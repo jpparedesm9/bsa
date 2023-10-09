@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<procedure>
+  <database>cob_cartera</database>
+  <name>sp_buscar_operaciones</name>
+  <type>SYBASE</type>
+  <version>1</version>
+  <parameters>
+    <parameter name="@t_debug" dataType="char" direction="in" />
+    <parameter name="@t_file" dataType="varchar" direction="in" />
+    <parameter name="@t_show_version" dataType="bit" direction="in" />
+    <parameter name="@i_banco" dataType="varchar" direction="in" />
+    <parameter name="@i_tramite" dataType="int" direction="in" />
+    <parameter name="@i_cliente" dataType="int" direction="in" />
+    <parameter name="@i_oficina" dataType="smallint" direction="in" />
+    <parameter name="@i_moneda" dataType="tinyint" direction="in" />
+    <parameter name="@i_oficial" dataType="smallint" direction="in" />
+    <parameter name="@i_fecha_ini" dataType="datetime" direction="in" />
+    <parameter name="@i_toperacion" dataType="varchar" direction="in" />
+    <parameter name="@i_lin_credito" dataType="varchar" direction="in" />
+    <parameter name="@i_estado" dataType="varchar" direction="in" />
+    <parameter name="@i_migrada" dataType="varchar" direction="in" />
+    <parameter name="@i_fecha_reajuste" dataType="datetime" direction="in" />
+    <parameter name="@i_siguiente" dataType="int" direction="in" />
+    <parameter name="@i_formato_fecha" dataType="int" direction="in" />
+    <parameter name="@i_condicion_est" dataType="tinyint" direction="in" />
+    <parameter name="@i_familia" dataType="varchar" direction="in" />
+    <parameter name="@i_categoria" dataType="char" direction="in" />
+    <parameter name="@i_conmora" dataType="char" direction="in" />
+    <parameter name="@i_tasa_ref" dataType="varchar" direction="in" />
+    <parameter name="@i_concepto" dataType="varchar" direction="in" />
+    <parameter name="@i_origen_fondo" dataType="varchar" direction="in" />
+    <parameter name="@i_op_tipo" dataType="char" direction="in" />
+    <parameter name="@i_op_tipo_filtrar" dataType="char" direction="in" />
+    <parameter name="@i_op_estado_filtrar" dataType="smallint" direction="in" />
+    <parameter name="@i_reajusta_operacion" dataType="char" direction="in" />
+    <parameter name="@i_tipo_carga" dataType="char" direction="in" />
+  </parameters>
+  <queries>
+    <query>
+      <columns>
+        <column name="op_toperacion" />
+        <column name="op_moneda" />
+        <column name="op_banco" />
+        <column name="op_monto" />
+        <column name="saldo" />
+        <column name="op_nombre" />
+        <column name="op_fecha_ini" />
+        <column name="op_fecha_fin" />
+        <column name="oficial" />
+        <column name="oficina" />
+        <column name="op_lin_credito" />
+        <column name="op_migrada" />
+        <column name="op_anterior" />
+        <column name="estado" />
+        <column name="op_tramite" />
+        <column name="op_cliente" />
+        <column name="secuencial" />
+        <column name="op_reajuste_especial" />
+        <column name="enmora" />
+        <column name="op_tipo" />
+      </columns>
+      <queryText></queryText>
+    </query>
+  </queries>
+</procedure>

@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="contratoCreditoRevolvente" pageWidth="547" pageHeight="794" whenNoDataType="AllSectionsNoDetail" columnWidth="507" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="deec1b21-1036-4734-948b-164547062a2b">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="SUBREPORT_DIR" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["/"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="urlPathSantander" class="java.lang.String"/>
+	<parameter name="firmaNF1CCI" class="java.lang.String"/>
+	<parameter name="firmaNF2CCI" class="java.lang.String"/>
+	<parameter name="firmaNB1CCI" class="java.lang.String"/>
+	<parameter name="firmaNB2CCI" class="java.lang.String"/>
+	<parameter name="condusef" class="java.lang.String"/>
+	<parameter name="pieAnio" class="java.lang.String"/>
+	<parameter name="clauMonto" class="java.lang.String"/>
+	<parameter name="footParam" class="java.lang.String"/>
+	<parameter name="footParamCr" class="java.lang.String"/>
+	<field name="contratoCreditoRevolventeDetallePrincipal" class="java.util.List"/>
+	<field name="contratoCreditoRevolventeClausula" class="java.util.List"/>
+	<field name="contratoCreditoRevolventeInfoPrevia" class="java.util.List"/>
+	<field name="contratoCreditoRevolventeAnexoLegal" class="java.util.List"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<pageHeader>
+		<band height="54">
+			<image>
+				<reportElement x="0" y="0" width="130" height="54" uuid="59af6e9f-a7af-491b-9491-935da477737a"/>
+				<imageExpression><![CDATA["tuiioSantander2.png"]]></imageExpression>
+			</image>
+		</band>
+	</pageHeader>
+	<detail>
+		<band height="32">
+			<subreport>
+				<reportElement positionType="Float" stretchType="RelativeToBandHeight" x="0" y="0" width="507" height="32" uuid="a814bab7-996e-4a6a-9492-3f3f21ad7db9"/>
+				<subreportParameter name="footParam">
+					<subreportParameterExpression><![CDATA[$P{footParam}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="condusef">
+					<subreportParameterExpression><![CDATA[$P{condusef}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="pieAnio">
+					<subreportParameterExpression><![CDATA[$P{pieAnio}]]></subreportParameterExpression>
+				</subreportParameter>
+				<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($F{contratoCreditoRevolventeInfoPrevia})]]></dataSourceExpression>
+				<subreportExpression><![CDATA[$P{SUBREPORT_DIR} + "contratoCreditoRevolvente_InfoPrevia.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+		<band height="45">
+			<subreport>
+				<reportElement positionType="Float" stretchType="RelativeToBandHeight" x="0" y="13" width="507" height="32" uuid="afb99ca9-ea7f-4f87-92d7-5adadfd6e2f2"/>
+				<subreportParameter name="footParamCr">
+					<subreportParameterExpression><![CDATA[$P{footParamCr}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="firmaNB2CCI">
+					<subreportParameterExpression><![CDATA[$P{firmaNB2CCI}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="condusef">
+					<subreportParameterExpression><![CDATA[$P{condusef}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="urlPathSantander">
+					<subreportParameterExpression><![CDATA[$P{urlPathSantander}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="firmaNF1CCI">
+					<subreportParameterExpression><![CDATA[$P{firmaNF1CCI}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="firmaNB1CCI">
+					<subreportParameterExpression><![CDATA[$P{firmaNB1CCI}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="pieAnio">
+					<subreportParameterExpression><![CDATA[$P{pieAnio}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="firmaNF2CCI">
+					<subreportParameterExpression><![CDATA[$P{firmaNF2CCI}]]></subreportParameterExpression>
+				</subreportParameter>
+				<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($F{contratoCreditoRevolventeDetallePrincipal})]]></dataSourceExpression>
+				<subreportExpression><![CDATA[$P{SUBREPORT_DIR} + "contratoCreditoRevolvente_DetallePrincipal.jasper"]]></subreportExpression>
+			</subreport>
+			<break>
+				<reportElement x="0" y="5" width="100" height="1" uuid="aefaef8e-d48b-441f-8e61-fb08560e28af"/>
+			</break>
+		</band>
+		<band height="39">
+			<subreport>
+				<reportElement positionType="Float" stretchType="RelativeToBandHeight" x="0" y="7" width="507" height="32" uuid="6eece550-4aba-4a46-a13a-9a0265eff092"/>
+				<subreportParameter name="footParam">
+					<subreportParameterExpression><![CDATA[$P{footParam}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="condusef">
+					<subreportParameterExpression><![CDATA[$P{condusef}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="pieAnio">
+					<subreportParameterExpression><![CDATA[$P{pieAnio}]]></subreportParameterExpression>
+				</subreportParameter>
+				<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($F{contratoCreditoRevolventeAnexoLegal})]]></dataSourceExpression>
+				<subreportExpression><![CDATA[$P{SUBREPORT_DIR} + "contratoCreditoRevolvente_AnexoLegal.jasper"]]></subreportExpression>
+			</subreport>
+			<break>
+				<reportElement x="0" y="3" width="100" height="1" uuid="2f1e1bd1-0157-40b3-8d7a-b168a878352f"/>
+			</break>
+		</band>
+	</detail>
+</jasperReport>

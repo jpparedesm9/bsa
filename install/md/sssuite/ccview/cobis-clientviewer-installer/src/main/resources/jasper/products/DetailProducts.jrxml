@@ -1,0 +1,452 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="DetailProducts" pageWidth="595" pageHeight="842" whenNoDataType="NoDataSection" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="8b8999bf-4996-49ab-8a5f-bed9862671ab">
+	<property name="ireport.zoom" value="1.6105100000000037"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="55"/>
+	<parameter name="SUBREPORT_DIR" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["\\\\192.168.64.240\\CobishomeP3\\CEW\\jasper\\products\\"]]></defaultValueExpression>
+	</parameter>
+	<field name="nationality" class="java.lang.Integer"/>
+	<field name="birthdate" class="java.util.Date"/>
+	<field name="personTypeDescription" class="java.lang.String"/>
+	<field name="studyLevelDescription" class="java.lang.String"/>
+	<field name="activityDescription" class="java.lang.String"/>
+	<field name="linkUpTypeDescription" class="java.lang.String"/>
+	<field name="superBancariaReported" class="java.lang.String"/>
+	<field name="civilStatusDescription" class="java.lang.String"/>
+	<field name="gender" class="java.lang.String"/>
+	<field name="professionDescription" class="java.lang.String"/>
+	<field name="groupDescription" class="java.lang.String"/>
+	<field name="preferredClient" class="java.lang.String"/>
+	<field name="maxDebtQuota" class="java.lang.Double"/>
+	<field name="status" class="java.lang.String"/>
+	<field name="typeCompanyId" class="java.lang.String"/>
+	<field name="numberEmployees" class="java.lang.Integer"/>
+	<field name="groupName" class="java.lang.String"/>
+	<field name="descriptionActivity" class="java.lang.String"/>
+	<field name="descriptionSegment" class="java.lang.String"/>
+	<field name="descriptionCoverage" class="java.lang.String"/>
+	<field name="totalAssets" class="java.lang.Double"/>
+	<field name="dateHeritage" class="java.util.Date"/>
+	<field name="heritage" class="java.lang.Double"/>
+	<field name="name" class="java.lang.String"/>
+	<field name="secondName" class="java.lang.String"/>
+	<field name="joinDate" class="java.util.Date"/>
+	<field name="descriptionOfficial" class="java.lang.String"/>
+	<field name="debtsLoans" class="java.util.List"/>
+	<field name="listSummaryInvestmentsDTO" class="java.util.List"/>
+	<field name="overdrafts" class="java.util.List"/>
+	<field name="warranties" class="java.util.List"/>
+	<field name="promissoryNotes" class="java.util.List"/>
+	<field name="credits" class="java.util.List"/>
+	<field name="contingencies" class="java.util.List"/>
+	<field name="others" class="java.util.List"/>
+	<field name="affiliations" class="java.util.List"/>
+	<field name="aplicattionLoans" class="java.util.List"/>
+	<field name="creditsPendings" class="java.util.List"/>
+	<field name="warrantiesPendings" class="java.util.List"/>
+	<field name="promissoryNotesPendings" class="java.util.List"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="70" splitType="Stretch">
+			<textField>
+				<reportElement uuid="0991899d-017c-4d30-8479-61f12f583857" x="77" y="30" width="86" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{name}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement uuid="bad08cc5-be31-4cf2-942c-2714b80c2d48" x="163" y="30" width="110" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{secondName}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="b57f4685-8a8e-4ffc-8035-88bd8d01ea85" x="77" y="50" width="196" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{joinDate}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement uuid="ba49622b-6e0a-4223-8e25-5fdbf8dc826d" x="349" y="30" width="206" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{status}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="d1056fbc-a785-4a82-a6c8-155d236671fd" x="349" y="50" width="206" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{descriptionOfficial}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="2b253d85-dc29-412f-b946-33c7207ce08e" x="0" y="30" width="77" height="20"/>
+				<textElement/>
+				<text><![CDATA[Customer:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="f78c68bb-e96c-4455-87f4-7481ad3bf215" x="0" y="50" width="77" height="20"/>
+				<textElement/>
+				<text><![CDATA[Join Date:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="5b99a64a-67a2-4eea-bdda-256489a5eb81" x="273" y="50" width="76" height="20">
+					<printWhenExpression><![CDATA[$F{descriptionOfficial} != null]]></printWhenExpression>
+				</reportElement>
+				<textElement/>
+				<text><![CDATA[Oficial:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="c45d3e36-412d-4ba0-9b3f-2ae8e6d26fc7" x="273" y="30" width="76" height="20"/>
+				<textElement/>
+				<text><![CDATA[Status:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="411fce3a-f9c7-4e24-8cfa-66122bb53497" x="0" y="0" width="555" height="16"/>
+				<box>
+					<bottomPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[Customer Products Detail]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="102" splitType="Stretch">
+			<subreport>
+				<reportElement uuid="2377168b-fe9e-41a8-903c-8a3a56fa5d29" x="0" y="51" width="555" height="51" isRemoveLineWhenBlank="true"/>
+				<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($F{listSummaryInvestmentsDTO})]]></dataSourceExpression>
+				<subreportExpression><![CDATA[$P{SUBREPORT_DIR} + "Liabilities.jasper"]]></subreportExpression>
+			</subreport>
+			<staticText>
+				<reportElement uuid="a3314824-c2e1-4fe0-a7f2-76bd54357534" x="0" y="17" width="555" height="20">
+					<printWhenExpression><![CDATA[!$F{listSummaryInvestmentsDTO}.isEmpty()]]></printWhenExpression>
+				</reportElement>
+				<box>
+					<bottomPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[Liabilities]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="88f5a603-90ea-4224-97e0-59f17e5b447c" x="401" y="37" width="74" height="14">
+					<printWhenExpression><![CDATA[!$F{listSummaryInvestmentsDTO}.isEmpty()]]></printWhenExpression>
+				</reportElement>
+				<box>
+					<bottomPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Right">
+					<font size="7"/>
+				</textElement>
+				<text><![CDATA[Blockades]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="706c9390-add3-49df-befd-5062fc2b670f" x="202" y="37" width="71" height="14">
+					<printWhenExpression><![CDATA[!$F{listSummaryInvestmentsDTO}.isEmpty()]]></printWhenExpression>
+				</reportElement>
+				<box>
+					<bottomPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Right">
+					<font size="7"/>
+				</textElement>
+				<text><![CDATA[Available]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="a3476e47-a489-4703-9ac0-a537daf98c23" x="349" y="37" width="52" height="14">
+					<printWhenExpression><![CDATA[!$F{listSummaryInvestmentsDTO}.isEmpty()]]></printWhenExpression>
+				</reportElement>
+				<box>
+					<bottomPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Right">
+					<font size="7"/>
+				</textElement>
+				<text><![CDATA[Retentions]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="571b448b-5225-4b90-8ac2-34ec1a12bfdd" x="514" y="37" width="41" height="14">
+					<printWhenExpression><![CDATA[!$F{listSummaryInvestmentsDTO}.isEmpty()]]></printWhenExpression>
+				</reportElement>
+				<box>
+					<bottomPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font size="7"/>
+				</textElement>
+				<text><![CDATA[Status]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="b7e829db-ac37-4b87-8079-449c2a159aef" x="475" y="37" width="39" height="14">
+					<printWhenExpression><![CDATA[!$F{listSummaryInvestmentsDTO}.isEmpty()]]></printWhenExpression>
+				</reportElement>
+				<box>
+					<bottomPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Right">
+					<font size="7"/>
+				</textElement>
+				<text><![CDATA[Score]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="45b3c6d0-c753-45fe-92bd-37b19cd33f57" x="273" y="37" width="76" height="14">
+					<printWhenExpression><![CDATA[!$F{listSummaryInvestmentsDTO}.isEmpty()]]></printWhenExpression>
+				</reportElement>
+				<box>
+					<bottomPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Right">
+					<font size="7"/>
+				</textElement>
+				<text><![CDATA[Amounth Pledged]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="3ae5e6d5-26bd-423b-8a61-34c75ac57d7e" x="0" y="37" width="77" height="14">
+					<printWhenExpression><![CDATA[!$F{listSummaryInvestmentsDTO}.isEmpty()]]></printWhenExpression>
+				</reportElement>
+				<box>
+					<bottomPen lineWidth="0.0"/>
+				</box>
+				<textElement>
+					<font size="7"/>
+				</textElement>
+				<text><![CDATA[Operation]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="6a7fac6c-b120-4157-9040-3d16765dde59" x="77" y="37" width="28" height="14">
+					<printWhenExpression><![CDATA[!$F{listSummaryInvestmentsDTO}.isEmpty()]]></printWhenExpression>
+				</reportElement>
+				<box>
+					<bottomPen lineWidth="0.0"/>
+				</box>
+				<textElement>
+					<font size="7"/>
+				</textElement>
+				<text><![CDATA[Rol]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="1ec4dbeb-b448-4e2c-b844-d3c92e35a7ed" x="163" y="37" width="39" height="14">
+					<printWhenExpression><![CDATA[!$F{listSummaryInvestmentsDTO}.isEmpty()]]></printWhenExpression>
+				</reportElement>
+				<box>
+					<bottomPen lineWidth="0.0"/>
+				</box>
+				<textElement>
+					<font size="7"/>
+				</textElement>
+				<text><![CDATA[Currency]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="5db66304-b607-40a9-80c8-c0a0249ef35a" x="105" y="37" width="58" height="14">
+					<printWhenExpression><![CDATA[!$F{listSummaryInvestmentsDTO}.isEmpty()]]></printWhenExpression>
+				</reportElement>
+				<box>
+					<bottomPen lineWidth="0.0"/>
+				</box>
+				<textElement>
+					<font size="7"/>
+				</textElement>
+				<text><![CDATA[Opening Date]]></text>
+			</staticText>
+		</band>
+		<band height="122">
+			<subreport>
+				<reportElement uuid="9f04c6e1-2fe5-4983-ae35-a92d01453b1c" x="0" y="20" width="555" height="51" isRemoveLineWhenBlank="true"/>
+				<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($F{debtsLoans})]]></dataSourceExpression>
+				<subreportExpression><![CDATA[$P{SUBREPORT_DIR} + "Debts.jasper"]]></subreportExpression>
+			</subreport>
+			<staticText>
+				<reportElement uuid="71ca9c22-dde7-4d7d-aab7-1a6a72f3777c" x="0" y="0" width="555" height="20">
+					<printWhenExpression><![CDATA[(!$F{debtsLoans}.isEmpty() && !$F{overdrafts}.isEmpty())]]></printWhenExpression>
+				</reportElement>
+				<box>
+					<bottomPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[Debts]]></text>
+			</staticText>
+			<subreport>
+				<reportElement uuid="c66b9234-3597-46e7-ba6d-1f0e508acd8a" x="0" y="71" width="555" height="51" isRemoveLineWhenBlank="true"/>
+				<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($F{overdrafts})]]></dataSourceExpression>
+				<subreportExpression><![CDATA[$P{SUBREPORT_DIR} + "Overdraft.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+		<band height="142">
+			<subreport>
+				<reportElement uuid="2d85af3b-2664-468c-9833-0a0201c55679" x="0" y="91" width="555" height="51" isRemoveLineWhenBlank="true"/>
+				<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($F{credits})]]></dataSourceExpression>
+				<subreportExpression><![CDATA[$P{SUBREPORT_DIR} + "Credits.jasper"]]></subreportExpression>
+			</subreport>
+			<staticText>
+				<reportElement uuid="66ee944c-d3f2-4a6f-b232-6b8a4c2e5c76" x="0" y="0" width="555" height="20">
+					<printWhenExpression><![CDATA[!$F{credits}.isEmpty() && !$F{contingencies}.isEmpty()]]></printWhenExpression>
+				</reportElement>
+				<box>
+					<bottomPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[Contingents]]></text>
+			</staticText>
+			<subreport>
+				<reportElement uuid="8c8e4f6f-73c0-4664-8c41-39c2d952f8dc" x="0" y="40" width="555" height="51" isRemoveLineWhenBlank="true"/>
+				<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($F{contingencies})]]></dataSourceExpression>
+				<subreportExpression><![CDATA[$P{SUBREPORT_DIR} + "Contingents.jasper"]]></subreportExpression>
+			</subreport>
+			<staticText>
+				<reportElement uuid="9ba83db2-6d3a-4a5e-8f91-bc3d182e7e38" x="77" y="20" width="86" height="20">
+					<printWhenExpression><![CDATA[!$F{credits}.isEmpty() && !$F{contingencies}.isEmpty()]]></printWhenExpression>
+				</reportElement>
+				<box>
+					<bottomPen lineWidth="0.25"/>
+				</box>
+				<textElement>
+					<font size="7"/>
+				</textElement>
+				<text><![CDATA[Operation Number]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="1a1deff1-5f28-46b2-b765-ca2c64c90e62" x="0" y="20" width="77" height="20">
+					<printWhenExpression><![CDATA[!$F{credits}.isEmpty() && !$F{contingencies}.isEmpty()]]></printWhenExpression>
+				</reportElement>
+				<box>
+					<bottomPen lineWidth="0.25"/>
+				</box>
+				<textElement>
+					<font size="7"/>
+				</textElement>
+				<text><![CDATA[Description Type]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="1ef7a288-5d9b-4247-b709-3cb5b12bcfb9" x="273" y="20" width="76" height="20">
+					<printWhenExpression><![CDATA[!$F{credits}.isEmpty() && !$F{contingencies}.isEmpty()]]></printWhenExpression>
+				</reportElement>
+				<box>
+					<bottomPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Right">
+					<font size="7"/>
+				</textElement>
+				<text><![CDATA[Currency]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="6b421113-91bf-4df0-bcb8-f5ab40bd1811" x="503" y="20" width="52" height="20">
+					<printWhenExpression><![CDATA[!$F{credits}.isEmpty() && !$F{contingencies}.isEmpty()]]></printWhenExpression>
+				</reportElement>
+				<box>
+					<bottomPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Right">
+					<font size="7"/>
+				</textElement>
+				<text><![CDATA[Original Amount]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="abb170ab-664c-4efd-b8d6-c8063df4d9ae" x="349" y="20" width="154" height="20">
+					<printWhenExpression><![CDATA[!$F{credits}.isEmpty() && !$F{contingencies}.isEmpty()]]></printWhenExpression>
+				</reportElement>
+				<box>
+					<bottomPen lineWidth="0.25"/>
+				</box>
+				<textElement>
+					<font size="7"/>
+				</textElement>
+				<text><![CDATA[Beneficiary]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="1f764274-533d-4058-92c0-76637defd56c" x="202" y="20" width="71" height="20">
+					<printWhenExpression><![CDATA[!$F{credits}.isEmpty() && !$F{contingencies}.isEmpty()]]></printWhenExpression>
+				</reportElement>
+				<box>
+					<bottomPen lineWidth="0.25"/>
+				</box>
+				<textElement>
+					<font size="7"/>
+				</textElement>
+				<text><![CDATA[Expiration Date]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="9a18d9f3-3724-463e-b22d-e262ae0cec6e" x="163" y="20" width="39" height="20">
+					<printWhenExpression><![CDATA[!$F{credits}.isEmpty() && !$F{contingencies}.isEmpty()]]></printWhenExpression>
+				</reportElement>
+				<box>
+					<bottomPen lineWidth="0.25"/>
+				</box>
+				<textElement>
+					<font size="7"/>
+				</textElement>
+				<text><![CDATA[Opening Date]]></text>
+			</staticText>
+		</band>
+		<band height="122">
+			<staticText>
+				<reportElement uuid="4c054080-5def-4d89-a2f2-ea96d812e1f7" x="0" y="0" width="555" height="20">
+					<printWhenExpression><![CDATA[(!$F{warranties}.isEmpty() && !$F{promissoryNotes}.isEmpty())]]></printWhenExpression>
+				</reportElement>
+				<box>
+					<bottomPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[Warranties]]></text>
+			</staticText>
+			<subreport>
+				<reportElement uuid="718aa322-25c8-4439-9cd7-ddfcb982dca7" x="0" y="20" width="555" height="51" isRemoveLineWhenBlank="true"/>
+				<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($F{warranties})]]></dataSourceExpression>
+				<subreportExpression><![CDATA[$P{SUBREPORT_DIR} + "Warranties.jasper"]]></subreportExpression>
+			</subreport>
+			<subreport>
+				<reportElement uuid="161a6e12-bd8d-4330-b2ef-820a6b3d4ed9" x="0" y="71" width="555" height="51" isRemoveLineWhenBlank="true"/>
+				<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($F{promissoryNotes})]]></dataSourceExpression>
+				<subreportExpression><![CDATA[$P{SUBREPORT_DIR} + "PromissoryNote.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+		<band height="275">
+			<staticText>
+				<reportElement uuid="21ac129b-0ba6-4661-a805-d26fd7d9c5cf" x="0" y="0" width="555" height="20">
+					<printWhenExpression><![CDATA[($F{others}.isEmpty() && $F{affiliations}.isEmpty() && $F{aplicattionLoans}.isEmpty() && $F{creditsPendings}.isEmpty() && $F{warrantiesPendings}.isEmpty() && $F{promissoryNotesPendings}.isEmpty())]]></printWhenExpression>
+				</reportElement>
+				<box>
+					<bottomPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[Other Products]]></text>
+			</staticText>
+			<subreport>
+				<reportElement uuid="3adc9148-a270-455c-a985-665f1d1630a7" x="0" y="71" width="555" height="51" isRemoveLineWhenBlank="true"/>
+				<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($F{affiliations})]]></dataSourceExpression>
+				<subreportExpression><![CDATA[$P{SUBREPORT_DIR} + "Others.jasper"]]></subreportExpression>
+			</subreport>
+			<subreport>
+				<reportElement uuid="913a812d-8f55-4a11-a2e9-c661a21dced6" x="0" y="20" width="555" height="51" isRemoveLineWhenBlank="true"/>
+				<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($F{others})]]></dataSourceExpression>
+				<subreportExpression><![CDATA[$P{SUBREPORT_DIR} + "OthersComext.jasper"]]></subreportExpression>
+			</subreport>
+			<subreport>
+				<reportElement uuid="2e01d1ef-464f-41fd-acbe-22170d056dc5" x="0" y="122" width="555" height="51" isRemoveLineWhenBlank="true"/>
+				<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($F{aplicattionLoans})]]></dataSourceExpression>
+				<subreportExpression><![CDATA[$P{SUBREPORT_DIR} + "AplicattionLoans.jasper"]]></subreportExpression>
+			</subreport>
+			<subreport>
+				<reportElement uuid="2c8f7a38-e2b7-48dd-a8dd-b37c640ffdef" x="0" y="173" width="555" height="51" isRemoveLineWhenBlank="true"/>
+				<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($F{warrantiesPendings})]]></dataSourceExpression>
+				<subreportExpression><![CDATA[$P{SUBREPORT_DIR} + "WarrantiesPendings.jasper"]]></subreportExpression>
+			</subreport>
+			<subreport>
+				<reportElement uuid="bcc49644-15d4-436f-bce1-7c6c7c4761f7" x="0" y="224" width="555" height="51" isRemoveLineWhenBlank="true"/>
+				<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($F{promissoryNotesPendings})]]></dataSourceExpression>
+				<subreportExpression><![CDATA[$P{SUBREPORT_DIR} + "PromissoryNotePendings.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

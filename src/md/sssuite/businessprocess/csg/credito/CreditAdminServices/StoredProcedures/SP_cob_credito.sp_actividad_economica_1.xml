@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<procedure>
+  <database>cob_credito</database>
+  <name>sp_actividad_economica</name>
+  <type>SYBASE</type>
+  <version>1</version>
+  <parameters>
+    <parameter name="@t_debug" dataType="char" direction="in" />
+    <parameter name="@t_file" dataType="varchar" direction="in" />
+    <parameter name="@t_from" dataType="varchar" direction="in" />
+    <parameter name="@s_user" dataType="varchar" direction="in" />
+    <parameter name="@t_trn" dataType="smallint" direction="in" />
+    <parameter name="@i_modo" dataType="tinyint" direction="in" />
+    <parameter name="@i_cod_sector" dataType="varchar" direction="in" />
+    <parameter name="@i_cod_subsector" dataType="varchar" direction="in" />
+    <parameter name="@i_cod_sub_act_ec" dataType="varchar" direction="in" />
+    <parameter name="@i_desc_act_ec" dataType="varchar" direction="in" />
+    <parameter name="@i_desc_sub_act_ec" dataType="varchar" direction="in" />
+    <parameter name="@i_aclaracion" dataType="varchar" direction="in" />
+  </parameters>
+  <queries>
+    <query>
+      <columns>
+        <column name="{1}" />
+        <column name="{2}" />
+        <column name="{3}" />
+        <column name="{4}" />
+        <column name="{5}" />
+        <column name="{6}" />
+        <column name="{7}" />
+        <column name="{8}" />
+        <column name="{9}" />
+        <column name="{10}" />
+      </columns>
+      <queryText>SELECT  a.se_codigo,a.se_descripcion,b.se_codigo,b.se_descripcion,c.ac_codigo,c.ac_descripcion,d.se_codigo,d.se_descripcion,d.se_aclaracionFie,d.se_codCaedge </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="{1}" />
+        <column name="{2}" />
+        <column name="{3}" />
+        <column name="{4}" />
+        <column name="{5}" />
+        <column name="{6}" />
+        <column name="{7}" />
+        <column name="{8}" />
+        <column name="{9}" />
+        <column name="{10}" />
+      </columns>
+      <queryText>SELECT  a.se_codigo,a.se_descripcion,b.se_codigo,b.se_descripcion,c.ac_codigo,c.ac_descripcion,d.se_codigo,d.se_descripcion,d.se_aclaracionFie,d.se_codCaedge </queryText>
+    </query>
+  </queries>
+</procedure>

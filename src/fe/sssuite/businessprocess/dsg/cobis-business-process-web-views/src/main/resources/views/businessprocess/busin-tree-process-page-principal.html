@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html ng-app="businessprocess" lang="en">
+
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<!--<title translate>COMMONS.CONTAINER.TIT_CONTAINER</title>-->
+  <script id="CEN">
+	function logOffFromCen(flagCen){
+		clearInterval(keepAliveInterval);
+		window.location.href = "${contextPath}/cobis/web/views/commons/cencontext.html?action=" + flagCen;
+	}
+  </script> 
+  <script src="${contextPath}/cobis/web/scripts/commons/cobis.censupport.js"></script> 
+  <script src="${contextPath}/cobis/web/scripts/lib/jquery/jquery-1.9.1.min.js"></script> 
+  <script src="${contextPath}/cobis/web/scripts/lib/jquery/jquery.blockUI.js" type="text/javascript"></script> 
+  <script src="${contextPath}/cobis/web/scripts/lib/jquery/jquery.validate.min.js" type="text/javascript"></script> 
+  <script src="${contextPath}/cobis/web/scripts/lib/angular/angular.min.js"></script> 
+  <script src="${contextPath}/cobis/web/scripts/lib/angular/angular-resource.min.js"></script> 
+  <script src="${contextPath}/cobis/web/scripts/lib/angular/angular-route.min.js"></script> 
+  <script src="${contextPath}/cobis/web/scripts/lib/angular/angular-translate.min.js"></script> 
+  <script src="${contextPath}/cobis/web/scripts/lib/angular/angular-translate-loader-partial.min.js"></script> 
+  <script src="${contextPath}/cobis/web/scripts/lib/angular/angular-translate-storage-local.min.js" type="text/javascript"></script> 
+  <script src="${contextPath}/cobis/web/scripts/lib/angular/angular-translate-storage-cookie.min.js" type="text/javascript"></script> 
+  <script src="${contextPath}/cobis/web/scripts/lib/angular/ocLazyLoad.min.js"></script> 
+  <script src="${contextPath}/cobis/web/scripts/lib/bootstrap/bootstrap.min.js"></script> 
+  <script src="${contextPath}/cobis/web/scripts/lib/bootstrap/ui-bootstrap-tpls.min.js"></script> 
+  <script src="${contextPath}/cobis/web/scripts/lib/kendo/kendo.web.min.js"></script> 
+  <script src="${contextPath}/cobis/web/scripts/lib/kendo/ExtComboBox.js"></script> 
+  <script src="${contextPath}/cobis/web/scripts/lib/kendo/ExtDatePicker.js"></script>
+  <script src="${contextPath}/cobis/web/scripts/lib/kendo/ExtMaskedTextBox.js"></script>
+  <script src="${contextPath}/cobis/web/scripts/lib/kendo/kiui.min.js"></script> 
+  <script src="${contextPath}/cobis/web/scripts/lib/kendo/ExtComboMultiSelect.js"></script>   
+  <script src="${contextPath}/cobis/web/scripts/lib/kendo/ExtTimePicker.js"></script> 
+  <script src="${contextPath}/cobis/web/scripts/lib/kendo/ExtGrid.js"></script> 
+  <script src="${contextPath}/cobis/web/scripts/lib/kendo/jszip.min.js"></script> 
+  <script src="${contextPath}/cobis/web/scripts/lib/angular/angular-cookies.min.js"></script> 
+  <script src="${contextPath}/cobis/web/scripts/lib/script/script.js"></script> 
+  <script src="${contextPath}/cobis/web/scripts/commons/cobis.commons.js"></script> 
+  <script src="${contextPath}/cobis/web/scripts/commons/module.cobis.js"></script> 
+  <script src="${contextPath}/cobis/web/scripts/commons/designerCommons.js"></script> 
+  <script src="${contextPath}/cobis/web/scripts/commons/designerBreadcrumbs.js"></script> 
+   <script src="${contextPath}/cobis/web/scripts/commons/designerDirectives.js"></script> 
+  <script src="${contextPath}/cobis/web/scripts/commons/designerCRUD.js"></script> 
+  <script src="${contextPath}/cobis/web/scripts/commons/designer.js"></script> 
+  <script src="${contextPath}/cobis/web/scripts/commons/designerCustomEvents.js"></script> 
+  <script src="${contextPath}/cobis/web/scripts/commons/designerPopover.js"></script>
+  <link href="${contextPath}/cobis/web/styles/theme.css" rel="stylesheet" /> 
+  <script type="text/javascript">
+angular.element(document.getElementsByTagName('head')).append(angular.element('<base href="' + window.location.pathname + '" />'));
+</script> 
+  <script type="text/javascript" src="${contextPath}/cobis/web/views/businessprocess/busin-tree-process.js"></script>
+  <script type="text/javascript" src="${contextPath}/cobis/web/views/businessprocess/services/busin-tree-process-srv.js"></script>
+  <script type="text/javascript" src="${contextPath}/cobis/web/views/businessprocess/controllers/busin-tree-process-ctrl.js"></script>
+    </head>
+<!-- Change the app name -->
+
+<body>
+    <div id="container" ng-controller="busin.treeProcessController" class="cb-viewport">           
+        <div id="validator" kendo-splitter k-orientation="orientationh" k-rebind="orientationh" 
+                		k-panes="[ { collapsible: true, resizable: true, size: '28%'},
+                                   { collapsible: false, resizable: true, size: '100%'}]" kendo-validator="validator">
+                <div ng-init="setTreeView()">						
+					<div designer-form-load form="vc.viewState.dynamicTreeGroup" class="cb-nav-subpanel"></div>
+                </div>
+				<div>
+					<div designer-form-load form="vc.viewState.dynamicGroup"></div>													
+					
+					<div class="cb-navbar cb-navbar-bottom">
+						<nav id="NAVIGATIONBUTTONBAR" class="navbar navbar-default navbar-fixed-bottom">
+							<button id="vc.viewState.SAVEBUTTON" ng-click="saveOnClick(vc.currentTaskLoaded)" class="btn btn-primary navbar-btn" ng-disabled="vc.viewState.SAVEBUTTON.disabled || vc.viewState.SAVEBUTTON.disabledingroup" ng-show="vc.viewState.SAVEBUTTON.visible"> 
+								<span> {{vc.viewState.SAVEBUTTON.label|translate}} </span>
+							</button>									
+
+							<button id="vc.viewState.FINISHBUTTON" ng-click="finishOnClick()" class="btn btn-default navbar-btn"ng-disabled="vc.viewState.FINISHBUTTON.disabled || vc.viewState.FINISHBUTTON.disabledingroup" ng-show="vc.viewState.FINISHBUTTON.visible"> 
+								<span> {{vc.viewState.FINISHBUTTON.label|translate}} </span>
+							</button>								
+						</nav>					
+						
+					</div>            
+				</div>	
+		</div>	
+    </div>		
+    <div ng-controller="keepAliveCen.Controller"></div> 	
+	
+</body>
+
+</html>

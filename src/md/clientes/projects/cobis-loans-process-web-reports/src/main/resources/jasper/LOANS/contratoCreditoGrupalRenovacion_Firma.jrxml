@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="contratoCreditoInclusion_Firma" pageWidth="263" pageHeight="794" whenNoDataType="AllSectionsNoDetail" columnWidth="263" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="deec1b21-1036-4734-948b-164547062a2b">
+	<property name="ireport.zoom" value="1.5"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="SUBREPORT_DIR" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["/"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="urlPathSantander" class="java.lang.String"/>
+	<field name="nombre" class="java.lang.String"/>
+	<field name="cargo" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="22">
+			<staticText>
+				<reportElement x="0" y="0" width="130" height="22" uuid="632d3121-cad9-475f-8723-f9f5ed58b817"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="8" isBold="true"/>
+					<paragraph leftIndent="10" rightIndent="10"/>
+				</textElement>
+				<text><![CDATA[Nombre]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="130" y="0" width="133" height="22" uuid="33b68521-bb37-4e61-a942-2136489bd977"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="8" isBold="true"/>
+					<paragraph leftIndent="10" rightIndent="10"/>
+				</textElement>
+				<text><![CDATA[Firma]]></text>
+			</staticText>
+		</band>
+	</title>
+	<detail>
+		<band height="56" splitType="Stretch">
+			<staticText>
+				<reportElement x="130" y="0" width="133" height="56" uuid="eec2f706-b7d0-4be8-9cf6-17fcd196f783"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Top">
+					<font fontName="SansSerif" size="8" isBold="true"/>
+					<paragraph leftIndent="10" rightIndent="10"/>
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="0" y="0" width="130" height="56" uuid="83a763c5-3716-4910-823b-c1f66a469d68"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="SansSerif" size="8"/>
+					<paragraph leftIndent="10" rightIndent="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{nombre}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

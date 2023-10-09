@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Warranties" language="java" pageWidth="595" pageHeight="842" columnWidth="595" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="4f510277-4146-465c-88fe-c46b4a07a9e6">
+	<property name="ireport.zoom" value="1.6105100000000019"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<field name="warrantyType" class="java.lang.String"/>
+	<field name="code" class="java.lang.String"/>
+	<field name="warrantyDescription" class="java.lang.String"/>
+	<field name="initialValue" class="java.lang.Double"/>
+	<field name="actualValue" class="java.lang.Double"/>
+	<field name="percet" class="java.lang.Double"/>
+	<field name="state" class="java.lang.String"/>
+	<field name="guarantor" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="20" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="6e81dd83-e918-4e6c-b886-ada14ea1ea24" x="0" y="0" width="555" height="20"/>
+				<box>
+					<bottomPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Warranty]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="20" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="c31ce5b2-693a-4ef8-812f-c39f53ff5f29" x="0" y="0" width="77" height="20"/>
+				<box>
+					<bottomPen lineWidth="0.25"/>
+				</box>
+				<textElement>
+					<font size="7"/>
+				</textElement>
+				<text><![CDATA[Type]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="9721f8c3-d460-4b6c-8eee-a2dbaf6be92b" x="77" y="0" width="86" height="20"/>
+				<box>
+					<bottomPen lineWidth="0.25"/>
+				</box>
+				<textElement>
+					<font size="7"/>
+				</textElement>
+				<text><![CDATA[Number Warranty]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="87bc764e-2c02-49ef-872c-548934e7e3a3" x="163" y="0" width="110" height="20"/>
+				<box>
+					<bottomPen lineWidth="0.25"/>
+				</box>
+				<textElement>
+					<font size="7"/>
+				</textElement>
+				<text><![CDATA[Money Decription]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="f85f3c42-b98c-46d8-a565-7096537557c1" x="273" y="0" width="76" height="20"/>
+				<box>
+					<bottomPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Right">
+					<font size="7"/>
+				</textElement>
+				<text><![CDATA[Initial  Value]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="06ed8c2c-a46c-42e4-962e-0c75cbae6749" x="349" y="0" width="52" height="20"/>
+				<box>
+					<bottomPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Right">
+					<font size="7"/>
+				</textElement>
+				<text><![CDATA[Present Value]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="f7f529dc-2438-4d85-bd6f-419df2a5468e" x="401" y="0" width="41" height="20"/>
+				<box>
+					<bottomPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Right">
+					<font size="7"/>
+				</textElement>
+				<text><![CDATA[MRC]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="fe96a156-8593-4206-b4f7-fd0612ccebb2" x="475" y="0" width="80" height="20"/>
+				<box>
+					<bottomPen lineWidth="0.25"/>
+				</box>
+				<textElement>
+					<font size="7"/>
+				</textElement>
+				<text><![CDATA[Guarantor]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="20b40d76-f04f-4c89-9efe-ace4079e4f88" x="442" y="0" width="33" height="20"/>
+				<box>
+					<bottomPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Right">
+					<font size="7"/>
+				</textElement>
+				<text><![CDATA[State]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="20" splitType="Stretch">
+			<textField>
+				<reportElement uuid="b4cedb5c-b27e-46b0-87a6-9138ed1e3fc2" x="0" y="0" width="77" height="20"/>
+				<textElement>
+					<font size="7"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{warrantyType}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="254b7275-1b7d-44a7-bc3f-020fff44de20" x="77" y="0" width="86" height="20"/>
+				<textElement>
+					<font size="7"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{code}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="c1f599ab-dd98-43e3-a5d1-80e776492ed1" x="163" y="0" width="110" height="20"/>
+				<textElement>
+					<font size="7"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{warrantyDescription}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0.00">
+				<reportElement uuid="03ae338f-d5ce-4b79-8c79-31c48adab666" x="273" y="0" width="76" height="20"/>
+				<textElement textAlignment="Right">
+					<font size="7"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{initialValue}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0.00">
+				<reportElement uuid="294ab9b2-3756-4ed9-af72-34a0a825f520" x="349" y="0" width="52" height="20"/>
+				<textElement textAlignment="Right">
+					<font size="7"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{actualValue}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="8b470a71-e267-4aba-8569-8eba0a39f3f2" x="401" y="0" width="41" height="20"/>
+				<textElement textAlignment="Right">
+					<font size="7"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{percet}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="125576b7-7f38-44a0-ad06-0ff6caa6f146" x="475" y="0" width="80" height="20"/>
+				<textElement>
+					<font size="7"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{guarantor}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement uuid="6dedf461-5102-4608-ad5b-8790121ff2e0" x="442" y="0" width="33" height="20"/>
+				<textElement textAlignment="Right">
+					<font size="7"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{state}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

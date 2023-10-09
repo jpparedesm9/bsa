@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:osgi="http://www.springframework.org/schema/osgi"
+       xsi:schemaLocation="http://www.springframework.org/schema/osgi http://www.springframework.org/schema/osgi/spring-osgi.xsd http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <osgi:service ref="DisbursementCheckProcess"
+                  interface="com.cobis.cloud.sofom.operationsexecution.operationalservicescheck.batch.process.IDisbursementCheckProcess">
+        <service-properties>
+            <entry key="transactionType" value="DSMBLCK"/>
+        </service-properties>
+    </osgi:service>
+
+    <osgi:service ref="ValidationService"
+                  interface="com.cobis.cloud.sofom.operationsexecution.operationalservicescheck.batch.tasklet.IValidation">
+    </osgi:service>
+
+    <osgi:service ref="CustomEncryption" interface="com.cobiscorp.cobis.batch.engine.tasklet.ICustomCryptography">
+        <osgi:service-properties>
+            <entry key="service.impl" value="CustomEncryptionImpl"/>
+            <entry key="service.app" value="DSBCK"/>
+            <entry key="service.transactionType" value="DSMBLCK"/>
+        </osgi:service-properties>
+    </osgi:service>
+
+    <osgi:reference id="cobisStoredProcedureUtilsOsgi"
+                    interface="com.cobiscorp.cobis.cts.jdbc.utils.CobisStoredProcedureUtils"/>
+
+    <osgi:reference id="batchServiceExecutor"
+                    interface="com.cobiscorp.cobis.batch.core.BatchServiceExecutor"/>
+
+    <osgi:reference id="cacheManager"
+                    interface="com.cobiscorp.cobis.cache.ICacheManager"/>
+
+    <osgi:reference id="cobisParameterOsgi"
+                    interface="com.cobiscorp.cobis.cts.services.utilservices.api.ICobisParameter"/>
+</beans>

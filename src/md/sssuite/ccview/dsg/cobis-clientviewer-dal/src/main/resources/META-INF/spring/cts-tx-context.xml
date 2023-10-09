@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd
+		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd">
+
+
+	<tx:advice id="transactionalAdvice" transaction-manager="transactionManager">
+		<tx:attributes>
+			<tx:method name="*" propagation="REQUIRED" rollback-for="RuntimeException" />
+			<tx:method name="getHistoricalLog" propagation="NOT_SUPPORTED"
+				rollback-for="RuntimeException" />
+		</tx:attributes>
+	</tx:advice>
+
+
+	<aop:config>
+		<aop:pointcut id="AffiliationsDAOTransaction"
+			expression="execution(* com.cobiscorp.ecobis.clientviewer.dal.AffiliationsDAO.*(..))" />
+		<aop:advisor pointcut-ref="AffiliationsDAOTransaction"
+			advice-ref="transactionalAdvice" />
+	</aop:config>
+
+	<aop:config>
+		<aop:pointcut id="RateDAOTransaction"
+			expression="execution(* com.cobiscorp.ecobis.clientviewer.dal.RateDAO.*(..))" />
+		<aop:advisor pointcut-ref="RateDAOTransaction"
+			advice-ref="transactionalAdvice" />
+	</aop:config>
+
+	<aop:config>
+		<aop:pointcut id="ScoreDAOTransaction"
+			expression="execution(* com.cobiscorp.ecobis.clientviewer.dal.IScoreDAO.*(..))" />
+		<aop:advisor pointcut-ref="ScoreDAOTransaction"
+			advice-ref="transactionalAdvice" />
+	</aop:config>
+	<aop:config>
+		<aop:pointcut id="SummaryCreditsDAOTransaction"
+			expression="execution(* com.cobiscorp.ecobis.clientviewer.dal.SummaryCreditsDAO.*(..))" />
+		<aop:advisor pointcut-ref="SummaryCreditsDAOTransaction"
+			advice-ref="transactionalAdvice" />
+	</aop:config>
+
+	<aop:config>
+		<aop:pointcut id="SummaryDebtsDAOTransaction"
+			expression="execution(* com.cobiscorp.ecobis.clientviewer.dal.SummaryDebtsDAO.*(..))" />
+		<aop:advisor pointcut-ref="SummaryDebtsDAOTransaction"
+			advice-ref="transactionalAdvice" />
+	</aop:config>
+
+	<aop:config>
+		<aop:pointcut id="CurrencyDAOTransaction"
+			expression="execution(* com.cobiscorp.ecobis.clientviewer.dal.CurrencyDAO.*(..))" />
+		<aop:advisor pointcut-ref="CurrencyDAOTransaction"
+			advice-ref="transactionalAdvice" />
+	</aop:config>
+
+
+	<aop:config>
+		<aop:pointcut id="SummaryInvestmentsDAOTransaction"
+			expression="execution(* com.cobiscorp.ecobis.clientviewer.dal.SummaryInvestmentsDAO.*(..))" />
+		<aop:advisor pointcut-ref="SummaryInvestmentsDAOTransaction"
+			advice-ref="transactionalAdvice" />
+	</aop:config>
+
+	<aop:config>
+		<aop:pointcut id="SummaryOthersDAOTransaction"
+			expression="execution(* com.cobiscorp.ecobis.clientviewer.dal.SummaryOthersDAO.*(..))" />
+		<aop:advisor pointcut-ref="SummaryOthersDAOTransaction"
+			advice-ref="transactionalAdvice" />
+	</aop:config>
+	<aop:config>
+		<aop:pointcut id="SummaryPersonalWarrantiesDAOTransaction"
+			expression="execution(* com.cobiscorp.ecobis.clientviewer.dal.SummaryPersonalWarrantiesDAO.*(..))" />
+		<aop:advisor pointcut-ref="SummaryPersonalWarrantiesDAOTransaction"
+			advice-ref="transactionalAdvice" />
+	</aop:config>
+	<aop:config>
+		<aop:pointcut id="SummaryWarrantiesDAOTransaction"
+			expression="execution(* com.cobiscorp.ecobis.clientviewer.dal.SummaryWarrantiesDAO.*(..))" />
+		<aop:advisor pointcut-ref="SummaryWarrantiesDAOTransaction"
+			advice-ref="transactionalAdvice" />
+	</aop:config>
+	
+	<aop:config>
+	<aop:pointcut id="AdministratorDAOTransaction"
+		expression="execution(* com.cobiscorp.ecobis.clientviewer.admin.dal.AdministratorDAO.*(..))"/>
+		<aop:advisor pointcut-ref="SummaryWarrantiesDAOTransaction"
+			advice-ref="transactionalAdvice" />
+	</aop:config>
+</beans>

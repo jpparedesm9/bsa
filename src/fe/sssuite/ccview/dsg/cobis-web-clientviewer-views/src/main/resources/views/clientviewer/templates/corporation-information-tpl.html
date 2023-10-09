@@ -1,0 +1,110 @@
+<div class="k-widget k-header k-tabstrip">
+	<fieldset id="organizer" class="cb-content">
+		<legend>
+			<a translate>CLIENTVIEWER.LABELS.LBL_COMPANY_DATA </a>
+		</legend>
+		<div class="col-xs-12">
+			<div class="col-xs-3">
+				<div class="form-group">
+					<label class="control-label" translate>CLIENTVIEWER.LABELS.LBL_CORPORATION_TYPE</label>
+					<div>{{clientAdditionalData.companyType}}</div>
+				</div>
+			</div>
+			<div class="col-xs-3">
+				<div class="form-group">
+					<label class="control-label" translate>CLIENTVIEWER.LABELS.LBL_LEGAL_ENTITY</label>
+					<div>{{clientAdditionalData.descriptionSegment}}</div>
+				</div>
+			</div>
+			<div class="col-xs-3">
+				<div class="form-group">
+					<label class="control-label" translate>CLIENTVIEWER.LABELS.LBL_EMPLOYEES_NUMBER</label>
+					<div>{{clientAdditionalData.numberEmployees}}</div>
+				</div>
+			</div>
+		</div>
+		<div class="col-xs-12">
+			<div class="col-xs-3">
+				<div class="form-group">
+					<label class="control-label" translate>CLIENTVIEWER.LABELS.LBL_REPRESENTATIVE_NAME</label>
+					<div>{{clientAdditionalData.legalRepresentative}}</div>
+				</div>
+			</div>
+			<div class="col-xs-3">
+				<div class="form-group">
+					<label class="control-label" translate>CLIENTVIEWER.LABELS.LBL_ECONOMIC_GROUP</label>
+					<div>{{clientAdditionalData.groupName}}</div>
+				</div>
+			</div>
+			<div class="col-xs-3">
+				<div class="form-group">
+					<label class="control-label" translate>CLIENTVIEWER.LABELS.LBL_BOUND</label>
+					<div>{{clientAdditionalData.entailment}}</div>
+				</div>
+			</div>
+		</div>
+		<div class="col-xs-12">
+			<div class="col-xs-3">
+				<div class="form-group">
+					<label class="control-label" translate>CLIENTVIEWER.LABELS.LBL_TYPE_ENTAILMENT</label>
+					<div>{{clientAdditionalData.linkUpTypeDescription}}</div>
+				</div>
+			</div>
+			<div class="col-xs-3">
+				<div class="form-group">
+					<label class="control-label" translate>CLIENTVIEWER.LABELS.LBL_STATE</label>
+					<div>{{clientAdditionalData.descState}}</div>
+				</div>
+			</div>
+		</div>
+		<legend>
+			<a translate>CLIENTVIEWER.LABELS.LBL_ACTIVITY </a>
+		</legend>
+		<div>
+			<div kendo-grid k-data-source="clientAdditionalData.economicActivity" k-columns="actividadColumns"></div>
+		</div>
+		<legend>
+			<a translate>CLIENTVIEWER.LABELS.LBL_OTHER_INFORMATION </a>
+		</legend>
+		<div class="col-xs-12">
+			<div class="col-xs-3">
+				<div class="form-group">
+					<label class="control-label" translate>CLIENTVIEWER.LABELS.LBL_MANAGEMENT_OFFICE</label>
+					<div>{{clientAdditionalData.office}}</div>
+				</div>
+			</div>
+			<div class="col-xs-3">
+				<div class="form-group">
+					<label class="control-label" translate>CLIENTVIEWER.LABELS.LBL_COVERAGE</label>
+					<div>{{clientAdditionalData.descriptionCoverage}}</div>
+				</div>
+			</div>
+			<div class="col-xs-3">
+				<div class="form-group">
+					<label class="control-label" translate>CLIENTVIEWER.LABELS.LBL_NATIONALITY</label>
+					<div>{{clientAdditionalData.nationality}}</div>
+				</div>
+			</div>
+		</div>
+		<div class="col-xs-12">			
+			<div class="col-xs-3">
+				<div class="form-group">
+					<label class="control-label" translate>CLIENTVIEWER.LABELS.LBL_ASSETS_AMOUNT</label>
+					<div>{{clientAdditionalData.totalAssets}}</div>
+				</div>
+			</div>
+			<div class="col-xs-3">
+				<div class="form-group">
+					<label class="control-label" translate>CLIENTVIEWER.LABELS.LBL_HERITAGE</label>
+					<div>{{clientAdditionalData.heritage}}</div>
+				</div>
+			</div>
+			<div class="col-xs-3">
+				<div class="form-group">
+					<label class="control-label" translate>CLIENTVIEWER.LABELS.LBL_DATE_HERITAGE</label>
+					<div>{{clientAdditionalData.dateHeritage}}</div>
+				</div>
+			</div>			
+		</div>
+	</fieldset>
+</div>

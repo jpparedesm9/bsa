@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<procedure>
+  <database>cob_cartera</database>
+  <name>sp_consulta_pago_solidario</name>
+  <type>SYBASE</type>
+  <version>1</version>
+  <parameters>
+    <parameter name="@t_debug" dataType="char" direction="in" />
+    <parameter name="@t_file" dataType="varchar" direction="in" />
+    <parameter name="@t_trn" dataType="smallint" direction="in" />
+    <parameter name="@i_banco_grupal" dataType="char" direction="in" />
+    <parameter name="@i_grupo" dataType="int" direction="in" />
+    <parameter name="@i_operacion" dataType="char" direction="in" />
+    <parameter name="@i_opcion" dataType="char" direction="in" />
+    <parameter name="@i_dividendo" dataType="int" direction="in" />
+  </parameters>
+  <queries>
+    <query>
+      <columns>
+        <column name="codGrupo" />
+        <column name="descGrupo" />
+        <column name="ciclo" />
+        <column name="FechaIni" />
+        <column name="Asesor" />
+        <column name="Sucursal" />
+        <column name="tipoCred" />
+        <column name="montoGrupal" />
+        <column name="tasa" />
+        <column name="plazo" />
+        <column name="saldoGarLiquida" />
+        <column name="cuotaVencidas" />
+        <column name="fechaProxVcto" />
+        <column name="montoCubrirPgSolid" />
+        <column name="pagDebito" />
+        <column name="coutaVigente" />
+        <column name="coutaMaxima" />
+      </columns>
+      <queryText>SELECT  "Número de Grupo" = cp_grupo,"Número de Grupo" = (SELECT  gr_nombre FROM cobis..cl_grupo   WHERE gr_grupo = CP.cp_grupo     ),"Ciclo" = (SELECT  gr_num_ciclo FROM cobis..cl_grupo   WHERE gr_grupo = CP.cp_grupo     ),op_fecha_ini,"Asesor" = (SELECT  fu_nombre FROM cobis..cc_oficial  ,cobis..cl_funcionario   WHERE oc_oficial = OPE.op_oficial AND oc_funcionario = fu_funcionario     ),"Sucursal" = (SELECT  of_nombre FROM cobis..cl_oficina   WHERE of_oficina = OPE.op_oficina     ),"Tipo de Crédito" = op_toperacion,"Monto grupal" = op_monto,"Tasa" = (SELECT  ro_valor FROM cob_cartera..ca_rubro_op   WHERE ro_operacion = OPE.op_operacion AND ro_concepto = "INT"     ),"Plazo" = op_plazo,op_tplazo,"Saldo Gar Liquida" = 0,"Cuotas vencidas" = 1,"Fecha próx Vcto" = OPE.op_fecha_ult_proceso,"Monto a cubrir con Pago Solidario" = cp_saldo_vencido,"Pagar débito a cuentas S/N" = "S" </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="cliente" />
+        <column name="clienteNombre" />
+        <column name="valorCuota" />
+        <column name="montoPagado" />
+        <column name="montoVencido" />
+        <column name="montoSolidario" />
+        <column name="dividendo" />
+        <column name="operacion" />
+      </columns>
+      <queryText>SELECT  "Nro Cliente" = cg_ente,"Nombre Cliente" = en_nombre,"Valor Cuota" = 0,"Monto Pagado" = 0,"Monto Vencido" = 0,"Monto Solidario" = 0 </queryText>
+    </query>
+  </queries>
+</procedure>

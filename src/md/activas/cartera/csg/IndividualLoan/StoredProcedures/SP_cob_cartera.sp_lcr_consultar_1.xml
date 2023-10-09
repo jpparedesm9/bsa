@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<procedure>
+  <database>cob_cartera</database>
+  <name>sp_lcr_consultar</name>
+  <type>SQLSERVER</type>
+  <version>1</version>
+  <parameters>
+    <parameter name="@s_ssn" dataType="int" direction="in" />
+    <parameter name="@s_sesn" dataType="int" direction="in" />
+    <parameter name="@s_date" dataType="datetime" direction="in" />
+    <parameter name="@s_user" dataType="varchar" direction="in" />
+    <parameter name="@s_term" dataType="varchar" direction="in" />
+    <parameter name="@s_ofi" dataType="smallint" direction="in" />
+    <parameter name="@s_srv" dataType="varchar" direction="in" />
+    <parameter name="@s_lsrv" dataType="varchar" direction="in" />
+    <parameter name="@s_rol" dataType="smallint" direction="in" />
+    <parameter name="@s_org" dataType="varchar" direction="in" />
+    <parameter name="@s_culture" dataType="varchar" direction="in" />
+    <parameter name="@t_rty" dataType="char" direction="in" />
+    <parameter name="@t_debug" dataType="char" direction="in" />
+    <parameter name="@t_file" dataType="varchar" direction="in" />
+    <parameter name="@t_trn" dataType="smallint" direction="in" />
+    <parameter name="@i_banco" dataType="varchar" direction="in" />
+    <parameter name="@o_msg" dataType="varchar" direction="out" />
+  </parameters>
+  <queries>
+    <query>
+      <columns>
+        <column name="{1}" />
+        <column name="{2}" />
+        <column name="{3}" />
+        <column name="{4}" />
+        <column name="{5}" />
+        <column name="{6}" />
+        <column name="{7}" />
+        <column name="{8}" />
+        <column name="{9}" />
+        <column name="{10}" />
+        <column name="{11}" />
+        <column name="{12}" />
+        <column name="{13}" />
+      </columns>
+      <queryText>SELECT w_nombre, w_monto_lcr, w_monto_utilizado, w_monto_disponible, w_pago_total, w_pago_minimo, w_fecha_pago, w_referencia, w_fecha_ult_acceso</queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="fecha " />
+        <column name="texto " />
+        <column name="monto" />
+        <column name="estado" />
+      </columns>
+      <queryText>SELECT  fecha = CONVERT (VARCHAR (10),tr_fecha_real ,101),texto = CASE tr_tran WHEN "DES" THEN "UTILIZACION" ELSE "PAGO REALIZADO EXITOSAMENTE" END,monto = dtr_monto </queryText>
+    </query>
+  </queries>
+</procedure>

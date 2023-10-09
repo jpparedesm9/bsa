@@ -1,0 +1,98 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<procedure>
+  <database>cob_cartera</database>
+  <name>sp_cuenta_cobis</name>
+  <type>SYBASE</type>
+  <version>1</version>
+  <parameters>
+    <parameter name="@i_operacion" dataType="char" direction="in" />
+    <parameter name="@i_cliente" dataType="int" direction="in" />
+    <parameter name="@i_cliente_ali" dataType="int" direction="in" />
+    <parameter name="@i_producto" dataType="varchar" direction="in" />
+    <parameter name="@i_cuenta" dataType="varchar" direction="in" />
+    <parameter name="@i_banco" dataType="varchar" direction="in" />
+    <parameter name="@i_categoria_fpago" dataType="varchar" direction="in" />
+    <parameter name="@i_ced_ruc" dataType="varchar" direction="in" />
+    <parameter name="@i_catalogo_banco_ach" dataType="varchar" direction="in" />
+    <parameter name="@i_oficina" dataType="smallint" direction="in" />
+  </parameters>
+  <queries>
+    <query>
+      <columns>
+        <column name="{1}" />
+      </columns>
+      <queryText>SELECT  en_nomlar </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="Cuenta" />
+        <column name="Cliente" />
+        <column name="Nombre" />
+      </columns>
+      <queryText>SELECT  "Cuenta" = cc_cta_banco,"Cliente" = cc_cliente,"Nombre" = cc_nombre </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="Cuenta" />
+        <column name="Cliente" />
+        <column name="Nombre" />
+      </columns>
+      <queryText>SELECT  "Cuenta" = cc_cta_banco,"Cliente" = cc_cliente,"Nombre" = cc_nombre </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="Cuenta" />
+        <column name="Cliente" />
+        <column name="Nombre" />
+      </columns>
+      <queryText>SELECT  "Cuenta" = ah_cta_banco,"Cliente" = ah_cliente,"Nombre" = ah_nombre </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="Cuenta" />
+        <column name="Cliente" />
+        <column name="Nombre" />
+      </columns>
+      <queryText>SELECT  "Cuenta" = ah_cta_banco,"Cliente" = ah_cliente,"Nombre" = ah_nombre </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="Cuenta" />
+        <column name="Cliente" />
+        <column name="Nombre" />
+      </columns>
+      <queryText>SELECT  "Cuenta" = op_banco,"Cliente" = op_cliente,"Nombre" = op_nombre </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="CUENTA" />
+        <column name="DESCRIPCION" />
+      </columns>
+      <queryText>SELECT  "CUENTA" = cg_cuenta,"DESCRIPCION" = "CHEQUE DE GERENCIA" </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="{1}" />
+      </columns>
+      <queryText>SELECT "S"</queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="{1}" />
+      </columns>
+      <queryText>SELECT "N"</queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="{1}" />
+      </columns>
+      <queryText>SELECT w_cta_alianza</queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="{1}" />
+      </columns>
+      <queryText>SELECT w_forma_des</queryText>
+    </query>
+  </queries>
+</procedure>

@@ -1,0 +1,138 @@
+use cobis
+go
+if exists (select * from sysobjects where name = 'tgi_an_page')
+    drop trigger tgi_an_page
+go
+create trigger tgi_an_page
+on an_page
+for insert
+as
+begin
+    declare
+        @w_pa_id        int,
+        @w_pa_la_id     int,
+        @w_pa_name      varchar(40),
+        @w_pa_icon      varchar(40),
+        @w_pa_id_parent int,
+        @w_pa_order     int,
+        @w_pa_splitter  varchar(20),
+        @w_pa_nemonic   varchar(40),
+        @w_pa_prod_name varchar(10),
+        @w_pa_arguments varchar(255),
+        @w_pa_he_id     int,
+        @w_pa_visible   int,
+        @w_id           int
+ 
+    declare cu_inserted cursor for
+        select
+            pa_id,
+            pa_la_id,
+            pa_name,
+            pa_icon,
+            pa_id_parent,
+            pa_order,
+            pa_splitter,
+            pa_nemonic,
+            pa_prod_name,
+            pa_arguments,
+            pa_he_id,
+            pa_visible
+        from inserted
+ 
+    open cu_inserted
+    fetch cu_inserted into
+        @w_pa_id,
+        @w_pa_la_id,
+        @w_pa_name,
+        @w_pa_icon,
+        @w_pa_id_parent,
+        @w_pa_order,
+        @w_pa_splitter,
+        @w_pa_nemonic,
+        @w_pa_prod_name,
+        @w_pa_arguments,
+        @w_pa_he_id,
+        @w_pa_visible
+                 
+    while @@FETCH_STATUS=0
+    begin
+        select @w_id = sq_siguiente
+        from cob_distrib..di_seqnos
+        where sq_tabla = 'di_log'
+ 
+        update cob_distrib..di_seqnos
+        set sq_siguiente = sq_siguiente + 1
+        where sq_tabla = 'di_log'
+ 
+        insert into cob_distrib..di_log (
+        lg_id, lg_fecha, lg_operacion, lg_objeto)
+        values (@w_id, getdate(), 'I', 'cobis..sp_an_page_tg')
+        
+        insert into cob_distrib..di_parametro (
+            pa_id, pa_nombre, pa_tipodato, pa_longitud, pa_int)
+        values (@w_id, '@i_pa_id', 56, isnull(datalength(@w_pa_id), 0), @w_pa_id)
+        
+        insert into cob_distrib..di_parametro (
+            pa_id, pa_nombre, pa_tipodato, pa_longitud, pa_int)
+        values (@w_id, '@i_pa_la_id', 56, isnull(datalength(@w_pa_la_id), 0), @w_pa_la_id)
+
+        insert into cob_distrib..di_parametro (
+            pa_id, pa_nombre, pa_tipodato, pa_longitud, pa_varchar)
+        values (@w_id, '@i_pa_name', 39, isnull(datalength(@w_pa_name), 0), @w_pa_name)
+
+        insert into cob_distrib..di_parametro (
+            pa_id, pa_nombre, pa_tipodato, pa_longitud, pa_varchar)
+        values (@w_id, '@i_pa_icon', 39, isnull(datalength(@w_pa_icon), 0), @w_pa_icon)
+
+        insert into cob_distrib..di_parametro (
+            pa_id, pa_nombre, pa_tipodato, pa_longitud, pa_int)
+        values (@w_id, '@i_pa_id_parent', 56, isnull(datalength(@w_pa_id_parent), 0), @w_pa_id_parent)
+
+        insert into cob_distrib..di_parametro (
+            pa_id, pa_nombre, pa_tipodato, pa_longitud, pa_int)
+        values (@w_id, '@i_pa_order', 56, isnull(datalength(@w_pa_order), 0), @w_pa_order)
+
+        insert into cob_distrib..di_parametro (
+            pa_id, pa_nombre, pa_tipodato, pa_longitud, pa_varchar)
+        values (@w_id, '@i_pa_splitter', 39, isnull(datalength(@w_pa_splitter), 0), @w_pa_splitter)
+
+        insert into cob_distrib..di_parametro (
+            pa_id, pa_nombre, pa_tipodato, pa_longitud, pa_varchar)
+        values (@w_id, '@i_pa_nemonic', 39, isnull(datalength(@w_pa_nemonic), 0), @w_pa_nemonic)
+
+        insert into cob_distrib..di_parametro (
+            pa_id, pa_nombre, pa_tipodato, pa_longitud, pa_varchar)
+        values (@w_id, '@i_pa_prod_name', 39, isnull(datalength(@w_pa_prod_name), 0), @w_pa_prod_name)
+
+        insert into cob_distrib..di_parametro (
+            pa_id, pa_nombre, pa_tipodato, pa_longitud, pa_varchar)
+        values (@w_id, '@i_pa_arguments', 39, isnull(datalength(@w_pa_arguments), 0), @w_pa_arguments)
+
+        insert into cob_distrib..di_parametro (
+            pa_id, pa_nombre, pa_tipodato, pa_longitud, pa_int)
+        values (@w_id, '@i_pa_he_id', 56, isnull(datalength(@w_pa_he_id), 0), @w_pa_he_id)
+
+        insert into cob_distrib..di_parametro (
+            pa_id, pa_nombre, pa_tipodato, pa_longitud, pa_int)
+        values (@w_id, '@i_pa_visible', 56, isnull(datalength(@w_pa_visible), 0), @w_pa_visible)
+
+        fetch cu_inserted into
+            @w_pa_id,
+            @w_pa_la_id,
+            @w_pa_name,
+            @w_pa_icon,
+            @w_pa_id_parent,
+            @w_pa_order,
+            @w_pa_splitter,
+            @w_pa_nemonic,
+            @w_pa_prod_name,
+            @w_pa_arguments,
+            @w_pa_he_id,
+            @w_pa_visible
+        
+    end
+    close cu_inserted
+    deallocate cu_inserted
+    
+end
+go

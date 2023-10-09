@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="GarDetalleReferencias" pageWidth="555" pageHeight="802" whenNoDataType="AllSectionsNoDetail" columnWidth="555" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="deec1b21-1036-4734-948b-164547062a2b">
+	<property name="ireport.zoom" value="1.5"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="SUBREPORT_DIR" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["/"]]></defaultValueExpression>
+	</parameter>
+	<field name="institucion" class="java.lang.String"/>
+	<field name="referencia" class="java.lang.String"/>
+	<field name="nroConvenio" class="java.lang.String"/>
+	<field name="barCode" class="java.lang.Object">
+		<fieldDescription><![CDATA[barCode]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<columnHeader>
+		<band height="20">
+			<staticText>
+				<reportElement positionType="Float" stretchType="RelativeToBandHeight" x="1" y="0" width="151" height="20" uuid="bd307ebd-7a5d-4340-a6af-414be1ec8739"/>
+				<box>
+					<topPen lineWidth="0.5" lineColor="#FF0000"/>
+					<leftPen lineWidth="0.0" lineColor="#FF0000"/>
+					<bottomPen lineWidth="0.5" lineColor="#FF0000"/>
+					<rightPen lineWidth="0.5" lineColor="#FF0000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="none">
+					<font fontName="SansSerif" size="10" isBold="true"/>
+					<paragraph leftIndent="3"/>
+				</textElement>
+				<text><![CDATA[INSTITUCION]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" stretchType="RelativeToBandHeight" x="152" y="0" width="276" height="20" uuid="755c1921-c4f2-47f4-ac38-5febcade4c98"/>
+				<box>
+					<topPen lineWidth="0.5" lineColor="#FF0000"/>
+					<leftPen lineWidth="0.5" lineColor="#FF0000"/>
+					<bottomPen lineWidth="0.5" lineColor="#FF0000"/>
+					<rightPen lineWidth="0.5" lineColor="#FF0000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="none">
+					<font fontName="SansSerif" size="10" isBold="true"/>
+					<paragraph leftIndent="3"/>
+				</textElement>
+				<text><![CDATA[REFERENCIA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" stretchType="RelativeToBandHeight" x="428" y="0" width="127" height="20" uuid="0c9789f1-2633-4b4c-9187-bf6bf82aadf9"/>
+				<box>
+					<topPen lineWidth="0.5" lineColor="#FF0000"/>
+					<leftPen lineWidth="0.5" lineColor="#FF0000"/>
+					<bottomPen lineWidth="0.5" lineColor="#FF0000"/>
+					<rightPen lineWidth="0.0" lineColor="#FF0000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="none">
+					<font fontName="SansSerif" size="10" isBold="true"/>
+					<paragraph leftIndent="3"/>
+				</textElement>
+				<text><![CDATA[NÚMERO DE CONVENIO]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="76">
+			<textField>
+				<reportElement x="1" y="0" width="151" height="76" uuid="05ff80ad-f147-4776-b058-c6ec7f03e69b"/>
+				<box>
+					<topPen lineWidth="0.5" lineColor="#FF0000"/>
+					<leftPen lineWidth="0.0" lineColor="#FF0000"/>
+					<bottomPen lineWidth="0.5" lineColor="#FF0000"/>
+					<rightPen lineWidth="0.5" lineColor="#FF0000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{institucion}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="152" y="0" width="138" height="76" uuid="dd109299-b484-4de3-9f9f-2fa5629755bf"/>
+				<box>
+					<topPen lineWidth="0.5" lineColor="#FF0000"/>
+					<leftPen lineWidth="0.5" lineColor="#FF0000"/>
+					<bottomPen lineWidth="0.5" lineColor="#FF0000"/>
+					<rightPen lineWidth="0.5" lineColor="#FF0000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{referencia}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="290" y="0" width="138" height="76" uuid="0d32700e-e2c5-4437-9485-9afe2cd1a7b9"/>
+				<box>
+					<topPen lineWidth="0.5" lineColor="#FF0000"/>
+					<leftPen lineWidth="0.5" lineColor="#FF0000"/>
+					<bottomPen lineWidth="0.5" lineColor="#FF0000"/>
+					<rightPen lineWidth="0.5" lineColor="#FF0000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{barCode} == null? $F{referencia} : ""]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="428" y="0" width="127" height="76" uuid="3feda8a0-3738-4637-9bc3-c2dcd1134142"/>
+				<box>
+					<topPen lineWidth="0.5" lineColor="#FF0000"/>
+					<leftPen lineWidth="0.5" lineColor="#FF0000"/>
+					<bottomPen lineWidth="0.5" lineColor="#FF0000"/>
+					<rightPen lineWidth="0.0" lineColor="#FF0000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{nroConvenio}]]></textFieldExpression>
+			</textField>
+			<image hAlign="Center" vAlign="Middle">
+				<reportElement positionType="Float" x="290" y="25" width="138" height="23" uuid="30ff13a8-bc7c-4483-a2d0-83eb17b40b99"/>
+				<imageExpression><![CDATA[$F{barCode}]]></imageExpression>
+			</image>
+		</band>
+	</detail>
+</jasperReport>

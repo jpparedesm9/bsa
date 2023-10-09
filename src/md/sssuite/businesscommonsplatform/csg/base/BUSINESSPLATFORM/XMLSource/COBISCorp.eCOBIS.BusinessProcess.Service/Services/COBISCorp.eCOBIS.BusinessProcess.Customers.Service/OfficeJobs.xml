@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<serviceClass name="OfficeJobs" nsBase="COBISCorp.eCOBIS.BusinessProcess.Customers" namespace="COBISCorp.eCOBIS.BusinessProcess.Customers.Service" package="cobiscorp.ecobis.businessprocess.customers.service" ns="http://service.customers.businessprocess.ecobis.cobiscorp" module="BusinessProcess.Customers" productName="COBISCorp.eCOBIS.BusinessProcess.Service" productVersion="2.0.0.0">
+  <productProperties>
+    <property name="MavenGroupId" value="com.cobiscorp.processapi" />
+    <property name="MavenArtifactId" value="COBISCorp.eCOBIS.BusinessProcess.Service" />
+    <property name="MavenVersion" value="2.0.0.0" />
+  </productProperties>
+  <partialClass name="OfficeJobs">
+    <services>
+      <service id="BusinessProcess.Customers.OfficeJobs.SearchOfficeJob" netName="SearchOfficeJob" javaName="searchOfficeJob" mappingType="STORED_PROCEDURE" mapId="75b9b6dc7fe44437c6e0a69fd863dbab">
+        <documentations default="Español">
+          <documentation id="Español">Retorna todas la ocupacines disponibles en el sistema</documentation>
+          <documentation id="English">Returns all the available system Occupation</documentation>
+        </documentations>
+        <SRVMapping name="cobis..sp_ocupacion" trnCode="1434">
+          <DTOs>
+            <DTO direction="in" name="OfficeJob" alias="inOfficeJob" namespace="COBISCorp.eCOBIS.BusinessProcess.Customers.DTO" package="cobiscorp.ecobis.businessprocess.customers.dto" ns="http://dto.customers.businessprocess.ecobis.cobiscorp" required="true" />
+            <DTO direction="return" name="OfficeJob" alias="returnOfficeJob" namespace="COBISCorp.eCOBIS.BusinessProcess.Customers.DTO" package="cobiscorp.ecobis.businessprocess.customers.dto" ns="http://dto.customers.businessprocess.ecobis.cobiscorp" required="true">
+              <properties>
+                <property name="code" propertyNet="Code" propertyJava="code" setterJavaMethod="setCode" getterJavaMethod="getCode" xsdType="string" netType="string" javaType="String" cobisMapping="" isInherit="false" isComplexType="false" isCollectionType="false" required="false" encrypted="false" maxLength="0" />
+                <property name="description" propertyNet="Description" propertyJava="description" setterJavaMethod="setDescription" getterJavaMethod="getDescription" xsdType="string" netType="string" javaType="String" cobisMapping="" isInherit="false" isComplexType="false" isCollectionType="false" required="false" encrypted="false" maxLength="0" />
+                <property name="sensitive" propertyNet="Sensitive" propertyJava="sensitive" setterJavaMethod="setSensitive" getterJavaMethod="getSensitive" xsdType="char" netType="char" javaType="char" cobisMapping="" isInherit="false" isComplexType="false" isCollectionType="false" required="true" encrypted="false" maxLength="0" />
+                <property name="state" propertyNet="State" propertyJava="state" setterJavaMethod="setState" getterJavaMethod="getState" xsdType="char" netType="char" javaType="char" cobisMapping="" isInherit="false" isComplexType="false" isCollectionType="false" required="true" encrypted="false" maxLength="0" />
+                <property name="mode" propertyNet="Mode" propertyJava="mode" setterJavaMethod="setMode" getterJavaMethod="getMode" xsdType="int" netType="int" javaType="int" cobisMapping="" isInherit="false" isComplexType="false" isCollectionType="false" required="true" encrypted="false" maxLength="0" />
+              </properties>
+            </DTO>
+            <DTO direction="out" name="OfficeJobResponse" alias="outOfficeJobResponse" namespace="COBISCorp.eCOBIS.BusinessProcess.Customers.DTO" package="cobiscorp.ecobis.businessprocess.customers.dto" ns="http://dto.customers.businessprocess.ecobis.cobiscorp" required="true">
+              <properties>
+                <property name="officeJobsList" propertyNet="OfficeJobsList" propertyJava="officeJobsList" setterJavaMethod="setOfficeJobsList" getterJavaMethod="getOfficeJobsList" xsdType="GenericList" netType="List&lt;OfficeJob&gt;" javaType="ArrayList&lt;OfficeJob&gt;" cobisMapping="" isInherit="false" isComplexType="true" isCollectionType="true" required="true" encrypted="false" maxLength="0" XSDElementType="OfficeJob" netElementType="OfficeJob" javaElementType="OfficeJob" />
+              </properties>
+            </DTO>
+          </DTOs>
+          <parameterMappings>
+            <parameter name="@i_operacion" direction="in" mappingDirection="in" dataType="char" CTSDataType="SQLCHAR" JavaSQLType="CHAR" mappingType="CONSTANT" allowNull="false" contantValue="S" />
+            <parameter name="@i_modo" direction="in" mappingDirection="in" dataType="tinyint" CTSDataType="SQLINT1" JavaSQLType="INTEGER" mappingType="DTO" allowNull="false" DTOAlias="inOfficeJob" DTOPropertyName="mode" />
+            <parameter name="@i_codigo" direction="in" mappingDirection="in" dataType="varchar" CTSDataType="SQLVARCHAR" JavaSQLType="VARCHAR" mappingType="DTO" allowNull="false" DTOAlias="inOfficeJob" DTOPropertyName="code" />
+          </parameterMappings>
+          <resultMappings>
+            <result>
+              <DTOResult DTOAlias="returnOfficeJob" MapReturn="true">
+                <columnMapping position="0" name="code" DTOPropertyName="code" DataType="string" Format="" />
+                <columnMapping position="1" name="description" DTOPropertyName="description" DataType="string" Format="" />
+                <columnMapping position="2" name="sensitive" DTOPropertyName="sensitive" DataType="char" Format="" />
+                <columnMapping position="3" name="state" DTOPropertyName="state" DataType="char" Format="" />
+              </DTOResult>
+            </result>
+          </resultMappings>
+          <MappingProperties>
+            <MappingProperty key="BLIQueryPropertyName1" value="officeJobsList" />
+          </MappingProperties>
+        </SRVMapping>
+      </service>
+    </services>
+  </partialClass>
+</serviceClass>

@@ -1,0 +1,18 @@
+use cobis
+go
+if exists (select * from sysobjects where name = 'tgu_an_role_navigation_zone')
+    drop trigger tgu_an_role_navigation_zone
+go
+create trigger tgu_an_role_navigation_zone
+on an_role_navigation_zone
+for update
+as
+begin
+ 
+    if update(rn_rol) or update(rn_nz_id)
+    begin
+        rollback transaction
+        print 'No se puede actualizar la clave'
+    end
+end
+go

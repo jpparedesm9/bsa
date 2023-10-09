@@ -1,0 +1,99 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<procedure>
+  <database>cob_remesas</database>
+  <name>sp_personaliza_cuenta</name>
+  <type>SYBASE</type>
+  <version>1</version>
+  <parameters>
+    <parameter name="@s_ssn" dataType="int" direction="in" />
+    <parameter name="@s_srv" dataType="varchar" direction="in" />
+    <parameter name="@s_lsrv" dataType="varchar" direction="in" />
+    <parameter name="@s_user" dataType="varchar" direction="in" />
+    <parameter name="@s_sesn" dataType="int" direction="in" />
+    <parameter name="@s_term" dataType="varchar" direction="in" />
+    <parameter name="@s_date" dataType="datetime" direction="in" />
+    <parameter name="@s_org" dataType="char" direction="in" />
+    <parameter name="@s_ofi" dataType="smallint" direction="in" />
+    <parameter name="@s_rol" dataType="smallint" direction="in" />
+    <parameter name="@s_org_err" dataType="char" direction="in" />
+    <parameter name="@s_error" dataType="int" direction="in" />
+    <parameter name="@s_sev" dataType="tinyint" direction="in" />
+    <parameter name="@s_msg" dataType="varchar" direction="in" />
+    <parameter name="@t_debug" dataType="char" direction="in" />
+    <parameter name="@t_file" dataType="varchar" direction="in" />
+    <parameter name="@t_from" dataType="varchar" direction="in" />
+    <parameter name="@t_rty" dataType="char" direction="in" />
+    <parameter name="@t_trn" dataType="smallint" direction="in" />
+    <parameter name="@i_operacion" dataType="char" direction="in" />
+    <parameter name="@i_filial" dataType="tinyint" direction="in" />
+    <parameter name="@i_tipo" dataType="char" direction="in" />
+    <parameter name="@i_tipo_default" dataType="char" direction="in" />
+    <parameter name="@i_cod_emp" dataType="int" direction="in" />
+    <parameter name="@i_producto" dataType="tinyint" direction="in" />
+    <parameter name="@i_moneda" dataType="tinyint" direction="in" />
+    <parameter name="@i_pro_bancario" dataType="smallint" direction="in" />
+    <parameter name="@i_rol" dataType="char" direction="in" />
+    <parameter name="@i_cod_persona" dataType="int" direction="in" />
+    <parameter name="@i_cuenta" dataType="int" direction="in" />
+  </parameters>
+  <queries>
+    <query>
+      <columns>
+        <column name="/**Store Procedure**/" />
+        <column name="s_ssn" />
+        <column name="s_user" />
+        <column name="s_term" />
+        <column name="s_date" />
+        <column name="s_srv" />
+        <column name="s_lsrv" />
+        <column name="s_ofi" />
+        <column name="t_file" />
+        <column name="t_from" />
+      </columns>
+      <queryText>SELECT "/**Store Procedure**/"=w_sp_name,"s_ssn"=s_ssn,"s_user"=s_user,"s_term"=s_term,"s_date"=s_date,"s_srv"=s_srv,"s_lsrv"=s_lsrv,"s_ofi"=s_ofi,"t_file"=t_file,"t_from"=t_from</queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="CUENTA" />
+        <column name="No. CUENTA" />
+        <column name="PERSONALIZACION" />
+        <column name="CODIGO" />
+        <column name="ROL" />
+        <column name="CATEGORIA" />
+        <column name="PRODUCTO" />
+        <column name="MONEDA" />
+        <column name="DESCRIPCION DE PRO. MON." />
+        <column name="PROD. BANCARIO" />
+        <column name="DESCRIPCION PROD. BANC." />
+        <column name="AGENCIA" />
+        <column name="TIPO CUENTA" />
+      </columns>
+      <queryText>SELECT  "CUENTA" = cc_ctacte,"No. CUENTA" = cc_cta_banco,"PERSONALIZACION" = cc_tipo_def,"CODIGO" = cc_default,"ROL" = cc_rol_ente,"CATEGORIA" = cc_categoria,"PRODUCTO" = cc_producto,"MONEDA" = cc_moneda,"DESCRIPCION DE PRO. MON." = SUBSTRING (pm_descripcion, 1, 35),"PROD. BANCARIO" = cc_prod_banc,"DESCRIPCION PROD. BANC." = SUBSTRING (pb_descripcion, 1, 35),"AGENCIA" = cc_oficina,"TIPO CUENTA" = cc_tipocta </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="CUENTA" />
+        <column name="No. CUENTA" />
+        <column name="PERSONALIZACION" />
+        <column name="CODIGO" />
+        <column name="ROL" />
+        <column name="CATEGORIA" />
+        <column name="PRODUCTO" />
+        <column name="MONEDA" />
+        <column name="DESCRIPCION DE PRO. MON." />
+        <column name="PROD. BANCARIO" />
+        <column name="DESCRIPCION PROD. BANC." />
+        <column name="AGENCIA" />
+        <column name="TIPO CUENTA" />
+      </columns>
+      <queryText>SELECT  "CUENTA" = ah_cuenta,"No. CUENTA" = ah_cta_banco,"PERSONALIZACION" = ah_tipo_def,"CODIGO" = ah_default,"ROL" = ah_rol_ente,"CATEGORIA" = ah_categoria,"PRODUCTO" = ah_producto,"MONEDA" = ah_moneda,"DESCRIPCION DE PRO. MON." = SUBSTRING (pm_descripcion, 1, 35),"PROD. BANCARIO" = ah_prod_banc,"DESCRIPCION PROD. BANC." = SUBSTRING (pb_descripcion, 1, 35),"AGENCIA" = ah_oficina,"TIPO CUENTA" = ah_tipocta </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="{1}" />
+        <column name="{2}" />
+      </columns>
+      <queryText>SELECT  pf_pro_final,SUBSTRING (pf_descripcion, 1, 45) </queryText>
+    </query>
+  </queries>
+</procedure>

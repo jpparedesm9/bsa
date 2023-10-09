@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="avisoPrivacidadMain" pageWidth="546" pageHeight="841" columnWidth="506" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="b4d1d2e8-4c49-4f93-92d8-9b9582ce4baf">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="SUBREPORT_DIR" class="java.lang.String">
+		<defaultValueExpression><![CDATA["/"]]></defaultValueExpression>
+	</parameter>
+	<field name="listaMiembros" class="java.util.List"/>
+	<detail>
+		<band height="46" splitType="Stretch">
+			<subreport>
+				<reportElement stretchType="RelativeToTallestObject" x="0" y="2" width="506" height="44" uuid="8dd0ef85-2052-4ee4-b668-b2d5ef774500"/>
+				<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($F{listaMiembros})]]></dataSourceExpression>
+				<subreportExpression><![CDATA[$P{SUBREPORT_DIR} + "avisoPrivacidadGrupal.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+	</detail>
+</jasperReport>

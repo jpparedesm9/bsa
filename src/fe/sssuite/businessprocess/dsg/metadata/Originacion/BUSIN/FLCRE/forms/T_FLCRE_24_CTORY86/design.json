@@ -1,0 +1,1539 @@
+{
+  "id": {
+    "moduleId": "BUSIN",
+    "subModuleId": "FLCRE",
+    "taskId": "T_FLCRE_24_CTORY86",
+    "version": "1.0.0"
+  },
+  "name": {
+    "$ref": "../../../../BUSIN/relations/componentKeys.json#/FLCRE/Forms/T_FLCRE_24_CTORY86/name"
+  },
+  "modeEnabled": 4095,
+  "tempSaveStr": "F",
+  "autoCrudStr": "F",
+  "mainViewContainerId": "VC_CTORY86_CTEGO_587",
+  "customizationLayer": 0,
+  "customizationLayerDescription": "ECU",
+  "viewContainers": [
+    {
+      "layoutType": "Group",
+      "collapsedStr": "F",
+      "id": {
+        "moduleId": "BUSIN",
+        "subModuleId": "FLCRE",
+        "taskId": "T_FLCRE_24_CTORY86",
+        "viewContainerId": "VC_CTORY86_CTEGO_587",
+        "taskVersion": "1.0.0"
+      },
+      "name": "Category",
+      "description": "Formulario para Rubros",
+      "options": 0,
+      "enabled": 4095,
+      "componentStyle": null,
+      "colSpan": 1,
+      "customizationLayer": 0,
+      "customizationLayerDescription": "ECU",
+      "customEvents": [
+        {
+          "executionType": 1,
+          "customEventId": "CEVC_002_CTORY86_CTEGO_587_247",
+          "enabled": "T",
+          "customizationLayer": 0,
+          "customizationLayerDescription": "ECU",
+          "viewContainerEventType": {
+            "eventId": 2,
+            "name": "InitData",
+            "description": "Inicialización de datos de un ViewContainer, despues de este evento se realiza el segimiento de cambios en los datos"
+          },
+          "thereAnServerEvent": false,
+          "thereAnClientEvent": true,
+          "thereAnCallbackEvent": false,
+          "isEnabled": true
+        },
+        {
+          "executionType": 1,
+          "customEventId": "CEVC_008_CTORY86_CTEGO_587_609",
+          "enabled": "T",
+          "customizationLayer": 0,
+          "customizationLayerDescription": "ECU",
+          "viewContainerEventType": {
+            "eventId": 8,
+            "name": "Render",
+            "description": "Se ejecuta antes de renderizar un ViewContainer, permite realizar personalizaciones visuales"
+          },
+          "thereAnServerEvent": false,
+          "thereAnClientEvent": true,
+          "thereAnCallbackEvent": false,
+          "isEnabled": true
+        }
+      ],
+      "responsiveLayouts": null,
+      "responsivity": false,
+      "columnsNum": 1,
+      "view": {
+        "id": {
+          "viewId": "VW_ATACATEGRY19",
+          "version": "1.0.0"
+        },
+        "name": "DataCategory",
+		"modules" : [
+			{
+				"moduleId" : "BUSIN"
+			}
+		],
+        "groups": [
+          {
+            "collapsedStr": "F",
+            "groupId": "GR_ATACATEGRY19_01",
+            "name": "Grupo Rubros",
+            "layoutType": "TabbedLayout",
+            "enabled": 4095,
+            "visible": 4095,
+            "refViewId": "VW_ATACATEGRY19",
+            "refViewVersion": "1.0.0",
+            "style": null,
+            "componentStyle": null,
+            "customEvents": [],
+            "eventType": 0,
+            "colSpan": 4,
+            "groups": [
+              {
+                "collapsedStr": "F",
+                "groupId": "GR_ATACATEGRY19_02",
+                "name": "Rubros",
+                "layoutType": "Group",
+                "enabled": 4095,
+                "visible": 4095,
+                "refViewId": "VW_ATACATEGRY19",
+                "refViewVersion": "1.0.0",
+                "style": null,
+                "componentStyle": null,
+                "customEvents": [],
+                "eventType": 0,
+                "colSpan": 4,
+                "columnsNum": 4,
+                "entity": {
+                  "$ref": "../../../../BUSIN/entities/EN_CATEGORYM957.json#"
+                },
+                "visualAttributes": [
+                  {
+                    "visualAttributeId": "VA_ATACATEGRY1902_COEP019",
+                    "name": "Concept",
+                    "userControl": {
+                      "userControlId": "ComboBox",
+                      "type": "I"
+                    },
+                    "customEvents": [
+                      {
+                        "executionType": 1,
+                        "customEventId": "CEVA_104_GRY1902_COEP019_326",
+                        "enabled": "T",
+                        "customizationLayer": 0,
+                        "customizationLayerDescription": "ECU",
+                        "visualAttributeEventType": {
+                          "eventId": 104,
+                          "name": "Changed",
+                          "description": "Se ejecuta al cambiar el valor de un VisualAttribute"
+                        },
+                        "thereAnServerEvent": false,
+                        "thereAnClientEvent": true,
+                        "thereAnCallbackEvent": false,
+                        "isEnabled": true
+                      },
+                      {
+                        "executionType": 1,
+                        "customEventId": "CEVA_110_GRY1902_COEP019_526",
+                        "enabled": "T",
+                        "customizationLayer": 0,
+                        "customizationLayerDescription": "ECU",
+                        "visualAttributeEventType": {
+                          "eventId": 110,
+                          "name": "LoadCatalogData",
+                          "description": "Sobreescribe la carga de datos de un catálogo"
+                        },
+                        "thereAnServerEvent": false,
+                        "thereAnClientEvent": true,
+                        "thereAnCallbackEvent": false,
+                        "isEnabled": true
+                      }
+                    ],
+                    "options": 17,
+                    "label": {
+                      "labelId": "DLB_BUSIN_CODIORURO_89488",
+                      "defaultValue": {
+                        "$ref": "../../../../BUSIN/assets/languages/BUSIN.json#/BUSIN/LBL/DLB_BUSIN_CODIORURO_89488"
+                      },
+                      "hasI18N": true,
+                      "moduleId": "BUSIN",
+                      "customizationLayer": 0,
+                      "customizationLayerDescription": "ECU",
+                      "i18N": "T"
+                    },
+                    "aggregateId": null,
+                    "aggregate": null,
+                    "width": null,
+                    "style": null,
+                    "componentStyle": null,
+                    "customizationLayer": 0,
+                    "customizationLayerDescription": "ECU",
+                    "include": 4095,
+                    "order": 0,
+                    "colSpan": 4,
+                    "responsivity": false,
+                    "responsiveLayouts": null,
+                    "maxRecords": null,
+                    "attribute": {
+                      "$ref": "../../../../BUSIN/entities/EN_CATEGORYM957.json#/attributes/AT_CAT957COEP74"
+                    },
+                    "attributeValidations": [],
+                    "enabled": 4095,
+                    "visible": 4095,
+                    "readOnly": 8,
+                    "catalogName": null,
+                    "queryVersion": " ",
+                    "queryMemberText": {
+                      "queryMemberId": null,
+                      "attribute": {
+                        "attributeId": null,
+                        "name": null
+                      }
+                    },
+                    "queryMemberValue": {
+                      "queryMemberId": null,
+                      "attribute": {
+                        "attributeId": null,
+                        "name": null
+                      }
+                    },
+                    "cacheDuration": 1,
+                    "entityQuery": null,
+                    "queryModule": null,
+                    "minChars": null,
+                    "type": "none"
+                  },
+                  {
+                    "visualAttributeId": "VA_ATACATEGRY1902_ITMS728",
+                    "name": "ItemDesc",
+                    "userControl": {
+                      "userControlId": "TextInputBox",
+                      "type": "I"
+                    },
+                    "customEvents": [],
+                    "options": 0,
+                    "aggregateId": null,
+                    "aggregate": null,
+                    "width": null,
+                    "style": null,
+                    "componentStyle": null,
+                    "customizationLayer": 0,
+                    "customizationLayerDescription": "ECU",
+                    "include": 4095,
+                    "order": 1,
+                    "colSpan": 2,
+                    "responsivity": false,
+                    "responsiveLayouts": null,
+                    "maxRecords": null,
+                    "attribute": {
+                      "$ref": "../../../../BUSIN/entities/EN_CATEGORYM957.json#/attributes/AT_CAT957ITMS50"
+                    },
+                    "attributeValidations": [],
+                    "enabled": 0,
+                    "visible": 0,
+                    "readOnly": 8,
+                    "textRows": 0
+                  },
+                  {
+                    "visualAttributeId": "VA_ATACATEGRY1902_AUNL784",
+                    "name": "AmounToApply",
+                    "userControl": {
+                      "userControlId": "ComboBox",
+                      "type": "I"
+                    },
+                    "customEvents": [
+                      {
+                        "executionType": 1,
+                        "customEventId": "CEVA_104_GRY1902_AUNL784_457",
+                        "enabled": "T",
+                        "customizationLayer": 0,
+                        "customizationLayerDescription": "ECU",
+                        "visualAttributeEventType": {
+                          "eventId": 104,
+                          "name": "Changed",
+                          "description": "Se ejecuta al cambiar el valor de un VisualAttribute"
+                        },
+                        "thereAnServerEvent": false,
+                        "thereAnClientEvent": true,
+                        "thereAnCallbackEvent": false,
+                        "isEnabled": true
+                      },
+                      {
+                        "executionType": 1,
+                        "customEventId": "CEVA_110_GRY1902_AUNL784_331",
+                        "enabled": "T",
+                        "customizationLayer": 0,
+                        "customizationLayerDescription": "ECU",
+                        "visualAttributeEventType": {
+                          "eventId": 110,
+                          "name": "LoadCatalogData",
+                          "description": "Sobreescribe la carga de datos de un catálogo"
+                        },
+                        "thereAnServerEvent": false,
+                        "thereAnClientEvent": true,
+                        "thereAnCallbackEvent": false,
+                        "isEnabled": true
+                      }
+                    ],
+                    "options": 17,
+                    "label": {
+                      "labelId": "DLB_BUSIN_LORAPICAR_36363",
+                      "defaultValue": {
+                        "$ref": "../../../../BUSIN/assets/languages/BUSIN.json#/BUSIN/LBL/DLB_BUSIN_LORAPICAR_36363"
+                      },
+                      "hasI18N": true,
+                      "moduleId": "BUSIN",
+                      "customizationLayer": 0,
+                      "customizationLayerDescription": "ECU",
+                      "i18N": "T"
+                    },
+                    "aggregateId": null,
+                    "aggregate": null,
+                    "width": null,
+                    "style": null,
+                    "componentStyle": null,
+                    "customizationLayer": 0,
+                    "customizationLayerDescription": "ECU",
+                    "include": 4095,
+                    "order": 2,
+                    "colSpan": 4,
+                    "responsivity": false,
+                    "responsiveLayouts": null,
+                    "maxRecords": null,
+                    "attribute": {
+                      "$ref": "../../../../BUSIN/entities/EN_CATEGORYM957.json#/attributes/AT_CAT957AUNL12"
+                    },
+                    "attributeValidations": [],
+                    "enabled": 4095,
+                    "visible": 4095,
+                    "readOnly": 8,
+                    "catalogName": null,
+                    "queryVersion": " ",
+                    "queryMemberText": {
+                      "queryMemberId": null,
+                      "attribute": {
+                        "attributeId": null,
+                        "name": null
+                      }
+                    },
+                    "queryMemberValue": {
+                      "queryMemberId": null,
+                      "attribute": {
+                        "attributeId": null,
+                        "name": null
+                      }
+                    },
+                    "cacheDuration": 1,
+                    "entityQuery": null,
+                    "queryModule": null,
+                    "minChars": null,
+                    "type": "none"
+                  },
+                  {
+                    "visualAttributeId": "VA_ATACATEGRY1902_EENE582",
+                    "name": "Reference",
+                    "userControl": {
+                      "userControlId": "TextInputBox",
+                      "type": "I"
+                    },
+                    "customEvents": [],
+                    "options": 0,
+                    "aggregateId": null,
+                    "aggregate": null,
+                    "width": null,
+                    "style": null,
+                    "componentStyle": null,
+                    "customizationLayer": 0,
+                    "customizationLayerDescription": "ECU",
+                    "include": 4095,
+                    "order": 3,
+                    "colSpan": 4,
+                    "responsivity": false,
+                    "responsiveLayouts": null,
+                    "maxRecords": null,
+                    "attribute": {
+                      "$ref": "../../../../BUSIN/entities/EN_CATEGORYM957.json#/attributes/AT_CAT957EENE30"
+                    },
+                    "attributeValidations": [],
+                    "enabled": 4095,
+                    "visible": 8,
+                    "readOnly": 8,
+                    "textRows": 0
+                  },
+                  {
+                    "visualAttributeId": "VA_ATACATEGRY1902_ECRI253",
+                    "name": "ReferenceDescription",
+                    "userControl": {
+                      "userControlId": "TextInputBox",
+                      "type": "I"
+                    },
+                    "customEvents": [],
+                    "options": 0,
+                    "label": {
+                      "labelId": "DLB_BUSIN_REERENCIA_20799",
+                      "defaultValue": {
+                        "$ref": "../../../../BUSIN/assets/languages/BUSIN.json#/BUSIN/LBL/DLB_BUSIN_REERENCIA_20799"
+                      },
+                      "hasI18N": true,
+                      "moduleId": "BUSIN",
+                      "customizationLayer": 0,
+                      "customizationLayerDescription": "ECU",
+                      "i18N": "T"
+                    },
+                    "aggregateId": null,
+                    "aggregate": null,
+                    "width": null,
+                    "style": null,
+                    "componentStyle": null,
+                    "customizationLayer": 0,
+                    "customizationLayerDescription": "ECU",
+                    "include": 4095,
+                    "order": 4,
+                    "colSpan": 4,
+                    "responsivity": false,
+                    "responsiveLayouts": null,
+                    "maxRecords": null,
+                    "attribute": {
+                      "$ref": "../../../../BUSIN/entities/EN_CATEGORYM957.json#/attributes/AT_CAT957ECRI97"
+                    },
+                    "attributeValidations": [],
+                    "enabled": 4095,
+                    "visible": 4095,
+                    "readOnly": 8,
+                    "textRows": 0
+                  },
+                  {
+                    "visualAttributeId": "VA_ATACATEGRY1902_MUPE771",
+                    "name": "AmountToApplyDesc",
+                    "userControl": {
+                      "userControlId": "TextInputBox",
+                      "type": "I"
+                    },
+                    "customEvents": [],
+                    "options": 0,
+                    "aggregateId": null,
+                    "aggregate": null,
+                    "width": null,
+                    "style": null,
+                    "componentStyle": null,
+                    "customizationLayer": 0,
+                    "customizationLayerDescription": "ECU",
+                    "include": 4095,
+                    "order": 5,
+                    "colSpan": 2,
+                    "responsivity": false,
+                    "responsiveLayouts": null,
+                    "maxRecords": null,
+                    "attribute": {
+                      "$ref": "../../../../BUSIN/entities/EN_CATEGORYM957.json#/attributes/AT_CAT957MUPE99"
+                    },
+                    "attributeValidations": [],
+                    "enabled": 0,
+                    "visible": 0,
+                    "readOnly": 8,
+                    "textRows": 0
+                  },
+                  {
+                    "visualAttributeId": "VA_ATACATEGRY1902_RNCU443",
+                    "name": "ReferenceAmount",
+                    "userControl": {
+                      "userControlId": "TextInputBox",
+                      "type": "I"
+                    },
+                    "customEvents": [],
+                    "options": 0,
+                    "aggregateId": null,
+                    "aggregate": null,
+                    "width": null,
+                    "style": null,
+                    "componentStyle": null,
+                    "customizationLayer": 0,
+                    "customizationLayerDescription": "ECU",
+                    "include": 4095,
+                    "order": 6,
+                    "colSpan": 1,
+                    "responsivity": false,
+                    "responsiveLayouts": null,
+                    "maxRecords": null,
+                    "attribute": {
+                      "$ref": "../../../../BUSIN/entities/EN_CATEGORYM957.json#/attributes/AT_CAT957RNCU78"
+                    },
+                    "attributeValidations": [],
+                    "enabled": 4095,
+                    "visible": 4095,
+                    "readOnly": 8,
+                    "format": "0.00000",
+                    "textRows": 0
+                  },
+                  {
+                    "visualAttributeId": "VA_ATACATEGRY1902_SIGN784",
+                    "name": "Sign",
+                    "userControl": {
+                      "userControlId": "ComboBox",
+                      "type": "I"
+                    },
+                    "customEvents": [
+                      {
+                        "executionType": 1,
+                        "customEventId": "CEVA_104_GRY1902_SIGN784_556",
+                        "enabled": "T",
+                        "customizationLayer": 0,
+                        "customizationLayerDescription": "ECU",
+                        "visualAttributeEventType": {
+                          "eventId": 104,
+                          "name": "Changed",
+                          "description": "Se ejecuta al cambiar el valor de un VisualAttribute"
+                        },
+                        "thereAnServerEvent": false,
+                        "thereAnClientEvent": true,
+                        "thereAnCallbackEvent": false,
+                        "isEnabled": true
+                      }
+                    ],
+                    "options": 16,
+                    "label": {
+                      "labelId": "DLB_BUSIN_SIGNOTCWB_56579",
+                      "defaultValue": {
+                        "$ref": "../../../../BUSIN/assets/languages/BUSIN.json#/BUSIN/LBL/DLB_BUSIN_SIGNOTCWB_56579"
+                      },
+                      "hasI18N": true,
+                      "moduleId": "BUSIN",
+                      "customizationLayer": 0,
+                      "customizationLayerDescription": "ECU",
+                      "i18N": "T"
+                    },
+                    "aggregateId": null,
+                    "aggregate": null,
+                    "width": null,
+                    "style": null,
+                    "componentStyle": null,
+                    "customizationLayer": 0,
+                    "customizationLayerDescription": "ECU",
+                    "include": 4095,
+                    "order": 7,
+                    "colSpan": 1,
+                    "responsivity": false,
+                    "responsiveLayouts": null,
+                    "maxRecords": null,
+                    "attribute": {
+                      "$ref": "../../../../BUSIN/entities/EN_CATEGORYM957.json#/attributes/AT_CAT957SIGN95"
+                    },
+                    "attributeValidations": [],
+                    "enabled": 4095,
+                    "visible": 4095,
+                    "readOnly": 8,
+                    "catalogName": null,
+                    "queryVersion": " ",
+                    "queryMemberText": {
+                      "queryMemberId": null,
+                      "attribute": {
+                        "attributeId": null,
+                        "name": null
+                      }
+                    },
+                    "queryMemberValue": {
+                      "queryMemberId": null,
+                      "attribute": {
+                        "attributeId": null,
+                        "name": null
+                      }
+                    },
+                    "cacheDuration": 0,
+                    "entityQuery": null,
+                    "queryModule": null,
+                    "minChars": null,
+                    "type": "none"
+                  },
+                  {
+                    "visualAttributeId": "VA_ATACATEGRY1902_SPRD943",
+                    "name": "Spread",
+                    "userControl": {
+                      "userControlId": "TextInputBox",
+                      "type": "I"
+                    },
+                    "customEvents": [
+                      {
+                        "executionType": 1,
+                        "customEventId": "CEVA_104_GRY1902_SPRD943_011",
+                        "enabled": "T",
+                        "customizationLayer": 0,
+                        "customizationLayerDescription": "ECU",
+                        "visualAttributeEventType": {
+                          "eventId": 104,
+                          "name": "Changed",
+                          "description": "Se ejecuta al cambiar el valor de un VisualAttribute"
+                        },
+                        "thereAnServerEvent": false,
+                        "thereAnClientEvent": true,
+                        "thereAnCallbackEvent": false,
+                        "isEnabled": true
+                      }
+                    ],
+                    "options": 0,
+                    "label": {
+                      "labelId": "DLB_BUSIN_SPREADVHA_77471",
+                      "defaultValue": {
+                        "$ref": "../../../../BUSIN/assets/languages/BUSIN.json#/BUSIN/LBL/DLB_BUSIN_SPREADVHA_77471"
+                      },
+                      "hasI18N": true,
+                      "moduleId": "BUSIN",
+                      "customizationLayer": 0,
+                      "customizationLayerDescription": "ECU",
+                      "i18N": "T"
+                    },
+                    "aggregateId": null,
+                    "aggregate": null,
+                    "width": null,
+                    "style": null,
+                    "componentStyle": null,
+                    "customizationLayer": 0,
+                    "customizationLayerDescription": "ECU",
+                    "include": 4095,
+                    "order": 8,
+                    "colSpan": 1,
+                    "responsivity": false,
+                    "responsiveLayouts": null,
+                    "maxRecords": null,
+                    "attribute": {
+                      "$ref": "../../../../BUSIN/entities/EN_CATEGORYM957.json#/attributes/AT_CAT957SPRD31"
+                    },
+                    "attributeValidations": [],
+                    "enabled": 4095,
+                    "visible": 4095,
+                    "readOnly": 8,
+                    "format": "0.00000",
+                    "textRows": 0
+                  },
+                  {
+                    "visualAttributeId": "VA_ATACATEGRY1902_VALU262",
+                    "name": "Value",
+                    "userControl": {
+                      "userControlId": "TextInputBox",
+                      "type": "I"
+                    },
+                    "customEvents": [],
+                    "options": 0,
+                    "label": {
+                      "labelId": "DLB_BUSIN_VALORDWSB_39301",
+                      "defaultValue": {
+                        "$ref": "../../../../BUSIN/assets/languages/BUSIN.json#/BUSIN/LBL/DLB_BUSIN_VALORDWSB_39301"
+                      },
+                      "hasI18N": true,
+                      "moduleId": "BUSIN",
+                      "customizationLayer": 0,
+                      "customizationLayerDescription": "ECU",
+                      "i18N": "T"
+                    },
+                    "aggregateId": null,
+                    "aggregate": null,
+                    "width": null,
+                    "style": null,
+                    "componentStyle": null,
+                    "customizationLayer": 0,
+                    "customizationLayerDescription": "ECU",
+                    "include": 4095,
+                    "order": 9,
+                    "colSpan": 1,
+                    "responsivity": false,
+                    "responsiveLayouts": null,
+                    "maxRecords": null,
+                    "attribute": {
+                      "$ref": "../../../../BUSIN/entities/EN_CATEGORYM957.json#/attributes/AT_CAT957VALU37"
+                    },
+                    "attributeValidations": [],
+                    "enabled": 4095,
+                    "visible": 4095,
+                    "readOnly": 8,
+                    "format": "0.00000",
+                    "textRows": 0
+                  },
+                  {
+                    "visualAttributeId": "VA_ATACATEGRY1902_MIMM127",
+                    "name": "Minimum",
+                    "userControl": {
+                      "userControlId": "TextInputBox",
+                      "type": "I"
+                    },
+                    "customEvents": [],
+                    "options": 0,
+                    "label": {
+                      "labelId": "DLB_BUSIN_MNIMODJBW_27031",
+                      "defaultValue": {
+                        "$ref": "../../../../BUSIN/assets/languages/BUSIN.json#/BUSIN/LBL/DLB_BUSIN_MNIMODJBW_27031"
+                      },
+                      "hasI18N": true,
+                      "moduleId": "BUSIN",
+                      "customizationLayer": 0,
+                      "customizationLayerDescription": "ECU",
+                      "i18N": "T"
+                    },
+                    "aggregateId": null,
+                    "aggregate": null,
+                    "width": null,
+                    "style": null,
+                    "componentStyle": null,
+                    "customizationLayer": 0,
+                    "customizationLayerDescription": "ECU",
+                    "include": 4095,
+                    "order": 10,
+                    "colSpan": 1,
+                    "responsivity": false,
+                    "responsiveLayouts": null,
+                    "maxRecords": null,
+                    "attribute": {
+                      "$ref": "../../../../BUSIN/entities/EN_CATEGORYM957.json#/attributes/AT_CAT957MIMM00"
+                    },
+                    "attributeValidations": [],
+                    "enabled": 4095,
+                    "visible": 4095,
+                    "readOnly": 8,
+                    "format": "0.00000",
+                    "textRows": 0
+                  },
+                  {
+                    "visualAttributeId": "VA_ATACATEGRY1902_MAXU405",
+                    "name": "Maximun",
+                    "userControl": {
+                      "userControlId": "TextInputBox",
+                      "type": "I"
+                    },
+                    "customEvents": [],
+                    "options": 0,
+                    "label": {
+                      "labelId": "DLB_BUSIN_MXIMOSLVA_91451",
+                      "defaultValue": {
+                        "$ref": "../../../../BUSIN/assets/languages/BUSIN.json#/BUSIN/LBL/DLB_BUSIN_MXIMOSLVA_91451"
+                      },
+                      "hasI18N": true,
+                      "moduleId": "BUSIN",
+                      "customizationLayer": 0,
+                      "customizationLayerDescription": "ECU",
+                      "i18N": "T"
+                    },
+                    "aggregateId": null,
+                    "aggregate": null,
+                    "width": null,
+                    "style": null,
+                    "componentStyle": null,
+                    "customizationLayer": 0,
+                    "customizationLayerDescription": "ECU",
+                    "include": 4095,
+                    "order": 11,
+                    "colSpan": 1,
+                    "responsivity": false,
+                    "responsiveLayouts": null,
+                    "maxRecords": null,
+                    "attribute": {
+                      "$ref": "../../../../BUSIN/entities/EN_CATEGORYM957.json#/attributes/AT_CAT957MAXU35"
+                    },
+                    "attributeValidations": [],
+                    "enabled": 4095,
+                    "visible": 4095,
+                    "readOnly": 8,
+                    "format": "0.00000",
+                    "textRows": 0
+                  },
+                  {
+                    "visualAttributeId": "VA_ATACATEGRY1902_MINA980",
+                    "name": "MaxRate",
+                    "userControl": {
+                      "userControlId": "TextInputBox",
+                      "type": "I"
+                    },
+                    "customEvents": [],
+                    "options": 0,
+                    "label": {
+                      "labelId": "DLB_BUSIN_MXIAREERA_18880",
+                      "defaultValue": {
+                        "$ref": "../../../../BUSIN/assets/languages/BUSIN.json#/BUSIN/LBL/DLB_BUSIN_MXIAREERA_18880"
+                      },
+                      "hasI18N": true,
+                      "moduleId": "BUSIN",
+                      "customizationLayer": 0,
+                      "customizationLayerDescription": "ECU",
+                      "i18N": "T"
+                    },
+                    "aggregateId": null,
+                    "aggregate": null,
+                    "width": null,
+                    "style": null,
+                    "componentStyle": null,
+                    "customizationLayer": 0,
+                    "customizationLayerDescription": "ECU",
+                    "include": 4095,
+                    "order": 12,
+                    "colSpan": 2,
+                    "responsivity": false,
+                    "responsiveLayouts": null,
+                    "maxRecords": null,
+                    "attribute": {
+                      "$ref": "../../../../BUSIN/entities/EN_CATEGORYM957.json#/attributes/AT_CAT957MAXR59"
+                    },
+                    "attributeValidations": [],
+                    "enabled": 4095,
+                    "visible": 4095,
+                    "readOnly": 8,
+                    "format": "|N:###.#####||%|",
+                    "textRows": 0
+                  },
+                  {
+                    "visualAttributeId": "VA_ATACATEGRY1902_FNDD538",
+                    "name": "Funded",
+                    "userControl": {
+                      "userControlId": "RadioButtonList",
+                      "type": "I"
+                    },
+                    "customEvents": [],
+                    "options": 0,
+                    "label": {
+                      "labelId": "DLB_BUSIN_FNANCIADO_68578",
+                      "defaultValue": {
+                        "$ref": "../../../../BUSIN/assets/languages/BUSIN.json#/BUSIN/LBL/DLB_BUSIN_FNANCIADO_68578"
+                      },
+                      "hasI18N": true,
+                      "moduleId": "BUSIN",
+                      "customizationLayer": 0,
+                      "customizationLayerDescription": "ECU",
+                      "i18N": "T"
+                    },
+                    "aggregateId": null,
+                    "aggregate": null,
+                    "width": null,
+                    "style": null,
+                    "componentStyle": null,
+                    "customizationLayer": 0,
+                    "customizationLayerDescription": "ECU",
+                    "include": 4095,
+                    "order": 13,
+                    "colSpan": 1,
+                    "responsivity": false,
+                    "responsiveLayouts": null,
+                    "maxRecords": null,
+                    "attribute": {
+                      "$ref": "../../../../BUSIN/entities/EN_CATEGORYM957.json#/attributes/AT_CAT957FNDD20"
+                    },
+                    "attributeValidations": [],
+                    "enabled": 0,
+                    "visible": 4095,
+                    "readOnly": 4095,
+                    "catalogName": null,
+                    "queryVersion": " ",
+                    "queryMemberText": {
+                      "queryMemberId": null,
+                      "attribute": {
+                        "attributeId": null,
+                        "name": null
+                      }
+                    },
+                    "queryMemberValue": {
+                      "queryMemberId": null,
+                      "attribute": {
+                        "attributeId": null,
+                        "name": null
+                      }
+                    },
+                    "cacheDuration": 0,
+                    "entityQuery": null,
+                    "queryModule": null,
+                    "orientation": "H"
+                  }
+                ],
+                "independentValidation": "F",
+                "orientation": "V",
+                "htmlSection": false,
+                "responsiveLayouts": null,
+                "responsivity": false
+              },
+              {
+                "collapsedStr": "F",
+                "groupId": "GR_ATACATEGRY19_04",
+                "name": "Rubros Reajuste",
+                "layoutType": "Group",
+                "enabled": 4095,
+                "visible": 4095,
+                "refViewId": "VW_ATACATEGRY19",
+                "refViewVersion": "1.0.0",
+                "style": null,
+                "componentStyle": null,
+                "customEvents": [],
+                "eventType": 0,
+                "colSpan": 1,
+                "columnsNum": 4,
+                "entity": {
+                  "$ref": "../../../../BUSIN/entities/EN_CATGOREAE716.json#"
+                },
+                "visualAttributes": [
+                  {
+                    "visualAttributeId": "VA_ATACATEGRY1904_COEP407",
+                    "name": "Concept",
+                    "userControl": {
+                      "userControlId": "ComboBox",
+                      "type": "I"
+                    },
+                    "customEvents": [
+                      {
+                        "executionType": 1,
+                        "customEventId": "CEVA_110_GRY1904_COEP407_584",
+                        "enabled": "T",
+                        "customizationLayer": 0,
+                        "customizationLayerDescription": "ECU",
+                        "visualAttributeEventType": {
+                          "eventId": 110,
+                          "name": "LoadCatalogData",
+                          "description": "Sobreescribe la carga de datos de un catálogo"
+                        },
+                        "thereAnServerEvent": false,
+                        "thereAnClientEvent": true,
+                        "thereAnCallbackEvent": false,
+                        "isEnabled": true
+                      }
+                    ],
+                    "options": 16,
+                    "label": {
+                      "labelId": "DLB_BUSIN_CODIORURO_89488",
+                      "defaultValue": {
+                        "$ref": "../../../../BUSIN/assets/languages/BUSIN.json#/BUSIN/LBL/DLB_BUSIN_CODIORURO_89488"
+                      },
+                      "hasI18N": true,
+                      "moduleId": "BUSIN",
+                      "customizationLayer": 0,
+                      "customizationLayerDescription": "ECU",
+                      "i18N": "T"
+                    },
+                    "aggregateId": null,
+                    "aggregate": null,
+                    "width": null,
+                    "style": null,
+                    "componentStyle": null,
+                    "customizationLayer": 0,
+                    "customizationLayerDescription": "ECU",
+                    "include": 4095,
+                    "order": 0,
+                    "colSpan": 4,
+                    "responsivity": false,
+                    "responsiveLayouts": null,
+                    "maxRecords": null,
+                    "attribute": {
+                      "$ref": "../../../../BUSIN/entities/EN_CATGOREAE716.json#/attributes/AT_CAT716COEP39"
+                    },
+                    "attributeValidations": [],
+                    "enabled": 8,
+                    "visible": 4095,
+                    "readOnly": 8,
+                    "catalogName": null,
+                    "queryVersion": " ",
+                    "queryMemberText": {
+                      "queryMemberId": null,
+                      "attribute": {
+                        "attributeId": null,
+                        "name": null
+                      }
+                    },
+                    "queryMemberValue": {
+                      "queryMemberId": null,
+                      "attribute": {
+                        "attributeId": null,
+                        "name": null
+                      }
+                    },
+                    "cacheDuration": 1,
+                    "entityQuery": null,
+                    "queryModule": null,
+                    "minChars": null,
+                    "type": "none"
+                  },
+                  {
+                    "visualAttributeId": "VA_ATACATEGRY1904_ORIT592",
+                    "name": "ConceptDescription",
+                    "userControl": {
+                      "userControlId": "TextInputBox",
+                      "type": "I"
+                    },
+                    "customEvents": [],
+                    "options": 0,
+                    "aggregateId": null,
+                    "aggregate": null,
+                    "width": null,
+                    "style": null,
+                    "componentStyle": null,
+                    "customizationLayer": 0,
+                    "customizationLayerDescription": "ECU",
+                    "include": 4095,
+                    "order": 1,
+                    "colSpan": 4,
+                    "responsivity": false,
+                    "responsiveLayouts": null,
+                    "maxRecords": null,
+                    "attribute": {
+                      "$ref": "../../../../BUSIN/entities/EN_CATGOREAE716.json#/attributes/AT_CAT716ORIT72"
+                    },
+                    "attributeValidations": [],
+                    "enabled": 4095,
+                    "visible": 8,
+                    "readOnly": 8,
+                    "textRows": 0
+                  },
+                  {
+                    "visualAttributeId": "VA_ATACATEGRY1904_AOOP178",
+                    "name": "AmountToApply",
+                    "userControl": {
+                      "userControlId": "ComboBox",
+                      "type": "I"
+                    },
+                    "customEvents": [
+                      {
+                        "executionType": 1,
+                        "customEventId": "CEVA_104_GRY1904_AOOP178_769",
+                        "enabled": "T",
+                        "customizationLayer": 0,
+                        "customizationLayerDescription": "ECU",
+                        "visualAttributeEventType": {
+                          "eventId": 104,
+                          "name": "Changed",
+                          "description": "Se ejecuta al cambiar el valor de un VisualAttribute"
+                        },
+                        "thereAnServerEvent": false,
+                        "thereAnClientEvent": true,
+                        "thereAnCallbackEvent": false,
+                        "isEnabled": true
+                      },
+                      {
+                        "executionType": 1,
+                        "customEventId": "CEVA_110_GRY1904_AOOP178_836",
+                        "enabled": "T",
+                        "customizationLayer": 0,
+                        "customizationLayerDescription": "ECU",
+                        "visualAttributeEventType": {
+                          "eventId": 110,
+                          "name": "LoadCatalogData",
+                          "description": "Sobreescribe la carga de datos de un catálogo"
+                        },
+                        "thereAnServerEvent": false,
+                        "thereAnClientEvent": true,
+                        "thereAnCallbackEvent": false,
+                        "isEnabled": true
+                      }
+                    ],
+                    "options": 17,
+                    "label": {
+                      "labelId": "DLB_BUSIN_LORAPICAR_36363",
+                      "defaultValue": {
+                        "$ref": "../../../../BUSIN/assets/languages/BUSIN.json#/BUSIN/LBL/DLB_BUSIN_LORAPICAR_36363"
+                      },
+                      "hasI18N": true,
+                      "moduleId": "BUSIN",
+                      "customizationLayer": 0,
+                      "customizationLayerDescription": "ECU",
+                      "i18N": "T"
+                    },
+                    "aggregateId": null,
+                    "aggregate": null,
+                    "width": null,
+                    "style": null,
+                    "componentStyle": null,
+                    "customizationLayer": 0,
+                    "customizationLayerDescription": "ECU",
+                    "include": 4095,
+                    "order": 2,
+                    "colSpan": 4,
+                    "responsivity": false,
+                    "responsiveLayouts": null,
+                    "maxRecords": null,
+                    "attribute": {
+                      "$ref": "../../../../BUSIN/entities/EN_CATGOREAE716.json#/attributes/AT_CAT716AOOP42"
+                    },
+                    "attributeValidations": [],
+                    "enabled": 8,
+                    "visible": 4095,
+                    "readOnly": 8,
+                    "catalogName": null,
+                    "queryVersion": " ",
+                    "queryMemberText": {
+                      "queryMemberId": null,
+                      "attribute": {
+                        "attributeId": null,
+                        "name": null
+                      }
+                    },
+                    "queryMemberValue": {
+                      "queryMemberId": null,
+                      "attribute": {
+                        "attributeId": null,
+                        "name": null
+                      }
+                    },
+                    "cacheDuration": 1,
+                    "entityQuery": null,
+                    "queryModule": null,
+                    "minChars": null,
+                    "type": "none"
+                  },
+                  {
+                    "visualAttributeId": "VA_ATACATEGRY1904_EENE861",
+                    "name": "Reference",
+                    "userControl": {
+                      "userControlId": "TextInputBox",
+                      "type": "I"
+                    },
+                    "customEvents": [],
+                    "options": 0,
+                    "aggregateId": null,
+                    "aggregate": null,
+                    "width": null,
+                    "style": null,
+                    "componentStyle": null,
+                    "customizationLayer": 0,
+                    "customizationLayerDescription": "ECU",
+                    "include": 4095,
+                    "order": 3,
+                    "colSpan": 4,
+                    "responsivity": false,
+                    "responsiveLayouts": null,
+                    "maxRecords": null,
+                    "attribute": {
+                      "$ref": "../../../../BUSIN/entities/EN_CATGOREAE716.json#/attributes/AT_CAT716EENE28"
+                    },
+                    "attributeValidations": [],
+                    "enabled": 8,
+                    "visible": 8,
+                    "readOnly": 8,
+                    "textRows": 0
+                  },
+                  {
+                    "visualAttributeId": "VA_ATACATEGRY1904_ERRO392",
+                    "name": "ReferenceDescription",
+                    "userControl": {
+                      "userControlId": "TextInputBox",
+                      "type": "I"
+                    },
+                    "customEvents": [],
+                    "options": 0,
+                    "label": {
+                      "labelId": "DLB_BUSIN_REERENCIA_20799",
+                      "defaultValue": {
+                        "$ref": "../../../../BUSIN/assets/languages/BUSIN.json#/BUSIN/LBL/DLB_BUSIN_REERENCIA_20799"
+                      },
+                      "hasI18N": true,
+                      "moduleId": "BUSIN",
+                      "customizationLayer": 0,
+                      "customizationLayerDescription": "ECU",
+                      "i18N": "T"
+                    },
+                    "aggregateId": null,
+                    "aggregate": null,
+                    "width": null,
+                    "style": null,
+                    "componentStyle": null,
+                    "customizationLayer": 0,
+                    "customizationLayerDescription": "ECU",
+                    "include": 4095,
+                    "order": 4,
+                    "colSpan": 4,
+                    "responsivity": false,
+                    "responsiveLayouts": null,
+                    "maxRecords": null,
+                    "attribute": {
+                      "$ref": "../../../../BUSIN/entities/EN_CATGOREAE716.json#/attributes/AT_CAT716ERRO08"
+                    },
+                    "attributeValidations": [],
+                    "enabled": 8,
+                    "visible": 3,
+                    "readOnly": 8,
+                    "textRows": 0
+                  },
+                  {
+                    "visualAttributeId": "VA_ATACATEGRY1904_ENEU551",
+                    "name": "ReferenceAmount",
+                    "userControl": {
+                      "userControlId": "TextInputBox",
+                      "type": "I"
+                    },
+                    "customEvents": [],
+                    "options": 0,
+                    "label": {
+                      "labelId": "DLB_BUSIN_EMPTYDKVF_56325",
+                      "defaultValue": {
+                        "$ref": "../../../../BUSIN/assets/languages/BUSIN.json#/BUSIN/LBL/DLB_BUSIN_EMPTYDKVF_56325"
+                      },
+                      "hasI18N": true,
+                      "moduleId": "BUSIN",
+                      "customizationLayer": 0,
+                      "customizationLayerDescription": "ECU",
+                      "i18N": "T"
+                    },
+                    "aggregateId": null,
+                    "aggregate": null,
+                    "width": null,
+                    "style": null,
+                    "componentStyle": null,
+                    "customizationLayer": 0,
+                    "customizationLayerDescription": "ECU",
+                    "include": 4095,
+                    "order": 5,
+                    "colSpan": 1,
+                    "responsivity": false,
+                    "responsiveLayouts": null,
+                    "maxRecords": null,
+                    "attribute": {
+                      "$ref": "../../../../BUSIN/entities/EN_CATGOREAE716.json#/attributes/AT_CAT716ENEU05"
+                    },
+                    "attributeValidations": [],
+                    "enabled": 8,
+                    "visible": 4095,
+                    "readOnly": 8,
+                    "format": "0.00000",
+                    "textRows": 0
+                  },
+                  {
+                    "visualAttributeId": "VA_ATACATEGRY1904_SIGN273",
+                    "name": "Sign",
+                    "userControl": {
+                      "userControlId": "ComboBox",
+                      "type": "I"
+                    },
+                    "customEvents": [
+                      {
+                        "executionType": 1,
+                        "customEventId": "CEVA_104_GRY1904_SIGN273_199",
+                        "enabled": "T",
+                        "customizationLayer": 0,
+                        "customizationLayerDescription": "ECU",
+                        "visualAttributeEventType": {
+                          "eventId": 104,
+                          "name": "Changed",
+                          "description": "Se ejecuta al cambiar el valor de un VisualAttribute"
+                        },
+                        "thereAnServerEvent": false,
+                        "thereAnClientEvent": true,
+                        "thereAnCallbackEvent": false,
+                        "isEnabled": true
+                      }
+                    ],
+                    "options": 16,
+                    "label": {
+                      "labelId": "DLB_BUSIN_SIGNOTCWB_56579",
+                      "defaultValue": {
+                        "$ref": "../../../../BUSIN/assets/languages/BUSIN.json#/BUSIN/LBL/DLB_BUSIN_SIGNOTCWB_56579"
+                      },
+                      "hasI18N": true,
+                      "moduleId": "BUSIN",
+                      "customizationLayer": 0,
+                      "customizationLayerDescription": "ECU",
+                      "i18N": "T"
+                    },
+                    "aggregateId": null,
+                    "aggregate": null,
+                    "width": null,
+                    "style": null,
+                    "componentStyle": null,
+                    "customizationLayer": 0,
+                    "customizationLayerDescription": "ECU",
+                    "include": 4095,
+                    "order": 6,
+                    "colSpan": 1,
+                    "responsivity": false,
+                    "responsiveLayouts": null,
+                    "maxRecords": null,
+                    "attribute": {
+                      "$ref": "../../../../BUSIN/entities/EN_CATGOREAE716.json#/attributes/AT_CAT716SIGN85"
+                    },
+                    "attributeValidations": [],
+                    "enabled": 4095,
+                    "visible": 4095,
+                    "readOnly": 8,
+                    "catalogName": null,
+                    "queryVersion": " ",
+                    "queryMemberText": {
+                      "queryMemberId": null,
+                      "attribute": {
+                        "attributeId": null,
+                        "name": null
+                      }
+                    },
+                    "queryMemberValue": {
+                      "queryMemberId": null,
+                      "attribute": {
+                        "attributeId": null,
+                        "name": null
+                      }
+                    },
+                    "cacheDuration": 0,
+                    "entityQuery": null,
+                    "queryModule": null,
+                    "minChars": null,
+                    "type": "none"
+                  },
+                  {
+                    "visualAttributeId": "VA_ATACATEGRY1904_SPED624",
+                    "name": "Spread",
+                    "userControl": {
+                      "userControlId": "TextInputBox",
+                      "type": "I"
+                    },
+                    "customEvents": [
+                      {
+                        "executionType": 1,
+                        "customEventId": "CEVA_104_GRY1904_SPED624_041",
+                        "enabled": "T",
+                        "customizationLayer": 0,
+                        "customizationLayerDescription": "ECU",
+                        "visualAttributeEventType": {
+                          "eventId": 104,
+                          "name": "Changed",
+                          "description": "Se ejecuta al cambiar el valor de un VisualAttribute"
+                        },
+                        "thereAnServerEvent": false,
+                        "thereAnClientEvent": true,
+                        "thereAnCallbackEvent": false,
+                        "isEnabled": true
+                      }
+                    ],
+                    "options": 0,
+                    "label": {
+                      "labelId": "DLB_BUSIN_SPREADVHA_77471",
+                      "defaultValue": {
+                        "$ref": "../../../../BUSIN/assets/languages/BUSIN.json#/BUSIN/LBL/DLB_BUSIN_SPREADVHA_77471"
+                      },
+                      "hasI18N": true,
+                      "moduleId": "BUSIN",
+                      "customizationLayer": 0,
+                      "customizationLayerDescription": "ECU",
+                      "i18N": "T"
+                    },
+                    "aggregateId": null,
+                    "aggregate": null,
+                    "width": null,
+                    "style": null,
+                    "componentStyle": null,
+                    "customizationLayer": 0,
+                    "customizationLayerDescription": "ECU",
+                    "include": 4095,
+                    "order": 7,
+                    "colSpan": 1,
+                    "responsivity": false,
+                    "responsiveLayouts": null,
+                    "maxRecords": null,
+                    "attribute": {
+                      "$ref": "../../../../BUSIN/entities/EN_CATGOREAE716.json#/attributes/AT_CAT716SPED14"
+                    },
+                    "attributeValidations": [],
+                    "enabled": 4095,
+                    "visible": 4095,
+                    "readOnly": 8,
+                    "format": "0.00000",
+                    "textRows": 0
+                  },
+                  {
+                    "visualAttributeId": "VA_ATACATEGRY1904_VALE195",
+                    "name": "Value",
+                    "userControl": {
+                      "userControlId": "TextInputBox",
+                      "type": "I"
+                    },
+                    "customEvents": [],
+                    "options": 0,
+                    "label": {
+                      "labelId": "DLB_BUSIN_VALORDWSB_39301",
+                      "defaultValue": {
+                        "$ref": "../../../../BUSIN/assets/languages/BUSIN.json#/BUSIN/LBL/DLB_BUSIN_VALORDWSB_39301"
+                      },
+                      "hasI18N": true,
+                      "moduleId": "BUSIN",
+                      "customizationLayer": 0,
+                      "customizationLayerDescription": "ECU",
+                      "i18N": "T"
+                    },
+                    "aggregateId": null,
+                    "aggregate": null,
+                    "width": null,
+                    "style": null,
+                    "componentStyle": null,
+                    "customizationLayer": 0,
+                    "customizationLayerDescription": "ECU",
+                    "include": 4095,
+                    "order": 8,
+                    "colSpan": 1,
+                    "responsivity": false,
+                    "responsiveLayouts": null,
+                    "maxRecords": null,
+                    "attribute": {
+                      "$ref": "../../../../BUSIN/entities/EN_CATGOREAE716.json#/attributes/AT_CAT716VALE26"
+                    },
+                    "attributeValidations": [],
+                    "enabled": 8,
+                    "visible": 4095,
+                    "readOnly": 8,
+                    "format": "0.00000",
+                    "textRows": 0
+                  },
+                  {
+                    "visualAttributeId": "VA_ATACATEGRY1904_MIUM176",
+                    "name": "Minimum",
+                    "userControl": {
+                      "userControlId": "TextInputBox",
+                      "type": "I"
+                    },
+                    "customEvents": [],
+                    "options": 0,
+                    "label": {
+                      "labelId": "DLB_BUSIN_MNIMODJBW_27031",
+                      "defaultValue": {
+                        "$ref": "../../../../BUSIN/assets/languages/BUSIN.json#/BUSIN/LBL/DLB_BUSIN_MNIMODJBW_27031"
+                      },
+                      "hasI18N": true,
+                      "moduleId": "BUSIN",
+                      "customizationLayer": 0,
+                      "customizationLayerDescription": "ECU",
+                      "i18N": "T"
+                    },
+                    "aggregateId": null,
+                    "aggregate": null,
+                    "width": null,
+                    "style": null,
+                    "componentStyle": null,
+                    "customizationLayer": 0,
+                    "customizationLayerDescription": "ECU",
+                    "include": 4095,
+                    "order": 9,
+                    "colSpan": 1,
+                    "responsivity": false,
+                    "responsiveLayouts": null,
+                    "maxRecords": null,
+                    "attribute": {
+                      "$ref": "../../../../BUSIN/entities/EN_CATGOREAE716.json#/attributes/AT_CAT716MIUM57"
+                    },
+                    "attributeValidations": [],
+                    "enabled": 8,
+                    "visible": 4095,
+                    "readOnly": 8,
+                    "format": "0.00000",
+                    "textRows": 0
+                  },
+                  {
+                    "visualAttributeId": "VA_ATACATEGRY1904_AXIN199",
+                    "name": "Maximun",
+                    "userControl": {
+                      "userControlId": "TextInputBox",
+                      "type": "I"
+                    },
+                    "customEvents": [],
+                    "options": 0,
+                    "label": {
+                      "labelId": "DLB_BUSIN_MXIMOSLVA_91451",
+                      "defaultValue": {
+                        "$ref": "../../../../BUSIN/assets/languages/BUSIN.json#/BUSIN/LBL/DLB_BUSIN_MXIMOSLVA_91451"
+                      },
+                      "hasI18N": true,
+                      "moduleId": "BUSIN",
+                      "customizationLayer": 0,
+                      "customizationLayerDescription": "ECU",
+                      "i18N": "T"
+                    },
+                    "aggregateId": null,
+                    "aggregate": null,
+                    "width": null,
+                    "style": null,
+                    "componentStyle": null,
+                    "customizationLayer": 0,
+                    "customizationLayerDescription": "ECU",
+                    "include": 4095,
+                    "order": 10,
+                    "colSpan": 1,
+                    "responsivity": false,
+                    "responsiveLayouts": null,
+                    "maxRecords": null,
+                    "attribute": {
+                      "$ref": "../../../../BUSIN/entities/EN_CATGOREAE716.json#/attributes/AT_CAT716AXIN22"
+                    },
+                    "attributeValidations": [],
+                    "enabled": 8,
+                    "visible": 4095,
+                    "readOnly": 8,
+                    "format": "0.00000",
+                    "textRows": 0
+                  }
+                ],
+                "independentValidation": "F",
+                "orientation": "V",
+                "htmlSection": false,
+                "responsiveLayouts": null,
+                "responsivity": false
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ],
+  "commands": [
+    {
+      "id": {
+        "commandId": "CM_CTORY86ARB39",
+        "moduleId": "BUSIN",
+        "subModuleId": "FLCRE",
+        "taskId": "T_FLCRE_24_CTORY86",
+        "taskVersion": "1.0.0"
+      },
+      "name": "Guardar Rubros",
+      "layoutType": "Command",
+      "commandType": 0,
+      "order": 1,
+      "showInMode": 4095,
+      "enabled": 4095,
+      "causesValidation": true,
+      "causesValidationAsString": "T",
+      "validationGroup": null,
+      "group": null,
+      "customizationLayer": 0,
+      "customizationLayerDescription": "ECU",
+      "imageId": null,
+      "options": 0,
+      "action": null,
+      "close": false,
+      "closeAsString": "F",
+      "userControl": {
+        "userControlId": "Button",
+        "description": "Designer Button",
+        "customizationLayer": 0,
+        "customizationLayerDescription": "ECU",
+        "type": "A",
+        "name": "Designer Button"
+      },
+      "label": {
+        "moduleId": "BUSIN",
+        "labelId": "DLB_BUSIN_GUARDARWV_92974",
+        "defaultValue": {
+          "$ref": "../../../../BUSIN/assets/languages/BUSIN.json#/BUSIN/LBL/DLB_BUSIN_GUARDARWV_92974"
+        }
+      },
+      "customEvents": [
+        {
+          "executionType": 1,
+          "customEventId": "CECM_010_CM_CTORY86ARB39_224",
+          "enabled": "T",
+          "customizationLayer": 0,
+          "customizationLayerDescription": "ECU",
+          "commandEventType": {
+            "eventId": 10,
+            "name": "ExecuteCommand",
+            "description": "Permite personalziar la acción a ejecutar de un command"
+          },
+          "thereAnServerEvent": false,
+          "thereAnClientEvent": true,
+          "thereAnCallbackEvent": false,
+          "isEnabled": true
+        }
+      ]
+    }
+  ],
+  "isImported": true,
+  "customEvents": []
+}

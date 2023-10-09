@@ -1,0 +1,129 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<procedure>
+  <database>cobis</database>
+  <name>sp_listas_negras</name>
+  <type>SYBASE</type>
+  <version>1</version>
+  <parameters>
+    <parameter name="@s_ssn" dataType="int" direction="in" />
+    <parameter name="@s_user" dataType="varchar" direction="in" />
+    <parameter name="@s_term" dataType="varchar" direction="in" />
+    <parameter name="@s_date" dataType="datetime" direction="in" />
+    <parameter name="@s_srv" dataType="varchar" direction="in" />
+    <parameter name="@s_lsrv" dataType="varchar" direction="in" />
+    <parameter name="@s_ofi" dataType="smallint" direction="in" />
+    <parameter name="@s_rol" dataType="smallint" direction="in" />
+    <parameter name="@s_org_err" dataType="char" direction="in" />
+    <parameter name="@s_error" dataType="int" direction="in" />
+    <parameter name="@s_sev" dataType="tinyint" direction="in" />
+    <parameter name="@s_msg" dataType="varchar" direction="in" />
+    <parameter name="@s_org" dataType="char" direction="in" />
+    <parameter name="@t_from" dataType="varchar" direction="in" />
+    <parameter name="@t_trn" dataType="int" direction="in" />
+    <parameter name="@t_show_version" dataType="bit" direction="in" />
+    <parameter name="@t_file" dataType="varchar" direction="in" />
+    <parameter name="@t_debug" dataType="char" direction="in" />
+    <parameter name="@i_codigo" dataType="int" direction="in" />
+    <parameter name="@i_ente" dataType="int" direction="in" />
+    <parameter name="@i_operacion" dataType="char" direction="in" />
+    <parameter name="@i_paterno" dataType="varchar" direction="in" />
+    <parameter name="@i_materno" dataType="varchar" direction="in" />
+    <parameter name="@i_nombres" dataType="varchar" direction="in" />
+    <parameter name="@i_docId" dataType="char" direction="in" />
+    <parameter name="@i_docIdNumEx" dataType="varchar" direction="in" />
+    <parameter name="@i_cpep" dataType="varchar" direction="in" />
+    <parameter name="@i_cargoId" dataType="varchar" direction="in" />
+    <parameter name="@i_entidadId" dataType="varchar" direction="in" />
+    <parameter name="@i_gestion" dataType="int" direction="in" />
+    <parameter name="@i_pais" dataType="varchar" direction="in" />
+    <parameter name="@i_estado" dataType="char" direction="in" />
+    <parameter name="@i_fecha_alta" dataType="datetime" direction="in" />
+    <parameter name="@i_motivo_alta" dataType="varchar" direction="in" />
+    <parameter name="@i_carga" dataType="char" direction="in" />
+    <parameter name="@i_tipo" dataType="char" direction="in" />
+    <parameter name="@o_secuencial" dataType="int" direction="out" />
+    <parameter name="@i_en_ente" dataType="int" direction="in" />
+  </parameters>
+  <queries>
+    <query>
+      <columns>
+        <column name="codigo" />
+        <column name="Apellido Paterno" />
+        <column name="Apellido Materno" />
+        <column name="Nombres" />
+        <column name="Cod. Doc Id" />
+        <column name="Cod. Id Num Ex" />
+        <column name="Cod. Lista" />
+        <column name="Cod. Cargo" />
+        <column name="Cod. Entidad" />
+        <column name="Gestion" />
+        <column name="Cod. Pa�s" />
+        <column name="Estado" />
+        <column name="Usuario" />
+        <column name="Fecha Alta" />
+        <column name="Motivo Alta" />
+        <column name="Carga" />
+      </columns>
+      <queryText>SELECT  "codigo" = ln_codigo,"Apellido Paterno" = ln_paterno,"Apellido Materno" = ln_materno,"Nombres" = ln_nombres,"Cod. Doc Id" = ln_doc_id,"Cod. Id Num Ex" = ln_en_ced_ruc,"Cod. Lista" = ln_cpep,"Cod. Cargo" = ln_cargo_id,"Cod. Entidad" = ln_entidad_id,"Gestion" = ln_gestion,"Cod. Pa�s" = ln_pais,"Estado" = ln_estado,"Usuario" = ln_usuario,"Fecha Alta" = ln_fecha_alta,"Motivo Alta" = ln_motivo_alta,"Carga" = ln_carga </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="codigo" />
+        <column name="Apellido Paterno" />
+        <column name="Apellido Materno" />
+        <column name="Nombres" />
+        <column name="Cod. Doc Id" />
+        <column name="Cod. Id Num Ex" />
+        <column name="Cod. Lista" />
+        <column name="Cod. Cargo" />
+        <column name="Cod. Entidad" />
+        <column name="Gestion" />
+        <column name="Cod. Pa�s" />
+        <column name="Estado" />
+        <column name="Usuario" />
+        <column name="Fecha Alta" />
+        <column name="Motivo Alta" />
+        <column name="Carga" />
+      </columns>
+      <queryText>SELECT  "codigo" = ln_codigo,"Apellido Paterno" = ln_paterno,"Apellido Materno" = ln_materno,"Nombres" = ln_nombres,"Cod. Doc Id" = ln_doc_id,"Cod. Id Num Ex" = ln_en_ced_ruc,"Cod. Lista" = ln_cpep,"Cod. Cargo" = ln_cargo_id,"Cod. Entidad" = ln_entidad_id,"Gestion" = ln_gestion,"Cod. Pa�s" = ln_pais,"Estado" = ln_estado,"Usuario" = ln_usuario,"Fecha Alta" = ln_fecha_alta,"Motivo Alta" = ln_motivo_alta,"Carga" = ln_carga </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="Apellido Paterno" />
+        <column name="Apellido Materno" />
+        <column name="Nombres" />
+        <column name="Cod. Doc. Id" />
+        <column name="Descripcion Doc. Id" />
+        <column name="Cod. Identificaci�n" />
+        <column name="Clasificaci�n" />
+        <column name="Cod. Cargo" />
+        <column name="Descripci�n Cargo" />
+        <column name="Cod. Entidad" />
+        <column name="Descripci�n Entidad" />
+        <column name="Gestion" />
+        <column name="Pa�s" />
+        <column name="Fecha Alta" />
+        <column name="Motivo Alta" />
+        <column name="Carga" />
+      </columns>
+      <queryText>SELECT  "Apellido Paterno" = ln_paterno,"Apellido Materno" = ln_materno,"Nombres" = ln_nombres,"Cod. Doc. Id" = ln_doc_id,"Descripcion Doc. Id" = (SELECT  td_desc_corta FROM cobis..cl_tipo_documento   WHERE td_codigo = c.ln_doc_id     ),"Cod. Identificaci�n" = ln_en_ced_ruc,"Clasificaci�n" = ln_cpep,"Cod. Cargo" = ln_cargo_id,"Descripci�n Cargo" = (SELECT  b.valor FROM cobis..cl_tabla a  ,cobis..cl_catalogo b   WHERE a.tabla = "cl_cargo_ln" AND a.codigo = b.tabla AND b.codigo = c.ln_cargo_id     ),"Cod. Entidad" = ln_entidad_id,"Descripci�n Entidad" = (SELECT  b.valor FROM cobis..cl_tabla a  ,cobis..cl_catalogo b   WHERE a.tabla = "cl_entidad_ln" AND a.codigo = b.tabla AND b.codigo = c.ln_entidad_id     ),"Gestion" = ln_gestion,"Pa�s" = (SELECT  b.valor FROM cobis..cl_tabla a  ,cobis..cl_catalogo b   WHERE a.tabla = "cl_pais" AND a.codigo = b.tabla AND b.codigo = c.ln_pais     ),"Fecha Alta" = ln_fecha_alta,"Motivo Alta" = ln_motivo_alta,"Carga" = ln_carga </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="DocId" />
+        <column name="IdNum" />
+        <column name="Lista" />
+        <column name="Cargo" />
+        <column name="Entidad" />
+        <column name="Gestion" />
+        <column name="Pais" />
+        <column name="Estado" />
+        <column name="Usuario" />
+        <column name="FechaAlta" />
+        <column name="MotivoAlta" />
+        <column name="Carga" />
+      </columns>
+      <queryText>SELECT  "DocId" = ln_doc_id,"IdNum" = ln_en_ced_ruc,"Lista" = ln_cpep,"Cargo" = ln_cargo_id,"Entidad" = ln_entidad_id,"Gestion" = ln_gestion,"Pais" = ln_pais,"Estado" = ln_estado,"Usuario" = ln_usuario,"FechaAlta" = ln_fecha_alta,"MotivoAlta" = ln_motivo_alta,"Carga" = ln_carga </queryText>
+    </query>
+  </queries>
+</procedure>

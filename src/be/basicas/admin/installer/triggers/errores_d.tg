@@ -1,0 +1,81 @@
+/********************************************************************************/
+/* Archivo:     errores_d.tg                                                    */
+/* Trigger:     tgd_cl_errores                                                  */
+/* Producto:    ADMINISTRACION                                                  */
+/********************************************************************************/
+/*                                 IMPORTANTE                                   */
+/* Este programa es parte de los paquetes bancarios propiedad de COBISCorp.     */
+/* Su uso no autorizado queda expresamente prohibido asi como cualquier         */
+/* alteracion o agregado hecho por alguno de usuarios sin el debido             */
+/* consentimiento por escrito de la Presidencia Ejecutiva de COBISCorp          */
+/* o su representante.                                                          */
+/********************************************************************************/
+/*                                PROPOSITO                                     */
+/* Disparador de informacion de errores                                         */
+/********************************************************************************/
+/*                                MODIFICACIONES                                */
+/********************************************************************************/
+/* FECHA        VERSION  AUTOR   RAZON                                          */
+/********************************************************************************/
+/* 20-Mar-2012  4.0.0.0  PCL     Internacionalizacion (CIB4.1.0.5)              */
+/* 03-May-2016  4.0.0.1  BBO     Migración SYB-SQL FAL                          */
+/********************************************************************************/
+
+use cobis
+go
+if exists (select * from sysobjects where name = 'tgd_cl_errores')
+    drop trigger tgd_cl_errores
+go
+create trigger tgd_cl_errores
+on cl_errores
+for delete
+as
+begin
+    declare
+        @w_numero   int,
+        @w_id       int,
+        @w_pc_id    INT
+
+    declare cu_deleted cursor for
+              select
+                    numero
+              from deleted
+
+              open cu_deleted
+              fetch cu_deleted into
+                    @w_numero
+
+        --while @@sqlstatus = 0
+        while @@fetch_status = 0  --migracion syb-sql
+        begin
+            /****************************************/
+            /* Internacionalizacion                 */
+
+            SELECT @w_pc_id = NULL
+
+            SELECT  @w_pc_id = pc_id
+            FROM    ad_error_i18n
+            WHERE   pc_codigo_int = @w_numero
+
+            IF @w_pc_id IS NOT NULL
+            BEGIN
+                DELETE FROM ad_recurso
+                WHERE re_pc_id = @w_pc_id
+
+                DELETE FROM ad_pseudo_catalogo
+                WHERE pc_id = @w_pc_id
+            END
+
+            /* Internacionalizacion                 */
+            /****************************************/
+
+
+                fetch cu_deleted into
+                       @w_numero
+
+        end
+        close cu_deleted
+        --deallocate cursor cu_deleted      --migracion syb-sql
+        deallocate cu_deleted      --migracion syb-sql
+end
+go

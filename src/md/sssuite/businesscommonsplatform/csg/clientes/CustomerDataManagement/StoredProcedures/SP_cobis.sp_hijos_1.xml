@@ -1,0 +1,141 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<procedure>
+  <database>cobis</database>
+  <name>sp_hijos</name>
+  <type>SYBASE</type>
+  <version>1</version>
+  <parameters>
+    <parameter name="@s_ssn" dataType="int" direction="in" />
+    <parameter name="@s_user" dataType="varchar" direction="in" />
+    <parameter name="@s_term" dataType="varchar" direction="in" />
+    <parameter name="@s_date" dataType="datetime" direction="in" />
+    <parameter name="@s_srv" dataType="varchar" direction="in" />
+    <parameter name="@s_lsrv" dataType="varchar" direction="in" />
+    <parameter name="@s_ofi" dataType="smallint" direction="in" />
+    <parameter name="@t_debug" dataType="char" direction="in" />
+    <parameter name="@t_file" dataType="varchar" direction="in" />
+    <parameter name="@t_from" dataType="varchar" direction="in" />
+    <parameter name="@t_trn" dataType="smallint" direction="in" />
+    <parameter name="@t_show_version" dataType="bit" direction="in" />
+    <parameter name="@i_operacion" dataType="char" direction="in" />
+    <parameter name="@i_ente" dataType="int" direction="in" />
+    <parameter name="@i_nombre" dataType="varchar" direction="in" />
+    <parameter name="@i_hijo" dataType="int" direction="in" />
+    <parameter name="@i_sexo" dataType="varchar" direction="in" />
+    <parameter name="@i_fecha_nac" dataType="datetime" direction="in" />
+    <parameter name="@i_tipo" dataType="char" direction="in" />
+    <parameter name="@i_papellido" dataType="varchar" direction="in" />
+    <parameter name="@i_sapellido" dataType="varchar" direction="in" />
+    <parameter name="@i_empresa" dataType="varchar" direction="in" />
+    <parameter name="@i_telefono" dataType="varchar" direction="in" />
+    <parameter name="@i_documento" dataType="varchar" direction="in" />
+    <parameter name="@i_tipo_doc" dataType="char" direction="in" />
+    <parameter name="@i_c_apellido" dataType="varchar" direction="in" />
+    <parameter name="@i_s_nombre" dataType="varchar" direction="in" />
+    <parameter name="@i_cod_otro_pais" dataType="char" direction="in" />
+    <parameter name="@i_fecha_expira" dataType="datetime" direction="in" />
+    <parameter name="@i_lugar_doc" dataType="int" direction="in" />
+    <parameter name="@i_pasaporte" dataType="varchar" direction="in" />
+    <parameter name="@i_formato_fecha" dataType="int" direction="in" />
+    <parameter name="@i_digito" dataType="char" direction="in" />
+    <parameter name="@i_nacionalidad" dataType="int" direction="in" />
+    <parameter name="@i_ciudad_nac" dataType="int" direction="in" />
+    <parameter name="@i_cod_area" dataType="varchar" direction="in" />
+  </parameters>
+  <queries>
+    <query>
+      <columns>
+        <column name="/** Stored Procedure **/ " />
+        <column name="s_ssn" />
+        <column name="s_user" />
+        <column name="s_term" />
+        <column name="s_date" />
+        <column name="s_srv" />
+        <column name="s_lsrv" />
+        <column name="s_ofi" />
+        <column name="t_file" />
+        <column name="t_from" />
+        <column name="i_operacion" />
+        <column name="i_ente" />
+        <column name="i_nombre" />
+        <column name="i_hijo" />
+        <column name="i_sexo" />
+        <column name="i_fecha_nac" />
+        <column name="i_tipo" />
+        <column name="i_papellido" />
+        <column name="i_sapellido" />
+        <column name="i_empresa" />
+        <column name="i_telefono" />
+        <column name="i_documento" />
+        <column name="i_tipo_doc" />
+        <column name="i_digito" />
+      </columns>
+      <queryText>SELECT "/** Stored Procedure **/ "=w_sp_name,"s_ssn"=s_ssn,"s_user"=s_user,"s_term"=s_term,"s_date"=s_date,"s_srv"=s_srv,"s_lsrv"=s_lsrv,"s_ofi"=s_ofi,"t_file"=t_file,"t_from"=t_from,"i_operacion"=i_operacion,"i_ente"=i_ente,"i_nombre"=i_nombre,"i_hijo"=i_hijo,"i_sexo"=i_sexo,"i_fecha_nac"=i_fecha_nac,"i_tipo"=i_tipo,"i_papellido"=i_papellido,"i_sapellido"=i_sapellido,"i_empresa"=i_empresa,"i_telefono"=i_telefono,"i_documento"=i_documento,"i_tipo_doc"=i_tipo_doc,"i_digito"=i_digito</queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="{1}" />
+      </columns>
+      <queryText>SELECT o_siguiente</queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="Consecutivo" />
+        <column name="Nombre" />
+        <column name="S. Nombre" />
+        <column name="P. Apellido" />
+        <column name="S. Apellido" />
+        <column name="Ap. Casada" />
+        <column name="Tipo" />
+        <column name="Tipo Id." />
+        <column name="Desc. Tipo Id." />
+        <column name="No.  Id." />
+        <column name="Sexo" />
+        <column name="Desc. Sexo" />
+        <column name="Fecha de Nac." />
+        <column name="Empresa" />
+        <column name="Telefono" />
+        <column name="Fecha Expira" />
+        <column name="Lugar del Doc" />
+        <column name="D�gito Verificador" />
+        <column name="Nacionalidad" />
+        <column name="Ciudad Nacimiento" />
+        <column name="Descripcion Nacionalidad" />
+        <column name="Descripcion Ciudad Nacimiento" />
+        <column name="Cod.Area" />
+      </columns>
+      <queryText>SELECT  "Consecutivo" = hi_hijo,"Nombre" = hi_nombre,"S. Nombre" = hi_s_nombre,"P. Apellido" = hi_papellido,"S. Apellido" = hi_sapellido,"Ap. Casada" = hi_c_apellido,"Tipo" = hi_tipo,"Tipo Id." = hi_tipo_doc,"Desc. Tipo Id." = td_descripcion,"No.  Id." = hi_documento,"Sexo" = hi_sexo,"Desc. Sexo" = (SELECT  c.valor FROM cobis..cl_catalogo c  ,cobis..cl_tabla t   WHERE t.tabla = "cl_sexo" AND c.tabla = t.codigo AND c.codigo = A.hi_sexo     ),"Fecha de Nac." = CONVERT (CHAR (10),hi_fecha_nac ,?),"Empresa" = hi_empresa,"Telefono" = hi_telefono,"Fecha Expira" = CONVERT (CHAR (10),hi_fecha_expira ,?),"Lugar del Doc" = hi_lugar_doc,"D�gito Verificador" = hi_digito,"Nacionalidad" = hi_nacionalidad,"Ciudad Nacimiento" = hi_ciudad_nac,"Descripcion Nacionalidad" = (SELECT  pa_nacionalidad FROM cobis..cl_pais   WHERE pa_pais = A.hi_nacionalidad     ),"Descripcion Ciudad Nacimiento" = CASE hi_tipo_doc WHEN "P" THEN (SELECT  pa_descripcion FROM cobis..cl_pais   WHERE pa_pais = A.hi_ciudad_nac     ) WHEN "E" THEN (SELECT  pa_descripcion FROM cobis..cl_pais   WHERE pa_pais = A.hi_ciudad_nac     ) WHEN "PE" THEN (SELECT  pa_descripcion FROM cobis..cl_pais   WHERE pa_pais = A.hi_ciudad_nac     ) WHEN "N" THEN (SELECT  pa_descripcion FROM cobis..cl_pais   WHERE pa_pais = A.hi_ciudad_nac     ) ELSE (SELECT  ci_descripcion FROM cobis..cl_ciudad   WHERE ci_ciudad = A.hi_ciudad_nac     ) END,"Cod.Area" = hi_area </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="{1}" />
+        <column name="{2}" />
+        <column name="{3}" />
+        <column name="{4}" />
+        <column name="{5}" />
+        <column name="{6}" />
+        <column name="{7}" />
+        <column name="{8}" />
+        <column name="{9}" />
+        <column name="{10}" />
+        <column name="{11}" />
+        <column name="{12}" />
+        <column name="{13}" />
+        <column name="{14}" />
+        <column name="{15}" />
+        <column name="{16}" />
+        <column name="{17}" />
+        <column name="{18}" />
+        <column name="{19}" />
+        <column name="{20}" />
+        <column name="{21}" />
+        <column name="{22}" />
+        <column name="{23}" />
+        <column name="{24}" />
+        <column name="{25}" />
+        <column name="{26}" />
+      </columns>
+      <queryText>SELECT o_hijo, o_nombre, o_sexo, ctx.convertString(o_fecha_nac ,i_formato_fecha), o_des_hijo, o_tipo, o_papellido, o_sapellido, o_empresa, o_telefono, o_documento, o_tipo_doc, o_c_apellido, o_s_nombre, o_cod_otro_pais, ctx.convertString(o_fecha_expira ,i_formato_fecha), o_lugar_doc, o_pasaporte, o_funcionario, ctx.convertString(o_fecha_ingreso ,i_formato_fecha), ctx.convertString(o_fecha_modifi ,i_formato_fecha), o_desc_tipo_doc, o_digito, o_nacionalidad, o_ciudad_nac, o_cod_area</queryText>
+    </query>
+  </queries>
+</procedure>

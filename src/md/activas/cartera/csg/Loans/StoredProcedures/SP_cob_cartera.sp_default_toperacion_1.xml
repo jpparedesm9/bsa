@@ -1,0 +1,250 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<procedure>
+  <database>cob_cartera</database>
+  <name>sp_default_toperacion</name>
+  <type>SYBASE</type>
+  <version>1</version>
+  <parameters>
+    <parameter name="@s_user" dataType="varchar" direction="in" />
+    <parameter name="@s_date" dataType="datetime" direction="in" />
+    <parameter name="@s_ofi" dataType="smallint" direction="in" />
+    <parameter name="@s_term" dataType="varchar" direction="in" />
+    <parameter name="@t_debug" dataType="char" direction="in" />
+    <parameter name="@t_file" dataType="varchar" direction="in" />
+    <parameter name="@t_from" dataType="varchar" direction="in" />
+    <parameter name="@i_operacion" dataType="char" direction="in" />
+    <parameter name="@i_toperacion" dataType="varchar" direction="in" />
+    <parameter name="@i_moneda" dataType="tinyint" direction="in" />
+    <parameter name="@i_reajustable" dataType="char" direction="in" />
+    <parameter name="@i_periodo_reaj" dataType="smallint" direction="in" />
+    <parameter name="@i_reajuste_especial" dataType="char" direction="in" />
+    <parameter name="@i_renovacion" dataType="char" direction="in" />
+    <parameter name="@i_tipo" dataType="char" direction="in" />
+    <parameter name="@i_estado" dataType="varchar" direction="in" />
+    <parameter name="@i_precancelacion" dataType="char" direction="in" />
+    <parameter name="@i_cuota_completa" dataType="char" direction="in" />
+    <parameter name="@i_tipo_cobro" dataType="char" direction="in" />
+    <parameter name="@i_tipo_reduccion" dataType="char" direction="in" />
+    <parameter name="@i_aceptar_anticipos" dataType="char" direction="in" />
+    <parameter name="@i_tipo_aplicacion" dataType="char" direction="in" />
+    <parameter name="@i_tplazo" dataType="varchar" direction="in" />
+    <parameter name="@i_plazo" dataType="smallint" direction="in" />
+    <parameter name="@i_tdividendo" dataType="varchar" direction="in" />
+    <parameter name="@i_periodo_cap" dataType="smallint" direction="in" />
+    <parameter name="@i_periodo_int" dataType="smallint" direction="in" />
+    <parameter name="@i_gracia_cap" dataType="smallint" direction="in" />
+    <parameter name="@i_gracia_int" dataType="smallint" direction="in" />
+    <parameter name="@i_dist_gracia" dataType="char" direction="in" />
+    <parameter name="@i_dias_anio" dataType="smallint" direction="in" />
+    <parameter name="@i_tipo_amortizacion" dataType="varchar" direction="in" />
+    <parameter name="@i_fecha_fija" dataType="char" direction="in" />
+    <parameter name="@i_dia_pago" dataType="tinyint" direction="in" />
+    <parameter name="@i_cuota_fija" dataType="char" direction="in" />
+    <parameter name="@i_dias_gracia" dataType="tinyint" direction="in" />
+    <parameter name="@i_evitar_feriados" dataType="char" direction="in" />
+    <parameter name="@i_mes_gracia" dataType="tinyint" direction="in" />
+    <parameter name="@i_base_calculo" dataType="char" direction="in" />
+    <parameter name="@i_prd_cobis" dataType="tinyint" direction="in" />
+    <parameter name="@i_ult_dia_habil" dataType="char" direction="in" />
+    <parameter name="@i_recalcular" dataType="char" direction="in" />
+    <parameter name="@i_codigo" dataType="varchar" direction="in" />
+    <parameter name="@i_tipo_redondeo" dataType="tinyint" direction="in" />
+    <parameter name="@i_causacion" dataType="char" direction="in" />
+    <parameter name="@i_convierte_tasa" dataType="char" direction="in" />
+    <parameter name="@i_tipo_linea" dataType="char" direction="in" />
+    <parameter name="@i_subtipo_linea" dataType="char" direction="in" />
+    <parameter name="@i_bvirtual" dataType="char" direction="in" />
+    <parameter name="@i_extracto" dataType="char" direction="in" />
+    <parameter name="@i_naturaleza" dataType="char" direction="in" />
+    <parameter name="@i_pago_caja" dataType="char" direction="in" />
+    <parameter name="@i_nace_vencida" dataType="char" direction="in" />
+    <parameter name="@i_calcula_devolucion" dataType="char" direction="in" />
+    <parameter name="@i_categoria" dataType="varchar" direction="in" />
+    <parameter name="@i_entidad_convenio" dataType="varchar" direction="in" />
+    <parameter name="@i_mora_retroactiva" dataType="char" direction="in" />
+    <parameter name="@i_prepago_desde_lavigente" dataType="char" direction="in" />
+    <parameter name="@i_dias_anio_mora" dataType="smallint" direction="in" />
+    <parameter name="@i_tipo_calif" dataType="varchar" direction="in" />
+    <parameter name="@i_plazo_min" dataType="smallint" direction="in" />
+    <parameter name="@i_plazo_max" dataType="smallint" direction="in" />
+    <parameter name="@i_monto_min" dataType="money" direction="in" />
+    <parameter name="@i_monto_max" dataType="money" direction="in" />
+    <parameter name="@i_clase_sector" dataType="varchar" direction="in" />
+    <parameter name="@i_clase_cartera" dataType="varchar" direction="in" />
+    <parameter name="@i_gar_admisible" dataType="char" direction="in" />
+    <parameter name="@i_afecta_cupo" dataType="char" direction="in" />
+    <parameter name="@i_control_dia_pago" dataType="char" direction="in" />
+    <parameter name="@i_porcen_colateral" dataType="float" direction="in" />
+  </parameters>
+  <queries>
+    <query>
+      <columns>
+        <column name="{1}" />
+        <column name="{2}" />
+      </columns>
+      <queryText>SELECT  x.dt_toperacion,c.valor </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="{1}" />
+        <column name="{2}" />
+        <column name="{3}" />
+        <column name="{4}" />
+        <column name="{5}" />
+        <column name="{6}" />
+        <column name="{7}" />
+        <column name="{8}" />
+        <column name="{9}" />
+        <column name="{10}" />
+        <column name="{11}" />
+        <column name="{12}" />
+        <column name="{13}" />
+        <column name="{14}" />
+        <column name="{15}" />
+        <column name="{16}" />
+        <column name="{17}" />
+        <column name="{18}" />
+        <column name="{19}" />
+        <column name="{20}" />
+        <column name="{21}" />
+        <column name="{22}" />
+        <column name="{23}" />
+        <column name="{24}" />
+        <column name="{25}" />
+        <column name="{26}" />
+        <column name="{27}" />
+        <column name="{28}" />
+        <column name="{29}" />
+        <column name="{30}" />
+        <column name="{31}" />
+        <column name="{32}" />
+        <column name="{33}" />
+        <column name="{34}" />
+        <column name="{35}" />
+        <column name="{36}" />
+        <column name="{37}" />
+        <column name="{38}" />
+        <column name="{39}" />
+        <column name="{40}" />
+        <column name="{41}" />
+        <column name="{42}" />
+        <column name="{43}" />
+        <column name="{44}" />
+        <column name="{45}" />
+        <column name="{46}" />
+        <column name="{47}" />
+        <column name="{48}" />
+        <column name="{49}" />
+        <column name="{50}" />
+        <column name="{51}" />
+        <column name="{52}" />
+        <column name="{53}" />
+        <column name="{54}" />
+        <column name="{55}" />
+        <column name="{56}" />
+        <column name="{57}" />
+        <column name="{58}" />
+        <column name="{59}" />
+        <column name="{60}" />
+        <column name="{61}" />
+        <column name="{62}" />
+        <column name="{63}" />
+        <column name="{64}" />
+        <column name="{65}" />
+        <column name="{66}" />
+        <column name="{67}" />
+        <column name="{68}" />
+        <column name="{69}" />
+        <column name="{70}" />
+        <column name="{71}" />
+        <column name="{72}" />
+        <column name="{73}" />
+        <column name="{74}" />
+        <column name="{75}" />
+        <column name="{76}" />
+        <column name="{77}" />
+        <column name="{78}" />
+        <column name="{79}" />
+        <column name="{80}" />
+        <column name="{81}" />
+        <column name="{82}" />
+        <column name="{83}" />
+        <column name="{84}" />
+      </columns>
+      <queryText>SELECT w_cuota_completa, "", "", "", w_tipo_cobro, "", w_tipo_reduccion, w_aceptar_anticipos, w_dias_anio, w_tipo_amortizacion, w_cuota_fija, w_fecha_fija, "", w_dias_gracia, w_dia_pago, w_tplazo, w_desc_tplazo, w_plazo, w_tdividendo, w_desc_tdiv, w_periodo_cap, w_periodo_int, w_gracia_cap, w_gracia_int, w_dist_gracia, w_reajustable, w_periodo_reaj, w_renovacion, w_precancelacion, w_tipo, 0, "", w_descripcion, w_valor_referencial, w_valor_total, w_estado, w_desc_estado, 0, w_reajuste_especial, "", 0, w_evitar_feriados, w_tipo_aplicacion, w_mes_gracia, w_desc_tipo, w_base_calculo, w_ult_dia_habil, w_recalcular, w_prd_cobis, w_des_prd_cobis, w_tipo_redondeo, w_causacion, w_convertir_tasa, w_tipo_linea, w_tipo_desc, w_subtipo_linea, w_subtipo_desc, w_bvirtual, w_extracto, w_naturaleza, w_pago_caja, w_nace_vencida, w_calcula_devolucion, w_categoria, w_categoria_desc, w_entidad_convenio, w_desc_entidad_convenio, w_mora_retroactiva, w_prepago_desde_lavigente, w_dias_anio_mora, w_tipo_calif, w_des_tipo_calif, w_plazo_min, w_plazo_max, w_monto_min, w_monto_max, w_clase_sector, w_desc_clase_sector, w_clase_cartera, w_desc_clase_cartera, w_gar_admisible, w_afecta_cupo, w_control_dia_pago, w_porcen_colateral</queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="{1}" />
+        <column name="{2}" />
+        <column name="{3}" />
+        <column name="{4}" />
+        <column name="{5}" />
+        <column name="{6}" />
+        <column name="{7}" />
+        <column name="{8}" />
+        <column name="{9}" />
+        <column name="{10}" />
+        <column name="{11}" />
+        <column name="{12}" />
+        <column name="{13}" />
+        <column name="{14}" />
+        <column name="{15}" />
+        <column name="{16}" />
+        <column name="desc_tplaz " />
+        <column name="{18}" />
+        <column name="{19}" />
+        <column name="desc_tdiv " />
+        <column name="{21}" />
+        <column name="{22}" />
+        <column name="{23}" />
+        <column name="{24}" />
+        <column name="{25}" />
+        <column name="{26}" />
+        <column name="{27}" />
+        <column name="{28}" />
+        <column name="{29}" />
+        <column name="{30}" />
+        <column name="{31}" />
+        <column name="{32}" />
+        <column name="{33}" />
+        <column name="{34}" />
+        <column name="{35}" />
+        <column name="{36}" />
+        <column name="{37}" />
+        <column name="{38}" />
+        <column name="{39}" />
+        <column name="{40}" />
+        <column name="{41}" />
+        <column name="{42}" />
+        <column name="{43}" />
+        <column name="{44}" />
+        <column name="{45}" />
+        <column name="{46}" />
+        <column name="{47}" />
+        <column name="{48}" />
+        <column name="{49}" />
+        <column name="{50}" />
+        <column name="{51}" />
+        <column name="{52}" />
+        <column name="{53}" />
+        <column name="{54}" />
+        <column name="{55}" />
+        <column name="{56}" />
+        <column name="{57}" />
+        <column name="{58}" />
+        <column name="{59}" />
+        <column name="{60}" />
+        <column name="{61}" />
+      </columns>
+      <queryText>SELECT  dt_cuota_completa,"","","",dt_tipo_cobro,"",dt_tipo_reduccion,dt_aceptar_anticipos,dt_dias_anio,dt_tipo_amortizacion,dt_cuota_fija,dt_fecha_fija,"",dt_dias_gracia,dt_dia_pago,dt_tplazo,desc_tplaz = (SELECT  td_descripcion FROM cob_cartera..ca_tdividendo   WHERE td_tdividendo = X.dt_tplazo     ),dt_plazo,dt_tdividendo,desc_tdiv = (SELECT  td_descripcion FROM cob_cartera..ca_tdividendo   WHERE td_tdividendo = X.dt_tdividendo     ),dt_periodo_cap,dt_periodo_int,dt_gracia_cap,dt_gracia_int,dt_dist_gracia,dt_reajustable,dt_periodo_reaj,dt_renovacion,dt_precancelacion,dt_tipo,0,NULL,NULL,NULL,dt_estado,c.valor,0,dt_reajuste_especial,"",0,dt_evitar_feriados,dt_tipo_aplicacion,dt_mes_gracia,dt_base_calculo,dt_dia_habil,dt_recalcular_plazo,dt_prd_cobis,NULL,NULL,NULL,NULL,NULL,dt_tipo_linea,dt_subtipo_linea,dt_bvirtual,dt_extracto,dt_naturaleza,dt_pago_caja,dt_nace_vencida,dt_calcula_devolucion,dt_categoria </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="codigo" />
+        <column name="descripcion" />
+      </columns>
+      <queryText>SELECT  "codigo" = b.codigo,"descripcion" = b.valor </queryText>
+    </query>
+  </queries>
+</procedure>

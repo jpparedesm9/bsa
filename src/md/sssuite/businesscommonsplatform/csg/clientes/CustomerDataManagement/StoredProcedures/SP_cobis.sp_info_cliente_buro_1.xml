@@ -1,0 +1,87 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<procedure>
+  <database>cobis</database>
+  <name>sp_info_cliente_buro</name>
+  <type>SYBASE</type>
+  <version>1</version>
+  <parameters>
+    <parameter name="@s_ssn" dataType="int" direction="in" />
+    <parameter name="@s_user" dataType="varchar" direction="in" />
+    <parameter name="@s_sesn" dataType="int" direction="in" />
+    <parameter name="@s_term" dataType="varchar" direction="in" />
+    <parameter name="@s_date" dataType="datetime" direction="in" />
+    <parameter name="@s_srv" dataType="varchar" direction="in" />
+    <parameter name="@s_lsrv" dataType="varchar" direction="in" />
+    <parameter name="@s_rol" dataType="smallint" direction="in" />
+    <parameter name="@s_ofi" dataType="smallint" direction="in" />
+    <parameter name="@s_org" dataType="char" direction="in" />
+    <parameter name="@t_debug" dataType="char" direction="in" />
+    <parameter name="@t_file" dataType="varchar" direction="in" />
+    <parameter name="@t_from" dataType="varchar" direction="in" />
+    <parameter name="@t_trn" dataType="int" direction="in" />
+    <parameter name="@i_operacion" dataType="char" direction="in" />
+    <parameter name="@i_transaccion" dataType="char" direction="in" />
+    <parameter name="@i_sub_tipo" dataType="char" direction="in" />
+    <parameter name="@i_codigo_cliente" dataType="int" direction="in" />
+    <parameter name="@i_tipo_para_n" dataType="varchar" direction="in" />
+    <parameter name="@i_dias_vigencia" dataType="int" direction="in" />
+  </parameters>
+  <queries>
+    <query>
+      <columns>
+        <column name="VersiÃ³n" />
+        <column name="NumeroReferenciaOperador" />
+        <column name="ProductoRequerido" />
+        <column name="ClavePais" />
+        <column name="ClaveUsuario" />
+        <column name="Password" />
+        <column name="Tipoconsulta" />
+        <column name="Tipocontrato" />
+        <column name="ClaveUnidadMonetaria" />
+        <column name="ImporteContrato" />
+        <column name="{11}" />
+        <column name="Idioma" />
+        <column name="TipoSalida" />
+      </columns>
+      <queryText>SELECT DISTINCT "VersiÃ³n" = 13,"NumeroReferenciaOperador" = tg_prestamo,"ProductoRequerido" = 509,"ClavePais" = "MX","ClaveUsuario" = "XXXXXXXXX","Password" = "XXXXXXX","Tipoconsulta" = "I","Tipocontrato" = "PA","ClaveUnidadMonetaria" = "MX","ImporteContrato" = ISNULL (tg_monto, op_monto),op_cliente,"Idioma" = "SP","TipoSalida" = "01" </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="ApellidoPaterno" />
+        <column name="ApellidoMaterno" />
+        <column name="PrimerNombre" />
+        <column name="FechaNacimiento" />
+        <column name="FechaNacimientoFormat" />
+        <column name="Nacionalidad" />
+        <column name="EstadoCivil" />
+        <column name="Sexo" />
+        <column name="FechaNacimientoDate" />
+        <column name="SegundoNombre" />
+      </columns>
+      <queryText>SELECT "ApellidoPaterno"=ctx.convertString(p_p_apellido),"ApellidoMaterno"=ctx.convertString(ctx.ISNULL(p_s_apellido, "")),"PrimerNombre"=ctx.convertString(en_nombre),"FechaNacimiento"="12-13-2017","FechaNacimientoFormat"="12","Nacionalidad"="MX","EstadoCivil"=ctx.convertString(p_estado_civil),"Sexo"=ctx.convertString(p_sexo),"FechaNacimientoDate"=p_fecha_nac,"SegundoNombre"=ctx.convertString(p_s_nombre)</queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="Direccion" />
+        <column name="Estado-Provincia" />
+      </columns>
+      <queryText>SELECT  "Direccion" = (SELECT  di_calle + " " + CONVERT (VARCHAR (10),di_nro )  ),"Estado-Provincia" = (SELECT  e2.eq_valor_arch </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="NumeroCuenta" />
+        <column name="ClaveOtorgante" />
+        <column name="NombreOtorgante" />
+      </columns>
+      <queryText>SELECT  "NumeroCuenta" = op_banco,"ClaveOtorgante" = "XXXXXXXXXX","NombreOtorgante" = "SOFOME" </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="cliente" />
+        <column name="nombre" />
+        <column name="print" />
+      </columns>
+      <queryText>SELECT "cliente"=i_codigo_cliente,"nombre"=w_name_report,"print"=w_print_report</queryText>
+    </query>
+  </queries>
+</procedure>

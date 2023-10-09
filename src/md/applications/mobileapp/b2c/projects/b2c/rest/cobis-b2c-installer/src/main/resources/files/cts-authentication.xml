@@ -1,0 +1,104 @@
+<csp-config name="AuthenticationService" xsi:noNamespaceSchemaLocation="configuracion-transaccion.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+   <config id="configuracion para utilizar Autenticacion BM" idzone="authentication" priority="1">
+    <conditions>
+      <condition param="idAplicacion">
+        <value>bancaMovil</value>
+      </condition>
+    </conditions>
+    <indicators>
+      <indicator name="authenticationService" value="COBISBM"/>
+    </indicators>
+    <mappings keepMode="1"/>
+  </config>  
+  <config priority="1" idzone="authentication" id="configuracion para utilizar Autenticacion BV">
+    <conditions>
+      <condition param="idAplicacion">
+        <value>bancaVirtual</value>
+      </condition>
+    </conditions>
+    <indicators>
+      <indicator name="authenticationService" value="COBISBV"/>
+    </indicators>
+    <mappings keepMode="1"/>
+  </config>
+  <config priority="1" idzone="authentication" id="configuracion para utilizar Autenticacion NCS sin handshake desde CEW">
+    <conditions>
+      <condition param="application">
+        <value>CEW</value>
+      </condition>
+    </conditions>
+    <indicators>
+      <indicator name="authenticationService" value="COBISNCS"/>
+      <indicator name="CTS_HANDSHAKE" value="false"/>
+    </indicators>
+    <mappings keepMode="1"/>
+  </config>
+  <config priority="1" idzone="authentication" id="configuracion para autenticacion usuario anonimo">
+    <conditions>
+      <condition param="idAplicacion">
+        <value>anonymousUser</value>
+      </condition>
+    </conditions>
+    <indicators>
+      <indicator name="authenticationService" value="COBISNCS"/>
+    </indicators>
+    <mappings keepMode="1"/>
+  </config>
+  <config priority="1" idzone="authentication" id="configuracion para utilizar Autenticacion NCS">
+    <conditions>
+      <condition param="ncs">
+        <value>S</value>
+      </condition>
+    </conditions>
+    <indicators>
+      <indicator name="authenticationService" value="COBISNCS"/>
+      <indicator name="CTS_HANDSHAKE" value="true"/>
+    </indicators>
+    <mappings keepMode="1"/>
+  </config>
+  <config priority="1" idzone="authentication" id="configuracion para utilizar Autenticacion Simple">
+    <conditions>
+      <condition param="ncs">
+        <value>N</value>
+      </condition>
+    </conditions>
+    <indicators>
+      <indicator name="authenticationService" value="COBISSIMPLE"/>
+    </indicators>
+    <mappings keepMode="1"/>
+  </config>
+  <config priority="1" idzone="authentication" id="configuracion para utilizar Autenticacion NCS desde CEN">
+    <conditions>
+      <condition param="NCS">
+        <value>S</value>
+      </condition>
+    </conditions>
+    <indicators>
+      <indicator name="authenticationService" value="COBISNCS"/>
+      <indicator name="CTS_HANDSHAKE" value="true"/>
+    </indicators>
+    <mappings keepMode="1"/>
+  </config>
+  <config priority="1" idzone="authentication" id="configuracion para utilizar Autenticacion Simple desde CEN">
+    <conditions>
+      <condition param="NCS">
+        <value>N</value>
+      </condition>
+    </conditions>
+    <indicators>
+      <indicator name="authenticationService" value="COBISSIMPLE"/>
+    </indicators>
+    <mappings keepMode="1"/>
+  </config>
+  <config priority="1" idzone="authentication" id="configuracion para utilizar Autenticacion LDAP">
+    <conditions>
+      <condition param="idAplicacion">
+        <value>LDAP</value>
+      </condition>
+    </conditions>
+    <indicators>
+      <indicator name="authenticationService" value="COBISLDAP"/>
+    </indicators>
+    <mappings keepMode="1"/>
+  </config>
+</csp-config>

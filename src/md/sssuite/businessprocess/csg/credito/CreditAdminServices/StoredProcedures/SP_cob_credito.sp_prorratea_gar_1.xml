@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<procedure>
+  <database>cob_credito</database>
+  <name>sp_prorratea_gar</name>
+  <type>SYBASE</type>
+  <version>1</version>
+  <parameters>
+    <parameter name="@s_ssn" dataType="int" direction="in" />
+    <parameter name="@s_user" dataType="varchar" direction="in" />
+    <parameter name="@s_sesn" dataType="int" direction="in" />
+    <parameter name="@s_term" dataType="varchar" direction="in" />
+    <parameter name="@s_date" dataType="datetime" direction="in" />
+    <parameter name="@s_rol" dataType="smallint" direction="in" />
+    <parameter name="@t_show_version" dataType="bit" direction="in" />
+    <parameter name="@t_trn" dataType="smallint" direction="in" />
+    <parameter name="@t_debug" dataType="char" direction="in" />
+    <parameter name="@t_file" dataType="varchar" direction="in" />
+    <parameter name="@t_from" dataType="varchar" direction="in" />
+    <parameter name="@i_garantia" dataType="varchar" direction="in" />
+    <parameter name="@i_tramite" dataType="int" direction="in" />
+    <parameter name="@i_monto_tramite" dataType="money" direction="in" />
+    <parameter name="@i_operacion" dataType="char" direction="in" />
+    <parameter name="@i_toperacion_cca" dataType="varchar" direction="in" />
+    <parameter name="@o_tasa_ponderada" dataType="float" direction="out" />
+  </parameters>
+  <queries>
+    <query>
+      <columns>
+        <column name="{1}" />
+        <column name="{2}" />
+        <column name="{3}" />
+        <column name="{4}" />
+      </columns>
+      <queryText>SELECT  pt_valor_vnr,pt_prorrateo,pt_rel_gar </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="{1}" />
+        <column name="{2}" />
+        <column name="{3}" />
+      </columns>
+      <queryText>SELECT  pt_valor_vnr,pt_prorrateo,? </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="{1}" />
+      </columns>
+      <queryText>SELECT  SUM (pt_tasa_ponderada) </queryText>
+    </query>
+  </queries>
+</procedure>

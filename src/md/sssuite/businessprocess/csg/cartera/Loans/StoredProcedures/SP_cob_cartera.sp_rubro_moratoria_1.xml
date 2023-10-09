@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<procedure>
+  <database>cob_cartera</database>
+  <name>sp_rubro_moratoria</name>
+  <type>SYBASE</type>
+  <version>1</version>
+  <parameters>
+    <parameter name="@s_user" dataType="varchar" direction="in" />
+    <parameter name="@s_term" dataType="varchar" direction="in" />
+    <parameter name="@s_date" dataType="datetime" direction="in" />
+    <parameter name="@s_sesn" dataType="int" direction="in" />
+    <parameter name="@s_ssn" dataType="int" direction="in" />
+    <parameter name="@s_srv" dataType="varchar" direction="in" />
+    <parameter name="@s_ofi" dataType="int" direction="in" />
+    <parameter name="@t_trn" dataType="int" direction="in" />
+    <parameter name="@t_show_version" dataType="bit" direction="in" />
+    <parameter name="@t_debug" dataType="char" direction="in" />
+    <parameter name="@t_file" dataType="varchar" direction="in" />
+    <parameter name="@t_from" dataType="varchar" direction="in" />
+    <parameter name="@i_banco" dataType="varchar" direction="in" />
+    <parameter name="@i_opcion" dataType="char" direction="in" />
+    <parameter name="@i_fec_ini" dataType="datetime" direction="in" />
+    <parameter name="@i_fec_fin" dataType="datetime" direction="in" />
+    <parameter name="@i_porcentaje_cap" dataType="float" direction="in" />
+    <parameter name="@i_porcentaje_int" dataType="float" direction="in" />
+    <parameter name="@i_monto_comprometido" dataType="money" direction="in" />
+    <parameter name="@i_observacion" dataType="varchar" direction="in" />
+    <parameter name="@i_estado" dataType="tinyint" direction="in" />
+    <parameter name="@i_usuario_modifica" dataType="varchar" direction="in" />
+    <parameter name="@i_formato_fecha" dataType="tinyint" direction="in" />
+    <parameter name="@o_nombre" dataType="varchar" direction="out" />
+    <parameter name="@o_monto" dataType="money" direction="out" />
+  </parameters>
+  <queries>
+    <query>
+      <columns>
+        <column name="Pactado Capital" />
+        <column name="Pactado Interes" />
+        <column name="Pagado Capital" />
+        <column name="Pagado Interes" />
+        <column name="Saldo Capital" />
+        <column name="Saldo Interes" />
+        <column name="Saldo Cap Corte" />
+        <column name="Saldo Int Corte" />
+        <column name="Pactado Mora" />
+        <column name="Pagado Mora" />
+        <column name=" Saldo Mor Corte" />
+        <column name=" Saldo Mora" />
+        <column name="Pactado Otros" />
+        <column name="Pagado Otros" />
+        <column name=" Saldo Otros" />
+      </columns>
+      <queryText>SELECT "Pactado Capital"=w_ori_capital,"Pactado Interes"=w_ori_interes,"Pagado Capital"=w_pagado_capital,"Pagado Interes"=w_pagado_interes,"Saldo Capital"=w_saldo_capital,"Saldo Interes"=w_saldo_interes</queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="ab_fecha_ing" />
+        <column name="monto" />
+      </columns>
+      <queryText>SELECT  "ab_fecha_ing" = CONVERT (CHAR (10),ab_fecha_ing ,?),abd_monto_mpg </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="numero_operaciones" />
+        <column name=" capital_vencido" />
+        <column name=" dias_vencido" />
+      </columns>
+      <queryText>SELECT  rm_operacion,rm_porcentaje_int,rm_porcentaje_cap,rm_monto_comprometido,rm_estado,rm_fecha_ini,rm_fecha_fin,rm_usuario_modifica,rm_observacion </queryText>
+    </query>
+  </queries>
+</procedure>

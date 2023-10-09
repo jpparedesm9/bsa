@@ -1,0 +1,102 @@
+{
+    "customEvents": [
+        {
+            "customEventId": "CEQY_130_Q_SCANNEMC_7701_299",
+            "customizationLayer": 0,
+            "customizationLayerDescription": "ECU",
+            "enabled": "T",
+            "executionType": 3,
+            "queryEventType": {
+                "availableExecutionType": 7,
+                "description": "Sobreescribe la ejecución de un Query",
+                "eventId": 130,
+                "name": "ExecuteQuery"
+            }
+        }
+    ],
+    "customizationLayer": 0,
+    "customizationLayerDescription": "ECU",
+    "id": {
+        "queryId": "Q_SCANNEMC_7701",
+        "version": "1.0.0"
+    },
+    "isAutomatic": false,
+    "isImported": false,
+    "mainEntityId": "EN_SCANNEDOU_199",
+    "mainEntityName": "",
+    "mainEntityVersion": "1.0.0",
+    "name": {
+        "$ref": "../../../CSTMR/relations/componentKeys.json#/CSTMR/Queries/Q_SCANNEMC_7701/name"
+    },
+    "queryMembers": [
+        {
+            "alias": "clientName",
+            "attribute": {
+                "$ref": "../../../CSTMR/entities/EN_SCANNEDOU_199.json#/attributes/AT99_CLIENTEN199"
+            },
+            "customizationLayer": "",
+            "customizationLayerDescription": "",
+            "defaultValue": null,
+            "defaultValueDataType": null,
+            "function": null,
+            "operator": null,
+            "order": 2,
+            "orderBy": null,
+            "orderByDirection": null,
+            "queryMemberId": "QM_SCANN1CE70729_02",
+            "select": true,
+            "selectStr": "T",
+            "where": false,
+            "whereStr": "F"
+        },
+        {
+            "alias": "member",
+            "attribute": {
+                "$ref": "../../../CSTMR/entities/EN_SCANNEDOU_199.json#/attributes/AT39_MEMBERLZ199"
+            },
+            "customizationLayer": null,
+            "customizationLayerDescription": null,
+            "defaultValue": null,
+            "defaultValueDataType": null,
+            "function": null,
+            "operator": null,
+            "order": 3,
+            "orderBy": 0,
+            "orderByDirection": "A",
+            "queryMemberId": "QM_SCANNCMC70274_01",
+            "select": true,
+            "selectStr": "T",
+            "where": false,
+            "whereStr": "F"
+        },
+        {
+            "alias": "customertId",
+            "attribute": {
+                "$ref": "../../../CSTMR/entities/EN_SCANNEDOU_199.json#/attributes/AT94_CLIENTII199"
+            },
+            "customizationLayer": "",
+            "customizationLayerDescription": "",
+            "defaultValue": null,
+            "defaultValueDataType": null,
+            "function": null,
+            "operator": null,
+            "order": 1,
+            "orderBy": null,
+            "orderByDirection": null,
+            "queryMemberId": "QM_SCANNC0771802_01",
+            "select": true,
+            "selectStr": "T",
+            "where": false,
+            "whereStr": "F"
+        }
+    ],
+    "sqlWhere": null,
+    "subModules": [
+        {
+            "id": {
+                "moduleId": "CSTMR",
+                "subModuleId": "CSTMR"
+            }
+        }
+    ]
+}

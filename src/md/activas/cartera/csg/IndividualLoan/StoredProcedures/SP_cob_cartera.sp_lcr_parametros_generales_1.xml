@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<procedure>
+  <database>cob_cartera</database>
+  <name>sp_lcr_parametros_generales</name>
+  <type>SQLSERVER</type>
+  <version>1</version>
+  <parameters>
+    <parameter name="@s_ssn" dataType="int" direction="in" />
+    <parameter name="@s_sesn" dataType="int" direction="in" />
+    <parameter name="@s_date" dataType="datetime" direction="in" />
+    <parameter name="@s_user" dataType="varchar" direction="in" />
+    <parameter name="@s_term" dataType="varchar" direction="in" />
+    <parameter name="@s_ofi" dataType="smallint" direction="in" />
+    <parameter name="@s_srv" dataType="varchar" direction="in" />
+    <parameter name="@s_lsrv" dataType="varchar" direction="in" />
+    <parameter name="@s_rol" dataType="smallint" direction="in" />
+    <parameter name="@s_org" dataType="varchar" direction="in" />
+    <parameter name="@s_culture" dataType="varchar" direction="in" />
+    <parameter name="@t_rty" dataType="char" direction="in" />
+    <parameter name="@t_debug" dataType="char" direction="in" />
+    <parameter name="@t_file" dataType="varchar" direction="in" />
+    <parameter name="@t_trn" dataType="smallint" direction="in" />
+    <parameter name="@i_banco" dataType="varchar" direction="in" />
+    <parameter name="@i_cliente" dataType="int" direction="in" />
+    <parameter name="@o_msg" dataType="varchar" direction="out" />
+  </parameters>
+  <queries>
+    <query>
+      <columns>
+        <column name="{1}" />
+        <column name="{2}" />
+      </columns>
+      <queryText>SELECT w_tasa_iva</queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="{1}" />
+        <column name="{2}" />
+        <column name="{3}" />
+        <column name="{4}" />
+      </columns>
+      <queryText>SELECT  pc_rango_inicio,pc_rango_fin,pc_tasa_comision </queryText>
+    </query>
+  </queries>
+</procedure>

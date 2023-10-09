@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="NotificacionGeneral" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="810d174d-6b23-4ad8-b743-9d4240eeab63">
+	<property name="ireport.zoom" value="1.2100000000000009"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="149"/>
+	<parameter name="FECHA" class="java.util.Date"/>
+	<parameter name="PIEPAGINA" class="java.lang.String"/>
+	<parameter name="NOMBREEMPRESA" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="mensaje" class="java.lang.String"/>
+	<variable name="FECHA" class="java.lang.String">
+		<variableExpression><![CDATA[new java.text.SimpleDateFormat("dd/MM/yyyy").format($P{FECHA})]]></variableExpression>
+	</variable>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="42" splitType="Stretch">
+			<image scaleImage="FillFrame">
+				<reportElement x="1" y="1" width="130" height="40" uuid="2712992f-aa1f-4236-a996-bac2a4786c26"/>
+				<imageExpression><![CDATA["logo-tuiio.png"]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="20" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="56" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="17" width="555" height="18" uuid="f6cac328-150a-4b2c-a4a5-95f5c8753568"/>
+				<textElement verticalAlignment="Middle" markup="html"/>
+				<textFieldExpression><![CDATA["Estimado Señor (a): "]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="0" width="555" height="18" uuid="ab541d8c-8f16-4bf7-9520-0da64b0ea287"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$P{FECHA}]]></textFieldExpression>
+			</textField>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="229" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="555" height="136" uuid="f4376324-d542-4314-807a-a6c79dfd1484"/>
+				<textElement textAlignment="Justified" markup="html"/>
+				<textFieldExpression><![CDATA[$F{mensaje}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="157" width="555" height="18" uuid="5e8a3509-beae-4eb8-a6a0-427ab84c73ff"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA["Saludos Cordiales."]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="16" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="19" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="13" splitType="Stretch"/>
+	</summary>
+</jasperReport>

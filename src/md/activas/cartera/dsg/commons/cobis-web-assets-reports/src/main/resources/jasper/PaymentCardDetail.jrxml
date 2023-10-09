@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version last-->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="PaymentCardDetail" pageWidth="555" pageHeight="802" columnWidth="555" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="8a3248b0-402b-4bb8-96e0-6254df9be74c">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<field name="institucion" class="java.lang.String"/>
+	<field name="referencia" class="java.lang.String"/>
+	<field name="nroConvenio" class="java.lang.String"/>
+	<field name="barCode" class="java.lang.Object">
+		<fieldDescription><![CDATA[barCode]]></fieldDescription>
+	</field>
+	<detail>
+		<band height="49" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="171" height="49" forecolor="#333333" uuid="ede0a8df-7e5f-48a4-8c05-a6add0fd3436"/>
+				<box leftPadding="16">
+					<topPen lineWidth="2.0" lineColor="#FF0000"/>
+					<bottomPen lineWidth="0.0" lineColor="#F0F0F0"/>
+					<rightPen lineWidth="2.0" lineColor="#FF0000"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font size="14" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{institucion}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="171" y="0" width="164" height="49" forecolor="#333333" uuid="3bc66511-42ea-4a04-ae2e-a3b1ac3df308"/>
+				<box leftPadding="12">
+					<topPen lineWidth="2.0" lineColor="#FF0000"/>
+					<bottomPen lineWidth="0.0" lineColor="#F0F0F0"/>
+					<rightPen lineWidth="2.0" lineColor="#FF0000"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font size="14" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{barCode}==null ? $F{referencia} :""]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="335" y="0" width="201" height="49" forecolor="#333333" uuid="d88950b9-06ed-4d60-867d-990f00c3becb"/>
+				<box leftPadding="12">
+					<topPen lineWidth="2.0" lineColor="#FF0000"/>
+					<bottomPen lineWidth="0.0" lineColor="#F0F0F0"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font size="14" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{nroConvenio}]]></textFieldExpression>
+			</textField>
+			<image hAlign="Center" vAlign="Middle">
+				<reportElement x="178" y="5" width="153" height="35" uuid="4b4fab29-df88-4329-bad2-c87ec09ef191"/>
+				<imageExpression><![CDATA[$F{barCode}]]></imageExpression>
+			</image>
+		</band>
+	</detail>
+</jasperReport>

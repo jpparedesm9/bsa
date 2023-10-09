@@ -1,0 +1,896 @@
+{
+    "autoCrudStr": "F",
+    "commands": [
+    ],
+    "customEvents": [
+    ],
+    "customizationLayer": 0,
+    "customizationLayerDescription": "ECU",
+    "id": {
+        "moduleId": "BUSIN",
+        "subModuleId": "FLCRE",
+        "taskId": "T_FLCRE_77_FUNME92",
+        "version": "1.0.0"
+    },
+    "isImported": true,
+    "mainViewContainerId": "VC_FUNME92_TTFAE_107",
+    "modeEnabled": 4095,
+    "name": {
+        "$ref": "../../../../BUSIN/relations/componentKeys.json#/FLCRE/Forms/T_FLCRE_77_FUNME92/name"
+    },
+    "tempSaveStr": "F",
+    "viewContainers": [
+        {
+            "colSpan": 1,
+            "collapsedStr": "F",
+            "columnsNum": 1,
+            "componentStyle": null,
+            "customEvents": [
+                {
+                    "customEventId": "CEVC_002_FUNME92_TTFAE_107_391",
+                    "customizationLayer": 0,
+                    "customizationLayerDescription": "ECU",
+                    "enabled": "T",
+                    "executionType": 1,
+                    "isEnabled": true,
+                    "thereAnCallbackEvent": false,
+                    "thereAnClientEvent": true,
+                    "thereAnServerEvent": false,
+                    "viewContainerEventType": {
+                        "description": "Inicialización de datos de un ViewContainer, despues de este evento se realiza el segimiento de cambios en los datos",
+                        "eventId": 2,
+                        "name": "InitData"
+                    }
+                },
+                {
+                    "customEventId": "CEVC_008_FUNME92_TTFAE_107_462",
+                    "customizationLayer": 0,
+                    "customizationLayerDescription": "ECU",
+                    "enabled": "T",
+                    "executionType": 1,
+                    "isEnabled": true,
+                    "thereAnCallbackEvent": false,
+                    "thereAnClientEvent": true,
+                    "thereAnServerEvent": false,
+                    "viewContainerEventType": {
+                        "description": "Se ejecuta antes de renderizar un ViewContainer, permite realizar personalizaciones visuales",
+                        "eventId": 8,
+                        "name": "Render"
+                    }
+                }
+            ],
+            "customizationLayer": 0,
+            "customizationLayerDescription": "ECU",
+            "description": " ",
+            "enabled": 4095,
+            "id": {
+                "moduleId": "BUSIN",
+                "subModuleId": "FLCRE",
+                "taskId": "T_FLCRE_77_FUNME92",
+                "taskVersion": "1.0.0",
+                "viewContainerId": "VC_FUNME92_TTFAE_107"
+            },
+            "layoutType": "Group",
+            "name": "TFuenteFinanciamiento",
+            "options": 0,
+            "responsiveLayouts": null,
+            "responsivity": false,
+            "style": null,
+            "view": {
+                "groups": [
+                    {
+                        "colSpan": 1,
+                        "collapsedStr": "F",
+                        "columnsNum": 1,
+                        "componentStyle": null,
+                        "customEvents": [
+                        ],
+                        "enabled": 4095,
+                        "entity": {
+                            "$ref": "../../../../BUSIN/entities/EN_OURCFUNDN956.json#"
+                        },
+                        "eventType": 0,
+                        "groupId": "GR_IWSORCENIN87_04",
+                        "htmlSection": "F",
+                        "independentValidation": "F",
+                        "layoutType": "Group",
+                        "name": "Matriz",
+                        "orientation": "V",
+                        "queryView": {
+                            "actionDesign": "Button",
+                            "actions": [
+                            ],
+                            "allowPaging": true,
+                            "allowPagingStr": "T",
+                            "allowSorting": true,
+                            "allowSortingStr": "T",
+                            "confirmRowDeletion": false,
+                            "confirmRowDeletionStr": "F",
+                            "customEvents": [
+                                {
+                                    "executionType": 1,
+                                    "queryViewEventType": {
+                                        "availableExecutionType": 1,
+                                        "description": "Evento de detalle de grilla",
+                                        "eventId": 313,
+                                        "name": "hasDetail"
+                                    }
+                                }
+                            ],
+                            "customUrlDialog": null,
+                            "customizationLayer": 0,
+                            "customizationLayerDescription": "ECU",
+                            "deleteCommandEnabled": true,
+                            "deleteCommandEnabledStr": "T",
+                            "dialogTitleLabelId": null,
+                            "editCommandEnabled": false,
+                            "editCommandEnabledStr": "F",
+                            "editMode": "0",
+                            "entityName": "SourceFunding",
+                            "hasDetail": true,
+                            "hasDetailString": "T",
+                            "height": null,
+                            "includeQueryMembers": [
+                                "AT_OUR956NSOR58",
+                                "AT_OUR956EORY19",
+                                "AT_OUR956OJEC51",
+                                "AT_OUR956CRNC74",
+                                "AT_OUR956NUNM30",
+                                "AT_OUR956MNAT44",
+                                "AT_OUR956ATNC43",
+                                "AT_OUR956IIRM65",
+                                "AT_OUR956XMUT35",
+                                "AT_OUR956MXAE20"
+                            ],
+                            "insertCommandEnabled": false,
+                            "insertCommandEnabledStr": "F",
+                            "modalSize": null,
+                            "modeSelection": "Simple",
+                            "moduleIdDialog": null,
+                            "multiSelectEnabledStr": "S",
+                            "name": "GSourceFunding",
+                            "options": 2816,
+                            "pageSize": 20,
+                            "query": {
+                                "$ref": "../../../../BUSIN/FLCRE/queries/Q_COURCUNG_4312.json#"
+                            },
+                            "queryId": "Q_COURCUNG_4312",
+                            "queryVersion": "1.0.0",
+                            "queryViewCustomActions": [
+                                {
+                                    "commandType": 0,
+                                    "customActionId": "CEQV_204_QV_COURC4312_01_373",
+                                    "customizationLayer": 0,
+                                    "customizationLayerDescription": "ECU",
+                                    "enabled": "T",
+                                    "executionType": 1,
+                                    "name": "ELiminarFuente",
+                                    "queryViewEventType": {
+                                        "description": "Se ejecuta antes de que los datos eliminados en una grilla sean comprometidos.",
+                                        "eventId": 204,
+                                        "name": "RowDeleting"
+                                    },
+                                    "thereAnCallbackEvent": false,
+                                    "thereAnClientEvent": true,
+                                    "thereAnServerEvent": false
+                                },
+                                {
+                                    "commandType": 0,
+                                    "customActionId": "CEQV_208_QV_COURC4312_01_156",
+                                    "customizationLayer": 0,
+                                    "customizationLayerDescription": "ECU",
+                                    "enabled": "T",
+                                    "executionType": 1,
+                                    "name": "SelecccionaFuenteFin",
+                                    "queryViewEventType": {
+                                        "description": "Se ejecuta antes de que los datos modificados en una grilla sean comprometidos.",
+                                        "eventId": 208,
+                                        "name": "RowSelecting"
+                                    },
+                                    "thereAnCallbackEvent": false,
+                                    "thereAnClientEvent": true,
+                                    "thereAnServerEvent": false
+                                },
+                                {
+                                    "action": null,
+                                    "commandImageId": null,
+                                    "commandName": "Nuevo",
+                                    "commandOrder": 1,
+                                    "commandType": 0,
+                                    "customActionId": "CEQV_201_QV_COURC4312_01_285",
+                                    "customizationLayer": 0,
+                                    "customizationLayerDescription": "ECU",
+                                    "enabled": "T",
+                                    "executionType": 1,
+                                    "filter": null,
+                                    "label": {
+                                        "customizationLayer": 0,
+                                        "customizationLayerDescription": "ECU",
+                                        "defaultValue": {
+                                            "$ref": "../../../../BUSIN/assets/languages/BUSIN.json#/BUSIN/LBL/DLB_BUSIN_NUEVOOPAM_52575"
+                                        },
+                                        "hasI18N": true,
+                                        "i18N": "T",
+                                        "labelId": "DLB_BUSIN_NUEVOOPAM_52575",
+                                        "moduleId": "BUSIN"
+                                    },
+                                    "name": "Nuevo",
+                                    "queryView": "",
+                                    "queryViewEventType": {
+                                        "description": "Evento para los botones de Grilla",
+                                        "eventId": 201,
+                                        "name": "GridCommand"
+                                    },
+                                    "serviceName": null,
+                                    "userControl": {
+                                        "customizationLayer": 0,
+                                        "customizationLayerDescription": "ECU",
+                                        "description": "Designer Button",
+                                        "name": "Designer Button",
+                                        "type": "A",
+                                        "userControlId": "Button"
+                                    }
+                                }
+                            ],
+                            "queryViewId": "QV_COURC4312_01",
+                            "queryViewType": "Grid",
+                            "rowCommandAppearance": 0,
+                            "subModuleIdDialog": null,
+                            "taskIdDialog": "1.0.0",
+                            "taskVersionDialog": "1.0.0",
+                            "typeFormDialog": null,
+                            "userControl": {
+                                "customizationLayer": 0,
+                                "customizationLayerDescription": "ECU",
+                                "description": "Designer Grid",
+                                "name": "Designer Grid",
+                                "type": "I",
+                                "userControlId": "Grid"
+                            },
+                            "viewContainerIdDialog": null
+                        },
+                        "queryViewId": "QV_COURC4312_01",
+                        "refViewId": "VW_IWSORCENIN87",
+                        "refViewVersion": "1.0.0",
+                        "responsiveLayouts": null,
+                        "responsivity": false,
+                        "style": null,
+                        "titleLabel": {
+                            "defaultValue": {
+                                "$ref": "../../../../BUSIN/assets/languages/BUSIN.json#/BUSIN/LBL/DLB_BUSIN_UDFINIAME_09623"
+                            },
+                            "labelId": "DLB_BUSIN_UDFINIAME_09623",
+                            "moduleId": "BUSIN"
+                        },
+                        "visible": 4095,
+                        "visualAttributes": [
+                            {
+                                "aggregate": null,
+                                "aggregateId": null,
+                                "attribute": {
+                                    "$ref": "../../../../BUSIN/entities/EN_OURCFUNDN956.json#/attributes/AT_OUR956ATNC43"
+                                },
+                                "attributeValidations": [
+                                ],
+                                "cacheDuration": 0,
+                                "catalogName": "ca_tdividendo",
+                                "colSpan": 1,
+                                "componentStyle": null,
+                                "customEvents": [
+                                ],
+                                "customizationLayer": 0,
+                                "customizationLayerDescription": "ECU",
+                                "enabled": 4095,
+                                "entityQuery": null,
+                                "include": 4095,
+                                "label": {
+                                    "customizationLayer": 0,
+                                    "customizationLayerDescription": "ECU",
+                                    "defaultValue": {
+                                        "$ref": "../../../../BUSIN/assets/languages/BUSIN.json#/BUSIN/LBL/DLB_BUSIN_FRUENCAPA_98048"
+                                    },
+                                    "hasI18N": true,
+                                    "i18N": "T",
+                                    "labelId": "DLB_BUSIN_FRUENCAPA_98048",
+                                    "moduleId": "BUSIN"
+                                },
+                                "maxRecords": null,
+                                "minChars": null,
+                                "name": "PaymentFrecuency",
+                                "options": 0,
+                                "order": 6,
+                                "queryId": null,
+                                "queryMemberText": {
+                                    "attribute": {
+                                        "attributeId": null,
+                                        "name": null
+                                    },
+                                    "queryMemberId": null
+                                },
+                                "queryMemberValue": {
+                                    "attribute": {
+                                        "attributeId": null,
+                                        "name": null
+                                    },
+                                    "queryMemberId": null
+                                },
+                                "queryModule": null,
+                                "queryVersion": " ",
+                                "readOnly": 8,
+                                "responsiveLayouts": null,
+                                "responsivity": false,
+                                "sizeWidthComposite": null,
+                                "style": null,
+                                "type": "none",
+                                "userControl": {
+                                    "type": "I",
+                                    "userControlId": "ComboBox"
+                                },
+                                "visible": 4095,
+                                "visualAttributeId": "VA_IWSORCENIN8704_ATNC995",
+                                "width": null,
+                                "widthComposite": "D"
+                            },
+                            {
+                                "aggregate": null,
+                                "aggregateId": null,
+                                "attribute": {
+                                    "$ref": "../../../../BUSIN/entities/EN_OURCFUNDN956.json#/attributes/AT_OUR956COOC17"
+                                },
+                                "attributeValidations": [
+                                ],
+                                "colSpan": 1,
+                                "componentStyle": null,
+                                "customEvents": [
+                                ],
+                                "customizationLayer": 0,
+                                "customizationLayerDescription": "ECU",
+                                "enabled": 0,
+                                "include": 4095,
+                                "label": {
+                                    "customizationLayer": 0,
+                                    "customizationLayerDescription": "ECU",
+                                    "defaultValue": {
+                                        "$ref": "../../../../DSGNR/assets/languages/DSGNR.json#/DSGNR/LBL/SYS_DSGNR_LBLESTETQ_00024"
+                                    },
+                                    "hasI18N": true,
+                                    "i18N": "T",
+                                    "labelId": "SYS_DSGNR_LBLESTETQ_00024",
+                                    "moduleId": "DSGNR"
+                                },
+                                "maxRecords": null,
+                                "name": "CodeSource",
+                                "options": 0,
+                                "order": 10,
+                                "readOnly": 8,
+                                "responsiveLayouts": null,
+                                "responsivity": false,
+                                "sizeWidthComposite": null,
+                                "style": null,
+                                "textRows": 0,
+                                "userControl": {
+                                    "type": "I",
+                                    "userControlId": "TextInputBox"
+                                },
+                                "visible": 0,
+                                "visualAttributeId": "VA_IWSORCENIN8704_COOC174",
+                                "width": null,
+                                "widthComposite": "D"
+                            },
+                            {
+                                "aggregate": null,
+                                "aggregateId": null,
+                                "attribute": {
+                                    "$ref": "../../../../BUSIN/entities/EN_OURCFUNDN956.json#/attributes/AT_OUR956CRNC74"
+                                },
+                                "attributeValidations": [
+                                ],
+                                "cacheDuration": 0,
+                                "catalogName": "cl_moneda",
+                                "colSpan": 1,
+                                "componentStyle": null,
+                                "customEvents": [
+                                ],
+                                "customizationLayer": 0,
+                                "customizationLayerDescription": "ECU",
+                                "enabled": 4095,
+                                "entityQuery": null,
+                                "include": 4095,
+                                "label": {
+                                    "customizationLayer": 0,
+                                    "customizationLayerDescription": "ECU",
+                                    "defaultValue": {
+                                        "$ref": "../../../../BUSIN/assets/languages/BUSIN.json#/BUSIN/LBL/DLB_BUSIN_MONEDAQAQ_04700"
+                                    },
+                                    "hasI18N": true,
+                                    "i18N": "T",
+                                    "labelId": "DLB_BUSIN_MONEDAQAQ_04700",
+                                    "moduleId": "BUSIN"
+                                },
+                                "maxRecords": null,
+                                "minChars": null,
+                                "name": "Currency",
+                                "options": 0,
+                                "order": 3,
+                                "queryId": null,
+                                "queryMemberText": {
+                                    "attribute": {
+                                        "attributeId": null,
+                                        "name": null
+                                    },
+                                    "queryMemberId": null
+                                },
+                                "queryMemberValue": {
+                                    "attribute": {
+                                        "attributeId": null,
+                                        "name": null
+                                    },
+                                    "queryMemberId": null
+                                },
+                                "queryModule": null,
+                                "queryVersion": " ",
+                                "readOnly": 8,
+                                "responsiveLayouts": null,
+                                "responsivity": false,
+                                "sizeWidthComposite": null,
+                                "style": null,
+                                "type": "none",
+                                "userControl": {
+                                    "type": "I",
+                                    "userControlId": "ComboBox"
+                                },
+                                "visible": 4095,
+                                "visualAttributeId": "VA_IWSORCENIN8704_CRNC109",
+                                "width": null,
+                                "widthComposite": "D"
+                            },
+                            {
+                                "aggregate": null,
+                                "aggregateId": null,
+                                "attribute": {
+                                    "$ref": "../../../../BUSIN/entities/EN_OURCFUNDN956.json#/attributes/AT_OUR956EORY19"
+                                },
+                                "attributeValidations": [
+                                ],
+                                "cacheDuration": 0,
+                                "catalogName": "cl_sector_economico",
+                                "colSpan": 1,
+                                "componentStyle": null,
+                                "customEvents": [
+                                ],
+                                "customizationLayer": 0,
+                                "customizationLayerDescription": "ECU",
+                                "enabled": 4095,
+                                "entityQuery": null,
+                                "include": 4095,
+                                "label": {
+                                    "customizationLayer": 0,
+                                    "customizationLayerDescription": "ECU",
+                                    "defaultValue": {
+                                        "$ref": "../../../../BUSIN/assets/languages/BUSIN.json#/BUSIN/LBL/DLB_BUSIN_CTDEACIDD_46781"
+                                    },
+                                    "hasI18N": true,
+                                    "i18N": "T",
+                                    "labelId": "DLB_BUSIN_CTDEACIDD_46781",
+                                    "moduleId": "BUSIN"
+                                },
+                                "maxRecords": null,
+                                "minChars": null,
+                                "name": "SectorActivity",
+                                "options": 0,
+                                "order": 1,
+                                "queryId": null,
+                                "queryMemberText": {
+                                    "attribute": {
+                                        "attributeId": null,
+                                        "name": null
+                                    },
+                                    "queryMemberId": null
+                                },
+                                "queryMemberValue": {
+                                    "attribute": {
+                                        "attributeId": null,
+                                        "name": null
+                                    },
+                                    "queryMemberId": null
+                                },
+                                "queryModule": null,
+                                "queryVersion": " ",
+                                "readOnly": 8,
+                                "responsiveLayouts": null,
+                                "responsivity": false,
+                                "sizeWidthComposite": null,
+                                "style": null,
+                                "type": "none",
+                                "userControl": {
+                                    "type": "I",
+                                    "userControlId": "ComboBox"
+                                },
+                                "visible": 4095,
+                                "visualAttributeId": "VA_IWSORCENIN8704_EORY405",
+                                "width": null,
+                                "widthComposite": "D"
+                            },
+                            {
+                                "aggregate": null,
+                                "aggregateId": null,
+                                "attribute": {
+                                    "$ref": "../../../../BUSIN/entities/EN_OURCFUNDN956.json#/attributes/AT_OUR956IIRM65"
+                                },
+                                "attributeValidations": [
+                                ],
+                                "colSpan": 1,
+                                "componentStyle": null,
+                                "customEvents": [
+                                ],
+                                "customizationLayer": 0,
+                                "customizationLayerDescription": "ECU",
+                                "enabled": 4095,
+                                "include": 4095,
+                                "label": {
+                                    "customizationLayer": 0,
+                                    "customizationLayerDescription": "ECU",
+                                    "defaultValue": {
+                                        "$ref": "../../../../BUSIN/assets/languages/BUSIN.json#/BUSIN/LBL/DLB_BUSIN_PAZOMAIMO_13951"
+                                    },
+                                    "hasI18N": true,
+                                    "i18N": "T",
+                                    "labelId": "DLB_BUSIN_PAZOMAIMO_13951",
+                                    "moduleId": "BUSIN"
+                                },
+                                "maxRecords": null,
+                                "name": "MaximunTerm",
+                                "options": 0,
+                                "order": 7,
+                                "readOnly": 8,
+                                "responsiveLayouts": null,
+                                "responsivity": false,
+                                "sizeWidthComposite": null,
+                                "style": null,
+                                "textRows": 0,
+                                "userControl": {
+                                    "type": "I",
+                                    "userControlId": "TextInputBox"
+                                },
+                                "visible": 4095,
+                                "visualAttributeId": "VA_IWSORCENIN8704_IIRM502",
+                                "width": null,
+                                "widthComposite": "D"
+                            },
+                            {
+                                "aggregate": null,
+                                "aggregateId": null,
+                                "attribute": {
+                                    "$ref": "../../../../BUSIN/entities/EN_OURCFUNDN956.json#/attributes/AT_OUR956MNAT44"
+                                },
+                                "attributeValidations": [
+                                ],
+                                "colSpan": 1,
+                                "componentStyle": null,
+                                "customEvents": [
+                                ],
+                                "customizationLayer": 0,
+                                "customizationLayerDescription": "ECU",
+                                "enabled": 4095,
+                                "format": "N:#####",
+                                "include": 4095,
+                                "label": {
+                                    "customizationLayer": 0,
+                                    "customizationLayerDescription": "ECU",
+                                    "defaultValue": {
+                                        "$ref": "../../../../BUSIN/assets/languages/BUSIN.json#/BUSIN/LBL/DLB_BUSIN_MONTOMAXI_85573"
+                                    },
+                                    "hasI18N": true,
+                                    "i18N": "T",
+                                    "labelId": "DLB_BUSIN_MONTOMAXI_85573",
+                                    "moduleId": "BUSIN"
+                                },
+                                "maxRecords": null,
+                                "name": "MaximunAmount",
+                                "options": 0,
+                                "order": 5,
+                                "readOnly": 8,
+                                "responsiveLayouts": null,
+                                "responsivity": false,
+                                "sizeWidthComposite": null,
+                                "style": null,
+                                "textRows": 0,
+                                "userControl": {
+                                    "type": "I",
+                                    "userControlId": "TextInputBox"
+                                },
+                                "visible": 4095,
+                                "visualAttributeId": "VA_IWSORCENIN8704_MNAT429",
+                                "width": null,
+                                "widthComposite": "D"
+                            },
+                            {
+                                "aggregate": null,
+                                "aggregateId": null,
+                                "attribute": {
+                                    "$ref": "../../../../BUSIN/entities/EN_OURCFUNDN956.json#/attributes/AT_OUR956MXAE20"
+                                },
+                                "attributeValidations": [
+                                ],
+                                "colSpan": 1,
+                                "componentStyle": null,
+                                "customEvents": [
+                                ],
+                                "customizationLayer": 0,
+                                "customizationLayerDescription": "ECU",
+                                "enabled": 4095,
+                                "include": 4095,
+                                "label": {
+                                    "customizationLayer": 0,
+                                    "customizationLayerDescription": "ECU",
+                                    "defaultValue": {
+                                        "$ref": "../../../../BUSIN/assets/languages/BUSIN.json#/BUSIN/LBL/DLB_BUSIN_TASAMXIMA_28676"
+                                    },
+                                    "hasI18N": true,
+                                    "i18N": "T",
+                                    "labelId": "DLB_BUSIN_TASAMXIMA_28676",
+                                    "moduleId": "BUSIN"
+                                },
+                                "maxRecords": null,
+                                "name": "MaximunRate",
+                                "options": 0,
+                                "order": 9,
+                                "readOnly": 8,
+                                "responsiveLayouts": null,
+                                "responsivity": false,
+                                "sizeWidthComposite": null,
+                                "style": null,
+                                "textRows": 0,
+                                "userControl": {
+                                    "type": "I",
+                                    "userControlId": "TextInputBox"
+                                },
+                                "visible": 4095,
+                                "visualAttributeId": "VA_IWSORCENIN8704_MXAE798",
+                                "width": null,
+                                "widthComposite": "D"
+                            },
+                            {
+                                "aggregate": null,
+                                "aggregateId": null,
+                                "attribute": {
+                                    "$ref": "../../../../BUSIN/entities/EN_OURCFUNDN956.json#/attributes/AT_OUR956NSOR58"
+                                },
+                                "attributeValidations": [
+                                ],
+                                "cacheDuration": 0,
+                                "catalogName": "ca_origen_fondo",
+                                "colSpan": 1,
+                                "componentStyle": null,
+                                "customEvents": [
+                                ],
+                                "customizationLayer": 0,
+                                "customizationLayerDescription": "ECU",
+                                "enabled": 4095,
+                                "entityQuery": null,
+                                "include": 4095,
+                                "label": {
+                                    "customizationLayer": 0,
+                                    "customizationLayerDescription": "ECU",
+                                    "defaultValue": {
+                                        "$ref": "../../../../BUSIN/assets/languages/BUSIN.json#/BUSIN/LBL/DLB_BUSIN_ETDEFAAMI_27181"
+                                    },
+                                    "hasI18N": true,
+                                    "i18N": "T",
+                                    "labelId": "DLB_BUSIN_ETDEFAAMI_27181",
+                                    "moduleId": "BUSIN"
+                                },
+                                "maxRecords": null,
+                                "minChars": null,
+                                "name": "FundingSource",
+                                "options": 0,
+                                "order": 0,
+                                "queryId": null,
+                                "queryMemberText": {
+                                    "attribute": {
+                                        "attributeId": null,
+                                        "name": null
+                                    },
+                                    "queryMemberId": null
+                                },
+                                "queryMemberValue": {
+                                    "attribute": {
+                                        "attributeId": null,
+                                        "name": null
+                                    },
+                                    "queryMemberId": null
+                                },
+                                "queryModule": null,
+                                "queryVersion": " ",
+                                "readOnly": 8,
+                                "responsiveLayouts": null,
+                                "responsivity": false,
+                                "sizeWidthComposite": null,
+                                "style": null,
+                                "type": "none",
+                                "userControl": {
+                                    "type": "I",
+                                    "userControlId": "ComboBox"
+                                },
+                                "visible": 4095,
+                                "visualAttributeId": "VA_IWSORCENIN8704_NSOR931",
+                                "width": null,
+                                "widthComposite": "D"
+                            },
+                            {
+                                "aggregate": null,
+                                "aggregateId": null,
+                                "attribute": {
+                                    "$ref": "../../../../BUSIN/entities/EN_OURCFUNDN956.json#/attributes/AT_OUR956NUNM30"
+                                },
+                                "attributeValidations": [
+                                ],
+                                "colSpan": 1,
+                                "componentStyle": null,
+                                "customEvents": [
+                                ],
+                                "customizationLayer": 0,
+                                "customizationLayerDescription": "ECU",
+                                "enabled": 4095,
+                                "format": "N:#####",
+                                "include": 4095,
+                                "label": {
+                                    "customizationLayer": 0,
+                                    "customizationLayerDescription": "ECU",
+                                    "defaultValue": {
+                                        "$ref": "../../../../BUSIN/assets/languages/BUSIN.json#/BUSIN/LBL/DLB_BUSIN_MONTOINIO_81578"
+                                    },
+                                    "hasI18N": true,
+                                    "i18N": "T",
+                                    "labelId": "DLB_BUSIN_MONTOINIO_81578",
+                                    "moduleId": "BUSIN"
+                                },
+                                "maxRecords": null,
+                                "name": "MinimunAmout",
+                                "options": 0,
+                                "order": 4,
+                                "readOnly": 8,
+                                "responsiveLayouts": null,
+                                "responsivity": false,
+                                "sizeWidthComposite": null,
+                                "style": null,
+                                "textRows": 0,
+                                "userControl": {
+                                    "type": "I",
+                                    "userControlId": "TextInputBox"
+                                },
+                                "visible": 4095,
+                                "visualAttributeId": "VA_IWSORCENIN8704_NUNM003",
+                                "width": null,
+                                "widthComposite": "D"
+                            },
+                            {
+                                "aggregate": null,
+                                "aggregateId": null,
+                                "attribute": {
+                                    "$ref": "../../../../BUSIN/entities/EN_OURCFUNDN956.json#/attributes/AT_OUR956OJEC51"
+                                },
+                                "attributeValidations": [
+                                ],
+                                "cacheDuration": 0,
+                                "catalogName": "cr_objeto",
+                                "colSpan": 1,
+                                "componentStyle": null,
+                                "customEvents": [
+                                ],
+                                "customizationLayer": 0,
+                                "customizationLayerDescription": "ECU",
+                                "enabled": 4095,
+                                "entityQuery": null,
+                                "include": 4095,
+                                "label": {
+                                    "customizationLayer": 0,
+                                    "customizationLayerDescription": "ECU",
+                                    "defaultValue": {
+                                        "$ref": "../../../../BUSIN/assets/languages/BUSIN.json#/BUSIN/LBL/DLB_BUSIN_ETCREDITO_65642"
+                                    },
+                                    "hasI18N": true,
+                                    "i18N": "T",
+                                    "labelId": "DLB_BUSIN_ETCREDITO_65642",
+                                    "moduleId": "BUSIN"
+                                },
+                                "maxRecords": null,
+                                "minChars": null,
+                                "name": "ObjectCredit",
+                                "options": 0,
+                                "order": 2,
+                                "queryId": null,
+                                "queryMemberText": {
+                                    "attribute": {
+                                        "attributeId": null,
+                                        "name": null
+                                    },
+                                    "queryMemberId": null
+                                },
+                                "queryMemberValue": {
+                                    "attribute": {
+                                        "attributeId": null,
+                                        "name": null
+                                    },
+                                    "queryMemberId": null
+                                },
+                                "queryModule": null,
+                                "queryVersion": " ",
+                                "readOnly": 8,
+                                "responsiveLayouts": null,
+                                "responsivity": false,
+                                "sizeWidthComposite": null,
+                                "style": null,
+                                "type": "none",
+                                "userControl": {
+                                    "type": "I",
+                                    "userControlId": "ComboBox"
+                                },
+                                "visible": 4095,
+                                "visualAttributeId": "VA_IWSORCENIN8704_OJEC009",
+                                "width": null,
+                                "widthComposite": "D"
+                            },
+                            {
+                                "aggregate": null,
+                                "aggregateId": null,
+                                "attribute": {
+                                    "$ref": "../../../../BUSIN/entities/EN_OURCFUNDN956.json#/attributes/AT_OUR956XMUT35"
+                                },
+                                "attributeValidations": [
+                                ],
+                                "colSpan": 1,
+                                "componentStyle": null,
+                                "customEvents": [
+                                ],
+                                "customizationLayer": 0,
+                                "customizationLayerDescription": "ECU",
+                                "enabled": 4095,
+                                "include": 4095,
+                                "label": {
+                                    "customizationLayer": 0,
+                                    "customizationLayerDescription": "ECU",
+                                    "defaultValue": {
+                                        "$ref": "../../../../BUSIN/assets/languages/BUSIN.json#/BUSIN/LBL/DLB_BUSIN_TASAMNIMA_01508"
+                                    },
+                                    "hasI18N": true,
+                                    "i18N": "T",
+                                    "labelId": "DLB_BUSIN_TASAMNIMA_01508",
+                                    "moduleId": "BUSIN"
+                                },
+                                "maxRecords": null,
+                                "name": "MinimunRate",
+                                "options": 0,
+                                "order": 8,
+                                "readOnly": 8,
+                                "responsiveLayouts": null,
+                                "responsivity": false,
+                                "sizeWidthComposite": null,
+                                "style": null,
+                                "textRows": 0,
+                                "userControl": {
+                                    "type": "I",
+                                    "userControlId": "TextInputBox"
+                                },
+                                "visible": 4095,
+                                "visualAttributeId": "VA_IWSORCENIN8704_XMUT186",
+                                "width": null,
+                                "widthComposite": "D"
+                            }
+                        ]
+                    }
+                ],
+                "id": {
+                    "version": "1.0.0",
+                    "viewId": "VW_IWSORCENIN87"
+                },
+                "modules": [
+                    {
+                        "moduleId": "BUSIN"
+                    }
+                ],
+                "name": "ViewSourceFunding"
+            }
+        }
+    ]
+}

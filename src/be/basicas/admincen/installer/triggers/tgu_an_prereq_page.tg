@@ -1,0 +1,18 @@
+use cobis
+go
+if exists (select * from sysobjects where name = 'tgu_an_prereq_page')
+    drop trigger tgu_an_prereq_page
+go
+create trigger tgu_an_prereq_page
+on an_prereq_page
+for update
+as
+begin
+ 
+    if update(pp_pa_id) or update(pp_prereq)
+    begin
+        rollback transaction
+        print 'No se puede actualizar la clave'
+    end
+end
+go

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_horizontal_margin"
+    android:paddingBottom="@dimen/activity_horizontal_margin">
+
+    <include layout="@layout/layout_error"/>
+
+    <TextView
+        android:id="@+id/text_person_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:maxLines="2"
+        style="@style/TextAppearance.AppCompat.Subhead"
+        tools:text="Person name"
+        />
+
+    <TextView
+        android:id="@+id/text_validation_status"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="@dimen/control_padding"
+        android:textAppearance="@style/TextAppearance.AppCompat.Caption"
+        android:textStyle="bold"
+        tools:text="Validation Status"
+        />
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recycler_sections"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        />
+</LinearLayout>

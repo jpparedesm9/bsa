@@ -1,0 +1,272 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<procedure>
+  <database>cobis</database>
+  <name>sp_parametro</name>
+  <type>SYBASE</type>
+  <version>1</version>
+  <parameters>
+    <parameter name="@s_ssn" dataType="int" direction="in" />
+    <parameter name="@s_user" dataType="varchar" direction="in" />
+    <parameter name="@s_sesn" dataType="int" direction="in" />
+    <parameter name="@s_term" dataType="varchar" direction="in" />
+    <parameter name="@s_date" dataType="datetime" direction="in" />
+    <parameter name="@s_srv" dataType="varchar" direction="in" />
+    <parameter name="@s_lsrv" dataType="varchar" direction="in" />
+    <parameter name="@s_rol" dataType="smallint" direction="in" />
+    <parameter name="@s_ofi" dataType="smallint" direction="in" />
+    <parameter name="@s_org_err" dataType="char" direction="in" />
+    <parameter name="@s_error" dataType="int" direction="in" />
+    <parameter name="@s_sev" dataType="tinyint" direction="in" />
+    <parameter name="@s_msg" dataType="varchar" direction="in" />
+    <parameter name="@s_org" dataType="char" direction="in" />
+    <parameter name="@t_debug" dataType="char" direction="in" />
+    <parameter name="@t_file" dataType="varchar" direction="in" />
+    <parameter name="@t_from" dataType="varchar" direction="in" />
+    <parameter name="@t_trn" dataType="smallint" direction="in" />
+    <parameter name="@t_show_version" dataType="bit" direction="in" />
+    <parameter name="@i_operacion" dataType="char" direction="in" />
+    <parameter name="@i_modo" dataType="tinyint" direction="in" />
+    <parameter name="@i_parametro" dataType="varchar" direction="in" />
+    <parameter name="@i_nemonico" dataType="varchar" direction="in" />
+    <parameter name="@i_tipo" dataType="char" direction="in" />
+    <parameter name="@i_char" dataType="varchar" direction="in" />
+    <parameter name="@i_tinyint" dataType="tinyint" direction="in" />
+    <parameter name="@i_smallint" dataType="smallint" direction="in" />
+    <parameter name="@i_int" dataType="int" direction="in" />
+    <parameter name="@i_money" dataType="money" direction="in" />
+    <parameter name="@i_datetime" dataType="datetime" direction="in" />
+    <parameter name="@i_float" dataType="float" direction="in" />
+    <parameter name="@i_producto" dataType="char" direction="in" />
+    <parameter name="@i_formato_fecha" dataType="int" direction="in" />
+    <parameter name="@i_valor" dataType="varchar" direction="in" />
+    <parameter name="@i_criterio" dataType="tinyint" direction="in" />
+    <parameter name="@i_rowcount" dataType="smallint" direction="in" />
+  </parameters>
+  <queries>
+    <query>
+      <columns>
+        <column name="Nem¢nico " />
+        <column name="Producto  " />
+        <column name="Par metro " />
+        <column name="Valor Char" />
+        <column name="Valor Tinyint" />
+        <column name="Valor Smallint" />
+        <column name="Valor Int" />
+        <column name="Valor Money" />
+        <column name="Valor Float" />
+        <column name="Valor Datetime" />
+      </columns>
+      <queryText>SELECT  "Nem¢nico " = pa_nemonico,"Producto  " = pa_producto,"Par metro " = SUBSTRING (pa_parametro, 1, ?),"Valor Char" = pa_char,"Valor Tinyint" = pa_tinyint,"Valor Smallint" = pa_smallint,"Valor Int" = pa_int,"Valor Money" = pa_money,"Valor Float" = pa_float,"Valor Datetime" = CONVERT (CHAR (10),pa_datetime ,?) </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="Nem¢nico " />
+        <column name="Producto  " />
+        <column name="Par metro " />
+        <column name="Valor Char" />
+        <column name="Valor Tinyint" />
+        <column name="Valor Smallint" />
+        <column name="Valor Int" />
+        <column name="Valor Money" />
+        <column name="Valor Float" />
+        <column name="Valor Datetime" />
+      </columns>
+      <queryText>SELECT  "Nem¢nico " = pa_nemonico,"Producto  " = pa_producto,"Par metro " = SUBSTRING (pa_parametro, 1, ?),"Valor Char" = pa_char,"Valor Tinyint" = pa_tinyint,"Valor Smallint" = pa_smallint,"Valor Int" = pa_int,"Valor Money" = pa_money,"Valor Float" = pa_float,"Valor Datetime" = CONVERT (CHAR (10),pa_datetime ,?) </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="Nem¢nico" />
+        <column name="Producto" />
+        <column name="Par metro" />
+        <column name="Valor Char" />
+        <column name="Valor Tinyint" />
+        <column name="Valor Smallint" />
+        <column name="Valor Int" />
+        <column name="Valor Money" />
+        <column name="Valor Float" />
+        <column name="Valor Datetime" />
+      </columns>
+      <queryText>SELECT  "Nem¢nico" = pa_nemonico,"Producto" = pa_producto,"Par metro" = SUBSTRING (pa_parametro, 1, ?),"Valor Char" = pa_char,"Valor Tinyint" = pa_tinyint,"Valor Smallint" = pa_smallint,"Valor Int" = pa_int,"Valor Money" = pa_money,"Valor Float" = pa_float,"Valor Datetime" = CONVERT (CHAR (10),pa_datetime ,?) </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="Nem¢nico" />
+        <column name="Producto" />
+        <column name="Par metro" />
+        <column name="Valor Char" />
+        <column name="Valor Tinyint" />
+        <column name="Valor Smallint" />
+        <column name="Valor Int" />
+        <column name="Valor Money" />
+        <column name="Valor Float" />
+        <column name="Valor Datetime" />
+      </columns>
+      <queryText>SELECT  "Nem¢nico" = pa_nemonico,"Producto" = pa_producto,"Par metro" = SUBSTRING (pa_parametro, 1, ?),"Valor Char" = pa_char,"Valor Tinyint" = pa_tinyint,"Valor Smallint" = pa_smallint,"Valor Int" = pa_int,"Valor Money" = pa_money,"Valor Float" = pa_float,"Valor Datetime" = CONVERT (CHAR (10),pa_datetime ,?) </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="Nem¢nico" />
+        <column name="Producto" />
+        <column name="Par metro" />
+        <column name="Valor Char" />
+        <column name="Valor Tinyint" />
+        <column name="Valor Smallint" />
+        <column name="Valor Int" />
+        <column name="Valor Money" />
+        <column name="Valor Float" />
+        <column name="Valor Datetime" />
+      </columns>
+      <queryText>SELECT  "Nem¢nico" = pa_nemonico,"Producto" = pa_producto,"Par metro" = SUBSTRING (pa_parametro, 1, ?),"Valor Char" = pa_char,"Valor Tinyint" = pa_tinyint,"Valor Smallint" = pa_smallint,"Valor Int" = pa_int,"Valor Money" = pa_money,"Valor Float" = pa_float,"Valor Datetime" = CONVERT (CHAR (10),pa_datetime ,?) </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="Nem¢nico" />
+        <column name="Producto" />
+        <column name="Par metro" />
+        <column name="Valor Char" />
+        <column name="Valor Tinyint" />
+        <column name="Valor Smallint" />
+        <column name="Valor Int" />
+        <column name="Valor Money" />
+        <column name="Valor Float" />
+        <column name="Valor Datetime" />
+      </columns>
+      <queryText>SELECT  "Nem¢nico" = pa_nemonico,"Producto" = pa_producto,"Par metro" = SUBSTRING (pa_parametro, 1, ?),"Valor Char" = pa_char,"Valor Tinyint" = pa_tinyint,"Valor Smallint" = pa_smallint,"Valor Int" = pa_int,"Valor Money" = pa_money,"Valor Float" = pa_float,"Valor Datetime" = CONVERT (CHAR (10),pa_datetime ,?) </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="Nem¢nico" />
+        <column name="Producto" />
+        <column name="Par metro" />
+        <column name="Valor Char" />
+        <column name="Valor Tinyint" />
+        <column name="Valor Smallint" />
+        <column name="Valor Int" />
+        <column name="Valor Money" />
+        <column name="Valor Float" />
+        <column name="Valor Datetime" />
+      </columns>
+      <queryText>SELECT  "Nem¢nico" = pa_nemonico,"Producto" = pa_producto,"Par metro" = SUBSTRING (pa_parametro, 1, ?),"Valor Char" = pa_char,"Valor Tinyint" = pa_tinyint,"Valor Smallint" = pa_smallint,"Valor Int" = pa_int,"Valor Money" = pa_money,"Valor Float" = pa_float,"Valor Datetime" = CONVERT (CHAR (10),pa_datetime ,?) </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="Nem¢nico" />
+        <column name="Producto" />
+        <column name="Par metro" />
+        <column name="Valor Char" />
+        <column name="Valor Tinyint" />
+        <column name="Valor Smallint" />
+        <column name="Valor Int" />
+        <column name="Valor Money" />
+        <column name="Valor Float" />
+        <column name="Valor Datetime" />
+      </columns>
+      <queryText>SELECT  "Nem¢nico" = pa_nemonico,"Producto" = pa_producto,"Par metro" = SUBSTRING (pa_parametro, 1, ?),"Valor Char" = pa_char,"Valor Tinyint" = pa_tinyint,"Valor Smallint" = pa_smallint,"Valor Int" = pa_int,"Valor Money" = pa_money,"Valor Float" = pa_float,"Valor Datetime" = CONVERT (CHAR (10),pa_datetime ,?) </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="{1}" />
+      </columns>
+      <queryText>SELECT  pa_int </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="Nem¢nico" />
+        <column name="Par metro" />
+        <column name="Tipo" />
+        <column name="Valor Char" />
+        <column name="ValorTinyint" />
+        <column name="Valor Smallint" />
+        <column name="Valor Int" />
+        <column name="Valor Money" />
+        <column name="Valor Float" />
+        <column name="Valor Datetime" />
+        <column name="Cod.Prod." />
+        <column name="Des.Prod." />
+        <column name="Producto" />
+      </columns>
+      <queryText>SELECT  "Nem¢nico" = pa_nemonico,"Par metro" = pa_parametro,"Tipo" = pa_tipo,"Valor Char" = ISNULL (pa_char, " "),"ValorTinyint" = ISNULL (pa_tinyint, 0),"Valor Smallint" = ISNULL (pa_smallint, 0),"Valor Int" = ISNULL (pa_int, 0),"Valor Money" = ISNULL (pa_money, 0.0),"Valor Float" = ISNULL (pa_float, 0.0),"Valor Datetime" = pa_datetime,"Cod.Prod." = pd_producto,"Des.Prod." = pd_descripcion,"Producto" = pa_producto </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="Parametro" />
+        <column name=" Tipo" />
+        <column name="Valor" />
+      </columns>
+      <queryText>SELECT w_parametro, w_tipo, w_valor_parametro</queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="Nem¢nico" />
+        <column name="Par metro" />
+        <column name="Tipo" />
+        <column name="Valor Char" />
+        <column name="ValorTinyint" />
+        <column name="Valor Smallint" />
+        <column name="Valor Int" />
+        <column name="Valor Money" />
+        <column name="Valor Float" />
+        <column name="Valor Datetime" />
+        <column name="Cod.Prod." />
+        <column name="Des.Prod." />
+        <column name="Producto" />
+      </columns>
+      <queryText>SELECT  "Nem¢nico" = pa_nemonico,"Par metro" = pa_parametro,"Tipo" = pa_tipo,"Valor Char" = ISNULL (pa_char, " "),"ValorTinyint" = ISNULL (pa_tinyint, 0),"Valor Smallint" = ISNULL (pa_smallint, 0),"Valor Int" = ISNULL (pa_int, 0),"Valor Money" = ISNULL (pa_money, 0.0),"Valor Float" = ISNULL (pa_float, 0.0),"Valor Datetime" = pa_datetime,"Cod.Prod." = pd_producto,"Des.Prod." = pd_descripcion,"Producto" = pa_producto </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="Nemonico" />
+        <column name="Producto" />
+        <column name="Parametro" />
+        <column name="Valor Char" />
+        <column name="Valor Tinyint" />
+        <column name="Valor Smallint" />
+        <column name="Valor Int" />
+        <column name="Valor Money" />
+        <column name="Valor Float" />
+        <column name="Valor Datetime" />
+        <column name="Tipo Dato" />
+      </columns>
+      <queryText>SELECT  "Nemonico" = pa_nemonico,"Producto" = pa_producto,"Parametro" = CONVERT (VARCHAR,pa_parametro ),"Valor Char" = pa_char,"Valor Tinyint" = pa_tinyint,"Valor Smallint" = pa_smallint,"Valor Int" = pa_int,"Valor Money" = pa_money,"Valor Float" = pa_float,"Valor Datetime" = pa_datetime,"Tipo Dato" = pa_tipo </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="Nemonico" />
+        <column name="Producto" />
+        <column name="Parametro" />
+        <column name="Valor Char" />
+        <column name="Valor Tinyint" />
+        <column name="Valor Smallint" />
+        <column name="Valor Int" />
+        <column name="Valor Money" />
+        <column name="Valor Float" />
+        <column name="Valor Datetime" />
+        <column name="Tipo Dato" />
+      </columns>
+      <queryText>SELECT  "Nemonico" = pa_nemonico,"Producto" = pa_producto,"Parametro" = CONVERT (VARCHAR,pa_parametro ),"Valor Char" = pa_char,"Valor Tinyint" = pa_tinyint,"Valor Smallint" = pa_smallint,"Valor Int" = pa_int,"Valor Money" = pa_money,"Valor Float" = pa_float,"Valor Datetime" = pa_datetime,"Tipo Dato" = pa_tipo </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="Nemonico" />
+        <column name="Producto" />
+        <column name="Parametro" />
+        <column name="Valor Char" />
+        <column name="Valor Tinyint" />
+        <column name="Valor Smallint" />
+        <column name="Valor Int" />
+        <column name="Valor Money" />
+        <column name="Valor Float" />
+        <column name="Valor Datetime" />
+        <column name="Tipo Dato" />
+      </columns>
+      <queryText>SELECT  "Nemonico" = pa_nemonico,"Producto" = pa_producto,"Parametro" = pa_parametro,"Valor Char" = pa_char,"Valor Tinyint" = pa_tinyint,"Valor Smallint" = pa_smallint,"Valor Int" = pa_int,"Valor Money" = pa_money,"Valor Float" = pa_float,"Valor Datetime" = pa_datetime,"Tipo Dato" = pa_tipo </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="Nemonico" />
+        <column name="ValorParametro" />
+      </columns>
+      <queryText></queryText>
+    </query>
+  </queries>
+</procedure>

@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<procedure>
+  <database>cob_cartera</database>
+  <name>sp_datocab_operacion</name>
+  <type>SYBASE</type>
+  <version>1</version>
+  <parameters>
+    <parameter name="@i_banco" dataType="varchar" direction="in" />
+    <parameter name="@i_formato_fecha" dataType="smallint" direction="in" />
+  </parameters>
+  <queries>
+    <query>
+      <columns>
+        <column name="op_toperacion" />
+        <column name="linea" />
+        <column name="op_oficina" />
+        <column name="oficina" />
+        <column name="op_banco" />
+        <column name="op_operacion" />
+        <column name="moneda" />
+        <column name="op_oficial" />
+        <column name="op_monto" />
+        <column name="op_cliente" />
+        <column name="op_nombre" />
+        <column name="en_tipo_ced" />
+        <column name="en_ced_ruc" />
+        <column name="op_estado" />
+        <column name="es_descripcion" />
+        <column name="fecha_ini" />
+        <column name="fecha_venc" />
+        <column name="fecha_venc_cuota" />
+        <column name="exigible" />
+        <column name="proxima_cuota" />
+        <column name="tasa_efec_anual" />
+      </columns>
+      <queryText>SELECT  "op_toperacion" = op_toperacion,"linea" = (SELECT  c.valor FROM cobis..cl_tabla t  ,cobis..cl_catalogo c   WHERE t.codigo = c.tabla AND t.tabla = "ca_toperacion" AND c.codigo = o.op_toperacion     ),"op_oficina" = op_oficina,"oficina" = (SELECT  of_nombre FROM cobis..cl_oficina   WHERE of_oficina = o.op_oficina     ),"op_banco" = op_banco,"op_operacion" = op_operacion,"moneda" = (SELECT  c.valor FROM cobis..cl_tabla t  ,cobis..cl_catalogo c   WHERE t.codigo = c.tabla AND t.tabla = "cl_moneda" AND c.codigo = CONVERT (CHAR (10),o.op_moneda )     ),"op_oficial" = (SELECT  f.fu_nombre FROM cobis..cc_oficial ofi  ,cobis..cl_funcionario f   WHERE ofi.oc_funcionario = f.fu_funcionario AND ofi.oc_oficial = o.op_oficial     ),"op_monto" = op_monto,"op_cliente" = op_cliente,"op_nombre" = op_nombre,"en_tipo_ced" = (SELECT  en_tipo_ced FROM cobis..cl_ente   WHERE en_ente = o.op_cliente     ),"en_ced_ruc" = (SELECT  en_ced_ruc FROM cobis..cl_ente   WHERE en_ente = o.op_cliente     ),"op_estado" = op_estado,"es_descripcion" = (SELECT  es_descripcion FROM cob_cartera..ca_estado   WHERE es_codigo = o.op_estado     ),"fecha_ini" = op_fecha_ini,"fecha_venc" = op_fecha_fin,"fecha_venc_cuota" = ?,"exigible" = ?,"proxima_cuota" = ?,"tasa_efec_anual" = (SELECT  SUM (ro_porcentaje_efa) FROM cob_cartera..ca_rubro_op   WHERE ro_operacion = o.op_operacion AND ro_tipo_rubro = "I"     ) </queryText>
+    </query>
+  </queries>
+</procedure>

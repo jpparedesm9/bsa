@@ -1,0 +1,80 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<procedure>
+  <database>cob_cartera</database>
+  <name>sp_retencion</name>
+  <type>SQLSERVER</type>
+  <version>1</version>
+  <parameters>
+    <parameter name="@s_user" dataType="varchar" direction="in" />
+    <parameter name="@s_term" dataType="varchar" direction="in" />
+    <parameter name="@s_date" dataType="datetime" direction="in" />
+    <parameter name="@s_sesn" dataType="int" direction="in" />
+    <parameter name="@s_ofi" dataType="smallint" direction="in" />
+    <parameter name="@i_operacion" dataType="char" direction="in" />
+    <parameter name="@i_concepto" dataType="varchar" direction="in" />
+    <parameter name="@i_categoria" dataType="varchar" direction="in" />
+    <parameter name="@i_descripcion" dataType="varchar" direction="in" />
+    <parameter name="@i_retencion" dataType="tinyint" direction="in" />
+    <parameter name="@i_desembolso" dataType="char" direction="in" />
+    <parameter name="@i_pago" dataType="char" direction="in" />
+    <parameter name="@i_cod_valor" dataType="smallint" direction="in" />
+    <parameter name="@i_pago_aut" dataType="char" direction="in" />
+    <parameter name="@i_moneda" dataType="tinyint" direction="in" />
+    <parameter name="@i_atx" dataType="char" direction="in" />
+    <parameter name="@i_pcobis" dataType="tinyint" direction="in" />
+    <parameter name="@i_producto_reversa" dataType="varchar" direction="in" />
+    <parameter name="@i_afectacion" dataType="char" direction="in" />
+    <parameter name="@i_producto" dataType="varchar" direction="in" />
+    <parameter name="@i_estado" dataType="char" direction="in" />
+    <parameter name="@i_act_pas" dataType="char" direction="in" />
+    <parameter name="@i_Sbancarios" dataType="int" direction="in" />
+    <parameter name="@i_canal" dataType="varchar" direction="in" />
+  </parameters>
+  <queries>
+    <query>
+      <columns>
+        <column name="PRODUCTO" />
+        <column name="DESCRIPCION" />
+        <column name="CATEGORIA" />
+        <column name="DESEMBOLSO" />
+        <column name="PAGO" />
+        <column name="DIAS RETENCION" />
+        <column name="CODIGO VALOR" />
+        <column name="PAGO AUT." />
+        <column name="MONEDA" />
+        <column name="PAGO ATX " />
+        <column name="DESC. MONEDA" />
+        <column name="PCOBIS" />
+        <column name="DESC. PCOBIS" />
+        <column name="PROD.REVERSA" />
+        <column name="AFECTACION" />
+        <column name="ACTIVA/PASIVA" />
+        <column name="ESTADO" />
+        <column name="INSTRUM.SBanc" />
+        <column name="DESCRIP.SBanc" />
+        <column name="CANAL" />
+        <column name="DESCRIPCANAL" />
+      </columns>
+      <queryText>SELECT  "PRODUCTO" = cp_producto,"DESCRIPCION" = CONVERT (VARCHAR (255),cob_cartera..ca_producto.cp_descripcion ),"CATEGORIA" = cp_categoria,"DESEMBOLSO" = cp_desembolso,"PAGO" = cp_pago,"DIAS RETENCION" = cp_retencion,"CODIGO VALOR" = cp_codvalor,"PAGO AUT." = cp_pago_aut,"MONEDA" = cp_moneda,"PAGO ATX " = cp_atx,"DESC. MONEDA" = SUBSTRING (mo_descripcion, 1, 20),"PCOBIS" = cp_pcobis,"DESC. PCOBIS" = SUBSTRING (pd_descripcion, 1, 20),"PROD.REVERSA" = cp_producto_reversa,"AFECTACION" = cp_afectacion,"ACTIVA/PASIVA" = cp_act_pas,"ESTADO" = cp_estado,"INSTRUM.SBanc" = cp_instrum_SB,"DESCRIP.SBanc" = "","CANAL" = cp_canal,"DESCRIPCANAL" = " " </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="{1}" />
+        <column name="{2}" />
+        <column name="{3}" />
+        <column name="{4}" />
+        <column name="{5}" />
+        <column name="{6}" />
+        <column name="{7}" />
+        <column name="{8}" />
+        <column name="{9}" />
+        <column name="{10}" />
+        <column name="{11}" />
+        <column name="{12}" />
+        <column name="{13}" />
+        <column name="{14}" />
+      </columns>
+      <queryText>SELECT  cp_producto,cp_descripcion,cp_desembolso,cp_pago,cp_retencion,cp_codvalor,cp_pago_aut,cp_moneda,cp_atx,mo_descripcion,cp_afectacion,cp_estado,cp_act_pas,cp_instrum_SB </queryText>
+    </query>
+  </queries>
+</procedure>

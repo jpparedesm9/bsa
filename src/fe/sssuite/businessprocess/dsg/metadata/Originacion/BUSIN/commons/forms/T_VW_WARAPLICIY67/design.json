@@ -1,0 +1,383 @@
+{
+  "id": {
+    "moduleId": "BUSIN",
+    "subModuleId": "commons",
+    "taskId": "T_VW_WARAPLICIY67",
+    "version": "1.0.0"
+  },
+  "name": {
+    "$ref": "../../../../BUSIN/relations/componentKeys.json#/commons/Forms/T_VW_WARAPLICIY67/name"
+  },
+  "modeEnabled": 4095,
+  "tempSaveStr": "F",
+  "autoCrudStr": "F",
+  "mainViewContainerId": "VC_VW_WARAPLICIY67",
+  "customizationLayer": 0,
+  "customizationLayerDescription": "ECU",
+  "viewContainers": [
+    {
+      "id": {
+        "moduleId": "BUSIN",
+        "subModuleId": "commons",
+        "taskId": "T_VW_WARAPLICIY67",
+        "viewContainerId": "VC_VW_WARAPLICIY67",
+        "taskVersion": "1.0.0"
+      },
+      "name": "F_WarrantyPolicies",
+      "description": " ",
+      "layoutType": "Group",
+      "order": 0,
+      "options": 0,
+      "collapsedStr": "F",
+      "enabled": 4095,
+      "customizationLayer": 0,
+      "customizationLayerDescription": "ECU",
+      "columnsNum": 1,
+      "colSpan": 1,
+      "collapsed": false,
+      "view": {
+        "id": {
+          "viewId": "VW_WARAPLICIY67",
+          "version": "1.0.0"
+        },
+        "description": "Vista para las polizas de una garantia",
+        "name": "WarrantyPolicies",
+        "customizationLayer": 0,
+        "customizationLayerDescription": "ECU",
+        "groups": [
+          {
+            "groupId": "GR_WARAPLICIY67_02",
+            "refViewId": "VW_WARAPLICIY67",
+            "refViewVersion": "1.0.0",
+            "collapsedStr": "F",
+            "columnsNum": 1,
+            "layoutType": "Group",
+            "enabled": 4095,
+            "visible": 4095,
+            "name": "[Grupo Sin Nombre]",
+            "order": 0,
+            "customizationLayer": 0,
+            "customizationLayerDescription": "ECU",
+            "queryView": {
+              "queryViewId": "QV_ERWRL4097_89",
+              "deleteCommandEnabledStr": "T",
+              "insertCommandEnabledStr": "T",
+              "editCommandEnabledStr": "T",
+              "confirmRowDeletionStr": "T",
+              "multiSelectEnabledStr": "S",
+              "rowCommandAppearance": 0,
+              "editMode": "3",
+              "allowSortingStr": "F",
+              "allowPagingStr": "F",
+              "pageSize": 5,
+              "name": "GrdWarrantyPolicies",
+              "customizationLayer": 0,
+              "customizationLayerDescription": "ECU",
+              "dialogTitleLabelId": "DLB_BUSIN_POLICYXKX_68098",
+              "hasDetailString": "F",
+              "options": 2304,
+              "modalSize": "lg",
+              "hasDetail": false,
+              "query": {
+                "$ref": "../../../../BUSIN/FLCRE/queries/Q_ERWRLCIE_4097.json#"
+              },
+              "queryId": "Q_ERWRLCIE_4097",
+              "queryVersion": "1.0.0",
+              "userControl": {
+                "userControlId": "Grid",
+                "description": "Designer Grid",
+                "customizationLayer": 0,
+                "customizationLayerDescription": "ECU",
+                "type": "I",
+                "name": "Designer Grid"
+              },
+              "moduleIdDialog": "BUSIN",
+              "subModuleIdDialog": "FLCRE",
+              "taskIdDialog": "T_FLCRE_76_CRNTO32",
+              "viewContainerIdDialog": "VC_CRNTO32_RRNYM_717",
+              "taskVersionDialog": "1.0.0",
+              "queryViewCustomActions": [
+                {
+                  "executionType": 1,
+                  "customActionId": "CEQV_207_QV_ERWRL4097_89_801",
+                  "enabled": "T",
+                  "name": "BeforeEnterLine",
+                  "customizationLayer": 0,
+                  "customizationLayerDescription": "ECU",
+                  "commandType": 0,
+                  "queryViewEventType": {
+                    "eventId": 207,
+                    "name": "BeforeEnterInLineRow",
+                    "description": "Se ejecuta antes de la edición o inserción en linea de la grilla."
+                  },
+                  "thereAnServerEvent": false,
+                  "thereAnClientEvent": true,
+                  "thereAnCallbackEvent": false
+                },
+                {
+                  "executionType": 1,
+                  "customActionId": "CEQV_204_QV_ERWRL4097_89_785",
+                  "enabled": "T",
+                  "name": "PolicyDeleting",
+                  "customizationLayer": 0,
+                  "customizationLayerDescription": "ECU",
+                  "commandType": 0,
+                  "queryViewEventType": {
+                    "eventId": 204,
+                    "name": "RowDeleting",
+                    "description": "Se ejecuta antes de que los datos eliminados en una grilla sean comprometidos."
+                  },
+                  "thereAnServerEvent": false,
+                  "thereAnClientEvent": true,
+                  "thereAnCallbackEvent": false
+                },
+                {
+                  "executionType": 1,
+                  "customActionId": "CEQV_208_QV_ERWRL4097_89_765",
+                  "enabled": "T",
+                  "name": "RowSelecting",
+                  "customizationLayer": 0,
+                  "customizationLayerDescription": "ECU",
+                  "commandType": 0,
+                  "queryViewEventType": {
+                    "eventId": 208,
+                    "name": "RowSelecting",
+                    "description": "Se ejecuta antes de que los datos modificados en una grilla sean comprometidos."
+                  },
+                  "thereAnServerEvent": false,
+                  "thereAnClientEvent": true,
+                  "thereAnCallbackEvent": false
+                }
+              ],
+              "typeFormDialog": "forms",
+              "deleteCommandEnabled": true,
+              "insertCommandEnabled": true,
+              "editCommandEnabled": true,
+              "confirmRowDeletion": true,
+              "allowSorting": false,
+              "allowPaging": false,
+              "includeQueryMembers": [
+                "AT_WRA629UEIC78",
+                "AT_WRA629NSNE69",
+                "AT_WRA629EERN75"
+              ],
+              "entityName": "WarrantyPoliciy",
+              "customEvents": [],
+              "actions": [
+                "Create",
+                "Update",
+                "Delete"
+              ]
+            },
+            "queryViewId": "QV_ERWRL4097_89",
+            "colSpan": 1,
+            "orientation": "V",
+            "entity": {
+              "$ref": "../../../../BUSIN/entities/EN_WRANTYPIY629.json#"
+            },
+            "visualAttributes": [
+              {
+                "visualAttributeId": "VA_WARAPLICIY6702_UEIC089",
+                "colSpan": 1,
+                "enabled": 4095,
+                "order": 0,
+                "queryVersion": " ",
+                "readOnly": 8,
+                "rowSpan": 0,
+                "visible": 4095,
+                "textRows": 0,
+                "name": "numberPolicy",
+                "customizationLayer": 0,
+                "customizationLayerDescription": "ECU",
+                "attributeValidations": [
+                  {
+                    "id": "VV_WARAPLICIY6702_UEIC089_64",
+                    "regularExpression": "^[a-zA-Z\\d_]{1,20}$",
+                    "compareOperator": 0,
+                    "customizationLayer": 0,
+                    "customizationLayerDescription": "ECU",
+                    "visualValidationType": {
+                      "visualValidationId": "RegularExpression",
+                      "description": "Regula Expression Validation"
+                    },
+                    "validateMessageLabel": {
+                      "labelId": "DLB_BUSIN_IGLETSUES_62052",
+                      "defaultValue": {
+                        "$ref": "../../../../BUSIN/assets/languages/BUSIN.json#/BUSIN/MSG/DLB_BUSIN_IGLETSUES_62052"
+                      },
+                      "hasI18N": true,
+                      "moduleId": "BUSIN",
+                      "customizationLayer": 0,
+                      "customizationLayerDescription": "ECU",
+                      "i18N": "T"
+                    }
+                  }
+                ],
+                "attribute": {
+                  "$ref": "../../../../BUSIN/entities/EN_WRANTYPIY629.json#/attributes/AT_WRA629UEIC78"
+                },
+                "label": {
+                  "labelId": "DLB_BUSIN_OLCYNUMBE_44906",
+                  "defaultValue": {
+                    "$ref": "../../../../BUSIN/assets/languages/BUSIN.json#/BUSIN/LBL/DLB_BUSIN_OLCYNUMBE_44906"
+                  },
+                  "hasI18N": true,
+                  "moduleId": "BUSIN",
+                  "customizationLayer": 0,
+                  "customizationLayerDescription": "ECU",
+                  "i18N": "T"
+                },
+                "userControl": {
+                  "userControlId": "TextInputBox",
+                  "description": "Designer TextBox",
+                  "customizationLayer": 0,
+                  "customizationLayerDescription": "ECU",
+                  "type": "I",
+                  "name": "Designer TextBox"
+                },
+                "cacheDuration": 0,
+                "options": 0,
+                "elementColumnSpan": 1,
+                "elementId": "VA_WARAPLICIY6702_UEIC089",
+                "customEvents": [],
+                "aggregateId": null,
+                "aggregate": null,
+                "width": null,
+                "style": null,
+                "componentStyle": null,
+                "include": 4095,
+                "responsiveLayouts": null,
+                "responsivity": false
+              },
+              {
+                "visualAttributeId": "VA_WARAPLICIY6702_NSNE315",
+                "colSpan": 1,
+                "enabled": 4095,
+                "order": 1,
+                "queryVersion": " ",
+                "readOnly": 8,
+                "rowSpan": 0,
+                "visible": 4095,
+                "textRows": 0,
+                "name": "insurance",
+                "customizationLayer": 0,
+                "customizationLayerDescription": "ECU",
+                "attribute": {
+                  "$ref": "../../../../BUSIN/entities/EN_WRANTYPIY629.json#/attributes/AT_WRA629NSNE69"
+                },
+                "label": {
+                  "labelId": "DLB_BUSIN_AGRORCDGO_54252",
+                  "defaultValue": {
+                    "$ref": "../../../../BUSIN/assets/languages/BUSIN.json#/BUSIN/LBL/DLB_BUSIN_AGRORCDGO_54252"
+                  },
+                  "hasI18N": true,
+                  "moduleId": "BUSIN",
+                  "customizationLayer": 0,
+                  "customizationLayerDescription": "ECU",
+                  "i18N": "T"
+                },
+                "userControl": {
+                  "userControlId": "TextInputBox",
+                  "description": "Designer TextBox",
+                  "customizationLayer": 0,
+                  "customizationLayerDescription": "ECU",
+                  "type": "I",
+                  "name": "Designer TextBox"
+                },
+                "cacheDuration": 0,
+                "options": 0,
+                "elementColumnSpan": 1,
+                "elementId": "VA_WARAPLICIY6702_NSNE315",
+                "customEvents": [],
+                "aggregateId": null,
+                "aggregate": null,
+                "width": null,
+                "style": null,
+                "componentStyle": null,
+                "include": 4095,
+                "responsiveLayouts": null,
+                "responsivity": false,
+                "attributeValidations": []
+              },
+              {
+                "visualAttributeId": "VA_WARAPLICIY6702_EERN636",
+                "colSpan": 1,
+                "enabled": 4095,
+                "order": 2,
+                "queryVersion": " ",
+                "readOnly": 8,
+                "rowSpan": 0,
+                "visible": 4095,
+                "textRows": 0,
+                "name": "insuranceDescription",
+                "customizationLayer": 0,
+                "customizationLayerDescription": "ECU",
+                "attribute": {
+                  "$ref": "../../../../BUSIN/entities/EN_WRANTYPIY629.json#/attributes/AT_WRA629EERN75"
+                },
+                "label": {
+                  "labelId": "DLB_BUSIN_ASEGURAOA_80576",
+                  "defaultValue": {
+                    "$ref": "../../../../BUSIN/assets/languages/BUSIN.json#/BUSIN/LBL/DLB_BUSIN_ASEGURAOA_80576"
+                  },
+                  "hasI18N": true,
+                  "moduleId": "BUSIN",
+                  "customizationLayer": 0,
+                  "customizationLayerDescription": "ECU",
+                  "i18N": "T"
+                },
+                "userControl": {
+                  "userControlId": "TextInputBox",
+                  "description": "Designer TextBox",
+                  "customizationLayer": 0,
+                  "customizationLayerDescription": "ECU",
+                  "type": "I",
+                  "name": "Designer TextBox"
+                },
+                "cacheDuration": 0,
+                "options": 0,
+                "elementColumnSpan": 1,
+                "elementId": "VA_WARAPLICIY6702_EERN636",
+                "customEvents": [],
+                "aggregateId": null,
+                "aggregate": null,
+                "width": null,
+                "style": null,
+                "componentStyle": null,
+                "include": 4095,
+                "responsiveLayouts": null,
+                "responsivity": false,
+                "attributeValidations": []
+              }
+            ],
+            "independentValidation": "F",
+            "htmlSection": false,
+            "eventType": 0,
+            "numberOfColumnsInContainer": 1,
+            "elementColumnSpan": 1,
+            "collapsed": false,
+            "elementId": "GR_WARAPLICIY67_02",
+            "style": null,
+            "customEvents": []
+          }
+        ],
+        "modules": [
+          {
+            "moduleId": "BUSIN"
+          }
+        ],
+        "module": {
+          "moduleId": "BUSIN"
+        }
+      },
+      "numberOfColumnsInContainer": 1,
+      "elementColumnSpan": 1,
+      "elementId": "VC_VW_WARAPLICIY67",
+      "customEvents": []
+    }
+  ],
+  "tempSave": false,
+  "autoCrud": false,
+  "isImported": true,
+  "commands": []
+}

@@ -1,0 +1,104 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<procedure>
+  <database>cob_cartera</database>
+  <name>sp_tcca_segcred</name>
+  <type>SYBASE</type>
+  <version>1</version>
+  <parameters>
+    <parameter name="@i_operacion" dataType="char" direction="in" />
+    <parameter name="@i_tipo_car" dataType="varchar" direction="in" />
+    <parameter name="@i_seg_cred" dataType="varchar" direction="in" />
+    <parameter name="@i_val_min" dataType="money" direction="in" />
+    <parameter name="@i_val_max" dataType="money" direction="in" />
+    <parameter name="@i_programa" dataType="varchar" direction="in" />
+    <parameter name="@i_modo" dataType="tinyint" direction="in" />
+    <parameter name="@i_valor_maximo_sis_fin" dataType="money" direction="in" />
+    <parameter name="@i_valor_max_m2" dataType="money" direction="in" />
+    <parameter name="@i_valor_max_viv" dataType="money" direction="in" />
+  </parameters>
+  <queries>
+    <query>
+      <columns>
+        <column name="Tipo Cartera" />
+        <column name="Des.Cartera" />
+        <column name="Seg.Credito" />
+        <column name="Des.Segmento" />
+        <column name="Valor Minimo" />
+        <column name="Valor Maximo" />
+        <column name="Programa" />
+        <column name="Valor Maximo Sis Financiero" />
+        <column name="Valor Max m2" />
+        <column name="Valor Max Vivienda" />
+      </columns>
+      <queryText>SELECT  "Tipo Cartera" = st_tipo_cca,"Des.Cartera" = (SELECT  valor FROM cobis..cl_catalogo y  ,cobis..cl_tabla t   WHERE t.tabla = "ca_tipo_cartera" AND y.tabla = t.codigo AND y.codigo = a.st_tipo_cca     ),"Seg.Credito" = st_seg_cred,"Des.Segmento" = (SELECT  valor FROM cobis..cl_catalogo y  ,cobis..cl_tabla t   WHERE t.tabla = "ca_segmento_credito" AND y.tabla = t.codigo AND y.codigo = a.st_seg_cred     ),"Valor Minimo" = st_valor_minimo,"Valor Maximo" = st_valor_maximo,"Programa" = st_programa,"Valor Maximo Sis Financiero" = st_valor_maximo_sis_fin,"Valor Max m2" = st_valor_max_m2,"Valor Max Vivienda" = st_valor_max_viv </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="{1}" />
+      </columns>
+      <queryText>SELECT 20</queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="Tipo Cartera" />
+        <column name="Des.Cartera" />
+        <column name="Seg.Credito" />
+        <column name="Des.Segmento" />
+        <column name="Valor Minimo" />
+        <column name="Valor Maximo" />
+        <column name="Programa" />
+        <column name="Valor Maximo Sis Financiero" />
+        <column name="Valor Max m2" />
+        <column name="Valor Max Vivienda" />
+      </columns>
+      <queryText>SELECT  "Tipo Cartera" = st_tipo_cca,"Des.Cartera" = (SELECT  valor FROM cobis..cl_catalogo y  ,cobis..cl_tabla t   WHERE t.tabla = "ca_tipo_cartera" AND y.tabla = t.codigo AND y.codigo = a.st_tipo_cca     ),"Seg.Credito" = st_seg_cred,"Des.Segmento" = (SELECT  valor FROM cobis..cl_catalogo y  ,cobis..cl_tabla t   WHERE t.tabla = "ca_segmento_credito" AND y.tabla = t.codigo AND y.codigo = a.st_seg_cred     ),"Valor Minimo" = st_valor_minimo,"Valor Maximo" = st_valor_maximo,"Programa" = st_programa,"Valor Maximo Sis Financiero" = st_valor_maximo_sis_fin,"Valor Max m2" = st_valor_max_m2,"Valor Max Vivienda" = st_valor_max_viv </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="{1}" />
+      </columns>
+      <queryText>SELECT 20</queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="{1}" />
+        <column name="{2}" />
+        <column name="{3}" />
+        <column name="{4}" />
+        <column name="{5}" />
+        <column name="{6}" />
+        <column name="{7}" />
+        <column name="{8}" />
+        <column name="{9}" />
+        <column name="{10}" />
+      </columns>
+      <queryText>SELECT w_tipo_car, w_det_tipocar, w_seg_cred, w_des_segcred, w_val_min, w_val_max, w_programa, w_valor_maximo_sis_fin, w_valor_max_m2, w_valor_max_viv</queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="Seg.Credito" />
+        <column name="Des.Segmento" />
+      </columns>
+      <queryText>SELECT  "Seg.Credito" = st_seg_cred,"Des.Segmento" = (SELECT  valor FROM cobis..cl_catalogo y  ,cobis..cl_tabla t   WHERE t.tabla = "ca_segmento_credito" AND y.tabla = t.codigo AND y.codigo = a.st_seg_cred     ) </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="Seg.Credito" />
+        <column name="Des.Segmento" />
+      </columns>
+      <queryText>SELECT  "Seg.Credito" = b.codigo,"Des.Segmento" = b.valor </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="Des.Segmento" />
+      </columns>
+      <queryText>SELECT  "Des.Segmento" = (SELECT  valor FROM cobis..cl_catalogo y  ,cobis..cl_tabla t   WHERE t.tabla = "ca_segmento_credito" AND y.tabla = t.codigo AND y.codigo = a.st_seg_cred     ) </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="Des.Segmento" />
+      </columns>
+      <queryText>SELECT  "Des.Segmento" = b.valor </queryText>
+    </query>
+  </queries>
+</procedure>

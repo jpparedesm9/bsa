@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<serviceClass name="ReadHolidays" nsBase="COBISCorp.eCOBIS.Loan" namespace="COBISCorp.eCOBIS.Loan.Service" package="cobiscorp.ecobis.loan.service" ns="http://service.loan.ecobis.cobiscorp" module="Loan" productName="COBISCorp.eCOBIS.Loan.Service" productVersion="2.0.0.0">
+  <productProperties>
+    <property name="MavenGroupId" value="com.cobiscorp.processapi" />
+    <property name="MavenArtifactId" value="COBISCorp.eCOBIS.Loan.Service" />
+    <property name="MavenVersion" value="2.0.0.0" />
+  </productProperties>
+  <partialClass name="ReadHolidays">
+    <services>
+      <service id="Loan.ReadHolidays.GetHolidays" netName="GetHolidays" javaName="getHolidays" mappingType="STORED_PROCEDURE" mapId="dce8af15f064d1accb98887a21029b08">
+        <SRVMapping name="cob_credito..sp_feriados_tamortizacion" trnCode="537">
+          <DTOs>
+            <DTO direction="in" name="HolidayRequest" alias="inHolidayRequest" namespace="COBISCorp.eCOBIS.Loan.DTO" package="cobiscorp.ecobis.loan.dto" ns="http://dto.loan.ecobis.cobiscorp" required="true" />
+            <DTO direction="out" name="HolidayResponseList" alias="outHolidayResponseList" namespace="COBISCorp.eCOBIS.Loan.DTO" package="cobiscorp.ecobis.loan.dto" ns="http://dto.loan.ecobis.cobiscorp" required="true">
+              <properties>
+                <property name="holidays" propertyNet="Holidays" propertyJava="holidays" setterJavaMethod="setHolidays" getterJavaMethod="getHolidays" xsdType="Array" netType="HolidayResponse[]" javaType="HolidayResponse[]" cobisMapping="" isInherit="false" isComplexType="true" isCollectionType="true" required="true" encrypted="false" maxLength="0" XSDElementType="HolidayResponse" netElementType="HolidayResponse" javaElementType="HolidayResponse" />
+              </properties>
+            </DTO>
+            <DTO direction="return" name="HolidayResponse" alias="returnHolidayResponse" namespace="COBISCorp.eCOBIS.Loan.DTO" package="cobiscorp.ecobis.loan.dto" ns="http://dto.loan.ecobis.cobiscorp" required="true">
+              <properties>
+                <property name="holidayDate" propertyNet="HolidayDate" propertyJava="holidayDate" setterJavaMethod="setHolidayDate" getterJavaMethod="getHolidayDate" xsdType="dateTime" netType="DateTime" javaType="java.util.Calendar" cobisMapping="" isInherit="false" isComplexType="false" isCollectionType="false" required="true" encrypted="false" maxLength="0" />
+              </properties>
+            </DTO>
+          </DTOs>
+          <parameterMappings>
+            <parameter name="@i_operacion" direction="in" mappingDirection="in" dataType="varchar" CTSDataType="SQLVARCHAR" JavaSQLType="VARCHAR" mappingType="CONSTANT" allowNull="false" contantValue="Q" />
+            <parameter name="@i_oficina" direction="in" mappingDirection="in" dataType="int" CTSDataType="SQLINT4" JavaSQLType="INTEGER" mappingType="DTO" allowNull="false" DTOAlias="inHolidayRequest" DTOPropertyName="office" />
+          </parameterMappings>
+          <resultMappings>
+            <result>
+              <DTOResult DTOAlias="returnHolidayResponse" MapReturn="true">
+                <columnMapping position="0" name="df_fecha" DTOPropertyName="holidayDate" DataType="dateTime" Format="" />
+              </DTOResult>
+            </result>
+          </resultMappings>
+          <MappingProperties />
+        </SRVMapping>
+      </service>
+    </services>
+  </partialClass>
+</serviceClass>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="Windows-1252"?>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="CreacionLCR">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="Tramite" maxOccurs="unbounded" minOccurs="0">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element type="xs:int" name="nc_tramite"/>
+              <xs:element type="xs:string" name="nc_fecha_reg"/>
+              <xs:element type="xs:int" name="nc_cliente"/>
+              <xs:element type="xs:string" name="nc_nombre"/>
+              <xs:element type="xs:string" name="nc_apellido_paterno"/>
+              <xs:element type="xs:string" name="nc_apellido_materno"/>
+              <xs:element type="xs:string" name="nc_correo"/>
+              <xs:element type="xs:string" name="nc_digito"/>
+              <xs:element type="xs:string" name="nc_estado"/>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

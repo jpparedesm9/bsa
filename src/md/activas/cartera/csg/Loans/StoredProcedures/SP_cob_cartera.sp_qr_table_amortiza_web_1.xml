@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<procedure>
+  <database>cob_cartera</database>
+  <name>sp_qr_table_amortiza_web</name>
+  <type>SQLSERVER</type>
+  <version>1</version>
+  <parameters>
+    <parameter name="@i_banco" dataType="varchar" direction="in" />
+    <parameter name="@i_opcion" dataType="char" direction="in" />
+  </parameters>
+  <queries>
+    <query>
+      <columns>
+        <column name="descripcion" />
+        <column name="concepto" />
+      </columns>
+      <queryText>SELECT  "descripcion" = co_descripcion,"concepto" = co_concepto </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="dividendo" />
+        <column name="fecha_ven" />
+        <column name="dia" />
+        <column name="saldo_cap" />
+        <column name="rubro1" />
+        <column name="rubro2" />
+        <column name="rubro3" />
+        <column name="rubro4" />
+        <column name="rubro5" />
+        <column name="rubro6" />
+        <column name="rubro7" />
+        <column name="rubro8" />
+        <column name="rubro9" />
+        <column name="rubro10" />
+        <column name="rubro11" />
+        <column name="rubro12" />
+        <column name="rubro13" />
+        <column name="rubro14" />
+        <column name="rubro15" />
+        <column name="cuota" />
+        <column name="estado" />
+        <column name="porroga" />
+      </columns>
+      <queryText>SELECT  "dividendo" = qat_dividendo,"fecha_ven" = qat_fecha_ven,"dia" = qat_dias_cuota,"saldo_cap" = qat_saldo_cap,"rubro1" = ISNULL (qat_rubro1, 0),"rubro2" = ISNULL (qat_rubro2, 0),"rubro3" = ISNULL (qat_rubro3, 0),"rubro4" = ISNULL (qat_rubro4, 0),"rubro5" = ISNULL (qat_rubro5, 0),"rubro6" = ISNULL (qat_rubro6, 0),"rubro7" = ISNULL (qat_rubro7, 0),"rubro8" = ISNULL (qat_rubro8, 0),"rubro9" = ISNULL (qat_rubro9, 0),"rubro10" = ISNULL (qat_rubro10, 0),"rubro11" = ISNULL (qat_rubro11, 0),"rubro12" = ISNULL (qat_rubro12, 0),"rubro13" = ISNULL (qat_rubro13, 0),"rubro14" = ISNULL (qat_rubro14, 0),"rubro15" = ISNULL (qat_rubro15, 0),"cuota" = qat_cuota,"estado" = qat_estado,"porroga" = qat_porroga </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="estado" />
+        <column name="capital" />
+        <column name="interes" />
+        <column name="mora" />
+        <column name="interes_mora" />
+        <column name="otros" />
+        <column name="total" />
+        <column name="cuotas" />
+      </columns>
+      <queryText></queryText>
+    </query>
+  </queries>
+</procedure>

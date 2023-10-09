@@ -1,0 +1,137 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<procedure>
+  <database>cob_custodia</database>
+  <name>sp_poliza</name>
+  <type>SYBASE</type>
+  <version>2</version>
+  <parameters>
+    <parameter name="@s_ssn" dataType="int" direction="in" />
+    <parameter name="@s_date" dataType="datetime" direction="in" />
+    <parameter name="@s_user" dataType="varchar" direction="in" />
+    <parameter name="@s_term" dataType="varchar" direction="in" />
+    <parameter name="@s_corr" dataType="char" direction="in" />
+    <parameter name="@s_ssn_corr" dataType="int" direction="in" />
+    <parameter name="@s_ofi" dataType="smallint" direction="in" />
+    <parameter name="@t_rty" dataType="char" direction="in" />
+    <parameter name="@t_trn" dataType="smallint" direction="in" />
+    <parameter name="@t_debug" dataType="char" direction="in" />
+    <parameter name="@t_file" dataType="varchar" direction="in" />
+    <parameter name="@t_from" dataType="varchar" direction="in" />
+    <parameter name="@i_operacion" dataType="char" direction="in" />
+    <parameter name="@i_modo" dataType="smallint" direction="in" />
+    <parameter name="@i_aseguradora" dataType="varchar" direction="in" />
+    <parameter name="@i_poliza" dataType="varchar" direction="in" />
+    <parameter name="@i_fvigencia_inicio" dataType="datetime" direction="in" />
+    <parameter name="@i_fvigencia_fin" dataType="datetime" direction="in" />
+    <parameter name="@i_moneda" dataType="tinyint" direction="in" />
+    <parameter name="@i_monto_poliza" dataType="money" direction="in" />
+    <parameter name="@i_monto_endozo" dataType="money" direction="in" />
+    <parameter name="@i_fecha_endozo" dataType="datetime" direction="in" />
+    <parameter name="@i_fendozo_fin" dataType="datetime" direction="in" />
+    <parameter name="@i_param1" dataType="varchar" direction="in" />
+    <parameter name="@i_param2" dataType="varchar" direction="in" />
+    <parameter name="@i_formato_fecha" dataType="int" direction="in" />
+    <parameter name="@i_cobertura" dataType="varchar" direction="in" />
+    <parameter name="@i_descripcion" dataType="varchar" direction="in" />
+    <parameter name="@i_filial" dataType="tinyint" direction="in" />
+    <parameter name="@i_sucursal" dataType="smallint" direction="in" />
+    <parameter name="@i_tipo" dataType="varchar" direction="in" />
+    <parameter name="@i_custodia" dataType="int" direction="in" />
+    <parameter name="@i_codigo_externo" dataType="varchar" direction="in" />
+    <parameter name="@i_estado_poliza" dataType="varchar" direction="in" />
+  </parameters>
+  <queries>
+    <query>
+      <columns>
+        <column name="{1}" />
+        <column name="{2}" />
+        <column name="{3}" />
+        <column name="{4}" />
+        <column name="{5}" />
+        <column name="{6}" />
+        <column name="{7}" />
+        <column name="{8}" />
+        <column name="{9}" />
+        <column name="{10}" />
+        <column name="{11}" />
+        <column name="{12}" />
+        <column name="{13}" />
+        <column name="{14}" />
+        <column name="{15}" />
+        <column name="{16}" />
+        <column name="{17}" />
+      </columns>
+      <queryText>SELECT w_aseguradora, w_des_aseguradora, w_poliza, ctx.convertString(w_fvigencia_inicio ,i_formato_fecha), ctx.convertString(w_fvigencia_fin ,i_formato_fecha), ctx.ISNULL(ctx.convertString(w_moneda), ""), w_des_moneda, w_monto_poliza, ctx.convertString(w_fecha_endozo ,i_formato_fecha), w_monto_endozo, w_cobertura, w_des_cobertura, w_descripcion, w_codigo_externo, ctx.convertString(w_fendozo_fin ,i_formato_fecha), w_estado_poliza, w_des_estado_poliza</queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="ASEGURADORA" />
+        <column name="POLIZA" />
+        <column name="MONTO" />
+      </columns>
+      <queryText>SELECT  "ASEGURADORA" = po_aseguradora,"POLIZA" = po_poliza,"MONTO" = po_monto_poliza </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="{1}" />
+        <column name="{2}" />
+        <column name="{3}" />
+      </columns>
+      <queryText>SELECT  po_aseguradora,po_poliza,po_monto_poliza </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="ASEGURADORA" />
+        <column name="POLIZA" />
+        <column name="GARANTIA" />
+        <column name="FECHA VENCIMIENTO" />
+        <column name="FECHA VIGENCIA" />
+        <column name="MONTO" />
+        <column name="FECHA ENDOSO" />
+      </columns>
+      <queryText>SELECT  "ASEGURADORA" = po_aseguradora,"POLIZA" = po_poliza,"GARANTIA" = po_codigo_externo,"FECHA VENCIMIENTO" = po_fvigencia_inicio,"FECHA VIGENCIA" = po_fvigencia_fin,"MONTO" = po_monto_poliza,"FECHA ENDOSO" = po_fecha_endozo </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="ASEGURADORA" />
+        <column name="POLIZA" />
+        <column name="GARANTIA" />
+        <column name="FECHA VENCIMIENTO" />
+        <column name="FECHA VIGENCIA" />
+        <column name="MONTO" />
+        <column name="FECHA ENDOSO" />
+      </columns>
+      <queryText>SELECT  "ASEGURADORA" = po_aseguradora,"POLIZA" = po_poliza,"GARANTIA" = po_codigo_externo,"FECHA VENCIMIENTO" = po_fvigencia_inicio,"FECHA VIGENCIA" = po_fvigencia_fin,"MONTO" = po_monto_poliza,"FECHA ENDOSO" = po_fecha_endozo </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="{1}" />
+        <column name="{2}" />
+        <column name="{3}" />
+      </columns>
+      <queryText>SELECT  po_aseguradora,po_poliza,po_codigo_externo </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="{1}" />
+        <column name="{2}" />
+        <column name="{3}" />
+        <column name="{4}" />
+        <column name="{5}" />
+        <column name="{6}" />
+        <column name="{7}" />
+        <column name="{8}" />
+        <column name="{9}" />
+        <column name="{10}" />
+        <column name="{11}" />
+        <column name="{12}" />
+        <column name="{13}" />
+        <column name="{14}" />
+        <column name="{15}" />
+        <column name="{16}" />
+        <column name="{17}" />
+      </columns>
+      <queryText>SELECT w_aseguradora, w_des_aseguradora, w_poliza, ctx.convertString(w_fvigencia_inicio ,i_formato_fecha), ctx.convertString(w_fvigencia_fin ,i_formato_fecha), ctx.ISNULL(ctx.convertString(w_moneda), ""), w_des_moneda, w_monto_poliza, ctx.convertString(w_fecha_endozo ,i_formato_fecha), w_monto_endozo, w_cobertura, w_des_cobertura, w_descripcion, w_codigo_externo, ctx.convertString(w_fendozo_fin ,i_formato_fecha), w_estado_poliza, w_des_estado_poliza</queryText>
+    </query>
+  </queries>
+</procedure>

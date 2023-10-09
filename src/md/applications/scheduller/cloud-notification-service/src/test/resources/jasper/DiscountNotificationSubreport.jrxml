@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="DiscountNotificationSubreport" pageWidth="563" pageHeight="842" columnWidth="433" leftMargin="100" rightMargin="30" topMargin="0" bottomMargin="0" uuid="4b281a76-b38e-48c8-a598-2051a797c03e">
+	<property name="ireport.zoom" value="1.239669421487604"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<field name="customerName" class="java.lang.String"/>
+	<field name="amount" class="java.math.BigDecimal"/>
+	<variable name="value_1" class="java.math.BigDecimal" calculation="Sum">
+		<variableExpression><![CDATA[$F{amount}]]></variableExpression>
+	</variable>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<columnHeader>
+		<band height="22" splitType="Stretch">
+			<rectangle radius="5">
+				<reportElement x="0" y="1" width="433" height="20" backcolor="#00C3AF" uuid="db203ee3-b43c-42b3-8906-6e6098ef9b4e"/>
+				<graphicElement>
+					<pen lineColor="#09B4AD"/>
+				</graphicElement>
+			</rectangle>
+			<staticText>
+				<reportElement mode="Transparent" x="0" y="0" width="268" height="20" forecolor="#FFFFFF" backcolor="#FFFFFF" uuid="689f1403-0695-4fdd-b10c-f117689a8992"/>
+				<box topPadding="5" leftPadding="16" rightPadding="0">
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement>
+					<font size="9" isBold="true" pdfFontName="Helvetica-Bold" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[NOMBRE DEL CLIENTE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Transparent" x="268" y="1" width="165" height="20" forecolor="#FFFFFF" backcolor="#FFFFFF" uuid="adbc843a-b09f-4e18-be13-629c2a6b72a2"/>
+				<box topPadding="5" leftPadding="16" rightPadding="0">
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement>
+					<font size="9" isBold="true" pdfFontName="Helvetica-Bold" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[MONTO]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="19" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="268" height="18" backcolor="#333333" uuid="7c45c091-a278-4bac-9df4-967d2fe6e7a3"/>
+				<box topPadding="5" leftPadding="16">
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="2.0" lineColor="#00C3AF"/>
+					<rightPen lineWidth="2.0" lineColor="#00C3AF"/>
+				</box>
+				<textElement>
+					<font size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{customerName}]]></textFieldExpression>
+			</textField>
+			<textField pattern="###0.00">
+				<reportElement x="268" y="0" width="165" height="18" forecolor="#333333" uuid="84daa6fb-7db9-428b-b4a7-96440352d6b9"/>
+				<box topPadding="5" leftPadding="16" rightPadding="16">
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="2.0" lineColor="#00C3AF"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Right">
+					<font size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{amount}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<summary>
+		<band height="18">
+			<staticText>
+				<reportElement x="0" y="-2" width="268" height="18" forecolor="#00C3AF" uuid="53c8ebe2-d03e-4658-9397-86739a919b62"/>
+				<box topPadding="5" rightPadding="16">
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Right">
+					<font size="9" isBold="true" pdfFontName="Helvetica-Bold" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[TOTAL]]></text>
+			</staticText>
+			<textField pattern="###0.00" isBlankWhenNull="true">
+				<reportElement x="268" y="0" width="165" height="18" forecolor="#333333" uuid="9b12e485-41df-4641-ae9f-83c9ce9ecff7"/>
+				<box topPadding="5" rightPadding="16">
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Right">
+					<font size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{value_1}]]></textFieldExpression>
+			</textField>
+		</band>
+	</summary>
+</jasperReport>

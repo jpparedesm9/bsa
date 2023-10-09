@@ -1,0 +1,98 @@
+<div class= "cb-content">
+   <div ng-controller="clientviewer.otherProductsController">
+	  <ul kendo-panel-bar class="cb-collapsible">	
+		 
+	      <li class="k-state-active" ng-show="isVisibleOthersProducts">
+                <span class="k-link k-state-selected"  translate>OTHERPRODUCTS.LABELS.LBL_OTHER_PRODUCTS</span><br/>
+				<div>				
+					<div kendo-grid k-data-source="dsOthersProducts"                  
+                             k-selectable="'row'" 
+                             k-columns="OthersProductsColumns" 
+                             k-rebind="dsOthersProducts"
+					></div>
+				</div>
+          </li>	
+          <li class="k-state-active" ng-show="isVisibleApplicationLoansSource">
+                <span class="k-link k-state-selected"  translate>OTHERPRODUCTS.LABELS.LBL_CONTINGENT</span><br/>
+				<div>				
+					<div kendo-grid k-data-source="dsApplicationLoansSource"                  
+                             k-selectable="'row'" 
+                             k-columns="ApplicationLoansColumns" 
+                             k-rebind="dsApplicationLoansSource"
+					></div>
+				</div>					
+          </li>
+          <li class="k-state-active" ng-show="isVisibleCEESource">
+                <span class="k-link k-state-selected"  translate>OTHERPRODUCTS.LABELS.LBL_DOMESTIC_LETTERS_CREDIT</span><br/>
+				<div>				
+					<div kendo-grid k-data-source="dsCCE"                  
+                             k-selectable="'row'" 
+                             k-columns="CCEColumns" 
+                             k-rebind="dsCCE"
+					></div>
+				</div>					
+          </li>
+          <li class="k-state-active" ng-show="isVisibleCDESource">
+                <span class="k-link k-state-selected"  translate>OTHERPRODUCTS.LABELS.LBL_DOMESTIC_LETTERS_IMPORT</span><br/>
+				<div>				
+					<div kendo-grid k-data-source="dsCDE"                  
+                             k-selectable="'row'" 
+                             k-columns="CDEColumns" 
+                             k-rebind="dsCDE"
+					></div>
+				</div>					
+           </li>
+          <li class="k-state-active" ng-show="isVisibleCDISource">
+                <span class="k-link k-state-selected"  translate>OTHERPRODUCTS.LABELS.LBL_DOMESTIC_LETTERS_STAND_BY</span><br/>
+				<div>				
+					<div kendo-grid k-data-source="dsCDI"                  
+                             k-selectable="'row'" 
+                             k-columns="CDIColumns" 
+                             k-rebind="dsCDI"
+					></div>
+				</div>					
+          </li>
+          <li class="k-state-active" ng-show="isVisibleCreditsLinesPendingSource">
+                <span class="k-link k-state-selected"  translate>OTHERPRODUCTS.LABELS.LBL_DOMESTIC_LETTERS_WARRANTY</span><br/>
+				<div>				
+					<div kendo-grid k-data-source="dsCreditsLinesPendingSource"                  
+                             k-selectable="'row'" 
+                             k-columns="CreditsLinesPendingColumns" 
+                             k-rebind="dsCreditsLinesPendingSource"
+					></div>
+				</div>					
+          </li>
+          <li class="k-state-active" ng-show="isVisibleGuaranteesPendingSource">
+                <span class="k-link k-state-selected"  translate>OTHERPRODUCTS.LABELS.LBL_DOMESTIC_LETTERS_EXTERNAL_WARRANTY</span><br/>
+				<div>				
+					<div kendo-grid k-data-source="dsGuaranteesPendingSource"                  
+                             k-selectable="'row'" 
+                             k-columns="GuaranteesPendingColumns" 
+                             k-rebind="dsGuaranteesPendingSource"
+					></div>
+				</div>					
+          </li>
+          <li class="k-state-active" ng-show="isVisibleOtherComextSource">
+                <span class="k-link k-state-selected"  translate>OTHERPRODUCTS.LABELS.LBL_DOMESTIC_LETTERS_EXTERNAL_WARRANTY</span><br/>
+				<div>					
+					<div kendo-grid k-data-source="dsOtherComextSource"                  
+                             k-selectable="'row'" 
+                             k-columns="OtherComextColumns" 
+                             k-rebind="dsOtherComextSource"
+					></div>
+				</div>					
+          </li>
+          <li class="k-state-active" ng-show="isVisiblePromissoryNotesSource">
+                <span class="k-link k-state-selected"  translate>OTHERPRODUCTS.LABELS.LBL_DOMESTIC_LETTERS_EXTERNAL_WARRANTY</span><br/>
+				<div>				
+					<div kendo-grid k-data-source="dsPromissoryNotesSource"                  
+                             k-selectable="'row'" 
+                             k-columns="PromissoryNotesColumns" 
+                             k-rebind="dsPromissoryNotesSource"
+					></div>
+				</div>					
+          </li>		  	 
+      </ul>
+   </div>
+</div>   
+

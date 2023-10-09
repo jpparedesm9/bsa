@@ -1,0 +1,355 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{914C3AE2-84E8-48A6-ABCE-8F45429AF261}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>COBISCorp.tCOBIS.PER.Query</RootNamespace>
+    <AssemblyName>COBISCorp.tCOBIS.PER.Query</AssemblyName>
+    <MyType>Windows</MyType>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>2.0</OldToolsVersion>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>..\..\ClickOnce\COBISCorp.tCOBIS.PER.Query\COBISCorp.tCOBIS.PER.Query.Installer\PER\</OutputPath>
+    <DocumentationFile>COBISCorp.tCOBIS.PER.Query.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022,42353,42354,42355</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>COBISCorp.tCOBIS.PER.Query.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022,42353,42354,42355</NoWarn>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Accessibility">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Artinsoft.VB6">
+      <Name>Artinsoft.VB6</Name>
+      <HintPath>..\UpgradeSupport\Artinsoft.VB6.dll</HintPath>
+      <SpecificVersion>False</SpecificVersion>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="COBISCorp.eCOBIS.COBISExplorer.CompositeUI, Culture=neutral, PublicKeyToken=9b8bba00b1313138, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="COBISCorp.eCOBIS.COBISExplorer.Container, Version=4.1.3.12, Culture=neutral, PublicKeyToken=9b8bba00b1313138, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\COBIS\COBISExplorer\Assemblies\Framework\COBISCorp.eCOBIS.COBISExplorer.Container.dll</HintPath>
+    </Reference>
+    <Reference Include="COBISCorp.eCOBIS.COBISExplorer.Preferences, Culture=neutral, PublicKeyToken=9b8bba00b1313138, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="COBISCorp.eCOBIS.Commons.COBISViewResizer, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="COBISCorp.eCOBIS.Commons.License, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="COBISCorp.eCOBIS.Commons.MessageBox, Culture=neutral, PublicKeyToken=345801f7851b84a9, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="COBISCorp.eCOBIS.Commons.Security, Culture=neutral, PublicKeyToken=9b8bba00b1313138, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="COBISCorp.eCOBIS.Commons.Styles, Version=4.0.1.2, Culture=neutral, PublicKeyToken=9b8bba00b1313138, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\COBIS\COBISExplorer\Assemblies\Framework\COBISCorp.eCOBIS.Commons.Styles.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="COBISCorp.Framework.UI.Components.COBISControlException, Version=1.0.0.1, Culture=neutral, PublicKeyToken=345801f7851b84a9">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="COBISCorp.Framework.UI.Components.COBISControlUtils, Version=1.0.0.0, Culture=neutral, PublicKeyToken=345801f7851b84a9">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="COBISCorp.Framework.UI.Components.COBISGrid, Version=1.0.0.4, Culture=neutral, PublicKeyToken=345801f7851b84a9, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="COBISCorp.Framework.UI.Components.COBISHook, Version=1.0.0.0, Culture=neutral, PublicKeyToken=345801f7851b84a9, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="COBISCorp.Framework.UI.Components.COBISMaskedInBox, Version=1.0.1.10, Culture=neutral, PublicKeyToken=345801f7851b84a9, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="COBISCorp.Framework.UI.Components.COBISMaskedTextBox, Version=1.0.0.4, Culture=neutral, PublicKeyToken=345801f7851b84a9, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="COBISCorp.Framework.UI.Components.COBISPanel, Version=1.0.0.3, Culture=neutral, PublicKeyToken=345801f7851b84a9, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="COBISCorp.Framework.UI.Components.COBISPrinterNet, Version=1.0.0.1, Culture=neutral, PublicKeyToken=345801f7851b84a9, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="COBISCorp.Framework.UI.Components.COBISRealInput, Version=1.0.0.4, Culture=neutral, PublicKeyToken=345801f7851b84a9, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="COBISCorp.Framework.UI.Components.COBISResourceProvider, Version=1.0.0.2, Culture=neutral, PublicKeyToken=345801f7851b84a9, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="COBISCorp.Framework.UI.Components.COBISSpread, Version=1.0.0.3, Culture=neutral, PublicKeyToken=345801f7851b84a9, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="COBISCorp.Framework.UI.Components.COBISTabControl, Version=1.0.0.7, Culture=neutral, PublicKeyToken=345801f7851b84a9, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="COBISCorp.Framework.UI.Components.COBISTools, Version=1.0.0.1, Culture=neutral, PublicKeyToken=345801f7851b84a9, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="COBISCorp.Framework.UI.Components.COBISValidTextBox, Version=1.0.0.12, Culture=neutral, PublicKeyToken=345801f7851b84a9, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="COBISCorp.Framework.UI.Components.Commons, Version=1.0.0.1, Culture=neutral, PublicKeyToken=345801f7851b84a9, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="COBISCorp.tCOBIS.COBISExplorer.CompositeUI, Culture=neutral, PublicKeyToken=9b8bba00b1313138, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="COBISCorp.tCOBIS.PER.SharedLibrary, Version=4.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\..\..\..\..\COBIS\Nuget\packages\COBISCorp.tCOBIS.PER.SharedLibrary.4.0.0.0\lib\net40-full\COBISCorp.tCOBIS.PER.SharedLibrary.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="FarPoint.Excel, Version=4.0.2018.2005, Culture=neutral, PublicKeyToken=327c3516b1b18457">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="FarPoint.Win, Version=4.0.2012.2005, Culture=neutral, PublicKeyToken=327c3516b1b18457">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="FarPoint.Win.Spread, Version=4.0.2012.2005, Culture=neutral, PublicKeyToken=327c3516b1b18457">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Infragistics2.Shared.v7.2, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Infragistics2.Win.Misc.v7.2, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Infragistics2.Win.v7.2, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Interop.CopiaDir, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\..\..\..\..\COBIS\Nuget\packages\Interop.CopiaDir.1.0.0.0\lib\net40-full\Interop.CopiaDir.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="MAPN, Version=1.0.0.24, Culture=neutral, PublicKeyToken=345801f7851b84a9, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic">
+      <Name>Microsoft.VisualBasic</Name>
+      <SpecificVersion>False</SpecificVersion>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic.Compatibility">
+      <Name>Microsoft.VisualBasic.Compatibility</Name>
+      <SpecificVersion>False</SpecificVersion>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic.Compatibility.Data">
+      <Name>Microsoft.VisualBasic.Compatibility.Data</Name>
+      <SpecificVersion>False</SpecificVersion>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="PrinterDll, Version=1.0.0.2, Culture=neutral, PublicKeyToken=345801f7851b84a9, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\COBIS\Assemblies\PrinterDll.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing">
+      <Name>System.Drawing</Name>
+      <SpecificVersion>False</SpecificVersion>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Windows.Forms">
+      <Name>System.Windows.Forms</Name>
+      <SpecificVersion>False</SpecificVersion>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Xml" />
+    <Reference Include="System.XML">
+      <Name>System.XML</Name>
+      <SpecificVersion>False</SpecificVersion>
+      <Private>False</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Diagnostics" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Module\CobisSharedModule.vb" />
+    <Compile Include="View\FCATSERV.designer.vb">
+      <DependentUpon>FCATSERV.vb</DependentUpon>
+    </Compile>
+    <Compile Include="View\FCATSERV.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\FCONCTA1.designer.vb">
+      <DependentUpon>FCONCTA1.vb</DependentUpon>
+    </Compile>
+    <Compile Include="View\FCONCTA1.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="My Project\licenses.licx" />
+    <EmbeddedResource Include="View\FCATSERV.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>FCATSERV.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\FCONCTA1.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>FCONCTA1.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="ADODB">
+      <Guid>{EF53050B-882E-4776-B643-EDA472E8E3F2}</Guid>
+      <Lcid>0</Lcid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>7</VersionMinor>
+      <WrapperTool>primary</WrapperTool>
+      <Private>False</Private>
+    </COMReference>
+    <COMReference Include="AxMhinrelLib">
+      <Guid>{0F1F1508-C40A-101B-AD04-00AA00575482}</Guid>
+      <Lcid>0</Lcid>
+      <VersionMajor>7</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <WrapperTool>aximp</WrapperTool>
+      <Private>False</Private>
+    </COMReference>
+    <COMReference Include="AxMSMask">
+      <Guid>{C932BA88-4374-101B-A56C-00AA003668DC}</Guid>
+      <Lcid>0</Lcid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>1</VersionMinor>
+      <WrapperTool>aximp</WrapperTool>
+      <Private>False</Private>
+    </COMReference>
+    <COMReference Include="MhinrelLib">
+      <Guid>{0F1F1508-C40A-101B-AD04-00AA00575482}</Guid>
+      <Lcid>0</Lcid>
+      <VersionMajor>7</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Private>False</Private>
+    </COMReference>
+    <COMReference Include="Microsoft.StdFormat">
+      <Guid>{6B263850-900B-11D0-9484-00A0C91110ED}</Guid>
+      <Lcid>0</Lcid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <WrapperTool>primary</WrapperTool>
+      <Private>False</Private>
+    </COMReference>
+    <COMReference Include="MSMask">
+      <Guid>{C932BA88-4374-101B-A56C-00AA003668DC}</Guid>
+      <Lcid>0</Lcid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>1</VersionMinor>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Private>False</Private>
+    </COMReference>
+    <COMReference Include="Office">
+      <Guid>{2DF8D04C-5BFA-101B-BDE5-00AA0044DE52}</Guid>
+      <Lcid>0</Lcid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>3</VersionMinor>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Private>False</Private>
+    </COMReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.VisualBasic.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

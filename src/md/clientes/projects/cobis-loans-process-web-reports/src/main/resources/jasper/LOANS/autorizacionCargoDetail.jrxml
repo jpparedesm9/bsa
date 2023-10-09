@@ -1,0 +1,432 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="autorizacionCargoDetail" pageWidth="475" pageHeight="782" columnWidth="475" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="787f973f-6fe9-47f6-a053-bdec1b9573bc">
+	<property name="ireport.zoom" value="1.3310000000000033"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="331"/>
+	<field name="name" class="java.lang.String"/>
+	<field name="address" class="java.lang.String"/>
+	<field name="birthdate" class="java.lang.String"/>
+	<field name="rfc" class="java.lang.String"/>
+	<field name="policy" class="java.lang.String"/>
+	<field name="certificateNumber" class="java.lang.String"/>
+	<field name="startValidity" class="java.lang.String"/>
+	<field name="termValidity" class="java.lang.String"/>
+	<field name="insuranceCost" class="java.lang.String"/>
+	<field name="account" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<detail>
+		<band height="349" splitType="Stretch">
+			<rectangle>
+				<reportElement x="0" y="0" width="109" height="74" forecolor="#A6A6A6" uuid="f94b60f8-eed9-4861-bb83-0efb2244c6d1"/>
+				<graphicElement>
+					<pen lineWidth="2.0"/>
+				</graphicElement>
+			</rectangle>
+			<staticText>
+				<reportElement x="109" y="0" width="366" height="74" forecolor="#AAAAAA" uuid="2887a36b-cf64-48e8-b5d6-c60991161f69"/>
+				<box>
+					<topPen lineWidth="2.0"/>
+					<leftPen lineWidth="2.0"/>
+					<bottomPen lineWidth="2.0"/>
+					<rightPen lineWidth="2.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[AUTORIZACIÓN CARGO
+PAGO DE SEGURO]]></text>
+			</staticText>
+			<image>
+				<reportElement x="8" y="11" width="138" height="58" uuid="85fd8506-5b3a-4112-8d09-274da2fa040d"/>
+				<imageExpression><![CDATA["tuiioSantander2.png"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement mode="Opaque" x="0" y="115" width="475" height="17" forecolor="#FFFFFF" backcolor="#000000" uuid="82378a30-0d6f-42d8-8653-7b370612d956"/>
+				<box>
+					<topPen lineWidth="1.0" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineColor="#000000"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font isBold="true"/>
+					<paragraph leftIndent="4"/>
+				</textElement>
+				<text><![CDATA[DATOS DEL ASEGURADO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="132" width="89" height="20" uuid="c339a7ae-15c7-460d-8d42-fa0465063c51"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<paragraph leftIndent="4"/>
+				</textElement>
+				<text><![CDATA[Nombre completo:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="152" width="54" height="20" uuid="089ba322-9305-4a87-a481-1f0603ed5b66"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<paragraph leftIndent="4"/>
+				</textElement>
+				<text><![CDATA[Domicilio:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="172" width="109" height="20" uuid="d5a129e7-7702-476f-9b9c-05d05273ed7f"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<paragraph leftIndent="4"/>
+				</textElement>
+				<text><![CDATA[Fecha de nacimiento:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="192" width="33" height="20" uuid="bcdccc38-d009-4fc9-b197-df81edd9cfa0"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<paragraph leftIndent="4"/>
+				</textElement>
+				<text><![CDATA[RFC:]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement x="89" y="132" width="386" height="20" uuid="8bd6c72a-7ca7-4036-abb1-871dfb22af73"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<paragraph leftIndent="4"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{name}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="54" y="152" width="421" height="20" uuid="7f2e8447-2d1f-4fda-b3a7-a764d617ae28"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<paragraph leftIndent="4"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{address}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="109" y="172" width="366" height="20" uuid="df912401-375b-43d8-969b-c5efd641cb12"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<paragraph leftIndent="4"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{birthdate}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="33" y="192" width="442" height="20" uuid="0f9c9be0-d428-46d7-bebf-f26a5bd0c5fb"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<paragraph leftIndent="4"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{rfc}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="109" y="249" width="366" height="20" uuid="d158b7dd-adcf-4d53-adac-5e3e6d6f7bc1"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<paragraph leftIndent="4"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{policy}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="309" width="161" height="20" uuid="081d48d6-b8c4-400f-9c0e-327f583f71df"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<paragraph leftIndent="4"/>
+				</textElement>
+				<text><![CDATA[Termino de vigencia de certificado:]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement x="193" y="269" width="282" height="20" uuid="85a6b3d8-fea8-4173-984d-663c1a65ee78"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<paragraph leftIndent="4"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{certificateNumber}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="289" width="146" height="20" uuid="ac37e738-6f63-4e10-a6cd-1789d9070c41"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<paragraph leftIndent="4"/>
+				</textElement>
+				<text><![CDATA[Inicio de vigencia de certificado:]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement x="146" y="289" width="329" height="20" uuid="36679377-2e84-4f5a-bc53-6f052b511ae2"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<paragraph leftIndent="4"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{startValidity}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="269" width="193" height="20" uuid="19012547-96b2-4913-9d1b-24c928f588eb"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<paragraph leftIndent="4"/>
+				</textElement>
+				<text><![CDATA[Número de certificado/ Número de crédito: ]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement x="161" y="309" width="314" height="20" uuid="2ef7b0b5-4a9a-4b9b-8bf0-5cac809e0476"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<paragraph leftIndent="4"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{termValidity}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="249" width="109" height="20" uuid="7cdbdc2a-2710-40c5-bf72-778014e8c7d2"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<paragraph leftIndent="4"/>
+				</textElement>
+				<text><![CDATA[Número de póliza:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="329" width="146" height="20" uuid="a50f75c9-b903-4b68-94fa-3c4f12c720fa"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<paragraph leftIndent="4"/>
+				</textElement>
+				<text><![CDATA[Costo del Seguro (Incluye IVA):]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement x="146" y="329" width="329" height="20" uuid="12d86faa-00a4-4d02-8be9-339d3132fb71"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<paragraph leftIndent="4"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{insuranceCost}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement mode="Opaque" x="0" y="232" width="475" height="17" forecolor="#FFFFFF" backcolor="#000000" uuid="a1597d56-15ae-4f64-ae44-3859ede878b4"/>
+				<box>
+					<pen lineColor="#000000"/>
+					<topPen lineWidth="1.0" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineColor="#000000"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font isBold="true"/>
+					<paragraph leftIndent="4"/>
+				</textElement>
+				<text><![CDATA[DATOS DE PÓLIZA]]></text>
+			</staticText>
+		</band>
+		<band height="167">
+			<staticText>
+				<reportElement mode="Opaque" x="0" y="67" width="475" height="17" forecolor="#FFFFFF" backcolor="#000000" uuid="bdc96001-dcdb-4b8d-b2e0-3df300252213"/>
+				<box>
+					<pen lineColor="#000000"/>
+					<topPen lineWidth="1.0" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineColor="#000000"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font isBold="true"/>
+					<paragraph leftIndent="4"/>
+				</textElement>
+				<text><![CDATA[AUTORIZACIÓN DE CARGO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="1" y="84" width="88" height="28" uuid="2dc2a950-6753-4c23-a22a-1b96d325eb08"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<paragraph leftIndent="3"/>
+				</textElement>
+				<text><![CDATA[Conducto de
+Cobro ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="89" y="84" width="160" height="28" uuid="81278dad-acce-44b6-b94a-b80709f5ed55"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement verticalAlignment="Top">
+					<paragraph leftIndent="3"/>
+				</textElement>
+				<text><![CDATA[Banco ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="249" y="84" width="111" height="28" uuid="3361e155-2c00-4c2e-835a-3e17c80de075"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement verticalAlignment="Top">
+					<paragraph leftIndent="3"/>
+				</textElement>
+				<text><![CDATA[Número de
+cuenta]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="360" y="84" width="115" height="28" uuid="059717b8-64d2-499a-a4e1-d414d01d3e68"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement verticalAlignment="Top">
+					<paragraph leftIndent="3"/>
+				</textElement>
+				<text><![CDATA[Firma]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="1" y="112" width="88" height="55" uuid="adb8ef21-6334-484f-b4d9-3fcaef1f759f"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<paragraph leftIndent="3"/>
+				</textElement>
+				<text><![CDATA[Cargo Cuenta
+de Cheques]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="249" y="112" width="111" height="55" uuid="937c707b-a282-4293-875b-45519daa7308"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<paragraph leftIndent="3"/>
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="89" y="112" width="160" height="55" uuid="9fa494a0-d695-4769-a6bd-b39f19964614"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement verticalAlignment="Top">
+					<paragraph leftIndent="3"/>
+				</textElement>
+				<text><![CDATA[Banco Santander (México), S.A., Institución de Banca Múltiple,
+Grupo Financiero
+Santander México]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="360" y="112" width="115" height="55" uuid="0f9b6fca-a55a-4199-81cb-07f09e8d3765"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<paragraph leftIndent="3"/>
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement x="249" y="112" width="111" height="55" uuid="33a1921c-8e05-4dd3-a546-bde84bce2bd4"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{account}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="0" width="475" height="67" uuid="478fd4ac-1f4c-4135-9641-ec5bff3b2186"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle">
+					<font size="6"/>
+					<paragraph leftIndent="1" rightIndent="1" spacingBefore="10" spacingAfter="10"/>
+				</textElement>
+				<text><![CDATA[En relación con lo establecido en el Contrato de Apertura de Crédito Simple que tengo celebrado con Santander Inclusión Financiera, S.A. de C.V., Sociedad Financiera de Objeto Múltiple, Entidad Regulada, Grupo Financiero Santander México, en lo sucesivo “Inclusión Financiera”, en el que compareció Banco Santander (México), S.A., Institución de Banca Múltiple, Grupo Financiero Santander México, en lo sucesivo el “Banco”, en específico en la cláusula relativa al esquema de aseguramiento y con fundamento en el artículo 57 de la Ley de Instituciones de Crédito, en este acto faculto a INCLUSIÓN FINANCIERA e instruyo al BANCO expresamente para cargar en la cuenta que se menciona a continuación, en una sola exhibición, el costo del esquema de aseguramiento que Inclusión Financiera, previa explicación de sus condiciones, contratará en nombre y por cuenta mía.
+]]></text>
+			</staticText>
+		</band>
+	</detail>
+</jasperReport>

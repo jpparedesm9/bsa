@@ -1,0 +1,495 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="solicitudCreditoIndividualLarga_SubRep_Referencias" pageWidth="572" pageHeight="572" columnWidth="572" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="a15ee7d3-2e9a-41b9-b5e8-802ac42b55c9">
+	<property name="ireport.zoom" value="1.771561000000001"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="urlPathSantander" class="java.lang.String"/>
+	<parameter name="SUBREPORT_DIR" class="java.lang.String">
+		<defaultValueExpression><![CDATA["/"]]></defaultValueExpression>
+	</parameter>
+	<field name="referNum" class="java.lang.String"/>
+	<field name="referApePaterno" class="java.lang.String"/>
+	<field name="referApeMaterno" class="java.lang.String"/>
+	<field name="referNombres" class="java.lang.String"/>
+	<field name="referTelefCel01" class="java.lang.String"/>
+	<field name="referTelefCel02" class="java.lang.String"/>
+	<field name="referTelefCel03" class="java.lang.String"/>
+	<field name="referTelefCel04" class="java.lang.String"/>
+	<field name="referTelefCel05" class="java.lang.String"/>
+	<field name="referTelefCel06" class="java.lang.String"/>
+	<field name="referTelefCel07" class="java.lang.String"/>
+	<field name="referTelefCel08" class="java.lang.String"/>
+	<field name="referTelefCel09" class="java.lang.String"/>
+	<field name="referTelefCel10" class="java.lang.String"/>
+	<field name="referTelefFijo01" class="java.lang.String"/>
+	<field name="referTelefFijo02" class="java.lang.String"/>
+	<field name="referTelefFijo03" class="java.lang.String"/>
+	<field name="referTelefFijo04" class="java.lang.String"/>
+	<field name="referTelefFijo05" class="java.lang.String"/>
+	<field name="referTelefFijo06" class="java.lang.String"/>
+	<field name="referTelefFijo07" class="java.lang.String"/>
+	<field name="referTelefFijo08" class="java.lang.String"/>
+	<field name="referTelefFijo09" class="java.lang.String"/>
+	<field name="referTelefFijo10" class="java.lang.String"/>
+	<field name="referCorreoElect" class="java.lang.String"/>
+	<field name="referTiempoConocerlo" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<detail>
+		<band height="15" splitType="Prevent">
+			<staticText>
+				<reportElement x="190" y="0" width="190" height="8" uuid="08c37c13-2bdf-44a3-ac91-a120cb090fbe"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement>
+					<font size="5" isBold="false"/>
+					<paragraph leftIndent="2" rightIndent="2" spacingAfter="2"/>
+				</textElement>
+				<text><![CDATA[APELLIDO MATERNO:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="380" y="0" width="192" height="8" uuid="5fc764c5-1554-4e2d-8cc9-862a2289a655"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement>
+					<font size="5" isBold="false"/>
+					<paragraph leftIndent="2" rightIndent="2" spacingAfter="2"/>
+				</textElement>
+				<text><![CDATA[NOMBRE (S):]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="0" y="0" width="190" height="8" isPrintWhenDetailOverflows="true" uuid="01acfea1-396a-4096-a4d2-65eeea25653e"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement verticalAlignment="Bottom">
+					<font size="5"/>
+					<paragraph leftIndent="2" rightIndent="2" spacingAfter="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA["REF. " + $F{referNum} + " APELLIDO PATERNO:"]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="190" y="7" width="190" height="8" isPrintWhenDetailOverflows="true" uuid="cee7c3ac-d0cc-4d10-92f0-90f5819ca009"/>
+				<box>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement verticalAlignment="Bottom">
+					<font size="6"/>
+					<paragraph leftIndent="2" rightIndent="2" spacingAfter="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{referApeMaterno}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="380" y="7" width="192" height="8" isPrintWhenDetailOverflows="true" uuid="c98f404f-81c0-4b42-82b3-ff4360aa63ec"/>
+				<box>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement verticalAlignment="Bottom">
+					<font size="6"/>
+					<paragraph leftIndent="2" rightIndent="2" spacingAfter="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{referNombres}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="0" y="7" width="190" height="8" isPrintWhenDetailOverflows="true" uuid="4e2b8aa9-57c9-4bf6-8a86-2d231437f41b"/>
+				<box>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement verticalAlignment="Bottom">
+					<font size="6"/>
+					<paragraph leftIndent="2" rightIndent="2" spacingAfter="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{referApePaterno}]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="15" splitType="Prevent">
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="168" y="7" width="14" height="8" isPrintWhenDetailOverflows="true" uuid="9eb3e775-9094-4a3c-ac9b-886e7f7c3c30"/>
+				<box>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Bottom">
+					<font size="5"/>
+					<paragraph leftIndent="2" rightIndent="2" spacingAfter="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{referTelefFijo03}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="210" y="7" width="14" height="8" isPrintWhenDetailOverflows="true" uuid="2929a2e6-4819-41ab-9094-1739682735cd"/>
+				<box>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Bottom">
+					<font size="5"/>
+					<paragraph leftIndent="2" rightIndent="2" spacingAfter="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{referTelefFijo06}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="140" y="7" width="14" height="8" isPrintWhenDetailOverflows="true" uuid="58618db6-dc33-43ea-b3fe-0578263cc17c"/>
+				<box>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Bottom">
+					<font size="5"/>
+					<paragraph leftIndent="2" rightIndent="2" spacingAfter="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{referTelefFijo01}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="154" y="7" width="14" height="8" isPrintWhenDetailOverflows="true" uuid="4a28b37c-7db2-4ce3-b26e-319d9ccf4627"/>
+				<box>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Bottom">
+					<font size="5"/>
+					<paragraph leftIndent="2" rightIndent="2" spacingAfter="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{referTelefFijo02}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="224" y="7" width="14" height="8" isPrintWhenDetailOverflows="true" uuid="91c34ab7-da84-4a5c-867d-df8540cb134d"/>
+				<box>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Bottom">
+					<font size="5"/>
+					<paragraph leftIndent="2" rightIndent="2" spacingAfter="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{referTelefFijo07}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="182" y="7" width="14" height="8" isPrintWhenDetailOverflows="true" uuid="478a01f6-8b93-4c88-b441-6b0329ce68a9"/>
+				<box>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Bottom">
+					<font size="5"/>
+					<paragraph leftIndent="2" rightIndent="2" spacingAfter="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{referTelefFijo04}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="196" y="7" width="14" height="8" isPrintWhenDetailOverflows="true" uuid="2c01f4fa-8789-4c20-8674-4f7f9e821b45"/>
+				<box>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Bottom">
+					<font size="5"/>
+					<paragraph leftIndent="2" rightIndent="2" spacingAfter="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{referTelefFijo05}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="238" y="7" width="14" height="8" isPrintWhenDetailOverflows="true" uuid="24bd6710-20f5-4712-81a4-45d65e1e7c8e"/>
+				<box>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Bottom">
+					<font size="5"/>
+					<paragraph leftIndent="2" rightIndent="2" spacingAfter="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{referTelefFijo08}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="252" y="7" width="14" height="8" isPrintWhenDetailOverflows="true" uuid="7051891b-fe8e-49e6-80b1-779f13c45d07"/>
+				<box>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Bottom">
+					<font size="5"/>
+					<paragraph leftIndent="2" rightIndent="2" spacingAfter="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{referTelefFijo09}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="266" y="7" width="14" height="8" isPrintWhenDetailOverflows="true" uuid="a31cc78b-979c-4f94-8d19-22cbf135187f"/>
+				<box>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Bottom">
+					<font size="5"/>
+					<paragraph leftIndent="2" rightIndent="2" spacingAfter="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{referTelefFijo10}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="140" y="0" width="140" height="8" uuid="bc1ff27b-2c38-4e77-ac4f-3adb6cc6f21e"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement>
+					<font size="5" isBold="false"/>
+					<paragraph leftIndent="2" rightIndent="2" spacingAfter="2"/>
+				</textElement>
+				<text><![CDATA[TELÉFONO FIJO:]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="28" y="7" width="14" height="8" isPrintWhenDetailOverflows="true" uuid="2dc0dc41-3183-4268-bbae-ddb3fd72e3a2"/>
+				<box>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Bottom">
+					<font size="5"/>
+					<paragraph leftIndent="2" rightIndent="2" spacingAfter="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{referTelefCel03}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="0" y="7" width="14" height="8" isPrintWhenDetailOverflows="true" uuid="6fe6b8c9-506d-4289-bc74-fd7f5c0a6e92"/>
+				<box>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Bottom">
+					<font size="5"/>
+					<paragraph leftIndent="2" rightIndent="2" spacingAfter="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{referTelefCel01}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="0" width="140" height="8" uuid="43b61f41-5990-4073-8e91-e60d13a697db"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement>
+					<font size="5" isBold="false"/>
+					<paragraph leftIndent="2" rightIndent="2" spacingAfter="2"/>
+				</textElement>
+				<text><![CDATA[TELÉFONO CELULAR:]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="14" y="7" width="14" height="8" isPrintWhenDetailOverflows="true" uuid="cf8ddcc1-6917-405d-b150-b3cc33b5514d"/>
+				<box>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Bottom">
+					<font size="5"/>
+					<paragraph leftIndent="2" rightIndent="2" spacingAfter="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{referTelefCel02}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="42" y="7" width="14" height="8" isPrintWhenDetailOverflows="true" uuid="a44e0785-8916-435f-a23c-1077b4dc3bb9"/>
+				<box>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Bottom">
+					<font size="5"/>
+					<paragraph leftIndent="2" rightIndent="2" spacingAfter="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{referTelefCel04}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="98" y="7" width="14" height="8" isPrintWhenDetailOverflows="true" uuid="027deeec-e26f-459a-87db-ba32710bd609"/>
+				<box>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Bottom">
+					<font size="5"/>
+					<paragraph leftIndent="2" rightIndent="2" spacingAfter="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{referTelefCel08}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="112" y="7" width="14" height="8" isPrintWhenDetailOverflows="true" uuid="3e913f68-05ba-4242-bb3b-1451d90b02b9"/>
+				<box>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Bottom">
+					<font size="5"/>
+					<paragraph leftIndent="2" rightIndent="2" spacingAfter="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{referTelefCel09}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="126" y="7" width="14" height="8" isPrintWhenDetailOverflows="true" uuid="329ef14d-77db-4c4a-b5b0-2d09c06b1d5e"/>
+				<box>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Bottom">
+					<font size="5"/>
+					<paragraph leftIndent="2" rightIndent="2" spacingAfter="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{referTelefCel10}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="280" y="0" width="138" height="8" uuid="9747cf03-822c-4df6-a405-5fb8161ad122"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement>
+					<font size="5" isBold="false"/>
+					<paragraph leftIndent="2" rightIndent="2" spacingAfter="2"/>
+				</textElement>
+				<text><![CDATA[CORREO ELECTRÓNICO:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="418" y="0" width="154" height="8" uuid="08f0706d-54b1-4f13-81c6-4c2b8f5d242e"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement>
+					<font size="5" isBold="false"/>
+					<paragraph leftIndent="2" rightIndent="2" spacingAfter="2"/>
+				</textElement>
+				<text><![CDATA[TIEMPO DE CONOCERLO  (AÑOS):]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="280" y="7" width="138" height="8" isPrintWhenDetailOverflows="true" uuid="178cbb9e-8b34-492e-81bc-fa3dc0f7a0d3"/>
+				<box>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Bottom">
+					<font size="5"/>
+					<paragraph leftIndent="2" rightIndent="2" spacingAfter="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{referCorreoElect}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="418" y="7" width="154" height="8" isPrintWhenDetailOverflows="true" uuid="5d1c93aa-7234-4383-adce-9b879d29e7ab"/>
+				<box>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Bottom">
+					<font size="5"/>
+					<paragraph leftIndent="2" rightIndent="2" spacingAfter="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{referTiempoConocerlo}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="56" y="7" width="14" height="8" isPrintWhenDetailOverflows="true" uuid="9522eaf0-bdd9-47ad-b16e-2508a62a5ff3"/>
+				<box>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Bottom">
+					<font size="5"/>
+					<paragraph leftIndent="2" rightIndent="2" spacingAfter="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{referTelefCel05}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="70" y="7" width="14" height="8" isPrintWhenDetailOverflows="true" uuid="47d20bb2-c2ce-4486-b94f-3000172f7f6b"/>
+				<box>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Bottom">
+					<font size="5"/>
+					<paragraph leftIndent="2" rightIndent="2" spacingAfter="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{referTelefCel06}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="84" y="7" width="14" height="8" isPrintWhenDetailOverflows="true" uuid="110b5d5b-fcb8-40d8-b1f3-ee235373d477"/>
+				<box>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Bottom">
+					<font size="5"/>
+					<paragraph leftIndent="2" rightIndent="2" spacingAfter="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{referTelefCel07}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

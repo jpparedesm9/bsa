@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<procedure>
+  <database>cob_custodia</database>
+  <name>sp_cancela</name>
+  <type>SQLSERVER</type>
+  <version>1</version>
+  <parameters>
+    <parameter name="@s_date" dataType="datetime" direction="in" />
+    <parameter name="@s_ofi" dataType="smallint" direction="in" />
+    <parameter name="@s_user" dataType="varchar" direction="in" />
+    <parameter name="@s_term" dataType="varchar" direction="in" />
+    <parameter name="@i_producto" dataType="char" direction="in" />
+    <parameter name="@i_modo" dataType="smallint" direction="in" />
+    <parameter name="@i_cliente" dataType="int" direction="in" />
+    <parameter name="@i_ente" dataType="int" direction="in" />
+    <parameter name="@i_filial" dataType="tinyint" direction="in" />
+    <parameter name="@i_sucursal" dataType="smallint" direction="in" />
+    <parameter name="@i_tipo_cust" dataType="varchar" direction="in" />
+    <parameter name="@i_custodia" dataType="int" direction="in" />
+    <parameter name="@i_moneda" dataType="tinyint" direction="in" />
+    <parameter name="@i_garante" dataType="int" direction="in" />
+    <parameter name="@i_opcion" dataType="tinyint" direction="in" />
+    <parameter name="@i_codigo_externo" dataType="varchar" direction="in" />
+    <parameter name="@i_operacion" dataType="varchar" direction="in" />
+    <parameter name="@i_formato_fecha" dataType="int" direction="in" />
+    <parameter name="@i_gasto_adm" dataType="smallint" direction="in" />
+    <parameter name="@i_pasar" dataType="char" direction="in" />
+    <parameter name="@i_consulta" dataType="char" direction="in" />
+    <parameter name="@i_riesgos" dataType="char" direction="in" />
+    <parameter name="@i_login" dataType="varchar" direction="in" />
+    <parameter name="@i_clave" dataType="varchar" direction="in" />
+    <parameter name="@i_cancelacion_credito" dataType="char" direction="in" />
+    <parameter name="@i_num_banco" dataType="varchar" direction="in" />
+    <parameter name="@i_cuenta" dataType="varchar" direction="in" />
+    <parameter name="@i_valor" dataType="money" direction="in" />
+    <parameter name="@i_tasa" dataType="float" direction="in" />
+    <parameter name="@i_spread" dataType="float" direction="in" />
+    <parameter name="@i_descripcion" dataType="varchar" direction="in" />
+    <parameter name="@i_observacion" dataType="varchar" direction="in" />
+    <parameter name="@i_web" dataType="char" direction="in" />
+  </parameters>
+  <queries>
+    <query>
+      <columns>
+        <column name="{1}" />
+        <column name="{2}" />
+        <column name="{3}" />
+        <column name="{4}" />
+        <column name="{5}" />
+        <column name="{6}" />
+        <column name="{7}" />
+      </columns>
+      <queryText>SELECT w_estado, w_des_est_custodia, w_des_abcerrada, w_valor_actual, w_moneda, w_ente, w_cliente</queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="{1}" />
+      </columns>
+      <queryText>SELECT w_riesgos</queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="{1}" />
+        <column name="{2}" />
+      </columns>
+      <queryText>SELECT w_estado, w_des_est_custodia</queryText>
+    </query>
+  </queries>
+</procedure>

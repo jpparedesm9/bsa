@@ -1,0 +1,94 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<serviceClass name="SearchAccount" nsBase="COBISCorp.eCOBIS.Account" namespace="COBISCorp.eCOBIS.Account.Service" package="cobiscorp.ecobis.account.service" ns="http://service.account.ecobis.cobiscorp" module="Account" productName="COBISCorp.eCOBIS.Account.Service" productVersion="2.0.0.0">
+  <productProperties>
+    <property name="MavenGroupId" value="com.cobiscorp.processapi" />
+    <property name="MavenArtifactId" value="COBISCorp.eCOBIS.Account.Service" />
+    <property name="MavenVersion" value="2.0.0.0" />
+  </productProperties>
+  <partialClass name="SearchAccount">
+    <services>
+      <service id="Account.SearchAccount.SearchAccountByCurrency" netName="SearchAccountByCurrency" javaName="searchAccountByCurrency" mappingType="STORED_PROCEDURE" mapId="b02f0c434ba1da7396aca257d0eb1e2f">
+        <SRVMapping name="cob_cartera..sp_cuenta_cobis" trnCode="7003">
+          <DTOs>
+            <DTO direction="in" name="Customer" alias="inCustomer" namespace="COBISCorp.eCOBIS.Account.DTO" package="cobiscorp.ecobis.account.dto" ns="http://dto.account.ecobis.cobiscorp" required="true" />
+            <DTO direction="return" name="AccountResponse" alias="returnAccountResponse" namespace="COBISCorp.eCOBIS.Account.DTO" package="cobiscorp.ecobis.account.dto" ns="http://dto.account.ecobis.cobiscorp" required="true">
+              <properties>
+                <property name="account" propertyNet="Account" propertyJava="account" setterJavaMethod="setAccount" getterJavaMethod="getAccount" xsdType="string" netType="string" javaType="String" cobisMapping="" isInherit="false" isComplexType="false" isCollectionType="false" required="false" encrypted="false" maxLength="0" />
+                <property name="accountName" propertyNet="AccountName" propertyJava="accountName" setterJavaMethod="setAccountName" getterJavaMethod="getAccountName" xsdType="string" netType="string" javaType="String" cobisMapping="" isInherit="false" isComplexType="false" isCollectionType="false" required="false" encrypted="false" maxLength="0" />
+                <property name="accountStatus" propertyNet="AccountStatus" propertyJava="accountStatus" setterJavaMethod="setAccountStatus" getterJavaMethod="getAccountStatus" xsdType="string" netType="string" javaType="String" cobisMapping="" isInherit="false" isComplexType="false" isCollectionType="false" required="false" encrypted="false" maxLength="0" />
+                <property name="accountOffice" propertyNet="AccountOffice" propertyJava="accountOffice" setterJavaMethod="setAccountOffice" getterJavaMethod="getAccountOffice" xsdType="int?" netType="int?" javaType="Integer" cobisMapping="" isInherit="false" isComplexType="false" isCollectionType="false" required="false" encrypted="false" maxLength="0" />
+                <property name="accountType" propertyNet="AccountType" propertyJava="accountType" setterJavaMethod="setAccountType" getterJavaMethod="getAccountType" xsdType="string" netType="string" javaType="String" cobisMapping="" isInherit="false" isComplexType="false" isCollectionType="false" required="false" encrypted="false" maxLength="0" />
+                <property name="accountDescription" propertyNet="AccountDescription" propertyJava="accountDescription" setterJavaMethod="setAccountDescription" getterJavaMethod="getAccountDescription" xsdType="string" netType="string" javaType="String" cobisMapping="" isInherit="false" isComplexType="false" isCollectionType="false" required="false" encrypted="false" maxLength="0" />
+                <property name="validAccount" propertyNet="ValidAccount" propertyJava="validAccount" setterJavaMethod="setValidAccount" getterJavaMethod="getValidAccount" xsdType="int?" netType="int?" javaType="Integer" cobisMapping="" isInherit="false" isComplexType="false" isCollectionType="false" required="false" encrypted="false" maxLength="0" />
+              </properties>
+            </DTO>
+            <DTO direction="out" name="AccountResponseList" alias="outAccountResponseList" namespace="COBISCorp.eCOBIS.Account.DTO" package="cobiscorp.ecobis.account.dto" ns="http://dto.account.ecobis.cobiscorp" required="true">
+              <properties>
+                <property name="searchAccountResponse" propertyNet="SearchAccountResponse" propertyJava="searchAccountResponse" setterJavaMethod="setSearchAccountResponse" getterJavaMethod="getSearchAccountResponse" xsdType="GenericList" netType="List&lt;AccountResponse&gt;" javaType="ArrayList&lt;AccountResponse&gt;" cobisMapping="" isInherit="false" isComplexType="true" isCollectionType="true" required="true" encrypted="false" maxLength="0" XSDElementType="AccountResponse" netElementType="AccountResponse" javaElementType="AccountResponse" />
+              </properties>
+            </DTO>
+          </DTOs>
+          <parameterMappings>
+            <parameter name="@i_operacion" direction="in" mappingDirection="in" dataType="char" CTSDataType="SQLCHAR" JavaSQLType="CHAR" mappingType="CONSTANT" allowNull="false" contantValue="H" />
+            <parameter name="@i_cliente" direction="in" mappingDirection="in" dataType="int" CTSDataType="SQLINT4" JavaSQLType="INTEGER" mappingType="DTO" allowNull="false" DTOAlias="inCustomer" DTOPropertyName="customerId" />
+            <parameter name="@i_pcobis" direction="in" mappingDirection="in" dataType="tinyint" CTSDataType="SQLINT1" JavaSQLType="INTEGER" mappingType="DTO" allowNull="false" DTOAlias="inCustomer" DTOPropertyName="product" />
+            <parameter name="@i_moneda" direction="in" mappingDirection="in" dataType="tinyint" CTSDataType="SQLINT1" JavaSQLType="INTEGER" mappingType="DTO" allowNull="false" DTOAlias="inCustomer" DTOPropertyName="currency" />
+            <parameter name="@i_producto_var" direction="in" mappingDirection="in" dataType="varchar" CTSDataType="SQLVARCHAR" JavaSQLType="VARCHAR" mappingType="DTO" allowNull="false" DTOAlias="inCustomer" DTOPropertyName="productVar" />
+          </parameterMappings>
+          <resultMappings>
+            <result>
+              <DTOResult DTOAlias="returnAccountResponse" MapReturn="true">
+                <columnMapping position="0" name="233157" DTOPropertyName="account" DataType="string" Format="" />
+                <columnMapping position="1" name="233158" DTOPropertyName="accountDescription" DataType="string" Format="" />
+              </DTOResult>
+            </result>
+          </resultMappings>
+          <MappingProperties>
+            <MappingProperty key="BLIQueryPropertyName1" value="searchAccountResponse" />
+          </MappingProperties>
+        </SRVMapping>
+      </service>
+      <service id="Account.SearchAccount.SearchAccountRequest" netName="SearchAccountRequest" javaName="searchAccountRequest" mappingType="STORED_PROCEDURE" mapId="28bda53c86d37e275a3ebfdc113b1f59">
+        <SRVMapping name="cob_remesas..sp_personaliza_cuenta" trnCode="4072">
+          <DTOs>
+            <DTO direction="in" name="Customer" alias="inCustomer" namespace="COBISCorp.eCOBIS.Account.DTO" package="cobiscorp.ecobis.account.dto" ns="http://dto.account.ecobis.cobiscorp" required="true" />
+            <DTO direction="out" name="AccountResponseList" alias="outAccountResponseList" namespace="COBISCorp.eCOBIS.Account.DTO" package="cobiscorp.ecobis.account.dto" ns="http://dto.account.ecobis.cobiscorp" required="true">
+              <properties>
+                <property name="searchAccountResponse" propertyNet="SearchAccountResponse" propertyJava="searchAccountResponse" setterJavaMethod="setSearchAccountResponse" getterJavaMethod="getSearchAccountResponse" xsdType="GenericList" netType="List&lt;AccountResponse&gt;" javaType="ArrayList&lt;AccountResponse&gt;" cobisMapping="" isInherit="false" isComplexType="true" isCollectionType="true" required="true" encrypted="false" maxLength="0" XSDElementType="AccountResponse" netElementType="AccountResponse" javaElementType="AccountResponse" />
+              </properties>
+            </DTO>
+            <DTO direction="return" name="AccountResponse" alias="returnAccountResponse" namespace="COBISCorp.eCOBIS.Account.DTO" package="cobiscorp.ecobis.account.dto" ns="http://dto.account.ecobis.cobiscorp" required="true">
+              <properties>
+                <property name="account" propertyNet="Account" propertyJava="account" setterJavaMethod="setAccount" getterJavaMethod="getAccount" xsdType="string" netType="string" javaType="String" cobisMapping="" isInherit="false" isComplexType="false" isCollectionType="false" required="false" encrypted="false" maxLength="0" />
+                <property name="accountName" propertyNet="AccountName" propertyJava="accountName" setterJavaMethod="setAccountName" getterJavaMethod="getAccountName" xsdType="string" netType="string" javaType="String" cobisMapping="" isInherit="false" isComplexType="false" isCollectionType="false" required="false" encrypted="false" maxLength="0" />
+                <property name="accountStatus" propertyNet="AccountStatus" propertyJava="accountStatus" setterJavaMethod="setAccountStatus" getterJavaMethod="getAccountStatus" xsdType="string" netType="string" javaType="String" cobisMapping="" isInherit="false" isComplexType="false" isCollectionType="false" required="false" encrypted="false" maxLength="0" />
+                <property name="accountOffice" propertyNet="AccountOffice" propertyJava="accountOffice" setterJavaMethod="setAccountOffice" getterJavaMethod="getAccountOffice" xsdType="int?" netType="int?" javaType="Integer" cobisMapping="" isInherit="false" isComplexType="false" isCollectionType="false" required="false" encrypted="false" maxLength="0" />
+                <property name="accountType" propertyNet="AccountType" propertyJava="accountType" setterJavaMethod="setAccountType" getterJavaMethod="getAccountType" xsdType="string" netType="string" javaType="String" cobisMapping="" isInherit="false" isComplexType="false" isCollectionType="false" required="false" encrypted="false" maxLength="0" />
+                <property name="accountDescription" propertyNet="AccountDescription" propertyJava="accountDescription" setterJavaMethod="setAccountDescription" getterJavaMethod="getAccountDescription" xsdType="string" netType="string" javaType="String" cobisMapping="" isInherit="false" isComplexType="false" isCollectionType="false" required="false" encrypted="false" maxLength="0" />
+                <property name="validAccount" propertyNet="ValidAccount" propertyJava="validAccount" setterJavaMethod="setValidAccount" getterJavaMethod="getValidAccount" xsdType="int?" netType="int?" javaType="Integer" cobisMapping="" isInherit="false" isComplexType="false" isCollectionType="false" required="false" encrypted="false" maxLength="0" />
+              </properties>
+            </DTO>
+          </DTOs>
+          <parameterMappings>
+            <parameter name="@i_operacion" direction="in" mappingDirection="in" dataType="char" CTSDataType="SQLCHAR" JavaSQLType="CHAR" mappingType="CONSTANT" allowNull="false" contantValue="C" />
+            <parameter name="@i_filial" direction="in" mappingDirection="in" dataType="tinyint" CTSDataType="SQLINT1" JavaSQLType="INTEGER" mappingType="DTO" allowNull="false" DTOAlias="inCustomer" DTOPropertyName="subsidiary" />
+            <parameter name="@i_tipo" direction="in" mappingDirection="in" dataType="char" CTSDataType="SQLCHAR" JavaSQLType="CHAR" mappingType="DTO" allowNull="false" DTOAlias="inCustomer" DTOPropertyName="type" />
+            <parameter name="@i_cod_persona" direction="in" mappingDirection="in" dataType="int" CTSDataType="SQLINT4" JavaSQLType="INTEGER" mappingType="DTO" allowNull="false" DTOAlias="inCustomer" DTOPropertyName="customerId" />
+          </parameterMappings>
+          <resultMappings>
+            <result>
+              <DTOResult DTOAlias="returnAccountResponse" MapReturn="true">
+                <columnMapping position="1" name="No. CUENTA" DTOPropertyName="account" DataType="string" Format="" />
+                <columnMapping position="8" name="DESCRIPCION DE PRO. MON." DTOPropertyName="accountDescription" DataType="string" />
+                <columnMapping position="12" name="TIPO CUENTA" DTOPropertyName="accountType" DataType="string" Format="" />
+              </DTOResult>
+            </result>
+          </resultMappings>
+          <MappingProperties>
+            <MappingProperty key="BLIQueryPropertyName1" value="searchAccountResponse" />
+          </MappingProperties>
+        </SRVMapping>
+      </service>
+    </services>
+  </partialClass>
+</serviceClass>

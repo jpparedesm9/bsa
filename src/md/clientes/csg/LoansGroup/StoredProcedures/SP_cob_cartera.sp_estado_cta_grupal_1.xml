@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<procedure>
+  <database>cob_cartera</database>
+  <name>sp_estado_cta_grupal</name>
+  <type>SYBASE</type>
+  <version>1</version>
+  <parameters>
+    <parameter name="@i_banco" dataType="varchar" direction="in" />
+    <parameter name="@i_opcion" dataType="char" direction="in" />
+    <parameter name="@s_date" dataType="datetime" direction="in" />
+  </parameters>
+  <queries>
+    <query>
+      <columns>
+        <column name="grupo" />
+        <column name="nombre_grupo" />
+        <column name="oficina" />
+        <column name="nombre_oficina" />
+        <column name="nombre_oficial" />
+        <column name="destino" />
+        <column name="desc_destino" />
+        <column name="reunion" />
+        <column name="ciclos" />
+        <column name="monto_financiado" />
+        <column name="plazo" />
+        <column name="tasa" />
+        <column name="fecha_liq" />
+        <column name="fecha_fin" />
+        <column name="fecha" />
+        <column name="grupal" />
+        <column name="periodicidad" />
+        <column name="tasa_mora" />
+        <column name="abreviatura_moneda" />
+      </columns>
+      <queryText>SELECT w_grupo, w_nombre_grupo, w_oficina, w_nombre_oficina, w_nombre_oficial, w_destino, w_desc_destino, w_reunion, w_ciclos, w_monto_financiado, w_plazo, w_tasa, w_fecha_liq, w_fecha_fin, w_fecha, w_grupal, w_periodicidad, w_tasa_mora</queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="{1}" />
+        <column name="{2}" />
+        <column name="{3}" />
+        <column name="{4}" />
+        <column name="{5}" />
+        <column name="{6}" />
+        <column name="ROUND (ISNULL ((SELECT  SUM (ISNULL (am_acumulado - am_pagado + am_gracia" />
+        <column name=" 0)) FROM cob_cartera..ca_dividendo  " />
+        <column name="cob_cartera..ca_amortizacion  " />
+        <column name="cob_credito..cr_tramite_grupal   WHERE tg_operacion " />
+      </columns>
+      <queryText>SELECT  am_concepto,co_descripcion,ro_prioridad,ROUND (ISNULL (SUM (am_cuota + am_gracia), 0), ?),ROUND (ISNULL (SUM (am_pagado), 0), ?),ROUND (ISNULL (SUM (am_cuota - am_pagado + am_gracia), 0), ?),ROUND (ISNULL ((SELECT  SUM (ISNULL (am_acumulado - am_pagado + am_gracia, 0)) FROM cob_cartera..ca_dividendo  ,cob_cartera..ca_amortizacion  ,cob_credito..cr_tramite_grupal   WHERE tg_operacion = di_operacion AND tg_referencia_grupal = ? AND am_operacion = di_operacion AND am_dividendo = di_dividendo AND di_estado = 2     ), 0), ?) </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="Pago" />
+        <column name="Fecha" />
+        <column name="Capital" />
+        <column name="Intereses" />
+        <column name="Cargos" />
+        <column name="Saldo_k" />
+        <column name="Aho_volunt" />
+        <column name="Aho_Extra" />
+        <column name="Cuota" />
+      </columns>
+      <queryText>SELECT  "Pago" = A.di_dividendo,"Fecha" = CONVERT (VARCHAR (10),A.di_fecha_ven ,103),"Capital" = (SELECT  SUM (am_cuota) FROM cob_cartera..ca_amortizacion  ,cob_credito..cr_tramite_grupal   WHERE tg_referencia_grupal = ? AND tg_operacion = am_operacion AND am_dividendo = A.di_dividendo AND am_concepto = "CAP"     ),"Intereses" = (SELECT  SUM (am_cuota) FROM cob_cartera..ca_amortizacion  ,cob_credito..cr_tramite_grupal   WHERE tg_referencia_grupal = ? AND tg_operacion = am_operacion AND am_dividendo = A.di_dividendo AND am_concepto = "INT"     ),"Cargos" = (SELECT  SUM (am_cuota) FROM cob_cartera..ca_amortizacion  ,cob_credito..cr_tramite_grupal   WHERE tg_referencia_grupal = ? AND tg_operacion = am_operacion AND am_dividendo = A.di_dividendo AND am_concepto NOT IN ("CAP","INT")     ),"Saldo_k" = (SELECT  SUM (tg_monto) - SUM (am_cuota) FROM cob_cartera..ca_amortizacion  ,cob_credito..cr_tramite_grupal   WHERE tg_referencia_grupal = ? AND tg_operacion = am_operacion AND am_dividendo &lt;= A.di_dividendo AND am_concepto = "CAP"     ),"Aho_volunt" = ISNULL ((SELECT  SUM (ISNULL (cp_ahorro, 0)) FROM cob_cartera..ca_control_pago  ,cob_credito..cr_tramite_grupal   WHERE tg_operacion = cp_operacion AND tg_referencia_grupal = ? AND cp_dividendo = A.di_dividendo     ), 0),"Aho_Extra" = ISNULL ((SELECT  SUM (ISNULL (cp_extras, 0)) FROM cob_cartera..ca_control_pago  ,cob_credito..cr_tramite_grupal   WHERE tg_operacion = cp_operacion AND tg_referencia_grupal = ? AND cp_dividendo = A.di_dividendo     ), 0) </queryText>
+    </query>
+  </queries>
+</procedure>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd
+		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd">
+
+	<bean id="portfolioCatalogServiceRef" class="com.cobiscorp.ecobis.fpm.portfolio.mock.CatalogManagerMock"></bean>
+
+	<bean id="transactionManager" class="org.springframework.orm.jpa.JpaTransactionManager">
+		<property name="entityManagerFactory" ref="entityManagerFactory" />
+	</bean>
+	
+	<bean id="storedProcedureUtils" class="com.cobiscorp.ecobis.fpm.portfolio.mock.StoreProcedureUtilsMock">		
+	</bean>
+
+	<tx:advice id="transactionalAdvice" transaction-manager="transactionManager">
+		<tx:attributes>
+			<tx:method name="*" propagation="REQUIRED" rollback-for="RuntimeException" />
+		</tx:attributes>
+	</tx:advice>
+
+	<aop:config>
+		<aop:pointcut id="defaultOperations"
+			expression="execution(* com.cobiscorp.ecobis.fpm.portfolio.service.IDefaultOperationManager.*(..))" />
+		<aop:advisor pointcut-ref="defaultOperations" advice-ref="transactionalAdvice" />
+	</aop:config>
+	<aop:config>
+		<aop:pointcut id="itemPortfolioOperations"
+			expression="execution(* com.cobiscorp.ecobis.fpm.portfolio.service.IItemPortfolioManager.*(..))" />
+		<aop:advisor pointcut-ref="itemPortfolioOperations"
+			advice-ref="transactionalAdvice" />
+	</aop:config>
+	<aop:config>
+		<aop:pointcut id="ratePortfolioOperations"
+			expression="execution(* com.cobiscorp.ecobis.fpm.portfolio.service.IRatePortfolio.*(..))" />
+		<aop:advisor pointcut-ref="ratePortfolioOperations"
+			advice-ref="transactionalAdvice" />
+	</aop:config>
+
+
+
+</beans>

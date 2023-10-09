@@ -1,0 +1,112 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<procedure>
+  <database>cob_credito</database>
+  <name>sp_toperacion</name>
+  <type>SYBASE</type>
+  <version>1</version>
+  <parameters>
+    <parameter name="@s_ssn" dataType="int" direction="in" />
+    <parameter name="@s_user" dataType="varchar" direction="in" />
+    <parameter name="@s_sesn" dataType="int" direction="in" />
+    <parameter name="@s_term" dataType="varchar" direction="in" />
+    <parameter name="@s_date" dataType="datetime" direction="in" />
+    <parameter name="@s_srv" dataType="varchar" direction="in" />
+    <parameter name="@s_lsrv" dataType="varchar" direction="in" />
+    <parameter name="@s_rol" dataType="smallint" direction="in" />
+    <parameter name="@s_ofi" dataType="smallint" direction="in" />
+    <parameter name="@s_org_err" dataType="char" direction="in" />
+    <parameter name="@s_error" dataType="int" direction="in" />
+    <parameter name="@s_sev" dataType="tinyint" direction="in" />
+    <parameter name="@s_msg" dataType="varchar" direction="in" />
+    <parameter name="@s_org" dataType="char" direction="in" />
+    <parameter name="@t_debug" dataType="char" direction="in" />
+    <parameter name="@t_file" dataType="varchar" direction="in" />
+    <parameter name="@t_from" dataType="varchar" direction="in" />
+    <parameter name="@t_trn" dataType="smallint" direction="in" />
+    <parameter name="@i_operacion" dataType="char" direction="in" />
+    <parameter name="@i_modo" dataType="tinyint" direction="in" />
+    <parameter name="@i_toperacion" dataType="varchar" direction="in" />
+    <parameter name="@o_toperacion" dataType="varchar" direction="in" />
+    <parameter name="@i_producto" dataType="varchar" direction="in" />
+    <parameter name="@o_producto" dataType="varchar" direction="in" />
+    <parameter name="@i_descripcion" dataType="varchar" direction="in" />
+    <parameter name="@i_descripcion_a" dataType="varchar" direction="in" />
+    <parameter name="@o_descripcion" dataType="varchar" direction="in" />
+    <parameter name="@o_descripcion_a" dataType="varchar" direction="in" />
+    <parameter name="@o_desc_producto" dataType="varchar" direction="in" />
+    <parameter name="@i_estado" dataType="char" direction="in" />
+    <parameter name="@o_estado" dataType="char" direction="in" />
+    <parameter name="@o_desc_estado" dataType="varchar" direction="in" />
+    <parameter name="@o_desc_modulo" dataType="varchar" direction="in" />
+    <parameter name="@i_riesgo" dataType="char" direction="in" />
+    <parameter name="@i_codigo_sib" dataType="char" direction="in" />
+    <parameter name="@i_firmas" dataType="tinyint" direction="in" />
+    <parameter name="@i_clase" dataType="varchar" direction="in" />
+    <parameter name="@i_hipotecario" dataType="char" direction="in" />
+    <parameter name="@i_mantener_c" dataType="char" direction="in" />
+    <parameter name="@i_fecha_cambio" dataType="datetime" direction="in" />
+    <parameter name="@o_clase" dataType="varchar" direction="in" />
+    <parameter name="@o_hipotecario" dataType="char" direction="in" />
+    <parameter name="@o_mantener_c" dataType="char" direction="in" />
+    <parameter name="@o_riesgo" dataType="char" direction="in" />
+    <parameter name="@o_codigo_sib" dataType="char" direction="in" />
+    <parameter name="@o_firmas" dataType="tinyint" direction="in" />
+    <parameter name="@o_fecha_cambio" dataType="varchar" direction="in" />
+    <parameter name="@i_formato_fecha" dataType="tinyint" direction="in" />
+    <parameter name="@i_valorcat" dataType="varchar" direction="in" />
+  </parameters>
+  <queries>
+    <query>
+      <columns>
+        <column name="62290" />
+        <column name="62291" />
+        <column name="62292" />
+        <column name="62293" />
+        <column name="62294" />
+        <column name="62389" />
+        <column name="351304" />
+        <column name="351306" />
+        <column name="351305" />
+        <column name="351307" />
+      </columns>
+      <queryText>SELECT  "62290" = to_toperacion,"62291" = to_producto,"62292" = CONVERT (CHAR (45),to_descripcion ),"62293" = to_estado,"62294" = to_codigo_sib,"62389" = CONVERT (CHAR (45),to_descripcion_a ),"351304" = to_categoria,"351306" = to_mantener_c,"351305" = to_hipotecaria,"351307" = CONVERT (VARCHAR (10),to_fecha_cambio ,?) </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="{1}" />
+        <column name="{2}" />
+        <column name="{3}" />
+        <column name="{4}" />
+        <column name="{5}" />
+        <column name="{6}" />
+        <column name="{7}" />
+        <column name="{8}" />
+        <column name="{9}" />
+        <column name="{10}" />
+        <column name="{11}" />
+        <column name="{12}" />
+        <column name="{13}" />
+        <column name="{14}" />
+      </columns>
+      <queryText>SELECT o_toperacion, o_producto, o_desc_producto, o_estado, o_desc_estado, o_desc_modulo, o_riesgo, o_codigo_sib, o_firmas, o_descripcion_a, o_clase, o_mantener_c, o_hipotecario, o_fecha_cambio</queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="operationType" />
+        <column name="operationName" />
+        <column name="productCode" />
+        <column name="riskType" />
+        <column name="sibCode" />
+        <column name="alternativeDescription" />
+      </columns>
+      <queryText>SELECT  "62295" = to_toperacion,"62296" = to_descripcion,"62291" = to_producto,"62297" = to_riesgo,"62298" = to_codigo_sib,"62389" = to_descripcion_a </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="Description" />
+        <column name="Product" />
+      </columns>
+      <queryText>SELECT  "Clase" = pa_char,"Descripcion" = pa_parametro </queryText>
+    </query>
+  </queries>
+</procedure>

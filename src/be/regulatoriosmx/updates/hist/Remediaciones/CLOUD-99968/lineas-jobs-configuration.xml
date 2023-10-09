@@ -1,0 +1,42 @@
+<!-----Indicaciones
+	--1.- Ubicarse en la ruta: \Notificador\notification
+	--2.- Sacar respaldo del archivo jobs-configuration.xml
+	--3.- Abrir el archivo: jobs-configuration.xml
+	--4.- Ir al final del archivo y agregar las siguientes líneas al final del archivo, una línea antes del cierre </jobXml>:	-->
+	
+	<!-- CAPA WEB CON ACCESO A INTERNET -->
+	<jobs>
+        <id>18</id>
+        <jobName>XTRSF</jobName>
+        <jobClass>com.cobiscorp.cloud.notificationservice.impl.ExtraccionReporteSeguroFuneral
+        </jobClass>
+        <cronExpression>0 0/1 * 1/1 * ? *</cronExpression>
+    </jobs>
+	<jobs>
+        <id>19</id>
+        <jobName>CRFAL</jobName>
+        <jobClass>com.cobiscorp.cloud.notificationservice.impl.CargaReporteSeguroFuneralNetAltas
+        </jobClass>
+        <cronExpression>0 0/1 * 1/1 * ? *</cronExpression>
+    </jobs>
+	<jobs>
+        <id>20</id>
+        <jobName>CRFBA</jobName>
+        <jobClass>com.cobiscorp.cloud.notificationservice.impl.CargaReporteSeguroFuneralNetBajas
+        </jobClass>
+        <cronExpression>0 0/1 * 1/1 * ? *</cronExpression>
+    </jobs>
+
+<!-----Indicaciones	
+	--1.- Ubicarse en la ruta: \Notificador\notification
+	--2.- Sacar respaldo del archivo jobs-configuration.xml
+	--3.- Abrir el archivo: jobs-configuration.xml
+	--4.- Ir al final del archivo y agregar las siguientes líneas al final del archivo, una línea antes del cierre </jobXml>:	-->
+	
+	<!-- CAPA BASE DE DATOS -->
+		<jobs>
+	    <id>16</id>
+		<jobName>CPYSF</jobName>
+		<jobClass>com.cobiscorp.cloud.notificationservice.impl.CopiaReporteSeguroFuneral</jobClass>
+		<cronExpression>0 0/53 * 1/1 * ? *</cronExpression>
+	</jobs>

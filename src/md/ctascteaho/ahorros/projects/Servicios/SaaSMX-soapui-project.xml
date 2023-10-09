@@ -1,0 +1,569 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="b6d1165c-4bb5-4975-be31-f0a7ee9e824b" activeEnvironment="Default" name="SaaSMX" resourceRoot="" soapui-version="5.2.1" abortOnError="false" runType="SEQUENTIAL" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" id="1cc95917-ab71-48bb-8573-bcd483ba8f19" wsaVersion="NONE" name="BLIAhorrosSoap12" type="wsdl" bindingName="{http://tempuri.org/}BLIAhorrosSoap12" soapVersion="1_2" anonymous="optional" definition="http://192.168.64.255:8081/MapWSTest/BLIAhorros.asmx?wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache/><con:endpoints><con:endpoint>http://192.168.64.255:8081/MapWSTest/BLIAhorros.asmx</con:endpoint></con:endpoints><con:operation id="3d890dbd-aa51-4af1-b398-c0488feb163d" isOneWay="false" action="http://tempuri.org/ConsultaMovimientos" name="ConsultaMovimientos" bindingOperationName="ConsultaMovimientos" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="eecc88a9-4c42-406b-88ca-49d29546dc67" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://192.168.64.255:8081/MapWSTest/BLIAhorros.asmx</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:tem="http://tempuri.org/">\r
+   <soap:Header/>\r
+   <soap:Body>\r
+      <tem:ConsultaMovimientos>\r
+         <!--Optional:-->\r
+         <tem:inConsultaMovimientoRequest>\r
+            <!--Optional:-->
+            <tem:Desde>08/12/2016</tem:Desde>
+            <!--Optional:-->
+            <tem:Hasta>08/12/2016</tem:Hasta>
+            <tem:Sec>0</tem:Sec>
+            <tem:SecAlt>-1</tem:SecAlt>
+            <!--Optional:-->
+            <tem:Hora>01/01/1900 12:00AM</tem:Hora>
+            <tem:Diario>0</tem:Diario>
+            <tem:FormatoFecha>101</tem:FormatoFecha>
+            <!--Optional:-->
+            <tem:NumCuenta>702040000013</tem:NumCuenta>
+         </tem:inConsultaMovimientoRequest>\r
+      </tem:ConsultaMovimientos>\r
+   </soap:Body>\r
+</soap:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/BLIAhorrosSoap/ConsultaMovimientosRequest"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="0e68efd7-1f65-4ab1-b15b-a59d4a35b477" isOneWay="false" action="http://tempuri.org/ConsultaSaldosYPromedios" name="ConsultaSaldosYPromedios" bindingOperationName="ConsultaSaldosYPromedios" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="577fb928-66aa-42f7-a41d-49fb24d4a9be" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://192.168.64.255:8081/MapWSTest/BLIAhorros.asmx</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:tem="http://tempuri.org/">\r
+   <soap:Header/>\r
+   <soap:Body>\r
+      <tem:ConsultaSaldosYPromedios>\r
+         <!--Optional:-->\r
+         <tem:inSaldoYPromedioRequest>\r
+            <tem:FormatoFecha>?</tem:FormatoFecha>\r
+            <!--Optional:-->\r
+            <tem:EsCliente>?</tem:EsCliente>\r
+            <!--Optional:-->\r
+            <tem:Corresponsal>?</tem:Corresponsal>\r
+            <!--Optional:-->\r
+            <tem:NumCuenta>?</tem:NumCuenta>\r
+            <!--Optional:-->\r
+            <tem:InforCuenta>?</tem:InforCuenta>\r
+         </tem:inSaldoYPromedioRequest>\r
+      </tem:ConsultaSaldosYPromedios>\r
+   </soap:Body>\r
+</soap:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/BLIAhorrosSoap/ConsultaSaldosYPromediosRequest"/></con:call></con:operation></con:interface><con:interface xsi:type="con:WsdlInterface" id="03a5b824-9910-4417-88af-93e7bb728fef" wsaVersion="NONE" name="BLIAhorrosSoap" type="wsdl" bindingName="{http://tempuri.org/}BLIAhorrosSoap" soapVersion="1_1" anonymous="optional" definition="http://192.168.64.255:8081/MapWSTest/BLIAhorros.asmx?wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="http://192.168.64.255:8081/MapWSTest/BLIAhorros.asmx?wsdl"><con:part><con:url>http://192.168.64.255:8081/MapWSTest/BLIAhorros.asmx?wsdl</con:url><con:content><![CDATA[<wsdl:definitions targetNamespace="http://tempuri.org/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="ConsultaMovimientos">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="inConsultaMovimientoRequest" type="tns:ConsultaMovimientoRequest"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ConsultaMovimientoRequest">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Desde" type="s:dateTime"/>
+          <s:element minOccurs="1" maxOccurs="1" name="Hasta" type="s:dateTime"/>
+          <s:element minOccurs="1" maxOccurs="1" name="Sec" type="s:int"/>
+          <s:element minOccurs="1" maxOccurs="1" name="SecAlt" type="s:int"/>
+          <s:element minOccurs="1" maxOccurs="1" name="Hora" type="s:dateTime"/>
+          <s:element minOccurs="1" maxOccurs="1" name="Diario" type="s:int"/>
+          <s:element minOccurs="1" maxOccurs="1" name="FormatoFecha" type="s:int"/>
+          <s:element minOccurs="0" maxOccurs="1" name="NumCuenta" type="s:string"/>
+          <s:element minOccurs="1" maxOccurs="1" name="Moneda" type="s:int"/>
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ConsultaMovimientosResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ConsultaMovimientosResult" type="tns:ConsultaMovimientosResponse"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ConsultaMovimientosResponse">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:BLIResponse">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="Movimientos" type="tns:ArrayOfMovimiento"/>
+              <s:element minOccurs="1" maxOccurs="1" name="Hist" type="s:int"/>
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="BLIResponse">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Messages" type="tns:ArrayOfMessageTO"/>
+          <s:element minOccurs="1" maxOccurs="1" name="Success" type="s:boolean"/>
+          <s:element minOccurs="1" maxOccurs="1" name="RetStatus" type="s:int"/>
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfMessageTO">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="MessageTO" nillable="true" type="tns:MessageTO"/>
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="MessageTO">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Code" type="s:string"/>
+          <s:element minOccurs="0" maxOccurs="1" name="Message" type="s:string"/>
+          <s:element minOccurs="0" maxOccurs="1" name="Type" type="s:string"/>
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfMovimiento">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Movimiento" nillable="true" type="tns:Movimiento"/>
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Movimiento">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Fecha" type="s:string"/>
+          <s:element minOccurs="0" maxOccurs="1" name="Causa" type="s:string"/>
+          <s:element minOccurs="1" maxOccurs="1" name="Oficina" type="s:int"/>
+          <s:element minOccurs="0" maxOccurs="1" name="Correccion" type="s:string"/>
+          <s:element minOccurs="0" maxOccurs="1" name="Descripcion" type="s:string"/>
+          <s:element minOccurs="0" maxOccurs="1" name="Signo" type="s:string"/>
+          <s:element minOccurs="1" maxOccurs="1" name="Valor" type="s:double"/>
+          <s:element minOccurs="0" maxOccurs="1" name="Terminal" type="s:string"/>
+          <s:element minOccurs="1" maxOccurs="1" name="SaldoContable" type="s:double"/>
+          <s:element minOccurs="1" maxOccurs="1" name="SaldoDisponible" type="s:double"/>
+          <s:element minOccurs="1" maxOccurs="1" name="Interes" type="s:double"/>
+          <s:element minOccurs="0" maxOccurs="1" name="SsnBranch" type="s:string"/>
+          <s:element minOccurs="0" maxOccurs="1" name="CodAlterno" type="s:string"/>
+          <s:element minOccurs="0" maxOccurs="1" name="Serial" type="s:string"/>
+          <s:element minOccurs="0" maxOccurs="1" name="Usuario" type="s:string"/>
+          <s:element minOccurs="0" maxOccurs="1" name="Hora" type="s:string"/>
+          <s:element minOccurs="0" maxOccurs="1" name="Secuencial" type="s:string"/>
+          <s:element minOccurs="1" maxOccurs="1" name="ValorComision" type="s:double"/>
+          <s:element minOccurs="1" maxOccurs="1" name="MontoImp" type="s:double"/>
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ConsultaSaldosYPromedios">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="inSaldoYPromedioRequest" type="tns:SaldoYPromedioRequest"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="SaldoYPromedioRequest">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="FormatoFecha" type="s:int"/>
+          <s:element minOccurs="0" maxOccurs="1" name="EsCliente" type="s:string"/>
+          <s:element minOccurs="0" maxOccurs="1" name="Corresponsal" type="s:string"/>
+          <s:element minOccurs="0" maxOccurs="1" name="NumCuenta" type="s:string"/>
+          <s:element minOccurs="0" maxOccurs="1" name="InforCuenta" type="s:string"/>
+          <s:element minOccurs="1" maxOccurs="1" name="Moneda" type="s:int"/>
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ConsultaSaldosYPromediosResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ConsultaSaldosYPromediosResult" type="tns:SaldoYPromedioResponse"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="SaldoYPromedioResponse">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:BLIResponse">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="SaldoYPromedio" type="tns:SaldoYPromedio"/>
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="SaldoYPromedio">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Moneda" type="s:int"/>
+          <s:element minOccurs="0" maxOccurs="1" name="DesMoneda" type="s:string"/>
+          <s:element minOccurs="0" maxOccurs="1" name="CodEstado" type="s:string"/>
+          <s:element minOccurs="0" maxOccurs="1" name="DesEstado" type="s:string"/>
+          <s:element minOccurs="0" maxOccurs="1" name="CodCategoria" type="s:string"/>
+          <s:element minOccurs="0" maxOccurs="1" name="DesCategoria" type="s:string"/>
+          <s:element minOccurs="1" maxOccurs="1" name="OficialCta" type="s:int"/>
+          <s:element minOccurs="0" maxOccurs="1" name="NombreOficial" type="s:string"/>
+          <s:element minOccurs="0" maxOccurs="1" name="CodTipoPromedio" type="s:string"/>
+          <s:element minOccurs="0" maxOccurs="1" name="DesTipoPromedio" type="s:string"/>
+          <s:element minOccurs="0" maxOccurs="1" name="CodCapitalizacion" type="s:string"/>
+          <s:element minOccurs="0" maxOccurs="1" name="DesCapitalizacion" type="s:string"/>
+          <s:element minOccurs="0" maxOccurs="1" name="CodProdBancario" type="s:string"/>
+          <s:element minOccurs="0" maxOccurs="1" name="DesProdBancario" type="s:string"/>
+          <s:element minOccurs="0" maxOccurs="1" name="Contractual" type="s:string"/>
+          <s:element minOccurs="0" maxOccurs="1" name="TipoCuenta" type="s:string"/>
+          <s:element minOccurs="1" maxOccurs="1" name="Retenido24Horas" type="s:double"/>
+          <s:element minOccurs="1" maxOccurs="1" name="Retenido12Horas" type="s:double"/>
+          <s:element minOccurs="1" maxOccurs="1" name="Disponible" type="s:double"/>
+          <s:element minOccurs="1" maxOccurs="1" name="SaldoCuenta" type="s:double"/>
+          <s:element minOccurs="1" maxOccurs="1" name="SaldoGirar" type="s:double"/>
+          <s:element minOccurs="1" maxOccurs="1" name="SaldoInteres" type="s:double"/>
+          <s:element minOccurs="1" maxOccurs="1" name="Promedio1" type="s:double"/>
+          <s:element minOccurs="1" maxOccurs="1" name="Promedio2" type="s:double"/>
+          <s:element minOccurs="1" maxOccurs="1" name="Promedio3" type="s:double"/>
+          <s:element minOccurs="1" maxOccurs="1" name="Promedio4" type="s:double"/>
+          <s:element minOccurs="1" maxOccurs="1" name="Promedio5" type="s:double"/>
+          <s:element minOccurs="1" maxOccurs="1" name="Promedio6" type="s:double"/>
+          <s:element minOccurs="1" maxOccurs="1" name="PromedioGeneral" type="s:double"/>
+          <s:element minOccurs="1" maxOccurs="1" name="RetencionValores" type="s:double"/>
+          <s:element minOccurs="0" maxOccurs="1" name="FechaUltMovimiento" type="s:string"/>
+          <s:element minOccurs="1" maxOccurs="1" name="PromedioDisponible" type="s:double"/>
+          <s:element minOccurs="1" maxOccurs="1" name="CredHoy" type="s:double"/>
+          <s:element minOccurs="1" maxOccurs="1" name="CredMes" type="s:double"/>
+          <s:element minOccurs="1" maxOccurs="1" name="DebHoy" type="s:double"/>
+          <s:element minOccurs="1" maxOccurs="1" name="DebMes" type="s:double"/>
+          <s:element minOccurs="1" maxOccurs="1" name="IdbMes" type="s:double"/>
+          <s:element minOccurs="1" maxOccurs="1" name="MontoConsumos" type="s:double"/>
+          <s:element minOccurs="1" maxOccurs="1" name="SaldoAyer" type="s:double"/>
+          <s:element minOccurs="1" maxOccurs="1" name="TasaHoy" type="s:double"/>
+          <s:element minOccurs="1" maxOccurs="1" name="UltimoInteres" type="s:double"/>
+          <s:element minOccurs="1" maxOccurs="1" name="InteresMes" type="s:double"/>
+          <s:element minOccurs="0" maxOccurs="1" name="ValoresEmbargados" type="s:string"/>
+          <s:element minOccurs="0" maxOccurs="1" name="CuentaEmbargada" type="s:string"/>
+          <s:element minOccurs="1" maxOccurs="1" name="ValoresSuspenso" type="s:double"/>
+          <s:element minOccurs="1" maxOccurs="1" name="RemAyer" type="s:double"/>
+          <s:element minOccurs="0" maxOccurs="1" name="Patente" type="s:string"/>
+          <s:element minOccurs="0" maxOccurs="1" name="Fideicomiso" type="s:string"/>
+        </s:sequence>
+      </s:complexType>
+      <s:element name="RegistroDelDeposito">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="inRegistroDelDepositoRequest" type="tns:RegistroDelDepositoRequest"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="RegistroDelDepositoRequest">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="NumCuenta" type="s:string"/>
+          <s:element minOccurs="0" maxOccurs="1" name="NumCuentaMig" type="s:string"/>
+          <s:element minOccurs="1" maxOccurs="1" name="Efectivo" type="s:double"/>
+          <s:element minOccurs="1" maxOccurs="1" name="ChequesPropios" type="s:double"/>
+          <s:element minOccurs="1" maxOccurs="1" name="ChequesLocales" type="s:double"/>
+          <s:element minOccurs="1" maxOccurs="1" name="Total" type="s:double"/>
+          <s:element minOccurs="1" maxOccurs="1" name="ChequesOtrasPlazas" type="s:double"/>
+          <s:element minOccurs="0" maxOccurs="1" name="Remesas" type="s:string"/>
+          <s:element minOccurs="1" maxOccurs="1" name="Fecha" type="s:dateTime"/>
+          <s:element minOccurs="1" maxOccurs="1" name="Filial" type="s:int"/>
+          <s:element minOccurs="0" maxOccurs="1" name="Operacion" type="s:string"/>
+          <s:element minOccurs="1" maxOccurs="1" name="SecCheque" type="s:int"/>
+          <s:element minOccurs="1" maxOccurs="1" name="CodBanco" type="s:int"/>
+          <s:element minOccurs="0" maxOccurs="1" name="CuentaCheque" type="s:string"/>
+          <s:element minOccurs="1" maxOccurs="1" name="NumCheque" type="s:int"/>
+          <s:element minOccurs="1" maxOccurs="1" name="FechaEmision" type="s:dateTime"/>
+          <s:element minOccurs="1" maxOccurs="1" name="ValorCheque" type="s:double"/>
+          <s:element minOccurs="1" maxOccurs="1" name="SsnDeposito" type="s:int"/>
+          <s:element minOccurs="1" maxOccurs="1" name="SsnBranch" type="s:int"/>
+          <s:element minOccurs="1" maxOccurs="1" name="OSsn" type="s:int"/>
+          <s:element minOccurs="1" maxOccurs="1" name="OSsnBranch" type="s:int"/>
+        </s:sequence>
+      </s:complexType>
+      <s:element name="RegistroDelDepositoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RegistroDelDepositoResult" type="tns:RegistroDelDepositoResponse"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="RegistroDelDepositoResponse">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:BLIResponse">
+            <s:sequence>
+              <s:element minOccurs="1" maxOccurs="1" name="Ssn" type="s:int"/>
+              <s:element minOccurs="1" maxOccurs="1" name="SsnBranch" type="s:int"/>
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:element name="RetiroAhorros">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="inRetiroRequest" type="tns:RetiroRequest"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="RetiroRequest">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="NumCuenta" type="s:string"/>
+          <s:element minOccurs="1" maxOccurs="1" name="Moneda" type="s:int"/>
+          <s:element minOccurs="1" maxOccurs="1" name="Valor" type="s:double"/>
+          <s:element minOccurs="1" maxOccurs="1" name="Canal" type="s:int"/>
+        </s:sequence>
+      </s:complexType>
+      <s:element name="RetiroAhorrosResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RetiroAhorrosResult" type="tns:RetiroResponse"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="RetiroResponse">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:BLIResponse">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="Ssn" type="s:string"/>
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="ConsultaMovimientosSoapIn">
+    <wsdl:part name="parameters" element="tns:ConsultaMovimientos"/>
+  </wsdl:message>
+  <wsdl:message name="ConsultaMovimientosSoapOut">
+    <wsdl:part name="parameters" element="tns:ConsultaMovimientosResponse"/>
+  </wsdl:message>
+  <wsdl:message name="ConsultaSaldosYPromediosSoapIn">
+    <wsdl:part name="parameters" element="tns:ConsultaSaldosYPromedios"/>
+  </wsdl:message>
+  <wsdl:message name="ConsultaSaldosYPromediosSoapOut">
+    <wsdl:part name="parameters" element="tns:ConsultaSaldosYPromediosResponse"/>
+  </wsdl:message>
+  <wsdl:message name="RegistroDelDepositoSoapIn">
+    <wsdl:part name="parameters" element="tns:RegistroDelDeposito"/>
+  </wsdl:message>
+  <wsdl:message name="RegistroDelDepositoSoapOut">
+    <wsdl:part name="parameters" element="tns:RegistroDelDepositoResponse"/>
+  </wsdl:message>
+  <wsdl:message name="RetiroAhorrosSoapIn">
+    <wsdl:part name="parameters" element="tns:RetiroAhorros"/>
+  </wsdl:message>
+  <wsdl:message name="RetiroAhorrosSoapOut">
+    <wsdl:part name="parameters" element="tns:RetiroAhorrosResponse"/>
+  </wsdl:message>
+  <wsdl:portType name="BLIAhorrosSoap">
+    <wsdl:operation name="ConsultaMovimientos">
+      <wsdl:input message="tns:ConsultaMovimientosSoapIn"/>
+      <wsdl:output message="tns:ConsultaMovimientosSoapOut"/>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaSaldosYPromedios">
+      <wsdl:input message="tns:ConsultaSaldosYPromediosSoapIn"/>
+      <wsdl:output message="tns:ConsultaSaldosYPromediosSoapOut"/>
+    </wsdl:operation>
+    <wsdl:operation name="RegistroDelDeposito">
+      <wsdl:input message="tns:RegistroDelDepositoSoapIn"/>
+      <wsdl:output message="tns:RegistroDelDepositoSoapOut"/>
+    </wsdl:operation>
+    <wsdl:operation name="RetiroAhorros">
+      <wsdl:input message="tns:RetiroAhorrosSoapIn"/>
+      <wsdl:output message="tns:RetiroAhorrosSoapOut"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BLIAhorrosSoap" type="tns:BLIAhorrosSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="ConsultaMovimientos">
+      <soap:operation soapAction="http://tempuri.org/ConsultaMovimientos" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaSaldosYPromedios">
+      <soap:operation soapAction="http://tempuri.org/ConsultaSaldosYPromedios" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RegistroDelDeposito">
+      <soap:operation soapAction="http://tempuri.org/RegistroDelDeposito" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RetiroAhorros">
+      <soap:operation soapAction="http://tempuri.org/RetiroAhorros" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="BLIAhorrosSoap12" type="tns:BLIAhorrosSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="ConsultaMovimientos">
+      <soap12:operation soapAction="http://tempuri.org/ConsultaMovimientos" style="document"/>
+      <wsdl:input>
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaSaldosYPromedios">
+      <soap12:operation soapAction="http://tempuri.org/ConsultaSaldosYPromedios" style="document"/>
+      <wsdl:input>
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RegistroDelDeposito">
+      <soap12:operation soapAction="http://tempuri.org/RegistroDelDeposito" style="document"/>
+      <wsdl:input>
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RetiroAhorros">
+      <soap12:operation soapAction="http://tempuri.org/RetiroAhorros" style="document"/>
+      <wsdl:input>
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="BLIAhorros">
+    <wsdl:port name="BLIAhorrosSoap" binding="tns:BLIAhorrosSoap">
+      <soap:address location="http://192.168.64.255:8081/MapWSTest/BLIAhorros.asmx"/>
+    </wsdl:port>
+    <wsdl:port name="BLIAhorrosSoap12" binding="tns:BLIAhorrosSoap12">
+      <soap12:address location="http://192.168.64.255:8081/MapWSTest/BLIAhorros.asmx"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://192.168.64.255:8081/MapWSTest/BLIAhorros.asmx</con:endpoint></con:endpoints><con:operation id="90bccdef-a46f-4800-ba53-857d44dbb71b" isOneWay="false" action="http://tempuri.org/ConsultaMovimientos" name="ConsultaMovimientos" bindingOperationName="ConsultaMovimientos" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="72e30d3e-4443-4235-b7ad-d9ddb2149026" name="RequestCompleta"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://192.168.64.255:8081/MapWSTest/BLIAhorros.asmx</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tem="http://tempuri.org/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <tem:ConsultaMovimientos>
+         <!--Optional:-->
+         <tem:inConsultaMovimientoRequest>
+            <tem:Desde>2016-08-10T00:00:00</tem:Desde>
+            <tem:Hasta>2016-08-12T00:00:00</tem:Hasta>
+            <!--Optional:-->
+            <tem:Sec>0</tem:Sec>
+            <!--Optional:-->
+            <tem:SecAlt>-1</tem:SecAlt>
+            <!--Optional:-->
+            <tem:Hora>1900-01-01T00:00:00</tem:Hora>
+            <!--Optional:-->
+            <tem:Diario>0</tem:Diario>
+            <!--Optional:-->
+            <tem:FormatoFecha>101</tem:FormatoFecha>
+            <tem:NumCuenta>702040000013</tem:NumCuenta>
+            <!--Optional:-->
+            <tem:Moneda>0</tem:Moneda>
+         </tem:inConsultaMovimientoRequest>
+      </tem:ConsultaMovimientos>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/ConsultaMovimientos"/><con:wsrmConfig version="1.2"/></con:call><con:call id="0f6d45fd-20de-455e-8fb4-28575963200c" name="RequestMinima"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://192.168.64.255:8081/MapWSTest/BLIAhorros.asmx</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tem="http://tempuri.org/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <tem:ConsultaMovimientos>
+         <!--Optional:-->
+         <tem:inConsultaMovimientoRequest>
+            <tem:Desde>2016-08-10T00:00:00</tem:Desde>
+            <tem:Hasta>2016-08-12T00:00:00</tem:Hasta>
+            <tem:NumCuenta>702040000013</tem:NumCuenta>
+         </tem:inConsultaMovimientoRequest>
+      </tem:ConsultaMovimientos>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/ConsultaMovimientos"/><con:wsrmConfig version="1.2"/></con:call><con:call id="82492d9a-0f2b-4b92-ba6c-986e6c3cdb45" name="RangoFechasInvalidas"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://192.168.64.255:8081/MapWSTest/BLIAhorros.asmx</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tem="http://tempuri.org/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <tem:ConsultaMovimientos>
+         <!--Optional:-->
+         <tem:inConsultaMovimientoRequest>
+            <tem:Desde>2016-08-12T00:00:00</tem:Desde>
+            <tem:Hasta>2016-08-10T00:00:00</tem:Hasta>
+            <tem:NumCuenta>702040000013</tem:NumCuenta>
+         </tem:inConsultaMovimientoRequest>
+      </tem:ConsultaMovimientos>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/ConsultaMovimientos"/><con:wsrmConfig version="1.2"/></con:call><con:call id="1f4da884-82da-4a58-b9db-3a744d3f2c9a" name="CuentaInvalida"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://192.168.64.255:8081/MapWSTest/BLIAhorros.asmx</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tem="http://tempuri.org/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <tem:ConsultaMovimientos>
+         <tem:inConsultaMovimientoRequest>
+            <tem:Desde>2016-08-10T00:00:00</tem:Desde>
+            <tem:Hasta>2016-08-12T00:00:00</tem:Hasta>
+            <tem:NumCuenta>802040000013</tem:NumCuenta>
+         </tem:inConsultaMovimientoRequest>
+      </tem:ConsultaMovimientos>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/ConsultaMovimientos"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="88b9fa8c-83e8-4369-b2a0-f25214df8278" isOneWay="false" action="http://tempuri.org/ConsultaSaldosYPromedios" name="ConsultaSaldosYPromedios" bindingOperationName="ConsultaSaldosYPromedios" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="939303f2-6046-43a1-95f2-bc2edecffff2" name="RequestCompleta"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://192.168.64.255:8081/MapWSTest/BLIAhorros.asmx</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tem="http://tempuri.org/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <tem:ConsultaSaldosYPromedios>\r
+         <tem:inSaldoYPromedioRequest>\r
+            <!--Optional:-->\r
+            <tem:FormatoFecha>101</tem:FormatoFecha>\r
+            <!--Optional:-->\r
+            <tem:EsCliente>N</tem:EsCliente>\r
+            <!--Optional:-->\r
+            <tem:Corresponsal>N</tem:Corresponsal>\r
+            <tem:NumCuenta>702040000013</tem:NumCuenta>\r
+            <!--Optional:-->\r
+            <tem:InforCuenta>N</tem:InforCuenta>\r
+            <!--Optional:-->\r
+            <tem:Moneda>0</tem:Moneda>\r
+         </tem:inSaldoYPromedioRequest>\r
+      </tem:ConsultaSaldosYPromedios>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/ConsultaSaldosYPromedios"/><con:wsrmConfig version="1.2"/></con:call><con:call id="7e6ae5b7-0c7c-4289-a1e0-b082ff9ada15" name="RequestMinima"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://192.168.64.255:8081/MapWSTest/BLIAhorros.asmx</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tem="http://tempuri.org/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <tem:ConsultaSaldosYPromedios>\r
+         <tem:inSaldoYPromedioRequest>\r
+            <tem:NumCuenta>702040000013</tem:NumCuenta>\r
+         </tem:inSaldoYPromedioRequest>\r
+      </tem:ConsultaSaldosYPromedios>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/ConsultaSaldosYPromedios"/><con:wsrmConfig version="1.2"/></con:call><con:call id="49a6227c-252c-4eb2-adbe-1511e5d4575f" name="CuentaInvalida"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://192.168.64.255:8081/MapWSTest/BLIAhorros.asmx</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tem="http://tempuri.org/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <tem:ConsultaSaldosYPromedios>\r
+         <tem:inSaldoYPromedioRequest>\r
+            <tem:NumCuenta>702050000013</tem:NumCuenta>\r
+         </tem:inSaldoYPromedioRequest>\r
+      </tem:ConsultaSaldosYPromedios>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/ConsultaSaldosYPromedios"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="1829c147-1dbe-49e4-8c5e-b7c9a4ae8069" isOneWay="false" action="http://tempuri.org/RetiroAhorros" name="RetiroAhorros" bindingOperationName="RetiroAhorros" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="c831ad1b-540d-450b-9013-f0adb3114ad7" name="RequestCompleta"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://192.168.64.255:8081/MapWSTest/BLIAhorros.asmx</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tem="http://tempuri.org/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <tem:RetiroAhorros>\r
+         <tem:inRetiroRequest>\r
+            <tem:NumCuenta>702002000430</tem:NumCuenta>\r
+            <!--Optional:-->
+            <tem:Moneda>0</tem:Moneda>\r
+            <tem:Valor>1</tem:Valor>\r
+            <!--Optional:-->
+            <tem:Canal>0</tem:Canal>\r
+         </tem:inRetiroRequest>\r
+      </tem:RetiroAhorros>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/RetiroAhorros"/><con:wsrmConfig version="1.2"/></con:call><con:call id="91c3c067-76d4-4e2a-a725-417c588b1ef4" name="RequestMinima"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://192.168.64.255:8081/MapWSTest/BLIAhorros.asmx</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tem="http://tempuri.org/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <tem:RetiroAhorros>\r
+         <tem:inRetiroRequest>\r
+            <tem:NumCuenta>702002000430</tem:NumCuenta>\r
+            <tem:Valor>1</tem:Valor>
+         </tem:inRetiroRequest>\r
+      </tem:RetiroAhorros>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/RetiroAhorros"/><con:wsrmConfig version="1.2"/></con:call><con:call id="a50f82bc-10a0-4502-9673-d5f42f95028c" name="CuentaInvalida"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://192.168.64.255:8081/MapWSTest/BLIAhorros.asmx</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tem="http://tempuri.org/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <tem:RetiroAhorros>\r
+         <tem:inRetiroRequest>\r
+            <tem:NumCuenta>702005000430</tem:NumCuenta>\r
+            <tem:Valor>1</tem:Valor>
+         </tem:inRetiroRequest>\r
+      </tem:RetiroAhorros>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/RetiroAhorros"/><con:wsrmConfig version="1.2"/></con:call><con:call id="ffa7da5f-2e60-449d-ac5f-e8b73e8e1de6" name="ValorInvalido"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://192.168.64.255:8081/MapWSTest/BLIAhorros.asmx</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tem="http://tempuri.org/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <tem:RetiroAhorros>\r
+         <tem:inRetiroRequest>\r
+            <tem:NumCuenta>702002000430</tem:NumCuenta>\r
+            <tem:Valor>-1</tem:Valor>
+         </tem:inRetiroRequest>\r
+      </tem:RetiroAhorros>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/RetiroAhorros"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="73494d24-f623-4d62-96d3-5fa37a1249e3" isOneWay="false" action="http://tempuri.org/RegistroDelDeposito" name="RegistroDelDeposito" bindingOperationName="RegistroDelDeposito" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="1c728e58-1cd0-4f17-9aa8-4f8431a182f6" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://192.168.64.255:8081/MapWSTest/BLIAhorros.asmx</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tem="http://tempuri.org/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <tem:RegistroDelDeposito>
+         </tem:RegistroDelDeposito>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/RegistroDelDeposito"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/></con:soapui-project>

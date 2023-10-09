@@ -1,0 +1,92 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<procedure>
+  <database>cobis</database>
+  <name>sp_filial</name>
+  <type>SYBASE</type>
+  <version>1</version>
+  <parameters>
+    <parameter name="@s_ssn" dataType="int" direction="in" />
+    <parameter name="@s_user" dataType="varchar" direction="in" />
+    <parameter name="@s_sesn" dataType="int" direction="in" />
+    <parameter name="@s_term" dataType="varchar" direction="in" />
+    <parameter name="@s_date" dataType="datetime" direction="in" />
+    <parameter name="@s_srv" dataType="varchar" direction="in" />
+    <parameter name="@s_lsrv" dataType="varchar" direction="in" />
+    <parameter name="@s_rol" dataType="smallint" direction="in" />
+    <parameter name="@s_ofi" dataType="smallint" direction="in" />
+    <parameter name="@s_org_err" dataType="char" direction="in" />
+    <parameter name="@s_error" dataType="int" direction="in" />
+    <parameter name="@s_sev" dataType="tinyint" direction="in" />
+    <parameter name="@s_msg" dataType="varchar" direction="in" />
+    <parameter name="@s_org" dataType="char" direction="in" />
+    <parameter name="@t_debug" dataType="char" direction="in" />
+    <parameter name="@t_file" dataType="varchar" direction="in" />
+    <parameter name="@t_from" dataType="varchar" direction="in" />
+    <parameter name="@t_trn" dataType="smallint" direction="in" />
+    <parameter name="@i_operacion" dataType="char" direction="in" />
+    <parameter name="@i_modo" dataType="tinyint" direction="in" />
+    <parameter name="@i_tipo" dataType="char" direction="in" />
+    <parameter name="@i_filial" dataType="tinyint" direction="in" />
+  </parameters>
+  <queries>
+    <query>
+      <columns>
+        <column name="Filial" />
+        <column name="Nombre" />
+        <column name="Rep.Legal" />
+        <column name="Direccion" />
+        <column name="R.U.C." />
+        <column name="Abreviatura" />
+        <column name="Actividad" />
+        <column name="Descrip. Actividad" />
+      </columns>
+      <queryText>SELECT  "Filial" = fi_filial,"Nombre" = SUBSTRING (fi_nombre, 1, 25),"Rep.Legal" = fi_rep_nombre,"Direccion" = SUBSTRING (fi_direccion, 1, 55),"R.U.C." = fi_ruc,"Abreviatura" = fi_abreviatura,"Actividad" = fi_actividad,"Descrip. Actividad" = SUBSTRING (b.valor, 1, 30) </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="Filial" />
+        <column name="Nombre" />
+        <column name="Rep.Legal" />
+        <column name="Direccion" />
+        <column name="R.U.C." />
+        <column name="Abreviatura" />
+        <column name="Actividad" />
+        <column name="Descrip. Actividad" />
+      </columns>
+      <queryText>SELECT  "Filial" = fi_filial,"Nombre" = SUBSTRING (fi_nombre, 1, 25),"Rep.Legal" = fi_rep_nombre,"Direccion" = SUBSTRING (fi_direccion, 1, 55),"R.U.C." = fi_ruc,"Abreviatura" = fi_abreviatura,"Actividad" = fi_actividad,"Descrip. Actividad" = SUBSTRING (b.valor, 1, 30) </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="{1}" />
+        <column name="{2}" />
+        <column name="{3}" />
+        <column name="{4}" />
+        <column name="{5}" />
+        <column name="{6}" />
+        <column name="{7}" />
+        <column name="{8}" />
+      </columns>
+      <queryText>SELECT o_filial, o_nombre, o_rep_legal, o_direccion, o_actividad, o_acnombre, o_abreviatura, o_ruc</queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="Codigo" />
+        <column name="Filial" />
+      </columns>
+      <queryText>SELECT  "Codigo" = fi_filial,"Filial" = fi_nombre </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="{1}" />
+        <column name="{2}" />
+      </columns>
+      <queryText>SELECT  fi_filial,fi_nombre </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="{1}" />
+      </columns>
+      <queryText>SELECT  fi_nombre </queryText>
+    </query>
+  </queries>
+</procedure>

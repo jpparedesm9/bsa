@@ -1,0 +1,153 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<procedure>
+  <database>cob_credito</database>
+  <name>sp_cons_gnral</name>
+  <type>SYBASE</type>
+  <version>1</version>
+  <parameters>
+    <parameter name="@s_ssn" dataType="int" direction="in" />
+    <parameter name="@s_sesn" dataType="int" direction="in" />
+    <parameter name="@s_date" dataType="datetime" direction="in" />
+    <parameter name="@s_user" dataType="varchar" direction="in" />
+    <parameter name="@s_term" dataType="varchar" direction="in" />
+    <parameter name="@s_ofi" dataType="smallint" direction="in" />
+    <parameter name="@s_srv" dataType="varchar" direction="in" />
+    <parameter name="@s_lsrv" dataType="varchar" direction="in" />
+    <parameter name="@s_org" dataType="char" direction="in" />
+    <parameter name="@t_rty" dataType="char" direction="in" />
+    <parameter name="@t_trn" dataType="smallint" direction="in" />
+    <parameter name="@t_debug" dataType="char" direction="in" />
+    <parameter name="@t_file" dataType="varchar" direction="in" />
+    <parameter name="@t_from" dataType="varchar" direction="in" />
+    <parameter name="@i_operacion" dataType="char" direction="in" />
+    <parameter name="@i_oficina" dataType="smallint" direction="in" />
+    <parameter name="@i_tipo_tramite" dataType="char" direction="in" />
+    <parameter name="@i_oficial" dataType="smallint" direction="in" />
+    <parameter name="@i_cliente" dataType="int" direction="in" />
+    <parameter name="@i_grupo" dataType="int" direction="in" />
+    <parameter name="@i_rol" dataType="smallint" direction="in" />
+    <parameter name="@i_transaccion" dataType="smallint" direction="in" />
+    <parameter name="@i_numero_op_banco" dataType="varchar" direction="in" />
+    <parameter name="@i_tramite" dataType="int" direction="in" />
+    <parameter name="@i_secuencia" dataType="smallint" direction="in" />
+    <parameter name="@i_truta" dataType="tinyint" direction="in" />
+    <parameter name="@i_etapa" dataType="tinyint" direction="in" />
+    <parameter name="@i_estacion" dataType="smallint" direction="in" />
+    <parameter name="@i_sustituto" dataType="char" direction="in" />
+    <parameter name="@i_moneda" dataType="tinyint" direction="in" />
+    <parameter name="@i_producto" dataType="varchar" direction="in" />
+    <parameter name="@i_tipo" dataType="char" direction="in" />
+    <parameter name="@i_modo" dataType="int" direction="in" />
+    <parameter name="@i_linea_banco" dataType="varchar" direction="in" />
+    <parameter name="@i_formato_fecha" dataType="int" direction="in" />
+  </parameters>
+  <queries>
+    <query>
+      <columns>
+        <column name="name" />
+        <column name="subtype" />
+        <column name="identification" />
+        <column name="passport" />
+        <column name="officialCode" />
+        <column name="officialName" />
+        <column name="sector" />
+        <column name="entity" />
+        <column name="rating" />
+        <column name="party" />
+      </columns>
+      <queryText></queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="step" />
+        <column name="stage" />
+        <column name="station" />
+        <column name="description" />
+        <column name="stepType" />
+        <column name="associatedRoute" />
+        <column name="associatedStep" />
+        <column name="associatedStage" />
+        <column name="stageType" />
+        <column name="stageReplacement" />
+        <column name="stationReplacement" />
+        <column name="stationDescription" />
+        <column name="userStation" />
+        <column name="committee" />
+        <column name="execution" />
+        <column name="stepClass" />
+      </columns>
+      <queryText></queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="route" />
+        <column name="description" />
+      </columns>
+      <queryText></queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="cityCode" />
+        <column name="cityDescription" />
+      </columns>
+      <queryText></queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="Station" />
+        <column name="Station Description" />
+        <column name="Station Type" />
+        <column name="Level" />
+        <column name="Committee" />
+        <column name="Official Code" />
+      </columns>
+      <queryText></queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="creditCode" />
+        <column name="operationType" />
+        <column name="amountExpire" />
+        <column name="amountDue" />
+        <column name="endDate" />
+        <column name="currency" />
+      </columns>
+      <queryText></queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="creditCode" />
+        <column name="typeOperation" />
+        <column name="typeCredit" />
+        <column name="debtor" />
+        <column name="debtorName" />
+        <column name="mountPV" />
+        <column name="mountV" />
+        <column name="dateVcto" />
+        <column name="currency" />
+        <column name="creditStatus" />
+        <column name="deposit" />
+        <column name="status" />
+      </columns>
+      <queryText></queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="warrantyCover" />
+        <column name="message" />
+        <column name="total" />
+        <column name="amount" />
+      </columns>
+      <queryText></queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="stage" />
+        <column name="station" />
+        <column name="description" />
+        <column name="name" />
+      </columns>
+      <queryText></queryText>
+    </query>
+  </queries>
+</procedure>

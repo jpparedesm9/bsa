@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd
+		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd">
+
+	<bean id="transactionManager" class="com.cobiscorp.cobis.jndi.CobisTransactionManager" />
+
+	<tx:advice id="transactionalAdvice" transaction-manager="transactionManager">
+		<tx:attributes>
+			<tx:method name="*" propagation="REQUIRED" rollback-for="RuntimeException" />
+		</tx:attributes>
+	</tx:advice>
+
+	<aop:config>
+		<aop:pointcut id="generalParametersOperations"
+			expression="execution(* com.cobiscorp.ecobis.fpm.portfolio.integration.service.IPortfolioGeneralParametersManager.*(..))" />
+		<aop:advisor pointcut-ref="generalParametersOperations"
+			advice-ref="transactionalAdvice" />
+	</aop:config>
+
+	<aop:config>
+		<aop:pointcut id="portfolioItemsManagerOperation"
+			expression="execution(* com.cobiscorp.ecobis.fpm.portfolio.integration.service.IPortfolioItemsManager.*(..))" />
+		<aop:advisor pointcut-ref="portfolioItemsManagerOperation"
+			advice-ref="transactionalAdvice" />
+	</aop:config>
+
+	<aop:config>
+		<aop:pointcut id="bankingProductOperations"
+			expression="execution(* com.cobiscorp.ecobis.fpm.portfolio.integration.service.IPortfolioBankingProductManager.*(..))" />
+		<aop:advisor pointcut-ref="bankingProductOperations"
+			advice-ref="transactionalAdvice" />
+	</aop:config>
+
+	<aop:config>
+		<aop:pointcut id="accountingProfileOperations"
+			expression="execution(* com.cobiscorp.ecobis.fpm.portfolio.integration.service.IPortfolioAccountingProfileManager.*(..))" />
+		<aop:advisor pointcut-ref="accountingProfileOperations"
+			advice-ref="transactionalAdvice" />
+	</aop:config>
+
+	<aop:config>
+		<aop:pointcut id="itemStatusOperations"
+			expression="execution(* com.cobiscorp.ecobis.fpm.portfolio.integration.service.IPortfolioItemStatusManager.*(..))" />
+		<aop:advisor pointcut-ref="itemStatusOperations"
+			advice-ref="transactionalAdvice" />
+	</aop:config>
+
+	<aop:config>
+		<aop:pointcut id="operationStatusOperations"
+			expression="execution(* com.cobiscorp.ecobis.fpm.portfolio.integration.service.IPortfolioOperationStatusManager.*(..))" />
+		<aop:advisor pointcut-ref="operationStatusOperations"
+			advice-ref="transactionalAdvice" />
+	</aop:config>
+
+	<aop:config>
+		<aop:pointcut id="purposeOperations"
+			expression="execution(* com.cobiscorp.ecobis.fpm.portfolio.integration.service.IPortfolioPurposeManager.*(..))" />
+		<aop:advisor pointcut-ref="purposeOperations" advice-ref="transactionalAdvice" />
+	</aop:config>
+
+	<aop:config>
+		<aop:pointcut id="economicActivityOperations"
+			expression="execution(* com.cobiscorp.ecobis.fpm.portfolio.integration.service.IPortfolioEconomicActivityManager.*(..))" />
+		<aop:advisor pointcut-ref="economicActivityOperations" advice-ref="transactionalAdvice" />
+	</aop:config>
+
+	<aop:config>
+		<aop:pointcut id="economicDestinationOperations"
+			expression="execution(* com.cobiscorp.ecobis.fpm.portfolio.integration.service.IPortfolioEconomicDestinationManager.*(..))" />
+		<aop:advisor pointcut-ref="economicDestinationOperations"
+			advice-ref="transactionalAdvice" />
+	</aop:config>
+	
+	<aop:config>
+		<aop:pointcut id="portfolioUnitFunctionality"
+			expression="execution(* com.cobiscorp.ecobis.fpm.portfolio.integration.service.IPortfolioUnitFunctionalityValuesManager.*(..))" />
+		<aop:advisor pointcut-ref="portfolioUnitFunctionality"
+			advice-ref="transactionalAdvice" />
+	</aop:config>
+
+	<aop:config>
+		<aop:pointcut id="portfolioItemWarrantiesOperation"
+			expression="execution(* com.cobiscorp.ecobis.fpm.portfolio.integration.service.IPortfolioItemWarranties.*(..))" />
+		<aop:advisor pointcut-ref="portfolioItemWarrantiesOperation"
+			advice-ref="transactionalAdvice" />
+	</aop:config>
+
+	
+</beans>

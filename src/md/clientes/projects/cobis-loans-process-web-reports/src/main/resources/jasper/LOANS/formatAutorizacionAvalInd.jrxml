@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="formatAutorizacionAvalInd" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="796" leftMargin="23" rightMargin="23" topMargin="23" bottomMargin="23" uuid="a013a6ab-10f1-4c7a-842a-f3eeed364c76">
+	<property name="ireport.zoom" value="1.100000000000001"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="34"/>
+	<parameter name="nombresMiembro" class="java.lang.String"/>
+	<queryString language="SQL">
+		<![CDATA[]]>
+	</queryString>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<detail>
+		<band height="492">
+			<staticText>
+				<reportElement x="0" y="47" width="796" height="20" uuid="0994c4fb-8073-4047-8951-45fe193f964e"/>
+				<textElement textAlignment="Center">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Autorizaciones]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="204" y="453" width="394" height="20" uuid="0fc21443-3fb9-4ca9-8ec8-bac3258818eb"/>
+				<box>
+					<topPen lineWidth="0.75"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font size="10" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{nombresMiembro} + "."]]></textFieldExpression>
+			</textField>
+			<image>
+				<reportElement x="651" y="0" width="145" height="47" uuid="aa839c00-0f02-4c7f-80b8-ab4a4f508d2c"/>
+				<imageExpression><![CDATA["logo.jpg"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="0" y="67" width="796" height="20" uuid="f286c9f7-b494-4214-bbb5-f1d705006bd9"/>
+				<box topPadding="3" leftPadding="5" bottomPadding="3" rightPadding="5"/>
+				<textElement>
+					<font size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Información PEP]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="104" width="596" height="37" uuid="06c14df9-d0f7-4d50-8d5c-0e9bbc027697"/>
+				<box topPadding="3" leftPadding="5" bottomPadding="3" rightPadding="5"/>
+				<textElement textAlignment="Justified">
+					<font size="10"/>
+				</textElement>
+				<text><![CDATA[Estimado Cliente, agradeceremos su respuesta a las siguientes preguntas:
+-  Usted o algún familiar desempeña o ha desempeñado en los últimos doce meses funciones públicas en México o el extranjero]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="140" width="796" height="58" uuid="3585ad57-6f84-44ed-8463-147e7c4df7d2"/>
+				<box topPadding="3" leftPadding="5" bottomPadding="3" rightPadding="5"/>
+				<textElement textAlignment="Justified">
+					<font size="10"/>
+				</textElement>
+				<text><![CDATA[Desempeña o ha desempeñado alguna de las actividades siguientes: Agente aduanal, centro nocturno, comercio de joyas y/o piedras preciosas, distribución de armas, juegos de azar, pirámides, casinos, comercio de antigüedades, comercio de metales preciosos, comercio de productos militares de alta sofisticación inmobiliaria, lotería, prestamista, centro de apuestas, comercio de armas, comercio de objetos de arte, consultor financiero, organización de caridad o producción de armas]]></text>
+			</staticText>
+			<rectangle>
+				<reportElement x="662" y="119" width="10" height="10" uuid="51ddec3e-1800-4a31-b647-d2833b19f96f"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="717" y="119" width="10" height="10" uuid="726c1e02-6167-4402-80db-3a529dad07d3"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="678" y="117" width="15" height="15" uuid="18c242f4-0f23-45cb-b924-69e7e203e2ae"/>
+				<text><![CDATA[SI]]></text>
+			</staticText>
+			<rectangle>
+				<reportElement x="717" y="174" width="10" height="10" uuid="c595d0cf-3687-467d-89da-7b420e2d1f65"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="662" y="174" width="10" height="10" uuid="43d5c564-9b50-4440-9823-c12de8bd9f01"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="678" y="172" width="15" height="15" uuid="67084efc-22e2-44ca-84b5-fd6b2d561406"/>
+				<text><![CDATA[SI]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="732" y="172" width="17" height="15" uuid="215ac6c5-3314-4210-bfff-9f30d2d9a251"/>
+				<text><![CDATA[NO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="732" y="117" width="17" height="15" uuid="b8980a9d-d252-45d7-b120-93d7c2870152"/>
+				<text><![CDATA[NO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="294" width="796" height="20" uuid="aebc4731-1bd6-48f5-ae00-493c6c57eacf"/>
+				<box topPadding="3" leftPadding="5" bottomPadding="3" rightPadding="5"/>
+				<textElement>
+					<font size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Información Crediticia]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="314" width="796" height="99" uuid="5a065e72-b7e6-4761-993e-6c47a8d9d8ed"/>
+				<box topPadding="3" leftPadding="5" bottomPadding="3" rightPadding="5"/>
+				<textElement textAlignment="Justified">
+					<font size="10"/>
+				</textElement>
+				<text><![CDATA[Por este conducto autorizo expresamente a Santander Inclusión Financiera S.A. de C.V., SOFOM, ER (en adelante “la SOFOM”), y/o a las entidades que formen parte del Grupo Financiero al que pertenecen, para que por conducto de sus funcionarios facultados lleve a cabo investigaciones sobre mi comportamiento crediticio en las Sociedades de Información Crediticia que estime conveniente, así como a compartir dicha información entre las entidades mencionadas.
+Asimismo, declaro que conozco la naturaleza y alcance de la información que se solicitará o se proporcionará y del uso que dichas entidades harán de tal información y de que podrán realizar consultas periódicas de mi historial crediticio, consintiendo que esta autorización se encuentre vigente por un período de 3 años contados a partir de la fecha de su expedición y en todo caso durante el tiempo que mantengamos relación jurídica con “la SOFOM”.]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="204" y="251" width="394" height="20" uuid="e9571f40-283f-4b57-a77e-216148f35d87"/>
+				<box>
+					<topPen lineWidth="0.75"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font size="10" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{nombresMiembro} + "."]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

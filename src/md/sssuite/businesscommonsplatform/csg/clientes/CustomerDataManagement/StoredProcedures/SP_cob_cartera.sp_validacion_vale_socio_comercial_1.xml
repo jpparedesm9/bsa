@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<procedure>
+  <database>cob_cartera</database>
+  <name>sp_validacion_vale_socio_comercial</name>
+  <type>SYBASE</type>
+  <version>1</version>
+  <parameters>
+    <parameter name="@i_referencia" dataType="varchar" direction="in" />
+    <parameter name="@i_fecha_proceso" dataType="datetime" direction="in" />
+    <parameter name="@i_monto_solicitar" dataType="money" direction="in" />
+    <parameter name="@o_error" dataType="tinyint" direction="out" />
+    <parameter name="@o_mensaje" dataType="varchar" direction="out" />
+    <parameter name="@i_operacion" dataType="char" direction="in" />
+  </parameters>
+  <queries>
+    <query>
+      <columns>
+        <column name="{1}" />
+        <column name="{2}" />
+        <column name="{3}" />
+      </columns>
+      <queryText>SELECT  dp_secuencial,dp_banco,dp_fecha_proceso,dp_estado,dp_login,dp_monto_aprobado,dp_monto_compra,dp_comision,dp_iva,dp_error,dp_mensaje_error </queryText>
+    </query>
+  </queries>
+</procedure>

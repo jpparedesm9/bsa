@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<procedure>
+  <database>cob_sincroniza</database>
+  <name>sp_terminal</name>
+  <type>SYBASE</type>
+  <version>1</version>
+  <parameters>
+    <parameter name="@t_show_version" dataType="bit" direction="in" />
+    <parameter name="@i_operacion" dataType="char" direction="in" />
+    <parameter name="@t_debug" dataType="char" direction="in" />
+    <parameter name="@t_file" dataType="varchar" direction="in" />
+    <parameter name="@i_mac" dataType="varchar" direction="in" />
+    <parameter name="@i_mac1" dataType="varchar" direction="in" />
+    <parameter name="@i_mac2" dataType="varchar" direction="in" />
+    <parameter name="@i_reference1" dataType="varchar" direction="in" />
+    <parameter name="@i_reference2" dataType="varchar" direction="in" />
+  </parameters>
+  <queries>
+    <query>
+      <columns>
+        <column name="mac" />
+        <column name="mac1" />
+        <column name="mac2" />
+        <column name="reference1" />
+        <column name="reference2" />
+      </columns>
+      <queryText>SELECT  "mac" = te_mac,"mac1" = te_mac1,"mac2" = te_mac2,"reference1" = te_reference1,"reference2" = te_reference2 </queryText>
+    </query>
+  </queries>
+</procedure>

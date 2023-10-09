@@ -1,0 +1,63 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.cobiscorp.ecobis</groupId>
+	<artifactId>cobis-clientviewer-build</artifactId>
+	<version>1.0.0</version>
+	<packaging>pom</packaging>
+	<name>${project.artifactId}</name>
+	<url>http://www.cobiscorp.com/</url>
+
+	<profiles>
+		<profile>
+			<id>env-development</id>
+			<activation>
+				<activeByDefault>true</activeByDefault>
+			</activation>
+			<modules>
+				<module>../../../source/middleware/MVN/cobis-clientviewer-dto</module>
+				<module>../../../source/middleware/MVN/cobis-clientviewer-dal</module>
+				<module>../../../source/middleware/MVN/cobis-external-services-bl</module>
+				<module>../../../source/middleware/MVN/cobis-clientviewer-bl</module>
+				<module>../../../source/middleware/MVN/cobis-clientviewer-services</module>
+				<module>../../../source/middleware/MVN/cobis-web-clientviewer-dto</module>
+				<module>../../../source/middleware/MVN/cobis-web-clientviewer-services</module>
+				<module>../../../source/middleware/MVN/cobis-web-clientviewer-external-services</module>
+				<module>../../../source/middleware/MVN/latfo.ucspm.taskdtolist.services</module>
+				<module>../../../source/middleware/MVN/latfo.ucspm.taskdtolist.customevents</module>
+				<module>../../../source/middleware/MVN/latfo.ucspm.taskdtomaintaining.services</module>
+				<module>../../../source/middleware/MVN/latfo.ucspm.taskdtomaintaining.customevents</module>
+				<module>../../../source/middleware/MVN/latfo.ucspm.tasksectionsmaintaining.services</module>
+				<module>../../../source/middleware/MVN/latfo.ucspm.tasksectionsmaintaining.customevents</module>
+				<module>../../../source/middleware/MVN/report-clientviewer-impl</module>
+				<module>../../../source/frontend/web/cobis-web-clientviewer-views</module>
+				<module>../cobis-clientviewer-installer</module>
+			</modules>
+		</profile>
+		<profile>
+			<id>env-hardening</id>
+			<modules>
+
+				<module>../../../source/middleware/MVN/cobis-clientviewer-dto</module>
+				<module>../../../source/middleware/MVN/cobis-clientviewer-dal</module>
+				<module>../../../source/middleware/MVN/cobis-external-services-bl</module>
+				<module>../../../source/middleware/MVN/cobis-clientviewer-bl</module>
+				<module>../../../source/middleware/MVN/cobis-clientviewer-services</module>
+				<module>../../../source/middleware/MVN/cobis-web-clientviewer-dto</module>
+				<module>../../../source/middleware/MVN/cobis-web-clientviewer-services</module>
+				<module>../../../source/middleware/MVN/cobis-web-clientviewer-external-services</module>
+				<module>../../../source/middleware/MVN/latfo.ucspm.taskdtolist.services</module>
+				<module>../../../source/middleware/MVN/latfo.ucspm.taskdtolist.customevents</module>
+				<module>../../../source/middleware/MVN/latfo.ucspm.taskdtomaintaining.services</module>
+				<module>../../../source/middleware/MVN/latfo.ucspm.taskdtomaintaining.customevents</module>
+				<module>../../../source/middleware/MVN/latfo.ucspm.tasksectionsmaintaining.services</module>
+				<module>../../../source/middleware/MVN/latfo.ucspm.tasksectionsmaintaining.customevents</module>
+				<module>../../../source/middleware/MVN/report-clientviewer-impl</module>
+				<module>../../../source/frontend/web/cobis-web-clientviewer-views</module>
+				<module>../cobis-clientviewer-installer</module>
+
+			</modules>
+		</profile>
+	</profiles>
+
+</project>

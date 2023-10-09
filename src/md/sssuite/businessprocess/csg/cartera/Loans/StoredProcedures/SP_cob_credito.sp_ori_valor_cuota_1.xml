@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<procedure>
+  <database>cob_credito</database>
+  <name>sp_ori_valor_cuota</name>
+  <type>SYBASE</type>
+  <version>1</version>
+  <parameters>
+    <parameter name="@t_debug" dataType="char" direction="in" />
+    <parameter name="@t_file" dataType="varchar" direction="in" />
+    <parameter name="@i_operacion" dataType="char" direction="in" />
+    <parameter name="@i_tramite" dataType="int" direction="in" />
+    <parameter name="@i_login" dataType="varchar" direction="in" />
+    <parameter name="@t_trn" dataType="int" direction="in" />
+    <parameter name="@i_oficial" dataType="int" direction="in" />
+    <parameter name="@i_tipo_tramite" dataType="varchar" direction="in" />
+    <parameter name="@i_cliente" dataType="int" direction="in" />
+    <parameter name="@i_instancia_wf" dataType="int" direction="in" />
+  </parameters>
+  <queries>
+    <query>
+      <columns>
+        <column name="{1}" />
+      </columns>
+      <queryText>SELECT ctx.ISNULL(w_valor_cuota, 0)</queryText>
+    </query>
+  </queries>
+</procedure>

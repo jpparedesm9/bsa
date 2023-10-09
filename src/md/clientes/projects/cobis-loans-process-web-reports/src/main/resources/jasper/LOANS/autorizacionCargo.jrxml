@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="autorizacionCargo" pageWidth="595" pageHeight="842" columnWidth="475" leftMargin="60" rightMargin="60" topMargin="30" bottomMargin="30" uuid="3a1efdc9-ad76-4f7b-9fda-1cddd2059443">
+	<property name="ireport.zoom" value="1.2100000000000002"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="SUBREPORT_DIR" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["/"]]></defaultValueExpression>
+	</parameter>
+	<field name="autorizacionCargoDetalle" class="java.util.List"/>
+	<detail>
+		<band height="55" splitType="Stretch">
+			<subreport>
+				<reportElement x="0" y="0" width="475" height="55" uuid="2fb805ff-896c-4798-a04f-d4a270d572fb"/>
+				<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($F{autorizacionCargoDetalle})]]></dataSourceExpression>
+				<subreportExpression><![CDATA[$P{SUBREPORT_DIR} + "autorizacionCargoDetail.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+	</detail>
+</jasperReport>

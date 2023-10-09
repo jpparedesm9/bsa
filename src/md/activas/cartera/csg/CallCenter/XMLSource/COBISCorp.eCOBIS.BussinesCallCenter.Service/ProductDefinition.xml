@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<product path="F:/SANTANDER/GIT/bsa/src/md/activas/cartera/csg/CallCenter/Products/COBISCorp.eCOBIS.BussinesCallCenter.Service" appPath="C:/Program Files (x86)/COBIS/COBIS Services Generator/" name="COBISCorp.eCOBIS.BussinesCallCenter.Service" productNS="http://service.bussinescallcenter.ecobis.cobiscorp" description=" Call Center Manager" documentationLanguage="Español" year="2019" version="1.0.0.0" type="SERVICE" GUID="261FC524-5203-4758-BD00-B4CFE5BAB951">
+  <namespaces>
+    <namespace type="class" base="COBISCorp.eCOBIS.BussinesCallCenter" name="COBISCorp.eCOBIS.BussinesCallCenter.Service" package="cobiscorp.ecobis.bussinescallcenter.service" ns="http://service.bussinescallcenter.ecobis.cobiscorp" folder="" />
+  </namespaces>
+  <templates>
+    <template id="ServiceCTS302" productName="COBISCorp.eCOBIS.BussinesCallCenter.Service" outputFolder="c:\COBIS-SG\Output\CTS\COBISCorp.eCOBIS.BussinesCallCenter.Service" package="true" packageType="Jar">
+      <templateFiles>
+        <templateFile filePath="Annotations\JavaInterface.xslt" enabled="true" override="true" />
+        <templateFile filePath="Annotations\JavaService.xslt" enabled="true" override="true" />
+        <templateFile filePath="Annotations\OSGIClass.xslt" enabled="true" override="true" />
+        <templateFile filePath="Annotations\Interceptor.xslt" enabled="true" override="false" />
+        <templateFile filePath="..\Commons\Java\buildProperties.xslt" enabled="true" override="true" />
+        <templateFile filePath="..\Commons\Java\build.xslt" enabled="true" override="true" />
+      </templateFiles>
+    </template>
+  </templates>
+  <DTOs />
+  <classes>
+    <class name="CallCenterManager" nsBase="COBISCorp.eCOBIS.BussinesCallCenter" namespace="COBISCorp.eCOBIS.BussinesCallCenter.Service" package="cobiscorp.ecobis.bussinescallcenter.service" ns="http://service.bussinescallcenter.ecobis.cobiscorp" version="1">
+      <partialClasses>
+        <partialClass name="CallCenterManager">
+          <services>
+            <service name="AutorizeDisposition" id="BussinesCallCenter.CallCenterManager.AutorizeDisposition">
+              <procedure name="sp_lcr_desembolsar" database="cob_cartera" version="1" />
+            </service>
+            <service name="ResetInformationImageMessage" id="BussinesCallCenter.CallCenterManager.ResetInformationImageMessage">
+              <procedure name="sp_reseteo_informacion" database="cob_bvirtual" version="1" />
+            </service>
+            <service name="SearchLoginCallCenter" id="BussinesCallCenter.CallCenterManager.SearchLoginCallCenter1">
+              <procedure name="sp_lcr_cc_validar_registro" database="cob_bvirtual" version="1" />
+            </service>
+            <service name="SearchQuestion" id="BussinesCallCenter.CallCenterManager.SearchQuestion">
+              <procedure name="sp_b2c_generar_preguntas" database="cob_bvirtual" version="1" />
+            </service>
+            <service name="ValidationQuestion" id="BussinesCallCenter.CallCenterManager.ValidationQuestion">
+              <procedure name="sp_b2c_validar_respuestas" database="cob_bvirtual" version="1" />
+            </service>
+          </services>
+        </partialClass>
+      </partialClasses>
+    </class>
+  </classes>
+  <packagers>
+    <packager type="SGPackageJava" AntTask="sign-archive" KeyAlias="cobisapp" KeyPassword="cobisappadminadmin" KeyCertificatePassword="cobisappadmin" KeyFileName="cobisapp.keystore" RelativeFolder="True" TemplateId="ServiceCTS302" />
+  </packagers>
+  <references>
+    <reference name="COBISCorp.eCOBIS.BussinesCallCenter.DTO" type="DTO" version="1.0.0.0" GUID="EB2B7FB1-A667-46B4-B764-170645B4FB38">
+      <templates>
+        <template id="DTOJavaPOJO" productName="COBISCorp.eCOBIS.BussinesCallCenter.DTO" outputFolder="c:\COBIS-SG\Output\CTS\COBISCorp.eCOBIS.BussinesCallCenter.DTO" package="true" packageType="Jar">
+          <templateFiles>
+            <templateFile filePath="JavaPOJO\JavaDTO.xslt" enabled="true" override="true" />
+            <templateFile filePath="..\Commons\Java\buildProperties.xslt" enabled="true" override="true" />
+            <templateFile filePath="..\Commons\Java\build.xslt" enabled="true" override="true" />
+          </templateFiles>
+        </template>
+      </templates>
+      <namespaces>
+        <namespace type="dto" base="COBISCorp.eCOBIS.BussinesCallCenter" name="COBISCorp.eCOBIS.BussinesCallCenter.DTO" package="cobiscorp.ecobis.bussinescallcenter.dto" ns="http://dto.bussinescallcenter.ecobis.cobiscorp" folder="DTO" />
+      </namespaces>
+    </reference>
+  </references>
+  <productProperties>
+    <property name="MavenGroupId" value="com.cobiscorp.processapi" />
+    <property name="MavenArtifactId" value="COBISCorp.eCOBIS.BussinesCallCenter.Service" />
+    <property name="MavenVersion" value="1.0.0.0" />
+  </productProperties>
+</product>

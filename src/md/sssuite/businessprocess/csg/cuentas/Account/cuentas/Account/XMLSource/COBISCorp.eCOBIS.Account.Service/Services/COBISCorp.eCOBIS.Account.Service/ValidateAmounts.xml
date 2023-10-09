@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<serviceClass name="ValidateAmounts" nsBase="COBISCorp.eCOBIS.Account" namespace="COBISCorp.eCOBIS.Account.Service" package="cobiscorp.ecobis.account.service" ns="http://service.account.ecobis.cobiscorp" module="Account" productName="COBISCorp.eCOBIS.Account.Service" productVersion="2.0.0.0">
+  <productProperties>
+    <property name="MavenGroupId" value="com.cobiscorp.processapi" />
+    <property name="MavenArtifactId" value="COBISCorp.eCOBIS.Account.Service" />
+    <property name="MavenVersion" value="2.0.0.0" />
+  </productProperties>
+  <partialClass name="ValidateAmounts">
+    <services>
+      <service id="Account.ValidateAmounts.ValidateAmountSavingAccounts" netName="ValidateAmountSavingAccounts" javaName="validateAmountSavingAccounts" mappingType="STORED_PROCEDURE" mapId="1b113258af3968aaf3969ca67e744ff8">
+        <SRVMapping name="cob_credito..sp_valida_cuenta_ahorros">
+          <DTOs>
+            <DTO direction="in" name="CustomerRequest" alias="inCustomerRequest" namespace="COBISCorp.eCOBIS.Account.DTO" package="cobiscorp.ecobis.account.dto" ns="http://dto.account.ecobis.cobiscorp" required="true" />
+            <DTO direction="out" name="AccountResponse" alias="outAccountResponse" namespace="COBISCorp.eCOBIS.Account.DTO" package="cobiscorp.ecobis.account.dto" ns="http://dto.account.ecobis.cobiscorp" required="true">
+              <properties>
+                <property name="account" propertyNet="Account" propertyJava="account" setterJavaMethod="setAccount" getterJavaMethod="getAccount" xsdType="string" netType="string" javaType="String" cobisMapping="" isInherit="false" isComplexType="false" isCollectionType="false" required="false" encrypted="false" maxLength="0" />
+                <property name="accountName" propertyNet="AccountName" propertyJava="accountName" setterJavaMethod="setAccountName" getterJavaMethod="getAccountName" xsdType="string" netType="string" javaType="String" cobisMapping="" isInherit="false" isComplexType="false" isCollectionType="false" required="false" encrypted="false" maxLength="0" />
+                <property name="accountStatus" propertyNet="AccountStatus" propertyJava="accountStatus" setterJavaMethod="setAccountStatus" getterJavaMethod="getAccountStatus" xsdType="string" netType="string" javaType="String" cobisMapping="" isInherit="false" isComplexType="false" isCollectionType="false" required="false" encrypted="false" maxLength="0" />
+                <property name="accountOffice" propertyNet="AccountOffice" propertyJava="accountOffice" setterJavaMethod="setAccountOffice" getterJavaMethod="getAccountOffice" xsdType="int?" netType="int?" javaType="Integer" cobisMapping="" isInherit="false" isComplexType="false" isCollectionType="false" required="false" encrypted="false" maxLength="0" />
+                <property name="accountType" propertyNet="AccountType" propertyJava="accountType" setterJavaMethod="setAccountType" getterJavaMethod="getAccountType" xsdType="string" netType="string" javaType="String" cobisMapping="" isInherit="false" isComplexType="false" isCollectionType="false" required="false" encrypted="false" maxLength="0" />
+                <property name="accountDescription" propertyNet="AccountDescription" propertyJava="accountDescription" setterJavaMethod="setAccountDescription" getterJavaMethod="getAccountDescription" xsdType="string" netType="string" javaType="String" cobisMapping="" isInherit="false" isComplexType="false" isCollectionType="false" required="false" encrypted="false" maxLength="0" />
+                <property name="validAccount" propertyNet="ValidAccount" propertyJava="validAccount" setterJavaMethod="setValidAccount" getterJavaMethod="getValidAccount" xsdType="int?" netType="int?" javaType="Integer" cobisMapping="" isInherit="false" isComplexType="false" isCollectionType="false" required="false" encrypted="false" maxLength="0" />
+              </properties>
+            </DTO>
+          </DTOs>
+          <parameterMappings>
+            <parameter name="@i_cliente" direction="in" mappingDirection="in" dataType="int" CTSDataType="SQLINT4" JavaSQLType="INTEGER" mappingType="DTO" allowNull="false" DTOAlias="inCustomerRequest" DTOPropertyName="clientId" />
+            <parameter name="@i_monto_solicitado" direction="in" mappingDirection="in" dataType="money" CTSDataType="SQLMONEY" JavaSQLType="DECIMAL" mappingType="DTO" allowNull="false" DTOAlias="inCustomerRequest" DTOPropertyName="requestedAmount" />
+            <parameter name="@o_valida_monto" direction="in out" mappingDirection="in" dataType="smallint" CTSDataType="SQLINT2" JavaSQLType="SMALLINT" mappingType="CONSTANT" allowNull="false" contantValue="0" />
+            <parameter name="@o_valida_monto" direction="in out" mappingDirection="out" dataType="smallint" CTSDataType="SQLINT2" JavaSQLType="SMALLINT" mappingType="DTO" allowNull="false" DTOAlias="outAccountResponse" DTOPropertyName="validAccount" />
+          </parameterMappings>
+          <resultMappings />
+          <MappingProperties />
+        </SRVMapping>
+      </service>
+    </services>
+  </partialClass>
+</serviceClass>

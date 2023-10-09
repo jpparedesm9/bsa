@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<procedure>
+  <database>cob_credito</database>
+  <name>sp_valida_pep</name>
+  <type>SYBASE</type>
+  <version>1</version>
+  <parameters>
+    <parameter name="@i_ente" dataType="int" direction="in" />
+    <parameter name="@o_es_pep" dataType="varchar" direction="out" />
+    <parameter name="@o_puesto" dataType="varchar" direction="out" />
+  </parameters>
+  <queries>
+    <query>
+      <columns>
+        <column name="w_curp " />
+        <column name="w_rfc " />
+        <column name="w_ente " />
+        <column name="w_p_nombre " />
+        <column name="w_s_nombre " />
+        <column name="w_p_apellido " />
+        <column name="w_s_apellido " />
+        <column name="w_fecha_nac " />
+      </columns>
+      <queryText>SELECT  w_curp = LOWER (en_ced_ruc),w_rfc = LOWER (en_rfc),w_ente = en_ente,w_p_nombre = LOWER (RTRIM (ISNULL (en_nombre, ""))),w_s_nombre = LOWER (RTRIM (ISNULL (p_s_nombre, ""))),w_p_apellido = LOWER (RTRIM (ISNULL (p_p_apellido, ""))),w_s_apellido = LOWER (RTRIM (ISNULL (p_s_apellido, ""))),w_fecha_nac = CONVERT (VARCHAR,p_fecha_nac ,112) </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="w_nombre" />
+      </columns>
+      <queryText>SELECT "w_nombre"=w_nombre</queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="es_pep " />
+        <column name="puesto " />
+        <column name="ENTE " />
+        <column name="CURP " />
+        <column name="RFC  " />
+        <column name="nombre " />
+      </columns>
+      <queryText>SELECT "es_pep "=w_es_pep,"puesto "=w_puesto,"ENTE "=w_ente,"CURP "=w_curp,"RFC  "=w_rfc,"nombre "=w_p_nombre + " " + w_s_nombre + w_p_apellido + " " + w_s_apellido</queryText>
+    </query>
+  </queries>
+</procedure>

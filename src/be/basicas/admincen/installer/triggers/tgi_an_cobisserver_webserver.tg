@@ -1,0 +1,70 @@
+/****************************************************************************************/
+/*  Cobiscorp Colombia S.A                                                              */
+/*  Proyecto                       : Banco Agrario                                      */
+/*  Nombre del script              : tgi_an_cobisserver_webserver.tg                    */
+/*  Tipo de script                 : Estructura                                         */
+/*  Numero de Solicitud/Referencia : SD675028                                           */
+/*  Objetivo                       : Creación de trigger sobre tabla de componentes     */
+/*									 para inserción de bitacora cuando se inserta un    */ 
+/*					                 registro de la tabla an_cobisserver_webserver      */
+/*  Fecha  creación                : Nov-04-2013                                        */
+/*  Autor                          : Cobiscorp Ecuador                                  */
+/****************************************************************************************/
+use cobis
+go
+if exists (select * from sysobjects where name = 'tgi_an_cobisserver_webserver')
+    drop trigger tgi_an_cobisserver_webserver
+go
+create trigger tgi_an_cobisserver_webserver
+on an_cobisserver_webserver
+for insert
+as
+begin
+    declare
+        @w_cw_cobisserver   varchar(30),
+        @w_cw_webserver     varchar(30),
+        @w_id               int
+ 
+    declare cu_inserted cursor for
+        select
+            cw_cobisserver,
+            cw_webserver
+        from inserted
+ 
+    open cu_inserted
+    fetch cu_inserted into
+        @w_cw_cobisserver,
+        @w_cw_webserver
+                 
+    while @@FETCH_STATUS=0
+    begin
+        select @w_id = sq_siguiente
+        from cob_distrib..di_seqnos 
+        where sq_tabla = 'di_log'
+ 
+        update cob_distrib..di_seqnos
+        set sq_siguiente = sq_siguiente + 1
+        where sq_tabla = 'di_log'
+ 
+        insert into cob_distrib..di_log (
+        lg_id, lg_fecha, lg_operacion, lg_objeto)
+        values (@w_id, getdate(), 'I', 'cobis..sp_an_cobsrv_websrv_tg')
+        
+        insert into cob_distrib..di_parametro (
+                pa_id, pa_nombre, pa_tipodato, pa_longitud, pa_varchar)
+        values (@w_id, '@i_cw_cobisserver', 39, isnull(datalength(@w_cw_cobisserver), 0), @w_cw_cobisserver)
+
+        insert into cob_distrib..di_parametro (
+                pa_id, pa_nombre, pa_tipodato, pa_longitud, pa_varchar)
+        values (@w_id, '@i_cw_webserver', 39, isnull(datalength(@w_cw_webserver), 0), @w_cw_webserver)
+        
+        fetch cu_inserted into
+                @w_cw_cobisserver,
+                @w_cw_webserver
+        
+    end
+    close cu_inserted
+    deallocate  cu_inserted
+    
+end
+go

@@ -1,0 +1,118 @@
+use cobis
+go
+if exists (select * from sysobjects where name = 'tgu_an_zone')
+    drop trigger tgu_an_zone
+go
+create trigger tgu_an_zone
+on an_zone
+for update
+as
+begin
+    declare
+        @w_zo_id                int,
+        @w_zo_name              varchar(40),
+        @w_zo_pin_visible       tinyint,
+        @w_zo_close_visible     tinyint,
+        @w_zo_title_visible     tinyint,
+        @w_zo_pin_value         tinyint,
+        @w_zo_id_old            int,
+        @w_id                   int
+ 
+    if update(zo_id )
+    begin
+        rollback transaction
+        print 'No se puede actualizar la clave'
+    end
+    else
+    begin
+        declare cu_inserted cursor for
+            select
+                zo_id,
+                zo_name,
+                zo_pin_visible,
+                zo_close_visible,
+                zo_title_visible,
+                zo_pin_value
+            from inserted
+            order by zo_id
+
+        declare cu_deleted cursor for
+            select
+                zo_id
+            from deleted
+            order by zo_id
+
+        open cu_deleted
+        open cu_inserted
+
+        fetch cu_inserted into
+            @w_zo_id,
+            @w_zo_name,
+            @w_zo_pin_visible,
+            @w_zo_close_visible,
+            @w_zo_title_visible,
+            @w_zo_pin_value
+         
+        fetch cu_deleted into
+            @w_zo_id_old
+
+        while @@FETCH_STATUS=0
+        begin
+            select @w_id = sq_siguiente
+            from cob_distrib..di_seqnos
+            where sq_tabla = 'di_log'
+ 
+            update cob_distrib..di_seqnos
+            set sq_siguiente = sq_siguiente + 1
+            where sq_tabla = 'di_log'
+ 
+            insert into cob_distrib..di_log (
+                lg_id, lg_fecha, lg_operacion, lg_objeto)
+            values (@w_id, getdate(), 'U', 'cobis..sp_an_zone_tg')
+            
+            insert into cob_distrib..di_parametro (
+                pa_id, pa_nombre, pa_tipodato, pa_longitud, pa_int)
+            values (@w_id, '@i_zo_id', 56, isnull(datalength(@w_zo_id), 0), @w_zo_id)
+            
+            insert into cob_distrib..di_parametro (
+                pa_id, pa_nombre, pa_tipodato, pa_longitud, pa_varchar)
+            values (@w_id, '@i_zo_name', 39, isnull(datalength(@w_zo_name), 0), @w_zo_name)
+            
+            insert into cob_distrib..di_parametro (
+                pa_id, pa_nombre, pa_tipodato, pa_longitud, pa_tinyint)
+            values (@w_id, '@i_zo_pin_visible', 48, isnull(datalength(@w_zo_pin_visible), 0), @w_zo_pin_visible)
+            
+            insert into cob_distrib..di_parametro (
+                pa_id, pa_nombre, pa_tipodato, pa_longitud, pa_tinyint)
+            values (@w_id, '@i_zo_close_visible', 48, isnull(datalength(@w_zo_close_visible), 0), @w_zo_close_visible)
+            
+            insert into cob_distrib..di_parametro (
+                pa_id, pa_nombre, pa_tipodato, pa_longitud, pa_tinyint)
+            values (@w_id, '@i_zo_title_visible', 48, isnull(datalength(@w_zo_title_visible), 0), @w_zo_title_visible)
+            
+            insert into cob_distrib..di_parametro (
+                pa_id, pa_nombre, pa_tipodato, pa_longitud, pa_tinyint)
+            values (@w_id, '@i_zo_pin_value', 48, isnull(datalength(@w_zo_pin_value), 0), @w_zo_pin_value)
+            
+            insert into cob_distrib..di_parametro (
+                pa_id, pa_nombre, pa_tipodato, pa_longitud, pa_int)
+            values (@w_id, '@i_zo_id_old', 56, isnull(datalength(@w_zo_id_old), 0), @w_zo_id_old)
+            
+            fetch cu_inserted into
+                @w_zo_id,
+                @w_zo_name,
+                @w_zo_pin_visible,
+                @w_zo_close_visible,
+                @w_zo_title_visible,
+                @w_zo_pin_value
+        
+            fetch cu_deleted into
+                @w_zo_id_old 
+        end
+        close cu_inserted
+        deallocate cu_inserted
+        close cu_deleted
+        deallocate cu_deleted
+    end
+end
+go

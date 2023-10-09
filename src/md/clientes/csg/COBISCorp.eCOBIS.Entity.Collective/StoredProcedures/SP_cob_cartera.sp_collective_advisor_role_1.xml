@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<procedure>
+  <database>cob_cartera</database>
+  <name>sp_rol_asesor_colectivo</name>
+  <type>SQLSERVER</type>
+  <version>1</version>
+  <parameters>
+    <parameter name="@t_trn" dataType="smallint" direction="in" />
+    <parameter name="@i_ente" dataType="int" direction="in" />
+    <parameter name="@i_operacion" dataType="char" direction="in" />
+    <parameter name="@i_role_desc" dataType="varchar" direction="in" />
+    <parameter name="@i_collective_desc" dataType="varchar" direction="in" />
+    <parameter name="@i_business_officer" dataType="varchar" direction="in" />
+  </parameters>
+  <queries>
+    <query>
+      <columns>
+        <column name="Descripcion Colectivo" />
+        <column name="ID Oficial" />
+        <column name="Nombre Oficial" />
+        <column name="Rol" />
+      </columns>
+      <queryText>SELECT  "Descripcion Colectivo" = cc_colectivo,"ID Oficial" = cc_oficial,"Nombre Oficial" = fu_nombre,"Rol" = cc_rol </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="Id Oficial" />
+        <column name="Nombre" />
+      </columns>
+      <queryText></queryText>
+    </query>
+  </queries>
+</procedure>

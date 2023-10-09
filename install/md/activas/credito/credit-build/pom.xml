@@ -1,0 +1,155 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.cobiscorp.ecobis</groupId>
+    <artifactId>credit-build</artifactId>
+    <version>1.0.0</version>
+    <packaging>pom</packaging>
+    <name>${project.artifactId}</name>
+    <url>http://www.cobiscorp.com/</url>
+
+
+    <properties>
+        <maven-javadoc-plugin.version>2.10.3</maven-javadoc-plugin.version>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+
+    <profiles>
+        <profile>
+            <id>env-development</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+            <modules>
+
+                <!-- Clientes Santander -->
+                <module>../../source/middleware/connectors/customers/cloud.sofom.customers.utils</module>
+                <module>../../source/middleware/connectors/customers/cloud.sofom.referencedata.party</module>
+                <module>../../source/middleware/connectors/customers/cloud.sofom.referencedata.party.impl</module>
+                <module>../../source/middleware/connectors/customers/cloud.sofom.salesservice.customermanagement
+                </module>
+                <module>../../source/middleware/connectors/customers/cloud.sofom.salesservice.customermanagement.impl
+                </module>
+
+                <!-- Desembolsos -->
+                <module>../../source/middleware/connectors/disbursements/operationalservices</module>
+                <module>../../source/middleware/connectors/disbursements/operationalservices.impl</module>
+                <module>../../source/middleware/connectors/disbursements/operationalservices.batch</module>
+                <module>../../source/middleware/connectors/disbursements/operationalservicescheck.batch</module>
+
+                <!-- Cobros -->
+                <module>../../source/middleware/connectors/direct-debits/operationsexecution.tradebanking.batch</module>
+
+                <!-- Corresponsal Openpay -->
+                <module>../../source/middleware/connectors/correspondents/OpenPay/operationsexecution.payments</module>
+
+                <!-- Listas negras -->
+                <module>../../source/middleware/connectors/blacklist/cloud.sofom.regulationscompliance.batch</module>
+
+                <!-- Pagos referenciados -->
+                <module>../../source/middleware/connectors/accounts-receivable/accountmanagement.batch</module>
+
+                <!-- Común de IEN -->
+                <module>../../source/middleware/connectors/IEN/cloud.sofom.batch</module>
+
+                <!-- Buró de crédito -->
+                <module>../../source/middleware/integrations/cobis-cobiscloudburo-zip-util</module>
+                <module>../../source/middleware/integrations/cobis-cobiscloudparty-bsl</module>
+                <module>../../source/middleware/integrations/cobis-cobiscloudparty-bsl-impl</module>
+                <module>../../source/middleware/integrations/cobis-cobiscloudburo-util</module>
+                <module>../../source/middleware/integrations/cobis-cobiscloudburo-bsl</module>
+                <module>../../source/middleware/integrations/cobis-cobiscloudburo-bsl-impl</module>
+
+                <module>../../source/middleware/integrations/cobis-cobiscloudsantander-bsl</module>
+                <module>../../source/middleware/integrations/cobis-cobiscloudsantander-bsl-impl</module>
+
+                <module>../../source/middleware/integrations/cobis-cobiscloudorchestration-bsl</module>
+                <module>../../source/middleware/integrations/cobis-cobiscloudorchestration-bsl-impl</module>
+                <module>../../source/middleware/integrations/cobis-cobiscloudorchestration-rest</module>
+				
+				 <!-- Ejecucion del Batch Satander Colectivos -->
+				<module>../../source/middleware/integrations/cloud.sofom.operationsexecution.santander.batch</module>
+
+                <module>../credit-installer</module>
+
+            </modules>
+        </profile>
+        <profile>
+            <id>env-hardening</id>
+            <modules>
+                <!-- Clientes Santander -->
+                <module>../../source/middleware/connectors/customers/cloud.sofom.customers.utils</module>
+                <module>../../source/middleware/connectors/customers/cloud.sofom.referencedata.party</module>
+                <module>../../source/middleware/connectors/customers/cloud.sofom.referencedata.party.impl</module>
+                <module>../../source/middleware/connectors/customers/cloud.sofom.salesservice.customermanagement
+                </module>
+                <module>../../source/middleware/connectors/customers/cloud.sofom.salesservice.customermanagement.impl
+                </module>
+
+                <!-- Desembolsos -->
+                <module>../../source/middleware/connectors/disbursements/operationalservices</module>
+                <module>../../source/middleware/connectors/disbursements/operationalservices.impl</module>
+                <module>../../source/middleware/connectors/disbursements/operationalservices.batch</module>
+                <module>../../source/middleware/connectors/disbursements/operationalservicescheck.batch</module>
+
+                <!-- Cobros -->
+                <module>../../source/middleware/connectors/direct-debits/operationsexecution.tradebanking.batch</module>
+
+                <!-- Corresponsal Openpay -->
+                <module>../../source/middleware/connectors/correspondents/OpenPay/operationsexecution.payments</module>
+
+                <!-- Listas negras -->
+                <module>../../source/middleware/connectors/blacklist/cloud.sofom.regulationscompliance.batch</module>
+
+                <!-- Pagos referenciados -->
+                <module>../../source/middleware/connectors/accounts-receivable/accountmanagement.batch</module>
+
+                <!-- Común de IEN -->
+                <module>../../source/middleware/connectors/IEN/cloud.sofom.batch</module>
+
+                <!-- Buró de crédito -->
+                <module>../../source/middleware/integrations/cobis-cobiscloudburo-zip-util</module>
+                <module>../../source/middleware/integrations/cobis-cobiscloudparty-bsl</module>
+                <module>../../source/middleware/integrations/cobis-cobiscloudparty-bsl-impl</module>
+                <module>../../source/middleware/integrations/cobis-cobiscloudburo-util</module>
+                <module>../../source/middleware/integrations/cobis-cobiscloudburo-bsl</module>
+                <module>../../source/middleware/integrations/cobis-cobiscloudburo-bsl-impl</module>
+
+                <module>../../source/middleware/integrations/cobis-cobiscloudsantander-bsl</module>
+                <module>../../source/middleware/integrations/cobis-cobiscloudsantander-bsl-impl</module>
+
+                <module>../../source/middleware/integrations/cobis-cobiscloudorchestration-bsl</module>
+                <module>../../source/middleware/integrations/cobis-cobiscloudorchestration-bsl-impl</module>
+                <module>../../source/middleware/integrations/cobis-cobiscloudorchestration-rest</module>
+				<module>../../source/middleware/integrations/cobis-cobiscloudorchestration-rest</module>
+				 <!-- Ejecucion del Batch Satander Colectivos -->
+				<module>../../source/middleware/integrations/cloud.sofom.operationsexecution.santander.batch</module>
+                <module>../credit-installer</module>
+            </modules>
+        </profile>
+        <profile>
+            <id>Purge</id>
+            <build>
+                <plugins>
+                    <plugin>
+                        <artifactId>maven-dependency-plugin</artifactId>
+                        <version>2.10</version>
+                        <executions>
+                            <execution>
+                                <id>purge-local-dependencies</id>
+                                <phase>process-sources</phase>
+                                <goals>
+                                    <goal>purge-local-repository</goal>
+                                </goals>
+                                <!-- >configuration> <actTransitively>true</actTransitively> <manualInclude>com.cobiscorp.processapi:COBISCorp.eCOBIS.Businessprocess.Creditmanagement.DTO</manualInclude>
+                                    <reResolve>true</reResolve> </configuration -->
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+    </profiles>
+
+
+</project>

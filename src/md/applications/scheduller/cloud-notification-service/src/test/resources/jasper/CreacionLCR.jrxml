@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="CreacionLCR" pageWidth="595" pageHeight="842" columnWidth="455" leftMargin="80" rightMargin="60" topMargin="20" bottomMargin="20" uuid="810d174d-6b23-4ad8-b743-9d4240eeab63">
+	<property name="ireport.zoom" value="1.0000000000000004"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<subDataset name="dataset1" uuid="140ee6ba-95ec-4066-b74e-578705c8ccd0"/>
+	<parameter name="FECHA" class="java.util.Date"/>
+	<parameter name="PIEPAGINA" class="java.lang.String"/>
+	<parameter name="NOMBREEMPRESA" class="java.lang.String"/>
+	<parameter name="FechaRegistro" class="java.lang.String"/>
+	<parameter name="Codigo" class="java.lang.String"/>
+	<parameter name="Nombre" class="java.lang.String"/>
+	<parameter name="ApellidoPaterno" class="java.lang.String"/>
+	<parameter name="ApellidoMaterno" class="java.lang.String"/>
+	<parameter name="Tramite" class="java.lang.Integer"/>
+	<parameter name="DigitoVerificador" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<variable name="FECHA" class="java.lang.String">
+		<variableExpression><![CDATA[new java.text.SimpleDateFormat("dd/MM/yyyy").format($P{FECHA})]]></variableExpression>
+	</variable>
+	<title>
+		<band height="37" splitType="Stretch">
+			<rectangle>
+				<reportElement x="-80" y="-20" width="598" height="57" forecolor="#00C7B1" backcolor="#00C7B1" uuid="d09bf451-dc14-436b-9828-aeb8233f5111"/>
+			</rectangle>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="32" splitType="Stretch">
+			<image scaleImage="FillFrame">
+				<reportElement x="356" y="-49" width="130" height="40" uuid="2712992f-aa1f-4236-a996-bac2a4786c26"/>
+				<imageExpression><![CDATA["logo-tuiio.png"]]></imageExpression>
+			</image>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="102" splitType="Stretch">
+			<textField isBlankWhenNull="true">
+				<reportElement x="0" y="0" width="455" height="21" uuid="f4376324-d542-4314-807a-a6c79dfd1484"/>
+				<textElement verticalAlignment="Middle" markup="html">
+					<font fontName="SansSerif" size="14" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Felicidades " + $P{Nombre} + " " + $P{ApellidoPaterno} + " " + $P{ApellidoMaterno} +"."]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="38" width="455" height="64" uuid="f6cac328-150a-4b2c-a4a5-95f5c8753568"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle" markup="html">
+					<font fontName="SansSerif" size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Has adquirido un préstamo individual que fue pensado especialmente para ti, para ayudarte a hacer crecer tu negocio y mejorar tus ingresos familiares."]]></textFieldExpression>
+			</textField>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="431" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="270" width="455" height="161" uuid="b4c4e99a-535e-4a43-ba5c-40f82aeb1f90"/>
+				<textElement textAlignment="Center" verticalAlignment="Top" markup="html">
+					<font fontName="SansSerif" size="14" isBold="false"/>
+				</textElement>
+				<text><![CDATA[<br/><br/>Te enviamos saludos y de nuevo <b>¡muchas felicidades!</b>
+<br/><b><br/><b>Equipo Tuiio</b>
+]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="18" width="455" height="39" uuid="d975a508-78cd-4eba-93c0-eabb8791678e"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="14"/>
+				</textElement>
+				<text><![CDATA[¿Qué beneficios tienes con tu crédito?]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="214" width="455" height="56" uuid="ed6e289e-4aab-4b8b-b4ad-c489c9f0ca29"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="14"/>
+				</textElement>
+				<text><![CDATA[Con tu préstamo individual tu crecimiento está en tus manos porque en Tuiio si tú creces, nosotros crecemos.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="57" width="455" height="157" uuid="fab57adb-b220-431e-8542-240045bfcfe8"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="SansSerif" size="14"/>
+				</textElement>
+				<text><![CDATA[      •	Puedes disponer de tu dinero de lunes a viernes.
+      •	Todos los trámites los haces desde tu celular para que ahorres
+           tiempo y dinero en traslados.
+      •	0% de interés si pagas el total de lo que pediste cada semana.
+      •	Incremento de tu monto si en tres semanas seguidas si solicitas
+           al menos el 70% de tu línea y pagas todo lo que hayas solicitado
+           cada martes.]]></text>
+			</staticText>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="85">
+			<image scaleImage="FillFrame">
+				<reportElement x="120" y="0" width="214" height="63" uuid="93e94fae-91e6-4444-9b15-520bc144ca90"/>
+				<imageExpression><![CDATA["logo-tuiio.jpg"]]></imageExpression>
+			</image>
+		</band>
+	</pageFooter>
+</jasperReport>

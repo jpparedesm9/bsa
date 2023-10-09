@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:jdbc="http://www.springframework.org/schema/jdbc"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/jdbc http://www.springframework.org/schema/jdbc/spring-jdbc.xsd">
+
+	<bean id="jpaVendorAdapter" class="org.springframework.orm.jpa.vendor.OpenJpaVendorAdapter">
+		<property name="database" value="SYBASE" />
+		<property name="showSql" value="false" />
+		<property name="generateDdl" value="false" />
+	</bean>
+
+	<!-- <jdbc:embedded-database id="dataSource" type="HSQL"> -->
+	<!-- <jdbc:script location="script-create.sql" /> -->
+	<!-- <jdbc:script location="script-insert.sql" /> -->
+	<!-- </jdbc:embedded-database> -->
+
+	<bean id="dataSource"
+		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+		<property name="driverClassName"
+			value="com.sybase.jdbc3.jdbc.SybConnectionPoolDataSource" />
+		<property name="url" value="jdbc:sybase:Tds:192.168.64.222:5000/cobis" />
+		<property name="username" value="desarrollo" />
+		<property name="password" value="desarrollo" />
+	</bean>
+
+
+	<bean id="entityManagerFactory"
+		class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
+		<property name="dataSource" ref="dataSource" />
+		<property name="jpaVendorAdapter" ref="jpaVendorAdapter" />
+		<property name="persistenceUnitName" value="JpaFpmPortfolio" />
+		<property name="persistenceXmlLocation" value="META-INF/test-persistence.xml" />
+
+		<property name="jpaPropertyMap">
+			<map>
+				<entry key="openjpa.jdbc.DBDictionary" value="sybase(CatalogSeparator='..')" />
+
+
+			</map>
+		</property>
+
+
+
+
+	</bean>
+
+</beans>

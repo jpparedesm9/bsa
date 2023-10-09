@@ -1,0 +1,789 @@
+!************************************************************************!
+!*      Archivo:                log.sqr                                 *!
+!*      Base de datos:          cob_conta                               *!
+!*      Producto: Contabilidad                                          *!
+!*      Disenado por:  Rodrigo Garces S.                                *!
+!*      Fecha de escritura: 01/MArzo/1994                               *!
+!************************************************************************!
+!*                              IMPORTANTE                              *!
+!*      Este programa es parte de los paquetes bancarios propiedad de   *!
+!*      "MACOSA", representantes exclusivos para el Ecuador de la       *!
+!*      "NCR CORPORATION".                                              *!
+!*      Su uso no autorizado queda expresamente prohibido asi como      *!
+!*      cualquier alteracion o agregado hecho por alguno de sus         *!
+!*      usuarios sin el debido consentimiento por escrito de la         *!
+!*      Presidencia Ejecutiva de MACOSA o su representante.             *!
+!************************************************************************!
+!*                              PROPOSITO                               *!
+!* Este programa posee procedimientos que manejan el log de procesos    *!
+!*                                                                      *!
+!* Rutinas para VISUAL BATCH     					*!
+!*                                                                      *!
+!************************************************************************!
+!*                              MODIFICACIONES                          *!
+!*      FECHA           AUTOR           RAZON                           *!
+!*      01/Mar/1994 Rodrigo Garces S.                                   *! 
+!*      20/May/2002 Sandro Soto         Cambios para upgrade grafico    *!  
+!*      27/Ago/2003 Diego Ayala		Consulta de path destino	*!  
+!************************************************************************!
+
+#define ANCHO_PAN            70  !Largo de la pantalla del terminal
+
+Begin-Procedure Inicializar_Programa
+!* Resume las llamadas iniciales de todo programa en uno solo *!
+
+create-array name=Parametros_Programa size=20 field=Valor:Char
+let $modo_debug = ''
+#debug let $modo_debug = 'S' !Se esta trabajando en modo debug
+
+if $modo_debug = 'S' !No genere las llamadas del log
+   !Le permite al usuario ingresar 7 parametros de prueba
+   show  '(Ejecucion en modo debug)'
+   input $parametro_debug1 'Parametro Prueba #1 '
+   if $parametro_debug1 <> ''
+      input $parametro_debug2 'Parametro Prueba #2 '
+      if $parametro_debug2 <> ''
+         input $parametro_debug3 'Parametro Prueba #3 '
+         if $parametro_debug3 <> ''
+            input $parametro_debug4 'Parametro Prueba #4 '
+            if $parametro_debug4 <> ''
+               input $parametro_debug5 'Parametro Prueba #5 '
+               if $parametro_debug5 <> ''
+                  input $parametro_debug6 'Parametro Prueba #6 '
+                  if $parametro_debug6 <> ''
+                     input $parametro_debug7 'Parametro Prueba #7 '
+                     if $parametro_debug7 <> ''
+                        input $parametro_debug8 'Parametro Prueba #8 '
+                        if $parametro_debug8 <> ''
+                           input $parametro_debug9 'Parametro Prueba #9 '
+                           if $parametro_debug9 <> ''
+                              input $parametro_debug10 'Parametro Prueba #10 '
+						   end-if
+                        end-if
+                     end-if
+                  end-if
+               end-if
+            end-if
+         end-if
+      end-if
+   end-if
+   put $parametro_debug1 into Parametros_Programa (1)
+   put $parametro_debug2 into Parametros_Programa (2)
+   put $parametro_debug3 into Parametros_Programa (3)
+   put $parametro_debug4 into Parametros_Programa (4)
+   put $parametro_debug5 into Parametros_Programa (5)
+   put $parametro_debug6 into Parametros_Programa (6)
+   put $parametro_debug7 into Parametros_Programa (7)
+   put $parametro_debug8 into Parametros_Programa (8)
+   put $parametro_debug9 into Parametros_Programa (9)
+   put $parametro_debug10 into Parametros_Programa (10)
+else
+   let #return-status = 1 ! Para el sistema operativo
+   input $w_lote        'Ingrese el codigo de lote      '
+   input $w_programa    'Ingrese el codigo del programa '
+   input $w_secuencial  'Ingrese el secuencial          '
+   input $w_corrida     'Ingrese la corrida             '
+   input $w_dependencia 'Dependencia (S/N)              '
+   input $w_parametros  'Parametros (A/C)               '
+   let #w_lote        = to_number ($w_lote)
+   let #w_programa    = to_number ($w_programa)
+   let #w_secuencial  = to_number ($w_secuencial)
+   let #w_corrida     = to_number ($w_corrida)
+   do Fecha_Proceso_Hoy
+   do Validar_Dependencia
+   do Inicializar_Corrida
+   do Obtener_Parametros
+end-if
+End-Procedure
+
+Begin-Procedure Fecha_Proceso_Hoy
+Begin-Select
+getdate () &fecha_inicio_log
+convert(char(10),getdate(),101) &fecha_hoy
+End-Select
+Begin-Select
+convert(char(10),fc_fecha_cierre,101) &fecha_proceso_batch
+convert(char(10),fc_fecha_cierre,101) &fecha_proceso_batch2
+from cobis..ba_fecha_cierre,cobis..ba_sarta
+where sa_sarta    = convert(int,#w_lote)
+  and sa_producto = convert(tinyint,fc_producto)
+End-Select
+let $t1_fecha_proceso = &fecha_proceso_batch
+let $t11_fecha_proceso = &fecha_proceso_batch2
+End-Procedure
+
+Begin-Procedure Validar_Dependencia
+!* Valida que la dependencia de ejecucion del programa se haya cumplido *!
+
+Begin-Select
+sb_repeticion
+from cobis..ba_sarta_batch_exec
+where sb_sarta      = #w_lote
+  and sb_secuencial = #w_secuencial
+End-Select
+if &sb_repeticion = 'N'
+   do Analizar_Repeticion
+else
+   if &sb_repeticion = 'U'
+      do Analizar_Una_Repeticion
+   end-if
+end-if
+if $w_dependencia = 'S' and #w_secuencial <> 1
+  do Verificar_Tiene_Padre
+end-if
+End-Procedure
+
+Begin-Procedure Verificar_Tiene_Padre
+Begin-Select on-error=Abortar
+sb_dependencia &existe_dependencia
+from cobis..ba_sarta_batch_exec
+where sb_sarta       = #w_lote
+  and sb_batch       = #w_programa
+  and sb_secuencial  = #w_secuencial
+End-Select
+let #existe_dependencia = &existe_dependencia
+Begin-Select on-error=Abortar
+ba_nombre &nombre_padre
+from cobis..ba_batch,cobis..ba_sarta_batch_exec
+where sb_sarta       = #w_lote
+  and sb_secuencial  = #existe_dependencia
+  and sb_batch       = ba_batch
+End-Select
+if #existe_dependencia <> 0
+   do Validar_Estatus_Padre
+end-if
+End-Procedure 
+
+Begin-Procedure Validar_Estatus_Padre
+Begin-Select on-error=Abortar
+lo_estatus       &estatus_padre
+lo_fecha_inicio  &fecha_inicio_padre
+lo_fecha_terminacion   &fecha_final_padre
+from cobis..ba_log,cobis..ba_fecha_cierre,cobis..ba_sarta
+where lo_sarta        =  convert(int,#w_lote)
+  and sa_sarta        =  convert(int,#w_lote)
+  and sa_producto     =  convert(tinyint,fc_producto)
+  and fc_producto     =  convert(tinyint,fc_producto)
+  and lo_secuencial   =  convert(smallint,&existe_dependencia)
+  and lo_corrida      =  convert(smallint,#w_corrida)
+  and convert(char(10),lo_fecha_proceso,101) = convert(char(10),fc_fecha_cierre,101)
+order by lo_intento
+End-Select
+if &estatus_padre = 'E'
+  show 'Este programa depende de: ' &nombre_padre
+  show 'el cual se esta ejecutando desde la fecha ' &fecha_inicio_padre
+  let $mensaje_error = 'El programa del cual se depende aun no ha terminado'
+  do Abortar
+end-if
+if &estatus_padre = 'A'
+  show 'Este programa depende de: '  &nombre_padre
+  show 'el cual aborto en la fecha ' &fecha_final_padre
+  let $mensaje_error = 'El programa del cual se depende aborto'
+  do Abortar
+end-if
+if &estatus_padre = ''
+  show 'Este programa depende de: '  &nombre_padre
+  show 'el cual aun no se ha ejecutado'
+  let $mensaje_error = 'El programa del cual se depende aun no se ha ejecutado'
+  do Abortar
+end-if
+if &estatus_padre = 'F'
+  show 'Este programa depende de: '  &nombre_padre
+  show 'el cual finalizo correctamente en la fecha ' &fecha_final_padre
+end-if
+End-Procedure
+
+Begin-Procedure Analizar_Repeticion
+Begin-Select
+lo_estatus &repeticion_unica
+from cobis..ba_log,cobis..ba_fecha_cierre,cobis..ba_sarta
+where lo_sarta      = convert(int,#w_lote)
+  and sa_sarta      = convert(int,#w_lote)
+  and sa_producto   = convert(tinyint,fc_producto)
+  and lo_secuencial = convert(smallint,#w_secuencial)
+  and lo_corrida   <> convert(int,#w_corrida)
+  and convert(char(10),lo_fecha_proceso,101) = convert(char(10),fc_fecha_cierre,101)
+End-Select
+if not isnull(&repeticion_unica)
+   show 'Este programa ya ha sido ejecutado '
+   show 'y solo se puede ejecutar una vez en el dia'
+   let $mensaje_error = 'Se trato de ejecutar el programa de nuevo en el mismo dia'
+   do Abortar
+end-if
+End-Procedure
+
+Begin-Procedure Analizar_Una_Repeticion
+Begin-Select
+lo_estatus &una_repeticion
+from cobis..ba_log,cobis..ba_fecha_cierre,cobis..ba_sarta
+where lo_sarta      = convert(int,#w_lote)
+  and sa_sarta      = convert(int,#w_lote)
+  and sa_producto   = convert(tinyint,fc_producto)
+  and lo_secuencial = convert(smallint,#w_secuencial)
+  and convert(char(10),lo_fecha_proceso,101) = convert(char(10),fc_fecha_cierre,101)
+  and lo_estatus    = 'F' ! (F)inalizo correctamente
+End-Select
+if not isnull(&una_repeticion)
+   show 'Este programa ya ha sido ejecutado exitosamente'
+   show 'y solo se puede ejecutar con este resultado una vez en el dia'
+   let $mensaje_error = 'Se trato de ejecutar el programa de nuevo en el mismo dia a pesar de haber terminado bien'
+   do Abortar
+end-if
+End-Procedure
+
+Begin-Procedure Validar_Fecha ($fecha,:#flag)
+
+!* Valida que el string $fecha sea una fecha de formato MM-DD-YY  *!
+
+let #flag = 0 
+Begin-Select on-error=Error_Fecha 
+dateadd(dd,1,$fecha)	&auxfecha
+  let #flag=1
+End-Select
+let #long_anio = length ($fecha) - 6
+let $sep = substr ($fecha,3,1) || substr ($fecha,6,1) 
+if $sep <> '--' and $sep <> '//'
+  let #flag = 0 
+end-if
+End-Procedure
+
+Begin-Procedure Error_Fecha 
+! Es um manejador de error, no ejecuta ninguna accion
+End-Procedure
+
+
+Begin-Procedure Inicializar_Corrida
+let #w_num_reg_proc = 0
+let $mensaje_error = 'N'       !El mensaje de error seria igual a $sql-error
+Begin-Select
+count(*) &existe_prog 
+from cobis..ba_sarta_batch_exec
+where sb_sarta = #w_lote
+  and sb_batch = #w_programa
+  and sb_secuencial = #w_secuencial
+End-Select
+let #existe_prog = &existe_prog
+if #existe_prog = 0
+   ! No existe entrada en el lote-programa, el secuencial asignado puede !
+   ! estar incorrecto 							 !
+   do Centrar_Show ('Error, es posible que el secuencial este mal asignado, REEJECUTAR EL PROCESO',0)
+   stop
+end-if
+
+Begin-Select
+ba_nombre
+ba_tipo_batch
+isnull(ba_frec_reg_proc,100) &ba_frec_reg_proc
+ba_ente_procesado
+from cobis..ba_batch
+where ba_batch = convert(int,#w_programa)
+End-Select
+
+Begin-Select
+count(*) &nro_est
+sum(lo_num_reg_proc) &ult_reg_proc
+from cobis..ba_log
+where lo_sarta = convert(int,#w_lote)
+  and lo_batch = convert(int,#w_programa)
+  and lo_secuencial = convert(smallint,#w_secuencial)
+  and lo_estatus = 'F' !Finalizo correctamente
+End-Select
+
+if &nro_est <> 0
+   let #nro_reg_prom = &ult_reg_proc / &nro_est
+else
+   let #nro_reg_prom = 0
+end-if
+
+!---> SSO 22/05/2002; Calcula el numero de intento para la corrida del proceso
+Begin-Select
+isnull(lo_intento, 0) &ultimo_intento
+from cobis..ba_log
+where lo_sarta = convert(int,#w_lote)
+  and lo_batch = convert(int,#w_programa)
+  and lo_secuencial = convert(smallint,#w_secuencial)
+  and lo_corrida = convert(smallint,#w_corrida)
+End-Select
+
+let #w_intento = &ultimo_intento + 1
+
+Begin-Select
+fc_fecha_cierre &fecha_cierre_prod
+from cobis..ba_sarta, cobis..ba_fecha_cierre
+where sa_producto = fc_producto
+  and sa_sarta = convert(int,#w_lote)
+End-Select
+let $fecha_proc = &fecha_cierre_prod
+
+if $fecha_proc = ''
+Begin-Select
+fp_fecha &fecha_proc1
+from cobis..ba_fecha_proceso
+End-Select
+let $fecha_proc = &fecha_proc1
+end-if
+
+! SE COMENTAN INSERCIONES Y ACTUALIZACIONES DE ba_log POR
+! IMPLEMENTACION DE VISUAL BATCH
+!Begin-SQL on-error=Clave_Duplicada 
+!   insert into cobis..ba_log
+!          (lo_sarta,lo_batch,lo_secuencial,lo_corrida,lo_operador,
+!           lo_fecha_inicio,lo_fecha_terminacion,lo_num_reg_proc,
+!	   lo_estatus,lo_razon,lo_fecha_proceso, lo_intento)
+!   values( #w_lote,#w_programa,#w_secuencial,#w_corrida,$username,
+!          &fecha_inicio_log, NULL,NULL,'E','',$fecha_proc,#w_intento) 
+!End-SQL
+End-Procedure
+
+Begin-Procedure Clave_Duplicada
+do Centrar_Show (' Error, es posible que el numero de corrida ya este registrado',0)
+stop
+End-Procedure
+
+Begin-Procedure Obtener_Parametros
+!* Selecciona los parametros de este programa y los confirma de ser *!
+!* necesario                                                        *!
+let $parametros_cobis = ''
+let #indice_parametros = 0
+Begin-Select
+pa_nombre
+pa_tipo
+pa_valor
+pa_parametro
+  add 1 to #indice_parametros
+! show '--------'
+! show &pa_nombre
+! show &pa_tipo
+! show &pa_valor
+  do Asignar_Parametros
+  get $parametro_actual_cobis from Parametros_Programa (#indice_parametros)  
+  let $parametros_cobis = $parametros_cobis || $parametro_actual_cobis || ';'
+from cobis..ba_parametro
+where pa_sarta     = convert(int,#w_lote)
+  and pa_batch     = convert(int,#w_programa)
+  and pa_ejecucion = convert(int,#w_secuencial)
+order by pa_parametro
+End-Select
+show (17,1) cl  !Limpia el area de informacion de corrida
+show (18,1) cl  !Limpia el area de informacion de corrida
+show (19,1) cl  !Limpia el area de informacion de corrida
+show (20,1) cl  !Limpia el area de informacion de corrida
+
+! ACTUALIZACION DEL LOG PARA LOS PARAMETROS RGA 07/10/96 !
+! SE COMENTAN INSERCIONES Y ACTUALIZACIONES DE ba_log POR
+! IMPLEMENTACION DE VISUAL BATCH 	
+!Begin-SQL on-error=Abortar
+! update cobis..ba_log
+! set    lo_parametro        = $parametros_cobis 
+! where  lo_sarta            = #w_lote
+!   and	lo_batch            = #w_programa
+!   and  lo_secuencial       = #w_secuencial
+!   and  lo_corrida          = #w_corrida
+!   and  lo_intento          = #w_intento
+!End-SQL
+End-Procedure
+
+Begin-Procedure Asignar_Parametros
+!* Asigna los parametros leidos a las variables o permite *!          
+!* que el usuario ingrese los valores                     *!
+
+let $confirmacion = 'Ingrese valor de ' || &pa_nombre
+                    || ' ( = ' || &pa_valor || ') '
+evaluate &pa_tipo
+  when = 'I'
+    if $w_parametros = 'C'
+      show $confirmacion
+      input $valor_parametro 'Nuevo Valor' type = integer
+      if $valor_parametro = ''
+         let $valor_parametro = &pa_valor
+      end-if
+      put $valor_parametro into Parametros_Programa(#indice_parametros)
+    else
+      put &pa_valor into Parametros_Programa(#indice_parametros)
+    end-if
+  when = 'D'
+    if $w_parametros = 'C'
+      let #validacion_fecha = 0
+      while #validacion_fecha = 0
+        show $confirmacion
+        input $valor_parametro 'Nuevo Valor' type = char
+        if $valor_parametro = ''
+           let $valor_parametro = &pa_valor
+           let #validacion_fecha = 1
+        else
+           do Validar_Fecha ($valor_parametro,#validacion_fecha)
+        end-if
+      end-while
+      put $valor_parametro into Parametros_Programa(#indice_parametros)
+    else
+      let $valor_parametro = substr(&pa_valor,1,2) ||
+                             '/' || substr (&pa_valor,4,2) ||
+                             '/' || substr (&pa_valor,7,4)
+      put $valor_parametro into Parametros_Programa(#indice_parametros)
+    end-if
+  when = 'C'
+    if $w_parametros = 'C'
+      show $confirmacion
+      input $valor_parametro 'Nuevo Valor' type = char
+      if $valor_parametro = ''
+         let $valor_parametro = &pa_valor
+      end-if
+      put $valor_parametro into Parametros_Programa(#indice_parametros)
+    else
+      let $valor_parametro = &pa_valor
+      put $valor_parametro into Parametros_Programa(#indice_parametros)
+    end-if
+  when = 'M'
+    if $w_parametros = 'C'
+      show $confirmacion
+      input $valor_parametro 'Nuevo Valor' type = number
+      if $valor_parametro = ''
+         let $valor_parametro = &pa_valor
+      end-if
+      put $valor_parametro into Parametros_Programa(#indice_parametros)
+    else
+      let $valor_parametro = &pa_valor
+      put $valor_parametro into Parametros_Programa(#indice_parametros)
+    end-if
+end-evaluate
+!show 'VALOR - PARA: ' $valor_parametro
+End-Procedure
+
+Begin-Procedure Finalizar_Corrida
+Begin-Select on-error=Abortar
+getdate() &fecha_final_log
+End-Select
+Begin-SQL on-error=Abortar
+ update cobis..ba_log
+set	lo_num_reg_proc     = #w_num_reg_proc
+ where  lo_sarta            = #w_lote
+   and	lo_batch            = #w_programa
+   and  lo_secuencial       = #w_secuencial
+   and  lo_corrida          = #w_corrida
+   and  lo_intento          = #w_intento
+End-SQL
+let #fin_corrida = 1 ! Verdadero
+do Actualizar_Reg_Proc
+End-Procedure
+
+Begin-Procedure Abortar 
+show beep
+show beep
+show beep
+show beep
+show beep
+if $modo_debug = 'S'  !Modo debug no genera llamadas al log
+   if $mensaje_error = 'N'
+      show $sql-error
+   else
+      show $mensaje_error
+   end-if
+   stop
+end-if 
+if $mensaje_error = 'N'
+  let $mensaje_error = $sql-error
+end-if
+Begin-Select
+getdate() &fecha_final_log2
+End-Select
+let $mensaje_error_show = ' Error : ' || $mensaje_error
+show  $mensaje_error_show
+!Begin-SQL
+! update cobis..ba_log
+! set    lo_fecha_terminacion= &fecha_final_log2,
+!	lo_num_reg_proc     = #w_num_reg_proc,
+!	lo_estatus	    = 'A',
+!        lo_razon            = $mensaje_error
+! where  lo_sarta            = #w_lote
+!   and	lo_batch            = #w_programa
+!   and  lo_secuencial       = #w_secuencial
+!   and  lo_corrida          = #w_corrida
+!   and  lo_intento          = #w_intento
+!End-SQL
+let #return-status = 1 ! Para el sistema operativo
+stop
+End-Procedure
+
+Begin-Procedure Actualizar_Reg_Proc
+! let #ba_frec_reg_proc = &ba_frec_reg_proc
+! if $modo_debug <> 'S' and #ba_frec_reg_proc <> 0
+!    if #fin_corrida <> 1 !No se trata del final
+!       add 1 to #w_num_reg_proc
+!    end-if
+!    let #estado_reg_proc = mod (#w_num_reg_proc,&ba_frec_reg_proc)
+!    if #estado_reg_proc = 0 or #fin_corrida = 1 ! Verdadero
+!      do Ejecutar_Actualizacion
+!      if #nro_reg_prom <> 0
+!         let #porcentaje = (#w_num_reg_proc / #nro_reg_prom) * 100
+!         show (17,20) '# ' &ba_ente_procesado ' EN PROCESO : ' #w_num_reg_proc edit 99999 ' ' #porcentaje edit 999 '%%'
+!         if #primer_despliege = 0 
+!            show (18,20) '[                              ]'
+!            let #primer_despliege = 1
+!         end-if
+!         let #termometro = trunc(#porcentaje/100*30,0)
+!         if #termometro > 30 !Se sobrepaso el 100% estadistico
+!            let #termometro = 30
+!         end-if
+!         let #ind_ter = 1
+!         while #ind_ter <= #termometro
+!             let #ind_ter_pos = #ind_ter + 20
+!            show (18,#ind_ter_pos) '='
+!            add 1 to #ind_ter
+!         end-while
+!      else
+!         show (17,20) '# ' &ba_ente_procesado ' EN PROCESO : ' #w_num_reg_proc edit 99999 
+!      end-if
+!    end-if
+! end-if
+End-Procedure
+
+Begin-Procedure Ejecutar_Actualizacion
+!Begin-SQL on-error=Abortar
+!  update cobis..ba_log
+!  set lo_num_reg_proc       = #w_num_reg_proc
+!  where  lo_sarta           = #w_lote
+!   and	lo_batch            = #w_programa
+!   and  lo_secuencial       = #w_secuencial
+!   and  lo_corrida          = #w_corrida
+!   and  lo_intento          = #w_intento
+!End-SQL
+End-Procedure
+
+Begin-Procedure ParamN (#indice,:#variable,$tabla,$cond,$mensaje)
+get $variable from Parametros_Programa (#indice)
+let #variable = to_number ($variable)
+if $tabla <> ''
+   let $cond = $cond || $variable
+   do Verificar_Existencia ($tabla,$cond,$mensaje)
+end-if
+End-Procedure
+
+Begin-Procedure ParamS (#indice,:$variable,$tabla,$cond,$mensaje)
+get $variable from Parametros_Programa (#indice)
+if $tabla <> ''
+   let $cond = $cond ||  '"' || $variable || '"'
+   do Verificar_Existencia ($tabla,$cond,$mensaje)
+end-if
+End-Procedure
+
+Begin-Procedure Verificar_Existencia ($tablas,$condicion,$mensaje)
+let #flag = 0
+Begin-Select
+count(*) &nro_reg
+from [cobis..cl_filial : $tablas]
+where [$condicion]
+End-Select
+let #nro_reg = &nro_reg
+if #nro_reg = 0
+  let $_mensaje_error = $mensaje
+  do Abortar
+end-if
+End-Procedure
+
+Begin-Procedure Comparar_Fechas ($fecha_i,$fecha_f,:#flag)
+let #flag = 1
+
+let $aux_i = substr ($fecha_i,7,2) || substr ($fecha_i,1,2)
+             || substr ($fecha_i,4,2)
+let $aux_f = substr ($fecha_f,7,2) || substr ($fecha_f,1,2)
+             || substr ($fecha_f,4,2)
+if $aux_i > $aux_f
+  let #flag = 0
+end-if
+End-Procedure
+
+Begin-Procedure Centrar_Show ($mensaje,#fila)
+!* Centra el $mensaje en la terminal *!
+
+let #centro = trunc (({ANCHO_PAN}-length(rtrim($mensaje,' ')))/2,0)
+let #ci = 1
+let $espacio = ''
+while #ci <= #centro
+   let $espacio = $espacio || ' '
+   add 1 to #ci
+end-while
+let $mensaje = $espacio || $mensaje
+if #fila > 0
+   show (#fila,1) $mensaje
+else
+   show (+1,1)    $mensaje
+end-if
+End-Procedure
+
+Begin-Procedure Finalizar_Programa
+!* Finaliza la corrida del programa reinicializando la impresora *!
+!* de tratarse de un reporte                                     *!
+
+let #return-status = 0 ! Para el sistema operativo
+if $modo_debug <> 'S' !Si modo debug, no generar llamdas al log
+   do Finalizar_Corrida
+end-if
+if &ba_tipo_batch = 'R' !Se trata de un reporte
+   if #page-count <> 1 or #current-column <> 1 or #w_num_reg_proc <> 0
+      let $nro_pag = to_char (#page-count)
+      let $msg_show = '(Se generaron ' || $nro_pag || ' paginas)'
+      do Centrar_Show ($msg_show,19)
+   else
+      do Centrar_Show ('(No se genero niguna pagina)',19)
+   end-if
+end-if
+show (20,28) ''
+End-Procedure
+
+Begin-Procedure Nombre_Programa_Fuente (:$nombre)  
+Begin-Select on-error=Abortar 
+ba_arch_resultado &ba_nombre_archivo
+from cobis..ba_batch
+where ba_batch = convert(int,#_w_programa)
+End-Select
+let $nombre = &ba_nombre_archivo
+End-Procedure
+
+Begin-Procedure Path_Destino (:$path_d)
+Begin-Select on-error=Abortar
+ba_path_destino   &ba_path_destino
+from cobis..ba_batch
+where ba_batch = #_w_programa
+End-Select
+let $path_d = &ba_path_destino
+End-Procedure
+
+Begin-Procedure Path_fuente (:$path_f)
+Begin-Select on-error=Abortar
+ba_path_fuente   &ba_path_fuente
+from cobis..ba_batch
+where ba_batch = #_w_programa
+End-Select
+let $path_f = &ba_path_fuente
+End-Procedure
+
+Begin-Procedure Generar_Nombre (#oficina,$fecha,:$nombre_listado)
+do Nombre_Programa_Fuente ($archivo_fuente)
+
+if $fecha = ''
+Begin-Select on-error=ErrorLog
+!*convert(int,datepart(mm,getdate())) &mes_listado
+!*convert(int,datepart(dd,getdate())) &dia_listado
+!*convert(int,datepart(yy,getdate())) &ani_listado
+
+convert(int,datepart(mm, fp_fecha)) &mes_listado
+convert(int,datepart(dd, fp_fecha)) &dia_listado
+convert(int,datepart(yy, fp_fecha)) &ani_listado
+from cobis..ba_fecha_proceso
+
+End-Select
+let $ani_listado = to_char(&ani_listado)
+
+if &mes_listado < 10
+	let $mes_listado = '0' || to_char(&mes_listado)
+else
+        let $mes_listado = to_char(&mes_listado)
+end-if
+if &dia_listado < 10
+	let $dia_listado = '0' || to_char(&dia_listado)
+else
+        let $dia_listado = to_char(&dia_listado)
+end-if
+
+else
+let $mes_listado = substr($fecha,1,2)
+let $dia_listado = substr($fecha,4,2) 
+let $ani_listado = substr($fecha,7,4)
+end-if
+
+Begin-Select on-error=ErrorLog
+convert(int,datepart(hh,getdate())) &hor_listado
+convert(int,datepart(mi,getdate())) &min_listado
+End-Select
+
+let #pos = instr($archivo_fuente,'.',1) - 1
+let $archivo_fuente = substr($archivo_fuente,1,#pos)
+
+
+if &hor_listado < 10
+	let $hor_listado = '0' || to_char(&hor_listado)
+else
+        let $hor_listado = to_char(&hor_listado)
+end-if
+if &min_listado < 10
+	let $min_listado = '0' || to_char(&min_listado)
+else
+        let $min_listado = to_char(&min_listado)
+end-if
+
+let $fecha_definitiva = $mes_listado || $dia_listado || $ani_listado || '_' || $hor_listado || $min_listado 
+
+do Path_Destino ($PathDest)
+if $PathDest = ''
+  let $PathDest = '../listados/'
+end-if
+
+if #oficina > 0
+  let #oficina = 100000 + #oficina
+  let $oficina = substr (to_char(#oficina), 2,5)
+  !let $nombre_listado = '../listados/' || $archivo_fuente || '_' || $fecha_definitiva || '_of' || $oficina || '.lis' AVI 27-Jul-2005 G.Bank debe tomar el path destino de la tabla
+  let $nombre_listado = $PathDest || $archivo_fuente || '_' || $fecha_definitiva || '_of' || $oficina || '.lis'
+else
+  !let $nombre_listado = '../listados/' || $archivo_fuente || '_' || $fecha_definitiva || '_of00000.lis' AVI 27-Jul-2005 G.Bank debe tomar el path destino de la tabla
+  let $nombre_listado = $PathDest || $archivo_fuente || '_' || $fecha_definitiva || '_of00000.lis'
+end-if
+
+End-Procedure
+
+Begin-Procedure Generar_Listado (#oficina)
+do Generar_Nombre (#oficina,$fecha_i,$nombre)
+new-report $nombre
+End-Procedure 
+
+Begin-Procedure Before_Pagina
+if #quiebre_pagina_cobis = 1
+   new-page
+   let #quiebre_pagina_cobis = 0
+end-if
+End-Procedure
+
+Begin-Procedure After_Pagina
+let #quiebre_pagina_cobis = 1
+End-Procedure
+
+!*Procedimiento para generacion de un archivo plano de extension txt*!
+Begin-Procedure Generar_Listado_txt
+do Nombre_Programa_Fuente ($archivo_fuente)
+Begin-Select
+substring(convert(char(8),getdate(), 112), 1, 4) &ani_listado
+substring(convert(char(8),getdate(), 112), 5, 2) &mes_listado
+substring(convert(char(8),getdate(), 112), 7, 2) &dia_listado
+substring(convert(char(8),getdate(), 108), 1, 2) &hor_listado
+substring(convert(char(8),getdate(), 108), 4, 2) &min_listado
+End-Select
+
+let #pos = instr($archivo_fuente,'.',1) - 1
+let $archivo_fuente = substr($archivo_fuente,1,#pos)
+move &mes_listado to $mes_listado '00'
+move &dia_listado to $dia_listado '00'
+move &hor_listado to $hor_listado '00'
+move &min_listado to $min_listado '00'
+let $fecha_definitiva = $mes_listado || $dia_listado || &ani_listado || '_' || $hor_listado || $min_listado 
+let $nombre_listado = '../listados/' || $archivo_fuente || '_' || $fecha_definitiva || '.txt'
+new-report $nombre_listado
+End-Procedure 
+
+
+Begin-Procedure Usuario_Operador (#w_lote, #w_programa, #w_secuencial, #w_corrida, :$user_op)
+
+Begin-Select on-error=Abortar
+lo_operador   &lo_operador
+from cobis..ba_log
+where lo_sarta      = #w_lote      
+and   lo_batch      = #w_programa
+and   lo_secuencial = #w_secuencial
+and   lo_corrida    = #w_corrida    
+order by lo_intento
+End-Select
+let $user_op = &lo_operador
+End-Procedure
+
+Begin-Procedure ErrorLog
+Let $mensaje_error = 'N'
+Do Abortar
+End-Procedure

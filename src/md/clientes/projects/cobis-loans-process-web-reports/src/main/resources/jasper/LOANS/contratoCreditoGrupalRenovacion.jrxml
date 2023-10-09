@@ -1,0 +1,291 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="contratoCreditoGrupalRenovacion" pageWidth="595" pageHeight="842" whenNoDataType="AllSectionsNoDetail" columnWidth="547" leftMargin="24" rightMargin="24" topMargin="24" bottomMargin="37" uuid="deec1b21-1036-4734-948b-164547062a2b">
+	<property name="ireport.zoom" value="1.5"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="151"/>
+	<parameter name="SUBREPORT_DIR" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["/"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="urlPathSantander" class="java.lang.String"/>
+	<parameter name="firmaNF1CCI" class="java.lang.String"/>
+	<parameter name="firmaNF2CCI" class="java.lang.String"/>
+	<parameter name="firmaNB1CCI" class="java.lang.String"/>
+	<parameter name="firmaNB2CCI" class="java.lang.String"/>
+	<parameter name="condusef" class="java.lang.String"/>
+	<parameter name="pieAnio" class="java.lang.String"/>
+	<parameter name="pieAnioContra" class="java.lang.String"/>
+	<parameter name="porCovit" class="java.lang.String"/>
+	<field name="contratoCreditoInclusionDetallePrincipal" class="java.util.List"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<detail>
+		<band height="32" splitType="Stretch">
+			<printWhenExpression><![CDATA[$P{porCovit}.equals("S")]]></printWhenExpression>
+			<subreport>
+				<reportElement positionType="Float" stretchType="RelativeToBandHeight" x="0" y="0" width="547" height="32" uuid="9b5b26c9-5bf5-406b-a96a-fce04ae101e1"/>
+				<subreportParameter name="firmaNB2CCI">
+					<subreportParameterExpression><![CDATA[$P{firmaNB2CCI}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="condusef">
+					<subreportParameterExpression><![CDATA[$P{condusef}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="urlPathSantander">
+					<subreportParameterExpression><![CDATA[$P{urlPathSantander}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="firmaNF1CCI">
+					<subreportParameterExpression><![CDATA[$P{firmaNF1CCI}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="firmaNB1CCI">
+					<subreportParameterExpression><![CDATA[$P{firmaNB1CCI}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="firmaNF2CCI">
+					<subreportParameterExpression><![CDATA[$P{firmaNF2CCI}]]></subreportParameterExpression>
+				</subreportParameter>
+				<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($F{contratoCreditoInclusionDetallePrincipal})]]></dataSourceExpression>
+				<subreportExpression><![CDATA[$P{SUBREPORT_DIR} + "contratoCreditoGrupalRenovacion_DetallePrincipal_COVID.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+		<band height="32" splitType="Stretch">
+			<printWhenExpression><![CDATA[$P{porCovit}.equals("N")]]></printWhenExpression>
+			<subreport>
+				<reportElement positionType="Float" stretchType="RelativeToBandHeight" x="0" y="0" width="547" height="32" uuid="5f2f366f-4ed6-40c4-b925-1bb7048b46c6"/>
+				<subreportParameter name="firmaNB2CCI">
+					<subreportParameterExpression><![CDATA[$P{firmaNB2CCI}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="condusef">
+					<subreportParameterExpression><![CDATA[$P{condusef}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="urlPathSantander">
+					<subreportParameterExpression><![CDATA[$P{urlPathSantander}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="firmaNF1CCI">
+					<subreportParameterExpression><![CDATA[$P{firmaNF1CCI}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="firmaNB1CCI">
+					<subreportParameterExpression><![CDATA[$P{firmaNB1CCI}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="firmaNF2CCI">
+					<subreportParameterExpression><![CDATA[$P{firmaNF2CCI}]]></subreportParameterExpression>
+				</subreportParameter>
+				<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($F{contratoCreditoInclusionDetallePrincipal})]]></dataSourceExpression>
+				<subreportExpression><![CDATA[$P{SUBREPORT_DIR} + "contratoCreditoGrupalRenovacion_DetallePrincipal.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+		<band height="27">
+			<break>
+				<reportElement x="0" y="14" width="100" height="1" uuid="5197515e-e428-48bc-865f-1eb34c1e708b"/>
+			</break>
+		</band>
+		<band height="81">
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="21" y="55" width="547" height="14" isPrintWhenDetailOverflows="true" uuid="b458489b-5317-4582-8320-9e024ce097b9"/>
+				<textElement textAlignment="Center" verticalAlignment="Top" markup="html">
+					<font fontName="DejaVu Sans" size="8" isBold="false"/>
+					<paragraph leftIndent="2" rightIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA["<b>ANEXO DE DISPOSICIONES LEGALES</b>"]]></textFieldExpression>
+			</textField>
+			<image>
+				<reportElement x="10" y="2" width="98" height="66" uuid="44c2de45-52e1-431a-b0b7-e79031930f2a"/>
+				<imageExpression><![CDATA["tuiioSantander2.png"]]></imageExpression>
+			</image>
+		</band>
+		<band height="14">
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="34" y="0" width="490" height="14" isPrintWhenDetailOverflows="true" uuid="924d0e5c-b0ef-4c51-95ca-0bdb1713fcd4"/>
+				<textElement textAlignment="Left" verticalAlignment="Top" markup="html">
+					<font fontName="DejaVu Sans" size="8" isBold="false"/>
+					<paragraph leftIndent="2" rightIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA["<b>Leyes Federales:</b> <br/> <u style=\"color:#335EFF\"><a href=\"http://www.diputados.gob.mx/LeyesBiblio/\" target=\"_blank\" >http://www.diputados.gob.mx/LeyesBiblio/index.htm</a></u> "]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="19" y="0" width="13" height="14" isPrintWhenDetailOverflows="true" uuid="a7d4c39b-e9e2-49fd-8bd6-b1c1d3057be3"/>
+				<textElement verticalAlignment="Top" markup="html">
+					<font fontName="DejaVu Sans" size="8" isBold="false"/>
+					<paragraph leftIndent="2" rightIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA["<b>1.<b/>"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="6"/>
+		<band height="14">
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="36" y="0" width="488" height="14" isPrintWhenDetailOverflows="true" uuid="43367fa6-6b2e-4377-bf31-2096f5bd75f5"/>
+				<textElement textAlignment="Left" verticalAlignment="Top" markup="html">
+					<font fontName="DejaVu Sans" size="8" isBold="false"/>
+					<paragraph leftIndent="2" rightIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA["<b>Ley de Instituciones de Crédito:</b><br/><u style=\"color:#335EFF\"><a href=\"http://www.diputados.gob.mx/LeyesBiblio/pdf/43_220618.pdf\" target=\"_blank\" >http://www.diputados.gob.mx/LeyesBiblio/ref/lic.htm</a></u>"]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="20" y="0" width="13" height="14" isPrintWhenDetailOverflows="true" uuid="41f17dd2-d8c2-4fe5-96e2-c82c09d906ca"/>
+				<textElement verticalAlignment="Top" markup="html">
+					<font fontName="DejaVu Sans" size="8" isBold="false"/>
+					<paragraph leftIndent="2" rightIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA["<b>2.<b/>"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="6"/>
+		<band height="14">
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="20" y="0" width="13" height="14" isPrintWhenDetailOverflows="true" uuid="64735887-d45b-4cdb-8f20-6eea9b12320c"/>
+				<textElement verticalAlignment="Top" markup="html">
+					<font fontName="DejaVu Sans" size="8" isBold="false"/>
+					<paragraph leftIndent="2" rightIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA["<b>3.<b/>"]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="35" y="0" width="489" height="14" isPrintWhenDetailOverflows="true" uuid="aad9e66f-ba83-48b4-a8fe-5f31306a75e0"/>
+				<textElement textAlignment="Left" verticalAlignment="Top" markup="html">
+					<font fontName="DejaVu Sans" size="8" isBold="false"/>
+					<paragraph leftIndent="2" rightIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA["<b>Ley General de Títulos y operaciones de Crédito:</b> <br/> <u style=\"color:#335EFF\"><a href=\"http://www.diputados.gob.mx/LeyesBiblio/pdf/145_220618.pdf\" target=\"_blank\" >http://www.diputados.gob.mx/LeyesBiblio/pdf/145_220618.pdf</a></u>"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="6"/>
+		<band height="14">
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="20" y="0" width="13" height="14" isPrintWhenDetailOverflows="true" uuid="b147f087-719a-4a45-bbb9-e2639b9dd837"/>
+				<textElement verticalAlignment="Top" markup="html">
+					<font fontName="DejaVu Sans" size="8" isBold="false"/>
+					<paragraph leftIndent="2" rightIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA["<b>4.<b/>"]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="35" y="0" width="489" height="14" isPrintWhenDetailOverflows="true" uuid="361378c2-41b1-474d-bda4-a0e86729142c"/>
+				<textElement textAlignment="Left" verticalAlignment="Top" markup="html">
+					<font fontName="DejaVu Sans" size="8" isBold="false"/>
+					<paragraph leftIndent="2" rightIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA["<b>Ley General de Organizaciones y Actividades Auxiliares del Crédito:</b> <br/> <u style=\"color:#335EFF\"><a href=\"http://www.diputados.gob.mx/LeyesBiblio/pdf/139_090318.pdf\" target=\"_blank\" >http://www.diputados.gob.mx/LeyesBiblio/pdf/139_090318.pdf</a></u>"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="6"/>
+		<band height="14">
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="20" y="0" width="13" height="14" isPrintWhenDetailOverflows="true" uuid="c487946b-b58e-4595-99f6-b612968df3c8"/>
+				<textElement verticalAlignment="Top" markup="html">
+					<font fontName="DejaVu Sans" size="8" isBold="false"/>
+					<paragraph leftIndent="2" rightIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA["<b>5.<b/>"]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="35" y="0" width="489" height="14" isPrintWhenDetailOverflows="true" uuid="5b609ad4-bae8-4f9e-80dd-3e5974ea1a92"/>
+				<textElement textAlignment="Left" verticalAlignment="Top" markup="html">
+					<font fontName="DejaVu Sans" size="8" isBold="false"/>
+					<paragraph leftIndent="2" rightIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA["<b>Ley para Regular las Agrupaciones Financieras:</b> <br/> <u style=\"color:#335EFF\"><a href=\"http://www.diputados.gob.mx/LeyesBiblio/pdf/LRAF_090318.pdf\" target=\"_blank\" >http://www.diputados.gob.mx/LeyesBiblio/pdf/LRAF_090318.pdf</a></u>"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="6"/>
+		<band height="14">
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="35" y="0" width="489" height="14" isPrintWhenDetailOverflows="true" uuid="b9d858c6-16c3-40dd-8de2-3010840bcbad"/>
+				<textElement textAlignment="Left" verticalAlignment="Top" markup="html">
+					<font fontName="DejaVu Sans" size="8" isBold="false"/>
+					<paragraph leftIndent="2" rightIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA["<b>Código de Comercio:</b> <br/> <u style=\"color:#335EFF\"><a href=\"http://www.diputados.gob.mx/LeyesBiblio/pdf/3_280318.pdf\" target=\"_blank\" >http://www.diputados.gob.mx/LeyesBiblio/ref/ccom.htm</a></u>"]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="20" y="0" width="13" height="14" isPrintWhenDetailOverflows="true" uuid="3d6eb63d-2fb3-41be-8a8a-ee8ef3b9db38"/>
+				<textElement verticalAlignment="Top" markup="html">
+					<font fontName="DejaVu Sans" size="8" isBold="false"/>
+					<paragraph leftIndent="2" rightIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA["<b>6.<b/>"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="6"/>
+		<band height="14">
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="35" y="0" width="489" height="14" isPrintWhenDetailOverflows="true" uuid="1366e5e3-6142-4f3d-88f4-f0ff5a55e1ca"/>
+				<textElement textAlignment="Left" verticalAlignment="Top" markup="html">
+					<font fontName="DejaVu Sans" size="8" isBold="false"/>
+					<paragraph leftIndent="2" rightIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA["<b>Ley para la Transparencia y Ordenamiento de los Servicios Financieros:</b> <br/> <u style=\"color:#335EFF\"><a href=\"http://www.diputados.gob.mx/LeyesBiblio/pdf/LTOSF_090318.pdf\" target=\"_blank\" >http://www.diputados.gob.mx/LeyesBiblio/pdf/LTOSF_090318.pdf</a></u>"]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="21" y="0" width="13" height="14" isPrintWhenDetailOverflows="true" uuid="70e78339-c6de-424c-92bd-9be0672ec1f6"/>
+				<textElement verticalAlignment="Top" markup="html">
+					<font fontName="DejaVu Sans" size="8" isBold="false"/>
+					<paragraph leftIndent="2" rightIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA["<b>7.<b/>"]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="42">
+			<textField>
+				<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="10" y="21" width="443" height="21" isPrintWhenDetailOverflows="true" uuid="1a5f7374-46d8-4bb8-bed4-8304593fee6d"/>
+				<textElement verticalAlignment="Middle" markup="html">
+					<font fontName="DejaVu Sans" size="7" isBold="false"/>
+					<paragraph firstLineIndent="1"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Hoja " + $V{PAGE_NUMBER} +"<br/>Registro de Contratos de Adhesión de la CONDUSEF: " + $P{condusef}+"."]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="0" y="19" width="547" height="1" uuid="20b45e69-ef55-4b5e-bd31-85f1a380e118"/>
+				<graphicElement>
+					<pen lineWidth="0.5"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement x="0" y="17" width="547" height="1" uuid="b3bce8e4-663e-4f98-9d45-cde78fee0bac"/>
+				<graphicElement>
+					<pen lineWidth="1.5"/>
+				</graphicElement>
+			</line>
+			<textField>
+				<reportElement x="322" y="21" width="225" height="10" uuid="7a14ef89-0454-4e13-9a71-3a9ea91ea196"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle" markup="html">
+					<font fontName="SansSerif" size="7" isBold="false"/>
+					<paragraph firstLineIndent="1"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{pieAnioContra}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<lastPageFooter>
+		<band height="42">
+			<line>
+				<reportElement x="0" y="17" width="547" height="1" uuid="30d9d861-e35d-469d-b943-1b8fe59a1966"/>
+				<graphicElement>
+					<pen lineWidth="1.5"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement x="0" y="19" width="547" height="1" uuid="a675c7fe-7e74-4290-9370-a4e3ac662ffe"/>
+				<graphicElement>
+					<pen lineWidth="0.5"/>
+				</graphicElement>
+			</line>
+			<textField>
+				<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="10" y="21" width="443" height="21" isPrintWhenDetailOverflows="true" uuid="db7a62f4-c4eb-4a34-a605-fb4e719ab4e3"/>
+				<textElement verticalAlignment="Middle" markup="html">
+					<font fontName="DejaVu Sans" size="7" isBold="false"/>
+					<paragraph firstLineIndent="1"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Hoja " + $V{PAGE_NUMBER} +"<br/>Registro de Contratos de Adhesión de la CONDUSEF: " + $P{condusef}+"."]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="322" y="21" width="225" height="10" uuid="cb4b8b50-2621-46b5-84c6-a5331a0d853f"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle" markup="html">
+					<font fontName="SansSerif" size="7" isBold="false"/>
+					<paragraph firstLineIndent="1"/>
+				</textElement>
+				<textFieldExpression><![CDATA["IF-040 "+$P{pieAnio}]]></textFieldExpression>
+			</textField>
+		</band>
+	</lastPageFooter>
+</jasperReport>

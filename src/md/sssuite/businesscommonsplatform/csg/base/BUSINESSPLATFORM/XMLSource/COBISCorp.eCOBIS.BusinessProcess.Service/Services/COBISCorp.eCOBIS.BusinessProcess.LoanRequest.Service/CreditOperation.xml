@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<serviceClass name="CreditOperation" nsBase="COBISCorp.eCOBIS.BusinessProcess.LoanRequest" namespace="COBISCorp.eCOBIS.BusinessProcess.LoanRequest.Service" package="cobiscorp.ecobis.businessprocess.loanrequest.service" ns="http://service.loanrequest.businessprocess.ecobis.cobiscorp" module="BusinessProcess.LoanRequest" productName="COBISCorp.eCOBIS.BusinessProcess.Service" productVersion="2.0.0.0">
+  <productProperties>
+    <property name="MavenGroupId" value="com.cobiscorp.processapi" />
+    <property name="MavenArtifactId" value="COBISCorp.eCOBIS.BusinessProcess.Service" />
+    <property name="MavenVersion" value="2.0.0.0" />
+  </productProperties>
+  <partialClass name="CreditOperation">
+    <services>
+      <service id="BusinessProcess.LoanRequest.CreditOperation.GetProcessedNumber" netName="GetProcessedNumber" javaName="getProcessedNumber" mappingType="STORED_PROCEDURE" mapId="457abd70094d50a7d1dfde038f9e295c">
+        <documentations default="Español">
+          <documentation id="Español">Obtiene el numero del tramite segun el proceso ingresado</documentation>
+          <documentation id="English">Gets the number of transactions entered according to the process</documentation>
+        </documentations>
+        <SRVMapping name="cob_credito..sp_consulta_tramite" trnCode="73903">
+          <DTOs>
+            <DTO direction="in" name="ProcessedNumber" alias="inProcessedNumber" namespace="COBISCorp.eCOBIS.BusinessProcess.LoanRequest.DTO" package="cobiscorp.ecobis.businessprocess.loanrequest.dto" ns="http://dto.loanrequest.businessprocess.ecobis.cobiscorp" required="true" />
+            <DTO direction="return" name="ProcessedNumber" alias="returnProcessedNumber" namespace="COBISCorp.eCOBIS.BusinessProcess.LoanRequest.DTO" package="cobiscorp.ecobis.businessprocess.loanrequest.dto" ns="http://dto.loanrequest.businessprocess.ecobis.cobiscorp" required="true">
+              <properties>
+                <property name="idInstProc" propertyNet="IdInstProc" propertyJava="idInstProc" setterJavaMethod="setIdInstProc" getterJavaMethod="getIdInstProc" xsdType="int" netType="int" javaType="int" cobisMapping="" isInherit="false" isComplexType="false" isCollectionType="false" required="true" encrypted="false" maxLength="0" />
+                <property name="tramite" propertyNet="Tramite" propertyJava="tramite" setterJavaMethod="setTramite" getterJavaMethod="getTramite" xsdType="int" netType="int" javaType="int" cobisMapping="" isInherit="false" isComplexType="false" isCollectionType="false" required="true" encrypted="false" maxLength="0" />
+                <property name="operation" propertyNet="Operation" propertyJava="operation" setterJavaMethod="setOperation" getterJavaMethod="getOperation" xsdType="char" netType="char" javaType="char" cobisMapping="" isInherit="false" isComplexType="false" isCollectionType="false" required="true" encrypted="false" maxLength="0" />
+                <property name="fieldSeven" propertyNet="FieldSeven" propertyJava="fieldSeven" setterJavaMethod="setFieldSeven" getterJavaMethod="getFieldSeven" xsdType="string" netType="string" javaType="String" cobisMapping="" isInherit="false" isComplexType="false" isCollectionType="false" required="false" encrypted="false" maxLength="0" />
+              </properties>
+            </DTO>
+            <DTO direction="out" name="ProcessedNumber" alias="outProcessedNumber" namespace="COBISCorp.eCOBIS.BusinessProcess.LoanRequest.DTO" package="cobiscorp.ecobis.businessprocess.loanrequest.dto" ns="http://dto.loanrequest.businessprocess.ecobis.cobiscorp" required="true">
+              <properties>
+                <property name="idInstProc" propertyNet="IdInstProc" propertyJava="idInstProc" setterJavaMethod="setIdInstProc" getterJavaMethod="getIdInstProc" xsdType="int" netType="int" javaType="int" cobisMapping="" isInherit="false" isComplexType="false" isCollectionType="false" required="true" encrypted="false" maxLength="0" />
+                <property name="tramite" propertyNet="Tramite" propertyJava="tramite" setterJavaMethod="setTramite" getterJavaMethod="getTramite" xsdType="int" netType="int" javaType="int" cobisMapping="" isInherit="false" isComplexType="false" isCollectionType="false" required="true" encrypted="false" maxLength="0" />
+                <property name="operation" propertyNet="Operation" propertyJava="operation" setterJavaMethod="setOperation" getterJavaMethod="getOperation" xsdType="char" netType="char" javaType="char" cobisMapping="" isInherit="false" isComplexType="false" isCollectionType="false" required="true" encrypted="false" maxLength="0" />
+                <property name="fieldSeven" propertyNet="FieldSeven" propertyJava="fieldSeven" setterJavaMethod="setFieldSeven" getterJavaMethod="getFieldSeven" xsdType="string" netType="string" javaType="String" cobisMapping="" isInherit="false" isComplexType="false" isCollectionType="false" required="false" encrypted="false" maxLength="0" />
+              </properties>
+            </DTO>
+          </DTOs>
+          <parameterMappings>
+            <parameter name="@i_tipo" direction="in" mappingDirection="in" dataType="varchar" CTSDataType="SQLVARCHAR" JavaSQLType="VARCHAR" mappingType="CONSTANT" allowNull="false" contantValue="1" />
+            <parameter name="@i_id_inst_proc" direction="in" mappingDirection="in" dataType="int" CTSDataType="SQLINT4" JavaSQLType="INTEGER" mappingType="DTO" allowNull="false" DTOAlias="inProcessedNumber" DTOPropertyName="idInstProc" />
+            <parameter name="@i_operacion" direction="in" mappingDirection="in" dataType="char" CTSDataType="SQLCHAR" JavaSQLType="CHAR" mappingType="CONSTANT" allowNull="false" contantValue="S" />
+          </parameterMappings>
+          <resultMappings>
+            <result>
+              <DTOResult DTOAlias="returnProcessedNumber" MapReturn="true">
+                <columnMapping position="0" name="tramite" DTOPropertyName="tramite" DataType="int" Format="" />
+                <columnMapping position="1" name="campo_siete" DTOPropertyName="fieldSeven" DataType="string" />
+              </DTOResult>
+            </result>
+          </resultMappings>
+          <MappingProperties>
+            <MappingProperty key="singleResult1" value="true" />
+          </MappingProperties>
+        </SRVMapping>
+      </service>
+    </services>
+  </partialClass>
+</serviceClass>

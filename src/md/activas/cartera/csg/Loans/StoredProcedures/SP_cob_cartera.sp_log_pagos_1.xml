@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<procedure>
+  <database>cob_cartera</database>
+  <name>sp_log_pagos</name>
+  <type>SYBASE</type>
+  <version>1</version>
+  <parameters>
+    <parameter name="@s_ssn" dataType="int" direction="in" />
+    <parameter name="@s_user" dataType="varchar" direction="in" />
+    <parameter name="@s_term" dataType="varchar" direction="in" />
+    <parameter name="@s_date" dataType="datetime" direction="in" />
+    <parameter name="@s_sesn" dataType="int" direction="in" />
+    <parameter name="@s_culture" dataType="varchar" direction="in" />
+    <parameter name="@s_srv" dataType="varchar" direction="in" />
+    <parameter name="@s_lsrv" dataType="varchar" direction="in" />
+    <parameter name="@s_ofi" dataType="smallint" direction="in" />
+    <parameter name="@s_rol" dataType="smallint" direction="in" />
+    <parameter name="@s_org_err" dataType="char" direction="in" />
+    <parameter name="@s_error" dataType="int" direction="in" />
+    <parameter name="@s_sev" dataType="tinyint" direction="in" />
+    <parameter name="@s_msg" dataType="varchar" direction="in" />
+    <parameter name="@s_org" dataType="char" direction="in" />
+    <parameter name="@t_debug" dataType="char" direction="in" />
+    <parameter name="@t_file" dataType="varchar" direction="in" />
+    <parameter name="@t_from" dataType="varchar" direction="in" />
+    <parameter name="@t_trn" dataType="int" direction="in" />
+    <parameter name="@t_show_version" dataType="bit" direction="in" />
+    <parameter name="@i_operacion" dataType="char" direction="in" />
+    <parameter name="@i_cliente" dataType="int" direction="in" />
+    <parameter name="@i_fecha_desde" dataType="datetime" direction="in" />
+    <parameter name="@i_fecha_hasta" dataType="datetime" direction="in" />
+    <parameter name="@i_num_prestamo" dataType="varchar" direction="in" />
+    <parameter name="@i_num_cuenta" dataType="varchar" direction="in" />
+    <parameter name="@i_tipo_error" dataType="char" direction="in" />
+    <parameter name="@i_referencia" dataType="varchar" direction="in" />
+    <parameter name="@i_archivo" dataType="varchar" direction="in" />
+  </parameters>
+  <queries>
+    <query>
+      <columns>
+        <column name="fechaGeneracionOrden" />
+        <column name="num.prestamo" />
+        <column name="num.cuenta" />
+        <column name="referencia" />
+        <column name="archivoPago" />
+        <column name="montoPago" />
+        <column name="tipoError" />
+        <column name="estadoCobis" />
+        <column name="mensajeError" />
+        <column name="nombreCliente" />
+      </columns>
+      <queryText>SELECT  "fechaGeneracionOrden" = cl.sl_fecha_gen_orden,"num.prestamo" = cl.sl_banco,"num.cuenta" = cl.sl_cuenta,"montoPago" = cl.sl_monto_pag,"estadoCobis" = cl.sl_estado_cobis,"estadoSantander" = cl.sl_estado_santander,"smsErrorCobis" = cl.sl_mensaje_err_cobis,"smsErrorSantander" = cl.sl_mensaje_err_std,"nombreCliente" = co.op_nombre </queryText>
+    </query>
+  </queries>
+</procedure>

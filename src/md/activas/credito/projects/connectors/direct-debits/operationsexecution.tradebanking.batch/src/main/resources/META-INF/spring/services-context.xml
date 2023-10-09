@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="DirectDebitMandateProcess"
+          class="com.cobis.cloud.sofom.operationsexecution.tradebanking.batch.process.impl.DirectDebitMandateProcessImpl">
+        <property name="databaseName" value="jdbc/IEN_BDD_CENTRAL"/>
+        <property name="cobisStoredProcedureUtils" ref="cobisStoredProcedureUtilsOsgi"/>
+    </bean>
+
+    <bean id="DirectDebitMandateRequest"
+          class="com.cobis.cloud.sofom.operationsexecution.tradebanking.batch.generate.DirectDebitMandateRequestImpl">
+        <property name="cobisStoredProcedureUtils" ref="cobisStoredProcedureUtilsOsgi"/>
+    </bean>
+
+    <bean id="CustomEncryption"
+          class="com.cobis.cloud.sofom.operationsexecution.tradebanking.batch.security.impl.CustomEncryptionImpl">
+        <property name="cobisParameter" ref="cobisParameterOsgi"/>
+    </bean>
+
+</beans>

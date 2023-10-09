@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="ConsentSecurityBasicRen" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="431cb9ae-e82d-4242-a622-a417dc526165">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="urlPathWhatsapp" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="listConsentSecurityBasic" class="java.util.List">
+		<fieldDescription><![CDATA[listConsentSecurityBasic]]></fieldDescription>
+	</field>
+	<detail>
+		<band height="80" splitType="Stretch">
+			<subreport>
+				<reportElement x="0" y="0" width="594" height="80" uuid="c9f3d4c8-69df-4a7b-96ae-9d24880621de"/>
+				<subreportParameter name="urlPathWhatsapp">
+					<subreportParameterExpression><![CDATA[$P{urlPathWhatsapp}]]></subreportParameterExpression>
+				</subreportParameter>
+				<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($F{listConsentSecurityBasic})]]></dataSourceExpression>
+				<subreportExpression><![CDATA["consentOfsegurityTuiioRen.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+	</detail>
+</jasperReport>

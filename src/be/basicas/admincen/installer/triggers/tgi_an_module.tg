@@ -1,0 +1,98 @@
+use cobis
+go
+if exists (select * from sysobjects where name = 'tgi_an_module')
+    drop trigger tgi_an_module
+go
+create trigger tgi_an_module
+on an_module
+for insert
+as
+begin
+    declare
+        @w_mo_id        int,
+        @w_mo_mg_id     int,
+        @w_mo_la_id     int,
+        @w_mo_name      varchar(64),
+        @w_mo_filename  varchar(255),
+        @w_mo_id_parent int,
+        @w_mo_key_token varchar(255),
+        @w_id           int
+ 
+    declare cu_inserted cursor for
+        select
+            mo_id,
+            mo_mg_id,
+            mo_la_id,
+            mo_name,
+            mo_filename,
+            mo_id_parent,
+            mo_key_token
+        from inserted
+ 
+    open cu_inserted
+    fetch cu_inserted into
+        @w_mo_id,
+        @w_mo_mg_id,
+        @w_mo_la_id,
+        @w_mo_name,
+        @w_mo_filename,
+        @w_mo_id_parent,
+        @w_mo_key_token
+                 
+    while @@FETCH_STATUS=0
+    begin
+        select @w_id = sq_siguiente
+        from cob_distrib..di_seqnos
+        where sq_tabla = 'di_log'
+ 
+        update cob_distrib..di_seqnos
+        set sq_siguiente = sq_siguiente + 1
+        where sq_tabla = 'di_log'
+ 
+        insert into cob_distrib..di_log (
+            lg_id, lg_fecha, lg_operacion, lg_objeto)
+        values (@w_id, getdate(), 'I', 'cobis..sp_an_module_tg')
+        
+        insert into cob_distrib..di_parametro (
+            pa_id, pa_nombre, pa_tipodato, pa_longitud, pa_int)
+        values (@w_id, '@i_mo_id', 56, isnull(datalength(@w_mo_id), 0), @w_mo_id)
+
+        insert into cob_distrib..di_parametro (
+            pa_id, pa_nombre, pa_tipodato, pa_longitud, pa_int)
+        values (@w_id, '@i_mo_mg_id', 56, isnull(datalength(@w_mo_mg_id), 0), @w_mo_mg_id)
+
+        insert into cob_distrib..di_parametro (
+            pa_id, pa_nombre, pa_tipodato, pa_longitud, pa_int)
+        values (@w_id, '@i_mo_la_id', 56, isnull(datalength(@w_mo_la_id), 0), @w_mo_la_id)
+
+        insert into cob_distrib..di_parametro (
+            pa_id, pa_nombre, pa_tipodato, pa_longitud, pa_varchar)
+        values (@w_id, '@i_mo_name', 39, isnull(datalength(@w_mo_name), 0), @w_mo_name)    
+
+        insert into cob_distrib..di_parametro (
+            pa_id, pa_nombre, pa_tipodato, pa_longitud, pa_varchar)
+        values (@w_id, '@i_mo_filename', 39, isnull(datalength(@w_mo_filename), 0), @w_mo_filename)
+
+        insert into cob_distrib..di_parametro (
+            pa_id, pa_nombre, pa_tipodato, pa_longitud, pa_int)
+        values (@w_id, '@i_mo_id_parent', 56, isnull(datalength(@w_mo_id_parent), 0), @w_mo_id_parent)
+
+        insert into cob_distrib..di_parametro (
+            pa_id, pa_nombre, pa_tipodato, pa_longitud, pa_varchar)
+        values (@w_id, '@i_mo_key_token', 39, isnull(datalength(@w_mo_key_token), 0), @w_mo_key_token)
+
+        fetch cu_inserted into
+            @w_mo_id,
+            @w_mo_mg_id,
+            @w_mo_la_id,
+            @w_mo_name,
+            @w_mo_filename,
+            @w_mo_id_parent,
+            @w_mo_key_token
+     
+    end
+    close cu_inserted
+    deallocate cu_inserted
+    
+end
+go

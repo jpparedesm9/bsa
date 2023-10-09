@@ -1,0 +1,14 @@
+<ul kendo-panel-bar k-on-expand-mode="single" ng-init="initData()">	
+	<li class="k-state-active">
+		<span>
+			<span class="glyphicon glyphicon-list-alt" aria-hidden="true"/>
+			<span class="itemlist" translate>BUSIN.DLB_BUSIN_NMIIITYCE_37844</span>
+		</span>
+		<div>
+			<div id="treeViewEconomicActivity" kendo-tree-view="treeViewEconomicActivity" k-data-source="treeDataSourceEconomicActivity"
+			k-on-change="onItemSelectedEconomicActivity(dataItem)">
+				<span k-template>{{dataItem.text}}</span>
+			</div>
+		</div>			
+	</li>
+</ul>

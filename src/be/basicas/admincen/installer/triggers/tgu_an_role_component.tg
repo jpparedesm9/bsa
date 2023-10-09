@@ -1,0 +1,18 @@
+use cobis
+go
+if exists (select * from sysobjects where name = 'tgu_an_role_component')
+    drop trigger tgu_an_role_component
+go
+create trigger tgu_an_role_component
+on an_role_component
+for update
+as
+begin
+ 
+    if update(rc_co_id) or update(rc_rol)
+    begin
+        rollback transaction
+        print 'No se puede actualizar la clave'
+    end
+end
+go

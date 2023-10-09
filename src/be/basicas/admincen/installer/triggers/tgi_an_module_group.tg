@@ -1,0 +1,82 @@
+use cobis
+go
+if exists (select * from sysobjects where name = 'tgi_an_module_group')
+    drop trigger tgi_an_module_group
+go
+create trigger tgi_an_module_group
+on an_module_group
+for insert
+as
+begin
+    declare
+        @w_mg_id          int,
+        @w_mg_name        varchar(64),
+        @w_mg_version     varchar(15),
+        @w_mg_location    varchar(255),
+        @w_mg_store_name  varchar(40),
+        @w_id             int
+ 
+    declare cu_inserted cursor for
+        select
+            mg_id,
+            mg_name,
+            mg_version,
+            mg_location,
+            mg_store_name
+        from inserted
+ 
+    open cu_inserted
+    fetch cu_inserted into
+        @w_mg_id,
+        @w_mg_name,
+        @w_mg_version,
+        @w_mg_location,
+        @w_mg_store_name
+                 
+    while @@FETCH_STATUS=0
+    begin
+        select @w_id = sq_siguiente
+        from cob_distrib..di_seqnos
+        where sq_tabla = 'di_log'
+ 
+        update cob_distrib..di_seqnos
+        set sq_siguiente = sq_siguiente + 1
+        where sq_tabla = 'di_log'
+ 
+        insert into cob_distrib..di_log (
+            lg_id, lg_fecha, lg_operacion, lg_objeto)
+        values (@w_id, getdate(), 'I', 'cobis..sp_an_module_group_tg')
+        
+        insert into cob_distrib..di_parametro (
+            pa_id, pa_nombre, pa_tipodato, pa_longitud, pa_int)
+        values (@w_id, '@i_mg_id', 56, isnull(datalength(@w_mg_id), 0), @w_mg_id)
+
+        insert into cob_distrib..di_parametro (
+            pa_id, pa_nombre, pa_tipodato, pa_longitud, pa_varchar)
+        values (@w_id, '@i_mg_name', 39, isnull(datalength(@w_mg_name), 0), @w_mg_name)
+        
+        insert into cob_distrib..di_parametro (
+            pa_id, pa_nombre, pa_tipodato, pa_longitud, pa_varchar)
+        values (@w_id, '@i_mg_version', 39, isnull(datalength(@w_mg_version), 0), @w_mg_version)
+        
+        insert into cob_distrib..di_parametro (
+            pa_id, pa_nombre, pa_tipodato, pa_longitud, pa_varchar)
+        values (@w_id, '@i_mg_location', 39, isnull(datalength(@w_mg_location), 0), @w_mg_location)
+
+        insert into cob_distrib..di_parametro (
+            pa_id, pa_nombre, pa_tipodato, pa_longitud, pa_varchar)
+        values (@w_id, '@i_mg_store_name', 39, isnull(datalength(@w_mg_store_name), 0), @w_mg_store_name)
+        
+        fetch cu_inserted into
+            @w_mg_id,
+            @w_mg_name,
+            @w_mg_version,
+            @w_mg_location,
+            @w_mg_store_name
+
+    end
+    close cu_inserted
+    deallocate cu_inserted
+    
+end
+go

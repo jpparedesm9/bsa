@@ -1,0 +1,439 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{16EBEC85-320F-4ADB-B6A3-69E7D5BC5A26}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>COBISCorp.tCOBIS.CTA.Ctes.Chamber</RootNamespace>
+    <AssemblyName>COBISCorp.tCOBIS.CTA.Ctes.Chamber</AssemblyName>
+    <MyType>Windows</MyType>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>2.0</OldToolsVersion>
+    <UpgradeBackupLocation />
+    <TargetFrameworkProfile />
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>..\bin\</OutputPath>
+    <DocumentationFile>COBISCorp.tCOBIS.CTA.Ctes.Chamber.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022,42353,42354,42355</NoWarn>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>COBISCorp.tCOBIS.CTA.Ctes.Chamber.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022,42353,42354,42355</NoWarn>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Infragistics2.Win.v10.2, Version=10.2.20102.2143, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files\Infragistics\NetAdvantage 2010.2\Windows Forms\Bin\Infragistics2.Win.v10.2.dll</HintPath>
+    </Reference>
+    <Reference Include="Infragistics2.Win.Misc.v10.2, Version=10.2.20102.2143, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files\Infragistics\NetAdvantage 2010.2\Windows Forms\Bin\Infragistics2.Win.Misc.v10.2.dll</HintPath>
+    </Reference>
+    <Reference Include="Infragistics2.Shared.v10.2, Version=10.2.20102.2143, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files\Infragistics\NetAdvantage 2010.2\Windows Forms\Bin\Infragistics2.Shared.v10.2.dll</HintPath>
+    </Reference>
+    <Reference Include="Artinsoft.VB6, Version=3.0.420.25, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files\COBIS\COBISExplorer\SDK\Artinsoft.VB6.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="COBISCorp.eCOBIS.COBISExplorer.CompositeUI, Version=4.0.3.2, Culture=neutral, PublicKeyToken=9b8bba00b1313138, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="COBISCorp.eCOBIS.COBISExplorer.Container, Version=4.0.1.3, Culture=neutral, PublicKeyToken=9b8bba00b1313138, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="COBISCorp.eCOBIS.Commons.COBISViewResizer, Version=4.0.0.0, Culture=neutral, PublicKeyToken=9b8bba00b1313138, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="COBISCorp.eCOBIS.Commons.License, Version=4.0.0.0, Culture=neutral, PublicKeyToken=9b8bba00b1313138, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="COBISCorp.eCOBIS.Commons.MessageBox, Version=4.0.1.0, Culture=neutral, PublicKeyToken=9b8bba00b1313138, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="COBISCorp.eCOBIS.Commons.Styles, Version=4.0.0.0, Culture=neutral, PublicKeyToken=9b8bba00b1313138, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="COBISCorp.eCOBIS.Customers.Controls, Version=1.0.0.0, Culture=neutral, PublicKeyToken=e085e873378132a5, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\bin\COBISCorp.eCOBIS.Customers.Controls.dll</HintPath>
+    </Reference>
+    <Reference Include="COBISCorp.eCOBIS.Customers.DTO.Commons, Version=1.0.0.0, Culture=neutral, PublicKeyToken=e085e873378132a5, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\bin\COBISCorp.eCOBIS.Customers.DTO.Commons.dll</HintPath>
+    </Reference>
+    <Reference Include="COBISCorp.eCOBIS.UCSP.Commons, Version=1.0.0.0, Culture=neutral, PublicKeyToken=9b8bba00b1313138, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\bin\COBISCorp.eCOBIS.UCSP.Commons.dll</HintPath>
+    </Reference>
+    <Reference Include="COBISCorp.Framework.UI.Components.COBISGrid, Version=1.0.0.1, Culture=neutral, PublicKeyToken=345801f7851b84a9, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="COBISCorp.Framework.UI.Components.COBISMaskedTextBox, Version=1.0.0.2, Culture=neutral, PublicKeyToken=345801f7851b84a9, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="COBISCorp.Framework.UI.Components.COBISMSOutline, Version=1.0.0.0, Culture=neutral, PublicKeyToken=345801f7851b84a9, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="COBISCorp.Framework.UI.Components.COBISPrinterNet, Version=1.0.0.0, Culture=neutral, PublicKeyToken=345801f7851b84a9, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="COBISCorp.Framework.UI.Components.COBISResourceProvider, Version=1.0.0.1, Culture=neutral, PublicKeyToken=345801f7851b84a9, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="COBISCorp.Framework.UI.Components.COBISSpread, Version=1.0.0.0, Culture=neutral, PublicKeyToken=345801f7851b84a9, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="COBISCorp.Framework.UI.Components.COBISTreeViewBase, Version=1.0.0.0, Culture=neutral, PublicKeyToken=345801f7851b84a9">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="COBISCorp.tCOBIS.COBISExplorer.CompositeUI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=9b8bba00b1313138, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="COBISCorp.tCOBIS.CTA.Ctes.Query, Version=3.6.3716.35482, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="COBISCorp.tCOBIS.CTA.SharedLibrary, Version=3.6.3716.33893, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="COBISCorp.tCOBIS.CTA.ToolBar, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\bin\COBISCorp.tCOBIS.CTA.ToolBar.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="FarPoint.Win, Version=4.0.2012.2005, Culture=neutral, PublicKeyToken=327c3516b1b18457" />
+    <Reference Include="FarPoint.Win.Spread, Version=4.0.2012.2005, Culture=neutral, PublicKeyToken=327c3516b1b18457" />
+    <Reference Include="Interop.Microsoft.Office.Core, Version=2.3.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>..\bin\Interop.Microsoft.Office.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=14.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>..\bin\Microsoft.Office.Interop.Excel.dll</HintPath>
+    </Reference>
+    <Reference Include="PrinterDll, Version=1.0.0.1, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\bin\PrinterDll.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Diagnostics" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Module\CobisSharedModule.vb" />
+    <Compile Include="View\FCATVCAM.designer.vb">
+      <DependentUpon>FCATVCAM.vb</DependentUpon>
+    </Compile>
+    <Compile Include="View\FCATVCAM.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\FFormaFirma.designer.vb">
+      <DependentUpon>FFormaFirma.vb</DependentUpon>
+    </Compile>
+    <Compile Include="View\FFormaFirma.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\FFormFirmDevDialog.designer.vb">
+      <DependentUpon>FFormFirmDevDialog.vb</DependentUpon>
+    </Compile>
+    <Compile Include="View\FFormFirmDevDialog.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\FMENSAJE.designer.vb">
+      <DependentUpon>FMENSAJE.vb</DependentUpon>
+    </Compile>
+    <Compile Include="View\FMENSAJE.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\FTRA2620.designer.vb">
+      <DependentUpon>FTRA2620.vb</DependentUpon>
+    </Compile>
+    <Compile Include="View\FTRA2620.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\FTRA2710.designer.vb">
+      <DependentUpon>FTRA2710.vb</DependentUpon>
+    </Compile>
+    <Compile Include="View\FTRA2710.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\FTRA2726.designer.vb">
+      <DependentUpon>FTRA2726.vb</DependentUpon>
+    </Compile>
+    <Compile Include="View\FTRA2726.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\FTRA2727.designer.vb">
+      <DependentUpon>FTRA2727.vb</DependentUpon>
+    </Compile>
+    <Compile Include="View\FTRA2727.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\ftra2833.designer.vb">
+      <DependentUpon>ftra2833.vb</DependentUpon>
+    </Compile>
+    <Compile Include="View\ftra2833.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\Ftran2837.designer.vb">
+      <DependentUpon>Ftran2837.vb</DependentUpon>
+    </Compile>
+    <Compile Include="View\Ftran2837.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\Ftran421.designer.vb">
+      <DependentUpon>Ftran421.vb</DependentUpon>
+    </Compile>
+    <Compile Include="View\Ftran421.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\FTRAN425.designer.vb">
+      <DependentUpon>FTRAN425.vb</DependentUpon>
+    </Compile>
+    <Compile Include="View\FTRAN425.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\Ftran426.designer.vb">
+      <DependentUpon>Ftran426.vb</DependentUpon>
+    </Compile>
+    <Compile Include="View\Ftran426.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\FTRAN428.designer.vb">
+      <DependentUpon>FTRAN428.vb</DependentUpon>
+    </Compile>
+    <Compile Include="View\FTRAN428.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\Ftran430.designer.vb">
+      <DependentUpon>Ftran430.vb</DependentUpon>
+    </Compile>
+    <Compile Include="View\Ftran430.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\FTRAN467.designer.vb">
+      <DependentUpon>FTRAN467.vb</DependentUpon>
+    </Compile>
+    <Compile Include="View\FTRAN467.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\FTRAN478.designer.vb">
+      <DependentUpon>FTRAN478.vb</DependentUpon>
+    </Compile>
+    <Compile Include="View\FTRAN478.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\FTRAN484.designer.vb">
+      <DependentUpon>FTRAN484.vb</DependentUpon>
+    </Compile>
+    <Compile Include="View\FTRAN484.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\FTRAN485.designer.vb">
+      <DependentUpon>FTRAN485.vb</DependentUpon>
+    </Compile>
+    <Compile Include="View\FTRAN485.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\Ftran615.designer.vb">
+      <DependentUpon>Ftran615.vb</DependentUpon>
+    </Compile>
+    <Compile Include="View\Ftran615.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="My Project\licenses.licx" />
+    <EmbeddedResource Include="View\FCATVCAM.resx">
+      <DependentUpon>FCATVCAM.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\FFormaFirma.resx">
+      <DependentUpon>FFormaFirma.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\FFormFirmDevDialog.resx">
+      <DependentUpon>FFormFirmDevDialog.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\FMENSAJE.resx">
+      <DependentUpon>FMENSAJE.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\FTRA2620.resx">
+      <DependentUpon>FTRA2620.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\FTRA2710.resx">
+      <DependentUpon>FTRA2710.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\FTRA2726.resx">
+      <DependentUpon>FTRA2726.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\FTRA2727.resx">
+      <DependentUpon>FTRA2727.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\ftra2833.resx">
+      <DependentUpon>ftra2833.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Ftran2837.resx">
+      <DependentUpon>Ftran2837.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Ftran421.resx">
+      <DependentUpon>Ftran421.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\FTRAN425.resx">
+      <DependentUpon>FTRAN425.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Ftran426.resx">
+      <DependentUpon>Ftran426.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\FTRAN428.resx">
+      <DependentUpon>FTRAN428.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Ftran430.resx">
+      <DependentUpon>Ftran430.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\FTRAN467.resx">
+      <DependentUpon>FTRAN467.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\FTRAN478.resx">
+      <DependentUpon>FTRAN478.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\FTRAN484.resx">
+      <DependentUpon>FTRAN484.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\FTRAN485.resx">
+      <DependentUpon>FTRAN485.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Ftran615.resx">
+      <DependentUpon>Ftran615.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.VisualBasic.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

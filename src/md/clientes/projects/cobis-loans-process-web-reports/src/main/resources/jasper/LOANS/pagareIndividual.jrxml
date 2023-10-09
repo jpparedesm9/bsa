@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="pagareIndividual" pageWidth="595" pageHeight="842" columnWidth="551" leftMargin="22" rightMargin="22" topMargin="22" bottomMargin="20" uuid="c0d8b5a4-8427-4d34-af26-b3643346ac0d">
+	<property name="ireport.zoom" value="1.3310000000000006"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="54"/>
+	<parameter name="idApplication" class="java.lang.String"/>
+	<parameter name="customerName" class="java.lang.String"/>
+	<parameter name="bankAddress" class="java.lang.String"/>
+	<parameter name="bankCP" class="java.lang.String"/>
+	<parameter name="amount" class="java.lang.String"/>
+	<parameter name="term" class="java.lang.String"/>
+	<parameter name="termType" class="java.lang.String"/>
+	<parameter name="weekPay" class="java.lang.String"/>
+	<parameter name="finalAmount" class="java.lang.String"/>
+	<parameter name="interest" class="java.lang.String"/>
+	<parameter name="overInterest" class="java.lang.String"/>
+	<parameter name="date" class="java.lang.String"/>
+	<parameter name="firstDate" class="java.lang.String"/>
+	<parameter name="endorsementName" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<pageHeader>
+		<band height="40" splitType="Stretch">
+			<image>
+				<reportElement x="0" y="0" width="130" height="39" uuid="648ff164-f6ba-403e-82be-36d4a1b9860e"/>
+				<imageExpression><![CDATA["logo.jpg"]]></imageExpression>
+			</image>
+			<textField>
+				<reportElement x="403" y="20" width="148" height="20" forecolor="#666666" uuid="be15b207-78af-4485-ad99-b4c5e2ae3a3b"/>
+				<textElement textAlignment="Right">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Número de Control "+ $P{idApplication}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<detail>
+		<band height="579" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="551" height="20" uuid="6c4d86ea-58c4-413f-9796-c2468f4d8156"/>
+				<textElement textAlignment="Center">
+					<font size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[PAGARÉ]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="0" y="20" width="551" height="448" uuid="ed1889f9-f65e-4260-aaad-3eb65b1c4f33"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Por este pagaré "+$P{customerName}+" (EL SUSCRIPTOR) en éste acto prometo incondicionalmente pagar, a la orden de SANTANDER INCLUSIÓN FINANCIERA S.A. DE C.V., SOFOM, ER, GFSM (LA SOFOM), en su domicilio ubicado en "+$P{bankAddress}+" Ciudad de México, Distrito Federal, C.P. "+$P{bankCP}+", o en cualquiera de sus sucursales, la suerte principal de "+$P{amount}+".<br/><br/>"+
+"EL SUSCRIPTOR se obliga a pagar a LA SOFOM la citada suerte principal, a partir del "+$P{firstDate}+", día de la fecha en que “LA SOFOM” deposite la suma principal, mediante "+$P{term}+" pagos "+$P{termType}+",  a razón de "+$P{weekPay}+", cada uno de ellos y un último pago a razón de "+$P{finalAmount}+". A los pagos de capital se le sumarán los intereses, accesorios e impuestos que se generen, en su caso.<br/><br/>"+
+"Los intereses normales u ordinarios se calcularán sobre la suerte principal, a razón del "+$P{interest}+" % anual.<br/><br/>"+
+"En caso de que EL SUSCRIPTOR deje de pagar puntualmente cualquier suma que estuviere obligado a cubrir conforme a este pagaré, las cantidades no pagadas causarán intereses moratorios a partir de la fecha en que debió ser cubierta hasta la fecha de su pago total, dichos intereses moratorios se calcularán a razón de multiplicar por dos la tasa de interés ordinaria o normal.<br/><br/>"+
+"LOS AVALES firman de manera recíproca esté pagaré, dado que EL SUSCRIPTOR también firma con carácter de aval los pagarés que ellos suscriben , y por ende renuncian expresamente a los beneficios de orden, excusión y división a que se refieren los artículos del 2814, 2815 y 2826 del Código Civil Federal y sus correlativos en las entidades federativas de la República Mexicana y reconocen la aplicación del artículo 4° de la Ley General de Títulos y Operaciones de Crédito, obligándose expresamente a responder solidaria e ilimitadamente en favor de “LA SOFOM”, por todas y cada una de las obligaciones a cargo de EL SUSCRIPTOR.<br/><br/>"+
+"La falta de pago oportuno de cualquier exhibición producirá el vencimiento anticipado de este título por lo que SANTANDER INCLUSIÓN FINANCIERA S.A. DE C.V., SOFOM, ER, GFSM o quien ésta determine podrá exigir, el saldo total adeudado más sus accesorios.<br/><br/>"+
+"EL SUSCRIPTOR pagará todas las sumas aquí establecidas incluyendo los intereses moratorios generados sin necesidad de requerimiento previo. Los pagos parciales serán aplicados en términos del párrafo segundo del artículo 364 del Código de Comercio con independencia del pago previo de impuestos y gastos que corresponda.<br/><br/>"+
+"Para todo lo relativo a la interpretación, cumplimiento o requerimiento judicial de las obligaciones contraídas en éste pagaré EL SUSCRIPTOR y EL AVAL se someten expresamente a la jurisdicción de los tribunales competentes de la Ciudad de México, Distrito Federal o el domicilio de EL SUSCRIPTOR a elección de SANTANDER INCLUSIÓN FINANCIERA S.A. DE C.V., SOFOM, ER, GFSM, renunciando por lo mismo las partes al fuero de cualquier otro domicilio. En caso de litigio para obtener el pago de la suma principal amparada por este pagaré e intereses devengados en su caso, EL SUSCRIPTOR conviene en cubrir la cantidad adicional por concepto de gastos y honorarios legales que los tribunales determinen razonablemente.<br/><br/>"+
+"El presente pagaré consta de 1  hoja, leído que fue por las partes, y enterados de su contenido y alcance legales, se firma en la Ciudad en la que radica la sucursal de La SOFOM en la que se otorga el crédito., el día "+$P{date}+".<br/><br/>"]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="46" y="483" width="192" height="20" uuid="de4e70d4-d080-4636-8281-e30b63c43d7e"/>
+				<textElement textAlignment="Center">
+					<font size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[EL SUSCRIPTOR]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="292" y="483" width="192" height="20" uuid="a1538e03-fc20-4f2c-b218-f06440196e27"/>
+				<textElement textAlignment="Center">
+					<font size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[EL AVAL]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="46" y="534" width="192" height="33" uuid="d3704892-ab59-4a21-95d6-bf5735816b36"/>
+				<textElement textAlignment="Center">
+					<font size="9" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{customerName}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="292" y="534" width="192" height="33" uuid="9cf8ad0e-b01a-4bb8-93ec-d705606c3703"/>
+				<textElement textAlignment="Center">
+					<font size="9" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{endorsementName}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

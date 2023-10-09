@@ -1,0 +1,138 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<procedure>
+  <database>cob_custodia</database>
+  <name>sp_aseguradora</name>
+  <type>SYBASE</type>
+  <version>1</version>
+  <parameters>
+    <parameter name="@s_ssn" dataType="int" direction="in" />
+    <parameter name="@s_date" dataType="datetime" direction="in" />
+    <parameter name="@s_user" dataType="varchar" direction="in" />
+    <parameter name="@s_term" dataType="varchar" direction="in" />
+    <parameter name="@s_corr" dataType="char" direction="in" />
+    <parameter name="@s_ssn_corr" dataType="int" direction="in" />
+    <parameter name="@s_ofi" dataType="smallint" direction="in" />
+    <parameter name="@t_rty" dataType="char" direction="in" />
+    <parameter name="@t_trn" dataType="smallint" direction="in" />
+    <parameter name="@t_debug" dataType="char" direction="in" />
+    <parameter name="@t_file" dataType="varchar" direction="in" />
+    <parameter name="@t_from" dataType="varchar" direction="in" />
+    <parameter name="@i_aseguradora" dataType="varchar" direction="in" />
+    <parameter name="@i_cliente" dataType="int" direction="in" />
+    <parameter name="@i_nombre" dataType="varchar" direction="in" />
+    <parameter name="@i_direccion" dataType="varchar" direction="in" />
+    <parameter name="@i_telefono" dataType="varchar" direction="in" />
+    <parameter name="@i_mail" dataType="varchar" direction="in" />
+    <parameter name="@i_fpago" dataType="varchar" direction="in" />
+    <parameter name="@i_cuenta" dataType="varchar" direction="in" />
+    <parameter name="@i_tipo_seguro" dataType="varchar" direction="in" />
+    <parameter name="@i_desc_pago" dataType="varchar" direction="in" />
+    <parameter name="@i_comentarios" dataType="varchar" direction="in" />
+    <parameter name="@i_descuento" dataType="float" direction="in" />
+    <parameter name="@i_manejo" dataType="float" direction="in" />
+    <parameter name="@i_itbm" dataType="float" direction="in" />
+    <parameter name="@i_depre_1er" dataType="float" direction="in" />
+    <parameter name="@i_depre_otros" dataType="float" direction="in" />
+    <parameter name="@i_operacion" dataType="char" direction="in" />
+    <parameter name="@i_modo" dataType="smallint" direction="in" />
+    <parameter name="@i_opcion" dataType="smallint" direction="in" />
+    <parameter name="@i_contacto" dataType="int" direction="in" />
+    <parameter name="@i_celular" dataType="varchar" direction="in" />
+    <parameter name="@i_uso" dataType="varchar" direction="in" />
+    <parameter name="@i_impuesto" dataType="float" direction="in" />
+  </parameters>
+  <queries>
+    <query>
+      <columns>
+        <column name="{1}" />
+        <column name="{2}" />
+        <column name="{3}" />
+        <column name="{4}" />
+        <column name="{5}" />
+        <column name="{6}" />
+        <column name="{7}" />
+        <column name="{8}" />
+        <column name="{9}" />
+        <column name="{10}" />
+        <column name="{11}" />
+        <column name="{12}" />
+        <column name="{13}" />
+        <column name="{14}" />
+      </columns>
+      <queryText>SELECT i_aseguradora, w_descrip_aseg, w_cliente, w_nombre, w_direccion, w_telefono, w_mail, w_desc_pago, w_comentarios, w_descuento, w_manejo, w_itbm, w_depre_1er, w_depre_otros</queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="{1}" />
+        <column name="{2}" />
+        <column name="{3}" />
+        <column name="{4}" />
+        <column name="{5}" />
+        <column name="{6}" />
+        <column name="{7}" />
+        <column name="{8}" />
+        <column name="{9}" />
+      </columns>
+      <queryText>SELECT i_aseguradora, w_descrip_aseg, w_cliente, w_nombre, w_telefono, w_mail, w_comentarios, w_contacto, w_celular</queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="17535" />
+        <column name="17572" />
+        <column name="17573" />
+        <column name="17242" />
+        <column name="17243" />
+        <column name="17905" />
+        <column name="17907" />
+        <column name="16118" />
+        <column name="17908" />
+        <column name="17909" />
+        <column name="17910" />
+        <column name="17911" />
+        <column name="17912" />
+      </columns>
+      <queryText>SELECT  "17535" = as_aseguradora,"17572" = as_cliente,"17573" = as_nombre,"17242" = as_direccion,"17243" = as_telefono,"17905" = as_mail,"17907" = as_desc_pago,"16118" = as_comentarios,"17908" = as_descuento,"17909" = as_manejo,"17910" = as_itbm,"17911" = as_depre_1er,"17912" = as_depre_otros </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="17535" />
+        <column name="17572" />
+        <column name="17573" />
+        <column name="17243" />
+        <column name="17905" />
+        <column name="16118" />
+        <column name="17926" />
+        <column name="17927" />
+      </columns>
+      <queryText>SELECT  "17535" = ac_aseguradora,"17572" = ac_cliente,"17573" = ac_nombre,"17243" = ac_telefono,"17905" = ac_mail,"16118" = ac_comentarios,"17926" = ac_contacto,"17927" = ac_celular </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="17970" />
+        <column name="81212" />
+        <column name="17906" />
+        <column name="17805" />
+      </columns>
+      <queryText>SELECT  "17970" = fa_tipo_seguro,"81212" = (SELECT  ts_nombre FROM cob_custodia..cu_tipo_seguro   WHERE ts_codigo = X.fa_tipo_seguro     ),"17906" = fa_fpago,"17805" = fa_cuenta </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="17970" />
+        <column name="81212" />
+        <column name="COD. USO" />
+        <column name="DESC USO" />
+        <column name="18000" />
+        <column name="18001" />
+      </columns>
+      <queryText>SELECT  "17970" = ad_tipo_seguro,"81212" = (SELECT  ts_nombre FROM cob_custodia..cu_tipo_seguro   WHERE ts_codigo = X.ad_tipo_seguro     ),"COD. USO" = ad_uso,"DESC USO" = CASE WHEN ad_tipo_seguro THEN (SELECT  b.valor FROM cobis..cl_tabla a  ,cobis..cl_catalogo b   WHERE a.tabla = "cu_ocupacion_bien" AND a.codigo = b.tabla AND b.codigo = X.ad_uso     ) ELSE (SELECT  b.valor FROM cobis..cl_tabla a  ,cobis..cl_catalogo b   WHERE a.tabla = "cu_uso_automotor" AND a.codigo = b.tabla AND b.codigo = X.ad_uso     ) END,"18000" = ad_descuento,"18001" = ad_impuesto </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="Use" />
+        <column name="Discount" />
+        <column name="Tax" />
+      </columns>
+      <queryText>SELECT  ad_uso,ad_descuento,ad_impuesto </queryText>
+    </query>
+  </queries>
+</procedure>

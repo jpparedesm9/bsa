@@ -1,0 +1,481 @@
+{
+  "id": {
+    "moduleId": "BUSIN",
+    "subModuleId": "commons",
+    "taskId": "T_VW_POLCIESVEW32",
+    "version": "1.0.0"
+  },
+  "name": {
+    "$ref": "../../../../BUSIN/relations/componentKeys.json#/commons/Forms/T_VW_POLCIESVEW32/name"
+  },
+  "modeEnabled": 4095,
+  "tempSaveStr": "F",
+  "autoCrudStr": "F",
+  "mainViewContainerId": "VC_VW_POLCIESVEW32",
+  "customizationLayer": 0,
+  "customizationLayerDescription": "ECU",
+  "viewContainers": [
+    {
+      "id": {
+        "moduleId": "BUSIN",
+        "subModuleId": "commons",
+        "taskId": "T_VW_POLCIESVEW32",
+        "viewContainerId": "VC_VW_POLCIESVEW32",
+        "taskVersion": "1.0.0"
+      },
+      "name": "F_PoliciesView",
+      "description": " ",
+      "layoutType": "Group",
+      "order": 0,
+      "options": 0,
+      "collapsedStr": "F",
+      "enabled": 4095,
+      "customizationLayer": 0,
+      "customizationLayerDescription": "ECU",
+      "columnsNum": 1,
+      "colSpan": 1,
+      "collapsed": false,
+      "view": {
+        "id": {
+          "viewId": "VW_POLCIESVEW32",
+          "version": "1.0.0"
+        },
+        "description": "Vista para las Politicas que se muestran en grilla",
+        "name": "PoliciesView",
+        "customizationLayer": 0,
+        "customizationLayerDescription": "ECU",
+        "groups": [
+          {
+            "groupId": "GR_POLCIESVEW32_02",
+            "refViewId": "VW_POLCIESVEW32",
+            "refViewVersion": "1.0.0",
+            "collapsedStr": "F",
+            "columnsNum": 1,
+            "layoutType": "GroupLayout",
+            "enabled": 4095,
+            "visible": 4095,
+            "name": "GrpGeneral",
+            "order": 0,
+            "customizationLayer": 0,
+            "customizationLayerDescription": "ECU",
+            "colSpan": 1,
+            "orientation": "V",
+            "groups": [
+              {
+                "groupId": "GR_POLCIESVEW32_03",
+                "refViewId": "VW_POLCIESVEW32",
+                "refViewVersion": "1.0.0",
+                "collapsedStr": "F",
+                "columnsNum": 1,
+                "layoutType": "Group",
+                "enabled": 4095,
+                "visible": 4095,
+                "name": "GrpPolicyGrid",
+                "order": 0,
+                "customizationLayer": 0,
+                "customizationLayerDescription": "ECU",
+                "queryView": {
+                  "queryViewId": "QV_QUERO4480_42",
+                  "deleteCommandEnabledStr": "F",
+                  "insertCommandEnabledStr": "F",
+                  "editCommandEnabledStr": "F",
+                  "confirmRowDeletionStr": "F",
+                  "rowCommandAppearance": 0,
+                  "allowSortingStr": "F",
+                  "allowPagingStr": "F",
+                  "name": "GridPolicy",
+                  "customizationLayer": 0,
+                  "customizationLayerDescription": "ECU",
+                  "hasDetailString": "T",
+                  "hasDetail": true,
+                  "query": {
+                    "$ref": "../../../../BUSIN/FLCRE/queries/Q_QUEROLCY_4480.json#"
+                  },
+                  "queryId": "Q_QUEROLCY_4480",
+                  "queryVersion": "1.0.0",
+                  "userControl": {
+                    "userControlId": "Grid",
+                    "description": "Designer Grid",
+                    "customizationLayer": 0,
+                    "customizationLayerDescription": "ECU",
+                    "type": "I",
+                    "name": "Designer Grid"
+                  },
+                  "taskVersionDialog": "1.0.0",
+                  "deleteCommandEnabled": false,
+                  "insertCommandEnabled": false,
+                  "editCommandEnabled": false,
+                  "confirmRowDeletion": false,
+                  "allowSorting": false,
+                  "allowPaging": false,
+                  "includeQueryMembers": [
+                    "AT_POL965NMNI98",
+                    "AT_POL965DRTO65",
+                    "AT_POL965RELT93"
+                  ],
+                  "entityName": "Policy",
+                  "customEvents": [
+                    {
+                      "executionType": 1,
+                      "queryViewEventType": {
+                        "name": "hasDetail",
+                        "eventId": 313,
+                        "description": "Evento de detalle de grilla",
+                        "availableExecutionType": 1
+                      }
+                    }
+                  ],
+                  "queryViewCustomActions": [],
+                  "actions": []
+                },
+                "queryViewId": "QV_QUERO4480_42",
+                "colSpan": 1,
+                "orientation": "V",
+                "entity": {
+                  "$ref": "../../../../BUSIN/entities/EN_POLICYKGO965.json#"
+                },
+                "independentValidation": "F",
+                "htmlSection": false,
+                "eventType": 0,
+                "numberOfColumnsInContainer": 1,
+                "elementColumnSpan": 1,
+                "collapsed": false,
+                "elementId": "GR_POLCIESVEW32_03",
+                "visualAttributes": [
+                  {
+                    "visualAttributeId": "VA_TEXTINPUTBOXCXW_894_03",
+                    "name": "mnemonic",
+                    "userControl": {
+                      "userControlId": "TextInputBox",
+                      "type": "I"
+                    },
+                    "customEvents": [],
+                    "options": 0,
+                    "aggregateId": null,
+                    "aggregate": null,
+                    "width": null,
+                    "style": null,
+                    "componentStyle": null,
+                    "customizationLayer": 0,
+                    "customizationLayerDescription": "ECU",
+                    "include": 4095,
+                    "order": 1,
+                    "colSpan": 1,
+                    "responsiveLayouts": null,
+                    "responsivity": false,
+                    "maxRecords": null,
+                    "label": {
+                      "moduleId": "BUSIN",
+                      "labelId": "DLB_BUSIN_NEMNICOZH_18160",
+                      "defaultValue": {
+                        "$ref": "../../../../BUSIN/assets/languages/BUSIN.json#/BUSIN/LBL/DLB_BUSIN_NEMNICOZH_18160"
+                      }
+                    },
+                    "attribute": {
+                      "$ref": "../../../../BUSIN/entities/EN_POLICYKGO965.json#/attributes/AT_POL965NMNI98"
+                    },
+                    "attributeValidations": [],
+                    "enabled": 4095,
+                    "visible": 4095,
+                    "readOnly": 8,
+                    "textRows": 0
+                  },
+                  {
+                    "visualAttributeId": "VA_TEXTINPUTBOXBMF_356_03",
+                    "name": "description",
+                    "userControl": {
+                      "userControlId": "TextInputBox",
+                      "type": "I"
+                    },
+                    "customEvents": [],
+                    "options": 0,
+                    "aggregateId": null,
+                    "aggregate": null,
+                    "width": null,
+                    "style": null,
+                    "componentStyle": null,
+                    "customizationLayer": 0,
+                    "customizationLayerDescription": "ECU",
+                    "include": 4095,
+                    "order": 2,
+                    "colSpan": 1,
+                    "responsiveLayouts": null,
+                    "responsivity": false,
+                    "maxRecords": null,
+                    "label": {
+                      "moduleId": "BUSIN",
+                      "labelId": "DLB_BUSIN_DESCRIPCI_06123",
+                      "defaultValue": {
+                        "$ref": "../../../../BUSIN/assets/languages/BUSIN.json#/BUSIN/LBL/DLB_BUSIN_DESCRIPCI_06123"
+                      }
+                    },
+                    "attribute": {
+                      "$ref": "../../../../BUSIN/entities/EN_POLICYKGO965.json#/attributes/AT_POL965DRTO65"
+                    },
+                    "attributeValidations": [],
+                    "enabled": 4095,
+                    "visible": 4095,
+                    "readOnly": 8,
+                    "textRows": 0
+                  },
+                  {
+                    "visualAttributeId": "VA_TEXTINPUTBOXUQG_869_03",
+                    "name": "result",
+                    "userControl": {
+                      "userControlId": "TextInputBox",
+                      "type": "I"
+                    },
+                    "customEvents": [],
+                    "options": 0,
+                    "aggregateId": null,
+                    "aggregate": null,
+                    "width": null,
+                    "style": null,
+                    "componentStyle": null,
+                    "customizationLayer": 0,
+                    "customizationLayerDescription": "ECU",
+                    "include": 4095,
+                    "order": 3,
+                    "colSpan": 1,
+                    "responsiveLayouts": null,
+                    "responsivity": false,
+                    "maxRecords": null,
+                    "label": {
+                      "moduleId": "BUSIN",
+                      "labelId": "DLB_BUSIN_RESULTADO_06672",
+                      "defaultValue": {
+                        "$ref": "../../../../BUSIN/assets/languages/BUSIN.json#/BUSIN/LBL/DLB_BUSIN_RESULTADO_06672"
+                      }
+                    },
+                    "attribute": {
+                      "$ref": "../../../../BUSIN/entities/EN_POLICYKGO965.json#/attributes/AT_POL965RELT93"
+                    },
+                    "attributeValidations": [],
+                    "enabled": 4095,
+                    "visible": 4095,
+                    "readOnly": 8,
+                    "textRows": 0
+                  }
+                ],
+                "style": null,
+                "customEvents": []
+              },
+              {
+                "groupId": "GR_POLCIESVEW32_04",
+                "refViewId": "VW_POLCIESVEW32",
+                "refViewVersion": "1.0.0",
+                "collapsedStr": "F",
+                "columnsNum": 1,
+                "layoutType": "Group",
+                "enabled": 8,
+                "visible": 0,
+                "name": "GrpVariablePolicy",
+                "order": 1,
+                "customizationLayer": 0,
+                "customizationLayerDescription": "ECU",
+                "queryView": {
+                  "queryViewId": "QV_UEVRB5831_12",
+                  "deleteCommandEnabledStr": "F",
+                  "insertCommandEnabledStr": "F",
+                  "editCommandEnabledStr": "F",
+                  "confirmRowDeletionStr": "F",
+                  "rowCommandAppearance": 0,
+                  "allowSortingStr": "F",
+                  "allowPagingStr": "F",
+                  "name": "GridVariablePolicy",
+                  "customizationLayer": 0,
+                  "customizationLayerDescription": "ECU",
+                  "hasDetailString": "F",
+                  "hasDetail": false,
+                  "query": {
+                    "$ref": "../../../../BUSIN/FLCRE/queries/Q_UEVRBPOC_5831.json#"
+                  },
+                  "queryId": "Q_UEVRBPOC_5831",
+                  "queryVersion": "1.0.0",
+                  "userControl": {
+                    "userControlId": "Grid",
+                    "description": "Designer Grid",
+                    "customizationLayer": 0,
+                    "customizationLayerDescription": "ECU",
+                    "type": "I",
+                    "name": "Designer Grid"
+                  },
+                  "taskVersionDialog": "1.0.0",
+                  "deleteCommandEnabled": false,
+                  "insertCommandEnabled": false,
+                  "editCommandEnabled": false,
+                  "confirmRowDeletion": false,
+                  "allowSorting": false,
+                  "allowPaging": false,
+                  "includeQueryMembers": [
+                    "AT_VAR396ILEA09",
+                    "AT_VAR396VILV60",
+                    "AT_VAR396BSCT95"
+                  ],
+                  "entityName": "VariablePolicy",
+                  "customEvents": [],
+                  "queryViewCustomActions": [],
+                  "actions": []
+                },
+                "queryViewId": "QV_UEVRB5831_12",
+                "colSpan": 1,
+                "orientation": "V",
+                "entity": {
+                  "$ref": "../../../../BUSIN/entities/EN_VARBLEPCY396.json#"
+                },
+                "independentValidation": "F",
+                "htmlSection": false,
+                "eventType": 0,
+                "numberOfColumnsInContainer": 1,
+                "elementColumnSpan": 1,
+                "collapsed": false,
+                "elementId": "GR_POLCIESVEW32_04",
+                "visualAttributes": [
+                  {
+                    "visualAttributeId": "VA_TEXTINPUTBOXEOA_822_04",
+                    "name": "VariableName",
+                    "userControl": {
+                      "userControlId": "TextInputBox",
+                      "type": "I"
+                    },
+                    "customEvents": [],
+                    "options": 0,
+                    "aggregateId": null,
+                    "aggregate": null,
+                    "width": null,
+                    "style": null,
+                    "componentStyle": null,
+                    "customizationLayer": 0,
+                    "customizationLayerDescription": "ECU",
+                    "include": 4095,
+                    "order": 1,
+                    "colSpan": 1,
+                    "responsiveLayouts": null,
+                    "responsivity": false,
+                    "maxRecords": null,
+                    "label": {
+                      "moduleId": "BUSIN",
+                      "labelId": "DLB_BUSIN_VARIABLEV_12696",
+                      "defaultValue": {
+                        "$ref": "../../../../BUSIN/assets/languages/BUSIN.json#/BUSIN/LBL/DLB_BUSIN_VARIABLEV_12696"
+                      }
+                    },
+                    "attribute": {
+                      "$ref": "../../../../BUSIN/entities/EN_VARBLEPCY396.json#/attributes/AT_VAR396ILEA09"
+                    },
+                    "attributeValidations": [],
+                    "enabled": 4095,
+                    "visible": 4095,
+                    "readOnly": 8,
+                    "textRows": 0
+                  },
+                  {
+                    "visualAttributeId": "VA_TEXTINPUTBOXCIQ_390_04",
+                    "name": "VariableValue",
+                    "userControl": {
+                      "userControlId": "TextInputBox",
+                      "type": "I"
+                    },
+                    "customEvents": [],
+                    "options": 0,
+                    "aggregateId": null,
+                    "aggregate": null,
+                    "width": null,
+                    "style": null,
+                    "componentStyle": null,
+                    "customizationLayer": 0,
+                    "customizationLayerDescription": "ECU",
+                    "include": 4095,
+                    "order": 2,
+                    "colSpan": 1,
+                    "responsiveLayouts": null,
+                    "responsivity": false,
+                    "maxRecords": null,
+                    "label": {
+                      "moduleId": "BUSIN",
+                      "labelId": "DLB_BUSIN_VALORDWSB_39301",
+                      "defaultValue": {
+                        "$ref": "../../../../BUSIN/assets/languages/BUSIN.json#/BUSIN/LBL/DLB_BUSIN_VALORDWSB_39301"
+                      }
+                    },
+                    "attribute": {
+                      "$ref": "../../../../BUSIN/entities/EN_VARBLEPCY396.json#/attributes/AT_VAR396VILV60"
+                    },
+                    "attributeValidations": [],
+                    "enabled": 4095,
+                    "visible": 4095,
+                    "readOnly": 8,
+                    "textRows": 0
+                  },
+                  {
+                    "visualAttributeId": "VA_TEXTINPUTBOXFNR_814_04",
+                    "name": "VariableDescription",
+                    "userControl": {
+                      "userControlId": "TextInputBox",
+                      "type": "I"
+                    },
+                    "customEvents": [],
+                    "options": 0,
+                    "aggregateId": null,
+                    "aggregate": null,
+                    "width": null,
+                    "style": null,
+                    "componentStyle": null,
+                    "customizationLayer": 0,
+                    "customizationLayerDescription": "ECU",
+                    "include": 4095,
+                    "order": 3,
+                    "colSpan": 1,
+                    "responsiveLayouts": null,
+                    "responsivity": false,
+                    "maxRecords": null,
+                    "label": {
+                      "moduleId": "BUSIN",
+                      "labelId": "DLB_BUSIN_DESCRIPCI_06123",
+                      "defaultValue": {
+                        "$ref": "../../../../BUSIN/assets/languages/BUSIN.json#/BUSIN/LBL/DLB_BUSIN_DESCRIPCI_06123"
+                      }
+                    },
+                    "attribute": {
+                      "$ref": "../../../../BUSIN/entities/EN_VARBLEPCY396.json#/attributes/AT_VAR396BSCT95"
+                    },
+                    "attributeValidations": [],
+                    "enabled": 4095,
+                    "visible": 4095,
+                    "readOnly": 8,
+                    "textRows": 0
+                  }
+                ],
+                "style": null,
+                "customEvents": []
+              }
+            ],
+            "independentValidation": "F",
+            "htmlSection": false,
+            "eventType": 0,
+            "numberOfColumnsInContainer": 1,
+            "elementColumnSpan": 1,
+            "collapsed": false,
+            "elementId": "GR_POLCIESVEW32_02"
+          }
+        ],
+        "modules": [
+          {
+            "moduleId": "BUSIN"
+          }
+        ],
+        "module": {
+          "moduleId": "BUSIN"
+        }
+      },
+      "numberOfColumnsInContainer": 1,
+      "elementColumnSpan": 1,
+      "elementId": "VC_VW_POLCIESVEW32",
+      "customEvents": []
+    }
+  ],
+  "tempSave": false,
+  "autoCrud": false,
+  "isImported": true,
+  "commands": []
+}

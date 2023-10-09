@@ -1,0 +1,35 @@
+<!-----Indicaciones
+	--1.- Ubicarse en la ruta: \Notificador\notification
+	--2.- Sacar respaldo del archivo jobs-configuration.xml
+	--3.- Abrir el archivo: jobs-configuration.xml
+	--4.- Ir al final del archivo y agregar las siguientes líneas al final del archivo, una línea antes del cierre </jobXml>:	-->
+	
+	<jobs>
+        <id>13</id>
+        <jobName>DSCDM</jobName>
+        <jobClass>com.cobiscorp.cloud.notificationservice.impl.DescargaDomiciliacion
+        </jobClass>
+		<cronExpression>0 0 15 1/1 * ? *</cronExpression>
+    </jobs>
+	<jobs>
+        <id>14</id>
+        <jobName>CRGDM</jobName>
+        <jobClass>com.cobiscorp.cloud.notificationservice.impl.CargaDomiciliacion
+        </jobClass>
+		<cronExpression>0 0 16 1/1 * ? *</cronExpression>
+    </jobs>
+	<jobs>
+        <id>15</id>
+        <jobName>CRGRS</jobName>
+        <jobClass>com.cobiscorp.cloud.notificationservice.impl.CargaReporteSeguros
+        </jobClass>
+		<cronExpression>0 0 16 1/1 * ? *</cronExpression>
+    </jobs>
+	<jobs>
+        <id>16</id>
+        <jobName>CRGRN</jobName>
+        <jobClass>com.cobiscorp.cloud.notificationservice.impl.CargaReporteSegurosNoCobrados
+        </jobClass>
+        <cronExpression>0 0 16 1/1 * ? *</cronExpression>
+    </jobs>
+    

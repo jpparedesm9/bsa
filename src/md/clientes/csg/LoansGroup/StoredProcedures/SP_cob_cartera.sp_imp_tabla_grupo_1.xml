@@ -1,0 +1,89 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<procedure>
+  <database>cob_cartera</database>
+  <name>sp_imp_tabla_grupo</name>
+  <type>SYBASE</type>
+  <version>1</version>
+  <parameters>
+    <parameter name="@s_ssn" dataType="int" direction="in" />
+    <parameter name="@s_date" dataType="datetime" direction="in" />
+    <parameter name="@s_user" dataType="varchar" direction="in" />
+    <parameter name="@s_term" dataType="varchar" direction="in" />
+    <parameter name="@s_corr" dataType="char" direction="in" />
+    <parameter name="@s_ssn_corr" dataType="int" direction="in" />
+    <parameter name="@s_ofi" dataType="smallint" direction="in" />
+    <parameter name="@t_rty" dataType="char" direction="in" />
+    <parameter name="@t_debug" dataType="char" direction="in" />
+    <parameter name="@t_file" dataType="varchar" direction="in" />
+    <parameter name="@t_trn" dataType="smallint" direction="in" />
+    <parameter name="@i_operacion" dataType="char" direction="in" />
+    <parameter name="@i_banco" dataType="varchar" direction="in" />
+    <parameter name="@i_formato_fecha" dataType="int" direction="in" />
+    <parameter name="@i_dividendo" dataType="int" direction="in" />
+  </parameters>
+  <queries>
+    <query>
+      <columns>
+        <column name="FECHA_IMP" />
+        <column name="HORA" />
+        <column name="USUARIO" />
+        <column name="OFICINA_ID" />
+        <column name="OFICINA_NOMBRE" />
+        <column name="GRUPO_ID" />
+        <column name="GRUPO_NOMBRE" />
+        <column name="DIR_REUNION" />
+        <column name="TIPO_OPERACION" />
+        <column name="FECHA_DESEMBOLSO" />
+        <column name="FECHA_LIQUIDACION" />
+      
+<column name="DESPLAZAMIENTO" />
+      
+</columns>
+      <queryText>SELECT w_fecha_imp, w_hora, s_user, w_oficina, w_nombre_oficina, w_grupo, w_nombre_grupo, w_direccion_reunion</queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="BANCO" />
+        <column name="MONEDA" />
+        <column name="MONEDA_DES" />
+        <column name="MONTO" />
+        <column name="PLAZO" />
+        <column name="PLAZO_DESC" />
+        <column name="TIPO_AMORTIZA" />
+        <column name="DIVIDENDO" />
+        <column name="BANCA" />
+        <column name="ESTADO" />
+        <column name="FECHA_LIQUID" />
+        <column name="FECHA_SOLICITUD" />
+        <column name="TASA" />
+        <column name="PLAZO_DIAS" />
+        <column name="PERIODO_CAP" />
+        <column name="PERIODO_INT" />
+        <column name="OPERACION" />
+        <column name="FECHA_FIN" />
+        <column name="MES_GRACIA" />
+        <column name="GRACIA" />
+        <column name="GRACIA_CAP" />
+        <column name="GRACIA_INT" />
+        <column name="PROXIMA_CUOTA" />
+        <column name="FECHA_PROX_VEN" />
+        <column name="OPERACION_COD" />
+      </columns>
+      <queryText>SELECT i_banco, w_moneda, w_moneda_desc, w_monto, w_plazo, w_tplazo, w_tipo_amortizacion, w_tdividendo, w_banca, w_estado, w_fecha_liq, w_fecha_solicitud, w_tasa, w_plazo_dias, w_periodo_cap, w_periodo_int, w_toperacion, w_fecha_fin, w_mes_gracia, w_gracia, w_gracia_cap, w_gracia_int, w_proxima_cuota, w_prox_fecha_ven</queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="Dividendo" />
+        <column name="Fecha_Vencimiento" />
+        <column name="Saldo_Capital" />
+        <column name="Capital" />
+        <column name="Intereses" />
+        <column name="Mora" />
+        <column name="Otros" />
+        <column name="Cuota" />
+        <column name="IVA_Intereses" />
+      </columns>
+      <queryText>SELECT  "Dividendo" = A.di_dividendo,"Fecha Vencimiento" = CONVERT (VARCHAR (10),A.di_fecha_ven ,?),"Saldo Capital" = ((O.op_monto) - (SELECT  SUM (am_cuota) FROM cob_cartera..ca_amortizacion   WHERE am_operacion = O.op_operacion AND am_dividendo &lt;= A.di_dividendo AND am_concepto = "CAP"     )),"Capital" = (SELECT  SUM (am_cuota) FROM cob_cartera..ca_amortizacion   WHERE am_operacion = O.op_operacion AND am_dividendo = A.di_dividendo AND am_concepto = "CAP"     ),"Intereses" = (SELECT  SUM (am_cuota) FROM cob_cartera..ca_amortizacion   WHERE am_operacion = O.op_operacion AND am_dividendo = A.di_dividendo AND am_concepto = "INT"     ),"Otros" = (SELECT  SUM (am_cuota) FROM cob_cartera..ca_amortizacion   WHERE am_operacion = O.op_operacion AND am_dividendo = A.di_dividendo AND am_concepto NOT IN ("CAP","INT")     ),"Cuota" = (SELECT  SUM (am_cuota) FROM cob_cartera..ca_amortizacion   WHERE am_operacion = O.op_operacion AND am_dividendo = A.di_dividendo     ) </queryText>
+    </query>
+  </queries>
+</procedure>

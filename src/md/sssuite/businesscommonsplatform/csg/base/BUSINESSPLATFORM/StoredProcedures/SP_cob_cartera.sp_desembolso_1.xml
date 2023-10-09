@@ -1,0 +1,90 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<procedure>
+  <database>cob_cartera</database>
+  <name>sp_desembolso</name>
+  <type>SYBASE</type>
+  <version>1</version>
+  <parameters>
+    <parameter name="@s_ssn" dataType="int" direction="in" />
+    <parameter name="@s_sesn" dataType="int" direction="in" />
+    <parameter name="@s_date" dataType="datetime" direction="in" />
+    <parameter name="@s_user" dataType="varchar" direction="in" />
+    <parameter name="@s_term" dataType="varchar" direction="in" />
+    <parameter name="@s_corr" dataType="char" direction="in" />
+    <parameter name="@s_ssn_corr" dataType="int" direction="in" />
+    <parameter name="@s_ofi" dataType="smallint" direction="in" />
+    <parameter name="@s_srv" dataType="varchar" direction="in" />
+    <parameter name="@t_rty" dataType="char" direction="in" />
+    <parameter name="@t_debug" dataType="char" direction="in" />
+    <parameter name="@t_file" dataType="varchar" direction="in" />
+    <parameter name="@t_trn" dataType="smallint" direction="in" />
+    <parameter name="@i_operacion" dataType="char" direction="in" />
+    <parameter name="@i_banco_real" dataType="varchar" direction="in" />
+    <parameter name="@i_banco_ficticio" dataType="varchar" direction="in" />
+    <parameter name="@i_secuencial" dataType="int" direction="in" />
+    <parameter name="@i_desembolso" dataType="tinyint" direction="in" />
+    <parameter name="@i_producto" dataType="varchar" direction="in" />
+    <parameter name="@i_cuenta" dataType="varchar" direction="in" />
+    <parameter name="@i_oficina_chg" dataType="int" direction="in" />
+    <parameter name="@i_beneficiario" dataType="varchar" direction="in" />
+    <parameter name="@i_monto_ds" dataType="money" direction="in" />
+    <parameter name="@i_moneda_ds" dataType="tinyint" direction="in" />
+    <parameter name="@i_cotiz_ds" dataType="float" direction="in" />
+    <parameter name="@i_tcotiz_ds" dataType="char" direction="in" />
+    <parameter name="@i_moneda_op" dataType="tinyint" direction="in" />
+    <parameter name="@i_cotiz_op" dataType="float" direction="in" />
+    <parameter name="@i_tcotiz_op" dataType="char" direction="in" />
+    <parameter name="@i_pasar_tmp" dataType="char" direction="in" />
+    <parameter name="@i_formato_fecha" dataType="int" direction="in" />
+    <parameter name="@i_consulta" dataType="char" direction="in" />
+    <parameter name="@i_numero" dataType="smallint" direction="in" />
+    <parameter name="@i_automatico" dataType="char" direction="in" />
+    <parameter name="@i_descripcion" dataType="varchar" direction="in" />
+    <parameter name="@i_renovacion" dataType="char" direction="in" />
+    <parameter name="@i_ofi_imp_chq" dataType="int" direction="in" />
+    <parameter name="@i_observaciones" dataType="varchar" direction="in" />
+    <parameter name="@o_monto_liq" dataType="money" direction="out" />
+  </parameters>
+  <queries>
+    <query>
+      <columns>
+        <column name="{1}" />
+      </columns>
+      <queryText>SELECT w_desembolso</queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="disbursement" />
+        <column name="product" />
+        <column name="currency" />
+        <column name="currencyDesc" />
+        <column name="ammountDsCur" />
+        <column name="tquoteDsCurr" />
+        <column name="quoteDsCur" />
+        <column name="ammountOpCur" />
+        <column name="tquoteOpCur" />
+        <column name="quoteOptCurr" />
+        <column name="ammountNCur" />
+        <column name="account" />
+        <column name="beneficiary" />
+        <column name="office" />
+        <column name="officeDesc" />
+        <column name="instruction" />
+        <column name="sequential" />
+        <column name="automatic" />
+        <column name="description" />
+        <column name="officeTax" />
+        <column name="officeTaxDesc" />
+        <column name="customer" />
+        <column name="comments" />
+      </columns>
+      <queryText>SELECT  "233373" = dm_desembolso,"233374" = dm_producto,"233375" = dm_moneda,"233376" = SUBSTRING ((SELECT  mo_descripcion </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="{1}" />
+      </columns>
+      <queryText>SELECT 5</queryText>
+    </query>
+  </queries>
+</procedure>

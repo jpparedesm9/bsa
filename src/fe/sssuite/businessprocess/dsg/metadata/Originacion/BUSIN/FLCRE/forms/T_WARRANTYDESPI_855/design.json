@@ -1,0 +1,364 @@
+{
+    "autoCrudStr": "F",
+    "commands": [
+    ],
+    "customEvents": [
+    ],
+    "customizationLayer": 0,
+    "customizationLayerDescription": "ECU",
+    "id": {
+        "moduleId": "BUSIN",
+        "subModuleId": "FLCRE",
+        "taskId": "T_WARRANTYDESPI_855",
+        "version": "1.0.0"
+    },
+    "isImported": false,
+    "mainViewContainerId": "VC_WARRANTYOI_923855",
+    "modeEnabled": 4095,
+    "name": {
+        "$ref": "../../../../BUSIN/relations/componentKeys.json#/FLCRE/Forms/T_WARRANTYDESPI_855/name"
+    },
+    "tempSaveStr": "F",
+    "viewContainers": [
+        {
+            "colSpan": 1,
+            "collapsedStr": "F",
+            "columnsNum": 1,
+            "componentStyle": null,
+            "customEvents": [
+            ],
+            "customizationLayer": 0,
+            "customizationLayerDescription": "ECU",
+            "enabled": 4095,
+            "id": {
+                "moduleId": "BUSIN",
+                "subModuleId": "FLCRE",
+                "taskId": "T_WARRANTYDESPI_855",
+                "taskVersion": "1.0.0",
+                "viewContainerId": "VC_WARRANTYOI_923855"
+            },
+            "layoutType": "Group",
+            "name": "WarrantyDescription",
+            "options": 0,
+            "responsiveLayouts": null,
+            "responsivity": false,
+            "style": null,
+            "view": {
+                "groups": [
+                    {
+                        "collapsedStr": "F",
+                        "columnsNum": 1,
+                        "componentStyle": null,
+                        "customEvents": [
+                        ],
+                        "enabled": 4095,
+                        "eventType": 0,
+                        "groupId": "G_WARRANTSRR_447235",
+                        "groups": [
+                            {
+                                "collapsedStr": "F",
+                                "columnsNum": 4,
+                                "componentStyle": null,
+                                "customEvents": [
+                                ],
+                                "enabled": 4095,
+                                "entity": {
+                                    "$ref": "../../../../BUSIN/entities/EN_WARRANTEI_906.json#"
+                                },
+                                "eventType": 0,
+                                "groupId": "G_WARRANTPYR_201235",
+                                "htmlSection": "F",
+                                "independentValidation": "F",
+                                "layoutType": "Group",
+                                "name": "Group1837",
+                                "orientation": "V",
+                                "parentLayoutType": "GroupLayout",
+                                "responsiveLayouts": null,
+                                "responsivity": false,
+                                "style": null,
+                                "visible": 4095,
+                                "visualAttributes": [
+                                    {
+                                        "aggregate": null,
+                                        "aggregateId": null,
+                                        "attribute": {
+                                            "$ref": "../../../../BUSIN/entities/EN_WARRANTEI_906.json#/attributes/AT84_DESCRIIP906"
+                                        },
+                                        "attributeValidations": [
+                                        ],
+                                        "colSpan": 4,
+                                        "componentStyle": null,
+                                        "customEvents": [
+                                        ],
+                                        "customizationLayer": 0,
+                                        "customizationLayerDescription": "ECU",
+                                        "enabled": 4095,
+                                        "format": "",
+                                        "include": 4095,
+                                        "label": {
+                                            "defaultValue": {
+                                                "$ref": "../../../../BUSIN/assets/languages/BUSIN.json#/BUSIN/LBL/DLB_BUSIN_DESCRIPCN_50497"
+                                            },
+                                            "labelId": "DLB_BUSIN_DESCRIPCN_50497",
+                                            "moduleId": "BUSIN"
+                                        },
+                                        "maxRecords": null,
+                                        "name": "description",
+                                        "options": 0,
+                                        "order": 0,
+                                        "readOnly": null,
+                                        "responsiveLayouts": null,
+                                        "responsivity": false,
+                                        "sizeWidthComposite": null,
+                                        "style": null,
+                                        "textRows": 2,
+                                        "userControl": {
+                                            "type": "I",
+                                            "userControlId": "TextInputBox"
+                                        },
+                                        "visible": 4095,
+                                        "visualAttributeId": "VA_DESCRIPTIONKCCH_290235",
+                                        "width": null,
+                                        "widthComposite": "D"
+                                    },
+                                    {
+                                        "aggregate": null,
+                                        "aggregateId": null,
+                                        "attribute": {
+                                            "$ref": "../../../../BUSIN/entities/EN_WARRANTEI_906.json#/attributes/AT51_CONTROII906"
+                                        },
+                                        "attributeValidations": [
+                                        ],
+                                        "cacheDuration": 0,
+                                        "catalogName": null,
+                                        "colSpan": 2,
+                                        "componentStyle": null,
+                                        "customEvents": [
+                                            {
+                                                "customEventId": "CEVA_104VA_CONTROLVISITCWN_191235_276",
+                                                "customizationLayer": 0,
+                                                "customizationLayerDescription": "ECU",
+                                                "enabled": "T",
+                                                "executionType": 3,
+                                                "filter": null,
+                                                "isEnabled": true,
+                                                "visualAttributeEventType": {
+                                                    "availableExecutionType": 7,
+                                                    "description": "Se ejecuta al cambiar el valor de un VisualAttribute",
+                                                    "eventId": 104,
+                                                    "name": "Changed"
+                                                }
+                                            }
+                                        ],
+                                        "customizationLayer": 0,
+                                        "customizationLayerDescription": "ECU",
+                                        "enabled": 11,
+                                        "entityQuery": null,
+                                        "include": 4095,
+                                        "label": {
+                                            "defaultValue": {
+                                                "$ref": "../../../../BUSIN/assets/languages/BUSIN.json#/BUSIN/LBL/LBL_BUSIN_VISITADNO_94817"
+                                            },
+                                            "labelId": "LBL_BUSIN_VISITADNO_94817",
+                                            "moduleId": "BUSIN"
+                                        },
+                                        "maxRecords": null,
+                                        "name": "controlVisit",
+                                        "options": 0,
+                                        "order": 0,
+                                        "orientation": "H",
+                                        "queryId": null,
+                                        "queryMemberText": {
+                                            "attribute": {
+                                                "attributeId": null,
+                                                "name": null
+                                            },
+                                            "queryMemberId": null
+                                        },
+                                        "queryMemberValue": {
+                                            "attribute": {
+                                                "attributeId": null,
+                                                "name": null
+                                            },
+                                            "queryMemberId": null
+                                        },
+                                        "queryModule": null,
+                                        "queryVersion": null,
+                                        "readOnly": null,
+                                        "responsiveLayouts": null,
+                                        "responsivity": false,
+                                        "sizeWidthComposite": null,
+                                        "style": null,
+                                        "userControl": {
+                                            "type": "I",
+                                            "userControlId": "RadioButtonList"
+                                        },
+                                        "visible": 4095,
+                                        "visualAttributeId": "VA_CONTROLVISITCWN_191235",
+                                        "width": null,
+                                        "widthComposite": "D"
+                                    },
+                                    {
+                                        "aggregate": null,
+                                        "aggregateId": null,
+                                        "attribute": {
+                                            "$ref": "../../../../BUSIN/entities/EN_WARRANTEI_906.json#/attributes/AT48_PERIODTT906"
+                                        },
+                                        "attributeValidations": [
+                                        ],
+                                        "cacheDuration": 0,
+                                        "catalogName": null,
+                                        "colSpan": 2,
+                                        "componentStyle": null,
+                                        "customEvents": [
+                                            {
+                                                "customEventId": "CEVA_110VA_PERIODICITYETNZ_810235_616",
+                                                "customizationLayer": 0,
+                                                "customizationLayerDescription": "ECU",
+                                                "enabled": "T",
+                                                "executionType": 3,
+                                                "filter": null,
+                                                "isEnabled": true,
+                                                "visualAttributeEventType": {
+                                                    "availableExecutionType": 3,
+                                                    "description": "Sobreescribe la carga de datos de un catálogo",
+                                                    "eventId": 110,
+                                                    "name": "LoadCatalogData"
+                                                }
+                                            }
+                                        ],
+                                        "customizationLayer": 0,
+                                        "customizationLayerDescription": "ECU",
+                                        "enabled": 4095,
+                                        "entityQuery": null,
+                                        "include": 4095,
+                                        "label": {
+                                            "defaultValue": {
+                                                "$ref": "../../../../BUSIN/assets/languages/BUSIN.json#/BUSIN/LBL/DLB_BUSIN_PEDICIDAD_84211"
+                                            },
+                                            "labelId": "DLB_BUSIN_PEDICIDAD_84211",
+                                            "moduleId": "BUSIN"
+                                        },
+                                        "maxRecords": null,
+                                        "minChars": null,
+                                        "name": "periodicity",
+                                        "options": 1,
+                                        "order": 0,
+                                        "queryId": null,
+                                        "queryMemberText": {
+                                            "attribute": {
+                                                "attributeId": null,
+                                                "name": null
+                                            },
+                                            "queryMemberId": null
+                                        },
+                                        "queryMemberValue": {
+                                            "attribute": {
+                                                "attributeId": null,
+                                                "name": null
+                                            },
+                                            "queryMemberId": null
+                                        },
+                                        "queryModule": null,
+                                        "queryVersion": null,
+                                        "readOnly": null,
+                                        "responsiveLayouts": null,
+                                        "responsivity": false,
+                                        "sizeWidthComposite": null,
+                                        "style": null,
+                                        "type": null,
+                                        "userControl": {
+                                            "type": "I",
+                                            "userControlId": "ComboBox"
+                                        },
+                                        "visible": 4095,
+                                        "visualAttributeId": "VA_PERIODICITYETNZ_810235",
+                                        "width": null,
+                                        "widthComposite": "D"
+                                    },
+                                    {
+                                        "aggregate": null,
+                                        "aggregateId": null,
+                                        "attribute": {
+                                            "$ref": "../../../../BUSIN/entities/EN_WARRANTEI_906.json#/attributes/AT24_REASONXG906"
+                                        },
+                                        "attributeValidations": [
+                                        ],
+                                        "cacheDuration": 0,
+                                        "catalogName": "cu_motivo_noinspeccion",
+                                        "colSpan": 2,
+                                        "componentStyle": null,
+                                        "customEvents": [
+                                        ],
+                                        "customizationLayer": 0,
+                                        "customizationLayerDescription": "ECU",
+                                        "enabled": 4095,
+                                        "entityQuery": null,
+                                        "include": 4095,
+                                        "label": {
+                                            "defaultValue": {
+                                                "$ref": "../../../../BUSIN/assets/languages/BUSIN.json#/BUSIN/LBL/DLB_BUSIN_MOTIVOMSN_14348"
+                                            },
+                                            "labelId": "DLB_BUSIN_MOTIVOMSN_14348",
+                                            "moduleId": "BUSIN"
+                                        },
+                                        "maxRecords": null,
+                                        "minChars": null,
+                                        "name": "reason",
+                                        "options": 1,
+                                        "order": 0,
+                                        "queryId": null,
+                                        "queryMemberText": {
+                                            "attribute": {
+                                                "attributeId": null,
+                                                "name": null
+                                            },
+                                            "queryMemberId": null
+                                        },
+                                        "queryMemberValue": {
+                                            "attribute": {
+                                                "attributeId": null,
+                                                "name": null
+                                            },
+                                            "queryMemberId": null
+                                        },
+                                        "queryModule": null,
+                                        "queryVersion": null,
+                                        "readOnly": 8,
+                                        "responsiveLayouts": null,
+                                        "responsivity": false,
+                                        "sizeWidthComposite": null,
+                                        "style": null,
+                                        "type": null,
+                                        "userControl": {
+                                            "type": "I",
+                                            "userControlId": "ComboBox"
+                                        },
+                                        "visible": 0,
+                                        "visualAttributeId": "VA_REASONQIMDHESAS_983235",
+                                        "width": null,
+                                        "widthComposite": "D"
+                                    }
+                                ]
+                            }
+                        ],
+                        "layoutType": "GroupLayout",
+                        "name": "GroupLayout1204",
+                        "style": null,
+                        "visible": 4095
+                    }
+                ],
+                "id": {
+                    "version": "1.0.0",
+                    "viewId": "VW_WARRANTYNI_235"
+                },
+                "modules": [
+                    {
+                        "moduleId": "BUSIN"
+                    }
+                ],
+                "name": "View of WarrantyDescription"
+            }
+        }
+    ]
+}

@@ -1,0 +1,213 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<procedure>
+  <database>cob_custodia</database>
+  <name>sp_tipo_custodia</name>
+  <type>SQLSERVER</type>
+  <version>1</version>
+  <parameters>
+    <parameter name="@s_ssn" dataType="int" direction="in" />
+    <parameter name="@s_date" dataType="datetime" direction="in" />
+    <parameter name="@s_user" dataType="varchar" direction="in" />
+    <parameter name="@s_term" dataType="varchar" direction="in" />
+    <parameter name="@s_corr" dataType="char" direction="in" />
+    <parameter name="@s_ssn_corr" dataType="int" direction="in" />
+    <parameter name="@s_ofi" dataType="smallint" direction="in" />
+    <parameter name="@t_rty" dataType="char" direction="in" />
+    <parameter name="@t_trn" dataType="smallint" direction="in" />
+    <parameter name="@t_debug" dataType="char" direction="in" />
+    <parameter name="@t_file" dataType="varchar" direction="in" />
+    <parameter name="@t_from" dataType="varchar" direction="in" />
+    <parameter name="@i_operacion" dataType="char" direction="in" />
+    <parameter name="@i_modo" dataType="smallint" direction="in" />
+    <parameter name="@i_tipo" dataType="varchar" direction="in" />
+    <parameter name="@i_tipo_superior" dataType="varchar" direction="in" />
+    <parameter name="@i_descripcion" dataType="varchar" direction="in" />
+    <parameter name="@i_periodicidad" dataType="varchar" direction="in" />
+    <parameter name="@i_cond1" dataType="varchar" direction="in" />
+    <parameter name="@i_param1" dataType="varchar" direction="in" />
+    <parameter name="@i_filial" dataType="tinyint" direction="in" />
+    <parameter name="@i_cuenta" dataType="char" direction="in" />
+    <parameter name="@i_contabilizar" dataType="char" direction="in" />
+    <parameter name="@i_porcentaje" dataType="money" direction="in" />
+    <parameter name="@i_adecuada" dataType="char" direction="in" />
+    <parameter name="@i_tipo_bien" dataType="char" direction="in" />
+    <parameter name="@i_porcen_cobertura" dataType="float" direction="in" />
+    <parameter name="@i_monetaria" dataType="char" direction="in" />
+    <parameter name="@i_garan_empleado" dataType="char" direction="in" />
+    <parameter name="@i_clase_custodia" dataType="char" direction="in" />
+    <parameter name="@i_multimoneda" dataType="char" direction="in" />
+    <parameter name="@i_agotada" dataType="char" direction="in" />
+    <parameter name="@i_ctr_vencimiento" dataType="char" direction="in" />
+    <parameter name="@i_estado" dataType="char" direction="in" />
+    <parameter name="@i_colat_adic" dataType="char" direction="in" />
+  </parameters>
+  <queries>
+    <query>
+      <columns>
+        <column name="{1}" />
+        <column name="{2}" />
+        <column name="{3}" />
+        <column name="{4}" />
+        <column name="{5}" />
+        <column name="{6}" />
+        <column name="{7}" />
+        <column name="{8}" />
+        <column name="{9}" />
+        <column name="{10}" />
+        <column name="{11}" />
+        <column name="{12}" />
+        <column name="{13}" />
+        <column name="{14}" />
+        <column name="{15}" />
+      </columns>
+      <queryText>SELECT w_descripcion, w_periodicidad, w_porcen_cobertura, w_adecuada, w_tipo_bien, w_des_periodicidad, w_des_tipo_bien, w_des_adecuada, w_contabilizar, w_monetaria, w_garan_empleado, w_clase, w_des_clase, w_estado, w_comparte</queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="{1}" />
+        <column name="{2}" />
+        <column name="{3}" />
+        <column name="{4}" />
+        <column name="{5}" />
+        <column name="{6}" />
+        <column name="{7}" />
+        <column name="{8}" />
+        <column name="{9}" />
+        <column name="{10}" />
+        <column name="{11}" />
+        <column name="{12}" />
+        <column name="{13}" />
+        <column name="{14}" />
+        <column name="{15}" />
+        <column name="{16}" />
+        <column name="{17}" />
+        <column name="{18}" />
+        <column name="{19}" />
+        <column name="{20}" />
+        <column name="{21}" />
+        <column name="{22}" />
+        <column name="{23}" />
+      </columns>
+      <queryText>SELECT w_tipo, w_tipo_superior, w_des_tiposup, w_descripcion, w_periodicidad, w_des_periodicidad, w_contabilizar, w_porcen_cobertura, w_adecuada, s_ofi, w_clase, w_agotada, w_monetaria, w_tipo_bien, w_des_tipo_bien, w_tipo_superior2, w_visita, w_visita, w_clase, w_des_clase, w_especial, w_estado, w_colat_adic</queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="{1}" />
+        <column name="{2}" />
+        <column name="{3}" />
+        <column name="{4}" />
+        <column name="{5}" />
+        <column name="{6}" />
+        <column name="{7}" />
+        <column name="{8}" />
+        <column name="{9}" />
+        <column name="{10}" />
+        <column name="{11}" />
+        <column name="{12}" />
+        <column name="{13}" />
+        <column name="{14}" />
+        <column name="{15}" />
+        <column name="{16}" />
+        <column name="{17}" />
+        <column name="{18}" />
+        <column name="{19}" />
+        <column name="{20}" />
+        <column name="{21}" />
+        <column name="{22}" />
+        <column name="{23}" />
+        <column name="{24}" />
+        <column name="{25}" />
+        <column name="{26}" />
+      </columns>
+      <queryText>SELECT w_tipo, w_tipo_superior, w_des_tiposup, w_descripcion, w_periodicidad, w_des_periodicidad, w_contabilizar, w_porcen_cobertura, w_adecuada, s_ofi, w_porcen_cobertura, w_des_adecuada, w_monetaria, w_tipo_bien, w_des_tipo_bien, w_tipo_superior2, w_visita, w_garan_empleado, w_clase, w_des_clase, w_especial, w_multimoneda, w_agotada, w_ctr_vencimiento, w_estado, w_colat_adic</queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="TIPO" />
+        <column name="DESCRIPCION" />
+      </columns>
+      <queryText>SELECT  "TIPO" = tc_tipo,"DESCRIPCION" = SUBSTRING (tc_descripcion, 1, 25) </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="{1}" />
+        <column name="{2}" />
+      </columns>
+      <queryText>SELECT  tc_tipo,tc_descripcion </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="TIPO" />
+        <column name="TIPO SUPERIOR" />
+      </columns>
+      <queryText>SELECT  "TIPO" = tc_tipo,"TIPO SUPERIOR" = tc_tipo_superior </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="TIPO" />
+        <column name="TIPO SUPERIOR" />
+      </columns>
+      <queryText>SELECT  "TIPO" = tc_tipo,"TIPO SUPERIOR" = tc_tipo_superior </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="TIPO" />
+        <column name="DESCRIPCION" />
+        <column name="CLASE CUSTODIA" />
+      </columns>
+      <queryText>SELECT  "TIPO" = SUBSTRING (tc_tipo, 1, 20),"DESCRIPCION" = tc_descripcion,"CLASE CUSTODIA" = tc_adecuada </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="TIPO" />
+        <column name="DESCRIPCION" />
+        <column name="CLASE CUSTODIA" />
+      </columns>
+      <queryText>SELECT  "TIPO" = SUBSTRING (tc_tipo, 1, 20),"DESCRIPCION" = tc_descripcion,"CLASE CUSTODIA" = tc_adecuada </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="TIPO" />
+        <column name="DESCRIPCION" />
+        <column name="CLASE CUSTODIA" />
+      </columns>
+      <queryText>SELECT  "TIPO" = SUBSTRING (tc_tipo, 1, 20),"DESCRIPCION" = tc_descripcion,"CLASE CUSTODIA" = tc_adecuada </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="TIPO" />
+        <column name="DESCRIPCION" />
+        <column name="CLASE CUSTODIA" />
+      </columns>
+      <queryText>SELECT  "TIPO" = SUBSTRING (tc_tipo, 1, 20),"DESCRIPCION" = tc_descripcion,"CLASE CUSTODIA" = tc_adecuada </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="TIPO" />
+        <column name="DESCRIPCION" />
+        <column name="CLASE CUSTODIA" />
+      </columns>
+      <queryText>SELECT  "TIPO" = SUBSTRING (tc_tipo, 1, 20),"DESCRIPCION" = tc_descripcion,"CLASE CUSTODIA" = tc_adecuada </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="{1}" />
+      </columns>
+      <queryText>SELECT  cu_nombre </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="TIPO" />
+        <column name="DESCRIPCION" />
+      </columns>
+      <queryText>SELECT  "TIPO" = tc_tipo,"DESCRIPCION" = SUBSTRING (tc_descripcion, 1, 25) </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="{1}" />
+        <column name="{2}" />
+      </columns>
+      <queryText>SELECT  tc_tipo,tc_descripcion </queryText>
+    </query>
+  </queries>
+</procedure>

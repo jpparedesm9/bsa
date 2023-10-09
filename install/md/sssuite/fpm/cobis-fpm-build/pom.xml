@@ -1,0 +1,43 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.cobiscorp.ecobis</groupId>
+	<artifactId>cobis-fpm-build</artifactId>
+	<version>1.0.0</version>
+	<packaging>pom</packaging>
+	<name>${project.artifactId}</name>
+	<url>http://www.cobiscorp.com/</url>
+
+	<profiles>
+		<profile>
+			<id>env-development</id>
+			<activation>
+				<activeByDefault>true</activeByDefault>
+			</activation>
+			<modules>
+				<module>../../../source/middleware/service-backend/fpm-parent</module>
+				<module>../../../source/middleware/service-backend/fpm-cobis-catalogs-services-impl</module>
+				<module>../../../source/middleware/service-backend/fpm-cobis-portfolio-dao</module>
+				<module>../../../source/middleware/service-backend/fpm-cobis-portfolio-interceptors</module>
+				<module>../../../source/middleware/service-backend/fpm-cobis-portfolio-services-impl</module>
+				<module>../../../source/middleware/service-backend/fpm-cobis-portfolio-services-integration-impl</module>
+				<module>../../../source/middleware/finpm.mprod.productgrouptask.customevents</module>
+				<module>../cobis-fpm-installer</module>
+			</modules>
+		</profile>
+		<profile>
+			<id>env-hardening</id>
+			<modules>
+				<module>../../../source/middleware/service-backend/fpm-parent</module>
+				<module>../../../source/middleware/service-backend/fpm-cobis-catalogs-services-impl</module>
+				<module>../../../source/middleware/service-backend/fpm-cobis-portfolio-dao</module>
+				<module>../../../source/middleware/service-backend/fpm-cobis-portfolio-interceptors</module>
+				<module>../../../source/middleware/service-backend/fpm-cobis-portfolio-services-impl</module>
+				<module>../../../source/middleware/service-backend/fpm-cobis-portfolio-services-integration-impl</module>
+				<module>../../../source/middleware/finpm.mprod.productgrouptask.customevents</module>
+				<module>../cobis-fpm-installer</module>
+			</modules>
+		</profile>
+	</profiles>
+
+</project>

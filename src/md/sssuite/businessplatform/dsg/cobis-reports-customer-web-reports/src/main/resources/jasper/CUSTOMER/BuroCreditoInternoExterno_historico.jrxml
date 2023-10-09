@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="BuroCreditoInternoExterno_historico.jrxml" pageWidth="572" pageHeight="752" columnWidth="572" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="9ab22525-e7a3-49a6-8b66-445b7cc4ee71">
+	<property name="ireport.zoom" value="1.3310000000000004"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="SUBREPORT_DIR" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["/"]]></defaultValueExpression>
+	</parameter>
+	<field name="hisNum" class="java.lang.Integer"/>
+	<field name="hisLICredito" class="java.lang.String"/>
+	<field name="hisNumCiclo" class="java.lang.Integer"/>
+	<field name="hisFechaApertura" class="java.lang.String"/>
+	<field name="hisFechaFin" class="java.lang.String"/>
+	<field name="hisFechaLiq" class="java.lang.String"/>
+	<field name="hisDiasAtrasoVenc" class="java.lang.Integer"/>
+	<field name="hisMontoAprobIndividual" class="java.lang.Double"/>
+	<field name="hisEstado" class="java.lang.String"/>
+	<field name="hisSaldoTotalCap" class="java.lang.Double"/>
+	<field name="hisSaldoCapMora" class="java.lang.Double"/>
+	<field name="hisDiasMoraAcumulado" class="java.lang.Integer"/>
+	<field name="hisMaxDiasMora" class="java.lang.Integer"/>
+	<field name="hisCalificacion" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<detail>
+		<band height="15" splitType="Stretch">
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="0" y="0" width="31" height="15" isPrintWhenDetailOverflows="true" uuid="2892de08-2522-47c0-819e-db8f8b44fa45"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font size="7"/>
+					<paragraph leftIndent="2" rightIndent="2" spacingBefore="2" spacingAfter="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{hisNum}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="31" y="0" width="54" height="15" isPrintWhenDetailOverflows="true" uuid="497f66d7-4ac7-42c2-9002-4caa6c8f9f3e"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font size="7"/>
+					<paragraph leftIndent="2" rightIndent="2" spacingBefore="2" spacingAfter="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{hisLICredito}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="85" y="0" width="30" height="15" isPrintWhenDetailOverflows="true" uuid="a72f7be0-1b39-4b40-a1a6-3b5b05ebd61f"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font size="7"/>
+					<paragraph leftIndent="2" rightIndent="2" spacingBefore="2" spacingAfter="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{hisNumCiclo}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="115" y="0" width="44" height="15" isPrintWhenDetailOverflows="true" uuid="48e330e3-a3cd-4161-9ced-f023457583fd"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font size="7"/>
+					<paragraph leftIndent="2" rightIndent="2" spacingBefore="2" spacingAfter="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{hisFechaApertura}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="159" y="0" width="41" height="15" isPrintWhenDetailOverflows="true" uuid="69182663-5c2c-458e-a405-d34807ae34b1"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font size="7"/>
+					<paragraph leftIndent="2" rightIndent="2" spacingBefore="2" spacingAfter="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{hisFechaFin}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="200" y="0" width="55" height="15" isPrintWhenDetailOverflows="true" uuid="3a6ea667-aadb-4b64-a2ee-0d414f55d1da"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font size="7"/>
+					<paragraph leftIndent="2" rightIndent="2" spacingBefore="2" spacingAfter="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{hisFechaLiq}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="255" y="0" width="40" height="15" isPrintWhenDetailOverflows="true" uuid="ac8c0540-f206-4613-a120-c0fd59802ea6"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font size="7"/>
+					<paragraph leftIndent="2" rightIndent="2" spacingBefore="2" spacingAfter="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{hisDiasAtrasoVenc}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" pattern="#,##0.00" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="295" y="0" width="46" height="15" isPrintWhenDetailOverflows="true" uuid="1b1c59fe-9e7d-437e-a4f0-e8f4918489e5"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font size="7"/>
+					<paragraph leftIndent="2" rightIndent="2" spacingBefore="2" spacingAfter="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{hisMontoAprobIndividual}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="341" y="0" width="45" height="15" isPrintWhenDetailOverflows="true" uuid="af998a51-931a-4913-9627-dc975231c17b"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font size="7"/>
+					<paragraph leftIndent="2" rightIndent="2" spacingBefore="2" spacingAfter="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{hisEstado}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" pattern="#,##0.00" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="386" y="0" width="47" height="15" isPrintWhenDetailOverflows="true" uuid="6de036d7-5ff2-4545-b56e-1edd4fae76ba"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font size="7"/>
+					<paragraph leftIndent="2" rightIndent="2" spacingBefore="2" spacingAfter="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{hisSaldoTotalCap}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" pattern="#,##0.00" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="433" y="0" width="47" height="15" isPrintWhenDetailOverflows="true" uuid="6a4f5ebe-4fd0-4aa9-9256-54d9f150d29b"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font size="7"/>
+					<paragraph leftIndent="2" rightIndent="2" spacingBefore="2" spacingAfter="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{hisSaldoCapMora}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="480" y="0" width="55" height="15" isPrintWhenDetailOverflows="true" uuid="2ef73fe4-8418-4cae-8dea-1fe753bf5bef"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font size="7"/>
+					<paragraph leftIndent="2" rightIndent="2" spacingBefore="2" spacingAfter="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{hisDiasMoraAcumulado}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="535" y="0" width="37" height="15" isPrintWhenDetailOverflows="true" uuid="0c244897-f4c9-4c6a-aefa-223b12888f44"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font size="7"/>
+					<paragraph leftIndent="2" rightIndent="2" spacingBefore="2" spacingAfter="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{hisMaxDiasMora}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

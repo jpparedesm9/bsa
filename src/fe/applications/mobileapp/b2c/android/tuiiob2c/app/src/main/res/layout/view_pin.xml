@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <Button
+        android:id="@+id/btn_number_1"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/pin_number_1"
+        app:layout_constraintBottom_toTopOf="@+id/btn_number_4"
+        app:layout_constraintEnd_toStartOf="@+id/btn_number_2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <Button
+        android:id="@+id/btn_number_2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/pin_number_2"
+        app:layout_constraintBottom_toTopOf="@+id/btn_number_5"
+        app:layout_constraintEnd_toStartOf="@+id/btn_number_3"
+        app:layout_constraintStart_toEndOf="@+id/btn_number_1"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <Button
+        android:id="@+id/btn_number_3"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/pin_number_3"
+        app:layout_constraintBottom_toTopOf="@+id/btn_number_6"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/btn_number_2"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <Button
+        android:id="@+id/btn_number_4"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/pin_number_4"
+        app:layout_constraintBottom_toTopOf="@+id/btn_number_7"
+        app:layout_constraintEnd_toStartOf="@+id/btn_number_5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_number_1"/>
+
+    <Button
+        android:id="@+id/btn_number_5"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/pin_number_5"
+        app:layout_constraintBottom_toTopOf="@+id/btn_number_8"
+        app:layout_constraintEnd_toStartOf="@id/btn_number_6"
+        app:layout_constraintStart_toEndOf="@id/btn_number_4"
+        app:layout_constraintTop_toBottomOf="@+id/btn_number_2"/>
+
+    <Button
+        android:id="@+id/btn_number_6"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/pin_number_6"
+        app:layout_constraintBottom_toTopOf="@+id/btn_number_9"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/btn_number_5"
+        app:layout_constraintTop_toBottomOf="@+id/btn_number_3"/>
+
+    <Button
+        android:id="@+id/btn_number_7"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/pin_number_7"
+        app:layout_constraintBottom_toTopOf="@+id/btn_clear"
+        app:layout_constraintEnd_toStartOf="@id/btn_number_8"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_number_4"/>
+
+    <Button
+        android:id="@+id/btn_number_8"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/pin_number_8"
+        app:layout_constraintBottom_toTopOf="@+id/btn_number_0"
+        app:layout_constraintEnd_toStartOf="@+id/btn_number_9"
+        app:layout_constraintStart_toEndOf="@+id/btn_number_7"
+        app:layout_constraintTop_toBottomOf="@+id/btn_number_5"/>
+
+    <Button
+        android:id="@+id/btn_number_9"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/pin_number_9"
+        app:layout_constraintBottom_toTopOf="@+id/btn_backspace"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/btn_number_8"
+        app:layout_constraintTop_toBottomOf="@+id/btn_number_6"/>
+
+    <ImageButton
+        android:id="@+id/btn_clear"
+        style="?buttonStyle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/btn_number_0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btn_number_7"
+        app:srcCompat="@drawable/ic_clear_black_24dp"/>
+
+    <Button
+        android:id="@+id/btn_number_0"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/pin_number_0"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/btn_backspace"
+        app:layout_constraintStart_toEndOf="@+id/btn_clear"
+        app:layout_constraintTop_toBottomOf="@+id/btn_number_8"/>
+
+    <ImageButton
+        android:id="@+id/btn_backspace"
+        style="?buttonStyle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/btn_number_0"
+        app:layout_constraintTop_toBottomOf="@+id/btn_number_9"
+        app:srcCompat="@drawable/ic_backspace_black_24dp">
+    </ImageButton>
+</android.support.constraint.ConstraintLayout>

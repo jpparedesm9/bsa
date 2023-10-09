@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<procedure>
+  <database>cob_custodia</database>
+  <name>sp_consult1</name>
+  <type>SYBASE</type>
+  <version>1</version>
+  <parameters>
+    <parameter name="@s_date" dataType="datetime" direction="in" />
+    <parameter name="@t_trn" dataType="int" direction="in" />
+    <parameter name="@t_debug" dataType="char" direction="in" />
+    <parameter name="@t_file" dataType="varchar" direction="in" />
+    <parameter name="@t_from" dataType="varchar" direction="in" />
+    <parameter name="@i_operacion" dataType="char" direction="in" />
+    <parameter name="@i_filial" dataType="tinyint" direction="in" />
+    <parameter name="@i_sucursal" dataType="smallint" direction="in" />
+    <parameter name="@i_tipo_cust" dataType="varchar" direction="in" />
+    <parameter name="@i_custodia" dataType="int" direction="in" />
+    <parameter name="@i_codigo_compuesto" dataType="varchar" direction="in" />
+    <parameter name="@i_formato_fecha" dataType="smallint" direction="in" />
+  </parameters>
+  <queries>
+    <query>
+      <columns>
+        <column name="statusCom" />
+        <column name="openClose" />
+        <column name="entryDate" />
+        <column name="expirationDate" />
+        <column name="customerComp" />
+        <column name="initialValue" />
+        <column name="currentValue" />
+        <column name="realValue" />
+        <column name="mrc" />
+        <column name="currencyCom" />
+        <column name="description" />
+        <column name="guarantorComp" />
+        <column name="city" />
+        <column name="address" />
+        <column name="Phone" />
+        <column name="locatedComp" />
+        <column name="locationComp" />
+        <column name="ubicationDateSal" />
+        <column name="ubicationDateDev" />
+        <column name="descriptionUb" />
+        <column name="bankAccount" />
+        <column name="available" />
+        <column name="rate" />
+        <column name="blockAmount" />
+      </columns>
+      <queryText>SELECT "17473"=w_estado_comp,"17474"=w_abierta_cerrada,"17476"=ctx.convertString(w_fecha_ingreso ,i_formato_fecha),"17477"=ctx.convertString(w_fecha_vence ,i_formato_fecha),"17478"=w_cliente_comp,"17479"=w_valor_inicial,"17480"=w_valor_actual,"17481"=w_valor_real,"16262"=w_mrc,"17482"=w_moneda_comp,"17483"=w_descripcion,"17484"=w_garante_comp,"17485"=w_ciudad,"17486"=w_direccion,"17487"=w_telefono,"17948"=w_ubica_comp,"17765"=w_ubicacion_comp,"17826"=ctx.convertString(w_fecha_ub_sal ,i_formato_fecha),"17827"=ctx.convertString(w_fecha_ub_dev ,i_formato_fecha),"18028"=w_descripcion_ub,"17965"=w_cta_banco,"17962"=w_disponible,"17963"=ctx.LTRIM(ctx.STR(w_tasa, 8, 4)),"17964"=w_monto_blq</queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="statusCom" />
+        <column name="openClose" />
+        <column name="entryDate" />
+        <column name="expirationDate" />
+        <column name="customerComp" />
+        <column name="initialValue" />
+        <column name="currentValue" />
+        <column name="realValue" />
+        <column name="mrc" />
+        <column name="currencyCom" />
+        <column name="description" />
+        <column name="guarantorComp" />
+        <column name="city" />
+        <column name="address" />
+        <column name="Phone" />
+        <column name="locatedComp" />
+        <column name="locationComp" />
+        <column name="ubicationDateSal" />
+        <column name="ubicationDateDev" />
+        <column name="descriptionUb" />
+      </columns>
+      <queryText>SELECT "17473"=w_estado_comp,"17474"=w_abierta_cerrada,"17476"=ctx.convertString(w_fecha_ingreso ,i_formato_fecha),"17477"=ctx.convertString(w_fecha_vence ,i_formato_fecha),"17478"=w_cliente_comp,"17479"=w_valor_inicial,"17480"=w_valor_actual,"17481"=w_valor_real,"16262"=w_mrc,"17482"=w_moneda_comp,"17483"=w_descripcion,"17484"=w_garante_comp,"17485"=w_ciudad,"17486"=w_direccion,"17487"=w_telefono,"17948"=w_ubica_comp,"17765"=w_ubicacion_comp,"17826"=ctx.convertString(w_fecha_ub_sal ,i_formato_fecha),"17827"=ctx.convertString(w_fecha_ub_dev ,i_formato_fecha),"18028"=w_descripcion_ub</queryText>
+    </query>
+  </queries>
+</procedure>

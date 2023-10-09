@@ -1,0 +1,92 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<procedure>
+  <database>cob_interfase</database>
+  <name>sp_tr_con_saldos</name>
+  <type>SQLSERVER</type>
+  <version>1</version>
+  <parameters>
+    <parameter name="@s_ssn" dataType="int" direction="in" />
+    <parameter name="@s_ssn_branch" dataType="int" direction="in" />
+    <parameter name="@s_srv" dataType="varchar" direction="in" />
+    <parameter name="@s_user" dataType="varchar" direction="in" />
+    <parameter name="@s_sesn" dataType="int" direction="in" />
+    <parameter name="@s_term" dataType="varchar" direction="in" />
+    <parameter name="@s_date" dataType="datetime" direction="in" />
+    <parameter name="@s_org" dataType="char" direction="in" />
+    <parameter name="@s_ofi" dataType="smallint" direction="in" />
+    <parameter name="@s_rol" dataType="smallint" direction="in" />
+    <parameter name="@s_org_err" dataType="char" direction="in" />
+    <parameter name="@s_error" dataType="int" direction="in" />
+    <parameter name="@s_sev" dataType="tinyint" direction="in" />
+    <parameter name="@s_msg" dataType="varchar" direction="in" />
+    <parameter name="@t_debug" dataType="char" direction="in" />
+    <parameter name="@t_file" dataType="varchar" direction="in" />
+    <parameter name="@t_from" dataType="varchar" direction="in" />
+    <parameter name="@t_rty" dataType="char" direction="in" />
+    <parameter name="@t_trn" dataType="smallint" direction="in" />
+    <parameter name="@t_show_version" dataType="bit" direction="in" />
+    <parameter name="@i_cta" dataType="varchar" direction="in" />
+    <parameter name="@i_cta_mig" dataType="varchar" direction="in" />
+    <parameter name="@i_mon" dataType="tinyint" direction="in" />
+    <parameter name="@i_inforcuenta" dataType="char" direction="in" />
+    <parameter name="@i_formato_fecha" dataType="int" direction="in" />
+    <parameter name="@i_turno" dataType="smallint" direction="in" />
+    <parameter name="@i_escliente" dataType="char" direction="in" />
+    <parameter name="@i_corresponsal" dataType="char" direction="in" />
+  </parameters>
+  <queries>
+    <query>
+      <columns>
+        <column name="Moneda" />
+        <column name="Des. Moneda" />
+        <column name="Cod. Estado" />
+        <column name="Des. Estado" />
+        <column name="Cod. Categoría" />
+        <column name="Des. Categoría" />
+        <column name="Oficial de cta" />
+        <column name="Nombre del oficial" />
+        <column name="Cod. Tipo Promedio" />
+        <column name="Des. Tipo Promedio" />
+        <column name="Cod. Capitalización" />
+        <column name="Des. Capitalización" />
+        <column name="Cod. Prod. Bancario" />
+        <column name="Des. Prod. Bancario" />
+        <column name="Contractual" />
+        <column name="Tipo Cuenta" />
+        <column name="Retenido 24 Horas" />
+        <column name="Retenido 12 Horas" />
+        <column name="Disponible" />
+        <column name="Saldo cuenta" />
+        <column name="Saldo para girar" />
+        <column name="Saldo interes" />
+        <column name="Promedio 1" />
+        <column name="Promedio 2" />
+        <column name="Promedio 3" />
+        <column name="Promedio 4" />
+        <column name="Promedio 5" />
+        <column name="Promedio 6" />
+        <column name="Promedio G" />
+        <column name="Retencion Valores" />
+        <column name="Fecha Ultimo Mov." />
+        <column name="Prom. Disp." />
+        <column name="Cred. Hoy" />
+        <column name="Cred. Mes" />
+        <column name="Deb. Hoy" />
+        <column name="Deb. Mes" />
+        <column name="IDB Mes" />
+        <column name="Monto Consumos" />
+        <column name="Saldo Ayer" />
+        <column name="Tasa Hoy" />
+        <column name="Ultimo Interes" />
+        <column name="Interes del Mes" />
+        <column name="Valores Embargados" />
+        <column name="Cta Embargada" />
+        <column name="Valores en Suspenso" />
+        <column name="Rem. Ayer" />
+        <column name="Patente" />
+        <column name="Fideicomiso" />
+      </columns>
+      <queryText>SELECT "Moneda"=w_moneda,"Des. Moneda"=w_mon_des,"Cod. Estado"=w_estado,"Des. Estado"=w_estado_des,"Cod. Categoría"=w_categoria,"Des. Categoría"=w_categ_des,"Oficial de cta"=w_oficial,"Nombre del oficial"=w_oficial_des,"Cod. Tipo Promedio"=w_tipo_promedio,"Des. Tipo Promedio"=w_tpromedio_des,"Cod. Capitalización"=w_capitalizacion,"Des. Capitalización"=w_capit_des,"Cod. Prod. Bancario"=w_prod_banc,"Des. Prod. Bancario"=w_desc_prod_banc,"Contractual"=w_contractual,"Tipo Cuenta"=w_tipocta,"Retenido 24 Horas"=w_24h,"Retenido 12 Horas"=w_12h,"Disponible"=w_disponible,"Saldo cuenta"=w_saldo_contable,"Saldo para girar"=w_saldo_para_girar,"Saldo interes"=w_saldo_interes,"Promedio 1"=w_promedio1,"Promedio 2"=w_promedio2,"Promedio 3"=w_promedio3,"Promedio 4"=w_promedio4,"Promedio 5"=w_promedio5,"Promedio 6"=w_promedio6,"Promedio G"=((w_promedio1 + w_promedio2 + w_promedio3 + w_promedio4 + w_promedio5 + w_promedio6) / 6),"Retencion Valores"=w_monto_bloq,"Fecha Ultimo Mov."=ctx.convertString(w_fecha_ult_mov ,i_formato_fecha),"Prom. Disp."=w_prom_disponible,"Cred. Hoy"=w_creditos_hoy,"Cred. Mes"=w_creditos,"Deb. Hoy"=w_debitos_hoy,"Deb. Mes"=w_debitos,"IDB Mes"=w_monto_imp,"Monto Consumos"=w_monto_consumos,"Saldo Ayer"=w_saldo_ayer,"Tasa Hoy"=w_tasa_hoy,"Ultimo Interes"=w_int_hoy,"Interes del Mes"=w_int_mes,"Valores Embargados"=w_monto_emb,"Cta Embargada"=w_embargada,"Valores en Suspenso"=w_suspensos,"Rem. Ayer"=w_rem_ayer,"Patente"=w_patente,"Fideicomiso"=w_fideicomiso</queryText>
+    </query>
+  </queries>
+</procedure>

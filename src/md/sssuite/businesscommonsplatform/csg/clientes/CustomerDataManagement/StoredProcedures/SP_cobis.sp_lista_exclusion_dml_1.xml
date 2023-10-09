@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<procedure>
+  <database>cobis</database>
+  <name>sp_lista_exclusion_dml</name>
+  <type>SQLSERVER</type>
+  <version>1</version>
+  <parameters>
+    <parameter name="@s_ssn" dataType="int" direction="in" />
+    <parameter name="@s_user" dataType="varchar" direction="in" />
+    <parameter name="@t_debug" dataType="char" direction="in" />
+    <parameter name="@t_file" dataType="varchar" direction="in" />
+    <parameter name="@t_trn" dataType="smallint" direction="in" />
+    <parameter name="@t_show_version" dataType="bit" direction="in" />
+    <parameter name="@i_operacion" dataType="char" direction="in" />
+    <parameter name="@i_ente" dataType="int" direction="in" />
+    <parameter name="@i_secuencial" dataType="int" direction="in" />
+    <parameter name="@i_calif" dataType="char" direction="in" />
+  </parameters>
+  <queries>
+    <query>
+      <columns>
+        <column name="cliente" />
+        <column name="nombreCliente" />
+        <column name="rfc" />
+        <column name="curp" />
+        <column name="calificacion" />
+      </columns>
+      <queryText>SELECT  "cliente" = cc_ente,"nombreCliente" = en_nomlar,"rfc" = en_rfc,"curp" = en_ced_ruc,"calificacion" = cc_calif </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="cliente" />
+        <column name="nombreCliente" />
+        <column name="rfc" />
+        <column name="curp" />
+        <column name="calificacion" />
+      </columns>
+      <queryText>SELECT  "cliente" = cc_ente,"nombreCliente" = en_nomlar,"rfc" = en_rfc,"curp" = en_ced_ruc,"calificacion" = cc_calif </queryText>
+    </query>
+  </queries>
+</procedure>

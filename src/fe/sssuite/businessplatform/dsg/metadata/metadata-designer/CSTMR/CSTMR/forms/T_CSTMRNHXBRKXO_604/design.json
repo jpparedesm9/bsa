@@ -1,0 +1,805 @@
+{
+    "autoCrudStr": "F",
+    "commands": [
+    ],
+    "customEvents": [
+    ],
+    "customizationLayer": 0,
+    "customizationLayerDescription": "ECU",
+    "id": {
+        "moduleId": "CSTMR",
+        "subModuleId": "CSTMR",
+        "taskId": "T_CSTMRNHXBRKXO_604",
+        "version": "1.0.0"
+    },
+    "isImported": false,
+    "mainViewContainerId": "VC_CUSTOMERUU_138604",
+    "modeEnabled": 4095,
+    "name": {
+        "$ref": "../../../../CSTMR/relations/componentKeys.json#/CSTMR/Forms/T_CSTMRNHXBRKXO_604/name"
+    },
+    "tempSaveStr": "F",
+    "viewContainers": [
+        {
+            "breadcrumbs": "Automatic",
+            "colSpan": 1,
+            "collapsedStr": "F",
+            "columnsNum": 1,
+            "componentStyle": null,
+            "customEvents": [
+                {
+                    "customEventId": "CEVC_002T_CSTMRNHXBRKXO_604_306",
+                    "customizationLayer": 0,
+                    "customizationLayerDescription": "ECU",
+                    "enabled": "T",
+                    "executionType": 1,
+                    "filter": null,
+                    "isEnabled": true,
+                    "viewContainerEventType": {
+                        "availableExecutionType": 7,
+                        "description": "Inicialización de datos de un ViewContainer, despues de este evento se realiza el segimiento de cambios en los datos",
+                        "eventId": 2,
+                        "name": "InitData"
+                    }
+                }
+            ],
+            "customizationLayer": 0,
+            "customizationLayerDescription": "ECU",
+            "enabled": 4095,
+            "id": {
+                "moduleId": "CSTMR",
+                "subModuleId": "CSTMR",
+                "taskId": "T_CSTMRNHXBRKXO_604",
+                "taskVersion": "1.0.0",
+                "viewContainerId": "VC_CUSTOMERUU_138604"
+            },
+            "layoutType": "Group",
+            "name": "CustomerSpouseForm",
+            "options": 0,
+            "responsiveLayouts": null,
+            "responsivity": false,
+            "style": null,
+            "view": {
+                "groups": [
+                    {
+                        "collapsedStr": "F",
+                        "columnsNum": 4,
+                        "componentStyle": null,
+                        "customEvents": [
+                        ],
+                        "enabled": 4095,
+                        "entity": {
+                            "$ref": "../../../../CSTMR/entities/EN_SPOUSEPNN_845.json#"
+                        },
+                        "eventType": 0,
+                        "groupId": "G_CUSTOMERES_756425",
+                        "htmlSection": "F",
+                        "independentValidation": "T",
+                        "layoutType": "Group",
+                        "name": "Group1523",
+                        "order": 1,
+                        "orientation": "V",
+                        "responsiveLayouts": null,
+                        "responsivity": false,
+                        "style": null,
+                        "visible": 4095,
+                        "visualAttributes": [
+                            {
+                                "aggregate": null,
+                                "aggregateId": null,
+                                "attribute": {
+                                    "$ref": "../../../../CSTMR/entities/EN_SPOUSEPNN_845.json#/attributes/AT37_BIRTHDEA845"
+                                },
+                                "attributeValidations": [
+                                    {
+                                        "compareOperator": -1,
+                                        "id": "VV_DATEFIELDMSIZCP_99042528",
+                                        "validateMessageLabel": {
+                                            "defaultValue": {
+                                                "$ref": "../../../../CSTMR/assets/languages/CSTMR.json#/CSTMR/MSG/MSG_CSTMR_LAFECHAAS_92767"
+                                            },
+                                            "labelId": "MSG_CSTMR_LAFECHAAS_92767",
+                                            "moduleId": "CSTMR"
+                                        },
+                                        "visualValidationType": {
+                                            "description": "Required Validation",
+                                            "visualValidationId": "Required"
+                                        }
+                                    }
+                                ],
+                                "colSpan": 2,
+                                "componentInGrid": false,
+                                "componentStyle": null,
+                                "customEvents": [
+                                    {
+                                        "customEventId": "CEVA_104VA_DATEFIELDMSIZCP_990425_425",
+                                        "customizationLayer": 0,
+                                        "customizationLayerDescription": "ECU",
+                                        "enabled": "T",
+                                        "executionType": 1,
+                                        "filter": null,
+                                        "isEnabled": true,
+                                        "visualAttributeEventType": {
+                                            "availableExecutionType": 7,
+                                            "description": "Se ejecuta al cambiar el valor de un VisualAttribute",
+                                            "eventId": 104,
+                                            "name": "Changed"
+                                        }
+                                    }
+                                ],
+                                "customizationLayer": 0,
+                                "customizationLayerDescription": "ECU",
+                                "enabled": 4095,
+                                "format": null,
+                                "include": 4095,
+                                "label": {
+                                    "defaultValue": {
+                                        "$ref": "../../../../CSTMR/assets/languages/CSTMR.json#/CSTMR/LBL/LBL_CSTMR_FECHADETE_15731"
+                                    },
+                                    "labelId": "LBL_CSTMR_FECHADETE_15731",
+                                    "moduleId": "CSTMR"
+                                },
+                                "maxRecords": null,
+                                "name": "birthDate",
+                                "options": 0,
+                                "order": 6,
+                                "readOnly": 8,
+                                "responsiveLayouts": null,
+                                "responsivity": false,
+                                "sizeWidthComposite": null,
+                                "style": null,
+                                "userControl": {
+                                    "type": "I",
+                                    "userControlId": "DateField"
+                                },
+                                "visible": 4095,
+                                "visualAttributeId": "VA_DATEFIELDMSIZCP_990425",
+                                "width": null,
+                                "widthComposite": "D"
+                            },
+                            {
+                                "aggregate": null,
+                                "aggregateId": null,
+                                "attribute": {
+                                    "$ref": "../../../../CSTMR/entities/EN_SPOUSEPNN_845.json#/attributes/AT69_SURNAMEE845"
+                                },
+                                "attributeValidations": [
+                                    {
+                                        "compareOperator": -1,
+                                        "id": "VV_TEXTINPUTBOXJTN_51442544",
+                                        "validateMessageLabel": {
+                                            "defaultValue": {
+                                                "$ref": "../../../../CSTMR/assets/languages/CSTMR.json#/CSTMR/MSG/MSG_CSTMR_ELAPELLEO_69775"
+                                            },
+                                            "labelId": "MSG_CSTMR_ELAPELLEO_69775",
+                                            "moduleId": "CSTMR"
+                                        },
+                                        "visualValidationType": {
+                                            "description": "Required Validation",
+                                            "visualValidationId": "Required"
+                                        }
+                                    },
+                                    {
+                                        "compareOperator": 3,
+                                        "id": "VV_TEXTINPUTBOXJTN_51442584",
+                                        "visualValidationType": {
+                                            "description": "Letters and Numbers, only Numbers, custom list, custom function, lock",
+                                            "visualValidationId": "InputRestriction"
+                                        }
+                                    },
+                                    {
+                                        "compareOperator": -1,
+                                        "id": "VV_TEXTINPUTBOXJTN_51442595",
+                                        "regularExpression": "^(?!\\s)(?!.*\\s$)(?!.*(\\s)\\1)[a-zA-Z\\u00D1\\u00F1\\u00E1\\u00E9\\u00ED\\u00F3\\u00FA\\u00C1\\u00C9\\u00CD\\u00D3\\u00DA ]",
+                                        "validateMessageLabel": {
+                                            "defaultValue": {
+                                                "$ref": "../../../../CSTMR/assets/languages/CSTMR.json#/CSTMR/MSG/MSG_CSTMR_VALIDARAI_68527"
+                                            },
+                                            "labelId": "MSG_CSTMR_VALIDARAI_68527",
+                                            "moduleId": "CSTMR"
+                                        },
+                                        "visualValidationType": {
+                                            "description": "Regula Expression Validation",
+                                            "visualValidationId": "RegularExpression"
+                                        }
+                                    }
+                                ],
+                                "colSpan": 2,
+                                "componentInGrid": false,
+                                "componentStyle": null,
+                                "customEvents": [
+                                    {
+                                        "customEventId": "CEVA_317VA_TEXTINPUTBOXJTN_514425_825",
+                                        "customizationLayer": 0,
+                                        "customizationLayerDescription": "ECU",
+                                        "enabled": "T",
+                                        "executionType": 1,
+                                        "filter": null,
+                                        "isEnabled": true,
+                                        "visualAttributeEventType": {
+                                            "availableExecutionType": 1,
+                                            "description": "Permite personalizar una validacion asociada a un visual attribute a travÃ©s de un inputRestrictions",
+                                            "eventId": 317,
+                                            "name": "customValidation"
+                                        }
+                                    },
+                                    {
+                                        "customEventId": "CEVA_104VA_TEXTINPUTBOXJTN_514425_939",
+                                        "customizationLayer": 0,
+                                        "customizationLayerDescription": "ECU",
+                                        "enabled": "T",
+                                        "executionType": 1,
+                                        "filter": null,
+                                        "isEnabled": true,
+                                        "visualAttributeEventType": {
+                                            "availableExecutionType": 7,
+                                            "description": "Se ejecuta al cambiar el valor de un VisualAttribute",
+                                            "eventId": 104,
+                                            "name": "Changed"
+                                        }
+                                    }
+                                ],
+                                "customizationLayer": 0,
+                                "customizationLayerDescription": "ECU",
+                                "enabled": 4095,
+                                "include": 4095,
+                                "label": {
+                                    "defaultValue": {
+                                        "$ref": "../../../../CSTMR/assets/languages/CSTMR.json#/CSTMR/LBL/LBL_CSTMR_APELLIDPT_76332"
+                                    },
+                                    "labelId": "LBL_CSTMR_APELLIDPT_76332",
+                                    "moduleId": "CSTMR"
+                                },
+                                "maxRecords": null,
+                                "name": "surname",
+                                "options": 32,
+                                "order": 3,
+                                "readOnly": 8,
+                                "responsiveLayouts": null,
+                                "responsivity": false,
+                                "sizeWidthComposite": null,
+                                "style": null,
+                                "textRows": 0,
+                                "userControl": {
+                                    "type": "I",
+                                    "userControlId": "TextInputBox"
+                                },
+                                "visible": 4095,
+                                "visualAttributeId": "VA_TEXTINPUTBOXJTN_514425",
+                                "width": null,
+                                "widthComposite": "D"
+                            },
+                            {
+                                "aggregate": null,
+                                "aggregateId": null,
+                                "attribute": {
+                                    "$ref": "../../../../CSTMR/entities/EN_SPOUSEPNN_845.json#/attributes/AT33_PHONEXES845"
+                                },
+                                "attributeValidations": [
+                                    {
+                                        "compareOperator": -1,
+                                        "id": "VV_TEXTINPUTBOXMPZ_37942518",
+                                        "validateMessageLabel": {
+                                            "defaultValue": {
+                                                "$ref": "../../../../CSTMR/assets/languages/CSTMR.json#/CSTMR/MSG/MSG_CSTMR_ELTELFOID_40988"
+                                            },
+                                            "labelId": "MSG_CSTMR_ELTELFOID_40988",
+                                            "moduleId": "CSTMR"
+                                        },
+                                        "visualValidationType": {
+                                            "description": "Required Validation",
+                                            "visualValidationId": "Required"
+                                        }
+                                    },
+                                    {
+                                        "compareOperator": -1,
+                                        "id": "VV_TEXTINPUTBOXMPZ_37942524",
+                                        "regularExpression": "[0-9]{4,15}",
+                                        "validateMessageLabel": {
+                                            "defaultValue": {
+                                                "$ref": "../../../../CSTMR/assets/languages/CSTMR.json#/CSTMR/MSG/MSG_CSTMR_ELVALORRO_55407"
+                                            },
+                                            "labelId": "MSG_CSTMR_ELVALORRO_55407",
+                                            "moduleId": "CSTMR"
+                                        },
+                                        "visualValidationType": {
+                                            "description": "Regula Expression Validation",
+                                            "visualValidationId": "RegularExpression"
+                                        }
+                                    },
+                                    {
+                                        "compareOperator": 1,
+                                        "id": "VV_TEXTINPUTBOXMPZ_37942577",
+                                        "visualValidationType": {
+                                            "description": "Letters and Numbers, only Numbers, custom list, custom function, lock",
+                                            "visualValidationId": "InputRestriction"
+                                        }
+                                    },
+                                    {
+                                        "compareOperator": -1,
+                                        "id": "VV_TEXTINPUTBOXMPZ_37942552",
+                                        "visualValidationType": {
+                                            "description": "Custom Validation",
+                                            "visualValidationId": "CustomValidate"
+                                        }
+                                    }
+                                ],
+                                "colSpan": 2,
+                                "componentInGrid": false,
+                                "componentStyle": null,
+                                "customEvents": [
+                                    {
+                                        "customEventId": "CEVA_316VA_TEXTINPUTBOXMPZ_379425_512",
+                                        "customizationLayer": 0,
+                                        "customizationLayerDescription": "ECU",
+                                        "enabled": "T",
+                                        "executionType": 1,
+                                        "filter": null,
+                                        "isEnabled": true,
+                                        "visualAttributeEventType": {
+                                            "availableExecutionType": 1,
+                                            "description": "Permite personalizar una validacion asociada a un visual attribute",
+                                            "eventId": 316,
+                                            "name": "CustomValidate"
+                                        }
+                                    }
+                                ],
+                                "customizationLayer": 0,
+                                "customizationLayerDescription": "ECU",
+                                "enabled": 4095,
+                                "include": 4095,
+                                "label": {
+                                    "defaultValue": {
+                                        "$ref": "../../../../CSTMR/assets/languages/CSTMR.json#/CSTMR/LBL/LBL_CSTMR_TELFONOVK_75532"
+                                    },
+                                    "labelId": "LBL_CSTMR_TELFONOVK_75532",
+                                    "moduleId": "CSTMR"
+                                },
+                                "maxRecords": null,
+                                "name": "phone",
+                                "options": 0,
+                                "order": 5,
+                                "readOnly": 8,
+                                "responsiveLayouts": null,
+                                "responsivity": false,
+                                "sizeWidthComposite": null,
+                                "style": null,
+                                "textRows": 0,
+                                "userControl": {
+                                    "type": "I",
+                                    "userControlId": "TextInputBox"
+                                },
+                                "visible": 4095,
+                                "visualAttributeId": "VA_TEXTINPUTBOXMPZ_379425",
+                                "width": null,
+                                "widthComposite": "D"
+                            },
+                            {
+                                "aggregate": null,
+                                "aggregateId": null,
+                                "attribute": {
+                                    "$ref": "../../../../CSTMR/entities/EN_SPOUSEPNN_845.json#/attributes/AT35_SECONDAR845"
+                                },
+                                "attributeValidations": [
+                                    {
+                                        "compareOperator": 3,
+                                        "id": "VV_TEXTINPUTBOXPLP_55642586",
+                                        "visualValidationType": {
+                                            "description": "Letters and Numbers, only Numbers, custom list, custom function, lock",
+                                            "visualValidationId": "InputRestriction"
+                                        }
+                                    },
+                                    {
+                                        "compareOperator": -1,
+                                        "id": "VV_TEXTINPUTBOXPLP_55642586",
+                                        "regularExpression": "^(?!\\s)(?!.*\\s$)(?!.*(\\s)\\1)[a-zA-Z\\u00D1\\u00F1\\u00E1\\u00E9\\u00ED\\u00F3\\u00FA\\u00C1\\u00C9\\u00CD\\u00D3\\u00DA ]",
+                                        "validateMessageLabel": {
+                                            "defaultValue": {
+                                                "$ref": "../../../../CSTMR/assets/languages/CSTMR.json#/CSTMR/MSG/MSG_CSTMR_VALIDARAI_68527"
+                                            },
+                                            "labelId": "MSG_CSTMR_VALIDARAI_68527",
+                                            "moduleId": "CSTMR"
+                                        },
+                                        "visualValidationType": {
+                                            "description": "Regula Expression Validation",
+                                            "visualValidationId": "RegularExpression"
+                                        }
+                                    }
+                                ],
+                                "colSpan": 2,
+                                "componentInGrid": false,
+                                "componentStyle": null,
+                                "customEvents": [
+                                    {
+                                        "customEventId": "CEVA_317VA_TEXTINPUTBOXPLP_556425_198",
+                                        "customizationLayer": 0,
+                                        "customizationLayerDescription": "ECU",
+                                        "enabled": "T",
+                                        "executionType": 1,
+                                        "filter": null,
+                                        "isEnabled": true,
+                                        "visualAttributeEventType": {
+                                            "availableExecutionType": 1,
+                                            "description": "Permite personalizar una validacion asociada a un visual attribute a travÃ©s de un inputRestrictions",
+                                            "eventId": 317,
+                                            "name": "customValidation"
+                                        }
+                                    },
+                                    {
+                                        "customEventId": "CEVA_104VA_TEXTINPUTBOXPLP_556425_469",
+                                        "customizationLayer": 0,
+                                        "customizationLayerDescription": "ECU",
+                                        "enabled": "T",
+                                        "executionType": 1,
+                                        "filter": null,
+                                        "isEnabled": true,
+                                        "visualAttributeEventType": {
+                                            "availableExecutionType": 7,
+                                            "description": "Se ejecuta al cambiar el valor de un VisualAttribute",
+                                            "eventId": 104,
+                                            "name": "Changed"
+                                        }
+                                    }
+                                ],
+                                "customizationLayer": 0,
+                                "customizationLayerDescription": "ECU",
+                                "enabled": 4095,
+                                "include": 4095,
+                                "label": {
+                                    "defaultValue": {
+                                        "$ref": "../../../../CSTMR/assets/languages/CSTMR.json#/CSTMR/LBL/LBL_CSTMR_APELLIDAE_84502"
+                                    },
+                                    "labelId": "LBL_CSTMR_APELLIDAE_84502",
+                                    "moduleId": "CSTMR"
+                                },
+                                "maxRecords": null,
+                                "name": "secondSurname",
+                                "options": 32,
+                                "order": 4,
+                                "readOnly": 8,
+                                "responsiveLayouts": null,
+                                "responsivity": false,
+                                "sizeWidthComposite": null,
+                                "style": null,
+                                "textRows": 0,
+                                "userControl": {
+                                    "type": "I",
+                                    "userControlId": "TextInputBox"
+                                },
+                                "visible": 4095,
+                                "visualAttributeId": "VA_TEXTINPUTBOXPLP_556425",
+                                "width": null,
+                                "widthComposite": "D"
+                            },
+                            {
+                                "aggregate": null,
+                                "aggregateId": null,
+                                "attribute": {
+                                    "$ref": "../../../../CSTMR/entities/EN_SPOUSEPNN_845.json#/attributes/AT58_FIRSTNMA845"
+                                },
+                                "attributeValidations": [
+                                    {
+                                        "compareOperator": -1,
+                                        "id": "VV_TEXTINPUTBOXTLP_40442581",
+                                        "validateMessageLabel": {
+                                            "defaultValue": {
+                                                "$ref": "../../../../CSTMR/assets/languages/CSTMR.json#/CSTMR/MSG/MSG_CSTMR_ELPRIMESO_64571"
+                                            },
+                                            "labelId": "MSG_CSTMR_ELPRIMESO_64571",
+                                            "moduleId": "CSTMR"
+                                        },
+                                        "visualValidationType": {
+                                            "description": "Required Validation",
+                                            "visualValidationId": "Required"
+                                        }
+                                    },
+                                    {
+                                        "compareOperator": 3,
+                                        "id": "VV_TEXTINPUTBOXTLP_40442515",
+                                        "visualValidationType": {
+                                            "description": "Letters and Numbers, only Numbers, custom list, custom function, lock",
+                                            "visualValidationId": "InputRestriction"
+                                        }
+                                    },
+                                    {
+                                        "compareOperator": -1,
+                                        "id": "VV_TEXTINPUTBOXTLP_40442559",
+                                        "regularExpression": "^(?!\\s)(?!.*\\s$)[a-zA-Z\\u00D1\\u00F1\\u00E1\\u00E9\\u00ED\\u00F3\\u00FA\\u00C1\\u00C9\\u00CD\\u00D3\\u00DA.]",
+                                        "validateMessageLabel": {
+                                            "defaultValue": {
+                                                "$ref": "../../../../CSTMR/assets/languages/CSTMR.json#/CSTMR/MSG/MSG_CSTMR_VALIDARNO_55637"
+                                            },
+                                            "labelId": "MSG_CSTMR_VALIDARNO_55637",
+                                            "moduleId": "CSTMR"
+                                        },
+                                        "visualValidationType": {
+                                            "description": "Regula Expression Validation",
+                                            "visualValidationId": "RegularExpression"
+                                        }
+                                    }
+                                ],
+                                "colSpan": 2,
+                                "componentInGrid": false,
+                                "componentStyle": null,
+                                "customEvents": [
+                                    {
+                                        "customEventId": "CEVA_317VA_TEXTINPUTBOXTLP_404425_279",
+                                        "customizationLayer": 0,
+                                        "customizationLayerDescription": "ECU",
+                                        "enabled": "T",
+                                        "executionType": 1,
+                                        "filter": null,
+                                        "isEnabled": true,
+                                        "visualAttributeEventType": {
+                                            "availableExecutionType": 1,
+                                            "description": "Permite personalizar una validacion asociada a un visual attribute a travÃ©s de un inputRestrictions",
+                                            "eventId": 317,
+                                            "name": "customValidation"
+                                        }
+                                    },
+                                    {
+                                        "customEventId": "CEVA_104VA_TEXTINPUTBOXTLP_404425_223",
+                                        "customizationLayer": 0,
+                                        "customizationLayerDescription": "ECU",
+                                        "enabled": "T",
+                                        "executionType": 1,
+                                        "filter": null,
+                                        "isEnabled": true,
+                                        "visualAttributeEventType": {
+                                            "availableExecutionType": 7,
+                                            "description": "Se ejecuta al cambiar el valor de un VisualAttribute",
+                                            "eventId": 104,
+                                            "name": "Changed"
+                                        }
+                                    }
+                                ],
+                                "customizationLayer": 0,
+                                "customizationLayerDescription": "ECU",
+                                "enabled": 4095,
+                                "include": 4095,
+                                "label": {
+                                    "defaultValue": {
+                                        "$ref": "../../../../CSTMR/assets/languages/CSTMR.json#/CSTMR/LBL/LBL_CSTMR_PRIMERNRB_92048"
+                                    },
+                                    "labelId": "LBL_CSTMR_PRIMERNRB_92048",
+                                    "moduleId": "CSTMR"
+                                },
+                                "maxRecords": null,
+                                "name": "firstName",
+                                "options": 32,
+                                "order": 1,
+                                "readOnly": 8,
+                                "responsiveLayouts": null,
+                                "responsivity": false,
+                                "sizeWidthComposite": null,
+                                "style": null,
+                                "textRows": 0,
+                                "userControl": {
+                                    "type": "I",
+                                    "userControlId": "TextInputBox"
+                                },
+                                "visible": 4095,
+                                "visualAttributeId": "VA_TEXTINPUTBOXTLP_404425",
+                                "width": null,
+                                "widthComposite": "D"
+                            },
+                            {
+                                "aggregate": null,
+                                "aggregateId": null,
+                                "attribute": {
+                                    "$ref": "../../../../CSTMR/entities/EN_SPOUSEPNN_845.json#/attributes/AT28_SECONDME845"
+                                },
+                                "attributeValidations": [
+                                    {
+                                        "compareOperator": 3,
+                                        "id": "VV_TEXTINPUTBOXXTU_73842571",
+                                        "visualValidationType": {
+                                            "description": "Letters and Numbers, only Numbers, custom list, custom function, lock",
+                                            "visualValidationId": "InputRestriction"
+                                        }
+                                    },
+                                    {
+                                        "compareOperator": -1,
+                                        "id": "VV_TEXTINPUTBOXXTU_73842538",
+                                        "regularExpression": "^(?!\\s)(?!.*\\s$)(?!.*(\\s)\\1)[a-zA-Z\\u00D1\\u00F1\\u00E1\\u00E9\\u00ED\\u00F3\\u00FA\\u00C1\\u00C9\\u00CD\\u00D3\\u00DA ]",
+                                        "validateMessageLabel": {
+                                            "defaultValue": {
+                                                "$ref": "../../../../CSTMR/assets/languages/CSTMR.json#/CSTMR/MSG/MSG_CSTMR_VALIDARAI_68527"
+                                            },
+                                            "labelId": "MSG_CSTMR_VALIDARAI_68527",
+                                            "moduleId": "CSTMR"
+                                        },
+                                        "visualValidationType": {
+                                            "description": "Regula Expression Validation",
+                                            "visualValidationId": "RegularExpression"
+                                        }
+                                    }
+                                ],
+                                "colSpan": 2,
+                                "componentInGrid": false,
+                                "componentStyle": null,
+                                "customEvents": [
+                                    {
+                                        "customEventId": "CEVA_317VA_TEXTINPUTBOXXTU_738425_627",
+                                        "customizationLayer": 0,
+                                        "customizationLayerDescription": "ECU",
+                                        "enabled": "T",
+                                        "executionType": 1,
+                                        "filter": null,
+                                        "isEnabled": true,
+                                        "visualAttributeEventType": {
+                                            "availableExecutionType": 1,
+                                            "description": "Permite personalizar una validacion asociada a un visual attribute a travÃ©s de un inputRestrictions",
+                                            "eventId": 317,
+                                            "name": "customValidation"
+                                        }
+                                    },
+                                    {
+                                        "customEventId": "CEVA_104VA_TEXTINPUTBOXXTU_738425_518",
+                                        "customizationLayer": 0,
+                                        "customizationLayerDescription": "ECU",
+                                        "enabled": "T",
+                                        "executionType": 1,
+                                        "filter": null,
+                                        "isEnabled": true,
+                                        "visualAttributeEventType": {
+                                            "availableExecutionType": 7,
+                                            "description": "Se ejecuta al cambiar el valor de un VisualAttribute",
+                                            "eventId": 104,
+                                            "name": "Changed"
+                                        }
+                                    }
+                                ],
+                                "customizationLayer": 0,
+                                "customizationLayerDescription": "ECU",
+                                "enabled": 4095,
+                                "include": 4095,
+                                "label": {
+                                    "defaultValue": {
+                                        "$ref": "../../../../CSTMR/assets/languages/CSTMR.json#/CSTMR/LBL/LBL_CSTMR_SEGUNDONS_72239"
+                                    },
+                                    "labelId": "LBL_CSTMR_SEGUNDONS_72239",
+                                    "moduleId": "CSTMR"
+                                },
+                                "maxRecords": null,
+                                "name": "secondName",
+                                "options": 32,
+                                "order": 2,
+                                "readOnly": 8,
+                                "responsiveLayouts": null,
+                                "responsivity": false,
+                                "sizeWidthComposite": null,
+                                "style": null,
+                                "textRows": 0,
+                                "userControl": {
+                                    "type": "I",
+                                    "userControlId": "TextInputBox"
+                                },
+                                "visible": 4095,
+                                "visualAttributeId": "VA_TEXTINPUTBOXXTU_738425",
+                                "width": null,
+                                "widthComposite": "D"
+                            },
+                            {
+                                "aggregate": null,
+                                "aggregateId": null,
+                                "attributeValidations": [
+                                ],
+                                "colSpan": 2,
+                                "componentInGrid": false,
+                                "componentStyle": null,
+                                "customEvents": [
+                                    {
+                                        "customEventId": "CEVA_010VA_VABUTTONOARJENM_541425_502",
+                                        "customizationLayer": 0,
+                                        "customizationLayerDescription": "ECU",
+                                        "enabled": "T",
+                                        "executionType": 3,
+                                        "filter": null,
+                                        "isEnabled": true,
+                                        "visualAttributeEventType": {
+                                            "availableExecutionType": 7,
+                                            "description": "Permite personalizar la acción a ejecutar de un command o de un ActionControl",
+                                            "eventId": 10,
+                                            "name": "ExecuteCommand"
+                                        }
+                                    }
+                                ],
+                                "customizationLayer": 0,
+                                "customizationLayerDescription": "ECU",
+                                "enabled": 4095,
+                                "entityQuery": null,
+                                "include": 4095,
+                                "label": {
+                                    "defaultValue": {
+                                        "$ref": "../../../../CSTMR/assets/languages/CSTMR.json#/CSTMR/LBL/LBL_CSTMR_GUARDARUC_79807"
+                                    },
+                                    "labelId": "LBL_CSTMR_GUARDARUC_79807",
+                                    "moduleId": "CSTMR"
+                                },
+                                "maxRecords": null,
+                                "name": "VA_VABUTTONOARJENM_541425",
+                                "options": 8,
+                                "order": 7,
+                                "queryModule": null,
+                                "queryVersion": null,
+                                "responsiveLayouts": null,
+                                "responsivity": false,
+                                "sizeWidthComposite": null,
+                                "style": null,
+                                "userControl": {
+                                    "type": "A",
+                                    "userControlId": "Button"
+                                },
+                                "visible": 4095,
+                                "visualAttributeId": "VA_VABUTTONOARJENM_541425",
+                                "width": null,
+                                "widthComposite": "D"
+                            },
+                            {
+                                "aggregate": null,
+                                "aggregateId": null,
+                                "attributeValidations": [
+                                ],
+                                "colSpan": 1,
+                                "componentInGrid": false,
+                                "componentStyle": null,
+                                "customEvents": [
+                                    {
+                                        "customEventId": "CEVA_010VA_VABUTTONSTVQSJN_350425_223",
+                                        "customizationLayer": 0,
+                                        "customizationLayerDescription": "ECU",
+                                        "enabled": "T",
+                                        "executionType": 3,
+                                        "filter": null,
+                                        "isEnabled": true,
+                                        "visualAttributeEventType": {
+                                            "availableExecutionType": 7,
+                                            "description": "Permite personalizar la acción a ejecutar de un command o de un ActionControl",
+                                            "eventId": 10,
+                                            "name": "ExecuteCommand"
+                                        }
+                                    }
+                                ],
+                                "customizationLayer": 0,
+                                "customizationLayerDescription": "ECU",
+                                "enabled": 11,
+                                "entityQuery": null,
+                                "include": 4095,
+                                "maxRecords": null,
+                                "name": "VA_VABUTTONSTVQSJN_350425",
+                                "options": 0,
+                                "order": 8,
+                                "queryModule": null,
+                                "queryVersion": null,
+                                "responsiveLayouts": null,
+                                "responsivity": false,
+                                "sizeWidthComposite": null,
+                                "style": null,
+                                "userControl": {
+                                    "type": "A",
+                                    "userControlId": "Button"
+                                },
+                                "visible": 0,
+                                "visualAttributeId": "VA_VABUTTONSTVQSJN_350425",
+                                "width": null,
+                                "widthComposite": "D"
+                            }
+                        ]
+                    }
+                ],
+                "id": {
+                    "version": "1.0.0",
+                    "viewId": "VW_CUSTOMERSO_425"
+                },
+                "metadataVersion": "6.4.0.5.1903",
+                "modules": [
+                    {
+                        "moduleId": "CSTMR"
+                    }
+                ],
+                "name": "View of CustomerSpouseForm"
+            }
+        }
+    ]
+}

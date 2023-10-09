@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<serviceClass name="Officer" nsBase="COBISCorp.eCOBIS.BusinessProcess.General" namespace="COBISCorp.eCOBIS.BusinessProcess.General.Service" package="cobiscorp.ecobis.businessprocess.general.service" ns="http://service.general.businessprocess.ecobis.cobiscorp" module="BusinessProcess.General" productName="COBISCorp.eCOBIS.BusinessProcess.Service" productVersion="2.0.0.0">
+  <productProperties>
+    <property name="MavenGroupId" value="com.cobiscorp.processapi" />
+    <property name="MavenArtifactId" value="COBISCorp.eCOBIS.BusinessProcess.Service" />
+    <property name="MavenVersion" value="2.0.0.0" />
+  </productProperties>
+  <partialClass name="Officer">
+    <services>
+      <service id="BusinessProcess.General.Officer.GetCodeOfficer" netName="GetCodeOfficer" javaName="getCodeOfficer" mappingType="STORED_PROCEDURE" mapId="78f4bf0f398218e66e98998b459897ab">
+        <documentations default="Español">
+          <documentation id="Español">Obtiene el codigo del oficial</documentation>
+          <documentation id="English">Get the code officer</documentation>
+        </documentations>
+        <SRVMapping name="cobis..sp_consulta_oficial" trnCode="73902">
+          <DTOs>
+            <DTO direction="in" name="OfficerCode" alias="inOfficerCode" namespace="COBISCorp.eCOBIS.BusinessProcess.General.DTO" package="cobiscorp.ecobis.businessprocess.general.dto" ns="http://dto.general.businessprocess.ecobis.cobiscorp" required="true" />
+            <DTO direction="return" name="OfficerCode" alias="returnOfficerCode" namespace="COBISCorp.eCOBIS.BusinessProcess.General.DTO" package="cobiscorp.ecobis.businessprocess.general.dto" ns="http://dto.general.businessprocess.ecobis.cobiscorp" required="true">
+              <properties>
+                <property name="usuario" propertyNet="Usuario" propertyJava="usuario" setterJavaMethod="setUsuario" getterJavaMethod="getUsuario" xsdType="string" netType="string" javaType="String" cobisMapping="" isInherit="false" isComplexType="false" isCollectionType="false" required="false" encrypted="false" maxLength="0" />
+                <property name="oficial" propertyNet="Oficial" propertyJava="oficial" setterJavaMethod="setOficial" getterJavaMethod="getOficial" xsdType="int" netType="int" javaType="int" cobisMapping="" isInherit="false" isComplexType="false" isCollectionType="false" required="true" encrypted="false" maxLength="0" />
+              </properties>
+            </DTO>
+            <DTO direction="out" name="OfficerCode" alias="outOfficerCode" namespace="COBISCorp.eCOBIS.BusinessProcess.General.DTO" package="cobiscorp.ecobis.businessprocess.general.dto" ns="http://dto.general.businessprocess.ecobis.cobiscorp" required="true">
+              <properties>
+                <property name="usuario" propertyNet="Usuario" propertyJava="usuario" setterJavaMethod="setUsuario" getterJavaMethod="getUsuario" xsdType="string" netType="string" javaType="String" cobisMapping="" isInherit="false" isComplexType="false" isCollectionType="false" required="false" encrypted="false" maxLength="0" />
+                <property name="oficial" propertyNet="Oficial" propertyJava="oficial" setterJavaMethod="setOficial" getterJavaMethod="getOficial" xsdType="int" netType="int" javaType="int" cobisMapping="" isInherit="false" isComplexType="false" isCollectionType="false" required="true" encrypted="false" maxLength="0" />
+              </properties>
+            </DTO>
+          </DTOs>
+          <parameterMappings>
+            <parameter name="@i_user" direction="in" mappingDirection="in" dataType="varchar" CTSDataType="SQLVARCHAR" JavaSQLType="VARCHAR" mappingType="DTO" allowNull="false" DTOAlias="inOfficerCode" DTOPropertyName="usuario" />
+          </parameterMappings>
+          <resultMappings>
+            <result>
+              <DTOResult DTOAlias="returnOfficerCode" MapReturn="true">
+                <columnMapping position="0" name="oficial" DTOPropertyName="oficial" DataType="int" Format="" />
+              </DTOResult>
+            </result>
+          </resultMappings>
+          <MappingProperties>
+            <MappingProperty key="singleResult1" value="true" />
+          </MappingProperties>
+        </SRVMapping>
+      </service>
+      <service id="BusinessProcess.General.Officer.UpdateCreditOfficer" netName="UpdateCreditOfficer" javaName="updateCreditOfficer" mappingType="STORED_PROCEDURE" mapId="61328c96b09ebd25ec974cc7f9430f8b">
+        <documentations default="Español">
+          <documentation id="Español">Actualiza el Oficial de Crédito</documentation>
+          <documentation id="English">Upgrade Credit Officer</documentation>
+        </documentations>
+        <SRVMapping name="cob_credito..sp_update_officer" trnCode="73916">
+          <DTOs>
+            <DTO direction="in" name="UpdateOfficer" alias="inUpdateOfficer" namespace="COBISCorp.eCOBIS.BusinessProcess.General.DTO" package="cobiscorp.ecobis.businessprocess.general.dto" ns="http://dto.general.businessprocess.ecobis.cobiscorp" required="true" />
+          </DTOs>
+          <parameterMappings>
+            <parameter name="@i_tramite" direction="in" mappingDirection="in" dataType="int" CTSDataType="SQLINT4" JavaSQLType="INTEGER" mappingType="DTO" allowNull="false" DTOAlias="inUpdateOfficer" DTOPropertyName="creditCode" />
+            <parameter name="@i_login" direction="in" mappingDirection="in" dataType="varchar" CTSDataType="SQLVARCHAR" JavaSQLType="VARCHAR" mappingType="DTO" allowNull="false" DTOAlias="inUpdateOfficer" DTOPropertyName="login" />
+            <parameter name="@i_operacion" direction="in" mappingDirection="in" dataType="char" CTSDataType="SQLCHAR" JavaSQLType="CHAR" mappingType="CONSTANT" allowNull="false" contantValue="U" />
+          </parameterMappings>
+          <resultMappings />
+          <MappingProperties />
+        </SRVMapping>
+      </service>
+    </services>
+  </partialClass>
+</serviceClass>

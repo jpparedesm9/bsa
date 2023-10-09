@@ -1,0 +1,139 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<procedure>
+  <database>cob_cartera</database>
+  <name>sp_desembolso</name>
+  <type>SYBASE</type>
+  <version>1</version>
+  <parameters>
+    <parameter name="@i_automatico" dataType="char" direction="in" />
+    <parameter name="@i_banco_ficticio" dataType="varchar" direction="in" />
+    <parameter name="@i_banco_real" dataType="varchar" direction="in" />
+    <parameter name="@i_beneficiario" dataType="varchar" direction="in" />
+    <parameter name="@i_consulta" dataType="char" direction="in" />
+    <parameter name="@i_cotiz_ds" dataType="float" direction="in" />
+    <parameter name="@i_cotiz_op" dataType="float" direction="in" />
+    <parameter name="@i_cuenta" dataType="varchar" direction="in" />
+    <parameter name="@i_descripcion" dataType="varchar" direction="in" />
+    <parameter name="@i_desembolso" dataType="tinyint" direction="in" />
+    <parameter name="@i_externo" dataType="char" direction="in" />
+    <parameter name="@i_formato_fecha" dataType="int" direction="in" />
+    <parameter name="@i_moneda_ds" dataType="tinyint" direction="in" />
+    <parameter name="@i_moneda_op" dataType="tinyint" direction="in" />
+    <parameter name="@i_monto_ds" dataType="money" direction="in" />
+    <parameter name="@i_monto_ds_dec" dataType="float" direction="in" />
+    <parameter name="@i_numero" dataType="smallint" direction="in" />
+    <parameter name="@i_observaciones" dataType="varchar" direction="in" />
+    <parameter name="@i_ofi_imp_chq" dataType="int" direction="in" />
+    <parameter name="@i_oficina_chg" dataType="int" direction="in" />
+    <parameter name="@i_operacion" dataType="char" direction="in" />
+    <parameter name="@i_originador" dataType="char" direction="in" />
+    <parameter name="@i_pasar_tmp" dataType="char" direction="in" />
+    <parameter name="@i_producto" dataType="varchar" direction="in" />
+    <parameter name="@i_renovacion" dataType="char" direction="in" />
+    <parameter name="@i_secuencial" dataType="int" direction="in" />
+    <parameter name="@i_tcotiz_ds" dataType="char" direction="in" />
+    <parameter name="@i_tcotiz_op" dataType="char" direction="in" />
+    <parameter name="@o_monto_liq" dataType="char" direction="out" />
+    <parameter name="@s_corr" dataType="char" direction="in" />
+    <parameter name="@s_date" dataType="datetime" direction="in" />
+    <parameter name="@s_ofi" dataType="smallint" direction="in" />
+    <parameter name="@s_sesn" dataType="int" direction="in" />
+    <parameter name="@s_srv" dataType="varchar" direction="in" />
+    <parameter name="@s_ssn" dataType="int" direction="in" />
+    <parameter name="@s_ssn_corr" dataType="int" direction="in" />
+    <parameter name="@s_term" dataType="varchar" direction="in" />
+    <parameter name="@s_user" dataType="varchar" direction="in" />
+    <parameter name="@t_debug" dataType="char" direction="in" />
+    <parameter name="@t_file" dataType="varchar" direction="in" />
+    <parameter name="@t_rty" dataType="char" direction="in" />
+    <parameter name="@t_show_version" dataType="bit" direction="in" />
+    <parameter name="@t_trn" dataType="smallint" direction="in" />
+    <parameter name="@i_grupo_id" dataType="int" direction="in" />
+    <parameter name="@i_grupal" dataType="char" direction="in" />
+    <parameter name="@i_tramite" dataType="int" direction="in" />
+  </parameters>
+  <queries>
+    <query>
+      <columns>
+        <column name="operationType" />
+        <column name="descriptionOperation" />
+        <column name="currency" />
+        <column name="descriptionCurrency" />
+        <column name="amountOpt" />
+        <column name="amountApproved" />
+        <column name="lastProcessDate" />
+        <column name="officeName" />
+        <column name="valueDiscount" />
+        <column name="valueDisburse" />
+        <column name="clienteId" />
+        <column name="productId" />
+        <column name="typeOpt" />
+        <column name="applyNegotiation" />
+        <column name="exchangeRate" />
+        <column name="optTitular" />
+        <column name="{17}" />
+        <column name="portfolioKind" />
+        <column name="status" />
+        <column name="officeId" />
+        <column name="tramitId" />
+        <column name="nroBmiOpt" />
+      </columns>
+      <queryText></queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="concept" />
+        <column name=" description" />
+        <column name=" amount" />
+        <column name=" sign" />
+        <column name=" chargeForm" />
+        <column name=" account" />
+        <column name=" paymentForm" />
+        <column name=" accountP" />
+        <column name=" valor1" />
+        <column name=" valor2" />
+        <column name=" valor3" />
+        <column name="valor4" />
+        <column name="valor5" />
+        <column name="valor6" />
+        <column name="valor7" />
+        <column name="valor8" />
+        <column name="valor9" />
+        <column name="valor10" />
+        <column name="valor11" />
+        <column name="valor12" />
+        <column name="valor13" />
+        <column name="valor14" />
+        <column name="valor15" />
+      </columns>
+      <queryText></queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="disbursement" />
+        <column name="product" />
+        <column name="currency" />
+        <column name="currencyDescription" />
+        <column name="amount" />
+        <column name="tQuote" />
+        <column name="quote" />
+        <column name="amountm" />
+        <column name="quotetm" />
+        <column name="cotizacionom" />
+        <column name="amountmn" />
+        <column name="accountDescription" />
+        <column name="beneficiaryComments" />
+        <column name="office" />
+        <column name="officeName" />
+        <column name="sequential" />
+        <column name="automatic" />
+        <column name="description" />
+        <column name="officeImp" />
+        <column name="oficinaNamemp" />
+        <column name="customerName" />
+        <column name="observations" />
+      </columns>
+      <queryText></queryText>
+    </query>
+  </queries>
+</procedure>

@@ -1,0 +1,101 @@
+{
+    "customEvents": [
+        {
+            "customEventId": "CEQY_130_Q_DEBTORJD_1763_362",
+            "customizationLayer": 0,
+            "customizationLayerDescription": "ECU",
+            "enabled": "T",
+            "executionType": 3,
+            "queryEventType": {
+                "availableExecutionType": 7,
+                "description": "Sobreescribe la ejecución de un Query",
+                "eventId": 130,
+                "name": "ExecuteQuery"
+            }
+        }
+    ],
+    "customizationLayer": 0,
+    "customizationLayerDescription": "ECU",
+    "id": {
+        "queryId": "Q_DEBTORJD_1763",
+        "version": "1.0.0"
+    },
+    "isAutomatic": false,
+    "isImported": false,
+    "mainEntityId": "EN_DEBTORTAZ_977",
+    "mainEntityName": "",
+    "mainEntityVersion": "1.0.0",
+    "name": {
+        "$ref": "../../../LOANS/relations/componentKeys.json#/GROUP/Queries/Q_DEBTORJD_1763/name"
+    },
+    "queryMembers": [
+        {
+            "alias": "members",
+            "attribute": {
+                "$ref": "../../../LOANS/entities/EN_DEBTORTAZ_977.json#/attributes/AT97_MEMBERSS977"
+            },
+            "customizationLayer": null,
+            "customizationLayerDescription": null,
+            "defaultValue": null,
+            "defaultValueDataType": null,
+            "function": null,
+            "operator": null,
+            "order": 1,
+            "orderBy": 0,
+            "orderByDirection": "A",
+            "queryMemberId": "QM_DEBTO3637R215_01",
+            "select": true,
+            "selectStr": "T",
+            "whereStr": "F"
+        },
+        {
+            "alias": "groupId",
+            "attribute": {
+                "$ref": "../../../LOANS/entities/EN_DEBTORTAZ_977.json#/attributes/AT12_GROUPIDD977"
+            },
+            "customizationLayer": null,
+            "customizationLayerDescription": null,
+            "defaultValue": null,
+            "defaultValueDataType": null,
+            "function": null,
+            "operator": null,
+            "order": "2000",
+            "orderBy": 0,
+            "orderByDirection": "A",
+            "queryMemberId": "QM_DEBTOD737R287_01",
+            "select": true,
+            "selectStr": "T",
+            "where": true,
+            "whereStr": "T"
+        },
+        {
+            "alias": "applicationNumber",
+            "attribute": {
+                "$ref": "../../../LOANS/entities/EN_DEBTORTAZ_977.json#/attributes/AT99_APPLICON977"
+            },
+            "customizationLayer": null,
+            "customizationLayerDescription": null,
+            "defaultValue": null,
+            "defaultValueDataType": null,
+            "function": null,
+            "operator": null,
+            "order": "2000",
+            "orderBy": 0,
+            "orderByDirection": "A",
+            "queryMemberId": "QM_DEBTO7D73J143_02",
+            "select": false,
+            "selectStr": "F",
+            "where": true,
+            "whereStr": "T"
+        }
+    ],
+    "sqlWhere": null,
+    "subModules": [
+        {
+            "id": {
+                "moduleId": "LOANS",
+                "subModuleId": "GROUP"
+            }
+        }
+    ]
+}

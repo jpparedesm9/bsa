@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="pagare" pageWidth="595" pageHeight="842" whenNoDataType="AllSectionsNoDetail" columnWidth="547" leftMargin="24" rightMargin="24" topMargin="24" bottomMargin="25" uuid="deec1b21-1036-4734-948b-164547062a2b">
+	<property name="ireport.zoom" value="1.5"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="SUBREPORT_DIR" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["/"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="urlPathSantander" class="java.lang.String"/>
+	<field name="pagareDetalle" class="java.util.List"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<detail>
+		<band height="32">
+			<subreport>
+				<reportElement positionType="Float" stretchType="RelativeToBandHeight" x="0" y="0" width="547" height="32" uuid="5f2f366f-4ed6-40c4-b925-1bb7048b46c6"/>
+				<subreportParameter name="urlPathSantander">
+					<subreportParameterExpression><![CDATA[$P{urlPathSantander}]]></subreportParameterExpression>
+				</subreportParameter>
+				<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($F{pagareDetalle})]]></dataSourceExpression>
+				<subreportExpression><![CDATA[$P{SUBREPORT_DIR} + "pagare_detalle.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+	</detail>
+</jasperReport>

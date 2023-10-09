@@ -1,0 +1,64 @@
+<div ng-controller="clientviewer.standbyController" ng-init="initData()">
+
+    <div id="organizer">
+		<ul kendo-panel-bar class="cb-collapsible">	
+			
+            <li class="k-state-active" ng-show="isVisibleStandbyCreditLine">
+                <span class="k-link k-state-selected" translate>STANDBY.LABELS.LBL_CREDITLINE</span><br/>
+				<div>	
+					<div kendo-grid k-data-source="creditLine" k-selectable="'row'" k-columns="creditlineColumns" k-rebind="creditLine"></div><br/>
+				</div>				
+            </li>
+
+            <li class="k-state-active" ng-show="isVisibleStandbyDomesticCreditLetter">
+                <span class="k-link k-state-selected" translate>STANDBY.LABELS.LBL_DOMESTICCREDITLETTER</span><br/>
+				<div>
+					<div kendo-grid k-data-source="domesticCreditLetters" k-selectable="'row'" k-columns="contingenciesColumns" k-rebind="domesticCreditLetters"></div><br/>
+				</div>				
+            </li>
+
+            <li class="k-state-active" ng-show="isVisibleStandbyImportCreditLetter">
+                <span class="k-link k-state-selected" translate>STANDBY.LABELS.LBL_IMPORTCREDITLETTER</span><br/>
+				<div>
+					<div kendo-grid k-data-source="importCreditLetter" k-selectable="'row'" k-columns="contingenciesColumns" k-rebind="importCreditLetter"></div><br/>
+				</div>
+            </li>
+
+            <li class="k-state-active" ng-show="isVisibleStandbyCreditLetter">
+                <span class="k-link k-state-selected" translate>STANDBY.LABELS.LBL_STANDBYCREDITLETTER</span><br/>
+				<div>				
+					<div kendo-grid k-data-source="standbyCreditLetter" k-selectable="'row'" k-columns="contingenciesColumns" k-rebind="standbyCreditLetter"></div><br/>
+				</div>				
+            </li>
+
+            <li class="k-state-active" ng-show="isVisibleBankEndorsement">
+                <span class="k-link k-state-selected" translate>STANDBY.LABELS.LBL_BANKENDORSEMENT</span><br/>
+				<div>	
+					<div kendo-grid k-data-source="bankEndorsement" k-selectable="'row'" k-columns="contingenciesColumns" k-rebind="bankEndorsement"></div><br/>
+				</div>					
+            </li>
+            <li class="k-state-active" ng-show="isVisibleStandbyforeingBankEndorsement">
+                <span class="k-link k-state-selected" translate>STANDBY.LABELS.LBL_FOREINGBANKENDORSEMENT</span><br/>
+				<div>				
+					<div kendo-grid k-data-source="foreingBankEndorsement" k-selectable="'row'" k-columns="contingenciesColumns" k-rebind="foreingBankEndorsement"></div><br/>
+				</div>					
+            </li>
+
+            <li class="k-state-active" ng-show="isVisibleStandbyBankGuarantee">
+                <span class="k-link k-state-selected" translate>STANDBY.LABELS.LBL_BANKGUARANTEE</span><br/>
+				<div>				
+					<div kendo-grid k-data-source="bankGuarantee" k-selectable="'row'" k-columns="contingenciesColumns" k-rebind="bankGuarantee"></div><br/>
+				</div>					
+            </li>
+
+            <li class="k-state-active" ng-show="isVisibleStandbyExternalGuarantee">
+                <span class="k-link k-state-selected" translate>STANDBY.LABELS.LBL_EXTERNALGUARANTEE</span><br/>
+				<div>				
+					<div kendo-grid k-data-source="externalGuarantee" k-selectable="'row'" k-columns="contingenciesColumns" k-rebind="externalGuarantee"></div><br/>
+				</div>					
+            </li>
+
+        </ul>
+    </div>
+
+</div>

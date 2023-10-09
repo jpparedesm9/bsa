@@ -1,0 +1,83 @@
+<div class="container-fluid">
+
+    <!--  AREA DE IMPRESION -->
+    <div class="form-vertical">
+        <form enctype="multipart/form-data">
+			<div class="row">
+				<div class="col-xs-12">
+					<div class="form-group">
+						<label class="control-label ng-binding" for="operatorsId">Corrresponsal:</label>	
+						<select class="form-control" id="operatorsId" 
+							ng-options="operator.value for operator in operators track by operator.code" 
+							ng-init = "initComboBox()"
+							ng-change = "onChangeComboBox()"
+							ng-model="selected"
+							style="width: 100%;"/>
+					</div>
+				<div/>
+				<div class="col-xs-12">					
+					
+						<div class="form-group" style="border:1px solid #b6c0d0; left:-13px; margin-right:-28px">						
+							<input id="files" name="files" type="file" kendo-upload k-async="{ autoUpload: true }" 
+							k-select="onSelect" k-remove="onDelete" k-error="onError" k-complete="onComplete" k-cancel="onCancel" k-progress="onProgress"
+							k-upload="onUpload" k-success="onSuccess"
+							k-value='Seleccionar' k-multiple="false"/>
+						</div>
+				
+				</div>
+				<div class="col-xs-12">Solo se puede subir archivos con extensión<strong> .csv</strong></div>
+			</div>
+			<div class="row">
+               	<div class="col-xs-3"/>
+				<div class="col-xs-3"/>
+				<div class="col-xs-3"/>
+				<div class="col-xs-3">
+					<p style="padding-top: 1em; text-align: right">
+						<button id="uploadFile" ng-click="uploadFile()" class="btn btn-primary"> 
+							<span translate>Carga Archivo</span >
+						</button>	
+					</p>
+				</div>
+				<div class="col-xs-12">
+					<fieldset class"cb-group cb-group-simple">
+						<legend>
+							<b><span class="cb-title ng-binding" style="font-size:14px">Registro de la Carga</span></b>
+						</legend>						
+					</fieldset>
+					<div class="console-box">					
+						<div class="console-log" id="console">					
+						</div>
+					</div>
+				</div>
+		
+               
+			   
+            </div>
+
+			
+            <script>
+                function addExtensionClass(extension) {
+                    switch (extension) {
+                        case '.xml':
+                            return "fa fa-file-o";
+                        default:
+                            return "fa fa-file-o";
+                    }
+                }
+            </script>
+
+        </form>
+    </div>
+
+    <div class="cb-navbar cb-navbar-bottom">
+        <nav class="cb-navbar cb-navbar-bottom ng-scope">
+            <button class="btn btn-primary navbar-btn" ng-click="ok()">
+                <span>Aceptar</span>
+            </button>
+            <button class="btn btn-default navbar-btn" ng-click="close()" type="button">
+                <span>Cancelar</span>
+            </button>
+        </nav>
+    </div>
+
+</div>

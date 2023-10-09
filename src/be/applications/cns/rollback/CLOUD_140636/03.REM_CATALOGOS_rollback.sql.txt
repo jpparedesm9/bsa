@@ -1,0 +1,28 @@
+
+use cobis
+GO
+
+declare @w_tabla int
+
+
+select @w_tabla = codigo from cobis..cl_tabla where tabla = 'ns_plantilla_sms'
+
+
+delete from cl_catalogo where tabla = @w_tabla
+
+delete from cobis..cl_tabla where tabla = 'ns_plantilla_sms'
+
+
+use cobis
+
+GO
+
+declare @w_tabla int
+
+
+select @w_tabla = codigo from cobis..cl_tabla where tabla = 'ns_bloque_sms'
+
+
+delete from cl_catalogo where tabla = @w_tabla
+
+delete from cobis..cl_tabla where tabla = 'ns_bloque_sms'

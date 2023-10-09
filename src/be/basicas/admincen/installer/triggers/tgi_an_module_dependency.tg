@@ -1,0 +1,57 @@
+use cobis
+go
+if exists (select * from sysobjects where name = 'tgi_an_module_dependency')
+    drop trigger tgi_an_module_dependency
+go
+create trigger tgi_an_module_dependency
+on an_module_dependency
+for insert
+as
+begin
+    declare
+        @w_md_mo_id         int,
+        @w_md_dependency_id int,
+        @w_id               int
+
+    declare cu_inserted cursor for
+        select
+            md_mo_id,
+            md_dependency_id
+          from inserted
+
+    open cu_inserted
+    fetch cu_inserted into
+        @w_md_mo_id,
+        @w_md_dependency_id
+
+    while @@FETCH_STATUS = 0
+    begin
+        select @w_id = sq_siguiente
+        from cob_distrib..di_seqnos
+        where sq_tabla = 'di_log'
+
+        update cob_distrib..di_seqnos
+        set sq_siguiente = sq_siguiente + 1
+        where sq_tabla = 'di_log'
+
+        insert into cob_distrib..di_log (
+            lg_id, lg_fecha, lg_operacion, lg_objeto)
+        values (@w_id, getdate(), 'I', 'cobis..sp_an_module_depend_tg')
+       
+        insert into cob_distrib..di_parametro (
+            pa_id, pa_nombre, pa_tipodato, pa_longitud, pa_int)
+        values (@w_id, '@i_md_mo_id', 56, isnull(datalength(@w_md_mo_id), 0), @w_md_mo_id)
+
+        insert into cob_distrib..di_parametro (
+            pa_id, pa_nombre, pa_tipodato, pa_longitud, pa_int)
+        values (@w_id, '@i_md_dependency_id', 56, isnull(datalength(@w_md_dependency_id), 0), @w_md_dependency_id)
+
+        fetch cu_inserted into
+            @w_md_mo_id,
+            @w_md_dependency_id
+
+    end
+    close cu_inserted
+    deallocate cu_inserted
+end
+go

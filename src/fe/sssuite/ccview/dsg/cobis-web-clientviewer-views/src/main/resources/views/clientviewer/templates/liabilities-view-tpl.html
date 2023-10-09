@@ -1,0 +1,44 @@
+
+<div ng-controller="clientviewer.liabilitiesController">
+
+                <ul kendo-panel-bar class="cb-collapsible">	
+                    <li class="k-state-active" ng-show="isVisiblecurrentAccount">                        
+                        <span class="k-link k-stated-selected" translate>CLIENTVIEWER.LABELS.LBL_CHECKING_ACCOUNT</span><br/>
+						<div>
+							<div kendo-grid k-data-source="currentAccount"                  
+							k-selectable="'row'" 
+							k-columns="currentAccountColumns" 
+							k-rebind="currentAccount"
+                            ng-show="isVisiblecurrentAccount"
+                        ></div>
+						</div>
+					
+                    </li>
+					
+                    <li  ng-show="isVisibleSavingAccounts">                       
+                        <span class="k-link k-stated-selected" translate>CLIENTVIEWER.LABELS.LBL_SAVING_ACCOUNT</span><br/>
+						<div>
+							<div kendo-grid k-data-source="savingAccounts"                  
+							k-selectable="'row'" 
+							k-columns="savingAccountsColumns" 
+							k-rebind="savingAccounts"
+                            ng-show="isVisibleSavingAccounts"
+                        ></div>
+						</div>						
+                    </li>
+					
+                    <li  ng-show="isVisiblefixedTerms">                        
+                        <span class="k-link k-stated-selected" translate>CLIENTVIEWER.LABELS.LBL_FIXED_TERMS</span><br/>
+						<div>		
+							<div kendo-grid k-data-source="fixedTerms"                  
+							k-selectable="'row'" 
+							k-columns="fixedTermsColumns" 
+							k-rebind="fixedTerms"
+                            ng-show="isVisiblefixedTerms"
+                        ></div>
+						</div>						
+                    </li>
+                </ul>
+             
+
+</div>

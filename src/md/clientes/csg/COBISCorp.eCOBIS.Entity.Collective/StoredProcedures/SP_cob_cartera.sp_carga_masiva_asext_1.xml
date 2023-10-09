@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<procedure>
+  <database>cob_cartera</database>
+  <name>sp_carga_masiva_asext</name>
+  <type>SYBASE</type>
+  <version>1</version>
+  <parameters>
+    <parameter name="@s_sesn" dataType="int" direction="in" />
+    <parameter name="@s_ssn" dataType="int" direction="in" />
+    <parameter name="@s_user" dataType="varchar" direction="in" />
+    <parameter name="@s_date" dataType="datetime" direction="in" />
+    <parameter name="@s_ofi" dataType="smallint" direction="in" />
+    <parameter name="@s_term" dataType="varchar" direction="in" />
+    <parameter name="@s_srv" dataType="varchar" direction="in" />
+    <parameter name="@s_lsrv" dataType="varchar" direction="in" />
+    <parameter name="@i_operacion" dataType="char" direction="in" />
+    <parameter name="@t_show_version" dataType="bit" direction="in" />
+    <parameter name="@t_debug" dataType="char" direction="in" />
+    <parameter name="@t_file" dataType="varchar" direction="in" />
+    <parameter name="@i_en_linea" dataType="char" direction="in" />
+    <parameter name="@i_secuencial" dataType="int" direction="in" />
+    <parameter name="@i_colectivo" dataType="varchar" direction="in" />
+    <parameter name="@i_nombre" dataType="varchar" direction="in" />
+    <parameter name="@i_cliente" dataType="varchar" direction="in" />
+    <parameter name="@i_direccion" dataType="varchar" direction="in" />
+    <parameter name="@i_celular" dataType="varchar" direction="in" />
+    <parameter name="@i_email" dataType="varchar" direction="in" />
+    <parameter name="@i_asesor" dataType="varchar" direction="in" />
+    <parameter name="@o_msg" dataType="varchar" direction="out" />
+    <parameter name="@o_sev" dataType="int" direction="out" />
+  </parameters>
+  <queries>
+    <query>
+      <columns>
+        <column name="{1}" />
+        <column name="{2}" />
+        <column name="{3}" />
+        <column name="{4}" />
+        <column name="{5}" />
+        <column name="{6}" />
+        <column name="{7}" />
+        <column name="{8}" />
+      </columns>
+      <queryText>SELECT "id", "Colectivo", "Nombres", "Id_Cliente", "Direccion", "Celular", "Email", "Asesor"</queryText>
+    </query>
+  </queries>
+</procedure>

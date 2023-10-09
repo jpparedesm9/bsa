@@ -1,0 +1,65 @@
+use cobis
+go
+if exists (select * from sysobjects where name = 'tgi_an_query_component')
+    drop trigger tgi_an_query_component
+go
+create trigger tgi_an_query_component
+on an_query_component
+for insert
+as
+begin
+    declare
+        @w_qc_id                        int,
+        @w_qc_interface_full_name       varchar(255),
+        @w_qc_implementation_full_name  varchar(255),
+        @w_id                           int
+
+    declare cu_inserted cursor for
+        select
+            qc_id,
+            qc_interface_full_name,
+            qc_implementation_full_name
+        from inserted
+
+    open cu_inserted
+    fetch cu_inserted into
+        @w_qc_id,
+        @w_qc_interface_full_name,
+        @w_qc_implementation_full_name
+
+    while @@FETCH_STATUS = 0
+    begin
+        select @w_id = sq_siguiente
+        from cob_distrib..di_seqnos
+        where sq_tabla = 'di_log'
+
+        update cob_distrib..di_seqnos
+        set sq_siguiente = sq_siguiente + 1
+        where sq_tabla = 'di_log'
+
+        insert into cob_distrib..di_log (
+            lg_id, lg_fecha, lg_operacion, lg_objeto)
+        values (@w_id, getdate(), 'I', 'cobis..sp_an_query_component_t')
+       
+        insert into cob_distrib..di_parametro (
+            pa_id, pa_nombre, pa_tipodato, pa_longitud, pa_int)
+        values (@w_id, '@i_qc_id', 56, isnull(datalength(@w_qc_id), 0), @w_qc_id)
+
+        insert into cob_distrib..di_parametro (
+            pa_id, pa_nombre, pa_tipodato, pa_longitud, pa_varchar)
+        values (@w_id, '@i_qc_interface_full_name', 39, isnull(datalength(@w_qc_interface_full_name), 0), @w_qc_interface_full_name)
+
+        insert into cob_distrib..di_parametro (
+            pa_id, pa_nombre, pa_tipodato, pa_longitud, pa_varchar)
+        values (@w_id, '@i_qc_implementation_full_name', 39, isnull(datalength(@w_qc_implementation_full_name), 0), @w_qc_implementation_full_name)
+
+        fetch cu_inserted into
+            @w_qc_id,
+            @w_qc_interface_full_name,
+            @w_qc_implementation_full_name
+
+    end
+    close cu_inserted
+    deallocate cu_inserted
+end
+go

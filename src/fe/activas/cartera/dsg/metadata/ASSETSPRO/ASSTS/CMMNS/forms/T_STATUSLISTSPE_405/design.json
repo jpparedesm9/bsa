@@ -1,0 +1,272 @@
+{
+    "autoCrudStr": "F",
+    "commands": [
+    ],
+    "customEvents": [
+    ],
+    "customizationLayer": 0,
+    "customizationLayerDescription": "ECU",
+    "id": {
+        "moduleId": "ASSTS",
+        "subModuleId": "CMMNS",
+        "taskId": "T_STATUSLISTSPE_405",
+        "version": "1.0.0"
+    },
+    "isImported": false,
+    "mainViewContainerId": "VC_STATUSLIST_332405",
+    "modeEnabled": 4095,
+    "name": {
+        "$ref": "../../../../ASSTS/relations/componentKeys.json#/CMMNS/Forms/T_STATUSLISTSPE_405/name"
+    },
+    "tempSaveStr": "F",
+    "viewContainers": [
+        {
+            "breadcrumbs": "Automatic",
+            "colSpan": 1,
+            "collapsedStr": "F",
+            "columnsNum": 1,
+            "componentStyle": null,
+            "customEvents": [
+                {
+                    "customEventId": "CEVC_002T_STATUSLISTSPE_405_337",
+                    "customizationLayer": 0,
+                    "customizationLayerDescription": "ECU",
+                    "enabled": "T",
+                    "executionType": 3,
+                    "filter": null,
+                    "isEnabled": true,
+                    "viewContainerEventType": {
+                        "availableExecutionType": 7,
+                        "description": "Inicialización de datos de un ViewContainer, despues de este evento se realiza el segimiento de cambios en los datos",
+                        "eventId": 2,
+                        "name": "InitData"
+                    }
+                }
+            ],
+            "customizationLayer": 0,
+            "customizationLayerDescription": "ECU",
+            "enabled": 4095,
+            "id": {
+                "moduleId": "ASSTS",
+                "subModuleId": "CMMNS",
+                "taskId": "T_STATUSLISTSPE_405",
+                "taskVersion": "1.0.0",
+                "viewContainerId": "VC_STATUSLIST_332405"
+            },
+            "layoutType": "Group",
+            "name": "StatusListForm",
+            "options": 0,
+            "responsiveLayouts": null,
+            "responsivity": false,
+            "style": null,
+            "view": {
+                "groups": [
+                    {
+                        "collapsedStr": "F",
+                        "columnsNum": 1,
+                        "componentStyle": null,
+                        "customEvents": [
+                        ],
+                        "enabled": 8,
+                        "entity": {
+                            "$ref": "../../../../ASSTS/entities/EN_LOANSTATU_584.json#"
+                        },
+                        "eventType": 0,
+                        "groupId": "G_STATUSLSTS_546707",
+                        "htmlSection": "F",
+                        "independentValidation": "F",
+                        "layoutType": "Group",
+                        "name": "Group1805",
+                        "orientation": "V",
+                        "queryView": {
+                            "actionDesign": "Button",
+                            "actions": [
+                            ],
+                            "allowPaging": false,
+                            "allowPagingStr": "F",
+                            "allowSorting": false,
+                            "allowSortingStr": "F",
+                            "componentStyle": null,
+                            "confirmRowDeletion": false,
+                            "confirmRowDeletionStr": "F",
+                            "customEvents": [
+                                {
+                                    "executionType": 3,
+                                    "queryViewEventType": {
+                                        "availableExecutionType": 7,
+                                        "description": "Se ejecuta antes de que los datos modificados en una grilla sean comprometidos.",
+                                        "eventId": 208,
+                                        "name": "RowSelecting"
+                                    }
+                                }
+                            ],
+                            "customUrlDialog": null,
+                            "customizationLayer": 0,
+                            "customizationLayerDescription": "ECU",
+                            "deleteCommandEnabled": false,
+                            "deleteCommandEnabledStr": "F",
+                            "dialogTitleLabelId": null,
+                            "editCommandEnabled": false,
+                            "editCommandEnabledStr": "F",
+                            "editMode": "0",
+                            "entityName": "LoanStatusChange",
+                            "hasDetail": false,
+                            "hasDetailString": "F",
+                            "height": null,
+                            "includeQueryMembers": [
+                                "AT75_NEWSTATS584"
+                            ],
+                            "insertCommandEnabled": false,
+                            "insertCommandEnabledStr": "F",
+                            "modalSize": null,
+                            "modeSelection": "Simple",
+                            "moduleIdDialog": null,
+                            "multiSelectEnabledStr": "S",
+                            "name": "QV_5541_56326",
+                            "options": 0,
+                            "pageSize": null,
+                            "query": {
+                                "$ref": "../../../../ASSTS/CMMNS/queries/Q_LOANSTNN_5541.json#"
+                            },
+                            "queryId": "Q_LOANSTNN_5541",
+                            "queryVersion": "1.0.0",
+                            "queryViewCustomActions": [
+                            ],
+                            "queryViewId": "QV_5541_56326",
+                            "queryViewType": "Grid",
+                            "rowCommandAppearance": 0,
+                            "style": null,
+                            "subModuleIdDialog": null,
+                            "taskIdDialog": "1.0.0",
+                            "taskVersionDialog": null,
+                            "typeFormDialog": null,
+                            "userControl": {
+                                "customizationLayer": 0,
+                                "customizationLayerDescription": "ECU",
+                                "description": "Designer Grid",
+                                "name": "Designer Grid",
+                                "type": "I",
+                                "userControlId": "Grid"
+                            },
+                            "viewContainerIdDialog": null
+                        },
+                        "queryViewId": "QV_5541_56326",
+                        "responsiveLayouts": null,
+                        "responsivity": false,
+                        "style": null,
+                        "visible": 4095,
+                        "visualAttributes": [
+                            {
+                                "aggregate": null,
+                                "aggregateId": null,
+                                "attribute": {
+                                    "$ref": "../../../../ASSTS/entities/EN_LOANSTATU_584.json#/attributes/AT75_NEWSTATS584"
+                                },
+                                "attributeValidations": [
+                                ],
+                                "colSpan": 1,
+                                "componentInGrid": true,
+                                "componentStyle": null,
+                                "customEvents": [
+                                ],
+                                "customizationLayer": 0,
+                                "customizationLayerDescription": "ECU",
+                                "enabled": 4095,
+                                "include": 4095,
+                                "label": {
+                                    "defaultValue": {
+                                        "$ref": "../../../../ASSTS/assets/languages/ASSTS.json#/ASSTS/LBL/LBL_ASSTS_ESTADOSIP_78723"
+                                    },
+                                    "labelId": "LBL_ASSTS_ESTADOSIP_78723",
+                                    "moduleId": "ASSTS"
+                                },
+                                "maxRecords": null,
+                                "name": "newStatus",
+                                "options": 0,
+                                "order": 1,
+                                "readOnly": 11,
+                                "responsiveLayouts": null,
+                                "responsivity": false,
+                                "sizeWidthComposite": null,
+                                "style": null,
+                                "textRows": 0,
+                                "userControl": {
+                                    "type": "I",
+                                    "userControlId": "TextInputBox"
+                                },
+                                "visible": 4095,
+                                "visualAttributeId": "VA_TEXTINPUTBOXQCD_746707",
+                                "width": null,
+                                "widthComposite": "D"
+                            }
+                        ]
+                    },
+                    {
+                        "collapsedStr": "F",
+                        "columnsNum": 3,
+                        "componentStyle": null,
+                        "customEvents": [
+                        ],
+                        "enabled": 4095,
+                        "entity": {
+                            "$ref": "../../../../ASSTS/entities/EN_LOANKYMRI_882.json#"
+                        },
+                        "eventType": 0,
+                        "groupId": "G_STATUSLSTI_910707",
+                        "htmlSection": "F",
+                        "independentValidation": "F",
+                        "layoutType": "Group",
+                        "name": "Group2188",
+                        "orientation": "V",
+                        "responsiveLayouts": null,
+                        "responsivity": false,
+                        "style": null,
+                        "visible": 4095,
+                        "visualAttributes": [
+                            {
+                                "aggregate": null,
+                                "aggregateId": null,
+                                "attributeValidations": [
+                                ],
+                                "colSpan": 1,
+                                "componentInGrid": false,
+                                "componentStyle": null,
+                                "customEvents": [
+                                ],
+                                "customizationLayer": 0,
+                                "customizationLayerDescription": "ECU",
+                                "include": 4095,
+                                "maxRecords": null,
+                                "name": "Spacer2499",
+                                "options": 0,
+                                "order": 0,
+                                "responsiveLayouts": null,
+                                "responsivity": false,
+                                "sizeWidthComposite": null,
+                                "style": null,
+                                "userControl": {
+                                    "type": "I",
+                                    "userControlId": "Spacer"
+                                },
+                                "visible": 4095,
+                                "visualAttributeId": "Spacer2499",
+                                "width": null,
+                                "widthComposite": "D"
+                            }
+                        ]
+                    }
+                ],
+                "id": {
+                    "version": "1.0.0",
+                    "viewId": "VW_STATUSLISS_707"
+                },
+                "modules": [
+                    {
+                        "moduleId": "ASSTS"
+                    }
+                ],
+                "name": "View of StatusListForm"
+            }
+        }
+    ]
+}

@@ -1,0 +1,86 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<procedure>
+  <database>cob_cartera</database>
+  <name>sp_qr_pagos</name>
+  <type>SQLSERVER</type>
+  <version>1</version>
+  <parameters>
+    <parameter name="@s_sesn" dataType="int" direction="in" />
+    <parameter name="@s_user" dataType="varchar" direction="in" />
+    <parameter name="@s_term" dataType="varchar" direction="in" />
+    <parameter name="@s_date" dataType="datetime" direction="in" />
+    <parameter name="@s_ofi" dataType="smallint" direction="in" />
+    <parameter name="@i_banco" dataType="varchar" direction="in" />
+    <parameter name="@i_formato_fecha" dataType="int" direction="in" />
+    <parameter name="@i_tipo_pago" dataType="char" direction="in" />
+    <parameter name="@i_tipo_pago_can" dataType="char" direction="in" />
+    <parameter name="@i_cancela" dataType="char" direction="in" />
+    <parameter name="@i_calcula_devolucion" dataType="char" direction="in" />
+  </parameters>
+  <queries>
+    <query>
+      <columns>
+        <column name="{1}" />
+        <column name="{2}" />
+        <column name="{3}" />
+        <column name="{4}" />
+        <column name="{5}" />
+        <column name="{6}" />
+        <column name="{7}" />
+        <column name="{8}" />
+        <column name="{9}" />
+        <column name="{10}" />
+        <column name="{11}" />
+        <column name="{12}" />
+        <column name="{13}" />
+        <column name="{14}" />
+        <column name="{15}" />
+        <column name="{16}" />
+        <column name="{17}" />
+        <column name="{18}" />
+        <column name="{19}" />
+        <column name="{20}" />
+      </columns>
+      <queryText>SELECT  op_toperacion,op_banco,op_moneda,op_tipo,op_oficina,ROUND (CONVERT (FLOAT,op_monto_aprobado ), ?),ROUND (CONVERT (FLOAT,op_monto ), ?),CONVERT (VARCHAR,op_fecha_fin ,?),op_cliente,op_nombre,es_descripcion,CONVERT (VARCHAR,? ,?),op_tipo_cobro,op_aceptar_anticipos,op_tipo_reduccion,op_tipo_aplicacion,op_cuota_completa,CONVERT (VARCHAR,op_fecha_ult_proceso ,?),op_calcula_devolucion,? </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="CONCEPTO " />
+        <column name="DESCRIPCION " />
+        <column name="VENCIDO " />
+        <column name="VIGENTE " />
+        <column name="RECONO " />
+        <column name="DEVOLUCION " />
+        <column name="TOTAL " />
+      </columns>
+      <queryText>SELECT  CONCEPTO = ISNULL (concepto, ""),DESCRIPCION = ISNULL (descripcion, ""),VENCIDO = ROUND (CONVERT (FLOAT,ISNULL (vencido1, 0) ), ?),VIGENTE = ROUND (CONVERT (FLOAT,ISNULL (vigente1, 0) ), ?),RECONO = ROUND (CONVERT (FLOAT,ISNULL (recono, 0) ), ?),DEVOLUCION = ROUND (CONVERT (FLOAT,ISNULL (devolucion, 0) ), ?),TOTAL = ROUND (CONVERT (MONEY,ISNULL (subtotal1, 0) ), ?) </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="{1}" />
+        <column name="{2}" />
+        <column name="{3}" />
+      </columns>
+      <queryText>SELECT  ro_concepto,co_descripcion,ro_prioridad </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="{1}" />
+      </columns>
+      <queryText>SELECT w_ro_porcentaje</queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="{1}" />
+      </columns>
+      <queryText>SELECT w_saldo_cap</queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="{1}" />
+        <column name="{2}" />
+      </columns>
+      <queryText>SELECT w_alerta</queryText>
+    </query>
+  </queries>
+</procedure>

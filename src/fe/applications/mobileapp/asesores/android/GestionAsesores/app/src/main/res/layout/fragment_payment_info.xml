@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingBottom="@dimen/activity_vertical_margin"
+        android:paddingEnd="@dimen/activity_horizontal_margin"
+        android:paddingStart="@dimen/activity_horizontal_margin"
+        android:paddingTop="@dimen/activity_vertical_margin">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:baselineAligned="false"
+            android:orientation="horizontal">
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/input_layout_cycle_number"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1">
+
+                <android.support.design.widget.TextInputEditText
+                    android:id="@+id/input_cycle_number"
+                    style="@style/Form.FieldReadOnly"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/form_hint_cycle_number"
+                    android:inputType="number"
+                    />
+            </android.support.design.widget.TextInputLayout>
+        </LinearLayout>
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/input_layout_guarantee_balance"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.cobis.gestionasesores.widgets.currencyfield.CurrencyInputEditText
+                android:id="@+id/input_guarantee_balance"
+                style="@style/Form.FieldReadOnly"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/solidarity_payment_hint_guarantee_balance"/>
+        </android.support.design.widget.TextInputLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:baselineAligned="false"
+            android:orientation="horizontal">
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/input_layout_rate"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1">
+
+                <android.support.design.widget.TextInputEditText
+                    android:id="@+id/input_rate"
+                    style="@style/Form.FieldReadOnly"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/form_hint_app_rate"
+                    android:inputType="text"/>
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/input_layout_term"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1">
+
+                <android.support.design.widget.TextInputEditText
+                    android:id="@+id/input_term"
+                    style="@style/Form.FieldReadOnly"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/form_hint_app_term"
+                    android:inputType="text"/>
+            </android.support.design.widget.TextInputLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:baselineAligned="false"
+            android:orientation="horizontal">
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/input_layout_overdue_payments"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1">
+
+                <android.support.design.widget.TextInputEditText
+                    android:id="@+id/input_overdue_payments"
+                    style="@style/Form.FieldReadOnly"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/solidarity_payment_hint_overdue_payments"
+                    android:inputType="text"/>
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/input_layout_next_due_date"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1">
+
+                <android.support.design.widget.TextInputEditText
+                    android:id="@+id/input_next_due_date"
+                    style="@style/Form.FieldReadOnly"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/solidarity_payment_hint_next_due_date"
+                    android:inputType="text"/>
+            </android.support.design.widget.TextInputLayout>
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>

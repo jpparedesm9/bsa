@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="informationHeadlineMedicalRen" pageWidth="574" pageHeight="400" columnWidth="574" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="2624157c-a7db-4394-a97d-a97e315597f4">
+	<property name="com.jaspersoft.studio.unit." value="pixel"/>
+	<property name="ireport.zoom" value="1.9487171000000014"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="fullName" class="java.lang.String">
+		<fieldDescription><![CDATA[fullName]]></fieldDescription>
+	</field>
+	<field name="birthDate" class="java.lang.String">
+		<fieldDescription><![CDATA[birthDate]]></fieldDescription>
+	</field>
+	<title>
+		<band height="20">
+			<rectangle radius="10">
+				<reportElement x="-1" y="0" width="576" height="20" forecolor="#CCCCCC" backcolor="#999999" uuid="e0fcc2f6-a580-45b6-8552-b3ee2bdd7583"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="-1" y="10" width="576" height="10" forecolor="#999999" backcolor="#999999" uuid="b6254d3e-e64a-4e7e-bd8c-06fc75b968cf"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="399" y="0" width="175" height="20" forecolor="#FFFFFF" uuid="c9a521b9-207f-4d31-95f3-753199bba99c"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="none">
+					<font size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[FECHA NACIMIENTO:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Transparent" x="0" y="0" width="399" height="20" forecolor="#FFFFFF" uuid="58ccb240-b914-4dab-a3db-daedba465acc"/>
+				<textElement verticalAlignment="Middle" markup="none">
+					<font size="10" isBold="true"/>
+					<paragraph leftIndent="10"/>
+				</textElement>
+				<text><![CDATA[NOMBRE COMPLETO:]]></text>
+			</staticText>
+		</band>
+	</title>
+	<detail>
+		<band height="20">
+			<textField>
+				<reportElement x="0" y="0" width="399" height="20" uuid="95a5df30-c51b-4f12-adaa-7493b0b4162a"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font size="8"/>
+					<paragraph firstLineIndent="1" leftIndent="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{fullName}]]></textFieldExpression>
+			</textField>
+			<textField pattern="dd/MM/yyyy">
+				<reportElement x="399" y="0" width="175" height="20" uuid="5cb1855e-ff61-4229-8921-230e9b224647"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8"/>
+					<paragraph firstLineIndent="1"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{birthDate}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

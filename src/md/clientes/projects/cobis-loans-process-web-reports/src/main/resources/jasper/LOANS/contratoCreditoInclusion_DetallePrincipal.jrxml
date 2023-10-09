@@ -1,0 +1,390 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="contratoCreditoInclusion_Detalle" pageWidth="547" pageHeight="794" whenNoDataType="AllSectionsNoDetail" columnWidth="547" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="deec1b21-1036-4734-948b-164547062a2b">
+	<property name="ireport.zoom" value="1.5"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="416"/>
+	<parameter name="SUBREPORT_DIR" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["/"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="urlPathSantander" class="java.lang.String"/>
+	<parameter name="firmaNF1CCI" class="java.lang.String"/>
+	<parameter name="firmaNF2CCI" class="java.lang.String"/>
+	<parameter name="firmaNB1CCI" class="java.lang.String"/>
+	<parameter name="firmaNB2CCI" class="java.lang.String"/>
+	<field name="nombreCliente" class="java.lang.String"/>
+	<field name="cciDetalleUno" class="java.util.List"/>
+	<field name="cciDetalleDos" class="java.util.List"/>
+	<field name="cciDetalleFirmaUno" class="java.util.List"/>
+	<field name="dia" class="java.lang.String"/>
+	<field name="mes" class="java.lang.String"/>
+	<field name="anio" class="java.lang.String"/>
+	<field name="nombreInclusionRepUno" class="java.lang.String"/>
+	<field name="nombreInclusionRepDos" class="java.lang.String"/>
+	<field name="nombreBancoRepUno" class="java.lang.String"/>
+	<field name="nombreBancoRepDos" class="java.lang.String"/>
+	<field name="cciDetalleFirmaDos" class="java.util.List"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<pageHeader>
+		<band height="65">
+			<image>
+				<reportElement x="0" y="0" width="113" height="65" uuid="f3fef1b3-1558-4d7b-9b05-adfda4891775"/>
+				<imageExpression><![CDATA["tuiioSantander2.png"]]></imageExpression>
+			</image>
+		</band>
+	</pageHeader>
+	<detail>
+		<band height="14" splitType="Stretch">
+			<staticText>
+				<reportElement x="124" y="-7" width="423" height="14" uuid="5c5c486e-f4d8-449f-a321-f2185bf270d7"/>
+				<textElement textAlignment="Right" verticalAlignment="Top">
+					<font fontName="DejaVu Sans" size="9" isBold="true"/>
+					<paragraph leftIndent="2" rightIndent="5"/>
+				</textElement>
+				<text><![CDATA[CONTRATO DE CRÉDITO GRUPAL]]></text>
+			</staticText>
+		</band>
+		<band height="7" splitType="Stretch"/>
+		<band height="14" splitType="Stretch">
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="Float" stretchType="RelativeToBandHeight" x="-1" y="-1" width="548" height="14" isPrintWhenDetailOverflows="true" uuid="782b76db-b133-4f86-9754-876fe1769ac9"/>
+				<textElement textAlignment="Justified" verticalAlignment="Top" markup="html">
+					<font fontName="DejaVu Sans" size="9" isBold="false"/>
+					<paragraph leftIndent="2" rightIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA["CONTRATO DE APERTURA DE CRÉDITO SIMPLE (CRÉDITO GRUPAL) EN MONEDA NACIONAL QUE CELEBRAN POR UNA PARTE SANTANDER INCLUSIÓN FINANCIERA, S.A. DE C.V., SOCIEDAD FINANCIERA DE OBJETO MÚLTIPLE, ENTIDAD REGULADA, GRUPO FINANCIERO SANTANDER MÉXICO, EN LO SUCESIVO “INCLUSIÓN FINANCIERA”; POR OTRA PARTE,  "+$F{nombreCliente}+" A QUIENES EN LO SUCESIVO SE LES DENOMINARÁ COMO LOS “ACREDITADOS” Y/U “OBLIGADOS SOLIDARIOS”; CON LA COMPARECENCIA DE  BANCO SANTANDER (MEXICO), S.A., INSTITUCIÓN DE BANCA MÚLTIPLE, GRUPO FINANCIERO SANTANDER MÉXICO, EN LO SUCESIVO EL “BANCO”, AL TENOR DE LAS SIGUIENTES DECLARACIONES Y CLÁUSULAS:<br/>"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="14" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="547" height="14" uuid="8fa0fd75-7df1-4314-a749-0834334c1e35"/>
+				<textElement textAlignment="Center" verticalAlignment="Top">
+					<font fontName="DejaVu Sans" size="9" isBold="true"/>
+					<paragraph leftIndent="2" rightIndent="5"/>
+				</textElement>
+				<text><![CDATA[DECLARACIONES]]></text>
+			</staticText>
+		</band>
+		<band height="7" splitType="Stretch"/>
+		<band height="14">
+			<subreport>
+				<reportElement positionType="Float" stretchType="RelativeToBandHeight" x="0" y="0" width="547" height="14" uuid="99f501a4-23f9-4946-bfd3-f01ab1f2fd32"/>
+				<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($F{cciDetalleUno})]]></dataSourceExpression>
+				<subreportExpression><![CDATA[$P{SUBREPORT_DIR} + "contratoCreditoInclusion_Detalle_1.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+		<band height="4" splitType="Stretch"/>
+		<band height="16" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="547" height="14" uuid="97992d32-298a-4e40-84a3-7fbaef00ee68"/>
+				<textElement verticalAlignment="Top">
+					<font fontName="DejaVu Sans" size="8" isBold="false"/>
+					<paragraph leftIndent="2" rightIndent="5"/>
+				</textElement>
+				<text><![CDATA[Hechas las DECLARACIONES anteriores, las partes convienen en obligarse al tenor de las siguientes: ]]></text>
+			</staticText>
+		</band>
+		<band height="14" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="547" height="14" uuid="318429f4-c7b2-42cf-b644-441d0f327573"/>
+				<textElement textAlignment="Center" verticalAlignment="Top">
+					<font fontName="DejaVu Sans" size="9" isBold="true"/>
+					<paragraph leftIndent="2" rightIndent="5"/>
+				</textElement>
+				<text><![CDATA[CLÁUSULAS]]></text>
+			</staticText>
+		</band>
+		<band height="14">
+			<subreport>
+				<reportElement positionType="Float" stretchType="RelativeToBandHeight" x="0" y="0" width="547" height="14" uuid="21de8fef-1d26-4155-b084-17960600a9dd"/>
+				<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($F{cciDetalleDos})]]></dataSourceExpression>
+				<subreportExpression><![CDATA[$P{SUBREPORT_DIR} + "contratoCreditoInclusion_Detalle_2.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+		<band height="25">
+			<break>
+				<reportElement x="0" y="0" width="100" height="1" uuid="516e0a54-733a-4d69-a4b1-f83f0292cbdd"/>
+			</break>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="Float" stretchType="RelativeToBandHeight" x="0" y="11" width="547" height="14" isPrintWhenDetailOverflows="true" uuid="4520c9f7-504b-41e8-9d88-f6c186225ad7"/>
+				<textElement textAlignment="Justified" verticalAlignment="Top" markup="html">
+					<font fontName="DejaVu Sans" size="8" isBold="false"/>
+					<paragraph leftIndent="2" rightIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA["<b>SECCIÓN ESPECIAL. </b><br><br>"+
+"<b>AUTORIZACIÓN PARA FINES PROMOCIONALES.</b> Los ACREDITADOS autorizan expresamente a Santander Inclusión Financiera, S.A. de C.V., SOFOM, E.R., Grupo Financiero Santander México, y/o a las entidades que formen parte del Grupo Financiero al que pertenece, para que hagan uso de sus datos personales, incluyendo el poder proporcionarlos a terceros para fines promocionales relacionados con bienes y/o servicios, en el entendido que podrá revocar esta autorización mediante solicitud por escrito, presentada en la sucursal en donde  se formalice el presente Contrato.<br><br><br>"+
+"La aceptación que en su caso hubiere proporcionado a INCLUSIÓN FINANCIERA, autorizando el intercambio de su información, podrá ser modificada o cancelada en cualquier momento, mediante escrito que deberá ser presentado en cualquier sucursal de INCLUSIÓN FINANCIERA, dicha modificación o cancelación surtirá efectos dentro de los quince días hábiles posteriores a la fecha en que INCLUSIÓN FINANCIERA reciba(n) dicha solicitud."]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="14"/>
+		<band height="14" splitType="Stretch"/>
+		<band height="50">
+			<staticText>
+				<reportElement x="0" y="27" width="547" height="23" uuid="5e3fad9c-913b-4cfc-8800-8e0ffb710c29"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+				</box>
+				<textElement verticalAlignment="Top">
+					<font fontName="DejaVu Sans" size="8" isBold="true"/>
+					<paragraph leftIndent="10" rightIndent="5" spacingBefore="2"/>
+				</textElement>
+				<text><![CDATA[LOS ACREDITADOS]]></text>
+			</staticText>
+		</band>
+		<band height="14">
+			<subreport>
+				<reportElement positionType="Float" stretchType="RelativeToBandHeight" x="0" y="0" width="273" height="14" uuid="0b0713cd-30fe-421e-bd72-2a3f5d259bfc"/>
+				<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($F{cciDetalleFirmaUno})]]></dataSourceExpression>
+				<subreportExpression><![CDATA[$P{SUBREPORT_DIR} + "contratoCreditoInclusion_Firma.jasper"]]></subreportExpression>
+			</subreport>
+			<subreport>
+				<reportElement positionType="Float" stretchType="RelativeToBandHeight" x="274" y="0" width="273" height="14" uuid="5767ab09-fb96-420f-b538-d8b66402f255"/>
+				<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($F{cciDetalleFirmaDos})]]></dataSourceExpression>
+				<subreportExpression><![CDATA[$P{SUBREPORT_DIR} + "contratoCreditoInclusion_Firma.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+		<band height="38"/>
+		<band height="14">
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="Float" stretchType="RelativeToBandHeight" x="0" y="0" width="547" height="14" isPrintWhenDetailOverflows="true" uuid="fbfc7a41-0280-4e7d-aac0-5933123f414d"/>
+				<textElement textAlignment="Justified" verticalAlignment="Top" markup="html">
+					<font fontName="DejaVu Sans" size="8" isBold="false"/>
+					<paragraph leftIndent="2" rightIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA["<b>SECCIÓN ESPECIAL. </b><br><br>"+
+"<b>AVISO DE PRIVACIDAD</b></b><br><br>"+
+"Al firmar el presente Contrato Usted otorga su consentimiento expreso en relación con lo siguiente:<br><br>"+
+"Santander Inclusión Financiera, S.A. de C.V., SOFOM, E.R., Grupo Financiero Santander México y Banco Santander México, S.A., Institución de Banca Múltiple, Grupo Financiero Santander México, señalando como domicilio convencional para los efectos relacionados con el presente aviso de privacidad el inmueble ubicado en Avenida Paseo de la Reforma, número 500, Colonia Lomas de Santa Fe, C.P. 01219, en la Ciudad de México, hacen de su conocimiento que sus datos personales serán protegidos de acuerdo a lo establecido por la Ley Federal de Protección de Datos Personales en Posesión de los Particulares así como por nuestra política de privacidad y que el tratamiento que se haga de sus datos será con la finalidad, enunciando sin limitar, de dar cumplimiento a las obligaciones contractuales pactadas entre las partes, la realización de actividades propias, relacionadas y derivadas de nuestro objeto social, así como para fines comerciales y promocionales. Usted podrá consultar nuestro aviso de privacidad completo en la página <u style=\"color:#335EFF\"><a href=\"www.tuiio.com.mx\" target=\"_blank\" >www.tuiio.com.mx</a></u> y <u style=\"color:#335EFF\"><a href=\"www.santander.com.mx\" target=\"_blank\" >www.santander.com.mx</a></u>.<br><br>"+
+"Leído el contenido del presente, lo firman como muestra de su conformidad, quedando un ejemplar en poder de INCLUSIÓN FINANCIERA, del BANCO y de cada uno de los ACREDITADOS y OBLIGADOS SOLIDARIOS, a los "+$F{dia}+" días del mes de "+$F{mes}+" del año "+$F{anio}+"."]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="50">
+			<staticText>
+				<reportElement x="0" y="27" width="547" height="23" uuid="97f1ae2a-fe35-44ca-b58d-818e2a187f98"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+				</box>
+				<textElement verticalAlignment="Top">
+					<font fontName="SansSerif" size="8" isBold="true"/>
+					<paragraph leftIndent="10" rightIndent="5" spacingBefore="2"/>
+				</textElement>
+				<text><![CDATA[LOS ACREDITADOS]]></text>
+			</staticText>
+		</band>
+		<band height="14">
+			<subreport>
+				<reportElement positionType="Float" stretchType="RelativeToBandHeight" x="0" y="0" width="273" height="14" uuid="c7adfff9-6179-4efe-b8da-a38403b743a2"/>
+				<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($F{cciDetalleFirmaUno})]]></dataSourceExpression>
+				<subreportExpression><![CDATA[$P{SUBREPORT_DIR} + "contratoCreditoInclusion_Firma.jasper"]]></subreportExpression>
+			</subreport>
+			<subreport>
+				<reportElement positionType="Float" stretchType="RelativeToBandHeight" x="274" y="0" width="273" height="14" uuid="75d96cff-aec0-47cf-98ad-6ffff90221ce"/>
+				<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($F{cciDetalleFirmaDos})]]></dataSourceExpression>
+				<subreportExpression><![CDATA[$P{SUBREPORT_DIR} + "contratoCreditoInclusion_Firma.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+		<band height="14"/>
+		<band height="50">
+			<staticText>
+				<reportElement x="0" y="27" width="547" height="23" uuid="aa0d61d8-a7a0-449d-90f0-581614251c00"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+				</box>
+				<textElement verticalAlignment="Top">
+					<font fontName="DejaVu Sans" size="8" isBold="true"/>
+					<paragraph leftIndent="10" rightIndent="5" spacingBefore="2"/>
+				</textElement>
+				<text><![CDATA[LOS OBLIGADOS SOLIDARIOS.]]></text>
+			</staticText>
+		</band>
+		<band height="14">
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="Float" stretchType="RelativeToBandHeight" x="0" y="0" width="547" height="14" isPrintWhenDetailOverflows="true" uuid="9311d9db-e095-4670-90ab-0b63c5a6bbfd"/>
+				<textElement textAlignment="Justified" verticalAlignment="Top">
+					<font fontName="DejaVu Sans" size="8" isBold="false"/>
+					<paragraph leftIndent="2" rightIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA["El (los) Obligado(s) Solidario(s) suscriben el presente como prueba de su entrega, lectura y conformidad y se obligan a responder como obligado(s) principal(es) frente a INCLUSIÓN FINANCIERA."]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="38">
+			<subreport>
+				<reportElement positionType="Float" stretchType="RelativeToBandHeight" x="0" y="24" width="273" height="14" uuid="5cea7859-91ed-4979-b6f9-ec08cde8dca4"/>
+				<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($F{cciDetalleFirmaUno})]]></dataSourceExpression>
+				<subreportExpression><![CDATA[$P{SUBREPORT_DIR} + "contratoCreditoInclusion_Firma.jasper"]]></subreportExpression>
+			</subreport>
+			<subreport>
+				<reportElement positionType="Float" stretchType="RelativeToBandHeight" x="274" y="24" width="273" height="14" uuid="d8dbb01d-bc1d-4af9-8839-0d6280e0ee42"/>
+				<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($F{cciDetalleFirmaDos})]]></dataSourceExpression>
+				<subreportExpression><![CDATA[$P{SUBREPORT_DIR} + "contratoCreditoInclusion_Firma.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+		<band height="17">
+			<staticText>
+				<reportElement x="0" y="7" width="547" height="10" uuid="c1a3c973-076a-4648-8302-48149e49db38"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+				</box>
+				<textElement verticalAlignment="Top">
+					<font fontName="SansSerif" size="8" isBold="true"/>
+					<paragraph leftIndent="10" rightIndent="5"/>
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<break>
+				<reportElement x="0" y="6" width="100" height="1" uuid="ef19165c-af0c-48d8-bbae-4eaa10fe7944"/>
+			</break>
+		</band>
+		<band height="14">
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="Float" stretchType="RelativeToBandHeight" x="0" y="0" width="263" height="14" isPrintWhenDetailOverflows="true" uuid="109f68cc-6176-496f-b172-b03b0b8e58ce"/>
+				<textElement textAlignment="Center" verticalAlignment="Top">
+					<font fontName="DejaVu Sans" size="8" isBold="true"/>
+					<paragraph leftIndent="2" rightIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA["INCLUSIÓN FINANCIERA"]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="Float" stretchType="RelativeToBandHeight" x="263" y="0" width="284" height="14" isPrintWhenDetailOverflows="true" uuid="e19a5284-a556-4432-8768-ab0b803b67fd"/>
+				<textElement textAlignment="Center" verticalAlignment="Top">
+					<font fontName="DejaVu Sans" size="8" isBold="true"/>
+					<paragraph leftIndent="2" rightIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA["EL BANCO"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="33">
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="Float" stretchType="RelativeToBandHeight" x="263" y="13" width="284" height="14" isPrintWhenDetailOverflows="true" uuid="7a43fc13-85e9-4850-b70b-b36fae26d38a"/>
+				<textElement textAlignment="Center" verticalAlignment="Top">
+					<font fontName="DejaVu Sans" size="8" isBold="true"/>
+					<paragraph leftIndent="2" rightIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA["BANCO SANTANDER MÉXICO, S.A., INSTITUCIÓN DE BANCA MÚLTIPLE, GRUPO FINANCIERO SANTANDER MÉXICO."]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="Float" stretchType="RelativeToBandHeight" x="0" y="13" width="263" height="14" isPrintWhenDetailOverflows="true" uuid="d0286587-2e75-4a70-81cb-ae7bc8a0447b"/>
+				<textElement textAlignment="Center" verticalAlignment="Top">
+					<font fontName="DejaVu Sans" size="8" isBold="true"/>
+					<paragraph leftIndent="2" rightIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA["SANTANDER INCLUSIÓN FINANCIERA, S.A. DE C.V. SOFOM, E.R., GRUPO FINANCIERO SANTANDER MÉXICO."]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="Float" stretchType="RelativeToBandHeight" x="0" y="0" width="547" height="14" isPrintWhenDetailOverflows="true" uuid="197c403a-f4d4-4a11-872f-e4bff9acc465"/>
+				<textElement textAlignment="Justified" verticalAlignment="Top">
+					<font fontName="SansSerif" size="8" isBold="false"/>
+					<paragraph leftIndent="2" rightIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA[""]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="50">
+			<image>
+				<reportElement x="70" y="0" width="124" height="50" uuid="792686ae-bd9c-413a-8609-a3b3fb6304ea"/>
+				<imageExpression><![CDATA[$P{firmaNF1CCI}]]></imageExpression>
+			</image>
+			<image>
+				<reportElement x="347" y="0" width="124" height="50" uuid="0a2db90c-c0b7-4cd9-af19-738a0037884d"/>
+				<imageExpression><![CDATA[$P{firmaNB1CCI}]]></imageExpression>
+			</image>
+		</band>
+		<band height="40">
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="Float" stretchType="RelativeToBandHeight" isPrintRepeatedValues="false" x="16" y="0" width="245" height="14" uuid="adcebb16-17f1-42d6-86ae-70c13ca0e56e"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Justified" verticalAlignment="Top">
+					<font fontName="SansSerif" size="8" isBold="true"/>
+					<paragraph leftIndent="2" rightIndent="2"/>
+				</textElement>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="Float" stretchType="RelativeToBandHeight" isPrintRepeatedValues="false" x="293" y="0" width="239" height="14" uuid="baddf05d-0b0f-4536-b202-a33b22954f95"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Justified" verticalAlignment="Top">
+					<font fontName="SansSerif" size="8" isBold="true"/>
+					<paragraph leftIndent="2" rightIndent="2"/>
+				</textElement>
+			</textField>
+			<textField>
+				<reportElement isPrintRepeatedValues="false" x="16" y="13" width="245" height="14" uuid="05e71e18-474c-40ea-b6e8-55dd967475c3"/>
+				<textElement textAlignment="Center">
+					<font fontName="DejaVu Sans" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{nombreInclusionRepUno}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement isPrintRepeatedValues="false" x="293" y="13" width="239" height="14" uuid="1e3262b7-4791-4a56-af8a-5a4e04e65ab1"/>
+				<textElement textAlignment="Center">
+					<font fontName="DejaVu Sans" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{nombreBancoRepUno}]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="50">
+			<image>
+				<reportElement x="70" y="0" width="124" height="50" uuid="a94c9b7f-b545-4098-9cac-8ce49ffe4d22"/>
+				<imageExpression><![CDATA[$P{firmaNF2CCI}]]></imageExpression>
+			</image>
+			<image>
+				<reportElement x="347" y="0" width="124" height="50" uuid="c9a43621-2459-44d5-add7-f88dd968c304"/>
+				<imageExpression><![CDATA[$P{firmaNB2CCI}]]></imageExpression>
+			</image>
+		</band>
+		<band height="40">
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="Float" stretchType="RelativeToBandHeight" isPrintRepeatedValues="false" x="293" y="0" width="239" height="14" uuid="57947ea6-ed9d-4db9-8b25-daa53f19ba4e"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Justified" verticalAlignment="Top">
+					<font fontName="SansSerif" size="8" isBold="true"/>
+					<paragraph leftIndent="2" rightIndent="2"/>
+				</textElement>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="Float" stretchType="RelativeToBandHeight" isPrintRepeatedValues="false" x="16" y="0" width="245" height="14" uuid="9276f767-1f91-4f5c-9667-7a6c5c46f8f8"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Justified" verticalAlignment="Top">
+					<font fontName="SansSerif" size="8" isBold="true"/>
+					<paragraph leftIndent="2" rightIndent="2"/>
+				</textElement>
+			</textField>
+			<textField>
+				<reportElement isPrintRepeatedValues="false" x="293" y="13" width="239" height="14" uuid="564b7cfa-9010-4dbb-a419-e0087781b4b4"/>
+				<textElement textAlignment="Center">
+					<font fontName="DejaVu Sans" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{nombreBancoRepDos}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement isPrintRepeatedValues="false" x="16" y="13" width="245" height="14" uuid="b91df5dd-b18d-4d0f-89b4-376d910b093c"/>
+				<textElement textAlignment="Center">
+					<font fontName="DejaVu Sans" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{nombreInclusionRepDos}]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="93">
+			<textField>
+				<reportElement x="0" y="0" width="547" height="48" uuid="42f20810-dcf7-4ad4-8752-32c3e1b6e527"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font fontName="DejaVu Sans" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA["LA PRESENTE HOJA CORRESPONDE AL <b>CONTRATO DE CRÉDITO GRUPAL</b> QUE CELEBRAN POR UNA PARTE SANTANDER INCLUSIÓN FINANCIERA, S.A. DE C.V., SOFOM E.R., GRUPO FINANCIERO SANTANDER MÉXICO, BANCO SANTANDER MÉXICO, S.A., INSTITUCIÓN DE BANCA MÚLTIPLE, GRUPO FINANCIERO SANTANDER MÉXICO, Y LA(S) PERSONA(S) CUYO(S) NOMBRE(S) APARECE(N) INDICADOS COMO LOS ACREDITADOS Y OBLIGADOS SOLIDARIOS EN EL PRESENTE DOCUMENTO."]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="6">
+			<break>
+				<reportElement x="0" y="5" width="100" height="1" uuid="a6e5dae7-b4c7-471f-90cc-8cb62575675e"/>
+			</break>
+		</band>
+	</detail>
+</jasperReport>

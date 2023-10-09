@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="ConsentimientoZurichSimpleIndAutoOnboard" pageWidth="612" pageHeight="792" columnWidth="591" leftMargin="21" rightMargin="0" topMargin="7" bottomMargin="5" uuid="416372ba-79bc-429f-898d-5a67b47261d4">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="SUBREPORT_DIR" class="java.lang.String">
+		<defaultValueExpression><![CDATA["/"]]></defaultValueExpression>
+	</parameter>
+	<field name="listaZurich" class="java.util.List"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<detail>
+		<band height="100" splitType="Stretch">
+			<subreport>
+				<reportElement x="0" y="0" width="193" height="100" uuid="d03e06b6-e5c3-4c52-a4c4-a8c8a3665132"/>
+				<subreportParameter name="DIR"/>
+				<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($F{listaZurich})]]></dataSourceExpression>
+				<subreportExpression><![CDATA[$P{SUBREPORT_DIR} + "ConsentimientoZurichSimpleIndAutoOnboard_SubReporte.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="20">
+			<textField>
+				<reportElement x="0" y="0" width="50" height="20" uuid="7427d074-db0b-422e-8171-7ec8b897fb58"/>
+				<textFieldExpression><![CDATA["Hoja " + $V{PAGE_NUMBER} + " de "]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement x="49" y="0" width="136" height="20" uuid="28719a30-2e9b-464f-8916-d705d8ab70b2"/>
+				<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+</jasperReport>

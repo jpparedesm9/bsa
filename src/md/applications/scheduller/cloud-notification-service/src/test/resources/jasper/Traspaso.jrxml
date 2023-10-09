@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Traspaso" pageWidth="595" pageHeight="842" columnWidth="515" leftMargin="40" rightMargin="40" topMargin="30" bottomMargin="60" uuid="810d174d-6b23-4ad8-b743-9d4240eeab63">
+	<property name="ireport.zoom" value="1.2100000000000009"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="160"/>
+	<parameter name="FECHA" class="java.lang.String"/>
+	<parameter name="nombre" class="java.lang.String"/>
+	<parameter name="esgrupo" class="java.lang.String"/>
+	<parameter name="solicitud" class="java.lang.String"/>
+	<parameter name="oficialniega" class="java.lang.String"/>
+	<parameter name="entes" class="java.lang.String"/>
+	<parameter name="razonrechazo" class="java.lang.String"/>
+	<parameter name="PIEPAGINA" class="java.lang.String"/>
+	<parameter name="NOMBREEMPRESA" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<title>
+		<band height="42" splitType="Stretch">
+			<image scaleImage="FillFrame">
+				<reportElement x="-1" y="2" width="130" height="40" uuid="2712992f-aa1f-4236-a996-bac2a4786c26"/>
+				<imageExpression><![CDATA["logo-tuiio.png"]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="91" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="17" width="515" height="18" uuid="f6cac328-150a-4b2c-a4a5-95f5c8753568"/>
+				<textElement verticalAlignment="Middle" markup="html"/>
+				<textFieldExpression><![CDATA["Estimado Señor (a): "]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="0" y="0" width="515" height="18" uuid="ab541d8c-8f16-4bf7-9520-0da64b0ea287"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$P{FECHA}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="0" y="47" width="515" height="21" uuid="d102d6fa-91c7-42e7-926f-edad5f947f89"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$P{nombre}]]></textFieldExpression>
+			</textField>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="194" splitType="Stretch">
+			<textField isBlankWhenNull="true">
+				<reportElement x="0" y="0" width="515" height="18" uuid="a701eaf2-2a4c-4117-9272-f0e126b1c3fc"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA["Su solicitud de tipo " + $P{esgrupo} + " con código #" + $P{solicitud} + ", fue rechazada por el oficial " + $P{oficialniega}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="28" width="515" height="18" uuid="62adc8b9-cdf2-4760-8004-ff935e21a225"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA["Los códigos son los siguientes: "]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="0" y="46" width="515" height="48" uuid="214a0e6c-1dc6-4117-928f-6f4321a5bdc0"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$P{entes}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="176" width="515" height="18" uuid="5e8a3509-beae-4eb8-a6a0-427ab84c73ff"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA["Saludos Cordiales."]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="104" width="515" height="18" uuid="98f6c727-3f0c-4b8c-bed2-1f45d461e339"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA["La razón de rechazo que ingresó el oficial es la siguiente:"]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="0" y="122" width="515" height="35" uuid="9e1312f5-6bf6-4ad4-9782-1d4c7dcde59e"/>
+				<textFieldExpression><![CDATA[$P{razonrechazo}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

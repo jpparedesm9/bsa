@@ -1,0 +1,35 @@
+<div class="ng-scope">
+    <div ng-controller="collateral.collaterRenderController" ng-init="loadModal()"> 
+		<form name="itemsCollateral" method="post">
+			<div class="panel-body">
+				<div class="form-vertical">
+					<div class="row cb-col-container">
+						<div ng-repeat="field in fields" class="col-xs-4">                       
+								
+								<div  ng-if="field.isMandatory" class="form-group cb-required" for="field.field">
+									<label class="control-label" for="field.field">{{field.title}}:</label>
+									<div id="field.field" designer-form-load form="vc.viewState.dynamicField" ></div>
+								</div>
+								<div  ng-if="!field.isMandatory" class="form-group" for="field.field">
+									<label class="control-label" for="field.field">{{field.title}}:</label>
+									<div id="field.field" designer-form-load form="vc.viewState.dynamicField" ></div>
+								</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		
+			<div class="cb-navbar cb-navbar-bottom">
+				<nav id="NAVIGATIONBUTTONBAR" class="navbar navbar-default navbar-fixed-bottom">
+					<button id="vc.viewState.SAVEBUTTON" ng-click="saveOnClick(vc.currentTaskLoaded)" class="btn btn-primary navbar-btn" > 
+						<span translate> RENDERCOLLATERAL.BUTTONS.BTN_SAVE </span >
+					</button>									
+		
+					<button id="vc.viewState.CANCELBUTTON" ng-click="cancelOnClick()" class="btn btn-default navbar-btn" > 
+						<span translate> RENDERCOLLATERAL.BUTTONS.BTN_CANCEL </span >
+					</button>								
+				</nav>					
+			</div>
+		</form>
+	</div>
+</div>	

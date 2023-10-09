@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="tablaAmortizacionInd" pageWidth="595" pageHeight="842" whenNoDataType="AllSectionsNoDetail" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="deec1b21-1036-4734-948b-164547062a2b">
+	<property name="ireport.zoom" value="1.3636363636363635"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="SUBREPORT_DIR" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["/"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="fechaImprimir" class="java.lang.String"/>
+	<parameter name="horaImprimir" class="java.lang.String"/>
+	<parameter name="usuario" class="java.lang.String"/>
+	<parameter name="oficina" class="java.lang.String"/>
+	<parameter name="pagina" class="java.lang.String"/>
+	<parameter name="fechaSistema" class="java.lang.String"/>
+	<parameter name="clienteCodigo" class="java.lang.Integer"/>
+	<parameter name="clienteNombre" class="java.lang.String"/>
+	<parameter name="clienteDireccion" class="java.lang.String"/>
+	<parameter name="operacion" class="java.lang.String"/>
+	<parameter name="moneda" class="java.lang.String"/>
+	<parameter name="monto" class="java.lang.Double"/>
+	<parameter name="plazoNum" class="java.lang.String"/>
+	<parameter name="plazoDescrip" class="java.lang.String"/>
+	<parameter name="tipoAmortiza" class="java.lang.String"/>
+	<parameter name="tipoCuota" class="java.lang.String"/>
+	<parameter name="banca" class="java.lang.String"/>
+	<parameter name="estado" class="java.lang.String"/>
+	<parameter name="fechaDesembolso" class="java.lang.String"/>
+	<parameter name="fechaSolicitud" class="java.lang.String"/>
+	<parameter name="tasaInteres" class="java.lang.Double"/>
+	<parameter name="tasaInteresDescrip" class="java.lang.String"/>
+	<parameter name="plazoDias" class="java.lang.Integer"/>
+	<parameter name="pagoCapital" class="java.lang.Integer"/>
+	<parameter name="pagoInteres" class="java.lang.Integer"/>
+	<parameter name="tipoOperacion" class="java.lang.String"/>
+	<parameter name="tipoOperacionDescrip" class="java.lang.String"/>
+	<parameter name="fechaVcto" class="java.lang.String"/>
+	<parameter name="mesGracia" class="java.lang.Integer"/>
+	<parameter name="graciaMora" class="java.lang.Integer"/>
+	<parameter name="graciaCapital" class="java.lang.Integer"/>
+	<parameter name="graciaInt" class="java.lang.Integer"/>
+	<parameter name="montoProxPago" class="java.lang.Double"/>
+	<parameter name="fechaProxPago" class="java.lang.String"/>
+	<parameter name="comentario" class="java.lang.String"/>
+	<parameter name="filialDireccion" class="java.lang.String"/>
+	<parameter name="ciudad" class="java.lang.String"/>
+	<parameter name="telefono" class="java.lang.String"/>
+	<parameter name="urlPathSantander" class="java.lang.String"/>
+	<parameter name="numeroBanco" class="java.lang.String"/>
+	<parameter name="numeroTramite" class="java.lang.String"/>
+	<parameter name="fechaLiquidacion" class="java.lang.String"/>
+	<parameter name="periodicidad" class="java.lang.String"/>
+	<parameter name="footParam" class="java.lang.String"/>
+	<parameter name="condusef" class="java.lang.String"/>
+	<field name="tablaAmortizacion" class="java.util.List"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="190" splitType="Stretch">
+			<staticText>
+				<reportElement positionType="Float" stretchType="RelativeToBandHeight" x="138" y="37" width="417" height="18" uuid="dc00cf30-db40-44af-9c75-cdc5295b1939"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle" markup="none">
+					<font fontName="SansSerif" size="12" isBold="true"/>
+					<paragraph leftIndent="3"/>
+				</textElement>
+				<text><![CDATA[Santander Inclusión Financiera S.A. de C.V. SOFOM ER., GFSM.]]></text>
+			</staticText>
+			<image>
+				<reportElement x="0" y="0" width="124" height="55" uuid="ed0c54fd-816f-42a1-80a3-eee1da6fe9fd"/>
+				<imageExpression><![CDATA[$P{urlPathSantander}]]></imageExpression>
+			</image>
+			<textField isBlankWhenNull="true">
+				<reportElement x="292" y="110" width="90" height="15" uuid="3dc3e3cf-94af-4550-836a-144119539c02"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8" isBold="true"/>
+					<paragraph leftIndent="2" rightIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA["No. De Contrato"]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="13" y="70" width="138" height="15" uuid="e5567297-a4be-4e5e-99a3-81a1e45bc403"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8" isBold="true"/>
+					<paragraph leftIndent="2" rightIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Nombre del Cliente"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="163" y="70" width="379" height="15" uuid="72c61b29-8566-4a41-a729-f208247bedca"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font size="8"/>
+					<paragraph leftIndent="3" rightIndent="3"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{clienteNombre}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="381" y="110" width="161" height="15" uuid="d5ac08b5-7581-445d-abac-5a6ff9131039"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font size="8"/>
+					<paragraph leftIndent="3" rightIndent="3"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{numeroTramite}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="0" y="55" width="555" height="1" uuid="7ee84f8f-d9c6-406a-bcfe-adef205c3436"/>
+				<graphicElement>
+					<pen lineWidth="0.5"/>
+				</graphicElement>
+			</line>
+			<textField isBlankWhenNull="true">
+				<reportElement x="13" y="95" width="138" height="15" uuid="831b6ebd-d3e7-477c-955a-b8f180018e72"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8" isBold="true"/>
+					<paragraph leftIndent="2" rightIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Fecha de Desembolso"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="163" y="95" width="105" height="15" uuid="a935d582-5af4-47f6-a60f-8d6ec74dc95f"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font size="8"/>
+					<paragraph leftIndent="3" rightIndent="3"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{fechaDesembolso}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="13" y="110" width="138" height="15" uuid="dd30b676-d517-456b-8cb4-4b4adbe24020"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8" isBold="true"/>
+					<paragraph leftIndent="2" rightIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Fecha de Liquidación:"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="163" y="110" width="105" height="15" uuid="439fd343-46bb-48d0-9948-b0b3a05296ed"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font size="8"/>
+					<paragraph leftIndent="3" rightIndent="3"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{fechaLiquidacion}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="13" y="135" width="138" height="15" uuid="cb4d627b-82a6-436e-b2ab-c5b37603fcaa"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8" isBold="true"/>
+					<paragraph leftIndent="2" rightIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Periodicidad:"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="163" y="135" width="105" height="15" uuid="e43f45b0-d214-477b-a04b-6179bfadb2c8"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font size="8"/>
+					<paragraph leftIndent="3" rightIndent="3"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{periodicidad}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement positionType="Float" stretchType="RelativeToBandHeight" x="0" y="169" width="555" height="21" uuid="3ea1d53a-4f71-4bfa-9e21-eb64fccff342"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="none">
+					<font fontName="SansSerif" size="14" isBold="true"/>
+					<paragraph leftIndent="3"/>
+				</textElement>
+				<text><![CDATA[Tabla de Amortización Crédito Simple Tu Crédito + Negocio]]></text>
+			</staticText>
+		</band>
+	</title>
+	<detail>
+		<band height="14" splitType="Stretch">
+			<subreport>
+				<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="0" y="0" width="555" height="14" isPrintWhenDetailOverflows="true" uuid="15118e2c-6f8f-4858-ae24-60925f63a4c4"/>
+				<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($F{tablaAmortizacion})]]></dataSourceExpression>
+				<subreportExpression><![CDATA[$P{SUBREPORT_DIR} + "tablaAmortizacionInd_subReporteTabla.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="62">
+			<textField>
+				<reportElement x="0" y="0" width="555" height="36" uuid="dc40b416-c879-46e8-9db1-44668256a321"/>
+				<box>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="SansSerif" size="8"/>
+					<paragraph leftIndent="3" rightIndent="3"/>
+				</textElement>
+				<textFieldExpression><![CDATA["* En cada ocasión en que el ACREDITADO realice  fuera de tiempo los pagos que se encuentre obligado a realizar en relación con el Crédito, se generará una comisión por concepto de gastos de cobranza, cuyo importe será de $250.00 (doscientos cincuenta  pesos 00/100 M.N.); (El importe de la comisión aplicable será más el Impuesto al Valor Agregado. )"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="47" width="463" height="15" uuid="b270e35f-789c-4a73-956b-c7ef28499141"/>
+				<box>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="SansSerif" size="8" isBold="true"/>
+					<paragraph leftIndent="3" rightIndent="3"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Registro de Contratos de Adhesión de la CONDUSEF: " + $P{condusef}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="463" y="47" width="92" height="15" uuid="1fa9fa96-bc0c-4631-8e40-7fdbff34e930"/>
+				<box>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="8" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{footParam}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+</jasperReport>

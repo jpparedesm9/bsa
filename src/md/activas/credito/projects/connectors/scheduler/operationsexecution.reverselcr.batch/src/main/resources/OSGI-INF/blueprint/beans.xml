@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<blueprint xmlns="http://www.osgi.org/xmlns/blueprint/v1.0.0">
+
+	<reference id="spOrchestratorOsgi"
+		interface="com.cobiscorp.cobis.cts.services.orchestrator.ISPOrchestrator" />
+
+	<bean id="reverseLcrExecutor"
+		class="com.cobis.cloud.sofom.operationsexecution.reverselcr.batch.ReverseLcrExecutor">
+		<property name="spOrchestrator" ref="spOrchestratorOsgi" />
+	</bean>
+
+	<service ref="reverseLcrExecutor"
+		interface="com.cobiscorp.cobis.scheduler.api.ICobisJob">
+		<service-properties>
+			<entry key="service.impl" value="ReverseLcrExecutor" />
+		</service-properties>
+	</service>
+
+</blueprint>

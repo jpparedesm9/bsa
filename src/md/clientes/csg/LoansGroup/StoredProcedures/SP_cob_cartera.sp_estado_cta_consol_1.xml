@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<procedure>
+  <database>cob_cartera</database>
+  <name>sp_estado_cta_consol</name>
+  <type>SYBASE</type>
+  <version>1</version>
+  <parameters>
+    <parameter name="@i_banco" dataType="varchar" direction="in" />
+    <parameter name="@i_opcion" dataType="char" direction="in" />
+    <parameter name="@s_date" dataType="datetime" direction="in" />
+  </parameters>
+  <queries>
+    <query>
+      <columns>
+        <column name="FILIAL" />
+        <column name="RUC" />
+        <column name="FECHA" />
+        <column name="GRUPO" />
+        <column name="NOMBRE_GRUPO" />
+        <column name="DIA_REUNION" />
+        <column name="HORA_REUNION" />
+        <column name="LUGAR_REUNION" />
+        <column name="FONDO" />
+        <column name="NUM_CICLO" />
+        <column name="SUCURSAL" />
+        <column name="ASESOR" />
+        <column name="DESTINO" />
+        <column name="MONTO_PRESTADO" />
+        <column name="TASA_INTERES" />
+        <column name="PLAZO" />
+        <column name="FECHA_DESEMBOLSO" />
+        <column name="ABREV_MONTO_P" />
+      </columns>
+      <queryText>SELECT w_filial, w_ruc, w_fecha, w_grupo, w_nombre_grupo, w_reunion</queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="Fecha" />
+        <column name="Cliente" />
+        <column name="Otorgado" />
+        <column name="Saldo Cap." />
+        <column name="Ahorros" />
+        <column name="Capital" />
+        <column name="INT + Otros" />
+        <column name="TOTAL" />
+        <column name="ID_CLIENTE" />
+        <column name="NUM_DOC_CLI" />
+      </columns>
+      <queryText>SELECT  "Fecha" = (SELECT  CONVERT (VARCHAR (10),op_fecha_liq ,?) FROM cob_cartera..ca_operacion   WHERE TG.tg_operacion = op_operacion     ),"Cliente" = (SELECT  CONVERT (VARCHAR,en_ente ) + " " + en_nomlar FROM cobis..cl_ente   WHERE en_ente = TG.tg_cliente     ),"Otorgado" = (SELECT  ISNULL (op_monto, 0) FROM cob_cartera..ca_operacion   WHERE TG.tg_operacion = op_operacion     ),"Saldo Cap." = (SELECT  SUM (am_cuota) - SUM (am_pagado) + SUM (am_gracia) FROM cob_cartera..ca_amortizacion   WHERE TG.tg_operacion = am_operacion AND am_concepto = "CAP"     ),"Ahorros" = ISNULL ((SELECT  SUM (ISNULL (cp_ahorro, 0)) + SUM (ISNULL (cp_extras, 0)) FROM cob_cartera..ca_control_pago   WHERE TG.tg_operacion = cp_operacion     ), 0),"Capital" = (SELECT  SUM (am_cuota) - SUM (am_pagado) + SUM (am_gracia) FROM cob_cartera..ca_amortizacion  ,cob_cartera..ca_dividendo   WHERE TG.tg_operacion = am_operacion AND am_operacion = di_operacion AND am_concepto = "CAP" AND di_estado NOT IN (?,?)     ),"INT + Otros" = (SELECT  SUM (am_cuota) - SUM (am_pagado) + SUM (am_gracia) FROM cob_cartera..ca_amortizacion  ,cob_cartera..ca_dividendo   WHERE TG.tg_operacion = am_operacion AND am_operacion = di_operacion AND am_concepto &lt;&gt; "CAP" AND di_estado NOT IN (?,?)     ),"TOTAL" = (SELECT  SUM (am_cuota) - SUM (am_pagado) + SUM (am_gracia) FROM cob_cartera..ca_amortizacion  ,cob_cartera..ca_dividendo   WHERE TG.tg_operacion = am_operacion AND am_operacion = di_operacion AND di_estado NOT IN (?,?)     ) </queryText>
+    </query>
+  </queries>
+</procedure>

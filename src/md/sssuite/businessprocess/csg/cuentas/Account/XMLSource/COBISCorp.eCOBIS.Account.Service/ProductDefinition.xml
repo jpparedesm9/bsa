@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<product path="D:/GYE/Dav_SaaSMx/SSSuite/BusinessProcess/source/middleware/SG/cuentas/Account/Products/COBISCorp.eCOBIS.Account.Service" appPath="C:/Program Files (x86)/COBIS/COBIS Services Generator/" name="COBISCorp.eCOBIS.Account.Service" productNS="http://service.account.ecobis.cobiscorp" description="Account Service" documentationLanguage="English" year="2017" version="2.0.0.0" type="SERVICE" GUID="4463BACD-BF8F-47F1-A2C1-926D6B26CC30">
+  <namespaces>
+    <namespace type="class" base="COBISCorp.eCOBIS.Account" name="COBISCorp.eCOBIS.Account.Service" package="cobiscorp.ecobis.account.service" ns="http://service.account.ecobis.cobiscorp" folder="" />
+  </namespaces>
+  <templates>
+    <template id="ServiceCTS302" productName="COBISCorp.eCOBIS.Account.Service" outputFolder="c:\COBIS-SG\Output\CTS\COBISCorp.eCOBIS.Account.Service" package="true" packageType="Jar">
+      <templateFiles>
+        <templateFile filePath="Annotations\JavaInterface.xslt" enabled="true" override="true" />
+        <templateFile filePath="Annotations\JavaService.xslt" enabled="true" override="true" />
+        <templateFile filePath="Annotations\OSGIClass.xslt" enabled="true" override="true" />
+        <templateFile filePath="Annotations\Interceptor.xslt" enabled="true" override="false" />
+        <templateFile filePath="..\Commons\Java\buildProperties.xslt" enabled="true" override="true" />
+        <templateFile filePath="..\Commons\Java\build.xslt" enabled="true" override="true" />
+      </templateFiles>
+    </template>
+  </templates>
+  <DTOs />
+  <classes>
+    <class name="SearchAccount" nsBase="COBISCorp.eCOBIS.Account" namespace="COBISCorp.eCOBIS.Account.Service" package="cobiscorp.ecobis.account.service" ns="http://service.account.ecobis.cobiscorp" version="1">
+      <partialClasses>
+        <partialClass name="SearchAccount">
+          <services>
+            <service name="SearchAccountByCurrency" id="Account.SearchAccount.SearchAccountByCurrency">
+              <procedure name="sp_cuenta_cobis" database="cob_cartera" version="1" />
+            </service>
+            <service name="SearchAccountRequest" id="Account.SearchAccount.SearchAccountRequest">
+              <procedure name="sp_personaliza_cuenta" database="cob_remesas" version="1" />
+            </service>
+          </services>
+        </partialClass>
+      </partialClasses>
+    </class>
+    <class name="ValidateAmounts" nsBase="COBISCorp.eCOBIS.Account" namespace="COBISCorp.eCOBIS.Account.Service" package="cobiscorp.ecobis.account.service" ns="http://service.account.ecobis.cobiscorp" version="1">
+      <partialClasses>
+        <partialClass name="ValidateAmounts">
+          <services>
+            <service name="ValidateAmountSavingAccounts" id="Account.ValidateAmounts.ValidateAmountSavingAccounts">
+              <procedure name="sp_valida_cuenta_ahorros" database="cob_credito" version="1" />
+            </service>
+          </services>
+        </partialClass>
+      </partialClasses>
+    </class>
+  </classes>
+  <packagers>
+    <packager type="SGPackageJava" AntTask="sign-archive" KeyAlias="cobisapp" KeyPassword="cobisappadminadmin" KeyCertificatePassword="cobisappadmin" KeyFileName="cobisapp.keystore" RelativeFolder="True" TemplateId="ServiceCTS302" />
+  </packagers>
+  <references>
+    <reference name="COBISCorp.eCOBIS.Account.DTO" type="DTO" version="2.0.0.0" GUID="6FFC936F-237C-4463-8983-C096D137378D">
+      <templates>
+        <template id="DTOJavaPOJO" productName="COBISCorp.eCOBIS.Account.DTO" outputFolder="c:\COBIS-SG\Output\CTS\COBISCorp.eCOBIS.Account.DTO" package="true" packageType="Jar">
+          <templateFiles>
+            <templateFile filePath="JavaPOJO\JavaDTO.xslt" enabled="true" override="true" />
+            <templateFile filePath="..\Commons\Java\buildProperties.xslt" enabled="true" override="true" />
+            <templateFile filePath="..\Commons\Java\build.xslt" enabled="true" override="true" />
+          </templateFiles>
+        </template>
+      </templates>
+      <namespaces>
+        <namespace type="dto" base="COBISCorp.eCOBIS.Account" name="COBISCorp.eCOBIS.Account.DTO" package="cobiscorp.ecobis.account.dto" ns="http://dto.account.ecobis.cobiscorp" folder="DTO" />
+      </namespaces>
+    </reference>
+  </references>
+  <productProperties>
+    <property name="MavenGroupId" value="com.cobiscorp.processapi" />
+    <property name="MavenArtifactId" value="COBISCorp.eCOBIS.Account.Service" />
+    <property name="MavenVersion" value="2.0.0.0" />
+  </productProperties>
+</product>

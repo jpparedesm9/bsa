@@ -1,0 +1,157 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<procedure>
+  <database>cob_credito</database>
+  <name>sp_datos_credito</name>
+  <type>SQLSERVER</type>
+  <version>1</version>
+  <parameters>
+    <parameter name="@s_ssn" dataType="int" direction="in" />
+    <parameter name="@s_sesn" dataType="int" direction="in" />
+    <parameter name="@s_ofi" dataType="smallint" direction="in" />
+    <parameter name="@s_rol" dataType="smallint" direction="in" />
+    <parameter name="@s_user" dataType="varchar" direction="in" />
+    <parameter name="@s_date" dataType="datetime" direction="in" />
+    <parameter name="@s_term" dataType="varchar" direction="in" />
+    <parameter name="@t_debug" dataType="char" direction="in" />
+    <parameter name="@t_file" dataType="varchar" direction="in" />
+    <parameter name="@t_from" dataType="varchar" direction="in" />
+    <parameter name="@s_srv" dataType="varchar" direction="in" />
+    <parameter name="@s_lsrv" dataType="varchar" direction="in" />
+    <parameter name="@i_modo" dataType="int" direction="in" />
+    <parameter name="@i_operacion" dataType="char" direction="in" />
+    <parameter name="@i_tramite" dataType="int" direction="in" />
+    <parameter name="@i_formato_fecha" dataType="int" direction="in" />
+    <parameter name="@i_tipo_cliente" dataType="char" direction="in" />
+  </parameters>
+  <queries>
+    <query>
+      <columns>
+        <column name="COSTO_ANUAL_TOT" />
+        <column name="TASA_INT_ANUAL" />
+        <column name="MONTO_CREDITO" />
+        <column name="MONTO_TOT_PAG" />
+        <column name="LISTA_COMISIONES" />
+        <column name="PORCENTAJE_MORA" />
+        <column name="PLAZO_CREDITO" />
+        <column name="DESCRIP_MONEDA" />
+        <column name="DESCRIP_PLAZO" />
+        <column name="FECHA_LIQUIDA" />
+        <column name="FECHA_LIMITE_PAGO" />
+        <column name="FECHA_CORTE" />
+      </columns>
+      <queryText>SELECT "COSTO_ANUAL_TOT"=w_costo_anual_tot,"TASA_INT_ANUAL"=w_tasa_int_anual,"MONTO_CREDITO"=w_monto_credito,"MONTO_TOT_PAG"=w_monto_tot_pag,"LISTA_COMISIONES"=w_lista_comisiones,"PORCENTAJE_MORA"=w_porcentaje_mora,"PLAZO_CREDITO"=w_plazo_credito,"DESCRIP_MONEDA"=w_desc_moneda,"DESCRIP_PLAZO"=w_desc_plz_cred,"FECHA_LIQUIDA"=w_fecha_liq,"FECHA_LIMITE_PAGO"=ctx.convertString(w_fecha_pago ,i_formato_fecha),"FECHA_CORTE"=ctx.convertString(w_fecha_corte ,i_formato_fecha)</queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="NUMERO" />
+        <column name="MONTO" />
+        <column name="FECHA_VENC" />
+      </columns>
+      <queryText>SELECT "NUMERO" = am_dividendo,"MONTO" = SUM (am_cuota),"FECHA_VENC" = di_fecha_ven</queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="OFICINA" />
+        <column name="FECHA_CREA" />
+        <column name="ASESOR" />
+        <column name="GERENTE" />
+        <column name="ANALISTA" />
+        <column name="MONTO" />
+        <column name="TASA" />
+        <column name="NUM_PAGOS" />
+        <column name="FECHA_FIN" />
+        <column name="TIPO_PLAZO" />
+        <column name="PLAZO" />
+        <column name="DEUDOR" />
+        <column name="GARANTE" />
+        <column name="TIPO_CREDITO" />
+        <column name="CIUD_TR" />
+        <column name="DIR_OFI" />
+        <column name="APODERADO" />
+        <column name="ID_OPERACION" />
+        <column name="MONTO_TOTAL" />
+        <column name="PAGO_SEMANAL" />
+        <column name="PRIMER PAGO" />
+        <column name="DIR_BANCO" />
+        <column name="CP_BANCO" />
+        <column name="MONTO_LETRAS" />
+        <column name="FECHA_LIQ" />
+        <column name="DESPLAZAMIENTO" />
+        <column name="FUNCIONARIO1" />
+        <column name="FUNCIONARIO2" />
+      </columns>
+      <queryText>SELECT "OFICINA" = (SELECT of_nombre FROM cobis..cl_oficina WHERE of_oficina = tr_oficina ),"FECHA_CREA" = CONVERT (VARCHAR (10),tr_fecha_crea ,?),"ASESOR" = (SELECT fu_nombre FROM cobis..cl_funcionario ,cobis..cc_oficial WHERE fu_funcionario = oc_funcionario AND oc_oficial = tr_oficial ),"GERENTE" = ?,"ANALISTA" = ?,"MONTO" = tr_monto,"TASA" = (SELECT ro_porcentaje FROM cob_cartera..ca_rubro_op WHERE ro_concepto = "INT" AND ro_operacion = tr_numero_op ),"NUM_PAGOS" = (SELECT COUNT (di_dividendo) FROM cob_cartera..ca_dividendo WHERE di_operacion = tr_numero_op ),"FECHA_FIN" = (SELECT CONVERT (VARCHAR (10),op_fecha_fin ,?) FROM cob_cartera..ca_operacion WHERE op_operacion = tr_numero_op ),"TIPO_PLAZO" = (SELECT td_descripcion FROM cob_cartera..ca_default_toperacion ,cob_cartera..ca_tdividendo WHERE dt_tdividendo = td_tdividendo AND dt_toperacion = tr_toperacion ),"PLAZO" = (SELECT dt_plazo FROM cob_cartera..ca_default_toperacion WHERE dt_toperacion = tr_toperacion ),"DEUDOR" = (SELECT de_cliente FROM cob_credito..cr_deudores WHERE de_tramite = tr_tramite AND de_rol = "D" ),"GARANTE" = tr_alianza,"TIPO_CREDITO" = (SELECT op_toperacion FROM cob_cartera..ca_operacion WHERE op_operacion = tr_numero_op ),"CIUD_TR" = (SELECT ci_descripcion FROM cobis..cl_ciudad WHERE ci_ciudad = tr_ciudad ),"DIR_OFI" = (SELECT of_direccion FROM cobis..cl_oficina WHERE of_oficina = tr_oficina ),"APODERADO" = (SELECT pa_char FROM cobis..cl_parametro WHERE pa_nemonico = "NASOF" AND pa_producto = "CRE" ),"ID_OPERACION" = (SELECT op_banco FROM cob_cartera..ca_operacion WHERE op_operacion = tr_numero_op ),"MONTO_TOTAL" = (SELECT SUM (am_cuota) FROM cob_cartera..ca_amortizacion WHERE am_operacion = tr_numero_op AND am_dividendo ),"PAGO_SEMANAL" = (SELECT SUM (am_cuota) FROM cob_cartera..ca_amortizacion WHERE am_operacion = tr_numero_op AND am_dividendo = 1 ),"PRIMER PAGO" = ((SELECT CONVERT (VARCHAR (10),di_fecha_ven ,?) FROM cob_cartera..ca_dividendo WHERE di_operacion = tr_numero_op AND di_dividendo = 1 )),"DIR_BANCO" = "Av. Prolongación Paseo de la Reforma No. 500 Col. Lomas de Santa Fe, Delegación Álvaro Obregón","CP_BANCO" = "01219","MONTO_LETRAS" = ?</queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="OFICINA" />
+      </columns>
+      <queryText>SELECT "OFICINA" = (SELECT of_nombre</queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="ENTE" />
+        <column name="NOMBRES" />
+        <column name="RFC" />
+        <column name="CURP" />
+        <column name="SEXO" />
+        <column name="FECHA_NAC" />
+        <column name="NACIONALIDAD" />
+        <column name="DOMICILIO_PART" />
+        <column name="COLONIA" />
+        <column name="CIUDAD" />
+        <column name="DELEGACION" />
+        <column name="CP" />
+        <column name="ESTADO" />
+        <column name="TELEFONO" />
+        <column name="CUENTA" />
+        <column name="OFICINA_CUENTA" />
+        <column name="CELULAR" />
+        <column name="CICLO_ACTUAL" />
+        <column name="ESTADO_CIVIL" />
+      </columns>
+      <queryText>SELECT "ENTE" = en_ente,"NOMBRES" = (SELECT UPPER (ISNULL (en_nombre, "")) + " " + UPPER (ISNULL (p_s_nombre, "")) + " " + UPPER (ISNULL (p_p_apellido, "")) + " " + UPPER (ISNULL (p_s_apellido, "")) ),"RFC" = en_nit,"CURP" = en_ced_ruc,"SEXO" = (SELECT c.valor FROM cobis..cl_catalogo c ,cobis..cl_tabla t WHERE c.tabla = t.codigo AND t.tabla = "cl_sexo" AND c.codigo = p_sexo ),"FECHA_NAC" = CONVERT (VARCHAR (10),p_fecha_nac ,?),"NACIONALIDAD" = (SELECT c.valor FROM cobis..cl_catalogo c ,cobis..cl_tabla t WHERE c.tabla = t.codigo AND t.tabla = "cl_nacionalidad" AND c.codigo = en_nac_aux ),"DOMICILIO_PART" = (SELECT di_descripcion FROM cobis..cl_direccion WHERE di_ente = en_ente AND di_principal = "S" ),"COLONIA" = (SELECT pq_descripcion FROM cobis..cl_parroquia WHERE pq_parroquia ),"CIUDAD" = (SELECT ci_descripcion FROM cobis..cl_ciudad WHERE ci_ciudad ),"DELEGACION" = (SELECT ci_descripcion FROM cobis..cl_ciudad WHERE ci_ciudad ),"CP" = (SELECT di_codpostal FROM cobis..cl_direccion WHERE di_ente = en_ente AND di_principal = "S" ),"ESTADO" = (SELECT pv_descripcion FROM cobis..cl_provincia WHERE pv_provincia ),"TELEFONO" = (SELECT te_valor FROM cobis..cl_telefono WHERE te_tipo_telefono = ? AND te_ente = en_ente AND te_direccion ),"CUENTA" = ea_cta_banco,"OFICINA_CUENTA" = "","CELULAR" = (SELECT te_valor FROM cobis..cl_telefono WHERE te_ente = en_ente AND te_tipo_telefono = ? AND te_fecha_registro ),"CICLO_ACTUAL" = ?,"ESTADO_CIVIL" = (SELECT c.valor FROM cobis..cl_catalogo c ,cobis..cl_tabla t WHERE c.tabla = t.codigo AND t.tabla = "cl_ecivil" AND c.codigo = p_estado_civil )</queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="NOMBRE_NEG" />
+        <column name="NOMBRE DUEÑO" />
+        <column name="DIRECCION" />
+        <column name="COLONIA" />
+        <column name="CIUDAD" />
+        <column name="DELEGACION" />
+        <column name="CP" />
+        <column name="ESTADO" />
+        <column name="TELEFONO" />
+      </columns>
+      <queryText>SELECT "NOMBRE_NEG" = n.nc_nombre,"NOMBRE DUE�O" = (SELECT UPPER (ISNULL (c.en_nombre, "")) + " " + UPPER (ISNULL (c.p_s_nombre, "")) + " " + UPPER (ISNULL (c.p_p_apellido, "")) + " " + UPPER (ISNULL (c.p_s_apellido, "")) ),"DIRECCION" = n.nc_calle + CONVERT (VARCHAR (20),nc_nro ),"COLONIA" = (SELECT pq_descripcion FROM cobis..cl_parroquia WHERE pq_parroquia = n.nc_colonia ),"CIUDAD" = (SELECT ci_descripcion FROM cobis..cl_ciudad WHERE ci_ciudad = n.nc_municipio ),"DELEGACION" = (SELECT ci_descripcion FROM cobis..cl_ciudad WHERE ci_ciudad = n.nc_municipio ),"CP" = n.nc_codpostal,"ESTADO" = (SELECT pv_descripcion FROM cobis..cl_provincia WHERE pv_provincia = n.nc_estado ),"TELEFONO" = n.nc_telefono</queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="NOMBRE_CLI" />
+        <column name="NUM_CTA_TARJ" />
+        <column name="MONTO_MAX" />
+        <column name="PERIODICIDAD" />
+        <column name="FECH_VENC" />
+        <column name="NUM_CREDITO" />
+      </columns>
+      <queryText>SELECT "NOMBRE_CLI" = en_nomlar,"NUM_CTA_TARJ" = ea_cta_banco,"MONTO_MAX" = ?,"PERIODICIDAD" = td_descripcion,"FECH_VENC" = op_fecha_fin,"NUM_CREDITO" = op_banco</queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="ID_ENTE" />
+        <column name="NOMBRE" />
+        <column name="FECHA" />
+        <column name="CIUDAD_TRAM" />
+        <column name="NOM_INCL_UNO" />
+        <column name="NOM_INCL_DOS" />
+        <column name="NOM_BANCO_UNO" />
+        <column name="NOM_BANCO_DOS" />
+        <column name="NUM_REGISTRO" />
+        <column name="DIR_LUG_PAGO" />
+        <column name="MONTO" />
+      </columns>
+      <queryText></queryText>
+    </query>
+  </queries>
+</procedure>

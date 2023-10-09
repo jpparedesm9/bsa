@@ -1,0 +1,50 @@
+[INFO] Scanning for projects...
+[WARNING] 
+[WARNING] Some problems were encountered while building the effective model for com.cobiscorp.b2c.jwt:cobis-b2c-jwt:bundle:1.0-SNAPSHOT
+[WARNING] 'build.plugins.plugin.version' for org.apache.felix:maven-bundle-plugin is missing. @ line 89, column 12
+[WARNING] 
+[WARNING] Some problems were encountered while building the effective model for com.cobiscorp:cobis-mb-services-impl:jar:1.0.1
+[WARNING] 'dependencies.dependency.(groupId:artifactId:type:classifier)' must be unique: com.cobiscorp:cobis-mb-services-interfaces:jar -> duplicate declaration of version 1.0.1 @ line 320, column 15
+[WARNING] 
+[WARNING] It is highly recommended to fix these problems because they threaten the stability of your build.
+[WARNING] 
+[WARNING] For this reason, future Maven versions might no longer support building such malformed projects.
+[WARNING] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Build Order:
+[INFO] 
+[INFO] cobis-b2c-jwt
+[INFO] cobis-mb-services-dtos
+[INFO] cobis-mb-services-interfaces
+[INFO] cobis-mb-services-impl
+[INFO] cobis-mb-services-integration
+[INFO] cobis-b2c-installer
+[INFO] cobis-b2c
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building cobis-b2c-jwt 1.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Summary:
+[INFO] 
+[INFO] cobis-b2c-jwt ...................................... FAILURE [  0.163 s]
+[INFO] cobis-mb-services-dtos ............................. SKIPPED
+[INFO] cobis-mb-services-interfaces ....................... SKIPPED
+[INFO] cobis-mb-services-impl ............................. SKIPPED
+[INFO] cobis-mb-services-integration ...................... SKIPPED
+[INFO] cobis-b2c-installer ................................ SKIPPED
+[INFO] cobis-b2c .......................................... SKIPPED
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 1.938 s
+[INFO] Finished at: 2019-01-24T09:21:47-05:00
+[INFO] Final Memory: 14M/220M
+[INFO] ------------------------------------------------------------------------
+[ERROR] Unknown lifecycle phase "sonar". You must specify a valid lifecycle phase or a goal in the format <plugin-prefix>:<goal> or <plugin-group-id>:<plugin-artifact-id>[:<plugin-version>]:<goal>. Available lifecycle phases are: validate, initialize, generate-sources, process-sources, generate-resources, process-resources, compile, process-classes, generate-test-sources, process-test-sources, generate-test-resources, process-test-resources, test-compile, process-test-classes, test, prepare-package, package, pre-integration-test, integration-test, post-integration-test, verify, install, deploy, pre-clean, clean, post-clean, pre-site, site, post-site, site-deploy. -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/LifecyclePhaseNotFoundException

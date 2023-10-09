@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<product path="D:/SANTANDER/bsa2/src/md/basicas/mobileintegration/csg/MobileAdminLcrService/Products/COBISCorp.eCOBIS.MobileLcr.Service" appPath="C:/Program Files (x86)/COBIS/COBIS Services Generator/" name="COBISCorp.eCOBIS.MobileLcr.Service" productNS="http://service.mobilelcr.ecobis.cobiscorp" description="data mobile lcr" documentationLanguage="Español" year="2019" version="1.0.0.0" type="SERVICE" GUID="E8E82BE9-D60A-4690-A724-120D38965DC6">
+  <namespaces>
+    <namespace type="class" base="COBISCorp.eCOBIS.MobileLcr" name="COBISCorp.eCOBIS.MobileLcr.Service" package="cobiscorp.ecobis.mobilelcr.service" ns="http://service.mobilelcr.ecobis.cobiscorp" folder="" />
+  </namespaces>
+  <templates>
+    <template id="ServiceCTS302" productName="COBISCorp.eCOBIS.MobileLcr.Service" outputFolder="c:\COBIS-SG\Output\CTS\COBISCorp.eCOBIS.MobileLcr.Service" package="true" packageType="Jar">
+      <templateFiles>
+        <templateFile filePath="Annotations\JavaInterface.xslt" enabled="true" override="true" />
+        <templateFile filePath="Annotations\JavaService.xslt" enabled="true" override="true" />
+        <templateFile filePath="Annotations\OSGIClass.xslt" enabled="true" override="true" />
+        <templateFile filePath="Annotations\Interceptor.xslt" enabled="true" override="false" />
+        <templateFile filePath="..\Commons\Java\buildProperties.xslt" enabled="true" override="true" />
+        <templateFile filePath="..\Commons\Java\build.xslt" enabled="true" override="true" />
+      </templateFiles>
+    </template>
+  </templates>
+  <DTOs />
+  <classes>
+    <class name="DocumentLcrRequest" nsBase="COBISCorp.eCOBIS.MobileLcr" namespace="COBISCorp.eCOBIS.MobileLcr.Service" package="cobiscorp.ecobis.mobilelcr.service" ns="http://service.mobilelcr.ecobis.cobiscorp" version="1">
+      <partialClasses>
+        <partialClass name="DocumentLcrRequest">
+          <services>
+            <service name="CreateMobileLcrDocument" id="MobileLcr.DocumentLcrRequest.CreateMobileLcrDocument">
+              <procedure name="sp_documents_lcr_resp" database="cob_credito" version="1" />
+            </service>
+            <service name="QueryInformationLcrDocument" id="MobileLcr.DocumentLcrRequest.QueryInformationLcrDocument">
+              <procedure name="sp_documents_lcr_resp" database="cob_credito" version="1" />
+            </service>
+            <service name="QueryMobileLcrValidateDocument" id="MobileLcr.DocumentLcrRequest.QueryMobileLcrValidateDocument">
+              <procedure name="sp_documents_lcr_resp" database="cob_credito" version="1" />
+            </service>
+          </services>
+        </partialClass>
+      </partialClasses>
+    </class>
+  </classes>
+  <packagers>
+    <packager type="SGPackageJava" AntTask="sign-archive" KeyAlias="cobisapp" KeyPassword="cobisappadminadmin" KeyCertificatePassword="cobisappadmin" KeyFileName="cobisapp.keystore" RelativeFolder="True" TemplateId="ServiceCTS302" />
+  </packagers>
+  <references>
+    <reference name="COBISCorp.eCOBIS.MobileLcr.DTO" type="DTO" version="1.0.0.0" GUID="541DE5BD-9557-4EFE-9423-64F401179964">
+      <templates>
+        <template id="DTOJavaPOJO" productName="COBISCorp.eCOBIS.MobileLcr.DTO" outputFolder="c:\COBIS-SG\Output\CTS\COBISCorp.eCOBIS.MobileLcr.DTO" package="true" packageType="Jar">
+          <templateFiles>
+            <templateFile filePath="JavaPOJO\JavaDTO.xslt" enabled="true" override="true" />
+            <templateFile filePath="..\Commons\Java\buildProperties.xslt" enabled="true" override="true" />
+            <templateFile filePath="..\Commons\Java\build.xslt" enabled="true" override="true" />
+          </templateFiles>
+        </template>
+      </templates>
+      <namespaces>
+        <namespace type="dto" base="COBISCorp.eCOBIS.MobileLcr" name="COBISCorp.eCOBIS.MobileLcr.DTO" package="cobiscorp.ecobis.mobilelcr.dto" ns="http://dto.mobilelcr.ecobis.cobiscorp" folder="DTO" />
+      </namespaces>
+    </reference>
+  </references>
+  <productProperties>
+    <property name="MavenGroupId" value="com.cobiscorp.processapi" />
+    <property name="MavenArtifactId" value="COBISCorp.eCOBIS.MobileLcr.Service" />
+    <property name="MavenVersion" value="1.0.0.0" />
+  </productProperties>
+</product>

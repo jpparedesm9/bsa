@@ -1,0 +1,92 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<procedure>
+  <database>cobis</database>
+  <name>sp_traspaso</name>
+  <type>SYBASE</type>
+  <version>1</version>
+  <parameters>
+    <parameter name="@s_ssn" dataType="int" direction="in" />
+    <parameter name="@s_user" dataType="varchar" direction="in" />
+    <parameter name="@s_ofi" dataType="int" direction="in" />
+    <parameter name="@s_rol" dataType="int" direction="in" />
+    <parameter name="@s_date" dataType="datetime" direction="in" />
+    <parameter name="@s_term" dataType="varchar" direction="in" />
+    <parameter name="@s_srv" dataType="varchar" direction="in" />
+    <parameter name="@s_lsrv" dataType="varchar" direction="in" />
+    <parameter name="@t_trn" dataType="int" direction="in" />
+    <parameter name="@t_debug" dataType="char" direction="in" />
+    <parameter name="@t_file" dataType="varchar" direction="in" />
+    <parameter name="@i_es_grupo" dataType="char" direction="in" />
+    <parameter name="@i_ofi_or" dataType="int" direction="in" />
+    <parameter name="@i_ofi_des" dataType="int" direction="in" />
+    <parameter name="@i_funcionario_or" dataType="varchar" direction="in" />
+    <parameter name="@i_funcionario_des" dataType="varchar" direction="in" />
+    <parameter name="@i_motivo" dataType="int" direction="in" />
+    <parameter name="@i_otro_motivo" dataType="varchar" direction="in" />
+    <parameter name="@i_operacion" dataType="char" direction="in" />
+    <parameter name="@i_cliente" dataType="int" direction="in" />
+    <parameter name="@i_solicitud" dataType="int" direction="in" />
+    <parameter name="@i_banco" dataType="varchar" direction="in" />
+    <parameter name="@i_clientes" dataType="varchar" direction="in" />
+    <parameter name="@i_usuario" dataType="varchar" direction="in" />
+    <parameter name="@i_es_origen" dataType="char" direction="in" />
+    <parameter name="@i_razon_rechazo" dataType="varchar" direction="in" />
+    <parameter name="@i_ult_result" dataType="int" direction="in" />
+    <parameter name="@i_colectivo" dataType="varchar" direction="in" />
+  </parameters>
+  <queries>
+    <query>
+      <columns>
+        <column name="codigo" />
+        <column name="nombre" />
+        <column name="fechaCrea" />
+        <column name="fechaMod" />
+        <column name="estado" />
+        <column name="ciclo" />
+        <column name="montoCre" />
+        <column name="semanasAtra" />
+      </columns>
+      <queryText>SELECT  "codigo" = en_ente,"nombre" = en_nomlar,"fechaCrea" = en_fecha_crea,"fechaMod" = en_fecha_mod,"estado" = ea_estado,"ciclo" = en_nro_ciclo </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="solicitud" />
+        <column name="nombreOfi" />
+        <column name="rolDesc" />
+        <column name="tipoCust" />
+        <column name="fechaIni" />
+        <column name="fechaFin" />
+        <column name="ofiOrigen" />
+        <column name="ofiDestino" />
+        <column name="razonTras" />
+      </columns>
+      <queryText>SELECT  "solicitud" = st_solicitud,"nombreOfi" = fu_nombre,"rolDesc" = ro_descripcion,"tipoCust" = st_es_grupo,"fechaIni" = CONVERT (VARCHAR (10),st_fecha ,103),"fechaFin" = CONVERT (VARCHAR (10),st_hora ,103),"ofiOrigen" = st_fun_origen,"ofiDestino" = st_fun_destino </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="codigo" />
+        <column name="nombre" />
+        <column name="tipo" />
+        <column name="ofiOrigen" />
+        <column name="ofiDestino" />
+      </columns>
+      <queryText>SELECT  "codigo" = cs_ente,"nombre" = (CASE st_es_grupo WHEN "N" THEN (SELECT  en_nombre </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="idOfi" />
+        <column name="nombreOfi" />
+      </columns>
+      <queryText>SELECT DISTINCT "idOfi" = fu_oficina,"nombreOfi" = valor </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="nombre" />
+        <column name="estado" />
+        <column name="oficina" />
+        <column name="usuario" />
+      </columns>
+      <queryText>SELECT  "nombre" = fu_nombre,"estado" = fu_estado,"oficina" = fu_oficina,"usuario" = fu_login </queryText>
+    </query>
+  </queries>
+</procedure>

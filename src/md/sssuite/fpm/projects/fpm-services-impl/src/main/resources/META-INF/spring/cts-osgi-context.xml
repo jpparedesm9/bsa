@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:osgi="http://www.springframework.org/schema/osgi"
+	xmlns:aop="http://www.springframework.org/schema/aop" xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:jee="http://www.springframework.org/schema/jee" xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/osgi http://www.springframework.org/schema/osgi/spring-osgi.xsd
+		http://www.springframework.org/schema/jee http://www.springframework.org/schema/jee/spring-jee.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
+		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd">
+
+
+<osgi:reference id="catalogServiceRef"
+		interface="com.cobiscorp.ecobis.fpm.catalogs.service.ICatalogManager" />
+
+	<osgi:reference id="portfolioCatalogServiceRef"
+		interface="com.cobiscorp.ecobis.fpm.portfolio.catalogs.service.IPortfolioCatalogManager" />
+
+	<osgi:reference id="serviceExecutorRef"
+		interface="com.cobiscorp.cobis.cts.services.servexecutor.IServiceExecutor"
+		filter="(service.impl=Business)" />
+
+<osgi:reference id="cacheManagerRef"
+        interface="com.cobiscorp.cobis.cache.ICacheManager"  />
+
+<osgi:reference id="storedProcedureUtils"
+		interface="com.cobiscorp.cobis.cts.jdbc.utils.CobisStoredProcedureUtils" />
+
+	<osgi:service ref="companyManagerService"
+		interface="com.cobiscorp.ecobis.fpm.administration.service.ICompanyManager" />
+	<osgi:service ref="nodeProductManagerService"
+		interface="com.cobiscorp.ecobis.fpm.administration.service.INodeProductManager" />
+	<osgi:service ref="dictionaryManagerService"
+		interface="com.cobiscorp.ecobis.fpm.administration.service.IDictionaryManager" />
+
+	<osgi:service ref="bankingProductManagerService"
+		interface="com.cobiscorp.ecobis.fpm.operation.service.IBankingProductManager" />
+	<osgi:service ref="bankingProductHistoryManagerService"
+		interface="com.cobiscorp.ecobis.fpm.operation.service.IBankingProductHistoryManager" />
+	<osgi:service ref="itemsManagerService"
+		interface="com.cobiscorp.ecobis.fpm.operation.service.IItemsManager" />
+	<osgi:service ref="renderManagerService"
+		interface="com.cobiscorp.ecobis.fpm.operation.service.IRenderManager" />
+	<osgi:service ref="generalParametersManagerService"
+		interface="com.cobiscorp.ecobis.fpm.operation.service.IGeneralParametersManager" />
+	<osgi:service ref="mappingManagerService"
+		interface="com.cobiscorp.ecobis.fpm.operation.service.IMappingFieldManager" />
+
+	<osgi:service ref="accountingProfileManagerService"
+		interface="com.cobiscorp.ecobis.fpm.portfolio.administration.service.IAccountingProfileManager" />
+	<osgi:service ref="itemStatusManagerService"
+		interface="com.cobiscorp.ecobis.fpm.portfolio.administration.service.IItemStatusManager" />
+	<osgi:service ref="operationStatusManagerService"
+		interface="com.cobiscorp.ecobis.fpm.portfolio.administration.service.IOperationStatusManager" />
+	<osgi:service ref="purposeManagerService"
+		interface="com.cobiscorp.ecobis.fpm.portfolio.administration.service.IPurposeManager" />
+	<osgi:service ref="economicActivityManagerService"
+		interface="com.cobiscorp.ecobis.fpm.portfolio.administration.service.IEconomicActivityManager" />
+	<osgi:service ref="economicDestinationManagerService"
+		interface="com.cobiscorp.ecobis.fpm.portfolio.administration.service.IEconomicDestinationManager" />
+	<osgi:service ref="defaultValuesManagerService"
+		interface="com.cobiscorp.ecobis.fpm.interceptors.service.IDefaultValuesManager" />
+
+	<osgi:reference id="ruleManager"
+		interface="com.cobiscorp.ecobis.bpl.rules.engine.services.IRuleManager"></osgi:reference>
+	<osgi:service ref="evaluatorManagerService"
+		interface="com.cobiscorp.ecobis.fpm.service.IEvaluatorManager" />
+		
+	<osgi:service ref="serviceTransactionManager"
+		interface="com.cobiscorp.ecobis.fpm.administration.service.IServiceTransactionManager" />
+		<osgi:reference id="transactionManager" filter="(service.impl=COBIS)"
+     interface="org.springframework.transaction.PlatformTransactionManager" />
+     <osgi:service ref="paymentTypeFieldsManager"
+		interface="com.cobiscorp.ecobis.fpm.administration.service.IPaymentTypeFieldsManager" />
+		  <osgi:service ref="BankingProductAssociationManager"
+		interface="com.cobiscorp.ecobis.fpm.operation.service.IBankingProductAssociationManager" />
+	<osgi:service ref="AssociationTransactionManager"
+		interface="com.cobiscorp.ecobis.fpm.administration.service.IAssociationTransactionManager" />
+	<osgi:service ref="AssociationChannelManager"
+		interface="com.cobiscorp.ecobis.fpm.administration.service.IAssociationChannelManager" />
+	<osgi:service ref="UnitFunctionalityValuesManagerService"
+		interface="com.cobiscorp.ecobis.fpm.operation.service.IUnitFunctionalityValues" />
+	
+	<osgi:service ref="FieldByProductManagerService"
+		interface="com.cobiscorp.ecobis.fpm.administration.service.IFieldsByProductManager" />
+	
+	<osgi:service ref="FieldsByProductValuesManagerService"   
+		interface="com.cobiscorp.ecobis.fpm.operation.service.IFieldsByProductValuesManager" />
+
+</beans>

@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<procedure>
+  <database>cob_conta_super</database>
+  <name>sp_conciliar_corresponsal_qry</name>
+  <type>SQLSERVER</type>
+  <version>1</version>
+  <parameters>
+    <parameter name="@i_corresponsal" dataType="varchar" direction="in" />
+    <parameter name="@i_tipo_trn" dataType="varchar" direction="in" />
+    <parameter name="@i_fecha_desde" dataType="datetime" direction="in" />
+    <parameter name="@i_fecha_hasta" dataType="datetime" direction="in" />
+    <parameter name="@i_id_trn_corresp" dataType="int" direction="in" />
+    <parameter name="@i_cliente" dataType="int" direction="in" />
+    <parameter name="@i_grupo" dataType="int" direction="in" />
+    <parameter name="@i_estado_conci" dataType="char" direction="in" />
+    <parameter name="@s_user" dataType="varchar" direction="in" />
+    <parameter name="@i_razon_conci" dataType="char" direction="in" />
+    <parameter name="@i_co_estado_trn" dataType="char" direction="in" />
+    <parameter name="@i_siguiente" dataType="int" direction="in" />
+    <parameter name="@i_accion" dataType="char" direction="in" />
+  </parameters>
+  <queries>
+    <query>
+      <columns>
+        <column name="Id" />
+        <column name="Corresponsal" />
+        <column name="Referencia" />
+        <column name="trn_corresponsal" />
+        <column name="Tipo_trn" />
+        <column name="Cliente / Grupo" />
+        <column name="Nombre" />
+        <column name="Reverso" />
+        <column name="Fecha Registro" />
+        <column name="Fecha Valor" />
+        <column name="Usuario_trn" />
+        <column name="Estado COBIS" />
+        <column name="Conciliado" />
+        <column name="Causa" />
+        <column name="Usuario" />
+        <column name="Fecha Conciliacion" />
+        <column name="Accion" />
+        <column name="Observacion" />
+        <column name="Secuencial" />
+        <column name="Relacionados" />
+      </columns>
+      <queryText>SELECT  "Fecha Registro" = MIN (co_fecha_registro) </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="Fecha Registro" />
+      </columns>
+      <queryText></queryText>
+    </query>
+  </queries>
+</procedure>

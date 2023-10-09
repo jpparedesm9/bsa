@@ -1,0 +1,1207 @@
+{
+  "id": {
+    "moduleId": "BUSIN",
+    "subModuleId": "FLCRE",
+    "taskId": "T_FLCRE_76_CRNTO32",
+    "version": "1.0.0"
+  },
+  "name": {
+    "$ref": "../../../../BUSIN/relations/componentKeys.json#/FLCRE/Forms/T_FLCRE_76_CRNTO32/name"
+  },
+  "modeEnabled": 4095,
+  "tempSaveStr": "F",
+  "autoCrudStr": "F",
+  "mainViewContainerId": "VC_CRNTO32_RRNYM_717",
+  "customizationLayer": 0,
+  "customizationLayerDescription": "ECU",
+  "commands": [
+    {
+      "id": {
+        "commandId": "CM_CRNTO32CAL78",
+        "moduleId": "BUSIN",
+        "subModuleId": "FLCRE",
+        "taskId": "T_FLCRE_76_CRNTO32",
+        "taskVersion": "1.0.0"
+      },
+      "name": "Cancelar",
+      "causesValidationAsString": "F",
+      "causesValidation": false,
+      "showInMode": 4095,
+      "enabled": 4095,
+      "closeAsString": "F",
+      "close": false,
+      "order": 2,
+      "customizationLayer": 0,
+      "customizationLayerDescription": "ECU",
+      "commandType": 0,
+      "options": 0,
+      "label": {
+        "labelId": "DLB_BUSIN_CANCELARI_56591",
+        "defaultValue": {
+          "$ref": "../../../../BUSIN/assets/languages/BUSIN.json#/BUSIN/LBL/DLB_BUSIN_CANCELARI_56591"
+        },
+        "hasI18N": true,
+        "moduleId": "BUSIN",
+        "customizationLayer": 0,
+        "customizationLayerDescription": "ECU",
+        "i18N": "T"
+      },
+      "userControl": {
+        "userControlId": "Button",
+        "description": "Designer Button",
+        "customizationLayer": 0,
+        "customizationLayerDescription": "ECU",
+        "type": "A",
+        "name": "Designer Button"
+      },
+      "customEvents": [
+        {
+          "executionType": 1,
+          "customEventId": "CECM_010_CM_CRNTO32CAL78_554",
+          "enabled": "T",
+          "customizationLayer": 0,
+          "customizationLayerDescription": "ECU",
+          "commandEventType": {
+            "eventId": 10,
+            "name": "ExecuteCommand",
+            "description": "Permite personalziar la acción a ejecutar de un command"
+          },
+          "thereAnServerEvent": false,
+          "thereAnClientEvent": true,
+          "thereAnCallbackEvent": false,
+          "isEnabled": true
+        }
+      ]
+    },
+    {
+      "id": {
+        "commandId": "CM_CRNTO32ARA57",
+        "moduleId": "BUSIN",
+        "subModuleId": "FLCRE",
+        "taskId": "T_FLCRE_76_CRNTO32",
+        "taskVersion": "1.0.0"
+      },
+      "name": "Guardar",
+      "causesValidationAsString": "F",
+      "causesValidation": false,
+      "showInMode": 4095,
+      "enabled": 4095,
+      "closeAsString": "F",
+      "close": false,
+      "order": 1,
+      "customizationLayer": 0,
+      "customizationLayerDescription": "ECU",
+      "commandType": 0,
+      "options": 0,
+      "label": {
+        "labelId": "DLB_BUSIN_GUARDARWV_92974",
+        "defaultValue": {
+          "$ref": "../../../../BUSIN/assets/languages/BUSIN.json#/BUSIN/LBL/DLB_BUSIN_GUARDARWV_92974"
+        },
+        "hasI18N": true,
+        "moduleId": "BUSIN",
+        "customizationLayer": 0,
+        "customizationLayerDescription": "ECU",
+        "i18N": "T"
+      },
+      "userControl": {
+        "userControlId": "Button",
+        "description": "Designer Button",
+        "customizationLayer": 0,
+        "customizationLayerDescription": "ECU",
+        "type": "A",
+        "name": "Designer Button"
+      },
+      "customEvents": [
+        {
+          "executionType": 1,
+          "customEventId": "CECM_010_CM_CRNTO32ARA57_477",
+          "enabled": "T",
+          "customizationLayer": 0,
+          "customizationLayerDescription": "ECU",
+          "commandEventType": {
+            "eventId": 10,
+            "name": "ExecuteCommand",
+            "description": "Permite personalziar la acción a ejecutar de un command"
+          },
+          "thereAnServerEvent": false,
+          "thereAnClientEvent": true,
+          "thereAnCallbackEvent": false,
+          "isEnabled": true
+        }
+      ]
+    }
+  ],
+  "viewContainers": [
+    {
+      "id": {
+        "moduleId": "BUSIN",
+        "subModuleId": "FLCRE",
+        "taskId": "T_FLCRE_76_CRNTO32",
+        "viewContainerId": "VC_CRNTO32_RRNYM_717",
+        "taskVersion": "1.0.0"
+      },
+      "name": "WarrrantyPolicyModal",
+      "description": " ",
+      "layoutType": "Group",
+      "order": 0,
+      "options": 0,
+      "collapsedStr": "F",
+      "enabled": 4095,
+      "customizationLayer": 0,
+      "customizationLayerDescription": "ECU",
+      "columnsNum": 1,
+      "colSpan": 1,
+      "customEvents": [
+        {
+          "executionType": 1,
+          "customEventId": "CEVC_002_CRNTO32_RRNYM_717_414",
+          "enabled": "T",
+          "customizationLayer": 0,
+          "customizationLayerDescription": "ECU",
+          "viewContainerEventType": {
+            "eventId": 2,
+            "name": "InitData",
+            "description": "Inicialización de datos de un ViewContainer, despues de este evento se realiza el segimiento de cambios en los datos"
+          },
+          "thereAnServerEvent": false,
+          "thereAnClientEvent": true,
+          "thereAnCallbackEvent": false,
+          "isEnabled": true
+        },
+        {
+          "executionType": 1,
+          "customEventId": "CEVC_008_CRNTO32_RRNYM_717_881",
+          "enabled": "T",
+          "customizationLayer": 0,
+          "customizationLayerDescription": "ECU",
+          "viewContainerEventType": {
+            "eventId": 8,
+            "name": "Render",
+            "description": "Se ejecuta antes de renderizar un ViewContainer, permite realizar personalizaciones visuales"
+          },
+          "thereAnServerEvent": false,
+          "thereAnClientEvent": true,
+          "thereAnCallbackEvent": false,
+          "isEnabled": true
+        }
+      ],
+      "view": {
+        "id": {
+          "viewId": "VW_WARNTYPOIY77",
+          "version": "1.0.0"
+        },
+        "description": "Vista para agregar una nueva política o editar una ya existente.",
+        "name": "WarrantyPolicy",
+        "customizationLayer": 0,
+        "customizationLayerDescription": "ECU",
+        "groups": [
+          {
+            "groupId": "GR_WARNTYPOIY77_04",
+            "refViewId": "VW_WARNTYPOIY77",
+            "refViewVersion": "1.0.0",
+            "collapsedStr": "F",
+            "columnsNum": 1,
+            "layoutType": "GroupLayout",
+            "enabled": 4095,
+            "visible": 4095,
+            "name": "Contenedor Acordeón",
+            "order": 0,
+            "customizationLayer": 0,
+            "customizationLayerDescription": "ECU",
+            "colSpan": 1,
+            "orientation": "V",
+            "groups": [
+              {
+                "groupId": "GR_WARNTYPOIY77_06",
+                "refViewId": "VW_WARNTYPOIY77",
+                "refViewVersion": "1.0.0",
+                "collapsedStr": "F",
+                "columnsNum": 2,
+                "layoutType": "Group",
+                "enabled": 4095,
+                "visible": 4095,
+                "name": "Grupo para WarrantyPoliciy",
+                "order": 0,
+                "customizationLayer": 0,
+                "customizationLayerDescription": "ECU",
+                "colSpan": 1,
+                "orientation": "V",
+                "entity": {
+                  "$ref": "../../../../BUSIN/entities/EN_WRANTYPIY629.json#"
+                },
+                "visualAttributes": [
+                  {
+                    "visualAttributeId": "VA_WARNTYPOIY7706_UEIC804",
+                    "colSpan": 1,
+                    "enabled": 4095,
+                    "order": 0,
+                    "queryVersion": " ",
+                    "readOnly": 8,
+                    "rowSpan": 0,
+                    "visible": 4095,
+                    "textRows": 0,
+                    "name": "numberPolicy",
+                    "customizationLayer": 0,
+                    "customizationLayerDescription": "ECU",
+                    "attributeValidations": [
+                      {
+                        "id": "VV_WARNTYPOIY7706_UEIC804_14",
+                        "regularExpression": "^[a-zA-Z\\d_]{1,20}$",
+                        "compareOperator": 0,
+                        "customizationLayer": 0,
+                        "customizationLayerDescription": "ECU",
+                        "visualValidationType": {
+                          "visualValidationId": "RegularExpression",
+                          "description": "Regula Expression Validation"
+                        },
+                        "validateMessageLabel": {
+                          "labelId": "DLB_BUSIN_IGLETSUES_62052",
+                          "defaultValue": {
+                            "$ref": "../../../../BUSIN/assets/languages/BUSIN.json#/BUSIN/MSG/DLB_BUSIN_IGLETSUES_62052"
+                          },
+                          "hasI18N": true,
+                          "moduleId": "BUSIN",
+                          "customizationLayer": 0,
+                          "customizationLayerDescription": "ECU",
+                          "i18N": "T"
+                        }
+                      },
+                      {
+                        "id": "VV_WARNTYPOIY7706_UEIC804_85",
+                        "compareOperator": 0,
+                        "customizationLayer": 0,
+                        "customizationLayerDescription": "ECU",
+                        "visualValidationType": {
+                          "visualValidationId": "Required",
+                          "description": "Required Validation"
+                        },
+                        "validateMessageLabel": {
+                          "labelId": "DLB_BUSIN_MANDATORY_16739",
+                          "defaultValue": {
+                            "$ref": "../../../../BUSIN/assets/languages/BUSIN.json#/BUSIN/MSG/DLB_BUSIN_MANDATORY_16739"
+                          },
+                          "hasI18N": true,
+                          "moduleId": "BUSIN",
+                          "customizationLayer": 0,
+                          "customizationLayerDescription": "ECU",
+                          "i18N": "T"
+                        }
+                      }
+                    ],
+                    "attribute": {
+                      "$ref": "../../../../BUSIN/entities/EN_WRANTYPIY629.json#/attributes/AT_WRA629UEIC78"
+                    },
+                    "label": {
+                      "labelId": "DLB_BUSIN_OLCYNUMBE_44906",
+                      "defaultValue": {
+                        "$ref": "../../../../BUSIN/assets/languages/BUSIN.json#/BUSIN/LBL/DLB_BUSIN_OLCYNUMBE_44906"
+                      },
+                      "hasI18N": true,
+                      "moduleId": "BUSIN",
+                      "customizationLayer": 0,
+                      "customizationLayerDescription": "ECU",
+                      "i18N": "T"
+                    },
+                    "userControl": {
+                      "userControlId": "TextInputBox",
+                      "description": "Designer TextBox",
+                      "customizationLayer": 0,
+                      "customizationLayerDescription": "ECU",
+                      "type": "I",
+                      "name": "Designer TextBox"
+                    },
+                    "cacheDuration": 0,
+                    "options": 0,
+                    "elementColumnSpan": 1,
+                    "elementId": "VA_WARNTYPOIY7706_UEIC804",
+                    "customEvents": [],
+                    "aggregateId": null,
+                    "aggregate": null,
+                    "width": null,
+                    "style": null,
+                    "componentStyle": null,
+                    "include": 4095,
+                    "responsiveLayouts": null,
+                    "responsivity": false
+                  },
+                  {
+                    "visualAttributeId": "VA_WARNTYPOIY7706_NSNE946",
+                    "colSpan": 1,
+                    "enabled": 4095,
+                    "order": 1,
+                    "queryVersion": " ",
+                    "readOnly": 8,
+                    "rowSpan": 0,
+                    "visible": 4095,
+                    "textRows": 0,
+                    "catalogName": "cu_des_aseguradora",
+                    "name": "insurance",
+                    "customizationLayer": 0,
+                    "customizationLayerDescription": "ECU",
+                    "attributeValidations": [
+                      {
+                        "id": "VV_WARNTYPOIY7706_NSNE946_38",
+                        "compareOperator": 0,
+                        "customizationLayer": 0,
+                        "customizationLayerDescription": "ECU",
+                        "visualValidationType": {
+                          "visualValidationId": "Required",
+                          "description": "Required Validation"
+                        },
+                        "validateMessageLabel": {
+                          "labelId": "DLB_BUSIN_MANDATORY_16739",
+                          "defaultValue": {
+                            "$ref": "../../../../BUSIN/assets/languages/BUSIN.json#/BUSIN/MSG/DLB_BUSIN_MANDATORY_16739"
+                          },
+                          "hasI18N": true,
+                          "moduleId": "BUSIN",
+                          "customizationLayer": 0,
+                          "customizationLayerDescription": "ECU",
+                          "i18N": "T"
+                        }
+                      }
+                    ],
+                    "attribute": {
+                      "$ref": "../../../../BUSIN/entities/EN_WRANTYPIY629.json#/attributes/AT_WRA629NSNE69"
+                    },
+                    "label": {
+                      "labelId": "DLB_BUSIN_ASEGURAOA_80576",
+                      "defaultValue": {
+                        "$ref": "../../../../BUSIN/assets/languages/BUSIN.json#/BUSIN/LBL/DLB_BUSIN_ASEGURAOA_80576"
+                      },
+                      "hasI18N": true,
+                      "moduleId": "BUSIN",
+                      "customizationLayer": 0,
+                      "customizationLayerDescription": "ECU",
+                      "i18N": "T"
+                    },
+                    "userControl": {
+                      "userControlId": "ComboBox",
+                      "description": "Designer ComboBox",
+                      "customizationLayer": 0,
+                      "customizationLayerDescription": "ECU",
+                      "type": "I",
+                      "name": "Designer ComboBox"
+                    },
+                    "cacheDuration": 0,
+                    "options": 0,
+                    "elementColumnSpan": 1,
+                    "elementId": "VA_WARNTYPOIY7706_NSNE946",
+                    "customEvents": [],
+                    "aggregateId": null,
+                    "aggregate": null,
+                    "width": null,
+                    "style": null,
+                    "componentStyle": null,
+                    "include": 4095,
+                    "responsiveLayouts": null,
+                    "responsivity": false
+                  },
+                  {
+                    "visualAttributeId": "VA_WARNTYPOIY7706_TYPE722",
+                    "colSpan": 1,
+                    "enabled": 4095,
+                    "order": 2,
+                    "queryVersion": " ",
+                    "readOnly": 8,
+                    "rowSpan": 0,
+                    "visible": 4095,
+                    "textRows": 0,
+                    "catalogName": "cu_cob_poliza",
+                    "name": "type",
+                    "customizationLayer": 0,
+                    "customizationLayerDescription": "ECU",
+                    "attribute": {
+                      "$ref": "../../../../BUSIN/entities/EN_WRANTYPIY629.json#/attributes/AT_WRA629TYPE21"
+                    },
+                    "label": {
+                      "labelId": "DLB_BUSIN_TYPEYLJIK_10770",
+                      "defaultValue": {
+                        "$ref": "../../../../BUSIN/assets/languages/BUSIN.json#/BUSIN/LBL/DLB_BUSIN_TYPEYLJIK_10770"
+                      },
+                      "hasI18N": true,
+                      "moduleId": "BUSIN",
+                      "customizationLayer": 0,
+                      "customizationLayerDescription": "ECU",
+                      "i18N": "T"
+                    },
+                    "userControl": {
+                      "userControlId": "ComboBox",
+                      "description": "Designer ComboBox",
+                      "customizationLayer": 0,
+                      "customizationLayerDescription": "ECU",
+                      "type": "I",
+                      "name": "Designer ComboBox"
+                    },
+                    "cacheDuration": 0,
+                    "options": 0,
+                    "elementColumnSpan": 1,
+                    "elementId": "VA_WARNTYPOIY7706_TYPE722",
+                    "customEvents": [],
+                    "aggregateId": null,
+                    "aggregate": null,
+                    "width": null,
+                    "style": null,
+                    "componentStyle": null,
+                    "include": 4095,
+                    "responsiveLayouts": null,
+                    "responsivity": false,
+                    "attributeValidations": []
+                  },
+                  {
+                    "visualAttributeId": "VA_WARNTYPOIY7706_ERII912",
+                    "colSpan": 1,
+                    "enabled": 4095,
+                    "order": 3,
+                    "queryVersion": " ",
+                    "readOnly": 8,
+                    "rowSpan": 0,
+                    "visible": 4095,
+                    "textRows": 0,
+                    "name": "description",
+                    "customizationLayer": 0,
+                    "customizationLayerDescription": "ECU",
+                    "attribute": {
+                      "$ref": "../../../../BUSIN/entities/EN_WRANTYPIY629.json#/attributes/AT_WRA629ERII42"
+                    },
+                    "label": {
+                      "labelId": "DLB_BUSIN_DESCRIPCN_50497",
+                      "defaultValue": {
+                        "$ref": "../../../../BUSIN/assets/languages/BUSIN.json#/BUSIN/LBL/DLB_BUSIN_DESCRIPCN_50497"
+                      },
+                      "hasI18N": true,
+                      "moduleId": "BUSIN",
+                      "customizationLayer": 0,
+                      "customizationLayerDescription": "ECU",
+                      "i18N": "T"
+                    },
+                    "userControl": {
+                      "userControlId": "TextInputBox",
+                      "description": "Designer TextBox",
+                      "customizationLayer": 0,
+                      "customizationLayerDescription": "ECU",
+                      "type": "I",
+                      "name": "Designer TextBox"
+                    },
+                    "cacheDuration": 0,
+                    "options": 0,
+                    "elementColumnSpan": 1,
+                    "elementId": "VA_WARNTYPOIY7706_ERII912",
+                    "customEvents": [],
+                    "aggregateId": null,
+                    "aggregate": null,
+                    "width": null,
+                    "style": null,
+                    "componentStyle": null,
+                    "include": 4095,
+                    "responsiveLayouts": null,
+                    "responsivity": false,
+                    "attributeValidations": []
+                  },
+                  {
+                    "visualAttributeId": "VA_WARNTYPOIY7706_FTVD738",
+                    "colSpan": 1,
+                    "enabled": 4095,
+                    "order": 4,
+                    "queryVersion": " ",
+                    "readOnly": 8,
+                    "rowSpan": 0,
+                    "visible": 4095,
+                    "textRows": 0,
+                    "name": "effectiveDate",
+                    "customizationLayer": 0,
+                    "customizationLayerDescription": "ECU",
+                    "attributeValidations": [
+                      {
+                        "id": "VV_WARNTYPOIY7706_FTVD738_31",
+                        "compareOperator": 0,
+                        "customizationLayer": 0,
+                        "customizationLayerDescription": "ECU",
+                        "visualValidationType": {
+                          "visualValidationId": "Required",
+                          "description": "Required Validation"
+                        },
+                        "validateMessageLabel": {
+                          "labelId": "DLB_BUSIN_MANDATORY_16739",
+                          "defaultValue": {
+                            "$ref": "../../../../BUSIN/assets/languages/BUSIN.json#/BUSIN/MSG/DLB_BUSIN_MANDATORY_16739"
+                          },
+                          "hasI18N": true,
+                          "moduleId": "BUSIN",
+                          "customizationLayer": 0,
+                          "customizationLayerDescription": "ECU",
+                          "i18N": "T"
+                        }
+                      }
+                    ],
+                    "attribute": {
+                      "$ref": "../../../../BUSIN/entities/EN_WRANTYPIY629.json#/attributes/AT_WRA629FTVD85"
+                    },
+                    "label": {
+                      "labelId": "DLB_BUSIN_HEVGENCIA_90594",
+                      "defaultValue": {
+                        "$ref": "../../../../BUSIN/assets/languages/BUSIN.json#/BUSIN/LBL/DLB_BUSIN_HEVGENCIA_90594"
+                      },
+                      "hasI18N": true,
+                      "moduleId": "BUSIN",
+                      "customizationLayer": 0,
+                      "customizationLayerDescription": "ECU",
+                      "i18N": "T"
+                    },
+                    "userControl": {
+                      "userControlId": "DateField",
+                      "description": "Designer DateField",
+                      "customizationLayer": 0,
+                      "customizationLayerDescription": "ECU",
+                      "type": "I",
+                      "name": "Designer DateField"
+                    },
+                    "cacheDuration": 0,
+                    "options": 0,
+                    "elementColumnSpan": 1,
+                    "elementId": "VA_WARNTYPOIY7706_FTVD738",
+                    "customEvents": [],
+                    "aggregateId": null,
+                    "aggregate": null,
+                    "width": null,
+                    "style": null,
+                    "componentStyle": null,
+                    "include": 4095,
+                    "responsiveLayouts": null,
+                    "responsivity": false
+                  },
+                  {
+                    "visualAttributeId": "VA_WARNTYPOIY7706_FCVN828",
+                    "colSpan": 1,
+                    "enabled": 4095,
+                    "order": 5,
+                    "queryVersion": " ",
+                    "readOnly": 8,
+                    "rowSpan": 0,
+                    "visible": 4095,
+                    "textRows": 0,
+                    "name": "effectiveDateEnd",
+                    "customizationLayer": 0,
+                    "customizationLayerDescription": "ECU",
+                    "attributeValidations": [
+                      {
+                        "id": "VV_WARNTYPOIY7706_FCVN828_20",
+                        "visualAttribute2": "VA_WARNTYPOIY7706_FTVD738",
+                        "compareOperator": 2,
+                        "customizationLayer": 0,
+                        "customizationLayerDescription": "ECU",
+                        "visualValidationType": {
+                          "visualValidationId": "Compare",
+                          "description": "Compare Validation"
+                        },
+                        "validateMessageLabel": {
+                          "labelId": "DLB_BUSIN_ENOEEHGES_25772",
+                          "defaultValue": {
+                            "$ref": "../../../../BUSIN/assets/languages/BUSIN.json#/BUSIN/MSG/DLB_BUSIN_ENOEEHGES_25772"
+                          },
+                          "hasI18N": true,
+                          "moduleId": "BUSIN",
+                          "customizationLayer": 0,
+                          "customizationLayerDescription": "ECU",
+                          "i18N": "T"
+                        }
+                      },
+                      {
+                        "id": "VV_WARNTYPOIY7706_FCVN828_89",
+                        "compareOperator": 0,
+                        "customizationLayer": 0,
+                        "customizationLayerDescription": "ECU",
+                        "visualValidationType": {
+                          "visualValidationId": "Required",
+                          "description": "Required Validation"
+                        },
+                        "validateMessageLabel": {
+                          "labelId": "DLB_BUSIN_MANDATORY_16739",
+                          "defaultValue": {
+                            "$ref": "../../../../BUSIN/assets/languages/BUSIN.json#/BUSIN/MSG/DLB_BUSIN_MANDATORY_16739"
+                          },
+                          "hasI18N": true,
+                          "moduleId": "BUSIN",
+                          "customizationLayer": 0,
+                          "customizationLayerDescription": "ECU",
+                          "i18N": "T"
+                        }
+                      }
+                    ],
+                    "attribute": {
+                      "$ref": "../../../../BUSIN/entities/EN_WRANTYPIY629.json#/attributes/AT_WRA629FCVN12"
+                    },
+                    "label": {
+                      "labelId": "DLB_BUSIN_FECADVIGE_91215",
+                      "defaultValue": {
+                        "$ref": "../../../../BUSIN/assets/languages/BUSIN.json#/BUSIN/LBL/DLB_BUSIN_FECADVIGE_91215"
+                      },
+                      "hasI18N": true,
+                      "moduleId": "BUSIN",
+                      "customizationLayer": 0,
+                      "customizationLayerDescription": "ECU",
+                      "i18N": "T"
+                    },
+                    "userControl": {
+                      "userControlId": "DateField",
+                      "description": "Designer DateField",
+                      "customizationLayer": 0,
+                      "customizationLayerDescription": "ECU",
+                      "type": "I",
+                      "name": "Designer DateField"
+                    },
+                    "cacheDuration": 0,
+                    "options": 0,
+                    "elementColumnSpan": 1,
+                    "elementId": "VA_WARNTYPOIY7706_FCVN828",
+                    "customEvents": [],
+                    "aggregateId": null,
+                    "aggregate": null,
+                    "width": null,
+                    "style": null,
+                    "componentStyle": null,
+                    "include": 4095,
+                    "responsiveLayouts": null,
+                    "responsivity": false
+                  },
+                  {
+                    "visualAttributeId": "VA_WARNTYPOIY7706_EDRT336",
+                    "colSpan": 1,
+                    "enabled": 4095,
+                    "order": 6,
+                    "queryVersion": " ",
+                    "readOnly": 8,
+                    "rowSpan": 0,
+                    "visible": 4095,
+                    "textRows": 0,
+                    "name": "endorsementDate",
+                    "customizationLayer": 0,
+                    "customizationLayerDescription": "ECU",
+                    "attributeValidations": [
+                      {
+                        "id": "VV_WARNTYPOIY7706_EDRT336_00",
+                        "compareOperator": 0,
+                        "customizationLayer": 0,
+                        "customizationLayerDescription": "ECU",
+                        "visualValidationType": {
+                          "visualValidationId": "Required",
+                          "description": "Required Validation"
+                        },
+                        "validateMessageLabel": {
+                          "labelId": "DLB_BUSIN_MANDATORY_16739",
+                          "defaultValue": {
+                            "$ref": "../../../../BUSIN/assets/languages/BUSIN.json#/BUSIN/MSG/DLB_BUSIN_MANDATORY_16739"
+                          },
+                          "hasI18N": true,
+                          "moduleId": "BUSIN",
+                          "customizationLayer": 0,
+                          "customizationLayerDescription": "ECU",
+                          "i18N": "T"
+                        }
+                      }
+                    ],
+                    "attribute": {
+                      "$ref": "../../../../BUSIN/entities/EN_WRANTYPIY629.json#/attributes/AT_WRA629EDRT46"
+                    },
+                    "label": {
+                      "labelId": "DLB_BUSIN_EAEVIENCI_72543",
+                      "defaultValue": {
+                        "$ref": "../../../../BUSIN/assets/languages/BUSIN.json#/BUSIN/LBL/DLB_BUSIN_EAEVIENCI_72543"
+                      },
+                      "hasI18N": true,
+                      "moduleId": "BUSIN",
+                      "customizationLayer": 0,
+                      "customizationLayerDescription": "ECU",
+                      "i18N": "T"
+                    },
+                    "userControl": {
+                      "userControlId": "DateField",
+                      "description": "Designer DateField",
+                      "customizationLayer": 0,
+                      "customizationLayerDescription": "ECU",
+                      "type": "I",
+                      "name": "Designer DateField"
+                    },
+                    "cacheDuration": 0,
+                    "options": 0,
+                    "elementColumnSpan": 1,
+                    "elementId": "VA_WARNTYPOIY7706_EDRT336",
+                    "customEvents": [],
+                    "aggregateId": null,
+                    "aggregate": null,
+                    "width": null,
+                    "style": null,
+                    "componentStyle": null,
+                    "include": 4095,
+                    "responsiveLayouts": null,
+                    "responsivity": false
+                  },
+                  {
+                    "visualAttributeId": "VA_WARNTYPOIY7706_REMN585",
+                    "colSpan": 1,
+                    "enabled": 4095,
+                    "order": 7,
+                    "queryVersion": " ",
+                    "readOnly": 8,
+                    "rowSpan": 0,
+                    "visible": 4095,
+                    "textRows": 0,
+                    "name": "endorsementDateEnd",
+                    "customizationLayer": 0,
+                    "customizationLayerDescription": "ECU",
+                    "attributeValidations": [
+                      {
+                        "id": "VV_WARNTYPOIY7706_REMN585_80",
+                        "visualAttribute2": "VA_WARNTYPOIY7706_EDRT336",
+                        "compareOperator": 2,
+                        "customizationLayer": 0,
+                        "customizationLayerDescription": "ECU",
+                        "visualValidationType": {
+                          "visualValidationId": "Compare",
+                          "description": "Compare Validation"
+                        },
+                        "validateMessageLabel": {
+                          "labelId": "DLB_BUSIN_ENOEEHGES_25772",
+                          "defaultValue": {
+                            "$ref": "../../../../BUSIN/assets/languages/BUSIN.json#/BUSIN/MSG/DLB_BUSIN_ENOEEHGES_25772"
+                          },
+                          "hasI18N": true,
+                          "moduleId": "BUSIN",
+                          "customizationLayer": 0,
+                          "customizationLayerDescription": "ECU",
+                          "i18N": "T"
+                        }
+                      },
+                      {
+                        "id": "VV_WARNTYPOIY7706_REMN585_09",
+                        "compareOperator": 0,
+                        "customizationLayer": 0,
+                        "customizationLayerDescription": "ECU",
+                        "visualValidationType": {
+                          "visualValidationId": "Required",
+                          "description": "Required Validation"
+                        },
+                        "validateMessageLabel": {
+                          "labelId": "DLB_BUSIN_MANDATORY_16739",
+                          "defaultValue": {
+                            "$ref": "../../../../BUSIN/assets/languages/BUSIN.json#/BUSIN/MSG/DLB_BUSIN_MANDATORY_16739"
+                          },
+                          "hasI18N": true,
+                          "moduleId": "BUSIN",
+                          "customizationLayer": 0,
+                          "customizationLayerDescription": "ECU",
+                          "i18N": "T"
+                        }
+                      }
+                    ],
+                    "attribute": {
+                      "$ref": "../../../../BUSIN/entities/EN_WRANTYPIY629.json#/attributes/AT_WRA629REMN20"
+                    },
+                    "label": {
+                      "labelId": "DLB_BUSIN_FECFINDSO_45630",
+                      "defaultValue": {
+                        "$ref": "../../../../BUSIN/assets/languages/BUSIN.json#/BUSIN/LBL/DLB_BUSIN_FECFINDSO_45630"
+                      },
+                      "hasI18N": true,
+                      "moduleId": "BUSIN",
+                      "customizationLayer": 0,
+                      "customizationLayerDescription": "ECU",
+                      "i18N": "T"
+                    },
+                    "userControl": {
+                      "userControlId": "DateField",
+                      "description": "Designer DateField",
+                      "customizationLayer": 0,
+                      "customizationLayerDescription": "ECU",
+                      "type": "I",
+                      "name": "Designer DateField"
+                    },
+                    "cacheDuration": 0,
+                    "options": 0,
+                    "elementColumnSpan": 1,
+                    "elementId": "VA_WARNTYPOIY7706_REMN585",
+                    "customEvents": [],
+                    "aggregateId": null,
+                    "aggregate": null,
+                    "width": null,
+                    "style": null,
+                    "componentStyle": null,
+                    "include": 4095,
+                    "responsiveLayouts": null,
+                    "responsivity": false
+                  },
+                  {
+                    "visualAttributeId": "VA_WARNTYPOIY7706_COIN726",
+                    "colSpan": 1,
+                    "enabled": 4095,
+                    "order": 8,
+                    "queryVersion": " ",
+                    "readOnly": 8,
+                    "rowSpan": 0,
+                    "visible": 4095,
+                    "textRows": 0,
+                    "catalogName": "cl_moneda",
+                    "name": "coin",
+                    "customizationLayer": 0,
+                    "customizationLayerDescription": "ECU",
+                    "attributeValidations": [
+                      {
+                        "id": "VV_WARNTYPOIY7706_COIN726_68",
+                        "compareOperator": 0,
+                        "customizationLayer": 0,
+                        "customizationLayerDescription": "ECU",
+                        "visualValidationType": {
+                          "visualValidationId": "Required",
+                          "description": "Required Validation"
+                        },
+                        "validateMessageLabel": {
+                          "labelId": "DLB_BUSIN_MANDATORY_16739",
+                          "defaultValue": {
+                            "$ref": "../../../../BUSIN/assets/languages/BUSIN.json#/BUSIN/MSG/DLB_BUSIN_MANDATORY_16739"
+                          },
+                          "hasI18N": true,
+                          "moduleId": "BUSIN",
+                          "customizationLayer": 0,
+                          "customizationLayerDescription": "ECU",
+                          "i18N": "T"
+                        }
+                      }
+                    ],
+                    "attribute": {
+                      "$ref": "../../../../BUSIN/entities/EN_WRANTYPIY629.json#/attributes/AT_WRA629COIN39"
+                    },
+                    "label": {
+                      "labelId": "DLB_BUSIN_MONEDAWDW_15876",
+                      "defaultValue": {
+                        "$ref": "../../../../BUSIN/assets/languages/BUSIN.json#/BUSIN/LBL/DLB_BUSIN_MONEDAWDW_15876"
+                      },
+                      "hasI18N": true,
+                      "moduleId": "BUSIN",
+                      "customizationLayer": 0,
+                      "customizationLayerDescription": "ECU",
+                      "i18N": "T"
+                    },
+                    "userControl": {
+                      "userControlId": "ComboBox",
+                      "description": "Designer ComboBox",
+                      "customizationLayer": 0,
+                      "customizationLayerDescription": "ECU",
+                      "type": "I",
+                      "name": "Designer ComboBox"
+                    },
+                    "cacheDuration": 0,
+                    "options": 0,
+                    "elementColumnSpan": 1,
+                    "elementId": "VA_WARNTYPOIY7706_COIN726",
+                    "customEvents": [],
+                    "aggregateId": null,
+                    "aggregate": null,
+                    "width": null,
+                    "style": null,
+                    "componentStyle": null,
+                    "include": 4095,
+                    "responsiveLayouts": null,
+                    "responsivity": false
+                  },
+                  {
+                    "visualAttributeId": "VA_WARNTYPOIY7706_POLI402",
+                    "colSpan": 1,
+                    "enabled": 4095,
+                    "order": 9,
+                    "queryVersion": " ",
+                    "readOnly": 8,
+                    "rowSpan": 0,
+                    "visible": 4095,
+                    "textRows": 0,
+                    "name": "policyValue",
+                    "customizationLayer": 0,
+                    "customizationLayerDescription": "ECU",
+                    "attributeValidations": [
+                      {
+                        "id": "VV_WARNTYPOIY7706_POLI402_32",
+                        "compareOperator": 0,
+                        "customizationLayer": 0,
+                        "customizationLayerDescription": "ECU",
+                        "visualValidationType": {
+                          "visualValidationId": "Required",
+                          "description": "Required Validation"
+                        },
+                        "validateMessageLabel": {
+                          "labelId": "DLB_BUSIN_MANDATORY_16739",
+                          "defaultValue": {
+                            "$ref": "../../../../BUSIN/assets/languages/BUSIN.json#/BUSIN/MSG/DLB_BUSIN_MANDATORY_16739"
+                          },
+                          "hasI18N": true,
+                          "moduleId": "BUSIN",
+                          "customizationLayer": 0,
+                          "customizationLayerDescription": "ECU",
+                          "i18N": "T"
+                        }
+                      }
+                    ],
+                    "attribute": {
+                      "$ref": "../../../../BUSIN/entities/EN_WRANTYPIY629.json#/attributes/AT_WRA629POLI06"
+                    },
+                    "label": {
+                      "labelId": "DLB_BUSIN_POLICYALU_25358",
+                      "defaultValue": {
+                        "$ref": "../../../../BUSIN/assets/languages/BUSIN.json#/BUSIN/LBL/DLB_BUSIN_POLICYALU_25358"
+                      },
+                      "hasI18N": true,
+                      "moduleId": "BUSIN",
+                      "customizationLayer": 0,
+                      "customizationLayerDescription": "ECU",
+                      "i18N": "T"
+                    },
+                    "userControl": {
+                      "userControlId": "TextInputBox",
+                      "description": "Designer TextBox",
+                      "customizationLayer": 0,
+                      "customizationLayerDescription": "ECU",
+                      "type": "I",
+                      "name": "Designer TextBox"
+                    },
+                    "cacheDuration": 0,
+                    "options": 0,
+                    "elementColumnSpan": 1,
+                    "elementId": "VA_WARNTYPOIY7706_POLI402",
+                    "customEvents": [],
+                    "aggregateId": null,
+                    "aggregate": null,
+                    "width": null,
+                    "style": null,
+                    "componentStyle": null,
+                    "include": 4095,
+                    "responsiveLayouts": null,
+                    "responsivity": false
+                  },
+                  {
+                    "visualAttributeId": "VA_WARNTYPOIY7706_DSTL580",
+                    "colSpan": 1,
+                    "enabled": 4095,
+                    "order": 10,
+                    "queryVersion": " ",
+                    "readOnly": 8,
+                    "rowSpan": 0,
+                    "visible": 4095,
+                    "textRows": 0,
+                    "name": "endorsementValue",
+                    "customizationLayer": 0,
+                    "customizationLayerDescription": "ECU",
+                    "attributeValidations": [
+                      {
+                        "id": "VV_WARNTYPOIY7706_DSTL580_45",
+                        "visualAttribute2": "VA_WARNTYPOIY7706_POLI402",
+                        "compareOperator": 5,
+                        "customizationLayer": 0,
+                        "customizationLayerDescription": "ECU",
+                        "visualValidationType": {
+                          "visualValidationId": "Compare",
+                          "description": "Compare Validation"
+                        },
+                        "validateMessageLabel": {
+                          "labelId": "DLB_BUSIN_VALREENOS_17278",
+                          "defaultValue": {
+                            "$ref": "../../../../BUSIN/assets/languages/BUSIN.json#/BUSIN/MSG/DLB_BUSIN_VALREENOS_17278"
+                          },
+                          "hasI18N": true,
+                          "moduleId": "BUSIN",
+                          "customizationLayer": 0,
+                          "customizationLayerDescription": "ECU",
+                          "i18N": "T"
+                        }
+                      },
+                      {
+                        "id": "VV_WARNTYPOIY7706_DSTL580_02",
+                        "compareOperator": 0,
+                        "customizationLayer": 0,
+                        "customizationLayerDescription": "ECU",
+                        "visualValidationType": {
+                          "visualValidationId": "Required",
+                          "description": "Required Validation"
+                        },
+                        "validateMessageLabel": {
+                          "labelId": "DLB_BUSIN_MANDATORY_16739",
+                          "defaultValue": {
+                            "$ref": "../../../../BUSIN/assets/languages/BUSIN.json#/BUSIN/MSG/DLB_BUSIN_MANDATORY_16739"
+                          },
+                          "hasI18N": true,
+                          "moduleId": "BUSIN",
+                          "customizationLayer": 0,
+                          "customizationLayerDescription": "ECU",
+                          "i18N": "T"
+                        }
+                      }
+                    ],
+                    "attribute": {
+                      "$ref": "../../../../BUSIN/entities/EN_WRANTYPIY629.json#/attributes/AT_WRA629DSTL03"
+                    },
+                    "label": {
+                      "labelId": "DLB_BUSIN_VALRENDOS_74667",
+                      "defaultValue": {
+                        "$ref": "../../../../BUSIN/assets/languages/BUSIN.json#/BUSIN/LBL/DLB_BUSIN_VALRENDOS_74667"
+                      },
+                      "hasI18N": true,
+                      "moduleId": "BUSIN",
+                      "customizationLayer": 0,
+                      "customizationLayerDescription": "ECU",
+                      "i18N": "T"
+                    },
+                    "userControl": {
+                      "userControlId": "TextInputBox",
+                      "description": "Designer TextBox",
+                      "customizationLayer": 0,
+                      "customizationLayerDescription": "ECU",
+                      "type": "I",
+                      "name": "Designer TextBox"
+                    },
+                    "cacheDuration": 0,
+                    "options": 0,
+                    "elementColumnSpan": 1,
+                    "elementId": "VA_WARNTYPOIY7706_DSTL580",
+                    "customEvents": [],
+                    "aggregateId": null,
+                    "aggregate": null,
+                    "width": null,
+                    "style": null,
+                    "componentStyle": null,
+                    "include": 4095,
+                    "responsiveLayouts": null,
+                    "responsivity": false
+                  },
+                  {
+                    "visualAttributeId": "VA_WARNTYPOIY7706_STTE568",
+                    "colSpan": 1,
+                    "enabled": 4095,
+                    "order": 11,
+                    "queryVersion": " ",
+                    "readOnly": 8,
+                    "rowSpan": 0,
+                    "visible": 4095,
+                    "textRows": 0,
+                    "catalogName": "cu_estado_poliza",
+                    "name": "state",
+                    "customizationLayer": 0,
+                    "customizationLayerDescription": "ECU",
+                    "attributeValidations": [
+                      {
+                        "id": "VV_WARNTYPOIY7706_STTE568_86",
+                        "compareOperator": 0,
+                        "customizationLayer": 0,
+                        "customizationLayerDescription": "ECU",
+                        "visualValidationType": {
+                          "visualValidationId": "Required",
+                          "description": "Required Validation"
+                        },
+                        "validateMessageLabel": {
+                          "labelId": "DLB_BUSIN_MANDATORY_16739",
+                          "defaultValue": {
+                            "$ref": "../../../../BUSIN/assets/languages/BUSIN.json#/BUSIN/MSG/DLB_BUSIN_MANDATORY_16739"
+                          },
+                          "hasI18N": true,
+                          "moduleId": "BUSIN",
+                          "customizationLayer": 0,
+                          "customizationLayerDescription": "ECU",
+                          "i18N": "T"
+                        }
+                      }
+                    ],
+                    "attribute": {
+                      "$ref": "../../../../BUSIN/entities/EN_WRANTYPIY629.json#/attributes/AT_WRA629STTE04"
+                    },
+                    "label": {
+                      "labelId": "DLB_BUSIN_STATEQINL_03037",
+                      "defaultValue": {
+                        "$ref": "../../../../BUSIN/assets/languages/BUSIN.json#/BUSIN/LBL/DLB_BUSIN_STATEQINL_03037"
+                      },
+                      "hasI18N": true,
+                      "moduleId": "BUSIN",
+                      "customizationLayer": 0,
+                      "customizationLayerDescription": "ECU",
+                      "i18N": "T"
+                    },
+                    "userControl": {
+                      "userControlId": "ComboBox",
+                      "description": "Designer ComboBox",
+                      "customizationLayer": 0,
+                      "customizationLayerDescription": "ECU",
+                      "type": "I",
+                      "name": "Designer ComboBox"
+                    },
+                    "cacheDuration": 0,
+                    "options": 1,
+                    "elementColumnSpan": 1,
+                    "elementId": "VA_WARNTYPOIY7706_STTE568",
+                    "customEvents": [],
+                    "aggregateId": null,
+                    "aggregate": null,
+                    "width": null,
+                    "style": null,
+                    "componentStyle": null,
+                    "include": 4095,
+                    "responsiveLayouts": null,
+                    "responsivity": false
+                  }
+                ],
+                "independentValidation": "F",
+                "htmlSection": false,
+                "eventType": 0,
+                "numberOfColumnsInContainer": 2,
+                "elementColumnSpan": 1,
+                "collapsed": false,
+                "elementId": "GR_WARNTYPOIY77_06",
+                "style": null,
+                "customEvents": []
+              }
+            ],
+            "titleLabel": {
+              "labelId": "DLB_BUSIN_PLIZAMMVK_53577",
+              "defaultValue": {
+                "$ref": "../../../../BUSIN/assets/languages/BUSIN.json#/BUSIN/LBL/DLB_BUSIN_PLIZAMMVK_53577"
+              },
+              "hasI18N": false,
+              "moduleId": "BUSIN",
+              "customizationLayer": 0,
+              "customizationLayerDescription": "ECU",
+              "i18N": "F"
+            },
+            "independentValidation": "F",
+            "htmlSection": false,
+            "eventType": 0,
+            "numberOfColumnsInContainer": 1,
+            "elementColumnSpan": 1,
+            "collapsed": false,
+            "elementId": "GR_WARNTYPOIY77_04"
+          }
+        ],
+        "modules": [
+          {
+            "moduleId": "BUSIN"
+          }
+        ],
+        "module": {
+          "moduleId": "BUSIN"
+        }
+      },
+      "titleLabel": {
+        "labelId": "DLB_BUSIN_PLIZAMMVK_53577",
+        "defaultValue": {
+          "$ref": "../../../../BUSIN/assets/languages/BUSIN.json#/BUSIN/LBL/DLB_BUSIN_PLIZAMMVK_53577"
+        },
+        "hasI18N": false,
+        "moduleId": "BUSIN",
+        "customizationLayer": 0,
+        "customizationLayerDescription": "ECU",
+        "i18N": "F"
+      },
+      "numberOfColumnsInContainer": 1,
+      "elementColumnSpan": 1,
+      "collapsed": false,
+      "elementId": "VC_CRNTO32_RRNYM_717"
+    }
+  ],
+  "tempSave": false,
+  "autoCrud": false,
+  "isImported": true
+}

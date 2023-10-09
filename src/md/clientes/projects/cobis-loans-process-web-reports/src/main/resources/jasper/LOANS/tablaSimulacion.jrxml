@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="tablaAmortizacion_grup" pageWidth="595" pageHeight="842" whenNoDataType="AllSectionsNoDetail" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="deec1b21-1036-4734-948b-164547062a2b">
+	<property name="ireport.zoom" value="2.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="54"/>
+	<parameter name="SUBREPORT_DIR" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["/"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="nombreCliente" class="java.lang.String"/>
+	<parameter name="fechaCreacion" class="java.lang.String"/>
+	<parameter name="montoSolicitado" class="java.lang.Double"/>
+	<parameter name="urlPathSantander" class="java.lang.String"/>
+	<parameter name="condusef" class="java.lang.String"/>
+	<parameter name="pieAnio" class="java.lang.String"/>
+	<parameter name="porCovit" class="java.lang.String"/>
+	<parameter name="plazo" class="java.lang.String"/>
+	<parameter name="cabeceraParrafo" class="java.lang.String"/>
+	<parameter name="fechaDep" class="java.lang.String"/>
+	<parameter name="fechaLiqui" class="java.lang.String"/>
+	<parameter name="cat" class="java.lang.Double"/>
+	<parameter name="tasaInteres" class="java.lang.Double"/>
+	<field name="tablaSimulacion" class="java.util.List"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="300" splitType="Stretch">
+			<textField isBlankWhenNull="true">
+				<reportElement x="359" y="175" width="83" height="15" uuid="3dc3e3cf-94af-4550-836a-144119539c02"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="8" isBold="true"/>
+					<paragraph leftIndent="2" rightIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Plazo Simulado:"]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="0" y="203" width="104" height="15" uuid="a33dcf05-2aa2-4d88-9501-4169495f8899"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="8" isBold="true"/>
+					<paragraph leftIndent="2" rightIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Monto Solicitado:"]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement positionType="Float" stretchType="RelativeToBandHeight" x="216" y="0" width="339" height="19" uuid="dc00cf30-db40-44af-9c75-cdc5295b1939"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="none">
+					<font fontName="SansSerif" size="11" isBold="true"/>
+					<paragraph leftIndent="3"/>
+				</textElement>
+				<text><![CDATA[Santander Inclusión Financiera, S.A. de C.V., SOFOM ER GFSM.]]></text>
+			</staticText>
+			<image>
+				<reportElement x="6" y="-4" width="98" height="66" uuid="392ae2d3-13c7-4c56-b521-989cde9ae168"/>
+				<imageExpression><![CDATA["tuiioSantander2.png"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="0" y="45" width="554" height="43" uuid="3b3beb79-c286-40f8-83bd-cb376a57af64"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[SIMULACIÓN DE TABLA DE AMORTIZACIÓN
+CORRESPONDIENTE AL CRÉDITO “RENOVACIÓN FINANCIADA”]]></text>
+			</staticText>
+			<textField pattern="#,##0.00" isBlankWhenNull="true">
+				<reportElement x="106" y="203" width="158" height="15" uuid="d922050f-9f94-4177-bf6d-3347063fa0ed"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="SansSerif" size="8"/>
+					<paragraph leftIndent="3" rightIndent="3"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{montoSolicitado}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="0" y="151" width="553" height="1" uuid="5ce5e96c-5b87-4ec1-9e8d-dc6307052967"/>
+			</line>
+			<textField>
+				<reportElement x="1" y="100" width="552" height="51" uuid="36edd4bf-9a8c-4781-ac62-ebfe69537434"/>
+				<textElement markup="html">
+					<font size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA["*La presente tabla de amortización corresponde  únicamente a una simulación, <b>por lo que no constituye ni forma parte de ningún documento contractual</b>. Las condiciones, precios y tasas <b>pueden variar</b> de acuerdo al crédito, monto solicitado, fecha base de cálculo, <b>entre otros.</b>"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="442" y="175" width="113" height="15" uuid="d5ac08b5-7581-445d-abac-5a6ff9131039"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="SansSerif" size="8"/>
+					<paragraph leftIndent="3" rightIndent="3"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{plazo}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="0" y="175" width="103" height="15" uuid="ee824c50-ac4b-4b94-96cc-0a4a7f3246b5"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="8" isBold="true"/>
+					<paragraph leftIndent="2" rightIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Fecha base de cálculo:"]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="104" y="175" width="255" height="15" uuid="466ba349-fc7f-47ad-bac9-a59b4f52bf0b"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="SansSerif" size="8"/>
+					<paragraph leftIndent="3" rightIndent="3"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{fechaCreacion}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="106" y="228" width="158" height="15" uuid="e4ef2fc0-4849-4b77-873f-ed8d995c7e8e"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="SansSerif" size="8"/>
+					<paragraph leftIndent="3" rightIndent="3"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{fechaDep}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="106" y="253" width="158" height="15" uuid="63be3a2e-ece7-4baa-8544-70b75af3a94d"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="SansSerif" size="8"/>
+					<paragraph leftIndent="3" rightIndent="3"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{fechaLiqui}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="0" y="228" width="104" height="15" uuid="431a3f86-993d-467a-9153-b86ded3de82b"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="8" isBold="true"/>
+					<paragraph leftIndent="2" rightIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Fecha de Disposición:"]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="-1" y="253" width="104" height="15" uuid="e487456f-9f82-41d9-8b82-6bd53ba18e8d"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="8" isBold="true"/>
+					<paragraph leftIndent="2" rightIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Fecha de Liquidación:"]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="291" y="203" width="94" height="15" uuid="4ce79534-123f-48d7-b36e-077c6f81c353"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="8" isBold="true"/>
+					<paragraph leftIndent="2" rightIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA["CAT"]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="395" y="203" width="158" height="15" uuid="7bd089c7-c241-4472-9872-e28ffd7c565f"/>
+				<box>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="SansSerif" size="8"/>
+					<paragraph leftIndent="3" rightIndent="3"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{cat}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="395" y="228" width="158" height="15" uuid="c9d15e06-cad6-48fc-95e8-855eb5927194"/>
+				<box>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="SansSerif" size="8"/>
+					<paragraph leftIndent="3" rightIndent="3"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{tasaInteres}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="291" y="228" width="94" height="15" uuid="ad9cd366-1f6f-4265-bef8-b76bb1c282af"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="8" isBold="true"/>
+					<paragraph leftIndent="2" rightIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Tasa de Interés"]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<detail>
+		<band height="14" splitType="Stretch">
+			<subreport>
+				<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="0" y="0" width="555" height="14" isPrintWhenDetailOverflows="true" uuid="15118e2c-6f8f-4858-ae24-60925f63a4c4"/>
+				<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($F{tablaSimulacion})]]></dataSourceExpression>
+				<subreportExpression><![CDATA[$P{SUBREPORT_DIR} + "tablaSimulacion_subReporteTabla.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="54"/>
+	</pageFooter>
+</jasperReport>

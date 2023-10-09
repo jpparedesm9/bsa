@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<procedure>
+  <database>cob_custodia</database>
+  <name>sp_transac1</name>
+  <type>SQLSERVER</type>
+  <version>1</version>
+  <parameters>
+    <parameter name="@s_ssn" dataType="int" direction="in" />
+    <parameter name="@s_date" dataType="datetime" direction="in" />
+    <parameter name="@s_user" dataType="varchar" direction="in" />
+    <parameter name="@s_term" dataType="varchar" direction="in" />
+    <parameter name="@s_corr" dataType="char" direction="in" />
+    <parameter name="@s_ssn_corr" dataType="int" direction="in" />
+    <parameter name="@s_ofi" dataType="smallint" direction="in" />
+    <parameter name="@t_rty" dataType="char" direction="in" />
+    <parameter name="@t_trn" dataType="smallint" direction="in" />
+    <parameter name="@t_debug" dataType="char" direction="in" />
+    <parameter name="@t_file" dataType="varchar" direction="in" />
+    <parameter name="@t_from" dataType="varchar" direction="in" />
+    <parameter name="@i_producto" dataType="char" direction="in" />
+    <parameter name="@i_modo" dataType="smallint" direction="in" />
+    <parameter name="@i_cliente" dataType="int" direction="in" />
+    <parameter name="@i_ente" dataType="int" direction="in" />
+    <parameter name="@i_filial" dataType="tinyint" direction="in" />
+    <parameter name="@i_sucursal" dataType="smallint" direction="in" />
+    <parameter name="@i_tipo_cust" dataType="varchar" direction="in" />
+    <parameter name="@i_custodia" dataType="int" direction="in" />
+    <parameter name="@i_garante" dataType="int" direction="in" />
+    <parameter name="@i_opcion" dataType="tinyint" direction="in" />
+    <parameter name="@i_codigo_externo" dataType="varchar" direction="in" />
+    <parameter name="@i_operacion" dataType="varchar" direction="in" />
+    <parameter name="@i_formato_fecha" dataType="int" direction="in" />
+  </parameters>
+  <queries>
+    <query>
+      <columns>
+        <column name="{1}" />
+        <column name="{2}" />
+        <column name="{3}" />
+        <column name="{4}" />
+        <column name="{5}" />
+        <column name="{6}" />
+        <column name="{7}" />
+        <column name="{8}" />
+        <column name="{9}" />
+        <column name="{10}" />
+        <column name="{11}" />
+        <column name="{12}" />
+        <column name="{13}" />
+        <column name="{14}" />
+        <column name="{15}" />
+      </columns>
+      <queryText>select w_descripcion, w_periodicidad, w_porcen_cobertura, w_adecuada, w_tipo_bien, w_des_periodicidad, w_des_tipo_bien, w_des_adecuada, w_contabilizar, w_monetaria, w_garan_empleado, w_clase,w_des_clase, w_estado,w_comparte</queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="{1}" />
+      </columns>
+      <queryText>SELECT  cu_estado </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="{1}" />
+        <column name="{2}" />
+        <column name="{3}" />
+        <column name="{4}" />
+        <column name="{5}" />
+        <column name="{6}" />
+        <column name="{7}" />
+        <column name="{8}" />
+        <column name="{9}" />
+        <column name="{10}" />
+        <column name="{11}" />
+        <column name="{12}" />
+        <column name="{13}" />
+        <column name="{14}" />
+        <column name="{15}" />
+        <column name="{16}" />
+        <column name="{17}" />
+      </columns>
+      <queryText>SELECT w_ente, w_cliente, w_moneda, w_valor_actual, ctx.convertString(s_date ,i_formato_fecha), w_num_acciones, w_valor_accion, w_autoriza, w_valor_comercial, w_porcen_compartida, w_valor_recuperado, w_cuantia, w_valor_cuantia, w_clase_cartera, w_des_clase_cartera, w_clase_custodia, w_des_clase_custodia</queryText>
+    </query>
+  </queries>
+</procedure>

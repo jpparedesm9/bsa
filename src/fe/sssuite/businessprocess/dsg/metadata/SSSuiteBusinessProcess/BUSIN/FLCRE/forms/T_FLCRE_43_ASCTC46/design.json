@@ -1,0 +1,676 @@
+{
+    "autoCrudStr": "F",
+    "commands": [
+    ],
+    "customEvents": [
+    ],
+    "customizationLayer": 0,
+    "customizationLayerDescription": "ECU",
+    "id": {
+        "moduleId": "BUSIN",
+        "subModuleId": "FLCRE",
+        "taskId": "T_FLCRE_43_ASCTC46",
+        "version": "1.0.0"
+    },
+    "isImported": true,
+    "mainViewContainerId": "VC_ASCTC46_EXTIO_871",
+    "modeEnabled": 0,
+    "name": {
+        "$ref": "../../../../BUSIN/relations/componentKeys.json#/FLCRE/Forms/T_FLCRE_43_ASCTC46/name"
+    },
+    "tempSaveStr": "F",
+    "viewContainers": [
+        {
+            "colSpan": 1,
+            "collapsedStr": "F",
+            "columnsNum": 1,
+            "componentStyle": null,
+            "customEvents": [
+                {
+                    "customEventId": "CEVC_002_ASCTC46_EXTIO_871_191",
+                    "customizationLayer": 0,
+                    "customizationLayerDescription": "ECU",
+                    "enabled": "T",
+                    "executionType": 1,
+                    "isEnabled": true,
+                    "thereAnCallbackEvent": false,
+                    "thereAnClientEvent": true,
+                    "thereAnServerEvent": false,
+                    "viewContainerEventType": {
+                        "description": "Inicialización de datos de un ViewContainer, despues de este evento se realiza el segimiento de cambios en los datos",
+                        "eventId": 2,
+                        "name": "InitData"
+                    }
+                },
+                {
+                    "customEventId": "CEVC_008_ASCTC46_EXTIO_871_858",
+                    "customizationLayer": 0,
+                    "customizationLayerDescription": "ECU",
+                    "enabled": "T",
+                    "executionType": 1,
+                    "isEnabled": true,
+                    "thereAnCallbackEvent": false,
+                    "thereAnClientEvent": true,
+                    "thereAnServerEvent": false,
+                    "viewContainerEventType": {
+                        "description": "Se ejecuta antes de renderizar un ViewContainer, permite realizar personalizaciones visuales",
+                        "eventId": 8,
+                        "name": "Render"
+                    }
+                }
+            ],
+            "customizationLayer": 0,
+            "customizationLayerDescription": "ECU",
+            "description": "Consulta de Excepciones",
+            "enabled": 4095,
+            "id": {
+                "moduleId": "BUSIN",
+                "subModuleId": "FLCRE",
+                "taskId": "T_FLCRE_43_ASCTC46",
+                "taskVersion": "1.0.0",
+                "viewContainerId": "VC_ASCTC46_EXTIO_871"
+            },
+            "layoutType": "Group",
+            "name": "ExceptionClientForm",
+            "options": 0,
+            "responsiveLayouts": null,
+            "responsivity": false,
+            "style": null,
+            "titleLabel": {
+                "defaultValue": {
+                    "$ref": "../../../../BUSIN/assets/languages/BUSIN.json#/BUSIN/LBL/DLB_BUSIN_NULECEONS_35112"
+                },
+                "labelId": "DLB_BUSIN_NULECEONS_35112",
+                "moduleId": "BUSIN"
+            },
+            "view": {
+                "groups": [
+                    {
+                        "colSpan": 1,
+                        "collapsedStr": "F",
+                        "columnsNum": 1,
+                        "componentStyle": null,
+                        "customEvents": [
+                        ],
+                        "enabled": 4095,
+                        "eventType": 0,
+                        "groupId": "GR_EPTCIENVIE72_15",
+                        "groups": [
+                            {
+                                "colSpan": 1,
+                                "collapsedStr": "F",
+                                "columnsNum": 1,
+                                "componentStyle": null,
+                                "customEvents": [
+                                ],
+                                "enabled": 4095,
+                                "entity": {
+                                    "$ref": "../../../../BUSIN/entities/EN_ECPTCLINT504.json#"
+                                },
+                                "eventType": 0,
+                                "groupId": "GR_EPTCIENVIE72_68",
+                                "htmlSection": "F",
+                                "independentValidation": "F",
+                                "layoutType": "Group",
+                                "name": "ExceptionClient",
+                                "orientation": "V",
+                                "queryView": {
+                                    "actionDesign": "Button",
+                                    "actions": [
+                                    ],
+                                    "allowPaging": false,
+                                    "allowPagingStr": "F",
+                                    "allowSorting": false,
+                                    "allowSortingStr": "F",
+                                    "confirmRowDeletion": false,
+                                    "confirmRowDeletionStr": "F",
+                                    "customEvents": [
+                                    ],
+                                    "customUrlDialog": null,
+                                    "customizationLayer": 0,
+                                    "customizationLayerDescription": "ECU",
+                                    "deleteCommandEnabled": false,
+                                    "deleteCommandEnabledStr": "F",
+                                    "dialogTitleLabelId": null,
+                                    "editCommandEnabled": false,
+                                    "editCommandEnabledStr": "F",
+                                    "editMode": "0",
+                                    "entityName": "ExceptionClient",
+                                    "hasDetail": false,
+                                    "hasDetailString": "F",
+                                    "height": null,
+                                    "includeQueryMembers": [
+                                        "AT_ECP504RMIT78",
+                                        "AT_ECP504UBNO37",
+                                        "AT_ECP504OEAC46",
+                                        "AT_ECP504RGLA40",
+                                        "AT_ECP504MRGA67",
+                                        "AT_ECP504FAIN94",
+                                        "AT_ECP504UZAT69",
+                                        "AT_ECP504NBRE25",
+                                        "AT_ECP504UTOA29",
+                                        "AT_ECP504BRCI11"
+                                    ],
+                                    "insertCommandEnabled": false,
+                                    "insertCommandEnabledStr": "F",
+                                    "modalSize": null,
+                                    "modeSelection": "Simple",
+                                    "moduleIdDialog": null,
+                                    "multiSelectEnabledStr": "S",
+                                    "name": "GridExceptionClient",
+                                    "options": 0,
+                                    "pageSize": null,
+                                    "query": {
+                                        "$ref": "../../../../BUSIN/FLCRE/queries/Q_RCOCLIEN_9806.json#"
+                                    },
+                                    "queryId": "Q_RCOCLIEN_9806",
+                                    "queryVersion": "1.0.0",
+                                    "queryViewCustomActions": [
+                                    ],
+                                    "queryViewId": "QV_RCOCL9806_76",
+                                    "queryViewType": "Grid",
+                                    "rowCommandAppearance": 0,
+                                    "subModuleIdDialog": null,
+                                    "taskIdDialog": "1.0.0",
+                                    "taskVersionDialog": "1.0.0",
+                                    "typeFormDialog": null,
+                                    "userControl": {
+                                        "customizationLayer": 0,
+                                        "customizationLayerDescription": "ECU",
+                                        "description": "Designer Grid",
+                                        "name": "Designer Grid",
+                                        "type": "I",
+                                        "userControlId": "Grid"
+                                    },
+                                    "viewContainerIdDialog": null
+                                },
+                                "queryViewId": "QV_RCOCL9806_76",
+                                "refViewId": "VW_EPTCIENVIE72",
+                                "refViewVersion": "1.0.0",
+                                "responsiveLayouts": null,
+                                "responsivity": false,
+                                "style": null,
+                                "titleLabel": {
+                                    "defaultValue": {
+                                        "$ref": "../../../../BUSIN/assets/languages/BUSIN.json#/BUSIN/LBL/DLB_BUSIN_NULECEONS_35112"
+                                    },
+                                    "labelId": "DLB_BUSIN_NULECEONS_35112",
+                                    "moduleId": "BUSIN"
+                                },
+                                "visible": 4095,
+                                "visualAttributes": [
+                                    {
+                                        "aggregate": null,
+                                        "aggregateId": null,
+                                        "attribute": {
+                                            "$ref": "../../../../BUSIN/entities/EN_ECPTCLINT504.json#/attributes/AT_ECP504BRCI11"
+                                        },
+                                        "attributeValidations": [
+                                        ],
+                                        "colSpan": 1,
+                                        "componentStyle": null,
+                                        "customEvents": [
+                                        ],
+                                        "customizationLayer": 0,
+                                        "customizationLayerDescription": "ECU",
+                                        "enabled": 4095,
+                                        "include": 4095,
+                                        "label": {
+                                            "customizationLayer": 0,
+                                            "customizationLayerDescription": "ECU",
+                                            "defaultValue": {
+                                                "$ref": "../../../../BUSIN/assets/languages/BUSIN.json#/BUSIN/LBL/DLB_BUSIN_OBSERVACI_93291"
+                                            },
+                                            "hasI18N": true,
+                                            "i18N": "T",
+                                            "labelId": "DLB_BUSIN_OBSERVACI_93291",
+                                            "moduleId": "BUSIN"
+                                        },
+                                        "maxRecords": null,
+                                        "name": "observacion",
+                                        "options": 0,
+                                        "order": 9,
+                                        "readOnly": 8,
+                                        "responsiveLayouts": null,
+                                        "responsivity": false,
+                                        "sizeWidthComposite": null,
+                                        "style": null,
+                                        "userControl": {
+                                            "type": "I",
+                                            "userControlId": "TextLabel"
+                                        },
+                                        "visible": 4095,
+                                        "visualAttributeId": "VA_EPTCIENVIE7268_BRCI781",
+                                        "width": null,
+                                        "widthComposite": "D"
+                                    },
+                                    {
+                                        "aggregate": null,
+                                        "aggregateId": null,
+                                        "attribute": {
+                                            "$ref": "../../../../BUSIN/entities/EN_ECPTCLINT504.json#/attributes/AT_ECP504FAIN94"
+                                        },
+                                        "attributeValidations": [
+                                        ],
+                                        "colSpan": 1,
+                                        "componentStyle": null,
+                                        "customEvents": [
+                                        ],
+                                        "customizationLayer": 0,
+                                        "customizationLayerDescription": "ECU",
+                                        "enabled": 4095,
+                                        "include": 4095,
+                                        "label": {
+                                            "customizationLayer": 0,
+                                            "customizationLayerDescription": "ECU",
+                                            "defaultValue": {
+                                                "$ref": "../../../../BUSIN/assets/languages/BUSIN.json#/BUSIN/LBL/DLB_BUSIN_HAUORZACI_75619"
+                                            },
+                                            "hasI18N": true,
+                                            "i18N": "T",
+                                            "labelId": "DLB_BUSIN_HAUORZACI_75619",
+                                            "moduleId": "BUSIN"
+                                        },
+                                        "maxRecords": null,
+                                        "name": "fechaAutorizacion",
+                                        "options": 0,
+                                        "order": 5,
+                                        "readOnly": 8,
+                                        "responsiveLayouts": null,
+                                        "responsivity": false,
+                                        "sizeWidthComposite": null,
+                                        "style": null,
+                                        "userControl": {
+                                            "type": "I",
+                                            "userControlId": "TextLabel"
+                                        },
+                                        "visible": 4095,
+                                        "visualAttributeId": "VA_EPTCIENVIE7268_FAIN666",
+                                        "width": null,
+                                        "widthComposite": "D"
+                                    },
+                                    {
+                                        "aggregate": null,
+                                        "aggregateId": null,
+                                        "attribute": {
+                                            "$ref": "../../../../BUSIN/entities/EN_ECPTCLINT504.json#/attributes/AT_ECP504MRGA67"
+                                        },
+                                        "attributeValidations": [
+                                        ],
+                                        "colSpan": 1,
+                                        "componentStyle": null,
+                                        "customEvents": [
+                                        ],
+                                        "customizationLayer": 0,
+                                        "customizationLayerDescription": "ECU",
+                                        "enabled": 4095,
+                                        "include": 4095,
+                                        "label": {
+                                            "customizationLayer": 0,
+                                            "customizationLayerDescription": "ECU",
+                                            "defaultValue": {
+                                                "$ref": "../../../../BUSIN/assets/languages/BUSIN.json#/BUSIN/LBL/DLB_BUSIN_OMBREREGA_27335"
+                                            },
+                                            "hasI18N": true,
+                                            "i18N": "T",
+                                            "labelId": "DLB_BUSIN_OMBREREGA_27335",
+                                            "moduleId": "BUSIN"
+                                        },
+                                        "maxRecords": null,
+                                        "name": "nombreRegla",
+                                        "options": 0,
+                                        "order": 4,
+                                        "readOnly": 8,
+                                        "responsiveLayouts": null,
+                                        "responsivity": false,
+                                        "sizeWidthComposite": null,
+                                        "style": null,
+                                        "userControl": {
+                                            "type": "I",
+                                            "userControlId": "TextLabel"
+                                        },
+                                        "visible": 4095,
+                                        "visualAttributeId": "VA_EPTCIENVIE7268_MRGA366",
+                                        "width": null,
+                                        "widthComposite": "D"
+                                    },
+                                    {
+                                        "aggregate": null,
+                                        "aggregateId": null,
+                                        "attribute": {
+                                            "$ref": "../../../../BUSIN/entities/EN_ECPTCLINT504.json#/attributes/AT_ECP504NBRE25"
+                                        },
+                                        "attributeValidations": [
+                                        ],
+                                        "colSpan": 1,
+                                        "componentStyle": null,
+                                        "customEvents": [
+                                        ],
+                                        "customizationLayer": 0,
+                                        "customizationLayerDescription": "ECU",
+                                        "enabled": 4095,
+                                        "include": 4095,
+                                        "label": {
+                                            "customizationLayer": 0,
+                                            "customizationLayerDescription": "ECU",
+                                            "defaultValue": {
+                                                "$ref": "../../../../BUSIN/assets/languages/BUSIN.json#/BUSIN/LBL/DLB_BUSIN_NOMBREFDW_08686"
+                                            },
+                                            "hasI18N": true,
+                                            "i18N": "T",
+                                            "labelId": "DLB_BUSIN_NOMBREFDW_08686",
+                                            "moduleId": "BUSIN"
+                                        },
+                                        "maxRecords": null,
+                                        "name": "nombre",
+                                        "options": 0,
+                                        "order": 7,
+                                        "readOnly": 8,
+                                        "responsiveLayouts": null,
+                                        "responsivity": false,
+                                        "sizeWidthComposite": null,
+                                        "style": null,
+                                        "userControl": {
+                                            "type": "I",
+                                            "userControlId": "TextLabel"
+                                        },
+                                        "visible": 4095,
+                                        "visualAttributeId": "VA_EPTCIENVIE7268_NBRE535",
+                                        "width": null,
+                                        "widthComposite": "D"
+                                    },
+                                    {
+                                        "aggregate": null,
+                                        "aggregateId": null,
+                                        "attribute": {
+                                            "$ref": "../../../../BUSIN/entities/EN_ECPTCLINT504.json#/attributes/AT_ECP504OEAC46"
+                                        },
+                                        "attributeValidations": [
+                                        ],
+                                        "colSpan": 1,
+                                        "componentStyle": null,
+                                        "customEvents": [
+                                        ],
+                                        "customizationLayer": 0,
+                                        "customizationLayerDescription": "ECU",
+                                        "enabled": 4095,
+                                        "include": 4095,
+                                        "label": {
+                                            "customizationLayer": 0,
+                                            "customizationLayerDescription": "ECU",
+                                            "defaultValue": {
+                                                "$ref": "../../../../BUSIN/assets/languages/BUSIN.json#/BUSIN/LBL/DLB_BUSIN_OPERATION_65031"
+                                            },
+                                            "hasI18N": true,
+                                            "i18N": "T",
+                                            "labelId": "DLB_BUSIN_OPERATION_65031",
+                                            "moduleId": "BUSIN"
+                                        },
+                                        "maxRecords": null,
+                                        "name": "operacion",
+                                        "options": 0,
+                                        "order": 1,
+                                        "readOnly": 8,
+                                        "responsiveLayouts": null,
+                                        "responsivity": false,
+                                        "sizeWidthComposite": null,
+                                        "style": null,
+                                        "userControl": {
+                                            "type": "I",
+                                            "userControlId": "TextLabel"
+                                        },
+                                        "visible": 4095,
+                                        "visualAttributeId": "VA_EPTCIENVIE7268_OEAC931",
+                                        "width": null,
+                                        "widthComposite": "D"
+                                    },
+                                    {
+                                        "aggregate": null,
+                                        "aggregateId": null,
+                                        "attribute": {
+                                            "$ref": "../../../../BUSIN/entities/EN_ECPTCLINT504.json#/attributes/AT_ECP504RGLA40"
+                                        },
+                                        "attributeValidations": [
+                                        ],
+                                        "colSpan": 1,
+                                        "componentStyle": null,
+                                        "customEvents": [
+                                        ],
+                                        "customizationLayer": 0,
+                                        "customizationLayerDescription": "ECU",
+                                        "enabled": 4095,
+                                        "include": 4095,
+                                        "label": {
+                                            "customizationLayer": 0,
+                                            "customizationLayerDescription": "ECU",
+                                            "defaultValue": {
+                                                "$ref": "../../../../BUSIN/assets/languages/BUSIN.json#/BUSIN/LBL/DLB_BUSIN_REGLACPYS_46735"
+                                            },
+                                            "hasI18N": true,
+                                            "i18N": "T",
+                                            "labelId": "DLB_BUSIN_REGLACPYS_46735",
+                                            "moduleId": "BUSIN"
+                                        },
+                                        "maxRecords": null,
+                                        "name": "regla",
+                                        "options": 0,
+                                        "order": 3,
+                                        "readOnly": 8,
+                                        "responsiveLayouts": null,
+                                        "responsivity": false,
+                                        "sizeWidthComposite": null,
+                                        "style": null,
+                                        "userControl": {
+                                            "type": "I",
+                                            "userControlId": "TextLabel"
+                                        },
+                                        "visible": 4095,
+                                        "visualAttributeId": "VA_EPTCIENVIE7268_RGLA109",
+                                        "width": null,
+                                        "widthComposite": "D"
+                                    },
+                                    {
+                                        "aggregate": null,
+                                        "aggregateId": null,
+                                        "attribute": {
+                                            "$ref": "../../../../BUSIN/entities/EN_ECPTCLINT504.json#/attributes/AT_ECP504RMIT78"
+                                        },
+                                        "attributeValidations": [
+                                        ],
+                                        "colSpan": 1,
+                                        "componentStyle": null,
+                                        "customEvents": [
+                                        ],
+                                        "customizationLayer": 0,
+                                        "customizationLayerDescription": "ECU",
+                                        "enabled": 4095,
+                                        "include": 4095,
+                                        "label": {
+                                            "customizationLayer": 0,
+                                            "customizationLayerDescription": "ECU",
+                                            "defaultValue": {
+                                                "$ref": "../../../../BUSIN/assets/languages/BUSIN.json#/BUSIN/LBL/DLB_BUSIN_TRAMITESM_34177"
+                                            },
+                                            "hasI18N": true,
+                                            "i18N": "T",
+                                            "labelId": "DLB_BUSIN_TRAMITESM_34177",
+                                            "moduleId": "BUSIN"
+                                        },
+                                        "maxRecords": null,
+                                        "name": "tramite",
+                                        "options": 0,
+                                        "order": 0,
+                                        "readOnly": 8,
+                                        "responsiveLayouts": null,
+                                        "responsivity": false,
+                                        "sizeWidthComposite": null,
+                                        "style": null,
+                                        "userControl": {
+                                            "type": "I",
+                                            "userControlId": "TextLabel"
+                                        },
+                                        "visible": 4095,
+                                        "visualAttributeId": "VA_EPTCIENVIE7268_RMIT194",
+                                        "width": null,
+                                        "widthComposite": "D"
+                                    },
+                                    {
+                                        "aggregate": null,
+                                        "aggregateId": null,
+                                        "attribute": {
+                                            "$ref": "../../../../BUSIN/entities/EN_ECPTCLINT504.json#/attributes/AT_ECP504UBNO37"
+                                        },
+                                        "attributeValidations": [
+                                        ],
+                                        "colSpan": 1,
+                                        "componentStyle": null,
+                                        "customEvents": [
+                                        ],
+                                        "customizationLayer": 0,
+                                        "customizationLayerDescription": "ECU",
+                                        "enabled": 4095,
+                                        "include": 4095,
+                                        "label": {
+                                            "customizationLayer": 0,
+                                            "customizationLayerDescription": "ECU",
+                                            "defaultValue": {
+                                                "$ref": "../../../../BUSIN/assets/languages/BUSIN.json#/BUSIN/LBL/DLB_BUSIN_BANCOXVHT_43763"
+                                            },
+                                            "hasI18N": true,
+                                            "i18N": "T",
+                                            "labelId": "DLB_BUSIN_BANCOXVHT_43763",
+                                            "moduleId": "BUSIN"
+                                        },
+                                        "maxRecords": null,
+                                        "name": "num_banco",
+                                        "options": 0,
+                                        "order": 2,
+                                        "readOnly": 8,
+                                        "responsiveLayouts": null,
+                                        "responsivity": false,
+                                        "sizeWidthComposite": null,
+                                        "style": null,
+                                        "userControl": {
+                                            "type": "I",
+                                            "userControlId": "TextLabel"
+                                        },
+                                        "visible": 4095,
+                                        "visualAttributeId": "VA_EPTCIENVIE7268_UBNO661",
+                                        "width": null,
+                                        "widthComposite": "D"
+                                    },
+                                    {
+                                        "aggregate": null,
+                                        "aggregateId": null,
+                                        "attribute": {
+                                            "$ref": "../../../../BUSIN/entities/EN_ECPTCLINT504.json#/attributes/AT_ECP504UTOA29"
+                                        },
+                                        "attributeValidations": [
+                                        ],
+                                        "colSpan": 1,
+                                        "componentStyle": null,
+                                        "customEvents": [
+                                        ],
+                                        "customizationLayer": 0,
+                                        "customizationLayerDescription": "ECU",
+                                        "enabled": 4095,
+                                        "include": 4095,
+                                        "label": {
+                                            "customizationLayer": 0,
+                                            "customizationLayerDescription": "ECU",
+                                            "defaultValue": {
+                                                "$ref": "../../../../BUSIN/assets/languages/BUSIN.json#/BUSIN/LBL/DLB_BUSIN_AUTHORIZD_41383"
+                                            },
+                                            "hasI18N": true,
+                                            "i18N": "T",
+                                            "labelId": "DLB_BUSIN_AUTHORIZD_41383",
+                                            "moduleId": "BUSIN"
+                                        },
+                                        "maxRecords": null,
+                                        "name": "autorizada",
+                                        "options": 0,
+                                        "order": 8,
+                                        "readOnly": 8,
+                                        "responsiveLayouts": null,
+                                        "responsivity": false,
+                                        "sizeWidthComposite": null,
+                                        "style": null,
+                                        "userControl": {
+                                            "type": "I",
+                                            "userControlId": "TextLabel"
+                                        },
+                                        "visible": 4095,
+                                        "visualAttributeId": "VA_EPTCIENVIE7268_UTOA470",
+                                        "width": null,
+                                        "widthComposite": "D"
+                                    },
+                                    {
+                                        "aggregate": null,
+                                        "aggregateId": null,
+                                        "attribute": {
+                                            "$ref": "../../../../BUSIN/entities/EN_ECPTCLINT504.json#/attributes/AT_ECP504UZAT69"
+                                        },
+                                        "attributeValidations": [
+                                        ],
+                                        "colSpan": 1,
+                                        "componentStyle": null,
+                                        "customEvents": [
+                                        ],
+                                        "customizationLayer": 0,
+                                        "customizationLayerDescription": "ECU",
+                                        "enabled": 4095,
+                                        "include": 4095,
+                                        "label": {
+                                            "customizationLayer": 0,
+                                            "customizationLayerDescription": "ECU",
+                                            "defaultValue": {
+                                                "$ref": "../../../../BUSIN/assets/languages/BUSIN.json#/BUSIN/LBL/DLB_BUSIN_AUORZANTE_03121"
+                                            },
+                                            "hasI18N": true,
+                                            "i18N": "T",
+                                            "labelId": "DLB_BUSIN_AUORZANTE_03121",
+                                            "moduleId": "BUSIN"
+                                        },
+                                        "maxRecords": null,
+                                        "name": "autorizante",
+                                        "options": 0,
+                                        "order": 6,
+                                        "readOnly": 8,
+                                        "responsiveLayouts": null,
+                                        "responsivity": false,
+                                        "sizeWidthComposite": null,
+                                        "style": null,
+                                        "userControl": {
+                                            "type": "I",
+                                            "userControlId": "TextLabel"
+                                        },
+                                        "visible": 4095,
+                                        "visualAttributeId": "VA_EPTCIENVIE7268_UZAT421",
+                                        "width": null,
+                                        "widthComposite": "D"
+                                    }
+                                ]
+                            }
+                        ],
+                        "layoutType": "GroupLayout",
+                        "name": "[Grupo Sin Nombre]",
+                        "refViewId": "VW_EPTCIENVIE72",
+                        "refViewVersion": "1.0.0",
+                        "style": null,
+                        "visible": 4095
+                    }
+                ],
+                "id": {
+                    "version": "1.0.0",
+                    "viewId": "VW_EPTCIENVIE72"
+                },
+                "modules": [
+                    {
+                        "moduleId": "BUSIN"
+                    }
+                ],
+                "name": "ExceptionClientView"
+            }
+        }
+    ]
+}

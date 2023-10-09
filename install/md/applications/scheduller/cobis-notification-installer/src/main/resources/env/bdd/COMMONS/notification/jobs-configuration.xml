@@ -1,0 +1,282 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<jobXml>
+	<jobs>
+		<id>1</id>
+		<jobName>CRGLN</jobName>
+		<jobClass>com.cobiscorp.cloud.notificationservice.impl.CargaListasNegras</jobClass>
+		<cronExpression>0 0 21 ? * MON *</cronExpression>
+	</jobs>
+	<jobs>
+		<id>2</id>
+		<jobName>CRGNF</jobName>
+		<jobClass>com.cobiscorp.cloud.notificationservice.impl.CargaNegativeFile</jobClass>
+		<cronExpression>0 0 16 ? * MON,TUE,WED,THU,FRI *</cronExpression>
+	</jobs>
+	<jobs>
+		<id>3</id>
+		<jobName>CPYSF</jobName>
+		<jobClass>com.cobiscorp.cloud.notificationservice.impl.CopiaReporteSeguroFuneral</jobClass>
+		<cronExpression>0 0,30 6 ? * TUE-SAT *</cronExpression>
+	</jobs>
+	<jobs>
+		<id>4</id>
+		<jobName>XTRRS</jobName>
+		<jobClass>com.cobiscorp.cloud.notificationservice.impl.ExtraccionReportesSeguros</jobClass>
+		<cronExpression>0 0 5 ? * TUE-SAT *</cronExpression>
+	</jobs>
+	<jobs>
+		<id>5</id>
+		<jobName>CPYRP</jobName>
+		<jobClass>com.cobiscorp.cloud.notificationservice.impl.CopiaReportePagos</jobClass>
+		<cronExpression>0 0 4 1/1 * ? *</cronExpression>
+	</jobs>
+	<jobs>
+		<id>6</id>
+		<jobName>CPYIFD</jobName>
+		<jobClass>com.cobiscorp.cloud.notificationservice.impl.CopiaEstadoCuentaInterfacturaDia</jobClass>
+		<cronExpression>50 37 5-20 1-5 * ? *</cronExpression>
+	</jobs>
+	<jobs>
+		<id>7</id>
+		<jobName>CPYRA</jobName>
+		<jobClass>com.cobiscorp.cloud.notificationservice.impl.CopiaReporteAlertas</jobClass>
+		<cronExpression>0 0/7 3,6-20 1/1 * ? *</cronExpression>
+	</jobs>
+	<jobs>
+		<id>8</id>
+		<jobName>GXMLCI</jobName>
+		<jobClass>com.cobiscorp.cloud.notificationservice.impl.GeneratorXmlSat</jobClass>
+		<cronExpression>50 17 5-20 1-5 * ? *</cronExpression>
+	</jobs>
+	<jobs>
+		<id>9</id>
+		<jobName>PRDEAU</jobName>
+		<jobClass>com.cobiscorp.cloud.notificationservice.impl.DesembolsoAutomatico</jobClass>
+		<cronExpression>0 22,52 8-16 ? * MON-FRI *</cronExpression>
+	</jobs>
+	<jobs>
+		<id>10</id>
+		<jobName>CPYRCC</jobName>
+		<jobClass>com.cobiscorp.cloud.notificationservice.impl.CopiaReporteConsultados</jobClass>
+		<cronExpression>0 0 7 ? * MON *</cronExpression>
+	</jobs>
+	<jobs>
+		<id>11</id>
+		<jobName>APCTN4</jobName>
+		<jobClass>com.cobiscorp.cloud.notificationservice.impl.AperturaCuentasN4</jobClass>
+		<cronExpression>0 0 16 ? * MON,TUE,WED,THU,FRI *</cronExpression>
+	</jobs>
+	<jobs>
+		<id>12</id>
+		<jobName>CPYN4</jobName>
+		<jobClass>com.cobiscorp.cloud.notificationservice.impl.CopiaReporteN4</jobClass>
+		<cronExpression>0 10,15 16 ? * MON,TUE,WED,THU,FRI *</cronExpression>
+	</jobs>
+	<jobs>
+		<id>13</id>
+		<jobName>CMCLI</jobName>
+		<jobClass>com.cobiscorp.cloud.notificationservice.impl.SocialImpactReport</jobClass>
+		<cronExpression>0 0 6 ? 1/1 SUN#1 *</cronExpression>
+	</jobs>
+	<jobs>
+		<id>14</id>
+		<jobName>INVCL</jobName>
+		<jobClass>com.cobiscorp.cloud.notificationservice.impl.CustomerAndProspectInventory</jobClass>
+		<cronExpression>0 0 3 1 1/1 ? *</cronExpression>
+	</jobs>
+	<jobs>
+		<id>15</id>
+		<jobName>GSCMC</jobName>
+		<jobClass>com.cobiscorp.cloud.notificationservice.impl.CobranzaMcCollect</jobClass>
+		<cronExpression>0 0 8-19 ? * MON-SAT *</cronExpression>
+	</jobs>
+	<jobs>
+		<id>16</id>
+		<jobName>GACMC</jobName>
+		<jobClass>com.cobiscorp.cloud.notificationservice.impl.GenerateArchCifMcCollect</jobClass>
+		<cronExpression>0 5,10 5-21 ? * MON-SAT *</cronExpression>
+	</jobs>
+	<jobs>
+		<id>17</id>
+		<jobName>CACMC</jobName>
+		<jobClass>com.cobiscorp.cloud.notificationservice.impl.CopiaArcCifMcCollect</jobClass>
+		<cronExpression>0 15,20 5-21 ? * MON-SAT *</cronExpression>
+	</jobs>
+	<jobs>
+		<id>18</id>
+		<jobName>GADMC</jobName>
+		<jobClass>com.cobiscorp.cloud.notificationservice.impl.GenerateArchDeMcCCobis</jobClass>
+		<cronExpression>0 5,10 9,12,18,20 ? * MON-FRI</cronExpression>
+	</jobs>
+	<jobs>
+		<id>19</id>
+		<jobName>CDMCC</jobName>
+		<jobClass>com.cobiscorp.cloud.notificationservice.impl.CargaDataMcCACobis</jobClass>
+		<cronExpression>0 15,20 9,12,18,20 ? * MON-FRI</cronExpression>
+	</jobs>
+	<jobs>
+		<id>20</id>
+		<jobName>GAMCC</jobName>
+		<jobClass>com.cobiscorp.cloud.notificationservice.impl.GenerateArchMcCCobis</jobClass>
+		<cronExpression>0 0 21 ? * MON-FRI</cronExpression>
+	</jobs>
+	<jobs>
+		<id>21</id>
+		<jobName>CPYASG</jobName>
+		<jobClass>com.cobiscorp.cloud.notificationservice.impl.CopiaReportesAsignaciones</jobClass>
+		<cronExpression>0 0 5 ? * MON-FRI *</cronExpression>
+	</jobs>
+	<jobs>
+		<id>22</id>
+		<jobName>XCRYS</jobName>
+		<jobClass>com.cobiscorp.cloud.notificationservice.impl.ReporteCoka</jobClass>
+		<cronExpression>0 0/15 4-5 1/1 * ? *</cronExpression>
+	</jobs>
+	<jobs>
+		<id>23</id>
+		<jobName>CPYSZ</jobName>
+		<jobClass>com.cobiscorp.cloud.notificationservice.impl.CopiaReporteSegurosZurich</jobClass>
+		<cronExpression>0 0/15 * 1/1 * ? *</cronExpression>
+	</jobs>
+	<jobs>
+		<id>24</id>
+		<jobName>CPYMC</jobName>
+		<jobClass>com.cobiscorp.cloud.notificationservice.impl.CopiaReporteMovtosContab</jobClass>
+		<cronExpression>0 0/15 * 1/1 * ? *</cronExpression>
+	</jobs>
+	<jobs>
+		<id>25</id>
+		<jobName>GXMLCO</jobName>
+		<jobClass>com.cobiscorp.cloud.notificationservice.impl.GeneratorXmlSatComplemento</jobClass>
+		<cronExpression>50 17 5-20 5-10 * ? *</cronExpression>
+	</jobs>
+	<jobs>
+		<id>26</id>
+		<jobName>CPYCO</jobName>
+		<jobClass>com.cobiscorp.cloud.notificationservice.impl.CopiaXmlComplemento</jobClass>
+		<cronExpression>50 37 5-20 5-10 * ? *</cronExpression>
+	</jobs>
+	<jobs>
+		<id>27</id>
+		<jobName>CPYZFAC</jobName>
+		<jobClass>com.cobiscorp.cloud.notificationservice.impl.CopiaConectorTimbrado</jobClass>
+		<cronExpression>50 57 5-20 1-5 * ? *</cronExpression>
+	</jobs>
+	<jobs>
+		<id>28</id>
+		<jobName>CPYZCOM</jobName>
+		<jobClass>com.cobiscorp.cloud.notificationservice.impl.CopiaConectorComplemento</jobClass>
+		<cronExpression>50 57 5-20 5-10 * ? *</cronExpression>
+	</jobs>
+	<jobs>
+		<id>29</id>
+		<jobName>CPYREE</jobName>
+		<jobClass>com.cobiscorp.cloud.notificationservice.impl.CopiaReporteReestructura</jobClass>
+		<cronExpression>0 0/15 * 1/1 * ? *</cronExpression>
+	</jobs>
+	<jobs>
+		<id>30</id> 
+		<jobName>CPYRCU</jobName>
+		<jobClass>
+			com.cobiscorp.cloud.notificationservice.impl.CopiaReportesCuestionarios
+		</jobClass>
+		<cronExpression>0 0/15 * 1/1 * ? *</cronExpression>
+	</jobs>
+	<jobs>
+	    <id>31</id> 
+	    <jobName>ESMSC</jobName>
+	    <jobClass>
+	  	  com.cobiscorp.cloud.notificationservice.impl.EnvioSmsCobranzas
+	    </jobClass>
+	    <cronExpression>0 0/10 9-13 ? * *</cronExpression>
+    </jobs>
+    
+    <jobs>
+	    <id>32</id> 
+	    <jobName>ESMSR</jobName>
+	    <jobClass>
+	  	  com.cobiscorp.cloud.notificationservice.impl.EnvioSmsRecordatorios
+	    </jobClass>
+	    <cronExpression>0 0/10 9-13 ? * *</cronExpression>
+    </jobs>
+	<jobs>
+		<id>33</id> 
+		<jobName>XTRRR</jobName>
+		<jobClass>
+	  	  com.cobiscorp.cloud.notificationservice.impl.ExtraccionReporteReintegros
+		</jobClass>
+		<cronExpression>0 50 4 ? * MON *</cronExpression>
+	</jobs>
+	<jobs>
+		<id>34</id> 
+		<jobName>CPYRR</jobName>
+		<jobClass>
+	  	  com.cobiscorp.cloud.notificationservice.impl.CopiaReporteReintegros
+		</jobClass>
+		<cronExpression>0 55 4 ? * MON *</cronExpression>
+	</jobs>
+	<jobs>
+		<id>35</id> 
+		<jobName>CPYCTFS</jobName>
+		<jobClass>
+			com.cobiscorp.cloud.notificationservice.impl.CopiaReportesContabilidad
+		</jobClass>
+		<cronExpression>0 0/15 * 1/1 * ? *</cronExpression>
+	</jobs>
+	<jobs>
+		<id>36</id> 
+		<jobName>CPYINFA</jobName>
+		<jobClass>
+			com.cobiscorp.cloud.notificationservice.impl.CopiaReportesInclusionFiancieraA
+		</jobClass>
+		<cronExpression>0 0/15 * 1/1 * ? *</cronExpression>
+	</jobs>
+	<jobs>
+		<id>37</id> 
+		<jobName>CPYINFB</jobName>
+		<jobClass>
+			com.cobiscorp.cloud.notificationservice.impl.CopiaReportesInclusionFiancieraB
+		</jobClass>
+		<cronExpression>0 0/15 * 1/1 * ? *</cronExpression>
+	</jobs>
+	<jobs>
+		<id>38</id> 
+		<jobName>CPYODS</jobName>
+		<jobClass>
+			com.cobiscorp.cloud.notificationservice.impl.CopiaReportesODS
+		</jobClass>
+		<cronExpression>0 0/15 * 1/1 * ? *</cronExpression>
+	</jobs>
+	<jobs>
+		<id>39</id> 
+		<jobName>CPYHRC</jobName>
+		<jobClass>
+			com.cobiscorp.cloud.notificationservice.impl.CopiaReportesHRC
+		</jobClass>
+		<cronExpression>0 0/15 * 1/1 * ? *</cronExpression>
+	</jobs>
+	<jobs>
+		<id>40</id> 
+		<jobName>CPYRGE</jobName>
+		<jobClass>
+			com.cobiscorp.cloud.notificationservice.impl.CopiaReporteGeolocalizacion
+		</jobClass>
+		<cronExpression>0 0/15 * 1/1 * ? *</cronExpression>
+	</jobs>
+	<jobs>
+		<id>41</id>
+		<jobName>COPYBTI</jobName>
+		<jobClass>
+			com.cobiscorp.cloud.notificationservice.impl.CopiaReporte
+		</jobClass>
+		<cronExpression>0 0/15 0,1,23 1/1 * ? *</cronExpression>
+	</jobs>
+	<jobs>
+		<id>54</id>
+		<jobName>GCRCOLI</jobName>
+		<jobClass>
+			com.cobiscorp.cloud.notificationservice.impl.GeneraCopiaReporteCobranzaLinea
+		</jobClass>
+		<cronExpression>0 10 12,15,18 1/1 * ? *</cronExpression>
+	</jobs>	
+</jobXml>

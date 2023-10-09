@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<procedure>
+  <database>cob_custodia</database>
+  <name>sp_item_custodia</name>
+  <type>SYBASE</type>
+  <version>1</version>
+  <parameters>
+    <parameter name="@s_ssn" dataType="int" direction="in" />
+    <parameter name="@s_date" dataType="datetime" direction="in" />
+    <parameter name="@s_user" dataType="varchar" direction="in" />
+    <parameter name="@s_term" dataType="varchar" direction="in" />
+    <parameter name="@s_corr" dataType="char" direction="in" />
+    <parameter name="@s_ssn_corr" dataType="int" direction="in" />
+    <parameter name="@s_ofi" dataType="smallint" direction="in" />
+    <parameter name="@t_rty" dataType="char" direction="in" />
+    <parameter name="@t_trn" dataType="smallint" direction="in" />
+    <parameter name="@t_debug" dataType="char" direction="in" />
+    <parameter name="@t_file" dataType="varchar" direction="in" />
+    <parameter name="@t_from" dataType="varchar" direction="in" />
+    <parameter name="@i_operacion" dataType="char" direction="in" />
+    <parameter name="@i_modo" dataType="smallint" direction="in" />
+    <parameter name="@i_filial" dataType="tinyint" direction="in" />
+    <parameter name="@i_sucursal" dataType="smallint" direction="in" />
+    <parameter name="@i_tipo_cust" dataType="varchar" direction="in" />
+    <parameter name="@i_custodia" dataType="int" direction="in" />
+    <parameter name="@i_item" dataType="tinyint" direction="in" />
+    <parameter name="@i_valor_item" dataType="varchar" direction="in" />
+    <parameter name="@i_nombre" dataType="varchar" direction="in" />
+    <parameter name="@i_secuencial" dataType="smallint" direction="in" />
+    <parameter name="@i_numerocount" dataType="tinyint" direction="in" />
+    <parameter name="@i_tramite" dataType="int" direction="in" />
+    <parameter name="@w_a" dataType="datetime" direction="in" />
+    <parameter name="@w_b" dataType="varchar" direction="in" />
+    <parameter name="@o_fecha_inscripcion" dataType="varchar" direction="out" />
+    <parameter name="@o_colaborador_juridico" dataType="varchar" direction="out" />
+  </parameters>
+  <queries>
+    <query>
+      <columns>
+        <column name="Sequential" />
+      </columns>
+      <queryText>SELECT  MAX (ic_secuencial) </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="Item" />
+        <column name="Name" />
+        <column name="Type" />
+        <column name="Mandatory" />
+        <column name="Description" />
+      </columns>
+      <queryText>SELECT  "17706" = it_item,"17707" = it_nombre,"17708" = it_tipo_dato,"17709" = CASE it_mandatorio WHEN "S" THEN "SI" ELSE "NO" END,"17710" = "                                     " </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="Sequential" />
+        <column name="Item" />
+        <column name="Name" />
+        <column name="Description" />
+      </columns>
+      <queryText>SELECT  "17711" = ic_secuencial,ic_item,"17707" = SUBSTRING (it_nombre, 1, 23),"17710" = CASE it_tipo_dato WHEN "D" THEN CONVERT (VARCHAR,CONVERT (MONEY,ic_valor_item ) ,1) ELSE ic_valor_item END </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="Custody Type" />
+        <column name="Custody" />
+      </columns>
+      <queryText>SELECT  ic_tipo_cust,ic_custodia </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="Registration Date" />
+        <column name="Legal Assistant" />
+      </columns>
+      <queryText>SELECT o_fecha_inscripcion, o_colaborador_juridico</queryText>
+    </query>
+  </queries>
+</procedure>

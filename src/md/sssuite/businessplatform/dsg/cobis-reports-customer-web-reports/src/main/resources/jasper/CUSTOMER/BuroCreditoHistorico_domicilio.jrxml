@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="BuroCreditoInternoExterno_domicilio.jrxml" pageWidth="572" pageHeight="752" columnWidth="572" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="9ab22525-e7a3-49a6-8b66-445b7cc4ee71">
+	<property name="ireport.zoom" value="1.6105100000000008"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="SUBREPORT_DIR" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["/"]]></defaultValueExpression>
+	</parameter>
+	<field name="domNumero" class="java.lang.String"/>
+	<field name="domCalleNum" class="java.lang.String"/>
+	<field name="domColonia" class="java.lang.String"/>
+	<field name="domDelegacion" class="java.lang.String"/>
+	<field name="domCiudad" class="java.lang.String"/>
+	<field name="domEstado" class="java.lang.String"/>
+	<field name="domCP" class="java.lang.String"/>
+	<field name="domRegistroBC" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<columnHeader>
+		<band height="30">
+			<staticText>
+				<reportElement stretchType="RelativeToBandHeight" mode="Opaque" x="0" y="0" width="572" height="15" isPrintWhenDetailOverflows="true" backcolor="#CCCCCC" uuid="f46c8b62-1a04-4815-9b40-9bea8db4b7b6"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="8" isBold="true" isStrikeThrough="false" isPdfEmbedded="false"/>
+					<paragraph leftIndent="2" rightIndent="2" spacingBefore="2" spacingAfter="2"/>
+				</textElement>
+				<text><![CDATA[DOMICILIO(S) REPORTADO(S)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement stretchType="RelativeToBandHeight" mode="Opaque" x="0" y="15" width="26" height="15" isPrintWhenDetailOverflows="true" backcolor="#CCCCCC" uuid="9662b1c6-90ea-4866-8e7e-fa7a26987123"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="6" isBold="true"/>
+					<paragraph leftIndent="2" rightIndent="2" spacingBefore="2" spacingAfter="2"/>
+				</textElement>
+				<text><![CDATA[NRO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement stretchType="RelativeToBandHeight" mode="Opaque" x="26" y="15" width="78" height="15" isPrintWhenDetailOverflows="true" backcolor="#CCCCCC" uuid="439c5e7c-b827-4969-9438-93f20e901007"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="6" isBold="true"/>
+					<paragraph leftIndent="2" rightIndent="2" spacingBefore="2" spacingAfter="2"/>
+				</textElement>
+				<text><![CDATA[CALLE Y NÚMERO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement stretchType="RelativeToBandHeight" mode="Opaque" x="104" y="15" width="77" height="15" isPrintWhenDetailOverflows="true" backcolor="#CCCCCC" uuid="6bd3c2be-db60-4b4b-b34a-865930ba98b2"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="6" isBold="true"/>
+					<paragraph leftIndent="2" rightIndent="2" spacingBefore="2" spacingAfter="2"/>
+				</textElement>
+				<text><![CDATA[COLONIA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement stretchType="RelativeToBandHeight" mode="Opaque" x="181" y="15" width="77" height="15" isPrintWhenDetailOverflows="true" backcolor="#CCCCCC" uuid="b3baba27-e580-47e7-bc8b-5bbdba69a664"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="6" isBold="true"/>
+					<paragraph leftIndent="2" rightIndent="2" spacingBefore="2" spacingAfter="2"/>
+				</textElement>
+				<text><![CDATA[DELEGACIÓN]]></text>
+			</staticText>
+			<staticText>
+				<reportElement stretchType="RelativeToBandHeight" mode="Opaque" x="258" y="15" width="77" height="15" isPrintWhenDetailOverflows="true" backcolor="#CCCCCC" uuid="d9f1bcad-6b88-46fe-93bf-1306d71e4566"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="6" isBold="true"/>
+					<paragraph leftIndent="2" rightIndent="2" spacingBefore="2" spacingAfter="2"/>
+				</textElement>
+				<text><![CDATA[CIUDAD]]></text>
+			</staticText>
+			<staticText>
+				<reportElement stretchType="RelativeToBandHeight" mode="Opaque" x="335" y="15" width="76" height="15" isPrintWhenDetailOverflows="true" backcolor="#CCCCCC" uuid="dbf0467b-9a42-4fdc-836b-1a8c4ef9d2e5"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="6" isBold="true"/>
+					<paragraph leftIndent="2" rightIndent="2" spacingBefore="2" spacingAfter="2"/>
+				</textElement>
+				<text><![CDATA[ESTADO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement stretchType="RelativeToBandHeight" mode="Opaque" x="411" y="15" width="76" height="15" isPrintWhenDetailOverflows="true" backcolor="#CCCCCC" uuid="baba36c1-9626-4ce6-9cc0-d5b37bd9c6b8"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="6" isBold="true"/>
+					<paragraph leftIndent="2" rightIndent="2" spacingBefore="2" spacingAfter="2"/>
+				</textElement>
+				<text><![CDATA[C.P]]></text>
+			</staticText>
+			<staticText>
+				<reportElement stretchType="RelativeToBandHeight" mode="Opaque" x="487" y="15" width="85" height="15" isPrintWhenDetailOverflows="true" backcolor="#CCCCCC" uuid="aa6e9320-abf3-46f8-b695-6964bd3d1f93"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="6" isBold="true"/>
+					<paragraph leftIndent="2" rightIndent="2" spacingBefore="2" spacingAfter="2"/>
+				</textElement>
+				<text><![CDATA[REGISTRO EN B.C.]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="15" splitType="Stretch">
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="0" y="0" width="26" height="15" isPrintWhenDetailOverflows="true" uuid="24639ad2-9567-4433-899e-44d60d3183f8"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font size="6"/>
+					<paragraph leftIndent="2" rightIndent="2" spacingBefore="2" spacingAfter="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{domNumero}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="26" y="0" width="78" height="15" isPrintWhenDetailOverflows="true" uuid="95054f00-2520-4900-9f4d-a16ddc7b14bd"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement>
+					<font size="6"/>
+					<paragraph leftIndent="2" rightIndent="2" spacingBefore="2" spacingAfter="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{domCalleNum}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="104" y="0" width="77" height="15" isPrintWhenDetailOverflows="true" uuid="112ff460-3037-4b65-853f-8e2a84df3f68"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement>
+					<font size="6"/>
+					<paragraph leftIndent="2" rightIndent="2" spacingBefore="2" spacingAfter="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{domColonia}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="181" y="0" width="77" height="15" isPrintWhenDetailOverflows="true" uuid="60031595-dd4c-4fc7-a073-7d7811e7bbd2"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement>
+					<font size="6"/>
+					<paragraph leftIndent="2" rightIndent="2" spacingBefore="2" spacingAfter="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{domDelegacion}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="258" y="0" width="77" height="15" isPrintWhenDetailOverflows="true" uuid="40f6da35-9c05-470d-ae38-ac5fb0868b15"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement>
+					<font size="6"/>
+					<paragraph leftIndent="2" rightIndent="2" spacingBefore="2" spacingAfter="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{domCiudad}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="335" y="0" width="76" height="15" isPrintWhenDetailOverflows="true" uuid="272da954-25d8-4303-8c08-91228fbb22d3"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement>
+					<font size="6"/>
+					<paragraph leftIndent="2" rightIndent="2" spacingBefore="2" spacingAfter="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{domEstado}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="411" y="0" width="76" height="15" isPrintWhenDetailOverflows="true" uuid="3759a483-0f7f-4128-9f37-c7488f718422"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font size="6"/>
+					<paragraph leftIndent="2" rightIndent="2" spacingBefore="2" spacingAfter="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{domCP}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="487" y="0" width="85" height="15" isPrintWhenDetailOverflows="true" uuid="0572e7e7-f2d5-4b33-985c-abcd624a192d"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font size="6"/>
+					<paragraph leftIndent="2" rightIndent="2" spacingBefore="2" spacingAfter="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{domRegistroBC}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

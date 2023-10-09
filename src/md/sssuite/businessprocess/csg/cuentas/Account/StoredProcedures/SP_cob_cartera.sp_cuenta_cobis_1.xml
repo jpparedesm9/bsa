@@ -1,0 +1,178 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<procedure>
+  <database>cob_cartera</database>
+  <name>sp_cuenta_cobis</name>
+  <type>SYBASE</type>
+  <version>1</version>
+  <parameters>
+    <parameter name="@s_date" dataType="datetime" direction="in" />
+    <parameter name="@s_ofi" dataType="smallint" direction="in" />
+    <parameter name="@i_operacion" dataType="char" direction="in" />
+    <parameter name="@i_cliente" dataType="int" direction="in" />
+    <parameter name="@i_producto" dataType="varchar" direction="in" />
+    <parameter name="@i_cuenta" dataType="varchar" direction="in" />
+    <parameter name="@i_banco" dataType="varchar" direction="in" />
+    <parameter name="@i_pcobis" dataType="tinyint" direction="in" />
+    <parameter name="@i_moneda" dataType="tinyint" direction="in" />
+    <parameter name="@i_formato_fecha" dataType="int" direction="in" />
+    <parameter name="@i_dpf" dataType="char" direction="in" />
+    <parameter name="@i_prodcobis" dataType="char" direction="in" />
+    <parameter name="@i_planilla" dataType="int" direction="in" />
+    <parameter name="@i_cotitular" dataType="char" direction="in" />
+    <parameter name="@i_producto_var" dataType="varchar" direction="in" />
+  </parameters>
+  <queries>
+    <query>
+      <columns>
+        <column name="233157" />
+        <column name="233158" />
+      </columns>
+      <queryText>SELECT  "233157" = cc_cta_banco,"233158" = cc_nombre </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="233157" />
+        <column name="233158" />
+      </columns>
+      <queryText>SELECT  "233157" = cc_cta_banco,"233158" = cc_nombre </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="233157" />
+        <column name="233158" />
+      </columns>
+      <queryText>SELECT  "233157" = ah_cta_banco,"233158" = ah_nombre </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="233157" />
+        <column name="233158" />
+      </columns>
+      <queryText>SELECT  "233157" = ah_cta_banco,"233158" = ah_nombre </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="233159" />
+        <column name="233158" />
+        <column name="233160" />
+        <column name="233161" />
+      </columns>
+      <queryText>SELECT  "233159" = op_banco,"233158" = op_nombre,"233160" = op_fecha_fin,"233161" = SUM (am_acumulado + am_gracia - am_pagado - am_exponencial) </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="233159" />
+        <column name="234133" />
+        <column name="230673" />
+        <column name="233158" />
+      </columns>
+      <queryText>SELECT  "233159" = op_banco,"234133" = es_descripcion,"230673" = op_toperacion,"233158" = op_nombre </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="233158" />
+      </columns>
+      <queryText>SELECT  "233158" = cc_nombre </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="233158" />
+      </columns>
+      <queryText>SELECT  "233158" = ah_nombre </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="{1}" />
+      </columns>
+      <queryText>SELECT w_descrip</queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="{1}" />
+      </columns>
+      <queryText>SELECT w_descrip</queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="{1}" />
+      </columns>
+      <queryText>SELECT w_descrip</queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="{1}" />
+      </columns>
+      <queryText>SELECT w_descrip</queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="{1}" />
+      </columns>
+      <queryText>SELECT  ISNULL (SUM (am_acumulado + am_gracia - am_pagado - am_exponencial), 0) </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="{1}" />
+      </columns>
+      <queryText>SELECT w_descrip</queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="{1}" />
+        <column name="{2}" />
+      </columns>
+      <queryText>SELECT w_cli, w_oficina</queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="{1}" />
+      </columns>
+      <queryText>SELECT w_cli</queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="{1}" />
+        <column name="{2}" />
+      </columns>
+      <queryText>SELECT w_cli, w_oficina</queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="{1}" />
+      </columns>
+      <queryText>SELECT w_cli</queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="Cuenta " />
+        <column name="Propietario " />
+      </columns>
+      <queryText>SELECT  Cuenta = SUBSTRING (cc_cta_banco, 1, 15),Propietario = cc_nombre </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="Cuenta " />
+        <column name="Propietario " />
+      </columns>
+      <queryText>SELECT  Cuenta = SUBSTRING (ah_cta_banco, 1, 15),Propietario = ah_nombre </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="{1}" />
+        <column name="{2}" />
+        <column name="{3}" />
+        <column name="{4}" />
+      </columns>
+      <queryText>SELECT w_cta, w_oficina, w_producto, w_descrip</queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="{1}" />
+        <column name="{2}" />
+        <column name="{3}" />
+        <column name="{4}" />
+      </columns>
+      <queryText>SELECT w_cta, w_oficina, w_producto, w_descrip</queryText>
+    </query>
+  </queries>
+</procedure>

@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<procedure>
+  <database>cob_cartera</database>
+  <name>sp_fuen_recur</name>
+  <type>SYBASE</type>
+  <version>1</version>
+  <parameters>
+    <parameter name="@s_user" dataType="varchar" direction="in" />
+    <parameter name="@s_term" dataType="varchar" direction="in" />
+    <parameter name="@s_ofi" dataType="int" direction="in" />
+    <parameter name="@s_date" dataType="datetime" direction="in" />
+    <parameter name="@i_utilizado" dataType="money" direction="in" />
+    <parameter name="@i_toperacion" dataType="varchar" direction="in" />
+    <parameter name="@i_tipo_fuente" dataType="char" direction="in" />
+    <parameter name="@i_secuencial" dataType="int" direction="in" />
+    <parameter name="@i_saldo" dataType="money" direction="in" />
+    <parameter name="@i_porcentaje" dataType="float" direction="in" />
+    <parameter name="@i_operacion" dataType="char" direction="in" />
+    <parameter name="@i_monto" dataType="money" direction="in" />
+    <parameter name="@i_modo" dataType="smallint" direction="in" />
+    <parameter name="@i_fondeador" dataType="varchar" direction="in" />
+    <parameter name="@i_fecha_ini" dataType="datetime" direction="in" />
+    <parameter name="@i_fecha_fin" dataType="datetime" direction="in" />
+    <parameter name="@i_estado" dataType="varchar" direction="in" />
+    <parameter name="@i_fondo_id" dataType="int" direction="in" />
+    <parameter name="@i_nombre_fondo" dataType="varchar" direction="in" />
+    <parameter name="@i_fecha_vig" dataType="datetime" direction="in" />
+  </parameters>
+  <queries>
+    <query>
+      <columns>
+        <column name="{1}" />
+        <column name="{2}" />
+        <column name="{3}" />
+        <column name="{4}" />
+        <column name="{5}" />
+        <column name="{6}" />
+        <column name="{7}" />
+        <column name="{8}" />
+        <column name="{9}" />
+        <column name="{10}" />
+        <column name="{11}" />
+      </columns>
+      <queryText>SELECT w_codigo_fuente, w_fuente, w_monto, w_saldo, w_utilizado, w_estado, w_desc1, w_desc2, w_tipo_fuente, w_porcentaje, w_reservado</queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="{1}" />
+        <column name="{2}" />
+        <column name="{3}" />
+        <column name="{4}" />
+        <column name="{5}" />
+        <column name="{6}" />
+        <column name="{7}" />
+        <column name="{8}" />
+        <column name="{9}" />
+      </columns>
+      <queryText>SELECT w_codigo_fuente, w_fuente, w_monto, w_saldo, w_utilizado, w_estado, w_desc1, w_desc2, w_tipo_fuente</queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="{Fondo id}" />
+        <column name="{Nombre}" />
+        <column name="{Fondeador id}" />
+        <column name="{Monto}" />
+        <column name="{Utilizado}" />
+        <column name="{Disponible}" />
+        <column name="{Fecha Vig}" />
+        <column name="{Estado}" />
+      </columns>
+      <queryText></queryText>
+    </query>
+  </queries>
+</procedure>

@@ -1,0 +1,15 @@
+   <!-- <title>Riesgo Indirecto</title> -->
+   	<div ng-controller="clientviewer.indirectRiskController">	
+		<ul kendo-panel-bar class="cb-collapsible">	
+			<li class="k-state-active" ng-show="isVisibleIndirectRiskDet">
+				<span class="k-link k-state-selected"  translate>INDIRECTRISK.LABELS.LBL_INDIRECTRISK</span><br/>
+				<div>				
+					<div kendo-grid k-data-source="indirectRisk"                  
+			                 	k-selectable="'row'" 
+			                 	k-columns="indirectRiskColumns" 
+			                 	k-rebind="indirectRisk"
+					></div>
+				</div>				
+			</li>
+    	</ul>
+    </div> 

@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="grupos_vencidos_coord">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" name="Coordinador">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="gv_coord_id" type="xs:unsignedShort" />
+              <xs:element name="gv_coord_name" type="xs:string" />
+              <xs:element name="gv_coord_email" type="xs:string" />
+              <xs:element maxOccurs="unbounded" name="Asesor">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="gv_asesor_id" type="xs:unsignedShort" />
+                    <xs:element name="gv_asesor_name" type="xs:string" />
+                    <xs:element maxOccurs="unbounded" name="Grupo">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="gv_grupo_id" type="xs:unsignedShort" />
+                          <xs:element name="gv_grupo_name" type="xs:string" />
+                          <xs:element name="gv_cuotas_vencidas" type="xs:unsignedShort" />
+                          <xs:element name="gv_saldo_exigible" type="xs:decimal" />
+                          <xs:element name="gv_cuota_actual" type="xs:decimal" />
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

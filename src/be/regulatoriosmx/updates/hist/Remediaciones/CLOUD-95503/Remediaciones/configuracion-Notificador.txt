@@ -1,0 +1,93 @@
+--------------------------------------------
+-- Crear un ftp para el servicio de negative file con su propio usuario y contraseña - Producción
+--------------------------------------------
+Crear el ftp con nombre NegativeFile y compartir la carpeta para todos 
+
+--------------------------------------------
+-- Archivo  configuration.properties - EN EL SERVIDOR DE LA CAPA DE INTERNET
+-- Nota para el desarrollador: Cuando se pase un requerimiento el archivo configuration.properties solo debe estar en \Notificador\notification\
+--------------------------------------------
+Tomar el archivo configuration.properties de la ruta ..\Notificador\notification\ y copialo en ..\Notificador\ si no existe
+con lo descrito el archivo 'configuration.properties' debe estar en las dos rutas: - \Notificador\
+                                                                                   - \Notificador\notification\
+
+--------------------------------------------
+-- Creacion de carpeta NegativeFile  - EN EL SERVIDOR DE LA CAPA DE INTERNET - Sustainig
+--------------------------------------------
+Crear la carpeta 'NegativeFile' y compartirla para para todos
+C:\NegativeFile
+
+--------------------------------------------
+-- Creacion de carpeta NegativeFile - EN EL SERVIDOR DE LA CAPA DE BASE DE DATOS
+--------------------------------------------
+Crear la carpeta 'NegativeFile'
+C:\NegativeFile\
+
+Dentro de 'NegativeFile' crear la carpeta la 'history'
+C:\NegativeFile\history\
+
+--------------------------------------------
+-- Añadir una carpeta 'properties' - EN EL SERVIDOR DE LA CAPA DE BASE DE DATOS
+--------------------------------------------	
+Añadir una carpeta 'properties' dentro de la ruta:
+C:\Notificador\notification\  quedando C:\Notificador\notification\properties\
+
+Dentro de la carpeta 'properties' añadir el archivo CRGNF.properties del tfs
+
+--------------------------------------------
+-- Modificar el archivo CRGNF.properties - EN EL SERVIDOR DE LA CAPA DE BASE DE DATOS
+-- Los datos dentro de este archivo se deben modificar de acuerdo al ambiente en donde se esta modificando
+--------------------------------------------
+--Debe corresponder al ftp de donde van a subir los archivos de negative file (IP del servidor de la capa de internet)
+Modificar el archivo CRGNF.properties con la ip de cada servidor:
+                              fileName=????????_negative_file.txt                                
+                              webServerPath=\\\\(IP del servidor de la capa de internet)\\NegativeFile\\   
+                              dbServerPath=C:\\NegativeFile\\         
+                              historyPath=C:\\NegativeFile\\history\\
+                              to=correro Electronico de la persona encargda de recibir los mensajes sobre la ejecución
+                              #to=ejprado@santander.com.mx;erumoroso@santander.com.mx
+                              cc=
+Quedando algo similar a (Ejemplo en el servidor de desarrollo):
+                              fileName=????????_negative_file.txt                                
+                              webServerPath=\\\\192.168.64.255\\NegativeFile\\
+                              dbServerPath=C:\\NegativeFile\\
+                              historyPath=C:\\NegativeFile\\history\\
+                              to=adriana.chiluisa@cobiscorp.com
+                              #to=ejprado@santander.com.mx;erumoroso@santander.com.mx
+                              cc=
+--------------------------------------------
+-- Modificar el archivo jobs-configuration.xml - EN EL SERVIDOR DE LA CAPA DE BASE DE DATOS
+--------------------------------------------
+En el archivo jobs-configuration.xml ubicado en C:\Notificador\notification\, añadir lo siguiente:
+                              <jobs>
+                                  <id>11</id>
+                                  <jobName>CRGNF</jobName>
+                                  <jobClass>
+                                      com.cobiscorp.cloud.notificationservice.impl.CargaNegativeFile
+                                  </jobClass>
+                                  <cronExpression>0 0 16 ? * MON,TUE,WED,THU,FRI *</cronExpression>
+                                  <!--cronExpression>0/20 * * * * ? *</cronExpression-->
+                              </jobs>
+Quedando algo similar a:
+                              <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+                              <jobXml>
+                                  <jobs>
+                                      <id>10</id>
+                                      <jobName>CRGLN</jobName>
+                                      <jobClass>
+                                          com.cobiscorp.cloud.notificationservice.impl.CargaListasNegras
+                                      </jobClass>
+                                      <cronExpression>10 4 9 * * ? *</cronExpression>
+                                      <!--cronExpression>0/20 * * * * ? *</cronExpression-->
+                                  </jobs>
+                                  <jobs>
+                                      <id>11</id>  <!-- este número debe ser el siguiente de los otros jobs-->
+                                      <jobName>CRGNF</jobName>
+                                      <jobClass>
+                                          com.cobiscorp.cloud.notificationservice.impl.CargaNegativeFile
+                                      </jobClass>
+                                      <cronExpression>0 0 16 ? * MON,TUE,WED,THU,FRI *</cronExpression>
+                                      <!--cronExpression>0/20 * * * * ? *</cronExpression-->
+                                  </jobs>	
+                              </jobXml>
+							  

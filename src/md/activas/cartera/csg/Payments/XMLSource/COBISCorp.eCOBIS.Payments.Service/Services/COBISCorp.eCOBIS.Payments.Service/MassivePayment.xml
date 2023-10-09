@@ -1,0 +1,123 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<serviceClass name="MassivePayment" nsBase="COBISCorp.eCOBIS.Payments" namespace="COBISCorp.eCOBIS.Payments.Service" package="cobiscorp.ecobis.payments.service" ns="http://service.payments.ecobis.cobiscorp" module="Payments" productName="COBISCorp.eCOBIS.Payments.Service" productVersion="1.0.0.0">
+  <productProperties>
+    <property name="MavenGroupId" value="com.cobiscorp.processapi" />
+    <property name="MavenArtifactId" value="COBISCorp.eCOBIS.Payments.Service" />
+    <property name="MavenVersion" value="1.0.0.0" />
+  </productProperties>
+  <partialClass name="MassivePayment">
+    <services>
+      <service id="Payments.MassivePayment.ExecutePayments" netName="ExecutePayments" javaName="executePayments" mappingType="STORED_PROCEDURE" mapId="7d2be41b1bde6ff8fe45150c37488ebb">
+        <SRVMapping name="cob_cartera..sp_pagos_corresponsal_masivos">
+          <DTOs>
+            <DTO direction="in" name="PaymentRecord" alias="inPaymentRecord" namespace="COBISCorp.eCOBIS.Payments.DTO" package="cobiscorp.ecobis.payments.dto" ns="http://dto.payments.ecobis.cobiscorp" required="true" />
+            <DTO direction="return" name="PaymentProcessResponse" alias="returnPaymentProcessResponse" namespace="COBISCorp.eCOBIS.Payments.DTO" package="cobiscorp.ecobis.payments.dto" ns="http://dto.payments.ecobis.cobiscorp" required="true">
+              <properties>
+                <property name="successRegisters" propertyNet="SuccessRegisters" propertyJava="successRegisters" setterJavaMethod="setSuccessRegisters" getterJavaMethod="getSuccessRegisters" xsdType="int" netType="int" javaType="int" cobisMapping="" isInherit="false" isComplexType="false" isCollectionType="false" required="true" encrypted="false" maxLength="0" />
+                <property name="failedRegisters" propertyNet="FailedRegisters" propertyJava="failedRegisters" setterJavaMethod="setFailedRegisters" getterJavaMethod="getFailedRegisters" xsdType="int" netType="int" javaType="int" cobisMapping="" isInherit="false" isComplexType="false" isCollectionType="false" required="true" encrypted="false" maxLength="0" />
+                <property name="amountProcessed" propertyNet="AmountProcessed" propertyJava="amountProcessed" setterJavaMethod="setAmountProcessed" getterJavaMethod="getAmountProcessed" xsdType="decimal" netType="Decimal" javaType="java.math.BigDecimal" cobisMapping="" isInherit="false" isComplexType="false" isCollectionType="false" required="true" encrypted="false" maxLength="0" />
+              </properties>
+            </DTO>
+          </DTOs>
+          <parameterMappings>
+            <parameter name="@i_operacion" direction="in" mappingDirection="in" dataType="char" CTSDataType="SQLCHAR" JavaSQLType="CHAR" mappingType="CONSTANT" allowNull="false" contantValue="P" />
+            <parameter name="@i_archivo_pago" direction="in" mappingDirection="in" dataType="varchar" CTSDataType="SQLVARCHAR" JavaSQLType="VARCHAR" mappingType="DTO" allowNull="false" DTOAlias="inPaymentRecord" DTOPropertyName="fileName" />
+          </parameterMappings>
+          <resultMappings />
+          <MappingProperties>
+            <MappingProperty key="singleResult1" value="true" />
+          </MappingProperties>
+        </SRVMapping>
+      </service>
+      <service id="Payments.MassivePayment.GetPaymentsResult" netName="GetPaymentsResult" javaName="getPaymentsResult" mappingType="STORED_PROCEDURE" mapId="15e122e839dfdaa7ce969536f94aecf6">
+        <SRVMapping name="cob_cartera..sp_pagos_corresponsal_masivos">
+          <DTOs>
+            <DTO direction="in" name="PaymentRecord" alias="inPaymentRecord" namespace="COBISCorp.eCOBIS.Payments.DTO" package="cobiscorp.ecobis.payments.dto" ns="http://dto.payments.ecobis.cobiscorp" required="true" />
+            <DTO direction="return" name="PaymentProcessResponse" alias="returnPaymentProcessResponse" namespace="COBISCorp.eCOBIS.Payments.DTO" package="cobiscorp.ecobis.payments.dto" ns="http://dto.payments.ecobis.cobiscorp" required="true">
+              <properties>
+                <property name="successRegisters" propertyNet="SuccessRegisters" propertyJava="successRegisters" setterJavaMethod="setSuccessRegisters" getterJavaMethod="getSuccessRegisters" xsdType="int" netType="int" javaType="int" cobisMapping="" isInherit="false" isComplexType="false" isCollectionType="false" required="true" encrypted="false" maxLength="0" />
+                <property name="failedRegisters" propertyNet="FailedRegisters" propertyJava="failedRegisters" setterJavaMethod="setFailedRegisters" getterJavaMethod="getFailedRegisters" xsdType="int" netType="int" javaType="int" cobisMapping="" isInherit="false" isComplexType="false" isCollectionType="false" required="true" encrypted="false" maxLength="0" />
+                <property name="amountProcessed" propertyNet="AmountProcessed" propertyJava="amountProcessed" setterJavaMethod="setAmountProcessed" getterJavaMethod="getAmountProcessed" xsdType="decimal" netType="Decimal" javaType="java.math.BigDecimal" cobisMapping="" isInherit="false" isComplexType="false" isCollectionType="false" required="true" encrypted="false" maxLength="0" />
+              </properties>
+            </DTO>
+          </DTOs>
+          <parameterMappings>
+            <parameter name="@i_operacion" direction="in" mappingDirection="in" dataType="char" CTSDataType="SQLCHAR" JavaSQLType="CHAR" mappingType="CONSTANT" allowNull="false" contantValue="Q" />
+            <parameter name="@i_archivo_pago" direction="in" mappingDirection="in" dataType="varchar" CTSDataType="SQLVARCHAR" JavaSQLType="VARCHAR" mappingType="DTO" allowNull="false" DTOAlias="inPaymentRecord" DTOPropertyName="fileName" />
+          </parameterMappings>
+          <resultMappings>
+            <result>
+              <DTOResult DTOAlias="returnPaymentProcessResponse" MapReturn="true">
+                <columnMapping position="0" name="NumProcesados" DTOPropertyName="successRegisters" DataType="int" />
+                <columnMapping position="1" name="MontoProcesado" DTOPropertyName="amountProcessed" DataType="decimal" />
+                <columnMapping position="2" name="NumNoProcesados" DTOPropertyName="failedRegisters" DataType="int" />
+              </DTOResult>
+            </result>
+          </resultMappings>
+          <MappingProperties>
+            <MappingProperty key="singleResult1" value="true" />
+          </MappingProperties>
+        </SRVMapping>
+      </service>
+      <service id="Payments.MassivePayment.RegisterPayment" netName="RegisterPayment" javaName="registerPayment" mappingType="STORED_PROCEDURE" mapId="6dbd2699e8e7ec0047de2d5d1b28a75b">
+        <SRVMapping name="cob_cartera..sp_pagos_corresponsal_masivos">
+          <DTOs>
+            <DTO direction="in" name="PaymentRecord" alias="inPaymentRecord" namespace="COBISCorp.eCOBIS.Payments.DTO" package="cobiscorp.ecobis.payments.dto" ns="http://dto.payments.ecobis.cobiscorp" required="true" />
+          </DTOs>
+          <parameterMappings>
+            <parameter name="@i_operacion" direction="in" mappingDirection="in" dataType="char" CTSDataType="SQLCHAR" JavaSQLType="CHAR" mappingType="CONSTANT" allowNull="false" contantValue="I" />
+            <parameter name="@i_referencia" direction="in" mappingDirection="in" dataType="varchar" CTSDataType="SQLVARCHAR" JavaSQLType="VARCHAR" mappingType="DTO" allowNull="false" DTOAlias="inPaymentRecord" DTOPropertyName="reference" />
+            <parameter name="@i_corresponsal" direction="in" mappingDirection="in" dataType="varchar" CTSDataType="SQLVARCHAR" JavaSQLType="VARCHAR" mappingType="DTO" allowNull="false" DTOAlias="inPaymentRecord" DTOPropertyName="paymentMethod" />
+            <parameter name="@i_fecha_pago" direction="in" mappingDirection="in" dataType="varchar" CTSDataType="SQLVARCHAR" JavaSQLType="VARCHAR" mappingType="DTO" allowNull="false" DTOAlias="inPaymentRecord" DTOPropertyName="date" />
+            <parameter name="@i_monto_pago" direction="in" mappingDirection="in" dataType="varchar" CTSDataType="SQLVARCHAR" JavaSQLType="VARCHAR" mappingType="DTO" allowNull="false" DTOAlias="inPaymentRecord" DTOPropertyName="amount" />
+            <parameter name="@i_archivo_pago" direction="in" mappingDirection="in" dataType="varchar" CTSDataType="SQLVARCHAR" JavaSQLType="VARCHAR" mappingType="DTO" allowNull="false" DTOAlias="inPaymentRecord" DTOPropertyName="fileName" />
+            <parameter name="@i_trn_id_corresp" direction="in" mappingDirection="in" dataType="varchar" CTSDataType="SQLVARCHAR" JavaSQLType="VARCHAR" mappingType="DTO" allowNull="false" DTOAlias="inPaymentRecord" DTOPropertyName="corresponsalCode" />
+            <parameter name="@i_num_fila" direction="in" mappingDirection="in" dataType="int" CTSDataType="SQLINT4" JavaSQLType="INTEGER" mappingType="DTO" allowNull="false" DTOAlias="inPaymentRecord" DTOPropertyName="rowNumber" />
+            <parameter name="@i_delete" direction="in" mappingDirection="in" dataType="char" CTSDataType="SQLCHAR" JavaSQLType="CHAR" mappingType="DTO" allowNull="false" DTOAlias="inPaymentRecord" DTOPropertyName="delete" />
+          </parameterMappings>
+          <resultMappings />
+          <MappingProperties />
+        </SRVMapping>
+      </service>
+      <service id="Payments.MassivePayment.ValidatePayments" netName="ValidatePayments" javaName="validatePayments" mappingType="STORED_PROCEDURE" mapId="6c0958d82a830a02c0718147b1b565c1">
+        <SRVMapping name="cob_cartera..sp_pagos_corresponsal_masivos">
+          <DTOs>
+            <DTO direction="in" name="PaymentRecord" alias="inPaymentRecord" namespace="COBISCorp.eCOBIS.Payments.DTO" package="cobiscorp.ecobis.payments.dto" ns="http://dto.payments.ecobis.cobiscorp" required="true" />
+            <DTO direction="return" name="PaymentRecord" alias="returnPaymentRecord" namespace="COBISCorp.eCOBIS.Payments.DTO" package="cobiscorp.ecobis.payments.dto" ns="http://dto.payments.ecobis.cobiscorp" required="true">
+              <properties>
+                <property name="rowNumber" propertyNet="RowNumber" propertyJava="rowNumber" setterJavaMethod="setRowNumber" getterJavaMethod="getRowNumber" xsdType="int" netType="int" javaType="int" cobisMapping="" isInherit="false" isComplexType="false" isCollectionType="false" required="true" encrypted="false" maxLength="0" />
+                <property name="observations" propertyNet="Observations" propertyJava="observations" setterJavaMethod="setObservations" getterJavaMethod="getObservations" xsdType="string" netType="string" javaType="String" cobisMapping="" isInherit="false" isComplexType="false" isCollectionType="false" required="false" encrypted="false" maxLength="0" />
+                <property name="date" propertyNet="Date" propertyJava="date" setterJavaMethod="setDate" getterJavaMethod="getDate" xsdType="string" netType="string" javaType="String" cobisMapping="" isInherit="false" isComplexType="false" isCollectionType="false" required="false" encrypted="false" maxLength="0" />
+                <property name="amount" propertyNet="Amount" propertyJava="amount" setterJavaMethod="setAmount" getterJavaMethod="getAmount" xsdType="string" netType="string" javaType="String" cobisMapping="" isInherit="false" isComplexType="false" isCollectionType="false" required="false" encrypted="false" maxLength="0" />
+                <property name="reference" propertyNet="Reference" propertyJava="reference" setterJavaMethod="setReference" getterJavaMethod="getReference" xsdType="string" netType="string" javaType="String" cobisMapping="" isInherit="false" isComplexType="false" isCollectionType="false" required="false" encrypted="false" maxLength="0" />
+                <property name="corresponsalCode" propertyNet="CorresponsalCode" propertyJava="corresponsalCode" setterJavaMethod="setCorresponsalCode" getterJavaMethod="getCorresponsalCode" xsdType="string" netType="string" javaType="String" cobisMapping="" isInherit="false" isComplexType="false" isCollectionType="false" required="false" encrypted="false" maxLength="0" />
+                <property name="fileName" propertyNet="FileName" propertyJava="fileName" setterJavaMethod="setFileName" getterJavaMethod="getFileName" xsdType="string" netType="string" javaType="String" cobisMapping="" isInherit="false" isComplexType="false" isCollectionType="false" required="false" encrypted="false" maxLength="0" />
+                <property name="paymentMethod" propertyNet="PaymentMethod" propertyJava="paymentMethod" setterJavaMethod="setPaymentMethod" getterJavaMethod="getPaymentMethod" xsdType="string" netType="string" javaType="String" cobisMapping="" isInherit="false" isComplexType="false" isCollectionType="false" required="false" encrypted="false" maxLength="0" />
+                <property name="delete" propertyNet="Delete" propertyJava="delete" setterJavaMethod="setDelete" getterJavaMethod="getDelete" xsdType="string" netType="string" javaType="String" cobisMapping="" isInherit="false" isComplexType="false" isCollectionType="false" required="false" encrypted="false" maxLength="0" />
+              </properties>
+            </DTO>
+          </DTOs>
+          <parameterMappings>
+            <parameter name="@i_operacion" direction="in" mappingDirection="in" dataType="char" CTSDataType="SQLCHAR" JavaSQLType="CHAR" mappingType="CONSTANT" allowNull="false" contantValue="V" />
+            <parameter name="@i_archivo_pago" direction="in" mappingDirection="in" dataType="varchar" CTSDataType="SQLVARCHAR" JavaSQLType="VARCHAR" mappingType="DTO" allowNull="false" DTOAlias="inPaymentRecord" DTOPropertyName="fileName" />
+          </parameterMappings>
+          <resultMappings>
+            <result>
+              <DTOResult DTOAlias="returnPaymentRecord" MapReturn="true">
+                <columnMapping position="0" name="NumFila" DTOPropertyName="rowNumber" DataType="int" Format="" />
+                <columnMapping position="1" name="FechaPago" DTOPropertyName="date" DataType="string" Format="" />
+                <columnMapping position="2" name="NumReferencia" DTOPropertyName="reference" DataType="string" Format="" />
+                <columnMapping position="3" name="MontoPago" DTOPropertyName="amount" DataType="string" Format="" />
+                <columnMapping position="4" name="FormaPago" DTOPropertyName="paymentMethod" DataType="string" Format="" />
+                <columnMapping position="5" name="TrnCorresponsal" DTOPropertyName="corresponsalCode" DataType="string" Format="" />
+                <columnMapping position="6" name="NombreArchivo" DTOPropertyName="fileName" DataType="string" Format="" />
+                <columnMapping position="7" name="Observaciones" DTOPropertyName="observations" DataType="string" Format="" />
+              </DTOResult>
+            </result>
+          </resultMappings>
+          <MappingProperties />
+        </SRVMapping>
+      </service>
+    </services>
+  </partialClass>
+</serviceClass>

@@ -1,0 +1,180 @@
+{
+    "id": {
+        "queryId": "Q_ECONCATI_3050",
+        "version": "1.0.0"
+    },
+    "name": {
+        "$ref": "../../../BUSIN/relations/componentKeys.json#/FLCRE/Queries/Q_ECONCATI_3050/name"
+    },
+    "customizationLayer": 0,
+    "customizationLayerDescription": "ECU",
+    "mainEntityId": "EN_CNOMACIVI771",
+    "mainEntityVersion": "1.0.0",
+    "queryMembers": [
+        {
+            "queryMemberId": "QM_ECONC3050_68",
+            "order": 1,
+            "orderByDirection": "A",
+            "selectStr": "T",
+            "alias": "sector",
+            "whereStr": "T",
+            "customizationLayer": 0,
+            "customizationLayerDescription": "ECU",
+            "attribute": {
+                "$ref": "../../../BUSIN/entities/EN_CNOMACIVI771.json#/attributes/AT_CNO771SETR24"
+            },
+            "select": true,
+            "where": true
+        },
+        {
+            "queryMemberId": "QM_ECONC3050_38",
+            "order": 2,
+            "orderByDirection": "A",
+            "selectStr": "T",
+            "alias": "subsector",
+            "whereStr": "T",
+            "customizationLayer": 0,
+            "customizationLayerDescription": "ECU",
+            "attribute": {
+                "$ref": "../../../BUSIN/entities/EN_CNOMACIVI771.json#/attributes/AT_CNO771USET12"
+            },
+            "select": true,
+            "where": true
+        },
+        {
+            "queryMemberId": "QM_ECONC3050_26",
+            "order": 3,
+            "orderByDirection": "A",
+            "selectStr": "T",
+            "alias": "actividadEconomica",
+            "whereStr": "T",
+            "customizationLayer": 0,
+            "customizationLayerDescription": "ECU",
+            "attribute": {
+                "$ref": "../../../BUSIN/entities/EN_CNOMACIVI771.json#/attributes/AT_CNO771ENAI25"
+            },
+            "select": true,
+            "where": true
+        },
+        {
+            "queryMemberId": "QM_ECONC3050_87",
+            "order": 4,
+            "orderByDirection": "A",
+            "selectStr": "T",
+            "alias": "subactividadEconomica",
+            "whereStr": "T",
+            "customizationLayer": 0,
+            "customizationLayerDescription": "ECU",
+            "attribute": {
+                "$ref": "../../../BUSIN/entities/EN_CNOMACIVI771.json#/attributes/AT_CNO771ESCY21"
+            },
+            "select": true,
+            "where": true
+        },
+        {
+            "queryMemberId": "QM_ECONC3050_08",
+            "order": 5,
+            "orderByDirection": "A",
+            "selectStr": "T",
+            "alias": "AclaracionFIE",
+            "whereStr": "T",
+            "customizationLayer": 0,
+            "customizationLayerDescription": "ECU",
+            "attribute": {
+                "$ref": "../../../BUSIN/entities/EN_CNOMACIVI771.json#/attributes/AT_CNO771ATIO24"
+            },
+            "select": true,
+            "where": true
+        },
+        {
+            "queryMemberId": "QM_ECONC3050_74",
+            "order": 6,
+            "orderByDirection": "A",
+            "selectStr": "T",
+            "alias": "codigoSubactividad",
+            "whereStr": "T",
+            "customizationLayer": 0,
+            "customizationLayerDescription": "ECU",
+            "attribute": {
+                "$ref": "../../../BUSIN/entities/EN_CNOMACIVI771.json#/attributes/AT_CNO771ODSY22"
+            },
+            "select": true,
+            "where": true
+        },
+        {
+            "queryMemberId": "QM_ECONC3050_35",
+            "order": 7,
+            "orderByDirection": "A",
+            "selectStr": "T",
+            "alias": "codigoSectorEc",
+            "whereStr": "T",
+            "customizationLayer": 0,
+            "customizationLayerDescription": "ECU",
+            "attribute": {
+                "$ref": "../../../BUSIN/entities/EN_CNOMACIVI771.json#/attributes/AT_CNO771DCTO30"
+            },
+            "select": true,
+            "where": true
+        },
+        {
+            "queryMemberId": "QM_ECONC3050_01",
+            "order": 8,
+            "orderByDirection": "A",
+            "selectStr": "T",
+            "alias": "codigoSubsectorEc",
+            "whereStr": "T",
+            "customizationLayer": 0,
+            "customizationLayerDescription": "ECU",
+            "attribute": {
+                "$ref": "../../../BUSIN/entities/EN_CNOMACIVI771.json#/attributes/AT_CNO771OSUC09"
+            },
+            "select": true,
+            "where": true
+        },
+        {
+            "queryMemberId": "QM_ECONC3050_18",
+            "order": 9,
+            "orderByDirection": "A",
+            "selectStr": "T",
+            "alias": "codigoActividadEc",
+            "whereStr": "T",
+            "customizationLayer": 0,
+            "customizationLayerDescription": "ECU",
+            "attribute": {
+                "$ref": "../../../BUSIN/entities/EN_CNOMACIVI771.json#/attributes/AT_CNO771EEOI57"
+            },
+            "select": true,
+            "where": true
+        }
+    ],
+    "customEvents": [
+        {
+            "executionType": 1,
+            "customEventId": "CEQY_130_Q_ECONCATI_3050_706",
+            "customizationLayer": 0,
+            "customizationLayerDescription": "ECU",
+            "queryEventType": {
+                "eventId": 130,
+                "name": "ExecuteQuery",
+                "description": "Sobreescribe la ejecución de un Query"
+            },
+            "thereAnServerEvent": false,
+            "thereAnClientEvent": true,
+            "thereAnCallbackEvent": false
+        }
+    ],
+    "isAutomatic": false,
+    "isImported": true,
+    "mainEntityModule": "BUSIN",
+    "subModules": [
+        {
+            "id": {
+                "moduleId": "BUSIN",
+                "subModuleId": "FLCRE"
+            }
+        }
+    ],
+    "mainEntityName": {
+        "$ref": "../../../BUSIN/relations/componentKeys.json#/Entities/EN_CNOMACIVI771/name"
+    }
+}

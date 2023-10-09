@@ -1,0 +1,99 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<procedure>
+  <database>cob_credito</database>
+  <name>sp_reporte_buro_int</name>
+  <type>SYBASE</type>
+  <version>1</version>
+  <parameters>
+    <parameter name="@s_ssn" dataType="int" direction="in" />
+    <parameter name="@s_user" dataType="varchar" direction="in" />
+    <parameter name="@s_sesn" dataType="int" direction="in" />
+    <parameter name="@s_term" dataType="varchar" direction="in" />
+    <parameter name="@s_date" dataType="datetime" direction="in" />
+    <parameter name="@s_srv" dataType="varchar" direction="in" />
+    <parameter name="@s_lsrv" dataType="varchar" direction="in" />
+    <parameter name="@s_rol" dataType="smallint" direction="in" />
+    <parameter name="@s_ofi" dataType="smallint" direction="in" />
+    <parameter name="@s_org_err" dataType="char" direction="in" />
+    <parameter name="@s_error" dataType="int" direction="in" />
+    <parameter name="@s_sev" dataType="tinyint" direction="in" />
+    <parameter name="@s_msg" dataType="varchar" direction="in" />
+    <parameter name="@s_org" dataType="char" direction="in" />
+    <parameter name="@t_rty" dataType="char" direction="in" />
+    <parameter name="@t_trn" dataType="smallint" direction="in" />
+    <parameter name="@t_debug" dataType="char" direction="in" />
+    <parameter name="@t_file" dataType="varchar" direction="in" />
+    <parameter name="@t_from" dataType="varchar" direction="in" />
+    <parameter name="@i_cliente" dataType="int" direction="in" />
+    <parameter name="@i_formato_fecha" dataType="int" direction="in" />
+  </parameters>
+  <queries>
+    <query>
+      <columns>
+        <column name="Nombres" />
+        <column name="Apellidos" />
+        <column name="RFC" />
+        <column name="F_NACIMIENTO" />
+        <column name="ESTADO_CIVIL" />
+        <column name="CURP" />
+        <column name="fechaReporte" />
+        <column name="sucursal" />
+        <column name="nombreFuncionario" />
+        <column name="fechaConsultaBR" />
+        <column name="codigo_cliente" />
+      </columns>
+      <queryText>SELECT  Nombres,Apellidos,RFC,F_NACIMIENTO,ESTADO_CIVIL,CURP </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="secuencial" />
+        <column name="calleNum" />
+        <column name="colonia" />
+        <column name="delegacion" />
+        <column name="ciudad" />
+        <column name="estado" />
+        <column name="codigoPostal" />
+        <column name="regFecha" />
+      </columns>
+      <queryText>SELECT  di_secuencial,di_calle_y_num,di_colonia,di_delegacion,di_ciudad,di_estado,di_codigo_postal,di_reg_fecha </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="seuencial" />
+        <column name="banco" />
+        <column name="ciclo" />
+        <column name="fechaApertura" />
+        <column name="fechaFin" />
+        <column name="fecha_liquida" />
+        <column name="diasAtraso" />
+        <column name="montoAprobado" />
+        <column name="estado" />
+        <column name="saldocapital" />
+        <column name="saldocapitalMora" />
+        <column name="diasMoraAcum" />
+        <column name="diasMaximoMora" />
+      </columns>
+      <queryText>SELECT  pr_seuencial,pr_banco,pr_ciclo,pr_fecha_apertura,pr_fecha_fin,pr_fecha_liquida,pr_dias_atraso,pr_monto_aprobado,pr_estado,pr_saldo_capital,pr_saldo_capital_mora,pr_dias_mora_acum,pr_dias_maximo_mora </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="cliente" />
+        <column name="mop" />
+        <column name="numero" />
+        <column name="cuentasAbiertas" />
+        <column name="limiteCuentasAbiertas" />
+        <column name="saldoActualAbiertas" />
+        <column name="saldo_vencidoAbiertas" />
+        <column name="pagoRelizarAbiertas" />
+        <column name="pagoSemanal" />
+        <column name="pagoCatorcenal" />
+        <column name="pago_mensual" />
+        <column name="cuentasCerradas" />
+        <column name="limiteCuentasCerradas" />
+        <column name="saldoActualCerradas" />
+        <column name="montoCerradas" />
+      </columns>
+      <queryText>SELECT  cp_cliente,cp_mop,cp_numero,cp_cuentas_abiertas,cp_limite_cuentas_abiertas,cp_saldo_actual_abiertas,cp_saldo_vencido_abiertas,cp_pago_relizar_abiertas,cp_pago_semanal,cp_pago_catorcenal,cp_pago_mensual,cp_cuentas_cerradas,cp_limite_cuentas_cerradas,cp_saldo_actual_cerradas,cp_monto_cerradas </queryText>
+    </query>
+  </queries>
+</procedure>

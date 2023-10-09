@@ -1,0 +1,887 @@
+{
+    "autoCrudStr": "F",
+    "commands": [
+    ],
+    "customEvents": [
+    ],
+    "customizationLayer": 0,
+    "customizationLayerDescription": "ECU",
+    "id": {
+        "moduleId": "BUSIN",
+        "subModuleId": "FLCRE",
+        "taskId": "T_FLCRE_33_TRESS53",
+        "version": "1.0.0"
+    },
+    "isImported": true,
+    "mainViewContainerId": "VC_TRESS53_ADRES_308",
+    "modeEnabled": 4095,
+    "name": {
+        "$ref": "../../../../BUSIN/relations/componentKeys.json#/FLCRE/Forms/T_FLCRE_33_TRESS53/name"
+    },
+    "tempSaveStr": "F",
+    "viewContainers": [
+        {
+            "colSpan": 1,
+            "collapsedStr": "F",
+            "columnsNum": 1,
+            "componentStyle": null,
+            "customEvents": [
+                {
+                    "customEventId": "CEVC_002_TRESS53_ADRES_308_101",
+                    "customizationLayer": 0,
+                    "customizationLayerDescription": "ECU",
+                    "enabled": "T",
+                    "executionType": 1,
+                    "isEnabled": true,
+                    "thereAnCallbackEvent": false,
+                    "thereAnClientEvent": true,
+                    "thereAnServerEvent": false,
+                    "viewContainerEventType": {
+                        "description": "Inicialización de datos de un ViewContainer, despues de este evento se realiza el segimiento de cambios en los datos",
+                        "eventId": 2,
+                        "name": "InitData"
+                    }
+                },
+                {
+                    "customEventId": "CEVC_008_TRESS53_ADRES_308_236",
+                    "customizationLayer": 0,
+                    "customizationLayerDescription": "ECU",
+                    "enabled": "T",
+                    "executionType": 1,
+                    "isEnabled": true,
+                    "thereAnCallbackEvent": false,
+                    "thereAnClientEvent": true,
+                    "thereAnServerEvent": false,
+                    "viewContainerEventType": {
+                        "description": "Se ejecuta antes de renderizar un ViewContainer, permite realizar personalizaciones visuales",
+                        "eventId": 8,
+                        "name": "Render"
+                    }
+                }
+            ],
+            "customizationLayer": 0,
+            "customizationLayerDescription": "ECU",
+            "description": "Formulario para la búsqueda de direcciones",
+            "enabled": 4095,
+            "id": {
+                "moduleId": "BUSIN",
+                "subModuleId": "FLCRE",
+                "taskId": "T_FLCRE_33_TRESS53",
+                "taskVersion": "1.0.0",
+                "viewContainerId": "VC_TRESS53_ADRES_308"
+            },
+            "layoutType": "Group",
+            "name": "FAddress",
+            "options": 0,
+            "responsiveLayouts": null,
+            "responsivity": false,
+            "style": null,
+            "view": {
+                "groups": [
+                    {
+                        "colSpan": 1,
+                        "collapsedStr": "F",
+                        "columnsNum": 1,
+                        "componentStyle": null,
+                        "customEvents": [
+                        ],
+                        "enabled": 4095,
+                        "entity": {
+                            "$ref": "../../../../BUSIN/entities/EN_ADDRESSUA698.json#"
+                        },
+                        "eventType": 0,
+                        "groupId": "GR_VIEWDDRESS41_02",
+                        "htmlSection": "F",
+                        "independentValidation": "F",
+                        "layoutType": "Group",
+                        "name": "Address",
+                        "orientation": "V",
+                        "queryView": {
+                            "actionDesign": "Button",
+                            "actions": [
+                            ],
+                            "allowPaging": false,
+                            "allowPagingStr": "F",
+                            "allowSorting": false,
+                            "allowSortingStr": "F",
+                            "confirmRowDeletion": false,
+                            "confirmRowDeletionStr": "F",
+                            "customEvents": [
+                            ],
+                            "customUrlDialog": null,
+                            "customizationLayer": 0,
+                            "customizationLayerDescription": "ECU",
+                            "deleteCommandEnabled": false,
+                            "deleteCommandEnabledStr": "F",
+                            "dialogTitleLabelId": null,
+                            "editCommandEnabled": false,
+                            "editCommandEnabledStr": "F",
+                            "editMode": "0",
+                            "entityName": "Address",
+                            "hasDetail": false,
+                            "hasDetailString": "F",
+                            "height": null,
+                            "includeQueryMembers": [
+                                "AT_ADD698CUSM45",
+                                "AT_ADD698ESIO78",
+                                "AT_ADD698TYPE94",
+                                "AT_ADD698GBHO39",
+                                "AT_ADD698HOME48",
+                                "AT_ADD698STEE09",
+                                "AT_ADD698RENC94",
+                                "AT_ADD698BUNG00",
+                                "AT_ADD698RNCP71"
+                            ],
+                            "insertCommandEnabled": false,
+                            "insertCommandEnabledStr": "F",
+                            "modalSize": null,
+                            "modeSelection": "Simple",
+                            "moduleIdDialog": null,
+                            "multiSelectEnabledStr": "S",
+                            "name": "GridAddress",
+                            "options": 2304,
+                            "pageSize": null,
+                            "query": {
+                                "$ref": "../../../../BUSIN/FLCRE/queries/Q_QUERYADS_5361.json#"
+                            },
+                            "queryId": "Q_QUERYADS_5361",
+                            "queryVersion": "1.0.0",
+                            "queryViewCustomActions": [
+                                {
+                                    "commandType": 0,
+                                    "customActionId": "CEQV_208_QV_QUERY5361_74_474",
+                                    "customizationLayer": 0,
+                                    "customizationLayerDescription": "ECU",
+                                    "enabled": "T",
+                                    "executionType": 1,
+                                    "name": "Select",
+                                    "queryViewEventType": {
+                                        "description": "Se ejecuta antes de que los datos modificados en una grilla sean comprometidos.",
+                                        "eventId": 208,
+                                        "name": "RowSelecting"
+                                    },
+                                    "thereAnCallbackEvent": false,
+                                    "thereAnClientEvent": true,
+                                    "thereAnServerEvent": false
+                                }
+                            ],
+                            "queryViewId": "QV_QUERY5361_74",
+                            "queryViewType": "Grid",
+                            "rowCommandAppearance": 0,
+                            "subModuleIdDialog": null,
+                            "taskIdDialog": "1.0.0",
+                            "taskVersionDialog": "1.0.0",
+                            "typeFormDialog": null,
+                            "userControl": {
+                                "customizationLayer": 0,
+                                "customizationLayerDescription": "ECU",
+                                "description": "Designer Grid",
+                                "name": "Designer Grid",
+                                "type": "I",
+                                "userControlId": "Grid"
+                            },
+                            "viewContainerIdDialog": null
+                        },
+                        "queryViewId": "QV_QUERY5361_74",
+                        "refViewId": "VW_VIEWDDRESS41",
+                        "refViewVersion": "1.0.0",
+                        "responsiveLayouts": null,
+                        "responsivity": false,
+                        "style": null,
+                        "titleLabel": {
+                            "defaultValue": {
+                                "$ref": "../../../../BUSIN/assets/languages/BUSIN.json#/BUSIN/LBL/DLB_BUSIN_ADRSSSEAC_72408"
+                            },
+                            "labelId": "DLB_BUSIN_ADRSSSEAC_72408",
+                            "moduleId": "BUSIN"
+                        },
+                        "visible": 4095,
+                        "visualAttributes": [
+                            {
+                                "aggregate": null,
+                                "aggregateId": null,
+                                "attribute": {
+                                    "$ref": "../../../../BUSIN/entities/EN_ADDRESSUA698.json#/attributes/AT_ADD698BUNG00"
+                                },
+                                "attributeValidations": [
+                                ],
+                                "colSpan": 1,
+                                "componentStyle": null,
+                                "customEvents": [
+                                ],
+                                "customizationLayer": 0,
+                                "customizationLayerDescription": "ECU",
+                                "enabled": 4095,
+                                "include": 4095,
+                                "label": {
+                                    "customizationLayer": 0,
+                                    "customizationLayerDescription": "ECU",
+                                    "defaultValue": {
+                                        "$ref": "../../../../BUSIN/assets/languages/BUSIN.json#/BUSIN/LBL/DLB_BUSIN_EDIFICIOO_08167"
+                                    },
+                                    "hasI18N": true,
+                                    "i18N": "T",
+                                    "labelId": "DLB_BUSIN_EDIFICIOO_08167",
+                                    "moduleId": "BUSIN"
+                                },
+                                "maxRecords": null,
+                                "name": "Building",
+                                "options": 0,
+                                "order": 7,
+                                "readOnly": 8,
+                                "responsiveLayouts": null,
+                                "responsivity": false,
+                                "sizeWidthComposite": null,
+                                "style": null,
+                                "textRows": 0,
+                                "userControl": {
+                                    "type": "I",
+                                    "userControlId": "TextInputBox"
+                                },
+                                "visible": 4095,
+                                "visualAttributeId": "VA_VIEWDDRESS4102_BUNG968",
+                                "width": null,
+                                "widthComposite": "D"
+                            },
+                            {
+                                "aggregate": null,
+                                "aggregateId": null,
+                                "attribute": {
+                                    "$ref": "../../../../BUSIN/entities/EN_ADDRESSUA698.json#/attributes/AT_ADD698CUSM45"
+                                },
+                                "attributeValidations": [
+                                ],
+                                "colSpan": 1,
+                                "componentStyle": null,
+                                "customEvents": [
+                                ],
+                                "customizationLayer": 0,
+                                "customizationLayerDescription": "ECU",
+                                "enabled": 4095,
+                                "include": 4095,
+                                "label": {
+                                    "customizationLayer": 0,
+                                    "customizationLayerDescription": "ECU",
+                                    "defaultValue": {
+                                        "$ref": "../../../../BUSIN/assets/languages/BUSIN.json#/BUSIN/LBL/DLB_BUSIN_CUSTOMERK_83530"
+                                    },
+                                    "hasI18N": true,
+                                    "i18N": "T",
+                                    "labelId": "DLB_BUSIN_CUSTOMERK_83530",
+                                    "moduleId": "BUSIN"
+                                },
+                                "maxRecords": null,
+                                "name": "Customer",
+                                "options": 0,
+                                "order": 0,
+                                "readOnly": 8,
+                                "responsiveLayouts": null,
+                                "responsivity": false,
+                                "sizeWidthComposite": null,
+                                "style": null,
+                                "textRows": 0,
+                                "userControl": {
+                                    "type": "I",
+                                    "userControlId": "TextInputBox"
+                                },
+                                "visible": 4095,
+                                "visualAttributeId": "VA_VIEWDDRESS4102_CUSM136",
+                                "width": null,
+                                "widthComposite": "D"
+                            },
+                            {
+                                "aggregate": null,
+                                "aggregateId": null,
+                                "attribute": {
+                                    "$ref": "../../../../BUSIN/entities/EN_ADDRESSUA698.json#/attributes/AT_ADD698ESIO78"
+                                },
+                                "attributeValidations": [
+                                ],
+                                "colSpan": 1,
+                                "componentStyle": null,
+                                "customEvents": [
+                                ],
+                                "customizationLayer": 0,
+                                "customizationLayerDescription": "ECU",
+                                "enabled": 4095,
+                                "include": 4095,
+                                "label": {
+                                    "customizationLayer": 0,
+                                    "customizationLayerDescription": "ECU",
+                                    "defaultValue": {
+                                        "$ref": "../../../../BUSIN/assets/languages/BUSIN.json#/BUSIN/LBL/DLB_BUSIN_DESCRIPCI_06123"
+                                    },
+                                    "hasI18N": true,
+                                    "i18N": "T",
+                                    "labelId": "DLB_BUSIN_DESCRIPCI_06123",
+                                    "moduleId": "BUSIN"
+                                },
+                                "maxRecords": null,
+                                "name": "AddressDescription",
+                                "options": 0,
+                                "order": 1,
+                                "readOnly": 8,
+                                "responsiveLayouts": null,
+                                "responsivity": false,
+                                "sizeWidthComposite": null,
+                                "style": null,
+                                "textRows": 0,
+                                "userControl": {
+                                    "type": "I",
+                                    "userControlId": "TextInputBox"
+                                },
+                                "visible": 4095,
+                                "visualAttributeId": "VA_VIEWDDRESS4102_ESIO105",
+                                "width": null,
+                                "widthComposite": "D"
+                            },
+                            {
+                                "aggregate": null,
+                                "aggregateId": null,
+                                "attribute": {
+                                    "$ref": "../../../../BUSIN/entities/EN_ADDRESSUA698.json#/attributes/AT_ADD698GBHO39"
+                                },
+                                "attributeValidations": [
+                                ],
+                                "colSpan": 1,
+                                "componentStyle": null,
+                                "customEvents": [
+                                ],
+                                "customizationLayer": 0,
+                                "customizationLayerDescription": "ECU",
+                                "enabled": 4095,
+                                "include": 4095,
+                                "label": {
+                                    "customizationLayer": 0,
+                                    "customizationLayerDescription": "ECU",
+                                    "defaultValue": {
+                                        "$ref": "../../../../BUSIN/assets/languages/BUSIN.json#/BUSIN/LBL/DLB_BUSIN_BARRIOAZE_09098"
+                                    },
+                                    "hasI18N": true,
+                                    "i18N": "T",
+                                    "labelId": "DLB_BUSIN_BARRIOAZE_09098",
+                                    "moduleId": "BUSIN"
+                                },
+                                "maxRecords": null,
+                                "name": "Neighborhood",
+                                "options": 0,
+                                "order": 3,
+                                "readOnly": 8,
+                                "responsiveLayouts": null,
+                                "responsivity": false,
+                                "sizeWidthComposite": null,
+                                "style": null,
+                                "textRows": 0,
+                                "userControl": {
+                                    "type": "I",
+                                    "userControlId": "TextInputBox"
+                                },
+                                "visible": 4095,
+                                "visualAttributeId": "VA_VIEWDDRESS4102_GBHO989",
+                                "width": null,
+                                "widthComposite": "D"
+                            },
+                            {
+                                "aggregate": null,
+                                "aggregateId": null,
+                                "attribute": {
+                                    "$ref": "../../../../BUSIN/entities/EN_ADDRESSUA698.json#/attributes/AT_ADD698HOME48"
+                                },
+                                "attributeValidations": [
+                                ],
+                                "colSpan": 1,
+                                "componentStyle": null,
+                                "customEvents": [
+                                ],
+                                "customizationLayer": 0,
+                                "customizationLayerDescription": "ECU",
+                                "enabled": 4095,
+                                "include": 4095,
+                                "label": {
+                                    "customizationLayer": 0,
+                                    "customizationLayerDescription": "ECU",
+                                    "defaultValue": {
+                                        "$ref": "../../../../BUSIN/assets/languages/BUSIN.json#/BUSIN/LBL/DLB_BUSIN_CASAYPDJH_89578"
+                                    },
+                                    "hasI18N": true,
+                                    "i18N": "T",
+                                    "labelId": "DLB_BUSIN_CASAYPDJH_89578",
+                                    "moduleId": "BUSIN"
+                                },
+                                "maxRecords": null,
+                                "name": "Home",
+                                "options": 0,
+                                "order": 4,
+                                "readOnly": 8,
+                                "responsiveLayouts": null,
+                                "responsivity": false,
+                                "sizeWidthComposite": null,
+                                "style": null,
+                                "textRows": 0,
+                                "userControl": {
+                                    "type": "I",
+                                    "userControlId": "TextInputBox"
+                                },
+                                "visible": 4095,
+                                "visualAttributeId": "VA_VIEWDDRESS4102_HOME776",
+                                "width": null,
+                                "widthComposite": "D"
+                            },
+                            {
+                                "aggregate": null,
+                                "aggregateId": null,
+                                "attribute": {
+                                    "$ref": "../../../../BUSIN/entities/EN_ADDRESSUA698.json#/attributes/AT_ADD698RENC94"
+                                },
+                                "attributeValidations": [
+                                ],
+                                "colSpan": 1,
+                                "componentStyle": null,
+                                "customEvents": [
+                                ],
+                                "customizationLayer": 0,
+                                "customizationLayerDescription": "ECU",
+                                "enabled": 4095,
+                                "include": 4095,
+                                "label": {
+                                    "customizationLayer": 0,
+                                    "customizationLayerDescription": "ECU",
+                                    "defaultValue": {
+                                        "$ref": "../../../../BUSIN/assets/languages/BUSIN.json#/BUSIN/LBL/DLB_BUSIN_REERENCIA_20799"
+                                    },
+                                    "hasI18N": true,
+                                    "i18N": "T",
+                                    "labelId": "DLB_BUSIN_REERENCIA_20799",
+                                    "moduleId": "BUSIN"
+                                },
+                                "maxRecords": null,
+                                "name": "Reference",
+                                "options": 0,
+                                "order": 6,
+                                "readOnly": 8,
+                                "responsiveLayouts": null,
+                                "responsivity": false,
+                                "sizeWidthComposite": null,
+                                "style": null,
+                                "textRows": 0,
+                                "userControl": {
+                                    "type": "I",
+                                    "userControlId": "TextInputBox"
+                                },
+                                "visible": 4095,
+                                "visualAttributeId": "VA_VIEWDDRESS4102_RENC805",
+                                "width": null,
+                                "widthComposite": "D"
+                            },
+                            {
+                                "aggregate": null,
+                                "aggregateId": null,
+                                "attribute": {
+                                    "$ref": "../../../../BUSIN/entities/EN_ADDRESSUA698.json#/attributes/AT_ADD698RNCP71"
+                                },
+                                "attributeValidations": [
+                                ],
+                                "colSpan": 1,
+                                "componentStyle": null,
+                                "customEvents": [
+                                ],
+                                "customizationLayer": 0,
+                                "customizationLayerDescription": "ECU",
+                                "enabled": 4095,
+                                "include": 4095,
+                                "label": {
+                                    "customizationLayer": 0,
+                                    "customizationLayerDescription": "ECU",
+                                    "defaultValue": {
+                                        "$ref": "../../../../BUSIN/assets/languages/BUSIN.json#/BUSIN/LBL/DLB_BUSIN_PRINCIPAL_24004"
+                                    },
+                                    "hasI18N": true,
+                                    "i18N": "T",
+                                    "labelId": "DLB_BUSIN_PRINCIPAL_24004",
+                                    "moduleId": "BUSIN"
+                                },
+                                "maxRecords": null,
+                                "name": "Principal",
+                                "options": 0,
+                                "order": 8,
+                                "readOnly": 8,
+                                "responsiveLayouts": null,
+                                "responsivity": false,
+                                "sizeWidthComposite": null,
+                                "style": null,
+                                "textRows": 0,
+                                "userControl": {
+                                    "type": "I",
+                                    "userControlId": "TextInputBox"
+                                },
+                                "visible": 4095,
+                                "visualAttributeId": "VA_VIEWDDRESS4102_RNCP133",
+                                "width": null,
+                                "widthComposite": "D"
+                            },
+                            {
+                                "aggregate": null,
+                                "aggregateId": null,
+                                "attribute": {
+                                    "$ref": "../../../../BUSIN/entities/EN_ADDRESSUA698.json#/attributes/AT_ADD698STEE09"
+                                },
+                                "attributeValidations": [
+                                ],
+                                "colSpan": 1,
+                                "componentStyle": null,
+                                "customEvents": [
+                                ],
+                                "customizationLayer": 0,
+                                "customizationLayerDescription": "ECU",
+                                "enabled": 4095,
+                                "include": 4095,
+                                "label": {
+                                    "customizationLayer": 0,
+                                    "customizationLayerDescription": "ECU",
+                                    "defaultValue": {
+                                        "$ref": "../../../../BUSIN/assets/languages/BUSIN.json#/BUSIN/LBL/DLB_BUSIN_CALLEBORY_85973"
+                                    },
+                                    "hasI18N": true,
+                                    "i18N": "T",
+                                    "labelId": "DLB_BUSIN_CALLEBORY_85973",
+                                    "moduleId": "BUSIN"
+                                },
+                                "maxRecords": null,
+                                "name": "Street",
+                                "options": 0,
+                                "order": 5,
+                                "readOnly": 8,
+                                "responsiveLayouts": null,
+                                "responsivity": false,
+                                "sizeWidthComposite": null,
+                                "style": null,
+                                "textRows": 0,
+                                "userControl": {
+                                    "type": "I",
+                                    "userControlId": "TextInputBox"
+                                },
+                                "visible": 4095,
+                                "visualAttributeId": "VA_VIEWDDRESS4102_STEE598",
+                                "width": null,
+                                "widthComposite": "D"
+                            },
+                            {
+                                "aggregate": null,
+                                "aggregateId": null,
+                                "attribute": {
+                                    "$ref": "../../../../BUSIN/entities/EN_ADDRESSUA698.json#/attributes/AT_ADD698TYPE94"
+                                },
+                                "attributeValidations": [
+                                ],
+                                "colSpan": 1,
+                                "componentStyle": null,
+                                "customEvents": [
+                                ],
+                                "customizationLayer": 0,
+                                "customizationLayerDescription": "ECU",
+                                "enabled": 4095,
+                                "include": 4095,
+                                "label": {
+                                    "customizationLayer": 0,
+                                    "customizationLayerDescription": "ECU",
+                                    "defaultValue": {
+                                        "$ref": "../../../../BUSIN/assets/languages/BUSIN.json#/BUSIN/LBL/DLB_BUSIN_TIPOLRXRX_31531"
+                                    },
+                                    "hasI18N": true,
+                                    "i18N": "T",
+                                    "labelId": "DLB_BUSIN_TIPOLRXRX_31531",
+                                    "moduleId": "BUSIN"
+                                },
+                                "maxRecords": null,
+                                "name": "Type",
+                                "options": 0,
+                                "order": 2,
+                                "readOnly": 8,
+                                "responsiveLayouts": null,
+                                "responsivity": false,
+                                "sizeWidthComposite": null,
+                                "style": null,
+                                "textRows": 0,
+                                "userControl": {
+                                    "type": "I",
+                                    "userControlId": "TextInputBox"
+                                },
+                                "visible": 4095,
+                                "visualAttributeId": "VA_VIEWDDRESS4102_TYPE838",
+                                "width": null,
+                                "widthComposite": "D"
+                            }
+                        ]
+                    },
+                    {
+                        "colSpan": 1,
+                        "collapsedStr": "F",
+                        "columnsNum": 1,
+                        "componentStyle": null,
+                        "customEvents": [
+                        ],
+                        "enabled": 4095,
+                        "eventType": 0,
+                        "groupId": "GR_VIEWDDRESS41_04",
+                        "htmlSection": "F",
+                        "independentValidation": "F",
+                        "layoutType": "Group",
+                        "name": "Separator",
+                        "orientation": "V",
+                        "refViewId": "VW_VIEWDDRESS41",
+                        "refViewVersion": "1.0.0",
+                        "responsiveLayouts": null,
+                        "responsivity": false,
+                        "style": null,
+                        "visible": 4095,
+                        "visualAttributes": [
+                            {
+                                "aggregate": null,
+                                "aggregateId": null,
+                                "colSpan": 1,
+                                "componentStyle": null,
+                                "customEvents": [
+                                ],
+                                "customizationLayer": 0,
+                                "customizationLayerDescription": "ECU",
+                                "include": 4095,
+                                "label": {
+                                    "customizationLayer": 0,
+                                    "customizationLayerDescription": "ECU",
+                                    "defaultValue": {
+                                        "$ref": "../../../../DSGNR/assets/languages/DSGNR.json#/DSGNR/LBL/SYS_DSGNR_LBLESTETQ_00024"
+                                    },
+                                    "hasI18N": true,
+                                    "i18N": "T",
+                                    "labelId": "SYS_DSGNR_LBLESTETQ_00024",
+                                    "moduleId": "DSGNR"
+                                },
+                                "maxRecords": null,
+                                "name": "Separator",
+                                "options": 0,
+                                "order": 0,
+                                "responsiveLayouts": null,
+                                "responsivity": false,
+                                "sizeWidthComposite": null,
+                                "style": null,
+                                "userControl": {
+                                    "userControlId": "Separator"
+                                },
+                                "visible": 4095,
+                                "visualAttributeId": "VA_VIEWDDRESS4104_0000480",
+                                "width": null,
+                                "widthComposite": "D"
+                            }
+                        ]
+                    },
+                    {
+                        "colSpan": 1,
+                        "collapsedStr": "F",
+                        "columnsNum": 4,
+                        "componentStyle": null,
+                        "customEvents": [
+                        ],
+                        "enabled": 4095,
+                        "eventType": 0,
+                        "groupId": "GR_VIEWDDRESS41_03",
+                        "htmlSection": "F",
+                        "independentValidation": "F",
+                        "layoutType": "Group",
+                        "name": "BSelection",
+                        "orientation": "V",
+                        "refViewId": "VW_VIEWDDRESS41",
+                        "refViewVersion": "1.0.0",
+                        "responsiveLayouts": null,
+                        "responsivity": false,
+                        "style": null,
+                        "visible": 4095,
+                        "visualAttributes": [
+                            {
+                                "aggregate": null,
+                                "aggregateId": null,
+                                "colSpan": 1,
+                                "componentStyle": null,
+                                "customEvents": [
+                                ],
+                                "customizationLayer": 0,
+                                "customizationLayerDescription": "ECU",
+                                "include": 4095,
+                                "label": {
+                                    "customizationLayer": 0,
+                                    "customizationLayerDescription": "ECU",
+                                    "defaultValue": {
+                                        "$ref": "../../../../DSGNR/assets/languages/DSGNR.json#/DSGNR/LBL/SYS_DSGNR_LBLESTETQ_00024"
+                                    },
+                                    "hasI18N": true,
+                                    "i18N": "T",
+                                    "labelId": "SYS_DSGNR_LBLESTETQ_00024",
+                                    "moduleId": "DSGNR"
+                                },
+                                "maxRecords": null,
+                                "name": "[Control Sin Nombre]",
+                                "options": 0,
+                                "order": 0,
+                                "responsiveLayouts": null,
+                                "responsivity": false,
+                                "sizeWidthComposite": null,
+                                "style": null,
+                                "userControl": {
+                                    "type": "I",
+                                    "userControlId": "Spacer"
+                                },
+                                "visible": 4095,
+                                "visualAttributeId": "VA_VIEWDDRESS4103_0000245",
+                                "width": null,
+                                "widthComposite": "D"
+                            },
+                            {
+                                "aggregate": null,
+                                "aggregateId": null,
+                                "colSpan": 1,
+                                "componentStyle": null,
+                                "customEvents": [
+                                ],
+                                "customizationLayer": 0,
+                                "customizationLayerDescription": "ECU",
+                                "include": 4095,
+                                "label": {
+                                    "customizationLayer": 0,
+                                    "customizationLayerDescription": "ECU",
+                                    "defaultValue": {
+                                        "$ref": "../../../../DSGNR/assets/languages/DSGNR.json#/DSGNR/LBL/SYS_DSGNR_LBLESTETQ_00024"
+                                    },
+                                    "hasI18N": true,
+                                    "i18N": "T",
+                                    "labelId": "SYS_DSGNR_LBLESTETQ_00024",
+                                    "moduleId": "DSGNR"
+                                },
+                                "maxRecords": null,
+                                "name": "[Control Sin Nombre]",
+                                "options": 0,
+                                "order": 1,
+                                "responsiveLayouts": null,
+                                "responsivity": false,
+                                "sizeWidthComposite": null,
+                                "style": null,
+                                "userControl": {
+                                    "type": "I",
+                                    "userControlId": "Spacer"
+                                },
+                                "visible": 4095,
+                                "visualAttributeId": "VA_VIEWDDRESS4103_0000094",
+                                "width": null,
+                                "widthComposite": "D"
+                            },
+                            {
+                                "aggregate": null,
+                                "aggregateId": null,
+                                "colSpan": 1,
+                                "componentStyle": null,
+                                "customEvents": [
+                                ],
+                                "customizationLayer": 0,
+                                "customizationLayerDescription": "ECU",
+                                "include": 4095,
+                                "label": {
+                                    "customizationLayer": 0,
+                                    "customizationLayerDescription": "ECU",
+                                    "defaultValue": {
+                                        "$ref": "../../../../DSGNR/assets/languages/DSGNR.json#/DSGNR/LBL/SYS_DSGNR_LBLESTETQ_00024"
+                                    },
+                                    "hasI18N": true,
+                                    "i18N": "T",
+                                    "labelId": "SYS_DSGNR_LBLESTETQ_00024",
+                                    "moduleId": "DSGNR"
+                                },
+                                "maxRecords": null,
+                                "name": "[Control Sin Nombre]",
+                                "options": 0,
+                                "order": 2,
+                                "responsiveLayouts": null,
+                                "responsivity": false,
+                                "sizeWidthComposite": null,
+                                "style": null,
+                                "userControl": {
+                                    "type": "I",
+                                    "userControlId": "Spacer"
+                                },
+                                "visible": 4095,
+                                "visualAttributeId": "VA_VIEWDDRESS4103_0000468",
+                                "width": null,
+                                "widthComposite": "D"
+                            },
+                            {
+                                "aggregate": null,
+                                "aggregateId": null,
+                                "colSpan": 1,
+                                "componentStyle": null,
+                                "customEvents": [
+                                    {
+                                        "customEventId": "CEVA_010_ESS4103_0000254_030",
+                                        "customizationLayer": 0,
+                                        "customizationLayerDescription": "ECU",
+                                        "enabled": "T",
+                                        "executionType": 1,
+                                        "isEnabled": true,
+                                        "thereAnCallbackEvent": false,
+                                        "thereAnClientEvent": true,
+                                        "thereAnServerEvent": false,
+                                        "visualAttributeEventType": {
+                                            "description": "Permite personalizar la acción a ejecutar de un command o de un ActionControl",
+                                            "eventId": 10,
+                                            "name": "ExecuteCommand"
+                                        }
+                                    }
+                                ],
+                                "customizationLayer": 0,
+                                "customizationLayerDescription": "ECU",
+                                "enabled": 4095,
+                                "entityQuery": null,
+                                "include": 4095,
+                                "label": {
+                                    "customizationLayer": 0,
+                                    "customizationLayerDescription": "ECU",
+                                    "defaultValue": {
+                                        "$ref": "../../../../BUSIN/assets/languages/BUSIN.json#/BUSIN/LBL/DLB_BUSIN_SELECIOAR_14656"
+                                    },
+                                    "hasI18N": true,
+                                    "i18N": "T",
+                                    "labelId": "DLB_BUSIN_SELECIOAR_14656",
+                                    "moduleId": "BUSIN"
+                                },
+                                "maxRecords": null,
+                                "name": "Selection",
+                                "options": 0,
+                                "order": 3,
+                                "queryModule": null,
+                                "queryVersion": " ",
+                                "responsiveLayouts": null,
+                                "responsivity": false,
+                                "sizeWidthComposite": null,
+                                "style": null,
+                                "userControl": {
+                                    "type": "A",
+                                    "userControlId": "Button"
+                                },
+                                "visible": 4095,
+                                "visualAttributeId": "VA_VIEWDDRESS4103_0000254",
+                                "width": null,
+                                "widthComposite": "D"
+                            }
+                        ]
+                    }
+                ],
+                "id": {
+                    "version": "1.0.0",
+                    "viewId": "VW_VIEWDDRESS41"
+                },
+                "modules": [
+                    {
+                        "moduleId": "BUSIN"
+                    }
+                ],
+                "name": "ViewAddress"
+            }
+        }
+    ]
+}

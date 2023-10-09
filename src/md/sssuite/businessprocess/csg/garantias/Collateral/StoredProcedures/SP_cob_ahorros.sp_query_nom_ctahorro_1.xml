@@ -1,0 +1,90 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<procedure>
+  <database>cob_ahorros</database>
+  <name>sp_query_nom_ctahorro</name>
+  <type>SQLSERVER</type>
+  <version>1</version>
+  <parameters>
+    <parameter name="@t_debug" dataType="char" direction="in" />
+    <parameter name="@t_file" dataType="varchar" direction="in" />
+    <parameter name="@t_from" dataType="varchar" direction="in" />
+    <parameter name="@t_show_version" dataType="bit" direction="in" />
+    <parameter name="@i_cta" dataType="varchar" direction="in" />
+    <parameter name="@i_mon" dataType="tinyint" direction="in" />
+    <parameter name="@i_cerrada" dataType="char" direction="in" />
+    <parameter name="@i_libreta" dataType="char" direction="in" />
+    <parameter name="@i_cedruc" dataType="char" direction="in" />
+    <parameter name="@i_cliente" dataType="char" direction="in" />
+    <parameter name="@i_val_inac" dataType="char" direction="in" />
+    <parameter name="@i_operacion" dataType="char" direction="in" />
+    <parameter name="@i_codcliente" dataType="int" direction="in" />
+    <parameter name="@i_estado" dataType="char" direction="in" />
+    <parameter name="@i_ctaint" dataType="int" direction="in" />
+    <parameter name="@i_trn" dataType="varchar" direction="in" />
+    <parameter name="@i_relacionada" dataType="char" direction="in" />
+    <parameter name="@i_cta_mig" dataType="varchar" direction="in" />
+    <parameter name="@s_ofi" dataType="smallint" direction="in" />
+    <parameter name="@i_corresponsal" dataType="char" direction="in" />
+    <parameter name="@i_consulta" dataType="char" direction="in" />
+    <parameter name="@o_fecha_aper" dataType="smalldatetime" direction="out" />
+    <parameter name="@o_titularidad" dataType="varchar" direction="out" />
+    <parameter name="@o_nombre_cta" dataType="varchar" direction="out" />
+    <parameter name="@o_patente_cta" dataType="varchar" direction="out" />
+    <parameter name="@o_oficina" dataType="smallint" direction="out" />
+    <parameter name="@o_estado" dataType="char" direction="out" />
+  </parameters>
+  <queries>
+    <query>
+      <columns>
+        <column name="{1}" />
+        <column name="{2}" />
+        <column name="{3}" />
+        <column name="{4}" />
+        <column name="{5}" />
+        <column name="{6}" />
+        <column name="{7}" />
+        <column name="{8}" />
+      </columns>
+      <queryText>SELECT w_nombre, w_oficina, w_traslado_dtn, o_titularidad, o_oficina, o_estado, w_alianza, w_des_alianza</queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="{1}" />
+      </columns>
+      <queryText>SELECT w_num_libreta</queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="{1}" />
+      </columns>
+      <queryText>SELECT w_ced_ruc</queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="{1}" />
+      </columns>
+      <queryText>SELECT w_cliente</queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="AccountNumber" />
+        <column name="Product" />
+        <column name="ProductName" />
+        <column name="Office" />
+        <column name="OfficeName" />
+        <column name="CustomerCode" />
+        <column name="DocumentType" />
+        <column name="DocumentNumber" />
+        <column name="CustomerName" />
+        <column name="Role" />
+        <column name="StatusAccount" />
+        <column name="IntAccount" />
+        <column name="OrigenOffice" />
+        <column name="Type" />
+        <column name="Category" />
+        <column name="CustomerType" />
+      </columns>
+      <queryText></queryText>
+    </query>
+  </queries>
+</procedure>

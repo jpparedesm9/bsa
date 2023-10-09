@@ -1,0 +1,35 @@
+<!-----Indicaciones
+	--1.- Ubicarse en la ruta: \Notificador\notification
+	--2.- Sacar respaldo del archivo jobs-configuration.xml
+	--3.- Abrir el archivo: jobs-configuration.xml
+	--4.- Ir al final del archivo y agregar las siguientes líneas al final del archivo, una línea antes del cierre </jobXml>:	
+	--5.- <id>25</id> esta parte segir en secuencial del archivo original -->
+	<!-- CAPA WEB CON ACCESO A INTERNET -->
+    <jobs>
+        <id>25</id>
+        <jobName>XTRRP</jobName>
+        <jobClass>com.cobiscorp.cloud.notificationservice.impl.ExtraccionReportePagos
+        </jobClass>
+        <cronExpression>0 0 22 1/1 * ? *</cronExpression>
+    </jobs>
+	<jobs>
+        <id>26</id>
+        <jobName>CRRPA</jobName>
+        <jobClass>com.cobiscorp.cloud.notificationservice.impl.CargaReportePagos
+        </jobClass>
+        <cronExpression>0 0 23 1/1 * ? *</cronExpression>
+    </jobs>
+
+<!-----Indicaciones	
+	--1.- Ubicarse en la ruta: \Notificador\notification
+	--2.- Sacar respaldo del archivo jobs-configuration.xml
+	--3.- Abrir el archivo: jobs-configuration.xml
+	--4.- Ir al final del archivo y agregar las siguientes líneas al final del archivo, una línea antes del cierre </jobXml>:	
+	--5.- <id>25</id> esta parte segir en secuencial del archivo original -->
+	<!-- CAPA BASE DE DATOS -->
+    <jobs>
+        <id>24</id>
+        <jobName>CPYRP</jobName>
+        <jobClass>com.cobiscorp.cloud.notificationservice.impl.CopiaReportePagos</jobClass>
+        <cronExpression>0 0 21 1/1 * ? *</cronExpression>
+    </jobs>

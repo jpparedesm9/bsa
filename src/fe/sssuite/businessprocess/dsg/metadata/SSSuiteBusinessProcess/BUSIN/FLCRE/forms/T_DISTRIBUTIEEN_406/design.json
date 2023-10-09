@@ -1,0 +1,776 @@
+{
+    "autoCrudStr": "F",
+    "commands": [
+    ],
+    "customEvents": [
+    ],
+    "customizationLayer": 0,
+    "customizationLayerDescription": "ECU",
+    "id": {
+        "moduleId": "BUSIN",
+        "subModuleId": "FLCRE",
+        "taskId": "T_DISTRIBUTIEEN_406",
+        "version": "1.0.0"
+    },
+    "isImported": false,
+    "mainViewContainerId": "VC_DISTRIBUOE_139406",
+    "modeEnabled": 4095,
+    "name": {
+        "$ref": "../../../../BUSIN/relations/componentKeys.json#/FLCRE/Forms/T_DISTRIBUTIEEN_406/name"
+    },
+    "tempSaveStr": "F",
+    "viewContainers": [
+        {
+            "colSpan": 1,
+            "collapsedStr": "F",
+            "columnsNum": 1,
+            "componentStyle": null,
+            "customEvents": [
+                {
+                    "customEventId": "CEVC_501T_DISTRIBUTIEEN_406_526",
+                    "customizationLayer": 0,
+                    "customizationLayerDescription": "ECU",
+                    "enabled": "T",
+                    "executionType": 1,
+                    "filter": null,
+                    "isEnabled": true,
+                    "viewContainerEventType": {
+                        "availableExecutionType": 1,
+                        "description": "Evento que actua como listener cuando se cierra ventanas modales.",
+                        "eventId": 501,
+                        "name": "onCloseModal"
+                    }
+                }
+            ],
+            "customizationLayer": 0,
+            "customizationLayerDescription": "ECU",
+            "enabled": 4095,
+            "id": {
+                "moduleId": "BUSIN",
+                "subModuleId": "FLCRE",
+                "taskId": "T_DISTRIBUTIEEN_406",
+                "taskVersion": "1.0.0",
+                "viewContainerId": "VC_DISTRIBUOE_139406"
+            },
+            "layoutType": "Group",
+            "name": "DistributionLine",
+            "options": 0,
+            "responsiveLayouts": null,
+            "responsivity": false,
+            "style": null,
+            "view": {
+                "groups": [
+                    {
+                        "collapsedStr": "F",
+                        "columnsNum": 1,
+                        "componentStyle": null,
+                        "customEvents": [
+                        ],
+                        "enabled": 4095,
+                        "entity": {
+                            "$ref": "../../../../BUSIN/entities/EN_DISTRIBUN_831.json#"
+                        },
+                        "eventType": 0,
+                        "groupId": "G_DISTRIBENI_792747",
+                        "htmlSection": "F",
+                        "independentValidation": "F",
+                        "layoutType": "Group",
+                        "name": "Group1722",
+                        "orientation": "V",
+                        "queryView": {
+                            "actionDesign": "Button",
+                            "actions": [
+                                "Create",
+                                "Update",
+                                "Delete"
+                            ],
+                            "allowPaging": false,
+                            "allowPagingStr": "F",
+                            "allowSorting": false,
+                            "allowSortingStr": "F",
+                            "confirmRowDeletion": true,
+                            "confirmRowDeletionStr": "T",
+                            "customEvents": [
+                            ],
+                            "customUrlDialog": null,
+                            "customizationLayer": 0,
+                            "customizationLayerDescription": "ECU",
+                            "deleteCommandEnabled": true,
+                            "deleteCommandEnabledStr": "T",
+                            "dialogTitleLabelId": null,
+                            "editCommandEnabled": true,
+                            "editCommandEnabledStr": "T",
+                            "editMode": "3",
+                            "entityName": "DistributionEntity",
+                            "hasDetail": false,
+                            "hasDetailString": "F",
+                            "height": null,
+                            "includeQueryMembers": [
+                                "AT70_PRODUCTT831",
+                                "AT63_TIPOOPCA831",
+                                "AT13_DESCRICI831",
+                                "AT96_RIESGOKM831",
+                                "AT88_MONTOPXP831",
+                                "AT96_MONEDAAH831",
+                                "AT20_OBSERVON831",
+                                "AT92_DESCRIAO831",
+                                "AT56_DESCRINO831",
+                                "AT86_DESCRIEC831"
+                            ],
+                            "insertCommandEnabled": true,
+                            "insertCommandEnabledStr": "T",
+                            "modalSize": null,
+                            "modeSelection": "None",
+                            "moduleIdDialog": "BUSIN",
+                            "multiSelectEnabledStr": "F",
+                            "name": "QV_2706_18706",
+                            "options": 0,
+                            "pageSize": null,
+                            "query": {
+                                "$ref": "../../../../BUSIN/FLCRE/queries/Q_DISTRIBB_2706.json#"
+                            },
+                            "queryId": "Q_DISTRIBB_2706",
+                            "queryVersion": "1.0.0",
+                            "queryViewCustomActions": [
+                                {
+                                    "action": null,
+                                    "commandImageId": null,
+                                    "commandName": "RowUpdating",
+                                    "commandOrder": null,
+                                    "commandType": 0,
+                                    "customActionId": "CEQV_203QV_2706_18706_550",
+                                    "customizationLayer": 0,
+                                    "customizationLayerDescription": "ECU",
+                                    "enabled": "T",
+                                    "executionType": 1,
+                                    "filter": null,
+                                    "name": "RowUpdating",
+                                    "queryView": "QV_2706_18706",
+                                    "queryViewEventType": {
+                                        "availableExecutionType": 7,
+                                        "description": "Se ejecuta antes de que los datos modificados en una grilla sean comprometidos.",
+                                        "eventId": 203,
+                                        "name": "RowUpdating"
+                                    },
+                                    "serviceName": null,
+                                    "userControl": {
+                                        "customizationLayer": "0",
+                                        "customizationLayerDescription": "ECU",
+                                        "description": "Designer Button",
+                                        "type": "A",
+                                        "userControlId": "Button"
+                                    }
+                                },
+                                {
+                                    "action": null,
+                                    "commandImageId": null,
+                                    "commandName": "RowDeleting",
+                                    "commandOrder": null,
+                                    "commandType": 0,
+                                    "customActionId": "CEQV_204QV_2706_18706_267",
+                                    "customizationLayer": 0,
+                                    "customizationLayerDescription": "ECU",
+                                    "enabled": "T",
+                                    "executionType": 1,
+                                    "filter": null,
+                                    "name": "RowDeleting",
+                                    "queryView": "QV_2706_18706",
+                                    "queryViewEventType": {
+                                        "availableExecutionType": 7,
+                                        "description": "Se ejecuta antes de que los datos eliminados en una grilla sean comprometidos.",
+                                        "eventId": 204,
+                                        "name": "RowDeleting"
+                                    },
+                                    "serviceName": null,
+                                    "userControl": {
+                                        "customizationLayer": "0",
+                                        "customizationLayerDescription": "ECU",
+                                        "description": "Designer Button",
+                                        "type": "A",
+                                        "userControlId": "Button"
+                                    }
+                                },
+                                {
+                                    "action": null,
+                                    "commandImageId": null,
+                                    "commandName": "BeforeOpenGridDialog",
+                                    "commandOrder": null,
+                                    "commandType": 0,
+                                    "customActionId": "CEQV_202QV_2706_18706_523",
+                                    "customizationLayer": 0,
+                                    "customizationLayerDescription": "ECU",
+                                    "enabled": "T",
+                                    "executionType": 1,
+                                    "filter": null,
+                                    "name": "BeforeOpenGridDialog",
+                                    "queryView": "QV_2706_18706",
+                                    "queryViewEventType": {
+                                        "availableExecutionType": 1,
+                                        "description": "Evento que se ejecuta antes que una pantalla de inserción o edición de registros aparezca en un contenedor diferente.",
+                                        "eventId": 202,
+                                        "name": "BeforeOpenGridDialog"
+                                    },
+                                    "serviceName": null,
+                                    "userControl": {
+                                        "customizationLayer": "0",
+                                        "customizationLayerDescription": "ECU",
+                                        "description": "Designer Button",
+                                        "type": "A",
+                                        "userControlId": "Button"
+                                    }
+                                }
+                            ],
+                            "queryViewId": "QV_2706_18706",
+                            "queryViewType": "Grid",
+                            "rowCommandAppearance": 0,
+                            "subModuleIdDialog": "FLCRE",
+                            "taskIdDialog": "T_DETAILDISTRRO_340",
+                            "taskVersionDialog": "1.0.0",
+                            "typeFormDialog": "forms",
+                            "userControl": {
+                                "customizationLayer": 0,
+                                "customizationLayerDescription": "ECU",
+                                "description": "Designer Grid",
+                                "name": "Designer Grid",
+                                "type": "I",
+                                "userControlId": "Grid"
+                            },
+                            "viewContainerIdDialog": "VC_DETAILDIIB_964340"
+                        },
+                        "queryViewId": "QV_2706_18706",
+                        "responsiveLayouts": null,
+                        "responsivity": false,
+                        "style": null,
+                        "titleLabel": {
+                            "defaultValue": {
+                                "$ref": "../../../../BUSIN/assets/languages/BUSIN.json#/BUSIN/LBL/LBL_BUSIN_DISTRIBLA_86318"
+                            },
+                            "labelId": "LBL_BUSIN_DISTRIBLA_86318",
+                            "moduleId": "BUSIN"
+                        },
+                        "visible": 4095,
+                        "visualAttributes": [
+                            {
+                                "aggregate": null,
+                                "aggregateId": null,
+                                "attributeValidations": [
+                                ],
+                                "colSpan": 1,
+                                "componentStyle": null,
+                                "customEvents": [
+                                ],
+                                "customizationLayer": 0,
+                                "customizationLayerDescription": "ECU",
+                                "include": 4095,
+                                "maxRecords": null,
+                                "name": "G_DISTRIBENI_792747-default-blank",
+                                "options": 0,
+                                "order": 0,
+                                "responsiveLayouts": null,
+                                "responsivity": false,
+                                "sizeWidthComposite": null,
+                                "style": null,
+                                "userControl": {
+                                    "type": "I",
+                                    "userControlId": "Spacer"
+                                },
+                                "visible": 4095,
+                                "visualAttributeId": "G_DISTRIBENI_792747-default-blank",
+                                "width": null,
+                                "widthComposite": "D"
+                            },
+                            {
+                                "aggregate": null,
+                                "aggregateId": null,
+                                "attribute": {
+                                    "$ref": "../../../../BUSIN/entities/EN_DISTRIBUN_831.json#/attributes/AT86_DESCRIEC831"
+                                },
+                                "attributeValidations": [
+                                ],
+                                "colSpan": 1,
+                                "componentStyle": null,
+                                "customEvents": [
+                                ],
+                                "customizationLayer": 0,
+                                "customizationLayerDescription": "ECU",
+                                "enabled": 4095,
+                                "include": 4095,
+                                "label": {
+                                    "defaultValue": {
+                                        "$ref": "../../../../BUSIN/assets/languages/BUSIN.json#/BUSIN/LBL/LBL_BUSIN_RIESGOWKK_89940"
+                                    },
+                                    "labelId": "LBL_BUSIN_RIESGOWKK_89940",
+                                    "moduleId": "BUSIN"
+                                },
+                                "maxRecords": null,
+                                "name": "descripcionRiesgo",
+                                "options": 0,
+                                "order": 8,
+                                "readOnly": 8,
+                                "responsiveLayouts": null,
+                                "responsivity": false,
+                                "sizeWidthComposite": null,
+                                "style": null,
+                                "textRows": 0,
+                                "userControl": {
+                                    "type": "I",
+                                    "userControlId": "TextInputBox"
+                                },
+                                "visible": 4095,
+                                "visualAttributeId": "VA_TEXTINPUTBOXDKE_784747",
+                                "width": null,
+                                "widthComposite": "D"
+                            },
+                            {
+                                "aggregate": null,
+                                "aggregateId": null,
+                                "attribute": {
+                                    "$ref": "../../../../BUSIN/entities/EN_DISTRIBUN_831.json#/attributes/AT96_RIESGOKM831"
+                                },
+                                "attributeValidations": [
+                                ],
+                                "colSpan": 1,
+                                "componentStyle": null,
+                                "customEvents": [
+                                ],
+                                "customizationLayer": 0,
+                                "customizationLayerDescription": "ECU",
+                                "enabled": 4095,
+                                "include": 4095,
+                                "maxRecords": null,
+                                "name": "riesgo",
+                                "options": 0,
+                                "order": 7,
+                                "readOnly": 8,
+                                "responsiveLayouts": null,
+                                "responsivity": false,
+                                "sizeWidthComposite": null,
+                                "style": null,
+                                "textRows": 0,
+                                "userControl": {
+                                    "type": "I",
+                                    "userControlId": "TextInputBox"
+                                },
+                                "visible": 4095,
+                                "visualAttributeId": "VA_TEXTINPUTBOXENI_548747",
+                                "width": null,
+                                "widthComposite": "D"
+                            },
+                            {
+                                "aggregate": null,
+                                "aggregateId": null,
+                                "attribute": {
+                                    "$ref": "../../../../BUSIN/entities/EN_DISTRIBUN_831.json#/attributes/AT13_DESCRICI831"
+                                },
+                                "attributeValidations": [
+                                ],
+                                "colSpan": 1,
+                                "componentStyle": null,
+                                "customEvents": [
+                                ],
+                                "customizationLayer": 0,
+                                "customizationLayerDescription": "ECU",
+                                "enabled": 4095,
+                                "include": 4095,
+                                "label": {
+                                    "defaultValue": {
+                                        "$ref": "../../../../BUSIN/assets/languages/BUSIN.json#/BUSIN/LBL/LBL_BUSIN_PRODUCTOO_90415"
+                                    },
+                                    "labelId": "LBL_BUSIN_PRODUCTOO_90415",
+                                    "moduleId": "BUSIN"
+                                },
+                                "maxRecords": null,
+                                "name": "descripcion",
+                                "options": 0,
+                                "order": 1,
+                                "readOnly": 8,
+                                "responsiveLayouts": null,
+                                "responsivity": false,
+                                "sizeWidthComposite": null,
+                                "style": null,
+                                "textRows": 0,
+                                "userControl": {
+                                    "type": "I",
+                                    "userControlId": "TextInputBox"
+                                },
+                                "visible": 4095,
+                                "visualAttributeId": "VA_TEXTINPUTBOXEPU_853747",
+                                "width": null,
+                                "widthComposite": "D"
+                            },
+                            {
+                                "aggregate": null,
+                                "aggregateId": null,
+                                "attribute": {
+                                    "$ref": "../../../../BUSIN/entities/EN_DISTRIBUN_831.json#/attributes/AT20_OBSERVON831"
+                                },
+                                "attributeValidations": [
+                                ],
+                                "colSpan": 1,
+                                "componentStyle": null,
+                                "customEvents": [
+                                ],
+                                "customizationLayer": 0,
+                                "customizationLayerDescription": "ECU",
+                                "enabled": 4095,
+                                "include": 4095,
+                                "label": {
+                                    "defaultValue": {
+                                        "$ref": "../../../../BUSIN/assets/languages/BUSIN.json#/BUSIN/LBL/LBL_BUSIN_OBSERVACI_27298"
+                                    },
+                                    "labelId": "LBL_BUSIN_OBSERVACI_27298",
+                                    "moduleId": "BUSIN"
+                                },
+                                "maxRecords": null,
+                                "name": "observacion",
+                                "options": 0,
+                                "order": 9,
+                                "readOnly": 8,
+                                "responsiveLayouts": null,
+                                "responsivity": false,
+                                "sizeWidthComposite": null,
+                                "style": null,
+                                "textRows": 0,
+                                "userControl": {
+                                    "type": "I",
+                                    "userControlId": "TextInputBox"
+                                },
+                                "visible": 4095,
+                                "visualAttributeId": "VA_TEXTINPUTBOXIAV_632747",
+                                "width": null,
+                                "widthComposite": "D"
+                            },
+                            {
+                                "aggregate": null,
+                                "aggregateId": null,
+                                "attribute": {
+                                    "$ref": "../../../../BUSIN/entities/EN_DISTRIBUN_831.json#/attributes/AT56_DESCRINO831"
+                                },
+                                "attributeValidations": [
+                                ],
+                                "colSpan": 1,
+                                "componentStyle": null,
+                                "customEvents": [
+                                ],
+                                "customizationLayer": 0,
+                                "customizationLayerDescription": "ECU",
+                                "enabled": 4095,
+                                "include": 4095,
+                                "label": {
+                                    "defaultValue": {
+                                        "$ref": "../../../../BUSIN/assets/languages/BUSIN.json#/BUSIN/LBL/LBL_BUSIN_OPERACINN_94574"
+                                    },
+                                    "labelId": "LBL_BUSIN_OPERACINN_94574",
+                                    "moduleId": "BUSIN"
+                                },
+                                "maxRecords": null,
+                                "name": "descripcionOperacion",
+                                "options": 0,
+                                "order": 3,
+                                "readOnly": 8,
+                                "responsiveLayouts": null,
+                                "responsivity": false,
+                                "sizeWidthComposite": null,
+                                "style": null,
+                                "textRows": 0,
+                                "userControl": {
+                                    "type": "I",
+                                    "userControlId": "TextInputBox"
+                                },
+                                "visible": 4095,
+                                "visualAttributeId": "VA_TEXTINPUTBOXIPT_820747",
+                                "width": null,
+                                "widthComposite": "D"
+                            },
+                            {
+                                "aggregate": null,
+                                "aggregateId": null,
+                                "attribute": {
+                                    "$ref": "../../../../BUSIN/entities/EN_DISTRIBUN_831.json#/attributes/AT88_MONTOPXP831"
+                                },
+                                "attributeValidations": [
+                                ],
+                                "colSpan": 1,
+                                "componentStyle": null,
+                                "customEvents": [
+                                ],
+                                "customizationLayer": 0,
+                                "customizationLayerDescription": "ECU",
+                                "enabled": 4095,
+                                "include": 4095,
+                                "maxRecords": null,
+                                "name": "monto",
+                                "options": 0,
+                                "order": 6,
+                                "readOnly": 8,
+                                "responsiveLayouts": null,
+                                "responsivity": false,
+                                "sizeWidthComposite": null,
+                                "style": null,
+                                "textRows": 0,
+                                "userControl": {
+                                    "type": "I",
+                                    "userControlId": "TextInputBox"
+                                },
+                                "visible": 4095,
+                                "visualAttributeId": "VA_TEXTINPUTBOXRXI_310747",
+                                "width": null,
+                                "widthComposite": "D"
+                            },
+                            {
+                                "aggregate": null,
+                                "aggregateId": null,
+                                "attribute": {
+                                    "$ref": "../../../../BUSIN/entities/EN_DISTRIBUN_831.json#/attributes/AT63_TIPOOPCA831"
+                                },
+                                "attributeValidations": [
+                                ],
+                                "colSpan": 1,
+                                "componentStyle": null,
+                                "customEvents": [
+                                ],
+                                "customizationLayer": 0,
+                                "customizationLayerDescription": "ECU",
+                                "enabled": 4095,
+                                "include": 4095,
+                                "label": {
+                                    "defaultValue": {
+                                        "$ref": "../../../../BUSIN/assets/languages/BUSIN.json#/BUSIN/LBL/LBL_BUSIN_OPERACINN_94574"
+                                    },
+                                    "labelId": "LBL_BUSIN_OPERACINN_94574",
+                                    "moduleId": "BUSIN"
+                                },
+                                "maxRecords": null,
+                                "name": "tipoOperacion",
+                                "options": 0,
+                                "order": 2,
+                                "readOnly": 8,
+                                "responsiveLayouts": null,
+                                "responsivity": false,
+                                "sizeWidthComposite": null,
+                                "style": null,
+                                "textRows": 0,
+                                "userControl": {
+                                    "type": "I",
+                                    "userControlId": "TextInputBox"
+                                },
+                                "visible": 4095,
+                                "visualAttributeId": "VA_TEXTINPUTBOXTRK_506747",
+                                "width": null,
+                                "widthComposite": "D"
+                            },
+                            {
+                                "aggregate": null,
+                                "aggregateId": null,
+                                "attribute": {
+                                    "$ref": "../../../../BUSIN/entities/EN_DISTRIBUN_831.json#/attributes/AT96_MONEDAAH831"
+                                },
+                                "attributeValidations": [
+                                ],
+                                "colSpan": 1,
+                                "componentStyle": null,
+                                "customEvents": [
+                                ],
+                                "customizationLayer": 0,
+                                "customizationLayerDescription": "ECU",
+                                "enabled": 4095,
+                                "include": 4095,
+                                "maxRecords": null,
+                                "name": "moneda",
+                                "options": 0,
+                                "order": 4,
+                                "readOnly": 8,
+                                "responsiveLayouts": null,
+                                "responsivity": false,
+                                "sizeWidthComposite": null,
+                                "style": null,
+                                "textRows": 0,
+                                "userControl": {
+                                    "type": "I",
+                                    "userControlId": "TextInputBox"
+                                },
+                                "visible": 4095,
+                                "visualAttributeId": "VA_TEXTINPUTBOXVAK_724747",
+                                "width": null,
+                                "widthComposite": "D"
+                            },
+                            {
+                                "aggregate": null,
+                                "aggregateId": null,
+                                "attribute": {
+                                    "$ref": "../../../../BUSIN/entities/EN_DISTRIBUN_831.json#/attributes/AT92_DESCRIAO831"
+                                },
+                                "attributeValidations": [
+                                ],
+                                "colSpan": 1,
+                                "componentStyle": null,
+                                "customEvents": [
+                                ],
+                                "customizationLayer": 0,
+                                "customizationLayerDescription": "ECU",
+                                "enabled": 4095,
+                                "include": 4095,
+                                "label": {
+                                    "defaultValue": {
+                                        "$ref": "../../../../BUSIN/assets/languages/BUSIN.json#/BUSIN/LBL/LBL_BUSIN_MONEDAYTW_88594"
+                                    },
+                                    "labelId": "LBL_BUSIN_MONEDAYTW_88594",
+                                    "moduleId": "BUSIN"
+                                },
+                                "maxRecords": null,
+                                "name": "descripcionMoneda",
+                                "options": 0,
+                                "order": 5,
+                                "readOnly": 8,
+                                "responsiveLayouts": null,
+                                "responsivity": false,
+                                "sizeWidthComposite": null,
+                                "style": null,
+                                "textRows": 0,
+                                "userControl": {
+                                    "type": "I",
+                                    "userControlId": "TextInputBox"
+                                },
+                                "visible": 4095,
+                                "visualAttributeId": "VA_TEXTINPUTBOXVHJ_313747",
+                                "width": null,
+                                "widthComposite": "D"
+                            },
+                            {
+                                "aggregate": null,
+                                "aggregateId": null,
+                                "attribute": {
+                                    "$ref": "../../../../BUSIN/entities/EN_DISTRIBUN_831.json#/attributes/AT70_PRODUCTT831"
+                                },
+                                "attributeValidations": [
+                                ],
+                                "colSpan": 1,
+                                "componentStyle": null,
+                                "customEvents": [
+                                ],
+                                "customizationLayer": 0,
+                                "customizationLayerDescription": "ECU",
+                                "enabled": 4095,
+                                "include": 4095,
+                                "label": {
+                                    "defaultValue": {
+                                        "$ref": "../../../../BUSIN/assets/languages/BUSIN.json#/BUSIN/LBL/LBL_BUSIN_PRODUCTOO_90415"
+                                    },
+                                    "labelId": "LBL_BUSIN_PRODUCTOO_90415",
+                                    "moduleId": "BUSIN"
+                                },
+                                "maxRecords": null,
+                                "name": "producto",
+                                "options": 0,
+                                "order": 0,
+                                "readOnly": 8,
+                                "responsiveLayouts": null,
+                                "responsivity": false,
+                                "sizeWidthComposite": null,
+                                "style": null,
+                                "textRows": 0,
+                                "userControl": {
+                                    "type": "I",
+                                    "userControlId": "TextInputBox"
+                                },
+                                "visible": 4095,
+                                "visualAttributeId": "VA_TEXTINPUTBOXZPV_704747",
+                                "width": null,
+                                "widthComposite": "D"
+                            }
+                        ]
+                    },
+                    {
+                        "collapsedStr": "F",
+                        "columnsNum": 3,
+                        "componentStyle": null,
+                        "customEvents": [
+                        ],
+                        "enabled": 4095,
+                        "entity": {
+                            "$ref": "../../../../BUSIN/entities/EN_1BVRSACFM_931.json#"
+                        },
+                        "eventType": 0,
+                        "groupId": "G_DISTRIBIIO_310747",
+                        "htmlSection": "F",
+                        "independentValidation": "F",
+                        "layoutType": "Group",
+                        "name": "Group1274",
+                        "orientation": "V",
+                        "responsiveLayouts": null,
+                        "responsivity": false,
+                        "style": null,
+                        "visible": 4095,
+                        "visualAttributes": [
+                            {
+                                "aggregate": null,
+                                "aggregateId": null,
+                                "attributeValidations": [
+                                ],
+                                "colSpan": 1,
+                                "componentStyle": null,
+                                "customEvents": [
+                                    {
+                                        "customEventId": "CEVA_010VA_VABUTTONWRSMLGV_643747_589",
+                                        "customizationLayer": 0,
+                                        "customizationLayerDescription": "ECU",
+                                        "enabled": "T",
+                                        "executionType": 7,
+                                        "filter": null,
+                                        "isEnabled": true,
+                                        "visualAttributeEventType": {
+                                            "availableExecutionType": 7,
+                                            "description": "Permite personalizar la acción a ejecutar de un command o de un ActionControl",
+                                            "eventId": 10,
+                                            "name": "ExecuteCommand"
+                                        }
+                                    }
+                                ],
+                                "customizationLayer": 0,
+                                "customizationLayerDescription": "ECU",
+                                "enabled": 4095,
+                                "entityQuery": null,
+                                "include": 4095,
+                                "label": {
+                                    "defaultValue": {
+                                        "$ref": "../../../../BUSIN/assets/languages/BUSIN.json#/BUSIN/LBL/LBL_BUSIN_RECARGARR_41541"
+                                    },
+                                    "labelId": "LBL_BUSIN_RECARGARR_41541",
+                                    "moduleId": "BUSIN"
+                                },
+                                "maxRecords": null,
+                                "name": "VA_VABUTTONWRSMLGV_643747",
+                                "options": 0,
+                                "order": 0,
+                                "queryModule": null,
+                                "queryVersion": null,
+                                "responsiveLayouts": null,
+                                "responsivity": false,
+                                "sizeWidthComposite": null,
+                                "style": null,
+                                "userControl": {
+                                    "type": "A",
+                                    "userControlId": "Button"
+                                },
+                                "visible": 0,
+                                "visualAttributeId": "VA_VABUTTONWRSMLGV_643747",
+                                "width": null,
+                                "widthComposite": "D"
+                            }
+                        ]
+                    }
+                ],
+                "id": {
+                    "version": "1.0.0",
+                    "viewId": "VW_DISTRIBULN_747"
+                },
+                "modules": [
+                    {
+                        "moduleId": "BUSIN"
+                    }
+                ],
+                "name": "View of DistributionLine"
+            }
+        }
+    ]
+}

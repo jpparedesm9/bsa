@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.cobiscorp.ecobis.fpm</groupId>
+	<artifactId>fpm-parent</artifactId>
+	<version>4.3.0.0</version>
+	<packaging>pom</packaging>
+
+	<properties>
+		<maven.build.timestamp.format>yyyyMMddHHmmss</maven.build.timestamp.format>
+		<bundle-version>${maven.build.timestamp}</bundle-version>
+		<slf4j.version>1.5.11</slf4j.version>
+		<wicket.version>1.4.15</wicket.version>
+		<jetty.version>6.1.25</jetty.version>
+		<org.springframework.version>3.0.4.RELEASE</org.springframework.version>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <db.provider>DataSource</db.provider>
+        <sign.alias>cobis</sign.alias>
+        <sign.keystore>../fpm-parent/cobis.keystore</sign.keystore>
+		<sign.keypass>cobisadmin</sign.keypass>
+		<sign.storepass>cobisadminadmin</sign.storepass>
+	</properties>	
+	<name>fpm-parent</name>
+	<build>
+		<plugins>
+			<plugin>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<configuration>
+					<source>1.5</source>
+					<target>1.5</target>
+				</configuration>
+			</plugin>
+		</plugins>
+		<pluginManagement>
+			<plugins>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-jarsigner-plugin</artifactId>
+					<version>1.2</version>
+					<executions>
+						<execution>
+							<id>sign</id>
+							<goals>
+								<goal>sign</goal>
+							</goals>
+						</execution>
+					</executions>
+					<configuration>
+						<keystore>${sign.keystore}</keystore>
+						<alias>${sign.alias}</alias>
+						<storepass>${sign.storepass}</storepass>
+						<keypass>${sign.keypass}</keypass>
+						<verbose>true</verbose>
+					</configuration>
+				</plugin>
+				<plugin>
+					<groupId>org.apache.felix</groupId>
+					<artifactId>maven-bundle-plugin</artifactId>
+					<!-- <version>2.1.0</version> -->
+					<extensions>true</extensions>
+				</plugin>
+				<plugin>
+					<groupId>org.apache.aries</groupId>
+					<artifactId>eba-maven-plugin</artifactId>
+					<version>0.2-incubating</version>
+					<extensions>true</extensions>
+				</plugin>
+				<!--This plugin's configuration is used to store Eclipse m2e settings only. It has no influence on the Maven build itself.-->
+				<plugin>
+					<groupId>org.eclipse.m2e</groupId>
+					<artifactId>lifecycle-mapping</artifactId>
+					<version>1.0.0</version>
+					<configuration>
+						<lifecycleMappingMetadata>
+							<pluginExecutions>
+								<pluginExecution>
+									<pluginExecutionFilter>
+										<groupId>
+											org.codehaus.mojo
+										</groupId>
+										<artifactId>
+											openjpa-maven-plugin
+										</artifactId>
+										<versionRange>
+											[1.2,)
+										</versionRange>
+										<goals>
+											<goal>enhance</goal>
+										</goals>
+									</pluginExecutionFilter>
+									<action>
+										<ignore></ignore>
+									</action>
+								</pluginExecution>
+								<pluginExecution>
+									<pluginExecutionFilter>
+										<groupId>
+											com.springsource.bundlor
+										</groupId>
+										<artifactId>
+											com.springsource.bundlor.maven
+										</artifactId>
+										<versionRange>
+											[1.0.0.RELEASE,)
+										</versionRange>
+										<goals>
+											<goal>bundlor</goal>
+										</goals>
+									</pluginExecutionFilter>
+									<action>
+										<ignore></ignore>
+									</action>
+								</pluginExecution>
+							</pluginExecutions>
+						</lifecycleMappingMetadata>
+					</configuration>
+				</plugin>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-antrun-plugin</artifactId>
+					<version>1.4</version>
+					<executions>
+						<execution>
+							<id>apply-version</id>
+							<phase>validate</phase>
+							<configuration>
+								<tasks>
+									<delete dir="${basedir}/target/src" />
+									<mkdir dir="${basedir}/target/src/main/java" />
+									<mkdir dir="${basedir}/target/src/main/resources" />
+									<copy todir="${basedir}/target/src/main/java">
+										<fileset dir="${basedir}/src/main/java" includes="**/*.*" />
+									</copy>
+									<copy todir="${basedir}/target/src/main/resources">
+										<fileset dir="${basedir}/src/main/resources" includes="**/*.*" />
+									</copy>
+									<echo>marking the version: ${project.version}</echo>
+									<replaceregexp match="\$\$project.version\$\$"
+										replace="${project.version}" flags="g">
+										<fileset dir="${basedir}/target/src/main" includes="**/*.java,**/*.xml,**/*.properties" />
+									</replaceregexp>
+									<echo>using the dbprovider: ${db.provider}</echo>
+									<replaceregexp match="\$\$db.provider\$\$"
+										replace="${db.provider}">
+										<fileset dir="${basedir}/target/src/main" includes="**/*.java,**/*.xml,**/*.properties" />
+									</replaceregexp>
+								</tasks>
+							</configuration>
+							<goals>
+								<goal>run</goal>
+							</goals>
+						</execution>
+						<execution>
+							<id>clean</id>
+							<phase>package</phase>
+							<configuration>
+								<tasks>
+									<delete dir="${basedir}/target/src" />
+								</tasks>
+							</configuration>
+							<goals>
+								<goal>run</goal>
+							</goals>
+						</execution>
+					</executions>
+				</plugin>
+			</plugins>
+		</pluginManagement>
+	</build>
+
+	<profiles>
+		<profile>
+			<id>dev-fabad</id>
+			<properties>
+				<jdbc-driverClassName>com.sybase.jdbc3.jdbc.SybDataSource</jdbc-driverClassName>
+				<jdbc-url>jdbc:sybase:Tds:192.168.66.167:5000/cob_fpm</jdbc-url>
+				<jdbc-username>sa</jdbc-username>
+				<jdbc-password>cobis321</jdbc-password>
+				<jdbc-minPoolSize>1</jdbc-minPoolSize>
+				<jdbc-acquireRetryAttempts>3</jdbc-acquireRetryAttempts>
+				<jdbc-maxPoolSize>5</jdbc-maxPoolSize>	
+			</properties>
+		</profile>
+		<profile>
+			<id>production</id>
+			<properties>
+				<jdbc-driverClassName>oracle.jdbc.driver.OracleDriver</jdbc-driverClassName>
+				<jdbc-url>jdbc:oracle:thin:@proddb01:1521:PROD</jdbc-url>
+				<jdbc-username>fabad</jdbc-username>
+				<jdbc-password>sybase</jdbc-password>
+				<jdbc-minPoolSize>1</jdbc-minPoolSize>
+				<jdbc-acquireRetryAttempts>3</jdbc-acquireRetryAttempts>
+				<jdbc-maxPoolSize>5</jdbc-maxPoolSize>
+			</properties>
+		</profile>		
+	</profiles>
+	<dependencies>
+		<dependency>
+			<groupId>jdbc</groupId>
+			<artifactId>jdbc.sybase</artifactId>
+			<version>3.0.0</version>
+			<type>jar</type>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.8.1</version>
+			<type>jar</type>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>jdbc</groupId>
+			<artifactId>jdbc.oracle</artifactId>
+			<version>6</version>
+			<type>jar</type>
+			<scope>test</scope>
+		</dependency>
+	</dependencies>
+	<dependencyManagement>
+		<dependencies>
+			<!-- Modules -->
+			<!-- Libraries -->
+			<dependency>
+				<groupId>org.apache.geronimo.specs</groupId>
+				<artifactId>geronimo-jpa_2.0_spec</artifactId>
+				<version>1.1</version>
+				<scope>provided</scope>
+			</dependency>
+			<dependency>
+				<groupId>javax.servlet</groupId>
+				<artifactId>servlet-api</artifactId>
+				<version>2.5</version>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
+</project>

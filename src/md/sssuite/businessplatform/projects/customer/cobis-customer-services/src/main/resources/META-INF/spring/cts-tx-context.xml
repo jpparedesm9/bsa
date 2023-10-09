@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd
+		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd">
+
+
+
+	<tx:advice id="transactionalAdvice" transaction-manager="transactionManager">
+		<tx:attributes>
+			<tx:method name="*" propagation="REQUIRED" rollback-for="RuntimeException" />
+			<tx:method name="getHistoricalLog" propagation="NOT_SUPPORTED"
+				rollback-for="RuntimeException" />
+		</tx:attributes>
+	</tx:advice>
+
+	<aop:config>
+		<aop:pointcut id="nationalityServiceTransactional"
+			expression="execution(* com.cobiscorp.ecobis.customer.services.NationalityService.*(..))" />
+		<aop:advisor pointcut-ref="nationalityServiceTransactional"
+			advice-ref="transactionalAdvice" />
+	</aop:config>
+	<aop:config>
+		<aop:pointcut id="customerTxServiceTransactional"
+			expression="execution(* com.cobiscorp.ecobis.customer.services.CustomerTxService.*(..))" />
+		<aop:advisor pointcut-ref="customerTxServiceTransactional"
+			advice-ref="transactionalAdvice" />
+	</aop:config>
+	<aop:config>
+		<aop:pointcut id="addressTxServiceTransactional"
+			expression="execution(* com.cobiscorp.ecobis.customer.services.AddressTxService.*(..))" />
+		<aop:advisor pointcut-ref="addressTxServiceTransactional"
+			advice-ref="transactionalAdvice" />
+	</aop:config>
+
+	<aop:config>
+		<aop:pointcut id="phoneTxServiceTransactional"
+			expression="execution(* com.cobiscorp.ecobis.customer.services.PhoneTxService.*(..))" />
+		<aop:advisor pointcut-ref="phoneTxServiceTransactional"
+			advice-ref="transactionalAdvice" />
+	</aop:config>
+
+	<aop:config>
+		<aop:pointcut id="activityTxServiceTransactional"
+			expression="execution(* com.cobiscorp.ecobis.customer.services.ActivityTxService.*(..))" />
+		<aop:advisor pointcut-ref="activityTxServiceTransactional"
+			advice-ref="transactionalAdvice" />
+	</aop:config>
+	<aop:config>
+		<aop:pointcut id="quickCreateTxServiceTransactional"
+			expression="execution(* com.cobiscorp.ecobis.customer.services.QuickCreateTxService.*(..))" />
+		<aop:advisor pointcut-ref="quickCreateTxServiceTransactional"
+			advice-ref="transactionalAdvice" />
+	</aop:config>
+	<aop:config>
+		<aop:pointcut id="CICTxServiceTransactional"
+			expression="execution(* com.cobiscorp.ecobis.customer.services.CICTxService.*(..))" />
+		<aop:advisor pointcut-ref="CICTxServiceTransactional"
+			advice-ref="transactionalAdvice" />
+	</aop:config>
+	<aop:config>
+		<aop:pointcut id="padronTxServiceTransactional"
+			expression="execution(* com.cobiscorp.ecobis.customer.services.PadronTxService.*(..))" />
+		<aop:advisor pointcut-ref="padronTxServiceTransactional"
+			advice-ref="transactionalAdvice" />
+	</aop:config>
+	<aop:config>
+		<aop:pointcut id="idCreateTxServiceTransactional"
+			expression="execution(* com.cobiscorp.ecobis.customer.services.IdCustomerTxService.*(..))" />
+		<aop:advisor pointcut-ref="idCreateTxServiceTransactional"
+			advice-ref="transactionalAdvice" />
+	</aop:config>
+	<aop:config>
+		<aop:pointcut id="productDetailServiceTransactional"
+			expression="execution(* com.cobiscorp.ecobis.customer.services.ProductDetailService.*(..))" />
+		<aop:advisor pointcut-ref="productDetailServiceTransactional"
+			advice-ref="transactionalAdvice" />
+	</aop:config>
+	<aop:config>
+		<aop:pointcut id="clientServiceTransactional"
+			expression="execution(* com.cobiscorp.ecobis.customer.services.ClientService.*(..))" />
+		<aop:advisor pointcut-ref="clientServiceTransactional"
+			advice-ref="transactionalAdvice" />
+	</aop:config>
+	<aop:config>
+		<aop:pointcut id="businessSegmentTxServiceTransactional"
+			expression="execution(* com.cobiscorp.ecobis.customer.services.BusinessSegmentTxService.*(..))" />
+		<aop:advisor pointcut-ref="businessSegmentTxServiceTransactional"
+			advice-ref="transactionalAdvice" />
+	</aop:config>
+	<aop:config>
+		<aop:pointcut id="contactTxServiceTransactional"
+			expression="execution(* com.cobiscorp.ecobis.customer.services.ContactTxService.*(..))" />
+		<aop:advisor pointcut-ref="contactTxServiceTransactional"
+			advice-ref="transactionalAdvice" />
+	</aop:config>
+</beans>

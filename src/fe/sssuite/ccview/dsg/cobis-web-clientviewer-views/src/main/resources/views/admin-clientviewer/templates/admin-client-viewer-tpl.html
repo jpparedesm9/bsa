@@ -1,0 +1,63 @@
+<div id="container">
+	<div class="cb-form-header">
+        <div>
+            <div class="cb-text-xl" translate>ADMCLIENTVIEWER.LABELS.LBL_VCC_ADMIN</div>
+        </div>
+    </div>
+    <div ng-controller="adminclientviewer.clientViewerController" ng-init="initData()" class="cb-view-container-root cb-content">
+        <div>
+            <fieldset>
+                <legend translate>ADMCLIENTVIEWER.HEADERS.HDR_ROLE</legend>
+                <div>
+
+                    <div>
+                        <ul kendo-panel-bar>
+                            <li>                                
+                                <div id="kRole" kendo-grid k-data-source="roleConfigDS" k-columns="roleColumns" k-rebind="roleConfigDS">
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="ng-scope" ng-show="isVisibleBtnAddRole">
+                        <div>
+
+                            <table>
+                                <tr>
+                                    <td style="width:7.8%">
+                                        <button type="button" class="btn btn-default btn-sm" ng-click="removeRoleGrid()">
+                                            <span class="glyphicon glyphicon-ban-circle"></span>
+                                        </button>
+                                    </td>
+                                    <td style="width:7.7%">
+                                        <button type="button" class="btn btn-default btn-sm" ng-click="addRoleGrid()">
+                                            <span class="glyphicon glyphicon-ok"></span>
+                                        </button>
+                                    </td>
+                                    <td style="width:84.2%">
+
+                                        <select class="form-control" id="cmbRoles" kendo-combo-box k-data-source="rolesAssociatesDS" k-data-text-field="'descripcion'" k-data-value-field="'rol'"></select>
+
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="cb-form-controlbar">
+                    <button class="btn btn-primary" ng-click="addRole()">
+                        <span class="image-button-add-item"></span>
+                        <span translate>ADMCLIENTVIEWER.BUTTONS.BTN_ADD_ROLE</span>
+                    </button>
+                </div>
+            </fieldset>
+            <fieldset>
+                <legend translate>ADMCLIENTVIEWER.HEADERS.HDR_SECTIONS_CONSOLIDATED</legend>
+                <div id="treewProducts">
+                    <div kendo-tree-view="tree" k-data-source="treewData" k-template="treeItemTemplate">
+                    </div>
+                </div>
+            </fieldset>
+        </div>
+    </div>
+</div>

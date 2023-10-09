@@ -1,0 +1,251 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<procedure>
+  <database>cobis</database>
+  <name>sp_compania_cons</name>
+  <type>SYBASE</type>
+  <version>1</version>
+  <parameters>
+    <parameter name="@s_ssn" dataType="int" direction="in" />
+    <parameter name="@s_user" dataType="varchar" direction="in" />
+    <parameter name="@s_term" dataType="varchar" direction="in" />
+    <parameter name="@s_date" dataType="datetime" direction="in" />
+    <parameter name="@s_srv" dataType="varchar" direction="in" />
+    <parameter name="@s_lsrv" dataType="varchar" direction="in" />
+    <parameter name="@s_ofi" dataType="smallint" direction="in" />
+    <parameter name="@s_rol" dataType="smallint" direction="in" />
+    <parameter name="@s_org_err" dataType="char" direction="in" />
+    <parameter name="@s_error" dataType="int" direction="in" />
+    <parameter name="@s_sev" dataType="tinyint" direction="in" />
+    <parameter name="@s_msg" dataType="varchar" direction="in" />
+    <parameter name="@s_org" dataType="char" direction="in" />
+    <parameter name="@t_debug" dataType="char" direction="in" />
+    <parameter name="@t_file" dataType="varchar" direction="in" />
+    <parameter name="@t_from" dataType="varchar" direction="in" />
+    <parameter name="@t_trn" dataType="int" direction="in" />
+    <parameter name="@t_show_version" dataType="bit" direction="in" />
+    <parameter name="@i_operacion" dataType="char" direction="in" />
+    <parameter name="@i_compania" dataType="int" direction="in" />
+    <parameter name="@i_nombre" dataType="varchar" direction="in" />
+    <parameter name="@i_posicion" dataType="varchar" direction="in" />
+    <parameter name="@i_ruc" dataType="varchar" direction="in" />
+    <parameter name="@i_grupo" dataType="int" direction="in" />
+    <parameter name="@i_rep_legal" dataType="int" direction="in" />
+    <parameter name="@i_activo" dataType="money" direction="in" />
+    <parameter name="@i_pasivo" dataType="money" direction="in" />
+    <parameter name="@i_pais" dataType="smallint" direction="in" />
+    <parameter name="@i_filial" dataType="tinyint" direction="in" />
+    <parameter name="@i_oficina" dataType="smallint" direction="in" />
+    <parameter name="@i_tipo" dataType="varchar" direction="in" />
+    <parameter name="@i_oficial" dataType="smallint" direction="in" />
+    <parameter name="@i_es_grupo" dataType="char" direction="in" />
+    <parameter name="@i_retencion" dataType="char" direction="in" />
+    <parameter name="@i_codsuper" dataType="char" direction="in" />
+    <parameter name="@i_tipspub" dataType="char" direction="in" />
+    <parameter name="@i_subspub" dataType="char" direction="in" />
+    <parameter name="@i_actividad" dataType="char" direction="in" />
+    <parameter name="@i_sectoreco" dataType="char" direction="in" />
+    <parameter name="@i_segmento" dataType="char" direction="in" />
+    <parameter name="@i_subemp1" dataType="char" direction="in" />
+    <parameter name="@i_subemp2" dataType="char" direction="in" />
+    <parameter name="@i_actneg" dataType="char" direction="in" />
+    <parameter name="@i_cobertura" dataType="varchar" direction="in" />
+    <parameter name="@i_suplidores" dataType="varchar" direction="in" />
+    <parameter name="@i_razon_social" dataType="varchar" direction="in" />
+    <parameter name="@i_tipo_op" dataType="char" direction="in" />
+    <parameter name="@i_nit" dataType="varchar" direction="in" />
+    <parameter name="@o_siguiente" dataType="int" direction="out" />
+    <parameter name="@o_dif_oficial" dataType="tinyint" direction="out" />
+    <parameter name="@i_formato_fecha" dataType="int" direction="in" />
+    <parameter name="@i_numtrib" dataType="char" direction="in" />
+    <parameter name="@i_categoria" dataType="varchar" direction="in" />
+  </parameters>
+  <queries>
+    <query>
+      <columns>
+        <column name="{1}" />
+        <column name="{2}" />
+        <column name="{3}" />
+        <column name="{4}" />
+        <column name="{5}" />
+        <column name="{6}" />
+        <column name="{7}" />
+        <column name="{8}" />
+        <column name="{9}" />
+        <column name="{10}" />
+        <column name="{11}" />
+        <column name="{12}" />
+        <column name="{13}" />
+        <column name="{14}" />
+        <column name="{15}" />
+        <column name="{16}" />
+        <column name="{17}" />
+        <column name="{18}" />
+        <column name="{19}" />
+        <column name="{20}" />
+        <column name="{21}" />
+        <column name="{22}" />
+        <column name="{23}" />
+        <column name="{24}" />
+        <column name="{25}" />
+        <column name="{26}" />
+        <column name="{27}" />
+        <column name="{28}" />
+        <column name="{29}" />
+        <column name="{30}" />
+        <column name="{31}" />
+        <column name="{32}" />
+        <column name="{33}" />
+        <column name="{34}" />
+        <column name="{35}" />
+        <column name="{36}" />
+        <column name="{37}" />
+        <column name="{38}" />
+        <column name="{39}" />
+        <column name="{40}" />
+        <column name="{41}" />
+        <column name="{42}" />
+        <column name="{43}" />
+        <column name="{44}" />
+        <column name="{45}" />
+        <column name="{46}" />
+        <column name="{47}" />
+        <column name="{48}" />
+        <column name="{49}" />
+        <column name="{50}" />
+        <column name="{51}" />
+        <column name="{52}" />
+        <column name="{53}" />
+        <column name="{54}" />
+        <column name="{55}" />
+        <column name="{56}" />
+        <column name="{57}" />
+        <column name="{58}" />
+        <column name="{59}" />
+        <column name="{60}" />
+        <column name="{61}" />
+        <column name="{62}" />
+        <column name="{63}" />
+        <column name="{64}" />
+        <column name="{65}" />
+        <column name="{66}" />
+        <column name="{67}" />
+        <column name="{68}" />
+        <column name="{69}" />
+        <column name="{70}" />
+        <column name="{71}" />
+        <column name="{72}" />
+        <column name="{73}" />
+        <column name="{74}" />
+        <column name="{75}" />
+        <column name="{76}" />
+        <column name="{77}" />
+        <column name="{78}" />
+        <column name="{79}" />
+        <column name="{80}" />
+        <column name="{81}" />
+        <column name="{82}" />
+        <column name="{83}" />
+        <column name="{84}" />
+        <column name="{85}" />
+        <column name="{86}" />
+        <column name="{87}" />
+        <column name="{88}" />
+        <column name="{89}" />
+        <column name="{90}" />
+        <column name="{91}" />
+        <column name="{92}" />
+        <column name="{93}" />
+        <column name="{94}" />
+        <column name="{95}" />
+        <column name="{96}" />
+        <column name="{97}" />
+        <column name="{98}" />
+        <column name="{99}" />
+        <column name="{100}" />
+        <column name="{101}" />
+        <column name="{102}" />
+        <column name="{103}" />
+        <column name="{104}" />
+        <column name="{105}" />
+        <column name="{106}" />
+        <column name="{107}" />
+        <column name="{108}" />
+        <column name="{109}" />
+        <column name="{110}" />
+        <column name="{111}" />
+        <column name="{112}" />
+        <column name="{113}" />
+        <column name="{114}" />
+        <column name="{115}" />
+        <column name="{116}" />
+        <column name="{117}" />
+        <column name="{118}" />
+        <column name="{119}" />
+        <column name="{120}" />
+        <column name="{121}" />
+        <column name="{122}" />
+        <column name="{123}" />
+        <column name="{124}" />
+        <column name="{125}" />
+        <column name="{126}" />
+        <column name="{127}" />
+        <column name="{128}" />
+        <column name="{129}" />
+        <column name="{130}" />
+        <column name="{131}" />
+        <column name="{132}" />
+        <column name="{133}" />
+        <column name="{134}" />
+        <column name="{135}" />
+        <column name="{136}" />
+        <column name="{137}" />
+        <column name="{138}" />
+        <column name="{139}" />
+        <column name="{140}" />
+        <column name="{141}" />
+        <column name="{142}" />
+        <column name="{143}" />
+        <column name="{144}" />
+        <column name="{145}" />
+        <column name="{146}" />
+        <column name="{147}" />
+      </columns>
+      <queryText>SELECT o_fecha_crea, o_tipo_nit, o_ruc, o_nombre, o_razon_social, o_tcompania, o_desc_tcomp, o_tipo_vinculacion, o_desc_tipo_vinculacion, o_cod_referido, o_desc_referido, o_total_activos, o_num_empleados, o_retencion, o_comentario, o_rep_superban, o_doc_validado, o_oficial, o_desc_func, o_fecha_mod, o_posicion, o_desc_posi, o_es_grupo, o_grupo, o_desc_grupo, o_pais, o_mala_ref, o_situacion_cliente, o_desc_situacion_clie, o_patrim_tec, o_fecha_patrimbruto, o_oficial_sup, o_desc_func_sup, o_preferen, o_exc_sipla, o_nivel_ing, o_nivel_egr, o_cem, o_codsuper, o_desc_codsuper, o_tipspub, o_desc_tipspub, o_subspub, o_desc_subspub, o_subemp, o_desc_actividad, o_sectoreco, o_desc_sectoreco, o_segmento, o_desc_segmento, o_lugar_doc, o_desc_lugar, o_promotor, o_desc_promotor, o_subemp1, o_desc_subemp1, o_subemp2, o_desc_subemp2, o_actneg, o_desc_actneg, o_cobertura, o_desc_cobertura, o_suplidores, o_principal_login, o_suplente_login, o_bloquear, o_tipo_nit_desc, o_cod_sector, o_sector, o_digito, o_desc_relacion, o_numtrib, o_oficina, o_desc_oficina, o_relacion, o_fecha_emision, o_pasaporte, w_tipo_medio, w_desc_tipo_medio, o_categoria, o_desc_categoria, w_es_cliente, w_referido_ext, w_des_referido_ext, w_nacionalidad, w_des_nacionalidad, w_otros_ingresos, w_origen_ingresos, o_ea_estado, o_ea_observacion_aut, o_ea_contrato_firmado, o_ea_conocido_como, ctx.convertString(o_ea_constitucion), o_ea_cod_risk, o_ea_sector_eco, o_ea_actividad, o_c_funcionario, ctx.convertString(o_ea_remp_legal), ctx.convertString(o_ea_apoderado_legal), w_arma_categoria, o_ea_act_comp_kyc, o_ea_fecha_act_kyc, o_ea_no_req_kyc_comp, o_ea_act_perfiltran, o_ea_fecha_act_perfiltran, o_ea_con_salario, o_ea_fecha_consal, o_ea_sin_salario, o_ea_fecha_sinsal, o_ea_cliente_planilla, o_ea_empadronado, o_ea_lin_neg, o_ea_seg_neg, o_ea_val_id_check, o_ea_ejecutivo_con, o_ea_suc_gestion, o_ea_constitucion, o_ea_remp_legal, o_ea_apoderado_legal, o_ea_actualizacion_cic, o_ea_fecha_act_cic, o_ea_excepcion_cic, o_ea_fuente_ing, o_ea_act_prin, o_ea_detalle, o_ea_act_dol, o_ea_cat_aml, o_ea_observacion_vincula, o_ea_fecha_vincula, o_exc_por2, ctx.ISNULL(o_c_verificado, "N"), o_ea_constitucion_desc, o_fuente_ing, o_actividad_princ, o_fecha_constitucion, o_fecha_verif, o_ea_excepcion_pad, o_ea_fecha_const, o_ea_num_testimonio, o_ea_indefinido, o_ea_fecha_vigencia, o_ea_nombre_notaria, o_ea_nombre_notario, o_nomlar, w_ea_estado_desc, o_sigla, o_ea_nom_apoderado_legal</queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="No. Id." />
+        <column name="Nombre Comercial" />
+        <column name="Razon Social" />
+        <column name="Cod. Tipo Compa��a" />
+        <column name="Tipo de Compa��a" />
+        <column name="Cod. Nacionalidad" />
+        <column name="Nacionalidad" />
+        <column name="Cod. Sector Eco." />
+        <column name="Sector Econ�mico" />
+        <column name="Cod. del Oficial de Cta." />
+        <column name="Nombre del Oficial de Cta." />
+        <column name="Cod. Grupo" />
+        <column name="Nombre Grupo" />
+        <column name="Mala Referencia" />
+        <column name="Categoria" />
+        <column name="Desc. Categoria" />
+        <column name="Cliente Planilla" />
+        <column name="Arma Categor�a" />
+      </columns>
+      <queryText>SELECT "No. Id."=o_ruc,"Nombre Comercial"=o_nombre,"Razon Social"=o_razon_social,"Cod. Tipo Compa��a"=o_tcompania,"Tipo de Compa��a"=o_desc_tcomp,"Cod. Nacionalidad"=w_nacionalidad,"Nacionalidad"=w_des_nacionalidad,"Cod. Sector Eco."=o_cod_sector,"Sector Econ�mico"=o_sector,"Cod. del Oficial de Cta."=o_oficial,"Nombre del Oficial de Cta."=o_desc_func,"Cod. Grupo"=o_grupo,"Nombre Grupo"=o_desc_grupo,"Mala Referencia"=o_mala_ref,"Categoria"=o_categoria,"Desc. Categoria"=o_desc_categoria,"Cliente Planilla"=o_ea_cliente_planilla,"Arma Categor�a"=w_arma_categoria</queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="{1}" />
+      </columns>
+      <queryText>SELECT ctx.ISNULL(w_direccion, 0)</queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="Compania" />
+      </columns>
+      <queryText>SELECT  "Compania" = en_nombre </queryText>
+    </query>
+  </queries>
+</procedure>

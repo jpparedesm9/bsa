@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Others" language="java" pageWidth="595" pageHeight="842" columnWidth="595" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="4f510277-4146-465c-88fe-c46b4a07a9e6">
+	<property name="ireport.zoom" value="1.771561000000002"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<field name="affiliateDate" class="java.lang.String"/>
+	<field name="profile" class="java.lang.Integer"/>
+	<field name="stateRegistry" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="16" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="6e81dd83-e918-4e6c-b886-ada14ea1ea24" x="0" y="0" width="555" height="16"/>
+				<box>
+					<bottomPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Others]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="20" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="87bc764e-2c02-49ef-872c-548934e7e3a3" x="273" y="0" width="282" height="20"/>
+				<box>
+					<bottomPen lineWidth="0.0"/>
+				</box>
+				<textElement>
+					<font size="7"/>
+				</textElement>
+				<text><![CDATA[State Registry]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="c31ce5b2-693a-4ef8-812f-c39f53ff5f29" x="0" y="0" width="105" height="20"/>
+				<box>
+					<bottomPen lineWidth="0.0"/>
+				</box>
+				<textElement>
+					<font size="7"/>
+				</textElement>
+				<text><![CDATA[Affiliate Date]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="9721f8c3-d460-4b6c-8eee-a2dbaf6be92b" x="105" y="0" width="168" height="20"/>
+				<box>
+					<bottomPen lineWidth="0.0"/>
+				</box>
+				<textElement>
+					<font size="7"/>
+				</textElement>
+				<text><![CDATA[Profile]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="14" splitType="Stretch">
+			<textField>
+				<reportElement uuid="b4cedb5c-b27e-46b0-87a6-9138ed1e3fc2" x="0" y="0" width="105" height="14"/>
+				<textElement>
+					<font size="7"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{affiliateDate}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="254b7275-1b7d-44a7-bc3f-020fff44de20" x="105" y="0" width="168" height="14"/>
+				<textElement>
+					<font size="7"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{profile}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="c1f599ab-dd98-43e3-a5d1-80e776492ed1" x="273" y="0" width="282" height="14"/>
+				<textElement>
+					<font size="7"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{stateRegistry}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

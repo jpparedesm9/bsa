@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<procedure>
+  <database>cob_cartera</database>
+  <name>sp_onboard_simulacion</name>
+  <type>SYBASE</type>
+  <version>1</version>
+  <parameters>
+    <parameter name="@i_cliente" dataType="int" direction="in" />
+    <parameter name="@i_toperacion" dataType="varchar" direction="in" />
+    <parameter name="@i_moneda" dataType="int" direction="in" />
+    <parameter name="@i_fecha_ini" dataType="varchar" direction="in" />
+    <parameter name="@i_monto" dataType="money" direction="in" />
+    <parameter name="@i_tasa" dataType="float" direction="in" />
+    <parameter name="@i_plazo" dataType="int" direction="in" />
+    <parameter name="@i_frecuencia" dataType="varchar" direction="in" />
+    <parameter name="@i_canal" dataType="int" direction="" />
+    <parameter name="@i_promocion" dataType="char" direction="" />
+  </parameters>
+  <queries>
+    <query>
+      <columns>
+        <column name="1" />
+        <column name="a" />
+        <column name="b" />
+        <column name="c" />
+        <column name="r" />
+      </columns>
+      <queryText>SELECT  "monto_cuota" = opt_cuota </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="2" />
+      </columns>
+      <queryText></queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="3" />
+      </columns>
+      <queryText></queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="monto_cuota" />
+        <column name=" tasa" />
+        <column name=" moneda" />
+      </columns>
+      <queryText></queryText>
+    </query>
+  </queries>
+</procedure>

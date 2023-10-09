@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<procedure>
+  <database>cob_cartera</database>
+  <name>sp_gen_ref_cuota_vigente</name>
+  <type>SQLSERVER</type>
+  <version>1</version>
+  <parameters>
+    <parameter name="@i_param1" dataType="datetime" direction="in" />
+    <parameter name="@i_param2" dataType="int" direction="in" />
+    <parameter name="@i_param3" dataType="char" direction="in" />
+    <parameter name="@i_param4" dataType="varchar" direction="in" />
+    <parameter name="@i_param5" dataType="int" direction="in" />
+  </parameters>
+  <queries>
+    <query>
+      <columns>
+        <column name="fecha_inicio" />
+        <column name="nombre_cliente" />
+        <column name="fecha_vigencia" />
+        <column name="nro_pago" />
+        <column name="monto" />
+        <column name="sucursal" />
+      </columns>
+      <queryText>SELECT  "fecha_inicio" = CONVERT (VARCHAR (10),grv_op_fecha_liq ,103),"nombre_cliente" = grv_grupo_name,"fecha_vigencia" = CONVERT (VARCHAR (10),grv_di_fecha_vig ,103),"nro_pago" = grv_di_dividendo,"monto" = grv_di_monto,"sucursal" = of_nombre </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="institucion" />
+        <column name="referencia" />
+        <column name="convenio" />
+      </columns>
+      <queryText>SELECT  "institucion" = grvd_institucion,"referencia" = grvd_referencia,"convenio" = grvd_convenio </queryText>
+    </query>
+  </queries>
+</procedure>

@@ -1,0 +1,22 @@
+<div class="cb-view" ng-controller="assetsUpload.assetsUploadFileDriver" ng-init="initData()">
+
+	<script id="loadFilesTemplate" type="text/x-kendo-template">
+		<span class = 'k-progress'></span>
+		<div class='file-wrapper'>
+			<span class='file-icon #=addExtensionClass(files[0].extension)#'></span > 
+				<h4 class = 'file-heading file-name-heading'>
+					<span>Nombre:</span>#=name#
+				</h4 > 
+				<h4 class = 'file-heading file-size-heading'> 
+					<span>Tamaño:</span>#=size# bytes
+				</h4> 
+				<button type = 'button' class='k-upload-action'> </button>
+		</div>
+	</script>
+	<div>
+		<div designer-form-load form="vc.viewState.dynamic"></div>
+	</div>
+	<div id="loader_assets" class="cb-view-loading cb-hidden">
+		<div class="cb-view-loading-icon"></div>
+	</div>
+</div>

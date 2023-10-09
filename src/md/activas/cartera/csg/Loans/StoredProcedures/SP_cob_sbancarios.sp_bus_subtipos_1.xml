@@ -1,0 +1,136 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<procedure>
+  <database>cob_sbancarios</database>
+  <name>sp_bus_subtipos</name>
+  <type>SYBASE</type>
+  <version>1</version>
+  <parameters>
+    <parameter name="@t_debug" dataType="char" direction="in" />
+    <parameter name="@t_file" dataType="varchar" direction="in" />
+    <parameter name="@t_trn" dataType="smallint" direction="in" />
+    <parameter name="@s_ofi" dataType="smallint" direction="in" />
+    <parameter name="@i_modo" dataType="char" direction="in" />
+    <parameter name="@i_cod_subtipo" dataType="int" direction="in" />
+    <parameter name="@i_estado" dataType="char" direction="in" />
+    <parameter name="@i_cod_prod" dataType="tinyint" direction="in" />
+    <parameter name="@i_cod_ins" dataType="smallint" direction="in" />
+    <parameter name="@i_valor_unitario" dataType="money" direction="in" />
+    <parameter name="@i_comercial" dataType="char" direction="in" />
+    <parameter name="@i_oficina" dataType="smallint" direction="in" />
+    <parameter name="@i_secuencial" dataType="int" direction="in" />
+    <parameter name="@i_bco" dataType="smallint" direction="in" />
+    <parameter name="@i_cuenta" dataType="varchar" direction="in" />
+  </parameters>
+  <queries>
+    <query>
+      <columns>
+        <column name="{1}" />
+      </columns>
+      <queryText>SELECT 40</queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="COD." />
+        <column name="DESCRIPCION" />
+        <column name="ESTADO" />
+        <column name="PROD." />
+        <column name="INST." />
+        <column name="V.UNIT." />
+        <column name="NEG." />
+        <column name="NUM.AUT." />
+        <column name="TIPO CALC." />
+        <column name="BENEF." />
+        <column name="CC" />
+        <column name="BANC ASOC." />
+        <column name="PARAM OFI." />
+      </columns>
+      <queryText>SELECT  "COD." = si_cod_subtipo,"DESCRIPCION" = si_nombre,"ESTADO" = si_estado,"PROD." = si_cod_producto,"INST." = si_cod_instrumento,"V.UNIT." = si_valor_unitario,"NEG." = si_negociable,"NUM.AUT." = si_num_automatica,"TIPO CALC." = si_forma_calc,"BENEF." = si_beneficiario,"CC" = si_enlace_cc,"BANC ASOC." = si_datos_cheque,"PARAM OFI." = si_param_oficina </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="COD. SUBT." />
+        <column name="DESCRIPCION" />
+        <column name="ESTADO" />
+        <column name="PROD." />
+        <column name="INST." />
+        <column name="V.UNIT." />
+        <column name="NEG." />
+        <column name="NUM.AUT." />
+        <column name="CALC." />
+        <column name="BENEF." />
+        <column name="MONEDA" />
+        <column name="COTIZ." />
+        <column name="CC" />
+        <column name="BANC ASOC." />
+      </columns>
+      <queryText>SELECT  "COD. SUBT." = si_cod_subtipo,"DESCRIPCION" = si_nombre,"ESTADO" = si_estado,"PROD." = si_cod_producto,"INST." = si_cod_instrumento,"V.UNIT." = si_valor_unitario,"NEG." = si_negociable,"NUM.AUT." = si_num_automatica,"CALC." = si_forma_calc,"BENEF." = si_beneficiario,"MONEDA" = in_moneda,"COTIZ." = in_tipo_cotizacion,"CC" = si_enlace_cc,"BANC ASOC." = si_datos_cheque </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="COD. SUBT." />
+        <column name="DESCRIPCION" />
+        <column name="ESTADO" />
+        <column name="PROD." />
+        <column name="INST." />
+        <column name="V.UNIT." />
+        <column name="NEG." />
+        <column name="NUM.AUT." />
+        <column name="CALC." />
+        <column name="BENEF." />
+        <column name="MONEDA" />
+        <column name="COTIZ." />
+        <column name="CC" />
+        <column name="BANC ASOC." />
+      </columns>
+      <queryText>SELECT  "COD. SUBT." = si_cod_subtipo,"DESCRIPCION" = si_nombre,"ESTADO" = si_estado,"PROD." = si_cod_producto,"INST." = si_cod_instrumento,"V.UNIT." = si_valor_unitario,"NEG." = si_negociable,"NUM.AUT." = si_num_automatica,"CALC." = si_forma_calc,"BENEF." = si_beneficiario,"MONEDA" = in_moneda,"COTIZ." = in_tipo_cotizacion,"CC" = si_enlace_cc,"BANC ASOC." = si_datos_cheque </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="{1}" />
+      </columns>
+      <queryText>SELECT 20</queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="COD. SUBT." />
+        <column name="DESCRIPCION" />
+      </columns>
+      <queryText>SELECT  "COD. SUBT." = si_cod_subtipo,"DESCRIPCION" = si_nombre </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="Cuenta " />
+        <column name="Banco " />
+        <column name="Sec " />
+      </columns>
+      <queryText>SELECT  Cuenta = pcc_cuenta,Banco = (SELECT  ba_descripcion FROM cob_remesas..re_banco   WHERE ba_banco = x.pcc_banco     ),Sec = pcc_secuencial </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="CodBco " />
+        <column name="Banco " />
+        <column name="Cuenta " />
+        <column name="Nemonico " />
+        <column name="Sec " />
+      </columns>
+      <queryText>SELECT  CodBco = pcc_banco,Banco = (SELECT  ba_descripcion FROM cob_remesas..re_banco   WHERE ba_banco = x.pcc_banco     ),Cuenta = pcc_cuenta,Nemonico = pcc_nemonico,Sec = pcc_secuencial </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="Cuenta " />
+        <column name="Banco " />
+        <column name="Subtipo " />
+        <column name="Sec " />
+      </columns>
+      <queryText>SELECT  Cuenta = pcc_cuenta,Banco = (SELECT  ba_descripcion FROM cob_remesas..re_banco   WHERE ba_banco = x.pcc_banco     ),Subtipo = pcc_subtipo,Sec = pcc_secuencial </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="Cuenta " />
+        <column name="Banco " />
+        <column name="Sec " />
+      </columns>
+      <queryText>SELECT  Cuenta = pcc_cuenta,Banco = (SELECT  ba_descripcion FROM cob_remesas..re_banco   WHERE ba_banco = x.pcc_banco     ),Sec = pcc_secuencial </queryText>
+    </query>
+  </queries>
+</procedure>

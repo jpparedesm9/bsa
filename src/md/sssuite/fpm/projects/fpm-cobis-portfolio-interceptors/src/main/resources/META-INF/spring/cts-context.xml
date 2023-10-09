@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+	<context:annotation-config />
+
+	<bean id="catalogsInterceptor"
+		class="com.cobiscorp.ecobis.fpm.cobis.portfolio.interceptors.service.impl.CatalogsInterceptor">
+		<property name="bankingProductService" ref="bankingProductReference" />
+		<property name="catalogService" ref="catalogReference"/>
+	</bean>
+
+	<bean id="creditSectorInterceptor"
+		class="com.cobiscorp.ecobis.fpm.cobis.portfolio.interceptors.service.impl.CreditSectorInterceptor">
+		<property name="bankingProductSector" ref="bankingProductReference"></property>
+		<property name="storedProcedureUtils" ref="storedProcedureUtils"></property>
+	</bean>
+
+	<bean id="deleteOperationInterceptor"
+		class="com.cobiscorp.ecobis.fpm.cobis.portfolio.interceptors.service.impl.DeleteOperationInterceptor">
+		<property name="defaultOperationManagerService" ref="defaultOperationReference" />
+		<property name="itemPortfolioManagerService" ref="itemPortfolioReference" />
+	</bean>
+
+	<bean id="generalParametersInterceptor"
+		class="com.cobiscorp.ecobis.fpm.cobis.portfolio.interceptors.service.impl.GeneralParametersInterceptor">
+		<property name="mappingFieldManagerService" ref="mappingFieldManagerReference" />
+		<property name="operationManagerService" ref="defaultOperationReference" />
+		<property name="generalParametersServices" ref="generalParametersReference" />
+		<property name="extractorManagerService" ref="extractorReference" />
+		<property name="rulesManager" ref="ruleManager" />
+		<property name="bankingProductManager" ref="bankingProductReference" />
+		<property name="defaultValuesManager" ref="defaultValueReference" />
+		
+	</bean>
+
+	<bean id="itemsInterceptor"
+		class="com.cobiscorp.ecobis.fpm.cobis.portfolio.interceptors.service.impl.ItemsInterceptor">
+		<property name="itemsManagerService" ref="itemsReference" />
+		<property name="defaultOperationManager" ref="defaultOperationReference" />
+		<property name="extractorManagerService" ref="extractorReference" />
+		<property name="rulesManager" ref="ruleManager" />
+		<property name="defaultValuesManager" ref="defaultValueReference" />
+	</bean>
+
+
+	<bean id="portfolioGenericInterceptor"
+		class="com.cobiscorp.ecobis.fpm.cobis.portfolio.interceptors.service.impl.PortfolioGenericInterceptor">
+		<property name="itemsManagerService" ref="itemsReference"></property>
+		<property name="defaultOperationManager" ref="defaultOperationReference"></property>
+		<property name="generalParametersServices" ref="generalParametersReference"></property>
+		<property name="extractorManagerService" ref="extractorReference" />
+		<property name="rulesManager" ref="ruleManager" />
+		<property name="bankingProductManager" ref="bankingProductReference" />
+		<property name="defaultValuesManager" ref="defaultValueReference" />
+	</bean>
+	
+	<bean id="qrOperationInterceptor"
+		class="com.cobiscorp.ecobis.fpm.cobis.portfolio.interceptors.service.impl.QrOperationInterceptor">
+		<property name="catalogManager" ref="catalogReference"></property>
+		<property name="generalParametersServices" ref="generalParametersReference"></property>
+		<property name="mappingFieldManagerService" ref="mappingFieldManagerReference" />
+		<property name="dictionaryService" ref="dictionaryReference" />
+		<property name="operationManagerService" ref="defaultOperationReference"></property>
+		<property name="extractorManagerService" ref="extractorReference"></property>
+		<property name="rulesManager" ref="ruleManager" />
+		<property name="bankingProductManager" ref="bankingProductReference" />
+		<property name="defaultValuesManager" ref="defaultValueReference" />
+	</bean>
+
+	<bean id="updatePortfolioGenericInterceptor"
+		class="com.cobiscorp.ecobis.fpm.cobis.portfolio.interceptors.service.impl.UpdatePortfolioGenericInterceptor">
+		<property name="defaultOperationManager" ref="defaultOperationReference" />
+	</bean>
+
+	<bean id="updateQrOperationInterceptor"
+		class="com.cobiscorp.ecobis.fpm.cobis.portfolio.interceptors.service.impl.UpdateQrOperationInterceptor">
+		<property name="defaultOperationManager" ref="defaultOperationReference"></property>
+		<property name="catalogService" ref="catalogReference"></property>
+	</bean>
+
+
+</beans>

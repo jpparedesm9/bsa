@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version last-->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="ConsentSecurityBasic" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="431cb9ae-e82d-4242-a622-a417dc526165">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="listConsentSecurityBasic" class="java.util.List">
+		<fieldDescription><![CDATA[listConsentSecurityBasic]]></fieldDescription>
+	</field>
+	<detail>
+		<band height="80" splitType="Stretch">
+			<subreport>
+				<reportElement x="0" y="0" width="594" height="80" uuid="c9f3d4c8-69df-4a7b-96ae-9d24880621de"/>
+				<dataSourceExpression><![CDATA[
+new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($F{listConsentSecurityBasic})]]></dataSourceExpression>
+				<subreportExpression><![CDATA["consentOfsegurityTuiio.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+	</detail>
+</jasperReport>

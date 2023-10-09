@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<serviceClass name="Reestructuring" nsBase="COBISCorp.eCOBIS.BusinessProcess.General" namespace="COBISCorp.eCOBIS.BusinessProcess.General.Service" package="cobiscorp.ecobis.businessprocess.general.service" ns="http://service.general.businessprocess.ecobis.cobiscorp" module="BusinessProcess.General" productName="COBISCorp.eCOBIS.BusinessProcess.Service" productVersion="2.0.0.0">
+  <productProperties>
+    <property name="MavenGroupId" value="com.cobiscorp.processapi" />
+    <property name="MavenArtifactId" value="COBISCorp.eCOBIS.BusinessProcess.Service" />
+    <property name="MavenVersion" value="2.0.0.0" />
+  </productProperties>
+  <partialClass name="Reestructuring">
+    <services>
+      <service id="BusinessProcess.General.Reestructuring.GetReestructuredBaseOperation" netName="GetReestructuredBaseOperation" javaName="getReestructuredBaseOperation" mappingType="STORED_PROCEDURE" mapId="e5e2c48d9b3b8e3f4132bd4d00f5ecd3">
+        <SRVMapping name="cob_cartera..sp_rees_base" trnCode="73903">
+          <DTOs>
+            <DTO direction="in" name="OperationName" alias="inOperationName" namespace="COBISCorp.eCOBIS.BusinessProcess.General.DTO" package="cobiscorp.ecobis.businessprocess.general.dto" ns="http://dto.general.businessprocess.ecobis.cobiscorp" required="true" />
+            <DTO direction="return" name="OperationName" alias="returnOperationName" namespace="COBISCorp.eCOBIS.BusinessProcess.General.DTO" package="cobiscorp.ecobis.businessprocess.general.dto" ns="http://dto.general.businessprocess.ecobis.cobiscorp" required="true">
+              <properties>
+                <property name="operation" propertyNet="Operation" propertyJava="operation" setterJavaMethod="setOperation" getterJavaMethod="getOperation" xsdType="string" netType="string" javaType="String" cobisMapping="" isInherit="false" isComplexType="false" isCollectionType="false" required="false" encrypted="false" maxLength="0" />
+                <property name="nameOperation" propertyNet="NameOperation" propertyJava="nameOperation" setterJavaMethod="setNameOperation" getterJavaMethod="getNameOperation" xsdType="string" netType="string" javaType="String" cobisMapping="" isInherit="false" isComplexType="false" isCollectionType="false" required="false" encrypted="false" maxLength="0" />
+                <property name="operationList" propertyNet="OperationList" propertyJava="operationList" setterJavaMethod="setOperationList" getterJavaMethod="getOperationList" xsdType="string" netType="string" javaType="String" cobisMapping="" isInherit="false" isComplexType="false" isCollectionType="false" required="false" encrypted="false" maxLength="0" />
+                <property name="tipoMonto" propertyNet="TipoMonto" propertyJava="tipoMonto" setterJavaMethod="setTipoMonto" getterJavaMethod="getTipoMonto" xsdType="char" netType="char" javaType="char" cobisMapping="" isInherit="false" isComplexType="false" isCollectionType="false" required="true" encrypted="false" maxLength="0" />
+              </properties>
+            </DTO>
+          </DTOs>
+          <parameterMappings>
+            <parameter name="@i_cadena" direction="in" mappingDirection="in" dataType="varchar" CTSDataType="SQLVARCHAR" JavaSQLType="VARCHAR" mappingType="DTO" allowNull="false" DTOAlias="inOperationName" DTOPropertyName="operationList" />
+            <parameter name="@i_tmonto" direction="in" mappingDirection="in" dataType="char" CTSDataType="SQLCHAR" JavaSQLType="CHAR" mappingType="DTO" allowNull="false" DTOAlias="inOperationName" DTOPropertyName="tipoMonto" />
+          </parameterMappings>
+          <resultMappings>
+            <result>
+              <DTOResult DTOAlias="returnOperationName" MapReturn="true">
+                <columnMapping position="0" name="op_base" DTOPropertyName="operation" DataType="string" Format="" />
+              </DTOResult>
+            </result>
+          </resultMappings>
+          <MappingProperties>
+            <MappingProperty key="singleResult1" value="true" />
+          </MappingProperties>
+        </SRVMapping>
+      </service>
+      <service id="BusinessProcess.General.Reestructuring.GetReestructuredProduct" netName="GetReestructuredProduct" javaName="getReestructuredProduct" mappingType="STORED_PROCEDURE" mapId="7a3c587b998f43c064bac3c3c4c12119">
+        <documentations default="Español">
+          <documentation id="Español">Obtiene el codigo del oficial</documentation>
+          <documentation id="English">Get the code officer</documentation>
+        </documentations>
+        <SRVMapping name="cob_cartera..sp_rees_op_base" trnCode="73902">
+          <DTOs>
+            <DTO direction="in" name="OperationName" alias="inOperationName" namespace="COBISCorp.eCOBIS.BusinessProcess.General.DTO" package="cobiscorp.ecobis.businessprocess.general.dto" ns="http://dto.general.businessprocess.ecobis.cobiscorp" required="true" />
+            <DTO direction="return" name="OperationName" alias="returnOperationName" namespace="COBISCorp.eCOBIS.BusinessProcess.General.DTO" package="cobiscorp.ecobis.businessprocess.general.dto" ns="http://dto.general.businessprocess.ecobis.cobiscorp" required="true">
+              <properties>
+                <property name="operation" propertyNet="Operation" propertyJava="operation" setterJavaMethod="setOperation" getterJavaMethod="getOperation" xsdType="string" netType="string" javaType="String" cobisMapping="" isInherit="false" isComplexType="false" isCollectionType="false" required="false" encrypted="false" maxLength="0" />
+                <property name="nameOperation" propertyNet="NameOperation" propertyJava="nameOperation" setterJavaMethod="setNameOperation" getterJavaMethod="getNameOperation" xsdType="string" netType="string" javaType="String" cobisMapping="" isInherit="false" isComplexType="false" isCollectionType="false" required="false" encrypted="false" maxLength="0" />
+                <property name="operationList" propertyNet="OperationList" propertyJava="operationList" setterJavaMethod="setOperationList" getterJavaMethod="getOperationList" xsdType="string" netType="string" javaType="String" cobisMapping="" isInherit="false" isComplexType="false" isCollectionType="false" required="false" encrypted="false" maxLength="0" />
+                <property name="tipoMonto" propertyNet="TipoMonto" propertyJava="tipoMonto" setterJavaMethod="setTipoMonto" getterJavaMethod="getTipoMonto" xsdType="char" netType="char" javaType="char" cobisMapping="" isInherit="false" isComplexType="false" isCollectionType="false" required="true" encrypted="false" maxLength="0" />
+              </properties>
+            </DTO>
+          </DTOs>
+          <parameterMappings>
+            <parameter name="@i_tope_base" direction="in" mappingDirection="in" dataType="varchar" CTSDataType="SQLVARCHAR" JavaSQLType="VARCHAR" mappingType="DTO" allowNull="false" DTOAlias="inOperationName" DTOPropertyName="operation" />
+          </parameterMappings>
+          <resultMappings>
+            <result>
+              <DTOResult DTOAlias="returnOperationName" MapReturn="true">
+                <columnMapping position="0" name="tope_rees" DTOPropertyName="nameOperation" DataType="string" Format="" />
+              </DTOResult>
+            </result>
+          </resultMappings>
+          <MappingProperties>
+            <MappingProperty key="singleResult1" value="true" />
+          </MappingProperties>
+        </SRVMapping>
+      </service>
+    </services>
+  </partialClass>
+</serviceClass>

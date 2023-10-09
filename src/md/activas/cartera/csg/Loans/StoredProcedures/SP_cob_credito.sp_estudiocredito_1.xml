@@ -1,0 +1,124 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<procedure>
+  <database>cob_credito</database>
+  <name>sp_estudiocredito</name>
+  <type>SQLSERVER</type>
+  <version>1</version>
+  <parameters>
+    <parameter name="@s_user" dataType="varchar" direction="in" />
+    <parameter name="@s_date" dataType="datetime" direction="in" />
+    <parameter name="@s_ofi" dataType="smallint" direction="in" />
+    <parameter name="@s_term" dataType="varchar" direction="in" />
+    <parameter name="@s_ssn" dataType="int" direction="in" />
+    <parameter name="@i_ente" dataType="int" direction="in" />
+    <parameter name="@i_cedruc" dataType="varchar" direction="in" />
+    <parameter name="@i_tipo" dataType="varchar" direction="in" />
+    <parameter name="@i_formato_f" dataType="tinyint" direction="in" />
+    <parameter name="@i_frontend" dataType="char" direction="in" />
+    <parameter name="@i_con_ente" dataType="char" direction="in" />
+    <parameter name="@o_descripcion" dataType="varchar" direction="out" />
+    <parameter name="@o_ciudad" dataType="int" direction="out" />
+    <parameter name="@o_parroquia" dataType="smallint" direction="out" />
+    <parameter name="@o_provincia" dataType="smallint" direction="out" />
+    <parameter name="@o_pais" dataType="smallint" direction="out" />
+    <parameter name="@o_telefono" dataType="varchar" direction="out" />
+    <parameter name="@o_desciudad" dataType="varchar" direction="out" />
+    <parameter name="@o_desparroquia" dataType="varchar" direction="out" />
+    <parameter name="@o_desprovincia" dataType="varchar" direction="out" />
+    <parameter name="@o_despais" dataType="varchar" direction="out" />
+    <parameter name="@o_tipoced" dataType="varchar" direction="out" />
+    <parameter name="@o_cedruc" dataType="varchar" direction="out" />
+    <parameter name="@o_ciudadexp" dataType="int" direction="out" />
+    <parameter name="@o_desciuexp" dataType="varchar" direction="out" />
+    <parameter name="@o_fecha_exp" dataType="varchar" direction="out" />
+    <parameter name="@o_fecha_nac" dataType="varchar" direction="out" />
+    <parameter name="@o_tipodir" dataType="varchar" direction="out" />
+    <parameter name="@o_nombre" dataType="varchar" direction="out" />
+    <parameter name="@o_papellido" dataType="varchar" direction="out" />
+    <parameter name="@o_sapellido" dataType="varchar" direction="out" />
+    <parameter name="@o_ofiprod" dataType="smallint" direction="out" />
+    <parameter name="@o_tel_cel" dataType="varchar" direction="out" />
+    <parameter name="@o_inddir" dataType="char" direction="out" />
+    <parameter name="@o_ciudadnac" dataType="int" direction="out" />
+    <parameter name="@o_desciunac" dataType="varchar" direction="out" />
+    <parameter name="@o_genero" dataType="varchar" direction="out" />
+    <parameter name="@o_ocupacion" dataType="varchar" direction="out" />
+    <parameter name="@o_descocupa" dataType="varchar" direction="out" />
+    <parameter name="@o_ecivil" dataType="varchar" direction="out" />
+    <parameter name="@o_descecivil" dataType="varchar" direction="out" />
+    <parameter name="@o_barrio" dataType="varchar" direction="out" />
+    <parameter name="@o_tvivienda" dataType="varchar" direction="out" />
+    <parameter name="@o_desctviv" dataType="varchar" direction="out" />
+    <parameter name="@o_nivelest" dataType="varchar" direction="out" />
+    <parameter name="@o_descnest" dataType="varchar" direction="out" />
+    <parameter name="@o_fch_neg" dataType="varchar" direction="out" />
+    <parameter name="@o_en_estrato" dataType="varchar" direction="out" />
+    <parameter name="@o_p_num_cargas" dataType="int" direction="out" />
+    <parameter name="@o_coy_papellido" dataType="varchar" direction="out" />
+    <parameter name="@o_coy_sapellido" dataType="varchar" direction="out" />
+    <parameter name="@o_coy_nombres" dataType="varchar" direction="out" />
+    <parameter name="@o_coy_tipoced" dataType="varchar" direction="out" />
+    <parameter name="@o_coy_cedruc" dataType="varchar" direction="out" />
+    <parameter name="@o_coy_ciudadexp" dataType="int" direction="out" />
+    <parameter name="@o_coy_desciuexp" dataType="varchar" direction="out" />
+    <parameter name="@o_coy_fecha_exp" dataType="varchar" direction="out" />
+    <parameter name="@o_coy_empresa" dataType="varchar" direction="out" />
+    <parameter name="@o_coy_telefono" dataType="varchar" direction="out" />
+    <parameter name="@o_coy_direccion" dataType="tinyint" direction="out" />
+    <parameter name="@o_coy_descripcion" dataType="varchar" direction="out" />
+    <parameter name="@i_tramite" dataType="int" direction="in" />
+    <parameter name="@o_profesion" dataType="varchar" direction="in" />
+    <parameter name="@i_intervalo_ini" dataType="int" direction="in" />
+    <parameter name="@i_intervalo_fin" dataType="int" direction="in" />
+    <parameter name="@i_tipo_reporte" dataType="varchar" direction="in" />
+    <parameter name="@i_codeudor" dataType="char" direction="in" />
+    <parameter name="@i_rango_ini" dataType="int" direction="in" />
+    <parameter name="@i_rango_fin" dataType="int" direction="in" />
+    <parameter name="@i_intervalo_ini_j" dataType="int" direction="in" />
+    <parameter name="@i_intervalo_fin_j" dataType="int" direction="in" />
+    <parameter name="@i_ssn" dataType="int" direction="in" />
+    <parameter name="@i_banco" dataType="varchar" direction="in" />
+    <parameter name="@i_limpieza" dataType="char" direction="in" />
+    <parameter name="@w_tipo_norm" dataType="int" direction="in" />
+    <parameter name="@o_alianza" dataType="varchar" direction="out" />
+  </parameters>
+  <queries>
+    <query>
+      <columns>
+        <column name="{1}" />
+        <column name="{2}" />
+        <column name="{3}" />
+        <column name="{4}" />
+        <column name="{5}" />
+        <column name="{6}" />
+        <column name="{7}" />
+        <column name="{8}" />
+        <column name="{9}" />
+        <column name="{10}" />
+        <column name="{11}" />
+        <column name="{12}" />
+        <column name="{13}" />
+        <column name="{14}" />
+        <column name="{15}" />
+        <column name="{16}" />
+        <column name="{17}" />
+        <column name="{18}" />
+        <column name="{19}" />
+        <column name="{20}" />
+      </columns>
+      <queryText></queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="{1}" />
+      </columns>
+      <queryText></queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="{1}" />
+      </columns>
+      <queryText></queryText>
+    </query>
+  </queries>
+</procedure>

@@ -1,0 +1,772 @@
+{
+    "autoCrudStr": "F",
+    "commands": [
+    ],
+    "customEvents": [
+    ],
+    "customizationLayer": 0,
+    "customizationLayerDescription": "ECU",
+    "id": {
+        "moduleId": "LOANS",
+        "subModuleId": "GROUP",
+        "taskId": "T_LOANSTIAEJUNH_604",
+        "version": "1.0.0"
+    },
+    "isImported": false,
+    "mainViewContainerId": "VC_SCANNEDDAE_495604",
+    "modeEnabled": 4095,
+    "name": {
+        "$ref": "../../../../LOANS/relations/componentKeys.json#/GROUP/Forms/T_LOANSTIAEJUNH_604/name"
+    },
+    "tempSaveStr": "F",
+    "viewContainers": [
+        {
+            "breadcrumbs": "Automatic",
+            "colSpan": 1,
+            "collapsedStr": "F",
+            "columnsNum": 1,
+            "componentStyle": null,
+            "customEvents": [
+                {
+                    "customEventId": "CEVC_002T_LOANSTIAEJUNH_604_212",
+                    "customizationLayer": 0,
+                    "customizationLayerDescription": "ECU",
+                    "enabled": "T",
+                    "executionType": 1,
+                    "filter": null,
+                    "isEnabled": true,
+                    "viewContainerEventType": {
+                        "availableExecutionType": 7,
+                        "description": "Inicialización de datos de un ViewContainer, despues de este evento se realiza el segimiento de cambios en los datos",
+                        "eventId": 2,
+                        "name": "InitData"
+                    }
+                },
+                {
+                    "customEventId": "CEVC_008T_LOANSTIAEJUNH_604_297",
+                    "customizationLayer": 0,
+                    "customizationLayerDescription": "ECU",
+                    "enabled": "T",
+                    "executionType": 1,
+                    "filter": null,
+                    "isEnabled": true,
+                    "viewContainerEventType": {
+                        "availableExecutionType": 1,
+                        "description": "Se ejecuta antes de renderizar un ViewContainer, permite realizar personalizaciones visuales",
+                        "eventId": 8,
+                        "name": "Render"
+                    }
+                }
+            ],
+            "customizationLayer": 0,
+            "customizationLayerDescription": "ECU",
+            "enabled": 4095,
+            "id": {
+                "moduleId": "LOANS",
+                "subModuleId": "GROUP",
+                "taskId": "T_LOANSTIAEJUNH_604",
+                "taskVersion": "1.0.0",
+                "viewContainerId": "VC_SCANNEDDAE_495604"
+            },
+            "layoutType": "Group",
+            "name": "ScannedDocumentsDetail",
+            "options": 0,
+            "responsiveLayouts": null,
+            "responsivity": false,
+            "style": null,
+            "view": {
+                "groups": [
+                    {
+                        "collapsedStr": "F",
+                        "columnsNum": 1,
+                        "componentStyle": null,
+                        "customEvents": [
+                        ],
+                        "enabled": 4095,
+                        "entity": {
+                            "$ref": "../../../../LOANS/entities/EN_SCANNEDDO_651.json#"
+                        },
+                        "eventType": 0,
+                        "groupId": "G_SCANNEDMIO_591904",
+                        "htmlSection": "F",
+                        "independentValidation": "F",
+                        "layoutType": "Group",
+                        "name": "Group1847",
+                        "order": 1,
+                        "orientation": "V",
+                        "queryView": {
+                            "actionDesign": "Button",
+                            "actions": [
+                                "Update"
+                            ],
+                            "allowPaging": false,
+                            "allowPagingStr": "F",
+                            "allowSorting": false,
+                            "allowSortingStr": "F",
+                            "autoSync": false,
+                            "componentStyle": null,
+                            "confirmRowDeletion": false,
+                            "confirmRowDeletionStr": "F",
+                            "customEvents": [
+                            ],
+                            "customUrlDialog": null,
+                            "customizationLayer": 0,
+                            "customizationLayerDescription": "ECU",
+                            "deleteCommandEnabled": false,
+                            "deleteCommandEnabledStr": "F",
+                            "dialogTitleLabelId": null,
+                            "editCommandEnabled": true,
+                            "editCommandEnabledStr": "T",
+                            "editMode": "0",
+                            "entityName": "ScannedDocuments",
+                            "hasDetail": false,
+                            "hasDetailString": "F",
+                            "height": null,
+                            "includeQueryMembers": [
+                                "AT46_DESCRINI651",
+                                "AT65_UPLOADEE651",
+                                "AT98_FILECWLB651",
+                                "AT67_TYPERETQ651"
+                            ],
+                            "insertCommandEnabled": false,
+                            "insertCommandEnabledStr": "F",
+                            "modalSize": null,
+                            "modeSelection": "None",
+                            "moduleIdDialog": null,
+                            "multiSelectEnabledStr": "F",
+                            "name": "QV_6397_58590",
+                            "options": 0,
+                            "pageSize": null,
+                            "query": {
+                                "$ref": "../../../../LOANS/GROUP/queries/Q_SCANNEDD_6397.json#"
+                            },
+                            "queryId": "Q_SCANNEDD_6397",
+                            "queryVersion": "1.0.0",
+                            "queryViewCustomActions": [
+                                {
+                                    "action": null,
+                                    "commandImageId": null,
+                                    "commandName": "AfterLeaveInLineRow",
+                                    "commandOrder": null,
+                                    "commandType": 0,
+                                    "customActionId": "CEQV_206QV_6397_58590_820",
+                                    "customizationLayer": 0,
+                                    "customizationLayerDescription": "ECU",
+                                    "enabled": "T",
+                                    "executionType": 1,
+                                    "filter": null,
+                                    "name": "AfterLeaveInLineRow",
+                                    "queryView": "QV_6397_58590",
+                                    "queryViewEventType": {
+                                        "availableExecutionType": 3,
+                                        "description": "Se ejecuta despues de aceptar la edición o inserción en linea de la grilla.",
+                                        "eventId": 206,
+                                        "name": "AfterLeaveInLineRow"
+                                    },
+                                    "serviceName": null,
+                                    "userControl": {
+                                        "customizationLayer": "0",
+                                        "customizationLayerDescription": "ECU",
+                                        "description": "Designer Button",
+                                        "type": "A",
+                                        "userControlId": "Button"
+                                    }
+                                },
+                                {
+                                    "action": null,
+                                    "commandImageId": null,
+                                    "commandName": "BeforeEnterInLineRow",
+                                    "commandOrder": null,
+                                    "commandType": 0,
+                                    "customActionId": "CEQV_207QV_6397_58590_873",
+                                    "customizationLayer": 0,
+                                    "customizationLayerDescription": "ECU",
+                                    "enabled": "T",
+                                    "executionType": 1,
+                                    "filter": null,
+                                    "name": "BeforeEnterInLineRow",
+                                    "queryView": "QV_6397_58590",
+                                    "queryViewEventType": {
+                                        "availableExecutionType": 3,
+                                        "description": "Se ejecuta antes de la edición o inserción en linea de la grilla.",
+                                        "eventId": 207,
+                                        "name": "BeforeEnterInLineRow"
+                                    },
+                                    "serviceName": null,
+                                    "userControl": {
+                                        "customizationLayer": "0",
+                                        "customizationLayerDescription": "ECU",
+                                        "description": "Designer Button",
+                                        "type": "A",
+                                        "userControlId": "Button"
+                                    }
+                                },
+                                {
+                                    "action": null,
+                                    "commandImageId": null,
+                                    "commandName": "GridInitColumnTemplate",
+                                    "commandOrder": null,
+                                    "commandType": 0,
+                                    "customActionId": "CEQV_314QV_6397_58590_604",
+                                    "customizationLayer": 0,
+                                    "customizationLayerDescription": "ECU",
+                                    "enabled": "T",
+                                    "executionType": 1,
+                                    "filter": null,
+                                    "name": "GridInitColumnTemplate",
+                                    "queryView": "QV_6397_58590",
+                                    "queryViewEventType": {
+                                        "availableExecutionType": 1,
+                                        "description": "Evento para template personalizado de una grilla",
+                                        "eventId": 314,
+                                        "name": "GridInitColumnTemplate"
+                                    },
+                                    "serviceName": null,
+                                    "userControl": {
+                                        "customizationLayer": "0",
+                                        "customizationLayerDescription": "ECU",
+                                        "description": "Designer Button",
+                                        "type": "A",
+                                        "userControlId": "Button"
+                                    }
+                                },
+                                {
+                                    "action": null,
+                                    "commandImageId": null,
+                                    "commandName": "GridInitEditColumnTemplate",
+                                    "commandOrder": null,
+                                    "commandType": 0,
+                                    "customActionId": "CEQV_315QV_6397_58590_175",
+                                    "customizationLayer": 0,
+                                    "customizationLayerDescription": "ECU",
+                                    "enabled": "T",
+                                    "executionType": 1,
+                                    "filter": null,
+                                    "name": "GridInitEditColumnTemplate",
+                                    "queryView": "QV_6397_58590",
+                                    "queryViewEventType": {
+                                        "availableExecutionType": 1,
+                                        "description": "Evento para template personalizado de una grilla",
+                                        "eventId": 315,
+                                        "name": "GridInitEditColumnTemplate"
+                                    },
+                                    "serviceName": null,
+                                    "userControl": {
+                                        "customizationLayer": "0",
+                                        "customizationLayerDescription": "ECU",
+                                        "description": "Designer Button",
+                                        "type": "A",
+                                        "userControlId": "Button"
+                                    }
+                                },
+                                {
+                                    "action": null,
+                                    "commandImageId": null,
+                                    "commandName": "GridRowRendering",
+                                    "commandOrder": null,
+                                    "commandType": 0,
+                                    "customActionId": "CEQV_210QV_6397_58590_563",
+                                    "customizationLayer": 0,
+                                    "customizationLayerDescription": "ECU",
+                                    "enabled": "T",
+                                    "executionType": 1,
+                                    "filter": null,
+                                    "name": "GridRowRendering",
+                                    "queryView": "QV_6397_58590",
+                                    "queryViewEventType": {
+                                        "availableExecutionType": 1,
+                                        "description": "Se ejecuta en el evento dataBound de una grilla con los registros visibles, dataview.",
+                                        "eventId": 210,
+                                        "name": "GridRowRendering"
+                                    },
+                                    "serviceName": null,
+                                    "userControl": {
+                                        "customizationLayer": "0",
+                                        "customizationLayerDescription": "ECU",
+                                        "description": "Designer Button",
+                                        "type": "A",
+                                        "userControlId": "Button"
+                                    }
+                                },
+                                {
+                                    "action": null,
+                                    "commandImageId": null,
+                                    "commandName": "RowUpdating",
+                                    "commandOrder": null,
+                                    "commandType": 0,
+                                    "customActionId": "CEQV_203QV_6397_58590_981",
+                                    "customizationLayer": 0,
+                                    "customizationLayerDescription": "ECU",
+                                    "enabled": "T",
+                                    "executionType": 1,
+                                    "filter": null,
+                                    "name": "RowUpdating",
+                                    "queryView": "QV_6397_58590",
+                                    "queryViewEventType": {
+                                        "availableExecutionType": 7,
+                                        "description": "Se ejecuta antes de que los datos modificados en una grilla sean comprometidos.",
+                                        "eventId": 203,
+                                        "name": "RowUpdating"
+                                    },
+                                    "serviceName": null,
+                                    "userControl": {
+                                        "customizationLayer": "0",
+                                        "customizationLayerDescription": "ECU",
+                                        "description": "Designer Button",
+                                        "type": "A",
+                                        "userControlId": "Button"
+                                    }
+                                }
+                            ],
+                            "queryViewId": "QV_6397_58590",
+                            "queryViewType": "Grid",
+                            "rowCommandAppearance": 0,
+                            "style": null,
+                            "subModuleIdDialog": null,
+                            "taskIdDialog": null,
+                            "taskVersionDialog": null,
+                            "typeFormDialog": null,
+                            "userControl": {
+                                "customizationLayer": 0,
+                                "customizationLayerDescription": "ECU",
+                                "description": "Designer Grid",
+                                "name": "Designer Grid",
+                                "type": "I",
+                                "userControlId": "Grid"
+                            },
+                            "viewContainerIdDialog": null
+                        },
+                        "queryViewId": "QV_6397_58590",
+                        "responsiveLayouts": null,
+                        "responsivity": false,
+                        "style": null,
+                        "visible": 4095,
+                        "visualAttributes": [
+                            {
+                                "aggregate": null,
+                                "aggregateId": null,
+                                "attributeValidations": [
+                                ],
+                                "colSpan": 1,
+                                "componentInGrid": true,
+                                "componentStyle": null,
+                                "customEvents": [
+                                    {
+                                        "customEventId": "CEVA_010VA_GRIDROWCOMMMAAD_760904_820",
+                                        "customizationLayer": 0,
+                                        "customizationLayerDescription": "ECU",
+                                        "enabled": "T",
+                                        "executionType": 1,
+                                        "filter": null,
+                                        "isEnabled": true,
+                                        "visualAttributeEventType": {
+                                            "availableExecutionType": 7,
+                                            "description": "Permite personalizar la acción a ejecutar de un actionControl",
+                                            "eventId": 10,
+                                            "name": "GridRowCommand"
+                                        }
+                                    }
+                                ],
+                                "customizationLayer": 0,
+                                "customizationLayerDescription": "ECU",
+                                "enabled": 4095,
+                                "entityQuery": null,
+                                "imageId": "fa fa-download",
+                                "include": 4095,
+                                "maxRecords": null,
+                                "name": "VA_GRIDROWCOMMMAAD_760904",
+                                "options": 0,
+                                "order": 10,
+                                "queryModule": null,
+                                "queryVersion": null,
+                                "responsiveLayouts": null,
+                                "responsivity": false,
+                                "sizeWidthComposite": null,
+                                "style": null,
+                                "userControl": {
+                                    "isEdit": true,
+                                    "isRowCommand": true,
+                                    "type": "A",
+                                    "userControlId": "Button"
+                                },
+                                "visible": 4095,
+                                "visualAttributeId": "VA_GRIDROWCOMMMAAD_760904",
+                                "width": null,
+                                "widthComposite": "D"
+                            },
+                            {
+                                "aggregate": null,
+                                "aggregateId": null,
+                                "attribute": {
+                                    "$ref": "../../../../LOANS/entities/EN_SCANNEDDO_651.json#/attributes/AT94_PROCESAS651"
+                                },
+                                "attributeValidations": [
+                                ],
+                                "colSpan": 1,
+                                "componentInGrid": true,
+                                "componentStyle": null,
+                                "customEvents": [
+                                ],
+                                "customizationLayer": 0,
+                                "customizationLayerDescription": "ECU",
+                                "enabled": 0,
+                                "include": 4095,
+                                "maxRecords": null,
+                                "name": "processInstance",
+                                "options": 0,
+                                "order": 6,
+                                "readOnly": 8,
+                                "responsiveLayouts": null,
+                                "responsivity": false,
+                                "sizeWidthComposite": null,
+                                "style": null,
+                                "textRows": 0,
+                                "userControl": {
+                                    "type": "I",
+                                    "userControlId": "TextInputBox"
+                                },
+                                "visible": 0,
+                                "visualAttributeId": "VA_TEXTINPUTBOXEXX_736904",
+                                "width": null,
+                                "widthComposite": "D"
+                            },
+                            {
+                                "aggregate": null,
+                                "aggregateId": null,
+                                "attribute": {
+                                    "$ref": "../../../../LOANS/entities/EN_SCANNEDDO_651.json#/attributes/AT54_CUSTOMRD651"
+                                },
+                                "attributeValidations": [
+                                ],
+                                "colSpan": 1,
+                                "componentInGrid": true,
+                                "componentStyle": null,
+                                "customEvents": [
+                                ],
+                                "customizationLayer": 0,
+                                "customizationLayerDescription": "ECU",
+                                "enabled": 0,
+                                "include": 4095,
+                                "maxRecords": null,
+                                "name": "customerId",
+                                "options": 0,
+                                "order": 4,
+                                "readOnly": 8,
+                                "responsiveLayouts": null,
+                                "responsivity": false,
+                                "sizeWidthComposite": null,
+                                "style": null,
+                                "textRows": 0,
+                                "userControl": {
+                                    "type": "I",
+                                    "userControlId": "TextInputBox"
+                                },
+                                "visible": 0,
+                                "visualAttributeId": "VA_TEXTINPUTBOXHPP_701904",
+                                "width": null,
+                                "widthComposite": "D"
+                            },
+                            {
+                                "aggregate": null,
+                                "aggregateId": null,
+                                "attribute": {
+                                    "$ref": "../../../../LOANS/entities/EN_SCANNEDDO_651.json#/attributes/AT61_DOCUMENI651"
+                                },
+                                "attributeValidations": [
+                                ],
+                                "colSpan": 1,
+                                "componentInGrid": true,
+                                "componentStyle": null,
+                                "customEvents": [
+                                ],
+                                "customizationLayer": 0,
+                                "customizationLayerDescription": "ECU",
+                                "enabled": 0,
+                                "include": 4095,
+                                "maxRecords": null,
+                                "name": "documentId",
+                                "options": 0,
+                                "order": 8,
+                                "readOnly": 8,
+                                "responsiveLayouts": null,
+                                "responsivity": false,
+                                "sizeWidthComposite": null,
+                                "style": null,
+                                "textRows": 0,
+                                "userControl": {
+                                    "type": "I",
+                                    "userControlId": "TextInputBox"
+                                },
+                                "visible": 0,
+                                "visualAttributeId": "VA_TEXTINPUTBOXINQ_706904",
+                                "width": null,
+                                "widthComposite": "D"
+                            },
+                            {
+                                "aggregate": null,
+                                "aggregateId": null,
+                                "attribute": {
+                                    "$ref": "../../../../LOANS/entities/EN_SCANNEDDO_651.json#/attributes/AT46_DESCRINI651"
+                                },
+                                "attributeValidations": [
+                                ],
+                                "colSpan": 1,
+                                "componentInGrid": true,
+                                "componentStyle": null,
+                                "customEvents": [
+                                ],
+                                "customizationLayer": 0,
+                                "customizationLayerDescription": "ECU",
+                                "enabled": 4095,
+                                "include": 4095,
+                                "label": {
+                                    "defaultValue": {
+                                        "$ref": "../../../../LOANS/assets/languages/LOANS.json#/LOANS/LBL/LBL_LOANS_DOCUMENOT_89129"
+                                    },
+                                    "labelId": "LBL_LOANS_DOCUMENOT_89129",
+                                    "moduleId": "LOANS"
+                                },
+                                "maxRecords": null,
+                                "name": "description",
+                                "options": 0,
+                                "order": 1,
+                                "readOnly": 11,
+                                "responsiveLayouts": null,
+                                "responsivity": false,
+                                "sizeWidthComposite": null,
+                                "style": null,
+                                "textRows": 0,
+                                "userControl": {
+                                    "type": "I",
+                                    "userControlId": "TextInputBox"
+                                },
+                                "visible": 4095,
+                                "visualAttributeId": "VA_TEXTINPUTBOXJFX_289904",
+                                "width": null,
+                                "widthComposite": "D"
+                            },
+                            {
+                                "aggregate": null,
+                                "aggregateId": null,
+                                "attribute": {
+                                    "$ref": "../../../../LOANS/entities/EN_SCANNEDDO_651.json#/attributes/AT98_FILECWLB651"
+                                },
+                                "attributeValidations": [
+                                ],
+                                "colSpan": 1,
+                                "componentInGrid": true,
+                                "componentStyle": null,
+                                "customEvents": [
+                                    {
+                                        "customEventId": "CEVA_010VA_TEXTINPUTBOXLEM_317904_725",
+                                        "customizationLayer": 0,
+                                        "customizationLayerDescription": "ECU",
+                                        "enabled": "T",
+                                        "executionType": 3,
+                                        "filter": null,
+                                        "isEnabled": true,
+                                        "visualAttributeEventType": {
+                                            "availableExecutionType": 7,
+                                            "description": "Permite personalizar la acción a ejecutar de un actionControl",
+                                            "eventId": 10,
+                                            "name": "GridRowCommand"
+                                        }
+                                    }
+                                ],
+                                "customizationLayer": 0,
+                                "customizationLayerDescription": "ECU",
+                                "enabled": 4095,
+                                "include": 4095,
+                                "label": {
+                                    "defaultValue": {
+                                        "$ref": "../../../../LOANS/assets/languages/LOANS.json#/LOANS/LBL/LBL_LOANS_ARCHIVOSR_58260"
+                                    },
+                                    "labelId": "LBL_LOANS_ARCHIVOSR_58260",
+                                    "moduleId": "LOANS"
+                                },
+                                "maxRecords": null,
+                                "name": "file",
+                                "options": 0,
+                                "order": 3,
+                                "readOnly": 8,
+                                "responsiveLayouts": null,
+                                "responsivity": false,
+                                "sizeWidthComposite": null,
+                                "style": null,
+                                "userControl": {
+                                    "type": "I",
+                                    "userControlId": "FileUpload"
+                                },
+                                "visible": 11,
+                                "visualAttributeId": "VA_TEXTINPUTBOXLEM_317904",
+                                "width": null,
+                                "widthComposite": "D"
+                            },
+                            {
+                                "aggregate": null,
+                                "aggregateId": null,
+                                "attribute": {
+                                    "$ref": "../../../../LOANS/entities/EN_SCANNEDDO_651.json#/attributes/AT17_GROUPIDD651"
+                                },
+                                "attributeValidations": [
+                                ],
+                                "colSpan": 1,
+                                "componentInGrid": true,
+                                "componentStyle": null,
+                                "customEvents": [
+                                ],
+                                "customizationLayer": 0,
+                                "customizationLayerDescription": "ECU",
+                                "enabled": 0,
+                                "include": 4095,
+                                "maxRecords": null,
+                                "name": "groupId",
+                                "options": 0,
+                                "order": 5,
+                                "readOnly": 8,
+                                "responsiveLayouts": null,
+                                "responsivity": false,
+                                "sizeWidthComposite": null,
+                                "style": null,
+                                "textRows": 0,
+                                "userControl": {
+                                    "type": "I",
+                                    "userControlId": "TextInputBox"
+                                },
+                                "visible": 0,
+                                "visualAttributeId": "VA_TEXTINPUTBOXNYC_310904",
+                                "width": null,
+                                "widthComposite": "D"
+                            },
+                            {
+                                "aggregate": null,
+                                "aggregateId": null,
+                                "attribute": {
+                                    "$ref": "../../../../LOANS/entities/EN_SCANNEDDO_651.json#/attributes/AT65_UPLOADEE651"
+                                },
+                                "attributeValidations": [
+                                ],
+                                "colSpan": 1,
+                                "componentInGrid": true,
+                                "componentStyle": null,
+                                "customEvents": [
+                                ],
+                                "customizationLayer": 0,
+                                "customizationLayerDescription": "ECU",
+                                "enabled": 4095,
+                                "include": 4095,
+                                "label": {
+                                    "defaultValue": {
+                                        "$ref": "../../../../LOANS/assets/languages/LOANS.json#/LOANS/LBL/LBL_LOANS_CARGADOMC_42766"
+                                    },
+                                    "labelId": "LBL_LOANS_CARGADOMC_42766",
+                                    "moduleId": "LOANS"
+                                },
+                                "maxRecords": null,
+                                "name": "uploaded",
+                                "options": 4,
+                                "order": 2,
+                                "readOnly": 8,
+                                "responsiveLayouts": null,
+                                "responsivity": false,
+                                "sizeWidthComposite": null,
+                                "style": null,
+                                "userControl": {
+                                    "type": "I",
+                                    "userControlId": "TextLabel"
+                                },
+                                "visible": 4095,
+                                "visualAttributeId": "VA_TEXTINPUTBOXSON_931904",
+                                "width": null,
+                                "widthComposite": "D"
+                            },
+                            {
+                                "aggregate": null,
+                                "aggregateId": null,
+                                "attribute": {
+                                    "$ref": "../../../../LOANS/entities/EN_SCANNEDDO_651.json#/attributes/AT67_TYPERETQ651"
+                                },
+                                "attributeValidations": [
+                                ],
+                                "colSpan": 1,
+                                "componentInGrid": true,
+                                "componentStyle": null,
+                                "customEvents": [
+                                ],
+                                "customizationLayer": 0,
+                                "customizationLayerDescription": "ECU",
+                                "enabled": 4095,
+                                "include": 4095,
+                                "maxRecords": null,
+                                "name": "typeRequest",
+                                "options": 0,
+                                "order": 9,
+                                "readOnly": 8,
+                                "responsiveLayouts": null,
+                                "responsivity": false,
+                                "sizeWidthComposite": null,
+                                "style": null,
+                                "textRows": 0,
+                                "userControl": {
+                                    "type": "I",
+                                    "userControlId": "TextInputBox"
+                                },
+                                "visible": 0,
+                                "visualAttributeId": "VA_TEXTINPUTBOXVPC_673904",
+                                "width": null,
+                                "widthComposite": "D"
+                            },
+                            {
+                                "aggregate": null,
+                                "aggregateId": null,
+                                "attribute": {
+                                    "$ref": "../../../../LOANS/entities/EN_SCANNEDDO_651.json#/attributes/AT98_EXTENSNN651"
+                                },
+                                "attributeValidations": [
+                                ],
+                                "colSpan": 1,
+                                "componentInGrid": true,
+                                "componentStyle": null,
+                                "customEvents": [
+                                ],
+                                "customizationLayer": 0,
+                                "customizationLayerDescription": "ECU",
+                                "enabled": 0,
+                                "include": 4095,
+                                "maxRecords": null,
+                                "name": "extension",
+                                "options": 0,
+                                "order": 7,
+                                "readOnly": 8,
+                                "responsiveLayouts": null,
+                                "responsivity": false,
+                                "sizeWidthComposite": null,
+                                "style": null,
+                                "textRows": 0,
+                                "userControl": {
+                                    "type": "I",
+                                    "userControlId": "TextInputBox"
+                                },
+                                "visible": 0,
+                                "visualAttributeId": "VA_TEXTINPUTBOXZWS_128904",
+                                "width": null,
+                                "widthComposite": "D"
+                            }
+                        ]
+                    }
+                ],
+                "id": {
+                    "version": "1.0.0",
+                    "viewId": "VW_SCANNEDDUE_904"
+                },
+                "metadataVersion": "6.4.0.5.1903",
+                "modules": [
+                    {
+                        "moduleId": "LOANS"
+                    }
+                ],
+                "name": "View of ScannedDocumentsDetail"
+            }
+        }
+    ]
+}

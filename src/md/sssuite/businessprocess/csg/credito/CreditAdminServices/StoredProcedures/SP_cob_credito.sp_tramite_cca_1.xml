@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<procedure>
+  <database>cob_credito</database>
+  <name>sp_tramite_cca</name>
+  <type>SQLSERVER</type>
+  <version>1</version>
+  <parameters>
+    <parameter name="@s_ssn" dataType="int" direction="in" />
+    <parameter name="@s_user" dataType="varchar" direction="in" />
+    <parameter name="@s_sesn" dataType="int" direction="in" />
+    <parameter name="@s_term" dataType="varchar" direction="in" />
+    <parameter name="@s_date" dataType="datetime" direction="in" />
+    <parameter name="@s_srv" dataType="varchar" direction="in" />
+    <parameter name="@s_lsrv" dataType="varchar" direction="in" />
+    <parameter name="@s_ofi" dataType="smallint" direction="in" />
+    <parameter name="@t_trn" dataType="smallint" direction="in" />
+    <parameter name="@t_debug" dataType="char" direction="in" />
+    <parameter name="@t_file" dataType="varchar" direction="in" />
+    <parameter name="@t_from" dataType="varchar" direction="in" />
+    <parameter name="@i_tipo" dataType="char" direction="in" />
+    <parameter name="@i_oficina_tr" dataType="smallint" direction="in" />
+    <parameter name="@i_usuario_tr" dataType="varchar" direction="in" />
+    <parameter name="@i_fecha_crea" dataType="datetime" direction="in" />
+    <parameter name="@i_oficial" dataType="smallint" direction="in" />
+    <parameter name="@i_sector" dataType="varchar" direction="in" />
+    <parameter name="@i_ciudad" dataType="int" direction="in" />
+    <parameter name="@i_nivel_ap" dataType="tinyint" direction="in" />
+    <parameter name="@i_fecha_apr" dataType="datetime" direction="in" />
+    <parameter name="@i_usuario_apr" dataType="varchar" direction="in" />
+    <parameter name="@i_banco" dataType="varchar" direction="in" />
+    <parameter name="@i_linea_credito" dataType="varchar" direction="in" />
+    <parameter name="@i_toperacion" dataType="varchar" direction="in" />
+    <parameter name="@i_producto" dataType="varchar" direction="in" />
+    <parameter name="@i_monto" dataType="money" direction="in" />
+    <parameter name="@i_moneda" dataType="tinyint" direction="in" />
+    <parameter name="@i_periodo" dataType="varchar" direction="in" />
+    <parameter name="@i_num_periodos" dataType="smallint" direction="in" />
+    <parameter name="@i_destino" dataType="varchar" direction="in" />
+    <parameter name="@i_ciudad_destino" dataType="int" direction="in" />
+    <parameter name="@i_cuenta_corriente" dataType="varchar" direction="in" />
+    <parameter name="@i_renovacion" dataType="smallint" direction="in" />
+    <parameter name="@i_cliente" dataType="int" direction="in" />
+    <parameter name="@i_clase" dataType="varchar" direction="in" />
+    <parameter name="@i_monto_mn" dataType="money" direction="in" />
+    <parameter name="@i_monto_des" dataType="money" direction="in" />
+    <parameter name="@i_grupal" dataType="char" direction="in" />
+    <parameter name="@i_promocion" dataType="char" direction="in" />
+    <parameter name="@i_acepta_ren" dataType="char" direction="in" />
+    <parameter name="@i_no_acepta" dataType="char" direction="in" />
+    <parameter name="@i_emprendimiento" dataType="char" direction="in" />
+    <parameter name="@i_participa_ciclo" dataType="char" direction="in" />
+    <parameter name="@i_monto_aprobado" dataType="money" direction="in" />
+    <parameter name="@i_garantia" dataType="float" direction="in" />
+    <parameter name="@i_ahorro" dataType="money" direction="in" />
+    <parameter name="@i_monto_max" dataType="money" direction="in" />
+    <parameter name="@i_bc_ln" dataType="char" direction="in" />
+    <parameter name="@i_plazo" dataType="int" direction="in" />
+    <parameter name="@i_tplazo" dataType="varchar" direction="in" />
+    <parameter name="@i_alianza" dataType="int" direction="in" />
+    <parameter name="@i_experiencia_cli" dataType="char" direction="in" />
+    <parameter name="@i_monto_max_tr" dataType="money" direction="in" />
+    <parameter name="@i_naturaleza" dataType="varchar" direction="in" />
+    <parameter name="@i_tplazo_lcr" dataType="varchar" direction="in" />
+    <parameter name="@i_operacion" dataType="varchar" direction="in" />
+    <parameter name="@i_tramite" dataType="int" direction="in" />
+    <parameter name="@o_tramite" dataType="int" direction="out" />
+  </parameters>
+  <queries />
+</procedure>

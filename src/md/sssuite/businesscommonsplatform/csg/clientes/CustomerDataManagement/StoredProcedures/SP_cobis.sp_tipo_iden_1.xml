@@ -1,0 +1,288 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<procedure>
+  <database>cobis</database>
+  <name>sp_tipo_iden</name>
+  <type>SYBASE</type>
+  <version>1</version>
+  <parameters>
+    <parameter name="@s_ssn" dataType="int" direction="in" />
+    <parameter name="@s_user" dataType="varchar" direction="in" />
+    <parameter name="@s_term" dataType="varchar" direction="in" />
+    <parameter name="@s_date" dataType="datetime" direction="in" />
+    <parameter name="@s_srv" dataType="varchar" direction="in" />
+    <parameter name="@s_lsrv" dataType="varchar" direction="in" />
+    <parameter name="@s_ofi" dataType="smallint" direction="in" />
+    <parameter name="@s_rol" dataType="smallint" direction="in" />
+    <parameter name="@s_org_err" dataType="char" direction="in" />
+    <parameter name="@s_error" dataType="int" direction="in" />
+    <parameter name="@s_sev" dataType="tinyint" direction="in" />
+    <parameter name="@s_msg" dataType="varchar" direction="in" />
+    <parameter name="@s_org" dataType="char" direction="in" />
+    <parameter name="@t_debug" dataType="char" direction="in" />
+    <parameter name="@t_file" dataType="varchar" direction="in" />
+    <parameter name="@t_from" dataType="varchar" direction="in" />
+    <parameter name="@t_trn" dataType="smallint" direction="in" />
+    <parameter name="@t_show_version" dataType="bit" direction="in" />
+    <parameter name="@i_operacion" dataType="char" direction="in" />
+    <parameter name="@i_tipo" dataType="char" direction="in" />
+    <parameter name="@i_modo" dataType="int" direction="in" />
+    <parameter name="@i_valor1" dataType="char" direction="in" />
+    <parameter name="@i_valor2" dataType="char" direction="in" />
+    <parameter name="@i_tabla" dataType="varchar" direction="in" />
+    <parameter name="@i_codigo" dataType="char" direction="in" />
+    <parameter name="@i_descripcion" dataType="varchar" direction="in" />
+    <parameter name="@i_mascara" dataType="varchar" direction="in" />
+    <parameter name="@i_tipoper" dataType="char" direction="in" />
+    <parameter name="@i_provincia" dataType="char" direction="in" />
+    <parameter name="@i_aperrapida" dataType="char" direction="in" />
+    <parameter name="@i_bloquea" dataType="char" direction="in" />
+    <parameter name="@i_nacionalidad" dataType="varchar" direction="in" />
+    <parameter name="@i_digito" dataType="char" direction="in" />
+    <parameter name="@i_estado" dataType="char" direction="in" />
+    <parameter name="@i_secuencial" dataType="int" direction="in" />
+    <parameter name="@i_tpersona" dataType="char" direction="in" />
+    <parameter name="@i_desc_corta" dataType="varchar" direction="in" />
+    <parameter name="@i_compuesto" dataType="char" direction="in" />
+    <parameter name="@i_nro_compuesto" dataType="tinyint" direction="in" />
+    <parameter name="@i_adicional" dataType="tinyint" direction="in" />
+    <parameter name="@i_creacion" dataType="char" direction="in" />
+    <parameter name="@i_habilitado_mis" dataType="char" direction="in" />
+    <parameter name="@i_habilitado_usu" dataType="char" direction="in" />
+    <parameter name="@i_prefijo" dataType="varchar" direction="in" />
+    <parameter name="@i_subfijo" dataType="varchar" direction="in" />
+    <parameter name="@i_codigo_id" dataType="varchar" direction="in" />
+    <parameter name="@i_valor" dataType="varchar" direction="in" />
+    <parameter name="@o_secuencial" dataType="int" direction="out" />
+  </parameters>
+  <queries>
+    <query>
+      <columns>
+        <column name="SECUENCIAL" />
+        <column name="TIPO IDENTIFICACION" />
+        <column name="NOMBRE TIPO IDENTIDAD" />
+        <column name="MASCARA" />
+        <column name="TIPO PERSONA" />
+        <column name="PERMITIR APERTURA RAPIDA" />
+        <column name="NACIONALIDAD" />
+        <column name="MANEJA DIGITO" />
+        <column name="ESTADO" />
+        <column name="DESCRIPCION CORTA" />
+        <column name="COMPUESTO" />
+        <column name="NRO CAMPOS COMPUESTOS" />
+        <column name="CAMPO ADICIONAL" />
+        <column name="PERMITE CREACION" />
+        <column name="HABILITADO CLIENTES" />
+        <column name="HABILITADO USUARIOS" />
+        <column name="PREFIJO" />
+        <column name="SUBFIJO" />
+      </columns>
+      <queryText>SELECT  "SECUENCIAL" = td_secuencial,"TIPO IDENTIFICACION" = td_codigo,"NOMBRE TIPO IDENTIDAD" = td_descripcion,"MASCARA" = td_mascara,"TIPO PERSONA" = td_tipoper,"PERMITIR APERTURA RAPIDA" = td_aperrapida,"NACIONALIDAD" = td_nacionalidad,"MANEJA DIGITO" = td_digito,"ESTADO" = td_estado,"DESCRIPCION CORTA" = td_desc_corta,"COMPUESTO" = td_compuesto,"NRO CAMPOS COMPUESTOS" = td_nro_compuesto,"CAMPO ADICIONAL" = td_adicional,"PERMITE CREACION" = td_creacion,"HABILITADO CLIENTES" = td_habilitado_mis,"HABILITADO USUARIOS" = td_habilitado_usu,"PREFIJO" = td_prefijo,"SUBFIJO" = td_subfijo </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="SECUENCIAL" />
+        <column name="TIPO IDENTIFICACION" />
+        <column name="NOMBRE TIPO IDENTIDAD" />
+        <column name="MASCARA" />
+        <column name="TIPO PERSONA" />
+        <column name="PERMITIR APERTURA RAPIDA" />
+        <column name="NACIONALIDAD" />
+        <column name="MANEJA DIGITO" />
+        <column name="ESTADO" />
+        <column name="DESCRIPCION CORTA" />
+        <column name="COMPUESTO" />
+        <column name="NRO CAMPOS COMPUESTOS" />
+        <column name="CAMPO ADICIONAL" />
+        <column name="PERMITE CREACION" />
+        <column name="HABILITADO CLIENTES" />
+        <column name="HABILITADO USUARIOS" />
+        <column name="PREFIJO" />
+        <column name="SUBFIJO" />
+      </columns>
+      <queryText>SELECT  "SECUENCIAL" = td_secuencial,"TIPO IDENTIFICACION" = td_codigo,"NOMBRE TIPO IDENTIDAD" = td_descripcion,"MASCARA" = td_mascara,"TIPO PERSONA" = td_tipoper,"PERMITIR APERTURA RAPIDA" = td_aperrapida,"NACIONALIDAD" = td_nacionalidad,"MANEJA DIGITO" = td_digito,"ESTADO" = td_estado,"DESCRIPCION CORTA" = td_desc_corta,"COMPUESTO" = td_compuesto,"NRO CAMPOS COMPUESTOS" = td_nro_compuesto,"CAMPO ADICIONAL" = td_adicional,"PERMITE CREACION" = td_creacion,"HABILITADO CLIENTES" = td_habilitado_mis,"HABILITADO USUARIOS" = td_habilitado_usu,"PREFIJO" = td_prefijo,"SUBFIJO" = td_subfijo </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="{1}" />
+      </columns>
+      <queryText>SELECT  td_descripcion </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="SECUENCIAL" />
+        <column name="TIPO IDENTIFICACION" />
+        <column name="NOMBRE TIPO IDENTIDAD" />
+        <column name="MASCARA" />
+        <column name="TIPO PERSONA" />
+        <column name="VALIDA PROVINCIA" />
+        <column name="PERMITIR APERTURA RAPIDA" />
+        <column name="BLOQUEA ENTE" />
+        <column name="NACIONALIDAD" />
+        <column name="MANEJA DIGITO" />
+        <column name="ESTADO" />
+        <column name="COMPUESTO" />
+        <column name="No.COMPUESTO" />
+        <column name="No.ADICIONAL" />
+        <column name="CREACION" />
+        <column name="HABILITADO MIS" />
+        <column name="HABILITADO USU" />
+        <column name="PREFIJO" />
+        <column name="SUFIJO" />
+      </columns>
+      <queryText>SELECT  "SECUENCIAL" = td_secuencial,"TIPO IDENTIFICACION" = td_codigo,"NOMBRE TIPO IDENTIDAD" = td_descripcion,"MASCARA" = td_mascara,"TIPO PERSONA" = td_tipoper,"VALIDA PROVINCIA" = td_provincia,"PERMITIR APERTURA RAPIDA" = td_aperrapida,"BLOQUEA ENTE" = td_bloquea,"NACIONALIDAD" = td_nacionalidad,"MANEJA DIGITO" = td_digito,"ESTADO" = td_estado,"COMPUESTO" = td_compuesto,"No.COMPUESTO" = td_nro_compuesto,"No.ADICIONAL" = td_adicional,"CREACION" = td_creacion,"HABILITADO MIS" = td_habilitado_mis,"HABILITADO USU" = td_habilitado_usu,"PREFIJO" = td_prefijo,"SUFIJO" = td_subfijo </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="SECUENCIAL" />
+        <column name="TIPO IDENTIFICACION" />
+        <column name="NOMBRE TIPO IDENTIDAD" />
+        <column name="MASCARA" />
+        <column name="TIPO PERSONA" />
+        <column name="VALIDA PROVINCIA" />
+        <column name="PERMITIR APERTURA RAPIDA" />
+        <column name="BLOQUEA ENTE" />
+        <column name="NACIONALIDAD" />
+        <column name="MANEJA DIGITO" />
+        <column name="ESTADO" />
+        <column name="COMPUESTO" />
+        <column name="No.COMPUESTO" />
+        <column name="No.ADICIONAL" />
+        <column name="CREACION" />
+        <column name="HABILITADO MIS" />
+        <column name="HABILITADO USU" />
+        <column name="PREFIJO" />
+        <column name="SUFIJO" />
+      </columns>
+      <queryText>SELECT  "SECUENCIAL" = td_secuencial,"TIPO IDENTIFICACION" = td_codigo,"NOMBRE TIPO IDENTIDAD" = td_descripcion,"MASCARA" = td_mascara,"TIPO PERSONA" = td_tipoper,"VALIDA PROVINCIA" = td_provincia,"PERMITIR APERTURA RAPIDA" = td_aperrapida,"BLOQUEA ENTE" = td_bloquea,"NACIONALIDAD" = td_nacionalidad,"MANEJA DIGITO" = td_digito,"ESTADO" = td_estado,"COMPUESTO" = td_compuesto,"No.COMPUESTO" = td_nro_compuesto,"No.ADICIONAL" = td_adicional,"CREACION" = td_creacion,"HABILITADO MIS" = td_habilitado_mis,"HABILITADO USU" = td_habilitado_usu,"PREFIJO" = td_prefijo,"SUFIJO" = td_subfijo </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="SECUENCIAL" />
+        <column name="TIPO IDENTIFICACION" />
+        <column name="NOMBRE TIPO IDENTIDAD" />
+        <column name="MASCARA" />
+        <column name="TIPO PERSONA" />
+        <column name="VALIDA PROVINCIA" />
+        <column name="PERMITIR APERTURA RAPIDA" />
+        <column name="BLOQUEA ENTE" />
+        <column name="NACIONALIDAD" />
+        <column name="MANEJA DIGITO" />
+        <column name="ESTADO" />
+      </columns>
+      <queryText>SELECT  "SECUENCIAL" = td_secuencial,"TIPO IDENTIFICACION" = td_codigo,"NOMBRE TIPO IDENTIDAD" = td_descripcion,"MASCARA" = td_mascara,"TIPO PERSONA" = td_tipoper,"VALIDA PROVINCIA" = td_provincia,"PERMITIR APERTURA RAPIDA" = td_aperrapida,"BLOQUEA ENTE" = td_bloquea,"NACIONALIDAD" = td_nacionalidad,"MANEJA DIGITO" = td_digito,"ESTADO" = td_estado </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="{1}" />
+      </columns>
+      <queryText>SELECT  td_descripcion </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="DES. CORTA" />
+        <column name="{2}" />
+      </columns>
+      <queryText>SELECT  "DES. CORTA" = td_desc_corta,td_descripcion </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="TIPO ID." />
+        <column name="NOMBRE TIPO ID." />
+        <column name="MASCARA" />
+        <column name="TIPO PERSONA" />
+        <column name="VALIDA PROVINCIA" />
+        <column name="PERMITIR APERTURA RAPIDA" />
+        <column name="BLOQUEA ENTE" />
+        <column name="NACIONALIDAD" />
+        <column name="MANEJA DIGITO" />
+      </columns>
+      <queryText>SELECT  "TIPO ID." = td_codigo,"NOMBRE TIPO ID." = td_descripcion,"MASCARA" = td_mascara,"TIPO PERSONA" = td_tipoper,"VALIDA PROVINCIA" = td_provincia,"PERMITIR APERTURA RAPIDA" = td_aperrapida,"BLOQUEA ENTE" = td_bloquea,"NACIONALIDAD" = td_nacionalidad,"MANEJA DIGITO" = td_digito </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="TIPO ID." />
+        <column name="NOMBRE TIPO ID." />
+        <column name="MASCARA" />
+        <column name="TIPO PERSONA" />
+        <column name="VALIDA PROVINCIA" />
+        <column name="PERMITIR APERTURA RAPIDA" />
+        <column name="BLOQUEA ENTE" />
+        <column name="NACIONALIDAD" />
+        <column name="MANEJA DIGITO" />
+      </columns>
+      <queryText>SELECT  "TIPO ID." = td_codigo,"NOMBRE TIPO ID." = td_descripcion,"MASCARA" = td_mascara,"TIPO PERSONA" = td_tipoper,"VALIDA PROVINCIA" = td_provincia,"PERMITIR APERTURA RAPIDA" = td_aperrapida,"BLOQUEA ENTE" = td_bloquea,"NACIONALIDAD" = td_nacionalidad,"MANEJA DIGITO" = td_digito </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="TIPO ID." />
+        <column name="NOMBRE TIPO ID." />
+        <column name="MASCARA" />
+        <column name="TIPO PERSONA" />
+        <column name="VALIDA PROVINCIA" />
+        <column name="PERMITIR APERTURA RAPIDA" />
+        <column name="BLOQUEA ENTE" />
+        <column name="NACIONALIDAD" />
+        <column name="MANEJA DIGITO" />
+      </columns>
+      <queryText>SELECT  "TIPO ID." = td_codigo,"NOMBRE TIPO ID." = td_descripcion,"MASCARA" = td_mascara,"TIPO PERSONA" = td_tipoper,"VALIDA PROVINCIA" = td_provincia,"PERMITIR APERTURA RAPIDA" = td_aperrapida,"BLOQUEA ENTE" = td_bloquea,"NACIONALIDAD" = td_nacionalidad,"MANEJA DIGITO" = td_digito </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="TIPO ID." />
+        <column name="NOMBRE TIPO ID." />
+        <column name="MASCARA" />
+        <column name="TIPO PERSONA" />
+        <column name="VALIDA PROVINCIA" />
+        <column name="PERMITIR APERTURA RAPIDA" />
+        <column name="BLOQUEA ENTE" />
+        <column name="NACIONALIDAD" />
+        <column name="MANEJA DIGITO" />
+      </columns>
+      <queryText>SELECT  "TIPO ID." = td_codigo,"NOMBRE TIPO ID." = td_descripcion,"MASCARA" = td_mascara,"TIPO PERSONA" = td_tipoper,"VALIDA PROVINCIA" = td_provincia,"PERMITIR APERTURA RAPIDA" = td_aperrapida,"BLOQUEA ENTE" = td_bloquea,"NACIONALIDAD" = td_nacionalidad,"MANEJA DIGITO" = td_digito </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="TIPO ID." />
+        <column name="NOMBRE TIPO ID." />
+        <column name="MASCARA" />
+        <column name="TIPO PERSONA" />
+        <column name="VALIDA PROVINCIA" />
+        <column name="PERMITIR APERTURA RAPIDA" />
+        <column name="BLOQUEA ENTE" />
+        <column name="NACIONALIDAD" />
+        <column name="MANEJA DIGITO" />
+      </columns>
+      <queryText>SELECT  "TIPO ID." = td_codigo,"NOMBRE TIPO ID." = td_descripcion,"MASCARA" = td_mascara,"TIPO PERSONA" = td_tipoper,"VALIDA PROVINCIA" = td_provincia,"PERMITIR APERTURA RAPIDA" = td_aperrapida,"BLOQUEA ENTE" = td_bloquea,"NACIONALIDAD" = td_nacionalidad,"MANEJA DIGITO" = td_digito </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="TIPO ID." />
+        <column name="NOMBRE TIPO ID." />
+        <column name="MASCARA" />
+        <column name="TIPO PERSONA" />
+        <column name="VALIDA PROVINCIA" />
+        <column name="PERMITIR APERTURA RAPIDA" />
+        <column name="BLOQUEA ENTE" />
+        <column name="NACIONALIDAD" />
+        <column name="MANEJA DIGITO" />
+      </columns>
+      <queryText>SELECT  "TIPO ID." = td_codigo,"NOMBRE TIPO ID." = td_descripcion,"MASCARA" = td_mascara,"TIPO PERSONA" = td_tipoper,"VALIDA PROVINCIA" = td_provincia,"PERMITIR APERTURA RAPIDA" = td_aperrapida,"BLOQUEA ENTE" = td_bloquea,"NACIONALIDAD" = td_nacionalidad,"MANEJA DIGITO" = td_digito </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="SECUENCIAL" />
+        <column name="TIPO IDENTIFICACI�N" />
+        <column name="NOMBRE TIPO IDENTIDAD" />
+        <column name="MASCARA" />
+        <column name="TIPO PERSONA" />
+        <column name="VALIDA PROVINCIA" />
+        <column name="PERMITIR APERTURA RAPIDA" />
+        <column name="BLOQUEA ENTE" />
+        <column name="NACIONALIDAD" />
+        <column name="MANEJA DIGITO" />
+        <column name="ESTADO" />
+      </columns>
+      <queryText>SELECT  "SECUENCIAL" = td_secuencial,"TIPO IDENTIFICACI�N" = td_codigo,"NOMBRE TIPO IDENTIDAD" = td_descripcion,"MASCARA" = td_mascara,"TIPO PERSONA" = td_tipoper,"VALIDA PROVINCIA" = td_provincia,"PERMITIR APERTURA RAPIDA" = td_aperrapida,"BLOQUEA ENTE" = td_bloquea,"NACIONALIDAD" = td_nacionalidad,"MANEJA DIGITO" = td_digito,"ESTADO" = td_estado </queryText>
+    </query>
+  </queries>
+</procedure>

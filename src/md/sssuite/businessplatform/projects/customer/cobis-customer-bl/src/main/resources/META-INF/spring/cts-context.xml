@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+	<context:annotation-config />
+
+	<bean id="NationalityManagerImpl"
+		class="com.cobiscorp.ecobis.customer.bl.impl.NationalityManagerImpl">
+		<property name="countryDAO" ref="CountryDAO" />
+	</bean>
+	<bean id="CustomerManagerImpl"
+		class="com.cobiscorp.ecobis.customer.bl.impl.CustomerManagerImpl">
+		<property name="spOrchestrator" ref="spOrchestrator" />
+		<property name="customerDAO" ref="CustomerDAO" />
+	</bean>
+
+	<bean id="ContactManagerImpl"
+		class="com.cobiscorp.ecobis.customer.bl.impl.ContactManagerImpl">
+		<property name="contactDAO" ref="ContactDAO" />
+	</bean>
+
+	<bean id="AddressManagerImpl"
+		class="com.cobiscorp.ecobis.customer.bl.impl.AddressManagerImpl">
+		<property name="spOrchestrator" ref="spOrchestrator" />
+	</bean>
+
+	<bean id="PhoneManagerImpl" class="com.cobiscorp.ecobis.customer.bl.impl.PhoneManagerImpl">
+		<property name="phoneDAO" ref="PhoneDAO" />
+	</bean>
+
+	<bean id="QuickCustomerManagerImpl"
+		class="com.cobiscorp.ecobis.customer.bl.impl.QuickCustomerManagerImpl">
+		<property name="spOrchestrator" ref="spOrchestrator" />
+	</bean>
+
+	<bean id="CICManagerImpl" class="com.cobiscorp.ecobis.customer.bl.impl.CICManagerImpl">
+		<property name="spOrchestrator" ref="spOrchestrator" />
+	</bean>
+
+	<bean id="PadronCustomerManagerImpl" class="com.cobiscorp.ecobis.customer.bl.impl.PadronManagerImpl">
+		<property name="spOrchestrator" ref="spOrchestrator" />
+	</bean>
+
+	<bean id="IdCustomerManagerImp"
+		class="com.cobiscorp.ecobis.customer.bl.impl.IdCustomerManagerImpl">
+		<property name="spOrchestrator" ref="spOrchestrator" />
+	</bean>
+
+	<bean id="POBoxManagerImpl" class="com.cobiscorp.ecobis.customer.bl.impl.POBoxManagerImpl">
+		<property name="poBoxDAO" ref="POBoxDAO" />
+	</bean>
+
+	<bean id="ProductDetailImpl"
+		class="com.cobiscorp.ecobis.customer.bl.impl.ProductDetailManagerImpl">
+		<property name="seqnosService" ref="SeqnosService" />
+		<property name="productDetailDAO" ref="ProductDetailDAO" />
+	</bean>
+
+	<bean id="ClientManagerImpl" class="com.cobiscorp.ecobis.customer.bl.impl.ClientManagerImpl">
+		<property name="clientDAO" ref="ClientDAO" />
+	</bean>
+	<bean id="ActivityManagerImpl"
+		class="com.cobiscorp.ecobis.customer.bl.impl.ActivityManagerImpl">
+		<property name="activityDao" ref="ActivityDAO" />
+	</bean>
+
+	<bean id="BusinessSegmentManagerImpl"
+		class="com.cobiscorp.ecobis.customer.bl.impl.BusinessSegmentManagerImpl">
+		<property name="businessSegmentDAO" ref="BusinessSegmentDAO" />
+	</bean>
+
+	<bean id="CreationCustomerManagerImpl"
+		class="com.cobiscorp.ecobis.customer.bl.impl.CreationCustomerManagerImpl">
+		<property name="spOrchestrator" ref="spOrchestrator" />
+	</bean>
+</beans>

@@ -1,0 +1,45 @@
+
+
+
+use cobis
+go
+
+delete from cobis..ns_plantilla_sms where ps_id_plantilla = '304162'
+
+delete from cobis..ns_plantilla_sms where ps_id_plantilla = '304837'
+
+delete from cobis..ns_plantilla_sms where ps_id_plantilla = '304660'
+
+
+
+--- Eliminacion datos de ns_datos_mensaje
+
+delete from cobis..ns_datos_mensaje where dm_codigo = '01'
+
+
+delete from cobis..ns_datos_mensaje where dm_codigo = '02'
+
+
+delete from cobis..ns_datos_mensaje where dm_codigo = '03'
+
+
+delete from cobis..ns_datos_mensaje where dm_codigo = '04'
+
+
+delete from cobis..ns_datos_mensaje where dm_codigo = '05'
+
+
+delete from cobis..ns_datos_mensaje where dm_codigo = '06'
+
+
+delete from cobis..ns_datos_mensaje where dm_codigo = '07'
+
+
+delete from cobis..ns_datos_mensaje where dm_codigo = '08'
+
+
+
+-- Eliminacion del detalle de datos y mensajes 
+
+truncate table ns_datos_mensaje_detalle
+

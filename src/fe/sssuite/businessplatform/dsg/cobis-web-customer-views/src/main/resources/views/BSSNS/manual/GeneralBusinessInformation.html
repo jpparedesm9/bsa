@@ -1,0 +1,15 @@
+<div id="principal-form" ng-app="customer">
+    <div id="principal" ng-controller="formControllerQuestion" ng-init="loadSections()" kendo-validator="principal">
+      <div class="panel-group k-content" class="form-vertical" kendo-tab-strip k-animation="false" k-ng-delay="result.section" id="sections">
+        <ul>
+          <li ng-repeat="section in result.section" class="k-state-active" id="lb{{section.idSection}}" >{{section.label}}</li>
+        </ul>
+        <div ng-repeat="section in result.section" class="row form-group" generate-elements id ="section-{{section.idSection}}" k-ng-delay="section"></div>
+
+      </div>
+      
+      <div style="text-align: center; align-items: center;" class="navbar navbar-default navbar-fixed-bottom">
+        <button id="saveButton" ng-click="saveBySection()" k-ng-delay="result.section" class="btn btn-primary navbar-btn">Guardar</button>
+      </div>
+    </div>
+</div>

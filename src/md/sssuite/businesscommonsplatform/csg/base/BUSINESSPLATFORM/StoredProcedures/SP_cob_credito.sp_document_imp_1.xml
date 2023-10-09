@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<procedure>
+  <database>cob_credito</database>
+  <name>sp_document_imp</name>
+  <type>SYBASE</type>
+  <version>1</version>
+  <parameters>
+    <parameter name="@i_id_inst_proc" dataType="int" direction="in" />
+    <parameter name="@i_operacion" dataType="char" direction="in" />
+  </parameters>
+  <queries>
+    <query>
+      <columns>
+        <column name="document" />
+        <column name="order" />
+        <column name="description" />
+        <column name="product" />
+        <column name="template" />
+        <column name="data" />
+      </columns>
+      <queryText>SELECT  "Documento" = dm_codigo_doc,"Orden" = dp_orden,"Descripci�n" = dm_nombre_doc,"Producto" = dm_producto,"Plantilla" = dm_plantilla,"Dato" = "00" </queryText>
+    </query>
+  </queries>
+</procedure>

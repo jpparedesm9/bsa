@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<procedure>
+  <database>cob_cartera</database>
+  <name>sp_estados</name>
+  <type>SQLSERVER</type>
+  <version>1</version>
+  <parameters>
+    <parameter name="@i_operacion" dataType="char" direction="in" />
+    <parameter name="@i_toperacion" dataType="varchar" direction="in" />
+    <parameter name="@i_estado_ini" dataType="varchar" direction="in" />
+    <parameter name="@i_codigo" dataType="varchar" direction="in" />
+    <parameter name="@i_categoria" dataType="int" direction="in" />
+  </parameters>
+  <queries>
+    <query>
+      <columns>
+        <column name="Descripci�n" />
+      </columns>
+      <queryText>SELECT  "Descripci�n" = es_descripcion </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="Codigo" />
+        <column name="Descripci�n" />
+      </columns>
+      <queryText>SELECT  "Codigo" = es_codigo,"Descripci�n" = es_descripcion </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="{1}" />
+      </columns>
+      <queryText>SELECT  es_descripcion </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="Estados Posibles" />
+      </columns>
+      <queryText>SELECT  "Estados Posibles" = B.es_descripcion </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="{1}" />
+      </columns>
+      <queryText>SELECT  es_descripcion </queryText>
+    </query>
+  </queries>
+</procedure>

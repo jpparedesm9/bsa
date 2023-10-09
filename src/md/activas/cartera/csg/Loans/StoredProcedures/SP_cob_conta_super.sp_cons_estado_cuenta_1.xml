@@ -1,0 +1,119 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<procedure>
+  <database>cob_conta_super</database>
+  <name>sp_cons_estado_cuenta</name>
+  <type>SYBASE</type>
+  <version>1</version>
+  <parameters>
+    <parameter name="@i_operacion" dataType="varchar" direction="in" />
+    <parameter name="@i_banco" dataType="varchar" direction="in" />
+    <parameter name="@i_fecha" dataType="datetime" direction="in" />
+    <parameter name="@i_formato" dataType="int" direction="in" />
+    <parameter name="@i_secuencial" dataType="int" direction="in" />
+    <parameter name="@o_secuencial" dataType="int" direction="out" />
+    <parameter name="@o_mensaje" dataType="varchar" direction="out" />
+  </parameters>
+  <queries>
+    <query>
+      <columns>
+        <column name="Cod_Sucursal" />
+        <column name="Sucursal" />
+        <column name="Producto" />
+        <column name="Nombre_Cliente" />
+        <column name="Cod_Grupo" />
+        <column name="Nom_Grupo" />
+        <column name="RFC" />
+        <column name="Operacion" />
+        <column name="Calle" />
+        <column name="Numero" />
+        <column name="Parroquia" />
+        <column name="Delegacion" />
+        <column name="Codigo_Postal" />
+        <column name="Estado" />
+        <column name="Fecha_Inicio" />
+        <column name="Fecha_Reporte" />
+        <column name="Dia_Habil" />
+        <column name="Importes" />
+        <column name="Folio_Fiscal" />
+        <column name="Certificado" />
+        <column name="Sello_Digital" />
+        <column name="Sello_SAT" />
+        <column name="No_De_Serie_Certificado" />
+        <column name="Fecha_Certificacion" />
+      </columns>
+      <queryText></queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="Limite_Credito" />
+        <column name="Saldo_Inicial" />
+        <column name="Interes_Ordinario" />
+        <column name="Total_Credito" />
+        <column name="Capital" />
+        <column name="Interes_Par" />
+        <column name="Iva_Interes" />
+        <column name="Total_Parcial" />
+        <column name="Base_Calculo" />
+        <column name="Saldo_Final_Cap" />
+        <column name="Estado" />
+        <column name="Fecha_Inicio" />
+        <column name="Fecha_Fin" />
+        <column name="Frecuencia_Pago" />
+        <column name="Plazo" />
+        <column name="Dia_Pago" />
+        <column name="Tasa_Ordinaria" />
+        <column name="Tasa_Mensual" />
+        <column name="Dep_Garantias" />
+        <column name="Fec_Dep_Garantias" />
+        <column name="Cat" />
+        <column name="Comisiones" />
+      </columns>
+      <queryText></queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="Numero" />
+        <column name="Fecha_Operacion" />
+        <column name="Fecha_Pactada" />
+        <column name="Numero_Pago" />
+        <column name="Dias_Atraso" />
+        <column name="Movimiento" />
+        <column name="Total" />
+        <column name="Capital" />
+        <column name="Interes_Ord" />
+        <column name="Comision" />
+        <column name="Iva_Int" />
+        <column name="Iva_Con_Mora" />
+        <column name="Otros" />
+        <column name="Saldo_Capital" />
+      </columns>
+      <queryText></queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="Sum_Capital" />
+        <column name="Sum_interes" />
+        <column name="Sum_Iva" />
+        <column name="Sum_Pagos" />
+        <column name="Importe_Com" />
+        <column name="Tipo_Comision" />
+        <column name="Fecha_Cobro" />
+      </columns>
+      <queryText></queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="Numero" />
+        <column name="Fecha" />
+        <column name="Capital" />
+        <column name="Interes" />
+        <column name="Iva_Int" />
+        <column name="Comision" />
+        <column name="Iva_Com" />
+        <column name="Monto_Pago" />
+        <column name="Saldo" />
+      </columns>
+      <queryText></queryText>
+    </query>
+  </queries>
+</procedure>

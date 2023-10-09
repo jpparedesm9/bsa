@@ -1,0 +1,65 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical"
+              android:paddingBottom="@dimen/activity_vertical_margin"
+              android:paddingEnd="@dimen/activity_horizontal_margin"
+              android:paddingStart="@dimen/activity_horizontal_margin"
+              android:paddingTop="@dimen/activity_vertical_margin"
+              tools:context="com.cobis.gestionasesores.presentation.synchronization.upload.UploadFragment">
+
+    <TextView
+        android:id="@+id/text_sync_up"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/synchronization_up"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+        android:layout_marginBottom="16dp"/>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ProgressBar
+                android:id="@+id/progress_bar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="gone"/>
+
+            <Button
+                android:id="@+id/btn_synchronize"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="@string/sync_title"/>
+        </FrameLayout>
+
+    <TextView
+        style="@style/Base.TextAppearance.AppCompat.Body2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/synchronization_details"/>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <LinearLayout
+            android:id="@+id/sync_details"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"/>
+    </ScrollView>
+
+    <Button
+        android:id="@+id/btn_finish"
+        style="?borderlessButtonStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/sync_finish_btn"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="16dp"
+        android:visibility="gone"/>
+</LinearLayout>

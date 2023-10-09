@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+	<context:annotation-config />
+
+	<bean id="portfolioGeneralParameters"
+		class="com.cobiscorp.ecobis.fpm.portfolio.integration.service.impl.PortfolioGeneralParametersManager">
+		<property name="mappingFieldService" ref="mappingFieldServiceRef"></property>
+		<property name="itemService" ref="itemsManagerServiceRef"></property>
+		<property name="generalParametersManager" ref="generalParametersRef"></property>
+		<property name="defaultOperationService" ref="operationManagerRef"></property>
+		<property name="defaultValuesManager" ref="defaultValueServiceRef"></property>
+		<property name="bankingProductManager" ref="bankingProductServiceRef"></property>
+	</bean>
+
+	<bean id="portfolioBankingProduct"
+		class="com.cobiscorp.ecobis.fpm.portfolio.integration.service.impl.PortfolioBankingProductManager">
+		<property name="nodeProductManager" ref="nodeProductManagerRef"></property>
+		<property name="portfolioOperationManager" ref="operationManagerRef"></property>
+		<property name="catalogManager" ref="catalogServiceRef"></property>
+		<property name="bankingProductManager" ref="bankingProductServiceRef"></property>
+		<property name="mappingFieldManager" ref="mappingFieldServiceRef"></property>
+	</bean>
+
+	<bean id="portfolioItemsManager"
+		class="com.cobiscorp.ecobis.fpm.portfolio.integration.service.impl.PortfolioItemsManager">
+		<property name="itemPortfolioManagerService" ref="iItemPortfolioServiceRef"></property>
+		<property name="mappingFieldManagerService" ref="mappingFieldServiceRef"></property>
+		<property name="itemsManagerService" ref="itemsManagerServiceRef"></property>
+		<property name="ratePortfolioService" ref="ratePortfolioServiceRef"></property>
+		<property name="defaultOperationService" ref="operationManagerRef"></property>
+		<property name="defaultValuesManager" ref="defaultValueServiceRef"></property>
+		<property name="bankingProductManager" ref="bankingProductServiceRef"></property>
+	</bean>
+
+	<bean id="portfolioAccountingProfile"
+		class="com.cobiscorp.ecobis.fpm.portfolio.integration.service.impl.PortfolioAccountingProfileManager">
+		<property name="accountingProfileService" ref="accountingProfileServiceRef"></property>
+		<property name="trnOperationService" ref="trnOperationServiceRef"></property>
+	<property name="bankingProductHistoryService" ref="bankingProductHistoryServiceRef"></property>
+		
+	</bean>
+
+	<bean id="portfolioItemStatus"
+		class="com.cobiscorp.ecobis.fpm.portfolio.integration.service.impl.PortfolioItemStatusManager">
+		<property name="itemStatusService" ref="itemStatusServiceRef"></property>
+		<property name="itemStatusPortfolioService" ref="itemStatusPortfolioServiceRef"></property>
+		<property name="portfolioCatalogService" ref="portfolioCatalogServiceRef"></property>
+		<property name="itemsManagerService" ref="itemsManagerServiceRef"></property>
+		<property name="catalogManager" ref="catalogServiceRef"></property>
+		<property name="bankingProductManager" ref="bankingProductServiceRef"></property>
+	</bean>
+
+	<bean id="portfolioOperationStatus"
+		class="com.cobiscorp.ecobis.fpm.portfolio.integration.service.impl.PortfolioOperationStatusManager">		
+		<property name="portfolioCatalogService" ref="portfolioCatalogServiceRef"></property>
+		<property name="operationStatusService" ref="operationStatusServiceRef"></property>
+		<property name="opManualStatusService" ref="opManualStatusServiceRef"></property>
+	<property name="bankingProductHistoryService" ref="bankingProductHistoryServiceRef"></property>
+		
+	</bean>
+	
+	<bean id="portfolioPurposeManager"
+		class="com.cobiscorp.ecobis.fpm.portfolio.integration.service.impl.PortfolioPurposeManager">
+		<property name="purposePortfolioManagerService" ref="purposePortfolioServiceRef"></property>
+		<property name="purposeManagerService" ref="purposesServiceRef"/>				
+	<property name="bankingProductHistoryService" ref="bankingProductHistoryServiceRef"></property>
+					
+	</bean>
+	
+	<bean id="portfolioEconomicDestinationManager"
+		class="com.cobiscorp.ecobis.fpm.portfolio.integration.service.impl.PortfolioEconomicDestinationManager">
+		<property name="economicDestinationService" ref="economicDestinationServiceRef"></property>
+		<property name="destinationTypeService" ref="destinationTypeServiceRef"></property>										
+	</bean>
+	
+	<bean id="portfolioEconomicActivityManager"
+		class="com.cobiscorp.ecobis.fpm.portfolio.integration.service.impl.PortfolioEconomicActivityManager">
+		<property name="activityPortfolioManagerService" ref="activityTypeServiceRef"></property>
+		<property name="economicActivityManagerService" ref="economicActivityServiceRef"/>				
+	<property name="bankingProductHistoryService" ref="bankingProductHistoryServiceRef"></property>
+					
+	</bean>
+	
+	<bean id="portfolioUnitFunctionalityManager"
+		class="com.cobiscorp.ecobis.fpm.portfolio.integration.service.impl.PortfolioUnitFunctionalityValuesManager">
+		<property name="mappingFieldService" ref="mappingFieldServiceRef"></property>
+		<property name="defaultOperationService" ref="operationManagerRef"></property>
+		<property name="defaultValuesManager" ref="defaultValueServiceRef"></property>
+		<property name="unitFunctionalityServices" ref="unitFunctionalityRef"></property>
+	</bean>
+
+	<bean id="portfolioItemWarranties"
+		class="com.cobiscorp.ecobis.fpm.portfolio.integration.service.impl.PortfolioItemWarranties">
+		<property name="iItemWarrantyManagerService" ref="iItemWarrantyManagerServiceRef"></property>
+	</bean>	
+	
+</beans>

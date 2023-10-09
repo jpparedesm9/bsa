@@ -1,0 +1,1584 @@
+{
+  "id": {
+    "moduleId": "BUSIN",
+    "subModuleId": "commons",
+    "taskId": "T_VW_ININGOTONE04",
+    "version": "1.0.0"
+  },
+  "name": {
+    "$ref": "../../../../BUSIN/relations/componentKeys.json#/commons/Forms/T_VW_ININGOTONE04/name"
+  },
+  "modeEnabled": 4095,
+  "tempSaveStr": "F",
+  "autoCrudStr": "F",
+  "mainViewContainerId": "VC_VW_ININGOTONE04",
+  "customizationLayer": 0,
+  "customizationLayerDescription": "ECU",
+  "viewContainers": [
+    {
+      "id": {
+        "moduleId": "BUSIN",
+        "subModuleId": "commons",
+        "taskId": "T_VW_ININGOTONE04",
+        "viewContainerId": "VC_VW_ININGOTONE04",
+        "taskVersion": "1.0.0"
+      },
+      "name": "F_RefinancingOperationView",
+      "description": " ",
+      "layoutType": "Group",
+      "order": 0,
+      "options": 0,
+      "collapsedStr": "F",
+      "enabled": 4095,
+      "customizationLayer": 0,
+      "customizationLayerDescription": "ECU",
+      "columnsNum": 1,
+      "colSpan": 1,
+      "collapsed": false,
+      "view": {
+        "id": {
+          "viewId": "VW_ININGOTONE04",
+          "version": "1.0.0"
+        },
+        "description": " ",
+        "name": "RefinancingOperationView",
+        "customizationLayer": 0,
+        "customizationLayerDescription": "ECU",
+        "groups": [
+          {
+            "groupId": "GR_ININGOTONE04_08",
+            "refViewId": "VW_ININGOTONE04",
+            "refViewVersion": "1.0.0",
+            "collapsedStr": "F",
+            "columnsNum": 1,
+            "layoutType": "GroupLayout",
+            "enabled": 4095,
+            "visible": 4095,
+            "name": "Contenedor de Pestañas",
+            "order": 0,
+            "customizationLayer": 0,
+            "customizationLayerDescription": "ECU",
+            "colSpan": 1,
+            "orientation": "V",
+            "groups": [
+              {
+                "groupId": "GR_ININGOTONE04_35",
+                "refViewId": "VW_ININGOTONE04",
+                "refViewVersion": "1.0.0",
+                "collapsedStr": "F",
+                "columnsNum": 2,
+                "layoutType": "Group",
+                "enabled": 4095,
+                "visible": 4095,
+                "name": "Pestaña para RefinancingOperations",
+                "order": 1,
+                "customizationLayer": 0,
+                "customizationLayerDescription": "ECU",
+                "queryView": {
+                  "queryViewId": "QV_ITRIC1523_63",
+                  "deleteCommandEnabledStr": "F",
+                  "insertCommandEnabledStr": "T",
+                  "editCommandEnabledStr": "T",
+                  "confirmRowDeletionStr": "F",
+                  "multiSelectEnabledStr": "S",
+                  "rowCommandAppearance": 0,
+                  "editMode": "0",
+                  "allowSortingStr": "F",
+                  "allowPagingStr": "F",
+                  "name": "GridRefinancingOperations",
+                  "customizationLayer": 0,
+                  "customizationLayerDescription": "ECU",
+                  "hasDetailString": "F",
+                  "options": 2304,
+                  "hasDetail": false,
+                  "query": {
+                    "$ref": "../../../../BUSIN/FLCRE/queries/Q_ITRICNAN_1523.json#"
+                  },
+                  "queryId": "Q_ITRICNAN_1523",
+                  "queryVersion": "1.0.0",
+                  "userControl": {
+                    "userControlId": "Grid",
+                    "description": "Designer Grid",
+                    "customizationLayer": 0,
+                    "customizationLayerDescription": "ECU",
+                    "type": "I",
+                    "name": "Designer Grid"
+                  },
+                  "taskVersionDialog": "1.0.0",
+                  "queryViewCustomActions": [
+                    {
+                      "executionType": 1,
+                      "customActionId": "CEQV_203_QV_ITRIC1523_63_599",
+                      "enabled": "T",
+                      "name": "RowUpdating",
+                      "customizationLayer": 0,
+                      "customizationLayerDescription": "ECU",
+                      "commandType": 0,
+                      "queryViewEventType": {
+                        "eventId": 203,
+                        "name": "RowUpdating",
+                        "description": "Se ejecuta antes de que los datos modificados en una grilla sean comprometidos."
+                      },
+                      "thereAnServerEvent": false,
+                      "thereAnClientEvent": true,
+                      "thereAnCallbackEvent": false
+                    },
+                    {
+                      "executionType": 1,
+                      "customActionId": "CEQV_207_QV_ITRIC1523_63_479",
+                      "enabled": "T",
+                      "name": "BeforeEnterLineRow",
+                      "customizationLayer": 0,
+                      "customizationLayerDescription": "ECU",
+                      "commandType": 0,
+                      "queryViewEventType": {
+                        "eventId": 207,
+                        "name": "BeforeEnterInLineRow",
+                        "description": "Se ejecuta antes de la edición o inserción en linea de la grilla."
+                      },
+                      "thereAnServerEvent": false,
+                      "thereAnClientEvent": true,
+                      "thereAnCallbackEvent": false
+                    },
+                    {
+                      "executionType": 1,
+                      "customActionId": "CEQV_208_QV_ITRIC1523_63_840",
+                      "enabled": "T",
+                      "name": "SelectOperation",
+                      "customizationLayer": 0,
+                      "customizationLayerDescription": "ECU",
+                      "commandType": 0,
+                      "queryViewEventType": {
+                        "eventId": 208,
+                        "name": "RowSelecting",
+                        "description": "Se ejecuta antes de que los datos modificados en una grilla sean comprometidos."
+                      },
+                      "thereAnServerEvent": false,
+                      "thereAnClientEvent": true,
+                      "thereAnCallbackEvent": false
+                    },
+                    {
+                      "executionType": 1,
+                      "customActionId": "CEQV_201_QV_ITRIC1523_63_992",
+                      "enabled": "T",
+                      "name": "cmdNew",
+                      "customizationLayer": 0,
+                      "customizationLayerDescription": "ECU",
+                      "commandName": "cmdNew",
+                      "commandType": 0,
+                      "commandOrder": 1,
+                      "userControl": {
+                        "userControlId": "Button",
+                        "description": "Designer Button",
+                        "customizationLayer": 0,
+                        "customizationLayerDescription": "ECU",
+                        "type": "A",
+                        "name": "Designer Button"
+                      },
+                      "label": {
+                        "labelId": "DLB_BUSIN_AADIRBVDH_15548",
+                        "defaultValue": {
+                          "$ref": "../../../../BUSIN/assets/languages/BUSIN.json#/BUSIN/LBL/DLB_BUSIN_AADIRBVDH_15548"
+                        },
+                        "hasI18N": true,
+                        "moduleId": "BUSIN",
+                        "customizationLayer": 0,
+                        "customizationLayerDescription": "ECU",
+                        "i18N": "T"
+                      },
+                      "labelToolTip": {
+                        "labelId": "DLB_BUSIN_AADIRBVDH_15548",
+                        "defaultValue": {
+                          "$ref": "../../../../BUSIN/assets/languages/BUSIN.json#/BUSIN/LBL/DLB_BUSIN_AADIRBVDH_15548"
+                        },
+                        "hasI18N": true,
+                        "moduleId": "BUSIN",
+                        "customizationLayer": 0,
+                        "customizationLayerDescription": "ECU",
+                        "i18N": "T"
+                      },
+                      "queryViewEventType": {
+                        "eventId": 201,
+                        "name": "GridCommand",
+                        "description": "Evento para los botones de Grilla"
+                      },
+                      "thereAnServerEvent": false,
+                      "thereAnClientEvent": true,
+                      "thereAnCallbackEvent": false
+                    },
+                    {
+                      "executionType": 1,
+                      "customActionId": "CEQV_201_QV_ITRIC1523_63_978",
+                      "enabled": "T",
+                      "name": "DeleteOperation",
+                      "customizationLayer": 0,
+                      "customizationLayerDescription": "ECU",
+                      "commandName": "DeleteCommand",
+                      "commandType": 0,
+                      "commandOrder": 2,
+                      "userControl": {
+                        "userControlId": "Button",
+                        "description": "Designer Button",
+                        "customizationLayer": 0,
+                        "customizationLayerDescription": "ECU",
+                        "type": "A",
+                        "name": "Designer Button"
+                      },
+                      "label": {
+                        "labelId": "DLB_BUSIN_DELETEVPS_36022",
+                        "defaultValue": {
+                          "$ref": "../../../../BUSIN/assets/languages/BUSIN.json#/BUSIN/LBL/DLB_BUSIN_DELETEVPS_36022"
+                        },
+                        "hasI18N": true,
+                        "moduleId": "BUSIN",
+                        "customizationLayer": 0,
+                        "customizationLayerDescription": "ECU",
+                        "i18N": "T"
+                      },
+                      "labelToolTip": {
+                        "labelId": "DLB_BUSIN_DELETEVPS_36022",
+                        "defaultValue": {
+                          "$ref": "../../../../BUSIN/assets/languages/BUSIN.json#/BUSIN/LBL/DLB_BUSIN_DELETEVPS_36022"
+                        },
+                        "hasI18N": true,
+                        "moduleId": "BUSIN",
+                        "customizationLayer": 0,
+                        "customizationLayerDescription": "ECU",
+                        "i18N": "T"
+                      },
+                      "queryViewEventType": {
+                        "eventId": 201,
+                        "name": "GridCommand",
+                        "description": "Evento para los botones de Grilla"
+                      },
+                      "thereAnServerEvent": false,
+                      "thereAnClientEvent": true,
+                      "thereAnCallbackEvent": false
+                    }
+                  ],
+                  "deleteCommandEnabled": false,
+                  "insertCommandEnabled": true,
+                  "editCommandEnabled": true,
+                  "confirmRowDeletion": false,
+                  "allowSorting": false,
+                  "allowPaging": false,
+                  "includeQueryMembers": [
+                    "AT_RNA459DPER71",
+                    "AT_RNA459EANA92",
+                    "AT_RNA459ANOP06",
+                    "AT_RNA459CURA87",
+                    "AT_RNA459BANC23",
+                    "AT_RNA459OCBA30",
+                    "AT_RNA459GAMO94",
+                    "AT_RNA459RNUN43",
+                    "AT_RNA459EITY95",
+                    "AT_RNA459NAIC57",
+                    "AT_RNA459EATI72",
+                    "AT_RNA459PEEE15",
+                    "AT_RNA459DTGN73",
+                    "AT_RNA459SIAL87",
+                    "AT_RNA459AORN87",
+                    "AT_RNA459RATE39",
+                    "AT_RNA459AMEN20",
+                    "AT_RNA459APIT61",
+                    "AT_RNA459STTS89",
+                    "AT_RNA459EPIN83",
+                    "AT_RNA459RORY08",
+                    "AT_RNA459EPER64"
+                  ],
+                  "entityName": "RefinancingOperations",
+                  "customEvents": [],
+                  "actions": [
+                    "Create",
+                    "Update"
+                  ]
+                },
+                "queryViewId": "QV_ITRIC1523_63",
+                "colSpan": 1,
+                "orientation": "V",
+                "entity": {
+                  "$ref": "../../../../BUSIN/entities/EN_RNANCOPAI459.json#"
+                },
+                "visualAttributes": [
+                  {
+                    "visualAttributeId": "VA_ININGOTONE0435_SIAL979",
+                    "colSpan": 1,
+                    "enabled": 4095,
+                    "order": 0,
+                    "queryVersion": " ",
+                    "readOnly": 0,
+                    "rowSpan": 0,
+                    "visible": 0,
+                    "width": "80",
+                    "textRows": 0,
+                    "name": "IsBase",
+                    "customizationLayer": 0,
+                    "customizationLayerDescription": "ECU",
+                    "attribute": {
+                      "$ref": "../../../../BUSIN/entities/EN_RNANCOPAI459.json#/attributes/AT_RNA459SIAL87"
+                    },
+                    "label": {
+                      "labelId": "DLB_BUSIN_SELECIOAR_14656",
+                      "defaultValue": {
+                        "$ref": "../../../../BUSIN/assets/languages/BUSIN.json#/BUSIN/LBL/DLB_BUSIN_SELECIOAR_14656"
+                      },
+                      "hasI18N": true,
+                      "moduleId": "BUSIN",
+                      "customizationLayer": 0,
+                      "customizationLayerDescription": "ECU",
+                      "i18N": "T"
+                    },
+                    "userControl": {
+                      "userControlId": "CheckBox",
+                      "description": "Designer CheckBox",
+                      "customizationLayer": 0,
+                      "customizationLayerDescription": "ECU",
+                      "type": "I",
+                      "name": "Designer CheckBox"
+                    },
+                    "customEvents": [
+                      {
+                        "executionType": 1,
+                        "customEventId": "CEVA_104_ONE0435_SIAL979_358",
+                        "enabled": "T",
+                        "customizationLayer": 0,
+                        "customizationLayerDescription": "ECU",
+                        "visualAttributeEventType": {
+                          "eventId": 104,
+                          "name": "Changed",
+                          "description": "Se ejecuta al cambiar el valor de un VisualAttribute"
+                        },
+                        "thereAnServerEvent": false,
+                        "thereAnClientEvent": true,
+                        "thereAnCallbackEvent": false,
+                        "isEnabled": true
+                      }
+                    ],
+                    "cacheDuration": 0,
+                    "options": 0,
+                    "elementColumnSpan": 1,
+                    "elementId": "VA_ININGOTONE0435_SIAL979",
+                    "aggregateId": null,
+                    "aggregate": null,
+                    "style": null,
+                    "componentStyle": null,
+                    "include": 4095,
+                    "responsiveLayouts": null,
+                    "responsivity": false,
+                    "attributeValidations": []
+                  },
+                  {
+                    "visualAttributeId": "VA_ININGOTONE0435_DPER910",
+                    "colSpan": 1,
+                    "enabled": 4095,
+                    "order": 1,
+                    "queryVersion": " ",
+                    "readOnly": 8,
+                    "rowSpan": 0,
+                    "visible": 0,
+                    "textRows": 0,
+                    "name": "IdOperation",
+                    "customizationLayer": 0,
+                    "customizationLayerDescription": "ECU",
+                    "attribute": {
+                      "$ref": "../../../../BUSIN/entities/EN_RNANCOPAI459.json#/attributes/AT_RNA459DPER71"
+                    },
+                    "label": {
+                      "labelId": "DLB_BUSIN_OPEIONBER_32159",
+                      "defaultValue": {
+                        "$ref": "../../../../BUSIN/assets/languages/BUSIN.json#/BUSIN/LBL/DLB_BUSIN_OPEIONBER_32159"
+                      },
+                      "hasI18N": true,
+                      "moduleId": "BUSIN",
+                      "customizationLayer": 0,
+                      "customizationLayerDescription": "ECU",
+                      "i18N": "T"
+                    },
+                    "userControl": {
+                      "userControlId": "TextInputBox",
+                      "description": "Designer TextBox",
+                      "customizationLayer": 0,
+                      "customizationLayerDescription": "ECU",
+                      "type": "I",
+                      "name": "Designer TextBox"
+                    },
+                    "labelToolTip": {
+                      "labelId": "DLB_BUSIN_OPEIONBER_32159",
+                      "defaultValue": {
+                        "$ref": "../../../../BUSIN/assets/languages/BUSIN.json#/BUSIN/LBL/DLB_BUSIN_OPEIONBER_32159"
+                      },
+                      "hasI18N": true,
+                      "moduleId": "BUSIN",
+                      "customizationLayer": 0,
+                      "customizationLayerDescription": "ECU",
+                      "i18N": "T"
+                    },
+                    "cacheDuration": 0,
+                    "options": 0,
+                    "elementColumnSpan": 1,
+                    "elementId": "VA_ININGOTONE0435_DPER910",
+                    "customEvents": [],
+                    "aggregateId": null,
+                    "aggregate": null,
+                    "width": null,
+                    "style": null,
+                    "componentStyle": null,
+                    "include": 4095,
+                    "responsiveLayouts": null,
+                    "responsivity": false,
+                    "attributeValidations": []
+                  },
+                  {
+                    "visualAttributeId": "VA_ININGOTONE0435_EANA700",
+                    "colSpan": 1,
+                    "enabled": 4095,
+                    "order": 2,
+                    "queryVersion": " ",
+                    "readOnly": 8,
+                    "rowSpan": 0,
+                    "visible": 4095,
+                    "width": "140",
+                    "textRows": 0,
+                    "name": "OperationBank",
+                    "customizationLayer": 0,
+                    "customizationLayerDescription": "ECU",
+                    "attribute": {
+                      "$ref": "../../../../BUSIN/entities/EN_RNANCOPAI459.json#/attributes/AT_RNA459EANA92"
+                    },
+                    "label": {
+                      "labelId": "DLB_BUSIN_OPEIONBER_32159",
+                      "defaultValue": {
+                        "$ref": "../../../../BUSIN/assets/languages/BUSIN.json#/BUSIN/LBL/DLB_BUSIN_OPEIONBER_32159"
+                      },
+                      "hasI18N": true,
+                      "moduleId": "BUSIN",
+                      "customizationLayer": 0,
+                      "customizationLayerDescription": "ECU",
+                      "i18N": "T"
+                    },
+                    "userControl": {
+                      "userControlId": "TextInputBox",
+                      "description": "Designer TextBox",
+                      "customizationLayer": 0,
+                      "customizationLayerDescription": "ECU",
+                      "type": "I",
+                      "name": "Designer TextBox"
+                    },
+                    "labelToolTip": {
+                      "labelId": "DLB_BUSIN_OPEIONBER_32159",
+                      "defaultValue": {
+                        "$ref": "../../../../BUSIN/assets/languages/BUSIN.json#/BUSIN/LBL/DLB_BUSIN_OPEIONBER_32159"
+                      },
+                      "hasI18N": true,
+                      "moduleId": "BUSIN",
+                      "customizationLayer": 0,
+                      "customizationLayerDescription": "ECU",
+                      "i18N": "T"
+                    },
+                    "cacheDuration": 0,
+                    "options": 0,
+                    "elementColumnSpan": 1,
+                    "elementId": "VA_ININGOTONE0435_EANA700",
+                    "customEvents": [],
+                    "aggregateId": null,
+                    "aggregate": null,
+                    "style": null,
+                    "componentStyle": null,
+                    "include": 4095,
+                    "responsiveLayouts": null,
+                    "responsivity": false,
+                    "attributeValidations": []
+                  },
+                  {
+                    "visualAttributeId": "VA_ININGOTONE0435_ANOP470",
+                    "colSpan": 1,
+                    "enabled": 4095,
+                    "order": 3,
+                    "queryVersion": " ",
+                    "readOnly": 8,
+                    "rowSpan": 0,
+                    "visible": 4095,
+                    "textRows": 0,
+                    "catalogName": "cr_opcion_refinan",
+                    "name": "RefinancingOption",
+                    "customizationLayer": 0,
+                    "customizationLayerDescription": "ECU",
+                    "attribute": {
+                      "$ref": "../../../../BUSIN/entities/EN_RNANCOPAI459.json#/attributes/AT_RNA459ANOP06"
+                    },
+                    "label": {
+                      "labelId": "DLB_BUSIN_RFNANIPTN_49588",
+                      "defaultValue": {
+                        "$ref": "../../../../BUSIN/assets/languages/BUSIN.json#/BUSIN/LBL/DLB_BUSIN_RFNANIPTN_49588"
+                      },
+                      "hasI18N": true,
+                      "moduleId": "BUSIN",
+                      "customizationLayer": 0,
+                      "customizationLayerDescription": "ECU",
+                      "i18N": "T"
+                    },
+                    "userControl": {
+                      "userControlId": "ComboBox",
+                      "description": "Designer ComboBox",
+                      "customizationLayer": 0,
+                      "customizationLayerDescription": "ECU",
+                      "type": "I",
+                      "name": "Designer ComboBox"
+                    },
+                    "labelToolTip": {
+                      "labelId": "DLB_BUSIN_RFNANIPTN_49588",
+                      "defaultValue": {
+                        "$ref": "../../../../BUSIN/assets/languages/BUSIN.json#/BUSIN/LBL/DLB_BUSIN_RFNANIPTN_49588"
+                      },
+                      "hasI18N": true,
+                      "moduleId": "BUSIN",
+                      "customizationLayer": 0,
+                      "customizationLayerDescription": "ECU",
+                      "i18N": "T"
+                    },
+                    "cacheDuration": 0,
+                    "options": 0,
+                    "elementColumnSpan": 1,
+                    "elementId": "VA_ININGOTONE0435_ANOP470",
+                    "customEvents": [],
+                    "aggregateId": null,
+                    "aggregate": null,
+                    "width": null,
+                    "style": null,
+                    "componentStyle": null,
+                    "include": 4095,
+                    "responsiveLayouts": null,
+                    "responsivity": false,
+                    "attributeValidations": []
+                  },
+                  {
+                    "visualAttributeId": "VA_ININGOTONE0435_CURA309",
+                    "colSpan": 1,
+                    "enabled": 4095,
+                    "order": 4,
+                    "queryVersion": " ",
+                    "readOnly": 8,
+                    "rowSpan": 0,
+                    "visible": 4095,
+                    "width": "150",
+                    "textRows": 0,
+                    "catalogName": "cl_moneda",
+                    "name": "CurrencyOperation",
+                    "customizationLayer": 0,
+                    "customizationLayerDescription": "ECU",
+                    "attribute": {
+                      "$ref": "../../../../BUSIN/entities/EN_RNANCOPAI459.json#/attributes/AT_RNA459CURA87"
+                    },
+                    "label": {
+                      "labelId": "DLB_BUSIN_MONEDAQAQ_04700",
+                      "defaultValue": {
+                        "$ref": "../../../../BUSIN/assets/languages/BUSIN.json#/BUSIN/LBL/DLB_BUSIN_MONEDAQAQ_04700"
+                      },
+                      "hasI18N": true,
+                      "moduleId": "BUSIN",
+                      "customizationLayer": 0,
+                      "customizationLayerDescription": "ECU",
+                      "i18N": "T"
+                    },
+                    "userControl": {
+                      "userControlId": "ComboBox",
+                      "description": "Designer ComboBox",
+                      "customizationLayer": 0,
+                      "customizationLayerDescription": "ECU",
+                      "type": "I",
+                      "name": "Designer ComboBox"
+                    },
+                    "labelToolTip": {
+                      "labelId": "DLB_BUSIN_MONEDAQAQ_04700",
+                      "defaultValue": {
+                        "$ref": "../../../../BUSIN/assets/languages/BUSIN.json#/BUSIN/LBL/DLB_BUSIN_MONEDAQAQ_04700"
+                      },
+                      "hasI18N": true,
+                      "moduleId": "BUSIN",
+                      "customizationLayer": 0,
+                      "customizationLayerDescription": "ECU",
+                      "i18N": "T"
+                    },
+                    "cacheDuration": 0,
+                    "options": 0,
+                    "elementColumnSpan": 1,
+                    "elementId": "VA_ININGOTONE0435_CURA309",
+                    "customEvents": [],
+                    "aggregateId": null,
+                    "aggregate": null,
+                    "style": null,
+                    "componentStyle": null,
+                    "include": 4095,
+                    "responsiveLayouts": null,
+                    "responsivity": false,
+                    "attributeValidations": []
+                  },
+                  {
+                    "visualAttributeId": "VA_ININGOTONE0435_BANC052",
+                    "colSpan": 1,
+                    "enabled": 4095,
+                    "format": "N:#,##0.00",
+                    "order": 5,
+                    "queryVersion": " ",
+                    "readOnly": 8,
+                    "rowSpan": 0,
+                    "visible": 4095,
+                    "width": "100",
+                    "textRows": 0,
+                    "name": "Balance",
+                    "customizationLayer": 0,
+                    "customizationLayerDescription": "ECU",
+                    "attribute": {
+                      "$ref": "../../../../BUSIN/entities/EN_RNANCOPAI459.json#/attributes/AT_RNA459BANC23"
+                    },
+                    "label": {
+                      "labelId": "DLB_BUSIN_BALANCESI_24039",
+                      "defaultValue": {
+                        "$ref": "../../../../BUSIN/assets/languages/BUSIN.json#/BUSIN/LBL/DLB_BUSIN_BALANCESI_24039"
+                      },
+                      "hasI18N": true,
+                      "moduleId": "BUSIN",
+                      "customizationLayer": 0,
+                      "customizationLayerDescription": "ECU",
+                      "i18N": "T"
+                    },
+                    "userControl": {
+                      "userControlId": "TextInputBox",
+                      "description": "Designer TextBox",
+                      "customizationLayer": 0,
+                      "customizationLayerDescription": "ECU",
+                      "type": "I",
+                      "name": "Designer TextBox"
+                    },
+                    "labelToolTip": {
+                      "labelId": "DLB_BUSIN_BALANCESI_24039",
+                      "defaultValue": {
+                        "$ref": "../../../../BUSIN/assets/languages/BUSIN.json#/BUSIN/LBL/DLB_BUSIN_BALANCESI_24039"
+                      },
+                      "hasI18N": true,
+                      "moduleId": "BUSIN",
+                      "customizationLayer": 0,
+                      "customizationLayerDescription": "ECU",
+                      "i18N": "T"
+                    },
+                    "cacheDuration": 0,
+                    "options": 0,
+                    "elementColumnSpan": 1,
+                    "elementId": "VA_ININGOTONE0435_BANC052",
+                    "customEvents": [],
+                    "aggregateId": null,
+                    "aggregate": null,
+                    "style": null,
+                    "componentStyle": null,
+                    "include": 4095,
+                    "responsiveLayouts": null,
+                    "responsivity": false,
+                    "attributeValidations": []
+                  },
+                  {
+                    "visualAttributeId": "VA_ININGOTONE0435_OCBA092",
+                    "colSpan": 1,
+                    "enabled": 4095,
+                    "format": "N:#,##0.00",
+                    "order": 6,
+                    "queryVersion": " ",
+                    "readOnly": 8,
+                    "rowSpan": 0,
+                    "visible": 4095,
+                    "width": "100",
+                    "textRows": 0,
+                    "name": "LocalCurrencyBalance",
+                    "customizationLayer": 0,
+                    "customizationLayerDescription": "ECU",
+                    "attribute": {
+                      "$ref": "../../../../BUSIN/entities/EN_RNANCOPAI459.json#/attributes/AT_RNA459OCBA30"
+                    },
+                    "label": {
+                      "labelId": "DLB_BUSIN_LORRNYANE_43671",
+                      "defaultValue": {
+                        "$ref": "../../../../BUSIN/assets/languages/BUSIN.json#/BUSIN/LBL/DLB_BUSIN_LORRNYANE_43671"
+                      },
+                      "hasI18N": true,
+                      "moduleId": "BUSIN",
+                      "customizationLayer": 0,
+                      "customizationLayerDescription": "ECU",
+                      "i18N": "T"
+                    },
+                    "userControl": {
+                      "userControlId": "TextInputBox",
+                      "description": "Designer TextBox",
+                      "customizationLayer": 0,
+                      "customizationLayerDescription": "ECU",
+                      "type": "I",
+                      "name": "Designer TextBox"
+                    },
+                    "labelToolTip": {
+                      "labelId": "DLB_BUSIN_LORRNYANE_43671",
+                      "defaultValue": {
+                        "$ref": "../../../../BUSIN/assets/languages/BUSIN.json#/BUSIN/LBL/DLB_BUSIN_LORRNYANE_43671"
+                      },
+                      "hasI18N": true,
+                      "moduleId": "BUSIN",
+                      "customizationLayer": 0,
+                      "customizationLayerDescription": "ECU",
+                      "i18N": "T"
+                    },
+                    "cacheDuration": 0,
+                    "options": 0,
+                    "elementColumnSpan": 1,
+                    "elementId": "VA_ININGOTONE0435_OCBA092",
+                    "customEvents": [],
+                    "aggregateId": null,
+                    "aggregate": null,
+                    "style": null,
+                    "componentStyle": null,
+                    "include": 4095,
+                    "responsiveLayouts": null,
+                    "responsivity": false,
+                    "attributeValidations": []
+                  },
+                  {
+                    "visualAttributeId": "VA_ININGOTONE0435_GAMO302",
+                    "colSpan": 1,
+                    "enabled": 4095,
+                    "format": "N:#,##0.00",
+                    "order": 7,
+                    "queryVersion": " ",
+                    "readOnly": 8,
+                    "rowSpan": 0,
+                    "visible": 4095,
+                    "width": "100",
+                    "textRows": 0,
+                    "name": "OriginalAmount",
+                    "customizationLayer": 0,
+                    "customizationLayerDescription": "ECU",
+                    "attribute": {
+                      "$ref": "../../../../BUSIN/entities/EN_RNANCOPAI459.json#/attributes/AT_RNA459GAMO94"
+                    },
+                    "label": {
+                      "labelId": "DLB_BUSIN_ORILAMOUN_89859",
+                      "defaultValue": {
+                        "$ref": "../../../../BUSIN/assets/languages/BUSIN.json#/BUSIN/LBL/DLB_BUSIN_ORILAMOUN_89859"
+                      },
+                      "hasI18N": true,
+                      "moduleId": "BUSIN",
+                      "customizationLayer": 0,
+                      "customizationLayerDescription": "ECU",
+                      "i18N": "T"
+                    },
+                    "userControl": {
+                      "userControlId": "TextInputBox",
+                      "description": "Designer TextBox",
+                      "customizationLayer": 0,
+                      "customizationLayerDescription": "ECU",
+                      "type": "I",
+                      "name": "Designer TextBox"
+                    },
+                    "labelToolTip": {
+                      "labelId": "DLB_BUSIN_ORILAMOUN_89859",
+                      "defaultValue": {
+                        "$ref": "../../../../BUSIN/assets/languages/BUSIN.json#/BUSIN/LBL/DLB_BUSIN_ORILAMOUN_89859"
+                      },
+                      "hasI18N": true,
+                      "moduleId": "BUSIN",
+                      "customizationLayer": 0,
+                      "customizationLayerDescription": "ECU",
+                      "i18N": "T"
+                    },
+                    "cacheDuration": 0,
+                    "options": 0,
+                    "elementColumnSpan": 1,
+                    "elementId": "VA_ININGOTONE0435_GAMO302",
+                    "customEvents": [],
+                    "aggregateId": null,
+                    "aggregate": null,
+                    "style": null,
+                    "componentStyle": null,
+                    "include": 4095,
+                    "responsiveLayouts": null,
+                    "responsivity": false,
+                    "attributeValidations": []
+                  },
+                  {
+                    "visualAttributeId": "VA_ININGOTONE0435_RNUN861",
+                    "colSpan": 1,
+                    "enabled": 4095,
+                    "format": "N:#,##0.00",
+                    "order": 8,
+                    "queryVersion": " ",
+                    "readOnly": 8,
+                    "rowSpan": 0,
+                    "visible": 4095,
+                    "width": "100",
+                    "textRows": 0,
+                    "name": "LocalCurrencyAmount",
+                    "customizationLayer": 0,
+                    "customizationLayerDescription": "ECU",
+                    "attribute": {
+                      "$ref": "../../../../BUSIN/entities/EN_RNANCOPAI459.json#/attributes/AT_RNA459RNUN43"
+                    },
+                    "label": {
+                      "labelId": "DLB_BUSIN_MOTLOCENC_66188",
+                      "defaultValue": {
+                        "$ref": "../../../../BUSIN/assets/languages/BUSIN.json#/BUSIN/LBL/DLB_BUSIN_MOTLOCENC_66188"
+                      },
+                      "hasI18N": true,
+                      "moduleId": "BUSIN",
+                      "customizationLayer": 0,
+                      "customizationLayerDescription": "ECU",
+                      "i18N": "T"
+                    },
+                    "userControl": {
+                      "userControlId": "TextInputBox",
+                      "description": "Designer TextBox",
+                      "customizationLayer": 0,
+                      "customizationLayerDescription": "ECU",
+                      "type": "I",
+                      "name": "Designer TextBox"
+                    },
+                    "labelToolTip": {
+                      "labelId": "DLB_BUSIN_MOTLOCENC_66188",
+                      "defaultValue": {
+                        "$ref": "../../../../BUSIN/assets/languages/BUSIN.json#/BUSIN/LBL/DLB_BUSIN_MOTLOCENC_66188"
+                      },
+                      "hasI18N": true,
+                      "moduleId": "BUSIN",
+                      "customizationLayer": 0,
+                      "customizationLayerDescription": "ECU",
+                      "i18N": "T"
+                    },
+                    "cacheDuration": 0,
+                    "options": 0,
+                    "elementColumnSpan": 1,
+                    "elementId": "VA_ININGOTONE0435_RNUN861",
+                    "customEvents": [],
+                    "aggregateId": null,
+                    "aggregate": null,
+                    "style": null,
+                    "componentStyle": null,
+                    "include": 4095,
+                    "responsiveLayouts": null,
+                    "responsivity": false,
+                    "attributeValidations": []
+                  },
+                  {
+                    "visualAttributeId": "VA_ININGOTONE0435_EPER936",
+                    "colSpan": 1,
+                    "enabled": 4095,
+                    "order": 9,
+                    "queryVersion": " ",
+                    "readOnly": 8,
+                    "rowSpan": 0,
+                    "visible": 4095,
+                    "width": "220",
+                    "textRows": 0,
+                    "name": "TypeOperation",
+                    "customizationLayer": 0,
+                    "customizationLayerDescription": "ECU",
+                    "attribute": {
+                      "$ref": "../../../../BUSIN/entities/EN_RNANCOPAI459.json#/attributes/AT_RNA459EPER64"
+                    },
+                    "label": {
+                      "labelId": "DLB_BUSIN_CREDITYPE_12941",
+                      "defaultValue": {
+                        "$ref": "../../../../BUSIN/assets/languages/BUSIN.json#/BUSIN/LBL/DLB_BUSIN_CREDITYPE_12941"
+                      },
+                      "hasI18N": true,
+                      "moduleId": "BUSIN",
+                      "customizationLayer": 0,
+                      "customizationLayerDescription": "ECU",
+                      "i18N": "T"
+                    },
+                    "userControl": {
+                      "userControlId": "TextInputBox",
+                      "description": "Designer TextBox",
+                      "customizationLayer": 0,
+                      "customizationLayerDescription": "ECU",
+                      "type": "I",
+                      "name": "Designer TextBox"
+                    },
+                    "labelToolTip": {
+                      "labelId": "DLB_BUSIN_CREDITYPE_12941",
+                      "defaultValue": {
+                        "$ref": "../../../../BUSIN/assets/languages/BUSIN.json#/BUSIN/LBL/DLB_BUSIN_CREDITYPE_12941"
+                      },
+                      "hasI18N": true,
+                      "moduleId": "BUSIN",
+                      "customizationLayer": 0,
+                      "customizationLayerDescription": "ECU",
+                      "i18N": "T"
+                    },
+                    "cacheDuration": 0,
+                    "options": 0,
+                    "elementColumnSpan": 1,
+                    "elementId": "VA_ININGOTONE0435_EPER936",
+                    "customEvents": [],
+                    "aggregateId": null,
+                    "aggregate": null,
+                    "style": null,
+                    "componentStyle": null,
+                    "include": 4095,
+                    "responsiveLayouts": null,
+                    "responsivity": false,
+                    "attributeValidations": []
+                  },
+                  {
+                    "visualAttributeId": "VA_ININGOTONE0435_EITY549",
+                    "colSpan": 1,
+                    "enabled": 4095,
+                    "order": 10,
+                    "queryVersion": " ",
+                    "readOnly": 8,
+                    "rowSpan": 0,
+                    "visible": 4095,
+                    "width": "220",
+                    "textRows": 0,
+                    "catalogName": "ca_toperacion",
+                    "name": "CreditType",
+                    "customizationLayer": 0,
+                    "customizationLayerDescription": "ECU",
+                    "attribute": {
+                      "$ref": "../../../../BUSIN/entities/EN_RNANCOPAI459.json#/attributes/AT_RNA459EITY95"
+                    },
+                    "label": {
+                      "labelId": "DLB_BUSIN_CREDITYPE_12941",
+                      "defaultValue": {
+                        "$ref": "../../../../BUSIN/assets/languages/BUSIN.json#/BUSIN/LBL/DLB_BUSIN_CREDITYPE_12941"
+                      },
+                      "hasI18N": true,
+                      "moduleId": "BUSIN",
+                      "customizationLayer": 0,
+                      "customizationLayerDescription": "ECU",
+                      "i18N": "T"
+                    },
+                    "userControl": {
+                      "userControlId": "ComboBox",
+                      "description": "Designer ComboBox",
+                      "customizationLayer": 0,
+                      "customizationLayerDescription": "ECU",
+                      "type": "I",
+                      "name": "Designer ComboBox"
+                    },
+                    "labelToolTip": {
+                      "labelId": "DLB_BUSIN_CREDITYPE_12941",
+                      "defaultValue": {
+                        "$ref": "../../../../BUSIN/assets/languages/BUSIN.json#/BUSIN/LBL/DLB_BUSIN_CREDITYPE_12941"
+                      },
+                      "hasI18N": true,
+                      "moduleId": "BUSIN",
+                      "customizationLayer": 0,
+                      "customizationLayerDescription": "ECU",
+                      "i18N": "T"
+                    },
+                    "cacheDuration": 0,
+                    "options": 1,
+                    "elementColumnSpan": 1,
+                    "elementId": "VA_ININGOTONE0435_EITY549",
+                    "customEvents": [],
+                    "aggregateId": null,
+                    "aggregate": null,
+                    "style": null,
+                    "componentStyle": null,
+                    "include": 4095,
+                    "responsiveLayouts": null,
+                    "responsivity": false,
+                    "attributeValidations": []
+                  },
+                  {
+                    "visualAttributeId": "VA_ININGOTONE0435_EPIN514",
+                    "colSpan": 1,
+                    "enabled": 4095,
+                    "order": 11,
+                    "queryVersion": " ",
+                    "readOnly": 8,
+                    "rowSpan": 0,
+                    "visible": 4095,
+                    "width": "130",
+                    "textRows": 0,
+                    "name": "ExpirationDate",
+                    "customizationLayer": 0,
+                    "customizationLayerDescription": "ECU",
+                    "attribute": {
+                      "$ref": "../../../../BUSIN/entities/EN_RNANCOPAI459.json#/attributes/AT_RNA459EPIN83"
+                    },
+                    "label": {
+                      "labelId": "DLB_BUSIN_EXIRTIONA_39042",
+                      "defaultValue": {
+                        "$ref": "../../../../BUSIN/assets/languages/BUSIN.json#/BUSIN/LBL/DLB_BUSIN_EXIRTIONA_39042"
+                      },
+                      "hasI18N": true,
+                      "moduleId": "BUSIN",
+                      "customizationLayer": 0,
+                      "customizationLayerDescription": "ECU",
+                      "i18N": "T"
+                    },
+                    "userControl": {
+                      "userControlId": "TextInputBox",
+                      "description": "Designer TextBox",
+                      "customizationLayer": 0,
+                      "customizationLayerDescription": "ECU",
+                      "type": "I",
+                      "name": "Designer TextBox"
+                    },
+                    "labelToolTip": {
+                      "labelId": "DLB_BUSIN_XPIRATION_69508",
+                      "defaultValue": {
+                        "$ref": "../../../../BUSIN/assets/languages/BUSIN.json#/BUSIN/LBL/DLB_BUSIN_XPIRATION_69508"
+                      },
+                      "hasI18N": true,
+                      "moduleId": "BUSIN",
+                      "customizationLayer": 0,
+                      "customizationLayerDescription": "ECU",
+                      "i18N": "T"
+                    },
+                    "cacheDuration": 0,
+                    "options": 0,
+                    "elementColumnSpan": 1,
+                    "elementId": "VA_ININGOTONE0435_EPIN514",
+                    "customEvents": [],
+                    "aggregateId": null,
+                    "aggregate": null,
+                    "style": null,
+                    "componentStyle": null,
+                    "include": 4095,
+                    "responsiveLayouts": null,
+                    "responsivity": false,
+                    "attributeValidations": []
+                  },
+                  {
+                    "visualAttributeId": "VA_ININGOTONE0435_NAIC020",
+                    "colSpan": 1,
+                    "enabled": 4095,
+                    "order": 12,
+                    "queryVersion": " ",
+                    "readOnly": 8,
+                    "rowSpan": 0,
+                    "visible": 4095,
+                    "width": "100",
+                    "textRows": 0,
+                    "name": "InternalCustomerClassification",
+                    "customizationLayer": 0,
+                    "customizationLayerDescription": "ECU",
+                    "attribute": {
+                      "$ref": "../../../../BUSIN/entities/EN_RNANCOPAI459.json#/attributes/AT_RNA459NAIC57"
+                    },
+                    "label": {
+                      "labelId": "DLB_BUSIN_INATOIATO_87203",
+                      "defaultValue": {
+                        "$ref": "../../../../BUSIN/assets/languages/BUSIN.json#/BUSIN/LBL/DLB_BUSIN_INATOIATO_87203"
+                      },
+                      "hasI18N": true,
+                      "moduleId": "BUSIN",
+                      "customizationLayer": 0,
+                      "customizationLayerDescription": "ECU",
+                      "i18N": "T"
+                    },
+                    "userControl": {
+                      "userControlId": "TextInputBox",
+                      "description": "Designer TextBox",
+                      "customizationLayer": 0,
+                      "customizationLayerDescription": "ECU",
+                      "type": "I",
+                      "name": "Designer TextBox"
+                    },
+                    "labelToolTip": {
+                      "labelId": "DLB_BUSIN_INATOIATO_87203",
+                      "defaultValue": {
+                        "$ref": "../../../../BUSIN/assets/languages/BUSIN.json#/BUSIN/LBL/DLB_BUSIN_INATOIATO_87203"
+                      },
+                      "hasI18N": true,
+                      "moduleId": "BUSIN",
+                      "customizationLayer": 0,
+                      "customizationLayerDescription": "ECU",
+                      "i18N": "T"
+                    },
+                    "cacheDuration": 0,
+                    "options": 0,
+                    "elementColumnSpan": 1,
+                    "elementId": "VA_ININGOTONE0435_NAIC020",
+                    "customEvents": [],
+                    "aggregateId": null,
+                    "aggregate": null,
+                    "style": null,
+                    "componentStyle": null,
+                    "include": 4095,
+                    "responsiveLayouts": null,
+                    "responsivity": false,
+                    "attributeValidations": []
+                  },
+                  {
+                    "visualAttributeId": "VA_ININGOTONE0435_EATI897",
+                    "colSpan": 1,
+                    "enabled": 4095,
+                    "order": 13,
+                    "queryVersion": " ",
+                    "readOnly": 8,
+                    "rowSpan": 0,
+                    "visible": 0,
+                    "textRows": 0,
+                    "name": "OperationQualification",
+                    "customizationLayer": 0,
+                    "customizationLayerDescription": "ECU",
+                    "attribute": {
+                      "$ref": "../../../../BUSIN/entities/EN_RNANCOPAI459.json#/attributes/AT_RNA459EATI72"
+                    },
+                    "label": {
+                      "labelId": "DLB_BUSIN_TELRETSCO_11552",
+                      "defaultValue": {
+                        "$ref": "../../../../BUSIN/assets/languages/BUSIN.json#/BUSIN/LBL/DLB_BUSIN_TELRETSCO_11552"
+                      },
+                      "hasI18N": true,
+                      "moduleId": "BUSIN",
+                      "customizationLayer": 0,
+                      "customizationLayerDescription": "ECU",
+                      "i18N": "T"
+                    },
+                    "userControl": {
+                      "userControlId": "TextInputBox",
+                      "description": "Designer TextBox",
+                      "customizationLayer": 0,
+                      "customizationLayerDescription": "ECU",
+                      "type": "I",
+                      "name": "Designer TextBox"
+                    },
+                    "cacheDuration": 0,
+                    "options": 0,
+                    "elementColumnSpan": 1,
+                    "elementId": "VA_ININGOTONE0435_EATI897",
+                    "customEvents": [],
+                    "aggregateId": null,
+                    "aggregate": null,
+                    "width": null,
+                    "style": null,
+                    "componentStyle": null,
+                    "include": 4095,
+                    "responsiveLayouts": null,
+                    "responsivity": false,
+                    "attributeValidations": []
+                  },
+                  {
+                    "visualAttributeId": "VA_ININGOTONE0435_PEEE492",
+                    "colSpan": 1,
+                    "enabled": 4095,
+                    "order": 14,
+                    "queryVersion": " ",
+                    "readOnly": 8,
+                    "rowSpan": 0,
+                    "visible": 0,
+                    "textRows": 0,
+                    "name": "PayoutPercentage",
+                    "customizationLayer": 0,
+                    "customizationLayerDescription": "ECU",
+                    "attribute": {
+                      "$ref": "../../../../BUSIN/entities/EN_RNANCOPAI459.json#/attributes/AT_RNA459PEEE15"
+                    },
+                    "label": {
+                      "labelId": "DLB_BUSIN_PYTPEETAG_70289",
+                      "defaultValue": {
+                        "$ref": "../../../../BUSIN/assets/languages/BUSIN.json#/BUSIN/LBL/DLB_BUSIN_PYTPEETAG_70289"
+                      },
+                      "hasI18N": true,
+                      "moduleId": "BUSIN",
+                      "customizationLayer": 0,
+                      "customizationLayerDescription": "ECU",
+                      "i18N": "T"
+                    },
+                    "userControl": {
+                      "userControlId": "TextInputBox",
+                      "description": "Designer TextBox",
+                      "customizationLayer": 0,
+                      "customizationLayerDescription": "ECU",
+                      "type": "I",
+                      "name": "Designer TextBox"
+                    },
+                    "cacheDuration": 0,
+                    "options": 0,
+                    "elementColumnSpan": 1,
+                    "elementId": "VA_ININGOTONE0435_PEEE492",
+                    "customEvents": [],
+                    "aggregateId": null,
+                    "aggregate": null,
+                    "width": null,
+                    "style": null,
+                    "componentStyle": null,
+                    "include": 4095,
+                    "responsiveLayouts": null,
+                    "responsivity": false,
+                    "attributeValidations": []
+                  },
+                  {
+                    "visualAttributeId": "VA_ININGOTONE0435_DTGN107",
+                    "colSpan": 1,
+                    "enabled": 4095,
+                    "order": 15,
+                    "queryVersion": " ",
+                    "readOnly": 8,
+                    "rowSpan": 0,
+                    "visible": 4095,
+                    "width": "130",
+                    "textRows": 0,
+                    "name": "DateGranting",
+                    "customizationLayer": 0,
+                    "customizationLayerDescription": "ECU",
+                    "attribute": {
+                      "$ref": "../../../../BUSIN/entities/EN_RNANCOPAI459.json#/attributes/AT_RNA459DTGN73"
+                    },
+                    "label": {
+                      "labelId": "DLB_BUSIN_ATDATCRED_67761",
+                      "defaultValue": {
+                        "$ref": "../../../../BUSIN/assets/languages/BUSIN.json#/BUSIN/LBL/DLB_BUSIN_ATDATCRED_67761"
+                      },
+                      "hasI18N": true,
+                      "moduleId": "BUSIN",
+                      "customizationLayer": 0,
+                      "customizationLayerDescription": "ECU",
+                      "i18N": "T"
+                    },
+                    "userControl": {
+                      "userControlId": "TextInputBox",
+                      "description": "Designer TextBox",
+                      "customizationLayer": 0,
+                      "customizationLayerDescription": "ECU",
+                      "type": "I",
+                      "name": "Designer TextBox"
+                    },
+                    "labelToolTip": {
+                      "labelId": "DLB_BUSIN_ATDATCRED_67761",
+                      "defaultValue": {
+                        "$ref": "../../../../BUSIN/assets/languages/BUSIN.json#/BUSIN/LBL/DLB_BUSIN_ATDATCRED_67761"
+                      },
+                      "hasI18N": true,
+                      "moduleId": "BUSIN",
+                      "customizationLayer": 0,
+                      "customizationLayerDescription": "ECU",
+                      "i18N": "T"
+                    },
+                    "cacheDuration": 0,
+                    "options": 0,
+                    "elementColumnSpan": 1,
+                    "elementId": "VA_ININGOTONE0435_DTGN107",
+                    "customEvents": [],
+                    "aggregateId": null,
+                    "aggregate": null,
+                    "style": null,
+                    "componentStyle": null,
+                    "include": 4095,
+                    "responsiveLayouts": null,
+                    "responsivity": false,
+                    "attributeValidations": []
+                  },
+                  {
+                    "visualAttributeId": "VA_ININGOTONE0435_STTS611",
+                    "colSpan": 1,
+                    "enabled": 4095,
+                    "order": 16,
+                    "queryVersion": " ",
+                    "readOnly": 8,
+                    "rowSpan": 0,
+                    "visible": 4095,
+                    "width": "90",
+                    "textRows": 0,
+                    "name": "State",
+                    "customizationLayer": 0,
+                    "customizationLayerDescription": "ECU",
+                    "attribute": {
+                      "$ref": "../../../../BUSIN/entities/EN_RNANCOPAI459.json#/attributes/AT_RNA459STTS89"
+                    },
+                    "label": {
+                      "labelId": "DLB_BUSIN_STATEQINL_03037",
+                      "defaultValue": {
+                        "$ref": "../../../../BUSIN/assets/languages/BUSIN.json#/BUSIN/LBL/DLB_BUSIN_STATEQINL_03037"
+                      },
+                      "hasI18N": true,
+                      "moduleId": "BUSIN",
+                      "customizationLayer": 0,
+                      "customizationLayerDescription": "ECU",
+                      "i18N": "T"
+                    },
+                    "userControl": {
+                      "userControlId": "TextInputBox",
+                      "description": "Designer TextBox",
+                      "customizationLayer": 0,
+                      "customizationLayerDescription": "ECU",
+                      "type": "I",
+                      "name": "Designer TextBox"
+                    },
+                    "labelToolTip": {
+                      "labelId": "DLB_BUSIN_STATEQINL_03037",
+                      "defaultValue": {
+                        "$ref": "../../../../BUSIN/assets/languages/BUSIN.json#/BUSIN/LBL/DLB_BUSIN_STATEQINL_03037"
+                      },
+                      "hasI18N": true,
+                      "moduleId": "BUSIN",
+                      "customizationLayer": 0,
+                      "customizationLayerDescription": "ECU",
+                      "i18N": "T"
+                    },
+                    "cacheDuration": 0,
+                    "options": 0,
+                    "elementColumnSpan": 1,
+                    "elementId": "VA_ININGOTONE0435_STTS611",
+                    "customEvents": [],
+                    "aggregateId": null,
+                    "aggregate": null,
+                    "style": null,
+                    "componentStyle": null,
+                    "include": 4095,
+                    "responsiveLayouts": null,
+                    "responsivity": false,
+                    "attributeValidations": []
+                  },
+                  {
+                    "visualAttributeId": "VA_ININGOTONE0435_RORY887",
+                    "colSpan": 1,
+                    "enabled": 4095,
+                    "order": 17,
+                    "queryVersion": " ",
+                    "readOnly": 8,
+                    "rowSpan": 0,
+                    "visible": 4095,
+                    "width": "100",
+                    "textRows": 0,
+                    "name": "Moratory",
+                    "customizationLayer": 0,
+                    "customizationLayerDescription": "ECU",
+                    "attribute": {
+                      "$ref": "../../../../BUSIN/entities/EN_RNANCOPAI459.json#/attributes/AT_RNA459RORY08"
+                    },
+                    "label": {
+                      "labelId": "DLB_BUSIN_MORARYDAS_35235",
+                      "defaultValue": {
+                        "$ref": "../../../../BUSIN/assets/languages/BUSIN.json#/BUSIN/LBL/DLB_BUSIN_MORARYDAS_35235"
+                      },
+                      "hasI18N": true,
+                      "moduleId": "BUSIN",
+                      "customizationLayer": 0,
+                      "customizationLayerDescription": "ECU",
+                      "i18N": "T"
+                    },
+                    "userControl": {
+                      "userControlId": "TextInputBox",
+                      "description": "Designer TextBox",
+                      "customizationLayer": 0,
+                      "customizationLayerDescription": "ECU",
+                      "type": "I",
+                      "name": "Designer TextBox"
+                    },
+                    "labelToolTip": {
+                      "labelId": "DLB_BUSIN_MORARYDAS_35235",
+                      "defaultValue": {
+                        "$ref": "../../../../BUSIN/assets/languages/BUSIN.json#/BUSIN/LBL/DLB_BUSIN_MORARYDAS_35235"
+                      },
+                      "hasI18N": true,
+                      "moduleId": "BUSIN",
+                      "customizationLayer": 0,
+                      "customizationLayerDescription": "ECU",
+                      "i18N": "T"
+                    },
+                    "cacheDuration": 0,
+                    "options": 0,
+                    "elementColumnSpan": 1,
+                    "elementId": "VA_ININGOTONE0435_RORY887",
+                    "customEvents": [],
+                    "aggregateId": null,
+                    "aggregate": null,
+                    "style": null,
+                    "componentStyle": null,
+                    "include": 4095,
+                    "responsiveLayouts": null,
+                    "responsivity": false,
+                    "attributeValidations": []
+                  },
+                  {
+                    "visualAttributeId": "VA_ININGOTONE0435_AORN777",
+                    "colSpan": 1,
+                    "enabled": 4095,
+                    "order": 19,
+                    "queryVersion": " ",
+                    "readOnly": 8,
+                    "rowSpan": 0,
+                    "visible": 0,
+                    "textRows": 0,
+                    "name": "oficialOperation",
+                    "customizationLayer": 0,
+                    "customizationLayerDescription": "ECU",
+                    "attribute": {
+                      "$ref": "../../../../BUSIN/entities/EN_RNANCOPAI459.json#/attributes/AT_RNA459AORN87"
+                    },
+                    "label": {
+                      "labelId": "SYS_DSGNR_LBLESTETQ_00024",
+                      "defaultValue": {
+                        "$ref": "../../../../DSGNR/assets/languages/DSGNR.json#/DSGNR/LBL/SYS_DSGNR_LBLESTETQ_00024"
+                      },
+                      "hasI18N": true,
+                      "moduleId": "DSGNR",
+                      "customizationLayer": 0,
+                      "customizationLayerDescription": "ECU",
+                      "i18N": "T"
+                    },
+                    "userControl": {
+                      "userControlId": "TextInputBox",
+                      "description": "Designer TextBox",
+                      "customizationLayer": 0,
+                      "customizationLayerDescription": "ECU",
+                      "type": "I",
+                      "name": "Designer TextBox"
+                    },
+                    "cacheDuration": 0,
+                    "options": 0,
+                    "elementColumnSpan": 1,
+                    "elementId": "VA_ININGOTONE0435_AORN777",
+                    "customEvents": [],
+                    "aggregateId": null,
+                    "aggregate": null,
+                    "width": null,
+                    "style": null,
+                    "componentStyle": null,
+                    "include": 4095,
+                    "responsiveLayouts": null,
+                    "responsivity": false,
+                    "attributeValidations": []
+                  },
+                  {
+                    "visualAttributeId": "VA_ININGOTONE0435_AMEN935",
+                    "colSpan": 1,
+                    "enabled": 4095,
+                    "format": "N:#,##0.00",
+                    "order": 20,
+                    "queryVersion": " ",
+                    "readOnly": 8,
+                    "rowSpan": 0,
+                    "visible": 4095,
+                    "width": "100",
+                    "textRows": 0,
+                    "name": "Payment",
+                    "customizationLayer": 0,
+                    "customizationLayerDescription": "ECU",
+                    "attribute": {
+                      "$ref": "../../../../BUSIN/entities/EN_RNANCOPAI459.json#/attributes/AT_RNA459AMEN20"
+                    },
+                    "label": {
+                      "labelId": "DLB_BUSIN_ABONOBLAD_13193",
+                      "defaultValue": {
+                        "$ref": "../../../../BUSIN/assets/languages/BUSIN.json#/BUSIN/LBL/DLB_BUSIN_ABONOBLAD_13193"
+                      },
+                      "hasI18N": true,
+                      "moduleId": "BUSIN",
+                      "customizationLayer": 0,
+                      "customizationLayerDescription": "ECU",
+                      "i18N": "T"
+                    },
+                    "userControl": {
+                      "userControlId": "TextInputBox",
+                      "description": "Designer TextBox",
+                      "customizationLayer": 0,
+                      "customizationLayerDescription": "ECU",
+                      "type": "I",
+                      "name": "Designer TextBox"
+                    },
+                    "cacheDuration": 0,
+                    "options": 0,
+                    "elementColumnSpan": 1,
+                    "elementId": "VA_ININGOTONE0435_AMEN935",
+                    "customEvents": [],
+                    "aggregateId": null,
+                    "aggregate": null,
+                    "style": null,
+                    "componentStyle": null,
+                    "include": 4095,
+                    "responsiveLayouts": null,
+                    "responsivity": false,
+                    "attributeValidations": []
+                  },
+                  {
+                    "visualAttributeId": "VA_ININGOTONE0435_APIT130",
+                    "colSpan": 1,
+                    "enabled": 4095,
+                    "order": 21,
+                    "queryVersion": " ",
+                    "readOnly": 8,
+                    "rowSpan": 0,
+                    "visible": 4095,
+                    "width": "150",
+                    "textRows": 0,
+                    "catalogName": "cr_monto_rees",
+                    "name": "Capitalize",
+                    "customizationLayer": 0,
+                    "customizationLayerDescription": "ECU",
+                    "attribute": {
+                      "$ref": "../../../../BUSIN/entities/EN_RNANCOPAI459.json#/attributes/AT_RNA459APIT61"
+                    },
+                    "label": {
+                      "labelId": "DLB_BUSIN_CAPITALIZ_39494",
+                      "defaultValue": {
+                        "$ref": "../../../../BUSIN/assets/languages/BUSIN.json#/BUSIN/LBL/DLB_BUSIN_CAPITALIZ_39494"
+                      },
+                      "hasI18N": true,
+                      "moduleId": "BUSIN",
+                      "customizationLayer": 0,
+                      "customizationLayerDescription": "ECU",
+                      "i18N": "T"
+                    },
+                    "userControl": {
+                      "userControlId": "ComboBox",
+                      "description": "Designer ComboBox",
+                      "customizationLayer": 0,
+                      "customizationLayerDescription": "ECU",
+                      "type": "I",
+                      "name": "Designer ComboBox"
+                    },
+                    "cacheDuration": 0,
+                    "options": 0,
+                    "elementColumnSpan": 1,
+                    "elementId": "VA_ININGOTONE0435_APIT130",
+                    "customEvents": [],
+                    "aggregateId": null,
+                    "aggregate": null,
+                    "style": null,
+                    "componentStyle": null,
+                    "include": 4095,
+                    "responsiveLayouts": null,
+                    "responsivity": false,
+                    "attributeValidations": []
+                  }
+                ],
+                "independentValidation": "F",
+                "htmlSection": false,
+                "eventType": 0,
+                "numberOfColumnsInContainer": 2,
+                "elementColumnSpan": 1,
+                "collapsed": false,
+                "elementId": "GR_ININGOTONE04_35",
+                "style": null,
+                "customEvents": []
+              }
+            ],
+            "independentValidation": "F",
+            "htmlSection": false,
+            "eventType": 0,
+            "numberOfColumnsInContainer": 1,
+            "elementColumnSpan": 1,
+            "collapsed": false,
+            "elementId": "GR_ININGOTONE04_08"
+          }
+        ],
+        "modules": [
+          {
+            "moduleId": "BUSIN"
+          }
+        ],
+        "module": {
+          "moduleId": "BUSIN"
+        }
+      },
+      "numberOfColumnsInContainer": 1,
+      "elementColumnSpan": 1,
+      "elementId": "VC_VW_ININGOTONE04",
+      "customEvents": []
+    }
+  ],
+  "tempSave": false,
+  "autoCrud": false,
+  "isImported": true,
+  "commands": []
+}

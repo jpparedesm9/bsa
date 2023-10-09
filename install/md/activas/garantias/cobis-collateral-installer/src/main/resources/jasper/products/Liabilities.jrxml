@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Liabilities" pageWidth="595" pageHeight="842" columnWidth="595" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="4f510277-4146-465c-88fe-c46b4a07a9e6">
+	<property name="ireport.zoom" value="1.9487171000000025"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<property name="net.sf.jasperreports.export.xls.detect.cell.type" value="true"/>
+	<field name="typeDescription" class="java.lang.String"/>
+	<field name="operationNumber" class="java.lang.String"/>
+	<field name="rol" class="java.lang.String"/>
+	<field name="openingDate" class="java.util.Date"/>
+	<field name="currencyDescription" class="java.lang.String"/>
+	<field name="available" class="java.lang.Double"/>
+	<field name="retentions" class="java.lang.Double"/>
+	<field name="blockades" class="java.lang.Double"/>
+	<field name="overdraftLimit" class="java.lang.Double"/>
+	<field name="protests" class="java.lang.Integer"/>
+	<field name="rate" class="java.lang.Float"/>
+	<field name="status" class="java.lang.String"/>
+	<field name="expirationDate" class="java.util.Date"/>
+	<field name="balance" class="java.lang.Double"/>
+	<field name="pledgedAmount" class="java.lang.Double"/>
+	<group name="Liabilities">
+		<groupExpression><![CDATA[$F{typeDescription}]]></groupExpression>
+		<groupHeader>
+			<band height="16">
+				<textField>
+					<reportElement uuid="b4cedb5c-b27e-46b0-87a6-9138ed1e3fc2" x="0" y="0" width="555" height="16"/>
+					<box>
+						<bottomPen lineWidth="0.25"/>
+					</box>
+					<textElement>
+						<font size="7"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{typeDescription}]]></textFieldExpression>
+				</textField>
+			</band>
+		</groupHeader>
+		<groupFooter>
+			<band/>
+		</groupFooter>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band splitType="Stretch"/>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="20" splitType="Stretch">
+			<textField>
+				<reportElement uuid="254b7275-1b7d-44a7-bc3f-020fff44de20" x="0" y="0" width="77" height="20"/>
+				<textElement>
+					<font size="7"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{operationNumber}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="c1f599ab-dd98-43e3-a5d1-80e776492ed1" x="77" y="0" width="28" height="20"/>
+				<textElement textAlignment="Center">
+					<font size="7"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{rol}]]></textFieldExpression>
+			</textField>
+			<textField pattern="dd/MM/yyyy">
+				<reportElement uuid="03ae338f-d5ce-4b79-8c79-31c48adab666" x="105" y="0" width="58" height="20"/>
+				<textElement>
+					<font size="7"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{openingDate}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="294ab9b2-3756-4ed9-af72-34a0a825f520" x="163" y="0" width="39" height="20"/>
+				<textElement>
+					<font size="7"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{currencyDescription}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0.00">
+				<reportElement uuid="8b470a71-e267-4aba-8569-8eba0a39f3f2" x="202" y="0" width="71" height="20"/>
+				<textElement textAlignment="Right">
+					<font size="7"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{available}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0.00">
+				<reportElement uuid="125576b7-7f38-44a0-ad06-0ff6caa6f146" x="349" y="0" width="52" height="20"/>
+				<textElement textAlignment="Right">
+					<font size="7"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{retentions}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0.00">
+				<reportElement uuid="8f90c743-c1ea-4673-9a8e-483748a7b5ad" x="401" y="0" width="74" height="20"/>
+				<textElement textAlignment="Right">
+					<font size="7"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{blockades}]]></textFieldExpression>
+			</textField>
+			<textField pattern="###0.00;-###0.00">
+				<reportElement uuid="3fc33b16-f1d2-4a12-a6ed-8e50e5b884f8" x="475" y="0" width="39" height="20"/>
+				<textElement textAlignment="Right">
+					<font size="7"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{rate}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement uuid="39794f7f-09d7-4f12-920a-9e0fbffbe86b" x="514" y="0" width="41" height="20"/>
+				<textElement textAlignment="Center">
+					<font size="7"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{status}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0.00">
+				<reportElement uuid="6dedf461-5102-4608-ad5b-8790121ff2e0" x="273" y="0" width="76" height="20"/>
+				<textElement textAlignment="Right">
+					<font size="7"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{pledgedAmount}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

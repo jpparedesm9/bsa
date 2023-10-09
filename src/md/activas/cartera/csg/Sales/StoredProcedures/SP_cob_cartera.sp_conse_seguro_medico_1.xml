@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<procedure>
+  <database>cob_cartera</database>
+  <name>sp_conse_seguro_medico</name>
+  <type>SQLSERVER</type>
+  <version>1</version>
+  <parameters>
+    <parameter name="@s_ssn" dataType="int" direction="in" />
+    <parameter name="@s_sesn" dataType="int" direction="in" />
+    <parameter name="@s_srv" dataType="varchar" direction="in" />
+    <parameter name="@s_lsrv" dataType="varchar" direction="in" />
+    <parameter name="@s_user" dataType="varchar" direction="in" />
+    <parameter name="@s_date" dataType="datetime" direction="in" />
+    <parameter name="@s_ofi" dataType="int" direction="in" />
+    <parameter name="@s_rol" dataType="tinyint" direction="in" />
+    <parameter name="@s_org" dataType="char" direction="in" />
+    <parameter name="@s_term" dataType="varchar" direction="in" />
+    <parameter name="@i_cliente" dataType="int" direction="in" />
+    <parameter name="@i_operacion" dataType="char" direction="in" />
+    <parameter name="@i_tramite" dataType="varchar" direction="in" />
+  </parameters>
+  <queries>
+    <query>
+      <columns>
+        <column name="{nombre_cliente}" />
+        <column name="{fecha_nacimiento}" />
+      </columns>
+      <queryText>SELECT  en_nomlar,p_fecha_nac = CONVERT (VARCHAR,ISNULL (p_fecha_nac, "") ,103) </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="{nombre_cliente}" />
+        <column name="{fecha_nacimiento}" />
+        <column name="{parentesco}" />
+        <column name="{porcentage}" />
+      </columns>
+      <queryText>SELECT  bs_cobertura,bs_titular,bs_pareja,bs_hijos </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="{cobertura}" />
+        <column name="{titulo}" />
+        <column name="{pareja}" />
+        <column name="{hijos}" />
+      </columns>
+      <queryText></queryText>
+    </query>
+  </queries>
+</procedure>

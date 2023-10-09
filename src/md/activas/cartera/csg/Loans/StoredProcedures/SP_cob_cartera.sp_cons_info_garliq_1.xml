@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<procedure>
+  <database>cob_cartera</database>
+  <name>sp_cons_info_garliq</name>
+  <type>SQLSERVER</type>
+  <version>1</version>
+  <parameters>
+    <parameter name="@s_ssn" dataType="int" direction="in" />
+    <parameter name="@s_sesn" dataType="int" direction="in" />
+    <parameter name="@s_term" dataType="varchar" direction="in" />
+    <parameter name="@s_user" dataType="varchar" direction="in" />
+    <parameter name="@s_date" dataType="datetime" direction="in" />
+    <parameter name="@s_srv" dataType="varchar" direction="in" />
+    <parameter name="@s_lsrv" dataType="varchar" direction="in" />
+    <parameter name="@s_org" dataType="char" direction="in" />
+    <parameter name="@s_ofi" dataType="smallint" direction="in" />
+    <parameter name="@s_rol" dataType="int" direction="in" />
+    <parameter name="@t_ssn_corr" dataType="int" direction="in" />
+    <parameter name="@i_tramite" dataType="int" direction="in" />
+  </parameters>
+  <queries>
+    <query>
+      <columns>
+        <column name="grupo_id " />
+        <column name="nombre_grupo " />
+        <column name="fecha_proceso " />
+        <column name="fecha_liq " />
+        <column name="fecha_venc " />
+        <column name="moneda " />
+        <column name="num_pago " />
+        <column name="monto " />
+        <column name="institucion " />
+        <column name="referencia " />
+        <column name="dest_nombre1 " />
+        <column name="dest_cargo1 " />
+        <column name="dest_email1 " />
+        <column name="dest_nombre2 " />
+        <column name="dest_cargo2 " />
+        <column name="dest_email2 " />
+        <column name="dest_nombre3 " />
+        <column name="dest_cargo3 " />
+        <column name="dest_email3 " />
+        <column name="{20}" />
+      </columns>
+      <queryText>SELECT  grupo_id = in_grupo_id,nombre_grupo = in_nombre_grupo,fecha_proceso = in_fecha_proceso,fecha_liq = in_fecha_liq,fecha_venc = in_fecha_venc,moneda = in_moneda,num_pago = in_num_pago,monto = in_monto,institucion = in_institucion,referencia = in_referencia,dest_nombre1 = in_dest_nombre1,dest_cargo1 = in_dest_cargo1,dest_email1 = in_dest_email1,dest_nombre2 = in_dest_nombre2,dest_cargo2 = in_dest_cargo2,dest_email2 = in_dest_email2,dest_nombre3 = in_dest_nombre3,dest_cargo3 = in_dest_cargo3,dest_email3 = in_dest_email3,of_nombre </queryText>
+    </query>
+  </queries>
+</procedure>

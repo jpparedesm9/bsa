@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:osgi="http://www.springframework.org/schema/osgi"
+	xmlns:aop="http://www.springframework.org/schema/aop" xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:jee="http://www.springframework.org/schema/jee" xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/osgi http://www.springframework.org/schema/osgi/spring-osgi.xsd
+		http://www.springframework.org/schema/jee http://www.springframework.org/schema/jee/spring-jee.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
+		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd">
+	
+	<osgi:reference id="transactionManager" filter="(service.impl=COBIS)"
+		interface="org.springframework.transaction.PlatformTransactionManager" />
+	<osgi:reference id="spOrchestrator"
+		interface="com.cobiscorp.cobis.cts.services.orchestrator.ISPOrchestrator"
+		filter="(service.callingSource=15)" />
+	
+	<osgi:reference id="CustomerDAO"
+		interface="com.cobiscorp.ecobis.customer.commons.dal.CustomerDAO" />
+	<osgi:reference id="SummaryInvestmentsDAO"
+		interface="com.cobiscorp.ecobis.clientviewer.dal.SummaryInvestmentsDAO" />
+	<osgi:reference id="SummaryDebtsDAO"
+		interface="com.cobiscorp.ecobis.clientviewer.dal.SummaryDebtsDAO" />
+	<osgi:reference id="CurrencyDAO"
+		interface="com.cobiscorp.ecobis.clientviewer.dal.CurrencyDAO" />
+	<osgi:reference id="SummaryWarrantiesDAO"
+		interface="com.cobiscorp.ecobis.clientviewer.dal.SummaryWarrantiesDAO" />
+	<osgi:reference id="SummaryPersonalWarrantiesDAO"
+		interface="com.cobiscorp.ecobis.clientviewer.dal.SummaryPersonalWarrantiesDAO" />
+	<osgi:reference id="SummaryCreditsDAO"
+		interface="com.cobiscorp.ecobis.clientviewer.dal.SummaryCreditsDAO" />
+	<osgi:reference id="SummaryOthersDAO"
+		interface="com.cobiscorp.ecobis.clientviewer.dal.SummaryOthersDAO" />
+	<osgi:reference id="AffiliationsDAO"
+		interface="com.cobiscorp.ecobis.clientviewer.dal.AffiliationsDAO" />
+	<osgi:reference id="CatalogDAO"
+		interface="com.cobiscorp.ecobis.commons.dal.CatalogDAO" />
+	<osgi:reference id="CobisStoredProcedureUtils"
+		interface="com.cobiscorp.cobis.cts.jdbc.utils.CobisStoredProcedureUtils" />
+	<osgi:reference id="GeneralParameterDAO"
+		interface="com.cobiscorp.ecobis.commons.dal.GeneralParameterDAO" />
+	<osgi:reference id="RateDAO"
+		interface="com.cobiscorp.ecobis.clientviewer.dal.RateDAO" />
+
+	<osgi:reference id="serviceIntegration"
+		interface="cobiscorp.ecobis.cts.integration.services.ICTSServiceIntegration" />
+		
+	<osgi:reference id="cacheManager"
+		interface="com.cobiscorp.cobis.cache.ICacheManager" />
+
+	<osgi:reference id="IScoreDAO"
+		interface="com.cobiscorp.ecobis.clientviewer.dal.IScoreDAO" />
+
+	<osgi:reference id="AdministratorDAO"
+		interface="com.cobiscorp.ecobis.clientviewer.admin.dal.AdministratorDAO" />
+	<osgi:reference id="AddressTxService"
+		interface="com.cobiscorp.ecobis.customer.services.AddressTxService" />
+	<osgi:reference id="ContactTxService"
+		interface="com.cobiscorp.ecobis.customer.services.ContactTxService" />
+
+	<osgi:service ref="QueryProductsManagerImpl"
+		interface="com.cobiscorp.ecobis.clientviewer.bl.QueryProductsManager">
+		<osgi:service-properties>
+			<entry key="service.impl" value="current" />
+		</osgi:service-properties>
+	</osgi:service>
+
+	<osgi:service ref="RateManagerImpl"
+		interface="com.cobiscorp.ecobis.clientviewer.bl.IRateManager">
+		<osgi:service-properties>
+			<entry key="service.impl" value="current" />
+		</osgi:service-properties>
+	</osgi:service>
+
+	<osgi:service ref="PrepareProductsDataManagerImpl"
+		interface="com.cobiscorp.ecobis.clientviewer.bl.PrepareProductsDataManager">
+	</osgi:service>
+
+	<osgi:service ref="ConsolidatePositionManagerImpl"
+		interface="com.cobiscorp.ecobis.clientviewer.bl.ConsolidatePositionManager">
+		<osgi:service-properties>
+			<entry key="service.impl" value="current" />
+		</osgi:service-properties>
+	</osgi:service>
+
+	<osgi:service ref="AdministratorManagerImpl"
+		interface="com.cobiscorp.ecobis.clientviewer.admin.bl.AdministratorManager">
+		<osgi:service-properties>
+			<entry key="service.impl" value="current" />
+		</osgi:service-properties>
+	</osgi:service>
+
+	<osgi:service ref="MaxDebtManagerImpl"
+		interface="com.cobiscorp.ecobis.clientviewer.bl.MaxDebtManager">
+	</osgi:service>
+
+	<osgi:service ref="ScoreManagerImpl"
+		interface="com.cobiscorp.ecobis.clientviewer.bl.IScoreManager">
+	</osgi:service>
+
+	<osgi:service ref="CustomerManagerImpl"
+		interface="com.cobiscorp.ecobis.clientviewer.bl.CustomerManager">
+	</osgi:service>
+
+
+
+</beans>

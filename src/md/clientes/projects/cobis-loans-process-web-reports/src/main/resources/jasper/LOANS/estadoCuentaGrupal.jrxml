@@ -1,0 +1,285 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version last-->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="estadoCuentaGrupal" pageWidth="595" pageHeight="842" whenNoDataType="AllSectionsNoDetail" columnWidth="547" leftMargin="24" rightMargin="24" topMargin="24" bottomMargin="24" uuid="deec1b21-1036-4734-948b-164547062a2b">
+	<property name="ireport.zoom" value="1.5"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="SUBREPORT_DIR" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["/"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="igNombreGrupo" class="java.lang.String"/>
+	<parameter name="igSucursal" class="java.lang.String"/>
+	<parameter name="igAsesor" class="java.lang.String"/>
+	<parameter name="igDestino" class="java.lang.String"/>
+	<parameter name="igReunionGrupo" class="java.lang.String"/>
+	<parameter name="igReunionGrupoFecha" class="java.lang.String"/>
+	<parameter name="igReunionGrupoHora" class="java.lang.String"/>
+	<parameter name="igReunionGrupoDescripcion" class="java.lang.String"/>
+	<parameter name="igCiclo" class="java.lang.Integer"/>
+	<parameter name="igMontoPrestado" class="java.lang.Double"/>
+	<parameter name="igPlazo" class="java.lang.String"/>
+	<parameter name="igTasaInteres" class="java.lang.Double"/>
+	<parameter name="igFechaEntrega" class="java.lang.String"/>
+	<parameter name="idCliente" class="java.lang.Integer"/>
+	<parameter name="igAbreviaturaMoneda" class="java.lang.String"/>
+	<field name="resumenCredito" class="java.util.List"/>
+	<field name="planPagos" class="java.util.List"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<detail>
+		<band height="56">
+			<image>
+				<reportElement x="0" y="0" width="179" height="56" uuid="9a33fd0d-8ea9-4081-bfab-b31bd94e3de4"/>
+				<imageExpression><![CDATA["logo2.png"]]></imageExpression>
+			</image>
+		</band>
+		<band height="18">
+			<staticText>
+				<reportElement positionType="Float" stretchType="RelativeToBandHeight" x="0" y="0" width="547" height="18" isPrintWhenDetailOverflows="true" uuid="65cfbda5-a0fc-4789-831a-87dc37ba8a10"/>
+				<textElement textAlignment="Center" verticalAlignment="Top">
+					<font size="14" isBold="true"/>
+					<paragraph leftIndent="2" rightIndent="2"/>
+				</textElement>
+				<text><![CDATA[DETALLE DE MOVIMIENTOS GRUPAL]]></text>
+			</staticText>
+		</band>
+		<band height="3"/>
+		<band height="3"/>
+		<band height="4"/>
+		<band height="14">
+			<staticText>
+				<reportElement positionType="Float" stretchType="RelativeToBandHeight" x="0" y="0" width="162" height="14" isPrintWhenDetailOverflows="true" uuid="fd58f876-3248-4604-9b2c-d42e91e7c90b"/>
+				<textElement verticalAlignment="Middle">
+					<font isBold="true"/>
+					<paragraph leftIndent="2" rightIndent="2"/>
+				</textElement>
+				<text><![CDATA[Información del Grupo]]></text>
+			</staticText>
+		</band>
+		<band height="10"/>
+		<band height="14">
+			<staticText>
+				<reportElement positionType="Float" stretchType="RelativeToBandHeight" x="0" y="0" width="98" height="14" isPrintWhenDetailOverflows="true" uuid="9ad8921a-5d2e-4096-9836-175345b22833"/>
+				<textElement verticalAlignment="Top">
+					<font size="8" isBold="true"/>
+					<paragraph leftIndent="2" rightIndent="2"/>
+				</textElement>
+				<text><![CDATA[GRUPO:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" stretchType="RelativeToBandHeight" x="273" y="0" width="98" height="14" isPrintWhenDetailOverflows="true" uuid="7fa645fd-831c-4b22-84ff-216288ffd4ff"/>
+				<textElement verticalAlignment="Top">
+					<font size="8" isBold="true"/>
+					<paragraph leftIndent="2" rightIndent="2"/>
+				</textElement>
+				<text><![CDATA[CICLO:]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="Float" stretchType="RelativeToBandHeight" x="138" y="0" width="135" height="14" isPrintWhenDetailOverflows="true" uuid="782b76db-b133-4f86-9754-876fe1769ac9"/>
+				<textElement verticalAlignment="Top">
+					<font size="8"/>
+					<paragraph leftIndent="2" rightIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{igNombreGrupo}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="Float" stretchType="RelativeToBandHeight" x="371" y="0" width="176" height="14" isPrintWhenDetailOverflows="true" uuid="ea3cd36c-1e73-4bd1-9617-96fe934dc0bd"/>
+				<textElement verticalAlignment="Top">
+					<font size="8"/>
+					<paragraph leftIndent="2" rightIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{igCiclo}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="Float" stretchType="RelativeToBandHeight" x="98" y="0" width="40" height="14" isPrintWhenDetailOverflows="true" uuid="e6e2ec96-eca6-4cf9-83ed-e40b599d3f6d"/>
+				<textElement verticalAlignment="Top">
+					<font size="8"/>
+					<paragraph leftIndent="2" rightIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{idCliente}]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="14">
+			<staticText>
+				<reportElement positionType="Float" stretchType="RelativeToBandHeight" x="0" y="0" width="98" height="14" isPrintWhenDetailOverflows="true" uuid="07f77bc4-9abb-418d-b125-10b690802884"/>
+				<textElement verticalAlignment="Top">
+					<font size="8" isBold="true"/>
+					<paragraph leftIndent="2" rightIndent="2"/>
+				</textElement>
+				<text><![CDATA[SUCURSAL:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" stretchType="RelativeToBandHeight" x="273" y="0" width="98" height="14" isPrintWhenDetailOverflows="true" uuid="1a085d2e-e54a-4332-b509-b67179bef370"/>
+				<textElement verticalAlignment="Top">
+					<font size="8" isBold="true"/>
+					<paragraph leftIndent="2" rightIndent="2"/>
+				</textElement>
+				<text><![CDATA[MONTO PRESTADO:]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="Float" stretchType="RelativeToBandHeight" x="98" y="0" width="175" height="14" isPrintWhenDetailOverflows="true" uuid="75a944bd-b404-41be-a25d-df67fa2d2e3b"/>
+				<textElement verticalAlignment="Top">
+					<font size="8"/>
+					<paragraph leftIndent="2" rightIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{igSucursal}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" pattern="#,##0.00" isBlankWhenNull="true">
+				<reportElement positionType="Float" stretchType="RelativeToBandHeight" x="396" y="0" width="150" height="14" isPrintWhenDetailOverflows="true" uuid="79eb86b1-88e7-421d-8638-4d10730a2d57"/>
+				<textElement verticalAlignment="Top">
+					<font size="8"/>
+					<paragraph leftIndent="2" rightIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{igMontoPrestado}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="Float" stretchType="RelativeToBandHeight" x="371" y="0" width="25" height="14" isPrintWhenDetailOverflows="true" uuid="42564c15-c13b-4d68-aa51-4ca3da5fb7d4"/>
+				<textElement verticalAlignment="Top">
+					<font size="8"/>
+					<paragraph leftIndent="2" rightIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{igAbreviaturaMoneda}]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="14">
+			<staticText>
+				<reportElement positionType="Float" stretchType="RelativeToBandHeight" x="0" y="0" width="98" height="14" isPrintWhenDetailOverflows="true" uuid="9c8d5c12-66c2-40b8-8024-90bea3c418f6"/>
+				<textElement verticalAlignment="Top">
+					<font size="8" isBold="true"/>
+					<paragraph leftIndent="2" rightIndent="2"/>
+				</textElement>
+				<text><![CDATA[ASESOR:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" stretchType="RelativeToBandHeight" x="273" y="0" width="98" height="14" isPrintWhenDetailOverflows="true" uuid="65ad1f47-8a30-4617-b0b4-c9c426eb60ae"/>
+				<textElement verticalAlignment="Top">
+					<font size="8" isBold="true"/>
+					<paragraph leftIndent="2" rightIndent="2"/>
+				</textElement>
+				<text><![CDATA[PLAZO:]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="Float" stretchType="RelativeToBandHeight" x="98" y="0" width="175" height="14" isPrintWhenDetailOverflows="true" uuid="ce3994e1-ef76-4f5b-b5bb-351f07380281"/>
+				<textElement verticalAlignment="Top">
+					<font size="8"/>
+					<paragraph leftIndent="2" rightIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{igAsesor}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="Float" stretchType="RelativeToBandHeight" x="371" y="0" width="176" height="14" isPrintWhenDetailOverflows="true" uuid="c499dc0b-0b1d-4eae-8888-99b16845dd65"/>
+				<textElement verticalAlignment="Top">
+					<font size="8"/>
+					<paragraph leftIndent="2" rightIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{igPlazo}]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="14">
+			<staticText>
+				<reportElement positionType="Float" stretchType="RelativeToBandHeight" x="0" y="0" width="98" height="14" isPrintWhenDetailOverflows="true" uuid="6686584b-047e-43bd-bfd0-25f80564f68e"/>
+				<textElement verticalAlignment="Top">
+					<font size="8" isBold="true"/>
+					<paragraph leftIndent="2" rightIndent="2"/>
+				</textElement>
+				<text><![CDATA[DESTINO:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" stretchType="RelativeToBandHeight" x="273" y="0" width="98" height="14" isPrintWhenDetailOverflows="true" uuid="39ae95d7-437e-42b3-93e0-5030aa4c1399"/>
+				<textElement verticalAlignment="Top">
+					<font size="8" isBold="true"/>
+					<paragraph leftIndent="2" rightIndent="2"/>
+				</textElement>
+				<text><![CDATA[TASA DE INTERES:]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="Float" stretchType="RelativeToBandHeight" x="98" y="0" width="175" height="14" isPrintWhenDetailOverflows="true" uuid="aebd6e90-b67a-48ae-bfe4-157d890521c6"/>
+				<textElement verticalAlignment="Top">
+					<font size="8"/>
+					<paragraph leftIndent="2" rightIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{igDestino}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" pattern="#,##0.0 %" isBlankWhenNull="true">
+				<reportElement positionType="Float" stretchType="RelativeToBandHeight" x="371" y="0" width="175" height="14" isPrintWhenDetailOverflows="true" uuid="4e281204-b1f8-46cb-9d38-d4bdfa2b4b35"/>
+				<textElement verticalAlignment="Top">
+					<font size="8"/>
+					<paragraph leftIndent="2" rightIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{igTasaInteres}]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="14">
+			<staticText>
+				<reportElement positionType="Float" stretchType="RelativeToBandHeight" x="0" y="0" width="98" height="14" isPrintWhenDetailOverflows="true" uuid="9b2b9c57-69ea-448f-9bdd-a007e09f0567"/>
+				<textElement verticalAlignment="Top">
+					<font size="8" isBold="true"/>
+					<paragraph leftIndent="2" rightIndent="2"/>
+				</textElement>
+				<text><![CDATA[REUNION DEL GRUPO:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" stretchType="RelativeToBandHeight" x="273" y="0" width="98" height="14" isPrintWhenDetailOverflows="true" uuid="106186be-8c70-4160-8e9c-23b8fa6eb0ab"/>
+				<textElement verticalAlignment="Top">
+					<font size="8" isBold="true"/>
+					<paragraph leftIndent="2" rightIndent="2"/>
+				</textElement>
+				<text><![CDATA[FECHA DE ENTREGA:]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="Float" stretchType="RelativeToBandHeight" x="371" y="0" width="176" height="14" isPrintWhenDetailOverflows="true" uuid="5ad1d724-49bb-4c8f-8a85-f0d9553326c6"/>
+				<textElement verticalAlignment="Top">
+					<font size="8"/>
+					<paragraph leftIndent="2" rightIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{igFechaEntrega}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="Float" stretchType="RelativeToBandHeight" x="98" y="0" width="175" height="14" isPrintWhenDetailOverflows="true" uuid="574701a9-4166-4f5d-b31f-1bc0f0099e3a"/>
+				<textElement verticalAlignment="Top">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{igReunionGrupo}]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="20"/>
+		<band height="14">
+			<staticText>
+				<reportElement positionType="Float" stretchType="RelativeToBandHeight" x="0" y="0" width="547" height="14" isPrintWhenDetailOverflows="true" uuid="bfe6c8e1-3e9f-4927-bee0-1b2fbefa886b"/>
+				<textElement verticalAlignment="Middle">
+					<font isBold="true"/>
+					<paragraph leftIndent="2" rightIndent="2"/>
+				</textElement>
+				<text><![CDATA[Resumen de Crédito]]></text>
+			</staticText>
+		</band>
+		<band height="5"/>
+		<band height="14">
+			<subreport>
+				<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="0" y="0" width="547" height="14" uuid="3cac4901-e93e-45d2-ad21-03a35dc57719"/>
+				<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($F{resumenCredito})]]></dataSourceExpression>
+				<subreportExpression><![CDATA[$P{SUBREPORT_DIR} + "estadoCuentaGrupal_SR_ResumenCredit.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+		<band height="20"/>
+		<band height="14">
+			<staticText>
+				<reportElement positionType="Float" stretchType="RelativeToBandHeight" x="0" y="0" width="547" height="14" isPrintWhenDetailOverflows="true" uuid="133d6874-810c-4bdb-bdc4-8c3a9f7e7866"/>
+				<textElement verticalAlignment="Middle">
+					<font isBold="true"/>
+					<paragraph leftIndent="2" rightIndent="2"/>
+				</textElement>
+				<text><![CDATA[Plan de Pagos]]></text>
+			</staticText>
+		</band>
+		<band height="5"/>
+		<band height="14">
+			<subreport>
+				<reportElement positionType="Float" stretchType="RelativeToBandHeight" x="0" y="0" width="555" height="14" uuid="15118e2c-6f8f-4858-ae24-60925f63a4c4"/>
+				<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($F{planPagos})]]></dataSourceExpression>
+				<subreportExpression><![CDATA[$P{SUBREPORT_DIR} + "estadoCuentaGrupal_SR_PlanPagos.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+	</detail>
+</jasperReport>

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+	<context:annotation-config />
+	<bean id="NationalityService"
+		class="com.cobiscorp.ecobis.customer.services.impl.NationalityServiceImpl">
+		<property name="nationalityManager" ref="NationalityManager" />
+	</bean>
+	<bean id="CustomerTxService"
+		class="com.cobiscorp.ecobis.customer.services.impl.CustomerTxServiceImpl">
+		<property name="customerManager" ref="CustomerManager" />
+		<property name="creationCustomerManager" ref="CreationCustomerManager" />
+	</bean>
+	<bean id="AddressTxService"
+		class="com.cobiscorp.ecobis.customer.services.impl.AddressTxServiceImpl">
+		<property name="addressManager" ref="AddressManager" />
+	</bean>
+	<bean id="PhoneTxService"
+		class="com.cobiscorp.ecobis.customer.services.impl.PhoneTxServiceImpl">
+		<property name="phoneManager" ref="PhoneManager" />
+	</bean>
+	<bean id="ActivityTxService"
+		class="com.cobiscorp.ecobis.customer.services.impl.ActivityTxServiceImpl">
+		<property name="activityManager" ref="ActivityManager" />
+	</bean>
+	<bean id="QuickCreateTxService"
+		class="com.cobiscorp.ecobis.customer.services.impl.QuickCreateTxServiceImpl">
+		<property name="quickCustomerManager" ref="QuickCustomerManager" />
+	</bean>
+	<bean id="CICTxService"
+		class="com.cobiscorp.ecobis.customer.services.impl.CICTxServiceImpl">
+		<property name="cicManager" ref="CICManager" />
+	</bean>
+	<bean id="PadronTxService"
+		class="com.cobiscorp.ecobis.customer.services.impl.PadronTxServiceImpl">
+		<property name="padronManager" ref="PadronManager" />
+	</bean>
+	<bean id="IdCreateTxService"
+		class="com.cobiscorp.ecobis.customer.services.impl.IdCreateTxServiceImpl">
+		<property name="idCustomerManager" ref="IdCustomerManager" />
+	</bean>
+	<bean id="POBoxTxService"
+		class="com.cobiscorp.ecobis.customer.services.impl.POBoxTxServiceImpl">
+		<property name="poBoxManager" ref="POBoxManager" />
+	</bean>
+	<bean id="ProductDetailService"
+		class="com.cobiscorp.ecobis.customer.services.impl.ProductDetailServiceImpl">
+		<property name="productDetailManager" ref="ProductDetailManager" />
+	</bean>
+	<bean id="ClientService"
+		class="com.cobiscorp.ecobis.customer.services.impl.ClientServiceImpl">
+		<property name="clientManager" ref="ClientManager" />
+	</bean>
+	<bean id="BusinessSegmentTxService"
+		class="com.cobiscorp.ecobis.customer.services.impl.BusinessSegmentTxServiceImpl">
+		<property name="businessSegmentManager" ref="BusinessSegmentManager" />
+	</bean>
+	<bean id="ContactTxService"
+		class="com.cobiscorp.ecobis.customer.services.impl.ContactTxServiceImpl">
+		<property name="contactManager" ref="ContactManager" />
+	</bean>
+
+
+
+</beans>

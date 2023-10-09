@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="Windows-1252"?>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="AlertasRiesgo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="Alerta" maxOccurs="unbounded" minOccurs="0">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element type="xs:int" name="codigo"/>
+              <xs:element type="xs:string" name="cliente"/>
+			  <xs:element type="xs:string" name="nombre"/>
+			  <xs:element type="xs:string" name="tipoLista"/>
+              <xs:element type="xs:string" name="fechaProceso"/>
+			  <xs:element type="xs:string" name="correo"/>
+			  <xs:element type="xs:string" name="estado"/>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

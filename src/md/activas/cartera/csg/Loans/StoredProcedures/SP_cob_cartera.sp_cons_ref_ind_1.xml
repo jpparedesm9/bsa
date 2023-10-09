@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<procedure>
+  <database>cob_cartera</database>
+  <name>sp_cons_ref_ind</name>
+  <type>SYBASE</type>
+  <version>1</version>
+  <parameters>
+    <parameter name="@s_user" dataType="varchar" direction="in" />
+    <parameter name="@s_term" dataType="varchar" direction="in" />
+    <parameter name="@i_operacion" dataType="varchar" direction="in" />
+    <parameter name="@i_ente" dataType="int" direction="in" />
+    <parameter name="@i_monto_pre" dataType="money" direction="in" />
+    <parameter name="@i_tipo" dataType="int" direction="in" />
+    <parameter name="@i_banco" dataType="varchar" direction="in" />
+  </parameters>
+  <queries>
+    <query>
+      <columns>
+        <column name="{1}" />
+        <column name="{2}" />
+        <column name="{3}" />
+        <column name="{4}" />
+      </columns>
+      <queryText>SELECT w_monto_op, w_monto_pre, w_monto_seg, w_pagado_seg</queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="Monto Prestamo" />
+        <column name="Monto PreCancelacion" />
+        <column name="Monto Seguro" />
+        <column name="Fecha Inicio" />
+        <column name="Nombre Cliente" />
+        <column name="Fecha Vencimiento" />
+        <column name="Oficina" />
+      </columns>
+      <queryText>SELECT "Monto Prestamo"=w_monto_op,"Monto PreCancelacion"=w_monto_pre,"Monto Seguro"=w_monto_seg,"Fecha Inicio"=w_fecha_liq,"Nombre Cliente"=w_nombre_banco,"Fecha Vencimiento"=w_fecha_ven,"Oficina"=w_nom_oficina,"Referencia"=w_referencia,"Convenio"=w_convenio</queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="Institucion" />
+        <column name="Referencia" />
+        <column name="Convenio" />
+      </columns>
+      <queryText></queryText>
+    </query>
+  </queries>
+</procedure>

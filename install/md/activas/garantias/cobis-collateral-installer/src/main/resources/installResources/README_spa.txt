@@ -1,0 +1,1 @@
+generacion del instalador de vista consolidada

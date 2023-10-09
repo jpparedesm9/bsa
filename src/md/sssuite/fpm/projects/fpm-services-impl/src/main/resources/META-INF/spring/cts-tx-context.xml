@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd
+		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd">
+
+	
+
+	<tx:advice id="transactionalAdvice" transaction-manager="transactionManager">
+		<tx:attributes>
+			<tx:method name="*" propagation="REQUIRED" rollback-for="RuntimeException" />
+			<tx:method name="getHistoricalLog" propagation="NOT_SUPPORTED"
+				rollback-for="RuntimeException" />
+		</tx:attributes>
+	</tx:advice>
+
+	<aop:config>
+		<aop:pointcut id="transactionalOperations"
+			expression="execution(* com.cobiscorp.ecobis.fpm.administration.service.ICompanyManager.*(..))" />
+		<aop:advisor pointcut-ref="transactionalOperations"
+			advice-ref="transactionalAdvice" />
+	</aop:config>
+	<aop:config>
+		<aop:pointcut id="nodeProductTransactionalOperations"
+			expression="execution(* com.cobiscorp.ecobis.fpm.administration.service.INodeProductManager.*(..))" />
+		<aop:advisor pointcut-ref="nodeProductTransactionalOperations"
+			advice-ref="transactionalAdvice" />
+	</aop:config>
+	<aop:config>
+		<aop:pointcut id="dictionaryTransactionalOperations"
+			expression="execution(* com.cobiscorp.ecobis.fpm.administration.service.IDictionaryManager.*(..))" />
+		<aop:advisor pointcut-ref="dictionaryTransactionalOperations"
+			advice-ref="transactionalAdvice" />
+	</aop:config>
+
+	<aop:config>
+		<aop:pointcut id="bankingProductOperations"
+			expression="execution(* com.cobiscorp.ecobis.fpm.operation.service.IBankingProductManager.*(..))" />
+		<aop:advisor pointcut-ref="bankingProductOperations"
+			advice-ref="transactionalAdvice" />
+		<aop:aspect ref="bankingProductManagerInterceptor">
+			<aop:after method="changeBankingProductAvailableToSale"
+				pointcut="execution(* com.cobiscorp.ecobis.fpm.operation.service.IBankingProductManager.changeBankingProductAvailableToSale(..))" />
+		</aop:aspect>
+	</aop:config>
+	<aop:config>
+		<aop:pointcut id="bankingProductHistoryOperations"
+			expression="execution(* com.cobiscorp.ecobis.fpm.operation.service.IBankingProductHistoryManager.*(..))" />
+		<aop:advisor pointcut-ref="bankingProductHistoryOperations"
+			advice-ref="transactionalAdvice" />
+	</aop:config>
+
+	<aop:config>
+		<aop:pointcut id="itemsOperations"
+			expression="execution(* com.cobiscorp.ecobis.fpm.operation.service.IItemsManager.*(..))" />
+		<aop:advisor pointcut-ref="itemsOperations" advice-ref="transactionalAdvice" />
+		<aop:aspect ref="itemsManagerInterceptor">
+			<aop:before method="manageItem"
+				pointcut="execution(* com.cobiscorp.ecobis.fpm.operation.service.IItemsManager.manageItem*(..))" />
+			<aop:before method="deleteItem"
+				pointcut="execution(* com.cobiscorp.ecobis.fpm.operation.service.IItemsManager.deleteItem*(..))" />
+			<aop:after method="createItemsHistory"
+				pointcut="execution(* com.cobiscorp.ecobis.fpm.operation.service.IItemsManager.createItemsHistory*(..))" />
+			<aop:around method="getRateValue"
+				pointcut="execution(* com.cobiscorp.ecobis.fpm.operation.service.IItemsManager.getRateValue*(..))" />
+			<aop:around method="getRateReferenceValue"
+				pointcut="execution(* com.cobiscorp.ecobis.fpm.operation.service.IItemsManager.getRateReferenceValue*(..))" />
+			<aop:around method="getChangeRate"
+				pointcut="execution(* com.cobiscorp.ecobis.fpm.operation.service.IItemsManager.getChangeRate*(..))" />
+			<aop:around method="getSpecialChangeRate"
+				pointcut="execution(* com.cobiscorp.ecobis.fpm.operation.service.IItemsManager.getSpecialChangeRate*(..))" />
+			<aop:around method="getPeriodChangerate"
+				pointcut="execution(* com.cobiscorp.ecobis.fpm.operation.service.IItemsManager.getPeriodChangerate*(..))" />
+			<aop:around method="getItemsGroup"
+				pointcut="execution(* com.cobiscorp.ecobis.fpm.operation.service.IItemsManager.getItemsGroup*(..))" />
+		</aop:aspect>
+	</aop:config>
+	<aop:config>
+		<aop:pointcut id="renderOperations"
+			expression="execution(* com.cobiscorp.ecobis.fpm.operation.service.IRenderManager.*(..))" />
+		<aop:advisor pointcut-ref="renderOperations" advice-ref="transactionalAdvice" />
+	</aop:config>
+	<aop:config>
+		<aop:pointcut id="generalParametersOperations"
+			expression="execution(* com.cobiscorp.ecobis.fpm.operation.service.IGeneralParametersManager.*(..))" />
+		<aop:advisor pointcut-ref="generalParametersOperations"
+			advice-ref="transactionalAdvice" />
+		<aop:aspect ref="generalParametersManagerInterceptor">
+			<aop:after method="saveGeneralParametersValues"
+				pointcut="execution(* com.cobiscorp.ecobis.fpm.operation.service.IGeneralParametersManager.saveGeneralParametersValues*(..))" />
+			<aop:around method="validateGeneralParameters"
+				pointcut="execution(* com.cobiscorp.ecobis.fpm.operation.service.IGeneralParametersManager.validateGeneralParameters*(..))" />
+			<aop:after method="createGenearalParametersHistory"
+				pointcut="execution(* com.cobiscorp.ecobis.fpm.operation.service.IGeneralParametersManager.createGenearalParametersHistory*(..))" />
+		</aop:aspect>
+	</aop:config>
+	<aop:config>
+		<aop:pointcut id="mappingManagerServiceSSN"
+			expression="execution(* com.cobiscorp.ecobis.fpm.operation.service.IMappingFieldManager.*(..))" />
+		<aop:advisor pointcut-ref="mappingManagerServiceSSN"
+			advice-ref="transactionalAdvice" />
+	</aop:config>
+
+	<aop:config>
+		<aop:pointcut id="accountingProfileOperations"
+			expression="execution(* com.cobiscorp.ecobis.fpm.portfolio.administration.service.IAccountingProfileManager.*(..))" />
+		<aop:advisor pointcut-ref="accountingProfileOperations"
+			advice-ref="transactionalAdvice" />
+		<aop:aspect ref="accountingProfileManagerInterceptor">
+			<aop:after method="createAccountingProfileHistory"
+				pointcut="execution(* com.cobiscorp.ecobis.fpm.portfolio.administration.service.IAccountingProfileManager.createAccountingProfileHistory*(..))" />
+		</aop:aspect>
+	</aop:config>
+	<aop:config>
+		<aop:pointcut id="itemStatusOperations"
+			expression="execution(* com.cobiscorp.ecobis.fpm.portfolio.administration.service.IItemStatusManager.*(..))" />
+		<aop:advisor pointcut-ref="itemStatusOperations"
+			advice-ref="transactionalAdvice" />
+		<aop:aspect ref="itemStatusManagerInterceptor">
+			<aop:after method="createItemStatusHistory"
+				pointcut="execution(* com.cobiscorp.ecobis.fpm.portfolio.administration.service.IItemStatusManager.createItemStatusHistory*(..))" />
+		</aop:aspect>
+	</aop:config>
+	<aop:config>
+		<aop:pointcut id="operationStatusOperations"
+			expression="execution(* com.cobiscorp.ecobis.fpm.portfolio.administration.service.IOperationStatusManager.*(..))" />
+		<aop:advisor pointcut-ref="operationStatusOperations"
+			advice-ref="transactionalAdvice" />
+		<aop:aspect ref="operationStatusManagerInterceptor">
+			<aop:after method="createOperationStatusHistory"
+				pointcut="execution(* com.cobiscorp.ecobis.fpm.portfolio.administration.service.IOperationStatusManager.createOperationStatusHistory*(..))" />
+		</aop:aspect>
+	</aop:config>
+	<aop:config>
+		<aop:pointcut id="purposeOperations"
+			expression="execution(* com.cobiscorp.ecobis.fpm.portfolio.administration.service.IPurposeManager.*(..))" />
+		<aop:advisor pointcut-ref="purposeOperations" advice-ref="transactionalAdvice" />
+		<aop:aspect ref="purposeManagerInterceptor">
+			<aop:after method="createPurposeHistory"
+				pointcut="execution(* com.cobiscorp.ecobis.fpm.portfolio.administration.service.IPurposeManager.createPurposeHistory*(..))" />
+		</aop:aspect>
+	</aop:config>
+	<aop:config>
+		<aop:pointcut id="economicActivityOperations"
+			expression="execution(* com.cobiscorp.ecobis.fpm.portfolio.administration.service.IEconomicActivityManager.*(..))" />
+		<aop:advisor pointcut-ref="economicActivityOperations" advice-ref="transactionalAdvice" />
+		<aop:aspect ref="economicActivityManagerInterceptor">
+			<aop:after method="createEconomicActivityHistory"
+				pointcut="execution(* com.cobiscorp.ecobis.fpm.portfolio.administration.service.IEconomicActivityManager.createEconomicActivityHistory*(..))" />
+		</aop:aspect>
+	</aop:config>
+	<aop:config>
+		<aop:pointcut id="economicDestinationOperations"
+			expression="execution(* com.cobiscorp.ecobis.fpm.portfolio.administration.service.IEconomicDestinationManager.*(..))" />
+		<aop:advisor pointcut-ref="economicDestinationOperations"
+			advice-ref="transactionalAdvice" />
+		<aop:aspect ref="economicDestinationManagerInterceptor">
+			<aop:after method="createEconomicDestinationHistory"
+				pointcut="execution(* com.cobiscorp.ecobis.fpm.portfolio.administration.service.IEconomicDestinationManager.createEconomicDestinationHistory*(..))" />
+		</aop:aspect>
+	</aop:config>
+	<aop:config>
+		<aop:pointcut id="defaultValuesOperation"
+			expression="execution(* com.cobiscorp.ecobis.fpm.interceptors.service.IDefaultValuesManager.*(..))" />
+		<aop:advisor pointcut-ref="defaultValuesOperation"
+			advice-ref="transactionalAdvice" />
+	</aop:config>
+	
+	<aop:config>
+		<aop:pointcut id="transactionlServicesOperations"
+			expression="execution(* com.cobiscorp.ecobis.fpm.administration.service.IServiceTransactionManager.*(..))" />
+		<aop:advisor pointcut-ref="transactionlServicesOperations"
+			advice-ref="transactionalAdvice" />
+	</aop:config>
+	
+	<aop:config>
+		<aop:pointcut id="paymentTypesOperations"
+			expression="execution(* com.cobiscorp.ecobis.fpm.administration.service.IPaymentTypeFieldsManager.*(..))" />
+		<aop:advisor pointcut-ref="paymentTypesOperations"
+			advice-ref="transactionalAdvice" />
+	</aop:config>
+	
+	<aop:config>
+		<aop:pointcut id="bankingProductAssociationOperation"
+			expression="execution(* com.cobiscorp.ecobis.fpm.operation.service.IBankingProductAssociationManager.*(..))" />
+		<aop:advisor pointcut-ref="bankingProductAssociationOperation"
+			advice-ref="transactionalAdvice" />
+	</aop:config>
+	
+	<aop:config>
+		<aop:pointcut id="associationTransactionOperation"
+			expression="execution(* com.cobiscorp.ecobis.fpm.administration.service.IAssociationTransactionManager.*(..))" />
+		<aop:advisor pointcut-ref="associationTransactionOperation"
+			advice-ref="transactionalAdvice" />
+	</aop:config>
+	
+	<aop:config>
+		<aop:pointcut id="associationChannelOperation"
+			expression="execution(* com.cobiscorp.ecobis.fpm.administration.service.IAssociationChannelManager.*(..))" />
+		<aop:advisor pointcut-ref="associationChannelOperation"
+			advice-ref="transactionalAdvice" />
+	</aop:config>
+	
+	<aop:config>
+		<aop:pointcut id="unitFunctionalityValuesOperation"
+			expression="execution(* com.cobiscorp.ecobis.fpm.operation.service.IUnitFunctionalityValues.*(..))" />
+		<aop:advisor pointcut-ref="unitFunctionalityValuesOperation"
+			advice-ref="transactionalAdvice" />
+		<aop:aspect ref="UnitFunctionalityValuesManagerInterceptor">
+			<aop:before method="insertUnitFunctionalityValues"
+				pointcut="execution(* com.cobiscorp.ecobis.fpm.operation.service.IUnitFunctionalityValues.insertUnitFunctionalityValues*(..))" />
+				<aop:before method="updateUnitFuntionalityValues"
+				pointcut="execution(* com.cobiscorp.ecobis.fpm.operation.service.IUnitFunctionalityValues.updateUnitFuntionalityValues*(..))" />
+			<aop:after method="createUnitFunctionalityValuesHistory"
+				pointcut="execution(* com.cobiscorp.ecobis.fpm.operation.service.IUnitFunctionalityValues.createUnitFunctionalityValuesHistory*(..))" />
+		</aop:aspect>
+	</aop:config>
+	
+	<aop:config>
+		<aop:pointcut id="fieldByProductOperation"
+			expression="execution(* com.cobiscorp.ecobis.fpm.administration.service.IFieldsByProductManager.*(..))" />
+		<aop:advisor pointcut-ref="fieldByProductOperation"
+			advice-ref="transactionalAdvice" />
+	</aop:config>
+	
+	<aop:config>
+		<aop:pointcut id="fieldByProductValuesOperation"                       
+			expression="execution(* com.cobiscorp.ecobis.fpm.operation.service.IFieldsByProductValuesManager.*(..))" />
+		<aop:advisor pointcut-ref="fieldByProductValuesOperation"
+			advice-ref="transactionalAdvice" />
+		<aop:aspect ref="fieldByProductValuesOperationInterceptor">
+			<aop:after method="insertListFieldByProductValues"
+				pointcut="execution(* com.cobiscorp.ecobis.fpm.operation.service.IFieldsByProductValuesManager.insertListFieldByProductValues*(..))" />
+		</aop:aspect>
+			
+	</aop:config>
+	
+</beans>

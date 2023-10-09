@@ -1,0 +1,382 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<procedure>
+  <database>cob_custodia</database>
+  <name>sp_custodia</name>
+  <type>SQLSERVER</type>
+  <version>1</version>
+  <parameters>
+    <parameter name="@s_ssn" dataType="int" direction="in" />
+    <parameter name="@s_date" dataType="datetime" direction="in" />
+    <parameter name="@s_user" dataType="varchar" direction="in" />
+    <parameter name="@s_term" dataType="varchar" direction="in" />
+    <parameter name="@s_corr" dataType="char" direction="in" />
+    <parameter name="@s_ssn_corr" dataType="int" direction="in" />
+    <parameter name="@s_ofi" dataType="smallint" direction="in" />
+    <parameter name="@s_srv" dataType="varchar" direction="in" />
+    <parameter name="@s_lsrv" dataType="varchar" direction="in" />
+    <parameter name="@t_rty" dataType="char" direction="in" />
+    <parameter name="@t_from" dataType="varchar" direction="in" />
+    <parameter name="@t_trn" dataType="smallint" direction="in" />
+    <parameter name="@i_operacion" dataType="char" direction="in" />
+    <parameter name="@i_filial" dataType="tinyint" direction="in" />
+    <parameter name="@i_sucursal" dataType="smallint" direction="in" />
+    <parameter name="@i_tipo" dataType="varchar" direction="in" />
+    <parameter name="@i_custodia" dataType="int" direction="in" />
+    <parameter name="@i_propuesta" dataType="int" direction="in" />
+    <parameter name="@i_estado" dataType="varchar" direction="in" />
+    <parameter name="@i_fecha_ingreso" dataType="datetime" direction="in" />
+    <parameter name="@i_valor_inicial" dataType="float" direction="in" />
+    <parameter name="@i_valor_actual" dataType="float" direction="in" />
+    <parameter name="@i_moneda" dataType="tinyint" direction="in" />
+    <parameter name="@i_garante" dataType="int" direction="in" />
+    <parameter name="@i_instruccion" dataType="varchar" direction="in" />
+    <parameter name="@i_descripcion" dataType="varchar" direction="in" />
+    <parameter name="@i_poliza" dataType="varchar" direction="in" />
+    <parameter name="@i_inspeccionar" dataType="char" direction="in" />
+    <parameter name="@i_motivo_noinsp" dataType="varchar" direction="in" />
+    <parameter name="@i_suficiencia_legal" dataType="char" direction="in" />
+    <parameter name="@i_fuente_valor" dataType="varchar" direction="in" />
+    <parameter name="@i_situacion" dataType="char" direction="in" />
+    <parameter name="@i_almacenera" dataType="smallint" direction="in" />
+    <parameter name="@i_aseguradora" dataType="varchar" direction="in" />
+    <parameter name="@i_tipo_cta" dataType="varchar" direction="in" />
+    <parameter name="@i_cta_inspeccion" dataType="varchar" direction="in" />
+    <parameter name="@i_direccion_prenda" dataType="varchar" direction="in" />
+    <parameter name="@i_ciudad_prenda" dataType="int" direction="in" />
+    <parameter name="@i_telefono_prenda" dataType="varchar" direction="in" />
+    <parameter name="@i_mex_prx_inspec" dataType="tinyint" direction="in" />
+    <parameter name="@i_fecha_modif" dataType="datetime" direction="in" />
+    <parameter name="@i_fecha_const" dataType="datetime" direction="in" />
+    <parameter name="@i_porcentaje_valor" dataType="float" direction="in" />
+    <parameter name="@i_formato_fecha" dataType="int" direction="in" />
+    <parameter name="@i_periodicidad" dataType="varchar" direction="in" />
+    <parameter name="@i_depositario" dataType="varchar" direction="in" />
+    <parameter name="@i_posee_poliza" dataType="char" direction="in" />
+    <parameter name="@i_parte" dataType="tinyint" direction="in" />
+    <parameter name="@i_cobranza_judicial" dataType="char" direction="in" />
+    <parameter name="@i_fecha_retiro" dataType="datetime" direction="in" />
+    <parameter name="@i_fecha_devolucion" dataType="datetime" direction="in" />
+    <parameter name="@i_estado_poliza" dataType="varchar" direction="in" />
+    <parameter name="@i_cobrar_comision" dataType="char" direction="in" />
+    <parameter name="@i_codigo_compuesto" dataType="varchar" direction="in" />
+    <parameter name="@i_compuesto" dataType="varchar" direction="in" />
+    <parameter name="@i_cuenta_dpf" dataType="varchar" direction="in" />
+    <parameter name="@i_cliente" dataType="int" direction="in" />
+    <parameter name="@i_ente" dataType="int" direction="in" />
+    <parameter name="@i_abierta_cerrada" dataType="char" direction="in" />
+    <parameter name="@i_adecuada_noadec" dataType="char" direction="in" />
+    <parameter name="@i_propietario" dataType="varchar" direction="in" />
+    <parameter name="@i_fsalida_colateral" dataType="datetime" direction="in" />
+    <parameter name="@i_fretorno_colateral" dataType="datetime" direction="in" />
+    <parameter name="@i_eliminarcliente" dataType="char" direction="in" />
+    <parameter name="@i_login" dataType="varchar" direction="in" />
+    <parameter name="@i_plazo_fijo" dataType="varchar" direction="in" />
+    <parameter name="@i_monto_pfijo" dataType="money" direction="in" />
+    <parameter name="@i_det_cliente" dataType="char" direction="in" />
+    <parameter name="@i_oficina_contabiliza" dataType="smallint" direction="in" />
+    <parameter name="@i_compartida" dataType="char" direction="in" />
+    <parameter name="@i_valor_compartida" dataType="money" direction="in" />
+    <parameter name="@i_valor_cobertura" dataType="float" direction="in" />
+    <parameter name="@i_num_acciones" dataType="int" direction="in" />
+    <parameter name="@i_valor_accion" dataType="money" direction="in" />
+    <parameter name="@i_cdt" dataType="char" direction="in" />
+    <parameter name="@i_num_banco" dataType="varchar" direction="in" />
+    <parameter name="@i_producto" dataType="varchar" direction="in" />
+    <parameter name="@i_valor" dataType="money" direction="in" />
+    <parameter name="@i_vlr_cuantia" dataType="money" direction="in" />
+    <parameter name="@i_tasa" dataType="float" direction="in" />
+    <parameter name="@i_spread" dataType="float" direction="in" />
+    <parameter name="@i_observacion" dataType="varchar" direction="in" />
+    <parameter name="@i_fecha_pignora" dataType="datetime" direction="in" />
+    <parameter name="@i_ubicacion" dataType="varchar" direction="in" />
+    <parameter name="@i_entidad" dataType="int" direction="in" />
+    <parameter name="@i_fecha_comp" dataType="datetime" direction="in" />
+    <parameter name="@i_grado_comp" dataType="tinyint" direction="in" />
+    <parameter name="@i_porcentaje_comp" dataType="float" direction="in" />
+    <parameter name="@i_cuantia" dataType="char" direction="in" />
+    <parameter name="@i_num_dcto" dataType="varchar" direction="in" />
+    <parameter name="@i_valor_refer_comis" dataType="money" direction="in" />
+    <parameter name="@i_entidad_esp" dataType="varchar" direction="in" />
+    <parameter name="@i_fecha_sol_rec" dataType="datetime" direction="in" />
+    <parameter name="@i_fecha_sol_ren" dataType="datetime" direction="in" />
+    <parameter name="@i_fec_impred" dataType="datetime" direction="in" />
+    <parameter name="@i_directo" dataType="char" direction="in" />
+    <parameter name="@i_licencia" dataType="varchar" direction="in" />
+    <parameter name="@i_fecha_vcto" dataType="datetime" direction="in" />
+    <parameter name="@i_fecha_aval" dataType="datetime" direction="in" />
+    <parameter name="@i_fec_venci" dataType="datetime" direction="in" />
+    <parameter name="@i_porcentaje_cobertura" dataType="float" direction="in" />
+    <parameter name="@i_valor_cuantia" dataType="money" direction="in" />
+    <parameter name="@i_entidad_emisora" dataType="int" direction="in" />
+    <parameter name="@i_fuente_valor_accion" dataType="varchar" direction="in" />
+    <parameter name="@i_fecha_accion" dataType="datetime" direction="in" />
+    <parameter name="@i_valor_comision" dataType="money" direction="in" />
+    <parameter name="@i_tipo_superior" dataType="varchar" direction="in" />
+    <parameter name="@o_num_banco" dataType="varchar" direction="out" />
+    <parameter name="@o_cuenta_dpf" dataType="varchar" direction="out" />
+    <parameter name="@i_grado_gar" dataType="varchar" direction="in" />
+    <parameter name="@i_provisiona" dataType="char" direction="in" />
+    <parameter name="@i_fnro_documento" dataType="varchar" direction="in" />
+    <parameter name="@i_fvalor_bruto" dataType="money" direction="in" />
+    <parameter name="@i_fanticipos" dataType="money" direction="in" />
+    <parameter name="@i_fpor_impuestos" dataType="float" direction="in" />
+    <parameter name="@i_fpor_retencion" dataType="float" direction="in" />
+    <parameter name="@i_fvalor_neto" dataType="money" direction="in" />
+    <parameter name="@i_ffecha_emision" dataType="datetime" direction="in" />
+    <parameter name="@i_ffecha_vtodoc" dataType="datetime" direction="in" />
+    <parameter name="@i_ffecha_inineg" dataType="datetime" direction="in" />
+    <parameter name="@i_ffecha_vtoneg" dataType="datetime" direction="in" />
+    <parameter name="@i_ffecha_pago" dataType="datetime" direction="in" />
+    <parameter name="@i_fbase_calculo" dataType="varchar" direction="in" />
+    <parameter name="@i_fdias_negocio" dataType="int" direction="in" />
+    <parameter name="@i_fnum_dex" dataType="varchar" direction="in" />
+    <parameter name="@i_ffecha_dex" dataType="datetime" direction="in" />
+    <parameter name="@i_fproveedor" dataType="int" direction="in" />
+    <parameter name="@i_fcomprador" dataType="int" direction="in" />
+    <parameter name="@i_fresp_pago" dataType="int" direction="in" />
+    <parameter name="@i_fresp_dscto" dataType="int" direction="in" />
+    <parameter name="@i_ftasa" dataType="float" direction="in" />
+    <parameter name="@i_disponible" dataType="float" direction="in" />
+    <parameter name="@i_codigo_externo" dataType="varchar" direction="in" />
+    <parameter name="@i_siniestro" dataType="char" direction="in" />
+    <parameter name="@i_castigo" dataType="char" direction="in" />
+    <parameter name="@i_agotada" dataType="char" direction="in" />
+    <parameter name="@i_clase_custodia" dataType="char" direction="in" />
+    <parameter name="@i_origen" dataType="char" direction="in" />
+    <parameter name="@i_fecha_sol_exp" dataType="datetime" direction="in" />
+    <parameter name="@i_fecha_apr_pre" dataType="datetime" direction="in" />
+    <parameter name="@i_fecha_apr" dataType="datetime" direction="in" />
+    <parameter name="@i_fecha_pro" dataType="datetime" direction="in" />
+    <parameter name="@i_num_acta_apr_pre" dataType="varchar" direction="in" />
+    <parameter name="@i_num_acta_apr" dataType="varchar" direction="in" />
+    <parameter name="@i_clase_vehiculo" dataType="varchar" direction="in" />
+    <parameter name="@i_oficial" dataType="smallint" direction="in" />
+    <parameter name="@i_ofi_ing" dataType="smallint" direction="in" />
+    <parameter name="@i_cuenta" dataType="varchar" direction="in" />
+    <parameter name="@i_carta_instruccion" dataType="char" direction="in" />
+    <parameter name="@i_nomcliente" dataType="varchar" direction="in" />
+    <parameter name="@i_principal" dataType="char" direction="in" />
+    <parameter name="@i_tipo_garante" dataType="varchar" direction="in" />
+    <parameter name="@i_opcion" dataType="char" direction="in" />
+    <parameter name="@i_expedido" dataType="char" direction="in" />
+    <parameter name="@i_causa_nexp" dataType="varchar" direction="in" />
+    <parameter name="@i_ciudad_gar" dataType="int" direction="in" />
+    <parameter name="@i_valor_original" dataType="float" direction="in" />
+    <parameter name="@i_tramite" dataType="int" direction="in" />
+  </parameters>
+  <queries>
+    <query>
+      <columns>
+        <column name="{1}" />
+      </columns>
+      <queryText>SELECT w_custodia</queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="Custodia" />
+      </columns>
+      <queryText>SELECT "Custodia"=w_custodia</queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="{1}" />
+      </columns>
+      <queryText>SELECT i_sucursal</queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="{1}" />
+        <column name="nombre " />
+        <column name="{3}" />
+        <column name="fu_nombre " />
+        <column name="{5}" />
+        <column name="{6}" />
+        <column name="garante " />
+        <column name="{8}" />
+        <column name="valor_cat " />
+      </columns>
+      <queryText>SELECT  cg_ente,nombre = SUBSTRING (p_p_apellido + " " + p_s_apellido + " " + en_nombre, 1, 25),cg_oficial,fu_nombre = (SELECT  SUBSTRING (fu_nombre, 1, 25) FROM cobis..cl_funcionario   WHERE OC.oc_funcionario = fu_funcionario     ),cg_principal,cg_tipo_garante,garante = SUBSTRING (A.valor, 1, 15),en_vinculacion,valor_cat = (SELECT  valor FROM cobis..cl_catalogo A  ,cobis..cl_tabla B   WHERE B.tabla = "cl_relacion_banco" AND B.codigo = A.tabla AND A.codigo = E.en_tipo_vinculacion     ) </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="{1}" />
+        <column name="{2}" />
+        <column name="{3}" />
+        <column name="{4}" />
+        <column name="{5}" />
+        <column name="{6}" />
+        <column name="{7}" />
+        <column name="{8}" />
+        <column name="{9}" />
+        <column name="{10}" />
+        <column name="{11}" />
+        <column name="{12}" />
+        <column name="{13}" />
+        <column name="{14}" />
+        <column name="{15}" />
+        <column name="{16}" />
+        <column name="{17}" />
+        <column name="{18}" />
+        <column name="{19}" />
+        <column name="{20}" />
+        <column name="{21}" />
+        <column name="{22}" />
+        <column name="{23}" />
+        <column name="{24}" />
+        <column name="{25}" />
+        <column name="{26}" />
+        <column name="{27}" />
+        <column name="{28}" />
+        <column name="{29}" />
+        <column name="{30}" />
+        <column name="{31}" />
+        <column name="{32}" />
+        <column name="{33}" />
+        <column name="{34}" />
+        <column name="{35}" />
+        <column name="{36}" />
+        <column name="{37}" />
+        <column name="{38}" />
+        <column name="{39}" />
+        <column name="{40}" />
+        <column name="{41}" />
+        <column name="{42}" />
+        <column name="{43}" />
+        <column name="{44}" />
+        <column name="{45}" />
+        <column name="{46}" />
+        <column name="{47}" />
+        <column name="{48}" />
+        <column name="{49}" />
+        <column name="{50}" />
+        <column name="{51}" />
+        <column name="{52}" />
+        <column name="{53}" />
+        <column name="{54}" />
+        <column name="{55}" />
+        <column name="{56}" />
+        <column name="{57}" />
+        <column name="{58}" />
+        <column name="{59}" />
+        <column name="{60}" />
+        <column name="{61}" />
+      </columns>
+      <queryText>SELECT w_custodia, w_tipo, w_des_tipo, ctx.convertString(w_fecha_ingreso ,i_formato_fecha), w_estado, w_des_est_custodia, w_descripcion, ctx.ISNULL(ctx.convertString(w_garante), ""), w_des_garante, w_cta_inspeccion, w_fuente_valor, w_des_fuente_valor, ctx.ISNULL(ctx.convertString(w_moneda), ""), w_des_moneda, ctx.convertString(w_valor_inicial), ctx.convertString(w_valor_actual), ctx.convertString(w_fecha_const ,i_formato_fecha), w_instruccion, w_inspeccionar, w_suficiencia_legal, w_motivo_noinsp, w_des_motivo_noinsp, w_ciudad_prenda, w_direccion_prenda, w_telefono_prenda, ctx.ISNULL(ctx.convertString(w_almacenera), ""), w_des_almacenera, ctx.convertString(w_fecha_avaluo ,i_formato_fecha), w_poliza, w_aseguradora, w_des_aseguradora, w_cobranza_judicial, ctx.convertString(w_fecha_retiro ,i_formato_fecha), ctx.convertString(w_fecha_devolucion ,i_formato_fecha), w_estado_poliza, w_des_estado_poliza, w_cobrar_comision, w_periodicidad, w_des_periodicidad, w_abr_cer, w_cuenta_dpf, ctx.ISNULL(ctx.convertString(w_cliente), ""), w_des_cliente, w_abierta_cerrada, w_adecuada_noadec, w_oficial, w_propietario, w_plazo_fijo, w_monto_pfijo, w_depositario, w_oficina_contabiliza, w_des_oficina, w_compartida, w_valor_compartida, w_posee_poliza, ctx.convertString(w_valor_cobertura), w_num_acciones, w_valor_accion, w_des_adecuada, w_cuenta_inspeccion, w_fag</queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="{1}" />
+        <column name="{2}" />
+        <column name="{3}" />
+        <column name="{4}" />
+        <column name="{5}" />
+        <column name="{6}" />
+        <column name="{7}" />
+        <column name="{8}" />
+        <column name="{9}" />
+        <column name="{10}" />
+        <column name="{11}" />
+        <column name="{12}" />
+        <column name="{13}" />
+        <column name="{14}" />
+        <column name="{15}" />
+        <column name="{16}" />
+        <column name="{17}" />
+        <column name="{18}" />
+        <column name="{19}" />
+        <column name="{20}" />
+        <column name="{21}" />
+        <column name="{22}" />
+        <column name="{23}" />
+        <column name="{24}" />
+        <column name="{25}" />
+        <column name="{26}" />
+        <column name="{27}" />
+        <column name="{28}" />
+        <column name="{29}" />
+        <column name="{30}" />
+        <column name="{31}" />
+        <column name="{32}" />
+        <column name="{33}" />
+        <column name="{34}" />
+        <column name="{35}" />
+        <column name="{36}" />
+        <column name="{37}" />
+        <column name="{38}" />
+        <column name="{39}" />
+        <column name="{40}" />
+        <column name="{41}" />
+        <column name="{42}" />
+        <column name="{43}" />
+        <column name="{44}" />
+        <column name="{45}" />
+        <column name="{46}" />
+        <column name="{47}" />
+        <column name="{48}" />
+        <column name="{49}" />
+        <column name="{50}" />
+        <column name="{51}" />
+        <column name="{52}" />
+        <column name="{53}" />
+        <column name="{54}" />
+        <column name="{55}" />
+        <column name="{56}" />
+        <column name="{57}" />
+        <column name="{58}" />
+        <column name="{59}" />
+        <column name="{60}" />
+        <column name="{61}" />
+        <column name="{62}" />
+        <column name="{63}" />
+        <column name="{64}" />
+        <column name="{65}" />
+        <column name="{66}" />
+        <column name="{67}" />
+        <column name="{68}" />
+        <column name="{69}" />
+        <column name="{70}" />
+        <column name="{71}" />
+        <column name="{72}" />
+        <column name="{73}" />
+        <column name="{74}" />
+        <column name="{75}" />
+        <column name="{76}" />
+        <column name="{77}" />
+        <column name="{78}" />
+        <column name="{79}" />
+      </columns>
+      <queryText>SELECT w_ubicacion, w_des_ubicacion, w_tipogarante, w_des_tipogarante, w_cuantia, w_vlr_cuantia, w_num_dcto, w_valor_refer_comis, w_entidad_esp, ctx.convertString(w_fecha_sol_rec ,i_formato_fecha), ctx.convertString(w_fecha_sol_ren ,i_formato_fecha), w_des_entidad_esp, w_des_ciudad_prenda, ctx.convertString(w_fec_impred ,i_formato_fecha), "", w_cta_inspeccion, w_tipo_cta, w_codoficial, w_licencia, ctx.convertString(w_fecha_vcto ,i_formato_fecha), ctx.convertString(w_fec_venci ,i_formato_fecha), ctx.convertString(w_fecha_aval ,i_formato_fecha), w_porcentaje_cobertura, w_entidad_emisora, w_fuente_valor_emisora, ctx.convertString(w_fecha_accion ,i_formato_fecha), w_desc_entidad_emisora, w_desc_fuente_emisora, w_porcentaje_comp, w_valor_compartida, w_valor_comision, w_recupera, w_grado_gar, w_des_grado, w_provisiona, w_fnro_documento, w_fvalor_bruto, w_fanticipos, w_fpor_impuestos, w_fpor_retencion, w_fvalor_neto, ctx.convertString(w_ffecha_emision ,i_formato_fecha), ctx.convertString(w_ffecha_vtodoc ,i_formato_fecha), ctx.convertString(w_ffecha_inineg ,i_formato_fecha), ctx.convertString(w_ffecha_vtoneg ,i_formato_fecha), ctx.convertString(w_ffecha_pago ,i_formato_fecha), w_fbase_calculo, w_fdias_negocio, w_fnum_dex, ctx.convertString(w_ffecha_dex ,i_formato_fecha), w_fproveedor, w_fcomprador, w_fresp_pago, w_fresp_dscto, w_ftasa, w_des_base_calculo, w_nom_proveedor, w_nom_comprador, w_nom_pago, w_nom_descuento, w_siniestro, w_castigo, w_agotada, w_clase_custodia, w_des_clase, ctx.convertString(w_fecha_sol_exp ,i_formato_fecha), ctx.convertString(w_fecha_sol_rec ,i_formato_fecha), ctx.convertString(w_fecha_apr_pre ,i_formato_fecha), ctx.convertString(w_fecha_pro ,i_formato_fecha), ctx.convertString(w_fecha_sol_ren ,i_formato_fecha), w_num_acta_apr_pre, w_num_acta_apr, w_clase_vehiculo, w_des_clase_vehiculo, w_propuesta, w_acum_ajuste, ctx.convertString(w_fecha_apr ,i_formato_fecha), w_valor_original, w_usuario_crea</queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="{1}" />
+        <column name="{2}" />
+        <column name="{3}" />
+        <column name="{4}" />
+        <column name="{5}" />
+      </columns>
+      <queryText>SELECT w_ciudad_gar, w_des_ciudad_gar, w_expedido, w_causa_nexp, w_des_nexpedido</queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="{1}" />
+        <column name="{2}" />
+        <column name="{3}" />
+        <column name="{4}" />
+      </columns>
+      <queryText>SELECT  CONVERT (CHAR (10),? ,?),CONVERT (CHAR (10),? ,?),mo_descripcion,? </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="{1}" />
+      </columns>
+      <queryText>SELECT  cu_propietario </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="{1}" />
+      </columns>
+      <queryText>SELECT w_es_cobreg</queryText>
+    </query>
+  </queries>
+</procedure>

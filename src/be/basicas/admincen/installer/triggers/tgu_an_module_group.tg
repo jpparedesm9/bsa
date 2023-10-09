@@ -1,0 +1,110 @@
+use cobis
+go
+if exists (select * from sysobjects where name = 'tgu_an_module_group')
+    drop trigger tgu_an_module_group
+go
+create trigger tgu_an_module_group
+on an_module_group
+for update
+as
+begin
+    declare
+        @w_mg_id          int,
+        @w_mg_id_old      int,
+        @w_mg_name        varchar(64),
+        @w_mg_version     varchar(15),
+        @w_mg_location    varchar(255),
+        @w_mg_store_name  varchar(40),
+        @w_id             int
+ 
+    if update(mg_id)
+    begin
+        rollback transaction
+        print 'No se puede actualizar la clave'
+    end
+    else
+    begin
+        declare cu_inserted cursor for
+            select
+                mg_id,
+                mg_name,
+                mg_version,
+                mg_location,
+                mg_store_name
+            from inserted
+            order by mg_id
+
+        declare cu_deleted cursor for
+            select
+                mg_id
+            from deleted
+            order by mg_id
+ 
+        open cu_deleted
+        open cu_inserted
+           
+        fetch cu_inserted into
+            @w_mg_id,
+            @w_mg_name,
+            @w_mg_version,
+            @w_mg_location,
+            @w_mg_store_name
+         
+        fetch cu_deleted into
+            @w_mg_id_old 
+
+        while @@FETCH_STATUS=0
+        begin
+            select @w_id = sq_siguiente
+            from cob_distrib..di_seqnos
+            where sq_tabla = 'di_log'
+ 
+            update cob_distrib..di_seqnos
+            set sq_siguiente = sq_siguiente + 1
+            where sq_tabla = 'di_log'
+ 
+            insert into cob_distrib..di_log (
+                lg_id, lg_fecha, lg_operacion, lg_objeto)
+            values (@w_id, getdate(), 'U', 'cobis..sp_an_module_group_tg')
+            
+            insert into cob_distrib..di_parametro (
+                pa_id, pa_nombre, pa_tipodato, pa_longitud, pa_int)
+            values (@w_id, '@i_mg_id', 56, isnull(datalength(@w_mg_id), 0), @w_mg_id)
+
+            insert into cob_distrib..di_parametro (
+                pa_id, pa_nombre, pa_tipodato, pa_longitud, pa_varchar)
+            values (@w_id, '@i_mg_name', 39, isnull(datalength(@w_mg_name), 0), @w_mg_name)
+            
+            insert into cob_distrib..di_parametro (
+                pa_id, pa_nombre, pa_tipodato, pa_longitud, pa_varchar)
+            values (@w_id, '@i_mg_version', 39, isnull(datalength(@w_mg_version), 0), @w_mg_version)
+            
+            insert into cob_distrib..di_parametro (
+                pa_id, pa_nombre, pa_tipodato, pa_longitud, pa_varchar)
+            values (@w_id, '@i_mg_location', 39, isnull(datalength(@w_mg_location), 0), @w_mg_location)
+
+            insert into cob_distrib..di_parametro (
+                pa_id, pa_nombre, pa_tipodato, pa_longitud, pa_varchar)
+            values (@w_id, '@i_mg_store_name', 39, isnull(datalength(@w_mg_store_name), 0), @w_mg_store_name)
+
+            insert into cob_distrib..di_parametro (
+                pa_id, pa_nombre, pa_tipodato, pa_longitud, pa_int)
+            values (@w_id, '@i_mg_id_old', 56, isnull(datalength(@w_mg_id_old), 0), @w_mg_id_old)
+
+            fetch cu_inserted into
+                @w_mg_id,
+                @w_mg_name,
+                @w_mg_version,
+                @w_mg_location,
+                @w_mg_store_name
+        
+            fetch cu_deleted into
+                @w_mg_id_old 
+        end
+        close cu_inserted
+        deallocate cu_inserted
+        close cu_deleted
+        deallocate cu_deleted
+    end    
+end
+go

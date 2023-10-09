@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<procedure>
+  <database>cob_cartera</database>
+  <name>sp_imprimir_oficina</name>
+  <type>SYBASE</type>
+  <version>1</version>
+  <parameters>
+    <parameter name="@s_ssn" dataType="int" direction="in" />
+    <parameter name="@s_date" dataType="datetime" direction="in" />
+    <parameter name="@s_user" dataType="varchar" direction="in" />
+    <parameter name="@s_term" dataType="varchar" direction="in" />
+    <parameter name="@s_corr" dataType="char" direction="in" />
+    <parameter name="@s_ssn_corr" dataType="int" direction="in" />
+    <parameter name="@s_ofi" dataType="smallint" direction="in" />
+    <parameter name="@t_rty" dataType="char" direction="in" />
+    <parameter name="@t_debug" dataType="char" direction="in" />
+    <parameter name="@t_file" dataType="varchar" direction="in" />
+    <parameter name="@t_trn" dataType="smallint" direction="in" />
+    <parameter name="@i_banco" dataType="varchar" direction="in" />
+    <parameter name="@i_operacion" dataType="char" direction="in" />
+  </parameters>
+  <queries>
+    <query>
+      <columns>
+        <column name="Filia" />
+        <column name="No. Ruc" />
+        <column name="Nombre Banco" />
+        <column name="Direccion " />
+        <column name="Oficina" />
+        <column name="Nombre Ofic." />
+        <column name="Ciudad" />
+        <column name="Telefono" />
+        <column name="Terminal" />
+        <column name="Usuario" />
+        <column name="Recibo" />
+      </columns>
+      <queryText>SELECT  "Filia" = fi_filial,"No. Ruc" = fi_ruc,"Nombre Banco" = SUBSTRING (fi_nombre, 1, 30),"Direccion " = SUBSTRING (of_direccion, 1, 60),"Oficina" = of_oficina,"Nombre Ofic." = SUBSTRING (of_nombre, 1, 30),"Ciudad" = SUBSTRING (ci_descripcion, 1, 30),"Telefono" = (SELECT  to_valor FROM cobis..cl_telefono_of   WHERE to_secuencial = A.of_telefono AND to_oficina = A.of_oficina     ),"Terminal" = ?,"Usuario" = ?,"Recibo" = "11111111" </queryText>
+    </query>
+  </queries>
+</procedure>

@@ -1,0 +1,39 @@
+<persistence version="2.0"
+	xmlns="http://java.sun.com/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd">
+	<persistence-unit name="JpaCustomerServices"
+		transaction-type="JTA">
+		<description>Cobis Persistence unit example</description>
+		<!-- <provider>org.apache.openjpa.persistence.PersistenceProviderImpl</provider> 
+			<jta-data-source>jdbc/CTS_BDD_MF</jta-data-source> -->
+
+		<class>com.cobiscorp.ecobis.customer.commons.dal.entities.Activity</class>
+		<class>com.cobiscorp.ecobis.customer.commons.dal.entities.City</class>
+		<class>com.cobiscorp.ecobis.customer.commons.dal.entities.Country</class>
+		<class>com.cobiscorp.ecobis.customer.commons.dal.entities.Customer</class>
+		<class>com.cobiscorp.ecobis.customer.commons.dal.entities.CustomerAddress</class>
+		<class>com.cobiscorp.ecobis.customer.commons.dal.entities.CustomerAddressId</class>
+		<class>com.cobiscorp.ecobis.customer.commons.dal.entities.CustomerAux</class>
+		<class>com.cobiscorp.ecobis.customer.commons.dal.entities.CustomerGroup</class>
+		<class>com.cobiscorp.ecobis.customer.commons.dal.entities.CustomerGroupId</class>
+		<class>com.cobiscorp.ecobis.customer.commons.dal.entities.CustomerScore</class>
+		<class>com.cobiscorp.ecobis.customer.commons.dal.entities.District</class>
+		<class>com.cobiscorp.ecobis.customer.commons.dal.entities.DocumentType</class>
+		<class>com.cobiscorp.ecobis.customer.commons.dal.entities.EconomicGroup</class>
+		<class>com.cobiscorp.ecobis.customer.commons.dal.entities.Functionary</class>
+		<class>com.cobiscorp.ecobis.customer.commons.dal.entities.Office</class>
+		<class>com.cobiscorp.ecobis.customer.commons.dal.entities.Official</class>
+		<class>com.cobiscorp.ecobis.customer.commons.dal.entities.OfficialId</class>
+		<class>com.cobiscorp.ecobis.customer.commons.dal.entities.Province</class>
+		<class>com.cobiscorp.ecobis.customer.commons.dal.entities.Town</class>
+		<class>com.cobiscorp.ecobis.customer.commons.dal.entities.EconomicActivity</class>
+		<class>com.cobiscorp.ecobis.customer.commons.dal.entities.EconomicSector</class>
+		<class>com.cobiscorp.ecobis.customer.commons.dal.entities.SubSector</class>
+		<class>com.cobiscorp.ecobis.customer.commons.dal.entities.Instance</class>
+		<class>com.cobiscorp.ecobis.customer.commons.dal.entities.Children</class>
+		<class>com.cobiscorp.ecobis.customer.commons.dal.entities.Relation</class>
+		<class>com.cobiscorp.ecobis.customer.commons.dal.entities.SubActivity</class>
+		<exclude-unlisted-classes>true</exclude-unlisted-classes>
+
+	</persistence-unit>
+</persistence>

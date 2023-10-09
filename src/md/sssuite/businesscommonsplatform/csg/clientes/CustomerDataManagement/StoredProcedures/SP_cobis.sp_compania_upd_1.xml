@@ -1,0 +1,131 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<procedure>
+  <database>cobis</database>
+  <name>sp_compania_upd</name>
+  <type>SYBASE</type>
+  <version>1</version>
+  <parameters>
+    <parameter name="@s_ssn" dataType="int" direction="in" />
+    <parameter name="@s_user" dataType="varchar" direction="in" />
+    <parameter name="@s_term" dataType="varchar" direction="in" />
+    <parameter name="@s_date" dataType="datetime" direction="in" />
+    <parameter name="@s_srv" dataType="varchar" direction="in" />
+    <parameter name="@s_lsrv" dataType="varchar" direction="in" />
+    <parameter name="@s_ofi" dataType="smallint" direction="in" />
+    <parameter name="@s_rol" dataType="smallint" direction="in" />
+    <parameter name="@s_org_err" dataType="char" direction="in" />
+    <parameter name="@s_error" dataType="int" direction="in" />
+    <parameter name="@s_sev" dataType="tinyint" direction="in" />
+    <parameter name="@s_msg" dataType="varchar" direction="in" />
+    <parameter name="@s_org" dataType="char" direction="in" />
+    <parameter name="@t_debug" dataType="char" direction="in" />
+    <parameter name="@t_file" dataType="varchar" direction="in" />
+    <parameter name="@t_from" dataType="varchar" direction="in" />
+    <parameter name="@t_trn" dataType="smallint" direction="in" />
+    <parameter name="@i_operacion" dataType="char" direction="in" />
+    <parameter name="@i_compania" dataType="int" direction="in" />
+    <parameter name="@i_nombre" dataType="varchar" direction="in" />
+    <parameter name="@i_posicion" dataType="varchar" direction="in" />
+    <parameter name="@i_ruc" dataType="varchar" direction="in" />
+    <parameter name="@i_grupo" dataType="int" direction="in" />
+    <parameter name="@i_activo" dataType="money" direction="in" />
+    <parameter name="@i_pasivo" dataType="money" direction="in" />
+    <parameter name="@i_pais" dataType="smallint" direction="in" />
+    <parameter name="@i_filial" dataType="tinyint" direction="in" />
+    <parameter name="@i_oficina" dataType="smallint" direction="in" />
+    <parameter name="@i_tipo" dataType="varchar" direction="in" />
+    <parameter name="@i_oficial" dataType="smallint" direction="in" />
+    <parameter name="@i_oficial_sup" dataType="smallint" direction="in" />
+    <parameter name="@i_es_grupo" dataType="char" direction="in" />
+    <parameter name="@i_comentario" dataType="varchar" direction="in" />
+    <parameter name="@i_retencion" dataType="char" direction="in" />
+    <parameter name="@i_asosciada" dataType="varchar" direction="in" />
+    <parameter name="@i_tipo_vinculacion" dataType="varchar" direction="in" />
+    <parameter name="@i_tipo_nit" dataType="char" direction="in" />
+    <parameter name="@i_referido" dataType="smallint" direction="in" />
+    <parameter name="@i_sector" dataType="varchar" direction="in" />
+    <parameter name="@i_tipo_soc" dataType="varchar" direction="in" />
+    <parameter name="@i_fecha_emision" dataType="datetime" direction="in" />
+    <parameter name="@i_lugar_doc" dataType="int" direction="in" />
+    <parameter name="@i_total_activos" dataType="money" direction="in" />
+    <parameter name="@i_num_empleados" dataType="smallint" direction="in" />
+    <parameter name="@i_sigla" dataType="varchar" direction="in" />
+    <parameter name="@i_mala_referencia" dataType="char" direction="in" />
+    <parameter name="@i_doc_validado" dataType="char" direction="in" />
+    <parameter name="@i_situacion_cliente" dataType="varchar" direction="in" />
+    <parameter name="@i_gran_contribuyente" dataType="char" direction="in" />
+    <parameter name="@i_patrim_tec" dataType="money" direction="in" />
+    <parameter name="@i_fecha_patrim_bruto" dataType="datetime" direction="in" />
+    <parameter name="@i_rep_superban" dataType="char" direction="in" />
+    <parameter name="@i_preferen" dataType="char" direction="in" />
+    <parameter name="@i_exc_sipla" dataType="char" direction="in" />
+    <parameter name="@i_exc_por2" dataType="char" direction="in" />
+    <parameter name="@i_nivel_ing" dataType="money" direction="in" />
+    <parameter name="@i_nivel_egr" dataType="money" direction="in" />
+    <parameter name="@i_cem" dataType="money" direction="in" />
+    <parameter name="@i_actividad" dataType="char" direction="in" />
+    <parameter name="@i_codsuper" dataType="char" direction="in" />
+    <parameter name="@i_tipspub" dataType="char" direction="in" />
+    <parameter name="@i_subspub" dataType="char" direction="in" />
+    <parameter name="@i_subemp" dataType="char" direction="in" />
+    <parameter name="@i_sectoreco" dataType="char" direction="in" />
+    <parameter name="@i_segmento" dataType="char" direction="in" />
+    <parameter name="@i_razon_social" dataType="varchar" direction="in" />
+    <parameter name="@i_promotor" dataType="varchar" direction="in" />
+    <parameter name="@i_subemp1" dataType="char" direction="in" />
+    <parameter name="@i_subemp2" dataType="char" direction="in" />
+    <parameter name="@i_actneg" dataType="char" direction="in" />
+    <parameter name="@i_cobertura" dataType="varchar" direction="in" />
+    <parameter name="@i_suplidores" dataType="varchar" direction="in" />
+    <parameter name="@o_siguiente" dataType="int" direction="out" />
+    <parameter name="@o_dif_oficial" dataType="tinyint" direction="out" />
+    <parameter name="@i_digito" dataType="char" direction="in" />
+    <parameter name="@i_numtrib" dataType="char" direction="in" />
+    <parameter name="@i_categoria" dataType="varchar" direction="in" />
+    <parameter name="@i_banco" dataType="varchar" direction="in" />
+    <parameter name="@i_referidor_ecu" dataType="int" direction="in" />
+    <parameter name="@i_nacionalidad" dataType="int" direction="in" />
+    <parameter name="@i_otros_ingresos" dataType="money" direction="in" />
+    <parameter name="@i_origen_ingresos" dataType="varchar" direction="in" />
+    <parameter name="@i_ea_estado" dataType="varchar" direction="in" />
+    <parameter name="@i_ea_observacion_aut" dataType="varchar" direction="in" />
+    <parameter name="@i_ea_contrato_firmado" dataType="char" direction="in" />
+    <parameter name="@i_ea_menor_edad" dataType="char" direction="in" />
+    <parameter name="@i_ea_conocido_como" dataType="varchar" direction="in" />
+    <parameter name="@i_ea_cliente_planilla" dataType="char" direction="in" />
+    <parameter name="@i_ea_cod_risk" dataType="varchar" direction="in" />
+    <parameter name="@i_ea_sector_eco" dataType="varchar" direction="in" />
+    <parameter name="@i_ea_actividad" dataType="varchar" direction="in" />
+    <parameter name="@i_ea_lin_neg" dataType="varchar" direction="in" />
+    <parameter name="@i_ea_seg_neg" dataType="varchar" direction="in" />
+    <parameter name="@i_ea_ejecutivo_con" dataType="int" direction="in" />
+    <parameter name="@i_ea_suc_gestion" dataType="smallint" direction="in" />
+    <parameter name="@i_ea_constitucion" dataType="smallint" direction="in" />
+    <parameter name="@i_ea_remp_legal" dataType="int" direction="in" />
+    <parameter name="@i_ea_apoderado_legal" dataType="int" direction="in" />
+    <parameter name="@i_ea_fuente_ing" dataType="varchar" direction="in" />
+    <parameter name="@i_ea_act_prin" dataType="varchar" direction="in" />
+    <parameter name="@i_ea_detalle" dataType="varchar" direction="in" />
+    <parameter name="@i_ea_act_dol" dataType="money" direction="in" />
+    <parameter name="@i_ea_cat_aml" dataType="varchar" direction="in" />
+    <parameter name="@i_ejecutar" dataType="char" direction="in" />
+    <parameter name="@i_verificado" dataType="char" direction="in" />
+    <parameter name="@i_fecha_verifi" dataType="datetime" direction="in" />
+    <parameter name="@t_show_version" dataType="bit" direction="in" />
+    <parameter name="@i_fecha_constitucion" dataType="datetime" direction="in" />
+    <parameter name="@i_ea_num_testimonio" dataType="int" direction="in" />
+    <parameter name="@i_ea_indefinido" dataType="char" direction="in" />
+    <parameter name="@i_ea_fecha_vigencia" dataType="datetime" direction="in" />
+    <parameter name="@i_ea_nombre_notaria" dataType="varchar" direction="in" />
+    <parameter name="@i_ea_nombre_notario" dataType="varchar" direction="in" />
+    <parameter name="@i_funcionario" dataType="varchar" direction="in" />
+  </parameters>
+  <queries>
+    <query>
+      <columns>
+        <column name="{1}" />
+      </columns>
+      <queryText>SELECT  1 </queryText>
+    </query>
+  </queries>
+</procedure>

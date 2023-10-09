@@ -1,0 +1,336 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<jobXml>
+	<jobs>
+		<id>1</id>
+		<jobName>DSCLN</jobName>
+		<jobClass>com.cobiscorp.cloud.notificationservice.impl.DescargaListasNegras</jobClass>
+		<cronExpression>0 30 16,17,18,19 ? * MON *</cronExpression>
+	</jobs>
+	<jobs>
+		<id>2</id>
+		<jobName>ETCUE</jobName>
+		<jobClass>com.cobiscorp.cloud.notificationservice.impl.EstadoCuenta</jobClass>
+		<cronExpression>0 2/5 3-20 1/1 * ? *</cronExpression>
+	</jobs>
+	<jobs>
+		<id>3</id>
+		<jobName>INFAC</jobName>
+		<jobClass>com.cobiscorp.cloud.notificationservice.impl.InterFacturas</jobClass>
+		<cronExpression>0 6,36 5-20 1-5 * ? *</cronExpression>
+	</jobs>
+	<jobs>
+		<id>4</id>
+		<jobName>CRGRS</jobName>
+		<jobClass>com.cobiscorp.cloud.notificationservice.impl.CargaReporteSeguros</jobClass>
+		<cronExpression>0 30 5 ? * TUE-SAT *</cronExpression>
+	</jobs>
+	<jobs>
+		<id>5</id>
+		<jobName>XTRRP</jobName>
+		<jobClass>com.cobiscorp.cloud.notificationservice.impl.ExtraccionReportePagos</jobClass>
+		<cronExpression>0 15 4 1/1 * ? *</cronExpression>
+	</jobs>
+	<jobs>
+		<id>6</id>
+		<jobName>CRRPA</jobName>
+		<jobClass>com.cobiscorp.cloud.notificationservice.impl.CargaReportePagos</jobClass>
+		<cronExpression>0 30 4 1/1 * ? *</cronExpression>
+	</jobs>
+	<jobs>
+		<id>7</id>
+		<jobName>CRGRN</jobName>
+		<jobClass>com.cobiscorp.cloud.notificationservice.impl.CargaReporteSegurosNoCobrados</jobClass>
+		<cronExpression>0 35 5 ? * TUE-SAT *</cronExpression>
+	</jobs>
+	<jobs>
+		<id>8</id>
+		<jobName>DSCDM</jobName>
+		<jobClass>com.cobiscorp.cloud.notificationservice.impl.DescargaDomiciliacion</jobClass>
+		<cronExpression>0 17 8-18 ? * MON-FRI *</cronExpression>
+	</jobs>
+	<jobs>
+		<id>9</id>
+		<jobName>CRGDM</jobName>
+		<jobClass>com.cobiscorp.cloud.notificationservice.impl.CargaDomiciliacion</jobClass>
+		<cronExpression>0 41 7-17 ? * MON-FRI *</cronExpression>
+	</jobs>
+	<jobs>
+		<id>10</id>
+		<jobName>XTRSF</jobName>
+		<jobClass>com.cobiscorp.cloud.notificationservice.impl.ExtraccionReporteSeguroFuneral</jobClass>
+		<cronExpression>0 3,33 6 ? * TUE-SAT *</cronExpression>
+	</jobs>
+	<jobs>
+		<id>11</id>
+		<jobName>CRFAL</jobName>
+		<jobClass>com.cobiscorp.cloud.notificationservice.impl.CargaReporteSeguroFuneralNetAltas</jobClass>
+		<cronExpression>0 5,35 6 ? * TUE-SAT *</cronExpression>
+	</jobs>
+	<jobs>
+		<id>12</id>
+		<jobName>CRFBA</jobName>
+		<jobClass>com.cobiscorp.cloud.notificationservice.impl.CargaReporteSeguroFuneralNetBajas</jobClass>
+		<cronExpression>0 7,37 6 ? * TUE-SAT *</cronExpression>
+	</jobs>
+	<!--
+	<jobs>
+		<id>13</id>
+		<jobName>CPYIFR</jobName>
+		<jobClass>com.cobiscorp.cloud.notificationservice.impl.CopiaEstadoCuentaInterfacturaRechazados</jobClass>
+		<cronExpression>0 36 3-20 * * ? *</cronExpression>
+	</jobs>
+	-->
+	<jobs>
+		<id>14</id>
+		<jobName>TRSPS</jobName>
+		<jobClass>com.cobiscorp.cloud.notificationservice.impl.Traspaso</jobClass>
+		<cronExpression>0 0/20 * 1/1 * ? *</cronExpression>
+	</jobs>
+	<jobs>
+		<id>15</id>
+		<jobName>RELCR</jobName>
+		<jobClass>com.cobiscorp.cloud.notificationservice.impl.RechazoCreditoRevolvente</jobClass>
+		<cronExpression>0 0/10 * 1/1 * ? *</cronExpression>
+	</jobs>
+	<jobs>
+		<id>16</id>
+		<jobName>CRLCR</jobName>
+		<jobClass>com.cobiscorp.cloud.notificationservice.impl.CreacionCreditoRevolvente</jobClass>
+		<cronExpression>0 0/10 * 1/1 * ? *</cronExpression>
+	</jobs>
+	<jobs>
+		<id>17</id>
+		<jobName>XTRRA</jobName>
+		<jobClass>com.cobiscorp.cloud.notificationservice.impl.ExtraccionReporteAlertas</jobClass>
+		<cronExpression>0 5,12,19,25,30,37,45,53,57 3,6-20 1/1 * ? *</cronExpression>
+	</jobs>
+	<jobs>
+		<id>18</id>
+		<jobName>ALRRG</jobName>
+		<jobClass>com.cobiscorp.cloud.notificationservice.impl.AlertaRiesgo</jobClass>
+		<cronExpression>0 0/15 * 1/1 * ? *</cronExpression>
+	</jobs>
+	<jobs>
+		<id>19</id>
+		<jobName>ETLCR</jobName>
+		<jobClass>com.cobiscorp.cloud.notificationservice.impl.EstadoCuentaLCR</jobClass>
+		<cronExpression>0 1/5 3-20 1/1 * ? *</cronExpression>
+	</jobs>
+	<jobs>
+		<id>20</id>
+		<jobName>ECETC</jobName>
+		<jobClass>com.cobiscorp.cloud.notificationservice.impl.EliminarCarpetaEstadoCuenta</jobClass>
+		<cronExpression>0 0/30 19-20 27,28,29,30,31 * ?</cronExpression>
+	</jobs>
+	<jobs>
+		<id>21</id>
+		<jobName>ELCMC</jobName>
+		<jobClass>com.cobiscorp.cloud.notificationservice.impl.EliminarCarpetaMcCollect</jobClass>
+		<cronExpression>0 15 6 ? * MON-SAT *</cronExpression>
+	</jobs>
+	<jobs>
+		<id>22</id>
+		<jobName>CAMCW</jobName>
+		<jobClass>com.cobiscorp.cloud.notificationservice.impl.CopiaArcMcCobis</jobClass>
+		<cronExpression>0 0 9,12,18,20 ? * MON-FRI</cronExpression>
+	</jobs>
+	<!-- Carga al SFTP Complemento con PAX -->
+	<jobs>
+		<id>23</id>
+		<jobName>CAZCOCA</jobName>
+		<jobClass>com.cobiscorp.cloud.notificationservice.impl.CargaXmlComplementoConectorA</jobClass>
+		<cronExpression>35 2/30 5-20 5-10 * ? *</cronExpression>
+	</jobs>
+     <!--
+	<jobs>
+		<id>24</id>
+		<jobName>CAZCOCB</jobName>
+		<jobClass>com.cobiscorp.cloud.notificationservice.impl.CargaXmlComplementoConectorB</jobClass>
+		<cronExpression>35 3/30 5-20 5-10 * ? *</cronExpression>
+	</jobs>
+	<jobs>
+		<id>25</id>
+		<jobName>CAZCOCC</jobName>
+		<jobClass>com.cobiscorp.cloud.notificationservice.impl.CargaXmlComplementoConectorC</jobClass>
+		<cronExpression>35 4/30 5-20 5-10 * ? *</cronExpression>
+	</jobs>
+	<jobs>
+		<id>26</id>
+		<jobName>CAZCOCD</jobName>
+		<jobClass>com.cobiscorp.cloud.notificationservice.impl.CargaXmlComplementoConectorD</jobClass>
+		<cronExpression>35 4/30 5-20 5-10 * ? *</cronExpression>
+	</jobs>
+	-->
+	<jobs>
+		<id>27</id>
+		<jobName>ETPCG</jobName>
+		<jobClass>com.cobiscorp.cloud.notificationservice.impl.EstadoCuentaPdfCorreo</jobClass>
+		<cronExpression>0 2/4 3-20 1/1 * ? *</cronExpression>
+	</jobs>
+	<!--  Carga al SFTP Timbrado con PAX -->
+	<jobs>
+		<id>28</id>
+		<jobName>CAFACCA</jobName>
+		<jobClass>com.cobiscorp.cloud.notificationservice.impl.CargaXmlFacturaTimbConectorA</jobClass>
+		<cronExpression>35 2/30 5-20 1-5 * ? *</cronExpression>
+	</jobs>
+	<jobs>
+		<id>29</id>
+		<jobName>CAFACCB</jobName>
+		<jobClass>com.cobiscorp.cloud.notificationservice.impl.CargaXmlFacturaTimbConectorB</jobClass>
+		<cronExpression>35 3/30 5-20 1-5 * ? *</cronExpression>
+	</jobs>
+	<jobs>
+		<id>30</id>
+		<jobName>CAFACCC</jobName>
+		<jobClass>com.cobiscorp.cloud.notificationservice.impl.CargaXmlFacturaTimbConectorC</jobClass>
+		<cronExpression>35 4/30 5-20 1-5 * ? *</cronExpression>
+	</jobs>
+	<jobs>
+		<id>31</id>
+		<jobName>CAFACCD</jobName>
+		<jobClass>com.cobiscorp.cloud.notificationservice.impl.CargaXmlFacturaTimbConectorD</jobClass>
+		<cronExpression>35 5/30 5-20 1-5 * ? *</cronExpression>
+	</jobs>
+	<!--  Termina carga al SFTP -->
+	<!-- Descarga del SFTP timbrado con PAX -->
+	<jobs>
+		<id>32</id>
+		<jobName>DAFACCA</jobName>
+		<jobClass>com.cobiscorp.cloud.notificationservice.impl.DescargaFacturacionTimbConectorA</jobClass>
+		<cronExpression>25 5/30 5-20 1-5 * ? *</cronExpression>
+	</jobs>
+	<jobs>
+		<id>33</id>
+		<jobName>DAFACCB</jobName>
+		<jobClass>com.cobiscorp.cloud.notificationservice.impl.DescargaFacturacionTimbConectorA</jobClass>
+		<cronExpression>35 6/30 5-20 1-5 * ? *</cronExpression>
+	</jobs>
+	<jobs>
+		<id>34</id>
+		<jobName>DAFACCC</jobName>
+		<jobClass>com.cobiscorp.cloud.notificationservice.impl.DescargaFacturacionTimbConectorA</jobClass>
+		<cronExpression>35 7/30 5-20 1-5 * ? *</cronExpression>
+	</jobs>
+	<jobs>
+		<id>35</id>
+		<jobName>DAFACCD</jobName>
+		<jobClass>com.cobiscorp.cloud.notificationservice.impl.DescargaFacturacionTimbConectorA</jobClass>
+		<cronExpression>35 8/30 5-20 1-5 * ? *</cronExpression>
+	</jobs>
+	<!-- Termina descarga del SFTP -->
+	<!-- 
+	<jobs>
+		<id>36</id>
+		<jobName>DAEFAC</jobName>
+		<jobClass>com.cobiscorp.cloud.notificationservice.impl.DescargaErrorFacturacion</jobClass>
+		<cronExpression>0 47 4-20 * * ? *</cronExpression>
+	</jobs>
+	-->
+	<jobs>
+		<id>37</id>
+		<jobName>CARNODS</jobName>
+		<jobClass>com.cobiscorp.cloud.notificationservice.impl.CargaReportesNODS</jobClass>
+		<cronExpression>0 0/15 * 1/1 * ? *</cronExpression>
+	</jobs>
+	<jobs>
+		<id>38</id>
+		<jobName>CARSZ</jobName>
+		<jobClass>com.cobiscorp.cloud.notificationservice.impl.CargaReporteSegurosZurich</jobClass>
+		<cronExpression>0 0/15 * 1/1 * ? *</cronExpression>
+	</jobs>
+	<jobs>
+		<id>39</id>
+		<jobName>CARMC</jobName>
+		<jobClass>com.cobiscorp.cloud.notificationservice.impl.CargaReporteMovtosContab</jobClass>
+		<cronExpression>0 0/15 * 1/1 * ? *</cronExpression>
+	</jobs>
+	<jobs>
+		<id>40</id>
+		<jobName>CRREE</jobName>
+		<jobClass>com.cobiscorp.cloud.notificationservice.impl.CargaReportesReestructura</jobClass>
+		<cronExpression>0 0/15 * 1/1 * ? *</cronExpression>
+	</jobs>
+	<jobs>
+		<id>41</id> 
+		<jobName>CARRCU</jobName>
+		<jobClass>
+			com.cobiscorp.cloud.notificationservice.impl.CargaReporteCuestionario
+		</jobClass>
+		<cronExpression>0 0/15 * 1/1 * ? *</cronExpression>
+	</jobs>
+	<jobs>
+		<id>42</id> 
+		<jobName>CRRRR</jobName>
+		<jobClass>com.cobiscorp.cloud.notificationservice.impl.CargaReporteReintegros</jobClass>
+		<cronExpression>0 0 5 ? * MON *</cronExpression> 
+	</jobs>
+	<jobs>
+		<id>43</id> 
+		<jobName>CARCTFS</jobName>
+		<jobClass>
+			com.cobiscorp.cloud.notificationservice.impl.CargaReportesContabilidad
+		</jobClass>
+		<cronExpression>0 0/15 * 1/1 * ? *</cronExpression>
+	</jobs>
+	<jobs>
+		<id>44</id> 
+		<jobName>CARINF</jobName>
+		<jobClass>
+			com.cobiscorp.cloud.notificationservice.impl.CargaReportesInclusionFinanciera
+		</jobClass>
+		<cronExpression>0 0/15 * 1/1 * ? *</cronExpression>
+	</jobs>
+	<jobs>
+		<id>45</id> 
+		<jobName>CARODS</jobName>
+		<jobClass>
+			com.cobiscorp.cloud.notificationservice.impl.CargaReportesODS
+		</jobClass>
+		<cronExpression>0 0/15 * 1/1 * ? *</cronExpression>
+	</jobs>
+	<jobs>
+		<id>46</id> 
+		<jobName>CARHRC</jobName>
+		<jobClass>
+			com.cobiscorp.cloud.notificationservice.impl.CargaReportesHRC
+		</jobClass>
+		<cronExpression>0 0/15 * 1/1 * ? *</cronExpression>
+	</jobs>
+	<jobs>
+	   <id>47</id>
+		<jobName>GRAOB</jobName>
+		<jobClass>com.cobiscorp.cloud.notificationservice.impl.GenerateReportAutoOnBoarding</jobClass>
+		<cronExpression>0 3/15 * 1/1 * ? *</cronExpression>
+	</jobs>	
+	<jobs>
+		<id>48</id> 
+		<jobName>CARRGE</jobName>
+		<jobClass>
+			com.cobiscorp.cloud.notificationservice.impl.CargaReporteGeolocalizacion
+		</jobClass>
+		<cronExpression>0 0/15 * 1/1 * ? *</cronExpression>
+	</jobs>
+	<jobs>
+		<id>49</id>
+		<jobName>ETCIN</jobName>
+		<jobClass>com.cobiscorp.cloud.notificationservice.impl.EstadoCuentaIndividual</jobClass>
+		<cronExpression>0 5/5 3-20 1/1 * ? *</cronExpression>
+	</jobs>	
+	<jobs>
+		<id>50</id> 
+		<jobName>CHARITS</jobName>
+		<jobClass>
+			com.cobiscorp.cloud.notificationservice.impl.CargaReporte
+		</jobClass>
+		<cronExpression>0 3/15 0,1,23 1/1 * ? *</cronExpression>
+	</jobs>
+	<jobs>
+		<id>51</id> 
+		<jobName>RCAUPD</jobName>
+		<jobClass>
+			com.cobiscorp.cloud.notificationservice.impl.ReintentoCargaAlfresco
+		</jobClass>
+		<cronExpression>0 20,21,22 * * * ? *</cronExpression>
+	</jobs>
+</jobXml>

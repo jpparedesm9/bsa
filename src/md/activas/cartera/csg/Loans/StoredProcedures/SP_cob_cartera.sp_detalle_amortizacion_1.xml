@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<procedure>
+  <database>cob_cartera</database>
+  <name>sp_detalle_amortizacion</name>
+  <type>SYBASE</type>
+  <version>1</version>
+  <parameters>
+    <parameter name="@s_user" dataType="varchar" direction="in" />
+    <parameter name="@s_date" dataType="datetime" direction="in" />
+    <parameter name="@s_term" dataType="varchar" direction="in" />
+    <parameter name="@s_ofi" dataType="smallint" direction="in" />
+    <parameter name="@i_banco" dataType="varchar" direction="in" />
+    <parameter name="@i_dividendo" dataType="int" direction="in" />
+    <parameter name="@i_tipo_cobro" dataType="char" direction="in" />
+    <parameter name="@i_tipo_proyeccion" dataType="char" direction="in" />
+    <parameter name="@i_tasa_prepago" dataType="float" direction="in" />
+    <parameter name="@i_formato_fecha" dataType="int" direction="in" />
+    <parameter name="@i_operacion" dataType="char" direction="in" />
+    <parameter name="@i_opcion" dataType="char" direction="in" />
+    <parameter name="@i_fecha" dataType="datetime" direction="in" />
+    <parameter name="@i_moneda" dataType="tinyint" direction="in" />
+    <parameter name="@i_vlrsec" dataType="money" direction="in" />
+    <parameter name="@i_atx" dataType="char" direction="in" />
+  </parameters>
+  <queries>
+    <query>
+      <columns>
+        <column name="numCuota" />
+        <column name=" fecVen" />
+        <column name=" pago" />
+        <column name=" estado" />
+      </columns>
+      <queryText></queryText>
+    </query>
+  </queries>
+</procedure>

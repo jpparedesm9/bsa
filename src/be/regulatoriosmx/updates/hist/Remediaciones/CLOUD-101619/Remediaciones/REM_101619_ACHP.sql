@@ -1,0 +1,15 @@
+--BUEN DIA SE SOLICITA LA REASIGNACION DE LA SIGUIENTE PERSONA LO CUAL SE ENCUENTRA CON EL 
+-- ASESOR GUADALUPE CASTRO CEDILLO  - gcastroce
+-- Y SE SOLICITA SEA REASIGNADO AL 
+-- ASESOR EFREN GONZALEZ ORNELAS    - egonzalezor
+--ID 10062 ROSA SANDOVAL PORTILLA.
+
+USE cobis
+go
+
+UPDATE cobis..cl_ente 
+SET en_oficial    = 96,
+    c_funcionario = 'egonzalezor',
+    en_oficina    = 3354
+WHERE en_ente in in (10062)
+go

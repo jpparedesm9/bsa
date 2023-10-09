@@ -1,0 +1,39 @@
+<div id= "organizer"  ng-controller="clientviewer.warrantiesController">
+      <ul kendo-panel-bar class="cb-collapsible">	
+      
+		<li class="k-state-active" ng-show="isVisibleWarrantiesDet">
+			<span class="k-link k-state-selected"  translate>GUARANTEES.LABELS.LBL_WARRANTY</span><br/>
+			<div>			
+				<div kendo-grid k-data-source="warranties"                 
+		                 k-selectable="'row'" 
+		                 k-columns="warrantiesColumns"  
+		                 k-rebind="warranties"
+			></div>
+			</div>			
+		</li>
+
+		<li class="k-state-active" ng-show="isVisiblePromissoryNotesDet">
+			<span class="k-link k-state-selected"  translate>GUARANTEES.LABELS.LBL_NOTES</span><br/>
+			<div>
+				<div kendo-grid k-data-source="promissoryNotes"                     
+		                 k-selectable="'row'" 
+		                 k-columns="promissoryNotesColumns" 
+		                 k-rebind="promissoryNotes"
+			></div>
+			</div>	
+		</li>
+
+		<li class="k-state-active" ng-show="isVisibleInsurancePolicyDet">
+			<span class="k-link k-state-selected"  translate>GUARANTEES.LABELS.LBL_INSURANCE_POLICIES</span><br/>
+			<div>
+				<div kendo-grid k-data-source="insurancePolicy"                  
+		                 k-selectable="'row'" 
+		                 k-columns="insurancePolicyColumns"   
+		                 k-rebind="insurancePolicy"
+			></div>
+			</div>			
+		</li>
+       
+	  </ul>
+  </div>
+

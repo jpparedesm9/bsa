@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<procedure>
+  <database>cob_cartera</database>
+  <name>sp_orden_desembolso_gru</name>
+  <type>SYBASE</type>
+  <version>1</version>
+  <parameters>
+    <parameter name="@s_ssn" dataType="int" direction="in" />
+    <parameter name="@s_date" dataType="datetime" direction="in" />
+    <parameter name="@s_user" dataType="varchar" direction="in" />
+    <parameter name="@s_term" dataType="varchar" direction="in" />
+    <parameter name="@s_corr" dataType="char" direction="in" />
+    <parameter name="@s_ssn_corr" dataType="int" direction="in" />
+    <parameter name="@s_ofi" dataType="smallint" direction="in" />
+    <parameter name="@t_rty" dataType="char" direction="in" />
+    <parameter name="@t_debug" dataType="char" direction="in" />
+    <parameter name="@t_file" dataType="varchar" direction="in" />
+    <parameter name="@t_trn" dataType="smallint" direction="in" />
+    <parameter name="@i_operacion" dataType="char" direction="in" />
+    <parameter name="@i_banco" dataType="varchar" direction="in" />
+    <parameter name="@i_formato_fecha" dataType="int" direction="in" />
+    <parameter name="@i_opcion" dataType="varchar" direction="in" />
+    <parameter name="@i_modo" dataType="int" direction="in" />
+  </parameters>
+  <queries>
+    <query>
+      <columns>
+        <column name="NUM_RUC" />
+        <column name="SUCURSAL" />
+        <column name="FECHA" />
+        <column name="NUM_RECIBO" />
+        <column name="NUM_OPERACION" />
+        <column name="DEUDOR" />
+        <column name="GRUPO" />
+        <column name="IDENTIFICACION" />
+        <column name="FECHA_LIQUIDACI" />
+        <column name="FECHA_DESEMBOLSO" />
+        <column name="TELEFONO" />
+        <column name="FECHA_OTHER" />
+      </columns>
+      <queryText>SELECT "NUM_RUC"=w_ruc,"SUCURSAL"=w_sucursal,"FECHA"=w_fecha,"NUM_RECIBO"=w_num_recibo,"NUM_OPERACION"=w_num_operacion,"DEUDOR"=w_deudor_principal,"GRUPO"=w_nombre_grupo,"IDENTIFICACION"=w_identificacion,"FECHA_LIQUIDACI"=w_fecha_liq,"FECHA_DESEMBOLSO"=w_fecha_desemb,"TELEFONO"=w_telefono,"FECHA_OTHER"=w_fecha_ven</queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="OFICINA_DESEMB_ID" />
+        <column name="OFICINA_DESEMB_DESC" />
+        <column name="FORMA DE DESEMBOLSO" />
+        <column name="REFERENCIA" />
+        <column name="MONEDA" />
+        <column name="MONEDA_DESC" />
+        <column name="COTIZACION" />
+        <column name="MONTO" />
+        <column name="NUMERO_BANCO" />
+        <column name="NOMBRE_CLIENTE" />
+        <column name="ID_CLIENTE" />
+        <column name="FECHA_PROCESO" />
+        <column name="DIRECCION" />
+        <column name="FECHA_LIQUID" />
+        <column name="ROL" />
+        <column name="DESCRIP_ROL" />
+        <column name="DESPLAZAMIENTO" />
+        <column name="MONTO_ADEUDO_PREVIO" />
+        <column name="MONTO_CAP_TRABAJO" />
+        <column name="MONTO_A_RECIBIR" />
+      </columns>
+      <queryText>SELECT  "OFICINA_DESEMB_ID" = dm_oficina,"OFICINA_DESEMB_DESC" = "","FORMA DE DESEMBOLSO" = "","REFERENCIA" = dm_concepto,"MONEDA" = dm_moneda,"MONEDA_DESC" = "","COTIZACION" = dm_cotizacion_mds,"MONTO" = dm_monto_mds </queryText>
+    </query>
+  </queries>
+</procedure>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="Windows-1252"?>
+<xs:schema attributeFormDefault="unqualified"
+	elementFormDefault="qualified"
+	xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:element name="FichasPagoLCR">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="FichaPago" maxOccurs="unbounded"
+					minOccurs="0">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element type="xs:int" name="SECUENCIAL" />
+							<xs:element type="xs:string" name="FECHA_PROX_PAGO" />
+							<xs:element type="xs:decimal" name="PAGO_MINIMO" />
+							<xs:element type="xs:decimal" name="PAGO_SIN_INTERES" />
+							<xs:element type="xs:string" name="CREDITO" />
+							<xs:element type="xs:string" name="NOMBRE_DEL_CLIENTE" />
+							<xs:element type="xs:string" name="MAIL" />
+							<xs:element type="xs:int" name="CLIENTE" />
+							<xs:element maxOccurs="unbounded" name="Referencia">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="institucion" type="xs:string" />
+										<xs:element name="referencia" type="xs:string" />
+										<xs:element name="nroConvenio" type="xs:string" />
+										<xs:element name="cliente" type="xs:int" />										
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

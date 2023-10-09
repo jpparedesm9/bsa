@@ -1,0 +1,67 @@
+<!-----Indicaciones
+	--1.- Ubicarse en la ruta: \cobishome\CTS_MF\infrastructure\
+	--2.- Sacar respaldo del archivo cts-ccm-plan-config.xml
+	--3.- Abrir el archivo: cts-ccm-plan-config.xml
+	--4.- Buscar el plan con id="ASSETS-CLOUD-TRANSACTION", dentro de este plan añadir al final (es decir antes del cierre "</plan>" lo siguiente	-->
+	<plugin name="assts.trnsc.accountstatusform.customevents" path="../../ASSETS/transactions/assts.trnsc.accountstatusform.customevents-1.0.0.jar"></plugin>
+
+<!----5.- Buscar el plan con id="ASSETS-CLOUD-TRANSACTIONS-SERVICES", dentro de este plan añadir al final (es decir antes del cierre "</plan>" lo siguiente -->
+	<plugin name="assts.trnsc.accountstatusform.services" path="../../ASSETS/transactions/assts.trnsc.accountstatusform.services-1.0.0.jar"></plugin>
+    
+	-------------------------------------------------	
+	-------------------------------------------------
+	-------------------------------------------------
+	-------------------------------------------------
+	
+<!---- Lo siguiente es solo un ejemplo de como quedaría con el aumento de las lineas antes descritas	-->
+    
+
+	
+	 <plan id="ASSETS-CLOUD-TRANSACTIONS" reloadable="true">
+      <plugin name="assts.trnsc.applyclause.customevents" path="../../ASSETS/transactions/assts.trnsc.applyclause.customevents-1.0.0.jar"></plugin>
+      <plugin name="assts.trnsc.loanrefinancing.customevents" path="../../ASSETS/transactions/assts.trnsc.loanrefinancing.customevents-1.0.0.jar"></plugin>
+      <plugin name="assts.trnsc.valuedatemain.customevents" path="../../ASSETS/transactions/assts.trnsc.valuedatemain.customevents-1.0.0.jar"></plugin>
+      <plugin name="assts.trnsc.valuedateform.customevents" path="../../ASSETS/transactions/assts.trnsc.valuedateform.customevents-1.0.0.jar"></plugin>
+      <plugin name="assts.trnsc.paymentsmain.customevents" path="../../ASSETS/transactions/assts.trnsc.paymentsmain.customevents-1.0.0.jar"></plugin>
+      <plugin name="assts.trnsc.prioritiespaymentsmodal.customevents" path="../../ASSETS/transactions/assts.trnsc.prioritiespaymentsmodal.customevents-1.0.0.jar"></plugin>
+      <plugin name="assts.trnsc.bankaccountslistform.customevents" path="../../ASSETS/transactions/assts.trnsc.bankaccountslistform.customevents-1.0.0.jar"></plugin>
+      <plugin name="assts.trnsc.leftoverpaymentsmodal.customevents" path="../../ASSETS/transactions/assts.trnsc.leftoverpaymentsmodal.customevents-1.0.0.jar"></plugin>
+      <plugin name="assts.trnsc.quotadetailpaymentsmodal.customevents" path="../../ASSETS/transactions/assts.trnsc.quotadetailpaymentsmodal.customevents-1.0.0.jar"></plugin>
+      <plugin name="assts.trnsc.refinanceloansfilter.customevents" path="../../ASSETS/transactions/assts.trnsc.refinanceloansfilter.customevents-1.0.0.jar"></plugin>
+      <plugin name="assts.trnsc.loandisbursementmain.customevents" path="../../ASSETS/transactions/assts.trnsc.loandisbursementmain.customevents-1.0.0.jar"></plugin>
+      <plugin name="assts.trnsc.paymentmodeform.customevents" path="../../ASSETS/transactions/assts.trnsc.paymentmodeform.customevents-1.0.0.jar"></plugin>
+      <plugin name="assts.trnsc.condonationdetailform.customevents" path="../../ASSETS/transactions/assts.trnsc.condonationdetailform.customevents-1.0.0.jar"></plugin>
+      <plugin name="assts.trnsc.bankaccountsmodal.customevents" path="../../ASSETS/transactions/assts.trnsc.bankaccountsmodal.customevents-1.0.0.jar"></plugin>
+      <plugin name="assts.trnsc.negotiationpaymentsmodal.customevents" path="../../ASSETS/transactions/assts.trnsc.negotiationpaymentsmodal.customevents-1.0.0.jar"></plugin>
+      <plugin name="assts.trnsc.grouppayment.customevents" path="../../ASSETS/transactions/assts.trnsc.grouppayment.customevents-1.0.0.jar"></plugin>
+      <plugin name="assts.trnsc.uploadconciliationfile.customevents" path="../../ASSETS/transactions/assts.trnsc.uploadconciliationfile.customevents-1.0.0.jar"></plugin>
+      <plugin name="assts.trnsc.manualconciliation.customevents" path="../../ASSETS/transactions/assts.trnsc.manualconciliation.customevents-1.0.0.jar"></plugin>
+      <plugin name="assts.trnsc.voucherpaymentmail.customevents" path="../../ASSETS/transactions/assts.trnsc.voucherpaymentmail.customevents-1.0.0.jar"></plugin>
+      <plugin name="assts.trnsc.precancellationloanreference.customevents" path="../../ASSETS/transactions/assts.trnsc.precancellationloanreference.customevents-1.0.0.jar"></plugin>
+      <plugin name="assts.trnsc.accountstatusform.customevents" path="../../ASSETS/transactions/assts.trnsc.accountstatusform.customevents-1.0.0.jar"></plugin>
+    </plan>
+	
+	<plan id="ASSETS-CLOUD-TRANSACTIONS-SERVICES" reloadable="true">
+      <plugin name="assts.trnsc.applyclause.services" path="../../ASSETS/transactions/assts.trnsc.applyclause.services-1.0.0.jar"></plugin>
+      <plugin name="assts.trnsc.loanrefinancing.services" path="../../ASSETS/transactions/assts.trnsc.loanrefinancing.services-1.0.0.jar"></plugin>
+      <plugin name="assts.trnsc.valuedatemain.services" path="../../ASSETS/transactions/assts.trnsc.valuedatemain.services-1.0.0.jar"></plugin>
+      <plugin name="assts.trnsc.valuedateform.services" path="../../ASSETS/transactions/assts.trnsc.valuedateform.services-1.0.0.jar"></plugin>
+      <plugin name="assts.trnsc.paymentsmain.services" path="../../ASSETS/transactions/assts.trnsc.paymentsmain.services-1.0.0.jar"></plugin>
+      <plugin name="assts.trnsc.prioritiespaymentsmodal.services" path="../../ASSETS/transactions/assts.trnsc.prioritiespaymentsmodal.services-1.0.0.jar"></plugin>
+      <plugin name="assts.trnsc.bankaccountslistform.services" path="../../ASSETS/transactions/assts.trnsc.bankaccountslistform.services-1.0.0.jar"></plugin>
+      <plugin name="assts.trnsc.leftoverpaymentsmodal.services" path="../../ASSETS/transactions/assts.trnsc.leftoverpaymentsmodal.services-1.0.0.jar"></plugin>
+      <plugin name="assts.trnsc.quotadetailpaymentsmodal.services" path="../../ASSETS/transactions/assts.trnsc.quotadetailpaymentsmodal.services-1.0.0.jar"></plugin>
+      <plugin name="assts.trnsc.refinanceloansfilter.services" path="../../ASSETS/transactions/assts.trnsc.refinanceloansfilter.services-1.0.0.jar"></plugin>
+      <plugin name="assts.trnsc.loandisbursementmain.services" path="../../ASSETS/transactions/assts.trnsc.loandisbursementmain.services-1.0.0.jar"></plugin>
+      <plugin name="assts.trnsc.paymentmodeform.services" path="../../ASSETS/transactions/assts.trnsc.paymentmodeform.services-1.0.0.jar"></plugin>
+      <plugin name="assts.trnsc.condonationdetailform.services" path="../../ASSETS/transactions/assts.trnsc.condonationdetailform.services-1.0.0.jar"></plugin>
+      <plugin name="assts.trnsc.bankaccountsmodal.services" path="../../ASSETS/transactions/assts.trnsc.bankaccountsmodal.services-1.0.0.jar"></plugin>
+      <plugin name="assts.trnsc.negotiationpaymentsmodal.services" path="../../ASSETS/transactions/assts.trnsc.negotiationpaymentsmodal.services-1.0.0.jar"></plugin>
+      <plugin name="assts.trnsc.grouppayment.services" path="../../ASSETS/transactions/assts.trnsc.grouppayment.services-1.0.0.jar"></plugin>
+      <plugin name="assts.trnsc.uploadconciliationfile.services" path="../../ASSETS/transactions/assts.trnsc.uploadconciliationfile.services-1.0.0.jar"></plugin>
+      <plugin name="assts.trnsc.manualconciliation.services" path="../../ASSETS/transactions/assts.trnsc.manualconciliation.services-1.0.0.jar"></plugin>
+      <plugin name="assts.trnsc.voucherpaymentmail.services" path="../../ASSETS/transactions/assts.trnsc.voucherpaymentmail.services-1.0.0.jar"></plugin>
+      <plugin name="assts.trnsc.precancellationloanreference.services" path="../../ASSETS/transactions/assts.trnsc.precancellationloanreference.services-1.0.0.jar"></plugin>
+      <plugin name="assts.trnsc.accountstatusform.services" path="../../ASSETS/transactions/assts.trnsc.accountstatusform.services-1.0.0.jar"></plugin>
+    </plan>
+	

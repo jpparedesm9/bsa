@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<procedure>
+  <database>cobis</database>
+  <name>sp_telefono</name>
+  <type>SYBASE</type>
+  <version>1</version>
+  <parameters>
+    <parameter name="@s_ssn" dataType="int" direction="in" />
+    <parameter name="@s_user" dataType="varchar" direction="in" />
+    <parameter name="@s_term" dataType="varchar" direction="in" />
+    <parameter name="@s_date" dataType="datetime" direction="in" />
+    <parameter name="@s_srv" dataType="varchar" direction="in" />
+    <parameter name="@s_lsrv" dataType="varchar" direction="in" />
+    <parameter name="@s_ofi" dataType="smallint" direction="in" />
+    <parameter name="@s_rol" dataType="smallint" direction="in" />
+    <parameter name="@s_org_err" dataType="char" direction="in" />
+    <parameter name="@s_error" dataType="int" direction="in" />
+    <parameter name="@s_sev" dataType="tinyint" direction="in" />
+    <parameter name="@s_msg" dataType="varchar" direction="in" />
+    <parameter name="@s_org" dataType="char" direction="in" />
+    <parameter name="@p_alterno" dataType="tinyint" direction="in" />
+    <parameter name="@t_debug" dataType="char" direction="in" />
+    <parameter name="@t_file" dataType="varchar" direction="in" />
+    <parameter name="@t_from" dataType="varchar" direction="in" />
+    <parameter name="@t_trn" dataType="smallint" direction="in" />
+    <parameter name="@i_operacion" dataType="char" direction="in" />
+    <parameter name="@i_ente" dataType="int" direction="in" />
+    <parameter name="@i_direccion" dataType="tinyint" direction="in" />
+    <parameter name="@i_secuencial" dataType="tinyint" direction="in" />
+    <parameter name="@i_valor" dataType="varchar" direction="in" />
+    <parameter name="@i_tipo_telefono" dataType="char" direction="in" />
+    <parameter name="@i_te_telf_cobro" dataType="char" direction="in" />
+    <parameter name="@i_tborrado" dataType="char" direction="in" />
+    <parameter name="@i_ejecutar" dataType="char" direction="in" />
+    <parameter name="@t_show_version" dataType="bit" direction="in" />
+    <parameter name="@i_verificado" dataType="char" direction="in" />
+    <parameter name="@i_formato_fecha" dataType="int" direction="in" />
+    <parameter name="@i_cod_area" dataType="varchar" direction="in" />
+    <parameter name="@i_canal" dataType="varchar" direction="in" />
+    <parameter name="@i_verificacion" dataType="char" direction="in" />
+  </parameters>
+  <queries>
+    <query>
+      <columns>
+        <column name="{1}" />
+      </columns>
+      <queryText>SELECT o_siguiente</queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="C¢digo" />
+        <column name="Telefono" />
+        <column name="Tipo" />
+        <column name="Descripcion" />
+        <column name="Telf. Cobro" />
+        <column name="Funcionario" />
+        <column name="Verificado" />
+        <column name="Fec. Ver." />
+        <column name="Fec. Reg." />
+        <column name="Fec. Mod." />
+        <column name="Cod. Area" />
+        <column name="Verificacion" />
+      </columns>
+      <queryText>SELECT  "C¢digo" = te_secuencial,"Telefono" = te_valor,"Tipo" = te_tipo_telefono,"Descripcion" = SUBSTRING (a.valor, 1, 10),"Telf. Cobro" = ISNULL (te_telf_cobro, "N"),"Funcionario" = te_funcionario,"Verificado" = te_verificado,"Fec. Ver." = CONVERT (VARCHAR (10),te_fecha_ver ,?),"Fec. Reg." = CONVERT (VARCHAR (10),te_fecha_registro ,?),"Fec. Mod." = CONVERT (VARCHAR (10),te_fecha_modificacion ,?),"Cod. Area" = te_area </queryText>
+    </query>
+  </queries>
+</procedure>

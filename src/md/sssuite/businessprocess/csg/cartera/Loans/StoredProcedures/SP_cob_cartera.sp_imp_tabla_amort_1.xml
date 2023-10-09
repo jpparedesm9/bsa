@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<procedure>
+  <database>cob_cartera</database>
+  <name>sp_imp_tabla_amort</name>
+  <type>SYBASE</type>
+  <version>1</version>
+  <parameters>
+    <parameter name="@t_show_version" dataType="bit" direction="in" />
+    <parameter name="@s_ssn" dataType="int" direction="in" />
+    <parameter name="@s_date" dataType="datetime" direction="in" />
+    <parameter name="@s_user" dataType="varchar" direction="in" />
+    <parameter name="@s_term" dataType="varchar" direction="in" />
+    <parameter name="@s_corr" dataType="char" direction="in" />
+    <parameter name="@s_ssn_corr" dataType="int" direction="in" />
+    <parameter name="@s_ofi" dataType="smallint" direction="in" />
+    <parameter name="@t_rty" dataType="char" direction="in" />
+    <parameter name="@t_debug" dataType="char" direction="in" />
+    <parameter name="@t_file" dataType="varchar" direction="in" />
+    <parameter name="@t_trn" dataType="smallint" direction="in" />
+    <parameter name="@i_operacion" dataType="char" direction="in" />
+    <parameter name="@i_banco" dataType="varchar" direction="in" />
+    <parameter name="@i_formato_fecha" dataType="int" direction="in" />
+    <parameter name="@i_dividendo" dataType="smallint" direction="in" />
+  </parameters>
+  <queries>
+    <query>
+      <columns>
+        <column name="cliente" />
+        <column name="nombre " />
+        <column name="ced_ruc" />
+        <column name="direccion" />
+        <column name="telefono" />
+        <column name="toperacion_desc" />
+        <column name="monto" />
+        <column name="moneda_desc" />
+        <column name="plazo" />
+        <column name="tplazo" />
+        <column name="tipo_amortizacion" />
+        <column name="tdividendo" />
+        <column name="tasa" />
+        <column name="periodo_cap" />
+        <column name="periodo_int" />
+        <column name="mes_gracia" />
+        <column name="gracia" />
+        <column name="gracia_cap" />
+        <column name="gracia_int" />
+        <column name="fecha_liq" />
+        <column name="fecha_vcto" />
+        <column name="referencial" />
+        <column name="signo" />
+        <column name="factor" />
+        <column name="tran" />
+        <column name="mora" />
+        <column name="tmora" />
+        <column name="tcomis" />
+        <column name="fecha_prox_pago" />
+        <column name="monto_prox_pago" />
+        <column name="op_tipo" />
+        <column name="nombre_orig" />
+        <column name="op_cuenta" />
+        <column name="op_banco_ori" />
+        <column name="fecha_renovacion" />
+        <column name="op_comentario" />
+        <column name="subsidio" />
+        <column name="porcentaje_subsidio" />
+        <column name="sector" />
+        <column name="estado_des" />
+        <column name="toperacion" />
+        <column name="rejustable" />
+        <column name="plazo_dias" />
+        <column name="ap_fec_aut" />
+        <column name="dap_tipo_deu" />
+        <column name="dap_doc_aut" />
+        <column name="dap_num_cont" />
+        <column name="dap_cau_orig" />
+        <column name="dap_cond_rep" />
+        <column name="dap_num_asfi" />
+        <column name="dap_linea" />
+      </columns>
+      <queryText></queryText>
+    </query>
+  </queries>
+</procedure>

@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<procedure>
+  <database>cob_credito</database>
+  <name>sp_update_officer</name>
+  <type>SYBASE</type>
+  <version>1</version>
+  <parameters>
+    <parameter name="@t_debug" dataType="char" direction="in" />
+    <parameter name="@t_file" dataType="varchar" direction="in" />
+    <parameter name="@i_operacion" dataType="char" direction="in" />
+    <parameter name="@i_tramite" dataType="int" direction="in" />
+    <parameter name="@i_login" dataType="varchar" direction="in" />
+    <parameter name="@t_trn" dataType="int" direction="in" />
+    <parameter name="@i_oficial" dataType="int" direction="in" />
+    <parameter name="@i_tipo_tramite" dataType="varchar" direction="in" />
+    <parameter name="@i_oficial_new" dataType="int" direction="in" />
+  </parameters>
+  <queries>
+    <query>
+      <columns>
+        <column name="C�digo Solicitud" />
+        <column name="C�digo Cr�dito" />
+        <column name="C�digo Oficial" />
+        <column name="Nombre Oficial" />
+        <column name="Tipo Flujo" />
+        <column name="Deudor Principal" />
+        <column name="Nombre del Deudor" />
+        <column name="Monto Propuesto" />
+        <column name="Moneda Propuesta" />
+      </columns>
+      <queryText>SELECT  "C�digo Solicitud" = io_id_inst_proc,"C�digo Cr�dito" = tr_tramite,"C�digo Oficial" = tr_oficial,"Nombre Oficial" = (SELECT  fu_nombre FROM cobis..cc_oficial  ,cobis..cl_funcionario   WHERE fu_funcionario = oc_funcionario AND oc_oficial = ?     ),"Tipo Flujo" = tr_tipo,"Deudor Principal" = de_cliente,"Monto Propuesto" = tr_monto,"Moneda Propuesta" = tr_moneda,"" </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="C�digo Solicitud" />
+        <column name="C�digo Cr�dito" />
+        <column name="C�digo Oficial" />
+        <column name="Nombre Oficial" />
+        <column name="Tipo Flujo" />
+        <column name="Deudor Principal" />
+        <column name="Nombre del Deudor" />
+        <column name="Monto Propuesto" />
+        <column name="Moneda Propuesta" />
+        <column name="{9}" />
+      </columns>
+      <queryText>SELECT  "C�digo Solicitud" = io_id_inst_proc,"C�digo Cr�dito" = tr_tramite,"C�digo Oficial" = tr_oficial,"Nombre Oficial" = (SELECT  fu_nombre FROM cobis..cc_oficial  ,cobis..cl_funcionario   WHERE fu_funcionario = oc_funcionario AND oc_oficial = ?     ),"Tipo Flujo" = tr_tipo,"Deudor Principal" = de_cliente,"Monto Propuesto" = tr_monto,"Moneda Propuesta" = tr_moneda,"" </queryText>
+    </query>
+  </queries>
+</procedure>

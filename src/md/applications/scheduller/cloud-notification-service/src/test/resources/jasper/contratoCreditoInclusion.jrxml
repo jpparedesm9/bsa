@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="contratoCreditoInclusion" pageWidth="595" pageHeight="842" whenNoDataType="AllSectionsNoDetail" columnWidth="547" leftMargin="24" rightMargin="24" topMargin="24" bottomMargin="37" uuid="deec1b21-1036-4734-948b-164547062a2b">
+	<property name="ireport.zoom" value="1.5"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="SUBREPORT_DIR" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["/"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="urlPathSantander" class="java.lang.String"/>
+	<parameter name="firmaNF1CCI" class="java.lang.String"/>
+	<parameter name="firmaNF2CCI" class="java.lang.String"/>
+	<parameter name="firmaNB1CCI" class="java.lang.String"/>
+	<parameter name="firmaNB2CCI" class="java.lang.String"/>
+	<parameter name="condusef" class="java.lang.String"/>
+	<parameter name="pieAnio" class="java.lang.String"/>
+	<parameter name="porCovit" class="java.lang.String"/>
+	<field name="contratoCreditoInclusionDetallePrincipal" class="java.util.List"/>
+	<field name="contratoCreditoInclusionInfoPrevia" class="java.util.List"/>
+	<field name="contratoCreditoInclusionAnexoLegal" class="java.util.List"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<detail>
+		<band height="32">
+			<printWhenExpression><![CDATA[$P{porCovit}.equals("N")]]></printWhenExpression>
+			<subreport>
+				<reportElement positionType="Float" stretchType="RelativeToBandHeight" x="0" y="0" width="547" height="32" uuid="371650ff-e86c-4162-9b76-d4b0430b5da0"/>
+				<subreportParameter name="firmaNB2CCI">
+					<subreportParameterExpression><![CDATA[$P{firmaNB2CCI}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="urlPathSantander">
+					<subreportParameterExpression><![CDATA[$P{urlPathSantander}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="condusef">
+					<subreportParameterExpression><![CDATA[$P{condusef}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="firmaNB1CCI">
+					<subreportParameterExpression><![CDATA[$P{firmaNB1CCI}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="firmaNF1CCI">
+					<subreportParameterExpression><![CDATA[$P{firmaNF1CCI}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="pieAnio">
+					<subreportParameterExpression><![CDATA[$P{pieAnio}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="firmaNF2CCI">
+					<subreportParameterExpression><![CDATA[$P{firmaNF2CCI}]]></subreportParameterExpression>
+				</subreportParameter>
+				<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($F{contratoCreditoInclusionInfoPrevia})]]></dataSourceExpression>
+				<subreportExpression><![CDATA[$P{SUBREPORT_DIR} + "contratoCreditoInclusion_InfoPrevia.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+		<band height="25">
+			<break>
+				<reportElement x="0" y="14" width="100" height="1" uuid="6bbc8617-7cbb-4a6a-92e0-37f2f9bda6e3"/>
+			</break>
+		</band>
+		<band height="32" splitType="Stretch">
+			<printWhenExpression><![CDATA[$P{porCovit}.equals("S")]]></printWhenExpression>
+			<subreport>
+				<reportElement positionType="Float" stretchType="RelativeToBandHeight" x="0" y="0" width="547" height="32" uuid="9b5b26c9-5bf5-406b-a96a-fce04ae101e1"/>
+				<subreportParameter name="firmaNB2CCI">
+					<subreportParameterExpression><![CDATA[$P{firmaNB2CCI}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="condusef">
+					<subreportParameterExpression><![CDATA[$P{condusef}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="urlPathSantander">
+					<subreportParameterExpression><![CDATA[$P{urlPathSantander}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="firmaNF1CCI">
+					<subreportParameterExpression><![CDATA[$P{firmaNF1CCI}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="firmaNB1CCI">
+					<subreportParameterExpression><![CDATA[$P{firmaNB1CCI}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="firmaNF2CCI">
+					<subreportParameterExpression><![CDATA[$P{firmaNF2CCI}]]></subreportParameterExpression>
+				</subreportParameter>
+				<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($F{contratoCreditoInclusionDetallePrincipal})]]></dataSourceExpression>
+				<subreportExpression><![CDATA[$P{SUBREPORT_DIR} + "contratoCreditoInclusion_DetallePrincipal_COVID.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+		<band height="32" splitType="Stretch">
+			<printWhenExpression><![CDATA[$P{porCovit}.equals("N")]]></printWhenExpression>
+			<subreport>
+				<reportElement positionType="Float" stretchType="RelativeToBandHeight" x="0" y="0" width="547" height="32" uuid="5f2f366f-4ed6-40c4-b925-1bb7048b46c6"/>
+				<subreportParameter name="firmaNB2CCI">
+					<subreportParameterExpression><![CDATA[$P{firmaNB2CCI}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="urlPathSantander">
+					<subreportParameterExpression><![CDATA[$P{urlPathSantander}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="condusef">
+					<subreportParameterExpression><![CDATA[$P{condusef}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="firmaNB1CCI">
+					<subreportParameterExpression><![CDATA[$P{firmaNB1CCI}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="firmaNF1CCI">
+					<subreportParameterExpression><![CDATA[$P{firmaNF1CCI}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="pieAnio">
+					<subreportParameterExpression><![CDATA[$P{pieAnio}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="firmaNF2CCI">
+					<subreportParameterExpression><![CDATA[$P{firmaNF2CCI}]]></subreportParameterExpression>
+				</subreportParameter>
+				<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($F{contratoCreditoInclusionDetallePrincipal})]]></dataSourceExpression>
+				<subreportExpression><![CDATA[$P{SUBREPORT_DIR} + "contratoCreditoInclusion_DetallePrincipal.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+		<band height="27">
+			<break>
+				<reportElement x="0" y="14" width="100" height="1" uuid="5197515e-e428-48bc-865f-1eb34c1e708b"/>
+			</break>
+		</band>
+		<band height="32">
+			<subreport>
+				<reportElement positionType="Float" stretchType="RelativeToBandHeight" x="0" y="0" width="547" height="32" uuid="e3212524-45ff-44a0-96a1-9d44e566cce5"/>
+				<subreportParameter name="firmaNB2CCI">
+					<subreportParameterExpression><![CDATA[$P{firmaNB2CCI}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="urlPathSantander">
+					<subreportParameterExpression><![CDATA[$P{urlPathSantander}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="condusef">
+					<subreportParameterExpression><![CDATA[$P{condusef}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="firmaNB1CCI">
+					<subreportParameterExpression><![CDATA[$P{firmaNB1CCI}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="firmaNF1CCI">
+					<subreportParameterExpression><![CDATA[$P{firmaNF1CCI}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="pieAnio">
+					<subreportParameterExpression><![CDATA[$P{pieAnio}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="firmaNF2CCI">
+					<subreportParameterExpression><![CDATA[$P{firmaNF2CCI}]]></subreportParameterExpression>
+				</subreportParameter>
+				<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($F{contratoCreditoInclusionAnexoLegal})]]></dataSourceExpression>
+				<subreportExpression><![CDATA[$P{SUBREPORT_DIR} + "contratoCreditoInclusion_AnexoLegal.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+	</detail>
+</jasperReport>

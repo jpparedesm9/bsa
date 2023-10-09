@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<procedure>
+  <database>cob_credito</database>
+  <name>sp_datos_tramites</name>
+  <type>SYBASE</type>
+  <version>1</version>
+  <parameters>
+    <parameter name="@s_ssn" dataType="int" direction="in" />
+    <parameter name="@s_user" dataType="varchar" direction="in" />
+    <parameter name="@s_sesn" dataType="int" direction="in" />
+    <parameter name="@s_term" dataType="varchar" direction="in" />
+    <parameter name="@s_date" dataType="datetime" direction="in" />
+    <parameter name="@s_srv" dataType="varchar" direction="in" />
+    <parameter name="@s_lsrv" dataType="varchar" direction="in" />
+    <parameter name="@s_rol" dataType="smallint" direction="in" />
+    <parameter name="@s_ofi" dataType="smallint" direction="in" />
+    <parameter name="@s_org_err" dataType="char" direction="in" />
+    <parameter name="@s_error" dataType="int" direction="in" />
+    <parameter name="@s_sev" dataType="tinyint" direction="in" />
+    <parameter name="@s_msg" dataType="varchar" direction="in" />
+    <parameter name="@s_org" dataType="char" direction="in" />
+    <parameter name="@t_rty" dataType="char" direction="in" />
+    <parameter name="@t_trn" dataType="smallint" direction="in" />
+    <parameter name="@t_debug" dataType="char" direction="in" />
+    <parameter name="@t_file" dataType="varchar" direction="in" />
+    <parameter name="@t_from" dataType="varchar" direction="in" />
+    <parameter name="@i_operacion" dataType="char" direction="in" />
+    <parameter name="@i_tramite" dataType="int" direction="in" />
+    <parameter name="@i_toperacion" dataType="varchar" direction="in" />
+    <parameter name="@i_producto" dataType="varchar" direction="in" />
+    <parameter name="@i_dato" dataType="varchar" direction="in" />
+    <parameter name="@i_valor" dataType="varchar" direction="in" />
+    <parameter name="@i_bandera" dataType="char" direction="in" />
+    <parameter name="@o_valor" dataType="varchar" direction="out" />
+  </parameters>
+  <queries>
+    <query>
+      <columns>
+        <column name="data" />
+        <column name="value" />
+      </columns>
+      <queryText>SELECT  dt_dato,dt_valor </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="data" />
+        <column name="value" />
+        <column name="descriptionTypeOperation" />
+      </columns>
+      <queryText>SELECT  "Dato" = dt_dato,"Valor" = dt_valor,"Descripcion" = do_descripcion </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="creditCode" />
+        <column name="typeOperation" />
+        <column name="descriptionTypeOperation" />
+        <column name="cobisProductMnemonic" />
+        <column name="data" />
+        <column name="value" />
+      </columns>
+      <queryText>SELECT w_tramite, w_toperacion, w_desc_toperacion, w_producto, w_dato, w_valor</queryText>
+    </query>
+  </queries>
+</procedure>

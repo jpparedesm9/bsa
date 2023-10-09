@@ -1,0 +1,113 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<procedure>
+  <database>cob_credito</database>
+  <name>sp_reporte_contrato_repro</name>
+  <type>SYBASE</type>
+  <version>1</version>
+  <parameters>
+    <parameter name="@s_ssn" dataType="int" direction="in" />
+    <parameter name="@s_user" dataType="varchar" direction="in" />
+    <parameter name="@s_sesn" dataType="int" direction="in" />
+    <parameter name="@s_term" dataType="varchar" direction="in" />
+    <parameter name="@s_date" dataType="datetime" direction="in" />
+    <parameter name="@s_srv" dataType="varchar" direction="in" />
+    <parameter name="@s_lsrv" dataType="varchar" direction="in" />
+    <parameter name="@s_rol" dataType="smallint" direction="in" />
+    <parameter name="@s_ofi" dataType="smallint" direction="in" />
+    <parameter name="@s_org_err" dataType="char" direction="in" />
+    <parameter name="@s_error" dataType="int" direction="in" />
+    <parameter name="@s_sev" dataType="tinyint" direction="in" />
+    <parameter name="@s_msg" dataType="varchar" direction="in" />
+    <parameter name="@s_org" dataType="char" direction="in" />
+    <parameter name="@t_rty" dataType="char" direction="in" />
+    <parameter name="@t_trn" dataType="smallint" direction="in" />
+    <parameter name="@t_debug" dataType="char" direction="in" />
+    <parameter name="@t_file" dataType="varchar" direction="in" />
+    <parameter name="@t_from" dataType="varchar" direction="in" />
+    <parameter name="@i_operacion" dataType="varchar" direction="in" />
+    <parameter name="@i_modo" dataType="int" direction="in" />
+    <parameter name="@i_tramite" dataType="int" direction="in" />
+    <parameter name="@i_format_fecha" dataType="int" direction="in" />
+    <parameter name="@i_id_inst_proc" dataType="int" direction="in" />
+    <parameter name="@i_filial" dataType="int" direction="in" />
+  </parameters>
+  <queries>
+    <query>
+      <columns>
+        <column name="num_operacion_ant" />
+        <column name="tramite_ant" />
+        <column name="plazo_ant" />
+        <column name="plazo_catalogo_ant" />
+        <column name="monto_ant" />
+        <column name="fecha_liquida_ant" />
+        <column name="num_dividendo" />
+        <column name="fecha_proceso" />
+        <column name="num_operacion" />
+        <column name="plazo" />
+        <column name="plazo_catalogo" />
+        <column name="monto" />
+        <column name="fecha_liquida" />
+        <column name="moneda_descrip_ant" />
+        <column name="moneda_descrip" />
+        <column name="tasa_fija" />
+        <column name="tasa_diferencial" />
+        <column name="tasa_efectiva_activa" />
+        <column name="tasa_nominal_fija" />
+        <column name="periodo_reajust" />
+        <column name="reajust" />
+        <column name="tipo_tabla_amort" />
+        <column name="plazo_letra" />
+        <column name="plazo_descrip_div" />
+        <column name="gracia_interes" />
+        <column name="gracias_capital" />
+        <column name="descrip_periodo_div" />
+        <column name="tasa_base" />
+        <column name="fecha_primer_pago" />
+        <column name="plazo_simbolo" />
+      </columns>
+      <queryText>SELECT "num_operacion_ant"=w_or_num_operacion,"tramite_ant"=w_tramite_ant,"plazo_ant"=w_op_plazo,"plazo_catalogo_ant"=valor_catalogo,"monto_ant"=w_op_monto,"fecha_liquida_ant"=w_op_fecha_liqui,"num_dividendo"=w_numAmortizacion,"fecha_proceso"=ctx.convertString(s_date ,i_format_fecha)</queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="monto_aprobado" />
+        <column name="total_endeudamiento" />
+        <column name="sumatoria_cli" />
+        <column name=" moneda" />
+      </columns>
+      <queryText></queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="num_dividendo_reajustable" />
+      </columns>
+      <queryText></queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="FilNombre" />
+        <column name="FilDireccion" />
+        <column name="FilRepreNombre" />
+        <column name="FilCedula" />
+        <column name="AgenRepreNombre" />
+        <column name="AgenRepreCedula" />
+        <column name="CargoApoderado" />
+        <column name="PoderNotariado" />
+        <column name="FechaPoder" />
+        <column name="NotariaNumero" />
+        <column name="NotarioNombre" />
+        <column name="DeudorNombre" />
+        <column name="DeudorCedula" />
+        <column name="DeudorEstadoCivil" />
+        <column name="DeudorDireccion" />
+        <column name="DeudorProfesion" />
+        <column name="TrOficina" />
+        <column name="TrCiudad" />
+        <column name="TrMontoSoli" />
+        <column name="TrMonedaDes" />
+        <column name="TrMonedaSim" />
+        <column name="FechaProceso" />
+      </columns>
+      <queryText></queryText>
+    </query>
+  </queries>
+</procedure>

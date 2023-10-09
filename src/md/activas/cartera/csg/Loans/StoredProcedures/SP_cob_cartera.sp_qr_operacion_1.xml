@@ -1,0 +1,222 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<procedure>
+  <database>cob_cartera</database>
+  <name>sp_qr_operacion</name>
+  <type>SQLSERVER</type>
+  <version>1</version>
+  <parameters>
+    <parameter name="@s_user" dataType="varchar" direction="in" />
+    <parameter name="@s_term" dataType="varchar" direction="in" />
+    <parameter name="@s_date" dataType="datetime" direction="in" />
+    <parameter name="@s_ofi" dataType="smallint" direction="in" />
+    <parameter name="@i_banco" dataType="varchar" direction="in" />
+    <parameter name="@i_formato_fecha" dataType="int" direction="in" />
+    <parameter name="@i_operacion" dataType="char" direction="in" />
+  </parameters>
+  <queries>
+    <query>
+      <columns>
+        <column name="RUBRO  " />
+        <column name="TOTAL DIFERIDO" />
+        <column name="PENDIENTE DIFERIDO" />
+      </columns>
+      <queryText>SELECT  "RUBRO  " = dif_concepto,"TOTAL DIFERIDO" = ISNULL (dif_valor_total, 0),"PENDIENTE DIFERIDO" = ISNULL (dif_valor_total, 0) - ISNULL (dif_valor_pagado, 0) </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="{1}" />
+        <column name="{2}" />
+        <column name="{3}" />
+        <column name="{4}" />
+        <column name="{5}" />
+        <column name="{6}" />
+        <column name="{7}" />
+        <column name="{8}" />
+        <column name="{9}" />
+        <column name="{10}" />
+        <column name="{11}" />
+        <column name="{12}" />
+        <column name="{13}" />
+        <column name="{14}" />
+        <column name="{15}" />
+        <column name="{16}" />
+        <column name="{17}" />
+        <column name="{18}" />
+        <column name="{19}" />
+        <column name="{20}" />
+        <column name="{21}" />
+        <column name="{22}" />
+        <column name="{23}" />
+        <column name="{24}" />
+        <column name="{25}" />
+        <column name="{26}" />
+        <column name="{27}" />
+        <column name="{28}" />
+        <column name="{29}" />
+        <column name="{30}" />
+        <column name="{31}" />
+        <column name="{32}" />
+        <column name="{33}" />
+        <column name="{34}" />
+        <column name="{35}" />
+        <column name="{36}" />
+        <column name="{37}" />
+        <column name="{38}" />
+        <column name="{39}" />
+        <column name="{40}" />
+        <column name="{41}" />
+        <column name="{42}" />
+        <column name="{43}" />
+        <column name="{44}" />
+        <column name="{45}" />
+        <column name="{46}" />
+        <column name="{47}" />
+        <column name="{48}" />
+        <column name="{49}" />
+        <column name="{50}" />
+        <column name="{51}" />
+        <column name="{52}" />
+        <column name="{53}" />
+        <column name="{54}" />
+        <column name="{55}" />
+        <column name="{56}" />
+        <column name="{57}" />
+        <column name="{58}" />
+        <column name="{59}" />
+        <column name="{60}" />
+        <column name="{61}" />
+        <column name="{62}" />
+        <column name="{63}" />
+        <column name="{64}" />
+        <column name="{65}" />
+        <column name="{66}" />
+        <column name="{67}" />
+        <column name="{68}" />
+        <column name="{69}" />
+        <column name="{70}" />
+        <column name="{71}" />
+        <column name="{72}" />
+        <column name="{73}" />
+        <column name="{74}" />
+        <column name="{75}" />
+        <column name="{76}" />
+        <column name="{77}" />
+        <column name="{78}" />
+        <column name="{79}" />
+        <column name="{80}" />
+        <column name="{81}" />
+        <column name="{82}" />
+        <column name="{83}" />
+        <column name="{84}" />
+        <column name="{85}" />
+        <column name="{86}" />
+        <column name="{87}" />
+        <column name="{88}" />
+        <column name="{89}" />
+        <column name="{90}" />
+        <column name="{91}" />
+        <column name="{92}" />
+        <column name="{93}" />
+        <column name="{94}" />
+        <column name="{95}" />
+        <column name="{96}" />
+        <column name="{97}" />
+        <column name="{98}" />
+        <column name="{99}" />
+        <column name="{100}" />
+        <column name="{101}" />
+        <column name="{102}" />
+        <column name="{103}" />
+        <column name="{104}" />
+        <column name="{105}" />
+        <column name="{106}" />
+        <column name="{107}" />
+        <column name="{108}" />
+        <column name="{109}" />
+        <column name="{110}" />
+        <column name="{111}" />
+        <column name="{112}" />
+        <column name="{113}" />
+        <column name="{114}" />
+        <column name="{115}" />
+        <column name="{116}" />
+        <column name="{117}" />
+        <column name="{118}" />
+        <column name="{119}" />
+        <column name="{120}" />
+        <column name="{121}" />
+        <column name="{122}" />
+        <column name="{123}" />
+        <column name="{124}" />
+        <column name="{125}" />
+        <column name="{126}" />
+        <column name="{127}" />
+        <column name="{128}" />
+        <column name="{129}" />
+        <column name="{130}" />
+        <column name="{131}" />
+        <column name="{132}" />
+        <column name="{133}" />
+        <column name="{134}" />
+        <column name="{135}" />
+        <column name="{136}" />
+        <column name="{137}" />
+        <column name="{138}" />
+        <column name="{139}" />
+        <column name="{140}" />
+        <column name="{141}" />
+        <column name="{142}" />
+        <column name="{143}" />
+        <column name="{144}" />
+        <column name="{145}" />
+        <column name="{146}" />
+        <column name="{147}" />
+        <column name="{148}" />
+        <column name="{149}" />
+        <column name="{150}" />
+        <column name="{151}" />
+        <column name="{152}" />
+        <column name="{153}" />
+      </columns>
+      <queryText>SELECT w_operacionca, w_banco, w_tramite, w_lin_credito, w_estado, w_cliente, w_toperacion, w_desc_toperacion, w_moneda, w_desc_entidad, w_oficina, w_oficial, ctx.convertString(w_fecha_ini ,i_formato_fecha), ctx.convertString(w_fecha_fin ,i_formato_fecha), ctx.convertString(w_fecha_prox_pag ,i_formato_fecha), ctx.convertDouble(w_monto), w_tplazo, w_desc_tplazo, w_plazo, w_tdividendo, w_desc_tdividendo, w_periodo_cap, w_periodo_int, w_periodos_gracia, w_periodos_gracia_int, w_dist_gracia, w_destino, w_desc_destino, w_ciudad, w_desc_ciudad, w_nem_producto, w_desc_producto, w_cuenta, w_reajuste_periodo, ctx.convertString(w_reajuste_fecha ,i_formato_fecha), w_reajuste_num, w_renovacion, w_num_renovacion, w_precancelacion, w_tipo, w_porcentaje_fin, w_tasa_fin, w_cuota_completa, w_anticipado_int, w_reajuste_intereses, w_reduccion, w_cuota_anticipada, w_dias_anio, w_tipo_amortizacion, w_cuota_fija, ctx.convertDouble(w_cuota), ctx.convertDouble(w_cuota_capital), w_dias_gracia, w_dia_pago, w_desc_ofi, w_inicio, w_fin, w_nombre, w_tasa, w_referencial, w_desc_referencial, w_opcion_cap, 0, w_reajuste_especial, w_banca, w_des_sector, w_anterior, w_migrada, w_refer, w_desembolso, ctx.convertString(w_fecha_liq ,i_formato_fecha), w_cuota_adic, w_meses_hip, ctx.convertDouble(w_monto_aprobado), w_tipo_aplicacion, w_gracia_int, w_mes_gracia, w_num_dec, w_fecha_fija, w_reajuste, w_evitar_feriados, ctx.convertString(w_fecha_ult_proceso ,i_formato_fecha), ctx.convertDouble(w_saldo_operacion), w_dias_clausula, w_clausula_aplicada, w_periodo_crecimiento, w_tasa_crecimiento, w_desc_direccion, w_desc_tipo, w_clase_cartera, w_desc_clase_cartera, w_des_programa, w_desc_origen_fondos, w_desc_calificacion, w_numero_reest, ctx.convertDouble(w_saldo_operacion_finan), ctx.convertString(w_fecha_ult_rees ,i_formato_fecha), w_op_divcap_original, w_fondos_propios, w_prd_cobis, w_ref_exterior, w_sujeta_nego, w_ref_red, ctx.convertDouble(w_sal_pro_pon), w_tipo_empresa, w_desc_t_empresa, w_validacion, w_desc_tmnio_empresa, ctx.convertString(w_fecha_pri_cuota ,i_formato_fecha), w_des_naturaleza, w_base_calculo, w_recalcular, w_dia_habil, w_usa_tasa_eq, w_grupo_fact, w_dias_cap_ven, w_bvirtual, w_extracto, w_reestructuracion, w_subtipo, ctx.convertString(w_fecha_embarque ,i_formato_fecha), ctx.convertString(w_fecha_dex ,i_formato_fecha), w_num_deuda_ext, w_nace_vencida, w_num_comex, w_calcula_devolucion, w_des_edad, w_estado_cobranza, w_op_pasiva_externa, ctx.convertDouble(w_op_margen_redescuento), ctx.convertString(w_fecha_migracion ,i_formato_fecha), w_nom_abogado, w_total_diferido, w_pendiente_diferido, w_capitalizado, w_telefonos, w_direccion1, w_vlr_rec_ini, w_vlr_x_amort, w_op_padre, w_op_hija, w_tramite_max, w_des_alianza, w_llave_finagro, w_finagro, w_gar_finagro</queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="{1}" />
+        <column name="{2}" />
+        <column name="{3}" />
+        <column name="{4}" />
+        <column name="{5}" />
+        <column name="{6}" />
+        <column name="{7}" />
+        <column name="{8}" />
+        <column name="{9}" />
+        <column name="{10}" />
+        <column name="{11}" />
+        <column name="{12}" />
+        <column name="{13}" />
+        <column name="{14}" />
+        <column name="{15}" />
+        <column name="{16}" />
+        <column name="{17}" />
+        <column name="{18}" />
+        <column name="{19}" />
+        <column name="{20}" />
+        <column name="{21}" />
+        <column name="{22}" />
+      </columns>
+      <queryText>SELECT w_mercado_objetivo, w_des_mercado_objetivo, w_tipo_productor, w_des_tipo_productor, w_desc_moneda, w_nom_oficial, w_mercado, w_des_mercado, w_cod_actividad, w_des_actprod, w_num_desemb, w_desc_situacion, w_total_desc_causal, ctx.convertString(w_fecha_castigo ,i_formato_fecha), w_calif_orig, w_desc_calif_orig, w_calif_segui, w_desc_calif_segui, w_toperacion, w_desc_toperacion, w_campana, w_camp_det</queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="{1}" />
+        <column name="{2}" />
+        <column name="{3}" />
+        <column name="{4}" />
+        <column name="{5}" />
+        <column name="{6}" />
+      </columns>
+      <queryText>SELECT w_vx_valor_vencido, w_vx_monto, w_vx_monto_max, w_vx_valor_vencido_rec, w_vx_monto_rec</queryText>
+    </query>
+  </queries>
+</procedure>

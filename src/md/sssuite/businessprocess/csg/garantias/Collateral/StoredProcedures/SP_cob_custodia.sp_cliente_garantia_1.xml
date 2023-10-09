@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<procedure>
+  <database>cob_custodia</database>
+  <name>sp_cliente_garantia</name>
+  <type>SYBASE</type>
+  <version>1</version>
+  <parameters>
+    <parameter name="@s_ssn" dataType="int" direction="in" />
+    <parameter name="@s_date" dataType="datetime" direction="in" />
+    <parameter name="@s_user" dataType="varchar" direction="in" />
+    <parameter name="@s_term" dataType="varchar" direction="in" />
+    <parameter name="@s_ofi" dataType="smallint" direction="in" />
+    <parameter name="@t_trn" dataType="smallint" direction="in" />
+    <parameter name="@t_debug" dataType="char" direction="in" />
+    <parameter name="@t_file" dataType="varchar" direction="in" />
+    <parameter name="@t_from" dataType="varchar" direction="in" />
+    <parameter name="@i_operacion" dataType="char" direction="in" />
+    <parameter name="@i_modo" dataType="smallint" direction="in" />
+    <parameter name="@i_filial" dataType="tinyint" direction="in" />
+    <parameter name="@i_sucursal" dataType="smallint" direction="in" />
+    <parameter name="@i_custodia" dataType="int" direction="in" />
+    <parameter name="@i_tipo_cust" dataType="varchar" direction="in" />
+    <parameter name="@i_ente" dataType="int" direction="in" />
+    <parameter name="@i_principal" dataType="char" direction="in" />
+    <parameter name="@i_cliente" dataType="int" direction="in" />
+    <parameter name="@i_oficial" dataType="int" direction="in" />
+    <parameter name="@i_nombre" dataType="varchar" direction="in" />
+    <parameter name="@i_ssn" dataType="int" direction="in" />
+  </parameters>
+  <queries>
+    <query>
+      <columns>
+        <column name="sequentialCustomer" />
+      </columns>
+      <queryText>SELECT w_seccliente</queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="{1}" />
+        <column name="{2}" />
+        <column name="{3}" />
+        <column name="{4}" />
+        <column name="{5}" />
+        <column name="{6}" />
+        <column name="{7}" />
+      </columns>
+      <queryText>SELECT w_filial, w_sucursal, w_custodia, w_tipo_cust, w_ente, w_oficial, w_nombre</queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="17410" />
+        <column name="17411" />
+        <column name="17412" />
+        <column name="17413" />
+        <column name="17414" />
+      </columns>
+      <queryText>SELECT  "17410" = en_ente,"17411" = SUBSTRING (cg_nombre, 1, DATALENGTH (cg_nombre)),"17412" = SUBSTRING (en_ced_ruc, 1, 20),"17413" = en_oficial,"17414" = cg_principal </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="17410" />
+        <column name="17411" />
+        <column name="17415" />
+        <column name="17413" />
+      </columns>
+      <queryText>SELECT  "17410" = en_ente,"17411" = SUBSTRING (cg_nombre, 1, DATALENGTH (cg_nombre)),"17415" = en_ced_ruc,"17413" = en_oficial </queryText>
+    </query>
+  </queries>
+</procedure>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.cobis.tuiiob2c">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <application
+        android:name=".AppConfig"
+        android:allowBackup="false"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        android:usesCleartextTraffic="true"
+        tools:ignore="GoogleAppIndexingWarning"
+        tools:targetApi="m">
+        <activity android:name=".presentation.splash.SplashActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".presentation.enrollment.EnrollmentActivity" />
+        <activity android:name=".presentation.login.LoginActivity" />
+        <activity android:name=".presentation.phoneValidation.PhoneValidationActivity" />
+        <activity android:name=".presentation.otpVerification.OtpVerificationActivity" />
+        <activity android:name=".presentation.createPassword.CreatePasswordActivity" />
+        <activity android:name=".presentation.changePassword.ChangePasswordActivity" />
+        <activity
+            android:name=".presentation.mainActivity.MainActivity"
+            android:label="@string/title_activity_main" />
+        <activity android:name=".presentation.forgotPassword.ForgotPasswordActivity" />
+        <activity android:name=".presentation.creditSolicitation.CreditSolicitationActivity" />
+        <activity android:name=".presentation.resetPassword.ResetPasswordActivity" />
+        <activity android:name=".presentation.solicitationAproved.AprovedActivity" />
+        <activity android:name=".presentation.otpCreditVerification.OtpCreditVerificationActivity"/>
+        <activity android:name=".presentation.unlock.UnlockActivity"/>
+        <activity android:name=".presentation.otpMessageVerification.OtpMessageVerificationActivity"/>
+    </application>
+
+</manifest>

@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<procedure>
+  <database>cob_credito</database>
+  <name>sp_cons_soli_cli</name>
+  <type>SYBASE</type>
+  <version>1</version>
+  <parameters>
+    <parameter name="@t_debug" dataType="char" direction="in" />
+    <parameter name="@t_file" dataType="varchar" direction="in" />
+    <parameter name="@i_operacion" dataType="char" direction="in" />
+    <parameter name="@i_tramite" dataType="int" direction="in" />
+    <parameter name="@i_login" dataType="varchar" direction="in" />
+    <parameter name="@t_trn" dataType="int" direction="in" />
+    <parameter name="@i_cliente" dataType="int" direction="in" />
+    <parameter name="@i_oficial" dataType="int" direction="in" />
+    <parameter name="@i_tipo_tramite" dataType="varchar" direction="in" />
+    <parameter name="@i_id_inst_proc" dataType="int" direction="in" />
+    <parameter name="@i_codigo_alterno" dataType="varchar" direction="in" />
+    <parameter name="@i_nemonico" dataType="varchar" direction="" />
+    <parameter name="@i_claimant" dataType="varchar" direction="" />
+    <parameter name="@i_group" dataType="char" direction="" />
+  </parameters>
+  <queries>
+    <query>
+      <columns>
+        <column name="'Código Solicitud'" />
+        <column name="'Código Alterno'" />
+        <column name="'Código Crédito'" />
+        <column name="'Tipo Flujo'" />
+        <column name="'Deudor Principal'" />
+        <column name="'Nombre Deudor'" />
+        <column name="'Monto Propuesto'" />
+        <column name="'Moneda Propuesta'" />
+        <column name="'Código Ciudad'" />
+      </columns>
+      <queryText></queryText>
+    </query>
+  </queries>
+</procedure>

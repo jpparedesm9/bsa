@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report1" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="c2cd4cb8-d330-4ca4-8119-f6213466d077">
+	<property name="ireport.zoom" value="1.5"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="table">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<subDataset name="Table Dataset 1" uuid="dc941ea3-57b6-4502-8bcc-2470d9b23fe4"/>
+	<parameter name="CLIENTE" class="java.lang.String"/>
+	<parameter name="FECHA" class="java.util.Date"/>
+	<parameter name="NOMBRE_GRUPO" class="java.lang.String"/>
+	<parameter name="PIEPAGINA" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="asesorId" class="java.lang.Integer"/>
+	<field name="asesor" class="java.lang.String"/>
+	<field name="cuotasVencidas" class="java.lang.Integer"/>
+	<field name="valorVencido" class="java.math.BigDecimal"/>
+	<field name="cuotaActual" class="java.math.BigDecimal"/>
+	<field name="coordId" class="java.lang.Integer"/>
+	<field name="coordinador" class="java.lang.String"/>
+	<field name="grupoId" class="java.lang.Integer"/>
+	<field name="grupo" class="java.lang.String"/>
+	<sortField name="grupoId"/>
+	<sortField name="asesorId"/>
+	<variable name="totalCuotasVenc" class="java.lang.Integer" calculation="Sum">
+		<variableExpression><![CDATA[$F{cuotasVencidas}]]></variableExpression>
+	</variable>
+	<variable name="totalValorVenc" class="java.math.BigDecimal" calculation="Sum">
+		<variableExpression><![CDATA[$F{valorVencido}]]></variableExpression>
+	</variable>
+	<variable name="totalCuotasAct" class="java.math.BigDecimal" calculation="Sum">
+		<variableExpression><![CDATA[$F{cuotaActual}]]></variableExpression>
+	</variable>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="40" splitType="Stretch">
+			<rectangle>
+				<reportElement x="136" y="0" width="419" height="37" forecolor="#FFFFFF" backcolor="#FFFFFF" uuid="27a1aa31-c753-47ff-9bd0-eab01b00cd31"/>
+				<graphicElement>
+					<pen lineWidth="0.0"/>
+				</graphicElement>
+			</rectangle>
+			<staticText>
+				<reportElement mode="Opaque" x="136" y="0" width="419" height="17" forecolor="#000000" backcolor="#FFFFFF" uuid="9c601e45-067a-4bd0-9d66-b4b117e1c239"/>
+				<box leftPadding="3"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Lista de grupos con cuatro o mas cuotas grupales vencidas]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Transparent" x="136" y="17" width="419" height="20" forecolor="#000000" backcolor="#FFFFFF" uuid="cbb95ff0-15d2-4a83-a2c1-7953a7f6c14a"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[SOFOM Santander ]]></text>
+			</staticText>
+			<image scaleImage="FillFrame">
+				<reportElement x="0" y="0" width="130" height="37" uuid="b61e926b-895d-4874-a428-c7f612b16517"/>
+				<imageExpression><![CDATA["logo-tuiio.png"]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<columnHeader>
+		<band height="32" splitType="Stretch">
+			<rectangle>
+				<reportElement x="258" y="0" width="109" height="32" backcolor="#CCCCCC" uuid="5c5c67fa-7ef3-4cf6-b597-da8718b68621"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="488" y="0" width="67" height="32" backcolor="#CCCCCC" uuid="ac94cdd3-83b2-4a42-9d91-078298ff5617"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="421" y="0" width="67" height="32" backcolor="#CCCCCC" uuid="71a40a6d-da65-4996-9911-47773f62df2e"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="421" y="0" width="67" height="32" uuid="a9eac0db-a912-464f-9620-0ed01262aa79"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[Valor Vencido]]></text>
+			</staticText>
+			<rectangle>
+				<reportElement x="149" y="0" width="109" height="32" backcolor="#CCCCCC" uuid="2619ed10-29ba-46a6-8222-9b9e81aa8df2"/>
+			</rectangle>
+			<staticText>
+				<reportElement mode="Transparent" x="149" y="0" width="107" height="32" uuid="2a309a4c-4ac3-4a77-b30f-d4870ffcd149"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[Asesor]]></text>
+			</staticText>
+			<rectangle>
+				<reportElement x="367" y="0" width="54" height="32" backcolor="#CCCCCC" uuid="b165e16d-df16-47d3-9620-27389155a563"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="3" y="0" width="46" height="32" backcolor="#CCCCCC" uuid="be70e044-3143-43ff-a7ae-daeeeb7726b8"/>
+			</rectangle>
+			<staticText>
+				<reportElement mode="Transparent" x="367" y="0" width="54" height="32" uuid="99b96e42-9898-42c2-9d62-51f5a5780c78"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[Cuotas Vencidas]]></text>
+			</staticText>
+			<rectangle>
+				<reportElement x="49" y="0" width="100" height="32" backcolor="#CCCCCC" uuid="026a4910-3d8f-441c-aca4-73cb4c2f3be6"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="7" y="0" width="36" height="32" uuid="d6626250-7e53-479c-8ea4-996173d80923"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[Id Grupo]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="49" y="0" width="100" height="32" uuid="6a0143a3-f3f1-4297-a72d-4585500774f4"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[Nombre del Grupo]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="490" y="0" width="65" height="32" uuid="4bad85f8-a9e8-455e-9c0b-9fa47acd48aa"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[Cuota Actual]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="260" y="0" width="107" height="32" uuid="f6fceb68-be3c-44f4-8bfc-58414fd76925"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[Coordinador]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="20" splitType="Stretch">
+			<rectangle>
+				<reportElement x="258" y="0" width="109" height="20" uuid="2e18f430-5183-4165-aa68-bb3461b5c512"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="488" y="0" width="67" height="20" uuid="f672d045-29b4-4f94-944a-04edd8a316cd"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="421" y="0" width="67" height="20" uuid="515a5afe-34e0-4a55-9aab-2132c6af9388"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="367" y="0" width="54" height="20" uuid="976278d9-02b4-4245-b6f2-8938f5db8ace"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="149" y="0" width="109" height="20" uuid="699ed554-bd8f-430e-8dfa-a4cdb46d981b"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="3" y="0" width="46" height="20" uuid="71ebff4a-fcd2-49c0-8335-cf95489955ad"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="49" y="0" width="100" height="20" uuid="2411baec-7367-4273-bfe4-bf5921894322"/>
+			</rectangle>
+			<textField>
+				<reportElement x="381" y="0" width="30" height="20" uuid="00594837-2217-47e8-b682-103d02b8762b"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{cuotasVencidas}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="152" y="0" width="106" height="20" uuid="709e0da0-3995-47b3-9bbc-1907eeb36222"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{asesor}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="3" y="0" width="46" height="20" uuid="19eefb86-dd30-497b-a07e-b6de079e8bfd"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{grupoId}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="52" y="0" width="97" height="20" uuid="230e50c5-cd6b-4ea1-8a93-05220ab2c060"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{grupo}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="422" y="0" width="62" height="20" uuid="d9a459dd-1d37-4fe6-a9ff-6407a88ae584"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[new java.text.DecimalFormat("###,###,##0.00").format($F{valorVencido})]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="490" y="0" width="61" height="20" uuid="82cec0ec-0af3-40dc-8c0e-e4c3dc1ef791"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[new java.text.DecimalFormat("###,###,##0.00").format($F{cuotaActual})]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="261" y="0" width="106" height="20" uuid="ad98b40a-55d8-4b76-9365-b737f1ced2ae"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{coordinador}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="20">
+			<textField>
+				<reportElement mode="Opaque" x="3" y="0" width="552" height="20" forecolor="#000000" backcolor="#FFFFFF" uuid="321f50fc-a99d-4874-b80f-96988515d7de"/>
+				<box>
+					<leftPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="false" isStrikeThrough="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{PIEPAGINA}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="27" splitType="Stretch">
+			<rectangle>
+				<reportElement x="367" y="0" width="54" height="20" uuid="99f6962b-1fef-41d3-be21-462b3d169b13"/>
+			</rectangle>
+			<textField>
+				<reportElement x="381" y="0" width="30" height="20" uuid="0c9e1b8a-5177-462b-95b8-70790b04a87e"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{totalCuotasVenc}]]></textFieldExpression>
+			</textField>
+			<rectangle>
+				<reportElement x="3" y="0" width="364" height="20" uuid="fe245b76-f52f-4767-9b57-aaff5e5b795c"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="421" y="0" width="67" height="20" uuid="a54efffd-8130-49f1-8ae1-32bd1d29ee5f"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="488" y="0" width="67" height="20" uuid="64b730bf-ec1b-4dbf-9c78-31f44281e69d"/>
+			</rectangle>
+			<textField>
+				<reportElement x="421" y="0" width="63" height="20" uuid="93e792f7-9741-4d42-8790-4eb5582a3f4f"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[new java.text.DecimalFormat("###,###,##0.00").format($V{totalValorVenc})]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="490" y="0" width="61" height="20" uuid="90dbbfcd-cd40-4385-a2d6-5cd6f0f9d36c"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[new java.text.DecimalFormat("###,###,##0.00").format($V{totalCuotasAct})]]></textFieldExpression>
+			</textField>
+		</band>
+	</summary>
+</jasperReport>

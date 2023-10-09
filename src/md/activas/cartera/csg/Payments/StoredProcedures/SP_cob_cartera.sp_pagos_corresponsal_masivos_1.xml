@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<procedure>
+  <database>cob_cartera</database>
+  <name>sp_pagos_corresponsal_masivos</name>
+  <type>SYBASE</type>
+  <version>1</version>
+  <parameters>
+    <parameter name="@s_ssn" dataType="int" direction="in" />
+    <parameter name="@s_sesn" dataType="int" direction="in" />
+    <parameter name="@s_date" dataType="datetime" direction="in" />
+    <parameter name="@s_user" dataType="varchar" direction="in" />
+    <parameter name="@s_term" dataType="varchar" direction="in" />
+    <parameter name="@s_ofi" dataType="smallint" direction="in" />
+    <parameter name="@s_srv" dataType="varchar" direction="in" />
+    <parameter name="@s_lsrv" dataType="varchar" direction="in" />
+    <parameter name="@s_rol" dataType="smallint" direction="in" />
+    <parameter name="@s_org" dataType="varchar" direction="in" />
+    <parameter name="@s_culture" dataType="varchar" direction="in" />
+    <parameter name="@t_debug" dataType="char" direction="in" />
+    <parameter name="@t_file" dataType="varchar" direction="in" />
+    <parameter name="@t_from" dataType="varchar" direction="in" />
+    <parameter name="@t_trn" dataType="smallint" direction="in" />
+    <parameter name="@i_operacion" dataType="char" direction="in" />
+    <parameter name="@i_referencia" dataType="varchar" direction="in" />
+    <parameter name="@i_corresponsal" dataType="varchar" direction="in" />
+    <parameter name="@i_moneda" dataType="int" direction="in" />
+    <parameter name="@i_status_srv" dataType="varchar" direction="in" />
+    <parameter name="@i_observacion" dataType="varchar" direction="in" />
+    <parameter name="@i_fecha_pago" dataType="varchar" direction="in" />
+    <parameter name="@i_monto_pago" dataType="varchar" direction="in" />
+    <parameter name="@i_archivo_pago" dataType="varchar" direction="in" />
+    <parameter name="@i_trn_id_corresp" dataType="varchar" direction="in" />
+    <parameter name="@i_accion" dataType="char" direction="in" />
+    <parameter name="@i_en_linea" dataType="char" direction="in" />
+    <parameter name="@i_num_fila" dataType="int" direction="in" />
+    <parameter name="@i_delete" dataType="char" direction="in" />
+    <parameter name="@o_msg" dataType="varchar" direction="out" />
+  </parameters>
+  <queries>
+    <query>
+      <columns>
+        <column name="NumFila" />
+        <column name="FechaPago" />
+        <column name="NumReferencia" />
+        <column name="MontoPago" />
+        <column name="FormaPago" />
+        <column name="TrnCorresponsal" />
+        <column name="NombreArchivo" />
+        <column name="Observaciones" />
+      </columns>
+      <queryText>SELECT  "NumFila" = num_fila,"FechaPago" = fecha_valor_pago,"NumReferencia" = num_referencia,"MontoPago" = monto_pago,"FormaPago" = forma_pago,"TrnCorresponsal" = trn_corresponsal,"NombreArchivo" = nom_archivo_pago,"Observaciones" = observaciones </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="NumProcesados" />
+        <column name="MontoProcesado" />
+        <column name="NumNoProcesados" />
+      </columns>
+      <queryText>SELECT  "NumProcesados" = COUNT (*),"MontoProcesado" = SUM (CONVERT (MONEY,monto_pago )),"NumNoProcesados" = ISNULL ((SELECT  COUNT (*) FROM cob_cartera..ca_referencia_tmp   WHERE nom_archivo_pago = ? AND procesado = "N"     ), 0) </queryText>
+    </query>
+  </queries>
+</procedure>

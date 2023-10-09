@@ -1,0 +1,62 @@
+!************************************************************************!
+!*      Archivo           :  up_ba_sb_exec.sqr                          *!
+!*      Base de datos     :  cobis                                      *!
+!*      Producto          :  Visual Batch                               *!
+!*      Disenado por      :  Diego Ayala.	                        *!
+!*      Fecha de escritura:  27/Oct/02                                  *!
+!************************************************************************!
+!*                              IMPORTANTE                              *!
+!*      Este programa es parte de los paquetes bancarios propiedad de   *!
+!*      "MACOSA", representantes exclusivos para el Ecuador de la       *!
+!*      "NCR CORPORATION".                                              *!
+!*      Su uso no autorizado queda expresamente prohibido asi como      *!
+!*      cualquier alteracion o agregado hecho por alguno de sus         *!
+!*      usuarios sin el debido consentimiento por escrito de la         *!
+!*      Presidencia Ejecutiva de MACOSA o su representante.             *!
+!************************************************************************!
+!*                              PROPOSITO                               *!
+!*      Update de log							*!  
+!*	PARAM 1: $LOTE 	(codigo de lote o sarta)			*!
+!*	PARAM 2: $BATCH (codigo de opcion batch)			*!
+!*	PARAM 3: $SEC	(secuencial del batch en el lote		*!
+!*      PARAM 4: $IDPROC (PID del proceso en unix)	                *!
+!************************************************************************!
+!*                            MODIFICACIONES                            *!
+!*      FECHA           AUTOR           RAZON                           *!
+!*      27/oct/03       Diego Ayala	Emision inicial			*!
+!************************************************************************!
+
+Begin-Setup
+use cobis
+End-Setup  
+
+Begin-Report
+   input $w_lote        'Ingrese el codigo de lote      '
+   input $w_batch       'Ingrese el codigo del batch    '
+   input $w_sec         'Ingrese el secuencial          '
+
+   input $w_idproc      'Ingrese proceso id             '
+
+   let #w_lote        = to_number ($w_lote)
+   let #w_batch       = to_number ($w_batch)
+   let #w_sec         = to_number ($w_sec)
+   let #w_idproc      = to_number ($w_idproc)
+
+do Main
+End-Report
+
+Begin-Procedure Main
+Begin-sql ON-ERROR = Error_Int
+update cobis..ba_sarta_batch_exec
+set sb_id_proceso	= #w_idproc
+where	sb_sarta	= #w_lote
+and	sb_batch	= #w_batch
+and	sb_secuencial	= #w_sec
+End-sql
+End-Procedure
+
+Begin-Procedure Error_Int
+   let #return-status = 1 ! Para el sistema operativo
+   show $sql-error
+   stop
+End-Procedure

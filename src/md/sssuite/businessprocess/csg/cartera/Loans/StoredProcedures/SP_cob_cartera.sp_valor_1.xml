@@ -1,0 +1,169 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<procedure>
+  <database>cob_cartera</database>
+  <name>sp_valor</name>
+  <type>SYBASE</type>
+  <version>1</version>
+  <parameters>
+    <parameter name="@i_aplica_ajuste" dataType="char" direction="in" />
+    <parameter name="@i_clase" dataType="varchar" direction="in" />
+    <parameter name="@i_clase_omitir" dataType="char" direction="in" />
+    <parameter name="@i_credito" dataType="char" direction="in" />
+    <parameter name="@i_descripcion" dataType="varchar" direction="in" />
+    <parameter name="@i_error" dataType="char" direction="in" />
+    <parameter name="@i_opcion" dataType="tinyint" direction="in" />
+    <parameter name="@i_operacion" dataType="char" direction="in" />
+    <parameter name="@i_periodo_ajuste" dataType="smallint" direction="in" />
+    <parameter name="@i_prime" dataType="char" direction="in" />
+    <parameter name="@i_referencia" dataType="varchar" direction="in" />
+    <parameter name="@i_sector" dataType="varchar" direction="in" />
+    <parameter name="@i_seg_cre" dataType="varchar" direction="in" />
+    <parameter name="@i_signo_default" dataType="char" direction="in" />
+    <parameter name="@i_signo_maximo" dataType="char" direction="in" />
+    <parameter name="@i_signo_minimo" dataType="char" direction="in" />
+    <parameter name="@i_tipo" dataType="varchar" direction="in" />
+    <parameter name="@i_tipoh" dataType="char" direction="in" />
+    <parameter name="@i_valor_default" dataType="float" direction="in" />
+    <parameter name="@i_valor_maximo" dataType="float" direction="in" />
+    <parameter name="@i_valor_minimo" dataType="float" direction="in" />
+    <parameter name="@i_valorcat" dataType="varchar" direction="in" />
+    <parameter name="@o_tasa" dataType="float" direction="out" />
+    <parameter name="@s_date" dataType="datetime" direction="in" />
+    <parameter name="@s_ofi" dataType="int" direction="in" />
+    <parameter name="@s_term" dataType="varchar" direction="in" />
+    <parameter name="@s_user" dataType="varchar" direction="in" />
+    <parameter name="@t_show_version" dataType="bit" direction="in" />
+    <parameter name="@i_banco" dataType="varchar" direction="in" />
+  </parameters>
+  <queries>
+    <query>
+      <columns>
+        <column name="233762" />
+        <column name="233763" />
+        <column name="233764" />
+        <column name="233765" />
+      </columns>
+      <queryText>SELECT  "233762" = va_tipo,"233763" = SUBSTRING (va_descripcion, 1, 50),"233764" = va_clase,"233765" = va_prime </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="233762" />
+        <column name="233766" />
+        <column name="233767" />
+        <column name="233768" />
+        <column name="233769" />
+        <column name="233770" />
+        <column name="233771" />
+        <column name="233772" />
+        <column name="233773" />
+        <column name="351311" />
+        <column name="351312" />
+      </columns>
+      <queryText>SELECT  "233762" = vd_tipo,"233766" = vd_sector,"233767" = vd_signo_default,"233768" = vd_valor_default,"233769" = vd_signo_minimo,"233770" = vd_valor_minimo,"233771" = vd_signo_maximo,"233772" = vd_valor_maximo,"233773" = vd_referencia,"351311" = vd_aplica_ajuste,"351312" = vd_periodo_ajuste </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="{1}" />
+        <column name="{2}" />
+        <column name="{3}" />
+        <column name="{4}" />
+        <column name="{5}" />
+        <column name="{6}" />
+        <column name="{7}" />
+        <column name="{8}" />
+        <column name="{9}" />
+        <column name="{10}" />
+        <column name="{11}" />
+        <column name="{12}" />
+        <column name="{13}" />
+        <column name="{14}" />
+        <column name="{15}" />
+        <column name="{16}" />
+        <column name="{17}" />
+        <column name="{18}" />
+      </columns>
+      <queryText>SELECT w_tipo, w_descripcion, w_clase, w_referencia, v_descripcion, v_valor_default, w_signo_default, w_valor_default, w_signo_minimo, w_valor_minimo, w_signo_maximo, w_valor_maximo, i_sector, w_des_sector, w_des_modalidad_ref, w_periodo_en_meses, w_vd_aplica_ajuste, w_vd_periodo_ajuste</queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="233762" />
+        <column name="233763" />
+        <column name="233764" />
+        <column name="233773" />
+        <column name="233686" />
+        <column name="351311" />
+        <column name="351312" />
+      </columns>
+      <queryText>SELECT  "233762" = va_tipo,"233763" = SUBSTRING (va_descripcion, 1, 35),"233764" = va_clase,"233773" = vd_referencia,"233686" = vd_valor_referencial,"351311" = vd_aplica_ajuste,"351312" = vd_periodo_ajuste </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="233763" />
+        <column name="233686" />
+        <column name="351311" />
+      </columns>
+      <queryText>SELECT  "233763" = va_descripcion,"233686" = ISNULL (?, 0),"351311" = ISNULL (?, "N") </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="233763" />
+        <column name="233764" />
+      </columns>
+      <queryText>SELECT  "233763" = va_descripcion,"233764" = va_clase </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="{1}" />
+        <column name="{2}" />
+        <column name="{3}" />
+        <column name="{4}" />
+        <column name="{5}" />
+        <column name="{6}" />
+        <column name="{7}" />
+      </columns>
+      <queryText>SELECT  tipo,descripcion,referencia,valor,cliente,aplica_ajuste,periodo_ajuste </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="{1}" />
+        <column name="{2}" />
+        <column name="{3}" />
+      </columns>
+      <queryText>SELECT w_descripcion, w_valor, w_cliente</queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="233777" />
+        <column name="233763" />
+      </columns>
+      <queryText>SELECT  "233777" = B.codigo,"233763" = B.valor </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="233762" />
+        <column name="233763" />
+        <column name="233764" />
+        <column name="233765" />
+      </columns>
+      <queryText>SELECT  "233762" = va_tipo,"233763" = SUBSTRING (va_descripcion, 1, 50),"233764" = va_clase,"233765" = va_prime </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="233762" />
+        <column name="351313" />
+        <column name="233766" />
+        <column name="351314" />
+        <column name="233767" />
+        <column name="233768" />
+        <column name="233769" />
+        <column name="233770" />
+        <column name="233771" />
+        <column name="233772" />
+        <column name="233773" />
+        <column name="351311" />
+        <column name="351312" />
+      </columns>
+      <queryText>SELECT  "233762" = vd_tipo,"351313" = va_descripcion,"233766" = vd_sector,"351314" = y.valor,"233767" = vd_signo_default,"233768" = vd_valor_default,"233769" = vd_signo_minimo,"233770" = vd_valor_minimo,"233771" = vd_signo_maximo,"233772" = vd_valor_maximo,"233773" = vd_referencia,"351311" = vd_aplica_ajuste,"351312" = vd_periodo_ajuste </queryText>
+    </query>
+  </queries>
+</procedure>

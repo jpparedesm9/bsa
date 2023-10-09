@@ -1,0 +1,111 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.cobiscorp.ecobis</groupId>
+	<artifactId>cobis-business-process-build</artifactId>
+	<version>1.0.0</version>
+	<packaging>pom</packaging>
+	<name>${project.artifactId}</name>
+	<url>http://www.cobiscorp.com/</url>
+
+
+
+	<properties>
+		<maven-javadoc-plugin.version>2.10.3</maven-javadoc-plugin.version>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+	</properties>
+
+	<profiles>
+		<profile>
+			<id>env-development</id>
+			<activation>
+				<activeByDefault>true</activeByDefault>
+			</activation>
+			<modules>
+				    <module>../../../source/middleware/MVN/cobis-business-process-connector</module>
+				<module>../../../source/middleware/MVN/cobis-business-process-orchestrator</module>
+				<module>../../../source/frontend/web/commons/busin.domains</module>
+				<module>../../../source/frontend/web/commons/busin.services</module>
+				<module>../../../source/frontend/web/commons/busin.flcre.commons</module>
+		       
+				<module>../../../source/frontend/web/commons/busin-commons-dto</module>
+				<module>../../../source/frontend/web/commons/busin-commons-services</module>
+				
+		       
+				<module>../../../source/frontend/web/commons/cobis-web-busin-services</module>
+
+				<module>../../../source/frontend/web/events/busin.flcre.category.customevents</module>
+				
+				<module>../../../source/frontend/web/events/busin.flcre.category.services</module>
+				<module>../../../source/frontend/web/events/busin.flcre.editentityinsharedwarranty.customevents</module>
+				<module>../../../source/frontend/web/events/busin.flcre.editentityinsharedwarranty.services</module>
+				<module>../../../source/frontend/web/events/busin.flcre.entrywarranty.customevents</module>
+				<module>../../../source/frontend/web/events/busin.flcre.entrywarranty.services</module>
+				<module>../../../source/frontend/web/events/busin.flcre.genericapplication.customevents</module>
+				<module>../../../source/frontend/web/events/busin.flcre.genericapplication.services</module>
+				<module>../../../source/frontend/web/events/busin.flcre.guaranteessearch.customevents</module>
+				<module>../../../source/frontend/web/events/busin.flcre.guaranteessearch.services</module>       
+				<module>../../../source/frontend/web/events/busin.flcre.plazofijoporcliente.customevents</module>
+				
+				
+				<module>../../../source/frontend/web/events/busin.flcre.plazofijoporcliente.services</module>
+				<module>../../../source/frontend/web/events/busin.flcre.printingactivity.customevents</module>
+				<module>../../../source/frontend/web/events/busin.flcre.printingactivity.services</module>
+
+				<module>../../../source/frontend/web/events/busin.flcre.rejectedapplication.customevents</module>
+				<module>../../../source/frontend/web/events/busin.flcre.rejectedapplication.services</module>
+
+				<module>../../../source/frontend/web/events/busin.flcre.taskconsultdisbursementforms.customevents</module>
+				<module>../../../source/frontend/web/events/busin.flcre.taskconsultdisbursementforms.services</module>
+				<module>../../../source/frontend/web/events/busin.flcre.taskdisbursementform.customevents</module>
+				
+				
+				<module>../../../source/frontend/web/events/busin.flcre.taskdisbursementform.services</module>
+				<module>../../../source/frontend/web/events/busin.flcre.taskdisbursementincome.customevents</module>
+				<module>../../../source/frontend/web/events/busin.flcre.taskdisbursementincome.services</module>
+				<module>../../../source/frontend/web/events/busin.flcre.tpaymentplan.customevents</module>
+		
+				<module>../../../source/frontend/web/events/busin.flcre.tpaymentplan.services</module>
+				<module>../../../source/frontend/web/events/busin.flcre.warrantiescreation.customevents</module>
+				<module>../../../source/frontend/web/events/busin.flcre.warrantiescreation.services</module>
+        
+        <module>../../../source/frontend/web/events/busin.flcre.dataverificationquestions.customevents</module>
+        <module>../../../source/frontend/web/events/busin.flcre.dataverificationquestions.services</module>
+
+        <module>../../../source/frontend/web/events/busin.flcre.dataverificationquestionscompound.customevents</module>
+        <module>../../../source/frontend/web/events/busin.flcre.dataverificationquestionscompound.services</module>
+		
+				<module>../../../source/frontend/web/views/cobis-business-process-web-views</module>
+
+				<module>../../cobis-businessprocess-installer</module>
+			</modules>
+		</profile>
+		<profile>
+		
+		</profile>
+		<profile>
+			<id>Purge</id>
+			<build>
+				<plugins>
+					<plugin>
+						<artifactId>maven-dependency-plugin</artifactId>
+						<version>2.10</version>
+						<executions>
+							<execution>
+								<id>purge-local-dependencies</id>
+								<phase>process-sources</phase>
+								<goals>
+									<goal>purge-local-repository</goal>
+								</goals>
+								<!-- >configuration> <actTransitively>true</actTransitively> <manualInclude>com.cobiscorp.processapi:COBISCorp.eCOBIS.Businessprocess.Creditmanagement.DTO</manualInclude> 
+									<reResolve>true</reResolve> </configuration -->
+							</execution>
+						</executions>
+					</plugin>
+				</plugins>
+			</build>
+		</profile>
+	</profiles>
+
+
+</project>

@@ -1,0 +1,130 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<procedure>
+  <database>cob_cartera</database>
+  <name>sp_desembolso</name>
+  <type>SQLSERVER</type>
+  <version>1</version>
+  <parameters>
+    <parameter name="@s_sesn" dataType="int" direction="in" />
+    <parameter name="@s_date" dataType="datetime" direction="in" />
+    <parameter name="@s_user" dataType="varchar" direction="in" />
+    <parameter name="@s_term" dataType="varchar" direction="in" />
+    <parameter name="@s_ofi" dataType="smallint" direction="in" />
+    <parameter name="@i_operacion" dataType="char" direction="in" />
+    <parameter name="@i_banco_real" dataType="varchar" direction="in" />
+    <parameter name="@i_banco_ficticio" dataType="varchar" direction="in" />
+    <parameter name="@i_secuencial" dataType="int" direction="in" />
+    <parameter name="@i_desembolso" dataType="tinyint" direction="in" />
+    <parameter name="@i_producto" dataType="varchar" direction="in" />
+    <parameter name="@i_cuenta" dataType="varchar" direction="in" />
+    <parameter name="@i_oficina_chg" dataType="int" direction="in" />
+    <parameter name="@i_beneficiario" dataType="varchar" direction="in" />
+    <parameter name="@i_monto_ds" dataType="money" direction="in" />
+    <parameter name="@i_moneda_ds" dataType="smallint" direction="in" />
+    <parameter name="@i_cotiz_ds" dataType="money" direction="in" />
+    <parameter name="@i_tcotiz_ds" dataType="char" direction="in" />
+    <parameter name="@i_moneda_op" dataType="tinyint" direction="in" />
+    <parameter name="@i_cotiz_op" dataType="money" direction="in" />
+    <parameter name="@i_tcotiz_op" dataType="char" direction="in" />
+    <parameter name="@i_pasar_tmp" dataType="char" direction="in" />
+    <parameter name="@i_formato_fecha" dataType="int" direction="in" />
+    <parameter name="@i_consulta" dataType="char" direction="in" />
+    <parameter name="@i_capitalizacion" dataType="char" direction="in" />
+    <parameter name="@i_externo" dataType="char" direction="in" />
+    <parameter name="@i_operacion_ach" dataType="char" direction="in" />
+    <parameter name="@i_nom_producto" dataType="char" direction="in" />
+    <parameter name="@i_cod_banco_ach" dataType="int" direction="in" />
+    <parameter name="@i_desde_cre" dataType="char" direction="in" />
+    <parameter name="@i_cheque" dataType="int" direction="in" />
+    <parameter name="@i_prenotificacion" dataType="int" direction="in" />
+    <parameter name="@i_carga" dataType="int" direction="in" />
+    <parameter name="@i_concepto" dataType="varchar" direction="in" />
+    <parameter name="@i_fecha_liq" dataType="datetime" direction="in" />
+    <parameter name="@o_respuesta" dataType="char" direction="out" />
+    <parameter name="@o_secuencial" dataType="varchar" direction="out" />
+    <parameter name="@i_ente_benef" dataType="int" direction="in" />
+    <parameter name="@i_idlote" dataType="int" direction="in" />
+    <parameter name="@i_renovaciones" dataType="char" direction="in" />
+    <parameter name="@i_origen" dataType="char" direction="in" />
+    <parameter name="@i_crea_ext" dataType="char" direction="in" />
+    <parameter name="@i_cruce_restrictivo" dataType="char" direction="in" />
+    <parameter name="@i_destino_economico" dataType="char" direction="in" />
+    <parameter name="@i_carta_autorizacion" dataType="char" direction="in" />
+    <parameter name="@i_calcular_gmf" dataType="char" direction="in" />
+    <parameter name="@o_anticipado" dataType="money" direction="out" />
+    <parameter name="@o_msg_msv" dataType="varchar" direction="out" />
+  </parameters>
+  <queries>
+    <query>
+      <columns>
+        <column name="{1}" />
+        <column name="{2}" />
+        <column name="{3}" />
+        <column name="{4}" />
+        <column name="{5}" />
+        <column name="{6}" />
+        <column name="{7}" />
+        <column name="{8}" />
+        <column name="{9}" />
+        <column name="{10}" />
+        <column name="{11}" />
+        <column name="{12}" />
+        <column name="{13}" />
+        <column name="{14}" />
+        <column name="{15}" />
+        <column name="{16}" />
+        <column name="{17}" />
+        <column name="{18}" />
+        <column name="{19}" />
+        <column name="{20}" />
+        <column name="{21}" />
+        <column name="{22}" />
+      </columns>
+      <queryText>SELECT  opt_toperacion,B.valor,opt_moneda,mo_descripcion,CONVERT (FLOAT,opt_monto ),CONVERT (FLOAT,opt_monto_aprobado ),CONVERT (VARCHAR (10),opt_fecha_ult_proceso ,?),of_nombre,CONVERT (FLOAT,? ),CONVERT (FLOAT,opt_monto - ? ),opt_cliente,opt_prd_cobis,opt_tipo,opt_sujeta_nego,opt_tipo_cambio,opt_nombre,?,CT.valor clase_cartera,es_descripcion desc_estado,of_oficina,opt_tramite,opt_operacion </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="RUBRO" />
+        <column name="DESCRIPCION" />
+        <column name="VALOR      " />
+      </columns>
+      <queryText>SELECT  "RUBRO" = SUBSTRING (rot_concepto, 1, 15),"DESCRIPCION" = SUBSTRING (co_descripcion, 1, 35),"VALOR      " = CONVERT (FLOAT,rot_valor ) </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="{1}" />
+      </columns>
+      <queryText>SELECT w_desembolso</queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="{1}" />
+      </columns>
+      <queryText>SELECT o_secuencial</queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="No." />
+        <column name="Forma" />
+        <column name="Mon." />
+        <column name="Moneda" />
+        <column name="Valor" />
+        <column name="TC." />
+        <column name="Cotiz." />
+        <column name="Valor OP" />
+        <column name="TC. OP" />
+        <column name="Cotiz OP" />
+        <column name="Valor MN" />
+        <column name="Referencia" />
+        <column name="Beneficiario." />
+        <column name="Cod.Oficina" />
+        <column name="Oficina" />
+        <column name="Secuencial" />
+        <column name="Categoria" />
+        <column name="Ins. ACH" />
+        <column name="Concepto General" />
+      </columns>
+      <queryText>SELECT  "No." = dm_desembolso,"Forma" = dm_producto,"Mon." = dm_moneda,"Moneda" = SUBSTRING ((SELECT  mo_descripcion </queryText>
+    </query>
+  </queries>
+</procedure>

@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<procedure>
+  <database>cob_credito</database>
+  <name>sp_consulta_tramite</name>
+  <type>SYBASE</type>
+  <version>1</version>
+  <parameters>
+    <parameter name="@s_ssn" dataType="int" direction="in" />
+    <parameter name="@s_user" dataType="varchar" direction="in" />
+    <parameter name="@s_sesn" dataType="int" direction="in" />
+    <parameter name="@s_term" dataType="varchar" direction="in" />
+    <parameter name="@s_date" dataType="datetime" direction="in" />
+    <parameter name="@s_srv" dataType="varchar" direction="in" />
+    <parameter name="@s_lsrv" dataType="varchar" direction="in" />
+    <parameter name="@s_rol" dataType="smallint" direction="in" />
+    <parameter name="@s_ofi" dataType="smallint" direction="in" />
+    <parameter name="@s_org_err" dataType="char" direction="in" />
+    <parameter name="@s_error" dataType="int" direction="in" />
+    <parameter name="@s_sev" dataType="tinyint" direction="in" />
+    <parameter name="@s_msg" dataType="varchar" direction="in" />
+    <parameter name="@s_org" dataType="char" direction="in" />
+    <parameter name="@t_debug" dataType="char" direction="in" />
+    <parameter name="@t_file" dataType="varchar" direction="in" />
+    <parameter name="@t_from" dataType="varchar" direction="in" />
+    <parameter name="@t_trn" dataType="smallint" direction="in" />
+    <parameter name="@i_modo" dataType="tinyint" direction="in" />
+    <parameter name="@i_tipo" dataType="varchar" direction="in" />
+    <parameter name="@i_id_inst_proc" dataType="int" direction="in" />
+    <parameter name="@i_operacion" dataType="char" direction="in" />
+  </parameters>
+  <queries>
+    <query>
+      <columns>
+        <column name="/** Stored Procedure **/ " />
+        <column name="s_ssn" />
+        <column name="s_user" />
+        <column name="s_term" />
+        <column name="s_date" />
+        <column name="s_srv" />
+        <column name="s_lsrv" />
+        <column name="s_ofi" />
+        <column name="s_rol" />
+        <column name="s_org_err" />
+        <column name="s_error" />
+        <column name="s_sev" />
+        <column name="s_msg" />
+        <column name="s_org" />
+        <column name="t_trn" />
+        <column name="t_file" />
+        <column name="t_from" />
+        <column name="i_modo" />
+        <column name="i_tipo" />
+      </columns>
+      <queryText>SELECT "/** Stored Procedure **/ "=w_sp_name,"s_ssn"=s_ssn,"s_user"=s_user,"s_term"=s_term,"s_date"=s_date,"s_srv"=s_srv,"s_lsrv"=s_lsrv,"s_ofi"=s_ofi,"s_rol"=s_rol,"s_org_err"=s_org_err,"s_error"=s_error,"s_sev"=s_sev,"s_msg"=s_msg,"s_org"=s_org,"t_trn"=t_trn,"t_file"=t_file,"t_from"=t_from,"i_modo"=i_modo,"i_tipo"=i_tipo</queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="tramite" />
+        <column name="campo_siete" />
+        <column name="campo_cinco" />
+      </columns>
+      <queryText>SELECT  "tramite" = io_campo_3 </queryText>
+    </query>
+  </queries>
+</procedure>

@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<product path="E:/SSSuite/CCView/source/middleware/SG/AdminVCC/Products/COBISCorp.eCOBIS.UCSP.Admin.DTO" appPath="C:/Program Files (x86)/COBIS/CEN - Services Generator/" name="COBISCorp.eCOBIS.UCSP.Admin.DTO" productNS="http://dto.admin.ucsp.ecobis.cobiscorp" description="DTO's del Aministardor de la VCC" documentationLanguage="Español" year="2016" version="4.2.0.0" type="DTO" GUID="1D8540C1-5A9A-45E0-944C-2BA44BDAD2C2">
+  <namespaces>
+    <namespace type="dto" base="COBISCorp.eCOBIS.UCSP.Admin" name="COBISCorp.eCOBIS.UCSP.Admin.DTO" package="cobiscorp.ecobis.ucsp.admin.dto" ns="http://dto.admin.ucsp.ecobis.cobiscorp" folder="Admin\DTO" />
+  </namespaces>
+  <templates>
+    <template id="DTODotNetWCF" productName="COBISCorp.eCOBIS.UCSP.Admin.DTO" outputFolder="c:\COBIS-SG\Output\AdminVCC\CEN\COBISCorp.eCOBIS.UCSP.Admin.DTO" package="true" packageType="Assembly">
+      <templateFiles>
+        <templateFile filePath="WCF\NetDTO.xslt" enabled="true" override="true" />
+        <templateFile filePath="WCF\ProjectMSBuild.xslt" enabled="true" override="true" />
+        <templateFile filePath="..\Commons\DOTNET\AssemblyInfo.xslt" enabled="true" override="true" />
+      </templateFiles>
+    </template>
+    <template id="DTOJavaPOJO" productName="COBISCorp.eCOBIS.UCSP.Admin.DTO" outputFolder="c:\COBIS-SG\Output\AdminVCC\CTS\COBISCorp.eCOBIS.UCSP.Admin.DTO" package="true" packageType="Jar">
+      <templateFiles>
+        <templateFile filePath="JavaPOJO\JavaDTO.xslt" enabled="true" override="true" />
+        <templateFile filePath="..\Commons\Java\buildProperties.xslt" enabled="true" override="true" />
+        <templateFile filePath="..\Commons\Java\build.xslt" enabled="true" override="true" />
+      </templateFiles>
+    </template>
+  </templates>
+  <DTOs>
+    <DTO name="ProductAdmin" nsBase="COBISCorp.eCOBIS.UCSP.Admin" namespace="COBISCorp.eCOBIS.UCSP.Admin.DTO" package="cobiscorp.ecobis.ucsp.admin.dto" ns="http://dto.admin.ucsp.ecobis.cobiscorp" version="1" />
+    <DTO name="ProductAdminListResponse" nsBase="COBISCorp.eCOBIS.UCSP.Admin" namespace="COBISCorp.eCOBIS.UCSP.Admin.DTO" package="cobiscorp.ecobis.ucsp.admin.dto" ns="http://dto.admin.ucsp.ecobis.cobiscorp" version="1" />
+    <DTO name="Role" nsBase="COBISCorp.eCOBIS.UCSP.Admin" namespace="COBISCorp.eCOBIS.UCSP.Admin.DTO" package="cobiscorp.ecobis.ucsp.admin.dto" ns="http://dto.admin.ucsp.ecobis.cobiscorp" version="1" />
+    <DTO name="RoleListResponse" nsBase="COBISCorp.eCOBIS.UCSP.Admin" namespace="COBISCorp.eCOBIS.UCSP.Admin.DTO" package="cobiscorp.ecobis.ucsp.admin.dto" ns="http://dto.admin.ucsp.ecobis.cobiscorp" version="1" />
+  </DTOs>
+  <classes />
+  <packagers>
+    <packager type="SGPackageNet" RootNamespace="COBISCorp.eCOBIS.UCSP.Admin.DTO" SNKFileName="ucsp.snk" RelativeFolder="True" Framework="4.0" TemplateId="DTODotNetWCF" />
+    <packager type="SGPackageJava" AntTask="sign-archive" KeyAlias="uscp" KeyPassword="ucspadminadmin" KeyCertificatePassword="ucspadmin" KeyFileName="ucsp.keystore" RelativeFolder="True" TemplateId="DTOJavaPOJO" />
+  </packagers>
+  <productProperties>
+    <property name="MavenGroupId" value="com.cobiscorp.processapi" />
+    <property name="MavenArtifactId" value="COBISCorp.eCOBIS.UCSP.Admin.DTO" />
+    <property name="MavenVersion" value="4.2.0.0" />
+  </productProperties>
+</product>

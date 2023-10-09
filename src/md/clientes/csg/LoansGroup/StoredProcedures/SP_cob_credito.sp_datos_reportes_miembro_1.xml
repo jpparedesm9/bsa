@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<procedure>
+  <database>cob_credito</database>
+  <name>sp_datos_reportes_miembro</name>
+  <type>SQLSERVER</type>
+  <version>1</version>
+  <parameters>
+    <parameter name="@s_ssn" dataType="int" direction="in" />
+    <parameter name="@s_sesn" dataType="int" direction="in" />
+    <parameter name="@s_ofi" dataType="smallint" direction="in" />
+    <parameter name="@s_rol" dataType="smallint" direction="in" />
+    <parameter name="@s_user" dataType="varchar" direction="in" />
+    <parameter name="@s_date" dataType="datetime" direction="in" />
+    <parameter name="@s_term" dataType="varchar" direction="in" />
+    <parameter name="@t_debug" dataType="char" direction="in" />
+    <parameter name="@t_file" dataType="varchar" direction="in" />
+    <parameter name="@t_from" dataType="varchar" direction="in" />
+    <parameter name="@s_srv" dataType="varchar" direction="in" />
+    <parameter name="@s_lsrv" dataType="varchar" direction="in" />
+    <parameter name="@i_modo" dataType="int" direction="in" />
+    <parameter name="@i_operacion" dataType="char" direction="in" />
+    <parameter name="@i_tramite" dataType="int" direction="in" />
+    <parameter name="@i_formato_fecha" dataType="int" direction="in" />
+  </parameters>
+  <queries>
+    <query>
+      <columns>
+        <column name="NOMBRE_CLI" />
+        <column name="NUM_CTA_TARJ" />
+        <column name="MONTO_MAX" />
+        <column name="PERIODICIDAD" />
+        <column name="FECH_VENC" />
+        <column name="NUM_CREDITO" />
+        <column name="IMPORTE_SEMANAL_APAGAR" />
+        <column name="FECHA_LIQUID" />
+      </columns>
+      <queryText>SELECT  "NOMBRE_CLI" = en_nomlar,"NUM_CTA_TARJ" = ea_cta_banco,"MONTO_MAX" = ?,"PERIODICIDAD" = td_descripcion,"FECH_VENC" = di_fecha_ven,"NUM_CREDITO" = op_banco </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="{1}" />
+      </columns>
+      <queryText>SELECT  MAX (di_fecha_ven) </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="COSTO_ANUAL_TOT" />
+        <column name="TASA_INT_ANUAL" />
+        <column name="MONTO_CREDITO" />
+        <column name="MONTO_TOT_PAG" />
+        <column name="LISTA_COMISIONES" />
+        <column name="PORCENTAJE_MORA" />
+        <column name="PLAZO_CREDITO" />
+        <column name="DESCRIP_MONEDA" />
+        <column name="DESCRIP_PLAZO" />
+        <column name="FECHA_LIMITE_PAGO" />
+        <column name="FECHA_CORTE" />
+        <column name="DESPLAZAMIENTO" />
+        <column name="FECHA_LIQUIDA" />
+        <column name="COMISION_LCR" />
+        <column name=" NOMBRE_COMERCIAL_PROD" />
+      </columns>
+      <queryText>SELECT "COSTO_ANUAL_TOT"=w_costo_anual_tot,"TASA_INT_ANUAL"=w_tasa_int_anual,"MONTO_CREDITO"=w_monto_credito,"MONTO_TOT_PAG"=w_monto_tot_pag,"LISTA_COMISIONES"=w_lista_comisiones,"PORCENTAJE_MORA"=w_porcentaje_mora,"PLAZO_CREDITO"=w_plazo_credito,"DESCRIP_MONEDA"=w_desc_moneda,"DESCRIP_PLAZO"=w_desc_plz_cred,"FECHA_LIMITE_PAGO"=w_fecha_pago,"FECHA_CORTE"=w_fecha_corte</queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="NUMERO" />
+        <column name="MONTO" />
+        <column name="FECHA_VENC" />
+      </columns>
+      <queryText>SELECT  "NUMERO" = am_dividendo,"MONTO" = SUM (am_cuota),"FECHA_VENC" = di_fecha_ven </queryText>
+    </query>
+  </queries>
+</procedure>

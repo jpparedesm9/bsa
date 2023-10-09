@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:osgi="http://www.springframework.org/schema/osgi"
+       xsi:schemaLocation="http://www.springframework.org/schema/osgi http://www.springframework.org/schema/osgi/spring-osgi.xsd http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <osgi:service ref="DirectDebitMandateProcess"
+                  interface="com.cobis.cloud.sofom.operationsexecution.tradebanking.batch.process.IDirectDebitMandateProcess">
+        <service-properties>
+            <entry key="transactionType" value="COBRO"/>
+        </service-properties>
+    </osgi:service>
+
+    <osgi:service ref="DirectDebitMandateRequest"
+                  interface="cobiscorp.ecobis.integrationengine.process.notification.IServicesIntegration">
+        <service-properties>
+            <entry key="transactionType" value="COBRO"/>
+        </service-properties>
+    </osgi:service>
+
+    <osgi:service ref="CustomEncryption" interface="com.cobiscorp.cobis.batch.engine.tasklet.ICustomCryptography">
+        <osgi:service-properties>
+            <entry key="service.impl" value="CustomEncryptionImpl"/>
+            <entry key="service.app" value="COBRO"/>
+            <entry key="service.transactionType" value="COBRO"/>
+        </osgi:service-properties>
+    </osgi:service>
+
+    <osgi:reference id="cobisStoredProcedureUtilsOsgi"
+                    interface="com.cobiscorp.cobis.cts.jdbc.utils.CobisStoredProcedureUtils"/>
+
+    <osgi:reference id="cobisParameterOsgi"
+                    interface="com.cobiscorp.cobis.cts.services.utilservices.api.ICobisParameter"/>
+
+</beans>

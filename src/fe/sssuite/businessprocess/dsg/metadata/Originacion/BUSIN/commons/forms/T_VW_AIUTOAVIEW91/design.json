@@ -1,0 +1,664 @@
+{
+  "id": {
+    "moduleId": "BUSIN",
+    "subModuleId": "commons",
+    "taskId": "T_VW_AIUTOAVIEW91",
+    "version": "1.0.0"
+  },
+  "name": {
+    "$ref": "../../../../BUSIN/relations/componentKeys.json#/commons/Forms/T_VW_AIUTOAVIEW91/name"
+  },
+  "modeEnabled": 4095,
+  "tempSaveStr": "F",
+  "autoCrudStr": "F",
+  "mainViewContainerId": "VC_VW_AIUTOAVIEW91",
+  "customizationLayer": 0,
+  "customizationLayerDescription": "ECU",
+  "viewContainers": [
+    {
+      "layoutType": "Group",
+      "collapsedStr": "F",
+      "id": {
+        "moduleId": "BUSIN",
+        "subModuleId": "commons",
+        "taskId": "T_VW_AIUTOAVIEW91",
+        "viewContainerId": "VC_VW_AIUTOAVIEW91",
+        "taskVersion": "1.0.0"
+      },
+      "name": "F_alicutoaView",
+      "description": " ",
+      "options": 0,
+      "enabled": 4095,
+      "componentStyle": null,
+      "colSpan": 1,
+      "customizationLayer": 0,
+      "customizationLayerDescription": "ECU",
+      "customEvents": [],
+      "responsiveLayouts": null,
+      "responsivity": false,
+      "columnsNum": 1,
+      "view": {
+        "id": {
+          "viewId": "VW_AIUTOAVIEW91",
+          "version": "1.0.0"
+        },
+        "name": "alicutoaView",
+        "groups": [
+          {
+            "collapsedStr": "F",
+            "groupId": "GR_AIUTOAVIEW91_02",
+            "name": "GrpGeneral",
+            "layoutType": "GroupLayout",
+            "enabled": 4095,
+            "visible": 4095,
+            "refViewId": "VW_AIUTOAVIEW91",
+            "refViewVersion": "1.0.0",
+            "style": null,
+            "componentStyle": null,
+            "customEvents": [],
+            "eventType": 0,
+            "colSpan": 1,
+            "columnsNum": 1,
+            "groups": [
+              {
+                "collapsedStr": "F",
+                "groupId": "GR_ORIAHEADER86_08",
+                "name": "GrpAlicuota",
+                "layoutType": "Group",
+                "enabled": 4095,
+                "visible": 4095,
+                "refViewId": "VW_AIUTOAVIEW91",
+                "refViewVersion": "1.0.0",
+                "style": null,
+                "componentStyle": null,
+                "customEvents": [],
+                "eventType": 0,
+                "colSpan": 1,
+                "columnsNum": 3,
+                "entity": {
+                  "$ref": "../../../../BUSIN/entities/EN_ALICUOTAT010.json#"
+                },
+                "visualAttributes": [
+                  {
+                    "visualAttributeId": "VA_ORIAHEADER8608_ALTA466",
+                    "name": "Alicuota",
+                    "userControl": {
+                      "userControlId": "RadioButtonList",
+                      "type": "I"
+                    },
+                    "customEvents": [
+                      {
+                        "executionType": 1,
+                        "customEventId": "CEVA_104_DER8608_ALTA466_338",
+                        "enabled": "T",
+                        "customizationLayer": 0,
+                        "customizationLayerDescription": "ECU",
+                        "visualAttributeEventType": {
+                          "eventId": 104,
+                          "name": "Changed",
+                          "description": "Se ejecuta al cambiar el valor de un VisualAttribute"
+                        },
+                        "thereAnCallbackEvent": false,
+                        "thereAnServerEvent": false,
+                        "thereAnClientEvent": true,
+                        "isEnabled": true
+                      },
+                      {
+                        "executionType": 1,
+                        "customEventId": "CEVA_110_DER8608_ALTA466_768",
+                        "enabled": "T",
+                        "customizationLayer": 0,
+                        "customizationLayerDescription": "ECU",
+                        "visualAttributeEventType": {
+                          "eventId": 110,
+                          "name": "LoadCatalogData",
+                          "description": "Sobreescribe la carga de datos de un catálogo"
+                        },
+                        "thereAnCallbackEvent": false,
+                        "thereAnServerEvent": false,
+                        "thereAnClientEvent": true,
+                        "isEnabled": true
+                      }
+                    ],
+                    "options": 0,
+                    "label": {
+                      "moduleId": "BUSIN",
+                      "labelId": "LBL_BUSIN_DOBLEALCU_34528",
+                      "defaultValue": {
+                        "$ref": "../../../../BUSIN/assets/languages/BUSIN.json#/BUSIN/LBL/LBL_BUSIN_DOBLEALCU_34528"
+                      }
+                    },
+                    "aggregateId": null,
+                    "aggregate": null,
+                    "width": null,
+                    "style": null,
+                    "componentStyle": null,
+                    "customizationLayer": 0,
+                    "customizationLayerDescription": "ECU",
+                    "include": 4095,
+                    "order": 0,
+                    "colSpan": 1,
+                    "responsivity": false,
+                    "responsiveLayouts": null,
+                    "maxRecords": null,
+                    "attribute": {
+                      "$ref": "../../../../BUSIN/entities/EN_ALICUOTAT010.json#/attributes/AT_ALI010ALTA79"
+                    },
+                    "attributeValidations": [],
+                    "enabled": 4095,
+                    "visible": 4095,
+                    "readOnly": 8,
+                    "catalogName": null,
+                    "queryVersion": " ",
+                    "queryMemberText": {
+                      "queryMemberId": null,
+                      "attribute": {
+                        "attributeId": null,
+                        "name": null
+                      }
+                    },
+                    "queryMemberValue": {
+                      "queryMemberId": null,
+                      "attribute": {
+                        "attributeId": null,
+                        "name": null
+                      }
+                    },
+                    "cacheDuration": 0,
+                    "entityQuery": null,
+                    "queryModule": null,
+                    "orientation": "V"
+                  },
+                  {
+                    "visualAttributeId": "VA_ORIAHEADER8608_TTCD057",
+                    "name": "CtaCertificada",
+                    "userControl": {
+                      "userControlId": "ComboBox",
+                      "type": "I"
+                    },
+                    "customEvents": [
+                      {
+                        "executionType": 1,
+                        "customEventId": "CEVA_104_DER8608_TTCD057_475",
+                        "enabled": "T",
+                        "customizationLayer": 0,
+                        "customizationLayerDescription": "ECU",
+                        "visualAttributeEventType": {
+                          "eventId": 104,
+                          "name": "Changed",
+                          "description": "Se ejecuta al cambiar el valor de un VisualAttribute"
+                        },
+                        "thereAnCallbackEvent": false,
+                        "thereAnServerEvent": false,
+                        "thereAnClientEvent": true,
+                        "isEnabled": true
+                      },
+                      {
+                        "visualAttributeEventType": {
+                          "name": "LoadCatalogData",
+                          "eventId": 110,
+                          "description": "Sobreescribe la carga de datos de un catálogo",
+                          "availableExecutionType": 3
+                        },
+                        "executionType": 3,
+                        "customEventId": "CEVA_110VA_ORIAHEADER8608_TTCD057_235",
+                        "filter": null,
+                        "enabled": "T",
+                        "customizationLayer": 0,
+                        "customizationLayerDescription": "ECU",
+                        "isEnabled": true
+                      }
+                    ],
+                    "options": 17,
+                    "label": {
+                      "moduleId": "BUSIN",
+                      "labelId": "LBL_BUSIN_CUENTACIE_90734",
+                      "defaultValue": {
+                        "$ref": "../../../../BUSIN/assets/languages/BUSIN.json#/BUSIN/LBL/LBL_BUSIN_CUENTACIE_90734"
+                      }
+                    },
+                    "aggregateId": null,
+                    "aggregate": null,
+                    "width": null,
+                    "style": null,
+                    "componentStyle": null,
+                    "customizationLayer": 0,
+                    "customizationLayerDescription": "ECU",
+                    "include": 4095,
+                    "order": 1,
+                    "colSpan": 1,
+                    "responsivity": false,
+                    "responsiveLayouts": null,
+                    "maxRecords": null,
+                    "attribute": {
+                      "$ref": "../../../../BUSIN/entities/EN_ALICUOTAT010.json#/attributes/AT_ALI010TTCD43"
+                    },
+                    "attributeValidations": [
+                      {
+                        "id": "VV_ORIAHEADER8608_TTCD057_11",
+                        "compareOperator": 0,
+                        "customizationLayer": 0,
+                        "customizationLayerDescription": "ECU",
+                        "visualValidationType": {
+                          "visualValidationId": "Required",
+                          "description": "Required Validation"
+                        },
+                        "validateMessageLabel": {
+                          "labelId": "DLB_BUSIN_MANDATORY_16739",
+                          "defaultValue": {
+                            "$ref": "../../../../BUSIN/assets/languages/BUSIN.json#/BUSIN/MSG/DLB_BUSIN_MANDATORY_16739"
+                          },
+                          "hasI18N": true,
+                          "moduleId": "BUSIN",
+                          "customizationLayer": 0,
+                          "customizationLayerDescription": "ECU",
+                          "i18N": "T"
+                        }
+                      }
+                    ],
+                    "enabled": 4095,
+                    "visible": 4095,
+                    "readOnly": 8,
+                    "catalogName": null,
+                    "queryVersion": " ",
+                    "queryMemberText": {
+                      "queryMemberId": null,
+                      "attribute": {
+                        "attributeId": null,
+                        "name": null
+                      }
+                    },
+                    "queryMemberValue": {
+                      "queryMemberId": null,
+                      "attribute": {
+                        "attributeId": null,
+                        "name": null
+                      }
+                    },
+                    "cacheDuration": 0,
+                    "entityQuery": null,
+                    "queryModule": null,
+                    "minChars": null,
+                    "type": "none"
+                  },
+                  {
+                    "visualAttributeId": "VA_ORIAHEADER8608_CCAA829",
+                    "name": "AlicuotaCertificada",
+                    "userControl": {
+                      "userControlId": "ComboBox",
+                      "type": "I"
+                    },
+                    "customEvents": [
+                      {
+                        "visualAttributeEventType": {
+                          "name": "LoadCatalogData",
+                          "eventId": 110,
+                          "description": "Sobreescribe la carga de datos de un catálogo",
+                          "availableExecutionType": 3
+                        },
+                        "executionType": 3,
+                        "customEventId": "CEVA_110VA_ORIAHEADER8608_CCAA829_234",
+                        "filter": null,
+                        "enabled": "T",
+                        "customizationLayer": 0,
+                        "customizationLayerDescription": "ECU",
+                        "isEnabled": true
+                      }
+                    ],
+                    "options": 17,
+                    "label": {
+                      "moduleId": "BUSIN",
+                      "labelId": "LBL_BUSIN_ALCUOTAFE_32499",
+                      "defaultValue": {
+                        "$ref": "../../../../BUSIN/assets/languages/BUSIN.json#/BUSIN/LBL/LBL_BUSIN_ALCUOTAFE_32499"
+                      }
+                    },
+                    "aggregateId": null,
+                    "aggregate": null,
+                    "width": null,
+                    "style": null,
+                    "componentStyle": null,
+                    "customizationLayer": 0,
+                    "customizationLayerDescription": "ECU",
+                    "include": 4095,
+                    "order": 2,
+                    "colSpan": 1,
+                    "responsivity": false,
+                    "responsiveLayouts": null,
+                    "maxRecords": null,
+                    "attribute": {
+                      "$ref": "../../../../BUSIN/entities/EN_ALICUOTAT010.json#/attributes/AT_ALI010CCAA81"
+                    },
+                    "attributeValidations": [
+                      {
+                        "id": "VV_ORIAHEADER8608_CCAA829_79",
+                        "compareOperator": 0,
+                        "customizationLayer": 0,
+                        "customizationLayerDescription": "ECU",
+                        "visualValidationType": {
+                          "visualValidationId": "Required",
+                          "description": "Required Validation"
+                        },
+                        "validateMessageLabel": {
+                          "labelId": "DLB_BUSIN_MANDATORY_16739",
+                          "defaultValue": {
+                            "$ref": "../../../../BUSIN/assets/languages/BUSIN.json#/BUSIN/MSG/DLB_BUSIN_MANDATORY_16739"
+                          },
+                          "hasI18N": true,
+                          "moduleId": "BUSIN",
+                          "customizationLayer": 0,
+                          "customizationLayerDescription": "ECU",
+                          "i18N": "T"
+                        }
+                      }
+                    ],
+                    "enabled": 4095,
+                    "visible": 4095,
+                    "readOnly": 8,
+                    "catalogName": null,
+                    "queryVersion": " ",
+                    "queryMemberText": {
+                      "queryMemberId": null,
+                      "attribute": {
+                        "attributeId": null,
+                        "name": null
+                      }
+                    },
+                    "queryMemberValue": {
+                      "queryMemberId": null,
+                      "attribute": {
+                        "attributeId": null,
+                        "name": null
+                      }
+                    },
+                    "cacheDuration": 0,
+                    "entityQuery": null,
+                    "queryModule": null,
+                    "minChars": null,
+                    "type": "none"
+                  },
+                  {
+                    "visualAttributeId": "VA_ORIAHEADER8608_TAOR020",
+                    "name": "CtaAhorros",
+                    "userControl": {
+                      "userControlId": "ComboBox",
+                      "type": "I"
+                    },
+                    "customEvents": [
+                      {
+                        "executionType": 1,
+                        "customEventId": "CEVA_104_DER8608_TAOR020_550",
+                        "enabled": "T",
+                        "customizationLayer": 0,
+                        "customizationLayerDescription": "ECU",
+                        "visualAttributeEventType": {
+                          "eventId": 104,
+                          "name": "Changed",
+                          "description": "Se ejecuta al cambiar el valor de un VisualAttribute"
+                        },
+                        "thereAnCallbackEvent": false,
+                        "thereAnServerEvent": false,
+                        "thereAnClientEvent": true,
+                        "isEnabled": true
+                      },
+                      {
+                        "visualAttributeEventType": {
+                          "name": "LoadCatalogData",
+                          "eventId": 110,
+                          "description": "Sobreescribe la carga de datos de un catálogo",
+                          "availableExecutionType": 3
+                        },
+                        "executionType": 3,
+                        "customEventId": "CEVA_110VA_ORIAHEADER8608_TAOR020_160",
+                        "filter": null,
+                        "enabled": "T",
+                        "customizationLayer": 0,
+                        "customizationLayerDescription": "ECU",
+                        "isEnabled": true
+                      }
+                    ],
+                    "options": 17,
+                    "label": {
+                      "moduleId": "BUSIN",
+                      "labelId": "LBL_BUSIN_CUENTAARH_14595",
+                      "defaultValue": {
+                        "$ref": "../../../../BUSIN/assets/languages/BUSIN.json#/BUSIN/LBL/LBL_BUSIN_CUENTAARH_14595"
+                      }
+                    },
+                    "aggregateId": null,
+                    "aggregate": null,
+                    "width": null,
+                    "style": null,
+                    "componentStyle": null,
+                    "customizationLayer": 0,
+                    "customizationLayerDescription": "ECU",
+                    "include": 4095,
+                    "order": 3,
+                    "colSpan": 1,
+                    "responsivity": false,
+                    "responsiveLayouts": null,
+                    "maxRecords": null,
+                    "attribute": {
+                      "$ref": "../../../../BUSIN/entities/EN_ALICUOTAT010.json#/attributes/AT_ALI010TAOR48"
+                    },
+                    "attributeValidations": [
+                      {
+                        "id": "VV_ORIAHEADER8608_TAOR020_53",
+                        "compareOperator": 0,
+                        "customizationLayer": 0,
+                        "customizationLayerDescription": "ECU",
+                        "visualValidationType": {
+                          "visualValidationId": "Required",
+                          "description": "Required Validation"
+                        },
+                        "validateMessageLabel": {
+                          "labelId": "DLB_BUSIN_MANDATORY_16739",
+                          "defaultValue": {
+                            "$ref": "../../../../BUSIN/assets/languages/BUSIN.json#/BUSIN/MSG/DLB_BUSIN_MANDATORY_16739"
+                          },
+                          "hasI18N": true,
+                          "moduleId": "BUSIN",
+                          "customizationLayer": 0,
+                          "customizationLayerDescription": "ECU",
+                          "i18N": "T"
+                        }
+                      }
+                    ],
+                    "enabled": 4095,
+                    "visible": 4095,
+                    "readOnly": 8,
+                    "catalogName": null,
+                    "queryVersion": " ",
+                    "queryMemberText": {
+                      "queryMemberId": null,
+                      "attribute": {
+                        "attributeId": null,
+                        "name": null
+                      }
+                    },
+                    "queryMemberValue": {
+                      "queryMemberId": null,
+                      "attribute": {
+                        "attributeId": null,
+                        "name": null
+                      }
+                    },
+                    "cacheDuration": 0,
+                    "entityQuery": null,
+                    "queryModule": null,
+                    "minChars": null,
+                    "type": "none"
+                  },
+                  {
+                    "visualAttributeId": "VA_ORIAHEADER8608_TCTC534",
+                    "name": "AlicuotaAhorro",
+                    "userControl": {
+                      "userControlId": "ComboBox",
+                      "type": "I"
+                    },
+                    "customEvents": [
+                      {
+                        "visualAttributeEventType": {
+                          "name": "LoadCatalogData",
+                          "eventId": 110,
+                          "description": "Sobreescribe la carga de datos de un catálogo",
+                          "availableExecutionType": 3
+                        },
+                        "executionType": 3,
+                        "customEventId": "CEVA_110VA_ORIAHEADER8608_TCTC534_341",
+                        "filter": null,
+                        "enabled": "T",
+                        "customizationLayer": 0,
+                        "customizationLayerDescription": "ECU",
+                        "isEnabled": true
+                      }
+                    ],
+                    "options": 17,
+                    "label": {
+                      "moduleId": "BUSIN",
+                      "labelId": "LBL_BUSIN_ALCUOTAOA_40387",
+                      "defaultValue": {
+                        "$ref": "../../../../BUSIN/assets/languages/BUSIN.json#/BUSIN/LBL/LBL_BUSIN_ALCUOTAOA_40387"
+                      }
+                    },
+                    "aggregateId": null,
+                    "aggregate": null,
+                    "width": null,
+                    "style": null,
+                    "componentStyle": null,
+                    "customizationLayer": 0,
+                    "customizationLayerDescription": "ECU",
+                    "include": 4095,
+                    "order": 4,
+                    "colSpan": 1,
+                    "responsivity": false,
+                    "responsiveLayouts": null,
+                    "maxRecords": null,
+                    "attribute": {
+                      "$ref": "../../../../BUSIN/entities/EN_ALICUOTAT010.json#/attributes/AT_ALI010TCTC66"
+                    },
+                    "attributeValidations": [
+                      {
+                        "id": "VV_ORIAHEADER8608_TCTC534_99",
+                        "compareOperator": 0,
+                        "customizationLayer": 0,
+                        "customizationLayerDescription": "ECU",
+                        "visualValidationType": {
+                          "visualValidationId": "Required",
+                          "description": "Required Validation"
+                        },
+                        "validateMessageLabel": {
+                          "labelId": "DLB_BUSIN_MANDATORY_16739",
+                          "defaultValue": {
+                            "$ref": "../../../../BUSIN/assets/languages/BUSIN.json#/BUSIN/MSG/DLB_BUSIN_MANDATORY_16739"
+                          },
+                          "hasI18N": true,
+                          "moduleId": "BUSIN",
+                          "customizationLayer": 0,
+                          "customizationLayerDescription": "ECU",
+                          "i18N": "T"
+                        }
+                      }
+                    ],
+                    "enabled": 4095,
+                    "visible": 4095,
+                    "readOnly": 8,
+                    "catalogName": null,
+                    "queryVersion": " ",
+                    "queryMemberText": {
+                      "queryMemberId": null,
+                      "attribute": {
+                        "attributeId": null,
+                        "name": null
+                      }
+                    },
+                    "queryMemberValue": {
+                      "queryMemberId": null,
+                      "attribute": {
+                        "attributeId": null,
+                        "name": null
+                      }
+                    },
+                    "cacheDuration": 0,
+                    "entityQuery": null,
+                    "queryModule": null,
+                    "minChars": null,
+                    "type": "none"
+                  }
+                ],
+                "independentValidation": "F",
+                "orientation": "V",
+                "htmlSection": false,
+                "responsiveLayouts": null,
+                "responsivity": false
+              },
+              {
+                "collapsedStr": "F",
+                "groupId": "GR_AIUTOAVIEW91_04",
+                "name": "GrpSeccionRenderizada",
+                "layoutType": "Group",
+                "enabled": 4095,
+                "visible": 0,
+                "titleLabel": {
+                  "moduleId": "BUSIN",
+                  "labelId": "DLB_BUSIN_CFICNIIOA_41747",
+                  "defaultValue": {
+                    "$ref": "../../../../BUSIN/assets/languages/BUSIN.json#/BUSIN/LBL/DLB_BUSIN_CFICNIIOA_41747"
+                  }
+                },
+                "refViewId": "VW_AIUTOAVIEW91",
+                "refViewVersion": "1.0.0",
+                "style": null,
+                "componentStyle": null,
+                "customEvents": [],
+                "eventType": 0,
+                "colSpan": 1,
+                "columnsNum": 1,
+                "visualAttributes": [
+                  {
+                    "visualAttributeId": "GR_AIUTOAVIEW91_04-default-blank",
+                    "name": "GR_AIUTOAVIEW91_04-default-blank",
+                    "userControl": {
+                      "userControlId": "Spacer",
+                      "type": "I"
+                    },
+                    "customEvents": [],
+                    "options": 0,
+                    "aggregateId": null,
+                    "aggregate": null,
+                    "width": null,
+                    "style": null,
+                    "componentStyle": null,
+                    "customizationLayer": 0,
+                    "customizationLayerDescription": "ECU",
+                    "include": 4095,
+                    "order": 0,
+                    "colSpan": 1,
+                    "responsiveLayouts": null,
+                    "responsivity": false,
+                    "maxRecords": null,
+                    "visible": 4095
+                  }
+                ],
+                "independentValidation": "F",
+                "orientation": "V",
+                "htmlSection": true,
+                "responsiveLayouts": null,
+                "responsivity": false,
+                "parentLayoutType": "GroupLayout"
+              }
+            ]
+          }
+        ],
+        "modules": [
+          {
+            "moduleId": "BUSIN"
+          }
+        ]
+      }
+    }
+  ],
+  "commands": [],
+  "isImported": true,
+  "customEvents": []
+}

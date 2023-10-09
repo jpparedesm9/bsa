@@ -1,0 +1,12 @@
+bcp cob_conta_tercero.dbo.ct_scomprobante in D:\Temp\Pruebas\cob_conta_tercero_ct_scomprobante_Enero_2019.dat -n -r \n -T -S
+bcp cob_conta_tercero.dbo.ct_scomprobante in D:\Temp\Pruebas\cob_conta_tercero_ct_scomprobante_Febrero_2019.dat -n -r \n -T -S
+bcp cob_conta_tercero.dbo.ct_scomprobante in D:\Temp\Pruebas\cob_conta_tercero_ct_scomprobante_Marzo_2019.dat -n -r \n -T -S
+bcp cob_conta_tercero.dbo.ct_scomprobante in D:\Temp\Pruebas\cob_conta_tercero_ct_scomprobante_Abril_2019.dat -n -r \n -T -S
+bcp cob_conta_tercero.dbo.ct_scomprobante in D:\Temp\Pruebas\cob_conta_tercero_ct_scomprobante_Mayo_2019.dat -n -r \n -T -S
+bcp cob_conta_tercero.dbo.ct_scomprobante in D:\Temp\Pruebas\cob_conta_tercero_ct_scomprobante_Junio_2019.dat -n -r \n -T -S
+bcp cob_conta_tercero.dbo.ct_scomprobante in D:\Temp\Pruebas\cob_conta_tercero_ct_scomprobante_Julio_2019.dat -n -r \n -T -S
+bcp cob_conta_tercero.dbo.ct_scomprobante in D:\Temp\Pruebas\cob_conta_tercero_ct_scomprobante_Agosto_2019.dat -n -r \n -T -S
+bcp cob_conta_tercero.dbo.ct_scomprobante in D:\Temp\Pruebas\cob_conta_tercero_ct_scomprobante_Septiembre_2019.dat -n -r \n -T -S
+bcp cob_conta_tercero.dbo.ct_scomprobante in D:\Temp\Pruebas\cob_conta_tercero_ct_scomprobante_Octubre_2019.dat -n -r \n -T -S
+bcp cob_conta_tercero.dbo.ct_scomprobante in D:\Temp\Pruebas\cob_conta_tercero_ct_scomprobante_Noviembre_2019.dat -n -r \n -T -S
+bcp cob_conta_tercero.dbo.ct_scomprobante in D:\Temp\Pruebas\cob_conta_tercero_ct_scomprobante_Diciembre_2019.dat -n -r \n -T -S

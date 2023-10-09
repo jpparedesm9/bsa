@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<serviceClass name="Catalogs" nsBase="COBISCorp.eCOBIS.RegularizePayments" namespace="COBISCorp.eCOBIS.RegularizePayments.Service" package="cobiscorp.ecobis.regularizepayments.service" ns="http://service.regularizepayments.ecobis.cobiscorp" module="RegularizePayments" productName="COBISCorp.eCOBIS.RegularizePayments.Service" productVersion="1.0.0.0">
+  <productProperties>
+    <property name="MavenGroupId" value="com.cobiscorp.cloud.paobj.api" />
+    <property name="MavenArtifactId" value="COBISCorp.eCOBIS.RegularizePayments.Service" />
+    <property name="MavenVersion" value="1.0.0.0" />
+  </productProperties>
+  <partialClass name="Catalogs">
+    <services>
+      <service id="RegularizePayments.Catalogs.OpGetPaymentMethods" netName="OpGetPaymentMethods" javaName="opGetPaymentMethods" mappingType="STORED_PROCEDURE" mapId="ce840aa9583592e71f3db26ee6e41703">
+        <SRVMapping name="cob_cartera..sp_qr_producto" trnCode="7076">
+          <DTOs>
+            <DTO direction="in" name="PaymentMethodRequest" alias="inPaymentMethodRequest" namespace="COBISCorp.eCOBIS.RegularizePayments.DTO" package="cobiscorp.ecobis.regularizepayments.dto" ns="http://dto.regularizepayments.ecobis.cobiscorp" required="true" />
+            <DTO direction="return" name="PaymentMethodResponse" alias="returnPaymentMethodResponse" namespace="COBISCorp.eCOBIS.RegularizePayments.DTO" package="cobiscorp.ecobis.regularizepayments.dto" ns="http://dto.regularizepayments.ecobis.cobiscorp" required="true">
+              <properties>
+                <property name="product" propertyNet="Product" propertyJava="product" setterJavaMethod="setProduct" getterJavaMethod="getProduct" xsdType="string" netType="string" javaType="String" cobisMapping="" isInherit="false" isComplexType="false" isCollectionType="false" required="false" encrypted="false" maxLength="0" />
+                <property name="description" propertyNet="Description" propertyJava="description" setterJavaMethod="setDescription" getterJavaMethod="getDescription" xsdType="string" netType="string" javaType="String" cobisMapping="" isInherit="false" isComplexType="false" isCollectionType="false" required="false" encrypted="false" maxLength="0" />
+                <property name="retention" propertyNet="Retention" propertyJava="retention" setterJavaMethod="setRetention" getterJavaMethod="getRetention" xsdType="int" netType="int" javaType="int" cobisMapping="" isInherit="false" isComplexType="false" isCollectionType="false" required="true" encrypted="false" maxLength="0" />
+                <property name="category" propertyNet="Category" propertyJava="category" setterJavaMethod="setCategory" getterJavaMethod="getCategory" xsdType="string" netType="string" javaType="String" cobisMapping="" isInherit="false" isComplexType="false" isCollectionType="false" required="false" encrypted="false" maxLength="0" />
+                <property name="pCobis" propertyNet="PCobis" propertyJava="pCobis" setterJavaMethod="setPCobis" getterJavaMethod="getPCobis" xsdType="string" netType="string" javaType="String" cobisMapping="" isInherit="false" isComplexType="false" isCollectionType="false" required="false" encrypted="false" maxLength="0" />
+              </properties>
+            </DTO>
+          </DTOs>
+          <parameterMappings>
+            <parameter name="@i_tipo" direction="in" mappingDirection="in" dataType="tinyint" CTSDataType="SQLINT1" JavaSQLType="INTEGER" mappingType="DTO" allowNull="false" DTOAlias="inPaymentMethodRequest" DTOPropertyName="type" />
+            <parameter name="@i_operacion" direction="in" mappingDirection="in" dataType="char" CTSDataType="SQLCHAR" JavaSQLType="CHAR" mappingType="DTO" allowNull="false" DTOAlias="inPaymentMethodRequest" DTOPropertyName="operation" />
+            <parameter name="@i_moneda" direction="in" mappingDirection="in" dataType="tinyint" CTSDataType="SQLINT1" JavaSQLType="INTEGER" mappingType="DTO" allowNull="false" DTOAlias="inPaymentMethodRequest" DTOPropertyName="currency" />
+            <parameter name="@i_linea_cre" direction="in" mappingDirection="in" dataType="varchar" CTSDataType="SQLVARCHAR" JavaSQLType="VARCHAR" mappingType="DTO" allowNull="false" DTOAlias="inPaymentMethodRequest" DTOPropertyName="creditLine" />
+          </parameterMappings>
+          <resultMappings>
+            <result>
+              <DTOResult DTOAlias="returnPaymentMethodResponse" MapReturn="true">
+                <columnMapping position="0" name="PRODUCTO" DTOPropertyName="product" DataType="string" Format="" />
+                <columnMapping position="1" name="DESCRIPCION" DTOPropertyName="description" DataType="string" Format="" />
+                <columnMapping position="2" name="RETENCION" DTOPropertyName="retention" DataType="int" Format="" />
+                <columnMapping position="3" name="CATEGORIA" DTOPropertyName="category" DataType="string" Format="" />
+                <columnMapping position="4" name="P.COBIS" DTOPropertyName="pCobis" DataType="string" Format="" />
+              </DTOResult>
+            </result>
+          </resultMappings>
+          <MappingProperties />
+        </SRVMapping>
+      </service>
+    </services>
+  </partialClass>
+</serviceClass>

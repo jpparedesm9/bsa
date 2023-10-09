@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd
+		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd">
+
+
+
+	<tx:advice id="transactionalAdvice" transaction-manager="transactionManager">
+		<tx:attributes>
+			<tx:method name="*" propagation="REQUIRED" rollback-for="RuntimeException" />
+			<tx:method name="getHistoricalLog" propagation="NOT_SUPPORTED"
+				rollback-for="RuntimeException" />
+		</tx:attributes>
+	</tx:advice>
+
+	<aop:config>
+		<aop:pointcut id="actitivyDAOImplTransactional"
+			expression="execution(* com.cobiscorp.ecobis.customer.dal.ActivityDAO.*(..))" />
+		<aop:advisor pointcut-ref="actitivyDAOImplTransactional"
+			advice-ref="transactionalAdvice" />
+	</aop:config>
+	<aop:config>
+		<aop:pointcut id="businessSegmentDAOImplTransactional"
+			expression="execution(* com.cobiscorp.ecobis.customer.dal.BusinessSegmentDAO.*(..))" />
+		<aop:advisor pointcut-ref="businessSegmentDAOImplTransactional"
+			advice-ref="transactionalAdvice" />
+	</aop:config>
+	<aop:config>
+		<aop:pointcut id="clientDAOImplTransactional"
+			expression="execution(* com.cobiscorp.ecobis.customer.dal.ClientDAO.*(..))" />
+		<aop:advisor pointcut-ref="clientDAOImplTransactional"
+			advice-ref="transactionalAdvice" />
+	</aop:config>
+
+	<aop:config>
+		<aop:pointcut id="contactDAOImplTransactional"
+			expression="execution(* com.cobiscorp.ecobis.customer.dal.ContactDAO.*(..))" />
+		<aop:advisor pointcut-ref="contactDAOImplTransactional"
+			advice-ref="transactionalAdvice" />
+	</aop:config>
+
+	<aop:config>
+		<aop:pointcut id="countryDAOImplTransactional"
+			expression="execution(* com.cobiscorp.ecobis.customer.dal.CountryDAO.*(..))" />
+		<aop:advisor pointcut-ref="countryDAOImplTransactional"
+			advice-ref="transactionalAdvice" />
+	</aop:config>
+	<aop:config>
+		<aop:pointcut id="customerDAOImplTransactional"
+			expression="execution(* com.cobiscorp.ecobis.customer.dal.CustomerDAO.*(..))" />
+		<aop:advisor pointcut-ref="customerDAOImplTransactional"
+			advice-ref="transactionalAdvice" />
+	</aop:config>
+	<aop:config>
+		<aop:pointcut id="phoneDAOImplTransactional"
+			expression="execution(* com.cobiscorp.ecobis.customer.dal.PhoneDAO.*(..))" />
+		<aop:advisor pointcut-ref="phoneDAOImplTransactional"
+			advice-ref="transactionalAdvice" />
+	</aop:config>
+	<aop:config>
+		<aop:pointcut id="poBoxDAOImplTransactional"
+			expression="execution(* com.cobiscorp.ecobis.customer.dal.POBoxDAO.*(..))" />
+		<aop:advisor pointcut-ref="poBoxDAOImplTransactional"
+			advice-ref="transactionalAdvice" />
+	</aop:config>
+	<aop:config>
+		<aop:pointcut id="productDetailDAOImplTransactional"
+			expression="execution(* com.cobiscorp.ecobis.customer.dal.ProductDetailDAO.*(..))" />
+		<aop:advisor pointcut-ref="productDetailDAOImplTransactional"
+			advice-ref="transactionalAdvice" />
+	</aop:config>
+</beans>

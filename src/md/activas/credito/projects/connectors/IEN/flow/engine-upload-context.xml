@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:batch="http://www.springframework.org/schema/batch" xmlns:util="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd
+		http://www.springframework.org/schema/batch http://www.springframework.org/schema/batch/spring-batch.xsd">
+    <bean id="validateUploadTasklet" class="com.cobiscorp.cobis.batch.engine.upload.ValidationTasklet" scope="step">
+        <property name="serviceExecutor" ref="batchServiceExecutor"/>
+        <property name="cobisJobId">
+            <bean class="com.cobiscorp.cobis.batch.engine.CobisJobId">
+                <constructor-arg name="id" value="#{jobParameters['jobId']}"/>
+                <constructor-arg name="entity" value="#{jobParameters['jobEntity']}"/>
+                <constructor-arg name="transaction" value="#{jobParameters['jobTransaction']}"/>
+                <constructor-arg name="nameExpression" value="#{jobParameters['jobNameExpression']}"/>
+            </bean>
+        </property>
+    </bean>
+    <bean id="loadUploadConfigTasklet" class="com.cobiscorp.cobis.batch.engine.upload.LoadConfigTasklet" scope="step">
+        <constructor-arg name="cobisJobId" index="0">
+            <bean class="com.cobiscorp.cobis.batch.engine.CobisJobId">
+                <constructor-arg name="id" value="#{jobParameters['jobId']}"/>
+                <constructor-arg name="entity" value="#{jobParameters['jobEntity']}"/>
+                <constructor-arg name="transaction" value="#{jobParameters['jobTransaction']}"/>
+                <constructor-arg name="nameExpression" value="#{jobParameters['jobNameExpression']}"/>
+            </bean>
+        </constructor-arg>
+        <property name="serviceExecutor" ref="batchServiceExecutor"/>
+    </bean>
+    <bean id="decryptFileWritingMessageHandler"
+          class="org.springframework.integration.file.config.FileWritingMessageHandlerFactoryBean" scope="step">
+        <property name="autoCreateDirectory" value="#{jobExecutionContext['autoCreateDecryptDirectory']}"/>
+        <property name="directory" value="#{jobExecutionContext['decryptDirectory']}"/>
+        <property name="deleteSourceFiles" value="false"/>
+        <property name="outputChannel" ref="nullChannel"/>
+    </bean>
+    <bean id="compressFileWritingMessageHandler"
+          class="org.springframework.integration.file.config.FileWritingMessageHandlerFactoryBean" scope="step">
+        <property name="autoCreateDirectory" value="true"/>
+        <property name="directory" value="#{jobExecutionContext['compressDirectory']}"/>
+        <property name="deleteSourceFiles" value="true"/>
+        <property name="outputChannel" ref="nullChannel"/>
+    </bean>
+    <bean id="uploadFileWritingMessageHandler"
+          class="org.springframework.integration.file.config.FileWritingMessageHandlerFactoryBean" scope="step">
+        <property name="autoCreateDirectory" value="#{jobExecutionContext['autoCreateRemoteDirectory']}"/>
+        <property name="directory" value="#{jobExecutionContext['remoteDirectory']}"/>
+        <property name="deleteSourceFiles" value="#{jobExecutionContext['deleteSourceFiles']}"/>
+        <property name="outputChannel" ref="nullChannel"/>
+    </bean>
+    <bean id="uploadFileTransferringMessageHandler"
+          class="org.springframework.integration.file.remote.handler.FileTransferringMessageHandler" scope="step">
+        <constructor-arg name="sessionFactory">
+            <bean id="sftpSessionFactory" class="org.springframework.integration.sftp.session.DefaultSftpSessionFactory"
+                  scope="step">
+                <property name="host" value="#{jobExecutionContext['ftpSessionHost']}"/>
+                <property name="user" value="#{jobExecutionContext['ftpSessionUsername']}"/>
+                <property name="privateKey" value="file://c:/ien-home/KEYS/201711245santander-tuiio"/>
+                <property name="sessionConfig">
+                    <util:properties>
+                        <prop key="StrictHostKeyChecking">no</prop>
+                    </util:properties>
+                </property>
+            </bean>
+            <!-- <bean id="ftpSessionFactory" class="org.springframework.integration.ftp.session.DefaultFtpSessionFactory" scope="step">
+                <property name="host" value="#{jobExecutionContext['ftpSessionHost']}" />
+                <property name="port" value="#{jobExecutionContext['ftpSessionPort']}" />
+                <property name="username" value="#{jobExecutionContext['ftpSessionUsername']}" />
+                <property name="password" value="#{jobExecutionContext['ftpSessionPassword']}" />
+                <property name="clientMode" value="#{jobExecutionContext['ftpSessionClientMode']}" />
+                <property name="fileType" value="#{jobExecutionContext['ftpSessionFileType']}" />
+                <property name="bufferSize" value="#{jobExecutionContext['ftpSessionBufferSize']}" />
+            </bean> -->
+        </constructor-arg>
+        <property name="remoteDirectoryExpression">
+            <bean class="org.springframework.expression.common.LiteralExpression">
+                <constructor-arg name="literalValue" value="#{jobExecutionContext['ftpRemoteDirectory']}"/>
+            </bean>
+        </property>
+        <property name="remoteFileSeparator" value="#{jobExecutionContext['ftpRemoteFileSeparator']}"/>
+    </bean>
+    <bean id="historyFileWritingMessageHandlerUpload"
+          class="org.springframework.integration.file.config.FileWritingMessageHandlerFactoryBean" scope="step">
+        <property name="autoCreateDirectory" value="#{jobExecutionContext['autoCreateHistoryDirectory']}"/>
+        <property name="directory" value="#{jobExecutionContext['historyDirectory']}"/>
+        <property name="deleteSourceFiles" value="#{jobExecutionContext['historyDeleteSourceFiles']}"/>
+        <property name="outputChannel" ref="nullChannel"/>
+    </bean>
+    <bean id="uploadLocalTasklet" class="com.cobiscorp.cobis.batch.engine.upload.UploadFilesTasklet" scope="step">
+        <property name="files" value="#{jobExecutionContext['files']}"/>
+        <property name="messageHandler" ref="uploadFileWritingMessageHandler"/>
+        <property name="historyMessageHandler" ref="historyFileWritingMessageHandlerUpload"/>
+        <property name="serviceExecutor" ref="batchServiceExecutor"/>
+        <property name="cobisJobId">
+            <bean class="com.cobiscorp.cobis.batch.engine.CobisJobId">
+                <constructor-arg name="id" value="#{jobParameters['jobId']}"/>
+                <constructor-arg name="entity" value="#{jobParameters['jobEntity']}"/>
+                <constructor-arg name="transaction" value="#{jobParameters['jobTransaction']}"/>
+                <constructor-arg name="nameExpression" value="#{jobParameters['jobNameExpression']}"/>
+            </bean>
+        </property>
+        <property name="agentFileDefinitionId" value="#{jobExecutionContext['agentFileDefinitionId']}"/>
+    </bean>
+    <bean id="uploadFtpTasklet" class="com.cobiscorp.cobis.batch.engine.upload.UploadFilesTasklet" scope="step">
+        <property name="files" value="#{jobExecutionContext['files']}"/>
+        <property name="messageHandler" ref="uploadFileTransferringMessageHandler"/>
+        <property name="historyMessageHandler" ref="historyFileWritingMessageHandlerUpload"/>
+        <property name="serviceExecutor" ref="batchServiceExecutor"/>
+        <property name="cobisJobId">
+            <bean class="com.cobiscorp.cobis.batch.engine.CobisJobId">
+                <constructor-arg name="id" value="#{jobParameters['jobId']}"/>
+                <constructor-arg name="entity" value="#{jobParameters['jobEntity']}"/>
+                <constructor-arg name="transaction" value="#{jobParameters['jobTransaction']}"/>
+                <constructor-arg name="nameExpression" value="#{jobParameters['jobNameExpression']}"/>
+            </bean>
+        </property>
+        <property name="agentFileDefinitionId" value="#{jobExecutionContext['agentFileDefinitionId']}"/>
+    </bean>
+    <bean id="encryptTasklet" class="com.cobiscorp.cobis.batch.engine.upload.EncryptTasklet" scope="step">
+        <property name="files" value="#{jobExecutionContext['files']}"/>
+        <property name="publicKey" value="#{jobExecutionContext['publicKey']}"/>
+        <property name="messageHandler" ref="decryptFileWritingMessageHandler"/>
+    </bean>
+    <bean id="uploadDecider" class="com.cobiscorp.cobis.batch.engine.decider.ServerTypeDecider"/>
+    <bean id="encryptDecider" class="com.cobiscorp.cobis.batch.engine.decider.EncryptDecider"/>
+    <bean id="compressDecider" class="com.cobiscorp.cobis.batch.engine.decider.CompressDecider"/>
+    <bean id="compressTasklet" class="com.cobiscorp.cobis.batch.engine.upload.CompressTasklet" scope="step">
+        <property name="files" value="#{jobExecutionContext['files']}"/>
+        <property name="messageHandler" ref="compressFileWritingMessageHandler"/>
+    </bean>
+    <!-- TaskExecutor Asincrono - Varios hilos -->
+    <bean id="uploadFilesTaskExecutor" class="org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor">
+        <property name="corePoolSize" value="5"/>
+        <property name="allowCoreThreadTimeOut" value="true"/>
+        <property name="maxPoolSize" value="10"/>
+    </bean>
+    <bean id="encryptCustomTasklet" class="com.cobiscorp.cobis.batch.engine.upload.EncryptCustomTasklet" scope="step">
+        <property name="files" value="#{jobExecutionContext['files']}"/>
+        <property name="serviceExecutor" ref="batchServiceExecutor"/>
+    </bean>
+    <batch:job id="uploadFiles">
+        <batch:step id="loadUploadConfiguration" next="compressDecision">
+            <batch:tasklet ref="loadUploadConfigTasklet">
+                <batch:transaction-attributes propagation="NEVER"/>
+            </batch:tasklet>
+        </batch:step>
+        <batch:decision id="compressDecision" decider="compressDecider">
+            <batch:next on="ZIP" to="compressZIP"/>
+            <batch:next on="*" to="encryptFileDecision"/>
+        </batch:decision>
+        <batch:step id="compressZIP" next="encryptFileDecision">
+            <batch:tasklet ref="compressTasklet"/>
+        </batch:step>
+        <batch:decision id="encryptFileDecision" decider="encryptDecider">
+            <batch:next on="PGP" to="encryptFileWithPgp"/>
+            <batch:next on="CUSTOM" to="encryptFileWithCustom"/>
+            <batch:next on="*" to="uploadServerTypeDecision"/>
+        </batch:decision>
+        <batch:step id="encryptFileWithCustom" next="uploadServerTypeDecision">
+            <batch:tasklet ref="encryptCustomTasklet"/>
+        </batch:step>
+        <batch:step id="encryptFileWithPgp" next="uploadServerTypeDecision">
+            <batch:tasklet ref="encryptTasklet"/>
+        </batch:step>
+        <batch:decision id="uploadServerTypeDecision" decider="uploadDecider">
+            <batch:next on="FTP_ACT" to="uploadToFtp"/>
+            <batch:next on="FTP_PASSIVE" to="uploadToFtp"/>
+            <batch:next on="SFTP_ACT" to="uploadToFtp"/>
+            <batch:next on="SFTP_PAS" to="uploadToFtp"/>
+            <batch:next on="LOCAL" to="uploadToLocal"/>
+            <batch:end on="*"/>
+        </batch:decision>
+        <batch:step id="uploadToLocal">
+            <batch:tasklet ref="uploadLocalTasklet"/>
+        </batch:step>
+        <batch:step id="uploadToFtp">
+            <batch:tasklet ref="uploadFtpTasklet"/>
+        </batch:step>
+    </batch:job>
+</beans>

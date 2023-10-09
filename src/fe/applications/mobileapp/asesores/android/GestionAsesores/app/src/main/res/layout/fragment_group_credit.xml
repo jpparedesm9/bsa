@@ -1,0 +1,264 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.NestedScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:paddingBottom="@dimen/activity_vertical_margin"
+        android:paddingEnd="@dimen/activity_horizontal_margin"
+        android:paddingStart="@dimen/activity_horizontal_margin"
+        android:paddingTop="@dimen/activity_vertical_margin">
+
+        <include layout="@layout/layout_error"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/input_layout_group_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <android.support.design.widget.TextInputEditText
+                    android:id="@+id/input_group_name"
+                    style="@style/Form.FieldReadOnly"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/form_hint_group_name"
+                    android:inputType="text"
+                    />
+            </android.support.design.widget.TextInputLayout>
+
+            <LinearLayout
+                android:id="@+id/layout_cycle_date"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/input_layout_group_name"
+                android:baselineAligned="false"
+                android:orientation="horizontal">
+
+                <android.support.design.widget.TextInputLayout
+                    android:id="@+id/input_layout_cycle_number"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1">
+
+                    <android.support.design.widget.TextInputEditText
+                        android:id="@+id/input_cycle_number"
+                        style="@style/Form.FieldReadOnly"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/form_hint_cycle_number"
+                        android:inputType="number"
+                        />
+                </android.support.design.widget.TextInputLayout>
+
+                <android.support.design.widget.TextInputLayout
+                    android:id="@+id/input_layout_application_date"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1">
+
+                    <android.support.design.widget.TextInputEditText
+                        android:id="@+id/input_application_date"
+                        style="@style/Form.FieldReadOnly"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/form_hint_app_date"
+                        android:inputType="text"
+                        />
+                </android.support.design.widget.TextInputLayout>
+            </LinearLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/input_layout_adviser"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/layout_cycle_date">
+
+                <android.support.design.widget.TextInputEditText
+                    android:id="@+id/input_adviser"
+                    style="@style/Form.FieldReadOnly"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/credit_app_hint_adviser"
+                    android:inputType="text"
+                    />
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/input_layout_branch_office"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/input_layout_adviser">
+
+                <android.support.design.widget.TextInputEditText
+                    android:id="@+id/input_branch_office"
+                    style="@style/Form.FieldReadOnly"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/credit_app_hint_branch_office"
+                    android:inputType="text"
+                    />
+            </android.support.design.widget.TextInputLayout>
+
+            <LinearLayout
+                android:id="@+id/layout_rate_term"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/input_layout_branch_office"
+                android:baselineAligned="false"
+                android:orientation="horizontal">
+
+                <android.support.design.widget.TextInputLayout
+                    android:id="@+id/input_layout_rate"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1">
+
+                    <android.support.design.widget.TextInputEditText
+                        android:id="@+id/input_rate"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:enabled="false"
+                        android:hint="@string/form_hint_app_rate"
+                        android:inputType="text"/>
+                </android.support.design.widget.TextInputLayout>
+
+                <android.support.design.widget.TextInputLayout
+                    android:id="@+id/input_layout_term"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1">
+
+                    <android.support.design.widget.TextInputEditText
+                        android:id="@+id/input_term"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:enabled="false"
+                        android:hint="@string/form_hint_app_term"
+                        android:inputType="text"/>
+                </android.support.design.widget.TextInputLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layout_is_promotion"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/layout_rate_term"
+                android:layout_marginBottom="8dp"
+                android:layout_marginTop="8dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/credit_app_hint_is_promotion"
+                    android:textAppearance="@style/TextAppearance.Design.Counter"/>
+
+                <android.support.v7.widget.SwitchCompat
+                    android:id="@+id/switch_is_promotion"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:theme="@style/SwitchTheme"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/view_renew"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/layout_is_promotion"
+                android:layout_marginTop="8dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/credit_app_group_hint_renew"
+                    android:textAppearance="@style/TextAppearance.Design.Counter"/>
+
+                <android.support.v7.widget.SwitchCompat
+                    android:id="@+id/switch_renew"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:theme="@style/SwitchTheme"/>
+            </LinearLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/input_layout_reason"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/view_renew">
+
+                <android.support.design.widget.TextInputEditText
+                    android:id="@+id/input_reason"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/credit_app_group_hint_reason"
+                    android:inputType="text"/>
+            </android.support.design.widget.TextInputLayout>
+
+            <TextView
+                android:id="@+id/text_list_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/input_layout_reason"
+                android:layout_marginTop="@dimen/activity_vertical_margin"
+                android:text="@string/credit_app_group_members_title"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:id="@+id/text_error"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/text_list_label"
+                android:textAppearance="@style/TextAppearance.Design.Error"
+                android:textColor="@android:color/holo_red_light"
+                android:visibility="gone"/>
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/list_member_credits"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/text_error"
+                android:layout_marginTop="8dp"/>
+
+            <LinearLayout
+                android:id="@+id/layout_amount"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_below="@+id/list_member_credits"
+                android:background="@color/colorPrimary"
+                android:orientation="horizontal"
+                android:padding="@dimen/list_item_padding">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/credit_app_group_hint_credit_amount"
+                    android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
+                    android:textColor="@android:color/white"/>
+
+                <TextView
+                    android:id="@+id/text_credit_amount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
+                    android:textColor="@android:color/white"
+                    tools:text="5000.00"/>
+            </LinearLayout>
+        </RelativeLayout>
+    </LinearLayout>
+</android.support.v4.widget.NestedScrollView>

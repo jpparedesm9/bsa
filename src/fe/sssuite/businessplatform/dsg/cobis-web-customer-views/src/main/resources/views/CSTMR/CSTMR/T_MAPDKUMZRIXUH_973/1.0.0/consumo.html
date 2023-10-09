@@ -1,0 +1,66 @@
+<!doctype html>
+<html ng-app="demo">
+	<head>
+		<title>Hello AngularJS</title>
+         <script 
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBeK8BWXsKDTMtwV_bC2FI4GADQklc-nuA"></script>
+		<script src="consumo.js"></script>
+        <link rel="stylesheet" type="text/css" href="consumo.css">
+         
+	</head>
+
+	<body>
+	
+		<div ng-controller="MapsController" ng-app="VC_PROSPECTMI_213684">
+		
+            <p>
+                LATITUD xx:  <input type="text" ng-model="resultado.latitud"/> 
+                LONGITUD: <input type="text" ng-model="resultado.longitud"/>
+            </p>
+	 <div class="form-vertical"> 
+      <div class="row"> 
+       <div class="col-xs-4"> 
+        <div class="form-group" id="VA_LATITUDEPLPYPFV_886945_DIV"> 
+         <label for="VA_LATITUDEPLPYPFV_886945"  class="control-label">Latitud:</label> 
+         <div class="cb-control"> 
+          <input id="VA_LATITUDEPLPYPFV_886945" name="PhysicalAddress_latitude" maxlength="13" 
+		  kendo-numeric-text-box k-spinners="false" k-step="0" datatypes-limit="N" 
+		  k-ng-model="resultado.latitud" ng-model="resultado.latitud" 
+		  ng-class="form-control cb-no-border ng-binding"  
+		   /> 
+         </div> 
+        </div> 
+       </div> 
+       <div class="col-xs-4" > 
+        <div class="form-group" id="VA_LONGITUDEGYHYVE_712945_DIV"> 
+         <label for="VA_LONGITUDEGYHYVE_712945"  class="control-label">Longitud:</label> 
+         <div class="cb-control"> 
+          <input id="VA_LONGITUDEGYHYVE_712945" name="PhysicalAddress_longitude" 
+		  maxlength="13" kendo-numeric-text-box k-spinners="false" k-step="0" datatypes-limit="N" 
+		 kendo-numeric-text-box k-spinners="false" k-step="0" datatypes-limit="N" 
+		  k-ng-model="resultado.longitud" ng-model="resultado.longitud" 
+		  ng-class="form-control cb-no-border ng-binding"  
+		   /> 
+        </div> 
+       </div> 
+	   </div>
+       <div class="col-xs-4" > 
+        <div class="form-group"> 
+         <label class="control-label">&nbsp;</label> 
+         <div class="cb-control"> 
+          <button id="VA_VABUTTONFZDMVNG_343945" class="btn btn-default btn-block" ng-click="cerrar()">Aceptar</div> 
+        </div> 
+       </div> 
+      </div> 
+     </div> 
+				<div class="row">
+					<div class="col-xs-12">
+					<div id="map"  height="400px"></div>
+					</div>
+					
+				</div>
+			
+			
+        </div>
+    </body>
+</html>

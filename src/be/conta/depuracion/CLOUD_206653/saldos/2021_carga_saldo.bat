@@ -1,0 +1,13 @@
+bcp cob_conta_tercero.dbo.ct_saldo_tercero in D:\Temp\Pruebas\cob_conta_tercero_ct_saldo_tercero_2021_corte_31.dat -n -r \n -T -S
+bcp cob_conta_tercero.dbo.ct_saldo_tercero in D:\Temp\Pruebas\cob_conta_tercero_ct_saldo_tercero_2021_corte_59.dat -n -r \n -T -S
+bcp cob_conta_tercero.dbo.ct_saldo_tercero in D:\Temp\Pruebas\cob_conta_tercero_ct_saldo_tercero_2021_corte_90.dat -n -r \n -T -S
+bcp cob_conta_tercero.dbo.ct_saldo_tercero in D:\Temp\Pruebas\cob_conta_tercero_ct_saldo_tercero_2021_corte_120.dat -n -r \n -T -S
+bcp cob_conta_tercero.dbo.ct_saldo_tercero in D:\Temp\Pruebas\cob_conta_tercero_ct_saldo_tercero_2021_corte_151.dat -n -r \n -T -S
+bcp cob_conta_tercero.dbo.ct_saldo_tercero in D:\Temp\Pruebas\cob_conta_tercero_ct_saldo_tercero_2021_corte_181.dat -n -r \n -T -S
+bcp cob_conta_tercero.dbo.ct_saldo_tercero in D:\Temp\Pruebas\cob_conta_tercero_ct_saldo_tercero_2021_corte_212.dat -n -r \n -T -S
+bcp cob_conta_tercero.dbo.ct_saldo_tercero in D:\Temp\Pruebas\cob_conta_tercero_ct_saldo_tercero_2021_corte_243.dat -n -r \n -T -S
+bcp cob_conta_tercero.dbo.ct_saldo_tercero in D:\Temp\Pruebas\cob_conta_tercero_ct_saldo_tercero_2021_corte_273.dat -n -r \n -T -S
+bcp cob_conta_tercero.dbo.ct_saldo_tercero in D:\Temp\Pruebas\cob_conta_tercero_ct_saldo_tercero_2021_corte_304.dat -n -r \n -T -S
+bcp cob_conta_tercero.dbo.ct_saldo_tercero in D:\Temp\Pruebas\cob_conta_tercero_ct_saldo_tercero_2021_corte_334.dat -n -r \n -T -S
+bcp cob_conta_tercero.dbo.ct_saldo_tercero in D:\Temp\Pruebas\cob_conta_tercero_ct_saldo_tercero_2021_corte_365.dat -n -r \n -T -S
+bcp cob_conta_tercero.dbo.ct_saldo_tercero in D:\Temp\Pruebas\cob_conta_tercero_ct_saldo_tercero_2021_corte_366.dat -n -r \n -T -S

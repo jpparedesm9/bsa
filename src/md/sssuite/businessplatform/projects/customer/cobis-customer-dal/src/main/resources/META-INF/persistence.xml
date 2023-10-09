@@ -1,0 +1,23 @@
+<persistence xmlns="http://java.sun.com/xml/ns/persistence"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd"
+	version="2.0">
+	<persistence-unit name="customerT" transaction-type="JTA">
+		<description>Cobis Persistence unit example</description>
+
+		<class>com.cobiscorp.ecobis.customer.dal.entities.Customer</class>
+		<class>com.cobiscorp.ecobis.customer.dal.entities.CustomerAux</class>
+		<class>com.cobiscorp.ecobis.customer.dal.entities.Phone</class>
+		<class>com.cobiscorp.ecobis.customer.dal.entities.POBox</class>
+		<class>com.cobiscorp.ecobis.customer.dal.entities.ProductDetail</class>
+		<class>com.cobiscorp.ecobis.customer.dal.entities.Client</class>
+		<class>com.cobiscorp.ecobis.customer.dal.entities.Country</class>
+		<class>com.cobiscorp.ecobis.customer.dal.entities.Catalog</class>
+		<class>com.cobiscorp.ecobis.customer.dal.entities.EconomicActivity</class>
+		<class>com.cobiscorp.ecobis.customer.dal.entities.MainActivity</class>
+		<class>com.cobiscorp.ecobis.customer.dal.entities.BusinessSegment</class>
+		<class>com.cobiscorp.ecobis.customer.dal.entities.TableCL</class>
+		<class>com.cobiscorp.ecobis.customer.dal.entities.Contact</class>
+		<exclude-unlisted-classes>true</exclude-unlisted-classes>
+	</persistence-unit>
+</persistence>

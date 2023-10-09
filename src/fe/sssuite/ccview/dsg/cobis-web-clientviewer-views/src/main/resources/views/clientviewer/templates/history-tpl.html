@@ -1,0 +1,15 @@
+<div ng-repeat="group in groupsProductHist|filterById:currentView" class="cb-view-container-root container-fluid">
+    <fieldset ng-repeat="groupDetail in group.conditionDefaultProductSons" ng-show="getVisibleSection(groupDetail.dtoId.dtoName,'dynamicHistoryData')" class="cb-group cb-group-simple">
+        <legend translate>{{ groupDetail.dtoId.dtoText }}</legend>
+		<div>	    
+		  </div>
+            <kendo-grid options="getDataSourceObjectHistory(groupDetail.dtoId.dtoName, groupDetail.dtoId, 'dynamicHistoryData')"           
+		                 	k-selectable="'row'" 
+		                 	resizable="true" id="{{groupDetail.dtoId.dtoName}}">
+				
+				<div k-detail-template  ng-if="groupDetail.dtoId.dtoList != null && groupDetail.dtoId.dtoList.length > 0" ng-init="setDetailDataSoruce(dataItem,groupDetail.dtoId.dtoList[0],groupDetail.dtoId,'dynamicHistoryData')">
+					<div kendo-grid k-data-source="getObject(groupDetail.dtoId.dtoList[0].dtoName, 'dynamicHistoryData', groupDetail.dtoId.dtoList[0],  groupDetail.dtoId, dataItem)" k-columns="getDataColumns(groupDetail.dtoId.dtoList[0])"></div>
+				</div>
+			</kendo-grid>	
+    </fieldset>
+</div>	

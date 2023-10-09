@@ -1,0 +1,303 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<procedure>
+  <database>cob_credito</database>
+  <name>sp_linea</name>
+  <type>SYBASE</type>
+  <version>1</version>
+  <parameters>
+    <parameter name="@t_show_version" dataType="bit" direction="in" />
+    <parameter name="@s_ssn" dataType="int" direction="in" />
+    <parameter name="@s_user" dataType="varchar" direction="in" />
+    <parameter name="@s_sesn" dataType="int" direction="in" />
+    <parameter name="@s_term" dataType="varchar" direction="in" />
+    <parameter name="@s_date" dataType="datetime" direction="in" />
+    <parameter name="@s_srv" dataType="varchar" direction="in" />
+    <parameter name="@s_lsrv" dataType="varchar" direction="in" />
+    <parameter name="@s_rol" dataType="smallint" direction="in" />
+    <parameter name="@s_ofi" dataType="smallint" direction="in" />
+    <parameter name="@s_org_err" dataType="char" direction="in" />
+    <parameter name="@s_error" dataType="int" direction="in" />
+    <parameter name="@s_sev" dataType="tinyint" direction="in" />
+    <parameter name="@s_msg" dataType="varchar" direction="in" />
+    <parameter name="@s_org" dataType="char" direction="in" />
+    <parameter name="@t_debug" dataType="char" direction="in" />
+    <parameter name="@t_file" dataType="varchar" direction="in" />
+    <parameter name="@t_from" dataType="varchar" direction="in" />
+    <parameter name="@t_trn" dataType="smallint" direction="in" />
+    <parameter name="@i_operacion" dataType="char" direction="in" />
+    <parameter name="@i_numero" dataType="int" direction="in" />
+    <parameter name="@i_num_banco" dataType="varchar" direction="in" />
+    <parameter name="@i_oficina" dataType="smallint" direction="in" />
+    <parameter name="@i_tramite" dataType="int" direction="in" />
+    <parameter name="@i_cliente" dataType="int" direction="in" />
+    <parameter name="@i_grupo" dataType="int" direction="in" />
+    <parameter name="@i_original" dataType="int" direction="in" />
+    <parameter name="@i_fecha_aprob" dataType="datetime" direction="in" />
+    <parameter name="@i_fecha_inicio" dataType="datetime" direction="in" />
+    <parameter name="@i_per_revision" dataType="varchar" direction="in" />
+    <parameter name="@i_fecha_vto" dataType="datetime" direction="in" />
+    <parameter name="@i_dias" dataType="smallint" direction="in" />
+    <parameter name="@i_condicion_especial" dataType="varchar" direction="in" />
+    <parameter name="@i_monto" dataType="money" direction="in" />
+    <parameter name="@i_moneda" dataType="tinyint" direction="in" />
+    <parameter name="@i_rotativa" dataType="char" direction="in" />
+    <parameter name="@i_contabiliza" dataType="char" direction="in" />
+    <parameter name="@i_oficial" dataType="int" direction="in" />
+    <parameter name="@i_fecha_contrato" dataType="datetime" direction="in" />
+    <parameter name="@i_revolvente" dataType="char" direction="in" />
+    <parameter name="@i_destino_fondos" dataType="varchar" direction="in" />
+    <parameter name="@i_comision_tramite" dataType="float" direction="in" />
+    <parameter name="@i_subsidio" dataType="float" direction="in" />
+    <parameter name="@i_tasa_aplicar" dataType="float" direction="in" />
+    <parameter name="@i_tasa_efectiva" dataType="float" direction="in" />
+    <parameter name="@i_plazo_desembolso" dataType="smallint" direction="in" />
+    <parameter name="@i_forma_pago" dataType="varchar" direction="in" />
+    <parameter name="@i_plazo_vigencia" dataType="smallint" direction="in" />
+    <parameter name="@i_origenfondos" dataType="varchar" direction="in" />
+    <parameter name="@i_formalizacion" dataType="varchar" direction="in" />
+    <parameter name="@i_cuenta_corrientelc" dataType="varchar" direction="in" />
+    <parameter name="@i_tmp" dataType="char" direction="in" />
+    <parameter name="@i_prorroga" dataType="char" direction="in" />
+    <parameter name="@i_tvisa" dataType="varchar" direction="in" />
+    <parameter name="@i_modo" dataType="int" direction="in" />
+    <parameter name="@i_plazo_dias_pago" dataType="int" direction="in" />
+    <parameter name="@i_opcion" dataType="int" direction="in" />
+    <parameter name="@i_subtipo" dataType="varchar" direction="in" />
+    <parameter name="@i_tipo_tarjeta" dataType="varchar" direction="in" />
+    <parameter name="@i_motivo" dataType="varchar" direction="in" />
+    <parameter name="@i_plazo_pro" dataType="int" direction="in" />
+    <parameter name="@i_acumulado_pro" dataType="smallint" direction="in" />
+    <parameter name="@i_fecha_valor" dataType="char" direction="in" />
+    <parameter name="@i_estado_lin" dataType="varchar" direction="in" />
+    <parameter name="@i_tasa_prenda" dataType="float" direction="in" />
+    <parameter name="@i_tasa_asociada" dataType="char" direction="in" />
+    <parameter name="@i_empleado" dataType="int" direction="in" />
+    <parameter name="@i_cancelar" dataType="char" direction="in" />
+    <parameter name="@i_nombre_empleado" dataType="varchar" direction="in" />
+    <parameter name="@i_formato_fecha" dataType="tinyint" direction="in" />
+    <parameter name="@i_en_linea" dataType="char" direction="in" />
+    <parameter name="@i_desde_VISA" dataType="char" direction="in" />
+    <parameter name="@i_tipo_tr" dataType="char" direction="in" />
+  </parameters>
+  <queries>
+    <query>
+      <columns>
+        <column name="61816" />
+        <column name="61217" />
+        <column name="61218" />
+        <column name="61819" />
+        <column name="61820" />
+        <column name="61821" />
+        <column name="61822" />
+        <column name="61823" />
+        <column name="61824" />
+        <column name="61825" />
+        <column name="61826" />
+        <column name="61827" />
+        <column name="61828" />
+        <column name="60058" />
+        <column name="DES" />
+        <column name="TRN" />
+        <column name="83974" />
+        <column name="94078" />
+        <column name="94079" />
+        <column name="94080" />
+        <column name="94081" />
+      </columns>
+      <queryText>SELECT "61816"=w_oficina,"61217"=w_cliente,"61218"=w_cli_nombre,"61819"=ctx.convertString(w_fecha_vto ,i_formato_fecha),"61820"=w_monto,"61821"=w_utilizado,"61822"=w_moneda,"61823"=w_desc_mondea,"61824"=w_rotativa,"61825"=ctx.convertString(w_fecha_contrato ,i_formato_fecha),"61826"=w_tramite,"61827"=w_contabiliza,"61828"=w_tipo_linea,"60058"=w_estado + "-" + w_des_estado,"DES"=w_desembolso,"TRN"=w_trn_aut,"83974"=w_tasa_asociada,"94078"=w_disp_fond,"94079"=w_clau_lim,"94080"=w_seg_sem,"94081"=ctx.convertString(w_fec_seg ,i_formato_fecha)</queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="61816" />
+        <column name="61817" />
+        <column name="61818" />
+        <column name="61819" />
+        <column name="61820" />
+        <column name="61821" />
+        <column name="61822" />
+        <column name="61823" />
+        <column name="61824" />
+        <column name="61825" />
+        <column name="61826" />
+        <column name="61827" />
+        <column name="61828" />
+        <column name="60058" />
+        <column name="DES" />
+        <column name="TRN" />
+        <column name="83974" />
+        <column name="94078" />
+        <column name="94079" />
+        <column name="94080" />
+        <column name="94081" />
+      </columns>
+      <queryText>SELECT "61816"=w_oficina,"61817"=w_grupo,"61818"=w_gru_nombre,"61819"=ctx.convertString(w_fecha_vto ,i_formato_fecha),"61820"=w_monto,"61821"=w_utilizado,"61822"=w_moneda,"61823"=w_desc_mondea,"61824"=w_rotativa,"61825"=ctx.convertString(w_fecha_contrato ,i_formato_fecha),"61826"=w_tramite,"61827"=w_contabiliza,"61828"=w_tipo_linea,"60058"=w_estado + "-" + w_des_estado,"DES"=w_desembolso,"TRN"=w_trn_aut,"83974"=w_tasa_asociada,"94078"=w_disp_fond,"94079"=w_clau_lim,"94080"=w_seg_sem,"94081"=ctx.convertString(w_fec_seg ,i_formato_fecha)</queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="{1}" />
+      </columns>
+      <queryText>SELECT o_numero</queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="{1}" />
+      </columns>
+      <queryText>SELECT  li_num_banco </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="{1}" />
+      </columns>
+      <queryText>SELECT  li_num_banco </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="{1}" />
+      </columns>
+      <queryText>SELECT w_crea</queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="{1}" />
+      </columns>
+      <queryText>SELECT w_crea</queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="{1}" />
+        <column name="{2}" />
+        <column name="{3}" />
+        <column name="{4}" />
+        <column name="{5}" />
+        <column name="{6}" />
+        <column name="{7}" />
+        <column name="{8}" />
+        <column name="{9}" />
+        <column name="{10}" />
+      </columns>
+      <queryText>SELECT w_num_banco, w_dias, w_monto, w_rotativa, w_fecha_inicio, w_fecha_vto, w_moneda, w_desc_moneda, w_contabiliza, w_tvisa</queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="61834" />
+        <column name="61835" />
+        <column name="61816" />
+        <column name="61836" />
+        <column name="61837" />
+        <column name="61838" />
+        <column name="61839" />
+        <column name="61817" />
+        <column name="61840" />
+        <column name="61841" />
+        <column name="61842" />
+        <column name="61843" />
+        <column name="61844" />
+        <column name="61845" />
+        <column name="61846" />
+        <column name="61847" />
+        <column name="61848" />
+        <column name="61849" />
+        <column name="61850" />
+        <column name="61851" />
+        <column name="61852" />
+        <column name="61820" />
+        <column name="61822" />
+        <column name="61853" />
+        <column name="61854" />
+        <column name="61824" />
+        <column name="61825" />
+        <column name="61855" />
+        <column name="61856" />
+        <column name="61857" />
+        <column name="61858" />
+        <column name="61859" />
+        <column name="61860" />
+        <column name="61861" />
+        <column name="61862" />
+        <column name="61863" />
+        <column name="61864" />
+        <column name="61865" />
+        <column name="61866" />
+        <column name="61867" />
+        <column name="61827" />
+        <column name="61868" />
+        <column name="61828" />
+        <column name="62425" />
+        <column name="61365" />
+        <column name="61562" />
+        <column name="61157" />
+        <column name="62416" />
+        <column name="62012" />
+        <column name="62419" />
+        <column name="62426" />
+        <column name="62424" />
+        <column name="83974" />
+        <column name="84012" />
+        <column name="82959" />
+        <column name="62420" />
+        <column name="84034" />
+        <column name="80923" />
+        <column name="84013" />
+        <column name="500261" />
+        <column name="210791" />
+        <column name="94078" />
+        <column name="94079" />
+        <column name="94080" />
+        <column name="94081" />
+        <column name="cuotaMaxima" />
+        <column name="cuotaMaximaLinea" />
+        <column name="sumaCuota" />
+        <column name="estadoBloque" />
+        <column name="motivo" />
+        <column name="saldoDisponible" />
+      </columns>
+      <queryText>SELECT "61834"=w_numero,"61835"=w_num_banco,"61816"=w_oficina,"61836"=w_desc_oficina,"61837"=w_tramite,"61838"=w_cliente,"61839"=w_cli_nombre,"61817"=w_grupo,"61840"=w_gru_nombre,"61841"=w_original,"61842"=ctx.convertString(w_fecha_aprob ,i_formato_fecha),"61843"=ctx.convertString(w_fecha_inicio ,i_formato_fecha),"61844"=w_per_revision,"61845"=w_dias,"61846"=w_condicion,"61847"=ctx.convertString(w_ultima_rev ,i_formato_fecha),"61848"=ctx.convertString(w_prox_rev ,i_formato_fecha),"61849"=w_usuario_rev,"61850"=w_nombre_rev,"61851"=ctx.convertString(w_fecha_vto ,i_formato_fecha),"61852"=w_desc_per_revision,"61820"=w_monto,"61822"=w_moneda,"61853"=w_desc_moneda,"61854"=w_utilizado,"61824"=w_rotativa,"61825"=ctx.convertString(w_fecha_contrato ,i_formato_fecha),"61855"=w_oficial,"61856"=w_nom_oficial,"61857"=w_destino_fondos,"61858"=w_comision_tramite,"61859"=w_subsidio,"61860"=w_tasa_aplicar,"61861"=w_tasa_efectiva,"61862"=w_plazo_desembolso,"61863"=w_forma_pago,"61864"=w_plazo_vigencia,"61865"=w_origenfondos,"61866"=w_formalizacion,"61867"=w_cuenta_corrientelc,"61827"=w_contabiliza,"61868"=w_tvisa,"61828"=w_tipo_linea,"62425"=w_plazo_dias_pago,"61365"=w_sector,"61562"=w_desc_sector,"61157"=w_subtipo + "-" + w_des_subtipo,"62416"=w_tipo_tarjeta + "-" + w_des_tipo_tarjeta,"62012"=ctx.ISNULL(w_estado, "P") + "-" + ctx.ISNULL(w_des_estado, "PROPUESTA"),"62419"=w_acumulado_pro,"62426"=w_comision_valor,"62424"=w_destino + "-" + w_des_destino,"83974"=w_tasa_asociada,"84012"=w_empleado,"82959"=w_nombre_empleado,"62420"=w_fecha_valor,"84034"=w_nro_prorroga,"80923"=w_nro_modifica,"84013"=w_nom_empleado_cia,"500261"=w_montoml,"210791"=w_cotiza,"94078"=w_disp_fond,"94079"=w_clau_lim,"94080"=w_seg_sem,"94081"=ctx.convertString(w_fec_seg ,i_formato_fecha)</queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="{1}" />
+        <column name="{2}" />
+        <column name="{3}" />
+        <column name="{4}" />
+        <column name="{5}" />
+        <column name="{6}" />
+        <column name="{7}" />
+        <column name="{8}" />
+        <column name="{9}" />
+        <column name="{10}" />
+        <column name="{11}" />
+        <column name="{12}" />
+        <column name="{13}" />
+        <column name="{14}" />
+        <column name="{15}" />
+        <column name="{16}" />
+        <column name="{17}" />
+        <column name="{18}" />
+        <column name="{19}" />
+        <column name="{20}" />
+        <column name="{21}" />
+        <column name="{22}" />
+        <column name="{23}" />
+        <column name="{24}" />
+        <column name="{25}" />
+        <column name="{26}" />
+        <column name="{27}" />
+        <column name="{28}" />
+        <column name="{29}" />
+      </columns>
+      <queryText>SELECT w_numero, w_num_banco, w_dias, w_estado, w_plazo_dias_pago, w_monto, w_tasa_calc, w_tplazo, w_proposito, w_tasa_desem, w_monto_desem, w_cuenta_corrientelc, w_descrip, ctx.convertString(w_fecha_vto ,i_formato_fecha), w_monto_cca_vig_lc, w_opera_vig_lc, w_opera_can_lc, w_utilizado, w_disponible, w_cex_fin_lc, w_otros, w_monto_del_desembolso, w_cartas_cex_v_lc, w_otros_cex_v_lc, w_disponible, w_no_aprobados, w_tiene_feci, w_sobregiros_oca_dos, w_otros_cancelados_dos</queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="ID" />
+        <column name="LINEA" />
+        <column name="MONTO" />
+        <column name="UTILIZADO" />
+        <column name="DISPONIBLE" />
+        <column name="MONEDA" />
+        <column name="DESCRIPCION" />
+      </columns>
+      <queryText></queryText>
+    </query>
+  </queries>
+</procedure>

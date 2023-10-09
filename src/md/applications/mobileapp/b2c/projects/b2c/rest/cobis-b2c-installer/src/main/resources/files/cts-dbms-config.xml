@@ -1,0 +1,69 @@
+<config>
+  <serviceProviders>
+    <serviceProvider name="Pool">com.cobiscorp.cobis.commons.db.impl.COBISPool</serviceProvider>
+    <serviceProvider name="DataSource">com.cobiscorp.cobis.commons.db.impl.COBISDataSource</serviceProvider>
+  </serviceProviders>
+  <dbms-types>
+    <dbms-type>Sybase</dbms-type>
+    <dbms-type>Sql</dbms-type>
+  </dbms-types>
+  <dbms name="SYBCTS" version="12.5">
+    <separator>..</separator>
+    <type>Sql</type>
+    <data-source>
+      <jndi>jdbc/CTS_BDD_MF</jndi>
+    </data-source>
+    <available-at-startup>true</available-at-startup>
+    <connection-pool>
+      <driver>com.microsoft.sqlserver.jdbc.SQLServerDriver</driver>
+      <url>jdbc:sqlserver://192.168.66.108:1433;databasename=cobis</url>
+      <authentication-alias>Sql.algncon</authentication-alias>
+      <initial-connections>1</initial-connections>
+      <max-connections>20</max-connections>
+    </connection-pool>
+  </dbms>
+    <dbms name="SQLCTS" version="12.5">
+    <separator>..</separator>
+    <type>Sql</type>
+    <data-source>
+      <jndi>jdbc/CTS_BDD_MF</jndi>
+    </data-source>
+    <available-at-startup>true</available-at-startup>
+    <connection-pool>
+      <driver>com.microsoft.sqlserver.jdbc.SQLServerDriver</driver>
+      <url>jdbc:sqlserver://192.168.66.108:1433;databasename=cobis</url>
+      <authentication-alias>Sql.algncon</authentication-alias>
+      <initial-connections>1</initial-connections>
+      <max-connections>20</max-connections>
+    </connection-pool>
+  </dbms>
+  <dbms name="SYBCIS" version="12.5">
+    <separator>..</separator>
+    <type>Sql</type>
+    <data-source>
+      <jndi>jdbc/CSP_BDD</jndi>
+    </data-source>
+    <available-at-startup>true</available-at-startup>
+    <connection-pool>
+      <driver>com.microsoft.sqlserver.jdbc.SQLServerDriver</driver>
+      <url>jdbc:sqlserver://192.168.66.108:1433;databasename=cobis</url>
+      <authentication-alias>Sql.algncon</authentication-alias>
+      <initial-connections>1</initial-connections>
+      <max-connections>20</max-connections>
+    </connection-pool>
+  </dbms>
+  <dbms name="DBMSIEN" version="11.0">
+    <separator>..</separator>
+    <type>Sql</type>
+    <data-source>
+      <jndi>jdbc/IEN_BDD_CENTRAL</jndi>
+    </data-source>
+    <connection-pool>
+      <driver>com.sybase.jdbc3.jdbc.SybConnectionPoolDataSource</driver>
+      <url>jdbc:sybase:Tds:192.168.66.108:1433/cobis</url>
+      <authentication-alias>Syb.algncon</authentication-alias>
+      <initial-connections>1</initial-connections>
+      <max-connections>20</max-connections>
+    </connection-pool>
+  </dbms>
+</config>

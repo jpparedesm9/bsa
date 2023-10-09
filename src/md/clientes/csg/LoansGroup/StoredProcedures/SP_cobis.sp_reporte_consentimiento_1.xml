@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<procedure>
+  <database>cobis</database>
+  <name>sp_reporte_consentimiento</name>
+  <type>SYBASE</type>
+  <version>1</version>
+  <parameters>
+    <parameter name="@s_ssn" dataType="int" direction="in" />
+    <parameter name="@s_user" dataType="varchar" direction="in" />
+    <parameter name="@s_term" dataType="varchar" direction="in" />
+    <parameter name="@s_date" dataType="datetime" direction="in" />
+    <parameter name="@s_sesn" dataType="int" direction="in" />
+    <parameter name="@s_culture" dataType="varchar" direction="in" />
+    <parameter name="@s_srv" dataType="varchar" direction="in" />
+    <parameter name="@s_lsrv" dataType="varchar" direction="in" />
+    <parameter name="@s_ofi" dataType="smallint" direction="in" />
+    <parameter name="@s_rol" dataType="smallint" direction="in" />
+    <parameter name="@s_org_err" dataType="char" direction="in" />
+    <parameter name="@s_error" dataType="int" direction="in" />
+    <parameter name="@s_sev" dataType="tinyint" direction="in" />
+    <parameter name="@s_msg" dataType="varchar" direction="in" />
+    <parameter name="@s_org" dataType="char" direction="in" />
+    <parameter name="@t_debug" dataType="char" direction="in" />
+    <parameter name="@t_file" dataType="varchar" direction="in" />
+    <parameter name="@t_from" dataType="varchar" direction="in" />
+    <parameter name="@t_trn" dataType="int" direction="in" />
+    <parameter name="@t_show_version" dataType="bit" direction="in" />
+    <parameter name="@i_tramite" dataType="int" direction="in" />
+    <parameter name="@i_operacion" dataType="char" direction="in" />
+    <parameter name="@i_nem_reporte" dataType="varchar" direction="in" />
+  </parameters>
+  <queries>
+    <query>
+      <columns>
+        <column name="poliza" />
+        <column name="nroCertificado" />
+        <column name="nombre" />
+        <column name="fechaNacimiento" />
+        <column name="direccion" />
+        <column name="rfc" />
+        <column name="diaInicio" />
+        <column name="mesInicio" />
+        <column name="anioInicio" />
+        <column name="diaFin" />
+        <column name="mesFin" />
+        <column name="anioFin" />
+        <column name="dia" />
+        <column name="mes" />
+        <column name="anio" />
+        <column name="inicioVigencia" />
+        <column name="terminoVigencia" />
+        <column name="costoSeguro" />
+        <column name="nroCuenta" />
+        <column name="temporality" />
+      </columns>
+      <queryText>SELECT  "poliza" = "SCV-10060-","nroCertificado" = "123456","nombre" = UPPER (ISNULL (en_nombre, "") + " " + ISNULL (p_s_nombre, "") + " " + ISNULL (p_p_apellido, "") + " " + ISNULL (p_s_apellido, "")),"fechaNacimiento" = CONVERT (VARCHAR (10),p_fecha_nac ,103),"direccion" = "DD","rfc" = en_nit,"diaInicio" = "24","mesInicio" = "05","anioInicio" = "2017","diaFin" = "25","mesFin" = "12","anioFin" = "2018","dia" = fp_fecha,"mes" = fp_fecha,"anio" = fp_fecha </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="poliza" />
+        <column name="nroCertificado" />
+        <column name="nombre" />
+        <column name="fechaNacimiento" />
+        <column name="direccion" />
+        <column name="rfc" />
+        <column name="diaInicio" />
+        <column name="mesInicio" />
+        <column name="anioInicio" />
+        <column name="diaFin" />
+        <column name="mesFin" />
+        <column name="anioFin" />
+        <column name="dia" />
+        <column name="mes" />
+        <column name="anio" />
+        <column name="inicioVigencia" />
+        <column name="terminoVigencia" />
+        <column name="costoSeguro" />
+        <column name="nroCuenta" />
+        <column name="temporality" />
+      </columns>
+      <queryText>SELECT  "poliza" = "SCV-10060-","nroCertificado" = "123456","nombre" = UPPER (ISNULL (en_nombre, "") + " " + ISNULL (p_s_nombre, "") + " " + ISNULL (p_p_apellido, "") + " " + ISNULL (p_s_apellido, "")),"fechaNacimiento" = CONVERT (VARCHAR (10),p_fecha_nac ,103),"direccion" = "DD","rfc" = en_nit,"diaInicio" = "24","mesInicio" = "05","anioInicio" = "2017","diaFin" = "25","mesFin" = "12","anioFin" = "2018","dia" = fp_fecha,"mes" = fp_fecha,"anio" = fp_fecha </queryText>
+    </query>
+  </queries>
+</procedure>

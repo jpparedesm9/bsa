@@ -1,0 +1,69 @@
+<project 
+  xmlns="http://maven.apache.org/POM/4.0.0" 
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.cobiscorp.cobiscloud</groupId>
+  <artifactId>cobis-cobiscloud-parent</artifactId>
+  <version>1.0.0</version>
+  <packaging>pom</packaging>
+  <properties>
+    <skip.obfuscation>true</skip.obfuscation>
+    <junit.version>4.12</junit.version>
+    <!-- <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>-->
+    <version.project>${project.version}</version.project>
+    <pmd.fail.on.violation>false</pmd.fail.on.violation>
+    <findbugs.fail.on.violation>false</findbugs.fail.on.violation>
+  </properties>
+  <dependencies>
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>${junit.version}</version>
+      <scope>test</scope>
+    </dependency>
+  </dependencies>
+  <parent>
+    <groupId>com.cobiscorp.cobis</groupId>
+    <artifactId>cobis-app-parent</artifactId>
+    <version>1.1.0</version>
+  </parent>
+  <description>parent project to set all dependencies and versions for mainstreet product</description>
+  <distributionManagement>
+    <repository>
+      <id>BSA-Maven-Development</id>
+      <name>BSA-Maven-Development</name>
+      <url>http://repolib.cobiscorp.com:8081/nexus/content/repositories/bsa-mvn-dev/</url>
+    </repository>
+    <snapshotRepository>
+      <id>cobiscloud-snapshots-deploy</id>
+      <name>cobiscloud-snapshots-deploy</name>
+      <url>http://mavenrepo-1579979608.us-east-1.elb.amazonaws.com/nexus/content/repositories/cobiscloud-snapshots/</url>
+    </snapshotRepository>
+  </distributionManagement>
+
+
+  <profiles>
+    <profile>
+      <id>env-amazon</id>
+      <activation>
+        <property>
+          <name>environment</name>
+          <value>amazon</value>
+        </property>
+      </activation>
+      <distributionManagement>
+        <repository>
+          <id>mainstreet-deploy</id>
+          <name>mainstreet-deploy</name>
+            <url>http://mavenrepo-1579979608.us-east-1.elb.amazonaws.com/nexus/content/repositories/mainstreet/</url>
+        </repository>
+        <snapshotRepository>
+          <id>cobiscloud-snapshots-deploy</id>
+          <name>cobiscloud-snapshots-deploy</name>
+          <url>http://mavenrepo-1579979608.us-east-1.elb.amazonaws.com/nexus/content/repositories/cobiscloud-snapshots/</url>
+        </snapshotRepository>
+      </distributionManagement>
+
+    </profile>
+  </profiles>      
+</project>

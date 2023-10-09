@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:osgi="http://www.springframework.org/schema/osgi"
+	xmlns:aop="http://www.springframework.org/schema/aop" xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:jee="http://www.springframework.org/schema/jee" xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/osgi http://www.springframework.org/schema/osgi/spring-osgi.xsd
+		http://www.springframework.org/schema/jee http://www.springframework.org/schema/jee/spring-jee.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
+		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd">
+
+	<osgi:reference id="serviceIntegration"
+		interface="cobiscorp.ecobis.cts.integration.services.ICTSServiceIntegration" />
+		
+	<osgi:reference id="cacheManager"
+		interface="com.cobiscorp.cobis.cache.ICacheManager" />
+	    
+	<osgi:service ref="ContractInformationImpl"
+		interface="com.cobiscorp.ecobis.external.services.bl.IExternalService">
+		<osgi:service-properties>
+			<entry key="extservice.type" value="customerLinked" />
+		</osgi:service-properties>
+	</osgi:service>
+
+	<osgi:service ref="ContractInformationHisImpl"
+		interface="com.cobiscorp.ecobis.external.services.bl.IExternalService">
+		<osgi:service-properties>
+			<entry key="extservice.type" value="customerLinkedHis" />
+		</osgi:service-properties>
+	</osgi:service>
+
+	<osgi:service ref="CreditCardDebtsManagerImpl"
+		interface="com.cobiscorp.ecobis.external.services.bl.IExternalService">
+		<osgi:service-properties>
+			<entry key="extservice.type" value="creditCardDataDeudas" />
+		</osgi:service-properties>
+	</osgi:service>
+	<osgi:service ref="CreditCardContingentsManagerImpl"
+		interface="com.cobiscorp.ecobis.external.services.bl.IExternalService">
+		<osgi:service-properties>
+			<entry key="extservice.type" value="creditCardData" />
+		</osgi:service-properties>
+	</osgi:service>
+
+	<osgi:service ref="CreditCardHisManagerImpl"
+		interface="com.cobiscorp.ecobis.external.services.bl.IExternalService">
+		<osgi:service-properties>
+			<entry key="extservice.type" value="creditCardDataHis" />
+		</osgi:service-properties>
+	</osgi:service>
+
+	<osgi:service ref="DebitCardManagerImpl"
+		interface="com.cobiscorp.ecobis.external.services.bl.IExternalService">
+		<osgi:service-properties>
+			<entry key="extservice.type" value="debitCardData" />
+		</osgi:service-properties>
+	</osgi:service>
+
+	<osgi:service ref="DebitCardHisManagerImpl"
+		interface="com.cobiscorp.ecobis.external.services.bl.IExternalService">
+		<osgi:service-properties>
+			<entry key="extservice.type" value="debitCardDataHis" />
+		</osgi:service-properties>
+	</osgi:service>
+
+	<osgi:service ref="DraftManagerImpl"
+		interface="com.cobiscorp.ecobis.external.services.bl.IExternalService">
+		<osgi:service-properties>
+			<entry key="extservice.type" value="drafts" />
+		</osgi:service-properties>
+	</osgi:service>
+
+	<osgi:service ref="TransferenceManagerImpl"
+		interface="com.cobiscorp.ecobis.external.services.bl.IExternalService">
+		<osgi:service-properties>
+			<entry key="extservice.type" value="transfers" />
+		</osgi:service-properties>
+	</osgi:service>
+
+	<osgi:service ref="RemittancesManagerImpl"
+		interface="com.cobiscorp.ecobis.external.services.bl.IExternalService">
+		<osgi:service-properties>
+			<entry key="extservice.type" value="remittances" />
+		</osgi:service-properties>
+	</osgi:service>
+
+	<osgi:service ref="DraftInManagerImpl"
+		interface="com.cobiscorp.ecobis.external.services.bl.IExternalService">
+		<osgi:service-properties>
+			<entry key="extservice.type" value="draftsIn" />
+		</osgi:service-properties>
+	</osgi:service>
+
+
+
+</beans>

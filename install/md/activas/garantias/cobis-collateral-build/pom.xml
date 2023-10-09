@@ -1,0 +1,45 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.cobiscorp.ecobis</groupId>
+	<artifactId>cobis-collateral-build</artifactId>
+	<version>1.0.0</version>
+	<packaging>pom</packaging>
+	<name>${project.artifactId}</name>
+	<url>http://www.cobiscorp.com/</url>
+
+	<profiles>
+		<profile>
+			<id>env-development</id>
+			<activation>
+				<activeByDefault>true</activeByDefault>
+			</activation>
+			<modules>
+				<module>../../../source/frontend/web/commons/wrrnt.commons</module>
+				<module>../../../source/frontend/web/commons/wrrnt.domains</module>		
+				<module>../../../source/frontend/web/events/wrrnt.mntnn.changevalue.services</module>
+				<module>../../../source/frontend/web/events/wrrnt.mntnn.liberation.services</module>
+				<module>../../../source/frontend/web/events/wrrnt.mntnn.changevalue.customevents</module>
+				<module>../../../source/frontend/web/events/wrrnt.mntnn.liberation.customevents</module>
+				<module>../../../source/middleware/services/cobis-collateral-web-service</module>
+				<module>../../../source/frontend/web/views/cobis-collateral-views</module>
+				<module>../cobis-collateral-installer</module>
+			</modules>
+		</profile>
+		<profile>
+			<id>env-hardening</id>
+			<modules>
+				<module>../../../source/frontend/web/commons/wrrnt.commons</module>
+				<module>../../../source/frontend/web/commons/wrrnt.domains</module>		
+				<module>../../../source/frontend/web/events/wrrnt.mntnn.changevalue.services</module>
+				<module>../../../source/frontend/web/events/wrrnt.mntnn.liberation.services</module>
+				<module>../../../source/frontend/web/events/wrrnt.mntnn.changevalue.customevents</module>
+				<module>../../../source/frontend/web/events/wrrnt.mntnn.liberation.customevents</module>
+				<module>../../../source/middleware/services/cobis-collateral-web-service</module>
+				<module>../../../source/frontend/web/views/cobis-collateral-views</module>
+				<module>../cobis-collateral-installer</module>
+			</modules>
+		</profile>
+	</profiles>
+
+</project>

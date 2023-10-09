@@ -1,0 +1,1057 @@
+{
+  "id": {
+    "moduleId": "BUSIN",
+    "subModuleId": "commons",
+    "taskId": "T_VW_DISURMETFR51",
+    "version": "1.0.0"
+  },
+  "name": {
+    "$ref": "../../../../BUSIN/relations/componentKeys.json#/commons/Forms/T_VW_DISURMETFR51/name"
+  },
+  "modeEnabled": 4095,
+  "tempSaveStr": "F",
+  "autoCrudStr": "F",
+  "mainViewContainerId": "VC_VW_DISURMETFR51",
+  "customizationLayer": 0,
+  "customizationLayerDescription": "ECU",
+  "viewContainers": [
+    {
+      "id": {
+        "moduleId": "BUSIN",
+        "subModuleId": "commons",
+        "taskId": "T_VW_DISURMETFR51",
+        "viewContainerId": "VC_VW_DISURMETFR51",
+        "taskVersion": "1.0.0"
+      },
+      "name": "F_DisbursementForms",
+      "description": " ",
+      "layoutType": "Group",
+      "order": 0,
+      "options": 0,
+      "collapsedStr": "F",
+      "enabled": 4095,
+      "customizationLayer": 0,
+      "customizationLayerDescription": "ECU",
+      "columnsNum": 1,
+      "colSpan": 1,
+      "collapsed": false,
+      "view": {
+        "id": {
+          "viewId": "VW_DISURMETFR51",
+          "version": "1.0.0"
+        },
+        "description": " ",
+        "name": "DisbursementForms",
+        "customizationLayer": 0,
+        "customizationLayerDescription": "ECU",
+        "groups": [
+          {
+            "groupId": "GR_DISURMETFR51_05",
+            "refViewId": "VW_DISURMETFR51",
+            "refViewVersion": "1.0.0",
+            "collapsedStr": "F",
+            "columnsNum": 1,
+            "layoutType": "GroupLayout",
+            "enabled": 4095,
+            "visible": 4095,
+            "name": "Contenedor Plegable",
+            "order": 0,
+            "customizationLayer": 0,
+            "customizationLayerDescription": "ECU",
+            "colSpan": 1,
+            "orientation": "V",
+            "groups": [
+              {
+                "groupId": "GR_DISURMETFR51_06",
+                "refViewId": "VW_DISURMETFR51",
+                "refViewVersion": "1.0.0",
+                "collapsedStr": "F",
+                "columnsNum": 4,
+                "layoutType": "Group",
+                "enabled": 4095,
+                "visible": 4095,
+                "name": "Panel Plegable para LoanHeader",
+                "order": 0,
+                "customizationLayer": 0,
+                "customizationLayerDescription": "ECU",
+                "colSpan": 1,
+                "orientation": "V",
+                "entity": {
+                  "$ref": "../../../../BUSIN/entities/EN_LONHEADER746.json#"
+                },
+                "visualAttributes": [
+                  {
+                    "visualAttributeId": "VA_DISURMETFR5106_ATBS301",
+                    "colSpan": 1,
+                    "enabled": 0,
+                    "order": 0,
+                    "queryVersion": " ",
+                    "readOnly": 4095,
+                    "rowSpan": 0,
+                    "visible": 4095,
+                    "textRows": 0,
+                    "name": "ValuetoDisburse",
+                    "customizationLayer": 0,
+                    "customizationLayerDescription": "ECU",
+                    "attribute": {
+                      "$ref": "../../../../BUSIN/entities/EN_LONHEADER746.json#/attributes/AT_LON746ATBS57"
+                    },
+                    "label": {
+                      "labelId": "DLB_BUSIN_AUETOIBUS_17766",
+                      "defaultValue": {
+                        "$ref": "../../../../BUSIN/assets/languages/BUSIN.json#/BUSIN/LBL/DLB_BUSIN_AUETOIBUS_17766"
+                      },
+                      "hasI18N": true,
+                      "moduleId": "BUSIN",
+                      "customizationLayer": 0,
+                      "customizationLayerDescription": "ECU",
+                      "i18N": "T"
+                    },
+                    "userControl": {
+                      "userControlId": "TextInputBox",
+                      "description": "Designer TextBox",
+                      "customizationLayer": 0,
+                      "customizationLayerDescription": "ECU",
+                      "type": "I",
+                      "name": "Designer TextBox"
+                    },
+                    "cacheDuration": 0,
+                    "options": 0,
+                    "elementColumnSpan": 1,
+                    "elementId": "VA_DISURMETFR5106_ATBS301",
+                    "customEvents": [],
+                    "aggregateId": null,
+                    "aggregate": null,
+                    "width": null,
+                    "style": null,
+                    "componentStyle": null,
+                    "include": 4095,
+                    "responsiveLayouts": null,
+                    "responsivity": false,
+                    "attributeValidations": []
+                  },
+                  {
+                    "visualAttributeId": "VA_DISURMETFR5106_BAIO644",
+                    "colSpan": 1,
+                    "enabled": 0,
+                    "order": 1,
+                    "queryVersion": " ",
+                    "readOnly": 4095,
+                    "rowSpan": 0,
+                    "visible": 4095,
+                    "textRows": 0,
+                    "name": "BalanceOperation",
+                    "customizationLayer": 0,
+                    "customizationLayerDescription": "ECU",
+                    "attribute": {
+                      "$ref": "../../../../BUSIN/entities/EN_LONHEADER746.json#/attributes/AT_LON746BAIO42"
+                    },
+                    "label": {
+                      "labelId": "DLB_BUSIN_BANERATIN_11128",
+                      "defaultValue": {
+                        "$ref": "../../../../BUSIN/assets/languages/BUSIN.json#/BUSIN/LBL/DLB_BUSIN_BANERATIN_11128"
+                      },
+                      "hasI18N": true,
+                      "moduleId": "BUSIN",
+                      "customizationLayer": 0,
+                      "customizationLayerDescription": "ECU",
+                      "i18N": "T"
+                    },
+                    "userControl": {
+                      "userControlId": "TextInputBox",
+                      "description": "Designer TextBox",
+                      "customizationLayer": 0,
+                      "customizationLayerDescription": "ECU",
+                      "type": "I",
+                      "name": "Designer TextBox"
+                    },
+                    "customEvents": [
+                      {
+                        "executionType": 1,
+                        "customEventId": "CEVA_104_TFR5106_BAIO644_849",
+                        "enabled": "T",
+                        "customizationLayer": 0,
+                        "customizationLayerDescription": "ECU",
+                        "visualAttributeEventType": {
+                          "eventId": 104,
+                          "name": "Changed",
+                          "description": "Se ejecuta al cambiar el valor de un VisualAttribute"
+                        },
+                        "thereAnServerEvent": false,
+                        "thereAnClientEvent": true,
+                        "thereAnCallbackEvent": false,
+                        "isEnabled": true
+                      }
+                    ],
+                    "cacheDuration": 0,
+                    "options": 0,
+                    "elementColumnSpan": 1,
+                    "elementId": "VA_DISURMETFR5106_BAIO644",
+                    "aggregateId": null,
+                    "aggregate": null,
+                    "width": null,
+                    "style": null,
+                    "componentStyle": null,
+                    "include": 4095,
+                    "responsiveLayouts": null,
+                    "responsivity": false,
+                    "attributeValidations": []
+                  }
+                ],
+                "independentValidation": "F",
+                "htmlSection": false,
+                "eventType": 0,
+                "numberOfColumnsInContainer": 4,
+                "elementColumnSpan": 1,
+                "collapsed": false,
+                "elementId": "GR_DISURMETFR51_06",
+                "style": null,
+                "customEvents": []
+              },
+              {
+                "groupId": "GR_DISURMETFR51_07",
+                "refViewId": "VW_DISURMETFR51",
+                "refViewVersion": "1.0.0",
+                "collapsedStr": "T",
+                "columnsNum": 2,
+                "layoutType": "Group",
+                "enabled": 4095,
+                "visible": 4095,
+                "name": "Panel Plegable para DetailLiquidateValues",
+                "order": 1,
+                "customizationLayer": 0,
+                "customizationLayerDescription": "ECU",
+                "queryView": {
+                  "queryViewId": "QV_TDLIA9011_50",
+                  "deleteCommandEnabledStr": "F",
+                  "insertCommandEnabledStr": "F",
+                  "editCommandEnabledStr": "F",
+                  "confirmRowDeletionStr": "F",
+                  "multiSelectEnabledStr": "S",
+                  "rowCommandAppearance": 0,
+                  "allowSortingStr": "F",
+                  "allowPagingStr": "F",
+                  "name": "GridDetailLiquidateValues",
+                  "customizationLayer": 0,
+                  "customizationLayerDescription": "ECU",
+                  "hasDetailString": "F",
+                  "hasDetail": false,
+                  "query": {
+                    "$ref": "../../../../BUSIN/FLCRE/queries/Q_TDLIAEAL_9011.json#"
+                  },
+                  "queryId": "Q_TDLIAEAL_9011",
+                  "queryVersion": "1.0.0",
+                  "userControl": {
+                    "userControlId": "Grid",
+                    "description": "Designer Grid",
+                    "customizationLayer": 0,
+                    "customizationLayerDescription": "ECU",
+                    "type": "I",
+                    "name": "Designer Grid"
+                  },
+                  "taskVersionDialog": "1.0.0",
+                  "queryViewCustomActions": [
+                    {
+                      "executionType": 1,
+                      "customActionId": "CEQV_208_QV_TDLIA9011_50_618",
+                      "enabled": "T",
+                      "name": "RowSelLiquidateValue",
+                      "customizationLayer": 0,
+                      "customizationLayerDescription": "ECU",
+                      "commandType": 0,
+                      "queryViewEventType": {
+                        "eventId": 208,
+                        "name": "RowSelecting",
+                        "description": "Se ejecuta antes de que los datos modificados en una grilla sean comprometidos."
+                      },
+                      "thereAnServerEvent": false,
+                      "thereAnClientEvent": true,
+                      "thereAnCallbackEvent": false
+                    }
+                  ],
+                  "deleteCommandEnabled": false,
+                  "insertCommandEnabled": false,
+                  "editCommandEnabled": false,
+                  "confirmRowDeletion": false,
+                  "allowSorting": false,
+                  "allowPaging": false,
+                  "includeQueryMembers": [
+                    "AT_ELQ522CONP15",
+                    "AT_ELQ522DCRI99",
+                    "AT_ELQ522VALU51",
+                    "AT_ELQ522SIGN15"
+                  ],
+                  "entityName": "DetailLiquidateValues",
+                  "customEvents": [],
+                  "actions": []
+                },
+                "queryViewId": "QV_TDLIA9011_50",
+                "colSpan": 1,
+                "orientation": "V",
+                "entity": {
+                  "$ref": "../../../../BUSIN/entities/EN_ELQUDATAU522.json#"
+                },
+                "titleLabel": {
+                  "labelId": "DLB_BUSIN_IUIDATEVS_67052",
+                  "defaultValue": {
+                    "$ref": "../../../../BUSIN/assets/languages/BUSIN.json#/BUSIN/LBL/DLB_BUSIN_IUIDATEVS_67052"
+                  },
+                  "hasI18N": true,
+                  "moduleId": "BUSIN",
+                  "customizationLayer": 0,
+                  "customizationLayerDescription": "ECU",
+                  "i18N": "T"
+                },
+                "visualAttributes": [
+                  {
+                    "visualAttributeId": "VA_DISURMETFR5107_CONP525",
+                    "colSpan": 1,
+                    "enabled": 4095,
+                    "order": 0,
+                    "queryVersion": " ",
+                    "readOnly": 8,
+                    "rowSpan": 0,
+                    "visible": 4095,
+                    "textRows": 0,
+                    "name": "Concept",
+                    "customizationLayer": 0,
+                    "customizationLayerDescription": "ECU",
+                    "attribute": {
+                      "$ref": "../../../../BUSIN/entities/EN_ELQUDATAU522.json#/attributes/AT_ELQ522CONP15"
+                    },
+                    "label": {
+                      "labelId": "DLB_BUSIN_CONCEPTIY_86172",
+                      "defaultValue": {
+                        "$ref": "../../../../BUSIN/assets/languages/BUSIN.json#/BUSIN/LBL/DLB_BUSIN_CONCEPTIY_86172"
+                      },
+                      "hasI18N": true,
+                      "moduleId": "BUSIN",
+                      "customizationLayer": 0,
+                      "customizationLayerDescription": "ECU",
+                      "i18N": "T"
+                    },
+                    "userControl": {
+                      "userControlId": "TextInputBox",
+                      "description": "Designer TextBox",
+                      "customizationLayer": 0,
+                      "customizationLayerDescription": "ECU",
+                      "type": "I",
+                      "name": "Designer TextBox"
+                    },
+                    "labelToolTip": {
+                      "labelId": "DLB_BUSIN_CONCEPTIY_86172",
+                      "defaultValue": {
+                        "$ref": "../../../../BUSIN/assets/languages/BUSIN.json#/BUSIN/LBL/DLB_BUSIN_CONCEPTIY_86172"
+                      },
+                      "hasI18N": true,
+                      "moduleId": "BUSIN",
+                      "customizationLayer": 0,
+                      "customizationLayerDescription": "ECU",
+                      "i18N": "T"
+                    },
+                    "cacheDuration": 0,
+                    "options": 0,
+                    "elementColumnSpan": 1,
+                    "elementId": "VA_DISURMETFR5107_CONP525",
+                    "customEvents": [],
+                    "aggregateId": null,
+                    "aggregate": null,
+                    "width": null,
+                    "style": null,
+                    "componentStyle": null,
+                    "include": 4095,
+                    "responsiveLayouts": null,
+                    "responsivity": false,
+                    "attributeValidations": []
+                  },
+                  {
+                    "visualAttributeId": "VA_DISURMETFR5107_DCRI085",
+                    "colSpan": 1,
+                    "enabled": 4095,
+                    "order": 1,
+                    "queryVersion": " ",
+                    "readOnly": 8,
+                    "rowSpan": 0,
+                    "visible": 4095,
+                    "textRows": 0,
+                    "name": "Description",
+                    "customizationLayer": 0,
+                    "customizationLayerDescription": "ECU",
+                    "attribute": {
+                      "$ref": "../../../../BUSIN/entities/EN_ELQUDATAU522.json#/attributes/AT_ELQ522DCRI99"
+                    },
+                    "label": {
+                      "labelId": "DLB_BUSIN_DESCRIPCI_06123",
+                      "defaultValue": {
+                        "$ref": "../../../../BUSIN/assets/languages/BUSIN.json#/BUSIN/LBL/DLB_BUSIN_DESCRIPCI_06123"
+                      },
+                      "hasI18N": true,
+                      "moduleId": "BUSIN",
+                      "customizationLayer": 0,
+                      "customizationLayerDescription": "ECU",
+                      "i18N": "T"
+                    },
+                    "userControl": {
+                      "userControlId": "TextInputBox",
+                      "description": "Designer TextBox",
+                      "customizationLayer": 0,
+                      "customizationLayerDescription": "ECU",
+                      "type": "I",
+                      "name": "Designer TextBox"
+                    },
+                    "labelToolTip": {
+                      "labelId": "DLB_BUSIN_DESCRIPCI_06123",
+                      "defaultValue": {
+                        "$ref": "../../../../BUSIN/assets/languages/BUSIN.json#/BUSIN/LBL/DLB_BUSIN_DESCRIPCI_06123"
+                      },
+                      "hasI18N": true,
+                      "moduleId": "BUSIN",
+                      "customizationLayer": 0,
+                      "customizationLayerDescription": "ECU",
+                      "i18N": "T"
+                    },
+                    "cacheDuration": 0,
+                    "options": 0,
+                    "elementColumnSpan": 1,
+                    "elementId": "VA_DISURMETFR5107_DCRI085",
+                    "customEvents": [],
+                    "aggregateId": null,
+                    "aggregate": null,
+                    "width": null,
+                    "style": null,
+                    "componentStyle": null,
+                    "include": 4095,
+                    "responsiveLayouts": null,
+                    "responsivity": false,
+                    "attributeValidations": []
+                  },
+                  {
+                    "visualAttributeId": "VA_DISURMETFR5107_VALU028",
+                    "colSpan": 1,
+                    "enabled": 4095,
+                    "format": "N:#,##0.00",
+                    "order": 2,
+                    "queryVersion": " ",
+                    "readOnly": 8,
+                    "rowSpan": 0,
+                    "visible": 4095,
+                    "textRows": 0,
+                    "name": "Value",
+                    "customizationLayer": 0,
+                    "customizationLayerDescription": "ECU",
+                    "attribute": {
+                      "$ref": "../../../../BUSIN/entities/EN_ELQUDATAU522.json#/attributes/AT_ELQ522VALU51"
+                    },
+                    "label": {
+                      "labelId": "DLB_BUSIN_VALOREYDC_15105",
+                      "defaultValue": {
+                        "$ref": "../../../../BUSIN/assets/languages/BUSIN.json#/BUSIN/LBL/DLB_BUSIN_VALOREYDC_15105"
+                      },
+                      "hasI18N": true,
+                      "moduleId": "BUSIN",
+                      "customizationLayer": 0,
+                      "customizationLayerDescription": "ECU",
+                      "i18N": "T"
+                    },
+                    "userControl": {
+                      "userControlId": "TextInputBox",
+                      "description": "Designer TextBox",
+                      "customizationLayer": 0,
+                      "customizationLayerDescription": "ECU",
+                      "type": "I",
+                      "name": "Designer TextBox"
+                    },
+                    "labelToolTip": {
+                      "labelId": "DLB_BUSIN_VALOREYDC_15105",
+                      "defaultValue": {
+                        "$ref": "../../../../BUSIN/assets/languages/BUSIN.json#/BUSIN/LBL/DLB_BUSIN_VALOREYDC_15105"
+                      },
+                      "hasI18N": true,
+                      "moduleId": "BUSIN",
+                      "customizationLayer": 0,
+                      "customizationLayerDescription": "ECU",
+                      "i18N": "T"
+                    },
+                    "cacheDuration": 0,
+                    "options": 0,
+                    "elementColumnSpan": 1,
+                    "elementId": "VA_DISURMETFR5107_VALU028",
+                    "customEvents": [],
+                    "aggregateId": null,
+                    "aggregate": null,
+                    "width": null,
+                    "style": null,
+                    "componentStyle": null,
+                    "include": 4095,
+                    "responsiveLayouts": null,
+                    "responsivity": false,
+                    "attributeValidations": []
+                  },
+                  {
+                    "visualAttributeId": "VA_DISURMETFR5107_SIGN810",
+                    "colSpan": 1,
+                    "enabled": 4095,
+                    "order": 3,
+                    "queryVersion": " ",
+                    "readOnly": 8,
+                    "rowSpan": 0,
+                    "visible": 4095,
+                    "textRows": 0,
+                    "name": "Sign",
+                    "customizationLayer": 0,
+                    "customizationLayerDescription": "ECU",
+                    "attribute": {
+                      "$ref": "../../../../BUSIN/entities/EN_ELQUDATAU522.json#/attributes/AT_ELQ522SIGN15"
+                    },
+                    "label": {
+                      "labelId": "DLB_BUSIN_SIGNOPGTS_91531",
+                      "defaultValue": {
+                        "$ref": "../../../../BUSIN/assets/languages/BUSIN.json#/BUSIN/LBL/DLB_BUSIN_SIGNOPGTS_91531"
+                      },
+                      "hasI18N": true,
+                      "moduleId": "BUSIN",
+                      "customizationLayer": 0,
+                      "customizationLayerDescription": "ECU",
+                      "i18N": "T"
+                    },
+                    "userControl": {
+                      "userControlId": "TextInputBox",
+                      "description": "Designer TextBox",
+                      "customizationLayer": 0,
+                      "customizationLayerDescription": "ECU",
+                      "type": "I",
+                      "name": "Designer TextBox"
+                    },
+                    "labelToolTip": {
+                      "labelId": "DLB_BUSIN_SIGNOPGTS_91531",
+                      "defaultValue": {
+                        "$ref": "../../../../BUSIN/assets/languages/BUSIN.json#/BUSIN/LBL/DLB_BUSIN_SIGNOPGTS_91531"
+                      },
+                      "hasI18N": true,
+                      "moduleId": "BUSIN",
+                      "customizationLayer": 0,
+                      "customizationLayerDescription": "ECU",
+                      "i18N": "T"
+                    },
+                    "cacheDuration": 0,
+                    "options": 0,
+                    "elementColumnSpan": 1,
+                    "elementId": "VA_DISURMETFR5107_SIGN810",
+                    "customEvents": [],
+                    "aggregateId": null,
+                    "aggregate": null,
+                    "width": null,
+                    "style": null,
+                    "componentStyle": null,
+                    "include": 4095,
+                    "responsiveLayouts": null,
+                    "responsivity": false,
+                    "attributeValidations": []
+                  }
+                ],
+                "independentValidation": "F",
+                "htmlSection": false,
+                "eventType": 0,
+                "numberOfColumnsInContainer": 2,
+                "elementColumnSpan": 1,
+                "collapsed": true,
+                "elementId": "GR_DISURMETFR51_07",
+                "style": null,
+                "customEvents": []
+              },
+              {
+                "groupId": "GR_DISURMETFR51_08",
+                "refViewId": "VW_DISURMETFR51",
+                "refViewVersion": "1.0.0",
+                "collapsedStr": "T",
+                "columnsNum": 2,
+                "layoutType": "Group",
+                "enabled": 4095,
+                "visible": 4095,
+                "name": "Panel Plegable para DisbursementDetail",
+                "order": 3,
+                "customizationLayer": 0,
+                "customizationLayerDescription": "ECU",
+                "queryView": {
+                  "queryViewId": "QV_TSRSE1342_26",
+                  "deleteCommandEnabledStr": "T",
+                  "insertCommandEnabledStr": "F",
+                  "editCommandEnabledStr": "F",
+                  "confirmRowDeletionStr": "T",
+                  "rowCommandAppearance": 0,
+                  "allowSortingStr": "F",
+                  "allowPagingStr": "F",
+                  "name": "GridDisbursementDetail",
+                  "customizationLayer": 0,
+                  "customizationLayerDescription": "ECU",
+                  "hasDetailString": "T",
+                  "options": 1,
+                  "hasDetail": true,
+                  "query": {
+                    "$ref": "../../../../BUSIN/FLCRE/queries/Q_TSRSEENL_1342.json#"
+                  },
+                  "queryId": "Q_TSRSEENL_1342",
+                  "queryVersion": "1.0.0",
+                  "userControl": {
+                    "userControlId": "Grid",
+                    "description": "Designer Grid",
+                    "customizationLayer": 0,
+                    "customizationLayerDescription": "ECU",
+                    "type": "I",
+                    "name": "Designer Grid"
+                  },
+                  "taskVersionDialog": "1.0.0",
+                  "queryViewCustomActions": [
+                    {
+                      "executionType": 1,
+                      "customActionId": "CEQV_204_QV_TSRSE1342_26_714",
+                      "enabled": "T",
+                      "name": "delete",
+                      "customizationLayer": 0,
+                      "customizationLayerDescription": "ECU",
+                      "commandType": 0,
+                      "queryViewEventType": {
+                        "eventId": 204,
+                        "name": "RowDeleting",
+                        "description": "Se ejecuta antes de que los datos eliminados en una grilla sean comprometidos."
+                      },
+                      "thereAnServerEvent": false,
+                      "thereAnClientEvent": true,
+                      "thereAnCallbackEvent": false
+                    },
+                    {
+                      "executionType": 1,
+                      "customActionId": "CEQV_201_QV_TSRSE1342_26_253",
+                      "enabled": "T",
+                      "name": "NewForm",
+                      "customizationLayer": 0,
+                      "customizationLayerDescription": "ECU",
+                      "commandName": "NewForm",
+                      "commandType": 0,
+                      "commandImageId": "glyphicon glyphicon-plus-sign",
+                      "userControl": {
+                        "userControlId": "Button",
+                        "description": "Designer Button",
+                        "customizationLayer": 0,
+                        "customizationLayerDescription": "ECU",
+                        "type": "A",
+                        "name": "Designer Button"
+                      },
+                      "label": {
+                        "labelId": "DLB_BUSIN_NUEVOOPAM_52575",
+                        "defaultValue": {
+                          "$ref": "../../../../BUSIN/assets/languages/BUSIN.json#/BUSIN/LBL/DLB_BUSIN_NUEVOOPAM_52575"
+                        },
+                        "hasI18N": true,
+                        "moduleId": "BUSIN",
+                        "customizationLayer": 0,
+                        "customizationLayerDescription": "ECU",
+                        "i18N": "T"
+                      },
+                      "queryViewEventType": {
+                        "eventId": 201,
+                        "name": "GridCommand",
+                        "description": "Evento para los botones de Grilla"
+                      },
+                      "thereAnServerEvent": false,
+                      "thereAnClientEvent": true,
+                      "thereAnCallbackEvent": false
+                    }
+                  ],
+                  "deleteCommandEnabled": true,
+                  "insertCommandEnabled": false,
+                  "editCommandEnabled": false,
+                  "confirmRowDeletion": true,
+                  "allowSorting": false,
+                  "allowPaging": false,
+                  "includeQueryMembers": [
+                    "AT_DBS924SUEN66",
+                    "AT_DBS924CNCY45",
+                    "AT_DBS924BSNT06",
+                    "AT_DBS924RUTE44",
+                    "AT_DBS924AUML51"
+                  ],
+                  "entityName": "DisbursementDetail",
+                  "customEvents": [
+                    {
+                      "executionType": 1,
+                      "queryViewEventType": {
+                        "name": "hasDetail",
+                        "eventId": 313,
+                        "description": "Evento de detalle de grilla",
+                        "availableExecutionType": 1
+                      }
+                    }
+                  ],
+                  "actions": [
+                    "Delete"
+                  ]
+                },
+                "queryViewId": "QV_TSRSE1342_26",
+                "colSpan": 1,
+                "orientation": "V",
+                "entity": {
+                  "$ref": "../../../../BUSIN/entities/EN_DBSMTDEAL924.json#"
+                },
+                "titleLabel": {
+                  "labelId": "DLB_BUSIN_DIBUNTEAI_55222",
+                  "defaultValue": {
+                    "$ref": "../../../../BUSIN/assets/languages/BUSIN.json#/BUSIN/LBL/DLB_BUSIN_DIBUNTEAI_55222"
+                  },
+                  "hasI18N": true,
+                  "moduleId": "BUSIN",
+                  "customizationLayer": 0,
+                  "customizationLayerDescription": "ECU",
+                  "i18N": "T"
+                },
+                "visualAttributes": [
+                  {
+                    "visualAttributeId": "VA_DISURMETFR5108_SUEN374",
+                    "colSpan": 1,
+                    "enabled": 4095,
+                    "order": 0,
+                    "queryVersion": " ",
+                    "readOnly": 8,
+                    "rowSpan": 0,
+                    "visible": 4095,
+                    "textRows": 0,
+                    "name": "DisbursementForm",
+                    "customizationLayer": 0,
+                    "customizationLayerDescription": "ECU",
+                    "attribute": {
+                      "$ref": "../../../../BUSIN/entities/EN_DBSMTDEAL924.json#/attributes/AT_DBS924SUEN66"
+                    },
+                    "label": {
+                      "labelId": "DLB_BUSIN_DISURENOR_61646",
+                      "defaultValue": {
+                        "$ref": "../../../../BUSIN/assets/languages/BUSIN.json#/BUSIN/LBL/DLB_BUSIN_DISURENOR_61646"
+                      },
+                      "hasI18N": true,
+                      "moduleId": "BUSIN",
+                      "customizationLayer": 0,
+                      "customizationLayerDescription": "ECU",
+                      "i18N": "T"
+                    },
+                    "userControl": {
+                      "userControlId": "TextInputBox",
+                      "description": "Designer TextBox",
+                      "customizationLayer": 0,
+                      "customizationLayerDescription": "ECU",
+                      "type": "I",
+                      "name": "Designer TextBox"
+                    },
+                    "labelToolTip": {
+                      "labelId": "DLB_BUSIN_DISURENOR_61646",
+                      "defaultValue": {
+                        "$ref": "../../../../BUSIN/assets/languages/BUSIN.json#/BUSIN/LBL/DLB_BUSIN_DISURENOR_61646"
+                      },
+                      "hasI18N": true,
+                      "moduleId": "BUSIN",
+                      "customizationLayer": 0,
+                      "customizationLayerDescription": "ECU",
+                      "i18N": "T"
+                    },
+                    "cacheDuration": 0,
+                    "options": 0,
+                    "elementColumnSpan": 1,
+                    "elementId": "VA_DISURMETFR5108_SUEN374",
+                    "customEvents": [],
+                    "aggregateId": null,
+                    "aggregate": null,
+                    "width": null,
+                    "style": null,
+                    "componentStyle": null,
+                    "include": 4095,
+                    "responsiveLayouts": null,
+                    "responsivity": false,
+                    "attributeValidations": []
+                  },
+                  {
+                    "visualAttributeId": "VA_DISURMETFR5108_CNCY768",
+                    "colSpan": 1,
+                    "enabled": 4095,
+                    "order": 1,
+                    "queryVersion": " ",
+                    "readOnly": 8,
+                    "rowSpan": 0,
+                    "visible": 4095,
+                    "textRows": 0,
+                    "catalogName": "cl_moneda",
+                    "name": "Currency",
+                    "customizationLayer": 0,
+                    "customizationLayerDescription": "ECU",
+                    "attribute": {
+                      "$ref": "../../../../BUSIN/entities/EN_DBSMTDEAL924.json#/attributes/AT_DBS924CNCY45"
+                    },
+                    "label": {
+                      "labelId": "DLB_BUSIN_MONEDAQAQ_04700",
+                      "defaultValue": {
+                        "$ref": "../../../../BUSIN/assets/languages/BUSIN.json#/BUSIN/LBL/DLB_BUSIN_MONEDAQAQ_04700"
+                      },
+                      "hasI18N": true,
+                      "moduleId": "BUSIN",
+                      "customizationLayer": 0,
+                      "customizationLayerDescription": "ECU",
+                      "i18N": "T"
+                    },
+                    "userControl": {
+                      "userControlId": "ComboBox",
+                      "description": "Designer ComboBox",
+                      "customizationLayer": 0,
+                      "customizationLayerDescription": "ECU",
+                      "type": "I",
+                      "name": "Designer ComboBox"
+                    },
+                    "labelToolTip": {
+                      "labelId": "DLB_BUSIN_MONEDAQAQ_04700",
+                      "defaultValue": {
+                        "$ref": "../../../../BUSIN/assets/languages/BUSIN.json#/BUSIN/LBL/DLB_BUSIN_MONEDAQAQ_04700"
+                      },
+                      "hasI18N": true,
+                      "moduleId": "BUSIN",
+                      "customizationLayer": 0,
+                      "customizationLayerDescription": "ECU",
+                      "i18N": "T"
+                    },
+                    "cacheDuration": 0,
+                    "options": 0,
+                    "elementColumnSpan": 1,
+                    "elementId": "VA_DISURMETFR5108_CNCY768",
+                    "customEvents": [],
+                    "aggregateId": null,
+                    "aggregate": null,
+                    "width": null,
+                    "style": null,
+                    "componentStyle": null,
+                    "include": 4095,
+                    "responsiveLayouts": null,
+                    "responsivity": false,
+                    "attributeValidations": []
+                  },
+                  {
+                    "visualAttributeId": "VA_DISURMETFR5108_BSNT947",
+                    "colSpan": 1,
+                    "enabled": 4095,
+                    "format": "N:#,##0.00",
+                    "order": 2,
+                    "queryVersion": " ",
+                    "readOnly": 8,
+                    "rowSpan": 0,
+                    "visible": 4095,
+                    "textRows": 0,
+                    "name": "DisbursementValue",
+                    "customizationLayer": 0,
+                    "customizationLayerDescription": "ECU",
+                    "attribute": {
+                      "$ref": "../../../../BUSIN/entities/EN_DBSMTDEAL924.json#/attributes/AT_DBS924BSNT06"
+                    },
+                    "label": {
+                      "labelId": "DLB_BUSIN_VALOREYDC_15105",
+                      "defaultValue": {
+                        "$ref": "../../../../BUSIN/assets/languages/BUSIN.json#/BUSIN/LBL/DLB_BUSIN_VALOREYDC_15105"
+                      },
+                      "hasI18N": true,
+                      "moduleId": "BUSIN",
+                      "customizationLayer": 0,
+                      "customizationLayerDescription": "ECU",
+                      "i18N": "T"
+                    },
+                    "userControl": {
+                      "userControlId": "TextInputBox",
+                      "description": "Designer TextBox",
+                      "customizationLayer": 0,
+                      "customizationLayerDescription": "ECU",
+                      "type": "I",
+                      "name": "Designer TextBox"
+                    },
+                    "labelToolTip": {
+                      "labelId": "DLB_BUSIN_VALOREYDC_15105",
+                      "defaultValue": {
+                        "$ref": "../../../../BUSIN/assets/languages/BUSIN.json#/BUSIN/LBL/DLB_BUSIN_VALOREYDC_15105"
+                      },
+                      "hasI18N": true,
+                      "moduleId": "BUSIN",
+                      "customizationLayer": 0,
+                      "customizationLayerDescription": "ECU",
+                      "i18N": "T"
+                    },
+                    "cacheDuration": 0,
+                    "options": 0,
+                    "elementColumnSpan": 1,
+                    "elementId": "VA_DISURMETFR5108_BSNT947",
+                    "customEvents": [],
+                    "aggregateId": null,
+                    "aggregate": null,
+                    "width": null,
+                    "style": null,
+                    "componentStyle": null,
+                    "include": 4095,
+                    "responsiveLayouts": null,
+                    "responsivity": false,
+                    "attributeValidations": []
+                  },
+                  {
+                    "visualAttributeId": "VA_DISURMETFR5108_AUML843",
+                    "colSpan": 1,
+                    "enabled": 4095,
+                    "format": "N:#,##0.00",
+                    "order": 3,
+                    "queryVersion": " ",
+                    "readOnly": 8,
+                    "rowSpan": 0,
+                    "visible": 4095,
+                    "textRows": 0,
+                    "name": "ValueMl",
+                    "customizationLayer": 0,
+                    "customizationLayerDescription": "ECU",
+                    "attribute": {
+                      "$ref": "../../../../BUSIN/entities/EN_DBSMTDEAL924.json#/attributes/AT_DBS924AUML51"
+                    },
+                    "label": {
+                      "labelId": "DLB_BUSIN_VALUELMMY_18189",
+                      "defaultValue": {
+                        "$ref": "../../../../BUSIN/assets/languages/BUSIN.json#/BUSIN/LBL/DLB_BUSIN_VALUELMMY_18189"
+                      },
+                      "hasI18N": true,
+                      "moduleId": "BUSIN",
+                      "customizationLayer": 0,
+                      "customizationLayerDescription": "ECU",
+                      "i18N": "T"
+                    },
+                    "userControl": {
+                      "userControlId": "TextInputBox",
+                      "description": "Designer TextBox",
+                      "customizationLayer": 0,
+                      "customizationLayerDescription": "ECU",
+                      "type": "I",
+                      "name": "Designer TextBox"
+                    },
+                    "labelToolTip": {
+                      "labelId": "DLB_BUSIN_VALUELMMY_18189",
+                      "defaultValue": {
+                        "$ref": "../../../../BUSIN/assets/languages/BUSIN.json#/BUSIN/LBL/DLB_BUSIN_VALUELMMY_18189"
+                      },
+                      "hasI18N": true,
+                      "moduleId": "BUSIN",
+                      "customizationLayer": 0,
+                      "customizationLayerDescription": "ECU",
+                      "i18N": "T"
+                    },
+                    "cacheDuration": 0,
+                    "options": 0,
+                    "elementColumnSpan": 1,
+                    "elementId": "VA_DISURMETFR5108_AUML843",
+                    "customEvents": [],
+                    "aggregateId": null,
+                    "aggregate": null,
+                    "width": null,
+                    "style": null,
+                    "componentStyle": null,
+                    "include": 4095,
+                    "responsiveLayouts": null,
+                    "responsivity": false,
+                    "attributeValidations": []
+                  },
+                  {
+                    "visualAttributeId": "VA_DISURMETFR5108_RUTE458",
+                    "colSpan": 1,
+                    "enabled": 4095,
+                    "format": "N:#,##0.00",
+                    "order": 4,
+                    "queryVersion": " ",
+                    "readOnly": 8,
+                    "rowSpan": 0,
+                    "visible": 4095,
+                    "textRows": 0,
+                    "name": "PriceQuote",
+                    "customizationLayer": 0,
+                    "customizationLayerDescription": "ECU",
+                    "attribute": {
+                      "$ref": "../../../../BUSIN/entities/EN_DBSMTDEAL924.json#/attributes/AT_DBS924RUTE44"
+                    },
+                    "label": {
+                      "labelId": "DLB_BUSIN_COTIZACIN_81787",
+                      "defaultValue": {
+                        "$ref": "../../../../BUSIN/assets/languages/BUSIN.json#/BUSIN/LBL/DLB_BUSIN_COTIZACIN_81787"
+                      },
+                      "hasI18N": true,
+                      "moduleId": "BUSIN",
+                      "customizationLayer": 0,
+                      "customizationLayerDescription": "ECU",
+                      "i18N": "T"
+                    },
+                    "userControl": {
+                      "userControlId": "TextInputBox",
+                      "description": "Designer TextBox",
+                      "customizationLayer": 0,
+                      "customizationLayerDescription": "ECU",
+                      "type": "I",
+                      "name": "Designer TextBox"
+                    },
+                    "labelToolTip": {
+                      "labelId": "DLB_BUSIN_COTIZACIN_81787",
+                      "defaultValue": {
+                        "$ref": "../../../../BUSIN/assets/languages/BUSIN.json#/BUSIN/LBL/DLB_BUSIN_COTIZACIN_81787"
+                      },
+                      "hasI18N": true,
+                      "moduleId": "BUSIN",
+                      "customizationLayer": 0,
+                      "customizationLayerDescription": "ECU",
+                      "i18N": "T"
+                    },
+                    "cacheDuration": 0,
+                    "options": 0,
+                    "elementColumnSpan": 1,
+                    "elementId": "VA_DISURMETFR5108_RUTE458",
+                    "customEvents": [],
+                    "aggregateId": null,
+                    "aggregate": null,
+                    "width": null,
+                    "style": null,
+                    "componentStyle": null,
+                    "include": 4095,
+                    "responsiveLayouts": null,
+                    "responsivity": false,
+                    "attributeValidations": []
+                  }
+                ],
+                "independentValidation": "F",
+                "htmlSection": false,
+                "eventType": 0,
+                "numberOfColumnsInContainer": 2,
+                "elementColumnSpan": 1,
+                "collapsed": true,
+                "elementId": "GR_DISURMETFR51_08",
+                "style": null,
+                "customEvents": []
+              }
+            ],
+            "independentValidation": "F",
+            "htmlSection": false,
+            "eventType": 0,
+            "numberOfColumnsInContainer": 1,
+            "elementColumnSpan": 1,
+            "collapsed": false,
+            "elementId": "GR_DISURMETFR51_05"
+          }
+        ],
+        "modules": [
+          {
+            "moduleId": "BUSIN"
+          }
+        ],
+        "module": {
+          "moduleId": "BUSIN"
+        }
+      },
+      "numberOfColumnsInContainer": 1,
+      "elementColumnSpan": 1,
+      "elementId": "VC_VW_DISURMETFR51",
+      "customEvents": []
+    }
+  ],
+  "tempSave": false,
+  "autoCrud": false,
+  "isImported": true,
+  "commands": []
+}

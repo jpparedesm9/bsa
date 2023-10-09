@@ -1,0 +1,89 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<procedure>
+  <database>cobis</database>
+  <name>sp_alerta_cliente</name>
+  <type>SYBASE</type>
+  <version>1</version>
+  <parameters>
+    <parameter name="@s_ssn" dataType="int" direction="in" />
+    <parameter name="@s_user" dataType="varchar" direction="in" />
+    <parameter name="@s_term" dataType="varchar" direction="in" />
+    <parameter name="@s_date" dataType="datetime" direction="in" />
+    <parameter name="@s_sesn" dataType="int" direction="in" />
+    <parameter name="@s_culture" dataType="varchar" direction="in" />
+    <parameter name="@s_srv" dataType="varchar" direction="in" />
+    <parameter name="@s_lsrv" dataType="varchar" direction="in" />
+    <parameter name="@s_ofi" dataType="smallint" direction="in" />
+    <parameter name="@s_rol" dataType="smallint" direction="in" />
+    <parameter name="@s_org_err" dataType="char" direction="in" />
+    <parameter name="@s_error" dataType="int" direction="in" />
+    <parameter name="@s_sev" dataType="tinyint" direction="in" />
+    <parameter name="@s_msg" dataType="varchar" direction="in" />
+    <parameter name="@s_org" dataType="char" direction="in" />
+    <parameter name="@t_debug" dataType="char" direction="in" />
+    <parameter name="@t_file" dataType="varchar" direction="in" />
+    <parameter name="@t_from" dataType="varchar" direction="in" />
+    <parameter name="@t_trn" dataType="int" direction="in" />
+    <parameter name="@t_show_version" dataType="bit" direction="in" />
+    <parameter name="@i_operacion" dataType="char" direction="in" />
+    <parameter name="@i_codigo" dataType="int" direction="in" />
+    <parameter name="@i_tipo" dataType="varchar" direction="in" />
+    <parameter name="@i_fecha_alta" dataType="datetime" direction="in" />
+    <parameter name="@i_fecha_report" dataType="datetime" direction="in" />
+    <parameter name="@i_nombre" dataType="varchar" direction="in" />
+    <parameter name="@i_s_nombre" dataType="varchar" direction="in" />
+    <parameter name="@i_apellido" dataType="varchar" direction="in" />
+    <parameter name="@i_s_apellido" dataType="varchar" direction="in" />
+    <parameter name="@i_comentario" dataType="varchar" direction="in" />
+    <parameter name="@i_observacion" dataType="varchar" direction="in" />
+    <parameter name="@i_estado" dataType="varchar" direction="in" />
+    <parameter name="@o_codigo" dataType="int" direction="out" />
+    <parameter name="@i_generate_report" dataType="varchar" direction="in" />
+    <parameter name="@i_modo" dataType="int" direction="in" />
+    <parameter name="@i_start_date" dataType="datetime" direction="in" />
+    <parameter name="@i_finish_date" dataType="datetime" direction="in" />
+    <parameter name="@i_tipo_operacion" dataType="varchar" direction="in" />
+  </parameters>
+  <queries>
+    <query>
+      <columns>
+        <column name="codigo" />
+        <column name="tipoOperacion" />
+        <column name="fechaAlta" />
+        <column name="fechaReporte" />
+        <column name="nombre" />
+        <column name="comentario" />
+      </columns>
+      <queryText>SELECT  "codigo" = oin_codigo,"tipoOperacion" = oin_tipo_op,"fechaAlta" = CONVERT (CHAR (10),oin_fecha_alta ,103),"fechaReporte" = CONVERT (CHAR (10),oin_fecha_reporte ,103),"nombre" = oin_nombre_rep,"comentario" = oin_comentario </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="dAlerta" />
+        <column name="sucursal" />
+        <column name="grupo" />
+        <column name="ente" />
+        <column name="nombre" />
+        <column name="contrato" />
+        <column name="tipoProducto" />
+        <column name="tipoLista" />
+        <column name="fechaAlerta" />
+        <column name="fechaOperacion" />
+        <column name="fechaDictamina" />
+        <column name="fechaReporte" />
+        <column name="observaciones" />
+        <column name="nivelRiesgo" />
+        <column name="etiqueta" />
+        <column name="escenario" />
+        <column name="tipoAlerta" />
+        <column name="tipooperacion" />
+        <column name="monto" />
+        <column name="status" />
+        <column name="generaReporte" />
+        <column name="nombreGurpo" />
+        <column name="rfc" />
+        <column name="fechaConsulta" />
+      </columns>
+      <queryText>SELECT  "dAlerta" = ar_id_alerta,"sucursal" = ar_sucursal,"grupo" = ar_grupo,"ente" = ar_ente,"contrato" = ar_contrato,"tipoProducto" = ar_tipo_producto,"tipoLista" = ar_tipo_lista,"fechaAlerta" = CONVERT (CHAR (10),ar_fecha_alerta ,103),"fechaOperacion" = CONVERT (CHAR (10),ar_fecha_operacion ,103),"fechaDictamina" = CONVERT (CHAR (10),ar_fecha_dictamina ,103),"fechaReporte" = CONVERT (CHAR (10),ar_fecha_reporte ,103),"observaciones" = ar_observaciones,"nivelRiesgo" = ar_nivel_riesgo,"etiqueta" = ar_etiqueta,"escenario" = ar_escenario,"tipoAlerta" = ar_tipo_alerta,"tipooperacion" = ar_tipo_operacion,"monto" = ar_monto,"status" = ar_status,"generaReporte" = ar_genera_reporte </queryText>
+    </query>
+  </queries>
+</procedure>

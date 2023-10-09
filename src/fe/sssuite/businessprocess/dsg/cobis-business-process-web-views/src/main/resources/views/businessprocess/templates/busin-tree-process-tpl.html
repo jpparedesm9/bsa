@@ -1,0 +1,14 @@
+<ul kendo-panel-bar k-on-expand-mode="single" ng-init="initData()">	
+	<li class="k-state-active">
+		<span>
+			<span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span>
+			<span class="itemlist" translate>BUSIN.DLB_BUSIN_TIPODERNT_79668</span>
+		</span>
+		<div>
+			<div id="treeViewWarranties" kendo-tree-view="treeViewWarranties" k-data-source="treeDataSourceWarranties"
+			k-on-change="onItemSelectedWarranty(dataItem)">
+				<span k-template>{{dataItem.text}}</span>
+			</div>
+		</div>			
+	</li>
+</ul>

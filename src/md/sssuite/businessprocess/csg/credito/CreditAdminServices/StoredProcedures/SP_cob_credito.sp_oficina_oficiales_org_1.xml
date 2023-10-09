@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<procedure>
+  <database>cob_credito</database>
+  <name>sp_oficina_oficiales_org</name>
+  <type>SYBASE</type>
+  <version>1</version>
+  <parameters>
+    <parameter name="@t_debug" dataType="char" direction="in" />
+    <parameter name="@t_file" dataType="varchar" direction="in" />
+    <parameter name="@t_from" dataType="varchar" direction="in" />
+    <parameter name="@t_trn" dataType="int" direction="in" />
+    <parameter name="@i_oficina" dataType="int" direction="in" />
+    <parameter name="@i_opcion_aut" dataType="char" direction="in" />
+    <parameter name="@i_id_inst_proc" dataType="int" direction="in" />
+    <parameter name="@s_date" dataType="datetime" direction="in" />
+    <parameter name="@s_ofi" dataType="int" direction="in" />
+    <parameter name="@s_ssn" dataType="int" direction="in" />
+    <parameter name="@s_user" dataType="varchar" direction="in" />
+    <parameter name="@t_show_version" dataType="bit" direction="in" />
+  </parameters>
+  <queries>
+    <query>
+      <columns>
+        <column name="Codigo Oficial" />
+        <column name="Nombre Oficial" />
+        <column name="Oficina" />
+        <column name="NoSolicitudesAsignadas" />
+        <column name="NoSolicitudesDesembolsadas" />
+      </columns>
+      <queryText>SELECT  "Codigo Oficial" = oc_oficial,"Nombre Oficial" = fu_nombre,"Oficina" = of_oficina,"NoSolicitudesAsignadas" = ISNULL ((SELECT  COUNT (*) FROM cob_credito..cr_tramite   WHERE tr_usuario = f.fu_login AND ofi.of_oficina = tr_oficina AND tr_estado = "N" GROUP BY (tr_usuario)    ), 0),"NoSolicitudesDesembolsadas" = ISNULL ((SELECT  COUNT (*) FROM cob_cartera..ca_operacion  ,cob_cartera..ca_estado   WHERE op_oficial = co.oc_oficial AND op_estado = es_codigo AND op_estado = 1 GROUP BY (op_oficial)    ), 0) </queryText>
+    </query>
+  </queries>
+</procedure>

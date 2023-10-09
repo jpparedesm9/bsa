@@ -1,0 +1,95 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<product path="C:/GIT/x/src/md/basicas/mobileintegration/csg/BusinessToBusiness/Products/COBISCorp.eCOBIS.BusinessToBusiness.Service" appPath="C:/COBIS/COBIS Services Generator/" name="COBISCorp.eCOBIS.BusinessToBusiness.Service" productNS="http://service.businesstobusiness.ecobis.cobiscorp" description="B2B Service" documentationLanguage="Español" year="2023" version="1.0.0.0" type="SERVICE" GUID="267BAE86-9EDA-48E9-A7DC-368B10E25E47">
+  <namespaces>
+    <namespace type="class" base="COBISCorp.eCOBIS.BusinessToBusiness" name="COBISCorp.eCOBIS.BusinessToBusiness.Service" package="cobiscorp.ecobis.businesstobusiness.service" ns="http://service.businesstobusiness.ecobis.cobiscorp" folder="" />
+  </namespaces>
+  <templates>
+    <template id="ServiceCTS302" productName="COBISCorp.eCOBIS.BusinessToBusiness.Service" outputFolder="c:\COBIS-SG\Output\CTS\COBISCorp.eCOBIS.BusinessToBusiness.Service" package="true" packageType="Jar">
+      <templateFiles>
+        <templateFile filePath="Annotations\JavaInterface.xslt" enabled="true" override="true" />
+        <templateFile filePath="Annotations\JavaService.xslt" enabled="true" override="true" />
+        <templateFile filePath="Annotations\OSGIClass.xslt" enabled="true" override="true" />
+        <templateFile filePath="Annotations\Interceptor.xslt" enabled="true" override="false" />
+        <templateFile filePath="..\Commons\Java\buildProperties.xslt" enabled="true" override="true" />
+        <templateFile filePath="..\Commons\Java\build.xslt" enabled="true" override="true" />
+      </templateFiles>
+    </template>
+  </templates>
+  <DTOs />
+  <classes>
+    <class name="OperationManagement" nsBase="COBISCorp.eCOBIS.BusinessToBusiness" namespace="COBISCorp.eCOBIS.BusinessToBusiness.Service" package="cobiscorp.ecobis.businesstobusiness.service" ns="http://service.businesstobusiness.ecobis.cobiscorp" version="1">
+      <partialClasses>
+        <partialClass name="OperationManagement">
+          <services>
+            <service name="SearchOperations" id="BusinessToBusiness.OperationManagement.SearchOperations">
+              <procedure name="sp_consulta_operaciones" database="cob_cartera" version="1" />
+            </service>
+          </services>
+        </partialClass>
+      </partialClasses>
+    </class>
+    <class name="PaymentManagement" nsBase="COBISCorp.eCOBIS.BusinessToBusiness" namespace="COBISCorp.eCOBIS.BusinessToBusiness.Service" package="cobiscorp.ecobis.businesstobusiness.service" ns="http://service.businesstobusiness.ecobis.cobiscorp" version="1">
+      <partialClasses>
+        <partialClass name="PaymentManagement">
+          <services>
+            <service name="ApplyPayment" id="BusinessToBusiness.PaymentManagement.ApplyPayment">
+              <procedure name="sp_pagos_corresponsal" database="cob_cartera" version="1" />
+            </service>
+          </services>
+        </partialClass>
+      </partialClasses>
+    </class>
+    <class name="QueryCustomerGroup" nsBase="COBISCorp.eCOBIS.BusinessToBusiness" namespace="COBISCorp.eCOBIS.BusinessToBusiness.Service" package="cobiscorp.ecobis.businesstobusiness.service" ns="http://service.businesstobusiness.ecobis.cobiscorp" version="1">
+      <partialClasses>
+        <partialClass name="QueryCustomerGroup">
+          <services>
+            <service name="SearchCustomerGroupByName" id="BusinessToBusiness.QueryCustomerGroup.SearchCustomerGroupByName">
+              <procedure name="sp_consulta_cliente_grupo" database="cobis" version="1" />
+            </service>
+          </services>
+        </partialClass>
+      </partialClasses>
+    </class>
+    <class name="SecurityManagement" nsBase="COBISCorp.eCOBIS.BusinessToBusiness" namespace="COBISCorp.eCOBIS.BusinessToBusiness.Service" package="cobiscorp.ecobis.businesstobusiness.service" ns="http://service.businesstobusiness.ecobis.cobiscorp" version="1">
+      <partialClasses>
+        <partialClass name="SecurityManagement">
+          <services>
+            <service name="SaveAcceptance" id="BusinessToBusiness.SecurityManagement.SaveAcceptance">
+              <procedure name="sp_aceptacion" database="cobis" version="1" />
+            </service>
+            <service name="SendOtp" id="BusinessToBusiness.SecurityManagement.SendOtp">
+              <procedure name="sp_registro_opt" database="cob_bvirtual" version="1" />
+            </service>
+            <service name="ValidationOtp" id="BusinessToBusiness.SecurityManagement.ValidationOtp">
+              <procedure name="sp_validacion_opt_gen" database="cob_bvirtual" version="1" />
+            </service>
+          </services>
+        </partialClass>
+      </partialClasses>
+    </class>
+  </classes>
+  <packagers>
+    <packager type="SGPackageJava" AntTask="sign-archive" KeyAlias="cobisapp" KeyPassword="cobisappadminadmin" KeyCertificatePassword="cobisappadmin" KeyFileName="cobisapp.keystore" RelativeFolder="True" TemplateId="ServiceCTS302" />
+  </packagers>
+  <references>
+    <reference name="COBISCorp.eCOBIS.BusinessToBusiness.DTO" type="DTO" version="1.0.0.0" GUID="40013CD3-BA43-4912-88AB-88A3FB80FD46">
+      <templates>
+        <template id="DTOJavaPOJO" productName="COBISCorp.eCOBIS.BusinessToBusiness.DTO" outputFolder="c:\COBIS-SG\Output\CTS\COBISCorp.eCOBIS.BusinessToBusiness.DTO" package="true" packageType="Jar">
+          <templateFiles>
+            <templateFile filePath="JavaPOJO\JavaDTO.xslt" enabled="true" override="true" />
+            <templateFile filePath="..\Commons\Java\buildProperties.xslt" enabled="true" override="true" />
+            <templateFile filePath="..\Commons\Java\build.xslt" enabled="true" override="true" />
+          </templateFiles>
+        </template>
+      </templates>
+      <namespaces>
+        <namespace type="dto" base="COBISCorp.eCOBIS.BusinessToBusiness" name="COBISCorp.eCOBIS.BusinessToBusiness.DTO" package="cobiscorp.ecobis.businesstobusiness.dto" ns="http://dto.businesstobusiness.ecobis.cobiscorp" folder="DTO" />
+      </namespaces>
+    </reference>
+  </references>
+  <productProperties>
+    <property name="MavenGroupId" value="com.cobiscorp.processapi" />
+    <property name="MavenArtifactId" value="COBISCorp.eCOBIS.BusinessToBusiness.Service" />
+    <property name="MavenVersion" value="1.0.0.0" />
+  </productProperties>
+</product>

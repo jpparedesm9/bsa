@@ -1,0 +1,99 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<procedure>
+  <database>cob_credito</database>
+  <name>sp_op_renovar</name>
+  <type>SYBASE</type>
+  <version>1</version>
+  <parameters>
+    <parameter name="@s_ssn" dataType="int" direction="in" />
+    <parameter name="@s_user" dataType="varchar" direction="in" />
+    <parameter name="@s_sesn" dataType="int" direction="in" />
+    <parameter name="@s_term" dataType="varchar" direction="in" />
+    <parameter name="@s_date" dataType="datetime" direction="in" />
+    <parameter name="@s_srv" dataType="varchar" direction="in" />
+    <parameter name="@s_lsrv" dataType="varchar" direction="in" />
+    <parameter name="@s_rol" dataType="smallint" direction="in" />
+    <parameter name="@s_ofi" dataType="smallint" direction="in" />
+    <parameter name="@s_org_err" dataType="char" direction="in" />
+    <parameter name="@s_error" dataType="int" direction="in" />
+    <parameter name="@s_sev" dataType="tinyint" direction="in" />
+    <parameter name="@s_msg" dataType="varchar" direction="in" />
+    <parameter name="@s_org" dataType="char" direction="in" />
+    <parameter name="@t_rty" dataType="char" direction="in" />
+    <parameter name="@t_trn" dataType="smallint" direction="in" />
+    <parameter name="@t_debug" dataType="char" direction="in" />
+    <parameter name="@t_file" dataType="varchar" direction="in" />
+    <parameter name="@t_from" dataType="varchar" direction="in" />
+    <parameter name="@i_operacion" dataType="char" direction="in" />
+    <parameter name="@i_modo" dataType="tinyint" direction="in" />
+    <parameter name="@i_tramite" dataType="int" direction="in" />
+    <parameter name="@i_num_operacion" dataType="varchar" direction="in" />
+    <parameter name="@i_producto" dataType="varchar" direction="in" />
+    <parameter name="@i_abono" dataType="money" direction="in" />
+    <parameter name="@i_moneda_abono" dataType="tinyint" direction="in" />
+    <parameter name="@i_monto_original" dataType="money" direction="in" />
+    <parameter name="@i_saldo_original" dataType="money" direction="in" />
+    <parameter name="@i_fecha_concesion" dataType="datetime" direction="in" />
+    <parameter name="@i_toperacion" dataType="varchar" direction="in" />
+    <parameter name="@i_moneda_original" dataType="tinyint" direction="in" />
+    <parameter name="@i_capitaliza" dataType="char" direction="in" />
+    <parameter name="@i_formato_fecha" dataType="tinyint" direction="in" />
+    <parameter name="@i_op_base" dataType="char" direction="in" />
+  </parameters>
+  <queries>
+    <query>
+      <columns>
+        <column name="{1}" />
+      </columns>
+      <queryText>SELECT  * </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="Operacion" />
+        <column name="Abono" />
+        <column name="Capitaliza" />
+      </columns>
+      <queryText>SELECT  "Operacion" = or_num_operacion,"Abono" = or_abono,"Capitaliza" = or_capitaliza </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="80947" />
+        <column name="80948" />
+        <column name="80949" />
+        <column name="80360" />
+        <column name="80952" />
+        <column name="61261" />
+        <column name="82776" />
+        <column name="80950" />
+        <column name="84000" />
+        <column name="62420" />
+        <column name="84001" />
+        <column name="80821" />
+        <column name="80826" />
+        <column name="61251" />
+        <column name="80838" />
+        <column name="80824" />
+        <column name="Operacion Base" />
+      </columns>
+      <queryText>SELECT  "80947" = op_tramite,"80948" = or_num_operacion,"80949" = or_toperacion,"80360" = es_descripcion,"80952" = or_saldo_original,"61261" = CONVERT (CHAR (3),or_moneda_original ) + " (" + b.mo_descripcion + ")","82776" = or_monto_original,"80950" = or_abono,"84000" = CONVERT (CHAR (3),or_moneda_abono ) + " (" + a.mo_descripcion + ")","62420" = CONVERT (CHAR (10),op_fecha_ult_proceso ,?),"84001" = RTRIM (d.codigo) + "-" + d.valor,"80821" = or_producto,"80826" = ?,"61251" = CONVERT (CHAR (10),or_fecha_concesion ,?),"80838" = (SELECT  tr_proposito_op FROM cob_credito..cr_tramite   WHERE tr_tramite = cob_cartera..ca_operacion.op_tramite     ),"80824" = op_destino,"Operacion Base" = or_base </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="{1}" />
+        <column name="{2}" />
+        <column name="{3}" />
+        <column name="{4}" />
+        <column name="{5}" />
+        <column name="{6}" />
+        <column name="{7}" />
+        <column name="{8}" />
+        <column name="{9}" />
+        <column name="{10}" />
+        <column name="{11}" />
+        <column name="{12}" />
+        <column name="{13}" />
+      </columns>
+      <queryText>SELECT w_tramite, w_num_operacion, w_producto, w_abono, w_moneda_abono, w_desc_moneda, w_monto_original, w_saldo_original, ctx.convertString(w_fecha_concesion ,i_formato_fecha), w_toperacion, w_moneda_original, w_desc_moneda_orig, w_capitaliza</queryText>
+    </query>
+  </queries>
+</procedure>

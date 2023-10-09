@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<procedure>
+  <database>cob_cartera</database>
+  <name>sp_apertura_credito</name>
+  <type>SQLSERVER</type>
+  <version>1</version>
+  <parameters>
+    <parameter name="@i_banco" dataType="varchar" direction="in" />
+    <parameter name="@i_impresion" dataType="tinyint" direction="in" />
+    <parameter name="@i_num_impresion" dataType="tinyint" direction="in" />
+    <parameter name="@i_estado" dataType="tinyint" direction="in" />
+    <parameter name="@o_num_impresion" dataType="tinyint" direction="out" />
+  </parameters>
+  <queries>
+    <query>
+      <columns>
+        <column name="{1}" />
+      </columns>
+      <queryText>SELECT w_tramite, w_cedula, w_nombre_completo, w_monto_apr, w_monto_letras, w_monto_total, w_apercre_letras, w_des_ciudad, w_plazo_cupo, w_plazo_cupo_letras, w_plazo_util, w_plazo_util_letras, w_fecha_liq, w_num_impresion, w_des_ciudad, w_tasa_ef_anual, w_tasa_referencial</queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="{1}" />
+      </columns>
+      <queryText>SELECT  cliente,nombre_clien,tipo_doc,cedula,rol,direccion,telefono,ciudad </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="{1}" />
+      </columns>
+      <queryText></queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="{1}" />
+      </columns>
+      <queryText></queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="{1}" />
+        <column name="{2}" />
+        <column name="{3}" />
+        <column name="{4}" />
+        <column name="{5}" />
+        <column name="{6}" />
+        <column name="{7}" />
+        <column name="{8}" />
+        <column name="{9}" />
+        <column name="{10}" />
+        <column name="{11}" />
+        <column name="{12}" />
+        <column name="{13}" />
+        <column name="{14}" />
+        <column name="{15}" />
+        <column name="{16}" />
+        <column name="{17}" />
+      </columns>
+      <queryText></queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="{1}" />
+        <column name="{2}" />
+        <column name="{3}" />
+        <column name="{4}" />
+        <column name="{5}" />
+        <column name="{6}" />
+        <column name="{7}" />
+        <column name="{8}" />
+      </columns>
+      <queryText></queryText>
+    </query>
+  </queries>
+</procedure>

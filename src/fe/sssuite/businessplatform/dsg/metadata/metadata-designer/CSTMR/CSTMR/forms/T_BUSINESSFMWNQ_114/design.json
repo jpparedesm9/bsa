@@ -1,0 +1,1500 @@
+{
+    "autoCrudStr": "F",
+    "commands": [
+    ],
+    "customEvents": [
+    ],
+    "customizationLayer": 0,
+    "customizationLayerDescription": "ECU",
+    "id": {
+        "moduleId": "CSTMR",
+        "subModuleId": "CSTMR",
+        "taskId": "T_BUSINESSFMWNQ_114",
+        "version": "1.0.0"
+    },
+    "isImported": false,
+    "mainViewContainerId": "VC_BUSINESSPR_115114",
+    "modeEnabled": 4095,
+    "name": {
+        "$ref": "../../../../CSTMR/relations/componentKeys.json#/CSTMR/Forms/T_BUSINESSFMWNQ_114/name"
+    },
+    "tempSaveStr": "F",
+    "viewContainers": [
+        {
+            "breadcrumbs": "Automatic",
+            "colSpan": 1,
+            "collapsedStr": "F",
+            "columnsNum": 1,
+            "componentStyle": null,
+            "customEvents": [
+                {
+                    "customEventId": "CEVC_002T_BUSINESSFMWNQ_114_998",
+                    "customizationLayer": 0,
+                    "customizationLayerDescription": "ECU",
+                    "enabled": "T",
+                    "executionType": 3,
+                    "filter": null,
+                    "isEnabled": true,
+                    "viewContainerEventType": {
+                        "availableExecutionType": 7,
+                        "description": "Inicialización de datos de un ViewContainer, despues de este evento se realiza el segimiento de cambios en los datos",
+                        "eventId": 2,
+                        "name": "InitData"
+                    }
+                },
+                {
+                    "customEventId": "CEVC_501T_BUSINESSFMWNQ_114_260",
+                    "customizationLayer": 0,
+                    "customizationLayerDescription": "ECU",
+                    "enabled": "T",
+                    "executionType": 1,
+                    "filter": null,
+                    "isEnabled": true,
+                    "viewContainerEventType": {
+                        "availableExecutionType": 7,
+                        "description": "Evento que actua como listener cuando se cierra ventanas modales.",
+                        "eventId": 501,
+                        "name": "onCloseModal"
+                    }
+                }
+            ],
+            "customizationLayer": 0,
+            "customizationLayerDescription": "ECU",
+            "enabled": 4095,
+            "id": {
+                "moduleId": "CSTMR",
+                "subModuleId": "CSTMR",
+                "taskId": "T_BUSINESSFMWNQ_114",
+                "taskVersion": "1.0.0",
+                "viewContainerId": "VC_BUSINESSPR_115114"
+            },
+            "layoutType": "Group",
+            "name": "BusinessForm",
+            "options": 0,
+            "responsiveLayouts": null,
+            "responsivity": false,
+            "style": null,
+            "titleLabel": {
+                "defaultValue": {
+                    "$ref": "../../../../CSTMR/assets/languages/CSTMR.json#/CSTMR/LBL/LBL_CSTMR_MANTENIID_22029"
+                },
+                "labelId": "LBL_CSTMR_MANTENIID_22029",
+                "moduleId": "CSTMR"
+            },
+            "view": {
+                "groups": [
+                    {
+                        "collapsedStr": "F",
+                        "columnsNum": 1,
+                        "componentStyle": null,
+                        "customEvents": [
+                        ],
+                        "enabled": 4095,
+                        "entity": {
+                            "$ref": "../../../../CSTMR/entities/EN_BUSINESSS_830.json#"
+                        },
+                        "eventType": 0,
+                        "groupId": "G_BUSINESSSS_110304",
+                        "htmlSection": "F",
+                        "independentValidation": "F",
+                        "layoutType": "Group",
+                        "name": "Group2122",
+                        "order": 3,
+                        "orientation": "V",
+                        "queryView": {
+                            "actionDesign": "Button",
+                            "actions": [
+                                "Create,Update,Delete"
+                            ],
+                            "allowPaging": true,
+                            "allowPagingStr": "T",
+                            "allowSorting": false,
+                            "allowSortingStr": "F",
+                            "componentStyle": null,
+                            "confirmRowDeletion": false,
+                            "confirmRowDeletionStr": "F",
+                            "customEvents": [
+                            ],
+                            "customUrlDialog": null,
+                            "customizationLayer": 0,
+                            "customizationLayerDescription": "ECU",
+                            "deleteCommandEnabled": true,
+                            "deleteCommandEnabledStr": "T",
+                            "dialogTitleLabelId": "LBL_CSTMR_NEGOCIOSS_45525",
+                            "editCommandEnabled": true,
+                            "editCommandEnabledStr": "T",
+                            "editMode": "3",
+                            "entityName": "Business",
+                            "hasDetail": false,
+                            "hasDetailString": "F",
+                            "height": null,
+                            "includeQueryMembers": [
+                                "AT98_NAMESVED830",
+                                "AT61_TIMEACYI830",
+                                "AT53_TIMEBUES830",
+                                "AT72_RESOUREC830",
+                                "AT22_TYPELOAC830",
+                                "AT87_CREDITIO830",
+                                "AT22_ECONOMVC830"
+                            ],
+                            "insertCommandEnabled": true,
+                            "insertCommandEnabledStr": "T",
+                            "modalSize": "lg",
+                            "modeSelection": "None",
+                            "moduleIdDialog": "CSTMR",
+                            "multiSelectEnabledStr": "F",
+                            "name": "QV_6359_40398",
+                            "options": 2048,
+                            "pageSize": 10,
+                            "query": {
+                                "$ref": "../../../../CSTMR/CSTMR/queries/Q_BUSINESS_6359.json#"
+                            },
+                            "queryId": "Q_BUSINESS_6359",
+                            "queryVersion": "1.0.0",
+                            "queryViewCustomActions": [
+                                {
+                                    "action": null,
+                                    "commandImageId": null,
+                                    "commandName": "GridRowRendering",
+                                    "commandOrder": null,
+                                    "commandType": 0,
+                                    "customActionId": "CEQV_210QV_6359_40398_597",
+                                    "customizationLayer": 0,
+                                    "customizationLayerDescription": "ECU",
+                                    "enabled": "T",
+                                    "executionType": 1,
+                                    "filter": null,
+                                    "name": "GridRowRendering",
+                                    "queryView": "QV_6359_40398",
+                                    "queryViewEventType": {
+                                        "availableExecutionType": 1,
+                                        "description": "Se ejecuta en el evento dataBound de una grilla con los registros visibles, dataview.",
+                                        "eventId": 210,
+                                        "name": "GridRowRendering"
+                                    },
+                                    "serviceName": null,
+                                    "userControl": {
+                                        "customizationLayer": "0",
+                                        "customizationLayerDescription": "ECU",
+                                        "description": "Designer Button",
+                                        "type": "A",
+                                        "userControlId": "Button"
+                                    }
+                                },
+                                {
+                                    "action": null,
+                                    "commandImageId": null,
+                                    "commandName": "RowDeleting",
+                                    "commandOrder": null,
+                                    "commandType": 0,
+                                    "customActionId": "CEQV_204QV_6359_40398_744",
+                                    "customizationLayer": 0,
+                                    "customizationLayerDescription": "ECU",
+                                    "enabled": "T",
+                                    "executionType": 7,
+                                    "filter": null,
+                                    "name": "RowDeleting",
+                                    "queryView": "QV_6359_40398",
+                                    "queryViewEventType": {
+                                        "availableExecutionType": 7,
+                                        "description": "Se ejecuta antes de que los datos eliminados en una grilla sean comprometidos.",
+                                        "eventId": 204,
+                                        "name": "RowDeleting"
+                                    },
+                                    "serviceName": null,
+                                    "userControl": {
+                                        "customizationLayer": "0",
+                                        "customizationLayerDescription": "ECU",
+                                        "description": "Designer Button",
+                                        "type": "A",
+                                        "userControlId": "Button"
+                                    }
+                                }
+                            ],
+                            "queryViewId": "QV_6359_40398",
+                            "queryViewType": "Grid",
+                            "rowCommandAppearance": 0,
+                            "style": null,
+                            "subModuleIdDialog": "CSTMR",
+                            "taskIdDialog": "T_BUSINESSPOPPU_722",
+                            "taskVersionDialog": "1.0.0",
+                            "typeFormDialog": "forms",
+                            "userControl": {
+                                "customizationLayer": 0,
+                                "customizationLayerDescription": "ECU",
+                                "description": "Designer Grid",
+                                "name": "Designer Grid",
+                                "type": "I",
+                                "userControlId": "Grid"
+                            },
+                            "viewContainerIdDialog": "VC_BUSINESSPP_740722"
+                        },
+                        "queryViewId": "QV_6359_40398",
+                        "responsiveLayouts": null,
+                        "responsivity": false,
+                        "style": null,
+                        "visible": 4095,
+                        "visualAttributes": [
+                            {
+                                "aggregate": null,
+                                "aggregateId": null,
+                                "attribute": {
+                                    "$ref": "../../../../CSTMR/entities/EN_BUSINESSS_830.json#/attributes/AT35_AREENTPE830"
+                                },
+                                "attributeValidations": [
+                                ],
+                                "colSpan": 1,
+                                "componentInGrid": true,
+                                "componentStyle": null,
+                                "customEvents": [
+                                ],
+                                "customizationLayer": 0,
+                                "customizationLayerDescription": "ECU",
+                                "enabled": 0,
+                                "include": 4095,
+                                "label": {
+                                    "defaultValue": {
+                                        "$ref": "../../../../CSTMR/assets/languages/CSTMR.json#/CSTMR/LBL/LBL_CSTMR_ESEMPRENO_47778"
+                                    },
+                                    "labelId": "LBL_CSTMR_ESEMPRENO_47778",
+                                    "moduleId": "CSTMR"
+                                },
+                                "maxRecords": null,
+                                "name": "areEntrepreneur",
+                                "options": 0,
+                                "order": 21,
+                                "readOnly": 8,
+                                "responsiveLayouts": null,
+                                "responsivity": false,
+                                "sizeWidthComposite": null,
+                                "style": null,
+                                "userControl": {
+                                    "type": "I",
+                                    "userControlId": "CheckBox"
+                                },
+                                "visible": 0,
+                                "visualAttributeId": "VA_CHECKBOXEKDYYHM_687304",
+                                "width": "100",
+                                "widthComposite": "D"
+                            },
+                            {
+                                "aggregate": null,
+                                "aggregateId": null,
+                                "attribute": {
+                                    "$ref": "../../../../CSTMR/entities/EN_BUSINESSS_830.json#/attributes/AT82_CREDITAA830"
+                                },
+                                "attributeValidations": [
+                                ],
+                                "colSpan": 1,
+                                "componentInGrid": true,
+                                "componentStyle": null,
+                                "customEvents": [
+                                ],
+                                "customizationLayer": 0,
+                                "customizationLayerDescription": "ECU",
+                                "enabled": 0,
+                                "include": 4095,
+                                "label": {
+                                    "defaultValue": {
+                                        "$ref": "../../../../CSTMR/assets/languages/CSTMR.json#/CSTMR/LBL/LBL_CSTMR_DESTINOTT_68123"
+                                    },
+                                    "labelId": "LBL_CSTMR_DESTINOTT_68123",
+                                    "moduleId": "CSTMR"
+                                },
+                                "maxRecords": null,
+                                "name": "creditDestination",
+                                "options": 0,
+                                "order": 12,
+                                "readOnly": 8,
+                                "responsiveLayouts": null,
+                                "responsivity": false,
+                                "sizeWidthComposite": null,
+                                "style": null,
+                                "textRows": 0,
+                                "userControl": {
+                                    "type": "I",
+                                    "userControlId": "TextInputBox"
+                                },
+                                "visible": 0,
+                                "visualAttributeId": "VA_TEXTINPUTBOXAEX_607304",
+                                "width": null,
+                                "widthComposite": "D"
+                            },
+                            {
+                                "aggregate": null,
+                                "aggregateId": null,
+                                "attribute": {
+                                    "$ref": "../../../../CSTMR/entities/EN_BUSINESSS_830.json#/attributes/AT14_ECONOMVA830"
+                                },
+                                "attributeValidations": [
+                                ],
+                                "colSpan": 1,
+                                "componentInGrid": true,
+                                "componentStyle": null,
+                                "customEvents": [
+                                ],
+                                "customizationLayer": 0,
+                                "customizationLayerDescription": "ECU",
+                                "enabled": 0,
+                                "include": 4095,
+                                "label": {
+                                    "defaultValue": {
+                                        "$ref": "../../../../CSTMR/assets/languages/CSTMR.json#/CSTMR/LBL/LBL_CSTMR_ACTIVIDAA_39121"
+                                    },
+                                    "labelId": "LBL_CSTMR_ACTIVIDAA_39121",
+                                    "moduleId": "CSTMR"
+                                },
+                                "maxRecords": null,
+                                "name": "economicActivity",
+                                "options": 0,
+                                "order": 10,
+                                "readOnly": 8,
+                                "responsiveLayouts": null,
+                                "responsivity": false,
+                                "sizeWidthComposite": null,
+                                "style": null,
+                                "textRows": 0,
+                                "userControl": {
+                                    "type": "I",
+                                    "userControlId": "TextInputBox"
+                                },
+                                "visible": 0,
+                                "visualAttributeId": "VA_TEXTINPUTBOXCLL_749304",
+                                "width": "200",
+                                "widthComposite": "D"
+                            },
+                            {
+                                "aggregate": null,
+                                "aggregateId": null,
+                                "attribute": {
+                                    "$ref": "../../../../CSTMR/entities/EN_BUSINESSS_830.json#/attributes/AT61_TIMEACYI830"
+                                },
+                                "attributeValidations": [
+                                ],
+                                "cacheDuration": 0,
+                                "catalogName": "cl_referencia_tiempo",
+                                "colSpan": 1,
+                                "componentInGrid": true,
+                                "componentStyle": null,
+                                "customEvents": [
+                                ],
+                                "customizationLayer": 0,
+                                "customizationLayerDescription": "ECU",
+                                "enabled": 4095,
+                                "entityQuery": null,
+                                "include": 4095,
+                                "label": {
+                                    "defaultValue": {
+                                        "$ref": "../../../../CSTMR/assets/languages/CSTMR.json#/CSTMR/LBL/LBL_CSTMR_TIEMPODAA_42945"
+                                    },
+                                    "labelId": "LBL_CSTMR_TIEMPODAA_42945",
+                                    "moduleId": "CSTMR"
+                                },
+                                "maxRecords": null,
+                                "minChars": null,
+                                "name": "timeActivity",
+                                "options": 0,
+                                "order": 3,
+                                "queryId": null,
+                                "queryMemberText": {
+                                    "attribute": {
+                                        "attributeId": null,
+                                        "name": null
+                                    },
+                                    "queryMemberId": null
+                                },
+                                "queryMemberValue": {
+                                    "attribute": {
+                                        "attributeId": null,
+                                        "name": null
+                                    },
+                                    "queryMemberId": null
+                                },
+                                "queryModule": null,
+                                "queryVersion": null,
+                                "readOnly": 8,
+                                "responsiveLayouts": null,
+                                "responsivity": false,
+                                "sizeWidthComposite": null,
+                                "style": null,
+                                "type": "none",
+                                "userControl": {
+                                    "type": "I",
+                                    "userControlId": "ComboBox"
+                                },
+                                "visible": 11,
+                                "visualAttributeId": "VA_TEXTINPUTBOXCQL_755304",
+                                "width": "150",
+                                "widthComposite": "D"
+                            },
+                            {
+                                "aggregate": null,
+                                "aggregateId": null,
+                                "attribute": {
+                                    "$ref": "../../../../CSTMR/entities/EN_BUSINESSS_830.json#/attributes/AT46_NUMBERSI830"
+                                },
+                                "attributeValidations": [
+                                ],
+                                "colSpan": 1,
+                                "componentInGrid": true,
+                                "componentStyle": null,
+                                "customEvents": [
+                                ],
+                                "customizationLayer": 0,
+                                "customizationLayerDescription": "ECU",
+                                "enabled": 0,
+                                "include": 4095,
+                                "maxRecords": null,
+                                "name": "numberOfBusiness",
+                                "options": 0,
+                                "order": 14,
+                                "readOnly": 8,
+                                "responsiveLayouts": null,
+                                "responsivity": false,
+                                "sizeWidthComposite": null,
+                                "style": null,
+                                "textRows": 0,
+                                "userControl": {
+                                    "type": "I",
+                                    "userControlId": "TextInputBox"
+                                },
+                                "visible": 0,
+                                "visualAttributeId": "VA_TEXTINPUTBOXCUG_754304",
+                                "width": null,
+                                "widthComposite": "D"
+                            },
+                            {
+                                "aggregate": null,
+                                "aggregateId": null,
+                                "attribute": {
+                                    "$ref": "../../../../CSTMR/entities/EN_BUSINESSS_830.json#/attributes/AT77_CODESODR830"
+                                },
+                                "attributeValidations": [
+                                ],
+                                "colSpan": 1,
+                                "componentInGrid": true,
+                                "componentStyle": null,
+                                "customEvents": [
+                                ],
+                                "customizationLayer": 0,
+                                "customizationLayerDescription": "ECU",
+                                "enabled": 0,
+                                "include": 4095,
+                                "maxRecords": null,
+                                "name": "code",
+                                "options": 0,
+                                "order": 8,
+                                "readOnly": 8,
+                                "responsiveLayouts": null,
+                                "responsivity": false,
+                                "sizeWidthComposite": null,
+                                "style": null,
+                                "textRows": 0,
+                                "userControl": {
+                                    "type": "I",
+                                    "userControlId": "TextInputBox"
+                                },
+                                "visible": 0,
+                                "visualAttributeId": "VA_TEXTINPUTBOXETM_971304",
+                                "width": null,
+                                "widthComposite": "D"
+                            },
+                            {
+                                "aggregate": null,
+                                "aggregateId": null,
+                                "attribute": {
+                                    "$ref": "../../../../CSTMR/entities/EN_BUSINESSS_830.json#/attributes/AT13_CUSTOMER830"
+                                },
+                                "attributeValidations": [
+                                ],
+                                "colSpan": 1,
+                                "componentInGrid": true,
+                                "componentStyle": null,
+                                "customEvents": [
+                                ],
+                                "customizationLayer": 0,
+                                "customizationLayerDescription": "ECU",
+                                "enabled": 0,
+                                "include": 4095,
+                                "maxRecords": null,
+                                "name": "customerCode",
+                                "options": 0,
+                                "order": 9,
+                                "readOnly": 8,
+                                "responsiveLayouts": null,
+                                "responsivity": false,
+                                "sizeWidthComposite": null,
+                                "style": null,
+                                "textRows": 0,
+                                "userControl": {
+                                    "type": "I",
+                                    "userControlId": "TextInputBox"
+                                },
+                                "visible": 0,
+                                "visualAttributeId": "VA_TEXTINPUTBOXEWA_952304",
+                                "width": null,
+                                "widthComposite": "D"
+                            },
+                            {
+                                "aggregate": null,
+                                "aggregateId": null,
+                                "attribute": {
+                                    "$ref": "../../../../CSTMR/entities/EN_BUSINESSS_830.json#/attributes/AT11_COLONYKL830"
+                                },
+                                "attributeValidations": [
+                                ],
+                                "colSpan": 1,
+                                "componentInGrid": true,
+                                "componentStyle": null,
+                                "customEvents": [
+                                ],
+                                "customizationLayer": 0,
+                                "customizationLayerDescription": "ECU",
+                                "enabled": 0,
+                                "include": 4095,
+                                "maxRecords": null,
+                                "name": "colony",
+                                "options": 0,
+                                "order": 15,
+                                "readOnly": 8,
+                                "responsiveLayouts": null,
+                                "responsivity": false,
+                                "sizeWidthComposite": null,
+                                "style": null,
+                                "textRows": 0,
+                                "userControl": {
+                                    "type": "I",
+                                    "userControlId": "TextInputBox"
+                                },
+                                "visible": 0,
+                                "visualAttributeId": "VA_TEXTINPUTBOXFNC_288304",
+                                "width": null,
+                                "widthComposite": "D"
+                            },
+                            {
+                                "aggregate": null,
+                                "aggregateId": null,
+                                "attribute": {
+                                    "$ref": "../../../../CSTMR/entities/EN_BUSINESSS_830.json#/attributes/AT73_COUNTRYY830"
+                                },
+                                "attributeValidations": [
+                                ],
+                                "colSpan": 1,
+                                "componentInGrid": true,
+                                "componentStyle": null,
+                                "customEvents": [
+                                ],
+                                "customizationLayer": 0,
+                                "customizationLayerDescription": "ECU",
+                                "enabled": 0,
+                                "include": 4095,
+                                "maxRecords": null,
+                                "name": "country",
+                                "options": 0,
+                                "order": 20,
+                                "readOnly": 8,
+                                "responsiveLayouts": null,
+                                "responsivity": false,
+                                "sizeWidthComposite": null,
+                                "style": null,
+                                "textRows": 0,
+                                "userControl": {
+                                    "type": "I",
+                                    "userControlId": "TextInputBox"
+                                },
+                                "visible": 0,
+                                "visualAttributeId": "VA_TEXTINPUTBOXFSJ_501304",
+                                "width": null,
+                                "widthComposite": "D"
+                            },
+                            {
+                                "aggregate": null,
+                                "aggregateId": null,
+                                "attribute": {
+                                    "$ref": "../../../../CSTMR/entities/EN_BUSINESSS_830.json#/attributes/AT60_STATEHSX830"
+                                },
+                                "attributeValidations": [
+                                ],
+                                "colSpan": 1,
+                                "componentInGrid": true,
+                                "componentStyle": null,
+                                "customEvents": [
+                                ],
+                                "customizationLayer": 0,
+                                "customizationLayerDescription": "ECU",
+                                "enabled": 0,
+                                "include": 4095,
+                                "maxRecords": null,
+                                "name": "state",
+                                "options": 0,
+                                "order": 18,
+                                "readOnly": 8,
+                                "responsiveLayouts": null,
+                                "responsivity": false,
+                                "sizeWidthComposite": null,
+                                "style": null,
+                                "textRows": 0,
+                                "userControl": {
+                                    "type": "I",
+                                    "userControlId": "TextInputBox"
+                                },
+                                "visible": 0,
+                                "visualAttributeId": "VA_TEXTINPUTBOXKBN_306304",
+                                "width": null,
+                                "widthComposite": "D"
+                            },
+                            {
+                                "aggregate": null,
+                                "aggregateId": null,
+                                "attribute": {
+                                    "$ref": "../../../../CSTMR/entities/EN_BUSINESSS_830.json#/attributes/AT90_TURNARDO830"
+                                },
+                                "attributeValidations": [
+                                ],
+                                "colSpan": 1,
+                                "componentInGrid": true,
+                                "componentStyle": null,
+                                "customEvents": [
+                                ],
+                                "customizationLayer": 0,
+                                "customizationLayerDescription": "ECU",
+                                "enabled": 0,
+                                "include": 4095,
+                                "label": {
+                                    "defaultValue": {
+                                        "$ref": "../../../../CSTMR/assets/languages/CSTMR.json#/CSTMR/LBL/LBL_CSTMR_GIROQYDVN_82921"
+                                    },
+                                    "labelId": "LBL_CSTMR_GIROQYDVN_82921",
+                                    "moduleId": "CSTMR"
+                                },
+                                "maxRecords": null,
+                                "name": "turnaround",
+                                "options": 0,
+                                "order": 11,
+                                "readOnly": 8,
+                                "responsiveLayouts": null,
+                                "responsivity": false,
+                                "sizeWidthComposite": null,
+                                "style": null,
+                                "textRows": 0,
+                                "userControl": {
+                                    "type": "I",
+                                    "userControlId": "TextInputBox"
+                                },
+                                "visible": 0,
+                                "visualAttributeId": "VA_TEXTINPUTBOXKWD_921304",
+                                "width": null,
+                                "widthComposite": "D"
+                            },
+                            {
+                                "aggregate": null,
+                                "aggregateId": null,
+                                "attribute": {
+                                    "$ref": "../../../../CSTMR/entities/EN_BUSINESSS_830.json#/attributes/AT27_MOUNTLEO830"
+                                },
+                                "attributeValidations": [
+                                ],
+                                "colSpan": 1,
+                                "componentInGrid": true,
+                                "componentStyle": null,
+                                "customEvents": [
+                                ],
+                                "customizationLayer": 0,
+                                "customizationLayerDescription": "ECU",
+                                "enabled": 0,
+                                "include": 4095,
+                                "maxRecords": null,
+                                "name": "mountlyIncomes",
+                                "options": 0,
+                                "order": 23,
+                                "readOnly": 8,
+                                "responsiveLayouts": null,
+                                "responsivity": false,
+                                "sizeWidthComposite": null,
+                                "style": null,
+                                "textRows": 0,
+                                "userControl": {
+                                    "type": "I",
+                                    "userControlId": "TextInputBox"
+                                },
+                                "visible": 0,
+                                "visualAttributeId": "VA_TEXTINPUTBOXMWQ_593304",
+                                "width": null,
+                                "widthComposite": "D"
+                            },
+                            {
+                                "aggregate": null,
+                                "aggregateId": null,
+                                "attribute": {
+                                    "$ref": "../../../../CSTMR/entities/EN_BUSINESSS_830.json#/attributes/AT48_WHICHRCE830"
+                                },
+                                "attributeValidations": [
+                                ],
+                                "colSpan": 1,
+                                "componentInGrid": true,
+                                "componentStyle": null,
+                                "customEvents": [
+                                ],
+                                "customizationLayer": 0,
+                                "customizationLayerDescription": "ECU",
+                                "enabled": 0,
+                                "include": 4095,
+                                "label": {
+                                    "defaultValue": {
+                                        "$ref": "../../../../CSTMR/assets/languages/CSTMR.json#/CSTMR/LBL/LBL_CSTMR_OTRORECSU_76656"
+                                    },
+                                    "labelId": "LBL_CSTMR_OTRORECSU_76656",
+                                    "moduleId": "CSTMR"
+                                },
+                                "maxRecords": null,
+                                "name": "whichResource",
+                                "options": 0,
+                                "order": 24,
+                                "readOnly": 8,
+                                "responsiveLayouts": null,
+                                "responsivity": false,
+                                "sizeWidthComposite": null,
+                                "style": null,
+                                "textRows": 0,
+                                "userControl": {
+                                    "type": "I",
+                                    "userControlId": "TextInputBox"
+                                },
+                                "visible": 0,
+                                "visualAttributeId": "VA_TEXTINPUTBOXNSS_139304",
+                                "width": null,
+                                "widthComposite": "D"
+                            },
+                            {
+                                "aggregate": null,
+                                "aggregateId": null,
+                                "attribute": {
+                                    "$ref": "../../../../CSTMR/entities/EN_BUSINESSS_830.json#/attributes/AT17_STREETFK830"
+                                },
+                                "attributeValidations": [
+                                ],
+                                "colSpan": 1,
+                                "componentInGrid": true,
+                                "componentStyle": null,
+                                "customEvents": [
+                                ],
+                                "customizationLayer": 0,
+                                "customizationLayerDescription": "ECU",
+                                "enabled": 0,
+                                "include": 4095,
+                                "maxRecords": null,
+                                "name": "street",
+                                "options": 0,
+                                "order": 13,
+                                "readOnly": 8,
+                                "responsiveLayouts": null,
+                                "responsivity": false,
+                                "sizeWidthComposite": null,
+                                "style": null,
+                                "textRows": 0,
+                                "userControl": {
+                                    "type": "I",
+                                    "userControlId": "TextInputBox"
+                                },
+                                "visible": 0,
+                                "visualAttributeId": "VA_TEXTINPUTBOXNWN_620304",
+                                "width": null,
+                                "widthComposite": "D"
+                            },
+                            {
+                                "aggregate": null,
+                                "aggregateId": null,
+                                "attribute": {
+                                    "$ref": "../../../../CSTMR/entities/EN_BUSINESSS_830.json#/attributes/AT78_MUNICILL830"
+                                },
+                                "attributeValidations": [
+                                ],
+                                "colSpan": 1,
+                                "componentInGrid": true,
+                                "componentStyle": null,
+                                "customEvents": [
+                                ],
+                                "customizationLayer": 0,
+                                "customizationLayerDescription": "ECU",
+                                "enabled": 0,
+                                "include": 4095,
+                                "maxRecords": null,
+                                "name": "municipality",
+                                "options": 0,
+                                "order": 17,
+                                "readOnly": 8,
+                                "responsiveLayouts": null,
+                                "responsivity": false,
+                                "sizeWidthComposite": null,
+                                "style": null,
+                                "textRows": 0,
+                                "userControl": {
+                                    "type": "I",
+                                    "userControlId": "TextInputBox"
+                                },
+                                "visible": 0,
+                                "visualAttributeId": "VA_TEXTINPUTBOXOZC_256304",
+                                "width": null,
+                                "widthComposite": "D"
+                            },
+                            {
+                                "aggregate": null,
+                                "aggregateId": null,
+                                "attribute": {
+                                    "$ref": "../../../../CSTMR/entities/EN_BUSINESSS_830.json#/attributes/AT98_NAMESVED830"
+                                },
+                                "attributeValidations": [
+                                ],
+                                "colSpan": 1,
+                                "componentInGrid": true,
+                                "componentStyle": null,
+                                "customEvents": [
+                                ],
+                                "customizationLayer": 0,
+                                "customizationLayerDescription": "ECU",
+                                "enabled": 4095,
+                                "include": 4095,
+                                "label": {
+                                    "defaultValue": {
+                                        "$ref": "../../../../CSTMR/assets/languages/CSTMR.json#/CSTMR/LBL/LBL_CSTMR_NOMBREDEC_62486"
+                                    },
+                                    "labelId": "LBL_CSTMR_NOMBREDEC_62486",
+                                    "moduleId": "CSTMR"
+                                },
+                                "maxRecords": null,
+                                "name": "names",
+                                "options": 0,
+                                "order": 1,
+                                "readOnly": 8,
+                                "responsiveLayouts": null,
+                                "responsivity": false,
+                                "sizeWidthComposite": null,
+                                "style": null,
+                                "textRows": 0,
+                                "userControl": {
+                                    "type": "I",
+                                    "userControlId": "TextInputBox"
+                                },
+                                "visible": 4095,
+                                "visualAttributeId": "VA_TEXTINPUTBOXQYD_971304",
+                                "width": "220",
+                                "widthComposite": "D"
+                            },
+                            {
+                                "aggregate": null,
+                                "aggregateId": null,
+                                "attribute": {
+                                    "$ref": "../../../../CSTMR/entities/EN_BUSINESSS_830.json#/attributes/AT48_POSTALCE830"
+                                },
+                                "attributeValidations": [
+                                ],
+                                "colSpan": 1,
+                                "componentInGrid": true,
+                                "componentStyle": null,
+                                "customEvents": [
+                                ],
+                                "customizationLayer": 0,
+                                "customizationLayerDescription": "ECU",
+                                "enabled": 0,
+                                "include": 4095,
+                                "maxRecords": null,
+                                "name": "postalCode",
+                                "options": 0,
+                                "order": 19,
+                                "readOnly": 8,
+                                "responsiveLayouts": null,
+                                "responsivity": false,
+                                "sizeWidthComposite": null,
+                                "style": null,
+                                "textRows": 0,
+                                "userControl": {
+                                    "type": "I",
+                                    "userControlId": "TextInputBox"
+                                },
+                                "visible": 0,
+                                "visualAttributeId": "VA_TEXTINPUTBOXSQX_574304",
+                                "width": null,
+                                "widthComposite": "D"
+                            },
+                            {
+                                "aggregate": null,
+                                "aggregateId": null,
+                                "attribute": {
+                                    "$ref": "../../../../CSTMR/entities/EN_BUSINESSS_830.json#/attributes/AT22_TYPELOAC830"
+                                },
+                                "attributeValidations": [
+                                ],
+                                "cacheDuration": 0,
+                                "catalogName": "cr_tipo_local",
+                                "colSpan": 1,
+                                "componentInGrid": true,
+                                "componentStyle": null,
+                                "customEvents": [
+                                ],
+                                "customizationLayer": 0,
+                                "customizationLayerDescription": "ECU",
+                                "enabled": 4095,
+                                "entityQuery": null,
+                                "include": 4095,
+                                "label": {
+                                    "defaultValue": {
+                                        "$ref": "../../../../CSTMR/assets/languages/CSTMR.json#/CSTMR/LBL/LBL_CSTMR_TIPODELAL_16702"
+                                    },
+                                    "labelId": "LBL_CSTMR_TIPODELAL_16702",
+                                    "moduleId": "CSTMR"
+                                },
+                                "maxRecords": null,
+                                "minChars": null,
+                                "name": "typeLocal",
+                                "options": 0,
+                                "order": 5,
+                                "queryId": null,
+                                "queryMemberText": {
+                                    "attribute": {
+                                        "attributeId": null,
+                                        "name": null
+                                    },
+                                    "queryMemberId": null
+                                },
+                                "queryMemberValue": {
+                                    "attribute": {
+                                        "attributeId": null,
+                                        "name": null
+                                    },
+                                    "queryMemberId": null
+                                },
+                                "queryModule": null,
+                                "queryVersion": null,
+                                "readOnly": 8,
+                                "responsiveLayouts": null,
+                                "responsivity": false,
+                                "sizeWidthComposite": null,
+                                "style": null,
+                                "type": "none",
+                                "userControl": {
+                                    "type": "I",
+                                    "userControlId": "ComboBox"
+                                },
+                                "visible": 4095,
+                                "visualAttributeId": "VA_TEXTINPUTBOXTMW_911304",
+                                "width": "200",
+                                "widthComposite": "D"
+                            },
+                            {
+                                "aggregate": null,
+                                "aggregateId": null,
+                                "attribute": {
+                                    "$ref": "../../../../CSTMR/entities/EN_BUSINESSS_830.json#/attributes/AT91_LOCATIOO830"
+                                },
+                                "attributeValidations": [
+                                ],
+                                "colSpan": 1,
+                                "componentInGrid": true,
+                                "componentStyle": null,
+                                "customEvents": [
+                                ],
+                                "customizationLayer": 0,
+                                "customizationLayerDescription": "ECU",
+                                "enabled": 0,
+                                "include": 4095,
+                                "maxRecords": null,
+                                "name": "locations",
+                                "options": 0,
+                                "order": 16,
+                                "readOnly": 8,
+                                "responsiveLayouts": null,
+                                "responsivity": false,
+                                "sizeWidthComposite": null,
+                                "style": null,
+                                "textRows": 0,
+                                "userControl": {
+                                    "type": "I",
+                                    "userControlId": "TextInputBox"
+                                },
+                                "visible": 0,
+                                "visualAttributeId": "VA_TEXTINPUTBOXTTR_701304",
+                                "width": null,
+                                "widthComposite": "D"
+                            },
+                            {
+                                "aggregate": null,
+                                "aggregateId": null,
+                                "attribute": {
+                                    "$ref": "../../../../CSTMR/entities/EN_BUSINESSS_830.json#/attributes/AT53_TIMEBUES830"
+                                },
+                                "attributeValidations": [
+                                ],
+                                "cacheDuration": 0,
+                                "catalogName": "cl_referencia_tiempo",
+                                "colSpan": 1,
+                                "componentInGrid": true,
+                                "componentStyle": null,
+                                "customEvents": [
+                                ],
+                                "customizationLayer": 0,
+                                "customizationLayerDescription": "ECU",
+                                "enabled": 4095,
+                                "entityQuery": null,
+                                "include": 4095,
+                                "label": {
+                                    "defaultValue": {
+                                        "$ref": "../../../../CSTMR/assets/languages/CSTMR.json#/CSTMR/LBL/LBL_CSTMR_TIEMPOAOA_58383"
+                                    },
+                                    "labelId": "LBL_CSTMR_TIEMPOAOA_58383",
+                                    "moduleId": "CSTMR"
+                                },
+                                "maxRecords": null,
+                                "minChars": null,
+                                "name": "timeBusinessAddress",
+                                "options": 0,
+                                "order": 4,
+                                "queryId": null,
+                                "queryMemberText": {
+                                    "attribute": {
+                                        "attributeId": null,
+                                        "name": null
+                                    },
+                                    "queryMemberId": null
+                                },
+                                "queryMemberValue": {
+                                    "attribute": {
+                                        "attributeId": null,
+                                        "name": null
+                                    },
+                                    "queryMemberId": null
+                                },
+                                "queryModule": null,
+                                "queryVersion": null,
+                                "readOnly": 8,
+                                "responsiveLayouts": null,
+                                "responsivity": false,
+                                "sizeWidthComposite": null,
+                                "style": null,
+                                "type": "none",
+                                "userControl": {
+                                    "type": "I",
+                                    "userControlId": "ComboBox"
+                                },
+                                "visible": 11,
+                                "visualAttributeId": "VA_TEXTINPUTBOXVKC_396304",
+                                "width": "150",
+                                "widthComposite": "D"
+                            },
+                            {
+                                "aggregate": null,
+                                "aggregateId": null,
+                                "attribute": {
+                                    "$ref": "../../../../CSTMR/entities/EN_BUSINESSS_830.json#/attributes/AT13_PHONEWJC830"
+                                },
+                                "attributeValidations": [
+                                ],
+                                "colSpan": 1,
+                                "componentInGrid": true,
+                                "componentStyle": null,
+                                "customEvents": [
+                                ],
+                                "customizationLayer": 0,
+                                "customizationLayerDescription": "ECU",
+                                "enabled": 0,
+                                "include": 4095,
+                                "maxRecords": null,
+                                "name": "phone",
+                                "options": 0,
+                                "order": 22,
+                                "readOnly": 8,
+                                "responsiveLayouts": null,
+                                "responsivity": false,
+                                "sizeWidthComposite": null,
+                                "style": null,
+                                "textRows": 0,
+                                "userControl": {
+                                    "type": "I",
+                                    "userControlId": "TextInputBox"
+                                },
+                                "visible": 0,
+                                "visualAttributeId": "VA_TEXTINPUTBOXWKG_843304",
+                                "width": null,
+                                "widthComposite": "D"
+                            },
+                            {
+                                "aggregate": null,
+                                "aggregateId": null,
+                                "attribute": {
+                                    "$ref": "../../../../CSTMR/entities/EN_BUSINESSS_830.json#/attributes/AT72_RESOUREC830"
+                                },
+                                "attributeValidations": [
+                                ],
+                                "cacheDuration": 0,
+                                "catalogName": "cl_recursos_credito",
+                                "colSpan": 1,
+                                "componentInGrid": true,
+                                "componentStyle": null,
+                                "customEvents": [
+                                ],
+                                "customizationLayer": 0,
+                                "customizationLayerDescription": "ECU",
+                                "enabled": 4095,
+                                "entityQuery": null,
+                                "include": 4095,
+                                "label": {
+                                    "defaultValue": {
+                                        "$ref": "../../../../CSTMR/assets/languages/CSTMR.json#/CSTMR/LBL/LBL_CSTMR_ORIGENLUE_60745"
+                                    },
+                                    "labelId": "LBL_CSTMR_ORIGENLUE_60745",
+                                    "moduleId": "CSTMR"
+                                },
+                                "maxRecords": null,
+                                "minChars": null,
+                                "name": "resources",
+                                "options": 0,
+                                "order": 6,
+                                "queryId": null,
+                                "queryMemberText": {
+                                    "attribute": {
+                                        "attributeId": null,
+                                        "name": null
+                                    },
+                                    "queryMemberId": null
+                                },
+                                "queryMemberValue": {
+                                    "attribute": {
+                                        "attributeId": null,
+                                        "name": null
+                                    },
+                                    "queryMemberId": null
+                                },
+                                "queryModule": null,
+                                "queryVersion": null,
+                                "readOnly": 8,
+                                "responsiveLayouts": null,
+                                "responsivity": false,
+                                "sizeWidthComposite": null,
+                                "style": null,
+                                "type": "none",
+                                "userControl": {
+                                    "type": "I",
+                                    "userControlId": "ComboBox"
+                                },
+                                "visible": 4095,
+                                "visualAttributeId": "VA_TEXTINPUTBOXXIK_422304",
+                                "width": "200",
+                                "widthComposite": "D"
+                            },
+                            {
+                                "aggregate": null,
+                                "aggregateId": null,
+                                "attribute": {
+                                    "$ref": "../../../../CSTMR/entities/EN_BUSINESSS_830.json#/attributes/AT22_ECONOMVC830"
+                                },
+                                "attributeValidations": [
+                                ],
+                                "colSpan": 1,
+                                "componentInGrid": true,
+                                "componentStyle": null,
+                                "customEvents": [
+                                ],
+                                "customizationLayer": 0,
+                                "customizationLayerDescription": "ECU",
+                                "enabled": 4095,
+                                "include": 4095,
+                                "label": {
+                                    "defaultValue": {
+                                        "$ref": "../../../../CSTMR/assets/languages/CSTMR.json#/CSTMR/LBL/LBL_CSTMR_ACTIVIDAA_39121"
+                                    },
+                                    "labelId": "LBL_CSTMR_ACTIVIDAA_39121",
+                                    "moduleId": "CSTMR"
+                                },
+                                "maxRecords": null,
+                                "name": "economicActivityDesc",
+                                "options": 0,
+                                "order": 2,
+                                "readOnly": 8,
+                                "responsiveLayouts": null,
+                                "responsivity": false,
+                                "sizeWidthComposite": null,
+                                "style": null,
+                                "textRows": 0,
+                                "userControl": {
+                                    "type": "I",
+                                    "userControlId": "TextInputBox"
+                                },
+                                "visible": 4095,
+                                "visualAttributeId": "VA_TEXTINPUTBOXYOY_865304",
+                                "width": "220",
+                                "widthComposite": "D"
+                            },
+                            {
+                                "aggregate": null,
+                                "aggregateId": null,
+                                "attribute": {
+                                    "$ref": "../../../../CSTMR/entities/EN_BUSINESSS_830.json#/attributes/AT87_CREDITIO830"
+                                },
+                                "attributeValidations": [
+                                ],
+                                "cacheDuration": 0,
+                                "catalogName": "cl_destino_credito",
+                                "colSpan": 1,
+                                "componentInGrid": true,
+                                "componentStyle": null,
+                                "customEvents": [
+                                ],
+                                "customizationLayer": 0,
+                                "customizationLayerDescription": "ECU",
+                                "enabled": 4095,
+                                "entityQuery": null,
+                                "include": 4095,
+                                "label": {
+                                    "defaultValue": {
+                                        "$ref": "../../../../CSTMR/assets/languages/CSTMR.json#/CSTMR/LBL/LBL_CSTMR_DESTINOTR_63871"
+                                    },
+                                    "labelId": "LBL_CSTMR_DESTINOTR_63871",
+                                    "moduleId": "CSTMR"
+                                },
+                                "maxRecords": null,
+                                "minChars": null,
+                                "name": "creditDestination",
+                                "options": 0,
+                                "order": 7,
+                                "queryId": null,
+                                "queryMemberText": {
+                                    "attribute": {
+                                        "attributeId": null,
+                                        "name": null
+                                    },
+                                    "queryMemberId": null
+                                },
+                                "queryMemberValue": {
+                                    "attribute": {
+                                        "attributeId": null,
+                                        "name": null
+                                    },
+                                    "queryMemberId": null
+                                },
+                                "queryModule": null,
+                                "queryVersion": null,
+                                "readOnly": 8,
+                                "responsiveLayouts": null,
+                                "responsivity": false,
+                                "sizeWidthComposite": null,
+                                "style": null,
+                                "type": "none",
+                                "userControl": {
+                                    "type": "I",
+                                    "userControlId": "ComboBox"
+                                },
+                                "visible": 4095,
+                                "visualAttributeId": "VA_TEXTINPUTBOXYPK_251304",
+                                "width": "200",
+                                "widthComposite": "D"
+                            }
+                        ]
+                    },
+                    {
+                        "collapsedStr": "F",
+                        "columnsNum": 1,
+                        "componentStyle": null,
+                        "customEvents": [
+                        ],
+                        "enabled": 4095,
+                        "eventType": 0,
+                        "groupId": "G_BUSINESSSS_687304",
+                        "groups": [
+                            {
+                                "collapsedStr": "F",
+                                "columnsNum": 3,
+                                "componentStyle": null,
+                                "customEvents": [
+                                ],
+                                "enabled": 4095,
+                                "eventType": 0,
+                                "groupId": "G_BUSINESSSS_428304",
+                                "htmlSection": "T",
+                                "independentValidation": "F",
+                                "layoutType": "Group",
+                                "name": "Group2643",
+                                "order": 1,
+                                "orientation": "V",
+                                "parentLayoutType": "GroupLayout",
+                                "responsiveLayouts": null,
+                                "responsivity": false,
+                                "style": null,
+                                "visible": 4095,
+                                "visualAttributes": [
+                                    {
+                                        "aggregate": null,
+                                        "aggregateId": null,
+                                        "colSpan": 1,
+                                        "componentInGrid": false,
+                                        "componentStyle": null,
+                                        "customEvents": [
+                                        ],
+                                        "customizationLayer": 0,
+                                        "customizationLayerDescription": "ECU",
+                                        "include": 4095,
+                                        "maxRecords": null,
+                                        "name": "G_BUSINESSSS_428304-default-blank",
+                                        "options": 0,
+                                        "order": 1,
+                                        "responsiveLayouts": null,
+                                        "responsivity": false,
+                                        "sizeWidthComposite": null,
+                                        "style": null,
+                                        "userControl": {
+                                            "type": "I",
+                                            "userControlId": "Spacer"
+                                        },
+                                        "visible": 4095,
+                                        "visualAttributeId": "G_BUSINESSSS_428304-default-blank",
+                                        "width": null,
+                                        "widthComposite": "D"
+                                    }
+                                ]
+                            }
+                        ],
+                        "layoutType": "GroupLayout",
+                        "name": "GroupLayout1591",
+                        "order": 1,
+                        "style": null,
+                        "visible": 4095
+                    },
+                    {
+                        "collapsedStr": "F",
+                        "columnsNum": 3,
+                        "componentStyle": null,
+                        "customEvents": [
+                        ],
+                        "enabled": 4095,
+                        "entity": {
+                            "$ref": "../../../../CSTMR/entities/EN_CUSTOMEIR_105.json#"
+                        },
+                        "eventType": 0,
+                        "groupId": "G_BUSINESSSS_972304",
+                        "htmlSection": "F",
+                        "independentValidation": "F",
+                        "layoutType": "Group",
+                        "name": "Group1257",
+                        "order": 2,
+                        "orientation": "V",
+                        "responsiveLayouts": null,
+                        "responsivity": false,
+                        "style": null,
+                        "visible": null,
+                        "visualAttributes": [
+                            {
+                                "aggregate": null,
+                                "aggregateId": null,
+                                "attribute": {
+                                    "$ref": "../../../../CSTMR/entities/EN_CUSTOMEIR_105.json#/attributes/AT51_CODEUXLP105"
+                                },
+                                "attributeValidations": [
+                                ],
+                                "colSpan": 1,
+                                "componentInGrid": false,
+                                "componentStyle": null,
+                                "customEvents": [
+                                ],
+                                "customizationLayer": 0,
+                                "customizationLayerDescription": "ECU",
+                                "enabled": 4095,
+                                "format": "",
+                                "include": 4095,
+                                "label": {
+                                    "defaultValue": {
+                                        "$ref": "../../../../CSTMR/assets/languages/CSTMR.json#/CSTMR/LBL/LBL_CSTMR_CDIGODEET_21744"
+                                    },
+                                    "labelId": "LBL_CSTMR_CDIGODEET_21744",
+                                    "moduleId": "CSTMR"
+                                },
+                                "maxRecords": null,
+                                "name": "code",
+                                "options": 0,
+                                "order": 1,
+                                "readOnly": 8,
+                                "responsiveLayouts": null,
+                                "responsivity": false,
+                                "sizeWidthComposite": null,
+                                "style": null,
+                                "textRows": 0,
+                                "userControl": {
+                                    "type": "I",
+                                    "userControlId": "TextInputBox"
+                                },
+                                "visible": 4095,
+                                "visualAttributeId": "VA_CODEZGXWKDYWYYB_648304",
+                                "width": null,
+                                "widthComposite": "D"
+                            },
+                            {
+                                "aggregate": null,
+                                "aggregateId": null,
+                                "attributeValidations": [
+                                ],
+                                "colSpan": 1,
+                                "componentInGrid": false,
+                                "componentStyle": null,
+                                "customEvents": [
+                                    {
+                                        "customEventId": "CEVA_010VA_VABUTTONJPSJYQV_906304_715",
+                                        "customizationLayer": 0,
+                                        "customizationLayerDescription": "ECU",
+                                        "enabled": "T",
+                                        "executionType": 7,
+                                        "filter": null,
+                                        "isEnabled": true,
+                                        "visualAttributeEventType": {
+                                            "availableExecutionType": 7,
+                                            "description": "Permite personalizar la acción a ejecutar de un command o de un ActionControl",
+                                            "eventId": 10,
+                                            "name": "ExecuteCommand"
+                                        }
+                                    }
+                                ],
+                                "customizationLayer": 0,
+                                "customizationLayerDescription": "ECU",
+                                "enabled": 4095,
+                                "entityQuery": null,
+                                "include": 4095,
+                                "label": {
+                                    "defaultValue": {
+                                        "$ref": "../../../../CSTMR/assets/languages/CSTMR.json#/CSTMR/LBL/LBL_CSTMR_BUSCARAUU_89471"
+                                    },
+                                    "labelId": "LBL_CSTMR_BUSCARAUU_89471",
+                                    "moduleId": "CSTMR"
+                                },
+                                "maxRecords": null,
+                                "name": "VA_VABUTTONJPSJYQV_906304",
+                                "options": 0,
+                                "order": 2,
+                                "queryModule": null,
+                                "queryVersion": null,
+                                "responsiveLayouts": null,
+                                "responsivity": false,
+                                "sizeWidthComposite": null,
+                                "style": null,
+                                "userControl": {
+                                    "type": "A",
+                                    "userControlId": "Button"
+                                },
+                                "visible": 4095,
+                                "visualAttributeId": "VA_VABUTTONJPSJYQV_906304",
+                                "width": null,
+                                "widthComposite": "D"
+                            }
+                        ]
+                    }
+                ],
+                "id": {
+                    "version": "1.0.0",
+                    "viewId": "VW_BUSINESSPU_304"
+                },
+                "metadataVersion": "6.4.0.5.1903",
+                "modules": [
+                    {
+                        "moduleId": "CSTMR"
+                    }
+                ],
+                "name": "View of BusinessForm"
+            }
+        }
+    ]
+}

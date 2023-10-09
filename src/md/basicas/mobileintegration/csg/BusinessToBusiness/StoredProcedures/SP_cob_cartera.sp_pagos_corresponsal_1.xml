@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<procedure>
+  <database>cob_cartera</database>
+  <name>sp_pagos_corresponsal</name>
+  <type>SQLSERVER</type>
+  <version>1</version>
+  <parameters>
+    <parameter name="@s_ssn" dataType="int" direction="in" />
+    <parameter name="@s_sesn" dataType="int" direction="in" />
+    <parameter name="@s_date" dataType="datetime" direction="in" />
+    <parameter name="@s_user" dataType="varchar" direction="in" />
+    <parameter name="@s_term" dataType="varchar" direction="in" />
+    <parameter name="@s_ofi" dataType="smallint" direction="in" />
+    <parameter name="@s_srv" dataType="varchar" direction="in" />
+    <parameter name="@s_lsrv" dataType="varchar" direction="in" />
+    <parameter name="@s_rol" dataType="smallint" direction="in" />
+    <parameter name="@s_org" dataType="varchar" direction="in" />
+    <parameter name="@s_culture" dataType="varchar" direction="in" />
+    <parameter name="@i_operacion" dataType="char" direction="in" />
+    <parameter name="@i_referencia" dataType="varchar" direction="in" />
+    <parameter name="@i_corresponsal" dataType="varchar" direction="in" />
+    <parameter name="@i_moneda" dataType="int" direction="in" />
+    <parameter name="@i_fecha_valor" dataType="datetime" direction="in" />
+    <parameter name="@i_status_srv" dataType="varchar" direction="in" />
+    <parameter name="@i_observacion" dataType="varchar" direction="in" />
+    <parameter name="@i_fecha_pago" dataType="varchar" direction="in" />
+    <parameter name="@i_monto_pago" dataType="varchar" direction="in" />
+    <parameter name="@i_archivo_pago" dataType="varchar" direction="in" />
+    <parameter name="@i_trn_id_corresp" dataType="varchar" direction="in" />
+    <parameter name="@i_accion" dataType="char" direction="in" />
+    <parameter name="@i_en_linea" dataType="char" direction="in" />
+    <parameter name="@i_externo" dataType="char" direction="in" />
+    <parameter name="@o_msg" dataType="varchar" direction="out" />
+    <parameter name="@i_token" dataType="varchar" direction="in" />
+    <parameter name="@i_ejecutar_fvalor" dataType="char" direction="in" />
+    <parameter name="@o_codigo_err" dataType="varchar" direction="out" />
+    <parameter name="@o_mensaje_err" dataType="varchar" direction="out" />
+    <parameter name="@o_monto_recibido" dataType="varchar" direction="out" />
+    <parameter name="@o_mensaje_ticket" dataType="varchar" direction="out" />
+    <parameter name="@o_cuenta" dataType="varchar" direction="out" />
+    <parameter name="@o_codigo_pago" dataType="varchar" direction="out" />
+    <parameter name="@o_codigo_reversa" dataType="varchar" direction="out" />
+  </parameters>
+  <queries />
+</procedure>

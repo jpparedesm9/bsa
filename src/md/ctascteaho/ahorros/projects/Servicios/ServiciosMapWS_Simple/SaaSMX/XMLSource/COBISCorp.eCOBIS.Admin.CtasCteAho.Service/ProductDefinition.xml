@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<product path="D:/ServiciosMapWS_Simple/SaaSMX/Products/COBISCorp.eCOBIS.Admin.CtasCteAho.Service" appPath="C:/Program Files (x86)/COBIS/COBIS Services Generator/" name="COBISCorp.eCOBIS.Admin.CtasCteAho.Service" productNS="http://service.ctascteaho.admin.ecobis.cobiscorp" description="Servicios Ahorros" documentationLanguage="Español" year="2016" version="1.0.0.0" type="SERVICE" GUID="BB6DBC97-AA89-4DE2-AFBB-D5E1BD03FC19">
+  <namespaces>
+    <namespace type="class" base="COBISCorp.eCOBIS.Admin.CtasCteAho" name="COBISCorp.eCOBIS.Admin.CtasCteAho.Service" package="cobiscorp.ecobis.admin.ctascteaho.service" ns="http://service.ctascteaho.admin.ecobis.cobiscorp" folder="CtasCteAho" />
+  </namespaces>
+  <templates>
+    <template id="MAPWSWebService" productName="COBISCorp.eCOBIS.Admin.CtasCteAho.BLI" outputFolder="D:\ServiciosMapWS_Simple\Code\BM\COBISCorp.eCOBIS.Admin.CtasCteAho.BLI" package="false" packageType="None">
+      <templateFiles>
+        <templateFile filePath="MAPWSWebService\BLIInterface.xslt" enabled="true" override="true" />
+        <templateFile filePath="MAPWSWebService\BLIImpl.xslt" enabled="true" override="true" />
+        <templateFile filePath="MAPWSWebService\asmx.xslt" enabled="true" override="true" />
+        <templateFile filePath="MAPWSWebService\webConfig.xslt" enabled="true" override="false" />
+        <templateFile filePath="MAPWSWebService\WebSiteSLN.xslt" enabled="true" override="true" />
+        <templateFile filePath="MAPWSWebService\webSiteBAT.xslt" enabled="true" override="true" />
+      </templateFiles>
+    </template>
+  </templates>
+  <DTOs />
+  <classes>
+    <class name="Ahorros" nsBase="COBISCorp.eCOBIS.Admin.CtasCteAho" namespace="COBISCorp.eCOBIS.Admin.CtasCteAho.Service" package="cobiscorp.ecobis.admin.ctascteaho.service" ns="http://service.ctascteaho.admin.ecobis.cobiscorp" version="1">
+      <partialClasses>
+        <partialClass name="Ahorros">
+          <services>
+            <service name="ConsultaMovimientos" id="Admin.CtasCteAho.Ahorros.ConsultaMovimientos">
+              <procedure name="sp_ahconsmov" database="cob_interfase" version="1" />
+            </service>
+            <service name="ConsultaSaldosYPromedios" id="Admin.CtasCteAho.Ahorros.ConsultaSaldosYPromedios">
+              <procedure name="sp_tr_con_saldos" database="cob_interfase" version="1" />
+            </service>
+            <service name="RegistroDelDeposito" id="Admin.CtasCteAho.Ahorros.RegistroDelDeposito">
+              <procedure name="sp_reg_deposito_efch" database="cob_interfase" version="1" />
+            </service>
+            <service name="RetiroAhorros" id="Admin.CtasCteAho.Ahorros.RetiroAhorros">
+              <procedure name="sp_ahretiro" database="cob_interfase" version="1" />
+            </service>
+          </services>
+        </partialClass>
+      </partialClasses>
+    </class>
+  </classes>
+  <references>
+    <reference name="COBISCorp.eCOBIS.Admin.CtasCteAho.DTO" type="DTO" version="1.0.0.0" GUID="0582EE55-2EB1-4BA3-AD41-C2F5F76FA389">
+      <templates>
+        <template id="DTOMAPWSWebService" productName="COBISCorp.eCOBIS.Admin.CtasCteAho.DTO" outputFolder="D:\ServiciosMapWS_Simple\Code\BM\COBISCorp.eCOBIS.Admin.CtasCteAho.DTO" package="true" packageType="Assembly">
+          <templateFiles>
+            <templateFile filePath="MAPWSWebServiceDTO\NetDTO.xslt" enabled="true" override="true" />
+            <templateFile filePath="MAPWSWebServiceDTO\ProjectMSBuild.xslt" enabled="true" override="true" />
+            <templateFile filePath="..\Commons\DOTNET\AssemblyInfo.xslt" enabled="true" override="true" />
+          </templateFiles>
+        </template>
+      </templates>
+      <namespaces>
+        <namespace type="dto" base="COBISCorp.eCOBIS.Admin.CtasCteAho" name="COBISCorp.eCOBIS.Admin.CtasCteAho.DTO" package="cobiscorp.ecobis.admin.ctascteaho.dto" ns="http://dto.ctascteaho.admin.ecobis.cobiscorp" folder="CtasCteAho\DTO" />
+      </namespaces>
+    </reference>
+  </references>
+  <externalReferences>
+    <externalReference name="COBISCorp.eCOBIS.Commons.BLIMAPWS" package="" path="D:\ServiciosMapWS\COBISCorp.eCOBIS.Commons.BLIMAPWS.dll" type="DLL" GUID="CB46BA0E-ABDB-4EB6-A3F9-FCE7DF58AD43" />
+    <externalReference name="COBISCorp.eCOBIS.MobileServices.MapWS" package="" path="D:\ServiciosMapWS\COBISCorp.eCOBIS.MobileServices.MapWS.dll" type="DLL" GUID="5E0B19B3-BE07-455F-B12E-FCF6D53B78D1" />
+    <externalReference name="log4net" package="" path="D:\ServiciosMapWS\log4net.dll" type="DLL" GUID="CA339AE9-0666-4658-958F-7687823C193E" />
+    <externalReference name="MapWs" package="" path="D:\ServiciosMapWS\MapWs.dll" type="DLL" GUID="795D1747-BF9F-4E57-A500-EE8F5F5907A2" />
+  </externalReferences>
+  <productProperties />
+</product>

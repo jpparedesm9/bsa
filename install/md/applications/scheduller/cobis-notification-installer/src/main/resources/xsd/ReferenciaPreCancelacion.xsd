@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="Windows-1252"?>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="ReferenciasPreCancelaciones">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="PreCancelacion" maxOccurs="unbounded" minOccurs="0">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element type="xs:string" name="pr_fecha_liq"/>
+              <xs:element type="xs:string" name="pr_nombre_cl"/>
+              <xs:element type="xs:string" name="pr_fecha_ven"/>
+              <xs:element type="xs:string" name="pr_monto_pre"/>
+              <xs:element type="xs:string" name="pr_nombre_of"/>
+              <xs:element type="xs:string" name="pr_nombre_banco"/>
+              <xs:element type="xs:string" name="pr_referencia"/>
+              <xs:element type="xs:string" name="pr_convenio"/>
+              <xs:element type="xs:string" name="pr_mail"/>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+	<context:annotation-config />
+
+	<bean id="defaultOperationManager"
+		class="com.cobiscorp.ecobis.fpm.portfolio.service.impl.DefaultOperationManager">
+	</bean>
+
+	<bean id="itemPortfolioManager"
+		class="com.cobiscorp.ecobis.fpm.portfolio.service.impl.ItemPortfolioManager">
+		<property name="portfolioCatalogService" ref="portfolioCatalogServiceRef"></property>
+	</bean>
+
+	<bean id="ratePortfolioManager"
+		class="com.cobiscorp.ecobis.fpm.portfolio.service.impl.RatePortfolioManager">
+	</bean>
+
+	<bean id="purposePortfolioManager"
+		class="com.cobiscorp.ecobis.fpm.portfolio.service.impl.PurposePortfolioManager">
+	</bean>
+	
+	<bean id="tranOperationManager"
+		class="com.cobiscorp.ecobis.fpm.portfolio.service.impl.TranOperationManager">
+		<property name="storedProcedureUtils" ref="storedProcedureUtils"></property>
+	</bean>
+	
+	<bean id="itemStatusPortfolioManager"
+		class="com.cobiscorp.ecobis.fpm.portfolio.service.impl.ItemStatusPortfolioManager">
+		<property name="storedProcedureUtils" ref="storedProcedureUtils"></property>
+	</bean>
+	
+	<bean id="opManualStatusManager"
+		class="com.cobiscorp.ecobis.fpm.portfolio.service.impl.OpManualStatusManager">
+		<property name="storedProcedureUtils" ref="storedProcedureUtils"></property>
+	</bean>
+	
+	<bean id="destinationTypeManager"
+		class="com.cobiscorp.ecobis.fpm.portfolio.service.impl.DestinationTypeManager">
+		
+	</bean>
+	
+	<bean id="purposeTypeManager"
+		class="com.cobiscorp.ecobis.fpm.portfolio.service.impl.PurposeTypeManager">		
+	</bean>
+
+	<bean id="activityPortfolioManager"
+		class="com.cobiscorp.ecobis.fpm.portfolio.service.impl.ActivityPortfolioManager">
+	</bean>
+	
+	<bean id="activityTypeManager"
+		class="com.cobiscorp.ecobis.fpm.portfolio.service.impl.ActivityTypeManager">
+	</bean>
+	
+	<bean id="itemWarrantyManager"
+		class="com.cobiscorp.ecobis.fpm.portfolio.service.impl.ItemWarrantyManager">
+		<property name="storedProcedureUtils" ref="storedProcedureUtils"></property>		
+	</bean>
+	
+</beans>

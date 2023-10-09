@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="Windows-1252"?>
+<xs:schema attributeFormDefault="unqualified"
+	elementFormDefault="qualified"
+	xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:element name="PagoCorresponsal">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element maxOccurs="unbounded" name="Grupo">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="grupo_id" type="xs:unsignedShort" />
+							<xs:element name="nombre_grupo" type="xs:string" />
+							<xs:element name="fecha_proceso" type="xs:dateTime" />
+							<xs:element name="fecha_liq" type="xs:dateTime" />
+							<xs:element name="fecha_venc" type="xs:dateTime" />
+							<xs:element name="moneda" type="xs:unsignedShort" />
+							<xs:element name="oficina" type="xs:string" />
+							<xs:element name="num_pago" type="xs:int" />
+							<xs:element name="fecha_vig" type="xs:dateTime" />
+							<xs:element name="monto" type="xs:decimal" />
+							<xs:element name="dest_nombre1" type="xs:string" />
+							<xs:element name="dest_cargo1" type="xs:string" />
+							<xs:element name="dest_email1" type="xs:string" />
+							<xs:element name="dest_nombre2" type="xs:string" />
+							<xs:element name="dest_cargo2" type="xs:string" />
+							<xs:element name="dest_email2" type="xs:string" />
+							<xs:element name="dest_nombre3" type="xs:string" />
+							<xs:element name="dest_cargo3" type="xs:string" />
+							<xs:element name="dest_email3" type="xs:string" />
+							<xs:element name="dest_nombre4" type="xs:string" />
+							<xs:element name="dest_cargo4" type="xs:string" />
+							<xs:element name="dest_email4" type="xs:string" />
+							<xs:element name="dest_nombre5" type="xs:string" />
+							<xs:element name="dest_cargo5" type="xs:string" />
+							<xs:element name="dest_email5" type="xs:string" />
+							<xs:element maxOccurs="unbounded" name="DetallePagos">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="nombreCliente" type="xs:string" />
+										<xs:element name="seguroVida" type="xs:double" />
+										<xs:element name="asistenciaMedica"
+											type="xs:double" />
+										<xs:element name="pagoAdelantado" type="xs:double" />
+										<xs:element name="grupo_id" type="xs:int" />
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element maxOccurs="unbounded" name="Referencia">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="grupo_id" type="xs:int" />
+										<xs:element name="institucion" type="xs:string" />
+										<xs:element name="referencia" type="xs:string" />
+										<xs:element name="barCode" type="xs:anySimpleType" />
+										<xs:element name="nro_convenio" type="xs:string" />
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

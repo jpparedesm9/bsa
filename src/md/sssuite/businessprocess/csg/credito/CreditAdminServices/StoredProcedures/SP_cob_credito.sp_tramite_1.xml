@@ -1,0 +1,382 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<procedure>
+  <database>cob_credito</database>
+  <name>sp_tramite</name>
+  <type>SYBASE</type>
+  <version>1</version>
+  <parameters>
+    <parameter name="@s_ssn" dataType="int" direction="in" />
+    <parameter name="@s_user" dataType="varchar" direction="in" />
+    <parameter name="@s_sesn" dataType="int" direction="in" />
+    <parameter name="@s_term" dataType="varchar" direction="in" />
+    <parameter name="@s_date" dataType="datetime" direction="in" />
+    <parameter name="@s_srv" dataType="varchar" direction="in" />
+    <parameter name="@s_lsrv" dataType="varchar" direction="in" />
+    <parameter name="@s_rol" dataType="smallint" direction="in" />
+    <parameter name="@s_ofi" dataType="smallint" direction="in" />
+    <parameter name="@s_org_err" dataType="char" direction="in" />
+    <parameter name="@s_error" dataType="int" direction="in" />
+    <parameter name="@s_sev" dataType="tinyint" direction="in" />
+    <parameter name="@s_msg" dataType="varchar" direction="in" />
+    <parameter name="@s_org" dataType="char" direction="in" />
+    <parameter name="@t_rty" dataType="char" direction="in" />
+    <parameter name="@t_trn" dataType="smallint" direction="in" />
+    <parameter name="@t_debug" dataType="char" direction="in" />
+    <parameter name="@t_file" dataType="varchar" direction="in" />
+    <parameter name="@t_from" dataType="varchar" direction="in" />
+    <parameter name="@t_show_version" dataType="bit" direction="in" />
+    <parameter name="@i_operacion" dataType="char" direction="in" />
+    <parameter name="@i_tramite" dataType="int" direction="in" />
+    <parameter name="@i_tipo" dataType="char" direction="in" />
+    <parameter name="@i_truta" dataType="tinyint" direction="in" />
+    <parameter name="@i_oficina_tr" dataType="smallint" direction="in" />
+    <parameter name="@i_usuario_tr" dataType="varchar" direction="in" />
+    <parameter name="@i_fecha_crea" dataType="datetime" direction="in" />
+    <parameter name="@i_oficial" dataType="smallint" direction="in" />
+    <parameter name="@i_sector" dataType="varchar" direction="in" />
+    <parameter name="@i_ciudad" dataType="int" direction="in" />
+    <parameter name="@i_estado" dataType="char" direction="in" />
+    <parameter name="@i_numero_op_banco" dataType="varchar" direction="in" />
+    <parameter name="@i_migarada" dataType="varchar" direction="in" />
+    <parameter name="@i_cuota" dataType="money" direction="in" />
+    <parameter name="@i_frec_pago" dataType="varchar" direction="in" />
+    <parameter name="@i_moneda_solicitada" dataType="tinyint" direction="in" />
+    <parameter name="@i_provincia" dataType="int" direction="in" />
+    <parameter name="@i_monto_solicitado" dataType="money" direction="in" />
+    <parameter name="@i_monto_desembolso" dataType="money" direction="in" />
+    <parameter name="@i_pplazo" dataType="smallint" direction="in" />
+    <parameter name="@i_tplazo" dataType="varchar" direction="in" />
+    <parameter name="@i_proposito" dataType="varchar" direction="in" />
+    <parameter name="@i_razon" dataType="varchar" direction="in" />
+    <parameter name="@i_txt_razon" dataType="varchar" direction="in" />
+    <parameter name="@i_efecto" dataType="varchar" direction="in" />
+    <parameter name="@i_cliente" dataType="int" direction="in" />
+    <parameter name="@i_grupo" dataType="int" direction="in" />
+    <parameter name="@i_fecha_inicio" dataType="datetime" direction="in" />
+    <parameter name="@i_num_dias" dataType="smallint" direction="in" />
+    <parameter name="@i_per_revision" dataType="varchar" direction="in" />
+    <parameter name="@i_condicion_especial" dataType="varchar" direction="in" />
+    <parameter name="@i_rotativa" dataType="char" direction="in" />
+    <parameter name="@i_destino_fondos" dataType="varchar" direction="in" />
+    <parameter name="@i_comision_tramite" dataType="float" direction="in" />
+    <parameter name="@i_subsidio" dataType="float" direction="in" />
+    <parameter name="@i_tasa_aplicar" dataType="float" direction="in" />
+    <parameter name="@i_tasa_efectiva" dataType="float" direction="in" />
+    <parameter name="@i_plazo_desembolso" dataType="smallint" direction="in" />
+    <parameter name="@i_forma_pago" dataType="varchar" direction="in" />
+    <parameter name="@i_plazo_vigencia" dataType="smallint" direction="in" />
+    <parameter name="@i_origen_fondos" dataType="varchar" direction="in" />
+    <parameter name="@i_formalizacion" dataType="varchar" direction="in" />
+    <parameter name="@i_cuenta_corrientelc" dataType="varchar" direction="in" />
+    <parameter name="@i_linea_credito" dataType="varchar" direction="in" />
+    <parameter name="@i_toperacion" dataType="varchar" direction="in" />
+    <parameter name="@i_producto" dataType="varchar" direction="in" />
+    <parameter name="@i_monto" dataType="money" direction="in" />
+    <parameter name="@i_moneda" dataType="tinyint" direction="in" />
+    <parameter name="@i_periodo" dataType="varchar" direction="in" />
+    <parameter name="@i_num_periodos" dataType="smallint" direction="in" />
+    <parameter name="@i_destino" dataType="varchar" direction="in" />
+    <parameter name="@i_ciudad_destino" dataType="int" direction="in" />
+    <parameter name="@i_reajustable" dataType="char" direction="in" />
+    <parameter name="@i_per_reajuste" dataType="tinyint" direction="in" />
+    <parameter name="@i_reajuste_especial" dataType="char" direction="in" />
+    <parameter name="@i_fecha_reajuste" dataType="datetime" direction="in" />
+    <parameter name="@i_cuota_completa" dataType="char" direction="in" />
+    <parameter name="@i_tipo_cobro" dataType="char" direction="in" />
+    <parameter name="@i_tipo_reduccion" dataType="char" direction="in" />
+    <parameter name="@i_aceptar_anticipos" dataType="char" direction="in" />
+    <parameter name="@i_precancelacion" dataType="char" direction="in" />
+    <parameter name="@i_tipo_aplicacion" dataType="char" direction="in" />
+    <parameter name="@i_renovable" dataType="char" direction="in" />
+    <parameter name="@i_fpago" dataType="varchar" direction="in" />
+    <parameter name="@i_cuenta" dataType="varchar" direction="in" />
+    <parameter name="@i_renovacion" dataType="smallint" direction="in" />
+    <parameter name="@i_cliente_cca" dataType="int" direction="in" />
+    <parameter name="@i_es_acta" dataType="char" direction="in" />
+    <parameter name="@i_op_renovada" dataType="varchar" direction="in" />
+    <parameter name="@i_deudor" dataType="int" direction="in" />
+    <parameter name="@i_op_reestructurar" dataType="varchar" direction="in" />
+    <parameter name="@i_sector_contable" dataType="varchar" direction="in" />
+    <parameter name="@i_cupos_terceros" dataType="varchar" direction="in" />
+    <parameter name="@i_origen_fondo" dataType="varchar" direction="in" />
+    <parameter name="@i_fondos_propios" dataType="char" direction="in" />
+    <parameter name="@i_plazo" dataType="varchar" direction="in" />
+    <parameter name="@i_tram_anticipo" dataType="int" direction="in" />
+    <parameter name="@i_ssn" dataType="int" direction="in" />
+    <parameter name="@i_trm_tmp" dataType="int" direction="in" />
+    <parameter name="@i_revolvente" dataType="char" direction="in" />
+    <parameter name="@i_her_ssn" dataType="int" direction="in" />
+    <parameter name="@i_causa" dataType="char" direction="in" />
+    <parameter name="@i_contabiliza" dataType="char" direction="in" />
+    <parameter name="@i_tvisa" dataType="varchar" direction="in" />
+    <parameter name="@i_migrada" dataType="varchar" direction="in" />
+    <parameter name="@i_tipo_linea" dataType="varchar" direction="in" />
+    <parameter name="@i_plazo_dias_pago" dataType="int" direction="in" />
+    <parameter name="@i_tipo_prioridad" dataType="char" direction="in" />
+    <parameter name="@i_linea_credito_pas" dataType="varchar" direction="in" />
+    <parameter name="@i_linea_cancelar" dataType="varchar" direction="in" />
+    <parameter name="@i_fecha_irenova" dataType="datetime" direction="in" />
+    <parameter name="@i_fdescuento" dataType="varchar" direction="in" />
+    <parameter name="@i_cta_descuento" dataType="varchar" direction="in" />
+    <parameter name="@i_proposito_op" dataType="varchar" direction="in" />
+    <parameter name="@i_subtipo" dataType="varchar" direction="in" />
+    <parameter name="@i_tipo_tarjeta" dataType="varchar" direction="in" />
+    <parameter name="@i_motivo" dataType="varchar" direction="in" />
+    <parameter name="@i_plazo_pro" dataType="int" direction="in" />
+    <parameter name="@i_fecha_valor" dataType="char" direction="in" />
+    <parameter name="@i_estado_lin" dataType="varchar" direction="in" />
+    <parameter name="@i_tasa_asociada" dataType="char" direction="in" />
+    <parameter name="@i_tpreferencial" dataType="char" direction="in" />
+    <parameter name="@i_porcentaje_preferencial" dataType="float" direction="in" />
+    <parameter name="@i_monto_preferencial" dataType="money" direction="in" />
+    <parameter name="@i_abono_ini" dataType="money" direction="in" />
+    <parameter name="@i_opcion_compra" dataType="money" direction="in" />
+    <parameter name="@i_beneficiario" dataType="varchar" direction="in" />
+    <parameter name="@i_financia" dataType="char" direction="in" />
+    <parameter name="@i_medio" dataType="int" direction="in" />
+    <parameter name="@i_ult_tramite" dataType="int" direction="in" />
+    <parameter name="@i_empleado" dataType="int" direction="in" />
+    <parameter name="@i_tran_servicio" dataType="char" direction="in" />
+    <parameter name="@i_migracion" dataType="char" direction="in" />
+    <parameter name="@i_nombre_empleado" dataType="varchar" direction="in" />
+    <parameter name="@i_formato_fecha" dataType="tinyint" direction="in" />
+    <parameter name="@i_canal" dataType="tinyint" direction="in" />
+    <parameter name="@i_promotor" dataType="int" direction="in" />
+    <parameter name="@i_comision_pro" dataType="float" direction="in" />
+    <parameter name="@i_iniciador" dataType="varchar" direction="in" />
+    <parameter name="@i_entrevistador" dataType="varchar" direction="in" />
+    <parameter name="@i_vendedor" dataType="varchar" direction="in" />
+    <parameter name="@i_cuenta_vende" dataType="varchar" direction="in" />
+    <parameter name="@i_agencia_venta" dataType="varchar" direction="in" />
+    <parameter name="@i_aut_valor_aut" dataType="money" direction="in" />
+    <parameter name="@i_aut_abono_aut" dataType="money" direction="in" />
+    <parameter name="@i_canal_venta" dataType="varchar" direction="in" />
+    <parameter name="@i_referido" dataType="varchar" direction="in" />
+    <parameter name="@i_FIniciacion" dataType="datetime" direction="in" />
+    <parameter name="@i_gemelo" dataType="char" direction="in" />
+    <parameter name="@i_tasa_prest_orig" dataType="float" direction="in" />
+    <parameter name="@i_banco_padre" dataType="varchar" direction="in" />
+    <parameter name="@i_num_cuenta" dataType="char" direction="in" />
+    <parameter name="@i_prod_bancario" dataType="smallint" direction="in" />
+    <parameter name="@i_actsaldo" dataType="char" direction="in" />
+    <parameter name="@i_monto_promocion" dataType="money" direction="in" />
+    <parameter name="@i_saldo_promocion" dataType="money" direction="in" />
+    <parameter name="@i_tipo_promocion" dataType="varchar" direction="in" />
+    <parameter name="@i_cuota_promocion" dataType="money" direction="in" />
+    <parameter name="@i_workflow" dataType="char" direction="in" />
+    <parameter name="@i_id_inst_proc" dataType="int" direction="in" />
+    <parameter name="@i_compra_operacion" dataType="char" direction="in" />
+    <parameter name="@i_destino_descripcion" dataType="varchar" direction="in" />
+    <parameter name="@i_patrimonio" dataType="money" direction="in" />
+    <parameter name="@i_ventas" dataType="money" direction="in" />
+    <parameter name="@i_num_personal_ocupado" dataType="int" direction="in" />
+    <parameter name="@i_indice_tamano_actividad" dataType="float" direction="in" />
+    <parameter name="@i_objeto" dataType="varchar" direction="in" />
+    <parameter name="@i_actividad" dataType="varchar" direction="in" />
+    <parameter name="@i_descripcion_oficial" dataType="varchar" direction="in" />
+    <parameter name="@i_sindicado" dataType="char" direction="in" />
+    <parameter name="@i_tipo_cartera" dataType="varchar" direction="in" />
+    <parameter name="@o_tramite" dataType="int" direction="out" />
+    <parameter name="@i_ventas_anuales" dataType="money" direction="in" />
+    <parameter name="@i_activos_productivos" dataType="money" direction="in" />
+    <parameter name="@i_sector_cli" dataType="varchar" direction="in" />
+    <parameter name="@i_cuota_maxima" dataType="float" direction="in" />
+    <parameter name="@i_cuota_maxima_linea" dataType="float" direction="in" />
+    <parameter name="@i_expromision" dataType="varchar" direction="in" />
+    <parameter name="@i_convenio" dataType="char" direction="in" />
+    <parameter name="@i_codigo_cliente_empresa" dataType="varchar" direction="in" />
+    <parameter name="@i_level_indebtedness" dataType="char" direction="in" />
+    <parameter name="@i_reprogramingObserv" dataType="varchar" direction="in" />
+    <parameter name="@i_motivo_uno" dataType="varchar" direction="in" />
+    <parameter name="@i_motivo_dos" dataType="varchar" direction="in" />
+    <parameter name="@i_motivo_rechazo" dataType="varchar" direction="in" />
+    <parameter name="@i_valida_estado" dataType="char" direction="in" />
+    <parameter name="@i_numero_testimonio" dataType="varchar" direction="in" />
+    <parameter name="@i_tamanio_empresa" dataType="varchar" direction="in" />
+    <parameter name="@i_asigna_fecha_cic" dataType="char" direction="in" />
+    <parameter name="@i_producto_fie" dataType="varchar" direction="in" />
+    <parameter name="@i_num_viviendas" dataType="tinyint" direction="in" />
+    <parameter name="@i_calificacion" dataType="varchar" direction="in" />
+    <parameter name="@i_es_garantia_destino" dataType="char" direction="in" />
+    <parameter name="@i_tipo_cca" dataType="varchar" direction="in" />
+    <parameter name="@i_actividad_destino" dataType="varchar" direction="in" />
+    <parameter name="@i_seg_cre" dataType="varchar" direction="in" />
+    <parameter name="@i_dest_hipot" dataType="varchar" direction="in" />
+    <parameter name="@i_dest_consumo" dataType="varchar" direction="in" />
+    <parameter name="@i_parroquia" dataType="varchar" direction="in" />
+    <parameter name="@i_cuenta_corriente" dataType="varchar" direction="in" />
+    <parameter name="@i_cuenta_certificado" dataType="varchar" direction="in" />
+    <parameter name="@i_alicuota_aho" dataType="varchar" direction="in" />
+    <parameter name="@i_alicuota" dataType="varchar" direction="in" />
+    <parameter name="@i_doble_alicuota" dataType="char" direction="in" />
+    <parameter name="@i_primera_instancia" dataType="int" direction="in" />
+    <parameter name="@i_tipo_credito" dataType="char" direction="in" />
+    <parameter name="@i_clase" dataType="char" direction="in" />
+  </parameters>
+  <queries>
+    <query>
+      <columns>
+        <column name="tramite" />
+        <column name=" desc_ruta" />
+        <column name=" tipo" />
+        <column name=" desc_tipo" />
+        <column name=" oficina_tr" />
+        <column name=" desc_oficina" />
+        <column name=" usuario_tr" />
+        <column name=" nom_usuario_tr" />
+        <column name=" fecha_crea" />
+        <column name=" oficial" />
+        <column name=" ciudad" />
+        <column name=" desc_ciudad" />
+        <column name=" estado" />
+        <column name=" secuencia " />
+        <column name="  numero_op_banco" />
+        <column name=" proposito" />
+        <column name=" des_proposito" />
+        <column name=" razon" />
+        <column name=" des_razon" />
+        <column name=" txt_razon " />
+        <column name=" efecto" />
+        <column name=" des_efecto" />
+        <column name="cliente " />
+        <column name="grupo " />
+        <column name="fecha_inicio" />
+        <column name="num_dias" />
+        <column name=" per_revision " />
+        <column name=" condicion_especial" />
+        <column name=" toperacion" />
+        <column name=" producto" />
+        <column name=" li_num_banco" />
+        <column name=" monto" />
+        <column name=" moneda" />
+        <column name=" periodo" />
+        <column name=" num_periodos" />
+        <column name=" destino" />
+        <column name=" ciudad_destino" />
+        <column name=" renovacion" />
+        <column name=" fecha_reajuste" />
+        <column name=" monto_desembolso" />
+        <column name=" periodo_reajuste" />
+        <column name=" reajuste_especial" />
+        <column name=" forma_pago" />
+        <column name=" cuenta" />
+        <column name=" cuota_completa" />
+        <column name=" tipo_cobro" />
+        <column name=" tipo_reduccion" />
+        <column name=" aceptar_anticipos" />
+        <column name=" precancelacion" />
+        <column name=" tipo_aplicacion" />
+        <column name=" renovable" />
+        <column name=" reajustable" />
+        <column name=" val_tasaref" />
+        <column name=" fecha_concesion" />
+        <column name="sector" />
+        <column name=" des_oficial" />
+        <column name=" des_sector" />
+        <column name=" des_nivel_ap" />
+        <column name=" nom_ciudad" />
+        <column name=" nom_cliente" />
+        <column name=" ciruc_cliente" />
+        <column name=" nom_grupo" />
+        <column name=" des_per_revision" />
+        <column name=" des_segmento" />
+        <column name=" des_toperacion" />
+        <column name=" des_moneda" />
+        <column name=" des_periodo" />
+        <column name=" des_destino" />
+        <column name=" des_fpago" />
+        <column name=" paso" />
+        <column name=" cont_dividendos" />
+        <column name=" banco_rest" />
+        <column name=" operacion_rest" />
+        <column name=" toperacion_rest" />
+        <column name=" fecha_vto_rest" />
+        <column name=" monto_rest" />
+        <column name=" saldo_rest" />
+        <column name=" moneda_rest" />
+        <column name=" renovacion_rest" />
+        <column name=" renovable_rest" />
+        <column name=" fecha_ini_rest" />
+        <column name=" producto_rest" />
+        <column name=" origen_fondo" />
+        <column name=" des_origen_fondo" />
+        <column name=" fondos_propios" />
+        <column name=" sector_contable" />
+        <column name=" des_sector_contable" />
+        <column name=" plazo" />
+        <column name=" proposito_op" />
+        <column name=" tipo_top" />
+        <column name="causa" />
+        <column name=" migrada" />
+        <column name=" tipo_prioridad" />
+        <column name=" descripcion" />
+        <column name=" efecto_pago" />
+        <column name=" monto_solicitado" />
+        <column name=" cuota" />
+        <column name=" frec_pago" />
+        <column name=" moneda_solicitada" />
+        <column name=" provincia" />
+        <column name=" monto_desembolso_tr" />
+        <column name=" pplazo " />
+        <column name=" tplazo" />
+        <column name=" sindicado" />
+        <column name=" tipo_cartera" />
+        <column name=" destino_descripcion" />
+        <column name=" mes_cic" />
+        <column name=" anio_cic" />
+        <column name=" patrimonio" />
+        <column name=" ventas" />
+        <column name=" num_personal_ocupado" />
+        <column name=" tipo_credito" />
+        <column name=" indice_tamano_actividad" />
+        <column name=" objeto" />
+        <column name=" actividad" />
+        <column name=" descripcion_oficial" />
+        <column name=" origen_fondos" />
+        <column name=" des_frec_pago" />
+        <column name="ventas_anuales" />
+        <column name="activos_productivos" />
+        <column name="simbolo_moneda" />
+        <column name="sector_cliente" />
+        <column name="li_dias" />
+        <column name="expromision" />
+        <column name="numero_op" />
+        <column name="level_indebtedness" />
+        <column name="convenio" />
+        <column name="empresaConvenio" />
+        <column name="numeroBancoCartera" />
+        <column name="lineaComext" />
+        <column name="reprogramingObserv" />
+        <column name="motivoUno" />
+        <column name="motivoDos" />
+        <column name="motivoRechazo" />
+        <column name="numeroTestimonio" />
+        <column name="lineaCredito" />
+        <column name="productoFIE" />
+        <column name="numeroViviendas" />
+        <column name="tipoCalificacion" />
+        <column name="calificacion" />
+        <column name="esGarantiaDestino" />
+        <column name="esDeudorPropietario" />
+        <column name="tamanioEmpresa" />
+        <column name="vinculado" />
+        <column name="parroquia" />
+        <column name="fechaVencimiento" />
+        <column name="clase" />
+        <column name="dias_anio" />
+        <column name="cuentaCorriente" />
+        <column name="cuentaCertificada" />
+        <column name="alicuotaAhorros" />
+        <column name="alicuotaCertificada" />
+        <column name="dobleAlicuota" />
+      </columns>
+      <queryText>SELECT  tr_tramite,tr_cuota,tr_moneda,tr_frec_pago,tr_monto,tr_destino,tr_ciudad,tr_moneda_solicitada,tr_toperacion,tr_oficial,tr_sector,tr_provincia,tr_ciudad_destino,tr_linea_credito,tr_monto_solicitado,tr_monto_desembolso,tr_tplazo,tr_plazo,tr_fecha_inicio </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="id_tramite" />
+      </columns>
+      <queryText></queryText>
+    </query>
+  </queries>
+</procedure>

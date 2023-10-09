@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<product path="D:/SANTANDER/bsa2/src/md/basicas/mobileintegration/csg/MobileAdminLcrService/Products/COBISCorp.eCOBIS.MobileLcr.DTO" appPath="C:/Program Files (x86)/COBIS/COBIS Services Generator/" name="COBISCorp.eCOBIS.MobileLcr.DTO" productNS="http://dto.mobilelcr.ecobis.cobiscorp" description="mobile lcr dto" documentationLanguage="Español" year="2019" version="1.0.0.0" type="DTO" GUID="3652DD86-CCA8-4725-826A-11E0E58A898D">
+  <namespaces>
+    <namespace type="dto" base="COBISCorp.eCOBIS.MobileLcr" name="COBISCorp.eCOBIS.MobileLcr.DTO" package="cobiscorp.ecobis.mobilelcr.dto" ns="http://dto.mobilelcr.ecobis.cobiscorp" folder="DTO" />
+  </namespaces>
+  <templates>
+    <template id="DTOJavaPOJO" productName="COBISCorp.eCOBIS.MobileLcr.DTO" outputFolder="c:\COBIS-SG\Output\CTS\COBISCorp.eCOBIS.MobileLcr.DTO" package="true" packageType="Jar">
+      <templateFiles>
+        <templateFile filePath="JavaPOJO\JavaDTO.xslt" enabled="true" override="true" />
+        <templateFile filePath="..\Commons\Java\buildProperties.xslt" enabled="true" override="true" />
+        <templateFile filePath="..\Commons\Java\build.xslt" enabled="true" override="true" />
+      </templateFiles>
+    </template>
+  </templates>
+  <DTOs>
+    <DTO name="DocumentLcrRequest" nsBase="COBISCorp.eCOBIS.MobileLcr" namespace="COBISCorp.eCOBIS.MobileLcr.DTO" package="cobiscorp.ecobis.mobilelcr.dto" ns="http://dto.mobilelcr.ecobis.cobiscorp" version="1" />
+    <DTO name="DocumentLcrValidateResponse" nsBase="COBISCorp.eCOBIS.MobileLcr" namespace="COBISCorp.eCOBIS.MobileLcr.DTO" package="cobiscorp.ecobis.mobilelcr.dto" ns="http://dto.mobilelcr.ecobis.cobiscorp" version="1" />
+  </DTOs>
+  <classes />
+  <packagers>
+    <packager type="SGPackageJava" AntTask="sign-archive" KeyAlias="cobisapp" KeyPassword="cobisappadminadmin" KeyCertificatePassword="cobisappadmin" KeyFileName="cobisapp.keystore" RelativeFolder="True" BuildFile="build.xml" TemplateId="DTOJavaPOJO" />
+  </packagers>
+  <productProperties>
+    <property name="MavenGroupId" value="com.cobiscorp.processapi" />
+    <property name="MavenArtifactId" value="COBISCorp.eCOBIS.MobileLcr.DTO" />
+    <property name="MavenVersion" value="1.0.0.0" />
+  </productProperties>
+</product>

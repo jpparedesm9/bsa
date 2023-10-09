@@ -1,0 +1,128 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<procedure>
+  <database>cob_credito</database>
+  <name>sp_gar_anteriores</name>
+  <type>SYBASE</type>
+  <version>1</version>
+  <parameters>
+    <parameter name="@s_ssn" dataType="int" direction="in" />
+    <parameter name="@s_user" dataType="varchar" direction="in" />
+    <parameter name="@s_sesn" dataType="int" direction="in" />
+    <parameter name="@s_term" dataType="varchar" direction="in" />
+    <parameter name="@s_date" dataType="datetime" direction="in" />
+    <parameter name="@s_srv" dataType="varchar" direction="in" />
+    <parameter name="@s_lsrv" dataType="varchar" direction="in" />
+    <parameter name="@s_rol" dataType="smallint" direction="in" />
+    <parameter name="@s_ofi" dataType="smallint" direction="in" />
+    <parameter name="@s_org_err" dataType="char" direction="in" />
+    <parameter name="@s_error" dataType="int" direction="in" />
+    <parameter name="@s_sev" dataType="tinyint" direction="in" />
+    <parameter name="@s_msg" dataType="varchar" direction="in" />
+    <parameter name="@s_org" dataType="char" direction="in" />
+    <parameter name="@t_show_version" dataType="bit" direction="in" />
+    <parameter name="@t_rty" dataType="char" direction="in" />
+    <parameter name="@t_trn" dataType="smallint" direction="in" />
+    <parameter name="@t_debug" dataType="char" direction="in" />
+    <parameter name="@t_file" dataType="varchar" direction="in" />
+    <parameter name="@t_from" dataType="varchar" direction="in" />
+    <parameter name="@i_tramite" dataType="int" direction="in" />
+    <parameter name="@i_gar_anterior" dataType="varchar" direction="in" />
+    <parameter name="@i_gar_nueva" dataType="varchar" direction="in" />
+    <parameter name="@i_num_operacion" dataType="varchar" direction="in" />
+    <parameter name="@i_operacion" dataType="char" direction="in" />
+    <parameter name="@i_modo" dataType="char" direction="in" />
+    <parameter name="@i_proposito" dataType="char" direction="in" />
+    <parameter name="@i_clase" dataType="char" direction="in" />
+    <parameter name="@i_porcentaje" dataType="float" direction="in" />
+    <parameter name="@i_saldo" dataType="money" direction="in" />
+  </parameters>
+  <queries>
+    <query>
+      <columns>
+        <column name="/** Stored Procedure **/ " />
+        <column name="s_ssn" />
+        <column name="s_user" />
+        <column name="s_sesn" />
+        <column name="s_term" />
+        <column name="s_date" />
+        <column name="s_srv" />
+        <column name="s_lsrv" />
+        <column name="s_rol" />
+        <column name="s_ofi" />
+        <column name="s_org_err" />
+        <column name="s_error" />
+        <column name="s_sev" />
+        <column name="s_msg" />
+        <column name="s_org" />
+        <column name="t_trn" />
+        <column name="t_file" />
+        <column name="t_from" />
+        <column name="i_num_operacion" />
+        <column name="i_tramite" />
+        <column name="i_gar_anterior" />
+        <column name="i_gar_nueva" />
+        <column name="i_proposito" />
+      </columns>
+      <queryText>SELECT "/** Stored Procedure **/ "=w_sp_name,"s_ssn"=s_ssn,"s_user"=s_user,"s_sesn"=s_sesn,"s_term"=s_term,"s_date"=s_date,"s_srv"=s_srv,"s_lsrv"=s_lsrv,"s_rol"=s_rol,"s_ofi"=s_ofi,"s_org_err"=s_org_err,"s_error"=s_error,"s_sev"=s_sev,"s_msg"=s_msg,"s_org"=s_org,"t_trn"=t_trn,"t_file"=t_file,"t_from"=t_from,"i_num_operacion"=i_num_operacion,"i_tramite"=i_tramite,"i_gar_anterior"=i_gar_anterior,"i_gar_nueva"=i_gar_nueva,"i_proposito"=i_proposito</queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="Operacion" />
+        <column name="Garantia anterior" />
+        <column name="Garantia nueva" />
+        <column name="Porcentaje" />
+        <column name="Valor Operacion" />
+      </columns>
+      <queryText>SELECT  "Operacion" = ga_operacion,"Garantia anterior" = ISNULL (ga_gar_anterior, ""),"Garantia nueva" = ISNULL (ga_gar_nueva, ""),"Porcentaje" = CONVERT (MONEY,STR (ga_porcentaje, 6, 2) ),"Valor Operacion" = ga_valor_resp_garantia </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="Operacion" />
+        <column name="Garantia anterior" />
+        <column name="Garantia nueva" />
+        <column name="Porcentaje" />
+        <column name="Valor Operacion" />
+      </columns>
+      <queryText>SELECT  "Operacion" = ga_operacion,"Garantia anterior" = ISNULL (ga_gar_anterior, ""),"Garantia nueva" = ISNULL (ga_gar_nueva, ""),"Porcentaje" = CONVERT (MONEY,STR (ga_porcentaje, 6, 2) ),"Valor Operacion" = ga_valor_resp_garantia </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="Operacion" />
+        <column name="Garantia anterior" />
+        <column name="Garantia nueva" />
+        <column name="Porcentaje" />
+        <column name="Valor Operacion" />
+      </columns>
+      <queryText>SELECT  "Operacion" = ga_operacion,"Garantia anterior" = ISNULL (ga_gar_anterior, ""),"Garantia nueva" = ISNULL (ga_gar_nueva, ""),"Porcentaje" = CONVERT (MONEY,STR (ga_porcentaje, 6, 2) ),"Valor Operacion" = ga_valor_resp_garantia </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="codigoGarantia" />
+        <column name="tipoCustodia" />
+        <column name="descripcion" />
+        <column name="tipo" />
+        <column name="cgEnte" />
+        <column name="duenoGarantia" />
+      </columns>
+      <queryText>SELECT  "tramite" = op.op_tramite,"operacion" = op.op_banco,"moneda" = op.op_moneda,"monto" = op.op_monto,"saldo" = (SELECT  SUM (am_acumulado - am_pagado + am_gracia) FROM cob_cartera..ca_amortizacion   WHERE am_operacion = op.op_operacion AND am_estado &lt;&gt; 3     ),"cuotas" = (SELECT  COUNT (di_dividendo) FROM cob_cartera..ca_dividendo   WHERE di_operacion = op.op_operacion AND di_estado &lt;&gt; 3     ),"cuotasPagadas" = CONVERT (DECIMAL (5,2),((SELECT  COUNT (di_dividendo) FROM cob_cartera..ca_dividendo   WHERE di_operacion = op.op_operacion AND di_estado = 3     ) + 0.00) / (SELECT  COUNT (di_dividendo) FROM cob_cartera..ca_dividendo   WHERE di_operacion = op.op_operacion     ) ),"inmuebleVig" = (SELECT  SUM (cu_valor_actual) FROM cob_custodia..cu_custodia   WHERE cu_codigo_externo = gran.ga_gar_anterior AND cu_tipo = ? AND cu_estado &lt;&gt; "C"     ),"vehiculoVig" = (SELECT  SUM (cu_valor_actual) FROM cob_custodia..cu_custodia   WHERE cu_codigo_externo = gran.ga_gar_anterior AND cu_tipo = ? AND cu_estado &lt;&gt; "C"     ),"prendariaVig" = (SELECT  SUM (cu_valor_actual) FROM cob_custodia..cu_custodia   WHERE cu_codigo_externo = gran.ga_gar_anterior AND (cu_tipo = ? OR cu_tipo = ? OR cu_tipo = ?) AND cu_estado &lt;&gt; "C"     ),"inmuebleProp" = (SELECT  SUM (cu_valor_actual) FROM cob_custodia..cu_custodia   WHERE cu_codigo_externo = gran.ga_gar_anterior AND cu_tipo = ? AND cu_estado &lt;&gt; "C"     ),"vehiculoProp" = (SELECT  SUM (cu_valor_actual) FROM cob_custodia..cu_custodia   WHERE cu_codigo_externo = gran.ga_gar_anterior AND cu_tipo = ? AND cu_estado &lt;&gt; "C"     ),"prendariaProp" = (SELECT  SUM (cu_valor_actual) FROM cob_custodia..cu_custodia   WHERE cu_codigo_externo = gran.ga_gar_anterior AND (cu_tipo = ? OR cu_tipo = ? OR cu_tipo = ?) AND cu_estado &lt;&gt; "C"     ),"garNueva" = gran.ga_gar_anterior,"garVieja" = gran.ga_gar_nueva </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="codigoGarantia" />
+        <column name="tipoGarantia" />
+        <column name="descripcionGarantia" />
+        <column name="tipo" />
+        <column name="idDuenoGarantia" />
+        <column name="duenoGarantia" />
+      </columns>
+      <queryText></queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="operacion" />
+        <column name="tramiteAntes" />
+      </columns>
+      <queryText></queryText>
+    </query>
+  </queries>
+</procedure>

@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<procedure>
+  <database>cob_cartera</database>
+  <name>sp_reportes</name>
+  <type>SYBASE</type>
+  <version>1</version>
+  <parameters>
+    <parameter name="@s_ssn" dataType="int" direction="in" />
+    <parameter name="@s_date" dataType="datetime" direction="in" />
+    <parameter name="@s_user" dataType="varchar" direction="in" />
+    <parameter name="@s_term" dataType="varchar" direction="in" />
+    <parameter name="@s_corr" dataType="char" direction="in" />
+    <parameter name="@s_ssn_corr" dataType="int" direction="in" />
+    <parameter name="@s_ofi" dataType="smallint" direction="in" />
+    <parameter name="@t_rty" dataType="char" direction="in" />
+    <parameter name="@t_debug" dataType="char" direction="in" />
+    <parameter name="@t_file" dataType="varchar" direction="in" />
+    <parameter name="@t_trn" dataType="smallint" direction="in" />
+    <parameter name="@i_tramite" dataType="char" direction="in" />
+    <parameter name="@i_operacion" dataType="char" direction="in" />
+    <parameter name="@i_banco" dataType="varchar" direction="in" />
+    <parameter name="@i_formato_fecha" dataType="int" direction="in" />
+    <parameter name="@i_opcion" dataType="varchar" direction="in" />
+    <parameter name="@i_modo" dataType="int" direction="in" />
+    <parameter name="@i_grupo" dataType="int" direction="in" />
+  </parameters>
+  <queries>
+    <query>
+      <columns>
+        <column name="CAMPO01" />
+        <column name="CAMPO02" />
+        <column name="CAMPO03" />
+        <column name="CAMPO04" />
+        <column name="CAMPO05" />
+        <column name="CAMPO06" />
+        <column name="CAMPO07" />
+        <column name="CAMPO08" />
+        <column name="CAMPO09" />
+        <column name="CAMPO10" />
+        <column name="CAMPO11" />
+        <column name="ALIANZA" />
+        <column name="TIPO_OPERACION" />
+      <column name="ROL" />
+        <column name="CAMPO_2_MONTO" />
+        <column name="CAMPO_6_CUOTA" />
+        <column name="CAMPO_7_CUOTA" />
+      </columns>
+      <queryText>SELECT  "CAMPO01" = en_nomlar,"CAMPO02" = op_monto,"CAMPO03" = op_fecha_liq,"CAMPO04" = CONVERT (VARCHAR (30),op_plazo ) + " " + (SELECT  valor FROM cobis..cl_catalogo   WHERE tabla = ? AND codigo = OP.op_tplazo     ),"CAMPO05" = CONVERT (VARCHAR (30),op_periodo_cap ) + " " + (SELECT  valor FROM cobis..cl_catalogo   WHERE tabla = ? AND codigo = OP.op_tdividendo     ),"CAMPO06" = (SELECT  valor FROM cobis..cl_catalogo   WHERE tabla = ? AND codigo = OP.op_tdividendo     ),"CAMPO07" = "","CAMPO08" = (SELECT  ro_porcentaje FROM cob_cartera..ca_rubro_op   WHERE ro_concepto = "INT" AND ro_operacion = op_operacion     ),"CAMPO09" = tr_fecha_apr,"CAMPO10" = op_banco,"CAMPO11" = (SELECT  fp_fecha FROM cobis..ba_fecha_proceso        ) </queryText>
+    </query>
+  </queries>
+</procedure>

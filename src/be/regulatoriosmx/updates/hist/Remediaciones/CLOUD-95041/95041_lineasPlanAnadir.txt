@@ -1,0 +1,62 @@
+    ---Indicaciones
+	--1.- Ubicarse en la ruta: \cobishome\CTS_MF\infrastructure\
+	--2.- Sacar respaldo del archivo cts-ccm-plan-config.xml
+	--3.- Abrir el archivo: cts-ccm-plan-config.xml
+	--4.- Buscar el plan con id="ASSETS-CLOUD-MNTNN-SERVICES", dentro de este plan añadir al final lo siguiente	
+   <plugin name="assts.mntnn.disbursementreportsform.services" path="../../ASSETS/management/assts.mntnn.disbursementreportsform.services-1.0.0.jar"></plugin>
+
+	--5.- Buscar el plan con id="ASSETS-CLOUD-MNTNN", dentro de este plan añadir al final lo siguiente
+   <plugin name="assts.mntnn.disbursementreportsform.customevents" path="../../ASSETS/management/assts.mntnn.disbursementreportsform.customevents-1.0.0.jar"></plugin>
+    
+	-------------------------------------------------	
+	-------------------------------------------------
+	-------------------------------------------------
+	-------------------------------------------------
+	
+    -- Lo siguiente es solo un ejemplo de como quedaría con el aumento de las lineas antes descritas
+    /*
+	<plan id="ASSETS-CLOUD-MNTNN-SERVICES" reloadable="true">
+      <plugin name="assts.mntnn.amortizationquotedetailform.services" path="../../ASSETS/management/assts.mntnn.amortizationquotedetailform.services-1.0.0.jar"></plugin>
+      <plugin name="assts.mntnn.readjustmentdetalilsloanform.services" path="../../ASSETS/management/assts.mntnn.readjustmentdetalilsloanform.services-1.0.0.jar"></plugin>
+      <plugin name="assts.mntnn.reajuste.services" path="../../ASSETS/management/assts.mntnn.reajuste.services-1.0.0.jar"></plugin>
+      <plugin name="assts.mntnn.documentprintingmain.services" path="../../ASSETS/management/assts.mntnn.documentprintingmain.services-1.0.0.jar"></plugin>
+      <plugin name="assts.mntnn.beforeprintpaymentform.services" path="../../ASSETS/management/assts.mntnn.beforeprintpaymentform.services-1.0.0.jar"></plugin>
+      <plugin name="assts.mntnn.projectothercharges.services" path="../../ASSETS/management/assts.mntnn.projectothercharges.services-1.0.0.jar"></plugin>
+      <plugin name="assts.mntnn.othercharges.services" path="../../ASSETS/management/assts.mntnn.othercharges.services-1.0.0.jar"></plugin>
+      <plugin name="assts.mntnn.projectionquotaformmain.services" path="../../ASSETS/management/assts.mntnn.projectionquotaformmain.services-1.0.0.jar"></plugin>
+      <plugin name="assts.mntnn.documentprinting.services" path="../../ASSETS/management/assts.mntnn.documentprinting.services-1.0.0.jar"></plugin>
+      <plugin name="assts.mntnn.extendsquotaformmain.services" path="../../ASSETS/management/assts.mntnn.extendsquotaformmain.services-1.0.0.jar"></plugin>
+      <plugin name="assts.mntnn.paymentmaintenance.services" path="../../ASSETS/management/assts.mntnn.paymentmaintenance.services-1.0.0.jar"></plugin>
+      <plugin name="assts.mntnn.paymentmaintenancemodal.services" path="../../ASSETS/management/assts.mntnn.paymentmaintenancemodal.services-1.0.0.jar"></plugin>
+      <plugin name="assts.mntnn.valuerates.services" path="../../ASSETS/management/assts.mntnn.valuerates.services-1.0.0.jar"></plugin>
+      <plugin name="assts.mntnn.typeratesmodal.services" path="../../ASSETS/management/assts.mntnn.typeratesmodal.services-1.0.0.jar"></plugin>
+      <plugin name="assts.mntnn.ratesmodal.services" path="../../ASSETS/management/assts.mntnn.ratesmodal.services-1.0.0.jar"></plugin>
+      <plugin name="assts.mntnn.detailsaho.services" path="../../ASSETS/management/assts.mntnn.detailsaho.services-1.0.0.jar"></plugin>
+      <plugin name="assts.mntnn.solidaritypaymentform.services" path="../../ASSETS/management/assts.mntnn.solidaritypaymentform.services-1.0.0.jar"></plugin>
+      <plugin name="assts.mntnn.detailfund.services" path="../../ASSETS/management/assts.mntnn.detailfund.services-1.0.0.jar"></plugin>
+      <plugin name="assts.mntnn.fund.services" path="../../ASSETS/management/assts.mntnn.fund.services-1.0.0.jar"></plugin>
+      <plugin name="assts.mntnn.disbursementreportsform.services" path="../../ASSETS/management/assts.mntnn.disbursementreportsform.services-1.0.0.jar"></plugin>
+    </plan>
+    <plan id="ASSETS-CLOUD-MNTNN" reloadable="true">
+      <plugin name="assts.mntnn.amortizationquotedetailform.customevents" path="../../ASSETS/management/assts.mntnn.amortizationquotedetailform.customevents-1.0.0.jar"></plugin>
+      <plugin name="assts.mntnn.readjustmentdetalilsloanform.customevents" path="../../ASSETS/management/assts.mntnn.readjustmentdetalilsloanform.customevents-1.0.0.jar"></plugin>
+      <plugin name="assts.mntnn.reajuste.customevents" path="../../ASSETS/management/assts.mntnn.reajuste.customevents-1.0.0.jar"></plugin>
+      <plugin name="assts.mntnn.documentprintingmain.customevents" path="../../ASSETS/management/assts.mntnn.documentprintingmain.customevents-1.0.0.jar"></plugin>
+      <plugin name="assts.mntnn.beforeprintpaymentform.customevents" path="../../ASSETS/management/assts.mntnn.beforeprintpaymentform.customevents-1.0.0.jar"></plugin>
+      <plugin name="assts.mntnn.projectothercharges.customevents" path="../../ASSETS/management/assts.mntnn.projectothercharges.customevents-1.0.0.jar"></plugin>
+      <plugin name="assts.mntnn.othercharges.customevents" path="../../ASSETS/management/assts.mntnn.othercharges.customevents-1.0.0.jar"></plugin>
+      <plugin name="assts.mntnn.projectionquotaformmain.customevents" path="../../ASSETS/management/assts.mntnn.projectionquotaformmain.customevents-1.0.0.jar"></plugin>
+      <plugin name="assts.mntnn.documentprinting.customevents" path="../../ASSETS/management/assts.mntnn.documentprinting.customevents-1.0.0.jar"></plugin>
+      <plugin name="assts.mntnn.extendsquotaformmain.customevents" path="../../ASSETS/management/assts.mntnn.extendsquotaformmain.customevents-1.0.0.jar"></plugin>
+      <plugin name="assts.mntnn.paymentmaintenance.customevents" path="../../ASSETS/management/assts.mntnn.paymentmaintenance.customevents-1.0.0.jar"></plugin>
+      <plugin name="assts.mntnn.paymentmaintenancemodal.customevents" path="../../ASSETS/management/assts.mntnn.paymentmaintenancemodal.customevents-1.0.0.jar"></plugin>
+      <plugin name="assts.mntnn.valuerates.customevents" path="../../ASSETS/management/assts.mntnn.valuerates.customevents-1.0.0.jar"></plugin>
+      <plugin name="assts.mntnn.typeratesmodal.customevents" path="../../ASSETS/management/assts.mntnn.typeratesmodal.customevents-1.0.0.jar"></plugin>
+      <plugin name="assts.mntnn.ratesmodal.customevents" path="../../ASSETS/management/assts.mntnn.ratesmodal.customevents-1.0.0.jar"></plugin>
+      <plugin name="assts.mntnn.detailsaho.customevents" path="../../ASSETS/management/assts.mntnn.detailsaho.customevents-1.0.0.jar"></plugin>
+      <plugin name="assts.mntnn.solidaritypaymentform.customevents" path="../../ASSETS/management/assts.mntnn.solidaritypaymentform.customevents-1.0.0.jar"></plugin>
+      <plugin name="assts.mntnn.detailfund.customevents" path="../../ASSETS/management/assts.mntnn.detailfund.customevents-1.0.0.jar"></plugin>
+      <plugin name="assts.mntnn.fund.customevents" path="../../ASSETS/management/assts.mntnn.fund.customevents-1.0.0.jar"></plugin>
+      <plugin name="assts.mntnn.disbursementreportsform.customevents" path="../../ASSETS/management/assts.mntnn.disbursementreportsform.customevents-1.0.0.jar"></plugin>
+    </plan>
+	*/

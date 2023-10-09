@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<procedure>
+  <database>cob_cartera</database>
+  <name>sp_candidatos_lcr</name>
+  <type>SQLSERVER</type>
+  <version>1</version>
+  <parameters>
+    <parameter name="@s_ssn" dataType="int" direction="in" />
+    <parameter name="@s_user" dataType="varchar" direction="in" />
+    <parameter name="@s_term" dataType="varchar" direction="in" />
+    <parameter name="@s_date" dataType="datetime" direction="in" />
+    <parameter name="@s_sesn" dataType="int" direction="in" />
+    <parameter name="@s_culture" dataType="varchar" direction="in" />
+    <parameter name="@s_srv" dataType="varchar" direction="in" />
+    <parameter name="@s_lsrv" dataType="varchar" direction="in" />
+    <parameter name="@s_ofi" dataType="smallint" direction="in" />
+    <parameter name="@s_rol" dataType="smallint" direction="in" />
+    <parameter name="@s_org_err" dataType="char" direction="in" />
+    <parameter name="@s_error" dataType="int" direction="in" />
+    <parameter name="@s_sev" dataType="tinyint" direction="in" />
+    <parameter name="@s_msg" dataType="varchar" direction="in" />
+    <parameter name="@s_org" dataType="char" direction="in" />
+    <parameter name="@t_debug" dataType="char" direction="in" />
+    <parameter name="@t_file" dataType="varchar" direction="in" />
+    <parameter name="@t_from" dataType="varchar" direction="in" />
+    <parameter name="@t_trn" dataType="int" direction="in" />
+    <parameter name="@t_show_version" dataType="bit" direction="in" />
+    <parameter name="@i_operacion" dataType="char" direction="in" />
+    <parameter name="@i_fecha_ing" dataType="datetime" direction="in" />
+    <parameter name="@i_grupo" dataType="int" direction="in" />
+    <parameter name="@i_cliente" dataType="int" direction="in" />
+    <parameter name="@i_periodicidad" dataType="varchar" direction="in" />
+    <parameter name="@i_accion" dataType="char" direction="in" />
+    <parameter name="@i_asesor_reasig" dataType="int" direction="in" />
+    <parameter name="@i_descripcion" dataType="varchar" direction="in" />
+  </parameters>
+  <queries>
+    <query>
+      <columns>
+        <column name="fechaIngreso" />
+        <column name="fechaDispersion" />
+        <column name="oficinaAsignadaId" />
+        <column name="oficinaAsignada" />
+        <column name="grupoId" />
+        <column name="grupoNombre" />
+        <column name="enteId" />
+        <column name="enteNombre" />
+        <column name="asesorAsignadoId" />
+        <column name="asesorAsignado" />
+        <column name="asesorReasignado" />
+        <column name="asesorReasignadoId" />
+        <column name="periodicidad" />
+        <column name="descripcion" />
+      </columns>
+      <queryText>SELECT  "fechaIngreso" = CONVERT (VARCHAR,cc_fecha_ing ,103),"fechaDispersion" = CONVERT (VARCHAR,cc_fecha_liq ,103),"oficinaAsignadaId" = cc_oficina,"oficinaAsignada" = of_nombre,"grupoId" = cc_grupo,"grupoNombre" = gr_nombre,"enteId" = cc_cliente,"enteNombre" = ISNULL (p_p_apellido, "") + " " + ISNULL (p_s_apellido, "") + " " + ISNULL (en_nombre, ""),"asesorAsignadoId" = fu_funcionario,"asesorAsignado" = fu_nombre,"asesorReasignado" = (SELECT  fu_funcionario FROM cobis..cl_funcionario   WHERE fu_login = cc_asesor_asig     ),"asesorReasignadoId" = (SELECT  fu_nombre FROM cobis..cl_funcionario   WHERE fu_login = cc_asesor_asig     ),"periodicidad" = cc_periodicidad </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="codigo" />
+        <column name="nombre" />
+        <column name="login" />
+        <column name="oficina" />
+        <column name="estado" />
+      </columns>
+      <queryText>SELECT  "codigo" = fu_funcionario,"nombre" = fu_nombre,"login" = fu_login,"oficina" = fu_oficina,"estado" = fu_estado </queryText>
+    </query>
+  </queries>
+</procedure>

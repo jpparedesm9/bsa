@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:osgi="http://www.springframework.org/schema/osgi"
+	xmlns:aop="http://www.springframework.org/schema/aop" xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:jee="http://www.springframework.org/schema/jee" xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/osgi http://www.springframework.org/schema/osgi/spring-osgi.xsd
+		http://www.springframework.org/schema/jee http://www.springframework.org/schema/jee/spring-jee.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
+		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd">
+
+	<osgi:reference id="bankingProductReference"
+		interface="com.cobiscorp.ecobis.fpm.operation.service.IBankingProductManager" />
+	<osgi:reference id="mappingFieldManagerReference"
+		interface="com.cobiscorp.ecobis.fpm.operation.service.IMappingFieldManager" />
+	<osgi:reference id="itemsReference"
+		interface="com.cobiscorp.ecobis.fpm.operation.service.IItemsManager" />
+	<osgi:reference id="generalParametersReference"
+		interface="com.cobiscorp.ecobis.fpm.operation.service.IGeneralParametersManager" />
+	<osgi:reference id="defaultOperationReference"
+		interface="com.cobiscorp.ecobis.fpm.portfolio.service.IDefaultOperationManager" />
+	<osgi:reference id="itemPortfolioReference"
+		interface="com.cobiscorp.ecobis.fpm.portfolio.service.IItemPortfolioManager" />
+	<osgi:reference id="ratePortfolioReference"
+		interface="com.cobiscorp.ecobis.fpm.portfolio.service.IRatePortfolio" />
+	<osgi:reference id="catalogReference"
+		interface="com.cobiscorp.ecobis.fpm.catalogs.service.ICatalogManager"></osgi:reference>
+	<osgi:reference id="extractorReference"
+		interface="com.cobiscorp.ecobis.fpm.extractors.administration.service.IExtractorManager"></osgi:reference>
+	<osgi:reference id="ruleManager"
+		interface="com.cobiscorp.ecobis.bpl.rules.engine.services.IRuleManager"></osgi:reference>
+	<osgi:reference id="dictionaryReference"
+		interface="com.cobiscorp.ecobis.fpm.administration.service.IDictionaryManager"></osgi:reference>
+	<osgi:reference id="storedProcedureUtils"
+		interface="com.cobiscorp.cobis.cts.jdbc.utils.CobisStoredProcedureUtils" />
+	<osgi:reference id="defaultValueReference"
+		interface="com.cobiscorp.ecobis.fpm.interceptors.service.IDefaultValuesManager" />
+	<osgi:reference id="transactionManager" filter="(service.impl=COBIS)"
+     	interface="org.springframework.transaction.PlatformTransactionManager" />
+
+
+	<osgi:service ref="catalogsInterceptor"
+		interface="com.cobiscorp.cobis.cts.interceptors.CobisInterceptor">
+		<osgi:service-properties>
+			<!-- (interceptor.type=catalogs) -->
+			<entry key="interceptor.type" value="catalogs" />
+		</osgi:service-properties>
+	</osgi:service>
+
+	<osgi:service ref="generalParametersInterceptor"
+		interface="com.cobiscorp.cobis.cts.interceptors.CobisInterceptor">
+		<osgi:service-properties>
+			<!-- (interceptor.type=catalogs) -->
+			<entry key="interceptor.type" value="generalParameters" />
+		</osgi:service-properties>
+	</osgi:service>
+
+	<osgi:service ref="itemsInterceptor"
+		interface="com.cobiscorp.cobis.cts.interceptors.CobisInterceptor">
+		<osgi:service-properties>
+			<!-- (interceptor.type=catalogs) -->
+			<entry key="interceptor.type" value="items" />
+		</osgi:service-properties>
+	</osgi:service>
+
+	<osgi:service ref="deleteOperationInterceptor"
+		interface="com.cobiscorp.cobis.cts.interceptors.CobisInterceptor">
+		<osgi:service-properties>
+			<!-- (interceptor.type=catalogs) -->
+			<entry key="interceptor.type" value="deleteOperation" />
+		</osgi:service-properties>
+	</osgi:service>
+
+	<osgi:service ref="portfolioGenericInterceptor"
+		interface="com.cobiscorp.cobis.cts.interceptors.CobisInterceptor">
+		<osgi:service-properties>
+			<entry key="interceptor.type" value="itemsTypeQuery"></entry>
+		</osgi:service-properties>
+
+	</osgi:service>
+
+	<osgi:service ref="updatePortfolioGenericInterceptor"
+		interface="com.cobiscorp.cobis.cts.interceptors.CobisInterceptor">
+		<osgi:service-properties>
+			<entry key="interceptor.type" value="updateConsultItems"></entry>
+		</osgi:service-properties>
+	</osgi:service>
+
+	<osgi:service ref="qrOperationInterceptor"
+		interface="com.cobiscorp.cobis.cts.interceptors.CobisInterceptor">
+		<osgi:service-properties>
+			<entry key="interceptor.type" value="qrOperationInterceptor" />
+		</osgi:service-properties>
+	</osgi:service>
+
+	<osgi:service ref="updateQrOperationInterceptor"
+		interface="com.cobiscorp.cobis.cts.interceptors.CobisInterceptor">
+		<osgi:service-properties>
+			<entry key="interceptor.type" value="updateQrOperationInterceptor" />
+		</osgi:service-properties>
+	</osgi:service>
+
+	<osgi:service ref="creditSectorInterceptor"
+		interface="com.cobiscorp.cobis.cts.interceptors.CobisInterceptor">
+		<osgi:service-properties>
+			<entry key="interceptor.type" value="creditSectorInterceptor" />
+		</osgi:service-properties>
+	</osgi:service>
+
+
+</beans>

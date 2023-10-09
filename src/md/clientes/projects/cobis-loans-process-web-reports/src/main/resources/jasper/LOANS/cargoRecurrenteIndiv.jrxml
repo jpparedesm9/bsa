@@ -1,0 +1,415 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="cargoRecurrenteIndiv" pageWidth="510" pageHeight="841" columnWidth="470" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="155e82bd-6d37-41fc-b845-4a6af757ade3">
+	<property name="ireport.zoom" value="1.610510000000001"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="1"/>
+	<style name="table">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+		<conditionalStyle>
+			<conditionExpression><![CDATA[new Boolean($V{REPORT_COUNT}.intValue()%2==0)]]></conditionExpression>
+			<style backcolor="#EFF7FF"/>
+		</conditionalStyle>
+	</style>
+	<subDataset name="Table Dataset 1" uuid="d19b65b8-5334-4772-8f0b-de3138bbc077"/>
+	<parameter name="fechaProceso" class="java.lang.String"/>
+	<parameter name="periodicidadPago" class="java.lang.String"/>
+	<parameter name="numeroTarjetaCuenta" class="java.lang.String"/>
+	<parameter name="claveBancariaEst" class="java.lang.String"/>
+	<parameter name="montoMaximoFijo" class="java.lang.String"/>
+	<parameter name="fechaVencimiento" class="java.lang.String"/>
+	<parameter name="nombreCliente" class="java.lang.String"/>
+	<parameter name="numeroCredito" class="java.lang.String"/>
+	<parameter name="importeSemanaAPagar" class="java.lang.String"/>
+	<detail>
+		<band height="583" splitType="Stretch">
+			<staticText>
+				<reportElement x="99" y="9" width="309" height="20" uuid="88b5900c-6370-4902-9053-135804967717"/>
+				<textElement textAlignment="Center">
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[FORMATO PARA SOLICITAR LA DOMICILIACIÓN]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="380" y="9" width="90" height="19" uuid="5b6938db-ddb1-4d1d-a60e-0431be86db94"/>
+				<textElement textAlignment="Right">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Fecha:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Transparent" x="0" y="67" width="470" height="28" backcolor="#CCCCCC" uuid="9c9da22c-11d4-4368-80e2-30988413eaf9"/>
+				<box leftPadding="5" rightPadding="5">
+					<pen lineWidth="0.0"/>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Justified">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[SOLICITO Y AUTORIZO QUE CON BASE EN LA INFORMACION QUE SE INDICA EN ESTA COMUNICACION SE REALICEN CARGOS PERIÓDICOS EN MI CUENTA CONFORME A LO SIGUIENTE:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="0" y="119" width="470" height="13" backcolor="#CCCCCC" uuid="a35a0c49-76fe-4a01-9bab-344bfa31d770"/>
+				<box leftPadding="2">
+					<pen lineWidth="0.75"/>
+					<topPen lineWidth="0.75"/>
+					<leftPen lineWidth="0.75"/>
+					<bottomPen lineWidth="0.75"/>
+					<rightPen lineWidth="0.75"/>
+				</box>
+				<textElement>
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[NOMBRE DEL PROVEEDOR :]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="0" y="132" width="470" height="13" uuid="be409ecd-67ff-4858-a80c-67c2ccab2f28"/>
+				<box leftPadding="2">
+					<pen lineWidth="0.75"/>
+					<topPen lineWidth="0.75"/>
+					<leftPen lineWidth="0.75"/>
+					<bottomPen lineWidth="0.75"/>
+					<rightPen lineWidth="0.75"/>
+				</box>
+				<textElement textAlignment="Justified">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA["SANTANDER INCLUSIÓN FINANCIERA S.A. DE C.V., SOFOM, E.R., GRUPO FINANCIERO SANTANDER MÉXICO."]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement mode="Opaque" x="0" y="197" width="470" height="13" backcolor="#CCCCCC" uuid="a054ad16-b229-469c-b240-b691712c7c9b"/>
+				<box leftPadding="2">
+					<pen lineWidth="0.75"/>
+					<topPen lineWidth="0.75"/>
+					<leftPen lineWidth="0.75"/>
+					<bottomPen lineWidth="0.75"/>
+					<rightPen lineWidth="0.75"/>
+				</box>
+				<textElement>
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[PERIODICIDAD DEL PAGO :]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="0" y="210" width="470" height="13" uuid="931ab7f9-349c-4b43-9909-9d87865638d4"/>
+				<box leftPadding="2">
+					<pen lineWidth="0.75"/>
+					<topPen lineWidth="0.75"/>
+					<leftPen lineWidth="0.75"/>
+					<bottomPen lineWidth="0.75"/>
+					<rightPen lineWidth="0.75"/>
+				</box>
+				<textElement textAlignment="Justified">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{periodicidadPago}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement mode="Opaque" x="0" y="223" width="470" height="23" backcolor="#CCCCCC" uuid="42e8ffd8-6cdf-430a-8564-20e763203d70"/>
+				<box leftPadding="2">
+					<pen lineWidth="0.75"/>
+					<topPen lineWidth="0.75"/>
+					<leftPen lineWidth="0.75"/>
+					<bottomPen lineWidth="0.75"/>
+					<rightPen lineWidth="0.75"/>
+				</box>
+				<textElement>
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[NOMBRE DEL BANCO QUE LLEVA LA CUENTA DE DEPÓSITO A LA VISTA O DE AHORRO EN LA QUE SE REALIZARA EL CARGO :]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="0" y="246" width="470" height="13" uuid="557cc15d-c4b5-45f1-a553-e468ebd8d414"/>
+				<box leftPadding="2">
+					<pen lineWidth="0.75"/>
+					<topPen lineWidth="0.75"/>
+					<leftPen lineWidth="0.75"/>
+					<bottomPen lineWidth="0.75"/>
+					<rightPen lineWidth="0.75"/>
+				</box>
+				<textElement textAlignment="Justified">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA["BANCO SANTANDER (MÉXICO), S.A., INSTITUCIÓN DE BANCA MÚTIPLE, GRUPO FINANCIERO SANTANDER MÉXICO."]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement mode="Opaque" x="0" y="259" width="470" height="13" backcolor="#CCCCCC" uuid="d55dc7bd-5845-4370-9349-3bd9b8963a54"/>
+				<box leftPadding="2">
+					<pen lineWidth="0.75"/>
+					<topPen lineWidth="0.75"/>
+					<leftPen lineWidth="0.75"/>
+					<bottomPen lineWidth="0.75"/>
+					<rightPen lineWidth="0.75"/>
+				</box>
+				<textElement>
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[NUMERO DE TARJETA DE DEBITO O CUENTA (10 ó 16 DIGITOS)]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="0" y="272" width="470" height="13" uuid="f327c149-8665-4cea-af7d-324917024764"/>
+				<box leftPadding="2">
+					<pen lineWidth="0.75"/>
+					<topPen lineWidth="0.75"/>
+					<leftPen lineWidth="0.75"/>
+					<bottomPen lineWidth="0.75"/>
+					<rightPen lineWidth="0.75"/>
+				</box>
+				<textElement textAlignment="Justified">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{numeroTarjetaCuenta}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement mode="Opaque" x="0" y="285" width="470" height="13" backcolor="#CCCCCC" uuid="725990ba-ece1-47d0-9a87-fbaca20f2a7d"/>
+				<box leftPadding="2">
+					<pen lineWidth="0.75"/>
+					<topPen lineWidth="0.75"/>
+					<leftPen lineWidth="0.75"/>
+					<bottomPen lineWidth="0.75"/>
+					<rightPen lineWidth="0.75"/>
+				</box>
+				<textElement>
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[CLAVE BANCARIA ESTANDARIZADA (”CLABE”) DE LA CUENTA (18 DIGITOS)]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="0" y="298" width="470" height="13" uuid="8e003d63-a43f-46a6-a439-7d8635b6c2fc"/>
+				<box leftPadding="2">
+					<pen lineWidth="0.75"/>
+					<topPen lineWidth="0.75"/>
+					<leftPen lineWidth="0.75"/>
+					<bottomPen lineWidth="0.75"/>
+					<rightPen lineWidth="0.75"/>
+				</box>
+				<textElement textAlignment="Justified">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{claveBancariaEst}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement mode="Opaque" x="0" y="311" width="470" height="13" backcolor="#CCCCCC" uuid="d7470adf-4517-4975-bb0b-85d65e6e646b"/>
+				<box leftPadding="2">
+					<pen lineWidth="0.75"/>
+					<topPen lineWidth="0.75"/>
+					<leftPen lineWidth="0.75"/>
+					<bottomPen lineWidth="0.75"/>
+					<rightPen lineWidth="0.75"/>
+				</box>
+				<textElement>
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[MONTO MÁXIMO FIJO DEL CARGO AUTORIZADO POR PERIODO DE FACTURACIÓN :]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="0" y="324" width="470" height="13" uuid="dcb1c488-cc30-4da9-9854-20e594a52eeb"/>
+				<box leftPadding="2">
+					<pen lineWidth="0.75"/>
+					<topPen lineWidth="0.75"/>
+					<leftPen lineWidth="0.75"/>
+					<bottomPen lineWidth="0.75"/>
+					<rightPen lineWidth="0.75"/>
+				</box>
+				<textElement textAlignment="Justified">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{montoMaximoFijo}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement mode="Opaque" x="0" y="337" width="470" height="13" backcolor="#CCCCCC" uuid="13bec6e6-04c6-4f73-bdf2-83ed5575f2a5"/>
+				<box leftPadding="2">
+					<pen lineWidth="0.75"/>
+					<topPen lineWidth="0.75"/>
+					<leftPen lineWidth="0.75"/>
+					<bottomPen lineWidth="0.75"/>
+					<rightPen lineWidth="0.75"/>
+				</box>
+				<textElement>
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ESTA AUTORIZACIÓN VENCE EL :]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="0" y="350" width="470" height="13" uuid="8bfb752f-e021-476c-b861-aea9c596486c"/>
+				<box leftPadding="2">
+					<pen lineWidth="0.75"/>
+					<topPen lineWidth="0.75"/>
+					<leftPen lineWidth="0.75"/>
+					<bottomPen lineWidth="0.75"/>
+					<rightPen lineWidth="0.75"/>
+				</box>
+				<textElement textAlignment="Justified">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{fechaVencimiento}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement mode="Opaque" x="0" y="362" width="470" height="13" backcolor="#CCCCCC" uuid="51f8ddf0-2d3f-441b-a6fa-fe661a4ded53"/>
+				<box leftPadding="2">
+					<pen lineWidth="0.75"/>
+					<topPen lineWidth="0.75"/>
+					<leftPen lineWidth="0.75"/>
+					<bottomPen lineWidth="0.75"/>
+					<rightPen lineWidth="0.75"/>
+				</box>
+				<textElement>
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[NOMBRE DEL CLIENTE :]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="0" y="375" width="470" height="13" uuid="149624fa-813c-4edd-ba49-25b6b9f15d49"/>
+				<box leftPadding="2">
+					<pen lineWidth="0.75"/>
+					<topPen lineWidth="0.75"/>
+					<leftPen lineWidth="0.75"/>
+					<bottomPen lineWidth="0.75"/>
+					<rightPen lineWidth="0.75"/>
+				</box>
+				<textElement textAlignment="Justified">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{nombreCliente}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement mode="Transparent" x="1" y="437" width="470" height="25" backcolor="#CCCCCC" uuid="4611bb63-c9e0-47d7-a12c-29f6390d32c1"/>
+				<box leftPadding="2">
+					<pen lineWidth="0.0"/>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[Estoy  enterado de que en cualquier momento podré solicitar la cancelación de la presente domiciliación sin costo a mi cargo.]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="0" y="538" width="470" height="20" uuid="33a6b5c7-cc37-4418-b22f-b3e2d241e723"/>
+				<textElement textAlignment="Center">
+					<font size="8" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{nombreCliente} + "."]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="169" y="521" width="166" height="1" uuid="a0c0851c-5c0f-4931-a554-5eac34fedc77"/>
+			</line>
+			<staticText>
+				<reportElement mode="Transparent" x="169" y="483" width="166" height="15" backcolor="#CCCCCC" uuid="45b38775-bf8d-4527-9119-4f46fd4ebaca"/>
+				<box leftPadding="2">
+					<pen lineWidth="0.0"/>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[ATENTAMENTE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="169" y="498" width="166" height="39" backcolor="#CCCCCC" uuid="55b73b07-508e-4a6b-b31a-7b6ca0d167cc"/>
+				<box leftPadding="2">
+					<pen lineWidth="0.0"/>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="380" y="27" width="90" height="20" uuid="09187534-998e-4aea-93e9-3032ac69242b"/>
+				<textElement textAlignment="Right">
+					<font size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{fechaProceso}]]></textFieldExpression>
+			</textField>
+			<image>
+				<reportElement x="0" y="0" width="97" height="49" uuid="1426021d-4dbd-432d-898f-837d0499917d"/>
+				<imageExpression><![CDATA["logo1.PNG"]]></imageExpression>
+			</image>
+			<textField pattern="#,##0.00">
+				<reportElement x="0" y="184" width="470" height="13" uuid="85159696-2ce1-4787-9f63-6b1c4a039bbc"/>
+				<box leftPadding="2">
+					<pen lineWidth="0.75"/>
+					<topPen lineWidth="0.75"/>
+					<leftPen lineWidth="0.75"/>
+					<bottomPen lineWidth="0.75"/>
+					<rightPen lineWidth="0.75"/>
+				</box>
+				<textElement textAlignment="Justified">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{importeSemanaAPagar}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement mode="Opaque" x="0" y="171" width="470" height="13" backcolor="#CCCCCC" uuid="5b1ad2a1-905e-41cf-b3ce-8b6404e894be"/>
+				<box leftPadding="2">
+					<pen lineWidth="0.75"/>
+					<topPen lineWidth="0.75"/>
+					<leftPen lineWidth="0.75"/>
+					<bottomPen lineWidth="0.75"/>
+					<rightPen lineWidth="0.75"/>
+				</box>
+				<textElement>
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[IMPORTE SEMANAL A PAGAR:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="0" y="158" width="470" height="13" uuid="627d95ca-5ce6-419b-a581-8650c0dee9f6"/>
+				<box leftPadding="2">
+					<pen lineWidth="0.75"/>
+					<topPen lineWidth="0.75"/>
+					<leftPen lineWidth="0.75"/>
+					<bottomPen lineWidth="0.75"/>
+					<rightPen lineWidth="0.75"/>
+				</box>
+				<textElement textAlignment="Justified">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{numeroCredito}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement mode="Opaque" x="0" y="145" width="470" height="13" backcolor="#CCCCCC" uuid="e65201e4-c6ac-4ce7-be27-1266f14a9f32"/>
+				<box leftPadding="2">
+					<pen lineWidth="0.75"/>
+					<topPen lineWidth="0.75"/>
+					<leftPen lineWidth="0.75"/>
+					<bottomPen lineWidth="0.75"/>
+					<rightPen lineWidth="0.75"/>
+				</box>
+				<textElement>
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[CRÉDITO A PAGAR (NO. CRÉDITO):]]></text>
+			</staticText>
+		</band>
+	</detail>
+</jasperReport>

@@ -1,0 +1,163 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/cardview_light_background"
+                android:orientation="vertical"
+                tools:context="com.cobis.gestionasesores.presentation.synchronization.SynchronizationFragment">
+
+    <LinearLayout
+        android:id="@+id/sync_up"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingBottom="@dimen/control_padding"
+        android:paddingEnd="@dimen/control_padding"
+        android:paddingStart="@dimen/activity_horizontal_margin"
+        android:paddingTop="@dimen/control_padding">
+
+        <android.support.v7.widget.AppCompatImageView
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            app:srcCompat="@drawable/ic_upload"
+            tools:ignore="RtlHardcoded"/>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/margin_medium"
+            android:layout_weight="1"
+            android:gravity="center_vertical"
+            android:orientation="vertical"
+            android:padding="@dimen/control_padding"
+            tools:ignore="RtlHardcoded">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/synchronization_up"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+                tools:ignore="RtlHardcoded"/>
+
+            <TextView
+                android:id="@+id/text_sync_up"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/sync_title"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                android:textColor="@android:color/darker_gray"
+                tools:ignore="RtlHardcoded"/>
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/sync_down"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/sync_up"
+        android:clickable="true"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingBottom="@dimen/control_padding"
+        android:paddingEnd="@dimen/control_padding"
+        android:paddingStart="@dimen/activity_horizontal_margin"
+        android:paddingTop="@dimen/control_padding">
+
+        <android.support.v7.widget.AppCompatImageView
+            android:id="@+id/image_sync"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            app:srcCompat="@drawable/ic_download"
+            tools:ignore="RtlHardcoded"/>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/margin_medium"
+            android:layout_weight="1"
+            android:gravity="center_vertical"
+            android:orientation="vertical"
+            android:padding="@dimen/control_padding"
+            tools:ignore="RtlHardcoded">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/synchronization_down"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+                tools:ignore="RtlHardcoded"/>
+
+            <TextView
+                android:id="@+id/text_sync_down"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/sync_title"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                android:textColor="@android:color/darker_gray"
+                tools:ignore="RtlHardcoded"/>
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/sync_catalog"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/sync_down"
+        android:clickable="true"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingBottom="@dimen/control_padding"
+        android:paddingEnd="@dimen/control_padding"
+        android:paddingStart="@dimen/activity_horizontal_margin"
+        android:paddingTop="@dimen/control_padding">
+
+        <android.support.v7.widget.AppCompatImageView
+            android:id="@+id/image_sync_catalog"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            app:srcCompat="@drawable/ic_load_param"
+            tools:ignore="RtlHardcoded"/>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/margin_medium"
+            android:layout_weight="1"
+            android:gravity="center_vertical"
+            android:orientation="vertical"
+            android:padding="@dimen/control_padding"
+            tools:ignore="RtlHardcoded">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/synchronization_catalogs"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+                tools:ignore="RtlHardcoded"/>
+
+            <TextView
+                android:id="@+id/text_sync_catalog"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/sync_title"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                android:textColor="@android:color/darker_gray"
+                tools:ignore="RtlHardcoded"/>
+        </LinearLayout>
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btn_continue"
+        style="?borderlessButtonStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="@dimen/activity_vertical_margin"
+        android:layout_marginEnd="64dp"
+        android:layout_marginStart="64dp"
+        android:text="@string/sync_finish_btn"
+        android:visibility="gone"/>
+</RelativeLayout>

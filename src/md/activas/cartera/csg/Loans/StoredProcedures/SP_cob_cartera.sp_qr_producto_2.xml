@@ -1,0 +1,191 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<procedure>
+  <database>cob_cartera</database>
+  <name>sp_qr_producto</name>
+  <type>SYBASE</type>
+  <version>2</version>
+  <parameters>
+    <parameter name="@s_ofi" dataType="int" direction="in" />
+    <parameter name="@i_tipo" dataType="tinyint" direction="in" />
+    <parameter name="@i_operacion" dataType="char" direction="in" />
+    <parameter name="@i_producto" dataType="varchar" direction="in" />
+    <parameter name="@i_moneda" dataType="tinyint" direction="in" />
+    <parameter name="@i_linea_cre" dataType="varchar" direction="in" />
+    <parameter name="@i_categoria" dataType="varchar" direction="in" />
+  </parameters>
+  <queries>
+    <query>
+      <columns>
+        <column name="PRODUCTO" />
+        <column name="DESCRIPCION" />
+        <column name="RETENCION" />
+        <column name="CATEGORIA" />
+        <column name="INSTRUMENTO" />
+      </columns>
+      <queryText>SELECT  "PRODUCTO" = cp_producto,"DESCRIPCION" = SUBSTRING (cp_descripcion, 1, 30),"RETENCION" = cp_retencion,"CATEGORIA" = cp_categoria,"INSTRUMENTO" = cp_instrum_SB </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="PRODUCTO" />
+        <column name="DESCRIPCION" />
+        <column name="RETENCION" />
+        <column name="CATEGORIA" />
+        <column name="NSTRUMENTO" />
+      </columns>
+      <queryText>SELECT  "PRODUCTO" = cp_producto,"DESCRIPCION" = SUBSTRING (cp_descripcion, 1, 30),"RETENCION" = cp_retencion,"CATEGORIA" = cp_categoria,"NSTRUMENTO" = cp_instrum_SB </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="PRODUCTO" />
+        <column name="DESCRIPCION" />
+        <column name="RETENCION" />
+        <column name="CATEGORIA" />
+        <column name="P.COBIS" />
+      </columns>
+      <queryText>SELECT  "PRODUCTO" = cp_producto,"DESCRIPCION" = SUBSTRING (cp_descripcion, 1, 30),"RETENCION" = cp_retencion,"CATEGORIA" = cp_categoria,"P.COBIS" = cp_pcobis </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="PRODUCTO" />
+        <column name="DESCRIPCION" />
+        <column name="RETENCION" />
+      </columns>
+      <queryText>SELECT  "PRODUCTO" = cp_producto,"DESCRIPCION" = SUBSTRING (cp_descripcion, 1, 30),"RETENCION" = cp_retencion </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="PRODUCTO" />
+        <column name="DESCRIPCION" />
+        <column name="RETENCION" />
+      </columns>
+      <queryText>SELECT  "PRODUCTO" = cp_producto,"DESCRIPCION" = SUBSTRING (cp_descripcion, 1, 30),"RETENCION" = cp_retencion </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="PRODUCTO" />
+        <column name="DESCRIPCION" />
+        <column name="RETENCION" />
+      </columns>
+      <queryText>SELECT  "PRODUCTO" = cp_producto,"DESCRIPCION" = SUBSTRING (cp_descripcion, 1, 30),"RETENCION" = cp_retencion </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="PRODUCTO" />
+        <column name="DESCRIPCION" />
+        <column name="RETENCION" />
+      </columns>
+      <queryText>SELECT  "PRODUCTO" = cp_producto,"DESCRIPCION" = SUBSTRING (cp_descripcion, 1, 30),"RETENCION" = cp_retencion </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="PRODUCTO" />
+        <column name="DESCRIPCION" />
+      </columns>
+      <queryText>SELECT  "PRODUCTO" = cp_producto,"DESCRIPCION" = SUBSTRING (cp_descripcion, 1, 30) </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="PRODUCTO" />
+        <column name="DESCRIPCION" />
+        <column name="RETENCION" />
+        <column name="CATEGORIA" />
+        <column name="P.COBIS" />
+      </columns>
+      <queryText>SELECT  "PRODUCTO" = cp_producto,"DESCRIPCION" = SUBSTRING (cp_descripcion, 1, 30),"RETENCION" = cp_retencion,"CATEGORIA" = cp_categoria,"P.COBIS" = cp_pcobis </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="PRODUCTO" />
+        <column name="DESCRIPCION" />
+      </columns>
+      <queryText>SELECT  "PRODUCTO" = cp_producto,"DESCRIPCION" = SUBSTRING (cp_descripcion, 1, 30) </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="{1}" />
+        <column name="{2}" />
+      </columns>
+      <queryText>SELECT  SUBSTRING (cp_descripcion, 1, 30),cp_categoria </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="{1}" />
+        <column name="{2}" />
+      </columns>
+      <queryText>SELECT  SUBSTRING (cp_descripcion, 1, 30),cp_categoria </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="{1}" />
+        <column name="{2}" />
+        <column name="{3}" />
+        <column name="{4}" />
+      </columns>
+      <queryText>SELECT  SUBSTRING (cp_descripcion, 1, 30),cp_retencion,cp_categoria,cp_pcobis </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="{1}" />
+        <column name="{2}" />
+        <column name="{3}" />
+        <column name="{4}" />
+      </columns>
+      <queryText>SELECT  SUBSTRING (cp_descripcion, 1, 30),cp_retencion,cp_categoria,cp_pcobis </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="{1}" />
+        <column name="{2}" />
+      </columns>
+      <queryText>SELECT  SUBSTRING (cp_descripcion, 1, 30),cp_retencion </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="{1}" />
+        <column name="{2}" />
+      </columns>
+      <queryText>SELECT  SUBSTRING (cp_descripcion, 1, 30),cp_retencion </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="{1}" />
+        <column name="{2}" />
+      </columns>
+      <queryText>SELECT  SUBSTRING (cp_descripcion, 1, 30),cp_retencion </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="{1}" />
+        <column name="{2}" />
+        <column name="{3}" />
+        <column name="{4}" />
+      </columns>
+      <queryText>SELECT  SUBSTRING (cp_descripcion, 1, 30),cp_retencion,cp_categoria,cp_pcobis </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="{1}" />
+        <column name="{2}" />
+        <column name="{3}" />
+        <column name="{4}" />
+        <column name="{5}" />
+      </columns>
+      <queryText>SELECT  cp_producto,SUBSTRING (cp_descripcion, 1, 30),cp_retencion,cp_categoria,cp_pcobis </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="PRODUCTO" />
+        <column name="DESCRIPCION" />
+        <column name="RETENCION" />
+        <column name="MONEDA" />
+      </columns>
+      <queryText>SELECT  "PRODUCTO" = cp_producto,"DESCRIPCION" = SUBSTRING (cp_descripcion, 1, 30),"RETENCION" = cp_retencion,"MONEDA" = cp_moneda </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="{1}" />
+      </columns>
+      <queryText>SELECT  SUBSTRING (cp_descripcion, 1, 30) </queryText>
+    </query>
+  </queries>
+</procedure>

@@ -1,0 +1,1518 @@
+<ccm-plan-config>
+  <own>
+    <plan id="CREDIT-FACILITY-PROCESS" reloadable="true">
+      <plugin name="COBISCorp.eCOBIS.CreditFacility.DTO" path="../../BUSINESSPROCESS/plugins/COBISCorp.eCOBIS.CreditFacility.DTO-1.0.0.0.jar"/>
+      <plugin name="COBISCorp.eCOBIS.CreditFacility.Service" path="../../BUSINESSPROCESS/plugins/COBISCorp.eCOBIS.CreditFacility.Service-1.0.0.0.jar"/>
+    </plan>
+    <plan id="ExternalCommons_SharePoint">
+      <plugin name="httpcore-osgi" path="../plugins/framework/ext/sharepoint/httpcore-osgi-4.0.1.jar"/>
+      <plugin name="httpclient-osgi" path="../plugins/framework/ext/sharepoint/httpclient-osgi-4.0.1.jar"/>
+      <plugin name="json" path="../plugins/framework/ext/sharepoint/json-20160810.jar"/>
+      <plugin name="org.springframework.web" path="../plugins/framework/ext/sharepoint/org.springframework.web-3.0.5.RELEASE.jar"/>
+      <plugin name="org.springframework.xml" path="../plugins/framework/ext/sharepoint/org.springframework.xml-2.0.0.RELEASE.jar"/>
+      <plugin name="commons-lang3" path="../plugins/framework/ext/sharepoint/commons-lang3-3.5.jar"/>
+    </plan>
+    <plan id="Apache"/>
+    <plan id="COLLATERAL-PROCESS" reloadable="true">
+      <plugin name="COBISCorp.eCOBIS.LoanRequest.General.DTO" path="../../COLLATERAL/plugins/COBISCorp.eCOBIS.LoanRequest.General.DTO-2.0.0.0.jar"/>
+      <plugin name="COBISCorp.eCOBIS.Collateral.DTO" path="../../COLLATERAL/plugins/COBISCorp.eCOBIS.Collateral.DTO-2.0.0.0.jar"/>
+      <plugin name="COBISCorp.eCOBIS.Collateral.Service" path="../../COLLATERAL/plugins/COBISCorp.eCOBIS.Collateral.Service-2.0.0.0.jar"/>
+    </plan>
+    <plan id="ACCOUNT-PROCESS" reloadable="true">
+      <plugin name="COBISCorp.eCOBIS.Account.DTO" path="../../ACCOUNT/plugins/COBISCorp.eCOBIS.Account.DTO-2.0.0.0.jar"/>
+      <plugin name="COBISCorp.eCOBIS.Account.Service" path="../../ACCOUNT/plugins/COBISCorp.eCOBIS.Account.Service-2.0.0.0.jar"/>
+    </plan>
+    <plan id="CAF-PROCESS" reloadable="true">
+      <plugin name="COBISCorp.eCOBIS.FinanEval.FinanEvalQuery.DTO" path="../../CAF/plugins/COBISCorp.eCOBIS.FinanEval.FinanEvalQuery.DTO-2.0.0.0.jar"/>
+      <plugin name="COBISCorp.eCOBIS.FinanEval.FinanEvalQuery.Service" path="../../CAF/plugins/COBISCorp.eCOBIS.FinanEval.FinanEvalQuery.Service-2.0.0.0.jar"/>
+    </plan>
+    <plan id="ExternalCommons" reloadable="true">
+      <plugin name="commons.pool" path="../plugins/framework/ext/commons/commons-pool-1.5.4.jar"/>
+      <plugin name="commons.dbcp" path="../plugins/framework/ext/commons/commons-dbcp-1.4.jar"/>
+      <plugin name="commons.logging" path="../plugins/framework/ext/commons/com.springsource.org.apache.commons.logging-1.1.1.jar"/>
+      <plugin name="commons.collection" path="../plugins/framework/ext/commons/commons-collections-3.2.1.jar"/>
+      <plugin name="commons.beanutils" path="../plugins/framework/ext/commons/com.springsource.org.apache.commons.beanutils-1.8.0.jar"/>
+      <plugin name="commons.io" path="../plugins/framework/ext/commons/com.springsource.org.apache.commons.io-1.4.0.jar"/>
+      <plugin name="commons.digester" path="../plugins/framework/ext/commons/commons-digester-2.1.jar"/>
+      <plugin name="commons.fileupload" path="../plugins/framework/ext/commons/commons-fileupload-1.3.1.jar"/>
+      <plugin name="commons.jxpath" path="../plugins/framework/ext/commons/com.springsource.org.apache.commons.jxpath-1.2.0.jar"/>
+      <plugin name="slf4j.commons.logging" path="../plugins/framework/ext/log/com.springsource.slf4j.org.apache.commons.logging-1.6.1.jar"/>
+      <plugin name="cglib" path="../plugins/framework/ext/aop/com.springsource.net.sf.cglib-2.1.3.jar"/>
+      <plugin name="aopalliance" path="../plugins/framework/ext/aop/com.springsource.org.aopalliance-1.0.0.jar"/>
+      <plugin name="jpa.spec" path="../plugins/framework/ext/spec/geronimo-jpa_2.0_spec-1.1.jar"/>
+      <plugin name="com.springsource.org.apache.commons.discovery" path="../plugins/framework/apache/com.springsource.org.apache.commons.discovery-0.4.0.jar"/>
+      <plugin name="com.springsource.org.apache.commons.httpclient" path="../plugins/framework/apache/com.springsource.org.apache.commons.httpclient-3.1.0.jar"/>
+      <plugin name="com.springsource.org.apache.bsf" path="../plugins/framework/apache/com.springsource.org.apache.bsf-2.4.0.jar"/>
+      <plugin name="com.springsource.org.apache.commons.net" path="../plugins/framework/apache/com.springsource.org.apache.commons.net-2.0.0.jar"/>
+      <plugin name="com.springsource.org.apache.poi" path="../plugins/framework/apache/com.springsource.org.apache.poi-3.9.0.FINAL.jar"/>
+      <plugin name="jackson-core" path="../plugins/framework/ext/jackson/jackson-core-2.5.1.jar"/>
+      <plugin name="jackson-annotations" path="../plugins/framework/ext/jackson/jackson-annotations-2.5.1.jar"/>
+      <plugin name="jackson-databind" path="../plugins/framework/ext/jackson/jackson-databind-2.5.1.jar"/>
+      <plugin name="xmlsec" path="../plugins/framework/apache/xmlsec-1.5.5.jar"/>
+      <plugin name="c3p0" path="../plugins/framework/ext/quartz/cobis-c3p0-bundle-0.9.1.1.jar"/>
+      <plugin name="quartz-bundle" path="../plugins/framework/ext/quartz/cobis-quartz-bundle-2.2.3.jar"/>
+      <plugin name="com.springsource.org.apache.commons.lang" path="../plugins/framework/apache/com.springsource.org.apache.commons.lang-2.6.0.jar"/>
+      <plugin name="jackson-core-asl" path="../plugins/framework/ext/jackson/jackson-core-asl-1.9.13.jar"/>
+      <plugin name="jackson-mapper-asl" path="../plugins/framework/ext/jackson/jackson-mapper-asl-1.9.13.jar"/>
+      <plugin name="jackson-xc" path="../plugins/framework/ext/jackson/jackson-xc-1.9.13.jar"/>
+    </plan>
+    <plan id="CtsConsole" reloadable="true">
+      <plugin name="joda-time" path="../plugins/framework/console/com.springsource.org.joda.time-1.6.0.jar"/>
+      <plugin name="cts-console-properties" path="../plugins/framework/console/cts-console-properties-1.0.0.jar"/>
+      <plugin name="cts-console-serializer" path="../plugins/framework/console/cts-console-serializer-1.0.0.jar"/>
+      <plugin name="castor.core" path="../plugins/framework/ext/castor/com.cobiscorp.cobis.castor-core-1.3.1.jar"/>
+      <plugin name="castor.xml" path="../plugins/framework/ext/castor/com.cobiscorp.cobis.castor-xml-1.3.1.jar"/>
+      <plugin name="cts-console-jmx" path="../plugins/framework/console/cts-console-jmx-1.0.0.jar"/>
+      <plugin name="cts-console-domain" path="../plugins/framework/console/cts-console-domain-1.0.0.7.jar"/>
+      <plugin name="cts-console-command" path="../plugins/framework/console/cts-console-command-1.0.5.jar"/>
+      <plugin name="cts-console-plugin" path="../plugins/framework/console/cts-console-plugin-1.0.0.7.jar"/>
+    </plan>
+    <plan id="COBISEvent">
+      <plugin name="COBISEventImpl" path="../plugins/COBISEventImpl-1.0.3.jar"/>
+    </plan>
+    <plan id="SpecialSpExecutor">
+      <plugin name="cts-console-messaging" path="../plugins/framework/console/cts-console-messaging-1.0.0.1.jar"/>
+      <plugin name="cts.special.spexecutor" path="../plugins/cts-special-spexecutor-1.0.1.7.jar"/>
+    </plan>
+    <plan id="OpenJPA">
+      <plugin name="serp" path="../plugins/framework/ext/openjpa/serp-1.13.1.jar"/>
+      <plugin name="servicemix.bundles.asm" path="../plugins/framework/ext/openjpa/org.apache.servicemix.bundles.asm-3.3.1_1.jar"/>
+      <plugin name="apache.openjpa" path="../plugins/framework/ext/openjpa/openjpa-2.2.2.jar"/>
+    </plan>
+    <plan id="OsgiEnterprise">
+      <plugin name="osgi.enterprise" path="../plugins/framework/ext/aries/org.osgi.enterprise-4.2.0.jar"/>
+      <plugin name="aries.util" path="../plugins/framework/ext/aries/org.apache.aries.util-1.1.0.jar"/>
+      <plugin name="aries-proxy" path="../plugins/framework/ext/aries/org.apache.aries.proxy-1.0.0.jar"/>
+      <plugin name="aries.blueprint" path="../plugins/framework/ext/aries/org.apache.aries.blueprint-1.1.0.jar"/>
+      <plugin name="org.apache.aries.jpa.api" path="../plugins/framework/ext/aries/org.apache.aries.jpa.api-1.0.0.jar"/>
+      <plugin name="cts-aries-jpa-container" path="../plugins/framework/ext/aries/cts-aries-jpa-container-1.0.0.jar"/>
+      <plugin name="org.apache.aries.jpa.container.context" path="../plugins/framework/ext/aries/org.apache.aries.jpa.container.context-1.0.0.jar"/>
+      <plugin name="org.apache.aries.jpa.blueprint.aries" path="../plugins/framework/ext/aries/org.apache.aries.jpa.blueprint.aries-1.0.0.jar"/>
+      <plugin name="com.ibm.ws.eba.jta.fep" path="../plugins/framework/ext/aries/com.ibm.ws.eba.jta.fep.jar"/>
+      <plugin name="org.apache.aries.transaction.wrappers" path="../plugins/framework/ext/aries/org.apache.aries.transaction.wrappers-1.0.0.jar"/>
+      <plugin name="org.apache.aries.transaction.blueprint" path="../plugins/framework/ext/aries/org.apache.aries.transaction.blueprint-1.0.0.jar"/>
+    </plan>
+    <plan id="SpringFramework" reloadable="true">
+      <plugin name="spring.asm" path="../plugins/framework/ext/spring/org.springframework.asm-3.0.5.RELEASE.jar"/>
+      <plugin name="spring.core" path="../plugins/framework/ext/spring/org.springframework.core-3.0.5.RELEASE.jar"/>
+      <plugin name="spring.beans" path="../plugins/framework/ext/spring/org.springframework.beans-3.0.5.RELEASE.jar"/>
+      <plugin name="spring.expression" path="../plugins/framework/ext/spring/org.springframework.expression-3.0.5.RELEASE.jar"/>
+      <plugin name="spring.context" path="../plugins/framework/ext/spring/org.springframework.context-3.0.5.RELEASE.jar"/>
+      <plugin name="spring.context.support" path="../plugins/framework/ext/spring/org.springframework.context.support-3.0.5.RELEASE.jar"/>
+      <plugin name="aspectj.weaver" path="../plugins/framework/ext/spring/com.springsource.org.aspectj.weaver-1.6.6.RELEASE.jar"/>
+      <plugin name="spring.aop" path="../plugins/framework/ext/spring/org.springframework.aop-3.0.5.RELEASE.jar"/>
+      <plugin name="spring.transaction" path="../plugins/framework/ext/spring/org.springframework.transaction-3.0.5.RELEASE.jar"/>
+      <plugin name="spring.aspects" path="../plugins/framework/ext/spring/org.springframework.aspects-3.0.5.RELEASE.jar"/>
+      <plugin name="spring.jdbc" path="../plugins/framework/ext/spring/org.springframework.jdbc-3.0.5.RELEASE.jar"/>
+      <plugin name="spring.orm" path="../plugins/framework/ext/spring/org.springframework.orm-3.0.5.RELEASE.jar"/>
+    </plan>
+    <plan id="SpringDataJpa" reloadable="true">
+      <plugin name="spring.data.commons" path="../plugins/framework/ext/spring-data/spring-data-commons-core-1.1.0.RELEASE.jar"/>
+      <plugin name="spring.data.jpa" path="../plugins/framework/ext/spring-data/spring-data-jpa-1.0.2.RELEASE.jar"/>
+    </plan>
+    <plan id="SpringOSGi">
+      <plugin name="spring.osgi.io" path="../plugins/framework/ext/spring-osgi/org.springframework.osgi.io-1.2.1.jar"/>
+      <plugin name="spring.osgi.core" path="../plugins/framework/ext/spring-osgi/org.springframework.osgi.core-1.2.1.jar"/>
+      <plugin name="spring.osgi.extender" path="../plugins/framework/ext/spring-osgi/org.springframework.osgi.extender-1.2.1.jar"/>
+    </plan>
+    <plan id="admin-middleware" reloadable="true">
+      <plugin name="cts-service-job-api" path="../plugins/framework/admin-middleware/cts-service-job-api-1.0.0.jar"/>
+      <plugin name="cts-service-job-impl" path="../plugins/framework/admin-middleware/cts-service-job-impl-1.0.0.jar"/>
+      <plugin name="cts-service-job-notification-api" path="../plugins/framework/admin-middleware/cts-service-job-notification-api-1.0.0.jar"/>
+      <plugin name="cts-service-job-notification-impl" path="../plugins/framework/admin-middleware/cts-service-job-notification-impl-1.0.2.jar"/>
+      <plugin name="cts-service-notification-api" path="../plugins/framework/admin-middleware/cts-service-notification-api-1.0.0.jar"/>
+      <plugin name="cts-service-notification-impl" path="../plugins/framework/admin-middleware/cts-service-notification-impl-1.0.1.jar"/>
+    </plan>
+    <plan id="Scheduler-api" reloadable="false">
+      <plugin name="cobis-scheduler-api" path="../plugins/framework/cts/cobis-scheduler-api-1.1.0.jar"/>
+    </plan>
+    <plan id="Scheduler-impl" reloadable="true">
+      <plugin name="cobis-scheduler-impl" path="../plugins/framework/cts/cobis-scheduler-impl-1.1.1.jar"/>
+    </plan>
+    <plan id="Scheduler-impl-ws" reloadable="true">
+      <plugin name="cobis-ws-scheduler" path="../plugins/framework/cts/cobis-ws-scheduler-1.0.1.jar"/>
+    </plan>
+    <plan id="Reentry" reloadable="true">
+      <plugin name="reentry-api" path="../plugins/reentry-api-1.2.0.jar"/>
+      <plugin name="reentry-base-impl" path="../plugins/reentry-base-impl-1.1.0.jar"/>
+      <plugin name="reentry-immediate-impl" path="../plugins/reentry-immediate-impl-1.1.0.jar"/>
+      <plugin name="reentry-monitor-impl" path="../plugins/reentry-monitor-impl-1.1.0.jar"/>
+      <plugin name="reentry-procedures-impl" path="../plugins/reentry-procedures-impl-1.0.1.8.jar"/>
+      <plugin name="reentry-procedures-persistence-impl" path="../plugins/reentry-procedures-persistence-impl-1.1.0.jar"/>
+      <plugin name="reentry-services-impl" path="../plugins/reentry-services-impl-1.0.1.1.jar"/>
+      <plugin name="reentry-services-persister-impl" path="../plugins/reentry-services-persister-impl-1.0.1.2.jar"/>
+    </plan>
+    <plan id="cts-document-manager-authorization-plan" reloadable="true">
+      <plugin name="cts-document-manager-authorization" path="../plugins/framework/cts/cts-document-manager-authorization-1.0.0.jar"/>
+    </plan>
+    <plan id="Jasper">
+      <plugin name="itext" path="../plugins/framework/ext/jasper/cobis-itext-bundle-2.1.7.jar"/>
+      <plugin name="jfree.jcommon" path="../plugins/framework/ext/jasper/com.springsource.org.jfree-1.0.12.jar"/>
+      <plugin name="jfree.chart" path="../plugins/framework/ext/jasper/cobis-jfreechart-bundle-1.0.19.jar"/>
+      <plugin name="jasperreports" path="../plugins/framework/ext/jasper/cobis-jasper-all-bundle-5.6.1.jar"/>
+    </plan>
+    <plan id="com-cobiscorp-jjwt-plan" reloadable="true">
+      <plugin name="com-cobiscorp-jjwt" path="../../CLOUD-MOBILE/plugins/com-cobiscorp-jjwt-0.7.1.jar"/>
+    </plan>
+    <plan id="cts-web-token-plan" reloadable="true">
+      <plugin name="cts-web-token" path="../../CLOUD-MOBILE/plugins/cts-web-token-1.0.0.jar"/>
+    </plan>
+    <plan id="CobisFramework" reloadable="true">
+      <plugin name="cobis-jdbc" path="../plugins/framework/cts/cobis-jdbc-2.0.2.3.jar"/>
+      <plugin name="cobis-jdbc-impl" path="../plugins/framework/cts/cobis-jdbc-impl-2.0.4.jar"/>
+      <plugin name="cobisv-commons" path="../plugins/framework/cts/cobisv-commons-1.0.4.jar"/>
+      <plugin name="cobis-jndi" path="../plugins/framework/cts/cobis-jndi-1.0.0.2.jar"/>
+      <plugin name="cts-security" path="../plugins/framework/cts/cts-security-2.1.0.jar"/>
+      <plugin name="cts-security-impl" path="../plugins/framework/cts/cts-security-impl-3.1.2.jar"/>
+      <plugin name="cts-jdbc" path="../plugins/framework/cts/cts-jdbc-1.1.1.jar"/>
+      <plugin name="cts-jdbc-utils" path="../plugins/framework/cts/cts-jdbc-utils-1.1.0.jar"/>
+      <plugin name="cts-jdbc-utils-impl" path="../plugins/framework/cts/cts-jdbc-utils-impl-1.1.0.jar"/>
+      <plugin name="cts-interceptors-jdbc" path="../plugins/framework/cts/cts-interceptors-jdbc-2.1.0.jar"/>
+      <plugin name="cts-servexecutor-external-auth-api" path="../plugins/cts-servexecutor-external-auth-api-1.0.0.2.jar"/>
+      <plugin name="CTSServiceExecutor" path="../plugins/CTSServiceExecutor-1.1.9.jar"/>
+      <plugin name="CTSOrchestrator" path="../plugins/CTSOrchestrator-1.2.0.22.jar"/>
+      <plugin name="cts-error-message-manager-impl" path="../plugins/framework/cts/cts-error-message-manager-impl-1.0.0.2.jar"/>
+      <plugin name="cts-jpa-commons" path="../plugins/framework/cts/cts-jpa-commons-1.0.0.jar"/>
+      <plugin name="cts-soa-governance" path="../plugins/framework/cts/cts-soa-governance-1.0.0.jar"/>
+      <plugin name="cts-spring-transaction-manager" path="../plugins/framework/cts/cts-spring-transaction-manager-1.0.0.jar"/>
+      <plugin name="cts-reporting-service-api" path="../plugins/framework/cts/cts-reporting-service-api-1.0.0.jar"/>
+      <plugin name="cts-reporting-service-impl" path="../plugins/framework/cts/cts-reporting-service-impl-1.1.0.jar"/>
+      <plugin name="CTSHandlers" path="../plugins/CTSHandlers-1.1.8.1.jar"/>
+      <plugin name="cts-cache-listener" path="../plugins/framework/cts/cts-cache-listener-1.0.0.jar"/>
+      <plugin name="CTSServicesUtils" path="../plugins/CTSServicesUtils-1.1.16.jar"/>
+      <plugin name="cobis-i18n-api" path="../plugins/framework/cts/cobis-i18n-api-1.0.0.jar"/>
+      <plugin name="cobis-i18n-impl" path="../plugins/framework/cts/cobis-i18n-impl-1.0.0.jar"/>
+      <plugin name="cts-digital-signature-service" path="../plugins/framework/cts/cts-digital-signature-service-1.0.1.jar"/>
+      <plugin name="CTSServiceIntegrationImpl" path="../plugins/CTSServiceIntegrationImpl-1.0.7.jar"/>
+      <plugin name="cts-service-executor-inprocclient" path="../plugins/cts-service-executor-inprocclient-1.0.0.jar"/>
+    </plan>
+    <plan id="cobis-document-manager-plan" reloadable="true">
+      <plugin name="cobis-document-manager-bsl" path="../plugins/framework/cts/cobis-document-manager-bsl-1.0.1.jar"/>
+      <plugin name="cobis-document-manager-bsl-impl" path="../plugins/framework/cts/cobis-document-manager-bsl-impl-1.0.1.jar"/>
+      <plugin name="cobis-mime-utils" path="../plugins/framework/cts/cobis-mime-utils-1.0.0.jar"/>
+      <plugin name="cobis-document-manager-dal" path="../plugins/framework/cts/cobis-document-manager-dal-1.0.0.jar"/>
+    </plan>
+    <plan id="cobis-cts-bsl-util-plan" reloadable="true">
+      <plugin name="cobis-cts-bsl-util" path="../plugins/framework/cts/cobis-cts-bsl-util-1.0.0.jar"/>
+    </plan>
+    <plan id="cobis-i18n-plan" reloadable="true">
+      <plugin name="cobis-i18n-resource-impl" path="../plugins/framework/cts/cobis-i18n-resource-impl-1.0.2.jar"/>
+    </plan>
+    <plan id="CTSMultiplexer">
+      <plugin name="cts-multiplexer" path="../plugins/framework/cts/cts-multiplexer-1.0.3.1.jar"/>
+    </plan>
+    <plan id="Modules">
+      <plugin name="COBISTSCENServices" path="../plugins/COBISTSCENServices-1.0.2.jar"/>
+      <plugin name="COBISTSCENServicesImpl" path="../plugins/COBISTSCENServicesImpl-1.0.3.jar"/>
+      <plugin name="CTSCENServicesImpl" path="../plugins/CTSCENServicesImpl-1.0.9.7.jar"/>
+      <plugin name="CTSAdminServicesImpl" path="../plugins/CTSAdminServicesImpl-1.1.3.7.jar"/>
+      <plugin name="CTSWSServicesImpl" path="../plugins/CTSWSServicesImpl-1.0.2.jar"/>
+    </plan>
+    <plan id="jaxws">
+      <plugin name="xmlschema-core" path="../plugins/framework/jaxws/xmlschema-core-2.1.0.jar"/>
+      <plugin name="stax2-api" path="../plugins/framework/jaxws/stax2-api-3.1.1.jar"/>
+      <plugin name="woodstox-core-asl" path="../plugins/framework/jaxws/woodstox-core-asl-4.2.0.jar"/>
+      <plugin name="cxf-api" path="../plugins/framework/jaxws/cxf-api-2.7.10.jar"/>
+      <plugin name="cxf-rt-databinding-jaxb" path="../plugins/framework/jaxws/cxf-rt-databinding-jaxb-2.7.10.jar"/>
+      <plugin name="cxf-rt-bindings-xml" path="../plugins/framework/jaxws/cxf-rt-bindings-xml-2.7.10.jar"/>
+      <plugin name="cxf-rt-bindings-soap" path="../plugins/framework/jaxws/cxf-rt-bindings-soap-2.7.10.jar"/>
+      <plugin name="cxf-rt-frontend-simple" path="../plugins/framework/jaxws/cxf-rt-frontend-simple-2.7.10.jar"/>
+      <plugin name="cxf-rt-frontend-jaxws" path="../plugins/framework/jaxws/cxf-rt-frontend-jaxws-2.7.10.jar"/>
+      <plugin name="cxf-rt-core" path="../plugins/framework/jaxws/cxf-rt-core-2.7.10.jar"/>
+      <plugin name="cxf-rt-transports-http" path="../plugins/framework/jaxws/cxf-rt-transports-http-2.7.10.jar"/>
+      <plugin name="cobis-osgi-jaxws-connector" path="../plugins/framework/jaxws/cobis-osgi-jaxws-connector-1.0.0.jar"/>
+    </plan>
+    <plan id="jaxrs">
+      <plugin name="javax.annotation-api" path="../plugins/framework/jaxrs/javax.annotation-api-1.2.jar"/>
+      <plugin name="validation-api" path="../plugins/framework/jaxrs/validation-api-1.1.0.Final.jar"/>
+      <plugin name="javax.inject" path="../plugins/framework/jaxrs/javax.inject-2.2.0-b21.jar"/>
+      <plugin name="javax.ws.rs-api" path="../plugins/framework/jaxrs/javax.ws.rs-api-2.0.jar"/>
+      <plugin name="guava" path="../plugins/framework/jaxrs/guava-14.0.1.jar"/>
+      <plugin name="asm-all-repackaged" path="../plugins/framework/jaxrs/asm-all-repackaged-2.2.0-b21.jar"/>
+      <plugin name="hk2-api" path="../plugins/framework/jaxrs/hk2-api-2.4.0-b11.jar"/>
+      <plugin name="hk2-utils" path="../plugins/framework/jaxrs/hk2-utils-2.4.0-b11.jar"/>
+      <plugin name="hk2-locator" path="../plugins/framework/jaxrs/hk2-locator-2.4.0-b11.jar"/>
+      <plugin name="osgi-resource-locator" path="../plugins/framework/jaxrs/osgi-resource-locator-1.0.1.jar"/>
+      <plugin name="jackson-jaxrs" path="../plugins/framework/jaxrs/jackson-jaxrs-1.9.13.jar"/>
+      <plugin name="jersey-common" path="../plugins/framework/jaxrs/jersey-common-2.5.1.jar"/>
+      <plugin name="jersey-client" path="../plugins/framework/jaxrs/jersey-client-2.5.1.jar"/>
+      <plugin name="jersey-server" path="../plugins/framework/jaxrs/jersey-server-2.5.1.jar"/>
+      <plugin name="jersey-container-servlet" path="../plugins/framework/jaxrs/jersey-container-servlet-core-2.5.1.jar"/>
+      <plugin name="jersey-media-json-jackson" path="../plugins/framework/jaxrs/jersey-media-json-jackson-2.5.1.jar"/>
+      <plugin name="cobis-osgi-jaxrs-connector" path="../plugins/framework/jaxrs/cobis-osgi-jaxrs-connector-1.0.2.jar"/>
+      <plugin name="cobis-jaxrs-provider-jackson" path="../plugins/framework/jaxrs/cobis-jaxrs-provider-jackson-1.0.1.jar"/>
+      <plugin name="gson" path="../plugins/framework/jaxrs/gson-2.3.1.jar"/>
+    </plan>
+    <plan id="CobisOfficeBanking" reloadable="true">
+      <plugin name="CTSOfficeBankingAuthorizedPagesWebDTO" path="../plugins/COBISCorp.eCOBIS.OfficeBanking.Commons.Admin.DTO-1.0.0.1.jar"/>
+      <plugin name="CTSOfficeBankingAuthorizedPagesWebServices" path="../plugins/COBISCorp.eCOBIS.OfficeBanking.Commons.Admin.Service-1.0.0.1.jar"/>
+    </plan>
+    <plan id="cobis-web-container-api" reloadable="false">
+      <plugin name="cobis-security-dal" path="../plugins/cobis5/cobis-security-dal-1.0.0.jar"/>
+      <plugin name="cobis-web-container-dto" path="../plugins/cobis5/cobis-web-container-dto-1.0.0.jar"/>
+      <plugin name="cobis-security-bl" path="../plugins/cobis5/cobis-security-bl-1.0.0.jar"/>
+      <plugin name="cobis-security-services-api" path="../plugins/cobis5/cobis-security-services-api-1.0.0.jar"/>
+    </plan>
+    <plan id="cobis-web-container" reloadable="true">
+      <plugin name="cobis-security-services" path="../plugins/cobis5/cobis-security-services-1.0.0.jar"/>
+      <plugin name="cobis-g11n-api" path="../plugins/cobis5/cobis-g11n-api-1.0.0.jar"/>
+      <plugin name="cobis-g11n-impl" path="../plugins/cobis5/cobis-g11n-impl-1.0.0.jar"/>
+      <plugin name="cobis-commons-utils" path="../plugins/cobis5/cobis-commons-utils-1.0.0.jar"/>
+      <plugin name="cobis-web-commons-services" path="../plugins/cobis5/cobis-web-commons-services-1.0.0.jar"/>
+      <plugin name="cobis-web-container-services" path="../plugins/cobis5/cobis-web-container-services-1.0.0.jar"/>
+      <plugin name="cobis-web-container" path="../plugins/cobis5/cobis-web-container-1.1.0.jar"/>
+      <plugin name="cobis-web-security-services" path="../plugins/cobis5/cobis-web-security-services-1.0.0.jar"/>
+    </plan>
+    <plan id="cobis-web-container-filter" reloadable="true">
+      <plugin name="cobis-web-container-auth-filter" path="../plugins/cobis5/cobis-web-container-auth-filter-1.1.0.jar"/>
+    </plan>
+    <plan id="cobis-designer-engine" reloadable="true">
+      <plugin name="designer-serviceLocator" path="../plugins/framework/designer/designer-serviceLocator-1.0.0.jar"/>
+      <plugin name="designer-metadata-service" path="../plugins/framework/designer/designer-metadata-service-1.2.1711.jar"/>
+      <plugin name="squiggle" path="../plugins/framework/designer/squiggle-2.0.0.jar"/>
+      <plugin name="COBISSqlGenerator" path="../plugins/framework/designer/COBISSqlGenerator-1.0.1.jar"/>
+      <plugin name="designer-sqlstatement-tracker" path="../plugins/framework/designer/designer-sqlstatement-tracker-1.0.0.jar"/>
+      <plugin name="cobis-designer-commons" path="../plugins/framework/designer/cobis-designer-commons-1.0.0.jar"/>
+      <plugin name="COBISCorp.eCOBIS.Designer.Transaction.DTO" path="../plugins/framework/designer/COBISCorp.eCOBIS.Designer.Transaction.DTO-1.1.0.jar"/>
+      <plugin name="designer-db-mapper" path="../plugins/framework/designer/designer-db-mapper-1.0.0.jar"/>
+      <!--plugin name="designer-table-importer" path="../plugins/framework/designer/designer-table-importer-1.0.0.jar"/-->
+      <plugin name="cobis-designer-web" path="../plugins/framework/designer/cobis-designer-web-1.0.0.jar"/>
+      <plugin name="cobis-designer-cts-integration" path="../plugins/framework/designer/cobis-designer-cts-integration-1.0.0.jar"/>
+      <plugin name="cobis-designer-api" path="../plugins/framework/designer/cobis-designer-api-1.2.0.jar"/>
+      <plugin name="cobis-designer-services" path="../plugins/framework/designer/cobis-designer-services-1.0.2.jar"/>
+      <plugin name="COBISCorp.eCOBIS.Designer.Transaction.Service" path="../plugins/framework/designer/COBISCorp.eCOBIS.Designer.Transaction.Service-1.1.1.jar"/>
+      <plugin name="cobis-designer-engine-web" path="../plugins/framework/designer/cobis-designer-engine-web-1.0.2.jar"/>
+      <plugin name="cobis-designer-autocrud-api" path="../plugins/framework/designer/cobis-designer-autocrud-api-1.0.0.jar"/>
+      <plugin name="cobis-designer-cts-impl" path="../plugins/framework/designer/cobis-designer-cts-impl-1.0.0.jar"/>
+      <plugin name="designer-entity-manager" path="../plugins/framework/designer/cobis-designer-entity-manager-1.0.0.jar"/>
+      <plugin name="designer-editor-metadata" path="../plugins/framework/designer/designer-editor-metadata-1.0.0.jar"/>
+    </plan>
+    <plan id="infraestructura">
+      <plugin name="infra.ctsrv.tareaejecucionjobs.customevents-1.0.0" path="../plugins/infraestructura/infra.ctsrv.tareaejecucionjobs.customevents-1.0.0.jar"/>
+      <plugin name="infra.ctsrv.tareaejecucionjobs.services-1.0.0" path="../plugins/infraestructura/infra.ctsrv.tareaejecucionjobs.services-1.0.0.jar"/>
+      <plugin name="infra.domains-1.0.0" path="../plugins/infraestructura/infra.domains-1.0.0.jar"/>
+      <plugin name="infra.ctsrv.tareadetallejobs.customevents-1.0.0" path="../plugins/infraestructura/infra.ctsrv.tareadetallejobs.customevents-1.0.0.jar"/>
+      <plugin name="infra.ctsrv.tareadetallejobs.services-1.0.0" path="../plugins/infraestructura/infra.ctsrv.tareadetallejobs.services-1.0.0.jar"/>
+      <plugin name="infra.ctsrv.tareadelavistav_notification.customevents-1.0.0" path="../plugins/infraestructura/infra.ctsrv.tareadelavistav_notification.customevents-1.0.0.jar"/>
+      <plugin name="infra.ctsrv.tareadelavistav_notification.services-1.0.0" path="../plugins/infraestructura/infra.ctsrv.tareadelavistav_notification.services-1.0.0.jar"/>
+    </plan>
+    <plan id="cobis-designer-license" reloadable="true">
+      <plugin name="cobis-designer-license" path="../plugins/framework/designer/cobis-designer-license-1.0.0.jar"/>
+      <plugin name="cobis-designer-license-commons" path="../plugins/framework/designer/cobis-designer-license-commons-1.0.0.jar"/>
+      <plugin name="cobis-designer-license-cts-impl" path="../plugins/framework/designer/cobis-designer-license-cts-impl-1.0.0.jar"/>
+    </plan>
+    <plan id="COBISAdminCEW-API" reloadable="false">
+      <plugin name="cobis-admin-cew-api" path="../plugins/ADMIN-CEW/cobis-admin-cew-api-1.0.0.jar"/>
+      <plugin name="cobis-admin-cew-dal" path="../plugins/ADMIN-CEW/cobis-admin-cew-dal-1.0.0.jar"/>
+      <plugin name="cobis-admin-cew-bl" path="../plugins/ADMIN-CEW/cobis-admin-cew-bl-1.0.0.jar"/>
+    </plan>
+    <plan id="COBISAdminCEW-Services" reloadable="false">
+      <plugin name="cobis-admin-cew-services" path="../plugins/ADMIN-CEW/cobis-admin-cew-services-1.0.0.jar"/>
+    </plan>
+    <plan id="COBISAdminCEW-Rest" reloadable="true">
+      <plugin name="cobis-admin-cew-rest" path="../plugins/ADMIN-CEW/cobis-admin-cew-rest-1.0.0.jar"/>
+    </plan>
+    <plan id="COBISAdminCEW-DSGNR" reloadable="false">
+      <plugin name="cobis-admin-cew-dsngr-domains" path="../plugins/ADMIN-CEW/admin.domains-1.0.0.jar"/>
+      <plugin name="cobis-admin-cew-dsngr-services" path="../plugins/ADMIN-CEW/admin.cewsm.menu.services-1.0.0.jar"/>
+      <plugin name="cobis-admin-cew-dsngr-custom" path="../plugins/ADMIN-CEW/admin.cewsm.menu.customevents-1.0.0.jar"/>
+    </plan>
+    <plan id="cobis-web-cen-services" reloadable="true">
+      <plugin name="cobis-web-cen-services" path="../plugins/cobis5/cobis-web-cen-services-1.0.0.jar"/>
+    </plan>
+    <plan id="cobis-container-mapper" reloadable="true">
+      <plugin name="cobis-container-kernel-sp" path="../plugins/cobis5/cobis-container-kernel-sp-1.0.0.jar"/>
+    </plan>
+    <plan id="cwc-extended-services" reloadable="true">
+      <plugin name="cwc-extended-dto" path="../plugins/cobis5/cobis-cwc-extended-dto-1.0.0.jar"/>
+      <plugin name="cwc-extended-services" path="../plugins/cobis5/cobis-cwc-extended-services-1.0.0.jar"/>
+    </plan>
+    <plan id="COBISAdminCEN" reloadable="false">
+      <plugin name="cobis-admin-cen-dto" path="../plugins/ADMIN-CEN/COBISCorp.eCOBIS.Admin.ModAdm.DTO-4.0.0.0.jar"/>
+      <plugin name="cobis-admin-cen-service" path="../plugins/ADMIN-CEN/COBISCorp.eCOBIS.Admin.AdmSecurity.Service-4.0.0.0.jar"/>
+    </plan>
+    <plan id="CIS-CORE">
+      <plugin name="CTSMQSeriesImpl" path="../plugins/CTSMQSeriesImpl-1.0.1.jar"/>
+      <plugin name="CSPRouting" path="../../CIS/SERVICES/plugins/CSPRouting-1.1.3.3.jar"/>
+      <plugin name="CSPHandlers" path="../../CIS/SERVICES/plugins/CSPHandlers-1.0.3.jar"/>
+      <plugin name="CSPLicenses" path="../../CIS/SERVICES/plugins/CSPLicenses-1.0.3.jar"/>
+      <plugin name="LockTransaction" path="../../CIS/SERVICES/plugins/LockTransaction-1.1.3.jar"/>
+      <plugin name="CSPOrchestrator" path="../../CIS/SERVICES/plugins/Orchestrator-1.0.5.jar"/>
+      <plugin name="DynamicOrchestrator" path="../../CIS/SERVICES/plugins/DynamicOrchestrator-1.2.0.jar"/>
+      <plugin name="SynchronousOrchestrator" path="../../CIS/SERVICES/plugins/SynchronousOrchestrator-1.0.7.jar"/>
+      <plugin name="SynchronousOrchestratorV2" path="../../CIS/SERVICES/plugins/SynchronousOrchestratorV2-1.0.3.jar"/>
+      <plugin name="Corebanking" path="../../CIS/SERVICES/plugins/CoreBanking-1.0.6.jar"/>
+      <plugin name="ReverseCorebanking" path="../../CIS/SERVICES/plugins/ReverseCoreBanking-1.0.3.jar"/>
+      <plugin name="SSNSocketClient" path="../../CIS/SERVICES/plugins/SSNSocketClient-1.0.2.jar"/>
+      <plugin name="BVMakerAndChecker" path="../../CIS/SERVICES/plugins/BVMakerAndChecker-1.0.2.jar"/>
+      <plugin name="BVExecutor" path="../../CIS/SERVICES/plugins/BVExecutor-1.0.2.jar"/>
+      <plugin name="Threshold" path="../../CIS/SERVICES/plugins/ThresholdService-1.0.2.jar"/>
+      <plugin name="Timeout" path="../../CIS/SERVICES/plugins/TimeoutService-1.0.2.jar"/>
+      <plugin name="Provider" path="../../CIS/SERVICES/plugins/ProviderService-1.0.3.jar"/>
+      <plugin name="CSPConnector" path="../../CIS/SERVICES/plugins/CSPConnectorService-1.0.5.jar"/>
+      <plugin name="TCPConnectorHandler" path="../../CIS/SERVICES/plugins/TCPConnectorHandler-1.0.1.jar"/>
+      <plugin name="TCPTransformationX11" path="../../CIS/SERVICES/plugins/TCPTransformationX11-1.0.5.jar"/>
+      <plugin name="TCPTransformationQS" path="../../CIS/SERVICES/plugins/TCPTransformationQS-1.0.4.jar"/>
+      <plugin name="TCPTransformationISO8583" path="../../CIS/SERVICES/plugins/TCPTransformationISO8583-1.0.4.jar"/>
+      <plugin name="CISConnectorFramework" path="../../CIS/SERVICES/plugins/CISConnectorFramework-1.0.2.jar"/>
+      <plugin name="sp-java-orchestration-base" path="../../CIS/SERVICES/plugins/sp-java-orchestration-base-1.0.2.6.jar"/>
+    </plan>
+    <plan id="CIS" reloadable="true">
+      <plugin name="cis-connector-api" path="../../CIS/plugins/cis-connector-api-1.0.0.2.jar"/>
+      <plugin name="atm-commons" path="../../CIS/plugins/atm-commons-1.0.3.jar"/>
+      <plugin name="connector-base" path="../../CIS/plugins/connector-base-1.1.2.jar"/>
+      <plugin name="x11-connector-impl" path="../../CIS/plugins/x11-connector-impl-1.0.3.2.jar"/>
+      <plugin name="iso8583-connector-impl" path="../../CIS/plugins/iso8583-connector-impl-1.1.0.jar"/>
+      <plugin name="tcp-executor-api" path="../../CIS/plugins/tcp-executor-api-1.0.0.1.jar"/>
+      <plugin name="tcp-handler-impl" path="../../CIS/plugins/tcp-handler-impl-1.0.0.jar"/>
+      <plugin name="tcp-executor-impl" path="../../CIS/plugins/tcp-executor-impl-1.0.0.3.jar"/>
+      <plugin name="connector-utils" path="../../CIS/plugins/cis-connector-utils-1.0.1.jar"/>
+    </plan>
+    <plan id="Binnacle">
+      <plugin name="Binnacle" path="../../CIS/SERVICES/plugins/BinnacleService-1.1.4.4.jar"/>
+    </plan>
+    <plan id="Alerts">
+      <plugin name="Alerts" path="../../CIS/SERVICES/plugins/alerts-service-impl-1.0.2.jar"/>
+    </plan>
+    <plan id="cobis-cts-cobisv-base-api-plan" reloadable="true">
+      <plugin name="cobis-cts-cobisv-base-api" path="../plugins/framework/cts/cobis-cts-cobisv-base-api-1.1.0.jar"/>
+    </plan>
+    <plan id="cobis-cts-cobisv-base-impl-plan" reloadable="true">
+      <plugin name="cobis-cts-cobisv-base-impl" path="../plugins/framework/cts/cobis-cts-cobisv-base-impl-1.1.0.jar"/>
+    </plan>
+    <plan id="API-PLATFORM" reloadable="true">
+      <plugin name="cobis-platform-utils" path="../../platform/plugins/cobis-platform-utils-1.0.0.jar"/>
+      <plugin name="latfo.domains" path="../../platform/plugins/latfo.domains-1.0.0.jar"/>
+    </plan>
+    <plan id="BUSINESS-COMMONS" reloadable="true">
+      <plugin name="busin-commons-dto" path="../../BUSINESSCOMMONSPLATFORM/plugins/busin-commons-dto-1.0.0.jar"/>
+      <plugin name="busin-commons-services" path="../../BUSINESSCOMMONSPLATFORM/plugins/busin-commons-services-1.0.0.jar"/>
+    </plan>
+    <plan id="ADMIN-PROCESS" reloadable="true">
+      <plugin name="System.Configuration.DTO" path="../../ADMIN/plugins/COBISCorp.eCOBIS.SystemConfiguration.DTO-2.0.0.0.jar"/>
+      <plugin name="System.Configuration.Service" path="../../ADMIN/plugins/COBISCorp.eCOBIS.SystemConfiguration.Service-2.0.0.0.jar"/>
+    </plan>
+    <plan id="CREDIT-REPORT-VALIDATION-PROCESS" reloadable="true">
+      <plugin name="Credit.Report.Validation.DTO" path="../../BUSINESSPROCESS/plugins/COBISCorp.eCOBIS.Credit.Report.Validation.DTO-1.0.0.0.jar"/>
+      <plugin name="Credit.Report.Validation.Service" path="../../BUSINESSPROCESS/plugins/COBISCorp.eCOBIS.Credit.Report.Validation.Service-1.0.0.0.jar"/>
+    </plan>
+    <plan id="LOANS-GROUP" reloadable="true">
+      <plugin name="COBISCorp.eCOBIS.LoanGroup.DTO" path="../../LOANS-GROUP/plugins/COBISCorp.eCOBIS.LoanGroup.DTO-1.0.0.0.jar"/>
+      <plugin name="COBISCorp.eCOBIS.LoanGroup.Service" path="../../LOANS-GROUP/plugins/COBISCorp.eCOBIS.LoanGroup.Service-1.0.0.0.jar"/>
+    </plan>
+    <plan id="CUSTOMER-PROCESS" reloadable="true">
+      <plugin name="COBISCorp.eCOBIS.Customer.DTO" path="../../CUSTOMER/plugins/COBISCorp.eCOBIS.CustomerDataManagement.DTO-2.1.0.0.jar"/>
+      <plugin name="COBISCorp.eCOBIS.Customer.Service" path="../../CUSTOMER/plugins/COBISCorp.eCOBIS.CustomerDataManagementService.Service-2.1.0.0.jar"/>
+    </plan>
+    <plan id="MONEYMARKET-PROCESS" reloadable="true">
+      <plugin name="COBISCorp.eCOBIS.MoneyMarket.DTO" path="../../MONEYMARKET/plugins/COBISCorp.eCOBIS.MoneyMarket.DTO-2.0.0.0.jar"/>
+      <plugin name="COBISCorp.eCOBIS.MoneyMarket.Service" path="../../MONEYMARKET/plugins/COBISCorp.eCOBIS.MoneyMarket.Service-2.0.0.0.jar"/>
+    </plan>
+    <plan id="LOANS-PROCESS" reloadable="true">
+      <plugin name="COBISCorp.eCOBIS.LoanProcess.DTO" path="../../LOANS-GROUP/plugins/COBISCorp.eCOBIS.LoanProcess.DTO-1.0.0.0.jar"/>
+      <plugin name="COBISCorp.eCOBIS.LoanProcess.Service" path="../../LOANS-GROUP/plugins/COBISCorp.eCOBIS.LoanProcess.Service-1.0.0.0.jar"/>
+    </plan>
+    <plan id="BUSINESS-PLATFORM-COMMONS" reloadable="true">
+      <plugin name="business-commons-platform-utils" path="../../BUSINESSCOMMONSPLATFORM/plugins/business-commons-platform-utils-1.0.0.jar"/>
+      <plugin name="business-commons-platform-services" path="../../BUSINESSCOMMONSPLATFORM/plugins/business-commons-platform-services-1.0.0.jar"/>
+    </plan>
+    <plan id="BUSINESS-SERVICES" reloadable="true">
+      <plugin name="busin.flcre.reprintdocument.customevents" path="../../BUSINESSPROCESS/plugins/busin.flcre.reprintdocument.customevents-1.0.0.jar"/>
+      <plugin name="busin.flcre.reprintdocument.services" path="../../BUSINESSPROCESS/plugins/busin.flcre.reprintdocument.services-1.0.0.jar"/>
+    </plan>
+    <plan id="CUSTOMER-PROCESS-REST" reloadable="true">
+      <plugin name="COBISCorp.eCOBIS.CustomerDataManagementService.Rest" path="../../CUSTOMER/plugins/customerdatamanagementservice-rest-1.0.0.jar"/>
+    </plan>
+    <plan id="LOANS-GROUP-PROCESS" reloadable="true">
+      <plugin name="COBISCorp.eCOBIS.LoanGroup.DTO" path="../../LOANS-GROUP/plugins/COBISCorp.eCOBIS.LoanGroup.DTO-1.0.0.0.jar"/>
+      <plugin name="COBISCorp.eCOBIS.LoanGroup.Service" path="../../LOANS-GROUP/plugins/COBISCorp.eCOBIS.LoanGroup.Service-1.0.0.0.jar"/>
+    </plan>
+    <plan id="LOANS-GROUP-PROCESS-REST" reloadable="true">
+      <plugin name="COBISCorp.eCOBIS.LoanGroup.Service.Rest" path="../../LOANS-GROUP/plugins/COBISCorp.eCOBIS.LoanGroup.Service.Rest-1.0.0.jar"/>
+    </plan>
+    <plan id="API-UCSP" reloadable="true">
+      <plugin name="UCSP-Admin-DTO" path="../../clientviewer/plugins/COBISCorp.eCOBIS.UCSP.Admin.DTO-4.2.0.0.jar"/>
+      <plugin name="UCSP-Admin-Service" path="../../clientviewer/plugins/COBISCorp.eCOBIS.UCSP.Admin.Service-4.2.0.0.jar"/>
+    </plan>
+    <plan id="BUSINESS-PROCESS-BASE" reloadable="true">
+      <plugin name="COBISCorp.eCOBIS.BusinessProcess.DTO" path="../../BUSINESSPROCESS/plugins/COBISCorp.eCOBIS.BusinessProcess.DTO-2.0.0.0.jar"/>
+      <plugin name="COBISCorp.eCOBIS.BusinessProcess.Service" path="../../BUSINESSPROCESS/plugins/COBISCorp.eCOBIS.BusinessProcess.Service-2.0.0.0.jar"/>
+    </plan>
+    <plan id="BUSINESS-PROCESS-FLCRE-COMMONS_CREDITMANAGENT" reloadable="true">
+      <plugin name="Businessprocess.Creditmanagement.DTO" path="../../BUSINESSPROCESS/plugins/COBISCorp.eCOBIS.Businessprocess.Creditmanagement.DTO-2.0.0.0.jar"/>
+      <plugin name="Businessprocess.Creditmanagement.Service" path="../../BUSINESSPROCESS/plugins/COBISCorp.eCOBIS.Businessprocess.Creditmanagement.Service-2.0.0.0.jar"/>
+    </plan>
+    <plan id="LOAN-PROCESS" reloadable="true">
+      <plugin name="COBISCorp.eCOBIS.Loan.DTO" path="../../BUSINESSPROCESS/plugins/COBISCorp.eCOBIS.Loan.DTO-2.0.0.0.jar"/>
+      <plugin name="COBISCorp.eCOBIS.Loan.Service" path="../../BUSINESSPROCESS/plugins/COBISCorp.eCOBIS.Loan.Service-2.0.0.0.jar"/>
+    </plan>
+    <plan id="API-SIMULATOR" reloadable="true">
+      <plugin name="SimulatorDto" path="../../SIMULATOR/plugins/COBISCorp.eCOBIS.Simulator.DTO-4.2.0.0.jar"/>
+      <plugin name="SimulatorServices" path="../../SIMULATOR/plugins/COBISCorp.eCOBIS.Simulator.Service-4.2.0.0.jar"/>
+    </plan>
+    <plan id="WORKFLOW-MONITOR" reloadable="true">
+      <plugin name="WFMonitorDto" path="../../workflow/plugins/COBISCorp.eCOBIS.WFMonitor.DTO-4.2.0.0.jar"/>
+      <plugin name="WFMonitorServices" path="../../workflow/plugins/COBISCorp.eCOBIS.WFMonitor.Service-4.2.0.0.jar"/>
+    </plan>
+    <plan id="API-WORFLOW" reloadable="true">
+      <plugin name="HTM-API-DTO" path="../../workflow/plugins/COBISCorp.eCOBIS.HTM.API.DTO-4.3.0.0.jar"/>
+      <plugin name="HTM-API-Service" path="../../workflow/plugins/COBISCorp.eCOBIS.HTM.API.Service-4.2.0.0.jar"/>
+    </plan>
+    <plan id="API-INBOX" reloadable="true">
+      <plugin name="Inbox-DTO" path="../../inbox/plugins/COBISCorp.eCOBIS.Inbox.DTO-4.2.0.0.jar"/>
+      <plugin name="Inbox-Service" path="../../inbox/plugins/COBISCorp.eCOBIS.Inbox.Service-4.2.0.0.jar"/>
+    </plan>
+    <plan id="Workflow-Scheduler" reloadable="true">
+      <plugin name="Scheduler-DTO" path="../../workflow/plugins/COBISCorp.eCOBIS.Scheduler.DTO-4.2.0.0.jar"/>
+      <plugin name="Scheduler-JOB" path="../../workflow/plugins/COBISCorp.eCOBIS.Workflow.Jobs-1.0.0.0.jar"/>
+    </plan>
+    <plan id="MakerAndChecker-admin-dao" reloadable="true">
+      <plugin name="mc-admin-dao" path="../../makerandchecker/plugins/mc-admin-dao-4.2.0.0.jar"/>
+    </plan>
+    <plan id="MakerAndChecker-admin-services" reloadable="true">
+      <plugin name="mc-admin-services" path="../../makerandchecker/plugins/mc-admin-services-4.2.0.0.jar"/>
+    </plan>
+    <plan id="MakerAndChecker-admin-services-impl" reloadable="true">
+      <plugin name="mc-admin-services-impl" path="../../makerandchecker/plugins/mc-admin-services-impl-4.2.0.0.jar"/>
+    </plan>
+    <plan id="MakerAndChecker-services" reloadable="true">
+      <plugin name="mc-services" path="../../makerandchecker/plugins/mc-services-4.2.0.0.jar"/>
+    </plan>
+    <plan id="MakerAndChecker-services-impl" reloadable="true">
+      <plugin name="mc-services-impl" path="../../makerandchecker/plugins/mc-services-impl-4.2.0.0.jar"/>
+    </plan>
+    <plan id="MakerAndChecker" reloadable="true">
+      <plugin name="mc-services-impl" path="../../makerandchecker/plugins/maker-and-checker-service-impl-4.2.0.0.jar"/>
+    </plan>
+    <plan id="cobis-dbutils-dal" reloadable="true">
+      <plugin name="cobis-dbutils-dal" path="../../CUSTOMER/plugins/cobis-dbutils-dal-1.0.0.jar"/>
+    </plan>
+    <plan id="cobis-admin-api" reloadable="true">
+      <plugin name="cobis-admin-api" path="../../CUSTOMER/plugins/cobis-admin-api-1.2.0.jar"/>
+    </plan>
+    <plan id="cobis-admin-dal" reloadable="true">
+      <plugin name="cobis-admin-dal" path="../../CUSTOMER/plugins/cobis-admin-dal-1.2.0.jar"/>
+    </plan>
+    <plan id="cobis-admin-bl" reloadable="true">
+      <plugin name="cobis-admin-bl" path="../../CUSTOMER/plugins/cobis-admin-bl-1.2.0.jar"/>
+    </plan>
+    <plan id="cobis-admin-services" reloadable="true">
+      <plugin name="cobis-admin-services" path="../../CUSTOMER/plugins/cobis-admin-services-1.2.0.jar"/>
+      <plugin name="cobis-web-admin-services" path="../../CUSTOMER/plugins/cobis-web-admin-services-1.2.0.jar"/>
+    </plan>
+    <plan id="cobis-commons-dal" reloadable="true">
+      <plugin name="cobis-commons-dal" path="../../CUSTOMER/plugins/cobis-commons-dal-1.0.0.jar"/>
+    </plan>
+    <plan id="cobis-customer-api" reloadable="true">
+      <plugin name="cobis-customer-api" path="../../CUSTOMER/plugins/cobis-customer-api-1.1.0.jar"/>
+    </plan>
+    <plan id="cobis-customer-dal" reloadable="true">
+      <plugin name="cobis-customer-dal" path="../../CUSTOMER/plugins/cobis-customer-dal-1.1.0.jar"/>
+    </plan>
+    <plan id="cobis-customer-bl" reloadable="true">
+      <plugin name="cobis-customer-bl" path="../../CUSTOMER/plugins/cobis-customer-bl-1.1.0.jar"/>
+    </plan>
+    <plan id="cobis-customer-services" reloadable="true">
+      <plugin name="cobis-customer-services" path="../../CUSTOMER/plugins/cobis-customer-services-1.1.0.jar"/>
+      <plugin name="cobis-customer-web-service" path="../../CUSTOMER/plugins/cobis-customer-web-services-1.1.0.jar"/>
+    </plan>
+    <plan id="cobis-customer-commons-api" reloadable="true">
+      <plugin name="cobis-customer-commons-api" path="../../CUSTOMER/plugins/cobis-customer-commons-api-1.0.0.jar"/>
+    </plan>
+    <plan id="cobis-customer-commons-dal" reloadable="true">
+      <plugin name="cobis-customer-commons-dal" path="../../CUSTOMER/plugins/cobis-customer-commons-dal-1.0.0.jar"/>
+      <plugin name="cobis-customer-commons-bl" path="../../CUSTOMER/plugins/cobis-customer-commons-bl-1.0.0.jar"/>
+    </plan>
+    <plan id="cobis-customer-commons-service" reloadable="true">
+      <plugin name="cobis-customer-commons-service" path="../../CUSTOMER/plugins/cobis-customer-commons-services-1.0.0.jar"/>
+      <plugin name="cobis-customer-commons-web-service" path="../../CUSTOMER/plugins/cobis-customer-commons-web-services-1.0.0.jar"/>
+    </plan>
+    <plan id="customer-commons-utils" reloadable="true">
+      <plugin name="customer-commons-utils" path="../../CUSTOMER/plugins/customer-commons-utils-1.0.0.jar"/>
+    </plan>
+    <plan id="customer-commons-services" reloadable="true">
+      <plugin name="customer-commons-services" path="../../CUSTOMER/plugins/customer-commons-services-1.0.0.jar"/>
+    </plan>
+    <plan id="cstmr-domains-and-events" reloadable="true">
+      <plugin name="cstmr.domains" path="../../CUSTOMER/plugins/cstmr.domains-1.0.0.jar"/>
+      <plugin name="cstmr.commons.events" path="../../CUSTOMER/plugins/cstmr.commons.events-1.0.0.jar"/>
+    </plan>
+    <plan id="cstmr-prospect-customevents" reloadable="true">
+      <plugin name="cstmr.cstmr.prospectcomposite.customevents" path="../../CUSTOMER/plugins/cstmr.cstmr.prospectcomposite.customevents-1.0.0.jar"/>
+      <plugin name="cstmr.cstmr.addressform.customevents" path="../../CUSTOMER/plugins/cstmr.cstmr.addressform.customevents-1.0.0.jar"/>
+      <plugin name="cstmr.cstmr.businessform.customevents" path="../../CUSTOMER/plugins/cstmr.cstmr.businessform.customevents-1.0.0.jar"/>
+      <plugin name="cstmr.cstmr.businesspopupform.customevents" path="../../CUSTOMER/plugins/cstmr.cstmr.businesspopupform.customevents-1.0.0.jar"/>
+      <plugin name="cstmr.cstmr.referencesform.customevents" path="../../CUSTOMER/plugins/cstmr.cstmr.referencesform.customevents-1.0.0.jar"/>
+      <plugin name="cstmr.cstmr.referencespopupform.customevents" path="../../CUSTOMER/plugins/cstmr.cstmr.referencespopupform.customevents-1.0.0.jar"/>
+    </plan>
+    <plan id="cstmr-prospect-services" reloadable="true">
+      <plugin name="cstmr.cstmr.prospectcomposite.services" path="../../CUSTOMER/plugins/cstmr.cstmr.prospectcomposite.services-1.0.0.jar"/>
+      <plugin name="cstmr.cstmr.addressform.services" path="../../CUSTOMER/plugins/cstmr.cstmr.addressform.services-1.0.0.jar"/>
+      <plugin name="cstmr.cstmr.businessform.services" path="../../CUSTOMER/plugins/cstmr.cstmr.businessform.services-1.0.0.jar"/>
+      <plugin name="cstmr.cstmr.businesspopupform.services" path="../../CUSTOMER/plugins/cstmr.cstmr.businesspopupform.services-1.0.0.jar"/>
+      <plugin name="cstmr.cstmr.referencesform.services" path="../../CUSTOMER/plugins/cstmr.cstmr.referencesform.services-1.0.0.jar"/>
+      <plugin name="cstmr.cstmr.referencespopupform.services" path="../../CUSTOMER/plugins/cstmr.cstmr.referencespopupform.services-1.0.0.jar"/>
+    </plan>
+    <plan id="cstmr-customer-customevents" reloadable="true">
+      <plugin name="cstmr.cstmr.customercomposite.customevents" path="../../CUSTOMER/plugins/cstmr.cstmr.customercomposite.customevents-1.0.0.jar"/>
+      <plugin name="cstmr.cstmr.economicactivityform.customevents" path="../../CUSTOMER/plugins/cstmr.cstmr.economicactivityform.customevents-1.0.0.jar"/>
+      <plugin name="cstmr.cstmr.economicactivitypopupform.customevents" path="../../CUSTOMER/plugins/cstmr.cstmr.economicactivitypopupform.customevents-1.0.0.jar"/>
+      <plugin name="cstmr.cstmr.legalpersoncomposite.customevents" path="../../CUSTOMER/plugins/cstmr.cstmr.legalpersoncomposite.customevents-1.0.0.jar"/>
+      <plugin name="cstmr.cstmr.relationform.customevents" path="../../CUSTOMER/plugins/cstmr.cstmr.relationform.customevents-1.0.0.jar"/>
+    </plan>
+    <plan id="cstmr-customer-services" reloadable="true">
+      <plugin name="cstmr.cstmr.customercomposite.services" path="../../CUSTOMER/plugins/cstmr.cstmr.customercomposite.services-1.0.0.jar"/>
+      <plugin name="cstmr.cstmr.economicactivityform.services" path="../../CUSTOMER/plugins/cstmr.cstmr.economicactivityform.services-1.0.0.jar"/>
+      <plugin name="cstmr.cstmr.economicactivitypopupform.services" path="../../CUSTOMER/plugins/cstmr.cstmr.economicactivitypopupform.services-1.0.0.jar"/>
+      <plugin name="cstmr.cstmr.legalpersoncomposite.services" path="../../CUSTOMER/plugins/cstmr.cstmr.legalpersoncomposite.services-1.0.0.jar"/>
+      <plugin name="cstmr.cstmr.relationform.services" path="../../CUSTOMER/plugins/cstmr.cstmr.relationform.services-1.0.0.jar"/>
+    </plan>
+    <plan id="CONECTOR-ORCHESTATOR" reloadable="true">
+      <plugin name="cobis-business-process-connector" path="../../BUSINESSPROCESS/plugins/cobis-business-process-connector-1.0.0.jar"/>
+      <plugin name="cobis-business-process-orchestrator" path="../../BUSINESSPROCESS/plugins/cobis-business-process-orchestrator-1.0.0.jar"/>
+    </plan>
+    <plan id="BUSINESS-PROCESS" reloadable="true">
+      <plugin name="busin.domains" path="../../BUSINESSPROCESS/plugins/busin.domains-1.0.0.jar"/>
+      <plugin name="busin.flcre.commons" path="../../BUSINESSPROCESS/plugins/busin.flcre.commons-1.0.0.jar"/>
+    </plan>
+    <plan id="BUSINESS-PROCESS-GENERIC-APPLICATION" reloadable="true">
+      <plugin name="busin.flcre.genericapplication.services" path="../../BUSINESSPROCESS/plugins/busin.flcre.genericapplication.services-1.0.0.jar"/>
+      <plugin name="busin.flcre.genericapplication.customevents" path="../../BUSINESSPROCESS/plugins/busin.flcre.genericapplication.customevents-1.0.0.jar"/>
+    </plan>
+    <plan id="BUSINESS-PROCESS-PLAYMENT-PLAN" reloadable="true">
+      <plugin name="busin.flcre.tpaymentplan.services" path="../../BUSINESSPROCESS/plugins/busin.flcre.tpaymentplan.services-1.0.0.jar"/>
+      <plugin name="busin.flcre.tpaymentplan.customevents" path="../../BUSINESSPROCESS/plugins/busin.flcre.tpaymentplan.customevents-1.0.0.jar"/>
+    </plan>
+    <plan id="BUSINESS-PROCESS-APPLICATION" reloadable="true">
+      <plugin name="busin.flcre.entrywarranty.services" path="../../BUSINESSPROCESS/plugins/busin.flcre.entrywarranty.services-1.0.0.jar"/>
+      <plugin name="busin.flcre.entrywarranty.customevents" path="../../BUSINESSPROCESS/plugins/busin.flcre.entrywarranty.customevents-1.0.0.jar"/>
+      <plugin name="busin.flcre.guaranteessearch.services" path="../../BUSINESSPROCESS/plugins/busin.flcre.guaranteessearch.services-1.0.0.jar"/>
+      <plugin name="busin.flcre.guaranteessearch.customevents" path="../../BUSINESSPROCESS/plugins/busin.flcre.guaranteessearch.customevents-1.0.0.jar"/>
+      <plugin name="busin.flcre.plazofijoporcliente.services" path="../../BUSINESSPROCESS/plugins/busin.flcre.plazofijoporcliente.services-1.0.0.jar"/>
+      <plugin name="busin.flcre.plazofijoporcliente.customevents" path="../../BUSINESSPROCESS/plugins/busin.flcre.plazofijoporcliente.customevents-1.0.0.jar"/>
+      <plugin name="busin.flcre.editentityinsharedwarranty.services" path="../../BUSINESSPROCESS/plugins/busin.flcre.editentityinsharedwarranty.services-1.0.0.jar"/>
+      <plugin name="busin.flcre.editentityinsharedwarranty.customevents" path="../../BUSINESSPROCESS/plugins/busin.flcre.editentityinsharedwarranty.customevents-1.0.0.jar"/>
+    </plan>
+    <plan id="BUSINESS-PROCESS-DISBURSEMENT" reloadable="true">
+      <plugin name="busin.flcre.taskdisbursementform.services" path="../../BUSINESSPROCESS/plugins/busin.flcre.taskdisbursementform.services-1.0.0.jar"/>
+      <plugin name="busin.flcre.taskdisbursementform.customevents" path="../../BUSINESSPROCESS/plugins/busin.flcre.taskdisbursementform.customevents-1.0.0.jar"/>
+      <plugin name="busin.flcre.taskconsultdisbursementforms.services" path="../../BUSINESSPROCESS/plugins/busin.flcre.taskconsultdisbursementforms.services-1.0.0.jar"/>
+      <plugin name="busin.flcre.taskconsultdisbursementforms.customevents" path="../../BUSINESSPROCESS/plugins/busin.flcre.taskconsultdisbursementforms.customevents-1.0.0.jar"/>
+      <plugin name="busin.flcre.taskdisbursementincome.services" path="../../BUSINESSPROCESS/plugins/busin.flcre.taskdisbursementincome.services-1.0.0.jar"/>
+      <plugin name="busin.flcre.taskdisbursementincome.customevents" path="../../BUSINESSPROCESS/plugins/busin.flcre.taskdisbursementincome.customevents-1.0.0.jar"/>
+    </plan>
+    <plan id="BUSINESS-PROCESS-VERIF-DATA-SERVICES" reloadable="true">
+      <plugin name="busin.flcre.dataverificationquestions.services" path="../../BUSINESSPROCESS/plugins/busin.flcre.dataverificationquestions.services-1.0.0.jar"/>
+      <plugin name="busin.flcre.dataverificationquestionscompound.services" path="../../BUSINESSPROCESS/plugins/busin.flcre.dataverificationquestionscompound.services-1.0.0.jar"/>
+    </plan>
+    <plan id="BUSINESS-PROCESS-VERIF-DATA-CUSTOMEVENTS" reloadable="true">
+      <plugin name="busin.flcre.dataverificationquestions.customevents" path="../../BUSINESSPROCESS/plugins/busin.flcre.dataverificationquestions.customevents-1.0.0.jar"/>
+      <plugin name="busin.flcre.dataverificationquestionscompound.customevents" path="../../BUSINESSPROCESS/plugins/busin.flcre.dataverificationquestionscompound.customevents-1.0.0.jar"/>
+    </plan>
+    <plan id="BUSINESS-PROCESS-REPRINT-DOCUMENT" reloadable="true">
+      <plugin name="busin.flcre.reprintdocument.customevents" path="../../BUSINESSPROCESS/plugins/busin.flcre.reprintdocument.customevents-1.0.0.jar"/>
+      <plugin name="busin.flcre.reprintdocument.services" path="../../BUSINESSPROCESS/plugins/busin.flcre.reprintdocument.services-1.0.0.jar"/>
+    </plan>
+    <plan id="BUSINESS-PROCESS-REST" reloadable="true">
+      <plugin name="cobis-web-busin-services" path="../../BUSINESSPROCESS/plugins/cobis-web-busin-services-1.0.0.jar"/>
+    </plan>
+    <plan id="cstmr-customer-doc-customevents" reloadable="true">
+      <plugin name="cstmr.cstmr.scanneddocumentsdetail.customevents" path="../../CUSTOMER/plugins/docDigitalizados/cstmr.cstmr.scanneddocumentsdetail.customevents-1.0.0.jar"/>
+      <plugin name="cstmr.cstmr.scanneddocuments.customevents" path="../../CUSTOMER/plugins/docDigitalizados/cstmr.cstmr.scanneddocuments.customevents-1.0.0.jar"/>
+    </plan>
+    <plan id="cstmr-customer-doc-services" reloadable="true">
+      <plugin name="cstmr.cstmr.scanneddocumentsdetail.services" path="../../CUSTOMER/plugins/docDigitalizados/cstmr.cstmr.scanneddocumentsdetail.services-1.0.0.jar"/>
+      <plugin name="cstmr.cstmr.scanneddocuments.services" path="../../CUSTOMER/plugins/docDigitalizados/cstmr.cstmr.scanneddocuments.services-1.0.0.jar"/>
+    </plan>
+    <plan id="cobis-customer-commons-bl" reloadable="true">
+      <plugin name="cobis-customer-commons-bl" path="../../CUSTOMER/plugins/cobis-customer-commons-bl-1.0.0.jar"/>
+    </plan>
+    <plan id="cobis-sales-api" reloadable="true">
+      <plugin name="cobis-sales-api" path="../../sales/plugins/cobis-sales-api-1.0.0.jar"/>
+    </plan>
+    <plan id="cobis-sales-dal" reloadable="true">
+      <plugin name="cobis-sales-dal" path="../../sales/plugins/cobis-sales-dal-1.0.0.jar"/>
+    </plan>
+    <plan id="cobis-sales-bl" reloadable="true">
+      <plugin name="cobis-sales-bl" path="../../sales/plugins/cobis-sales-bl-1.0.0.jar"/>
+    </plan>
+    <plan id="cobis-sales-services" reloadable="true">
+      <plugin name="cobis-sales-services" path="../../sales/plugins/cobis-sales-service-1.0.0.jar"/>
+      <plugin name="cobis-web-sales-services" path="../../sales/plugins/cobis-web-sales-services-1.0.0.jar"/>
+    </plan>
+    <plan id="BankingServicesVCC" reloadable="true">
+      <plugin name="COBISCorp.eCOBIS.BankingServices.Remittance.DTO" path="../../clientviewer/plugins/COBISCorp.eCOBIS.BankingServices.Remittance.DTO-1.0.0.0.jar"/>
+      <plugin name="COBISCorp.eCOBIS.BankingServices.Remittance.Service" path="../../clientviewer/plugins/COBISCorp.eCOBIS.BankingServices.Remittance.Service-1.0.0.0.jar"/>
+    </plan>
+    <plan id="RemittanceVCC" reloadable="true">
+      <plugin name="COBISCorp.eCOBIS.Remittance.DTO" path="../../clientviewer/plugins/COBISCorp.eCOBIS.Remittance.DTO-1.0.0.0.jar"/>
+      <plugin name="COBISCorp.eCOBIS.Remittance.Service" path="../../clientviewer/plugins/COBISCorp.eCOBIS.Remittance.Service-1.0.0.0.jar"/>
+    </plan>
+    <plan id="IB" reloadable="true">
+      <plugin name="COBISCorp.eCOBIS.InternetBanking.WebApp.Utils.DTO" path="../plugins/IB/COBISCorp.eCOBIS.InternetBanking.WebApp.Utils.DTO-4.6.1.0.jar"/>
+      <plugin name="COBISCorp.eCOBIS.InternetBanking.WebApp.Admin.DTO" path="../plugins/IB/COBISCorp.eCOBIS.InternetBanking.WebApp.Admin.DTO-4.6.1.0.jar"/>
+    </plan>
+    <plan id="ContactManagementCustomerVCC" reloadable="true">
+      <plugin name="COBISCorp.eCOBIS.ContactManagement.DTO" path="../../clientviewer/plugins/COBISCorp.eCOBIS.ContactManagement.DTO-1.0.0.0.jar"/>
+      <plugin name="COBISCorp.eCOBIS.ContactManagement.Service" path="../../clientviewer/plugins/COBISCorp.eCOBIS.ContactManagement.Service-1.0.0.0.jar"/>
+    </plan>
+    <plan id="cobis-reports" reloadable="true">
+      <plugin name="groovy" path="../../clientviewer/plugins/reports/groovy-all-2.0.1.jar"/>
+      <plugin name="jasperreports-fonts-5.1.0" path="../../clientviewer/plugins/reports/jasperreports-fonts-5.1.0.jar"/>
+      <plugin name="jxl" path="../../clientviewer/plugins/reports/jxl-2.6.6.jar"/>
+      <plugin name="jasperreports" path="../../clientviewer/plugins/reports/jasperreports-5.1.0.jar"/>
+    </plan>
+    <plan id="VCCService-dto" reloadable="true">
+      <plugin name="cobis-clientviewer-dto" path="../../clientviewer/plugins/cobis-clientviewer-dto-1.0.0.jar"/>
+    </plan>
+    <plan id="VCCService-dal" reloadable="true">
+      <plugin name="cobis-clientviewer-dal" path="../../clientviewer/plugins/cobis-clientviewer-dal-1.0.0.jar"/>
+    </plan>
+    <plan id="VCCService-external-service-bl" reloadable="true">
+      <plugin name="cobis-external-services-bl" path="../../clientviewer/plugins/cobis-external-services-bl-1.0.0.jar"/>
+    </plan>
+    <plan id="VCCService-bl" reloadable="true">
+      <plugin name="cobis-clientviewer-bl" path="../../clientviewer/plugins/cobis-clientviewer-bl-1.0.0.jar"/>
+    </plan>
+    <plan id="VCCService-service" reloadable="true">
+      <plugin name="cobis-clientviewer-services" path="../../clientviewer/plugins/cobis-clientviewer-services-1.0.0.jar"/>
+    </plan>
+    <plan id="VCCWeb-dto" reloadable="true">
+      <plugin name="cobis-web-clientviewer-dto" path="../../clientviewer/plugins/cobis-web-clientviewer-dto-1.0.0.jar"/>
+    </plan>
+    <plan id="VCCWeb-services" reloadable="true">
+      <plugin name="cobis-web-clientviewer-services" path="../../clientviewer/plugins/cobis-web-clientviewer-services-1.0.0.jar"/>
+    </plan>
+    <plan id="VCCWeb-external-services" reloadable="true">
+      <plugin name="cobis-web-clientviewer-external-services" path="../../clientviewer/plugins/cobis-web-clientviewer-external-services-1.0.0.jar"/>
+    </plan>
+    <plan id="VCC-reporting" reloadable="true">
+      <plugin name="report-clientviewer" path="../../clientviewer/plugins/report-clientviewer-impl-1.0.0.jar"/>
+    </plan>
+    <plan id="admin-vcc" reloadable="true">
+      <plugin name="latfo.ucspm.tasksectionsmaintaining.services" path="../../clientviewer/plugins/latfo.ucspm.tasksectionsmaintaining.services-1.0.0.jar"/>
+      <plugin name="latfo.ucspm.tasksectionsmaintaining.customevents" path="../../clientviewer/plugins/latfo.ucspm.tasksectionsmaintaining.customevents-1.0.0.jar"/>
+      <plugin name="latfo.ucspm.taskdtolist.services" path="../../clientviewer/plugins/latfo.ucspm.taskdtolist.services-1.0.0.jar"/>
+      <plugin name="latfo.ucspm.taskdtolist.customevents" path="../../clientviewer/plugins/latfo.ucspm.taskdtolist.customevents-1.0.0.jar"/>
+      <plugin name="latfo.ucspm.taskdtomaintaining.services" path="../../clientviewer/plugins/latfo.ucspm.taskdtomaintaining.services-1.0.0.jar"/>
+      <plugin name="latfo.ucspm.taskdtomaintaining.customevents" path="../../clientviewer/plugins/latfo.ucspm.taskdtomaintaining.customevents-1.0.0.jar"/>
+    </plan>
+    <plan id="BussinesRules" reloadable="true">
+      <plugin name="bpl-cobis-commons-dao" path="../../businessrules/plugins/bpl-cobis-commons-dao-4.3.0.0.jar"/>
+      <plugin name="bpl-cobis-commons-services" path="../../businessrules/plugins/bpl-cobis-commons-services-4.3.0.0.jar"/>
+      <plugin name="bpl-cobis-commons-services-impl" path="../../businessrules/plugins/bpl-cobis-commons-services-impl-4.3.0.0.jar"/>
+      <plugin name="bpl-bussines-rules-dao" path="../../businessrules/plugins/bpl-bussines-rules-dao-4.3.0.0.jar"/>
+      <plugin name="bpl-bussines-rules-services" path="../../businessrules/plugins/bpl-bussines-rules-services-4.3.0.0.jar"/>
+      <plugin name="bpl-bussines-rules-adm-services" path="../../businessrules/plugins/bpl-bussines-rules-adm-services-4.3.0.0.jar"/>
+      <plugin name="bpl-bussines-rules-adm-services-impl" path="../../businessrules/plugins/bpl-bussines-rules-adm-services-impl-4.3.0.0.jar"/>
+      <plugin name="COBISCorp.eCOBIS.Rules.Admin.DTO" path="../../businessrules/plugins/COBISCorp.eCOBIS.Rules.Admin.DTO-1.0.0.0.jar"/>
+      <plugin name="COBISCorp.eCOBIS.Rules.Admin.Service" path="../../businessrules/plugins/COBISCorp.eCOBIS.Rules.Admin.Service-1.0.0.0.jar"/>
+    </plan>
+    <plan id="BussinesRulesImpl" reloadable="true">
+      <plugin name="bpl-bussines-rules-services-impl" path="../../businessrules/plugins/bpl-bussines-rules-services-impl-4.3.0.0.jar"/>
+    </plan>
+    <plan id="businessrules-cobis5" reloadable="true">
+      <plugin name="cobis-businessRule-web-service" path="../../businessrules/plugins/cobis-businessRule-web-service-1.0.1.jar"/>
+    </plan>
+    <plan id="businessRules-web" reloadable="true">
+      <plugin name="latfo.platf.program.services" path="../../businessrules/plugins/latfo.platf.program.services-1.0.0.jar"/>
+      <plugin name="latfo.platf.program.customevents" path="../../businessrules/plugins/latfo.platf.program.customevents-1.0.0.jar"/>
+      <plugin name="latfo.platf.tareadelavistaviewadminpolicy.services" path="../../businessrules/plugins/latfo.platf.tareadelavistaviewadminpolicy.services-1.0.0.jar"/>
+      <plugin name="latfo.platf.tareadelavistaviewadminpolicy.customevents" path="../../businessrules/plugins/latfo.platf.tareadelavistaviewadminpolicy.customevents-1.0.0.jar"/>
+      <plugin name="latfo.platf.taskviewexceptionrule.services" path="../../businessrules/plugins/latfo.platf.taskviewexceptionrule.services-1.0.0.jar"/>
+      <plugin name="latfo.platf.taskviewexceptionrule.customevents" path="../../businessrules/plugins/latfo.platf.taskviewexceptionrule.customevents-1.0.0.jar"/>
+      <plugin name="latfo.platf.tsubtype.services" path="../../businessrules/plugins/latfo.platf.tsubtype.services-1.0.0.jar"/>
+      <plugin name="latfo.platf.tsubtype.customevents" path="../../businessrules/plugins/latfo.platf.tsubtype.customevents-1.0.0.jar"/>
+      <plugin name="latfo.platf.tsystem.services" path="../../businessrules/plugins/latfo.platf.tsystem.services-1.0.0.jar"/>
+      <plugin name="latfo.platf.tsystem.customevents" path="../../businessrules/plugins/latfo.platf.tsystem.customevents-1.0.0.jar"/>
+      <plugin name="latfo.platf.variables.services" path="../../businessrules/plugins/latfo.platf.variables.services-1.0.0.jar"/>
+      <plugin name="latfo.platf.variables.customevents" path="../../businessrules/plugins/latfo.platf.variables.customevents-1.0.0.jar"/>
+      <plugin name="latfo.platf.tdependency.services" path="../../businessrules/plugins/latfo.platf.tdependency.services-1.0.0.jar"/>
+      <plugin name="latfo.platf.tdependency.customevents" path="../../businessrules/plugins/latfo.platf.tdependency.customevents-1.0.0.jar"/>
+      <plugin name="latfo.platf.contentsectiontask.services" path="../../businessrules/plugins/latfo.platf.contentsectiontask.services-1.0.0.jar"/>
+      <plugin name="latfo.platf.contentsectiontask.customevents" path="../../businessrules/plugins/latfo.platf.contentsectiontask.customevents-1.0.0.jar"/>
+      <plugin name="latfo.platf.rolecontentsectiontask.services" path="../../businessrules/plugins/latfo.platf.rolecontentsectiontask.services-1.0.0.jar"/>
+      <plugin name="latfo.platf.rolecontentsectiontask.customevents" path="../../businessrules/plugins/latfo.platf.rolecontentsectiontask.customevents-1.0.0.jar"/>
+    </plan>
+    <plan id="ComextVCC" reloadable="true">
+      <plugin name="COBISCorp.eCOBIS.Comext.DTO" path="../../clientviewer/plugins/COBISCorp.eCOBIS.Comext.DTO-1.0.0.0.jar"/>
+      <plugin name="COBISCorp.eCOBIS.Comext.Query.Service" path="../../clientviewer/plugins/COBISCorp.eCOBIS.Comext.Query.Service-1.0.0.0.jar"/>
+    </plan>
+    <plan id="BplDAO" reloadable="true">
+      <plugin name="bpl-cobis-commons-dao" path="../../businessrules/plugins/bpl-cobis-commons-dao-4.3.0.0.jar"/>
+    </plan>
+    <plan id="BplService" reloadable="true">
+      <plugin name="bpl-cobis-commons-services" path="../../businessrules/plugins/bpl-cobis-commons-services-4.3.0.0.jar"/>
+    </plan>
+    <plan id="BplServiceImpl" reloadable="true">
+      <plugin name="bpl-cobis-commons-services-impl" path="../../businessrules/plugins/bpl-cobis-commons-services-impl-4.3.0.0.jar"/>
+    </plan>
+    <plan id="BussinesRulesDao" reloadable="true">
+      <plugin name="bpl-bussines-rules-dao" path="../../businessrules/plugins/bpl-bussines-rules-dao-4.3.0.0.jar"/>
+    </plan>
+    <plan id="BussinesRulesServices" reloadable="true">
+      <plugin name="bpl-bussines-rules-services" path="../../businessrules/plugins/bpl-bussines-rules-services-4.3.0.0.jar"/>
+    </plan>
+    <plan id="BussinesRulesServicesImpl" reloadable="true">
+      <plugin name="bpl-bussines-rules-services-impl" path="../../businessrules/plugins/bpl-bussines-rules-services-impl-4.3.0.0.jar"/>
+    </plan>
+    <plan id="workflow-services" reloadable="true">
+      <plugin name="workflowDTO" path="../../workflow/plugins/COBISCorp.eCOBIS.Workflow.DTO-4.2.0.0.jar"/>
+      <plugin name="workflowServices" path="../../workflow/plugins/COBISCorp.eCOBIS.Workflow.Service-4.2.0.0.jar"/>
+      <plugin name="workflowAdmin" path="../../workflow/plugins/cobis-web-workflow-admin-services-1.0.0.jar"/>
+    </plan>
+    <plan id="workflow-web" reloadable="true">
+      <plugin name="distribucionCargaServices" path="../../workflow/plugins/latfo.workf.wfdistloadtask.services-1.0.0.jar"/>
+      <plugin name="distribucionCargaCustomevents" path="../../workflow/plugins/latfo.workf.wfdistloadtask.customevents-1.0.0.jar"/>
+      <plugin name="saveActionsServices" path="../../workflow/plugins/latfo.workf.wfresulttask.services-1.0.0.jar"/>
+      <plugin name="saveActionsCustomevents" path="../../workflow/plugins/latfo.workf.wfresulttask.customevents-1.0.0.jar"/>
+      <plugin name="observatMaintServices" path="../../workflow/plugins/latfo.workf.observationsmaintainingtask2.services-1.0.0.jar"/>
+      <plugin name="observatMaintCustomevents" path="../../workflow/plugins/latfo.workf.observationsmaintainingtask2.customevents-1.0.0.jar"/>
+      <plugin name="documentTypeServices" path="../../workflow/plugins/latfo.workf.wfdocumenttypetask.services-1.0.0.jar"/>
+      <plugin name="documentTypeCustomevents" path="../../workflow/plugins/latfo.workf.wfdocumenttypetask.customevents-1.0.0.jar"/>
+      <plugin name="callworkflowServices" path="../../workflow/plugins/latfo.workf.callworkflow.services-1.0.0.jar"/>
+      <plugin name="callworkflowCustomevents" path="../../workflow/plugins/latfo.workf.callworkflow.customevents-1.0.0.jar"/>
+      <plugin name="wfrequirementtypeServices" path="../../workflow/plugins/latfo.workf.wfrequirementtypetask.services-1.0.0.jar"/>
+      <plugin name="wfrequirementtypeCustomevents" path="../../workflow/plugins/latfo.workf.wfrequirementtypetask.customevents-1.0.0.jar"/>
+      <plugin name="stepinformationtaskServices" path="../../workflow/plugins/latfo.workf.stepinformationtask.services-1.0.0.jar"/>
+      <plugin name="stepinformationtaskCustomevents" path="../../workflow/plugins/latfo.workf.stepinformationtask.customevents-1.0.0.jar"/>
+      <plugin name="wfformtasktaskCustomevents" path="../../workflow/plugins/latfo.workf.wfformtasktask.customevents-1.0.0.jar"/>
+      <plugin name="wfformtasktaskServices" path="../../workflow/plugins/latfo.workf.wfformtasktask.services-1.0.0.jar"/>
+      <plugin name="MaintenanceBusinessProcessServices" path="../../workflow/plugins/latfo.workf.formmaintenancebusinessprocess.services-1.0.0.jar"/>
+      <plugin name="MaintenanceBusinessProcessCustomevents" path="../../workflow/plugins/latfo.workf.formmaintenancebusinessprocess.customevents-1.0.0.jar"/>
+      <plugin name="cloneModalService" path="../../workflow/plugins/latfo.workf.frmclonemodal.services-1.0.0.jar"/>
+      <plugin name="cloneModalCustomevents" path="../../workflow/plugins/latfo.workf.frmclonemodal.customevents-1.0.0.jar"/>
+      <plugin name="rolemasterServices" path="../../workflow/plugins/latfo.workf.rolemaster.services-1.0.0.jar"/>
+      <plugin name="rolemasterCustomevents" path="../../workflow/plugins/latfo.workf.rolemaster.customevents-1.0.0.jar"/>
+      <plugin name="userDefinitionServices" path="../../workflow/plugins/latfo.workf.wfuserdefinitiontask.services-1.0.0.jar"/>
+      <plugin name="userDefinitionCustomevents" path="../../workflow/plugins/latfo.workf.wfuserdefinitiontask.customevents-1.0.0.jar"/>
+      <plugin name="frmassignuserbyrolServices" path="../../workflow/plugins/latfo.workf.frmassignuserbyrol.services-1.0.0.jar"/>
+      <plugin name="frmassignuserbyrolCustomevents" path="../../workflow/plugins/latfo.workf.frmassignuserbyrol.customevents-1.0.0.jar"/>
+      <plugin name="processErrorCustomevents" path="../../workflow/plugins/latfo.workf.tprocesserror.customevents-1.0.0.jar"/>
+      <plugin name="processErrorEvents" path="../../workflow/plugins/latfo.workf.tprocesserror.services-1.0.0.jar"/>
+      <plugin name="linkActivities" path="../../workflow/plugins/latfo.workf.linkactivities.services-1.0.0.jar"/>
+      <plugin name="linkActivitiesCustomevents" path="../../workflow/plugins/latfo.workf.linkactivities.customevents-1.0.0.jar"/>
+      <plugin name="linkTaskDetailErrorCustomevents" path="../../workflow/plugins/latfo.workf.taskdetailerror.customevents-1.0.0.jar"/>
+      <plugin name="linkTaskDetailErrorServices" path="../../workflow/plugins/latfo.workf.taskdetailerror.services-1.0.0.jar"/>
+      <plugin name="launchActivityCustomevents" path="../../workflow/plugins/latfo.workf.launchactivity.customevents-1.0.0.jar"/>
+      <plugin name="launchActivityServices" path="../../workflow/plugins/latfo.workf.launchactivity.services-1.0.0.jar"/>
+      <plugin name="linkTaskVariableCustomevents" path="../../workflow/plugins/latfo.workf.taskvariable.customevents-1.0.0.jar"/>
+      <plugin name="linkTaskVariableServices" path="../../workflow/plugins/latfo.workf.taskvariable.services-1.0.0.jar"/>
+      <plugin name="mapingfathersonCustomevents" path="../../workflow/plugins/latfo.workf.mapingfatherson.customevents-1.0.0.jar"/>
+      <plugin name="mapingfathersonServices" path="../../workflow/plugins/latfo.workf.mapingfatherson.services-1.0.0.jar"/>
+      <plugin name="linkVariableProcessCustomevents" path="../../workflow/plugins/latfo.workf.taskvariableprocess.customevents-1.0.0.jar"/>
+      <plugin name="linkVariableProcessServices" path="../../workflow/plugins/latfo.workf.taskvariableprocess.services-1.0.0.jar"/>
+      <plugin name="taskprocessversionnewCustomevents" path="../../workflow/plugins/latfo.workf.taskprocessversionnew.customevents-1.0.0.jar"/>
+      <plugin name="taskprocessversionnewServices" path="../../workflow/plugins/latfo.workf.taskprocessversionnew.services-1.0.0.jar"/>
+      <plugin name="searchVersionCustomevents" path="../../workflow/plugins/latfo.workf.searchversion.customevents-1.0.0.jar"/>
+      <plugin name="searchVersionService" path="../../workflow/plugins/latfo.workf.searchversion.services-1.0.0.jar"/>
+      <plugin name="stepInformationCustomevents" path="../../workflow/plugins/latfo.workf.taskstepinformation.customevents-1.0.0.jar"/>
+      <plugin name="stepInformationService" path="../../workflow/plugins/latfo.workf.taskstepinformation.services-1.0.0.jar"/>
+      <plugin name="tabfathandsonCustomevents" path="../../workflow/plugins/latfo.workf.tabfathandson.customevents-1.0.0.jar"/>
+      <plugin name="tabfathandsonService" path="../../workflow/plugins/latfo.workf.tabfathandson.services-1.0.0.jar"/>
+      <plugin name="taskEnlaceRolSevice" path="../../workflow/plugins/latfo.workf.tenlace.services-1.0.0.jar"/>
+      <plugin name="taskEnlaceRolCustomevents" path="../../workflow/plugins/latfo.workf.tenlace.customevents-1.0.0.jar"/>
+      <plugin name="taskSubtypeCustomevents" path="../../workflow/plugins/latfo.workf.tsubtype.customevents-1.0.0.jar"/>
+      <plugin name="taskSubtypeService" path="../../workflow/plugins/latfo.workf.tsubtype.services-1.0.0.jar"/>
+      <plugin name="taskSystemCustomevents" path="../../workflow/plugins/latfo.workf.tsystem.services-1.0.0.jar"/>
+      <plugin name="taskSystemService" path="../../workflow/plugins/latfo.workf.tsystem.customevents-1.0.0.jar"/>
+      <plugin name="taskUserHierarchyCustomevents" path="../../workflow/plugins/latfo.workf.hierarchytask.services-1.0.0.jar"/>
+      <plugin name="taskUserHierarchyService" path="../../workflow/plugins/latfo.workf.hierarchytask.customevents-1.0.0.jar"/>
+      <plugin name="taskHierarchyUsrService" path="../../workflow/plugins/latfo.workf.thierarchyuser.services-1.0.0.jar"/>
+      <plugin name="taskHierarchyUsrCustomevents" path="../../workflow/plugins/latfo.workf.thierarchyuser.customevents-1.0.0.jar"/>
+      <plugin name="taskrequirementstepmodifyService" path="../../workflow/plugins/latfo.workf.taskrequirementstepmodify.services-1.0.0.jar"/>
+      <plugin name="taskrequirementstepmodifyCustomevents" path="../../workflow/plugins/latfo.workf.taskrequirementstepmodify.customevents-1.0.0.jar"/>
+    </plan>
+    <plan id="workflow-report" reloadable="true">
+      <plugin name="linkTaskDetailErrorServices" path="../../workflow/plugins/report-workflow-impl-1.0.0.jar"/>
+    </plan>
+    <plan id="inbox" reloadable="true">
+      <plugin name="latfo.inbox.consultationcomments.customevents" path="../../inbox/plugins/latfo.inbox.consultationcomments.customevents-1.0.0.jar"/>
+      <plugin name="latfo.inbox.consultationcomments.services" path="../../inbox/plugins/latfo.inbox.consultationcomments.services-1.0.0.jar"/>
+      <plugin name="latfo.inbox.formactivityschedulers.customevents" path="../../inbox/plugins/latfo.inbox.formactivityschedulers.customevents-1.0.0.jar"/>
+      <plugin name="latfo.inbox.formactivityschedulers.services" path="../../inbox/plugins/latfo.inbox.formactivityschedulers.services-1.0.0.jar"/>
+      <plugin name="latfo.inbox.inboxcontainertask.customevents" path="../../inbox/plugins/latfo.inbox.inboxcontainertask.customevents-1.0.0.jar"/>
+      <plugin name="latfo.inbox.inboxcontainertask.services" path="../../inbox/plugins/latfo.inbox.inboxcontainertask.services-1.0.0.jar"/>
+      <plugin name="latfo.inbox.observation.customevents" path="../../inbox/plugins/latfo.inbox.observation.customevents-1.0.0.jar"/>
+      <plugin name="latfo.inbox.observation.services" path="../../inbox/plugins/latfo.inbox.observation.services-1.0.0.jar"/>
+      <plugin name="latfo.inbox.queryactivities.customevents" path="../../inbox/plugins/latfo.inbox.queryactivities.customevents-1.0.0.jar"/>
+      <plugin name="latfo.inbox.queryactivities.services" path="../../inbox/plugins/latfo.inbox.queryactivities.services-1.0.0.jar"/>
+      <plugin name="latfo.inbox.taskactivitydetails.customevents" path="../../inbox/plugins/latfo.inbox.taskactivitydetails.customevents-1.0.0.jar"/>
+      <plugin name="latfo.inbox.taskactivitydetails.services" path="../../inbox/plugins/latfo.inbox.taskactivitydetails.services-1.0.0.jar"/>
+      <plugin name="latfo.inbox.taskhistoric.customevents" path="../../inbox/plugins/latfo.inbox.taskhistoric.customevents-1.0.0.jar"/>
+      <plugin name="latfo.inbox.taskhistoric.services" path="../../inbox/plugins/latfo.inbox.taskhistoric.services-1.0.0.jar"/>
+      <plugin name="latfo.inbox.taskinboxcontainerpage.customevents" path="../../inbox/plugins/latfo.inbox.taskinboxcontainerpage.customevents-1.0.0.jar"/>
+      <plugin name="latfo.inbox.taskinboxcontainerpage.services" path="../../inbox/plugins/latfo.inbox.taskinboxcontainerpage.services-1.0.0.jar"/>
+      <plugin name="latfo.inbox.taskrequirementslists.customevents" path="../../inbox/plugins/latfo.inbox.taskrequirementslists.customevents-1.0.0.jar"/>
+      <plugin name="latfo.inbox.taskrequirementslists.services" path="../../inbox/plugins/latfo.inbox.taskrequirementslists.services-1.0.0.jar"/>
+      <plugin name="latfo.inbox.taskviewform.customevents" path="../../inbox/plugins/latfo.inbox.taskviewform.customevents-1.0.0.jar"/>
+      <plugin name="latfo.inbox.taskviewform.services" path="../../inbox/plugins/latfo.inbox.taskviewform.services-1.0.0.jar"/>
+      <plugin name="latfo.inbox.taskpoliticslist.customevents" path="../../inbox/plugins/latfo.inbox.taskpoliticslist.customevents-1.0.0.jar"/>
+      <plugin name="latfo.inbox.taskpoliticslist.services" path="../../inbox/plugins/latfo.inbox.taskpoliticslist.services-1.0.0.jar"/>
+      <plugin name="latfo.inbox.taskpoliticsdetail.customevents" path="../../inbox/plugins/latfo.inbox.taskpoliticsdetail.customevents-1.0.0.jar"/>
+      <plugin name="latfo.inbox.taskpoliticsdetail.services" path="../../inbox/plugins/latfo.inbox.taskpoliticsdetail.services-1.0.0.jar"/>
+      <plugin name="latfo.inbox.taskactivitiesrequirements.customevents" path="../../inbox/plugins/latfo.inbox.taskactivitiesrequirements.customevents-1.0.0.jar"/>
+      <plugin name="latfo.inbox.taskactivitiesrequirements.services" path="../../inbox/plugins/latfo.inbox.taskactivitiesrequirements.services-1.0.0.jar"/>
+    </plan>
+    <plan id="inbox-web-services" reloadable="true">
+      <plugin name="cobis-inbox-web-service" path="../../inbox/plugins/cobis-inbox-web-service-1.0.0.jar"/>
+    </plan>
+    <plan id="inbox-container-task" reloadable="true">
+      <plugin name="latfo.inbox.inboxcontainertask.customevents" path="../../inbox/plugins/latfo.inbox.inboxcontainertask.customevents-1.0.0.jar"/>
+      <plugin name="latfo.inbox.inboxcontainertask.services" path="../../inbox/plugins/latfo.inbox.inboxcontainertask.services-1.0.0.jar"/>
+    </plan>
+    <plan id="inbox-storage-services-api" reloadable="true">
+      <plugin name="inbox-storage-services-api" path="../../inbox/plugins/inbox-storage-services-api-1.0.0.0.jar"/>
+    </plan>
+    <plan id="inbox-storage-office2010" reloadable="true">
+      <plugin name="inbox-storage-office2010" path="../../inbox/plugins/inbox-storage-office2010-1.0.0.0.jar"/>
+    </plan>
+    <plan id="inbox-storage-alfresco" reloadable="true">
+      <plugin name="inbox-storage-alfresco" path="../../inbox/plugins/inbox-storage-alfresco-1.0.0.0.jar"/>
+    </plan>
+    <plan id="inbox-file-servlet" reloadable="true">
+      <plugin name="cobis-web-servlet-file" path="../../inbox/plugins/cobis-web-servlet-file-1.0.0.jar"/>
+    </plan>
+    <plan id="FPMDao" reloadable="true">
+      <plugin name="fpm-dao" path="../../FPM/plugins/fpm-dao-4.3.0.0.jar"/>
+      <plugin name="fpm-cobis-portfolio-dao" path="../../FPM/plugins/fpm-cobis-portfolio-dao-4.3.0.0.jar"/>
+      <plugin name="fpm-cobis-catalogs-dao" path="../../FPM/plugins/fpm-cobis-catalogs-dao-4.3.0.0.jar"/>
+    </plan>
+    <plan id="FPMProductmanagment" reloadable="true">
+      <plugin name="cobis-productmanagment-api" path="../../FPM/plugins/cobis-productmanagment-api-1.0.0.0.jar"/>
+      <plugin name="cobis-productmanagment-api-impl" path="../../FPM/plugins/cobis-productmanagment-api-impl-1.0.0.0.jar"/>
+    </plan>
+    <plan id="FPMCatalogs" reloadable="true">
+      <plugin name="fpm-catalogs-services" path="../../FPM/plugins/fpm-catalogs-services-4.3.0.0.jar"/>
+      <plugin name="fpm-cobis-catalogs-services-impl" path="../../FPM/plugins/fpm-cobis-catalogs-services-impl-4.3.0.0.jar"/>
+    </plan>
+    <plan id="FPMServices" reloadable="true">
+      <plugin name="fpm-services" path="../../FPM/plugins/fpm-services-4.3.0.0.jar"/>
+      <plugin name="fpm-cobis-portfolio-services" path="../../FPM/plugins/fpm-cobis-portfolio-services-4.3.0.0.jar"/>
+      <plugin name="fpm-services-integration" path="../../FPM/plugins/fpm-services-integration-4.3.0.0.jar"/>
+    </plan>
+    <plan id="FPMServicesIntegration" reloadable="true">
+      <plugin name="fpm-services-impl" path="../../FPM/plugins/fpm-services-impl-4.3.0.0.jar"/>
+      <plugin name="fpm-cobis-portfolio-services-impl" path="../../FPM/plugins/fpm-cobis-portfolio-services-impl-4.3.0.0.jar"/>
+      <plugin name="fpm-cobis-portfolio-services-integration-impl" path="../../FPM/plugins/fpm-cobis-portfolio-services-integration-impl-4.3.0.0.jar"/>
+      <plugin name="fpm-cobis-administration-services-integration-impl" path="../../FPM/plugins/fpm-cobis-administration-services-integration-impl-4.3.0.0.jar"/>
+    </plan>
+    <plan id="FPMExtractorsServices" reloadable="true">
+      <plugin name="fpm-cobis-extractors-dao" path="../../FPM/plugins/fpm-cobis-extractors-dao-4.3.0.0.jar"/>
+      <plugin name="fpm-cobis-extractors-services" path="../../FPM/plugins/fpm-cobis-extractors-services-4.3.0.0.jar"/>
+      <plugin name="fpm-cobis-extractors-services-impl" path="../../FPM/plugins/fpm-cobis-extractors-services-impl-4.3.0.0.jar"/>
+    </plan>
+    <plan id="FPMExtractors" reloadable="true">
+      <plugin name="COBISCorp.eCOBIS.ExtractorFPM.DTO" path="../../FPM/plugins/COBISCorp.eCOBIS.ExtractorFPM.DTO-4.3.0.0.jar"/>
+      <plugin name="COBISCorp.eCOBIS.ExtractorFPM.Service" path="../../FPM/plugins/COBISCorp.eCOBIS.ExtractorFPM.Service-4.3.0.0.jar"/>
+      <plugin name="COBISCorp.eCOBIS.ExtractorFPM.Service-Impl" path="../../FPM/plugins/COBISCorp.eCOBIS.ExtractorFPM.Service-Impl-4.3.0.0.jar"/>
+    </plan>
+    <plan id="FPMInterceptors" reloadable="true">
+      <plugin name="fpm-cobis-portfolio-interceptors" path="../../FPM/plugins/fpm-cobis-portfolio-interceptors-4.3.0.0.jar"/>
+    </plan>
+    <plan id="FPM-load-catalogs" reloadable="true">
+      <plugin name="finpm.mprod.catalogs" path="../../FPM/plugins/finpm.mprod.catalogs-1.0.0.jar"/>
+    </plan>
+    <plan id="FPM-web-domains" reloadable="true">
+      <plugin name="finpm.domains" path="../../FPM/plugins/finpm.domains-1.0.0.jar"/>
+    </plan>
+    <plan id="FPM-web-administration-services" reloadable="true">
+      <plugin name="finpm.mprod.financialgrouptask.services" path="../../FPM/plugins/finpm.mprod.financialgrouptask.services-1.0.0.jar"/>
+      <plugin name="finpm.mprod.financialgrouptask.customevents" path="../../FPM/plugins/finpm.mprod.financialgrouptask.customevents-1.0.0.jar"/>
+      <plugin name="finpm.mprod.productgrouptask.services" path="../../FPM/plugins/finpm.mprod.productgrouptask.services-1.0.0.jar"/>
+      <plugin name="finpm.mprod.productgrouptask.customevents" path="../../FPM/plugins/finpm.mprod.productgrouptask.customevents-1.0.0.jar"/>
+      <plugin name="finpm.mprod.definitionparameterstask.services" path="../../FPM/plugins/finpm.mprod.definitionparameterstask.services-1.0.0.jar"/>
+      <plugin name="finpm.mprod.definitionparameterstask.customevents" path="../../FPM/plugins/finpm.mprod.definitionparameterstask.customevents-1.0.0.jar"/>
+      <plugin name="finpm.mprod.valuedetailtask.services" path="../../FPM/plugins/finpm.mprod.valuedetailtask.services-1.0.0.jar"/>
+      <plugin name="finpm.mprod.valuedetailtask.customevents" path="../../FPM/plugins/finpm.mprod.valuedetailtask.customevents-1.0.0.jar"/>
+      <plugin name="finpm.mprod.validatordetailtask.services" path="../../FPM/plugins/finpm.mprod.validatordetailtask.services-1.0.0.jar"/>
+      <plugin name="finpm.mprod.validatordetailtask.customevents" path="../../FPM/plugins/finpm.mprod.validatordetailtask.customevents-1.0.0.jar"/>
+    </plan>
+    <plan id="FPM-web-operation-services" reloadable="true">
+      <plugin name="finpm.mprod.bankingproducttask.services" path="../../FPM/plugins/finpm.mprod.bankingproducttask.services-1.0.0.jar"/>
+      <plugin name="finpm.mprod.bankingproducttask.customevents" path="../../FPM/plugins/finpm.mprod.bankingproducttask.customevents-1.0.0.jar"/>
+      <plugin name="finpm.mprod.itemspagetask.services" path="../../FPM/plugins/finpm.mprod.itemspagetask.services-1.0.0.jar"/>
+      <plugin name="finpm.mprod.itemspagetask.customevents" path="../../FPM/plugins/finpm.mprod.itemspagetask.customevents-1.0.0.jar"/>
+      <plugin name="finpm.mprod.ruleselectortask.services" path="../../FPM/plugins/finpm.mprod.ruleselectortask.services-1.0.0.jar"/>
+      <plugin name="finpm.mprod.ruleselectortask.customevents" path="../../FPM/plugins/finpm.mprod.ruleselectortask.customevents-1.0.0.jar"/>
+      <plugin name="finpm.mprod.currencypolicytask.services" path="../../FPM/plugins/finpm.mprod.currencypolicytask.services-1.0.0.jar"/>
+      <plugin name="finpm.mprod.currencypolicytask.customevents" path="../../FPM/plugins/finpm.mprod.currencypolicytask.customevents-1.0.0.jar"/>
+      <plugin name="finpm.mprod.selectoritembyproducttask.services" path="../../FPM/plugins/finpm.mprod.selectoritembyproducttask.services-1.0.0.jar"/>
+      <plugin name="finpm.mprod.selectoritembyproducttask.customevents" path="../../FPM/plugins/finpm.mprod.selectoritembyproducttask.customevents-1.0.0.jar"/>
+      <plugin name="finpm.mprod.destinationpurposetask.services" path="../../FPM/plugins/finpm.mprod.destinationpurposetask.services-1.0.0.jar"/>
+      <plugin name="finpm.mprod.destinationpurposetask.customevents" path="../../FPM/plugins/finpm.mprod.destinationpurposetask.customevents-1.0.0.jar"/>
+      <plugin name="finpm.mprod.itemstatustask.services" path="../../FPM/plugins/finpm.mprod.itemstatustask.services-1.0.0.jar"/>
+      <plugin name="finpm.mprod.itemstatustask.customevents" path="../../FPM/plugins/finpm.mprod.itemstatustask.customevents-1.0.0.jar"/>
+      <plugin name="finpm.mprod.operationstatustask.services" path="../../FPM/plugins/finpm.mprod.operationstatustask.services-1.0.0.jar"/>
+      <plugin name="finpm.mprod.operationstatustask.customevents" path="../../FPM/plugins/finpm.mprod.operationstatustask.customevents-1.0.0.jar"/>
+      <plugin name="finpm.mprod.accountingprofiletask.customevents" path="../../FPM/plugins/finpm.mprod.accountingprofiletask.customevents-1.0.0.jar"/>
+      <plugin name="finpm.mprod.accountingprofiletask.services" path="../../FPM/plugins/finpm.mprod.accountingprofiletask.services-1.0.0.jar"/>
+      <plugin name="finpm.mprod.bankingproductmodalstask.services" path="../../FPM/plugins/finpm.mprod.bankingproductmodalstask.services-1.0.0.jar"/>
+      <plugin name="finpm.mprod.bankingproductmodalstask.customevents" path="../../FPM/plugins/finpm.mprod.bankingproductmodalstask.customevents-1.0.0.jar"/>
+      <plugin name="finpm.mprod.historicquerytask.customevents" path="../../FPM/plugins/finpm.mprod.historicquerytask.customevents-1.0.0.jar"/>
+      <plugin name="finpm.mprod.historicquerytask.services" path="../../FPM/plugins/finpm.mprod.historicquerytask.services-1.0.0.jar"/>
+      <plugin name="finpm.mprod.rendertask.customevents" path="../../FPM/plugins/finpm.mprod.rendertask.customevents-1.0.0.jar"/>
+      <plugin name="finpm.mprod.rendertask.services" path="../../FPM/plugins/finpm.mprod.rendertask.services-1.0.0.jar"/>
+      <plugin name="finpm.mprod.displayrendertask.customevents" path="../../FPM/plugins/finpm.mprod.displayrendertask.customevents-1.0.0.jar"/>
+      <plugin name="finpm.mprod.displayrendertask.services" path="../../FPM/plugins/finpm.mprod.displayrendertask.services-1.0.0.jar"/>
+      <plugin name="finpm.mprod.unitfunctionalitytask.customevents" path="../../FPM/plugins/finpm.mprod.unitfunctionalitytask.customevents-1.0.0.jar"/>
+      <plugin name="finpm.mprod.unitfunctionalitytask.services" path="../../FPM/plugins/finpm.mprod.unitfunctionalitytask.services-1.0.0.jar"/>
+      <plugin name="finpm.mprod.fieldbyproducttask.customevents" path="../../FPM/plugins/finpm.mprod.fieldbyproducttask.customevents-1.0.0.jar"/>
+      <plugin name="finpm.mprod.fieldbyproducttask.services" path="../../FPM/plugins/finpm.mprod.fieldbyproducttask.services-1.0.0.jar"/>
+    </plan>
+    <plan id="FPM-web-catalogs-services" reloadable="true">
+      <plugin name="cobis-web-fpm-catalogs-services" path="../../FPM/plugins/cobis-web-fpm-catalogs-services-1.0.0.jar"/>
+    </plan>
+    <plan id="FPM-web-services" reloadable="true">
+      <plugin name="cobis-web-fpm-services" path="../../FPM/plugins/cobis-web-fpm-services-1.0.0.jar"/>
+    </plan>
+    <plan id="ALFRESCO INTEGRATION" reloadable="true">
+      <plugin name="cobis-web-servlet-storage-util" path="../../CUSTOMER/plugins/cobis-web-servlet-storage-util-1.0.0.jar"/>
+      <plugin name="cobis-web-customer-servlet-file" path="../../CUSTOMER/plugins/cobis-web-customer-servlet-file-1.0.0.jar"/>
+    </plan>
+    <plan id="FPMCatalogsService" reloadable="true">
+      <plugin name="fpm-catalogs-services" path="../../FPM/plugins/fpm-catalogs-services-4.3.0.0.jar"/>
+    </plan>
+    <plan id="FPMCatalogsServiceImpl" reloadable="true">
+      <plugin name="fpm-cobis-catalogs-services-impl" path="../../FPM/plugins/fpm-cobis-catalogs-services-impl-4.3.0.0.jar"/>
+    </plan>
+    <plan id="fpm-services" reloadable="true">
+      <plugin name="fpm-services" path="../../FPM/plugins/fpm-services-4.3.0.0.jar"/>
+    </plan>
+    <plan id="ASSETS-CLOUD-COMMONS-SG" reloadable="true">
+      <plugin name="COBISCorp.eCOBIS.Assets.Cloud.DTO" path="../../ASSETS/COBISCorp.eCOBIS.Assets.Cloud.DTO-2.0.0.0.jar"/>
+      <plugin name="COBISCorp.eCOBIS.Assets.Cloud.Service" path="../../ASSETS/COBISCorp.eCOBIS.Assets.Cloud.Service-2.0.0.0.jar"/>
+    </plan>
+    <plan id="ASSETS-CLOUD-COMMONS" reloadable="true">
+      <plugin name="assts.domains" path="../../ASSETS/commons/assts.domains-1.0.0.jar"/>
+      <plugin name="assts.commons.events" path="../../ASSETS/commons/assts.commons.events-1.0.0.jar"/>
+    </plan>
+    <plan id="ASSETS-CLOUD-COMMONS-SERVICES" reloadable="true">
+      <plugin name="assts.cmmns.loanheaderinfoform.services" path="../../ASSETS/commons-events/assts.cmmns.loanheaderinfoform.services-1.0.0.jar"/>
+      <plugin name="assts.cmmns.loansearchform.services" path="../../ASSETS/commons-events/assts.cmmns.loansearchform.services-1.0.0.jar"/>
+      <plugin name="assts.cmmns.loanstatuschangemain.services" path="../../ASSETS/commons-events/assts.cmmns.loanstatuschangemain.services-1.0.0.jar"/>
+      <plugin name="assts.cmmns.loanstatuschangeform.services" path="../../ASSETS/commons-events/assts.cmmns.loanstatuschangeform.services-1.0.0.jar"/>
+      <plugin name="assts.cmmns.statuslistform.services" path="../../ASSETS/commons-events/assts.cmmns.statuslistform.services-1.0.0.jar"/>
+      <plugin name="assts.mntnn.paymentapplication.services" path="../../ASSETS/management/assts.mntnn.paymentapplication.services-1.0.0.jar"/>
+      <plugin name="assts.cmmns.conciliationsearchform.services" path="../../ASSETS/commons-events/assts.cmmns.conciliationsearchform.services-1.0.0.jar"/>
+    </plan>
+    <plan id="ASSETS-CLOUD-COMMONS-EVENTS" reloadable="true">
+      <plugin name="assts.cmmns.loanheaderinfoform.customevents" path="../../ASSETS/commons-events/assts.cmmns.loanheaderinfoform.customevents-1.0.0.jar"/>
+      <plugin name="assts.cmmns.loansearchform.customevents" path="../../ASSETS/commons-events/assts.cmmns.loansearchform.customevents-1.0.0.jar"/>
+      <plugin name="assts.cmmns.loanstatuschangemain.customevents" path="../../ASSETS/commons-events/assts.cmmns.loanstatuschangemain.customevents-1.0.0.jar"/>
+      <plugin name="assts.cmmns.loanstatuschangeform.customevents" path="../../ASSETS/commons-events/assts.cmmns.loanstatuschangeform.customevents-1.0.0.jar"/>
+      <plugin name="assts.cmmns.statuslistform.customevents" path="../../ASSETS/commons-events/assts.cmmns.statuslistform.customevents-1.0.0.jar"/>
+      <plugin name="assts.mntnn.paymentapplication.customevents" path="../../ASSETS/management/assts.mntnn.paymentapplication.customevents-1.0.0.jar"/>
+      <plugin name="assts.cmmns.conciliationsearchform.customevents" path="../../ASSETS/commons-events/assts.cmmns.conciliationsearchform.customevents-1.0.0.jar"/>
+    </plan>
+    <plan id="ASSETS-CLOUD-MNTNN-SERVICES" reloadable="true">
+      <plugin name="assts.mntnn.amortizationquotedetailform.services" path="../../ASSETS/management/assts.mntnn.amortizationquotedetailform.services-1.0.0.jar"/>
+      <plugin name="assts.mntnn.readjustmentdetalilsloanform.services" path="../../ASSETS/management/assts.mntnn.readjustmentdetalilsloanform.services-1.0.0.jar"/>
+      <plugin name="assts.mntnn.reajuste.services" path="../../ASSETS/management/assts.mntnn.reajuste.services-1.0.0.jar"/>
+      <plugin name="assts.mntnn.documentprintingmain.services" path="../../ASSETS/management/assts.mntnn.documentprintingmain.services-1.0.0.jar"/>
+      <plugin name="assts.mntnn.beforeprintpaymentform.services" path="../../ASSETS/management/assts.mntnn.beforeprintpaymentform.services-1.0.0.jar"/>
+      <plugin name="assts.mntnn.projectothercharges.services" path="../../ASSETS/management/assts.mntnn.projectothercharges.services-1.0.0.jar"/>
+      <plugin name="assts.mntnn.othercharges.services" path="../../ASSETS/management/assts.mntnn.othercharges.services-1.0.0.jar"/>
+      <plugin name="assts.mntnn.projectionquotaformmain.services" path="../../ASSETS/management/assts.mntnn.projectionquotaformmain.services-1.0.0.jar"/>
+      <plugin name="assts.mntnn.documentprinting.services" path="../../ASSETS/management/assts.mntnn.documentprinting.services-1.0.0.jar"/>
+      <plugin name="assts.mntnn.extendsquotaformmain.services" path="../../ASSETS/management/assts.mntnn.extendsquotaformmain.services-1.0.0.jar"/>
+      <plugin name="assts.mntnn.paymentmaintenance.services" path="../../ASSETS/management/assts.mntnn.paymentmaintenance.services-1.0.0.jar"/>
+      <plugin name="assts.mntnn.paymentmaintenancemodal.services" path="../../ASSETS/management/assts.mntnn.paymentmaintenancemodal.services-1.0.0.jar"/>
+      <plugin name="assts.mntnn.valuerates.services" path="../../ASSETS/management/assts.mntnn.valuerates.services-1.0.0.jar"/>
+      <plugin name="assts.mntnn.typeratesmodal.services" path="../../ASSETS/management/assts.mntnn.typeratesmodal.services-1.0.0.jar"/>
+      <plugin name="assts.mntnn.ratesmodal.services" path="../../ASSETS/management/assts.mntnn.ratesmodal.services-1.0.0.jar"/>
+      <plugin name="assts.mntnn.detailsaho.services" path="../../ASSETS/management/assts.mntnn.detailsaho.services-1.0.0.jar"/>
+      <plugin name="assts.mntnn.solidaritypaymentform.services" path="../../ASSETS/management/assts.mntnn.solidaritypaymentform.services-1.0.0.jar"/>
+      <plugin name="assts.mntnn.detailfund.services" path="../../ASSETS/management/assts.mntnn.detailfund.services-1.0.0.jar"/>
+      <plugin name="assts.mntnn.fund.services" path="../../ASSETS/management/assts.mntnn.fund.services-1.0.0.jar"/>
+    </plan>
+    <plan id="ASSETS-CLOUD-MNTNN" reloadable="true">
+      <plugin name="assts.mntnn.amortizationquotedetailform.customevents" path="../../ASSETS/management/assts.mntnn.amortizationquotedetailform.customevents-1.0.0.jar"/>
+      <plugin name="assts.mntnn.readjustmentdetalilsloanform.customevents" path="../../ASSETS/management/assts.mntnn.readjustmentdetalilsloanform.customevents-1.0.0.jar"/>
+      <plugin name="assts.mntnn.reajuste.customevents" path="../../ASSETS/management/assts.mntnn.reajuste.customevents-1.0.0.jar"/>
+      <plugin name="assts.mntnn.documentprintingmain.customevents" path="../../ASSETS/management/assts.mntnn.documentprintingmain.customevents-1.0.0.jar"/>
+      <plugin name="assts.mntnn.beforeprintpaymentform.customevents" path="../../ASSETS/management/assts.mntnn.beforeprintpaymentform.customevents-1.0.0.jar"/>
+      <plugin name="assts.mntnn.projectothercharges.customevents" path="../../ASSETS/management/assts.mntnn.projectothercharges.customevents-1.0.0.jar"/>
+      <plugin name="assts.mntnn.othercharges.customevents" path="../../ASSETS/management/assts.mntnn.othercharges.customevents-1.0.0.jar"/>
+      <plugin name="assts.mntnn.projectionquotaformmain.customevents" path="../../ASSETS/management/assts.mntnn.projectionquotaformmain.customevents-1.0.0.jar"/>
+      <plugin name="assts.mntnn.documentprinting.customevents" path="../../ASSETS/management/assts.mntnn.documentprinting.customevents-1.0.0.jar"/>
+      <plugin name="assts.mntnn.extendsquotaformmain.customevents" path="../../ASSETS/management/assts.mntnn.extendsquotaformmain.customevents-1.0.0.jar"/>
+      <plugin name="assts.mntnn.paymentmaintenance.customevents" path="../../ASSETS/management/assts.mntnn.paymentmaintenance.customevents-1.0.0.jar"/>
+      <plugin name="assts.mntnn.paymentmaintenancemodal.customevents" path="../../ASSETS/management/assts.mntnn.paymentmaintenancemodal.customevents-1.0.0.jar"/>
+      <plugin name="assts.mntnn.valuerates.customevents" path="../../ASSETS/management/assts.mntnn.valuerates.customevents-1.0.0.jar"/>
+      <plugin name="assts.mntnn.typeratesmodal.customevents" path="../../ASSETS/management/assts.mntnn.typeratesmodal.customevents-1.0.0.jar"/>
+      <plugin name="assts.mntnn.ratesmodal.customevents" path="../../ASSETS/management/assts.mntnn.ratesmodal.customevents-1.0.0.jar"/>
+      <plugin name="assts.mntnn.detailsaho.customevents" path="../../ASSETS/management/assts.mntnn.detailsaho.customevents-1.0.0.jar"/>
+      <plugin name="assts.mntnn.solidaritypaymentform.customevents" path="../../ASSETS/management/assts.mntnn.solidaritypaymentform.customevents-1.0.0.jar"/>
+      <plugin name="assts.mntnn.detailfund.customevents" path="../../ASSETS/management/assts.mntnn.detailfund.customevents-1.0.0.jar"/>
+      <plugin name="assts.mntnn.fund.customevents" path="../../ASSETS/management/assts.mntnn.fund.customevents-1.0.0.jar"/>
+    </plan>
+    <plan id="ASSETS-CLOUD-QUERIES-SERVICES" reloadable="true">
+      <plugin name="assts.qerys.paymentdetailform.services" path="../../ASSETS/querys/assts.qerys.paymentdetailform.services-1.0.0.jar"/>
+      <plugin name="assts.qerys.querygeneralinformationmain.services" path="../../ASSETS/querys/assts.qerys.querygeneralinformationmain.services-1.0.0.jar"/>
+      <plugin name="assts.qerys.debitorderprocessinglog.services" path="../../ASSETS/querys/assts.qerys.debitorderprocessinglog.services-1.0.0.jar"/>
+    </plan>
+    <plan id="ASSETS-CLOUD-QUERIES" reloadable="true">
+      <plugin name="assts.qerys.paymentdetailform.customevents" path="../../ASSETS/querys/assts.qerys.paymentdetailform.customevents-1.0.0.jar"/>
+      <plugin name="assts.qerys.querygeneralinformationmain.customevents" path="../../ASSETS/querys/assts.qerys.querygeneralinformationmain.customevents-1.0.0.jar"/>
+      <plugin name="assts.qerys.debitorderprocessinglog.customevents" path="../../ASSETS/querys/assts.qerys.debitorderprocessinglog.customevents-1.0.0.jar"/>
+    </plan>
+    <plan id="ASSETS-CLOUD-QUERIES-DOC-CUSTOM" reloadable="true">
+      <plugin name="assts.qerys.querydocuments.customevents" path="../../ASSETS/querys/assts.qerys.querydocuments.customevents-1.0.0.jar"/>
+      <plugin name="assts.qerys.querydocumentsgriddetail.customevents" path="../../ASSETS/querys/assts.qerys.querydocumentsgriddetail.customevents-1.0.0.jar"/>
+    </plan>
+    <plan id="ASSETS-CLOUD-QUERIES-DOC-SERVICES" reloadable="true">
+      <plugin name="assts.qerys.querydocuments.services" path="../../ASSETS/querys/assts.qerys.querydocuments.services-1.0.0.jar"/>
+      <plugin name="assts.qerys.querydocumentsgriddetail.services" path="../../ASSETS/querys/assts.qerys.querydocumentsgriddetail.services-1.0.0.jar"/>
+    </plan>
+    <plan id="ASSETS-CLOUD-TRANSACTIONS-SERVICES" reloadable="true">
+      <plugin name="assts.trnsc.applyclause.services" path="../../ASSETS/transactions/assts.trnsc.applyclause.services-1.0.0.jar"/>
+      <plugin name="assts.trnsc.loanrefinancing.services" path="../../ASSETS/transactions/assts.trnsc.loanrefinancing.services-1.0.0.jar"/>
+      <plugin name="assts.trnsc.valuedatemain.services" path="../../ASSETS/transactions/assts.trnsc.valuedatemain.services-1.0.0.jar"/>
+      <plugin name="assts.trnsc.valuedateform.services" path="../../ASSETS/transactions/assts.trnsc.valuedateform.services-1.0.0.jar"/>
+      <plugin name="assts.trnsc.paymentsmain.services" path="../../ASSETS/transactions/assts.trnsc.paymentsmain.services-1.0.0.jar"/>
+      <plugin name="assts.trnsc.prioritiespaymentsmodal.services" path="../../ASSETS/transactions/assts.trnsc.prioritiespaymentsmodal.services-1.0.0.jar"/>
+      <plugin name="assts.trnsc.bankaccountslistform.services" path="../../ASSETS/transactions/assts.trnsc.bankaccountslistform.services-1.0.0.jar"/>
+      <plugin name="assts.trnsc.leftoverpaymentsmodal.services" path="../../ASSETS/transactions/assts.trnsc.leftoverpaymentsmodal.services-1.0.0.jar"/>
+      <plugin name="assts.trnsc.quotadetailpaymentsmodal.services" path="../../ASSETS/transactions/assts.trnsc.quotadetailpaymentsmodal.services-1.0.0.jar"/>
+      <plugin name="assts.trnsc.refinanceloansfilter.services" path="../../ASSETS/transactions/assts.trnsc.refinanceloansfilter.services-1.0.0.jar"/>
+      <plugin name="assts.trnsc.loandisbursementmain.services" path="../../ASSETS/transactions/assts.trnsc.loandisbursementmain.services-1.0.0.jar"/>
+      <plugin name="assts.trnsc.paymentmodeform.services" path="../../ASSETS/transactions/assts.trnsc.paymentmodeform.services-1.0.0.jar"/>
+      <plugin name="assts.trnsc.condonationdetailform.services" path="../../ASSETS/transactions/assts.trnsc.condonationdetailform.services-1.0.0.jar"/>
+      <plugin name="assts.trnsc.bankaccountsmodal.services" path="../../ASSETS/transactions/assts.trnsc.bankaccountsmodal.services-1.0.0.jar"/>
+      <plugin name="assts.trnsc.negotiationpaymentsmodal.services" path="../../ASSETS/transactions/assts.trnsc.negotiationpaymentsmodal.services-1.0.0.jar"/>
+      <plugin name="assts.trnsc.grouppayment.services" path="../../ASSETS/transactions/assts.trnsc.grouppayment.services-1.0.0.jar"/>
+      <plugin name="assts.trnsc.uploadconciliationfile.services" path="../../ASSETS/transactions/assts.trnsc.uploadconciliationfile.services-1.0.0.jar"/>
+      <plugin name="assts.trnsc.manualconciliation.services" path="../../ASSETS/transactions/assts.trnsc.manualconciliation.services-1.0.0.jar"/>
+      <plugin name="assts.trnsc.voucherpaymentmail.services" path="../../ASSETS/transactions/assts.trnsc.voucherpaymentmail.services-1.0.0.jar"/>
+    </plan>
+    <plan id="ASSETS-CLOUD-TRANSACTIONS" reloadable="true">
+      <plugin name="assts.trnsc.applyclause.customevents" path="../../ASSETS/transactions/assts.trnsc.applyclause.customevents-1.0.0.jar"/>
+      <plugin name="assts.trnsc.loanrefinancing.customevents" path="../../ASSETS/transactions/assts.trnsc.loanrefinancing.customevents-1.0.0.jar"/>
+      <plugin name="assts.trnsc.valuedatemain.customevents" path="../../ASSETS/transactions/assts.trnsc.valuedatemain.customevents-1.0.0.jar"/>
+      <plugin name="assts.trnsc.valuedateform.customevents" path="../../ASSETS/transactions/assts.trnsc.valuedateform.customevents-1.0.0.jar"/>
+      <plugin name="assts.trnsc.paymentsmain.customevents" path="../../ASSETS/transactions/assts.trnsc.paymentsmain.customevents-1.0.0.jar"/>
+      <plugin name="assts.trnsc.prioritiespaymentsmodal.customevents" path="../../ASSETS/transactions/assts.trnsc.prioritiespaymentsmodal.customevents-1.0.0.jar"/>
+      <plugin name="assts.trnsc.bankaccountslistform.customevents" path="../../ASSETS/transactions/assts.trnsc.bankaccountslistform.customevents-1.0.0.jar"/>
+      <plugin name="assts.trnsc.leftoverpaymentsmodal.customevents" path="../../ASSETS/transactions/assts.trnsc.leftoverpaymentsmodal.customevents-1.0.0.jar"/>
+      <plugin name="assts.trnsc.quotadetailpaymentsmodal.customevents" path="../../ASSETS/transactions/assts.trnsc.quotadetailpaymentsmodal.customevents-1.0.0.jar"/>
+      <plugin name="assts.trnsc.refinanceloansfilter.customevents" path="../../ASSETS/transactions/assts.trnsc.refinanceloansfilter.customevents-1.0.0.jar"/>
+      <plugin name="assts.trnsc.loandisbursementmain.customevents" path="../../ASSETS/transactions/assts.trnsc.loandisbursementmain.customevents-1.0.0.jar"/>
+      <plugin name="assts.trnsc.paymentmodeform.customevents" path="../../ASSETS/transactions/assts.trnsc.paymentmodeform.customevents-1.0.0.jar"/>
+      <plugin name="assts.trnsc.condonationdetailform.customevents" path="../../ASSETS/transactions/assts.trnsc.condonationdetailform.customevents-1.0.0.jar"/>
+      <plugin name="assts.trnsc.bankaccountsmodal.customevents" path="../../ASSETS/transactions/assts.trnsc.bankaccountsmodal.customevents-1.0.0.jar"/>
+      <plugin name="assts.trnsc.negotiationpaymentsmodal.customevents" path="../../ASSETS/transactions/assts.trnsc.negotiationpaymentsmodal.customevents-1.0.0.jar"/>
+      <plugin name="assts.trnsc.grouppayment.customevents" path="../../ASSETS/transactions/assts.trnsc.grouppayment.customevents-1.0.0.jar"/>
+      <plugin name="assts.trnsc.uploadconciliationfile.customevents" path="../../ASSETS/transactions/assts.trnsc.uploadconciliationfile.customevents-1.0.0.jar"/>
+      <plugin name="assts.trnsc.manualconciliation.customevents" path="../../ASSETS/transactions/assts.trnsc.manualconciliation.customevents-1.0.0.jar"/>
+      <plugin name="assts.trnsc.voucherpaymentmail.customevents" path="../../ASSETS/transactions/assts.trnsc.voucherpaymentmail.customevents-1.0.0.jar"/>
+    </plan>
+    <plan id="ASSETS-CLOUD-REPORT" reloadable="true">
+      <plugin name="cobis-web-assets-reportes" path="../../ASSETS/reports/cobis-web-assets-reportes-1.0.0.jar"/>
+    </plan>
+    <plan id="ASSETS-CLOUD-SERVICES" reloadable="true">
+      <plugin name="cobis-web-assets-services" path="../../ASSETS/services/cobis-web-assets-services-1.0.0.jar"/>
+    </plan>
+    <plan id="PLATFORM-SIMULATOR" reloadable="true">
+      <plugin name="latfo.simul.loansimulator.services" path="../../SIMULATOR/plugins/latfo.simul.loansimulator.services-1.0.0.jar"/>
+      <plugin name="latfo.simul.loansimulator.customevents" path="../../SIMULATOR/plugins/latfo.simul.loansimulator.customevents-1.0.0.jar"/>
+      <plugin name="latfo.simul.loanitemsdetail.services" path="../../SIMULATOR/plugins/latfo.simul.loanitemsdetail.services-1.0.0.jar"/>
+      <plugin name="latfo.simul.loanitemsdetail.customevents" path="../../SIMULATOR/plugins/latfo.simul.loanitemsdetail.customevents-1.0.0.jar"/>
+    </plan>
+    <plan id="claim-task" reloadable="true">
+      <plugin name="claim-DTO" path="../../claims/plugins/cobiscorp.ecobis.businessprocess.crm.DTO-1.0.0.0.jar"/>
+      <plugin name="claim-Services" path="../../claims/plugins/cobiscorp.ecobis.businessprocess.crm.Service-1.0.0.0.jar"/>
+      <plugin name="latfo.claim.commons" path="../../claims/plugins/latfo.claim.commons-1.0.0.jar"/>
+      <plugin name="latfo.claim.tclaim.services" path="../../claims/plugins/latfo.claim.tclaim.services-1.0.0.jar"/>
+      <plugin name="latfo.claim.tclaim.customevents" path="../../claims/plugins/latfo.claim.tclaim.customevents-1.0.0.jar"/>
+      <plugin name="latfo.claim.claimsettlementdetailtask.services" path="../../claims/plugins/latfo.claim.claimsettlementdetailtask.services-1.0.0.jar"/>
+      <plugin name="latfo.claim.claimsettlementdetailtask.customevents" path="../../claims/plugins/latfo.claim.claimsettlementdetailtask.customevents-1.0.0.jar"/>
+      <plugin name="latfo.claim.tsearchclaimrequest.customevents" path="../../claims/plugins/latfo.claim.tsearchclaimrequest.customevents-1.0.0.jar"/>
+      <plugin name="latfo.claim.tsearchclaimrequest.services" path="../../claims/plugins/latfo.claim.tsearchclaimrequest.services-1.0.0.jar"/>
+      <plugin name="latfo.claim.tcategory.customevents" path="../../claims/plugins/latfo.claim.tcategory.customevents-1.0.0.jar"/>
+      <plugin name="latfo.claim.tcategory.services" path="../../claims/plugins/latfo.claim.tcategory.services-1.0.0.jar"/>
+      <plugin name="latfo.claim.tsubcategory.customevents" path="../../claims/plugins/latfo.claim.tsubcategory.customevents-1.0.0.jar"/>
+      <plugin name="latfo.claim.tsubcategory.services" path="../../claims/plugins/latfo.claim.tsubcategory.services-1.0.0.jar"/>
+      <plugin name="latfo.claim.tsubcategorydetail.customevents" path="../../claims/plugins/latfo.claim.tsubcategorydetail.customevents-1.0.0.jar"/>
+      <plugin name="latfo.claim.tsubcategorydetail.services" path="../../claims/plugins/latfo.claim.tsubcategorydetail.services-1.0.0.jar"/>
+      <plugin name="latfo.claim.report" path="../../claims/plugins/latfo.claim.report-1.0.0.jar"/>
+      <plugin name="latfo.claim.alert" path="../../claims/plugins/latfo.claim.alert-1.0.0.jar"/>
+    </plan>
+    <plan id="VCCWeb-external-customer" reloadable="true">
+      <plugin name="cobis-web-clientviewer-external-services" path="../../clientviewer/plugins/cobis-web-clientviewer-external-services-1.0.0.jar"/>
+      <plugin name="cobis-web-clientviewer-external-services" path="../../clientviewer/plugins/cobis-web-clientviewer-external-services-1.0.0.jar"/>
+    </plan>
+    <plan id="ADMIN-PROCESS" reloadable="true">
+      <plugin name="System.Configuration.DTO" path="../../ADMIN/plugins/COBISCorp.eCOBIS.SystemConfiguration.DTO-2.0.0.0.jar"/>
+      <plugin name="System.Configuration.Service" path="../../ADMIN/plugins/COBISCorp.eCOBIS.SystemConfiguration.Service-2.0.0.0.jar"/>
+    </plan>
+    <plan id="COMEXT-PROCESS" reloadable="true">
+      <plugin name="COBISCorp.eCOBIS.Comext.DTO" path="../../COMEXT/plugins/COBISCorp.eCOBIS.Comext.DTO-2.0.0.0.jar"/>
+      <plugin name="COBISCorp.eCOBIS.Comext.Service" path="../../COMEXT/plugins/COBISCorp.eCOBIS.Comext.Query.Service-2.0.0.0.jar"/>
+    </plan>
+    <plan id="LOAN-REPORT" reloadable="true">
+      <plugin name="Loan.Report.DTO" path="../../BUSINESSPROCESS/plugins/COBISCorp.eCOBIS.Loan.Report.DTO-1.0.0.0.jar"/>
+      <plugin name="Loan.Report.Service" path="../../BUSINESSPROCESS/plugins/COBISCorp.eCOBIS.Loan.Report.Service-1.0.0.0.jar"/>
+    </plan>
+    <plan id="CREDIT-REPORT" reloadable="true">
+      <plugin name="Credit.Report.DTO" path="../../BUSINESSPROCESS/plugins/COBISCorp.eCOBIS.Credit.Report.DTO-1.0.0.0.jar"/>
+      <plugin name="Credit.Report.Service" path="../../BUSINESSPROCESS/plugins/COBISCorp.eCOBIS.Credit.Report.Service-1.0.0.0.jar"/>
+    </plan>
+    <plan id="CREDIT-COST-REPORT" reloadable="true">
+      <plugin name="Credit.Report.Cost.DTO" path="../../BUSINESSPROCESS/plugins/COBISCorp.eCOBIS.Credit.Report.Cost.DTO-1.0.0.0.jar"/>
+      <plugin name="Credit.Report.Cost.Service" path="../../BUSINESSPROCESS/plugins/COBISCorp.eCOBIS.Credit.Report.Cost.Service-1.0.0.0.jar"/>
+    </plan>
+    <plan id="CREDIT-REPORT-VALIDATION" reloadable="true">
+      <plugin name="Credit.Report.Validation.DTO" path="../../BUSINESSPROCESS/plugins/COBISCorp.eCOBIS.Credit.Report.Validation.DTO-1.0.0.0.jar"/>
+      <plugin name="Credit.Report.Validation.Service" path="../../BUSINESSPROCESS/plugins/COBISCorp.eCOBIS.Credit.Report.Validation.Service-1.0.0.0.jar"/>
+    </plan>
+    <plan id="CREDIT-FACILITY" reloadable="true">
+      <plugin name="COBISCorp.eCOBIS.CreditFacility.DTO" path="../../BUSINESSPROCESS/plugins/COBISCorp.eCOBIS.CreditFacility.DTO-1.0.0.0.jar"/>
+      <plugin name="COBISCorp.eCOBIS.CreditFacility.Service" path="../../BUSINESSPROCESS/plugins/COBISCorp.eCOBIS.CreditFacility.Service-1.0.0.0.jar"/>
+    </plan>
+    <plan id="BUSINESS-PROCESS-DOMAINS" reloadable="true">
+      <plugin name="busin.domains" path="../../BUSINESSPROCESS/plugins/busin.domains-1.0.0.jar"/>
+    </plan>
+    <plan id="BUSINESS-PROCESS-FLCRE-COMMONS" reloadable="true">
+      <plugin name="busin.flcre.commons" path="../../BUSINESSPROCESS/plugins/busin.flcre.commons-1.0.0.jar"/>
+    </plan>
+    <plan id="cobis-web-busin-services" reloadable="true">
+      <plugin name="cobis-web-busin-services" path="../../BUSINESSPROCESS/plugins/cobis-web-busin-services-1.0.0.jar"/>
+    </plan>
+    <plan id="BUSINESS-PROCESS-REPORTS" reloadable="true">
+      <plugin name="busin.reports" path="../../BUSINESSPROCESS/plugins/cobis-business-process-web-reports-1.0.0.jar"/>
+    </plan>
+    <plan id="MakerAndChecker-domains" reloadable="true">
+      <plugin name="mkchk.domains" path="../../makerandchecker/plugins/mkchk.domains-1.0.0.jar"/>
+    </plan>
+    <plan id="MakerAndChecker-commons" reloadable="true">
+      <plugin name="mkchk.admws.commons" path="../../makerandchecker/plugins/mkchk.admws.commons-1.0.0.jar"/>
+    </plan>
+    <plan id="MakerAndChecker-task" reloadable="true">
+      <plugin name="mkchk.admws.tareatransaccionesdenegocio.services" path="../../makerandchecker/plugins/mkchk.admws.tareatransaccionesdenegocio.services-1.0.0.jar"/>
+      <plugin name="mkchk.admws.tareatransaccionesdenegocio.customevents" path="../../makerandchecker/plugins/mkchk.admws.tareatransaccionesdenegocio.customevents-1.0.0.jar"/>
+    </plan>
+    <plan id="BusquedaOperaciones" reloadable="true">
+      <plugin name="COBISCorp.eCOBIS.FNA.Afiliados.DTO" path="../plugins/Talleres/COBISCorp.eCOBIS.FNA.Afiliados.DTO-1.0.0.0.jar"/>
+      <plugin name="COBISCorp.eCOBIS.FNA.Afiliados.Service" path="../plugins/Talleres/COBISCorp.eCOBIS.FNA.Afiliados.Service-1.0.0.0.jar"/>
+    </plan>
+    <plan id="BusquedaClientes" reloadable="true">
+      <plugin name="clnts.domains" path="../plugins/Talleres/CLNTS/clnts.domains-1.0.0.jar"/>
+      <plugin name="clnts.jvier.cabecerabusquedacliente.customevents" path="../plugins/Talleres/CLNTS/clnts.jvier.cabecerabusquedacliente.customevents-1.0.0.jar"/>
+      <plugin name="clnts.jvier.cabecerabusquedacliente.services" path="../plugins/Talleres/CLNTS/clnts.jvier.cabecerabusquedacliente.services-1.0.0.jar"/>
+    </plan>
+    <plan id="SearchOperation" reloadable="true">
+      <plugin name="cobis-web-loans-operation-services" path="../plugins/LOANS/cobis-web-loans-operation-services-1.0.0.jar"/>
+    </plan>
+    <plan id="PaymentOperation" reloadable="true">
+      <plugin name="cobis-web-lons-paymentOperation-services" path="../plugins/LOANS/cobis-web-lons-paymentOperation-services-1.0.0.jar"/>
+    </plan>
+    <plan id="DetailOperation" reloadable="true">
+      <plugin name="cobis-web-loans-detailOperation-services" path="../plugins/LOANS/cobis-web-loans-detailOperation-services-1.0.0.jar"/>
+    </plan>
+    <plan id="BusGRO" reloadable="true">
+      <plugin name="clgro.bsgro.busqcli.customevents" path="../plugins/Talleres/CLNTS/Gelen/clgro.bsgro.busqcli.customevents-1.0.0.jar"/>
+      <plugin name="clgro.bsgro.busqcli.services" path="../plugins/Talleres/CLNTS/Gelen/clgro.bsgro.busqcli.services-1.0.0.jar"/>
+      <plugin name="clgro.domains" path="../plugins/Talleres/CLNTS/Gelen/clgro.domains-1.0.0.jar"/>
+    </plan>
+    <plan id="LoanCommons" reloadable="true">
+      <plugin name="lnsds.domains" path="../plugins/LOANS/commons/lnsds.domains-1.0.0.jar"/>
+    </plan>
+    <plan id="BusOpGRO" reloadable="true">
+      <plugin name="lnsds.qrsds.operationform.customevents" path="../plugins/LOANS/BusquedaOperacion/lnsds.qrsds.operationform.customevents-1.0.0.jar"/>
+      <plugin name="lnsds.qrsds.operationform.services" path="../plugins/LOANS/BusquedaOperacion/lnsds.qrsds.operationform.services-1.0.0.jar"/>
+    </plan>
+    <plan id="DetOpe" reloadable="true">
+      <plugin name="lnsds.qrsds.amortizationdtoform.customevents" path="../plugins/LOANS/DetalleOperacion/lnsds.qrsds.amortizationdtoform.customevents-1.0.0.jar"/>
+      <plugin name="lnsds.qrsds.debtorsdtoform.customevents" path="../plugins/LOANS/DetalleOperacion/lnsds.qrsds.debtorsdtoform.customevents-1.0.0.jar"/>
+      <plugin name="lnsds.qrsds.guaranteesform.customevents" path="../plugins/LOANS/DetalleOperacion/lnsds.qrsds.guaranteesform.customevents-1.0.0.jar"/>
+      <plugin name="lnsds.qrsds.operationdetailform.customevents" path="../plugins/LOANS/DetalleOperacion/lnsds.qrsds.operationdetailform.customevents-1.0.0.jar"/>
+      <plugin name="lnsds.qrsds.operationdetailfull.customevents" path="../plugins/LOANS/DetalleOperacion/lnsds.qrsds.operationdetailfull.customevents-1.0.0.jar"/>
+      <plugin name="lnsds.qrsds.generalinformation.customevents" path="../plugins/LOANS/DetalleOperacion/lnsds.qrsds.generalinformation.customevents-1.0.0.jar"/>
+    </plan>
+    <plan id="DetOpeServ" reloadable="true">
+      <plugin name="lnsds.qrsds.debtorsdtoform.services" path="../plugins/LOANS/DetalleOperacion/lnsds.qrsds.debtorsdtoform.services-1.0.0.jar"/>
+      <plugin name="lnsds.qrsds.amortizationdtoform.services" path="../plugins/LOANS/DetalleOperacion/lnsds.qrsds.amortizationdtoform.services-1.0.0.jar"/>
+      <plugin name="lnsds.qrsds.guaranteesform.services" path="../plugins/LOANS/DetalleOperacion/lnsds.qrsds.guaranteesform.services-1.0.0.jar"/>
+      <plugin name="lnsds.qrsds.operationdetailform.services" path="../plugins/LOANS/DetalleOperacion/lnsds.qrsds.operationdetailform.services-1.0.0.jar"/>
+      <plugin name="lnsds.qrsds.operationdetailfull.services" path="../plugins/LOANS/DetalleOperacion/lnsds.qrsds.operationdetailfull.services-1.0.0.jar"/>
+      <plugin name="lnsds.qrsds.generalinformation.services" path="../plugins/LOANS/DetalleOperacion/lnsds.qrsds.generalinformation.services-1.0.0.jar"/>
+    </plan>
+    <plan id="PaymentfullDSG" reloadable="true">
+      <plugin name="lnsds.qrsds.paymentsfull.customevents" path="../plugins/LOANS/DetalleOperacion/lnsds.qrsds.paymentsfull.customevents-1.0.0.jar"/>
+      <plugin name="lnsds.qrsds.paymentsfull.services" path="../plugins/LOANS/DetalleOperacion/lnsds.qrsds.paymentsfull.services-1.0.0.jar"/>
+    </plan>
+    <plan id="final" reloadable="true">
+      <plugin name="cts-final-plugin" path="../plugins/cts-final-plugin-1.0.0.jar"/>
+    </plan>
+    <plan id="capacitacion" reloadable="true">
+      <plugin name="cobis-reports-smo" path="../../Capacitacion/plugins/cobis-reports-smo-0.0.1.jar"/>
+      <plugin name="cobis-reports-iyu" path="../../Capacitacion/plugins/cobis-reports-iyu-0.0.1.jar"/>
+      <plugin name="cobis-reports-achp" path="../../Capacitacion/plugins/cobis-reports-achp-0.0.1.jar"/>
+      <plugin name="cobis-reports-tba" path="../../Capacitacion/plugins/cobis-reports-tba-0.0.1.jar"/>
+      <plugin name="cobis-reports-pxsg" path="../../Capacitacion/plugins/cobis-reports-pxsg-0.0.1.jar"/>
+      <plugin name="cobis-reports-jsa" path="../../Capacitacion/plugins/cobis-reports-jsa-0.0.1.jar"/>
+      <plugin name="cobis-reports-BES" path="../../Capacitacion/plugins/cobis-report-BES-0.0.1.jar"/>
+      <plugin name="cobis-reports-rve" path="../../Capacitacion/plugins/cobis-reports-rve-0.0.1.jar"/>
+      <plugin name="cobis-reports-pov" path="../../Capacitacion/plugins/cobis-Reports-POV-0.0.1.jar"/>
+      <plugin name="cobis-reports-jru" path="../../Capacitacion/plugins/cobis-report-jru-0.0.1.jar"/>
+      <plugin name="cobis-reports-mta" path="../../Capacitacion/plugins/cobis-report-mta-0.0.1.jar"/>
+      <plugin name="cobis-reports-fbo" path="../../Capacitacion/plugins/cobis-report-fbo-0.0.1.jar"/>
+      <plugin name="cobis-reports-wba" path="../../Capacitacion/plugins/cobis-report-wba-0.0.1.jar"/>
+      <plugin name="cobis-reports-lgu" path="../../Capacitacion/plugins/cobis-report-lgu-0.0.1.jar"/>
+      <plugin name="cobis-reports-smo2" path="../../Capacitacion/plugins/cobis-reports2-smo-0.0.1.jar"/>
+      <plugin name="cobis-reports-gvi" path="../../Capacitacion/plugins/cobis-report-gvi-0.0.1.jar"/>
+    </plan>
+    <plan id="taller-errores-domains" reloadable="true">
+      <plugin name="tlllr.domains" path="../../LOANS-GROUP/plugins/tlllr.domains-1.0.0.jar"/>
+    </plan>
+    <plan id="taller-errores-customevents" reloadable="true">
+      <plugin name="tlllr.prdct.productform.customevents" path="../../LOANS-GROUP/plugins/tlllr.prdct.productform.customevents-1.0.0.jar"/>
+    </plan>
+    <plan id="taller-errores-services" reloadable="true">
+      <plugin name="tlllr.prdct.productform.services" path="../../LOANS-GROUP/plugins/tlllr.prdct.productform.services-1.0.0.jar"/>
+    </plan>
+    <plan id="COLLATERAL-WEB-SERVICES" reloadable="true">
+      <plugin name="cobis-collateral-web-service" path="../../COLLATERAL/plugins/cobis-collateral-web-service-1.0.0.jar"/>
+    </plan>
+    <plan id="wrrnt-commons" reloadable="true">
+      <plugin name="wrrnt.commons" path="../plugins/wrrnt/commons/wrrnt.commons-1.0.0.jar"/>
+      <plugin name="wrrnt.domains" path="../plugins/wrrnt/commons/wrrnt.domains-1.0.0.jar"/>
+    </plan>
+    <plan id="wrrnt-mantenaince" reloadable="true">
+      <plugin name="wrrnt.mntnn.liberation.customevents" path="../plugins/wrrnt/mantenaince/wrrnt.mntnn.liberation.customevents-1.0.0.jar"/>
+      <plugin name="wrrnt.mntnn.liberation.services" path="../plugins/wrrnt/mantenaince/wrrnt.mntnn.liberation.services-1.0.0.jar"/>
+      <plugin name="wrrnt.mntnn.changevalue.customevents" path="../plugins/wrrnt/mantenaince/wrrnt.mntnn.changevalue.customevents-1.0.0.jar"/>
+      <plugin name="wrrnt.mntnn.changevalue.services" path="../plugins/wrrnt/mantenaince/wrrnt.mntnn.changevalue.services-1.0.0.jar"/>
+    </plan>
+    <plan id="BUSINESS-PROCESS-CATEGORY" reloadable="true">
+      <plugin name="busin.flcre.category.services" path="../../BUSINESSPROCESS/plugins/busin.flcre.category.services-1.0.0.jar"/>
+      <plugin name="busin.flcre.category.customevents" path="../../BUSINESSPROCESS/plugins/busin.flcre.category.customevents-1.0.0.jar"/>
+    </plan>
+    <plan id="BUSINESS-PROCESS-WARRANTIES-CREATION" reloadable="true">
+      <plugin name="busin.flcre.warrantiescreation.services" path="../../BUSINESSPROCESS/plugins/busin.flcre.warrantiescreation.services-1.0.0.jar"/>
+      <plugin name="busin.flcre.warrantiescreation.customevents" path="../../BUSINESSPROCESS/plugins/busin.flcre.warrantiescreation.customevents-1.0.0.jar"/>
+    </plan>
+    <plan id="BUSINESS-PROCESS-REJECTED-APPLICATION" reloadable="true">
+      <plugin name="busin.flcre.rejectedapplication.services" path="../../BUSINESSPROCESS/plugins/busin.flcre.rejectedapplication.services-1.0.0.jar"/>
+      <plugin name="busin.flcre.rejectedapplication.customevents" path="../../BUSINESSPROCESS/plugins/busin.flcre.rejectedapplication.customevents-1.0.0.jar"/>
+    </plan>
+    <plan id="BUSINESS-PROCESS-PRINTING-ACTIVITY" reloadable="true">
+      <plugin name="busin.flcre.printingactivity.services" path="../../BUSINESSPROCESS/plugins/busin.flcre.printingactivity.services-1.0.0.jar"/>
+      <plugin name="busin.flcre.printingactivity.customevents" path="../../BUSINESSPROCESS/plugins/busin.flcre.printingactivity.customevents-1.0.0.jar"/>
+      <plugin name="busin.flcre.parameterprinttask.services" path="../../BUSINESSPROCESS/plugins/busin.flcre.parameterprinttask.services-1.0.0.jar"/>
+      <plugin name="busin.flcre.parameterprinttask.customevents" path="../../BUSINESSPROCESS/plugins/busin.flcre.parameterprinttask.customevents-1.0.0.jar"/>
+    </plan>
+    <plan id="cloud-sofom-interface-customers" reloadable="true">
+      <plugin name="cloud.sofom.customers.utils" path="../../CREDIT/integration/plugins/cloud.sofom.customers.utils-1.0.0.jar"/>
+      <plugin name="cloud.sofom.referencedata.party" path="../../CREDIT/integration/plugins/cloud.sofom.referencedata.party-1.0.0.jar"/>
+      <plugin name="cloud.sofom.referencedata.party.impl" path="../../CREDIT/integration/plugins/cloud.sofom.referencedata.party.impl-1.0.0.jar"/>
+      <plugin name="cloud.sofom.salesservice.customermanagement" path="../../CREDIT/integration/plugins/cloud.sofom.salesservice.customermanagement-1.0.0.jar"/>
+      <plugin name="cloud.sofom.salesservice.customermanagement.impl" path="../../CREDIT/integration/plugins/cloud.sofom.salesservice.customermanagement.impl-1.0.0.jar"/>
+    </plan>
+    <plan id="cloud-sofom-interface-direct-debits-batch" reloadable="true">
+      <plugin name="cloud.sofom.operationsexecution.tradebanking.batch" path="../../CREDIT/integration/plugins/cloud.sofom.operationsexecution.tradebanking.batch-1.0.0.jar"/>
+    </plan>
+    <plan id="cloud-sofom-interface-disbursements" reloadable="true">
+      <plugin name="cloud.sofom.operationsexecution.operationalservices" path="../../CREDIT/integration/plugins/cloud.sofom.operationsexecution.operationalservices-1.0.0.jar"/>
+      <plugin name="cloud.sofom.operationsexecution.operationalservices.impl" path="../../CREDIT/integration/plugins/cloud.sofom.operationsexecution.operationalservices.impl-1.0.0.jar"/>
+      <plugin name="cloud.sofom.operationsexecution.operationalservices.batch" path="../../CREDIT/integration/plugins/cloud.sofom.operationsexecution.operationalservices.batch-1.0.0.jar"/>
+      <plugin name="cloud.sofom.operationsexecution.operationalservicescheck.batch" path="../../CREDIT/integration/plugins/cloud.sofom.operationsexecution.operationalservicescheck.batch-1.0.0.jar"/>
+    </plan>
+    <plan id="cloud-sofom-interface-payments-rest" reloadable="true">
+      <plugin name="cloud.sofom.operationsexecution.payments" path="../../CREDIT/integration/plugins/cloud.sofom.operationsexecution.payments-1.0.0.jar"/>
+    </plan>
+    <plan id="INTEGRATION-UTILS" reloadable="true">
+      <plugin name="cobis-cobiscloudburo-util" path="../../CREDIT/integration/plugins/cobis-cobiscloudburo-util-1.0.0.jar"/>
+      <plugin name="cobis-cobiscloudburo-zip-util" path="../../CREDIT/integration/plugins/cobis-cobiscloudburo-zip-util-1.0.0.jar"/>
+    </plan>
+    <plan id="INTEGRATION-BURO" reloadable="true">
+      <plugin name="cobis-cobiscloudburo-bsl" path="../../CREDIT/integration/plugins/cobis-cobiscloudburo-bsl-1.0.0.jar"/>
+      <plugin name="cobis-cobiscloudburo-bsl-impl" path="../../CREDIT/integration/plugins/cobis-cobiscloudburo-bsl-impl-1.0.0.jar"/>
+    </plan>
+    <plan id="INTEGRATION-SANTANDER" reloadable="true">
+      <plugin name="cobis-cobiscloudsantander-bsl" path="../../CREDIT/integration/plugins/cobis-cobiscloudsantander-bsl-1.0.0.jar"/>
+      <plugin name="cobis-cobiscloudsantander-bsl-impl" path="../../CREDIT/integration/plugins/cobis-cobiscloudsantander-bsl-impl-1.0.0.jar"/>
+    </plan>
+    <plan id="INTEGRATION-PARTY" reloadable="true">
+      <plugin name="cobis-cobiscloudparty-bsl" path="../../CREDIT/integration/plugins/cobis-cobiscloudparty-bsl-1.0.0.jar"/>
+      <plugin name="cobis-cobiscloudparty-bsl-impl" path="../../CREDIT/integration/plugins/cobis-cobiscloudparty-bsl-impl-1.0.0.jar"/>
+    </plan>
+    <plan id="INTEGRATION-ORCHESTRATION" reloadable="true">
+      <plugin name="cobis-cobiscloudorchestration-bsl" path="../../CREDIT/integration/plugins/cobis-cobiscloudorchestration-bsl-1.0.0.jar"/>
+      <plugin name="cobis-cobiscloudparty-bsl-impl" path="../../CREDIT/integration/plugins/cobis-cobiscloudorchestration-bsl-impl-1.0.0.jar"/>
+      <plugin name="cobis-cobiscloudorchestration-rest" path="../../CREDIT/integration/plugins/cobis-cobiscloudorchestration-rest-1.0.0.jar"/>
+    </plan>
+    <plan id="cloud-sofom-interface-customers-test" reloadable="true">
+      <plugin name="cloud.sofom.customers.test" path="../../cloud-sofom-interfaces/plugins/cloud.sofom.customers.test-1.0.0.jar"/>
+      <plugin name="cloud.sofom.customers.test.impl" path="../../cloud-sofom-interfaces/plugins/cloud.sofom.customers.test.impl-1.0.0.jar"/>
+    </plan>
+    <plan id="cloud-sofom-interface-customers-test-rest" reloadable="true">
+      <plugin name="cloud.sofom.customers.test.rest" path="../../cloud-sofom-interfaces/plugins/cloud.sofom.customers.test.rest-1.0.0.jar"/>
+    </plan>
+    <plan id="cloud-sofom-interface-payments" reloadable="true">
+      <plugin name="cobis-sofompayments-bsl" path="../../cloud-sofom-interfaces/plugins/cobis-sofompayments-bsl-1.0.0.jar"/>
+      <plugin name="cobis-sofompayments-bsl-impl" path="../../cloud-sofom-interfaces/plugins/cobis-sofompayments-bsl-impl-1.0.0.jar"/>
+    </plan>
+    <plan id="cloud-sofom-interface-regulationscompliance-batch" reloadable="true">
+      <plugin name="cloud.sofom.riskcompliance.regulationscompliance.batch" path="../../cloud-sofom-interfaces/plugins/cloud.sofom.riskcompliance.regulationscompliance.batch-1.0.0.jar"/>
+    </plan>
+    <plan id="cobis-cobiscloudsantander-bsl-plan" reloadable="true">
+      <plugin name="cobis-cobiscloudsantander-bsl-plan" path="../../CREDIT/integration/plugins/cobis-cobiscloudsantander-bsl-1.0.0.jar"/>
+    </plan>
+    <plan id="cobis-cobiscloudsantander-bsl-impl-plan" reloadable="true">
+      <plugin name="cobis-cobiscloudsantander-bsl-impl-plan" path="../../CREDIT/integration/plugins/cobis-cobiscloudsantander-bsl-impl-1.0.0.jar"/>
+    </plan>
+    <plan id="cobis-cobiscloudburo-bsl-plan" reloadable="true">
+      <plugin name="cobis-cobiscloudburo-bsl-plan" path="../../CREDIT/integration/plugins/cobis-cobiscloudburo-bsl-1.0.0.jar"/>
+    </plan>
+    <plan id="cobis-cobiscloudburo-bsl-impl-plan" reloadable="true">
+      <plugin name="cobis-cobiscloudburo-bsl-impl-plan" path="../../CREDIT/integration/plugins/cobis-cobiscloudburo-bsl-impl-1.0.0.jar"/>
+    </plan>
+    <plan id="cobis-cobiscloudburo-util-plan" reloadable="true">
+      <plugin name="cobis-cobiscloudburo-util-plan" path="../../CREDIT/integration/plugins/cobis-cobiscloudburo-util-1.0.0.jar"/>
+    </plan>
+    <plan id="cobis-cobiscloudburo-util-zip-plan" reloadable="true">
+      <plugin name="cobis-cobiscloudburo-util-zip-plan" path="../../CREDIT/integration/plugins/cobis-cobiscloudburo-zip-util-1.0.0.jar"/>
+    </plan>
+    <plan id="cobis-cobiscloudparty-bsl-plan" reloadable="true">
+      <plugin name="cobis-cobiscloudparty-bsl-plan" path="../../CREDIT/integration/plugins/cobis-cobiscloudparty-bsl-1.0.0.jar"/>
+    </plan>
+    <plan id="cobis-cobiscloudparty-bsl-impl-plan" reloadable="true">
+      <plugin name="cobis-cobiscloudparty-bsl-impl-plan" path="../../CREDIT/integration/plugins/cobis-cobiscloudparty-bsl-impl-1.0.0.jar"/>
+    </plan>
+    <plan id="cobis-cobiscloudorchestration-bsl-plan" reloadable="true">
+      <plugin name="cobis-cobiscloudorchestration-bsl" path="../../CREDIT/integration/plugins/cobis-cobiscloudorchestration-bsl-1.0.0.jar"/>
+    </plan>
+    <plan id="cobis-cobiscloudorchestration-bsl-impl-plan" reloadable="true">
+      <plugin name="cobis-cobiscloudorchestration-bsl-impl" path="../../CREDIT/integration/plugins/cobis-cobiscloudorchestration-bsl-impl-1.0.0.jar"/>
+    </plan>
+    <plan id="cobis-cobiscloudorchestration-rest-plan" reloadable="true">
+      <plugin name="cobis-cobiscloudorchestration-rest" path="../../CREDIT/integration/plugins/cobis-cobiscloudorchestration-rest-1.0.0.jar"/>
+    </plan>
+    <plan id="loans-group-domains" reloadable="true">
+      <plugin name="loans-group.domains" path="../../LOANS-GROUP/plugins/loans.domains-1.0.0.jar"/>
+    </plan>
+    <plan id="loans-group-customevents" reloadable="true">
+      <plugin name="loans-group.groupcomposite.customevents" path="../../LOANS-GROUP/plugins/loans.group.groupcomposite.customevents-1.0.0.jar"/>
+      <plugin name="loans.group.memberpoppupform.customevents" path="../../LOANS-GROUP/plugins/loans.group.memberpoppupform.customevents-1.0.0.jar"/>
+      <plugin name="loans.group.reportsettlementsheet.customevents" path="../../LOANS-GROUP/plugins/loans.group.reportsettlementsheet.customevents-1.0.0.jar"/>
+      <plugin name="loans.group.reportgroupaccountstatement.customevents" path="../../LOANS-GROUP/plugins/loans.group.reportgroupaccountstatement.customevents-1.0.0.jar"/>
+      <plugin name="cobis-loans-process-web-reports" path="../../LOANS-GROUP/plugins/cobis-loans-process-web-reports-1.0.0.jar"/>
+      <plugin name="loans.group.scanneddocuments.customevents" path="../../LOANS-GROUP/plugins/loans.group.scanneddocuments.customevents-1.0.0.jar"/>
+      <plugin name="loans.group.scanneddocumentsdetail.customevents" path="../../LOANS-GROUP/plugins/loans.group.scanneddocumentsdetail.customevents-1.0.0.jar"/>
+    </plan>
+    <plan id="loans-group-services" reloadable="true">
+      <plugin name="loans.group.memberpoppupform.services" path="../../LOANS-GROUP/plugins/loans.group.memberpoppupform.services-1.0.0.jar"/>
+      <plugin name="loans.group.groupcomposite.services" path="../../LOANS-GROUP/plugins/loans.group.groupcomposite.services-1.0.0.jar"/>
+      <plugin name="loans.group.reportgroupaccountstatement.services" path="../../LOANS-GROUP/plugins/loans.group.reportgroupaccountstatement.services-1.0.0.jar"/>
+      <plugin name="loans.group.reportsettlementsheet.services" path="../../LOANS-GROUP/plugins/loans.group.reportsettlementsheet.services-1.0.0.jar"/>
+      <plugin name="loans.group.scanneddocuments.services" path="../../LOANS-GROUP/plugins/loans.group.scanneddocuments.services-1.0.0.jar"/>
+      <plugin name="loans.group.scanneddocumentsdetail.services" path="../../LOANS-GROUP/plugins/loans.group.scanneddocumentsdetail.services-1.0.0.jar"/>
+    </plan>
+    <plan id="cobis-cloud-mobile-orchestration-rest" reloadable="true">
+      <plugin name="cobis-cloud-mobile-orchestration-rest" path="../../CLOUD-MOBILE/plugins/cobis-cloud-orch-rest-1.0.0.jar"/>
+    </plan>
+    <plan id="cobis-cobiscloudsynchronization-util-plan" reloadable="true">
+      <plugin name="cobis-cobiscloudsynchronization-util" path="../../CLOUD-MOBILE/plugins/cobis-cobiscloudsynchronization-util-1.0.0.jar"/>
+    </plan>
+    <plan id="cobis-cobiscloudsynchronization-bsl-plan" reloadable="true">
+      <plugin name="cobis-cobiscloudsynchronization-bsl" path="../../CLOUD-MOBILE/plugins/cobis-cobiscloudsynchronization-bsl-1.0.0.jar"/>
+    </plan>
+    <plan id="cobis-cobiscloudsynchronization-bsl-impl-plan" reloadable="true">
+      <plugin name="cobis-cobiscloudsynchronization-bsl-impl" path="../../CLOUD-MOBILE/plugins/cobis-cobiscloudsynchronization-bsl-impl-1.0.0.jar"/>
+    </plan>
+    <plan id="cobis-cobiscloudsynchronization-rest-plan" reloadable="true">
+      <plugin name="cobis-cobiscloudsynchronization-rest" path="../../CLOUD-MOBILE/plugins/cobis-cobiscloudsynchronization-rest-1.0.0.jar"/>
+    </plan>
+
+    <plan id="cobis-cobiscloudloginvalidationext-impl-plan" reloadable="true">
+      <plugin name="cobis-cobiscloudloginvalidationext-impl-plan" path="../../CLOUD-MOBILE/plugins/cobis-cobiscloudloginvalidationext-impl-1.0.0.jar"/>
+    </plan>
+    
+    <plan id="MOBILE-MANAGEMENT" reloadable="true">
+      <plugin name="MobileManagement.DTO" path="../../CLOUD-MOBILE/plugins/COBISCorp.eCOBIS.MobileManagement.DTO-1.0.0.0.jar"/>
+      <plugin name="MobileManagement.Services" path="../../CLOUD-MOBILE/plugins/COBISCorp.eCOBIS.MobileManagement.Service-1.0.0.0.jar"/>
+    </plan>
+    <plan id="MOBILE-COMMONS" reloadable="true">
+      <plugin name="mobile-commons-services" path="../../CLOUD-MOBILE/plugins/mobile-commons-services-1.0.0.jar"/>
+      <plugin name="mobile-commons-utils" path="../../CLOUD-MOBILE/plugins/mobile-commons-utils-1.0.0.jar"/>
+    </plan>
+    <plan id="mbile.mobilemanagementform.commons" reloadable="true">
+      <plugin name="mbile.domains" path="../../CLOUD-MOBILE/plugins/mbile.domains-1.0.0.jar"/>
+      <plugin name="mbile.commons.events" path="../../CLOUD-MOBILE/plugins/mbile.commons.events-1.0.0.jar"/>
+    </plan>
+    <plan id="mbile.mobilemanagementform.services" reloadable="true">
+      <plugin name="mbile.admin.mobilemanagementform.services" path="../../CLOUD-MOBILE/plugins/mbile.admin.mobilemanagementform.services-1.0.0.jar"/>
+      <plugin name="mbile.admin.mobilepopupform.services" path="../../CLOUD-MOBILE/plugins/mbile.admin.mobilepopupform.services-1.0.0.jar"/>
+    </plan>
+    <plan id="mbile.mobilemanagementform.customevents" reloadable="true">
+      <plugin name="mbile.admin.mobilemanagementform.customevents" path="../../CLOUD-MOBILE/plugins/mbile.admin.mobilemanagementform.customevents-1.0.0.jar"/>
+      <plugin name="mbile.admin.mobilepopupform.customevents" path="../../CLOUD-MOBILE/plugins/mbile.admin.mobilepopupform.customevents-1.0.0.jar"/>
+    </plan>
+    <plan id="jackson-core-2.7.8-plan" reloadable="true">
+      <plugin name="jackson-core-2.7.8" path="../../CLOUD-MOBILE/plugins/jackson-core-2.7.8.jar"/>
+    </plan>
+    <plan id="jackson-databind-2.7.8-plan" reloadable="true">
+      <plugin name="jackson-databind-2.7.8" path="../../CLOUD-MOBILE/plugins/jackson-databind-2.7.8.jar"/>
+    </plan>
+    <plan id="jackson-dataformat-cbor-2.7.8-plan" reloadable="true">
+      <plugin name="jackson-dataformat-cbor-2.7.8" path="../../CLOUD-MOBILE/plugins/jackson-dataformat-cbor-2.7.8.jar"/>
+    </plan>
+    <plan id="jackson-annotations-2.8.5-plan" reloadable="true">
+      <plugin name="jackson-annotations-2.8.5" path="../../CLOUD-MOBILE/plugins/jackson-annotations-2.8.5.jar"/>
+    </plan>
+    <plan id="cobis-cobisclouddevicemanagement-util-plan" reloadable="true">
+      <plugin name="cobis-cobisclouddevicemanagement-util" path="../../CLOUD-MOBILE/plugins/cobis-cobisclouddevicemanagement-util-1.0.0.jar"/>
+    </plan>
+    <plan id="cobis-cobisclouddevicemanagement-bsl-plan" reloadable="true">
+      <plugin name="cobis-cobisclouddevicemanagement-bsl" path="../../CLOUD-MOBILE/plugins/cobis-cobisclouddevicemanagement-bsl-1.0.0.jar"/>
+    </plan>
+    <plan id="cobis-cobisclouddevicemanagement-bsl-impl-plan" reloadable="true">
+      <plugin name="cobis-cobisclouddevicemanagement-bsl-impl" path="../../CLOUD-MOBILE/plugins/cobis-cobisclouddevicemanagement-bsl-impl-1.0.0.jar"/>
+    </plan>
+    <plan id="cobis-cobisclouddevicemanagement-rest-plan" reloadable="true">
+      <plugin name="cobis-cobisclouddevicemanagement-rest" path="../../CLOUD-MOBILE/plugins/cobis-cobisclouddevicemanagement-rest-1.0.0.jar"/>
+    </plan>
+    <plan id="cobis-cobiscloudsecurity-rest-plan" reloadable="true">
+      <plugin name="cobis-cobiscloudsecurity-rest-rest" path="../../CLOUD-MOBILE/plugins/cobis-cobiscloudsecurity-rest-1.0.0.jar"/>
+    </plan>
+    <plan id="SpringIntegrationBatch" reloadable="true">
+      <plugin name="quartz-spring" path="../../BATCH/plugins/framework/spring/ext/com.springsource.org.quartz-1.6.2.jar"/>
+      <plugin name="jcraft.jsch" path="../../BATCH/plugins/framework/spring/ext/com.springsource.com.jcraft.jsch-0.1.41.jar"/>
+      <plugin name="jivesoftware.smack" path="../../BATCH/plugins/framework/spring/ext/com.springsource.org.jivesoftware.smack-3.1.0.jar"/>
+      <plugin name="jettison" path="../../BATCH/plugins/framework/spring/ext/com.springsource.org.codehaus.jettison-1.0.1.jar"/>
+      <plugin name="xmlpull" path="../../BATCH/plugins/framework/spring/ext/com.springsource.org.xmlpull-1.1.4.c.jar"/>
+      <plugin name="thoughtworks" path="../../BATCH/plugins/framework/spring/ext/com.springsource.com.thoughtworks.xstream-1.3.1.jar"/>
+      <plugin name="spring.batch.infrastructure" path="../../BATCH/plugins/framework/spring/batch/spring-batch-infrastructure-2.1.7.RELEASE.jar"/>
+      <plugin name="spring.batch.core" path="../../BATCH/plugins/framework/spring/batch/spring-batch-core-2.1.7.RELEASE.jar"/>
+      <plugin name="spring.integration.core" path="../../BATCH/plugins/framework/spring/integration2.5/spring-integration-core-2.0.5.RELEASE.jar"/>
+      <plugin name="spring.integration.file" path="../../BATCH/plugins/framework/spring/integration2.5/spring-integration-file-2.0.5.RELEASE.jar"/>
+      <plugin name="spring.integration.ftp" path="../../BATCH/plugins/framework/spring/integration2.5/spring-integration-ftp-2.0.5.RELEASE.jar"/>
+      <plugin name="spring.integration.ip" path="../../BATCH/plugins/framework/spring/integration2.5/spring-integration-ip-2.0.5.RELEASE.jar"/>
+      <plugin name="spring.integration.sftp" path="../../BATCH/plugins/framework/spring/integration2.5/spring-integration-sftp-2.0.5.RELEASE.jar"/>
+      <plugin name="antlr" path="../../BATCH/plugins/framework/spring/ext/com.springsource.antlr-2.7.7.jar"/>
+      <plugin name="groovy" path="../../BATCH/plugins/framework/spring/ext/com.springsource.org.codehaus.groovy-1.7.3.jar"/>
+    </plan>
+    <plan id="IENBatchCore" reloadable="true">
+      <plugin name="cobis-bcpg-jdk16-bundle" path="../../BATCH/plugins/integration-engine/cobis-bcpg-jdk16-bundle-1.46.jar"/>
+      <plugin name="cobis-batch-core" path="../../BATCH/plugins/integration-engine/cobis-batch-core-2.0.0.jar"/>
+      <plugin name="cobis-batch-repository" path="../../BATCH/plugins/integration-engine/cobis-batch-repository-2.0.0.jar"/>
+      <plugin name="cobis-batch-service-executor" path="../../BATCH/plugins/integration-engine/cobis-batch-service-executor-2.0.1.jar"/>
+      <plugin name="cobis-batch-util" path="../../BATCH/plugins/integration-engine/cobis-batch-util-2.0.0.jar"/>
+      <plugin name="engine-commons" path="../../BATCH/plugins/integration-engine/engine-commons-2.0.4.jar"/>
+      <plugin name="IEAdminService" path="../../BATCH/plugins_cts/IEAdminServices-2.0.2.jar"/>
+      <plugin name="engine-services" path="../../BATCH/plugins/integration-engine/engine-services-2.0.2.jar"/>
+      <plugin name="engine-util" path="../../BATCH/plugins/integration-engine/engine-util-2.0.1.jar"/>
+      <plugin name="engine-process" path="../../BATCH/plugins/integration-engine/engine-process-2.0.4.jar"/>
+    </plan>
+    <plan id="IENBatchEngine" reloadable="true">
+      <plugin name="cobis-batch-engine" path="../../BATCH/plugins/integration-engine/cobis-batch-engine-2.0.8.jar"/>
+    </plan>
+  </own>
+  <general>
+    <dbms/>
+    <log-level>INFO</log-level>
+    <messaging message-exp-time="0"/>
+  </general>
+</ccm-plan-config>

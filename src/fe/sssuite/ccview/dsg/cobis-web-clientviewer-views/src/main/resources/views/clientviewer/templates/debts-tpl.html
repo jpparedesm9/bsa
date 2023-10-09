@@ -1,0 +1,23 @@
+<div ng-repeat="group in groupsProduct|filterById:currentView" class="cb-view-container-root">
+    <fieldset ng-repeat="groupDetail in group.conditionDefaultProductSons" ng-show="getVisibleSection(groupDetail.dtoId.dtoName)" class="cb-group cb-group-simple">
+        <legend translate><span class="cb-title">{{ groupDetail.dtoId.dtoText }}</span></legend>
+		<div>
+            <kendo-grid options="getDataSourceObject(groupDetail.dtoId.dtoName, groupDetail.dtoId, null)"           
+		                 	k-selectable="'row'" 
+		                 	k-columns="getDataColumns(groupDetail.dtoId)" resizable="true">
+				<div k-detail-template  ng-if="groupDetail.dtoId.dtoList != null && groupDetail.dtoId.dtoList.length > 0" ng-init="setDetailDataSoruce(dataItem,groupDetail.dtoId.dtoList[0],groupDetail.dtoId, 'dynamicData')">
+	
+					<div kendo-grid k-data-source="getObject(groupDetail.dtoId.dtoList[0].dtoName, null, groupDetail.dtoId.dtoList[0],  groupDetail.dtoId, dataItem)" k-columns="getDataColumns(groupDetail.dtoId.dtoList[0])"></div>
+				</div>
+				<div k-detail-template  ng-if="groupDetail.dtoId.dtoName == 'remittances'" ng-init="setDetailRemittanceDataSoruce(dataItem,groupDetail.dtoId.dtoList[0].dtoName, 'dynamicData')">
+					<div kendo-grid k-data-source="dataItem.details" k-columns ="getRemittanceDetailColumns()"></div>
+				</div>
+			</kendo-grid>
+		</div>		
+    </fieldset>
+</div>	
+
+
+
+   
+

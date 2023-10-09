@@ -1,0 +1,31 @@
+use cobis
+go
+declare @w_id int
+select @w_id = isnull(max(te_id),0) + 1 from cobis..ns_template
+insert into cobis..ns_template (te_id, te_tipo, te_cultura, te_nombre, te_estado, te_version)
+values (@w_id,'XSLT', 'NEUTRAL', 'NotificacionesEC_ctas.xslt', 'A', '1.0.0.0')
+
+
+exec sp_despacho_ins
+@i_cliente = 9,
+@i_template=1,
+@i_servicio = 1,
+@i_estado = 'P',
+@i_tipo = 'MAIL',
+@i_tipo_mensaje = 'I',
+@i_prioridad = 1,
+@i_from = 'santiago.gavilanes@cobiscorp.com',
+@i_to = 'santiago.gavilanes@cobiscorp.com',
+@i_cc = '',
+@i_bcc = null,
+@i_subject = 'Prueba Notificaciones',
+@i_body = '<?xml version="1.0" encoding="UTF-8"?><data><referencia><codigo>1</codigo><nombre>nombre referencia 1</nombre></referencia><referencia><codigo>2</codigo><nombre>nombre referencia 1</nombre></referencia><nombreBanco>Cobis Cloud Banking</nombreBanco></data>',
+@i_content_manager = 'HTML',
+@i_retry = 'S',
+@i_fecha_envio = null,
+@i_hora_ini = null,
+@i_hora_fin = null,
+@i_tries = 0,
+@i_max_tries = 2
+
+delete ns_notificaciones_despacho

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="formatPagareMain" pageWidth="545" pageHeight="841" columnWidth="505" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="9a2c3532-3d4c-4a16-b91e-8a0d6ec878f3">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="SUBREPORT_DIR" class="java.lang.String">
+		<defaultValueExpression><![CDATA["/"]]></defaultValueExpression>
+	</parameter>
+	<field name="listaMiembros" class="java.util.List"/>
+	<detail>
+		<band height="63" splitType="Stretch">
+			<subreport>
+				<reportElement stretchType="RelativeToTallestObject" x="0" y="0" width="505" height="63" uuid="b0d4b89d-f948-4d91-9464-fbaf21d2c213"/>
+				<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($F{listaMiembros})]]></dataSourceExpression>
+				<subreportExpression><![CDATA[$P{SUBREPORT_DIR} + "formatPagareGrupal.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+	</detail>
+</jasperReport>

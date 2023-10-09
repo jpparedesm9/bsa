@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<serviceClass name="ReadOperationGuarantees" nsBase="COBISCorp.eCOBIS.Loan" namespace="COBISCorp.eCOBIS.Loan.Service" package="cobiscorp.ecobis.loan.service" ns="http://service.loan.ecobis.cobiscorp" module="Loan" productName="COBISCorp.eCOBIS.Loan.Service" productVersion="2.0.0.0">
+  <productProperties>
+    <property name="MavenGroupId" value="com.cobiscorp.processapi" />
+    <property name="MavenArtifactId" value="COBISCorp.eCOBIS.Loan.Service" />
+    <property name="MavenVersion" value="2.0.0.0" />
+  </productProperties>
+  <partialClass name="ReadOperationGuarantees">
+    <services>
+      <service id="Loan.ReadOperationGuarantees.GetOperationGuarantees" netName="GetOperationGuarantees" javaName="getOperationGuarantees" mappingType="STORED_PROCEDURE" mapId="8a48e241f2c22a1f335c2149eef73868">
+        <SRVMapping name="cob_cartera..sp_garantia_operacion" trnCode="74005">
+          <DTOs>
+            <DTO direction="in" name="OperationGuaranteesRequest" alias="inOperationGuaranteesRequest" namespace="COBISCorp.eCOBIS.Loan.DTO" package="cobiscorp.ecobis.loan.dto" ns="http://dto.loan.ecobis.cobiscorp" required="true" />
+            <DTO direction="return" name="OperationGuaranteesResponse" alias="returnOperationGuaranteesResponse" namespace="COBISCorp.eCOBIS.Loan.DTO" package="cobiscorp.ecobis.loan.dto" ns="http://dto.loan.ecobis.cobiscorp" required="true">
+              <properties>
+                <property name="guarantee" propertyNet="Guarantee" propertyJava="guarantee" setterJavaMethod="setGuarantee" getterJavaMethod="getGuarantee" xsdType="string" netType="string" javaType="String" cobisMapping="" isInherit="false" isComplexType="false" isCollectionType="false" required="false" encrypted="false" maxLength="0" />
+                <property name="operationNumber" propertyNet="OperationNumber" propertyJava="operationNumber" setterJavaMethod="setOperationNumber" getterJavaMethod="getOperationNumber" xsdType="string" netType="string" javaType="String" cobisMapping="" isInherit="false" isComplexType="false" isCollectionType="false" required="false" encrypted="false" maxLength="0" />
+                <property name="initialDate" propertyNet="InitialDate" propertyJava="initialDate" setterJavaMethod="setInitialDate" getterJavaMethod="getInitialDate" xsdType="dateTime" netType="DateTime" javaType="java.util.Calendar" cobisMapping="" isInherit="false" isComplexType="false" isCollectionType="false" required="true" encrypted="false" maxLength="0" />
+                <property name="states" propertyNet="States" propertyJava="states" setterJavaMethod="setStates" getterJavaMethod="getStates" xsdType="string" netType="string" javaType="String" cobisMapping="" isInherit="false" isComplexType="false" isCollectionType="false" required="false" encrypted="false" maxLength="0" />
+              </properties>
+            </DTO>
+          </DTOs>
+          <parameterMappings>
+            <parameter name="@i_garantia" direction="in" mappingDirection="in" dataType="varchar" CTSDataType="SQLVARCHAR" JavaSQLType="VARCHAR" mappingType="DTO" allowNull="false" DTOAlias="inOperationGuaranteesRequest" DTOPropertyName="guaranteeNumber" />
+          </parameterMappings>
+          <resultMappings>
+            <result>
+              <DTOResult DTOAlias="returnOperationGuaranteesResponse" MapReturn="true">
+                <columnMapping position="0" name="{1}" DTOPropertyName="guarantee" DataType="string" />
+                <columnMapping position="1" name="{2}" DTOPropertyName="operationNumber" DataType="string" />
+                <columnMapping position="2" name="{3}" DTOPropertyName="initialDate" DataType="dateTime" />
+                <columnMapping position="3" name="{4}" DTOPropertyName="states" DataType="string" />
+              </DTOResult>
+            </result>
+          </resultMappings>
+          <MappingProperties />
+        </SRVMapping>
+      </service>
+    </services>
+  </partialClass>
+</serviceClass>

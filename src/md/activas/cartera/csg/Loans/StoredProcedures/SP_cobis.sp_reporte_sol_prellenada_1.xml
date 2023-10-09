@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<procedure>
+  <database>cobis</database>
+  <name>sp_reporte_sol_prellenada</name>
+  <type>SQLSERVER</type>
+  <version>1</version>
+  <parameters>
+    <parameter name="@s_ssn" dataType="int" direction="in" />
+    <parameter name="@s_user" dataType="varchar" direction="in" />
+    <parameter name="@s_sesn" dataType="int" direction="in" />
+    <parameter name="@s_term" dataType="varchar" direction="in" />
+    <parameter name="@s_date" dataType="datetime" direction="in" />
+    <parameter name="@s_srv" dataType="varchar" direction="in" />
+    <parameter name="@s_lsrv" dataType="varchar" direction="in" />
+    <parameter name="@s_rol" dataType="smallint" direction="in" />
+    <parameter name="@s_ofi" dataType="smallint" direction="in" />
+    <parameter name="@s_org_err" dataType="char" direction="in" />
+    <parameter name="@s_error" dataType="int" direction="in" />
+    <parameter name="@s_sev" dataType="tinyint" direction="in" />
+    <parameter name="@s_msg" dataType="varchar" direction="in" />
+    <parameter name="@s_org" dataType="char" direction="in" />
+    <parameter name="@t_debug" dataType="char" direction="in" />
+    <parameter name="@t_file" dataType="varchar" direction="in" />
+    <parameter name="@t_from" dataType="varchar" direction="in" />
+    <parameter name="@i_cliente" dataType="int" direction="in" />
+    <parameter name="@i_es_grupo" dataType="char" direction="in" />
+    <parameter name="@i_es_renovacion" dataType="varchar" direction="in" />
+    <parameter name="@i_formato_fecha" dataType="int" direction="in" />
+    <parameter name="@i_modo" dataType="int" direction="in" />
+    <parameter name="@i_operacion" dataType="char" direction="in" />
+    <parameter name="@i_tramite" dataType="int" direction="in" />
+  </parameters>
+  <queries>
+    <query>
+      <columns>
+        <column name="sucursal" />
+        <column name="importeSolicitado" />
+        <column name="fecha" />
+        <column name="apellidoPaterno" />
+        <column name="apellidoMaterno" />
+        <column name="nombre" />
+        <column name="correoElectronico" />
+        <column name="fechaNacimiento" />
+        <column name="direccion" />
+        <column name="referenciaDomicilio" />
+        <column name="colonia" />
+        <column name="municipio" />
+        <column name="estado" />
+        <column name="pais" />
+        <column name="codigoPostal" />
+        <column name="telefonoCelular" />
+        <column name="numCreditoAnt" />
+        <column name="entidadNacimiento" />
+        <column name="genero" />
+        <column name="estadoCivil" />
+        <column name="nombreAsesor" />
+        <column name="nombreCoordinador" />
+        <column name="nombreAnalista" />
+        <column name="piePagina" />
+        <column name="condusef" />
+        <column name="nombreGerente" />
+        <column name="nombreGrupo" />
+        <column name="nombreDirector" />
+        <column name="nombreSubdirector" />
+        <column name="numExt" />
+        <column name="numInt" />
+      </columns>
+      <queryText></queryText>
+    </query>
+  </queries>
+</procedure>

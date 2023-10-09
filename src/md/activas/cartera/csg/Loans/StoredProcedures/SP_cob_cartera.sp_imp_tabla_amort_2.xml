@@ -1,0 +1,192 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<procedure>
+  <database>cob_cartera</database>
+  <name>sp_imp_tabla_amort</name>
+  <type>SQLSERVER</type>
+  <version>2</version>
+  <parameters>
+    <parameter name="@s_ssn" dataType="int" direction="in" />
+    <parameter name="@s_date" dataType="datetime" direction="in" />
+    <parameter name="@s_user" dataType="varchar" direction="in" />
+    <parameter name="@s_term" dataType="varchar" direction="in" />
+    <parameter name="@s_corr" dataType="char" direction="in" />
+    <parameter name="@s_ssn_corr" dataType="int" direction="in" />
+    <parameter name="@s_ofi" dataType="smallint" direction="in" />
+    <parameter name="@t_rty" dataType="char" direction="in" />
+    <parameter name="@t_debug" dataType="char" direction="in" />
+    <parameter name="@t_file" dataType="varchar" direction="in" />
+    <parameter name="@t_trn" dataType="smallint" direction="in" />
+    <parameter name="@i_operacion" dataType="char" direction="in" />
+    <parameter name="@i_banco" dataType="varchar" direction="in" />
+    <parameter name="@i_formato_fecha" dataType="int" direction="in" />
+    <parameter name="@i_dividendo" dataType="int" direction="in" />
+  </parameters>
+  <queries>
+    <query>
+      <columns>
+        <column name="{1}" />
+        <column name="{2}" />
+        <column name="{3}" />
+        <column name="{4}" />
+        <column name="{5}" />
+        <column name="{6}" />
+        <column name="{7}" />
+        <column name="{8}" />
+        <column name="{9}" />
+        <column name="{10}" />
+        <column name="{11}" />
+        <column name="{12}" />
+        <column name="{13}" />
+        <column name="{14}" />
+        <column name="{15}" />
+        <column name="{16}" />
+        <column name="{17}" />
+        <column name="{18}" />
+        <column name="{19}" />
+        <column name="{20}" />
+        <column name="{21}" />
+        <column name="{22}" />
+        <column name="{23}" />
+        <column name="{24}" />
+        <column name="{25}" />
+        <column name="{26}" />
+        <column name="{27}" />
+        <column name="{28}" />
+        <column name="{29}" />
+        <column name="{30}" />
+        <column name="{31}" />
+        <column name="{32}" />
+        <column name="{33}" />
+        <column name="{34}" />
+        <column name="{35}" />
+        <column name="{36}" />
+        <column name="{37}" />
+        <column name="{38}" />
+        <column name="{39}" />
+        <column name="{40}" />
+        <column name="{41}" />
+        <column name="{42}" />
+        <column name="{43}" />
+        <column name="{44}" />
+        <column name="{45}" />
+        <column name="{46}" />
+        <column name="{47}" />
+        <column name="{48}" />
+        <column name="{49}" />
+        <column name="{50}" />
+        <column name="{51}" />
+        <column name="{52}" />
+        <column name="{53}" />
+        <column name="{54}" />
+        <column name="{55}" />
+        <column name="{56}" />
+        <column name="{57}" />
+      </columns>
+      <queryText>SELECT w_cliente, ctx.SUBSTRING(w_nombre, 1, 100), ctx.SUBSTRING(w_ced_ruc, 1, 15), ctx.SUBSTRING(w_direccion, 1, 100), ctx.SUBSTRING(w_telefono, 1, 15), ctx.SUBSTRING(w_toperacion_desc, 1, 60), ctx.ROUND(ctx.convertDouble(w_monto), w_num_dec), ctx.SUBSTRING(w_moneda_desc, 1, 20), w_plazo, ctx.SUBSTRING(w_tplazo, 1, 40), ctx.SUBSTRING(w_tipo_amortizacion, 1, 40), ctx.SUBSTRING(w_tdividendo, 1, 40), w_tasa, w_periodo_cap, w_periodo_int, w_mes_gracia, w_gracia, w_gracia_cap, w_gracia_int, w_tasa_ef_anual_aux, ctx.SUBSTRING(w_fecha_fin, 1, 12), w_dias_anio, w_base_calculo, w_tasa_base, w_valor_base, w_valor_spread, w_signo_spread, w_modalidad, w_fecha_liq, w_dia_fijo, w_fecha_pri_cuot, w_recalcular_plazo, w_evitar_feriados, w_ult_dia_habil, w_tasa_equivalente, w_reajustable, w_tipo_puntos, w_valor_base, ctx.convertString(w_fecha_ult_pro ,i_formato_fecha), w_moneda, ctx.SUBSTRING(w_nom_oficina, 1, 64), w_op_codigo_externo, w_margen_redescuento, w_dist_gracia, w_cod_tipogar, w_tipo_garantia, w_vlr_x_amort, w_tasa_seg_ind, w_tasa_seg_1_perd, w_tasa_seg_exequias, w_tasa_seg_danos, ctx.ROUND(ctx.convertDouble(w_valor_total_seg), w_num_dec), w_alianza, w_desalianza, ctx.ISNULL(w_div_vig, 0), ctx.ISNULL(w_cuota_cap, 0), ctx.ISNULL(w_sld_cap_div, 0)</queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="numCuota" />
+        <column name="valor" />
+      </columns>
+      <queryText></queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="numCuota" />
+        <column name="valor" />
+        <column name="concepto" />
+        <column name="tasa" />
+      </columns>
+      <queryText></queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="numCuota" />
+        <column name="valor" />
+      </columns>
+      <queryText></queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="numCuota" />
+        <column name="valor" />
+      </columns>
+      <queryText></queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="fecha" />
+        <column name="descripcion" />
+        <column name="dias" />
+      </columns>
+      <queryText></queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="numCuota" />
+        <column name="valor" />
+      </columns>
+      <queryText></queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="numCuota" />
+        <column name="valor" />
+      </columns>
+      <queryText></queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="numCuota" />
+        <column name="valor" />
+      </columns>
+      <queryText></queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="numCuota" />
+        <column name="valor" />
+      </columns>
+      <queryText></queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="numCuota" />
+        <column name="valor" />
+      </columns>
+      <queryText></queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="numCuota" />
+        <column name="valor" />
+      </columns>
+      <queryText></queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="numCuota" />
+        <column name="valorCapital" />
+        <column name="valorInteres" />
+        <column name="mora" />
+      </columns>
+      <queryText></queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="numCuota" />
+        <column name="valor" />
+      </columns>
+      <queryText></queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="numCuota" />
+        <column name="valor" />
+        <column name="valorInteres" />
+      </columns>
+      <queryText></queryText>
+    </query>
+  </queries>
+</procedure>

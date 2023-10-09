@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<procedure>
+  <database>cob_credito</database>
+  <name>sp_reporte_contrato_linea</name>
+  <type>SYBASE</type>
+  <version>1</version>
+  <parameters>
+    <parameter name="@t_show_version" dataType="bit" direction="in" />
+    <parameter name="@t_debug" dataType="char" direction="in" />
+    <parameter name="@i_operacion" dataType="char" direction="in" />
+    <parameter name="@i_tramite" dataType="int" direction="in" />
+    <parameter name="@i_modo" dataType="int" direction="in" />
+  </parameters>
+  <queries>
+    <query>
+      <columns>
+        <column name="reporte" />
+        <column name="linea_rotativa" />
+        <column name="monto" />
+        <column name="moneda" />
+        <column name="num_testimonio" />
+        <column name="fecha_contrato" />
+        <column name="fecha_aprobacion" />
+        <column name="fecha_inicio" />
+        <column name="num_banco" />
+        <column name="simbolo_moneda" />
+        <column name="cuota_maxima" />
+        <column name="plazo" />
+        <column name="desc_moneda" />
+        <column name="num_credit_line" />
+        <column name="fecha_venci" />
+      </columns>
+      <queryText>SELECT reporte</queryText>
+    </query>
+  </queries>
+</procedure>

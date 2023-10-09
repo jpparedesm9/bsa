@@ -1,0 +1,211 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<procedure>
+  <database>cob_cartera</database>
+  <name>sp_datos_operacion</name>
+  <type>SQLSERVER</type>
+  <version>2</version>
+  <parameters>
+    <parameter name="@s_ssn" dataType="int" direction="in" />
+    <parameter name="@s_date" dataType="datetime" direction="in" />
+    <parameter name="@s_user" dataType="varchar" direction="in" />
+    <parameter name="@s_term" dataType="varchar" direction="in" />
+    <parameter name="@s_corr" dataType="char" direction="in" />
+    <parameter name="@s_ssn_corr" dataType="int" direction="in" />
+    <parameter name="@s_ofi" dataType="smallint" direction="in" />
+    <parameter name="@t_rty" dataType="char" direction="in" />
+    <parameter name="@t_debug" dataType="char" direction="in" />
+    <parameter name="@t_file" dataType="varchar" direction="in" />
+    <parameter name="@t_trn" dataType="smallint" direction="in" />
+    <parameter name="@i_banco" dataType="varchar" direction="in" />
+    <parameter name="@i_operacion" dataType="char" direction="in" />
+    <parameter name="@i_formato_fecha" dataType="int" direction="in" />
+    <parameter name="@i_secuencial_ing" dataType="int" direction="in" />
+    <parameter name="@i_toperacion" dataType="varchar" direction="in" />
+    <parameter name="@i_moneda" dataType="int" direction="in" />
+    <parameter name="@i_siguiente" dataType="int" direction="in" />
+    <parameter name="@i_dividendo" dataType="int" direction="in" />
+    <parameter name="@i_numero" dataType="int" direction="in" />
+    <parameter name="@i_sucursal" dataType="int" direction="in" />
+    <parameter name="@i_filial" dataType="int" direction="in" />
+    <parameter name="@i_oficina" dataType="smallint" direction="in" />
+    <parameter name="@i_concepto" dataType="varchar" direction="in" />
+    <parameter name="@i_fecha_abono" dataType="datetime" direction="in" />
+    <parameter name="@i_opcion" dataType="tinyint" direction="in" />
+    <parameter name="@i_tramite" dataType="int" direction="in" />
+    <parameter name="@i_sec_detpago" dataType="int" direction="in" />
+    <parameter name="@i_tran" dataType="varchar" direction="in" />
+  </parameters>
+  <queries>
+    <query>
+      <columns>
+        <column name="id_abono" />
+        <column name="Id_Pago" />
+        <column name="Sec_Pag" />
+        <column name="Forma_Pago" />
+        <column name="Fecha_Ingreso" />
+        <column name="Fecha_Valor" />
+        <column name="Oficina" />
+        <column name="Monto" />
+        <column name="Moneda" />
+        <column name="Id_Corresponsal" />
+        <column name="Estado" />
+        <column name="Usuario" />
+        <column name="Mensaje" />
+      </columns>
+      <queryText></queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="Dividendo" />
+        <column name="Concepto" />
+        <column name="Estado" />
+        <column name="Cuenta" />
+        <column name="Moneda" />
+        <column name="Monto MOP" />
+        <column name="Monto MLE" />
+        <column name="Sec" />
+      </columns>
+      <queryText></queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="Tramite" />
+        <column name="Operacion Renovada" />
+        <column name="Monto Original" />
+        <column name="Saldo Renovado" />
+        <column name="Tipo Credito" />
+        <column name="Funcionario" />
+      </columns>
+      <queryText></queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="GARANTIA" />
+        <column name="ESTADO_GAR" />
+        <column name="DESCRIPCION" />
+        <column name="COD_CLIENTE" />
+        <column name="NOMBRE_CLIENTE" />
+        <column name="VALOR_ACTUAL" />
+        <column name="MON" />
+        <column name="F_INGRESO " />
+      </columns>
+      <queryText></queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="Codigo" />
+        <column name="CE./NIT." />
+        <column name="Rol" />
+        <column name="Nombre" />
+        <column name="Telefono" />
+        <column name="Direccion" />
+        <column name="Cob/Central" />
+      </columns>
+      <queryText></queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="Rubro" />
+        <column name="Descripcion" />
+        <column name="Tipo Rubro" />
+        <column name="F. de Pago" />
+        <column name="Valor" />
+        <column name="Prioridad" />
+        <column name="Paga Mora" />
+        <column name="Causa" />
+        <column name="Referencia" />
+        <column name="Signo" />
+        <column name="Valor/Puntos" />
+        <column name="Tipo/Puntos" />
+        <column name="Valor/Tasa Total" />
+        <column name="Tasa Negociada" />
+        <column name="Tasa Ef.Anual" />
+        <column name="Signo reaj." />
+        <column name="Valor/Puntos de Reaj." />
+        <column name="Referencia de Reaj." />
+        <column name="Gracia" />
+        <column name="Base de calculo" />
+        <column name="Por./Cobrar/TIMBRE" />
+        <column name="Tipo Garantia" />
+        <column name="Nro. Garantia" />
+        <column name="%Cobertura Gar." />
+        <column name="Valor Garantia" />
+        <column name="Tipo Dividendo" />
+        <column name="No. Periodos Int." />
+        <column name="Tabla Otras Tasas" />
+      </columns>
+      <queryText></queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="Secuencial" />
+        <column name="Fecha Mod." />
+        <column name="No.Cuota" />
+        <column name="Rubro" />
+        <column name="Valor Aplicar" />
+        <column name="Signo Aplicar" />
+        <column name="Spread Aplicar" />
+        <column name="Tasa Actual" />
+        <column name="Tasa Efectiva Anual" />
+        <column name="Tasa Referencial" />
+        <column name="Fecha Tasa Referencial" />
+        <column name="Valor Tasa Referencial" />
+      </columns>
+      <queryText></queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="Tipo Cobro" />
+        <column name="Aceptar Anticipos" />
+        <column name="Tipo Reduccion" />
+        <column name=" Tipo Aplicacion" />
+        <column name="Cuota Completa" />
+        <column name="Fecha Fin" />
+        <column name="Pago Caja" />
+        <column name=" Calcula Devolucion" />
+      </columns>
+      <queryText></queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="Rubro" />
+        <column name="Estado" />
+        <column name="Periodo" />
+        <column name="Cuota" />
+        <column name="Gracia" />
+        <column name="Pagado" />
+        <column name="Acumulado" />
+        <column name="Secuencia " />
+      </columns>
+      <queryText></queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="Secuencial" />
+        <column name="Tipo_tran" />
+        <column name="Id_tran" />
+        <column name="Fecha_Ingreso" />
+        <column name="Fecha_Valor" />
+        <column name="Oficina" />
+        <column name="Monto" />
+        <column name="Moneda" />
+        <column name="Id_Corresponsal" />
+        <column name="Forma_Pago" />
+        <column name="Estado" />
+        <column name="Usuario" />
+      </columns>
+      <queryText></queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="CONCEPTO" />
+        <column name="ESTADO" />
+        <column name="CUOTA" />
+        <column name="SECUENCIA" />
+        <column name="CODIGO_VALOR" />
+        <column name="MONTO" />
+      </columns>
+      <queryText></queryText>
+    </query>
+  </queries>
+</procedure>

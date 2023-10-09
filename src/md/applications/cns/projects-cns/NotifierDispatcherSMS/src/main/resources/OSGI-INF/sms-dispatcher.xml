@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<scr:component xmlns:scr="http://www.osgi.org/xmlns/scr/v1.0.0" name="sms-dispatcher">
+   <implementation class="com.cobiscorp.cobis.notifier.dispatcher.sms.SmsDispatcher"/>
+   <property name="service.description" value="Notifier SMS Dispatcher" />
+   <property name="service.vendor" value="Cobiscorp" />
+   <property name="service.version" value="$$project.version$$" />
+   <property name="service.name" type="String" value="SMS"/>
+   <service>
+      <provide interface="com.cobiscorp.cobis.notifier.core.dispatcher.INotifierDispatcher"/>
+   </service>
+</scr:component>

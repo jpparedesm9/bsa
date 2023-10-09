@@ -1,0 +1,117 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.cobiscorp.ecobis</groupId>
+	<artifactId>clientes-build</artifactId>
+	<version>1.0.0</version>
+	<packaging>pom</packaging>
+	<name>${project.artifactId}</name>
+	<url>http://www.cobiscorp.com/</url>
+
+
+
+	<properties>
+		<maven-javadoc-plugin.version>2.10.3</maven-javadoc-plugin.version>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+	</properties>
+
+	<profiles>
+		<profile>
+			<id>env-development</id>
+			<activation>
+				<activeByDefault>true</activeByDefault>
+			</activation>
+			<modules>
+				<module>../../FrontEnd/LoansGroup/web/cobis-loans-group-web-views</module>
+				<module>../../FrontEnd/LoansGroup/web/cobis-loans-process-web-reports</module>
+		        <module>../../FrontEnd/LoansGroup/web/loans.domains</module>
+				<module>../../FrontEnd/LoansGroup/web/loans.group.groupcomposite.customevents</module>
+				<module>../../FrontEnd/LoansGroup/web/loans.group.groupcomposite.services</module>
+				<module>../../FrontEnd/LoansGroup/web/loans.group.memberpoppupform.customevents</module>
+				<module>../../FrontEnd/LoansGroup/web/loans.group.memberpoppupform.services</module>
+				<module>../../FrontEnd/LoansGroup/web/loans.group.reportgroupaccountstatement.customevents</module>
+				<module>../../FrontEnd/LoansGroup/web/loans.group.reportgroupaccountstatement.services</module><!--descomentar pmd-->
+				<module>../../FrontEnd/LoansGroup/web/loans.group.reportsettlementsheet.customevents</module>
+				<module>../../FrontEnd/LoansGroup/web/loans.group.reportsettlementsheet.services</module><!--descomentar pmd-->
+				<module>../../FrontEnd/LoansGroup/web/loans.group.scanneddocuments.customevents</module>
+				<module>../../FrontEnd/LoansGroup/web/loans.group.scanneddocuments.services</module>
+				<module>../../FrontEnd/LoansGroup/web/loans.group.scanneddocumentsdetail.customevents</module>
+				<module>../../FrontEnd/LoansGroup/web/loans.group.scanneddocumentsdetail.services</module>
+				<module>../../FrontEnd/LoansGroup/web/loans.group.memberrisklevelform.customevents</module>
+				<module>../../FrontEnd/LoansGroup/web/loans.group.memberrisklevelform.services</module>
+                <!-- Colectivos-->				
+				<module>../../FrontEnd/LoansGroup/web/cobis-client-collec-web-views</module>
+				<module>../../FrontEnd/LoansGroup/web/clcol.domains</module>
+				<module>../../FrontEnd/LoansGroup/web/collective-commons-utils</module>
+				<module>../../FrontEnd/LoansGroup/web/collective-commons-services</module>
+				<module>../../FrontEnd/LoansGroup/web/clcol.cltvo.loadcollectiveperson.customevents</module>
+				<module>../../FrontEnd/LoansGroup/web/clcol.cltvo.loadcollectiveperson.services</module>
+				<module>../../FrontEnd/LoansGroup/web/clcol.cltvo.loadexternaladvisor.customevents</module>
+				<module>../../FrontEnd/LoansGroup/web/clcol.cltvo.loadexternaladvisor.services</module>
+				<module>../../FrontEnd/LoansGroup/web/clcol.cltvo.loadexternaladvisor.services</module>
+				<module>../../FrontEnd/LoansGroup/web/report-collective-impl</module>
+
+				<module>../clientes-installer</module>
+			</modules>
+		</profile>
+		<profile>
+			<id>env-hardening</id>
+			<modules>
+			     <module>../../FrontEnd/LoansGroup/web/cobis-loans-group-web-views</module>
+			  	<module>../../FrontEnd/LoansGroup/web/cobis-loans-process-web-reports</module>
+		        <module>../../FrontEnd/LoansGroup/web/loans.domains</module>
+				<module>../../FrontEnd/LoansGroup/web/loans.group.groupcomposite.customevents</module>
+				<module>../../FrontEnd/LoansGroup/web/loans.group.groupcomposite.services</module>
+				<!--<module>../../FrontEnd/LoansGroup/web/loans.group.memberform.customevents</module>Q_MEMBERZI_7978_IExecuteQuery;  -->
+				<!--<module>../../FrontEnd/LoansGroup/web/loans.group.memberform.services</module>-->
+				<module>../../FrontEnd/LoansGroup/web/loans.group.memberpoppupform.customevents</module>
+				<module>../../FrontEnd/LoansGroup/web/loans.group.memberpoppupform.services</module>
+				<module>../../FrontEnd/LoansGroup/web/loans.group.reportgroupaccountstatement.customevents</module>
+				<module>../../FrontEnd/LoansGroup/web/loans.group.reportgroupaccountstatement.services</module><!--descomentar pmd-->
+				<module>../../FrontEnd/LoansGroup/web/loans.group.reportsettlementsheet.customevents</module>
+				<module>../../FrontEnd/LoansGroup/web/loans.group.reportsettlementsheet.services</module><!--descomentar pmd-->
+				<module>../../FrontEnd/LoansGroup/web/loans.group.scanneddocuments.customevents</module>
+				<module>../../FrontEnd/LoansGroup/web/loans.group.scanneddocuments.services</module>
+				<module>../../FrontEnd/LoansGroup/web/loans.group.scanneddocumentsdetail.customevents</module>
+				<module>../../FrontEnd/LoansGroup/web/loans.group.scanneddocumentsdetail.services</module>
+				<module>../../FrontEnd/LoansGroup/web/loans.group.memberrisklevelform.customevents</module>
+				<module>../../FrontEnd/LoansGroup/web/loans.group.memberrisklevelform.services</module>
+				<!-- Colectivos-->
+				<module>../../FrontEnd/LoansGroup/web/cobis-client-collec-web-views</module>
+				<module>../../FrontEnd/LoansGroup/web/clcol.domains</module>
+				<module>../../FrontEnd/LoansGroup/web/collective-commons-utils</module>
+				<module>../../FrontEnd/LoansGroup/web/collective-commons-services</module>
+				<module>../../FrontEnd/LoansGroup/web/clcol.cltvo.loadcollectiveperson.customevents</module>
+				<module>../../FrontEnd/LoansGroup/web/clcol.cltvo.loadcollectiveperson.services</module>
+				<module>../../FrontEnd/LoansGroup/web/clcol.cltvo.loadexternaladvisor.customevents</module>
+				<module>../../FrontEnd/LoansGroup/web/clcol.cltvo.loadexternaladvisor.services</module>
+				<module>../../FrontEnd/LoansGroup/web/report-collective-impl</module>
+				<module>../clientes-installer</module>
+			</modules>
+		</profile>
+		<profile>
+			<id>Purge</id>
+			<build>
+				<plugins>
+					<plugin>
+						<artifactId>maven-dependency-plugin</artifactId>
+						<version>2.10</version>
+						<executions>
+							<execution>
+								<id>purge-local-dependencies</id>
+								<phase>process-sources</phase>
+								<goals>
+									<goal>purge-local-repository</goal>
+								</goals>
+								<!-- >configuration> <actTransitively>true</actTransitively> <manualInclude>com.cobiscorp.processapi:COBISCorp.eCOBIS.Businessprocess.Creditmanagement.DTO</manualInclude> 
+									<reResolve>true</reResolve> </configuration -->
+							</execution>
+						</executions>
+					</plugin>
+				</plugins>
+			</build>
+		</profile>
+	</profiles>
+
+
+</project>

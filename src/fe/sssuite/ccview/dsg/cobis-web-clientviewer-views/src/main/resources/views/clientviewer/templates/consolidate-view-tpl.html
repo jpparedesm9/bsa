@@ -1,0 +1,19 @@
+<div class="cb-viewport">
+	<div kendo-splitter k-orientation="orientationh" k-rebind="orientationh" k-panes="[ { collapsible: true, collapsed: false, resizable: true, size: '65%'},
+					 { collapsible: false, resizable: true, size: '35%'}]">
+		<div>
+			<div  ng-show="!currentView">
+				<div designer-form-load form="vc.viewState.consolidatePositionView"></div>
+			</div>
+			<div  ng-show="currentView">
+				<div designer-form-load form="vc.viewState.debts"></div>
+			</div>
+			<button class="btn btn-default btn-xs" ng-show="currentView != null" ng-click="setCurrentView(null)" style="position: absolute; top: 5px; right: 5px;" title="Cerrar">
+				<span class="fa fa-close"></span>
+			</button>
+      </div>
+      
+	  <div designer-form-load form="vc.viewState.products" class="cb-sub-scrollable"></div>
+     
+	</div>
+</div>	

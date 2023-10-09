@@ -1,0 +1,135 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<procedure>
+  <database>cob_custodia</database>
+  <name>sp_poliza</name>
+  <type>SYBASE</type>
+  <version>1</version>
+  <parameters>
+    <parameter name="@s_sesn" dataType="int" direction="in" />
+    <parameter name="@s_ofi" dataType="smallint" direction="in" />
+    <parameter name="@s_rol" dataType="smallint" direction="in" />
+    <parameter name="@s_ssn" dataType="int" direction="in" />
+    <parameter name="@s_date" dataType="datetime" direction="in" />
+    <parameter name="@s_user" dataType="varchar" direction="in" />
+    <parameter name="@s_term" dataType="varchar" direction="in" />
+    <parameter name="@t_debug" dataType="char" direction="in" />
+    <parameter name="@t_file" dataType="varchar" direction="in" />
+    <parameter name="@t_from" dataType="varchar" direction="in" />
+    <parameter name="@t_show_version" dataType="bit" direction="in" />
+    <parameter name="@s_srv" dataType="varchar" direction="in" />
+    <parameter name="@s_lsrv" dataType="varchar" direction="in" />
+    <parameter name="@t_trn" dataType="smallint" direction="in" />
+    <parameter name="@i_operacion" dataType="char" direction="in" />
+    <parameter name="@i_modo" dataType="smallint" direction="in" />
+    <parameter name="@i_tramite" dataType="int" direction="in" />
+    <parameter name="@i_banco" dataType="varchar" direction="in" />
+    <parameter name="@i_param1" dataType="varchar" direction="in" />
+    <parameter name="@i_param2" dataType="varchar" direction="in" />
+    <parameter name="@i_formato_fecha" dataType="smallint" direction="in" />
+    <parameter name="@i_filial" dataType="tinyint" direction="in" />
+    <parameter name="@i_sucursal" dataType="smallint" direction="in" />
+    <parameter name="@i_tipo" dataType="varchar" direction="in" />
+    <parameter name="@i_custodia" dataType="int" direction="in" />
+    <parameter name="@i_codigo_compuesto" dataType="varchar" direction="in" />
+    <parameter name="@i_secuencial" dataType="int" direction="in" />
+    <parameter name="@i_secuencial_ren" dataType="int" direction="in" />
+    <parameter name="@i_aseguradora" dataType="varchar" direction="in" />
+    <parameter name="@i_poliza" dataType="varchar" direction="in" />
+    <parameter name="@i_tipo_seguro" dataType="varchar" direction="in" />
+    <parameter name="@i_corredor" dataType="smallint" direction="in" />
+    <parameter name="@i_tpago_prima" dataType="char" direction="in" />
+    <parameter name="@i_financiado" dataType="char" direction="in" />
+    <parameter name="@i_emitido_bco" dataType="char" direction="in" />
+    <parameter name="@i_fecha_renovacion" dataType="datetime" direction="in" />
+    <parameter name="@i_nro_pagos" dataType="smallint" direction="in" />
+    <parameter name="@i_fvigencia_inicio" dataType="datetime" direction="in" />
+    <parameter name="@i_fvigencia_fin" dataType="datetime" direction="in" />
+    <parameter name="@i_moneda" dataType="tinyint" direction="in" />
+    <parameter name="@i_fendoso_ini" dataType="datetime" direction="in" />
+    <parameter name="@i_fendoso_fin" dataType="datetime" direction="in" />
+    <parameter name="@i_monto_endoso" dataType="money" direction="in" />
+    <parameter name="@i_monto_poliza" dataType="money" direction="in" />
+    <parameter name="@i_prima_bruto" dataType="money" direction="in" />
+    <parameter name="@i_monto_dscto" dataType="money" direction="in" />
+    <parameter name="@i_monto_impuesto" dataType="money" direction="in" />
+    <parameter name="@i_total_prima" dataType="money" direction="in" />
+    <parameter name="@i_prima_cuota" dataType="money" direction="in" />
+    <parameter name="@i_comision_asegura" dataType="float" direction="in" />
+    <parameter name="@i_comision_banco" dataType="float" direction="in" />
+    <parameter name="@i_estado_poliza" dataType="varchar" direction="in" />
+    <parameter name="@i_clase" dataType="varchar" direction="in" />
+    <parameter name="@i_codigo_externo" dataType="varchar" direction="in" />
+    <parameter name="@i_descripcion" dataType="varchar" direction="in" />
+    <parameter name="@i_ente" dataType="int" direction="in" />
+    <parameter name="@i_porc_obligacion" dataType="float" direction="in" />
+    <parameter name="@i_cobertura" dataType="smallint" direction="in" />
+    <parameter name="@i_instruccion" dataType="smallint" direction="in" />
+    <parameter name="@i_variable" dataType="varchar" direction="in" />
+    <parameter name="@i_uso" dataType="varchar" direction="in" />
+    <parameter name="@i_val_cob_minimo" dataType="money" direction="in" />
+    <parameter name="@i_val_cob_maximo" dataType="money" direction="in" />
+    <parameter name="@i_val_cob_prima" dataType="money" direction="in" />
+    <parameter name="@i_por_cob_prima" dataType="float" direction="in" />
+    <parameter name="@i_val_cob_deducible" dataType="money" direction="in" />
+    <parameter name="@i_por_cob_deducible" dataType="float" direction="in" />
+    <parameter name="@i_cob_nocumple" dataType="varchar" direction="in" />
+    <parameter name="@i_cobrado_cuota" dataType="char" direction="in" />
+    <parameter name="@i_cobrado_liq" dataType="char" direction="in" />
+    <parameter name="@i_titular" dataType="int" direction="in" />
+    <parameter name="@i_lote" dataType="int" direction="in" />
+    <parameter name="@i_workflow" dataType="char" direction="in" />
+    <parameter name="@i_auto" dataType="char" direction="in" />
+    <parameter name="@i_capital" dataType="char" direction="in" />
+    <parameter name="@i_factor" dataType="float" direction="in" />
+    <parameter name="@i_recargo" dataType="float" direction="in" />
+    <parameter name="@i_estado" dataType="char" direction="in" />
+    <parameter name="@i_grupo_seguro" dataType="varchar" direction="in" />
+    <parameter name="@i_tabla_temporal" dataType="char" direction="in" />
+    <parameter name="@i_factor_svida" dataType="float" direction="in" />
+    <parameter name="@i_aseguradora_sig" dataType="varchar" direction="in" />
+    <parameter name="@i_valorcat" dataType="varchar" direction="in" />
+    <parameter name="@o_secuencial" dataType="int" direction="out" />
+  </parameters>
+  <queries>
+    <query>
+      <columns>
+        <column name="policy" />
+        <column name="customerIncumbent" />
+        <column name="nameIncumbent" />
+      </columns>
+      <queryText>SELECT  "17535" = as_aseguradora,"17957" = (SELECT  SUBSTRING (A.valor, 1, 30) FROM cobis..cl_catalogo A  ,cobis..cl_tabla B   WHERE B.codigo = A.tabla AND B.tabla = "cu_des_aseguradora" AND A.codigo = X.as_aseguradora     ),"17908" = as_descuento,"17910" = as_itbm </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="17535" />
+        <column name="17957" />
+        <column name="17908" />
+        <column name="17910" />
+      </columns>
+      <queryText>SELECT  as_aseguradora,(SELECT  SUBSTRING (A.valor, 1, 30) FROM cobis..cl_catalogo A  ,cobis..cl_tabla B   WHERE B.codigo = A.tabla AND B.tabla = "cu_des_aseguradora" AND A.codigo = X.as_aseguradora     ),as_descuento,as_itbm </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="{1}" />
+        <column name="{2}" />
+        <column name="{3}" />
+        <column name="{4}" />
+      </columns>
+      <queryText>SELECT ctx.convertString(w_fvigencia_inicio ,i_formato_fecha), ctx.convertString(w_fvigencia_fin ,i_formato_fecha), w_monto_poliza, ctx.convertString(w_fendoso_ini ,i_formato_fecha), ctx.convertString(w_fendoso_fin ,i_formato_fecha), w_monto_endoso, w_estado_poliza, w_moneda, w_titular</queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="{1}" />
+        <column name="{2}" />
+        <column name="{3}" />
+        <column name="{4}" />
+        <column name="{5}" />
+        <column name="{6}" />
+        <column name="{7}" />
+        <column name="{8}" />
+        <column name="{9}" />
+      </columns>
+      <queryText></queryText>
+    </query>
+  </queries>
+</procedure>

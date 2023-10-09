@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<serviceClass name="PaymentManagement" nsBase="COBISCorp.eCOBIS.BusinessToBusiness" namespace="COBISCorp.eCOBIS.BusinessToBusiness.Service" package="cobiscorp.ecobis.businesstobusiness.service" ns="http://service.businesstobusiness.ecobis.cobiscorp" module="BusinessToBusiness" productName="COBISCorp.eCOBIS.BusinessToBusiness.Service" productVersion="1.0.0.0">
+  <productProperties>
+    <property name="MavenGroupId" value="com.cobiscorp.processapi" />
+    <property name="MavenArtifactId" value="COBISCorp.eCOBIS.BusinessToBusiness.Service" />
+    <property name="MavenVersion" value="1.0.0.0" />
+  </productProperties>
+  <partialClass name="PaymentManagement">
+    <services>
+      <service id="BusinessToBusiness.PaymentManagement.ApplyPayment" netName="ApplyPayment" javaName="applyPayment" mappingType="STORED_PROCEDURE" mapId="75df63609809c7a2052fdffe5c00a84e">
+        <SRVMapping name="cob_cartera..sp_pagos_corresponsal">
+          <DTOs>
+            <DTO direction="in" name="PaymentRequest" alias="inPaymentRequest" namespace="COBISCorp.eCOBIS.BusinessToBusiness.DTO" package="cobiscorp.ecobis.businesstobusiness.dto" ns="http://dto.businesstobusiness.ecobis.cobiscorp" required="true" />
+          </DTOs>
+          <parameterMappings>
+            <parameter name="@i_operacion" direction="in" mappingDirection="in" dataType="char" CTSDataType="SQLCHAR" JavaSQLType="CHAR" mappingType="CONSTANT" allowNull="false" contantValue="I" />
+            <parameter name="@i_referencia" direction="in" mappingDirection="in" dataType="varchar" CTSDataType="SQLVARCHAR" JavaSQLType="VARCHAR" mappingType="DTO" allowNull="false" DTOAlias="inPaymentRequest" DTOPropertyName="reference" />
+            <parameter name="@i_corresponsal" direction="in" mappingDirection="in" dataType="varchar" CTSDataType="SQLVARCHAR" JavaSQLType="VARCHAR" mappingType="DTO" allowNull="false" DTOAlias="inPaymentRequest" DTOPropertyName="correspondent" />
+            <parameter name="@i_fecha_pago" direction="in" mappingDirection="in" dataType="varchar" CTSDataType="SQLVARCHAR" JavaSQLType="VARCHAR" mappingType="DTO" allowNull="false" DTOAlias="inPaymentRequest" DTOPropertyName="paymentDate" />
+            <parameter name="@i_monto_pago" direction="in" mappingDirection="in" dataType="varchar" CTSDataType="SQLVARCHAR" JavaSQLType="VARCHAR" mappingType="DTO" allowNull="false" DTOAlias="inPaymentRequest" DTOPropertyName="paymentAmount" />
+            <parameter name="@i_archivo_pago" direction="in" mappingDirection="in" dataType="varchar" CTSDataType="SQLVARCHAR" JavaSQLType="VARCHAR" mappingType="DTO" allowNull="false" DTOAlias="inPaymentRequest" DTOPropertyName="file" />
+            <parameter name="@i_trn_id_corresp" direction="in" mappingDirection="in" dataType="varchar" CTSDataType="SQLVARCHAR" JavaSQLType="VARCHAR" mappingType="DTO" allowNull="false" DTOAlias="inPaymentRequest" DTOPropertyName="trnIdCorrespondent" />
+            <parameter name="@i_accion" direction="in" mappingDirection="in" dataType="char" CTSDataType="SQLCHAR" JavaSQLType="CHAR" mappingType="CONSTANT" allowNull="false" contantValue="I" />
+            <parameter name="@i_externo" direction="in" mappingDirection="in" dataType="char" CTSDataType="SQLCHAR" JavaSQLType="CHAR" mappingType="CONSTANT" allowNull="false" contantValue="S" />
+            <parameter name="@o_msg" direction="in out" mappingDirection="in" dataType="varchar" CTSDataType="SQLVARCHAR" JavaSQLType="VARCHAR" mappingType="CONSTANT" allowNull="false" contantValue="0" />
+            <parameter name="@o_mensaje_err" direction="in out" mappingDirection="in" dataType="varchar" CTSDataType="SQLVARCHAR" JavaSQLType="VARCHAR" mappingType="CONSTANT" allowNull="false" contantValue="0" />
+            <parameter name="@o_monto_recibido" direction="in out" mappingDirection="in" dataType="varchar" CTSDataType="SQLVARCHAR" JavaSQLType="VARCHAR" mappingType="CONSTANT" allowNull="false" contantValue="0" />
+          </parameterMappings>
+          <resultMappings />
+          <MappingProperties />
+        </SRVMapping>
+      </service>
+    </services>
+  </partialClass>
+</serviceClass>

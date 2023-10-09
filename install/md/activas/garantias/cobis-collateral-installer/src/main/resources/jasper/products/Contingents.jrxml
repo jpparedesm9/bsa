@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Debts" language="java" pageWidth="595" pageHeight="842" columnWidth="595" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="4f510277-4146-465c-88fe-c46b4a07a9e6">
+	<property name="ireport.zoom" value="1.9487171000000043"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<field name="descriptionType" class="java.lang.String"/>
+	<field name="numberOperation" class="java.lang.String"/>
+	<field name="openingDate" class="java.util.Date"/>
+	<field name="expirationDate" class="java.util.Date"/>
+	<field name="currencyDescription" class="java.lang.String"/>
+	<field name="originalAmount" class="java.lang.Double"/>
+	<field name="beneficiary" class="java.lang.String"/>
+	<field name="operationType" class="java.lang.String"/>
+	<group name="OperationType">
+		<groupExpression><![CDATA[$F{operationType}]]></groupExpression>
+		<groupHeader>
+			<band height="16">
+				<staticText>
+					<reportElement uuid="cee69f0d-7283-4efe-8232-76d45b821dd9" x="0" y="0" width="555" height="16"/>
+					<box>
+						<bottomPen lineWidth="0.25"/>
+					</box>
+					<textElement markup="none">
+						<font size="7"/>
+					</textElement>
+					<text><![CDATA[$F{descriptionType}]]></text>
+				</staticText>
+			</band>
+		</groupHeader>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band splitType="Stretch"/>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="20" splitType="Stretch">
+			<textField>
+				<reportElement uuid="b4cedb5c-b27e-46b0-87a6-9138ed1e3fc2" x="0" y="0" width="77" height="20"/>
+				<textElement>
+					<font size="7"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{descriptionType}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="254b7275-1b7d-44a7-bc3f-020fff44de20" x="77" y="0" width="86" height="20"/>
+				<textElement>
+					<font size="7"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{numberOperation}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="03ae338f-d5ce-4b79-8c79-31c48adab666" x="163" y="0" width="39" height="20"/>
+				<textElement>
+					<font size="7"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{openingDate}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="294ab9b2-3756-4ed9-af72-34a0a825f520" x="202" y="0" width="71" height="20"/>
+				<textElement>
+					<font size="7"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{expirationDate}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="8b470a71-e267-4aba-8569-8eba0a39f3f2" x="273" y="0" width="76" height="20"/>
+				<textElement textAlignment="Right">
+					<font size="7"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{currencyDescription}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="125576b7-7f38-44a0-ad06-0ff6caa6f146" x="349" y="0" width="154" height="20"/>
+				<textElement>
+					<font size="7"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{beneficiary}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0.00">
+				<reportElement uuid="6dedf461-5102-4608-ad5b-8790121ff2e0" x="503" y="0" width="52" height="20"/>
+				<textElement textAlignment="Right">
+					<font size="7"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{originalAmount}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

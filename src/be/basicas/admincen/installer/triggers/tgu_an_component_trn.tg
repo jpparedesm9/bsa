@@ -1,0 +1,18 @@
+use cobis
+go
+if exists (select * from sysobjects where name = 'tgu_an_component_trn')
+    drop trigger tgu_an_component_trn
+go
+create trigger tgu_an_component_trn
+on an_component_trn
+for update
+as
+begin
+ 
+    if update(ct_co_id) or update(ct_trn)
+    begin
+        rollback transaction
+        print 'No se puede actualizar la clave'
+    end
+end
+go

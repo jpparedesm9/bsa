@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="PaymentCard" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="30" rightMargin="30" topMargin="20" bottomMargin="20" uuid="24c0182d-cfb8-4053-8e8c-32a7704f2414">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="SUBREPORT_DIR" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["/"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="PUrlLogo" class="java.lang.String"/>
+	<parameter name="PUrlInfoImage" class="java.lang.String"/>
+	<parameter name="PLoanId" class="java.lang.String"/>
+	<parameter name="PCustomerName" class="java.lang.String"/>
+	<parameter name="PNextPaymentDate" class="java.lang.String"/>
+	<parameter name="PAmountNoInterests" class="java.lang.String"/>
+	<parameter name="PMinimiumPayment" class="java.lang.String"/>
+	<parameter name="PSendMail" class="java.lang.String"/>
+	<field name="referencias" class="java.util.Collection"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<pageHeader>
+		<band height="509" splitType="Stretch">
+			<rectangle radius="5">
+				<reportElement x="1" y="184" width="534" height="25" backcolor="#00C3AF" uuid="7aa4fc6c-edfe-41bf-ad59-18cd84b667a4"/>
+				<graphicElement>
+					<pen lineColor="#09B4AD"/>
+				</graphicElement>
+			</rectangle>
+			<textField>
+				<reportElement x="2" y="186" width="204" height="23" forecolor="#FFFFFF" uuid="56a5c9b2-60f1-4316-929c-41b911945193"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["NÚMERO DE CRÉDITO"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="206" y="186" width="201" height="23" forecolor="#FFFFFF" uuid="e7b79cf0-328b-411f-bd39-54a723c5b4d5"/>
+				<textElement verticalAlignment="Middle">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["NOMBRE DEL CLIENTE"]]></textFieldExpression>
+			</textField>
+			<rectangle radius="5">
+				<reportElement x="1" y="257" width="534" height="25" backcolor="#00C3AF" uuid="c3e65895-4e43-4139-812e-9cbc25c99761"/>
+				<graphicElement>
+					<pen lineColor="#09B4AD"/>
+				</graphicElement>
+			</rectangle>
+			<textField>
+				<reportElement x="1" y="259" width="246" height="23" forecolor="#FFFFFF" uuid="2987b094-6362-411e-ad2c-f6ea11e622e5"/>
+				<box leftPadding="12"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="html">
+					<font size="14" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["<b>INFORMACIÓN</b> DE PAGO"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="1" y="283" width="194" height="52" forecolor="#555555" uuid="0c319379-27f5-43d3-9d21-fea819893a22"/>
+				<box leftPadding="16" rightPadding="32">
+					<bottomPen lineWidth="2.0" lineColor="#00C3AF"/>
+					<rightPen lineWidth="2.0" lineColor="#00C3AF"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="SansSerif" size="16" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Fecha de tu \npróximo pago"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="1" y="335" width="194" height="52" forecolor="#555555" uuid="02d28325-ae9a-43d6-8485-46727fbf19e5"/>
+				<box leftPadding="16" rightPadding="32">
+					<bottomPen lineWidth="2.0" lineColor="#00C3AF"/>
+					<rightPen lineWidth="2.0" lineColor="#00C3AF"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="SansSerif" size="16" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Pago para no generar interés"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="1" y="388" width="194" height="52" forecolor="#555555" uuid="2fa6376b-2413-44d2-ac6b-6ff76870c1d9"/>
+				<box leftPadding="16" rightPadding="32">
+					<bottomPen lineWidth="2.0" lineColor="#00C3AF"/>
+					<rightPen lineWidth="2.0" lineColor="#00C3AF"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="SansSerif" size="16" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Pago mínimo"]]></textFieldExpression>
+			</textField>
+			<rectangle radius="5">
+				<reportElement x="1" y="456" width="534" height="25" forecolor="#FF0000" backcolor="#FF0000" uuid="b97e4bdd-7b83-4229-83b6-59c5709e1254"/>
+				<graphicElement>
+					<pen lineColor="#FF0000"/>
+				</graphicElement>
+			</rectangle>
+			<textField>
+				<reportElement x="9" y="456" width="479" height="25" forecolor="#FFFFFF" uuid="da8aae56-b1e8-473d-8e32-6904322d3783"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="16" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["REALIZA TUS PAGOS EN:"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="335" y="481" width="201" height="28" forecolor="#555555" uuid="46ead17b-f81c-455c-ace4-8e6a6b041fc7"/>
+				<box leftPadding="10">
+					<bottomPen lineWidth="0.0" lineColor="#F0F0F0"/>
+				</box>
+				<textElement textAlignment="Justified" verticalAlignment="Middle">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["NÚMERO DE CONVENIO"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="172" y="481" width="164" height="28" forecolor="#555555" uuid="43e897d4-4b64-485a-9bc5-702f878b31b2"/>
+				<box leftPadding="12">
+					<rightPen lineWidth="2.0" lineColor="#FF0000"/>
+				</box>
+				<textElement textAlignment="Justified" verticalAlignment="Middle">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["REFERENCIA"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="1" y="481" width="171" height="28" forecolor="#555555" uuid="59c05602-76ba-43ca-a5de-78bef4b6a7ba"/>
+				<box leftPadding="12">
+					<rightPen lineWidth="2.0" lineColor="#FF0000"/>
+				</box>
+				<textElement textAlignment="Justified" verticalAlignment="Middle">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["INSTITUCIÓN"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="1" y="209" width="194" height="32" forecolor="#555555" uuid="e47bf3fc-a110-4913-97f3-1ca3f8c104bf"/>
+				<box leftPadding="12">
+					<bottomPen lineWidth="2.0" lineColor="#00C3AF"/>
+					<rightPen lineWidth="2.0" lineColor="#00C3AF"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="14" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{PLoanId}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="194" y="209" width="341" height="32" forecolor="#555555" uuid="a80fa810-4b45-4313-9b69-5d5a7ec27968"/>
+				<box leftPadding="20">
+					<bottomPen lineWidth="2.0" lineColor="#09B4AD"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="SansSerif" size="14" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{PCustomerName}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="195" y="283" width="340" height="52" forecolor="#555555" uuid="97ab0931-31e5-4249-a005-4bd198677c48"/>
+				<box leftPadding="16">
+					<bottomPen lineWidth="2.0" lineColor="#00C3AF"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="SansSerif" size="14" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{PNextPaymentDate}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="195" y="335" width="340" height="52" forecolor="#555555" uuid="afd7b2b0-b37d-47d5-9cbc-8b741a432fbb"/>
+				<box leftPadding="16">
+					<bottomPen lineWidth="2.0" lineColor="#00C3AF"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="SansSerif" size="14" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{PAmountNoInterests}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="195" y="388" width="340" height="52" forecolor="#555555" uuid="426a3a25-29db-4e89-acf6-900679569a88"/>
+				<box leftPadding="16">
+					<bottomPen lineWidth="2.0" lineColor="#00C3AF"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="SansSerif" size="14" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{PMinimiumPayment}]]></textFieldExpression>
+			</textField>
+			<image>
+				<reportElement x="0" y="12" width="536" height="174" uuid="68406d64-b2f9-4935-a150-06d30a0c4e26"/>
+				<imageExpression><![CDATA["imagen\\cabecera.jpg"]]></imageExpression>
+			</image>
+		</band>
+	</pageHeader>
+	<detail>
+		<band height="33" splitType="Stretch">
+			<subreport>
+				<reportElement x="1" y="0" width="534" height="33" uuid="fd7752c9-748f-4635-8e6a-4d8771a3b6c2"/>
+				<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($F{referencias})]]></dataSourceExpression>
+				<subreportExpression><![CDATA[$P{SUBREPORT_DIR} + "PaymentCardDetail.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="160" splitType="Stretch">
+			<image>
+				<reportElement x="112" y="9" width="304" height="150" uuid="be44fb6b-4196-4410-a64c-9edabeeae10c"/>
+				<imageExpression><![CDATA["imagen\\InfoPago.jpg"]]></imageExpression>
+			</image>
+		</band>
+	</pageFooter>
+</jasperReport>

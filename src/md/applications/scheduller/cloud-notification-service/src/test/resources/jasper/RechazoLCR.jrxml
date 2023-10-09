@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="RechazoLCR" pageWidth="595" pageHeight="842" columnWidth="505" leftMargin="50" rightMargin="40" topMargin="20" bottomMargin="20" uuid="810d174d-6b23-4ad8-b743-9d4240eeab63">
+	<property name="ireport.zoom" value="1.2100000000000009"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="103"/>
+	<parameter name="FECHA" class="java.util.Date"/>
+	<parameter name="PIEPAGINA" class="java.lang.String"/>
+	<parameter name="NOMBREEMPRESA" class="java.lang.String"/>
+	<parameter name="FechaRegistro" class="java.lang.String"/>
+	<parameter name="Codigo" class="java.lang.Integer"/>
+	<parameter name="Nombre" class="java.lang.String"/>
+	<parameter name="ApellidoPaterno" class="java.lang.String"/>
+	<parameter name="ApellidoMaterno" class="java.lang.String"/>
+	<parameter name="Observacion" class="java.lang.String"/>
+	<parameter name="Tramite" class="java.lang.Integer"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<variable name="FECHA" class="java.lang.String">
+		<variableExpression><![CDATA[new java.text.SimpleDateFormat("dd/MM/yyyy").format($P{FECHA})]]></variableExpression>
+	</variable>
+	<title>
+		<band height="51" splitType="Stretch">
+			<image scaleImage="FillFrame">
+				<reportElement x="1" y="1" width="130" height="40" uuid="2712992f-aa1f-4236-a996-bac2a4786c26"/>
+				<imageExpression><![CDATA["logo-tuiio.png"]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="20" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="56" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="17" width="505" height="18" uuid="f6cac328-150a-4b2c-a4a5-95f5c8753568"/>
+				<textElement verticalAlignment="Middle" markup="html">
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Estimado Señor (a): "]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="0" width="505" height="18" uuid="ab541d8c-8f16-4bf7-9520-0da64b0ea287"/>
+				<textElement verticalAlignment="Middle">
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{FECHA}]]></textFieldExpression>
+			</textField>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="244" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="226" width="505" height="18" uuid="5e8a3509-beae-4eb8-a6a0-427ab84c73ff"/>
+				<textElement verticalAlignment="Middle">
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Saludos Cordiales."]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="1" y="0" width="504" height="99" uuid="002d9677-3d30-4cbe-ae78-24ac1d6ac981"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle" markup="html">
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Se le informa que la solicitud de la Línea de Crédito Revolvente del cliente " + $P{Nombre} + " " + $P{ApellidoPaterno} + " " + $P{ApellidoMaterno} + ", fue rechazado por las siguientes razones: "]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="99" width="505" height="58" uuid="52b0a82a-1a2d-4b21-872c-83b2a291e772"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle" markup="html">
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{Observacion}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

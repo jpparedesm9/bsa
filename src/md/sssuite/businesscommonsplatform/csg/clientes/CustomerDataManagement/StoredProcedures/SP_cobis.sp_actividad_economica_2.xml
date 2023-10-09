@@ -1,0 +1,169 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<procedure>
+  <database>cobis</database>
+  <name>sp_actividad_economica</name>
+  <type>SYBASE</type>
+  <version>2</version>
+  <parameters>
+    <parameter name="@s_ssn" dataType="int" direction="in" />
+    <parameter name="@s_user" dataType="varchar" direction="in" />
+    <parameter name="@s_term" dataType="varchar" direction="in" />
+    <parameter name="@s_date" dataType="datetime" direction="in" />
+    <parameter name="@s_srv" dataType="varchar" direction="in" />
+    <parameter name="@s_lsrv" dataType="varchar" direction="in" />
+    <parameter name="@s_ofi" dataType="smallint" direction="in" />
+    <parameter name="@s_rol" dataType="smallint" direction="in" />
+    <parameter name="@s_org_err" dataType="char" direction="in" />
+    <parameter name="@s_error" dataType="int" direction="in" />
+    <parameter name="@s_sev" dataType="tinyint" direction="in" />
+    <parameter name="@s_msg" dataType="varchar" direction="in" />
+    <parameter name="@s_org" dataType="char" direction="in" />
+    <parameter name="@t_debug" dataType="char" direction="in" />
+    <parameter name="@t_file" dataType="varchar" direction="in" />
+    <parameter name="@t_from" dataType="varchar" direction="in" />
+    <parameter name="@t_trn" dataType="smallint" direction="in" />
+    <parameter name="@t_show_version" dataType="bit" direction="in" />
+    <parameter name="@i_operacion" dataType="char" direction="in" />
+    <parameter name="@i_modo" dataType="int" direction="in" />
+    <parameter name="@i_secuencial" dataType="int" direction="in" />
+    <parameter name="@i_ente" dataType="int" direction="in" />
+    <parameter name="@i_actividad" dataType="varchar" direction="in" />
+    <parameter name="@i_sector" dataType="varchar" direction="in" />
+    <parameter name="@i_subactividad" dataType="varchar" direction="in" />
+    <parameter name="@i_subsector" dataType="varchar" direction="in" />
+    <parameter name="@i_principal" dataType="char" direction="in" />
+    <parameter name="@i_dias_atencion" dataType="varchar" direction="in" />
+    <parameter name="@i_horario_atencion" dataType="varchar" direction="in" />
+    <parameter name="@i_fecha_ini" dataType="datetime" direction="in" />
+    <parameter name="@i_fuente_ingr" dataType="varchar" direction="in" />
+    <parameter name="@i_antiguedad" dataType="int" direction="in" />
+    <parameter name="@i_ambiente" dataType="varchar" direction="in" />
+    <parameter name="@i_autorizado" dataType="char" direction="in" />
+    <parameter name="@i_afiliado" dataType="char" direction="in" />
+    <parameter name="@i_lugar_afiliacion" dataType="varchar" direction="in" />
+    <parameter name="@i_num_empleados" dataType="int" direction="in" />
+    <parameter name="@i_desc_actividad" dataType="varchar" direction="in" />
+    <parameter name="@i_desc_caedec" dataType="varchar" direction="in" />
+    <parameter name="@i_tipo_propiedad" dataType="varchar" direction="in" />
+    <parameter name="@i_horario_act" dataType="varchar" direction="in" />
+    <parameter name="@i_estado" dataType="char" direction="in" />
+    <parameter name="@i_verificado" dataType="char" direction="in" />
+    <parameter name="@i_fecha_verif" dataType="datetime" direction="in" />
+    <parameter name="@i_fuente_verif" dataType="varchar" direction="in" />
+    <parameter name="@i_formato_fecha" dataType="int" direction="in" />
+    <parameter name="@o_fecha_ini" dataType="varchar" direction="in" />
+    <parameter name="@o_secuencial" dataType="int" direction="out" />
+    <parameter name="@i_aplicacion" dataType="char" direction="in" />
+  </parameters>
+  <queries>
+    <query>
+      <columns>
+        <column name="{1}" />
+      </columns>
+      <queryText>SELECT o_secuencial</queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="SECUENCIAL" />
+        <column name="CLIENTE" />
+        <column name="SECTOR" />
+        <column name="SUB SECTOR" />
+        <column name="ACTIVIDAD" />
+        <column name="ACTIVIDAD FIE" />
+        <column name="HORARIO DE ATENCION" />
+        <column name="NRO EMPLEADOS" />
+        <column name="PRINCIPAL" />
+        <column name="DIAS DE ATENCION" />
+        <column name="AMBIENTE" />
+        <column name="TIPO DE PROPIEDAD" />
+        <column name="FUENTE DE INGRESO" />
+        <column name="FECHA INICIO ACT" />
+        <column name="ANTIGUEDAD" />
+        <column name="AUTORIZADO" />
+        <column name="AFILIADO" />
+        <column name="LUGAR DE AFILIACION" />
+        <column name="HORARIO ACTIVIDAD" />
+        <column name="DESCRIP. CAEDEC" />
+        <column name="DESCRIP. ACTIVIDAD" />
+        <column name="VERIFICADO" />
+        <column name="FECHA VERIF." />
+        <column name="FUENTE VERIF." />
+        <column name="ACLARACION FIE" />
+        <column name="SUBACTIVIAD ECONOMICA" />
+      </columns>
+      <queryText>SELECT  "SECUENCIAL" = ae_secuencial,"CLIENTE" = ae_ente,"SECTOR" = ae_sector,"SUB SECTOR" = ae_subsector,"ACTIVIDAD" = ae_actividad,"ACTIVIDAD FIE" = ae_subactividad,"HORARIO DE ATENCION" = ae_horario_atencion,"NRO EMPLEADOS" = ae_num_empleados,"PRINCIPAL" = ae_principal,"DIAS DE ATENCION" = ae_dias_atencion,"AMBIENTE" = ae_ambiente,"TIPO DE PROPIEDAD" = ae_ubicacion,"FUENTE DE INGRESO" = ae_fuente_ing,"FECHA INICIO ACT" = CONVERT (VARCHAR (10),ae_fecha_inicio_act ,?),"ANTIGUEDAD" = ae_antiguedad,"AUTORIZADO" = ae_autorizado,"AFILIADO" = ae_afiliado,"LUGAR DE AFILIACION" = ae_lugar_afiliacion,"HORARIO ACTIVIDAD" = ae_horario_actividad,"DESCRIP. CAEDEC" = ae_desc_caedec,"DESCRIP. ACTIVIDAD" = ae_desc_actividad,"VERIFICADO" = ae_verificado,"FECHA VERIF." = CONVERT (VARCHAR (10),ae_fecha_verificacion ,?),"FUENTE VERIF." = ae_fuente_verificacion,"ACLARACION FIE" = (SELECT  se_aclaracionFie FROM cobis..cl_subactividad_ec   WHERE se_codigo = c.ae_subactividad     ),"ACLARACION FIE 2" = (SELECT  se_aclaracionFie2 FROM cobis..cl_subactividad_ec   WHERE se_codigo = c.ae_subactividad     ),"ACLARACION FIE 3" = (SELECT  se_aclaracionFie3 FROM cobis..cl_subactividad_ec   WHERE se_codigo = c.ae_subactividad     ),"ACLARACION FIE 4" = (SELECT  se_aclaracionFie4 FROM cobis..cl_subactividad_ec   WHERE se_codigo = c.ae_subactividad     ) </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="SECUENCIAL" />
+        <column name="CLIENTE" />
+        <column name="SECTOR" />
+        <column name="SUB SECTOR" />
+        <column name="ACTIVIDAD" />
+        <column name="ACTIVIDAD FIE" />
+        <column name="HORARIO DE ATENCION" />
+        <column name="NRO EMPLEADOS" />
+        <column name="PRINCIPAL" />
+        <column name="DIAS DE ATENCION" />
+        <column name="AMBIENTE" />
+        <column name="TIPO DE PROPIEDAD" />
+        <column name="FUENTE DE INGRESO" />
+        <column name="FECHA INICIO ACT" />
+        <column name="ANTIGUEDAD" />
+        <column name="AUTORIZADO" />
+        <column name="AFILIADO" />
+        <column name="LUGAR DE AFILIACION" />
+        <column name="HORARIO ACTIVIDAD" />
+        <column name="DESCRIP. CAEDEC" />
+        <column name="DESCRIP. ACTIVIDAD" />
+        <column name="VERIFICADO" />
+        <column name="FECHA VERIF." />
+        <column name="FUENTE VERIF." />
+        <column name="ACLARACION FIE" />
+        <column name="SUBACTIVIAD ECONOMICA" />
+      </columns>
+      <queryText>SELECT  "SECUENCIAL" = ae_secuencial,"CLIENTE" = ae_ente,"SECTOR" = ae_sector,"SUB SECTOR" = ae_subsector,"ACTIVIDAD" = ae_actividad,"ACTIVIDAD FIE" = ae_subactividad,"HORARIO DE ATENCION" = ae_horario_atencion,"NRO EMPLEADOS" = ae_num_empleados,"PRINCIPAL" = ae_principal,"DIAS DE ATENCION" = ae_dias_atencion,"AMBIENTE" = ae_ambiente,"TIPO DE PROPIEDAD" = ae_ubicacion,"FUENTE DE INGRESO" = ae_fuente_ing,"FECHA INICIO ACT" = CONVERT (VARCHAR (10),ae_fecha_inicio_act ,?),"ANTIGUEDAD" = ae_antiguedad,"AUTORIZADO" = ae_autorizado,"AFILIADO" = ae_afiliado,"LUGAR DE AFILIACION" = ae_lugar_afiliacion,"HORARIO ACTIVIDAD" = ae_horario_actividad,"DESCRIP. CAEDEC" = ae_desc_caedec,"DESCRIP. ACTIVIDAD" = ae_desc_actividad,"VERIFICADO" = ae_verificado,"FECHA VERIF." = CONVERT (VARCHAR (10),ae_fecha_verificacion ,?),"FUENTE VERIF." = ae_fuente_verificacion,"ACLARACION FIE" = (SELECT  se_aclaracionFie FROM cobis..cl_subactividad_ec   WHERE se_codigo = c.ae_subactividad     ),"ACLARACION FIE 2" = (SELECT  se_aclaracionFie2 FROM cobis..cl_subactividad_ec   WHERE se_codigo = c.ae_subactividad     ),"ACLARACION FIE 3" = (SELECT  se_aclaracionFie3 FROM cobis..cl_subactividad_ec   WHERE se_codigo = c.ae_subactividad     ),"ACLARACION FIE 4" = (SELECT  se_aclaracionFie4 FROM cobis..cl_subactividad_ec   WHERE se_codigo = c.ae_subactividad     ) </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="SECUENCIAL" />
+        <column name="CLIENTE" />
+        <column name="SECTOR" />
+        <column name="SECTOR Desc" />
+        <column name="SUB SECTOR" />
+        <column name="SUB SECTOR Desc" />
+        <column name="ACTIVIDAD" />
+        <column name="ACTIVIDAD Desc" />
+        <column name="ACTIVIDAD FIE" />
+        <column name="ACTIVIDAD FIE Desc" />
+        <column name="FUENTE INGRESO" />
+        <column name="FUENTE INGRESO Desc" />
+        <column name="NRO EMPLEADOS" />
+        <column name="DESCRIP. CAEDEC" />
+        <column name="DESCRIP. ACTIVIDAD" />
+      </columns>
+      <queryText>SELECT  "SECUENCIAL" = ae_secuencial,"CLIENTE" = ae_ente,"SECTOR" = ae_sector,"SECTOR Desc" = (SELECT  se_descripcion FROM cobis..cl_sector_economico   WHERE se_codigo = c.ae_sector     ),"SUB SECTOR" = ae_subsector,"SUB SECTOR Desc" = (SELECT  se_descripcion FROM cobis..cl_subsector_ec   WHERE se_codigo = c.ae_subsector     ),"ACTIVIDAD" = ae_actividad,"ACTIVIDAD Desc" = (SELECT  ac_descripcion FROM cobis..cl_actividad_ec   WHERE ac_codigo = c.ae_actividad     ),"ACTIVIDAD FIE" = ae_subactividad,"ACTIVIDAD FIE Desc" = (SELECT  se_descripcion FROM cobis..cl_subactividad_ec   WHERE se_codigo = c.ae_subactividad     ),"FUENTE INGRESO" = ae_fuente_ing,"FUENTE INGRESO Desc" = (SELECT  valor FROM cobis..cl_catalogo   WHERE tabla IN (SELECT  codigo FROM cobis..cl_tabla   WHERE tabla = "cl_fuente_ingreso"     ) AND codigo = c.ae_fuente_ing     ),"NRO EMPLEADOS" = ae_num_empleados,"DESCRIP. CAEDEC" = ae_desc_caedec,"DESCRIP. ACTIVIDAD" = ae_desc_actividad </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="{1}" />
+        <column name="{2}" />
+      </columns>
+      <queryText>SELECT  ae_actividad,b.valor </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="SECUENCIAL" />
+        <column name="CLIENTE" />
+        <column name="COD. SECTOR" />
+        <column name="SECTOR" />
+        <column name="SUB SECTOR" />
+        <column name="ACTIVIDAD" />
+        <column name="ACTIVIDAD FIE" />
+        <column name="HORARIO DE ATENCION" />
+        <column name="PRINCIPAL" />
+      </columns>
+      <queryText>SELECT  "SECUENCIAL" = ae_secuencial,"CLIENTE" = ae_ente,"COD. SECTOR" = ae_sector,"SECTOR" = (SELECT  b.valor FROM cobis..cl_tabla a  ,cobis..cl_catalogo b   WHERE a.tabla = "cl_sector_economico" AND a.codigo = b.tabla AND b.codigo = c.ae_sector     ),"SUB SECTOR" = ae_subsector,"ACTIVIDAD" = ae_actividad,"ACTIVIDAD FIE" = ae_subactividad,"HORARIO DE ATENCION" = ae_horario_atencion,"PRINCIPAL" = ae_principal </queryText>
+    </query>
+  </queries>
+</procedure>

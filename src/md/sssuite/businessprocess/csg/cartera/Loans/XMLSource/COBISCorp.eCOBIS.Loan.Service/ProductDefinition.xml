@@ -1,0 +1,290 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<product path="D:/MX/DEV_SaaSMX/SSSuite/BusinessProcess/source/middleware/SG/cartera/Loans/Products/COBISCorp.eCOBIS.Loan.Service" appPath="C:/Program Files (x86)/COBIS/COBIS Services Generator/" name="COBISCorp.eCOBIS.Loan.Service" productNS="http://service.loan.ecobis.cobiscorp" description="Servicio Cartera" documentationLanguage="Español" year="2017" version="2.0.0.0" type="SERVICE" GUID="6C256F3A-4668-4BA7-B15E-29494670CEC3">
+  <namespaces>
+    <namespace type="class" base="COBISCorp.eCOBIS.Loan" name="COBISCorp.eCOBIS.Loan.Service" package="cobiscorp.ecobis.loan.service" ns="http://service.loan.ecobis.cobiscorp" folder="" />
+  </namespaces>
+  <templates>
+    <template id="ServiceCTS302" productName="COBISCorp.eCOBIS.Loan.Service" outputFolder="c:\COBIS-SG\Output\CTS\COBISCorp.eCOBIS.Loan.Service" package="true" packageType="Jar">
+      <templateFiles>
+        <templateFile filePath="Annotations\JavaInterface.xslt" enabled="true" override="true" />
+        <templateFile filePath="Annotations\JavaService.xslt" enabled="true" override="true" />
+        <templateFile filePath="Annotations\OSGIClass.xslt" enabled="true" override="true" />
+        <templateFile filePath="Annotations\Interceptor.xslt" enabled="true" override="false" />
+        <templateFile filePath="..\Commons\Java\buildProperties.xslt" enabled="true" override="true" />
+        <templateFile filePath="..\Commons\Java\build.xslt" enabled="true" override="true" />
+      </templateFiles>
+    </template>
+  </templates>
+  <DTOs />
+  <classes>
+    <class name="LoanGeneralData" nsBase="COBISCorp.eCOBIS.Loan" namespace="COBISCorp.eCOBIS.Loan.Service" package="cobiscorp.ecobis.loan.service" ns="http://service.loan.ecobis.cobiscorp" version="1">
+      <partialClasses>
+        <partialClass name="LoanGeneralData">
+          <services>
+            <service name="ReadLoanGeneralDataSearch" id="Loan.LoanGeneralData.ReadLoanGeneralDataSearch">
+              <procedure name="sp_qr_operacion" database="cob_cartera" version="1" />
+            </service>
+          </services>
+        </partialClass>
+      </partialClasses>
+    </class>
+    <class name="LoanMaintenance" nsBase="COBISCorp.eCOBIS.Loan" namespace="COBISCorp.eCOBIS.Loan.Service" package="cobiscorp.ecobis.loan.service" ns="http://service.loan.ecobis.cobiscorp" version="1">
+      <partialClasses>
+        <partialClass name="LoanMaintenance">
+          <services>
+            <service name="CommitLoanChanges" id="Loan.LoanMaintenance.CommitLoanChanges">
+              <procedure name="sp_operacion_def" database="cob_cartera" version="1" />
+            </service>
+            <service name="CreateDisbursementForm" id="Loan.LoanMaintenance.CreateDisbursementForm">
+              <procedure name="sp_desembolso" database="cob_cartera" version="1" />
+            </service>
+            <service name="CreateTmpTables" id="Loan.LoanMaintenance.CreateTmpTables">
+              <procedure name="sp_pasotmp" database="cob_cartera" version="1" />
+            </service>
+            <service name="DeleteTmpTables" id="Loan.LoanMaintenance.DeleteTmpTables">
+              <procedure name="sp_borrar_tmp" database="cob_cartera" version="1" />
+            </service>
+            <service name="InsertPenalizationLoan" id="Loan.LoanMaintenance.InsertPenalizationLoan">
+              <procedure name="sp_castigo_operaciones" database="cob_credito" version="1" />
+            </service>
+            <service name="ManualTable" id="Loan.LoanMaintenance.ManualTable">
+              <procedure name="sp_decodificador" database="cob_cartera" version="1" />
+            </service>
+            <service name="RemoveDisbursementForm" id="Loan.LoanMaintenance.removeDisbursementForm">
+              <procedure name="sp_desembolso" database="cob_cartera" version="1" />
+            </service>
+            <service name="SearchCustomerOperation" id="Loan.LoanMaintenance.SearchCustomerOperation">
+              <procedure name="sp_buscar_operaciones" database="cob_cartera" version="1" />
+            </service>
+            <service name="SearchLoan" id="Loan.LoanMaintenance.SearchLoan">
+              <procedure name="sp_qr_operacion_tmp" database="cob_cartera" version="1" />
+            </service>
+            <service name="SearchPenalizationLoan" id="Loan.LoanMaintenance.SearchPenalizationLoan">
+              <procedure name="sp_consulta_candidata_castigo" database="cob_credito" version="1" />
+            </service>
+            <service name="UpdateLoanDataTmp" id="Loan.LoanMaintenance.UpdateLoanDataTmp">
+              <procedure name="sp_modificar_operacion_busin" database="cob_pac" version="1" />
+            </service>
+            <service name="UpdateLoanParameters" id="Loan.LoanMaintenance.UpdateLoanParameters">
+              <procedure name="sp_modificar_operacion_busin" database="cob_pac" version="1" />
+            </service>
+            <service name="UpdatePenalizationLoan" id="Loan.LoanMaintenance.UpdatePenalizationLoan">
+              <procedure name="sp_consulta_candidata_castigo" database="cob_credito" version="1" />
+            </service>
+          </services>
+        </partialClass>
+      </partialClasses>
+    </class>
+    <class name="LoansQueries" nsBase="COBISCorp.eCOBIS.Loan" namespace="COBISCorp.eCOBIS.Loan.Service" package="cobiscorp.ecobis.loan.service" ns="http://service.loan.ecobis.cobiscorp" version="1">
+      <partialClasses>
+        <partialClass name="LoansQueries">
+          <services>
+            <service name="GetPenalizationLoan" id="Loan.LoansQueries.GetPenalizationLoan">
+              <procedure name="sp_datos_castigo" database="cob_cartera" version="1" />
+            </service>
+            <service name="ReadArrearsRange" id="Loan.LoansQueries.ReadArrearsRange">
+              <procedure name="sp_rango_moratoria" database="cob_cartera" version="1" />
+            </service>
+            <service name="ReadCurrentValuesByOperation" id="Loan.LoansQueries.ReadCurrentValuesByOperation">
+              <procedure name="sp_rubro_moratoria" database="cob_cartera" version="1" />
+            </service>
+            <service name="ReadLoanAmortizationTableSearch" id="Loan.LoansQueries.ReadLoanAmortizationTableSearch">
+              <procedure name="sp_qr_amortiza_web" database="cob_cartera" version="1" />
+            </service>
+            <service name="ReadLoanGeneralDataTmp" id="Loan.LoansQueries.ReadLoanGeneralDataTmp">
+              <procedure name="sp_qr_operacion_tmp" database="cob_cartera" version="1" />
+            </service>
+            <service name="ReadRepAmortizationTable" id="Loan.LoansQueries.ReadRepAmortizationTable">
+              <procedure name="sp_imp_tabla_amort" database="cob_cartera" version="1" />
+            </service>
+            <service name="SearchDisbursmentForm" id="Loan.LoansQueries.SearchDisbursmentForm">
+              <procedure name="sp_qr_producto" database="cob_cartera" version="1" />
+            </service>
+            <service name="SearchLoanItemsTmp" id="Loan.LoansQueries.SearchLoanItemsTmp">
+              <procedure name="sp_qr_producto" database="cob_cartera" version="1" />
+            </service>
+          </services>
+        </partialClass>
+      </partialClasses>
+    </class>
+    <class name="LoanTransaction" nsBase="COBISCorp.eCOBIS.Loan" namespace="COBISCorp.eCOBIS.Loan.Service" package="cobiscorp.ecobis.loan.service" ns="http://service.loan.ecobis.cobiscorp" version="1">
+      <partialClasses>
+        <partialClass name="LoanTransaction">
+          <services>
+            <service name="DisburseLoan" id="Loan.LoanTransaction.DisburseLoan">
+              <procedure name="sp_liquida" database="cob_cartera" version="1" />
+            </service>
+          </services>
+        </partialClass>
+      </partialClasses>
+    </class>
+    <class name="Queries" nsBase="COBISCorp.eCOBIS.Loan" namespace="COBISCorp.eCOBIS.Loan.Service" package="cobiscorp.ecobis.loan.service" ns="http://service.loan.ecobis.cobiscorp" version="1">
+      <partialClasses>
+        <partialClass name="Queries">
+          <services>
+            <service name="GetStatus" id="Loan.Queries.GetStatus">
+              <procedure name="sp_consulta_estado" database="cob_cartera" version="1" />
+            </service>
+          </services>
+        </partialClass>
+      </partialClasses>
+    </class>
+    <class name="ReadDisbursementForm" nsBase="COBISCorp.eCOBIS.Loan" namespace="COBISCorp.eCOBIS.Loan.Service" package="cobiscorp.ecobis.loan.service" ns="http://service.loan.ecobis.cobiscorp" version="1">
+      <partialClasses>
+        <partialClass name="ReadDisbursementForm">
+          <services>
+            <service name="ReadDisbursementFormSearch" id="Loan.ReadDisbursementForm.ReadDisbursementFormSearch">
+              <procedure name="sp_desembolso" database="cob_cartera" version="1" />
+            </service>
+            <service name="SearchDisbursementForm" id="Loan.ReadDisbursementForm.SearchDisbursementForm">
+              <procedure name="sp_desembolso" database="cob_cartera" version="1" />
+            </service>
+            <service name="SearchDisbursementFormReport" id="Loan.ReadDisbursementForm.SearchDisbursementFormReport">
+              <procedure name="sp_desembolso" database="cob_cartera" version="1" />
+            </service>
+            <service name="ValueDisbursementForm" id="Loan.ReadDisbursementForm.ValueDisbursementForm">
+              <procedure name="sp_qr_producto" database="cob_cartera" version="1" />
+            </service>
+          </services>
+        </partialClass>
+      </partialClasses>
+    </class>
+    <class name="ReadHolidays" nsBase="COBISCorp.eCOBIS.Loan" namespace="COBISCorp.eCOBIS.Loan.Service" package="cobiscorp.ecobis.loan.service" ns="http://service.loan.ecobis.cobiscorp" version="1">
+      <partialClasses>
+        <partialClass name="ReadHolidays">
+          <services>
+            <service name="GetHolidays" id="Loan.ReadHolidays.GetHolidays">
+              <procedure name="sp_feriados_tamortizacion" database="cob_credito" version="1" />
+            </service>
+          </services>
+        </partialClass>
+      </partialClasses>
+    </class>
+    <class name="ReadLoanAmortizationTable" nsBase="COBISCorp.eCOBIS.Loan" namespace="COBISCorp.eCOBIS.Loan.Service" package="cobiscorp.ecobis.loan.service" ns="http://service.loan.ecobis.cobiscorp" version="1">
+      <partialClasses>
+        <partialClass name="ReadLoanAmortizationTable">
+          <services>
+            <service name="ReadLoanAmortizationTableSearch" id="Loan.ReadLoanAmortizationTable.ReadLoanAmortizationTableSearch">
+              <procedure name="sp_qr_amortiza_web" database="cob_cartera" version="1" />
+            </service>
+            <service name="ReadLoanAmortizationTableSearchTmp" id="Loan.ReadLoanAmortizationTable.ReadLoanAmortizationTableSearchTmp">
+              <procedure name="sp_qr_amortiza_tmp_web" database="cob_cartera" version="1" />
+            </service>
+            <service name="ReadLoanPayment" id="Loan.ReadLoanAmortizationTable.ReadLoanPayment">
+              <procedure name="sp_ori_valor_cuota" database="cob_credito" version="1" />
+            </service>
+          </services>
+        </partialClass>
+      </partialClasses>
+    </class>
+    <class name="ReadLoanInsurance" nsBase="COBISCorp.eCOBIS.Loan" namespace="COBISCorp.eCOBIS.Loan.Service" package="cobiscorp.ecobis.loan.service" ns="http://service.loan.ecobis.cobiscorp" version="1">
+      <partialClasses>
+        <partialClass name="ReadLoanInsurance">
+          <services>
+            <service name="ReadLoanInsuranceSearch" id="Loan.ReadLoanInsurance.ReadLoanInsuranceSearch">
+              <procedure name="sp_poliza" database="cob_custodia" version="1" />
+            </service>
+          </services>
+        </partialClass>
+      </partialClasses>
+    </class>
+    <class name="ReadLoanItems" nsBase="COBISCorp.eCOBIS.Loan" namespace="COBISCorp.eCOBIS.Loan.Service" package="cobiscorp.ecobis.loan.service" ns="http://service.loan.ecobis.cobiscorp" version="1">
+      <partialClasses>
+        <partialClass name="ReadLoanItems">
+          <services>
+            <service name="ReadLoanItemsSearch" id="Loan.ReadLoanItems.ReadLoanItemsSearch">
+              <procedure name="sp_datos_operacion" database="cob_cartera" version="1" />
+            </service>
+          </services>
+        </partialClass>
+      </partialClasses>
+    </class>
+    <class name="ReadOperationCustomer" nsBase="COBISCorp.eCOBIS.Loan" namespace="COBISCorp.eCOBIS.Loan.Service" package="cobiscorp.ecobis.loan.service" ns="http://service.loan.ecobis.cobiscorp" version="1">
+      <partialClasses>
+        <partialClass name="ReadOperationCustomer">
+          <services>
+            <service name="GetOperationCustomer" id="Loan.ReadOperationCustomer.GetOperationCustomer">
+              <procedure name="sp_bus_oper_cliente" database="cob_credito" version="1" />
+            </service>
+          </services>
+        </partialClass>
+      </partialClasses>
+    </class>
+    <class name="ReadOperationGuarantees" nsBase="COBISCorp.eCOBIS.Loan" namespace="COBISCorp.eCOBIS.Loan.Service" package="cobiscorp.ecobis.loan.service" ns="http://service.loan.ecobis.cobiscorp" version="1">
+      <partialClasses>
+        <partialClass name="ReadOperationGuarantees">
+          <services>
+            <service name="GetOperationGuarantees" id="Loan.ReadOperationGuarantees.GetOperationGuarantees">
+              <procedure name="sp_garantia_operacion" database="cob_cartera" version="1" />
+            </service>
+          </services>
+        </partialClass>
+      </partialClasses>
+    </class>
+    <class name="SearchLoanItems" nsBase="COBISCorp.eCOBIS.Loan" namespace="COBISCorp.eCOBIS.Loan.Service" package="cobiscorp.ecobis.loan.service" ns="http://service.loan.ecobis.cobiscorp" version="1">
+      <partialClasses>
+        <partialClass name="SearchLoanItems">
+          <services>
+            <service name="CreateItem" id="Loan.SearchLoanItems.CreateItem">
+              <procedure name="sp_valor" database="cob_cartera" version="1" />
+            </service>
+            <service name="CreateLoanItems" id="Loan.SearchLoanItems.CreateLoanItems">
+              <procedure name="sp_rubro_tmp" database="cob_cartera" version="1" />
+            </service>
+            <service name="DeleteItems" id="Loan.SearchLoanItems.DeleteItems">
+              <procedure name="sp_rubro_tmp" database="cob_cartera" version="1" />
+            </service>
+            <service name="GetLoanItemsAllDetails" id="Loan.SearchLoanItems.GetLoanItemsAllDetails">
+              <procedure name="sp_valor" database="cob_cartera" version="1" />
+            </service>
+            <service name="GetLoanItemsDetails" id="Loan.SearchLoanItems.GetLoanItemsDetails">
+              <procedure name="sp_rubro_tmp" database="cob_cartera" version="1" />
+            </service>
+            <service name="InsertItem" id="Loan.SearchLoanItems.InsertItem">
+              <procedure name="sp_consulta_rubro" database="cob_cartera" version="1" />
+            </service>
+            <service name="ReadValueApply" id="Loan.SearchLoanItems.ReadValueApply">
+              <procedure name="sp_valor" database="cob_cartera" version="1" />
+            </service>
+            <service name="ReadValueReference" id="Loan.SearchLoanItems.ReadValueReference">
+              <procedure name="sp_valor_referencial" database="cob_cartera" version="1" />
+            </service>
+            <service name="SearchLoanItemsSearch" id="Loan.SearchLoanItems.SearchLoanItemsSearch">
+              <procedure name="sp_rubro_tmp" database="cob_cartera" version="1" />
+            </service>
+            <service name="SearchValueReferenceByValueApply" id="Loan.SearchLoanItems.SearchValueReferenceByValueApply">
+              <procedure name="sp_valor" database="cob_cartera" version="1" />
+            </service>
+            <service name="UpdateLoanItems" id="Loan.SearchLoanItems.UpdateLoanItems">
+              <procedure name="sp_rubro_tmp" database="cob_cartera" version="1" />
+            </service>
+          </services>
+        </partialClass>
+      </partialClasses>
+    </class>
+  </classes>
+  <packagers>
+    <packager type="SGPackageJava" AntTask="sign-archive" KeyAlias="cobisapp" KeyPassword="cobisappadminadmin" KeyCertificatePassword="cobisappadmin" KeyFileName="cobisapp.keystore" RelativeFolder="True" BuildFile="build.xml" TemplateId="ServiceCTS302" />
+  </packagers>
+  <references>
+    <reference name="COBISCorp.eCOBIS.Loan.DTO" type="DTO" version="2.0.0.0" GUID="BB68B5DE-3561-46B6-82D7-CA305BC77099">
+      <templates>
+        <template id="DTOJavaPOJO" productName="COBISCorp.eCOBIS.Loan.DTO" outputFolder="c:\COBIS-SG\Output\CTS\COBISCorp.eCOBIS.Loan.DTO" package="true" packageType="Jar">
+          <templateFiles>
+            <templateFile filePath="JavaPOJO\JavaDTO.xslt" enabled="true" override="true" />
+            <templateFile filePath="..\Commons\Java\buildProperties.xslt" enabled="true" override="true" />
+            <templateFile filePath="..\Commons\Java\build.xslt" enabled="true" override="true" />
+          </templateFiles>
+        </template>
+      </templates>
+      <namespaces>
+        <namespace type="dto" base="COBISCorp.eCOBIS.Loan" name="COBISCorp.eCOBIS.Loan.DTO" package="cobiscorp.ecobis.loan.dto" ns="http://dto.loan.ecobis.cobiscorp" folder="DTO" />
+      </namespaces>
+    </reference>
+  </references>
+  <productProperties>
+    <property name="MavenGroupId" value="com.cobiscorp.processapi" />
+    <property name="MavenArtifactId" value="COBISCorp.eCOBIS.Loan.Service" />
+    <property name="MavenVersion" value="2.0.0.0" />
+  </productProperties>
+</product>

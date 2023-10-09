@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Overdraft" language="java" pageWidth="595" pageHeight="842" columnWidth="595" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="4f510277-4146-465c-88fe-c46b4a07a9e6">
+	<property name="ireport.zoom" value="1.771561000000002"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<field name="descriptionType" class="java.lang.String"/>
+	<field name="numberOperation" class="java.lang.String"/>
+	<field name="currencyDescription" class="java.lang.String"/>
+	<field name="usedAmount" class="java.lang.Double"/>
+	<field name="available" class="java.lang.Double"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="20" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="6e81dd83-e918-4e6c-b886-ada14ea1ea24" x="0" y="0" width="555" height="20"/>
+				<box>
+					<bottomPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Overdraft]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="20" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="c31ce5b2-693a-4ef8-812f-c39f53ff5f29" x="0" y="0" width="105" height="20"/>
+				<box>
+					<bottomPen lineWidth="0.25"/>
+				</box>
+				<textElement>
+					<font size="7"/>
+				</textElement>
+				<text><![CDATA[DescriptionType]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="9721f8c3-d460-4b6c-8eee-a2dbaf6be92b" x="105" y="0" width="97" height="20"/>
+				<box>
+					<bottomPen lineWidth="0.25"/>
+				</box>
+				<textElement>
+					<font size="7"/>
+				</textElement>
+				<text><![CDATA[NumberOperation]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="87bc764e-2c02-49ef-872c-548934e7e3a3" x="202" y="0" width="147" height="20"/>
+				<box>
+					<bottomPen lineWidth="0.25"/>
+				</box>
+				<textElement>
+					<font size="7"/>
+				</textElement>
+				<text><![CDATA[CurrencyDescription]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="f85f3c42-b98c-46d8-a565-7096537557c1" x="349" y="0" width="126" height="20"/>
+				<box>
+					<bottomPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Right">
+					<font size="7"/>
+				</textElement>
+				<text><![CDATA[UsedAmount]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="f7f529dc-2438-4d85-bd6f-419df2a5468e" x="475" y="0" width="80" height="20"/>
+				<box>
+					<bottomPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Right">
+					<font size="7"/>
+				</textElement>
+				<text><![CDATA[Available]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="20" splitType="Stretch">
+			<textField>
+				<reportElement uuid="b4cedb5c-b27e-46b0-87a6-9138ed1e3fc2" x="0" y="0" width="105" height="20"/>
+				<textElement>
+					<font size="7"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{descriptionType}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="19baaeb4-f879-4884-8945-93c47b43e32e" x="105" y="0" width="97" height="20"/>
+				<textElement>
+					<font size="7"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{numberOperation}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="7158c415-418c-4176-9c21-faf9def44166" x="202" y="0" width="147" height="20"/>
+				<textElement>
+					<font size="7"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{currencyDescription}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0.00">
+				<reportElement uuid="4f4ae04f-dd32-4753-a51a-aa05476cf601" x="349" y="0" width="126" height="20"/>
+				<textElement textAlignment="Right">
+					<font size="7"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{usedAmount}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0.00">
+				<reportElement uuid="f28a8c02-007a-437c-8dd2-05dc831c391c" x="475" y="0" width="80" height="20"/>
+				<textElement textAlignment="Right">
+					<font size="7"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{available}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

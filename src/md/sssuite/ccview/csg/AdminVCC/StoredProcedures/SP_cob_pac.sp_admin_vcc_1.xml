@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<procedure>
+  <database>cob_pac</database>
+  <name>sp_admin_vcc</name>
+  <type>SYBASE</type>
+  <version>1</version>
+  <parameters>
+    <parameter name="@i_pr_id" dataType="numeric" direction="in" />
+    <parameter name="@i_pr_rol_id" dataType="int" direction="in" />
+    <parameter name="@i_pr_mnemonic" dataType="char" direction="in" />
+    <parameter name="@i_pr_name" dataType="varchar" direction="in" />
+    <parameter name="@i_pr_description" dataType="varchar" direction="in" />
+    <parameter name="@i_pr_parent" dataType="numeric" direction="in" />
+    <parameter name="@i_pr_isvisible" dataType="bit" direction="in" />
+    <parameter name="@i_pr_isencrypted" dataType="bit" direction="in" />
+    <parameter name="@i_pr_rol_name" dataType="varchar" direction="in" />
+    <parameter name="@i_operacion" dataType="char" direction="in" />
+  </parameters>
+  <queries>
+    <query>
+      <columns>
+        <column name="pr_id" />
+        <column name=" pr_rol_id" />
+        <column name=" pr_mnemonic" />
+        <column name=" pr_name" />
+        <column name=" pr_description" />
+        <column name=" pr_parent" />
+        <column name=" pr_isvisible" />
+        <column name=" pr_isencrypted" />
+        <column name=" pr_rol_name" />
+      </columns>
+      <queryText>SELECT  pr_id,pr_rol_id,pr_mnemonic,pr_name,pr_description,pr_parent,pr_isvisible,pr_isencrypted,pr_rol_name </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="ro_rol" />
+        <column name=" ro_descripcion" />
+      </columns>
+      <queryText>SELECT  pr_rol_id,pr_rol_name </queryText>
+    </query>
+  </queries>
+</procedure>

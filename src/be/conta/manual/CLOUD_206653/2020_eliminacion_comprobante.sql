@@ -1,0 +1,12 @@
+DELETE FROM cob_conta_tercero..ct_scomprobante WHERE sc_fecha_tran BETWEEN '01/01/2020' AND '01/31/2020' GO --737693 registros
+DELETE FROM cob_conta_tercero..ct_scomprobante WHERE sc_fecha_tran BETWEEN '02/01/2020' AND '02/29/2020' GO --699052 registros
+DELETE FROM cob_conta_tercero..ct_scomprobante WHERE sc_fecha_tran BETWEEN '03/01/2020' AND '03/31/2020' GO --809517 registros
+DELETE FROM cob_conta_tercero..ct_scomprobante WHERE sc_fecha_tran BETWEEN '04/01/2020' AND '04/30/2020' GO --515768 registros
+DELETE FROM cob_conta_tercero..ct_scomprobante WHERE sc_fecha_tran BETWEEN '05/01/2020' AND '05/31/2020' GO --255468 registros
+DELETE FROM cob_conta_tercero..ct_scomprobante WHERE sc_fecha_tran BETWEEN '06/01/2020' AND '06/30/2020' GO --681192 registros
+DELETE FROM cob_conta_tercero..ct_scomprobante WHERE sc_fecha_tran BETWEEN '07/01/2020' AND '07/31/2020' GO --1562502 registros
+DELETE FROM cob_conta_tercero..ct_scomprobante WHERE sc_fecha_tran BETWEEN '08/01/2020' AND '08/31/2020' GO --695964 registros
+DELETE FROM cob_conta_tercero..ct_scomprobante WHERE sc_fecha_tran BETWEEN '09/01/2020' AND '09/30/2020' GO --724110 registros
+DELETE FROM cob_conta_tercero..ct_scomprobante WHERE sc_fecha_tran BETWEEN '10/01/2020' AND '10/31/2020' GO --1087344 registros
+DELETE FROM cob_conta_tercero..ct_scomprobante WHERE sc_fecha_tran BETWEEN '11/01/2020' AND '11/30/2020' GO --764207 registros
+DELETE FROM cob_conta_tercero..ct_scomprobante WHERE sc_fecha_tran BETWEEN '12/01/2020' AND '12/31/2020' GO --780329 registros

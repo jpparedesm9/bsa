@@ -1,0 +1,523 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="caratulaCreditoRevolvente" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="c1957766-1c85-475d-9214-e3abf5674f9a">
+	<property name="ireport.zoom" value="1.5"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="730"/>
+	<parameter name="SUBREPORT_DIR" class="java.lang.String">
+		<defaultValueExpression><![CDATA["/"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="costoAnualTotal" class="java.lang.String"/>
+	<parameter name="tasaInteresAnual" class="java.lang.String"/>
+	<parameter name="montoTotalPagar" class="java.lang.String"/>
+	<parameter name="montoCredito" class="java.lang.String"/>
+	<parameter name="listaComisiones" class="java.lang.String"/>
+	<parameter name="porcentajeMora" class="java.lang.Double"/>
+	<parameter name="plazoCredito" class="java.lang.String"/>
+	<parameter name="descripMoneda" class="java.lang.String"/>
+	<parameter name="descripPlazo" class="java.lang.String"/>
+	<parameter name="fechaLiquida" class="java.lang.String"/>
+	<parameter name="fechaPago" class="java.lang.String"/>
+	<parameter name="fechaCorte" class="java.lang.String"/>
+	<parameter name="seguro" class="java.lang.String"/>
+	<parameter name="aseguradora" class="java.lang.String"/>
+	<parameter name="contraAdhesion" class="java.lang.String"/>
+	<parameter name="contraAdhesionRayas" class="java.lang.String"/>
+	<parameter name="pieAnio" class="java.lang.String"/>
+	<parameter name="footParam" class="java.lang.String"/>
+	<parameter name="comisionDisCrEfec" class="java.lang.String"/>
+	<parameter name="nombreComercProd" class="java.lang.String"/>
+	<field name="listaPagos" class="java.util.List"/>
+	<detail>
+		<band height="495">
+			<image>
+				<reportElement x="1" y="1" width="179" height="78" uuid="ae6212bf-1267-4f08-aedd-4eb2f73985f2"/>
+				<imageExpression><![CDATA["tuiioSantander2.png"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement mode="Transparent" x="0" y="129" width="555" height="15" backcolor="#CCCCCC" uuid="de7952dc-93fb-40f2-98fe-17d35cd69d88"/>
+				<box leftPadding="5" rightPadding="5">
+					<leftPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement verticalAlignment="Bottom" markup="html">
+					<font size="8" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Tipo de Crédito: Apertura de Crédito en Cuenta Corriente]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="0" y="152" width="129" height="37" backcolor="#CCCCCC" uuid="128d2c48-5bba-4164-b09d-627cce006bfa"/>
+				<box>
+					<pen lineWidth="0.75" lineColor="#000000"/>
+					<topPen lineWidth="0.75" lineColor="#000000"/>
+					<leftPen lineWidth="0.75" lineColor="#000000"/>
+					<bottomPen lineWidth="0.75" lineColor="#000000"/>
+					<rightPen lineWidth="0.75" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="html">
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[CAT <br/> (Costo Anual Total)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="129" y="152" width="140" height="37" backcolor="#CCCCCC" uuid="88df90c6-ef54-4edb-a3aa-b1cb0209e1ee"/>
+				<box>
+					<pen lineWidth="0.75" lineColor="#000000"/>
+					<topPen lineWidth="0.75" lineColor="#000000"/>
+					<leftPen lineWidth="0.75" lineColor="#000000"/>
+					<bottomPen lineWidth="0.75" lineColor="#000000"/>
+					<rightPen lineWidth="0.75" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[TASA DE INTERÉS ANUAL ORDINARIA Y MORATORIA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="269" y="152" width="130" height="37" backcolor="#CCCCCC" uuid="f231620f-c054-435e-9c3b-1318a1795307"/>
+				<box>
+					<pen lineWidth="0.75" lineColor="#000000"/>
+					<topPen lineWidth="0.75" lineColor="#000000"/>
+					<leftPen lineWidth="0.75" lineColor="#000000"/>
+					<bottomPen lineWidth="0.75" lineColor="#000000"/>
+					<rightPen lineWidth="0.75" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[MONTO O LÍNEA DE
+CRÉDITO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="399" y="152" width="156" height="37" backcolor="#CCCCCC" uuid="b7971fec-9cea-4d87-bba8-0150db2884e3"/>
+				<box>
+					<pen lineWidth="0.75" lineColor="#000000"/>
+					<topPen lineWidth="0.75" lineColor="#000000"/>
+					<leftPen lineWidth="0.75" lineColor="#000000"/>
+					<bottomPen lineWidth="0.75" lineColor="#000000"/>
+					<rightPen lineWidth="0.75" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[MONTO TOTAL A
+PAGAR O MÍNIMO A PAGAR]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement x="0" y="189" width="129" height="102" uuid="8046fc03-2070-48d3-b452-17d8c63960cd"/>
+				<box topPadding="3" leftPadding="5" bottomPadding="3" rightPadding="5">
+					<pen lineWidth="0.75"/>
+					<topPen lineWidth="0.75"/>
+					<leftPen lineWidth="0.75"/>
+					<bottomPen lineWidth="0.75"/>
+					<rightPen lineWidth="0.75"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="html">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA["CAT "+ $P{costoAnualTotal} + "% <br/>Sin IVA. <br/>Para fines informativos y de comparación"]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="129" y="189" width="140" height="102" uuid="2e493fd6-dc5c-40fa-aa47-63cffefa4fcb"/>
+				<box topPadding="3" leftPadding="5" bottomPadding="3" rightPadding="5">
+					<pen lineWidth="0.75"/>
+					<topPen lineWidth="0.75"/>
+					<leftPen lineWidth="0.75"/>
+					<bottomPen lineWidth="0.75"/>
+					<rightPen lineWidth="0.75"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="html">
+					<font size="8" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{tasaInteresAnual} + "% <br/>Tasa de Interés Fija Anual Ordinaria <br/> Tasa de Interés Anual Moratoria No Aplica"]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="269" y="189" width="130" height="102" uuid="96f519a9-915b-40ed-bba7-6f4b119fb363"/>
+				<box topPadding="3" leftPadding="5" bottomPadding="3" rightPadding="5">
+					<pen lineWidth="0.75"/>
+					<topPen lineWidth="0.75"/>
+					<leftPen lineWidth="0.75"/>
+					<bottomPen lineWidth="0.75"/>
+					<rightPen lineWidth="0.75"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="html">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{montoCredito}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="399" y="189" width="156" height="102" uuid="c6be03f7-e561-459f-97a6-22b077da0390"/>
+				<box topPadding="1" leftPadding="5" bottomPadding="0" rightPadding="5">
+					<pen lineWidth="0.75"/>
+					<topPen lineWidth="0.75"/>
+					<leftPen lineWidth="0.75"/>
+					<bottomPen lineWidth="0.75"/>
+					<rightPen lineWidth="0.75"/>
+				</box>
+				<textElement textAlignment="Justified" verticalAlignment="Top">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Si la cuenta está al corriente en el pago y no registra exceso respecto al Límite de Crédito, el pago mínimo será la cantidad más alta entre (i) la tercera parte del saldo de capital a la fecha de corte más los intereses, comisiones y demás accesorios acumulados a la fecha de corte, y (ii) la cantidad de $100.00 (cien pesos 00/100 M.N.)."]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="291" width="129" height="16" uuid="94005b64-ebd1-4ff1-86ba-3fb7a4d494e7"/>
+				<box topPadding="3" leftPadding="5" bottomPadding="0" rightPadding="5">
+					<topPen lineWidth="0.75"/>
+					<leftPen lineWidth="0.75"/>
+					<rightPen lineWidth="0.75"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[PLAZO DEL CRÉDITO:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="323" width="555" height="21" uuid="0fcc04f6-0777-4f14-b0a3-686ffe151681"/>
+				<box topPadding="3" leftPadding="5" bottomPadding="3" rightPadding="5">
+					<leftPen lineWidth="0.75"/>
+					<bottomPen lineWidth="0.75"/>
+					<rightPen lineWidth="0.75"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[COMISIONES RELEVANTES]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement x="0" y="307" width="129" height="16" uuid="f0713715-f14b-4db8-9daa-4502c70f375f"/>
+				<box topPadding="0" leftPadding="5" bottomPadding="3" rightPadding="5">
+					<leftPen lineWidth="0.75"/>
+					<bottomPen lineWidth="0.75"/>
+					<rightPen lineWidth="0.75"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{plazoCredito} + " - " + $P{descripPlazo}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="129" y="307" width="426" height="16" uuid="2917dfd9-8613-4d59-a7e0-8950e3db7140"/>
+				<box topPadding="0" leftPadding="5" bottomPadding="3" rightPadding="5">
+					<leftPen lineWidth="0.75"/>
+					<bottomPen lineWidth="0.75"/>
+					<rightPen lineWidth="0.75"/>
+				</box>
+				<textElement verticalAlignment="Middle" markup="html">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA["<b>Fecha de corte:</b> " + " segundo " + $P{fechaCorte} + " contado a partir de la disposición"]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="280" y="344" width="275" height="93" uuid="998cfd8f-a37c-4c40-b9e0-6ac5f3dac7c4"/>
+				<box topPadding="3" leftPadding="5" bottomPadding="3" rightPadding="5">
+					<pen lineWidth="0.75"/>
+					<topPen lineWidth="0.75"/>
+					<leftPen lineWidth="0.75"/>
+					<bottomPen lineWidth="0.75"/>
+					<rightPen lineWidth="0.75"/>
+				</box>
+				<textElement textAlignment="Justified" verticalAlignment="Middle" markup="html">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[<b>Comisión por Gastos de Cobranza: </b>De $60 (sesenta pesos 00/100 M.N.), en cada ocasión en que realice fuera de tiempo los pagos que se encuentren obligados a realizar en relación con el Crédito. El importe de la comisión será más el Impuesto al Valor Agregado.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="437" width="555" height="58" uuid="66db3428-16b0-4ebe-a6b4-cca300c2a0d0"/>
+				<box topPadding="3" leftPadding="5" bottomPadding="3" rightPadding="5">
+					<pen lineWidth="0.75"/>
+					<topPen lineWidth="0.75"/>
+					<leftPen lineWidth="0.75"/>
+					<bottomPen lineWidth="0.75"/>
+					<rightPen lineWidth="0.75"/>
+				</box>
+				<textElement textAlignment="Justified" verticalAlignment="Top" markup="html">
+					<font size="8" isBold="false"/>
+				</textElement>
+				<text><![CDATA[<b>ADVERTENCIAS:</b> <br><br>
+Incumplir tus obligaciones te puede generar comisiones e intereses moratorios.<br>
+Contratar créditos que excedan tu capacidad de pago afecta tu historial crediticio.<br>
+Realizar sólo el pago mínimo aumenta el tiempo de pago y el costo de la deuda.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Transparent" x="0" y="106" width="555" height="10" backcolor="#CCCCCC" uuid="5b8c76e1-e0d5-42b0-9a50-b3107bcf2c5e"/>
+				<box leftPadding="5" rightPadding="5">
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement>
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Transparent" x="0" y="143" width="555" height="10" backcolor="#CCCCCC" uuid="008888d4-509e-4624-b93c-66217b7cc3d0"/>
+				<box leftPadding="5" rightPadding="5">
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement>
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Transparent" x="0" y="74" width="555" height="18" backcolor="#CCCCCC" uuid="a3adf79f-ac4e-4fce-b426-be370b3bbbdf"/>
+				<box leftPadding="5" rightPadding="5"/>
+				<textElement textAlignment="Center">
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[CARÁTULA DE LINEA DE CRÉDITO INDIVIDUAL]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement x="129" y="291" width="426" height="16" uuid="f59aac39-30c4-4708-aca8-7e5678b8e2bd"/>
+				<box topPadding="0" leftPadding="5" bottomPadding="3" rightPadding="5">
+					<leftPen lineWidth="0.75"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.75"/>
+				</box>
+				<textElement verticalAlignment="Middle" markup="html">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA["<b>Fecha límite de pago:</b> " + $P{fechaPago} + " siguiente a la fecha de la disposición"]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="0" y="344" width="280" height="93" uuid="25c6b184-86ef-469f-8123-2471d7102021"/>
+				<box topPadding="0" leftPadding="5" bottomPadding="3" rightPadding="5">
+					<leftPen lineWidth="0.75"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.75"/>
+				</box>
+				<textElement textAlignment="Justified" verticalAlignment="Middle" markup="html">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA["<br>Apertura: No aplica <br> <p> Anualidad: No aplica <p/> <br> <b> Comisión Disposición del Crédito en Efectivo: </b>  Es del " + $P{comisionDisCrEfec} + "% por cada disposición de crédito realizada. El importe de la comisión será más el Impuesto al Valor Agregado."]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="0" y="115" width="555" height="15" uuid="34aa4813-0bcd-44eb-a749-ffc49d5538bd"/>
+				<box topPadding="0" leftPadding="5" bottomPadding="0" rightPadding="5">
+					<leftPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.75"/>
+				</box>
+				<textElement markup="html">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Nombre comercial del Producto: " + "<b>" + $P{nombreComercProd}+ "</b>"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="93" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="555" height="21" uuid="a0513d14-2062-422b-bba8-b02a1c1b5d2b"/>
+				<box topPadding="3" leftPadding="5" bottomPadding="3" rightPadding="5">
+					<topPen lineWidth="0.75"/>
+					<leftPen lineWidth="0.75"/>
+					<bottomPen lineWidth="0.75"/>
+					<rightPen lineWidth="0.75"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[SEGUROS]]></text>
+			</staticText>
+			<staticText>
+				<reportElement stretchType="RelativeToBandHeight" x="0" y="21" width="129" height="72" isPrintWhenDetailOverflows="true" uuid="caa7e2dd-8da1-457d-ba29-4985b40124b7"/>
+				<box topPadding="3" leftPadding="5" bottomPadding="3" rightPadding="5">
+					<pen lineWidth="0.75"/>
+					<topPen lineWidth="0.75"/>
+					<leftPen lineWidth="0.75"/>
+					<bottomPen lineWidth="0.75"/>
+					<rightPen lineWidth="0.75"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Seguro de vida: Obligatorio]]></text>
+			</staticText>
+			<staticText>
+				<reportElement stretchType="RelativeToBandHeight" x="129" y="21" width="119" height="72" isPrintWhenDetailOverflows="true" uuid="32b8b560-99ae-4dca-aa12-aaa1c16c3e4c"/>
+				<box topPadding="3" leftPadding="5" bottomPadding="3" rightPadding="5">
+					<pen lineWidth="0.75"/>
+					<topPen lineWidth="0.75"/>
+					<leftPen lineWidth="0.75"/>
+					<bottomPen lineWidth="0.75"/>
+					<rightPen lineWidth="0.75"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Aseguradora:
+Zúrich Santander Seguros México, S.A.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement stretchType="RelativeToBandHeight" x="248" y="21" width="307" height="72" isPrintWhenDetailOverflows="true" uuid="1753e0df-b68c-4b14-a511-e0e143441b37"/>
+				<box topPadding="3" leftPadding="5" bottomPadding="3" rightPadding="5">
+					<pen lineWidth="0.75"/>
+					<topPen lineWidth="0.75"/>
+					<leftPen lineWidth="0.75"/>
+					<bottomPen lineWidth="0.75"/>
+					<rightPen lineWidth="0.75"/>
+				</box>
+				<textElement textAlignment="Justified" verticalAlignment="Middle" markup="html">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[<b>Cláusula: Vigésima Tercera. Esquema de aseguramiento </b><br>
+En caso que el ACREDITADO no haya podido demostrar la contratación del seguro en las condiciones establecidas en el Contrato, INCLUSIÓN FINANCIERA podrá optar por: (i) dar por vencido anticipadamente el Contrato; o bien, (ii) contratará en nombre y por cuenta de éste, el esquema de aseguramiento de que se trate con la compañía de seguros seleccionada por INCLUSIÓN FINANCIERA.]]></text>
+			</staticText>
+		</band>
+		<band height="115">
+			<staticText>
+				<reportElement x="0" y="56" width="555" height="59" uuid="80d30c95-1ff6-416e-ade1-214b3b665e3b"/>
+				<box topPadding="1" leftPadding="5" bottomPadding="3" rightPadding="5">
+					<pen lineWidth="0.75"/>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.75"/>
+					<bottomPen lineWidth="0.75"/>
+					<rightPen lineWidth="0.75"/>
+				</box>
+				<textElement verticalAlignment="Middle" markup="html">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[Unidad Especializada de Atención a Usuarios:<br>
+Domicilio: Av. Vasco de Quiroga No. 3900, Torre A Piso 13, Corp. Diamante, Col. Lomas de Santa Fe, Alcaldía Cuajimalpa, C.P. 05100, Ciudad de México o a través de las oficinas de INCLUSIÓN FINANCIERA, en la que se formalice el presente.<br>
+Teléfono: 55 5169 4328   Correo electrónico: <u style="color:#335EFF">ueac@santander.com.mx</u><br>
+Página de Internet: <u style="color:#335EFF"><a href="www.tuiio.com.mx" target="_blank">www.tuiio.com.mx</a></u> ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="0" width="555" height="21" uuid="1076fe16-a51e-4066-9986-def04b4fe0a0"/>
+				<box topPadding="3" leftPadding="5" bottomPadding="3" rightPadding="5">
+					<pen lineWidth="0.75"/>
+					<topPen lineWidth="0.75"/>
+					<leftPen lineWidth="0.75"/>
+					<bottomPen lineWidth="0.75"/>
+					<rightPen lineWidth="0.75"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ESTADO DE CUENTA:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="21" width="129" height="21" uuid="b3dd2eea-e703-4007-90f3-ae289df83e2e"/>
+				<box topPadding="3" leftPadding="5" bottomPadding="3" rightPadding="5">
+					<pen lineWidth="0.75"/>
+					<topPen lineWidth="0.75"/>
+					<leftPen lineWidth="0.75"/>
+					<bottomPen lineWidth="0.75"/>
+					<rightPen lineWidth="0.75"/>
+				</box>
+				<textElement textAlignment="Justified" verticalAlignment="Middle">
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Enviar a:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="129" y="21" width="119" height="21" uuid="b8934d53-36eb-4753-9d52-877272fbb00f"/>
+				<box topPadding="3" leftPadding="5" bottomPadding="3" rightPadding="5">
+					<pen lineWidth="0.75"/>
+					<topPen lineWidth="0.75"/>
+					<leftPen lineWidth="0.75"/>
+					<bottomPen lineWidth="0.75"/>
+					<rightPen lineWidth="0.75"/>
+				</box>
+				<textElement textAlignment="Justified" verticalAlignment="Middle">
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Domicilio: ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="248" y="21" width="307" height="21" uuid="273345f4-d704-40ad-ac7e-ba928d76c32b"/>
+				<box topPadding="3" leftPadding="5" bottomPadding="3" rightPadding="5">
+					<pen lineWidth="0.75"/>
+					<topPen lineWidth="0.75"/>
+					<leftPen lineWidth="0.75"/>
+					<bottomPen lineWidth="0.75"/>
+					<rightPen lineWidth="0.75"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Correo Electrónico:   X]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="42" width="555" height="15" uuid="4386773f-2a97-463c-9abd-1f1cf6176fe2"/>
+				<box topPadding="1" leftPadding="5" bottomPadding="3" rightPadding="5">
+					<pen lineWidth="0.75"/>
+					<topPen lineWidth="0.75"/>
+					<leftPen lineWidth="0.75"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.75"/>
+				</box>
+				<textElement markup="none">
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Aclaraciones y reclamaciones:]]></text>
+			</staticText>
+		</band>
+		<band height="62">
+			<staticText>
+				<reportElement x="0" y="22" width="555" height="40" uuid="debe59a2-a493-4f2e-b00e-99a2df5925d7"/>
+				<box topPadding="1" leftPadding="5" bottomPadding="3" rightPadding="5">
+					<pen lineWidth="0.75"/>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.75"/>
+					<bottomPen lineWidth="0.75"/>
+					<rightPen lineWidth="0.75"/>
+				</box>
+				<textElement textAlignment="Justified" verticalAlignment="Middle" markup="html">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[Comisión Nacional para la Protección y Defensa de los Usuarios de Servicios Financieros (CONDUSEF) <br>
+Teléfono: 800 999 8080 y 5553400999. Página de Internet. www.condusef.gob.mx]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement x="0" y="0" width="555" height="23" uuid="f2f067ff-fee8-4237-b25c-53833501b768"/>
+				<box topPadding="0" leftPadding="5" bottomPadding="3" rightPadding="5">
+					<leftPen lineWidth="0.75"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.75"/>
+				</box>
+				<textElement textAlignment="Justified" verticalAlignment="Middle" markup="html">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[" <b> Registro de Contratos de Adhesión Núm: </b> " + $P{contraAdhesion}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="33">
+			<textField isBlankWhenNull="true">
+				<reportElement mode="Opaque" x="1" y="20" width="554" height="13" uuid="26a77210-898f-4380-8c8a-f80f194152f0"/>
+				<textElement verticalAlignment="Middle">
+					<font size="8" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["  Registro de Contratos de Adhesión de la CONDUSEF: " + $P{contraAdhesionRayas}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="7" width="468" height="13" uuid="8b83105b-ccad-44d9-9ec6-0ad6b66f771f"/>
+				<textElement verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Hoja "+$V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="0" y="1" width="555" height="1" uuid="fd4f532c-f7a9-42d5-90fd-0383f3a0f7f6"/>
+				<graphicElement>
+					<pen lineWidth="2.0" lineStyle="Solid"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement x="0" y="5" width="555" height="1" uuid="d0a9ffae-95f4-4e5e-9cba-6fc7f8204805"/>
+				<graphicElement>
+					<pen lineWidth="0.5"/>
+				</graphicElement>
+			</line>
+			<textField isBlankWhenNull="true">
+				<reportElement mode="Opaque" x="457" y="7" width="97" height="13" uuid="bc33ee9f-31fd-4679-a6eb-e34ea0fe6187"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="8" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{footParam}+" "+$P{pieAnio}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+</jasperReport>

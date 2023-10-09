@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:osgi="http://www.springframework.org/schema/osgi"
+	xmlns:aop="http://www.springframework.org/schema/aop" xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:jee="http://www.springframework.org/schema/jee" xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/osgi http://www.springframework.org/schema/osgi/spring-osgi.xsd
+		http://www.springframework.org/schema/jee http://www.springframework.org/schema/jee/spring-jee.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
+		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd">
+
+	<osgi:reference id="transactionManager" filter="(service.impl=COBIS)"
+		interface="org.springframework.transaction.PlatformTransactionManager" />
+	<osgi:reference id="CustomerManager"
+		interface="com.cobiscorp.ecobis.customer.bl.CustomerManager" />
+	<osgi:reference id="AddressManager"
+		interface="com.cobiscorp.ecobis.customer.bl.AddressManager" />
+	<osgi:reference id="QuickCustomerManager"
+		interface="com.cobiscorp.ecobis.customer.bl.QuickCustomerManager" />
+	<osgi:reference id="CICManager"
+		interface="com.cobiscorp.ecobis.customer.bl.CICManager" />
+	<osgi:reference id="PadronManager"
+		interface="com.cobiscorp.ecobis.customer.bl.PadronManager" />
+	<osgi:reference id="IdCustomerManager"
+		interface="com.cobiscorp.ecobis.customer.bl.IdCustomerManager" />
+	<osgi:reference id="PhoneManager"
+		interface="com.cobiscorp.ecobis.customer.bl.PhoneManager" />
+	<osgi:reference id="ActivityManager"
+		interface="com.cobiscorp.ecobis.customer.bl.ActivityManager" />
+	<osgi:reference id="POBoxManager"
+		interface="com.cobiscorp.ecobis.customer.bl.POBoxManager" />
+	<osgi:reference id="ProductDetailManager"
+		interface="com.cobiscorp.ecobis.customer.bl.ProductDetailManager" />
+	<osgi:reference id="ClientManager"
+		interface="com.cobiscorp.ecobis.customer.bl.ClientManager" />
+	<osgi:reference id="BusinessSegmentManager"
+		interface="com.cobiscorp.ecobis.customer.bl.BusinessSegmentManager" />
+	<osgi:reference id="CreationCustomerManager"
+		interface="com.cobiscorp.ecobis.customer.bl.CreationCustomerManager" />
+	<osgi:reference id="NationalityManager"
+		interface="com.cobiscorp.ecobis.customer.bl.NationalityManager" />
+	<osgi:reference id="ContactManager"
+		interface="com.cobiscorp.ecobis.customer.bl.ContactManager" />
+
+	<osgi:service ref="NationalityService"
+		interface="com.cobiscorp.ecobis.customer.services.NationalityService">
+		<osgi:service-properties>
+			<entry key="service.impl" value="current" />
+		</osgi:service-properties>
+	</osgi:service>
+	<osgi:service ref="CustomerTxService"
+		interface="com.cobiscorp.ecobis.customer.services.CustomerTxService">
+		<osgi:service-properties>
+			<entry key="service.impl" value="current" />
+		</osgi:service-properties>
+	</osgi:service>
+	<osgi:service ref="AddressTxService"
+		interface="com.cobiscorp.ecobis.customer.services.AddressTxService">
+		<osgi:service-properties>
+			<entry key="service.impl" value="current" />
+		</osgi:service-properties>
+	</osgi:service>
+	<osgi:service ref="PhoneTxService"
+		interface="com.cobiscorp.ecobis.customer.services.PhoneTxService">
+		<osgi:service-properties>
+			<entry key="service.impl" value="current" />
+		</osgi:service-properties>
+	</osgi:service>
+	<osgi:service ref="QuickCreateTxService"
+		interface="com.cobiscorp.ecobis.customer.services.QuickCreateTxService">
+		<osgi:service-properties>
+			<entry key="service.impl" value="current" />
+		</osgi:service-properties>
+	</osgi:service>
+	<osgi:service ref="CICTxService"
+		interface="com.cobiscorp.ecobis.customer.services.CICTxService">
+		<osgi:service-properties>
+			<entry key="service.impl" value="current" />
+		</osgi:service-properties>
+	</osgi:service>
+	<osgi:service ref="PadronTxService"
+		interface="com.cobiscorp.ecobis.customer.services.PadronTxService">
+		<osgi:service-properties>
+			<entry key="service.impl" value="current" />
+		</osgi:service-properties>
+	</osgi:service>
+	<osgi:service ref="IdCreateTxService"
+		interface="com.cobiscorp.ecobis.customer.services.IdCustomerTxService">
+		<osgi:service-properties>
+			<entry key="service.impl" value="current" />
+		</osgi:service-properties>
+	</osgi:service>
+	<osgi:service ref="POBoxTxService"
+		interface="com.cobiscorp.ecobis.customer.services.POBoxTxService">
+		<osgi:service-properties>
+			<entry key="service.impl" value="current" />
+		</osgi:service-properties>
+	</osgi:service>
+	<osgi:service ref="ProductDetailService"
+		interface="com.cobiscorp.ecobis.customer.services.ProductDetailService">
+		<osgi:service-properties>
+			<entry key="service.impl" value="current" />
+		</osgi:service-properties>
+	</osgi:service>
+	<osgi:service ref="ClientService"
+		interface="com.cobiscorp.ecobis.customer.services.ClientService">
+		<osgi:service-properties>
+			<entry key="service.impl" value="current" />
+		</osgi:service-properties>
+	</osgi:service>
+	<osgi:service ref="ActivityTxService"
+		interface="com.cobiscorp.ecobis.customer.services.ActivityTxService">
+		<osgi:service-properties>
+			<entry key="service.impl" value="current" />
+		</osgi:service-properties>
+	</osgi:service>
+	<osgi:service ref="BusinessSegmentTxService"
+		interface="com.cobiscorp.ecobis.customer.services.BusinessSegmentTxService">
+		<osgi:service-properties>
+			<entry key="service.impl" value="current" />
+		</osgi:service-properties>
+	</osgi:service>
+	<osgi:service ref="ContactTxService"
+		interface="com.cobiscorp.ecobis.customer.services.ContactTxService">
+		<osgi:service-properties>
+			<entry key="service.impl" value="current" />
+		</osgi:service-properties>
+	</osgi:service>
+</beans>

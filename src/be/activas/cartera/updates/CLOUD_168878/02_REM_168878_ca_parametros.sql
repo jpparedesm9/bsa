@@ -1,0 +1,11 @@
+use cobis
+go
+
+delete cl_parametro where pa_nemonico in ('RSCGRE', 'RSCGPI', 'RSCRFR', 'RSCRFP') and pa_producto='CCA' 
+
+insert into cl_parametro values('REPORTE SOLICITUD CREDITO GRUPAL RECA', 'RSCGRE', 'C', '14795-439-028351/02-00343-0119', NULL, NULL, NULL, NULL, NULL, NULL, 'CCA')
+insert into cl_parametro values('REPORTE SOLICITUD CREDITO GRUPAL PIE', 'RSCGPI', 'C', 'IF-001 (102021)', NULL, NULL, NULL, NULL, NULL, NULL, 'CCA')
+insert into cl_parametro values('REPORTE SOLICITUD CREDITO RENOVACION FINANCIADA RECA', 'RSCRFR', 'C', '14795-439-034275/01-00897-0321', NULL, NULL, NULL, NULL, NULL, NULL, 'CCA')
+insert into cl_parametro values('REPORTE SOLICITUD CREDITO RENOVACION FINANCIADA PIE', 'RSCRFP', 'C', 'IF-040 (062021)', NULL, NULL, NULL, NULL, NULL, NULL, 'CCA')
+
+go

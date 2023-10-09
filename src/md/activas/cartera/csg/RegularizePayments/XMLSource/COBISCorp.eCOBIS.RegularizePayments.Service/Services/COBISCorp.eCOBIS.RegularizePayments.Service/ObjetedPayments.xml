@@ -1,0 +1,115 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<serviceClass name="ObjetedPayments" nsBase="COBISCorp.eCOBIS.RegularizePayments" namespace="COBISCorp.eCOBIS.RegularizePayments.Service" package="cobiscorp.ecobis.regularizepayments.service" ns="http://service.regularizepayments.ecobis.cobiscorp" module="RegularizePayments" productName="COBISCorp.eCOBIS.RegularizePayments.Service" productVersion="1.0.0.0">
+  <productProperties>
+    <property name="MavenGroupId" value="com.cobiscorp.cloud.paobj.api" />
+    <property name="MavenArtifactId" value="COBISCorp.eCOBIS.RegularizePayments.Service" />
+    <property name="MavenVersion" value="1.0.0.0" />
+  </productProperties>
+  <partialClass name="ObjetedPayments">
+    <services>
+      <service id="RegularizePayments.ObjetedPayments.GetAllObjetedPayments" netName="GetAllObjetedPayments" javaName="getAllObjetedPayments" mappingType="STORED_PROCEDURE" mapId="e52e71c0875e195d57269a3d6db98e17">
+        <SRVMapping name="cob_cartera..sp_abono_objetado" trnCode="7070001">
+          <DTOs>
+            <DTO direction="in" name="RegularizePaymentsRequest" alias="inRegularizePaymentsRequest" namespace="COBISCorp.eCOBIS.RegularizePayments.DTO" package="cobiscorp.ecobis.regularizepayments.dto" ns="http://dto.regularizepayments.ecobis.cobiscorp" required="true" />
+            <DTO direction="return" name="RegularizePaymentsResponse" alias="returnRegularizePaymentsResponse" namespace="COBISCorp.eCOBIS.RegularizePayments.DTO" package="cobiscorp.ecobis.regularizepayments.dto" ns="http://dto.regularizepayments.ecobis.cobiscorp" required="true">
+              <properties>
+                <property name="paymentId" propertyNet="PaymentId" propertyJava="paymentId" setterJavaMethod="setPaymentId" getterJavaMethod="getPaymentId" xsdType="int" netType="int" javaType="int" cobisMapping="" isInherit="false" isComplexType="false" isCollectionType="false" required="true" encrypted="false" maxLength="0" />
+                <property name="loanType" propertyNet="LoanType" propertyJava="loanType" setterJavaMethod="setLoanType" getterJavaMethod="getLoanType" xsdType="string" netType="string" javaType="String" cobisMapping="" isInherit="false" isComplexType="false" isCollectionType="false" required="false" encrypted="false" maxLength="0" />
+                <property name="amountPayment" propertyNet="AmountPayment" propertyJava="amountPayment" setterJavaMethod="setAmountPayment" getterJavaMethod="getAmountPayment" xsdType="double" netType="double" javaType="double" cobisMapping="" isInherit="false" isComplexType="false" isCollectionType="false" required="true" encrypted="false" maxLength="0" />
+                <property name="date" propertyNet="Date" propertyJava="date" setterJavaMethod="setDate" getterJavaMethod="getDate" xsdType="dateTime" netType="DateTime" javaType="java.util.Calendar" cobisMapping="" isInherit="false" isComplexType="false" isCollectionType="false" required="true" encrypted="false" maxLength="0" />
+                <property name="loanId" propertyNet="LoanId" propertyJava="loanId" setterJavaMethod="setLoanId" getterJavaMethod="getLoanId" xsdType="string" netType="string" javaType="String" cobisMapping="" isInherit="false" isComplexType="false" isCollectionType="false" required="false" encrypted="false" maxLength="0" />
+                <property name="seq" propertyNet="Seq" propertyJava="seq" setterJavaMethod="setSeq" getterJavaMethod="getSeq" xsdType="int" netType="int" javaType="int" cobisMapping="" isInherit="false" isComplexType="false" isCollectionType="false" required="true" encrypted="false" maxLength="0" />
+              </properties>
+            </DTO>
+          </DTOs>
+          <parameterMappings>
+            <parameter name="@i_operacion" direction="in" mappingDirection="in" dataType="char" CTSDataType="SQLCHAR" JavaSQLType="CHAR" mappingType="DTO" allowNull="false" DTOAlias="inRegularizePaymentsRequest" DTOPropertyName="operation" />
+            <parameter name="@i_criterio" direction="in" mappingDirection="in" dataType="char" CTSDataType="SQLCHAR" JavaSQLType="CHAR" mappingType="DTO" allowNull="false" DTOAlias="inRegularizePaymentsRequest" DTOPropertyName="criteria" />
+            <parameter name="@i_valor_busqueda" direction="in" mappingDirection="in" dataType="int" CTSDataType="SQLINT4" JavaSQLType="INTEGER" mappingType="DTO" allowNull="false" DTOAlias="inRegularizePaymentsRequest" DTOPropertyName="searchValue" />
+            <parameter name="@i_secuencial" direction="in" mappingDirection="in" dataType="int" CTSDataType="SQLINT4" JavaSQLType="INTEGER" mappingType="DTO" allowNull="false" DTOAlias="inRegularizePaymentsRequest" DTOPropertyName="sequential" />
+          </parameterMappings>
+          <resultMappings>
+            <result>
+              <DTOResult DTOAlias="returnRegularizePaymentsResponse" MapReturn="true">
+                <columnMapping position="0" name="sec" DTOPropertyName="seq" DataType="int" Format="" />
+                <columnMapping position="1" name="ID._PAGO" DTOPropertyName="paymentId" DataType="int" Format="" />
+                <columnMapping position="2" name="TIPO_PRESTAMO" DTOPropertyName="loanType" DataType="string" Format="" />
+                <columnMapping position="3" name="MONTO_REGULARIZAR" DTOPropertyName="amountPayment" DataType="double" Format="" />
+                <columnMapping position="4" name="FECHA_VALOR" DTOPropertyName="date" DataType="dateTime" Format="" />
+                <columnMapping position="5" name="ID_PRESTAMO" DTOPropertyName="loanId" DataType="int" Format="" />
+              </DTOResult>
+            </result>
+          </resultMappings>
+          <MappingProperties />
+        </SRVMapping>
+      </service>
+      <service id="RegularizePayments.ObjetedPayments.InsertObjetedPayments" netName="InsertObjetedPayments" javaName="insertObjetedPayments" mappingType="STORED_PROCEDURE" mapId="cd110185d5f2a5be257c9cd9fe9fd3f0">
+        <SRVMapping name="cob_cartera..sp_abono_objetado" trnCode="7070002">
+          <DTOs>
+            <DTO direction="in" name="InsertRegularizedPaymentsRequest" alias="inInsertRegularizedPaymentsRequest" namespace="COBISCorp.eCOBIS.RegularizePayments.DTO" package="cobiscorp.ecobis.regularizepayments.dto" ns="http://dto.regularizepayments.ecobis.cobiscorp" required="true" />
+          </DTOs>
+          <parameterMappings>
+            <parameter name="@i_operacion" direction="in" mappingDirection="in" dataType="char" CTSDataType="SQLCHAR" JavaSQLType="CHAR" mappingType="CONSTANT" allowNull="false" contantValue="I" />
+            <parameter name="@i_idPago" direction="in" mappingDirection="in" dataType="int" CTSDataType="SQLINT4" JavaSQLType="INTEGER" mappingType="DTO" allowNull="false" DTOAlias="inInsertRegularizedPaymentsRequest" DTOPropertyName="idPago" />
+            <parameter name="@i_banco" direction="in" mappingDirection="in" dataType="int" CTSDataType="SQLVARCHAR" JavaSQLType="VARCHAR" mappingType="DTO" allowNull="false" DTOAlias="inInsertRegularizedPaymentsRequest" DTOPropertyName="idOperacion" />
+            <parameter name="@i_toperacion" direction="in" mappingDirection="in" dataType="varchar" CTSDataType="SQLVARCHAR" JavaSQLType="VARCHAR" mappingType="DTO" allowNull="false" DTOAlias="inInsertRegularizedPaymentsRequest" DTOPropertyName="tipoOperacion" />
+            <parameter name="@i_monto_pago" direction="in" mappingDirection="in" dataType="money" CTSDataType="SQLMONEY" JavaSQLType="DECIMAL" mappingType="DTO" allowNull="false" DTOAlias="inInsertRegularizedPaymentsRequest" DTOPropertyName="montoPago" />
+            <parameter name="@i_fecha_valor" direction="in" mappingDirection="in" dataType="datetime" CTSDataType="SQLDATETIME" JavaSQLType="DATE" mappingType="DTO" allowNull="false" DTOAlias="inInsertRegularizedPaymentsRequest" DTOPropertyName="fechaValor" />
+          </parameterMappings>
+          <resultMappings />
+          <MappingProperties />
+        </SRVMapping>
+      </service>
+      <service id="RegularizePayments.ObjetedPayments.OpGetObjetedPayments" netName="OpGetObjetedPayments" javaName="opGetObjetedPayments" mappingType="STORED_PROCEDURE" mapId="f6e794a75c5d51de081dbefa224304f9">
+        <SRVMapping name="cob_cartera..sp_abono_objetado1">
+          <DTOs>
+            <DTO direction="in" name="RegularizePaymentsRequest" alias="inRegularizePaymentsRequest" namespace="COBISCorp.eCOBIS.RegularizePayments.DTO" package="cobiscorp.ecobis.regularizepayments.dto" ns="http://dto.regularizepayments.ecobis.cobiscorp" required="true" />
+            <DTO direction="return" name="RegularizePaymentsResponse" alias="returnRegularizePaymentsResponse" namespace="COBISCorp.eCOBIS.RegularizePayments.DTO" package="cobiscorp.ecobis.regularizepayments.dto" ns="http://dto.regularizepayments.ecobis.cobiscorp" required="true">
+              <properties>
+                <property name="paymentId" propertyNet="PaymentId" propertyJava="paymentId" setterJavaMethod="setPaymentId" getterJavaMethod="getPaymentId" xsdType="int" netType="int" javaType="int" cobisMapping="" isInherit="false" isComplexType="false" isCollectionType="false" required="true" encrypted="false" maxLength="0" />
+                <property name="loanType" propertyNet="LoanType" propertyJava="loanType" setterJavaMethod="setLoanType" getterJavaMethod="getLoanType" xsdType="string" netType="string" javaType="String" cobisMapping="" isInherit="false" isComplexType="false" isCollectionType="false" required="false" encrypted="false" maxLength="0" />
+                <property name="amountPayment" propertyNet="AmountPayment" propertyJava="amountPayment" setterJavaMethod="setAmountPayment" getterJavaMethod="getAmountPayment" xsdType="double" netType="double" javaType="double" cobisMapping="" isInherit="false" isComplexType="false" isCollectionType="false" required="true" encrypted="false" maxLength="0" />
+                <property name="date" propertyNet="Date" propertyJava="date" setterJavaMethod="setDate" getterJavaMethod="getDate" xsdType="dateTime" netType="DateTime" javaType="java.util.Calendar" cobisMapping="" isInherit="false" isComplexType="false" isCollectionType="false" required="true" encrypted="false" maxLength="0" />
+                <property name="loanId" propertyNet="LoanId" propertyJava="loanId" setterJavaMethod="setLoanId" getterJavaMethod="getLoanId" xsdType="string" netType="string" javaType="String" cobisMapping="" isInherit="false" isComplexType="false" isCollectionType="false" required="false" encrypted="false" maxLength="0" />
+                <property name="seq" propertyNet="Seq" propertyJava="seq" setterJavaMethod="setSeq" getterJavaMethod="getSeq" xsdType="int" netType="int" javaType="int" cobisMapping="" isInherit="false" isComplexType="false" isCollectionType="false" required="true" encrypted="false" maxLength="0" />
+              </properties>
+            </DTO>
+          </DTOs>
+          <parameterMappings>
+            <parameter name="@i_operacion" direction="in" mappingDirection="in" dataType="char" CTSDataType="SQLCHAR" JavaSQLType="CHAR" mappingType="DTO" allowNull="false" DTOAlias="inRegularizePaymentsRequest" DTOPropertyName="operation" />
+            <parameter name="@i_criterio" direction="in" mappingDirection="in" dataType="char" CTSDataType="SQLCHAR" JavaSQLType="CHAR" mappingType="DTO" allowNull="false" DTOAlias="inRegularizePaymentsRequest" DTOPropertyName="criteria" />
+            <parameter name="@i_valor_busqueda" direction="in" mappingDirection="in" dataType="int" CTSDataType="SQLINT4" JavaSQLType="INTEGER" mappingType="DTO" allowNull="false" DTOAlias="inRegularizePaymentsRequest" DTOPropertyName="searchValue" />
+            <parameter name="@i_secuencial" direction="in" mappingDirection="in" dataType="int" CTSDataType="SQLINT4" JavaSQLType="INTEGER" mappingType="DTO" allowNull="false" DTOAlias="inRegularizePaymentsRequest" DTOPropertyName="sequential" />
+            <parameter name="@i_formato_fecha" direction="in" mappingDirection="in" dataType="int" CTSDataType="SQLINT4" JavaSQLType="INTEGER" mappingType="CONSTANT" allowNull="false" contantValue="103" />
+          </parameterMappings>
+          <resultMappings>
+            <result>
+              <DTOResult DTOAlias="returnRegularizePaymentsResponse" MapReturn="true">
+                <columnMapping position="0" name="sec" DTOPropertyName="seq" DataType="int" />
+                <columnMapping position="1" name="ID._PAGO" DTOPropertyName="paymentId" DataType="int" />
+                <columnMapping position="2" name="TIPO_PRESTAMO" DTOPropertyName="loanType" DataType="string" />
+                <columnMapping position="3" name="MONTO_REGULARIZAR" DTOPropertyName="amountPayment" DataType="double" />
+                <columnMapping position="4" name="FECHA_VALOR" DTOPropertyName="date" DataType="dateTime" />
+                <columnMapping position="5" name="ID_PRESTAMO" DTOPropertyName="loanId" DataType="int" />
+              </DTOResult>
+            </result>
+          </resultMappings>
+          <MappingProperties />
+        </SRVMapping>
+      </service>
+      <service id="RegularizePayments.ObjetedPayments.OpRegularizePayments" netName="OpRegularizePayments" javaName="opRegularizePayments" mappingType="STORED_PROCEDURE" mapId="bdac3397532b15fab1f8aaee0b7d7f22">
+        <SRVMapping name="cob_cartera..sp_abono_objetado" trnCode="7070003">
+          <DTOs>
+            <DTO direction="in" name="RegularizePaymentRequest" alias="inRegularizePaymentRequest" namespace="COBISCorp.eCOBIS.RegularizePayments.DTO" package="cobiscorp.ecobis.regularizepayments.dto" ns="http://dto.regularizepayments.ecobis.cobiscorp" required="true" />
+          </DTOs>
+          <parameterMappings>
+            <parameter name="@i_operacion" direction="in" mappingDirection="in" dataType="char" CTSDataType="SQLCHAR" JavaSQLType="CHAR" mappingType="CONSTANT" allowNull="false" contantValue="R" />
+            <parameter name="@i_forma_pago" direction="in" mappingDirection="in" dataType="varchar" CTSDataType="SQLVARCHAR" JavaSQLType="VARCHAR" mappingType="DTO" allowNull="false" DTOAlias="inRegularizePaymentRequest" DTOPropertyName="paymentMethod" />
+          </parameterMappings>
+          <resultMappings />
+          <MappingProperties />
+        </SRVMapping>
+      </service>
+    </services>
+  </partialClass>
+</serviceClass>

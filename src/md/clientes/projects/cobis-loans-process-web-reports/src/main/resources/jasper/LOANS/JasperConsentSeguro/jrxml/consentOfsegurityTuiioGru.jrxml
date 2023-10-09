@@ -1,0 +1,264 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="consentOfsegurityTuiioGru" pageWidth="595" pageHeight="842" whenNoDataType="BlankPage" columnWidth="555" leftMargin="10" rightMargin="10" topMargin="10" bottomMargin="10" uuid="9931d0a9-24f4-41cb-a8c6-1a7ba6518450">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+	<property name="ireport.zoom" value="2.1961500000000007"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="803"/>
+	<subDataset name="dataset1" uuid="ad673cff-e1e7-442f-82cf-86a8a97bdb12"/>
+	<parameter name="parameter1" class="java.lang.String"/>
+	<parameter name="fullNameP" class="java.lang.String"/>
+	<parameter name="urlPathWhatsapp" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="listInformationHeadLine" class="java.util.List">
+		<fieldDescription><![CDATA[listInformationHeadLine]]></fieldDescription>
+	</field>
+	<field name="listBenefitsDeclare" class="java.util.List">
+		<fieldDescription><![CDATA[listBenefitsDeclare]]></fieldDescription>
+	</field>
+	<field name="listBenefitsInformationTable" class="java.util.List">
+		<fieldDescription><![CDATA[listBenefitsInformationTable]]></fieldDescription>
+	</field>
+	<field name="fullNameP" class="java.lang.String"/>
+	<field name="cobertura" class="java.lang.String"/>
+	<field name="fechaContraAsis" class="java.lang.String"/>
+	<field name="fechaFinVig" class="java.lang.String"/>
+	<field name="eventoMedEsp" class="java.lang.String"/>
+	<field name="eventoCheckUps" class="java.lang.String"/>
+	<field name="eventoServDent" class="java.lang.String"/>
+	<field name="lineaEmbarazo" class="java.lang.String"/>
+	<field name="lineaDiabetes" class="java.lang.String"/>
+	<field name="lineaViolencia" class="java.lang.String"/>
+	<pageHeader>
+		<band height="90">
+			<image>
+				<reportElement x="2" y="12" width="126" height="72" uuid="e8e9ad7c-51a6-4764-8221-ebd9d686bc66"/>
+				<imageExpression><![CDATA["/logos/logoSraul.png"]]></imageExpression>
+			</image>
+			<image>
+				<reportElement x="300" y="12" width="121" height="72" uuid="b08bbd42-66e4-4e5d-92d9-7d88c52fbacc"/>
+				<imageExpression><![CDATA["/logos/logotuiio.png"]]></imageExpression>
+			</image>
+			<rectangle>
+				<reportElement x="433" y="0" width="142" height="20" backcolor="#B5B3B3" uuid="0ec73369-a44b-4a41-8218-5a2d50388fc5"/>
+				<graphicElement>
+					<pen lineWidth="0.0" lineColor="#C2C2C2"/>
+				</graphicElement>
+			</rectangle>
+			<textField>
+				<reportElement x="433" y="0" width="142" height="20" forecolor="#FFFFFF" backcolor="#FFFFFF" uuid="46630beb-9b74-4567-ae62-081d0e3bdd62"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="13" isBold="true"/>
+					<paragraph leftIndent="2" rightIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Cobertura "+$F{cobertura} + " MESES"]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<detail>
+		<band height="60" splitType="Stretch">
+			<subreport>
+				<reportElement x="0" y="0" width="575" height="60" uuid="dba61ec3-e725-4882-8be1-7662dd9ff63a"/>
+				<subreportParameter name="eventoCheckUps">
+					<subreportParameterExpression><![CDATA[$F{eventoCheckUps}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="lineaEmbarazo">
+					<subreportParameterExpression><![CDATA[$F{lineaEmbarazo}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="lineaDiabetes">
+					<subreportParameterExpression><![CDATA[$F{lineaDiabetes}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="urlPathWhatsapp">
+					<subreportParameterExpression><![CDATA[$P{urlPathWhatsapp}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="eventoServDent">
+					<subreportParameterExpression><![CDATA[$F{eventoServDent}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="lineaViolencia">
+					<subreportParameterExpression><![CDATA[$F{lineaViolencia}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="eventoMedEsp">
+					<subreportParameterExpression><![CDATA[$F{eventoMedEsp}]]></subreportParameterExpression>
+				</subreportParameter>
+				<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.JREmptyDataSource()]]></dataSourceExpression>
+				<subreportExpression><![CDATA["subreportCertificationTuiioGru.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+		<band height="119">
+			<staticText>
+				<reportElement stretchType="RelativeToBandHeight" mode="Transparent" x="1" y="5" width="575" height="20" forecolor="#1F1C1C" backcolor="#FCFCFC" uuid="bd60445b-ba24-4a1b-9e4f-6a2e30a91a69"/>
+				<box>
+					<topPen lineColor="#C2C2C2"/>
+					<leftPen lineWidth="0.0" lineColor="#0D0A0A"/>
+					<bottomPen lineColor="#C2C2C2"/>
+					<rightPen lineColor="#C2C2C2"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="13" isBold="true"/>
+				</textElement>
+				<text><![CDATA[CONSENTIMIENTO DE CONTRATACIÓN]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="25" width="575" height="30" uuid="d5797a70-f031-44b6-8743-bc063f51cacf"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle" markup="html">
+					<font size="9"/>
+				</textElement>
+				<text><![CDATA[Otorgo mi consentimiento para formar parte del contrato de servicios de conexión de asistencias, contratado a través de Santander Inclusión Financieras S.A. de C.V. SOFOM ER en mi nombre para tal efecto proporciono la siguiente información:]]></text>
+			</staticText>
+			<subreport>
+				<reportElement x="-1" y="74" width="575" height="40" uuid="5e9e474c-444f-4ec9-97ab-54580f5d0950"/>
+				<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($F{listInformationHeadLine})]]></dataSourceExpression>
+				<subreportExpression><![CDATA["informationHeadlineGru.jasper"]]></subreportExpression>
+			</subreport>
+			<staticText>
+				<reportElement x="0" y="57" width="571" height="16" uuid="9f8503d9-915b-464f-9b00-b9b2c04cc281">
+					<property name="local_mesure_unitheight" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement markup="html">
+					<font isUnderline="false"/>
+				</textElement>
+				<text><![CDATA[<b>INFORMACIÓN DE TITULAR ASEGURADO:</b>]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="5" width="574" height="1" forecolor="#CCCCCC" uuid="d9856723-b65f-44c8-8db2-2d40f2d08adc"/>
+				<graphicElement>
+					<pen lineWidth="1.5"/>
+				</graphicElement>
+			</line>
+		</band>
+		<band height="96">
+			<staticText>
+				<reportElement x="0" y="60" width="574" height="20" uuid="aba284cc-4104-4e24-b922-bea493d0e10b"/>
+				<textElement>
+					<font size="8" isItalic="false"/>
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="86" width="576" height="1" uuid="7a3b6b2c-57de-4044-96b7-b99117dbd426"/>
+				<graphicElement>
+					<pen lineStyle="Dashed"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement x="287" y="31" width="287" height="30" uuid="cfc92b3e-9c75-4afd-b051-08a4815bb521"/>
+				<textElement verticalAlignment="Bottom" markup="html"/>
+				<text><![CDATA[<b> Fecha de firma:</b>___________________________________]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="31" width="287" height="30" uuid="ac5ff84f-9a8a-42b9-befa-7e00ac780edf"/>
+				<textElement textAlignment="Left" verticalAlignment="Bottom" markup="html"/>
+				<text><![CDATA[<b>Firma del Cliente:</b>__________________________________
+
+]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="1" width="156" height="30" uuid="43ada798-eb0b-4692-8e64-91f269584d0f"/>
+				<textElement textAlignment="Left" verticalAlignment="Bottom" markup="html"/>
+				<text><![CDATA[<b>Fecha Contratación Asistencia:</b>
+
+]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="287" y="1" width="146" height="30" uuid="969c63b2-232d-427a-a153-9e8f4df812d5"/>
+				<textElement textAlignment="Left" verticalAlignment="Bottom" markup="html"/>
+				<text><![CDATA[<b>Fecha Finalización Vigencia:</b>
+]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="156" y="15" width="112" height="16" forecolor="#000000" backcolor="#FFFFFF" uuid="3cad85a6-1a6f-4dcb-ba39-253fe66ebfb4"/>
+				<box>
+					<bottomPen lineWidth="0.7"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{fechaContraAsis}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="433" y="15" width="118" height="16" forecolor="#000000" backcolor="#FFFFFF" uuid="d698fbde-5a6e-4463-b2fc-9cc937bfd22a"/>
+				<box>
+					<bottomPen lineWidth="0.7"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{fechaFinVig}]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="75">
+			<staticText>
+				<reportElement x="0" y="0" width="574" height="20" uuid="aaa7f323-a091-4a8c-9f62-de66116a02b3"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="13" isBold="true"/>
+				</textElement>
+				<text><![CDATA[CERTIFICADO DE SERVICIOS DE ASISTENCIAS A:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="-1" y="52" width="575" height="20" uuid="cb23db75-23d1-44bc-9dbe-e74d2c46bc08"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="13" isBold="true"/>
+				</textElement>
+				<text><![CDATA[QUIEN CUENTA CON LOS SIGUIENTES BENEFICIOS:]]></text>
+			</staticText>
+			<rectangle radius="10">
+				<reportElement x="8" y="25" width="555" height="20" uuid="27cb62fe-82f1-4d67-be66-522479fb47f8"/>
+				<graphicElement>
+					<pen lineWidth="2.0"/>
+				</graphicElement>
+			</rectangle>
+			<textField>
+				<reportElement x="23" y="25" width="528" height="20" uuid="a5b860ae-c902-40a1-9a3b-ba9d6e5906b2"/>
+				<textElement verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{fullNameP}]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="69">
+			<subreport>
+				<reportElement x="0" y="0" width="575" height="69" uuid="cc8dc66a-b7ad-4022-b252-e1f39c205f7d"/>
+				<subreportParameter name="eventoCheckUps">
+					<subreportParameterExpression><![CDATA[$F{eventoCheckUps}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="lineaEmbarazo">
+					<subreportParameterExpression><![CDATA[$F{lineaEmbarazo}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="lineaDiabetes">
+					<subreportParameterExpression><![CDATA[$F{lineaDiabetes}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="lineaViolencia">
+					<subreportParameterExpression><![CDATA[$F{lineaViolencia}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="eventoServDent">
+					<subreportParameterExpression><![CDATA[$F{eventoServDent}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="eventoMedEsp">
+					<subreportParameterExpression><![CDATA[$F{eventoMedEsp}]]></subreportParameterExpression>
+				</subreportParameter>
+				<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($F{listBenefitsInformationTable})]]></dataSourceExpression>
+				<subreportExpression><![CDATA["subreportBenefitsTableGru.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+		<band height="45">
+			<textField>
+				<reportElement x="1" y="11" width="573" height="34" forecolor="#000000" backcolor="#FFFFFF" uuid="df22421b-8429-413d-bc6b-79ec033116f9"/>
+				<box>
+					<leftPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Justified" verticalAlignment="Middle" markup="html">
+					<font size="8" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["1 Edad de aceptación titular y pareja: 18 a 79 años con cancelación a los 80 años cumplidos. Hijos de 0 a 17 años con cancelación a los 18 años cumplidos. Incluye "+$F{eventoMedEsp} + " a  elegir por familia para pediatría y ginecología, "+$F{eventoCheckUps} + " a elegir para check ups para titular + pareja e hijos por grupo familiar. Es necesario realizar la llamada al <b>800 953 0014</b> o &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <b>55 4857 5220</b> para coordinar el servicio requerido. No aplican reembolsos."]]></textFieldExpression>
+			</textField>
+			<image>
+				<reportElement x="137" y="34" width="9" height="9" uuid="ca839aba-d619-4da3-9d3b-ea2cbbc81383"/>
+				<imageExpression><![CDATA[$P{urlPathWhatsapp}]]></imageExpression>
+			</image>
+		</band>
+		<band height="12"/>
+	</detail>
+</jasperReport>

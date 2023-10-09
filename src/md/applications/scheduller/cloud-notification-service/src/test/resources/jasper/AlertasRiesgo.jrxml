@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="AlertasRiesgo" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="810d174d-6b23-4ad8-b743-9d4240eeab63">
+	<property name="ireport.zoom" value="1.2100000000000009"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="PIEPAGINA" class="java.lang.String"/>
+	<parameter name="NOMBREEMPRESA" class="java.lang.String"/>
+	<parameter name="FECHA" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="cliente" class="java.lang.String"/>
+	<field name="nombre" class="java.lang.String"/>
+	<field name="tipolista" class="java.lang.String"/>
+	<variable name="FECHA" class="java.lang.String">
+		<variableExpression><![CDATA[]]></variableExpression>
+	</variable>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="42" splitType="Stretch">
+			<image scaleImage="FillFrame">
+				<reportElement x="1" y="1" width="130" height="40" uuid="2712992f-aa1f-4236-a996-bac2a4786c26"/>
+				<imageExpression><![CDATA["logo-tuiio.png"]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="20" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="56" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="17" width="555" height="18" uuid="f6cac328-150a-4b2c-a4a5-95f5c8753568"/>
+				<textElement verticalAlignment="Middle" markup="html"/>
+				<textFieldExpression><![CDATA["Estimados Usuarios: "]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="0" y="0" width="555" height="20" uuid="d2c3842d-736b-4873-9efa-b8891d8e15d4"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$P{FECHA}]]></textFieldExpression>
+			</textField>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="229" splitType="Stretch">
+			<textField isBlankWhenNull="true">
+				<reportElement x="1" y="0" width="555" height="39" uuid="f4376324-d542-4314-807a-a6c79dfd1484"/>
+				<textElement textAlignment="Justified" markup="html"/>
+				<textFieldExpression><![CDATA["El  Cliente No. " + $F{cliente} + " - " + $F{nombre} +  ", fue encontrado con coincidencias en:"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="1" y="139" width="555" height="18" uuid="5e8a3509-beae-4eb8-a6a0-427ab84c73ff"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA["Saludos Cordiales."]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="0" y="39" width="555" height="40" uuid="bc59ecf5-0dee-4a8d-8c39-a5a60325cfc0"/>
+				<textElement textAlignment="Justified" markup="html"/>
+				<textFieldExpression><![CDATA[$F{tipolista}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="79" width="555" height="25" uuid="e1c438a4-e046-4a59-8b2d-b99f7c93eb6a"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[Le informamos para su revisión y análisis.]]></text>
+			</staticText>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="16" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="19" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="13" splitType="Stretch"/>
+	</summary>
+</jasperReport>

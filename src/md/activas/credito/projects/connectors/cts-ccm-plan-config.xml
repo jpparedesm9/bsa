@@ -1,0 +1,57 @@
+<ccm-plan-config>
+  <general>
+    <log-level>INFO</log-level>
+  </general>
+  <own>
+    <plan id="cloud-sofom-interface-customers" reloadable="true">
+      <plugin name="cloud.sofom.customers.utils" path="../../CREDIT/integration/plugins/cloud.sofom.customers.utils-1.0.0.jar"/>
+      <plugin name="cloud.sofom.referencedata.party" path="../../CREDIT/integration/plugins/cloud.sofom.referencedata.party-1.0.0.jar"/>
+      <plugin name="cloud.sofom.referencedata.party.impl" path="../../CREDIT/integration/plugins/cloud.sofom.referencedata.party.impl-1.0.0.jar"/>
+      <plugin name="cloud.sofom.salesservice.customermanagement" path="../../CREDIT/integration/plugins/cloud.sofom.salesservice.customermanagement-1.0.0.jar"/>
+      <plugin name="cloud.sofom.salesservice.customermanagement.impl" path="../../CREDIT/integration/plugins/cloud.sofom.salesservice.customermanagement.impl-1.0.0.jar"/>
+    </plan>
+    <plan id="cloud-sofom-batch" reloadable="true">
+      <plugin name="cloud.sofom.batch" path="../../CREDIT/integration/plugins/cloud.sofom.batch-1.0.0.jar"/>
+    </plan>
+    <plan id="cloud-sofom-interface-direct-debits-batch" reloadable="true">
+      <plugin name="cloud.sofom.operationsexecution.tradebanking.batch" path="../../CREDIT/integration/plugins/cloud.sofom.operationsexecution.tradebanking.batch-1.0.0.jar"/>
+    </plan>
+    <plan id="cloud-sofom-interface-disbursements" reloadable="true">
+      <plugin name="cloud.sofom.operationsexecution.operationalservices" path="../../CREDIT/integration/plugins/cloud.sofom.operationsexecution.operationalservices-1.0.0.jar"/>
+      <plugin name="cloud.sofom.operationsexecution.operationalservices.impl" path="../../CREDIT/integration/plugins/cloud.sofom.operationsexecution.operationalservices.impl-1.0.0.jar"/>
+      <plugin name="cloud.sofom.operationsexecution.operationalservices.batch" path="../../CREDIT/integration/plugins/cloud.sofom.operationsexecution.operationalservices.batch-1.0.0.jar"/>
+      <plugin name="cloud.sofom.operationsexecution.operationalservicescheck.batch" path="../../CREDIT/integration/plugins/cloud.sofom.operationsexecution.operationalservicescheck.batch-1.0.0.jar"/>
+    </plan>
+    <plan id="cloud-sofom-interface-payments-rest" reloadable="true">
+      <plugin name="cloud.sofom.operationsexecution.payments" path="../../CREDIT/integration/plugins/cloud.sofom.operationsexecution.payments-1.0.0.jar"/>
+    </plan>
+    <plan id="cloud-sofom-interface-regulationscompliance-batch" reloadable="true">
+      <plugin name="cloud.sofom.riskcompliance.regulationscompliance.batch" path="../../CREDIT/integration/plugins/cloud.sofom.riskcompliance.regulationscompliance.batch-1.0.0.jar"/>
+    </plan>
+	<plan id="cloud-sofom-interface-accounts-receivable-batch" reloadable="true">
+		<plugin name="cloud.sofom.operationsexecution.accountmanagement.batch" path="../../CREDIT/integration/plugins/cloud.sofom.operationsexecution.accountmanagement.batch-1.0.0.jar"/>
+	</plan>
+
+	<plan id="cloud-sofom-interface-customers-test" reloadable="true">
+		<plugin name="cloud.sofom.customers.test" path="../../cloud-sofom-interfaces/plugins/cloud.sofom.customers.test-1.0.0.jar"/>
+		<plugin name="cloud.sofom.customers.test.impl" path="../../cloud-sofom-interfaces/plugins/cloud.sofom.customers.test.impl-1.0.0.jar"/>
+	</plan>
+	<plan id="cloud-sofom-interface-customers-test-rest" reloadable="true">
+		<plugin name="cloud.sofom.customers.test.rest" path="../../cloud-sofom-interfaces/plugins/cloud.sofom.customers.test.rest-1.0.0.jar"/>
+	</plan>
+
+	<plan id="cloud-sofom-interface-payments" reloadable="true">
+		<plugin name="cobis-sofompayments-bsl" path="../../cloud-sofom-interfaces/plugins/cobis-sofompayments-bsl-1.0.0.jar"/>
+		<plugin name="cobis-sofompayments-bsl-impl" path="../../cloud-sofom-interfaces/plugins/cobis-sofompayments-bsl-impl-1.0.0.jar"/>
+	</plan>
+	<plan id="cloud-sofom-interface-payments-rest" reloadable="true">
+		<plugin name="cloud.sofom.operationsexecution.payments" path="../../cloud-sofom-interfaces/plugins/cloud.sofom.operationsexecution.payments-1.0.0.jar"/>
+	</plan>
+
+    <plan id="ASSETS-CLOUD-COMMONS-SG" reloadable="true">
+      <plugin name="COBISCorp.eCOBIS.Assets.Cloud.DTO" path="../../ASSETS/COBISCorp.eCOBIS.Assets.Cloud.DTO-2.0.0.0.jar"/>
+      <plugin name="COBISCorp.eCOBIS.Assets.Cloud.Service" path="../../ASSETS/COBISCorp.eCOBIS.Assets.Cloud.Service-2.0.0.0.jar"/>
+    </plan>
+
+	</own>
+</ccm-plan-config>

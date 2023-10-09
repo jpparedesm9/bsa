@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<procedure>
+  <database>cob_comext</database>
+  <name>sp_conv_numero_letras</name>
+  <type>SYBASE</type>
+  <version>1</version>
+  <parameters>
+    <parameter name="@t_trn" dataType="smallint" direction="in" />
+    <parameter name="@t_debug" dataType="char" direction="in" />
+    <parameter name="@t_file" dataType="varchar" direction="in" />
+    <parameter name="@t_from" dataType="varchar" direction="in" />
+    <parameter name="@i_dinero" dataType="money" direction="in" />
+    <parameter name="@i_moneda" dataType="tinyint" direction="in" />
+    <parameter name="@i_opcion" dataType="tinyint" direction="in" />
+    <parameter name="@o_letras" dataType="varchar" direction="out" />
+  </parameters>
+  <queries>
+    <query>
+      <columns>
+        <column name="/** Stored Procedure **/ " />
+        <column name="t_trn" />
+        <column name="t_file" />
+        <column name="i_dinero" />
+        <column name="i_moneda" />
+      </columns>
+      <queryText>SELECT "/** Stored Procedure **/ "=w_sp_name,"t_trn"=t_trn,"t_file"=t_file,"i_dinero"=i_dinero,"i_moneda"=i_moneda</queryText>
+    </query>
+  </queries>
+</procedure>

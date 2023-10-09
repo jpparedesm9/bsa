@@ -1,0 +1,104 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<procedure>
+  <database>cob_credito</database>
+  <name>sp_grupal_monto</name>
+  <type>SQLSERVER</type>
+  <version>1</version>
+  <parameters>
+    <parameter name="@i_operacion" dataType="char" direction="in" />
+    <parameter name="@i_grupo" dataType="int" direction="in" />
+    <parameter name="@i_tramite" dataType="int" direction="in" />
+    <parameter name="@i_ente" dataType="int" direction="in" />
+    <parameter name="@i_monto" dataType="money" direction="in" />
+    <parameter name="@s_ssn" dataType="int" direction="in" />
+    <parameter name="@s_sesn" dataType="int" direction="in" />
+    <parameter name="@s_ofi" dataType="smallint" direction="in" />
+    <parameter name="@s_rol" dataType="smallint" direction="in" />
+    <parameter name="@s_user" dataType="varchar" direction="in" />
+    <parameter name="@s_date" dataType="datetime" direction="in" />
+    <parameter name="@s_term" dataType="varchar" direction="in" />
+    <parameter name="@t_debug" dataType="char" direction="in" />
+    <parameter name="@t_file" dataType="varchar" direction="in" />
+    <parameter name="@t_from" dataType="varchar" direction="in" />
+    <parameter name="@s_srv" dataType="varchar" direction="in" />
+    <parameter name="@s_lsrv" dataType="varchar" direction="in" />
+    <parameter name="@i_cheque" dataType="int" direction="in" />
+    <parameter name="@i_modo" dataType="int" direction="in" />
+    <parameter name="@i_participa_ciclo" dataType="char" direction="in" />
+    <parameter name="@i_tg_monto_aprobado" dataType="money" direction="in" />
+    <parameter name="@i_ahorro" dataType="money" direction="in" />
+    <parameter name="@i_monto_max" dataType="money" direction="in" />
+    <parameter name="@i_bc_ln" dataType="char" direction="in" />
+    <parameter name="@o_msg1" dataType="varchar" direction="out" />
+    <parameter name="@o_msg2" dataType="varchar" direction="out" />
+    <parameter name="@o_msg3" dataType="varchar" direction="out" />
+    <parameter name="@o_msg4" dataType="varchar" direction="out" />
+    <parameter name="@o_tasa_grp" dataType="varchar" direction="out" />
+  </parameters>
+  <queries>
+    <query>
+      <columns>
+        <column name="cliente" />
+        <column name="nombre" />
+        <column name="monto" />
+        <column name="cuenta" />
+        <column name="cheque" />
+        <column name="participa_ciclo" />
+        <column name="monto_aprobado" />
+        <column name="ahorro" />
+        <column name="monto_max" />
+        <column name="incremento" />
+        <column name="listas_negras" />
+        <column name="role" />
+        <column name="cycleNumber" />
+        <column name="rfc" />
+        <column name="liquidGuarantee" />
+        <column name="riskLevel" />
+        <column name="checkRenapo" />
+      </columns>
+      <queryText>SELECT  "cliente" = tg_cliente,"nombre" = "","monto" = tg_monto,"cuenta" = "","cheque" = tg_cheque,"participa_ciclo" = tg_participa_ciclo,"monto_aprobado" = "","ahorro" = "","monto_max" = "","incremento" = "","listas_negras" = "","role" = "","cycleNumber" = "","rfc" = "","liquidGuarantee" = "","riskLevel" = "" </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="cliente" />
+        <column name="nombre" />
+        <column name="monto" />
+      </columns>
+      <queryText>SELECT  "cliente" = cg_ente,"nombre" = (SELECT  en_nomlar FROM cobis..cl_ente   WHERE en_ente = cg.cg_ente     ),"monto" = 0 </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="applicationDate" />
+        <column name="applicationType" />
+        <column name="groupAgreeRenew" />
+        <column name="groupAmount" />
+        <column name="groupCycle" />
+        <column name="groupName" />
+        <column name="groupNumber" />
+        <column name="office" />
+        <column name="officer" />
+        <column name="processInstance" />
+        <column name="promotion" />
+        <column name="rate" />
+        <column name="reasonNotAccepting" />
+        <column name="term" />
+        <column name="flagModifyApplication" />
+        <column name="displacement" />
+      </columns>
+      <queryText>SELECT  "applicationDate" = "","applicationType" = op_toperacion,"groupAgreeRenew" = TR.tr_acepta_ren,"groupAmount" = op_monto,"groupCycle" = ISNULL (G.gr_num_ciclo, 0),"groupName" = G.gr_nombre,"groupNumber" = G.gr_grupo,"office" = "","officer" = "","processInstance" = ?,"promotion" = TR.tr_promocion,"rate" = "","reasonNotAccepting" = tr_no_acepta,"term" = tr_plazo,"flagModifyApplication" = ? </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="cliente" />
+        <column name="banco" />
+        <column name="operacion" />
+        <column name="saldo" />
+        <column name="monto" />
+        <column name="monto_max" />
+        <column name="incremento" />
+        <column name="ciclo" />
+      </columns>
+      <queryText></queryText>
+    </query>
+  </queries>
+</procedure>

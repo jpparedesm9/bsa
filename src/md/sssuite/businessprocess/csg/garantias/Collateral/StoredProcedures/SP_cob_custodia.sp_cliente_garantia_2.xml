@@ -1,0 +1,92 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<procedure>
+  <database>cob_custodia</database>
+  <name>sp_cliente_garantia</name>
+  <type>SQLSERVER</type>
+  <version>2</version>
+  <parameters>
+    <parameter name="@s_date" dataType="datetime" direction="in" />
+    <parameter name="@s_user" dataType="varchar" direction="in" />
+    <parameter name="@s_term" dataType="varchar" direction="in" />
+    <parameter name="@s_corr" dataType="char" direction="in" />
+    <parameter name="@s_ofi" dataType="smallint" direction="in" />
+    <parameter name="@t_rty" dataType="char" direction="in" />
+    <parameter name="@t_trn" dataType="smallint" direction="in" />
+    <parameter name="@t_debug" dataType="char" direction="in" />
+    <parameter name="@t_file" dataType="varchar" direction="in" />
+    <parameter name="@t_from" dataType="varchar" direction="in" />
+    <parameter name="@i_operacion" dataType="char" direction="in" />
+    <parameter name="@i_modo" dataType="smallint" direction="in" />
+    <parameter name="@i_filial" dataType="tinyint" direction="in" />
+    <parameter name="@i_sucursal" dataType="smallint" direction="in" />
+    <parameter name="@i_custodia" dataType="int" direction="in" />
+    <parameter name="@i_tipo_cust" dataType="varchar" direction="in" />
+    <parameter name="@i_ente" dataType="int" direction="in" />
+    <parameter name="@i_principal" dataType="char" direction="in" />
+    <parameter name="@i_cliente" dataType="int" direction="in" />
+    <parameter name="@i_oficial" dataType="int" direction="in" />
+    <parameter name="@i_nomcliente" dataType="varchar" direction="in" />
+    <parameter name="@i_tipo_garante" dataType="varchar" direction="in" />
+    <parameter name="@i_codigo_externo" dataType="varchar" direction="in" />
+  </parameters>
+  <queries>
+    <query>
+      <columns>
+        <column name="{1}" />
+        <column name="{2}" />
+        <column name="{3}" />
+        <column name="{4}" />
+        <column name="{5}" />
+        <column name="{6}" />
+      </columns>
+      <queryText>SELECT w_filial, w_sucursal, w_custodia, w_tipo_cust, w_ente, w_oficial</queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="ENTE" />
+        <column name="NOMBRE" />
+        <column name="DI/NIT" />
+        <column name="GERENTE" />
+        <column name="PRINCIPAL" />
+      </columns>
+      <queryText>SELECT  "ENTE" = en_ente,"NOMBRE" = p_p_apellido + " " + p_s_apellido + " " + en_nombre,"DI/NIT" = SUBSTRING (en_ced_ruc, 1, 20),"GERENTE" = cg_oficial,"PRINCIPAL" = cg_principal </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="ENTE" />
+        <column name="NOMBRE" />
+        <column name="DI/NIT" />
+        <column name="GERENTE" />
+      </columns>
+      <queryText>SELECT  "ENTE" = en_ente,"NOMBRE" = p_p_apellido + " " + p_s_apellido + " " + en_nombre,"DI/NIT" = en_ced_ruc,"GERENTE" = cg_oficial </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="COD. CLIENTE" />
+        <column name="CLIENTE" />
+        <column name="TIPO DE GARANTE" />
+        <column name="No.IDENTIFICACION" />
+        <column name="GERENTE" />
+        <column name="GRUPO ECONOMICO" />
+        <column name="CALIFICACION" />
+        <column name="COMPARTIDA" />
+      </columns>
+      <queryText>SELECT  "COD. CLIENTE" = cg_ente,"CLIENTE" = p_p_apellido + " " + p_s_apellido + " " + en_nombre,"TIPO DE GARANTE" = B.valor,"No.IDENTIFICACION" = en_ced_ruc,"GERENTE" = F.fu_nombre,"GRUPO ECONOMICO" = en_grupo,"CALIFICACION" = en_calificacion,"COMPARTIDA" = cu_compartida </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="{1}" />
+      </columns>
+      <queryText>SELECT w_cliente</queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="COD. CLIENTE" />
+        <column name="ROL" />
+        <column name="IDENTIFICACION" />
+        <column name="CLIENTE" />
+      </columns>
+      <queryText>SELECT  "COD. CLIENTE" = cg_ente,"ROL" = cg_tipo_garante,"IDENTIFICACION" = en_ced_ruc,"CLIENTE" = p_p_apellido + " " + p_s_apellido + " " + en_nombre </queryText>
+    </query>
+  </queries>
+</procedure>

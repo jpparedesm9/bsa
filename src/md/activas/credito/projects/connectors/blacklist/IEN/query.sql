@@ -1,0 +1,1 @@
+select * from cob_credito..cr_lista_negra

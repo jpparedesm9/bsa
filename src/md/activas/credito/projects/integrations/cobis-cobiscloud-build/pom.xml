@@ -1,0 +1,66 @@
+<project 
+  xmlns="http://maven.apache.org/POM/4.0.0" 
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.cobiscorp.cobiscloud</groupId>
+  <artifactId>cobis-cobiscloud-build</artifactId>
+  <version>1.0.0</version>
+  <packaging>pom</packaging>
+  <name>${project.artifactId}</name>
+  <url>http://www.cobiscorp.com/</url>
+  <distributionManagement>
+    <repository>
+      <id>cobis-dev-maven</id>
+      <name>cobis-dev-maven</name>
+      <url>http://repolib.cobiscorp.com:8081/nexus/content/repositories/bsa-mvn-dev/</url>
+    </repository>
+    <snapshotRepository>
+      <id>cobiscloud-snapshots-deploy</id>
+      <name>cobiscloud-snapshots-deploy</name>
+      <url>http://mavenrepo-1579979608.us-east-1.elb.amazonaws.com/nexus/content/repositories/cobiscloud-snapshots/</url>
+    </snapshotRepository>
+  </distributionManagement>
+  <profiles>
+
+    <profile>
+      <id>env-amazon</id>
+      <activation>
+        <property>
+          <name>environment</name>
+          <value>amazon</value>
+        </property>
+      </activation>
+      <distributionManagement>
+        <repository>
+          <id>mainstreet-deploy</id>
+          <name>mainstreet-deploy</name>
+            <url>http://mavenrepo-1579979608.us-east-1.elb.amazonaws.com/nexus/content/repositories/mainstreet/</url>
+        </repository>
+        <snapshotRepository>
+          <id>cobiscloud-snapshots-deploy</id>
+          <name>cobiscloud-snapshots-deploy</name>
+          <url>http://mavenrepo-1579979608.us-east-1.elb.amazonaws.com/nexus/content/repositories/cobiscloud-snapshots/</url>
+        </snapshotRepository>
+      </distributionManagement>
+
+    </profile>
+
+
+    <profile>
+      <id>env-development</id>
+      <activation>
+        <activeByDefault>true</activeByDefault>
+      </activation>
+      <modules>
+        <module>../cobis-cobiscloud-parent</module>
+        <module>../cobis-cobiscloudburo-zip-util</module>
+        <module>../cobis-cobiscloudparty-build</module>
+        <module>../cobis-cobiscloudburo-util</module>
+        <module>../cobis-cobiscloudburo-build</module>
+        <module>../cobis-cobiscloudsantander-build</module>
+        <module>../cobis-cobiscloudorchestration-build</module>
+      </modules>
+    </profile>
+  </profiles>
+  <!--if you want code order to custom maven distributionManagement use key:mainstreetregulationscompliance.distributionManagement -->
+</project>

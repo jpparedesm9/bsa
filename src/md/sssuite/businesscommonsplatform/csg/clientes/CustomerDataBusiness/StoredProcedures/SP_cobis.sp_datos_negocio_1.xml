@@ -1,0 +1,126 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<procedure>
+  <database>cobis</database>
+  <name>sp_datos_negocio</name>
+  <type>SYBASE</type>
+  <version>1</version>
+  <parameters>
+    <parameter name="@t_debug" dataType="char" direction="in" />
+    <parameter name="@t_from" dataType="varchar" direction="in" />
+    <parameter name="@s_ssn" dataType="int" direction="in" />
+    <parameter name="@s_user" dataType="varchar" direction="in" />
+    <parameter name="@s_sesn" dataType="int" direction="in" />
+    <parameter name="@s_term" dataType="varchar" direction="in" />
+    <parameter name="@s_date" dataType="datetime" direction="in" />
+    <parameter name="@s_srv" dataType="varchar" direction="in" />
+    <parameter name="@s_lsrv" dataType="varchar" direction="in" />
+    <parameter name="@s_ofi" dataType="smallint" direction="in" />
+    <parameter name="@t_file" dataType="varchar" direction="in" />
+    <parameter name="@s_rol" dataType="smallint" direction="in" />
+    <parameter name="@s_org_err" dataType="char" direction="in" />
+    <parameter name="@s_error" dataType="int" direction="in" />
+    <parameter name="@s_sev" dataType="tinyint" direction="in" />
+    <parameter name="@s_msg" dataType="varchar" direction="in" />
+    <parameter name="@s_org" dataType="char" direction="in" />
+    <parameter name="@s_culture" dataType="varchar" direction="in" />
+    <parameter name="@t_trn" dataType="int" direction="in" />
+    <parameter name="@i_ente" dataType="int" direction="in" />
+    <parameter name="@i_operacion" dataType="char" direction="in" />
+    <parameter name="@i_id_formulario" dataType="int" direction="in" />
+    <parameter name="@i_vers_formulario" dataType="int" direction="in" />
+    <parameter name="@i_id_pregunta" dataType="int" direction="in" />
+    <parameter name="@i_tipo_respuesta" dataType="char" direction="in" />
+    <parameter name="@i_preg_form" dataType="int" direction="in" />
+    <parameter name="@i_respuesta" dataType="varchar" direction="in" />
+    <parameter name="@i_column" dataType="int" direction="in" />
+    <parameter name="@i_fila" dataType="int" direction="in" />
+    <parameter name="@i_es_registro" dataType="char" direction="in" />
+    <parameter name="@i_inst_proc" dataType="int" direction="in" />
+    <parameter name="@i_flag" dataType="varchar" direction="in" />
+    <parameter name="@o_ente" dataType="int" direction="out" />
+    <parameter name="@i_etapa" dataType="varchar" direction="in" />
+    <parameter name="@o_mensaje" dataType="varchar" direction="out" />
+  </parameters>
+  <queries>
+    <query>
+      <columns>
+        <column name="{1}" />
+        <column name="{2}" />
+        <column name="{3}" />
+        <column name="{4}" />
+        <column name="{5}" />
+      </columns>
+      <queryText>SELECT w_id_formulario, w_vers_formulario, w_nombre_formulario, w_sit_version, w_calif_minima</queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="idFormulario" />
+        <column name="idVerFormulario" />
+        <column name="idSeccion" />
+        <column name="nombreEtiqueta" />
+        <column name="descEtiqueta" />
+        <column name="habilitado" />
+      </columns>
+      <queryText>SELECT  "idFormulario" = se_id_formulario,"idVerFormulario" = 1,"idSeccion" = se_id_seccion,"nombreEtiqueta" = se_etiqueta,"descEtiqueta" = se_descripcion </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="identPregunta" />
+        <column name="identFormulario" />
+        <column name="identSeccion" />
+        <column name="nombreEtiqueta" />
+        <column name="descripcion" />
+        <column name="tipoRespuesta" />
+        <column name="obligatoria" />
+        <column name="registros" />
+        <column name="repetidos" />
+      </columns>
+      <queryText>SELECT  "identPregunta" = pe_pregunta,"identFormulario" = pe_formulario,"identSeccion" = pe_seccion,"nombreEtiqueta" = pe_etiqueta,"descripcion" = pe_descripcion,"tipoRespuesta" = pe_tipo_resp </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="identForm" />
+        <column name="preguntaForm" />
+        <column name="iTabla" />
+        <column name="nombreColumna" />
+        <column name="tipoDato" />
+        <column name="catAsociado" />
+        <column name="obligatoriedad" />
+      </columns>
+      <queryText>SELECT  "identForm" = pe_ta_formulario,"preguntaForm" = pe_ta_preg_form,"iTabla" = pe_ta_id_tabla,"nombreColumna" = pe_ta_columna,"tipoDato" = pe_ta_tipo_dato,"catAsociado" = pe_ts_catalogo,"obligatoriedad" = pe_ta_obligatoriedad </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="iCatRespuesta" />
+        <column name="iForm" />
+        <column name="iPregunta" />
+        <column name="catalogo" />
+        <column name="codigo" />
+        <column name="valor" />
+        <column name="puntos" />
+      </columns>
+      <queryText></queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="formulario" />
+        <column name="version" />
+        <column name="pregunta" />
+        <column name="tipo_respuesta" />
+        <column name="respuesta" />
+      </columns>
+      <queryText></queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="form" />
+        <column name="version" />
+        <column name="question" />
+        <column name="response" />
+        <column name="column" />
+        <column name="row" />
+      </columns>
+      <queryText></queryText>
+    </query>
+  </queries>
+</procedure>

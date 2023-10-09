@@ -1,0 +1,124 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<procedure>
+  <database>cob_custodia</database>
+  <name>sp_reg_doc</name>
+  <type>SYBASE</type>
+  <version>1</version>
+  <parameters>
+    <parameter name="@s_ssn" dataType="int" direction="in" />
+    <parameter name="@s_date" dataType="datetime" direction="in" />
+    <parameter name="@s_user" dataType="varchar" direction="in" />
+    <parameter name="@s_term" dataType="varchar" direction="in" />
+    <parameter name="@s_corr" dataType="char" direction="in" />
+    <parameter name="@s_ssn_corr" dataType="int" direction="in" />
+    <parameter name="@s_ofi" dataType="smallint" direction="in" />
+    <parameter name="@t_rty" dataType="char" direction="in" />
+    <parameter name="@t_trn" dataType="smallint" direction="in" />
+    <parameter name="@t_debug" dataType="char" direction="in" />
+    <parameter name="@t_file" dataType="varchar" direction="in" />
+    <parameter name="@t_from" dataType="varchar" direction="in" />
+    <parameter name="@i_operacion" dataType="char" direction="in" />
+    <parameter name="@i_modo" dataType="smallint" direction="in" />
+    <parameter name="@i_filial" dataType="int" direction="in" />
+    <parameter name="@i_sucursal" dataType="int" direction="in" />
+    <parameter name="@i_custodia" dataType="int" direction="in" />
+    <parameter name="@i_tipo_cust" dataType="varchar" direction="in" />
+    <parameter name="@i_secuencial" dataType="int" direction="in" />
+    <parameter name="@i_registro" dataType="varchar" direction="in" />
+    <parameter name="@i_ubicacion_reg" dataType="varchar" direction="in" />
+    <parameter name="@i_tipo_doc" dataType="varchar" direction="in" />
+    <parameter name="@i_fecha_reg" dataType="datetime" direction="in" />
+    <parameter name="@i_nro_doc" dataType="varchar" direction="in" />
+    <parameter name="@i_colaborador_legal" dataType="varchar" direction="in" />
+    <parameter name="@i_colaborador_reg" dataType="varchar" direction="in" />
+    <parameter name="@i_notario" dataType="varchar" direction="in" />
+    <parameter name="@i_unidad_legal" dataType="varchar" direction="in" />
+    <parameter name="@i_fecha_escrituracion" dataType="datetime" direction="in" />
+    <parameter name="@i_fec_venap" dataType="datetime" direction="in" />
+    <parameter name="@i_documento" dataType="int" direction="in" />
+    <parameter name="@i_observaciones" dataType="varchar" direction="in" />
+    <parameter name="@i_comentarios" dataType="varchar" direction="in" />
+    <parameter name="@i_formato_fecha" dataType="tinyint" direction="in" />
+    <parameter name="@i_codigo_compuesto" dataType="varchar" direction="in" />
+    <parameter name="@i_tramite" dataType="int" direction="in" />
+    <parameter name="@i_und_legal" dataType="varchar" direction="in" />
+  </parameters>
+  <queries>
+    <query>
+      <columns>
+        <column name="{1}" />
+        <column name="{2}" />
+        <column name="{3}" />
+        <column name="{4}" />
+        <column name="{5}" />
+        <column name="{6}" />
+        <column name="{7}" />
+        <column name="{8}" />
+        <column name="{9}" />
+        <column name="{10}" />
+        <column name="{11}" />
+        <column name="{12}" />
+        <column name="{13}" />
+        <column name="{14}" />
+        <column name="{15}" />
+        <column name="{16}" />
+        <column name="{17}" />
+        <column name="{18}" />
+        <column name="{19}" />
+      </columns>
+      <queryText>SELECT w_secuencial, w_registro, w_ubicacion_reg, w_tipo_doc, w_fecha_reg, w_fec_venap, w_fecha_escrituracion, w_nro_doc, w_colaborador_reg, w_colaborador_legal, w_unidad_legal, w_notario, w_observaciones, w_comentarios, w_desc_registro, w_desc_ubicacion, w_desc_tipodoc, w_desc_legalizacion, w_und_legal</queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="Sequential" />
+        <column name="Document" />
+        <column name="ExternalCode" />
+        <column name="Record" />
+        <column name="LocationLog" />
+        <column name="docType" />
+        <column name="EntryDate" />
+        <column name="VenapDate" />
+        <column name="FormailizationDate" />
+        <column name="DocumentNumber" />
+        <column name="RegPartner" />
+        <column name="LegalPartner" />
+        <column name="LegalUnit" />
+        <column name="Notary" />
+        <column name="Observations" />
+        <column name="Comments" />
+        <column name="UndLegal" />
+      </columns>
+      <queryText>SELECT  "17761" = rd_secuencial,"17762" = rd_documento,"17763" = rd_codigo_externo,"17764" = rd_registro,"17765" = rd_ubicacion_reg,"17766" = rd_tipo_doc,"17767" = CONVERT (CHAR (10),rd_fecha ,?),"17768" = CONVERT (CHAR (10),rd_fec_vecap ,?),"17769" = CONVERT (CHAR (10),rd_fecha_escrituracion ,?),"17770" = rd_nro_doc,"17771" = rd_colaborador_reg,"17772" = rd_colaborador_legal,"17773" = rd_unidad_legal,"17774" = rd_notario,"17775" = rd_observaciones,"17776" = rd_comentarios,"17777" = rd_und_legal </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="17761" />
+        <column name="17762" />
+        <column name="17763" />
+        <column name="17764" />
+        <column name="17765" />
+        <column name="17766" />
+        <column name="17767" />
+        <column name="17768" />
+        <column name="17769" />
+        <column name="17770" />
+        <column name="17771" />
+        <column name="17772" />
+        <column name="17773" />
+        <column name="17774" />
+        <column name="17775" />
+        <column name="17776" />
+        <column name="17777" />
+      </columns>
+      <queryText>SELECT  "17761" = rd_secuencial,"17762" = rd_documento,"17763" = rd_codigo_externo,"17764" = rd_registro,"17765" = rd_ubicacion_reg,"17766" = rd_tipo_doc,"17767" = CONVERT (CHAR (10),rd_fecha ,103),"17768" = CONVERT (CHAR (10),rd_fec_vecap ,103),"17769" = CONVERT (CHAR (10),rd_fecha_escrituracion ,103),"17770" = rd_nro_doc,"17771" = rd_colaborador_reg,"17772" = rd_colaborador_legal,"17773" = rd_unidad_legal,"17774" = rd_notario,"17775" = rd_observaciones,"17776" = rd_comentarios,"17777" = rd_und_legal </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="{1}" />
+        <column name="{2}" />
+        <column name="{3}" />
+      </columns>
+      <queryText>SELECT w_colaborador_legal, w_desc_legalizacion, w_fecha_reg</queryText>
+    </query>
+  </queries>
+</procedure>

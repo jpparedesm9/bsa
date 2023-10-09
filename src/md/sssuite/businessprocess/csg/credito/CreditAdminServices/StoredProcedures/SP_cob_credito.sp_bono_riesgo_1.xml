@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<procedure>
+  <database>cob_credito</database>
+  <name>sp_bono_riesgo</name>
+  <type>SYBASE</type>
+  <version>1</version>
+  <parameters>
+    <parameter name="@t_debug" dataType="char" direction="in" />
+    <parameter name="@t_file" dataType="varchar" direction="in" />
+    <parameter name="@t_from" dataType="varchar" direction="in" />
+    <parameter name="@t_show_version" dataType="bit" direction="in" />
+    <parameter name="@i_operacion" dataType="char" direction="in" />
+    <parameter name="@i_tipo" dataType="char" direction="in" />
+    <parameter name="@i_filial" dataType="tinyint" direction="in" />
+    <parameter name="@i_codigo" dataType="int" direction="in" />
+    <parameter name="@i_agencia" dataType="int" direction="in" />
+    <parameter name="@i_fecha_desde" dataType="datetime" direction="in" />
+    <parameter name="@i_fecha_hasta" dataType="datetime" direction="in" />
+    <parameter name="@i_porcentaje" dataType="float" direction="in" />
+    <parameter name="@i_porcentaje_gestion" dataType="float" direction="in" />
+    <parameter name="@i_fecha_registro" dataType="datetime" direction="in" />
+    <parameter name="@i_usuario" dataType="varchar" direction="in" />
+    <parameter name="@i_regional" dataType="varchar" direction="in" />
+    <parameter name="@i_porcentaje_operativo" dataType="float" direction="in" />
+  </parameters>
+  <queries>
+    <query>
+      <columns>
+        <column name=" codigo_agencia" />
+        <column name=" nombre_agencia" />
+        <column name=" codigo_riesgo" />
+        <column name="fecha_desde" />
+        <column name="fecha_hasta" />
+        <column name="porcentaje" />
+        <column name="porcentaje_gestion" />
+        <column name="fecha_registro" />
+        <column name="usuario" />
+        <column name="regional_Id" />
+        <column name="porcentaj_riesgo_operativo" />
+        <column name="regional_nombre" />
+      </columns>
+      <queryText>SELECT  1 </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="codigo_agencia" />
+        <column name=" nombre_agencia" />
+        <column name=" codigo_riesgo" />
+        <column name=" fecha_desde" />
+        <column name="fecha_hasta" />
+        <column name="porcentaje" />
+        <column name="porcentaje_gestion" />
+        <column name="fecha_registro" />
+        <column name="usuario" />
+        <column name="regional_Id" />
+        <column name="porcentaj_riesgo_operativo" />
+        <column name="regional_nombre" />
+      </columns>
+      <queryText>SELECT  rag_codigo,rag_agencia,rag_fecha_desde,rag_fecha_hasta,rag_porcentaje,rag_porcentaje_gestion,rag_fecha_registro,rag_usuario </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="{1}" />
+      </columns>
+      <queryText>SELECT  1 </queryText>
+    </query>
+  </queries>
+</procedure>

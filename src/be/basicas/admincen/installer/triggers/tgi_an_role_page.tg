@@ -1,0 +1,58 @@
+use cobis
+go
+if exists (select * from sysobjects where name = 'tgi_an_role_page')
+    drop trigger tgi_an_role_page
+go
+create trigger tgi_an_role_page
+on an_role_page
+for insert
+as
+begin
+    declare
+        @w_rp_pa_id     int,
+        @w_rp_rol       tinyint,
+        @w_id           int
+ 
+    declare cu_inserted cursor for
+        select
+            rp_pa_id, 
+            rp_rol
+        from inserted
+ 
+    open cu_inserted
+    fetch cu_inserted into
+        @w_rp_pa_id, 
+        @w_rp_rol
+                 
+    while @@FETCH_STATUS=0
+    begin
+        select @w_id = sq_siguiente
+        from cob_distrib..di_seqnos
+        where sq_tabla = 'di_log'
+ 
+        update cob_distrib..di_seqnos
+        set sq_siguiente = sq_siguiente + 1
+        where sq_tabla = 'di_log'
+ 
+        insert into cob_distrib..di_log (
+            lg_id, lg_fecha, lg_operacion, lg_objeto)
+        values (@w_id, getdate(), 'I', 'cobis..sp_an_role_page_tg')
+        
+        insert into cob_distrib..di_parametro (
+            pa_id, pa_nombre, pa_tipodato, pa_longitud, pa_int)
+        values (@w_id, '@i_rp_pa_id', 56, isnull(datalength(@w_rp_pa_id), 0),@w_rp_pa_id)
+        
+        insert into cob_distrib..di_parametro (
+            pa_id, pa_nombre, pa_tipodato, pa_longitud, pa_tinyint)
+        values (@w_id, '@i_rp_rol', 48, isnull(datalength(@w_rp_rol), 0), @w_rp_rol)
+        
+        fetch cu_inserted into
+            @w_rp_pa_id, 
+            @w_rp_rol
+        
+    end
+    close cu_inserted
+    deallocate cu_inserted
+    
+end
+go

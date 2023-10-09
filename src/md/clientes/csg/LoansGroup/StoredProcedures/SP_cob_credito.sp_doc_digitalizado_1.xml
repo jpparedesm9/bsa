@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<procedure>
+  <database>cob_credito</database>
+  <name>sp_doc_digitalizado</name>
+  <type>SQLSERVER</type>
+  <version>1</version>
+  <parameters>
+    <parameter name="@s_ssn" dataType="int" direction="in" />
+    <parameter name="@s_sesn" dataType="int" direction="in" />
+    <parameter name="@s_user" dataType="varchar" direction="in" />
+    <parameter name="@s_term" dataType="varchar" direction="in" />
+    <parameter name="@s_date" dataType="datetime" direction="in" />
+    <parameter name="@s_srv" dataType="varchar" direction="in" />
+    <parameter name="@s_lsrv" dataType="varchar" direction="in" />
+    <parameter name="@s_ofi" dataType="smallint" direction="in" />
+    <parameter name="@s_rol" dataType="smallint" direction="in" />
+    <parameter name="@s_org_err" dataType="char" direction="in" />
+    <parameter name="@s_error" dataType="int" direction="in" />
+    <parameter name="@s_sev" dataType="tinyint" direction="in" />
+    <parameter name="@s_msg" dataType="varchar" direction="in" />
+    <parameter name="@s_org" dataType="char" direction="in" />
+    <parameter name="@t_debug" dataType="char" direction="in" />
+    <parameter name="@t_file" dataType="varchar" direction="in" />
+    <parameter name="@t_from" dataType="varchar" direction="in" />
+    <parameter name="@t_trn" dataType="smallint" direction="in" />
+    <parameter name="@t_show_version" dataType="bit" direction="in" />
+    <parameter name="@i_operacion" dataType="char" direction="in" />
+    <parameter name="@i_cliente" dataType="int" direction="in" />
+    <parameter name="@i_inst_proceso" dataType="int" direction="in" />
+    <parameter name="@i_grupo" dataType="int" direction="in" />
+    <parameter name="@i_fecha" dataType="datetime" direction="in" />
+    <parameter name="@i_tipo_doc" dataType="varchar" direction="in" />
+    <parameter name="@i_cargado" dataType="char" direction="in" />
+    <parameter name="@i_extension" dataType="char" direction="in" />
+    <parameter name="@i_modo" dataType="int" direction="in" />
+    <parameter name="@i_origen" dataType="char" direction="in" />
+    <parameter name="@i_sin_huella_dactilar" dataType="char" direction="in" />
+  </parameters>
+  <queries>
+    <query>
+      <columns>
+        <column name="INSTANCIA_PROCESO" />
+        <column name="CLIENTE" />
+        <column name="GRUPO" />
+        <column name="FECHA_PROCESO" />
+        <column name="TIPO_DOCUMENTO" />
+        <column name="CARGADO" />
+        <column name="ID_DOCUMENTO" />
+        <column name="EXTENSION" />
+      </columns>
+      <queryText>select      'INSTANCIA_PROCESO' = dd_inst_proceso,      'CLIENTE' = dd_cliente,      'GRUPO' = dd_grupo,      'FECHA_PROCESO' = dd_fecha,      'TIPO_DOCUMENTO' = dd_tipo_doc,      'CARGADO' = dd_cargado       from</queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="INSTANCIA_PROCESO" />
+        <column name="CLIENTE" />
+        <column name="GRUPO" />
+        <column name="FECHA_PROCESO" />
+        <column name="TIPO_DOCUMENTO" />
+        <column name="CARGADO" />
+        <column name="ID_DOCUMENTO" />
+        <column name="EXTENSION" />
+      </columns>
+      <queryText></queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="sintaciaProceso" />
+        <column name="grupo" />
+        <column name="completado" />
+      </columns>
+      <queryText></queryText>
+    </query>
+  </queries>
+</procedure>

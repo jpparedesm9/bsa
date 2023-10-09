@@ -1,0 +1,587 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="BuroCreditoInternoExterno_sisFinanciero.jrxml" pageWidth="572" pageHeight="752" columnWidth="572" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="9ab22525-e7a3-49a6-8b66-445b7cc4ee71">
+	<property name="ireport.zoom" value="1.4641000000000006"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="SUBREPORT_DIR" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["/"]]></defaultValueExpression>
+	</parameter>
+	<field name="sisFInMop" class="java.lang.String"/>
+	<field name="sisFInTotalCuentas" class="java.lang.Integer"/>
+	<field name="sisFInCuentasAbi" class="java.lang.Integer"/>
+	<field name="sisFInLimCredCuentaAbi" class="java.lang.Double"/>
+	<field name="sisFInSaldoActualCuentasAbi" class="java.lang.Double"/>
+	<field name="sisFInSaldoVencidoCuentasAbi" class="java.lang.Double"/>
+	<field name="sisFInPagoPago" class="java.lang.Double"/>
+	<field name="sisFInPagoSemanal" class="java.lang.Double"/>
+	<field name="sisFInPagoCatorcenal" class="java.lang.Double"/>
+	<field name="sisFInPagoMensual" class="java.lang.Double"/>
+	<field name="sisFInCuentasCerradas" class="java.lang.Integer"/>
+	<field name="sisFInLimiteCredCuentasAbi" class="java.lang.Double"/>
+	<variable name="sumSisFInTotalCuentas" class="java.lang.Integer" calculation="Sum">
+		<variableExpression><![CDATA[$F{sisFInTotalCuentas}]]></variableExpression>
+	</variable>
+	<variable name="sumSisFInCuentasAbi" class="java.lang.Integer" calculation="Sum">
+		<variableExpression><![CDATA[$F{sisFInCuentasAbi}]]></variableExpression>
+	</variable>
+	<variable name="sumSisFInLimCredCuentaAbi" class="java.lang.Double" calculation="Sum">
+		<variableExpression><![CDATA[$F{sisFInLimCredCuentaAbi}]]></variableExpression>
+	</variable>
+	<variable name="sumSisFInSaldoActualCuentasAbi" class="java.lang.Double" calculation="Sum">
+		<variableExpression><![CDATA[$F{sisFInSaldoActualCuentasAbi}]]></variableExpression>
+	</variable>
+	<variable name="sumSisFInSaldoVencidoCuentasAbi" class="java.lang.Double" calculation="Sum">
+		<variableExpression><![CDATA[$F{sisFInSaldoVencidoCuentasAbi}]]></variableExpression>
+	</variable>
+	<variable name="sumSisFInPagoPago" class="java.lang.Double" calculation="Sum">
+		<variableExpression><![CDATA[$F{sisFInPagoPago}]]></variableExpression>
+	</variable>
+	<variable name="sumSisFInPagoSemanal" class="java.lang.Double" calculation="Sum">
+		<variableExpression><![CDATA[$F{sisFInPagoSemanal}]]></variableExpression>
+	</variable>
+	<variable name="sumSisFInPagoCatorcenal" class="java.lang.Double" calculation="Sum">
+		<variableExpression><![CDATA[$F{sisFInPagoCatorcenal}]]></variableExpression>
+	</variable>
+	<variable name="sumSisFInPagoMensual" class="java.lang.Double" calculation="Sum">
+		<variableExpression><![CDATA[$F{sisFInPagoMensual}]]></variableExpression>
+	</variable>
+	<variable name="sumSisFInCuentasCerradas" class="java.lang.Integer" calculation="Sum">
+		<variableExpression><![CDATA[$F{sisFInCuentasCerradas}]]></variableExpression>
+	</variable>
+	<variable name="sumSisFInLimiteCredCuentasAbi" class="java.lang.Double" calculation="Sum">
+		<variableExpression><![CDATA[$F{sisFInLimiteCredCuentasAbi}]]></variableExpression>
+	</variable>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<columnHeader>
+		<band height="66">
+			<staticText>
+				<reportElement stretchType="RelativeToBandHeight" mode="Opaque" x="0" y="0" width="572" height="15" isPrintWhenDetailOverflows="true" backcolor="#CCCCCC" uuid="f46c8b62-1a04-4815-9b40-9bea8db4b7b6"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font fontName="SansSerif" size="8" isBold="true" isStrikeThrough="false" isPdfEmbedded="false"/>
+					<paragraph leftIndent="2" rightIndent="2" spacingBefore="2" spacingAfter="2"/>
+				</textElement>
+				<text><![CDATA[SISTEMA FINANCIERO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement stretchType="RelativeToBandHeight" mode="Opaque" x="0" y="15" width="51" height="51" isPrintWhenDetailOverflows="true" backcolor="#CCCCCC" uuid="439c5e7c-b827-4969-9438-93f20e901007"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="7" isBold="true"/>
+					<paragraph leftIndent="2" rightIndent="2" spacingBefore="2" spacingAfter="2"/>
+				</textElement>
+				<text><![CDATA[MOP]]></text>
+			</staticText>
+			<staticText>
+				<reportElement stretchType="RelativeToBandHeight" mode="Opaque" x="91" y="15" width="40" height="51" isPrintWhenDetailOverflows="true" backcolor="#CCCCCC" uuid="6bd3c2be-db60-4b4b-b34a-865930ba98b2"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="7" isBold="true"/>
+					<paragraph leftIndent="2" rightIndent="2" spacingBefore="2" spacingAfter="2"/>
+				</textElement>
+				<text><![CDATA[CUENTAS ABIERTAS]]></text>
+			</staticText>
+			<staticText>
+				<reportElement stretchType="RelativeToBandHeight" mode="Opaque" x="185" y="15" width="40" height="51" isPrintWhenDetailOverflows="true" backcolor="#CCCCCC" uuid="b3baba27-e580-47e7-bc8b-5bbdba69a664"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="7" isBold="true"/>
+					<paragraph leftIndent="2" rightIndent="2" spacingBefore="2" spacingAfter="2"/>
+				</textElement>
+				<text><![CDATA[SALDO ACTUAL DE CUENTAS ABIERTAS]]></text>
+			</staticText>
+			<staticText>
+				<reportElement stretchType="RelativeToBandHeight" mode="Opaque" x="51" y="15" width="40" height="51" isPrintWhenDetailOverflows="true" backcolor="#CCCCCC" uuid="82228f35-d3de-4642-9fcb-33f5bd540706"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="7" isBold="true"/>
+					<paragraph leftIndent="2" rightIndent="2" spacingBefore="2" spacingAfter="2"/>
+				</textElement>
+				<text><![CDATA[TOTAL CUENTAS]]></text>
+			</staticText>
+			<staticText>
+				<reportElement stretchType="RelativeToBandHeight" mode="Opaque" x="131" y="15" width="54" height="51" isPrintWhenDetailOverflows="true" backcolor="#CCCCCC" uuid="db0523d8-456f-46d8-a8a4-12528cc6da48"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="7" isBold="true"/>
+					<paragraph leftIndent="2" rightIndent="2" spacingBefore="2" spacingAfter="2"/>
+				</textElement>
+				<text><![CDATA[LIMITE DE CRÉDITO DE CUENTAS ABIERTAS]]></text>
+			</staticText>
+			<staticText>
+				<reportElement stretchType="RelativeToBandHeight" mode="Opaque" x="225" y="15" width="53" height="51" isPrintWhenDetailOverflows="true" backcolor="#CCCCCC" uuid="3b2dfa66-976f-4732-99b2-161d22f10776"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="7" isBold="true"/>
+					<paragraph leftIndent="2" rightIndent="2" spacingBefore="2" spacingAfter="2"/>
+				</textElement>
+				<text><![CDATA[SALDO VENCIDO DE CUENTAS ABIERTAS]]></text>
+			</staticText>
+			<staticText>
+				<reportElement stretchType="RelativeToBandHeight" mode="Opaque" x="278" y="15" width="40" height="51" isPrintWhenDetailOverflows="true" backcolor="#CCCCCC" uuid="85163263-2c07-4385-ab49-099b8d9487ec"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="7" isBold="true"/>
+					<paragraph leftIndent="2" rightIndent="2" spacingBefore="2" spacingAfter="2"/>
+				</textElement>
+				<text><![CDATA[PAGO PAGAR ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement stretchType="RelativeToBandHeight" mode="Opaque" x="318" y="15" width="43" height="51" isPrintWhenDetailOverflows="true" backcolor="#CCCCCC" uuid="c22a47ff-a2bd-4aab-94fb-16c4b4feefa2"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="7" isBold="true"/>
+					<paragraph leftIndent="2" rightIndent="2" spacingBefore="2" spacingAfter="2"/>
+				</textElement>
+				<text><![CDATA[PAGO SEMANAL]]></text>
+			</staticText>
+			<staticText>
+				<reportElement stretchType="RelativeToBandHeight" mode="Opaque" x="361" y="15" width="63" height="51" isPrintWhenDetailOverflows="true" backcolor="#CCCCCC" uuid="b9e93231-4bdc-4c04-bc36-0f22b79dd6bc"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="7" isBold="true"/>
+					<paragraph leftIndent="2" rightIndent="2" spacingBefore="2" spacingAfter="2"/>
+				</textElement>
+				<text><![CDATA[PAGO CATORCENAL]]></text>
+			</staticText>
+			<staticText>
+				<reportElement stretchType="RelativeToBandHeight" mode="Opaque" x="424" y="15" width="43" height="51" isPrintWhenDetailOverflows="true" backcolor="#CCCCCC" uuid="526c5e61-db94-496a-91b5-69d107896a61"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="7" isBold="true"/>
+					<paragraph leftIndent="2" rightIndent="2" spacingBefore="2" spacingAfter="2"/>
+				</textElement>
+				<text><![CDATA[PAGO MENSUAL]]></text>
+			</staticText>
+			<staticText>
+				<reportElement stretchType="RelativeToBandHeight" mode="Opaque" x="467" y="15" width="49" height="51" isPrintWhenDetailOverflows="true" backcolor="#CCCCCC" uuid="4b56827a-69a8-4e10-999b-36370571b1a1"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="7" isBold="true"/>
+					<paragraph leftIndent="2" rightIndent="2" spacingBefore="2" spacingAfter="2"/>
+				</textElement>
+				<text><![CDATA[CUENTAS CERRADAS]]></text>
+			</staticText>
+			<staticText>
+				<reportElement stretchType="RelativeToBandHeight" mode="Opaque" x="516" y="15" width="56" height="51" isPrintWhenDetailOverflows="true" backcolor="#CCCCCC" uuid="f7b01480-88ad-44b7-afa6-307496673926"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="7" isBold="true"/>
+					<paragraph leftIndent="2" rightIndent="2" spacingBefore="2" spacingAfter="2"/>
+				</textElement>
+				<text><![CDATA[LIMITE DE CRÉDITO DE CUENTAS CERRADAS]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="15" splitType="Stretch">
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="0" y="0" width="51" height="15" isPrintWhenDetailOverflows="true" uuid="05814229-db15-4595-a425-0ac141ac73cf"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement>
+					<font size="7"/>
+					<paragraph leftIndent="2" rightIndent="2" spacingBefore="2" spacingAfter="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{sisFInMop}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="51" y="0" width="40" height="15" isPrintWhenDetailOverflows="true" uuid="c97a7ca8-b598-4d73-9d7e-7ee27cfc70bf"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font size="7"/>
+					<paragraph leftIndent="2" rightIndent="2" spacingBefore="2" spacingAfter="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{sisFInTotalCuentas}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="91" y="0" width="40" height="15" isPrintWhenDetailOverflows="true" uuid="8bf0174c-58b3-4dbe-b345-bcc189ad9fac"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font size="7"/>
+					<paragraph leftIndent="2" rightIndent="2" spacingBefore="2" spacingAfter="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{sisFInCuentasAbi}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" pattern="#,##0.00" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="131" y="0" width="54" height="15" isPrintWhenDetailOverflows="true" uuid="816f5f40-b067-43ab-8adb-800a152d0cde"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Right">
+					<font size="7"/>
+					<paragraph leftIndent="2" rightIndent="2" spacingBefore="2" spacingAfter="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{sisFInLimCredCuentaAbi}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" pattern="#,##0.00" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="185" y="0" width="40" height="15" isPrintWhenDetailOverflows="true" uuid="53d70c5e-6d26-42e2-acf4-0624e902b7b4"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Right">
+					<font size="7"/>
+					<paragraph leftIndent="2" rightIndent="2" spacingBefore="2" spacingAfter="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{sisFInSaldoActualCuentasAbi}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" pattern="#,##0.00" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="225" y="0" width="53" height="15" isPrintWhenDetailOverflows="true" uuid="100087fb-8b60-4cad-82c0-4dcfc0742181"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Right">
+					<font size="7"/>
+					<paragraph leftIndent="2" rightIndent="2" spacingBefore="2" spacingAfter="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{sisFInSaldoVencidoCuentasAbi}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" pattern="#,##0.00" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="278" y="0" width="40" height="15" isPrintWhenDetailOverflows="true" uuid="86bef13d-4b22-4c8c-8a86-24009f5ecee3"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Right">
+					<font size="7"/>
+					<paragraph leftIndent="2" rightIndent="2" spacingBefore="2" spacingAfter="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{sisFInPagoPago}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" pattern="#,##0.00" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="318" y="0" width="43" height="15" isPrintWhenDetailOverflows="true" uuid="054d91c1-d346-4ccc-932c-4b36a8377858"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Right">
+					<font size="7"/>
+					<paragraph leftIndent="2" rightIndent="2" spacingBefore="2" spacingAfter="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{sisFInPagoSemanal}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" pattern="#,##0.00" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="361" y="0" width="63" height="15" isPrintWhenDetailOverflows="true" uuid="c5fe386c-2897-4e19-809f-b4034cbd7a18"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Right">
+					<font size="7"/>
+					<paragraph leftIndent="2" rightIndent="2" spacingBefore="2" spacingAfter="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{sisFInPagoCatorcenal}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" pattern="#,##0.00" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="424" y="0" width="43" height="15" isPrintWhenDetailOverflows="true" uuid="af32dd2a-462f-4208-a756-822ba00ae2a3"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Right">
+					<font size="7"/>
+					<paragraph leftIndent="2" rightIndent="2" spacingBefore="2" spacingAfter="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{sisFInPagoMensual}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="467" y="0" width="49" height="15" isPrintWhenDetailOverflows="true" uuid="50b11abd-f9cf-4b15-9980-7c02202f34d4"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font size="7"/>
+					<paragraph leftIndent="2" rightIndent="2" spacingBefore="2" spacingAfter="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{sisFInCuentasCerradas}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" pattern="#,##0.00" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="516" y="0" width="56" height="15" isPrintWhenDetailOverflows="true" uuid="8685a463-c665-4f52-a42c-2a6a724182e4"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Right">
+					<font size="7"/>
+					<paragraph leftIndent="2" rightIndent="2" spacingBefore="2" spacingAfter="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{sisFInLimiteCredCuentasAbi}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="15">
+			<staticText>
+				<reportElement stretchType="RelativeToBandHeight" x="0" y="0" width="51" height="15" isPrintWhenDetailOverflows="true" backcolor="#999999" uuid="253eb619-adb8-44e8-aee6-dfb57af2a58d"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="7" isBold="true"/>
+					<paragraph leftIndent="2" rightIndent="2" spacingBefore="2" spacingAfter="2"/>
+				</textElement>
+				<text><![CDATA[TOTALES]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="51" y="0" width="40" height="15" isPrintWhenDetailOverflows="true" uuid="c9eadb31-f800-4b43-8492-341893e65d98"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font size="7"/>
+					<paragraph leftIndent="2" rightIndent="2" spacingBefore="2" spacingAfter="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{sumSisFInTotalCuentas}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="91" y="0" width="40" height="15" isPrintWhenDetailOverflows="true" uuid="1c59c640-b8ac-4622-811e-c6120d4df9b4"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font size="7"/>
+					<paragraph leftIndent="2" rightIndent="2" spacingBefore="2" spacingAfter="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{sumSisFInCuentasAbi}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" pattern="#,##0.00" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="131" y="0" width="54" height="15" isPrintWhenDetailOverflows="true" uuid="69b9845f-48bd-4a84-91ac-e06fc9709336"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Right">
+					<font size="7"/>
+					<paragraph leftIndent="2" rightIndent="2" spacingBefore="2" spacingAfter="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{sumSisFInLimCredCuentaAbi}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" pattern="#,##0.00" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="185" y="0" width="40" height="15" isPrintWhenDetailOverflows="true" uuid="d69d8511-74fd-488a-a844-84164e9fdbe8"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Right">
+					<font size="7"/>
+					<paragraph leftIndent="2" rightIndent="2" spacingBefore="2" spacingAfter="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{sumSisFInSaldoActualCuentasAbi}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" pattern="#,##0.00" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="225" y="0" width="53" height="15" isPrintWhenDetailOverflows="true" uuid="9f70c1d1-2b38-475a-90fd-22fbd67a2a4d"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Right">
+					<font size="7"/>
+					<paragraph leftIndent="2" rightIndent="2" spacingBefore="2" spacingAfter="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{sumSisFInSaldoVencidoCuentasAbi}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" pattern="#,##0.00" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="278" y="0" width="40" height="15" isPrintWhenDetailOverflows="true" uuid="9e419b5d-c192-4d99-b50e-d4e4b0704608"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Right">
+					<font size="7"/>
+					<paragraph leftIndent="2" rightIndent="2" spacingBefore="2" spacingAfter="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{sumSisFInPagoPago}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" pattern="#,##0.00" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="318" y="0" width="43" height="15" isPrintWhenDetailOverflows="true" uuid="22c2ca84-9694-4b6c-896e-79cd56d1b874"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Right">
+					<font size="7"/>
+					<paragraph leftIndent="2" rightIndent="2" spacingBefore="2" spacingAfter="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{sumSisFInPagoSemanal}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" pattern="#,##0.00" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="361" y="0" width="63" height="15" isPrintWhenDetailOverflows="true" uuid="c97a6590-6535-4d5c-a4fa-b97a9bdce4be"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Right">
+					<font size="7"/>
+					<paragraph leftIndent="2" rightIndent="2" spacingBefore="2" spacingAfter="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{sumSisFInPagoCatorcenal}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" pattern="#,##0.00" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="424" y="0" width="43" height="15" isPrintWhenDetailOverflows="true" uuid="d4596bbc-ead5-4445-9068-2c302cc50bcd"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Right">
+					<font size="7"/>
+					<paragraph leftIndent="2" rightIndent="2" spacingBefore="2" spacingAfter="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{sumSisFInPagoCatorcenal}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="467" y="0" width="49" height="15" isPrintWhenDetailOverflows="true" uuid="e806038d-6608-4c30-8813-0da184b6dde6"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font size="7"/>
+					<paragraph leftIndent="2" rightIndent="2" spacingBefore="2" spacingAfter="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{sumSisFInCuentasCerradas}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" pattern="#,##0.00" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="516" y="0" width="56" height="15" isPrintWhenDetailOverflows="true" uuid="640bdd2b-1db7-41fb-95dd-bbbcb5c1baeb"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Right">
+					<font size="7"/>
+					<paragraph leftIndent="2" rightIndent="2" spacingBefore="2" spacingAfter="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{sumSisFInLimiteCredCuentasAbi}]]></textFieldExpression>
+			</textField>
+		</band>
+	</columnFooter>
+</jasperReport>

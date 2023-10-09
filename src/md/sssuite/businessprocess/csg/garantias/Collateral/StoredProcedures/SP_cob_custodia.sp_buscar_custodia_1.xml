@@ -1,0 +1,172 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<procedure>
+  <database>cob_custodia</database>
+  <name>sp_buscar_custodia</name>
+  <type>SYBASE</type>
+  <version>1</version>
+  <parameters>
+    <parameter name="@s_date" dataType="datetime" direction="in" />
+    <parameter name="@t_trn" dataType="smallint" direction="in" />
+    <parameter name="@i_operacion" dataType="char" direction="in" />
+    <parameter name="@i_modo" dataType="smallint" direction="in" />
+    <parameter name="@i_formato_fecha" dataType="int" direction="in" />
+    <parameter name="@i_filial" dataType="tinyint" direction="in" />
+    <parameter name="@i_moneda" dataType="tinyint" direction="in" />
+    <parameter name="@i_sucursal" dataType="smallint" direction="in" />
+    <parameter name="@i_oficina" dataType="smallint" direction="in" />
+    <parameter name="@i_tipo" dataType="varchar" direction="in" />
+    <parameter name="@i_estado" dataType="varchar" direction="in" />
+    <parameter name="@i_custodia1" dataType="int" direction="in" />
+    <parameter name="@i_custodia2" dataType="int" direction="in" />
+    <parameter name="@i_custodia3" dataType="int" direction="in" />
+    <parameter name="@i_fecha_ingreso1" dataType="datetime" direction="in" />
+    <parameter name="@i_fecha_ingreso2" dataType="datetime" direction="in" />
+    <parameter name="@i_tipo1" dataType="varchar" direction="in" />
+    <parameter name="@i_cliente" dataType="int" direction="in" />
+    <parameter name="@i_oficial" dataType="int" direction="in" />
+    <parameter name="@i_codigo_externo" dataType="varchar" direction="in" />
+    <parameter name="@i_siguiente" dataType="varchar" direction="in" />
+    <parameter name="@i_condicion_est" dataType="tinyint" direction="in" />
+    <parameter name="@i_caracter" dataType="char" direction="in" />
+    <parameter name="@i_cuantia" dataType="char" direction="in" />
+    <parameter name="@i_clase" dataType="char" direction="in" />
+    <parameter name="@i_compartida" dataType="char" direction="in" />
+    <parameter name="@i_ofi_sig" dataType="smallint" direction="in" />
+    <parameter name="@i_tipo_sig" dataType="varchar" direction="in" />
+    <parameter name="@i_cust_sig" dataType="int" direction="in" />
+    <parameter name="@i_llama_estado" dataType="char" direction="in" />
+    <parameter name="@i_fecha_ingreso3" dataType="datetime" direction="in" />
+    <parameter name="@i_fecha_ingreso4" dataType="datetime" direction="in" />
+    <parameter name="@i_fecha_ingreso5" dataType="datetime" direction="in" />
+    <parameter name="@i_fecha_ingreso6" dataType="datetime" direction="in" />
+    <parameter name="@i_certificado" dataType="smallint" direction="in" />
+  </parameters>
+  <queries>
+    <query>
+      <columns>
+        <column name="GARANTIA" />
+        <column name="CODIGO" />
+        <column name="TIPO" />
+        <column name="DESCRIPCION" />
+        <column name="{5}" />
+        <column name="OFICINA" />
+        <column name="COD.ESTADO" />
+        <column name="ESTADO" />
+      </columns>
+      <queryText>SELECT  "GARANTIA" = B.cu_custodia,"CODIGO" = B.cu_codigo_externo,"TIPO" = B.cu_tipo,"DESCRIPCION" = SUBSTRING (tc_descripcion, 1, 10),B.cu_sucursal,"OFICINA" = SUBSTRING (of_nombre, 1, 20),"COD.ESTADO" = B.cu_estado,"ESTADO" = (SELECT  valor </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="GARANTIA" />
+        <column name="CODIGO" />
+        <column name="TIPO" />
+        <column name="DESCRIPCION" />
+        <column name="{5}" />
+        <column name="OFICINA" />
+        <column name="COD.ESTADO" />
+        <column name="ESTADO" />
+      </columns>
+      <queryText>SELECT  "GARANTIA" = B.cu_custodia,"CODIGO" = B.cu_codigo_externo,"TIPO" = B.cu_tipo,"DESCRIPCION" = SUBSTRING (tc_descripcion, 1, 10),B.cu_sucursal,"OFICINA" = SUBSTRING (of_nombre, 1, 20),"COD.ESTADO" = B.cu_estado,"ESTADO" = (SELECT  valor </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="GARANTIA" />
+        <column name="OFICINA" />
+        <column name="CLIENTE" />
+        <column name="No GARANTIA" />
+        <column name="TIPO GARANTIA" />
+        <column name="No CERTIFICADO" />
+        <column name="FECHA DESDE" />
+        <column name="FECHA HASTA" />
+        <column name="ADMISIBILIDAD " />
+        <column name="{10}" />
+        <column name="{11}" />
+        <column name="{12}" />
+        <column name="{13}" />
+        <column name="No.ACTA APROB" />
+        <column name="{15}" />
+        <column name="No ACTA APROB PREVIA" />
+        <column name="{17}" />
+        <column name="{18}" />
+        <column name="{19}" />
+        <column name="{20}" />
+        <column name="No OBLIGACION" />
+        <column name="DIAS VTO OBL." />
+      </columns>
+      <queryText>SELECT  "GARANTIA" = B.cu_codigo_externo,"OFICINA" = of_nombre,"CLIENTE" = A.cg_nombre,"No GARANTIA" = B.cu_custodia,"TIPO GARANTIA" = tc_descripcion,"No CERTIFICADO" = B.cu_num_dcto,"FECHA DESDE" = B.cu_fecha_desde,"FECHA HASTA" = B.cu_fecha_hasta,"ADMISIBILIDAD " = D.valor,"FECHA SOL.RECON.","FECHA SOL.RENOV.","FECHA SOL.EXP.","FECHA PRORROGA SOL.","No.ACTA APROB" = B.cu_num_acta_apr,"FECHA APROB.PREVIA","No ACTA APROB PREVIA" = B.cu_num_acta_apr,"FECHA VTO GTIA","DIAS TRANSC.","FECHA LIMITE SOL CERT.","DIAS PRORROGA","No OBLIGACION" = "454","DIAS VTO OBL." = 0 </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="GARANTIA" />
+        <column name="OFICINA" />
+        <column name="CLIENTE" />
+        <column name="No GARANTIA" />
+        <column name="TIPO GARANTIA" />
+        <column name="No CERTIFICADO" />
+        <column name="FECHA DESDE" />
+        <column name="FECHA HASTA" />
+        <column name="ADMISIBILIDAD " />
+        <column name="FECHA SOL.RECON." />
+        <column name="FECHA SOL.RENOV." />
+        <column name="FECHA SOL.EXP." />
+        <column name="FECHA PRORROGA SOL." />
+        <column name="No.ACTA APROB" />
+        <column name="FECHA APROB.PREVIA" />
+        <column name="No ACTA APROB PREVIA" />
+        <column name="FECHA VTO GTIA" />
+        <column name="DIAS TRANSC." />
+        <column name="FECHA LIMITE SOL CERT." />
+        <column name="DIAS PRORROGA" />
+        <column name="{21}" />
+        <column name="{22}" />
+      </columns>
+      <queryText>SELECT  "GARANTIA" = B.cu_codigo_externo,"OFICINA" = of_nombre,"CLIENTE" = SUBSTRING (A.cg_nombre, 1, 30),"No GARANTIA" = B.cu_custodia,"TIPO GARANTIA" = SUBSTRING (tc_descripcion, 1, 10),"No CERTIFICADO" = B.cu_num_dcto,"FECHA DESDE" = CONVERT (CHAR (10),B.cu_fecha_desde ,?),"FECHA HASTA" = CONVERT (CHAR (10),B.cu_fecha_hasta ,?),"ADMISIBILIDAD " = D.valor,"FECHA SOL.RECON." = CONVERT (CHAR (10),B.cu_fecha_sol_rec ,?),"FECHA SOL.RENOV." = CONVERT (CHAR (10),B.cu_fecha_sol_ren ,?),"FECHA SOL.EXP." = CONVERT (CHAR (10),B.cu_fecha_sol_exp ,?),"FECHA PRORROGA SOL." = CONVERT (CHAR (10),B.cu_fecha_pro ,?),"No.ACTA APROB" = B.cu_num_acta_apr,"FECHA APROB.PREVIA" = CONVERT (CHAR (10),B.cu_fecha_apr_pre ,?),"No ACTA APROB PREVIA" = B.cu_num_acta_apr,"FECHA VTO GTIA" = CONVERT (CHAR (10),cu_fecha_vencimiento ,?),"DIAS TRANSC." = ISNULL (DATEDIFF (dd, cu_fecha_sol_exp, ?), 0),"FECHA LIMITE SOL CERT." = CONVERT (CHAR (10),DATEADD (dd, ?, cu_fecha_sol_exp) ,101),"DIAS PRORROGA" = ISNULL (DATEDIFF (dd, B.cu_fecha_pro, ?), 0),"No OBLIGACION","DIAS VTO OBL." </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="GARANTIA " />
+        <column name="VALOR_GARANTIA " />
+        <column name="PORCENTAJE " />
+        <column name="CLASE " />
+        <column name="IDONEIDAD " />
+        <column name="CUANTIA " />
+        <column name="AGOTADA " />
+      </columns>
+      <queryText>SELECT  GARANTIA = cu_codigo_externo,VALOR_GARANTIA = cu_valor_inicial,PORCENTAJE = cu_porcentaje_cobertura,CLASE = cu_abierta_cerrada,IDONEIDAD = cu_clase_custodia,CUANTIA = cu_cuantia,AGOTADA = cu_agotada </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="codigo_externo" />
+        <column name="tipo" />
+        <column name="descripcion" />
+        <column name="abierta_cerrada" />
+        <column name="id_garante" />
+        <column name="id_cliente" />
+        <column name="nombre_gar" />
+        <column name="custodia" />
+        <column name="sucursal" />
+        <column name="nombre_of" />
+        <column name="moneda" />
+        <column name="valor_actual" />
+        <column name="valor_inicial" />
+        <column name="fecha_avaluo" />
+        <column name="estado" />
+        <column name="usuario_crea" />
+        <column name="esPersonal" />
+        <column name="nombre_cli" />
+        <column name="ubicacion" />
+        <column name="moneda_desc" />
+        <column name="fecha_ing" />
+        <column name="fecha_ven" />
+        <column name="disponible" />
+        <column name="calidad" />
+        <column name="valor_comercial" />
+        <column name="valor_utilizado" />
+        <column name="oficina_contable" />
+        <column name="oficina_cont_desc" />
+        <column name="estado_cod" />
+      </columns>
+      <queryText>SELECT "codigo_externo" =cu_codigo_externo, "tipo" = cu_tipo,"descripcion" = substring(tc_descripcion,1,35), "abierta_cerrada" =(select valor from cobis..cl_catalogo c, cobis..cl_tabla t where c.tabla = t.codigo and t.tabla = "cu_caracter"and c.codigo = cu_abierta_cerrada), "id_garante" =cu_garante, "id_cliente" = cg_ente, "nombre_gar" =isnull(substring(b.en_nomlar,1,datalength(b.en_nomlar)),""), "custodia" = cu_custodia, "sucursal" = cu_sucursal, "nombre_of" = of_nombre, "moneda"=cu_moneda, "valor_actual"=isnull(cu_valor_actual, 0),"valor_inicial" =isnull(cu_valor_inicial, 0), "fecha_avaluo"=convert(varchar(10), isnull(cu_fecha_insp, cu_fecha_ingreso),103), "estado"=(select valor from cobis..cl_catalogo c, cobis..cl_tabla t where c.tabla = t.codigo and t.tabla = "cu_est_custodia "and c.codigo = cu_estado), "usuario_crea"=cu_usuario_crea, "esPersonal"=case when cu_tipo = @w_tipo_personal then "S" else"N" end, "nombre_cli"=isnull(substring(a.en_nomlar,1,datalength(a.en_nomlar)),""), "ubicacion" =(select valor from cobis..cl_catalogo c, cobis..cl_tabla t where c.tabla = t.codigo and t.tabla = "cu_ubicacion_doc"and c.codigo = cu_ubicacion),"moneda_desc" = (select mo_nemonico from cobis..cl_moneda where mo_moneda = convert(char(10),cu_moneda)), "fecha_ing" = cu_fecha_ingreso,"fecha_ven" = cu_fecha_vencimiento,"valor_ini" = isnull(cu_valor_inicial, 0),"disponible"= isnull(cu_disponible, 0) </queryText>
+    </query>
+  </queries>
+</procedure>

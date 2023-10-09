@@ -1,0 +1,100 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<procedure>
+  <database>cob_cartera</database>
+  <name>sp_otros_cargos</name>
+  <type>SYBASE</type>
+  <version>1</version>
+  <parameters>
+    <parameter name="@s_date" dataType="datetime" direction="in" />
+    <parameter name="@s_ssn" dataType="int" direction="in" />
+    <parameter name="@s_srv" dataType="varchar" direction="in" />
+    <parameter name="@s_user" dataType="varchar" direction="in" />
+    <parameter name="@s_term" dataType="varchar" direction="in" />
+    <parameter name="@s_ofi" dataType="smallint" direction="in" />
+    <parameter name="@i_banco" dataType="varchar" direction="in" />
+    <parameter name="@i_operacion" dataType="char" direction="in" />
+    <parameter name="@i_formato_fecha" dataType="int" direction="in" />
+    <parameter name="@i_toperacion" dataType="varchar" direction="in" />
+    <parameter name="@i_moneda" dataType="int" direction="in" />
+    <parameter name="@i_concepto" dataType="varchar" direction="in" />
+    <parameter name="@i_monto" dataType="money" direction="in" />
+    <parameter name="@i_comentario" dataType="varchar" direction="in" />
+    <parameter name="@i_tipo_rubro" dataType="char" direction="in" />
+    <parameter name="@i_base_calculo" dataType="money" direction="in" />
+    <parameter name="@i_div_desde" dataType="smallint" direction="in" />
+    <parameter name="@i_div_hasta" dataType="smallint" direction="in" />
+    <parameter name="@i_saldo_op" dataType="char" direction="in" />
+    <parameter name="@i_saldo_por_desem" dataType="char" direction="in" />
+    <parameter name="@i_tasa" dataType="float" direction="in" />
+    <parameter name="@i_num_dec_tapl" dataType="tinyint" direction="in" />
+    <parameter name="@i_credito" dataType="char" direction="in" />
+    <parameter name="@i_sec_act" dataType="int" direction="in" />
+    <parameter name="@i_forma_cabio_fecha" dataType="char" direction="in" />
+    <parameter name="@o_sec_tran" dataType="int" direction="out" />
+  </parameters>
+  <queries>
+    <query>
+      <columns>
+        <column name="{1}" />
+        <column name="{2}" />
+        <column name="{3}" />
+        <column name="{4}" />
+        <column name="{5}" />
+        <column name="{6}" />
+        <column name="{7}" />
+        <column name="{8}" />
+        <column name="{9}" />
+        <column name="{10}" />
+        <column name="{11}" />
+        <column name="{12}" />
+        <column name="{13}" />
+        <column name="{14}" />
+      </columns>
+      <queryText>SELECT  op_toperacion,op_oficina,op_banco,op_moneda,op_oficial,CONVERT (VARCHAR,op_fecha_fin ,?),CONVERT (FLOAT,op_monto_aprobado ),CONVERT (FLOAT,op_monto ),es_descripcion,op_cliente,op_nombre,CONVERT (VARCHAR,? ,?),CONVERT (VARCHAR,op_fecha_ult_proceso ,?),CONVERT (FLOAT,? ) </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="Sec." />
+        <column name="Div.Ini" />
+        <column name="Dic.Hasta" />
+        <column name="Fecha" />
+        <column name="Concepto" />
+        <column name="Valor" />
+        <column name="Ref" />
+      </columns>
+      <queryText>SELECT  "Sec." = oc_secuencial,"Div.Ini" = oc_div_desde,"Dic.Hasta" = oc_div_hasta,"Fecha" = CONVERT (VARCHAR,oc_fecha ,?),"Concepto" = oc_concepto,"Valor" = oc_monto,"Ref" = oc_referencia </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="Concepto" />
+        <column name="Descripcion" />
+      </columns>
+      <queryText>SELECT  "Concepto" = co_concepto,"Descripcion" = co_descripcion </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="{1}" />
+        <column name="{2}" />
+        <column name="{3}" />
+        <column name="{4}" />
+        <column name="{5}" />
+        <column name="{6}" />
+        <column name="{7}" />
+        <column name="{8}" />
+        <column name="{9}" />
+        <column name="{10}" />
+        <column name="{11}" />
+        <column name="{12}" />
+      </columns>
+      <queryText>SELECT w_ru_concepto, w_co_descripcion, w_ru_tipo_rubro, w_ru_referencial, w_vd_valor_default, w_vd_valor_maximo, w_vd_valor_minimo, w_vd_referencia, ctx.ISNULL(w_ru_saldo_op, "N"), ctx.ISNULL(w_ru_saldo_por_desem, "N"), w_tasa, w_num_dec_tapl</queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="{1}" />
+        <column name="{2}" />
+        <column name="{3}" />
+      </columns>
+      <queryText>SELECT w_vd_valor_default, w_vd_valor_maximo, w_vd_valor_minimo</queryText>
+    </query>
+  </queries>
+</procedure>

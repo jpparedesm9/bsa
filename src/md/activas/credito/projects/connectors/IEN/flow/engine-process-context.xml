@@ -1,0 +1,404 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xsi:schemaLocation="http://www.springframework.org/schema/integration/file http://www.springframework.org/schema/integration/file/spring-integration-file.xsd   http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd   http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd   http://www.springframework.org/schema/batch http://www.springframework.org/schema/batch/spring-batch.xsd"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	
+	<import resource="engine-process-context-DSBCK.xml"/>
+	<import resource="engine-process-context-DSMBL.xml"/>
+	<import resource="engine-process-context-COBRO.xml"/>
+	<import resource="engine-process-context-PGRFR.xml"/>
+	
+	<bean id="loadProcessConfigTasklet"
+		class="com.cobiscorp.cobis.batch.engine.process.LoadConfigTasklet"
+		scope="step">
+		<property name="cobisJobId">
+			<bean class="com.cobiscorp.cobis.batch.engine.CobisJobId">
+				<constructor-arg name="id" value="#{jobParameters['jobId']}" />
+				<constructor-arg name="entity"
+					value="#{jobParameters['jobEntity']}" />
+				<constructor-arg name="transaction"
+					value="#{jobParameters['jobTransaction']}" />
+				<constructor-arg name="nameExpression"
+					value="#{jobParameters['jobNameExpression']}" />
+			</bean>
+		</property>
+		<property name="serviceExecutor" ref="batchServiceExecutor" />
+	</bean>
+	<bean id="processFileReadingMessage"
+		class="org.springframework.integration.file.config.FileReadingMessageSourceFactoryBean"
+		scope="step">
+		<property name="directory" value="#{jobExecutionContext['remoteDirectory']}" />
+		<property name="filter">
+			<bean
+				class="org.springframework.integration.file.filters.RegexPatternFileListFilter"
+				scope="step">
+				<constructor-arg name="pattern"
+					value="#{jobExecutionContext['fileRegexPatternFileListFilter']}" />
+			</bean>
+		</property>
+	</bean>
+	<bean id="readDirectoryScanner"
+		class="org.springframework.integration.file.DefaultDirectoryScanner"
+		scope="step">
+		<property name="filter">
+			<bean
+				class="org.springframework.integration.file.filters.RegexPatternFileListFilter"
+				scope="step">
+				<constructor-arg name="pattern"
+					value="#{jobExecutionContext['fileRegexPatternFileListFilter']}" />
+			</bean>
+		</property>
+	</bean>
+	<bean id="processFileWritingMessageHandler"
+		class="org.springframework.integration.file.config.FileWritingMessageHandlerFactoryBean"
+		scope="step">
+		<property name="autoCreateDirectory"
+			value="#{jobExecutionContext['autoCreateLocalDirectory']}" />
+		<property name="directory" value="#{jobExecutionContext['localDirectory']}" />
+		<property name="deleteSourceFiles" value="#{jobExecutionContext['deleteSourceFiles']}" />
+		<property name="outputChannel" ref="nullChannel" />
+	</bean>
+	<bean id="copyFilesToInprocessFolderTasklet" class="com.cobiscorp.cobis.batch.engine.util.CopyFilesTasklet"
+		scope="step">
+		<property name="messageSource" ref="processFileReadingMessage" />
+		<property name="messageHandler" ref="processFileWritingMessageHandler" />
+		<property name="poller">
+			<bean class="com.cobiscorp.cobis.batch.engine.poller.LocalSimplePoller"
+				scope="step">
+				<property name="localDirectory" value="#{jobExecutionContext['localDirectory']}" />
+			</bean>
+		</property>
+	</bean>
+	<bean id="readInprocessFolderTasklet" class="com.cobiscorp.cobis.batch.engine.util.ReadFilesTasklet"
+		scope="step">
+		<property name="directory" value="#{jobExecutionContext['localDirectory']}" />
+		<property name="scanner" ref="readDirectoryScanner" />
+	</bean>
+	<bean id="registerFailTasklet"
+		class="com.cobiscorp.cobis.batch.engine.reprocess.RegisterFailTasklet"
+		scope="step">
+		<property name="fileTransferId" value="#{jobExecutionContext['fileTransferId']}" />
+		<property name="serviceExecutor" ref="batchServiceExecutor" />
+	</bean>
+	<bean id="registerProcessResponseTasklet"
+		class="com.cobiscorp.cobis.batch.engine.process.RegisterProcessResponseTasklet"
+		scope="step">
+		<property name="file" value="#{jobParameters['fileName']}" />
+		<property name="fileTransferId" value="#{jobExecutionContext['fileTransferId']}" />
+		<property name="itemsFailed" value="#{jobExecutionContext['itemsFailed']}" />
+		<property name="itemsSuccess" value="#{jobExecutionContext['itemsSuccess']}" />
+		<property name="itemsFooter" value="#{jobExecutionContext['itemsFooter']}" />
+		<property name="itemsHeader" value="#{jobExecutionContext['itemsHeader']}" />
+		<property name="statusStep" value="#{jobExecutionContext['statusStep']}" />
+		<property name="serviceExecutor" ref="batchServiceExecutor" />
+	</bean>
+	<bean id="sendResponseMailTasklet"
+		class="com.cobiscorp.cobis.batch.engine.process.SendResponseMailTasklet"
+		scope="step">
+		<property name="file" value="#{jobParameters['fileName']}" />
+		<property name="fileTransferId" value="#{jobExecutionContext['fileTransferId']}" />
+		<property name="itemsFailed" value="#{jobExecutionContext['itemsFailed']}" />
+		<property name="itemsSuccess" value="#{jobExecutionContext['itemsSuccess']}" />
+		<property name="serviceExecutor" ref="batchServiceExecutor" />
+		<property name="entityCode" value="#{jobParameters['jobEntity']}" />
+	</bean>
+	<bean id="copiedFilesPartitioner"
+		class="com.cobiscorp.cobis.batch.engine.partitioner.FilesPartitioner"
+		scope="step">
+		<property name="keyName" value="fileName" />
+		<property name="files" value="#{jobExecutionContext['partitionFiles']}" />
+	</bean>
+	<bean id="processJobParametersExtractor"
+		class="com.cobiscorp.cobis.batch.engine.partitioner.JobParametersExtractor">
+		<property name="keys">
+			<array>
+				<value>fileName</value>
+			</array>
+		</property>
+	</bean>
+	<bean id="registerProcessFileTasklet"
+		class="com.cobiscorp.cobis.batch.engine.process.IniProcessTasklet"
+		scope="step">
+		<property name="cobisJobId">
+			<bean class="com.cobiscorp.cobis.batch.engine.CobisJobId">
+				<constructor-arg name="id" value="#{jobParameters['jobId']}" />
+				<constructor-arg name="entity"
+					value="#{jobParameters['jobEntity']}" />
+				<constructor-arg name="transaction"
+					value="#{jobParameters['jobTransaction']}" />
+				<constructor-arg name="nameExpression"
+					value="#{jobParameters['jobNameExpression']}" />
+			</bean>
+		</property>
+		<property name="serviceExecutor" ref="batchServiceExecutor" />
+		<property name="file" value="#{jobParameters['fileName']}" />
+	</bean>
+	<bean id="verificationFileTasklet"
+		class="com.cobiscorp.cobis.batch.engine.process.VerificationFileTasklet"
+		scope="step">
+		<property name="serviceExecutor" ref="batchServiceExecutor" />
+		<property name="file" value="#{jobParameters['fileName']}" />
+	</bean>
+	<bean id="bufferedReaderDefault"
+		class="org.springframework.batch.item.file.DefaultBufferedReaderFactory" />
+	<bean id="bufferedReaderSuffix"
+		class="org.springframework.batch.item.file.SimpleBinaryBufferedReaderFactory"
+		scope="step">
+		<property name="lineEnding" value="#{jobParameters['rowSeparator']}" />
+	</bean>
+	<bean id="cobisItemReader" class="org.springframework.batch.item.file.FlatFileItemReader"
+		scope="step">
+		<property name="resource" value="#{jobParameters['fileName']}" />
+		<property name="encoding" value="#{jobParameters['encoding']}" />
+		<property name="linesToSkip" value="#{jobParameters['header']}" />
+		<property name="bufferedReaderFactory" ref="#{jobParameters['bufferedReaderFactory']}" />
+		<property name="lineMapper">
+			<bean
+				class="com.cobiscorp.cobis.batch.engine.process.BatchResponseLineMapper">
+				<property name="serviceExecutor" ref="batchServiceExecutor" />
+				<property name="agentFileDefinition"
+					value="#{jobExecutionContext['agentFileDefinition']}" />
+				<property name="lineNumberStartingFooter"
+					value="#{jobExecutionContext['lineNumberStartingFooter']}" />
+				<property name="file" value="#{jobParameters['fileName']}" />
+				<property name="fileTransferId" value="#{jobExecutionContext['fileTransferId']}" />
+				<property name="jobParameters" value="#{jobParameters}" />
+			</bean>
+		</property>
+	</bean>
+	<bean id="cobisItemProcessor" class="com.cobiscorp.cobis.batch.engine.process.ItemProcessor"
+		scope="step">
+		<property name="serviceExecutor" ref="batchServiceExecutor" />
+		<property name="fileTransferId" value="#{jobExecutionContext['fileTransferId']}" />
+		<property name="agentFileDefinition"
+			value="#{jobExecutionContext['agentFileDefinition']}" />
+		<property name="cobisResourceBundle" ref="cobisResourceBundle" />
+		<property name="transactions" value="#{jobExecutionContext['transactions']}" />
+		<property name="reprocess" value="#{jobExecutionContext['allowReprocess']}" />
+	</bean>
+	<bean id="cobisItemWriter" class="com.cobiscorp.cobis.batch.engine.process.ItemWriter"
+		scope="step" />
+	<bean id="batchResponseLineAggregator"
+		class="com.cobiscorp.cobis.batch.engine.process.BatchResponseLineAggregator"
+		scope="step">
+		<property name="serviceExecutor" ref="batchServiceExecutor" />
+		<property name="agentFileDefinitionConf"
+			value="#{jobExecutionContext['agentFileDefinitionConf']}" />
+		<property name="columnsFileTransferConf"
+			value="#{jobExecutionContext['columnsFileTransferConf']}" />
+	</bean>
+	<bean id="confirmationItemWriter" class="org.springframework.batch.item.file.FlatFileItemWriter"
+		scope="step">
+		<property name="encoding" value="#{jobParameters['encoding']}" />
+		<property name="resource" value="file:#{jobExecutionContext['fileNameConf']}" />
+		<property name="lineAggregator" ref="batchResponseLineAggregator" />
+		<property name="shouldDeleteIfExists" value="true" />
+		<property name="transactional" value="false" />
+	</bean>
+	<bean id="historyFileWritingMessageHandler"
+		class="org.springframework.integration.file.config.FileWritingMessageHandlerFactoryBean"
+		scope="step">
+		<property name="autoCreateDirectory"
+			value="#{jobParameters['autoCreateHistoryDirectory']}" />
+		<property name="directory" value="#{jobParameters['historyDirectory']}" />
+		<property name="deleteSourceFiles" value="#{jobParameters['historyDeleteSourceFiles']}" />
+		<property name="outputChannel" ref="nullChannel" />
+	</bean>
+	<bean id="sendHistoryTasklet"
+		class="com.cobiscorp.cobis.batch.engine.process.SendHistoryTasklet"
+		scope="step">
+		<property name="historyMessageHandler" ref="historyFileWritingMessageHandler" />
+		<property name="file" value="#{jobParameters['fileName']}" />
+		<property name="fileTransferId" value="#{jobExecutionContext['fileTransferId']}" />
+		<property name="pathHistory" value="#{jobExecutionContext['historyDirectory']}" />
+		<property name="serviceExecutor" ref="batchServiceExecutor" />
+		<property name="entityCode" value="#{jobParameters['jobEntity']}" />
+		<property name="transaction" value="#{jobParameters['jobTransaction']}" />
+	</bean>
+	<bean id="processFilesTaskExecutor"
+		class="org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor">
+		<property name="corePoolSize" value="3" />
+		<property name="allowCoreThreadTimeOut" value="true" />
+		<property name="maxPoolSize" value="5" />
+	</bean>
+	<bean id="processFilesPartitionHandler"
+		class="org.springframework.batch.core.partition.support.TaskExecutorPartitionHandler">
+		<property name="taskExecutor" ref="processFilesTaskExecutor" />
+		<property name="gridSize" value="5" />
+	</bean>
+	<!-- Bean for Process file light -->
+	<bean id="cobisItemReaderLight" class="org.springframework.batch.item.file.FlatFileItemReader"
+		scope="step">
+		<property name="resource" value="#{jobParameters['fileName']}"></property>
+		<property name="encoding" value="#{jobParameters['encoding']}"></property>
+		<property name="bufferedReaderFactory" ref="#{jobParameters['bufferedReaderFactory']}"></property>
+		<property name="lineMapper">
+			<bean
+				class="com.cobiscorp.cobis.batch.engine.process.BatchResponseLineMapperLight">
+				<property name="serviceExecutor" ref="batchServiceExecutor"></property>
+				<property name="agentFileDefinition"
+					value="#{jobExecutionContext['agentFileDefinition']}"></property>
+				<property name="file" value="#{jobParameters['fileName']}"></property>
+				<property name="fileTransferId" value="#{jobExecutionContext['fileTransferId']}"></property>
+				<property name="jobParameters" value="#{jobParameters}"></property>
+			</bean>
+		</property>
+	</bean>
+	<bean id="cobisItemProcessorLight"
+		class="com.cobiscorp.cobis.batch.engine.process.ItemProcessorLight"
+		scope="step">
+		<property name="serviceExecutor" ref="batchServiceExecutor"></property>
+		<property name="fileTransferId" value="#{jobExecutionContext['fileTransferId']}"></property>
+		<property name="agentFileDefinition"
+			value="#{jobExecutionContext['agentFileDefinition']}"></property>
+		<property name="transactions" value="#{jobExecutionContext['transactions']}"></property>
+	</bean>
+	<bean id="cobisItemWriterLight"
+		class="com.cobiscorp.cobis.batch.engine.process.ItemWriterLight"
+		scope="step"></bean>
+	<bean id="processListenerLight"
+		class="com.cobiscorp.cobis.batch.engine.process.ProcessListenerLight"
+		scope="step">
+		<property name="agentFileDefinition"
+			value="#{jobExecutionContext['agentFileDefinition']}"></property>
+	</bean>
+	<!-- Bean for Process file light -->
+	<batch:job xmlns:batch="http://www.springframework.org/schema/batch"
+		id="processFiles">
+		<batch:step id="loadProcessConfiguration" next="copyFilesToInprocessFolder">
+			<batch:tasklet ref="loadProcessConfigTasklet">
+				<batch:transaction-attributes
+					propagation="NOT_SUPPORTED" />
+			</batch:tasklet>
+		</batch:step>
+		<batch:step id="copyFilesToInprocessFolder" next="readFilesInprocessFolder">
+			<batch:tasklet ref="copyFilesToInprocessFolderTasklet" />
+		</batch:step>
+		<batch:step id="readFilesInprocessFolder" next="copiedFilesPartition">
+			<batch:tasklet ref="readInprocessFolderTasklet">
+				<batch:transaction-attributes
+					propagation="NOT_SUPPORTED" />
+			</batch:tasklet>
+		</batch:step>
+		<batch:step id="copiedFilesPartition">
+			<batch:partition partitioner="copiedFilesPartitioner"
+				handler="processFilesPartitionHandler">
+				<batch:step>
+					<batch:job ref="processFile" job-parameters-extractor="processJobParametersExtractor" />
+				</batch:step>
+			</batch:partition>
+		</batch:step>
+	</batch:job>
+	<bean id="processListener"
+		class="com.cobiscorp.cobis.batch.engine.process.ProcessListener"
+		scope="step" />
+	<bean id="confirmationDecider"
+		class="com.cobiscorp.cobis.batch.engine.decider.ConfirmationDecider" />
+	<bean id="verificationDecider"
+		class="com.cobiscorp.cobis.batch.engine.decider.ValidationDecider" />
+	<bean id="sendHistoryReprocessDecider"
+		class="com.cobiscorp.cobis.batch.engine.decider.SendHistoryReprocessDecider" />
+	<bean id="sendHistoryDecider"
+		class="com.cobiscorp.cobis.batch.engine.decider.SendHistoryDecider" />
+	<bean id="failedProcessDecider"
+		class="com.cobiscorp.cobis.batch.engine.decider.FailExistsDecider" />
+	<batch:job xmlns:batch="http://www.springframework.org/schema/batch"
+		id="processFile">
+		<batch:step id="registerProcessFile" next="verificationDecision">
+			<batch:tasklet ref="registerProcessFileTasklet">
+				<batch:transaction-attributes
+					propagation="NOT_SUPPORTED" />
+			</batch:tasklet>
+		</batch:step>
+		<batch:decision id="verificationDecision" decider="verificationDecider">
+			<batch:next on="NOT_VALIDATION" to="sendHistoryReprocessDecision" />
+			<batch:next on="VALIDATION" to="verificationFile" />
+		</batch:decision>
+		<batch:step id="verificationFile" next="confirmationDecision">
+			<batch:tasklet ref="verificationFileTasklet">
+				<batch:transaction-attributes
+					propagation="NOT_SUPPORTED" />
+			</batch:tasklet>
+		</batch:step>
+		<batch:decision id="sendHistoryReprocessDecision"
+			decider="sendHistoryReprocessDecider">
+			<batch:next on="HISTORY" to="registerFail" />
+			<batch:next on="RE_PROCESS" to="confirmationDecision" />
+		</batch:decision>
+		<batch:decision id="confirmationDecision" decider="confirmationDecider">
+			<batch:next on="WITH_CONFIRMATION" to="processFileStepWithConfirmation" />
+			<batch:next on="WITHOUT_CONFIRMATION" to="processFileStepWithoutConfirmation" />
+		</batch:decision>
+		<batch:step id="processFileStepWithConfirmation">
+			<batch:tasklet>
+				<batch:transaction-attributes
+					propagation="NOT_SUPPORTED" />
+				<batch:chunk reader="cobisItemReader" processor="cobisItemProcessor"
+					writer="confirmationItemWriter" commit-interval="50" skip-limit="100"
+					retry-limit="5">
+					<batch:retryable-exception-classes>
+						<batch:include
+							class="org.springframework.dao.DeadlockLoserDataAccessException" />
+					</batch:retryable-exception-classes>
+					<batch:skippable-exception-classes>
+						<batch:include class="java.lang.Exception" />
+						<batch:include class="java.lang.RuntimeException" />
+						<batch:exclude
+							class="cobiscorp.ecobis.integrationengine.commons.exceptions.EngineFinalException" />
+					</batch:skippable-exception-classes>
+					<batch:listeners>
+						<batch:listener ref="processListener" />
+					</batch:listeners>
+				</batch:chunk>
+			</batch:tasklet>
+			<batch:next on="FAILED" to="registerProcessResponse" />
+			<batch:next on="*" to="registerProcessResponse" />
+		</batch:step>
+		<batch:step id="processFileStepWithoutConfirmation">
+			<batch:tasklet>
+				<batch:transaction-attributes
+					propagation="NOT_SUPPORTED" />
+				<batch:chunk reader="cobisItemReader" processor="cobisItemProcessor"
+					writer="cobisItemWriter" commit-interval="50" skip-limit="100"
+					retry-limit="5">
+					<batch:retryable-exception-classes>
+						<batch:include
+							class="org.springframework.dao.DeadlockLoserDataAccessException" />
+					</batch:retryable-exception-classes>
+					<batch:skippable-exception-classes>
+						<batch:include class="java.lang.Exception" />
+						<batch:include class="java.lang.RuntimeException" />
+						<batch:exclude
+							class="cobiscorp.ecobis.integrationengine.commons.exceptions.EngineFinalException" />
+					</batch:skippable-exception-classes>
+					<batch:listeners>
+						<batch:listener ref="processListener" />
+					</batch:listeners>
+				</batch:chunk>
+			</batch:tasklet>
+			<batch:next on="FAILED" to="registerProcessResponse" />
+			<batch:next on="*" to="registerProcessResponse" />
+		</batch:step>
+		<batch:step id="registerProcessResponse" next="sendHistoryDecission">
+			<batch:tasklet ref="registerProcessResponseTasklet">
+				<batch:transaction-attributes
+					propagation="NOT_SUPPORTED" />
+			</batch:tasklet>
+		</batch:step>
+		<batch:decision id="sendHistoryDecission" decider="sendHistoryDecider">
+			<batch:next on="HISTORY" to="sendHistory" />
+			<batch:end on="*" />
+		</batch:decision>
+		<batch:step id="registerFail" next="sendHistory">
+			<batch:tasklet ref="registerFailTasklet">
+				<batch:transaction-attributes
+					propagation="NOT_SUPPORTED" />
+			</batch:tasklet>
+		</batch:step>
+		<batch:step id="sendHistory">
+			<batch:tasklet ref="sendHistoryTasklet">
+				<batch:transaction-attributes
+					propagation="NOT_SUPPORTED" />
+			</batch:tasklet>
+		</batch:step>
+	</batch:job>
+</beans>

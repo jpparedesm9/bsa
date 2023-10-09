@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<procedure>
+  <database>cob_credito</database>
+  <name>sp_query_condition_rule</name>
+  <type>SQLSERVER</type>
+  <version>1</version>
+  <parameters>
+    <parameter name="@s_ssn" dataType="int" direction="in" />
+    <parameter name="@s_date" dataType="datetime" direction="in" />
+    <parameter name="@s_user" dataType="varchar" direction="in" />
+    <parameter name="@s_term" dataType="varchar" direction="in" />
+    <parameter name="@s_corr" dataType="char" direction="in" />
+    <parameter name="@s_ssn_corr" dataType="int" direction="in" />
+    <parameter name="@s_ofi" dataType="smallint" direction="in" />
+    <parameter name="@s_sesn" dataType="int" direction="in" />
+    <parameter name="@s_srv" dataType="varchar" direction="in" />
+    <parameter name="@s_lsrv" dataType="varchar" direction="in" />
+    <parameter name="@t_rty" dataType="char" direction="in" />
+    <parameter name="@t_trn" dataType="smallint" direction="in" />
+    <parameter name="@t_debug" dataType="char" direction="in" />
+    <parameter name="@t_file" dataType="varchar" direction="in" />
+    <parameter name="@t_from" dataType="varchar" direction="in" />
+    <parameter name="@t_show_version" dataType="bit" direction="in" />
+    <parameter name="@i_online" dataType="varchar" direction="in" />
+    <parameter name="@i_ente" dataType="int" direction="in" />
+    <parameter name="@i_acronym" dataType="varchar" direction="in" />
+    <parameter name="@i_operation" dataType="varchar" direction="in" />
+    <parameter name="@i_formato" dataType="tinyint" direction="in" />
+  </parameters>
+  <queries>
+    <query>
+      <columns>
+        <column name="operator" />
+        <column name="min_value" />
+        <column name="max_value" />
+        <column name="rate" />
+      </columns>
+      <queryText>SELECT  "operator" = cr_operator,"min_value" = (CASE WHEN cr_min_value IS NULL || cr_min_value THEN CONVERT (INTEGER,cr_max_value ) ELSE CONVERT (INTEGER,cr_min_value ) END),"max_value" = (CASE WHEN cr_max_value IS NULL || cr_max_value THEN CONVERT (INTEGER,cr_min_value ) ELSE CONVERT (INTEGER,cr_max_value ) END),"rate" = (SELECT  cr_max_value FROM cob_pac..bpl_condition_rule icr   WHERE icr.rv_id = ecr.rv_id AND icr.cr_parent = ecr.cr_id     ) </queryText>
+    </query>
+  </queries>
+</procedure>

@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="IndirectPortfolio" language="java" pageWidth="595" pageHeight="842" columnWidth="595" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="4f510277-4146-465c-88fe-c46b4a07a9e6">
+	<property name="ireport.zoom" value="1.771561000000002"/>
+	<property name="ireport.x" value="231"/>
+	<property name="ireport.y" value="0"/>
+	<field name="operationTypeDesc" class="java.lang.String"/>
+	<field name="operation" class="java.lang.String"/>
+	<field name="dateApt" class="java.util.Date"/>
+	<field name="dateVto" class="java.util.Date"/>
+	<field name="currencyDesc" class="java.lang.String"/>
+	<field name="amountOrigin" class="java.lang.Double"/>
+	<field name="amountLosing" class="java.lang.Double"/>
+	<field name="amountCapital" class="java.lang.Double"/>
+	<field name="rate" class="java.lang.Double"/>
+	<field name="state" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="20" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="6e81dd83-e918-4e6c-b886-ada14ea1ea24" x="0" y="0" width="595" height="20"/>
+				<box>
+					<bottomPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Indirect Risk]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="20" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="c31ce5b2-693a-4ef8-812f-c39f53ff5f29" x="0" y="0" width="80" height="20"/>
+				<box>
+					<bottomPen lineWidth="0.25"/>
+				</box>
+				<textElement>
+					<font size="7"/>
+				</textElement>
+				<text><![CDATA[OperationTypeDescription]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="9721f8c3-d460-4b6c-8eee-a2dbaf6be92b" x="80" y="0" width="65" height="20"/>
+				<box>
+					<bottomPen lineWidth="0.25"/>
+				</box>
+				<textElement>
+					<font size="7"/>
+				</textElement>
+				<text><![CDATA[Operation]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="f85f3c42-b98c-46d8-a565-7096537557c1" x="145" y="0" width="70" height="20"/>
+				<box>
+					<bottomPen lineWidth="0.25"/>
+				</box>
+				<textElement>
+					<font size="7"/>
+				</textElement>
+				<text><![CDATA[Opening Date]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="06ed8c2c-a46c-42e4-962e-0c75cbae6749" x="215" y="0" width="40" height="20"/>
+				<box>
+					<bottomPen lineWidth="0.25"/>
+				</box>
+				<textElement>
+					<font size="7"/>
+				</textElement>
+				<text><![CDATA[Ending Date]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="f7f529dc-2438-4d85-bd6f-419df2a5468e" x="255" y="0" width="60" height="20"/>
+				<box>
+					<bottomPen lineWidth="0.25"/>
+				</box>
+				<textElement>
+					<font size="7"/>
+				</textElement>
+				<text><![CDATA[Currency Description]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="fe96a156-8593-4206-b4f7-fd0612ccebb2" x="375" y="0" width="50" height="20"/>
+				<box>
+					<bottomPen lineWidth="0.25"/>
+				</box>
+				<textElement>
+					<font size="7"/>
+				</textElement>
+				<text><![CDATA[Balance Due]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="ee4a0bce-a59f-4dd2-b417-a379874ae1cd" x="425" y="0" width="50" height="20"/>
+				<box>
+					<bottomPen lineWidth="0.25"/>
+				</box>
+				<textElement>
+					<font size="7"/>
+				</textElement>
+				<text><![CDATA[Capital Balance]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="86903238-2cc7-4214-9601-1c1ba0634196" x="475" y="0" width="62" height="20"/>
+				<box>
+					<bottomPen lineWidth="0.25"/>
+				</box>
+				<textElement>
+					<font size="7"/>
+				</textElement>
+				<text><![CDATA[Score]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="3bd918fa-be81-43df-ae5d-f553c5d299b0" x="537" y="0" width="58" height="20"/>
+				<box>
+					<bottomPen lineWidth="0.25"/>
+				</box>
+				<textElement>
+					<font size="7"/>
+				</textElement>
+				<text><![CDATA[status]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="20b40d76-f04f-4c89-9efe-ace4079e4f88" x="315" y="0" width="60" height="20"/>
+				<box>
+					<bottomPen lineWidth="0.25"/>
+				</box>
+				<textElement>
+					<font size="7"/>
+				</textElement>
+				<text><![CDATA[Original Amount]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="20" splitType="Stretch">
+			<textField>
+				<reportElement uuid="b4cedb5c-b27e-46b0-87a6-9138ed1e3fc2" x="0" y="0" width="80" height="20"/>
+				<textElement>
+					<font size="7"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{operationTypeDesc}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="254b7275-1b7d-44a7-bc3f-020fff44de20" x="80" y="0" width="65" height="20"/>
+				<textElement>
+					<font size="7"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{operation}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="03ae338f-d5ce-4b79-8c79-31c48adab666" x="145" y="0" width="70" height="20"/>
+				<textElement>
+					<font size="7"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{dateApt}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="294ab9b2-3756-4ed9-af72-34a0a825f520" x="215" y="0" width="40" height="20"/>
+				<textElement>
+					<font size="7"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{dateVto}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="8b470a71-e267-4aba-8569-8eba0a39f3f2" x="255" y="0" width="60" height="20"/>
+				<textElement>
+					<font size="7"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{currencyDesc}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="125576b7-7f38-44a0-ad06-0ff6caa6f146" x="375" y="0" width="50" height="20"/>
+				<textElement>
+					<font size="7"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{amountLosing}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="8f90c743-c1ea-4673-9a8e-483748a7b5ad" x="425" y="0" width="50" height="20"/>
+				<textElement>
+					<font size="7"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{amountCapital}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="3fc33b16-f1d2-4a12-a6ed-8e50e5b884f8" x="475" y="0" width="62" height="20"/>
+				<textElement>
+					<font size="7"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{rate}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="39794f7f-09d7-4f12-920a-9e0fbffbe86b" x="537" y="0" width="58" height="20"/>
+				<textElement>
+					<font size="7"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{state}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="6dedf461-5102-4608-ad5b-8790121ff2e0" x="315" y="0" width="60" height="20"/>
+				<textElement>
+					<font size="7"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{amountOrigin}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<procedure>
+  <database>cob_credito</database>
+  <name>sp_customer_infor_matriz</name>
+  <type>SYBASE</type>
+  <version>1</version>
+  <parameters>
+    <parameter name="@t_debug" dataType="char" direction="in" />
+    <parameter name="@t_file" dataType="varchar" direction="in" />
+    <parameter name="@t_from" dataType="varchar" direction="in" />
+    <parameter name="@t_show_version" dataType="bit" direction="in" />
+    <parameter name="@s_rol" dataType="smallint" direction="in" />
+    <parameter name="@i_operacion" dataType="char" direction="in" />
+    <parameter name="@i_ente" dataType="int" direction="in" />
+    <parameter name="@i_variable" dataType="varchar" direction="in" />
+    <parameter name="@i_modo" dataType="tinyint" direction="in" />
+    <parameter name="@i_nivel_obtenido" dataType="varchar" direction="in" />
+    <parameter name="@i_puntaje_regla" dataType="int" direction="in" />
+    <parameter name="@i_suma_puntaje_total" dataType="int" direction="in" />
+    <parameter name="@i_resultado_riesgo" dataType="varchar" direction="in" />
+    <parameter name="@i_resul_numero_env" dataType="varchar" direction="in" />
+    <parameter name="@i_resul_numero_rec" dataType="varchar" direction="in" />
+    <parameter name="@i_resul_monto_env" dataType="varchar" direction="in" />
+    <parameter name="@i_resul_monto_rec" dataType="varchar" direction="in" />
+    <parameter name="@i_resul_numero_dep_efec" dataType="varchar" direction="in" />
+    <parameter name="@i_resul_numero_dep_noefec" dataType="varchar" direction="in" />
+    <parameter name="@i_resul_monto_dep_efec" dataType="varchar" direction="in" />
+    <parameter name="@i_resul_monto_dep_noefec" dataType="varchar" direction="in" />
+    <parameter name="@o_error_mens" dataType="varchar" direction="out" />
+  </parameters>
+  <queries>
+    <query>
+      <columns>
+        <column name="Datos_Completos" />
+        <column name="Sub_Producto" />
+        <column name="Trans_Inter_Enviadas" />
+        <column name="Trans_Inter_Recibidas" />
+        <column name="Depositos_Efectivo" />
+        <column name="Depositos_No_efectivo" />
+        <column name="Activida_Economica" />
+        <column name="Entidad_Federativa" />
+        <column name="Nacionalidad" />
+        <column name="Segmento" />
+        <column name="Producto" />
+        <column name="PEP" />
+        <column name="Origen_Recursos" />
+        <column name="Destino_recursos" />
+        <column name="Trans_Inter_Enviadas_NUMOPMES" />
+        <column name="Trans_Inter_Recibidas_NUMOPMES" />
+        <column name="Trans_Nacio_Enviadas" />
+        <column name="Trans_Nacio_Recibidas" />
+        <column name="Depositos_Efectivo_NUMOPMES" />
+        <column name="Depositos_No_efectivo_NUMOPMES" />
+        <column name="Retiros_Efectivo" />
+        <column name="Retiros_No_Efectivo" />
+        <column name="Compra_divisas" />
+        <column name="Venta_Divisas" />
+      </columns>
+      <queryText></queryText>
+    </query>
+  </queries>
+</procedure>

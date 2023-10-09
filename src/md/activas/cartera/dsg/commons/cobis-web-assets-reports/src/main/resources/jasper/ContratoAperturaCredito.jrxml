@@ -1,0 +1,326 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="ContratoAperturaCredito" pageWidth="595" pageHeight="842" whenNoDataType="AllSectionsNoDetail" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="14" uuid="770ee5f8-0225-4141-a2e4-670c8c00777f">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="1636"/>
+	<parameter name="SUBREPORT_DIR" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["/"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="PUrlLogo" class="java.lang.String"/>
+	<parameter name="PWebPage" class="java.lang.String"/>
+	<parameter name="PPhoneMsg" class="java.lang.String"/>
+	<parameter name="PSupportEmail" class="java.lang.String"/>
+	<parameter name="PTittleBankName" class="java.lang.String"/>
+	<field name="amountLetters" class="java.lang.String"/>
+	<field name="amountApr" class="java.math.BigDecimal"/>
+	<field name="termQuotaLetters" class="java.lang.String"/>
+	<field name="termQuota" class="java.lang.Integer"/>
+	<field name="lettersApercre" class="java.lang.String"/>
+	<field name="rateEfAnnual" class="java.lang.Double"/>
+	<field name="totalAmount" class="java.math.BigDecimal"/>
+	<field name="headlines" class="java.util.List"/>
+	<field name="dateLiq" class="java.lang.String"/>
+	<field name="day" class="java.lang.String"/>
+	<field name="month" class="java.lang.String"/>
+	<field name="year" class="java.lang.String"/>
+	<field name="dayLetters" class="java.lang.String"/>
+	<field name="monthLetters" class="java.lang.String"/>
+	<field name="yearLetters" class="java.lang.String"/>
+	<field name="assets" class="java.util.List"/>
+	<field name="signaturesLeft" class="java.util.List"/>
+	<field name="signaturesRight" class="java.util.List"/>
+	<field name="bankName" class="java.lang.String"/>
+	<field name="loanBankId" class="java.lang.String"/>
+	<variable name="fecha" class="java.util.Date">
+		<variableExpression><![CDATA[new java.util.Date()]]></variableExpression>
+	</variable>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="86">
+			<textField>
+				<reportElement isPrintRepeatedValues="false" mode="Transparent" x="114" y="5" width="305" height="46" isPrintInFirstWholeBand="true" uuid="70ca89fa-1e7a-47b4-b1f1-33881379c93f"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA["CONTRATO DE APERTURA DE CRÉDITO SIMPLE"
++ "\n " + "SUSCRITO ENTRE:"]]></textFieldExpression>
+			</textField>
+			<image scaleImage="RetainShape">
+				<reportElement x="8" y="7" width="106" height="46" uuid="c22a0b48-8009-40fe-bb75-8abf4970c4ea"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<imageExpression><![CDATA[$P{PUrlLogo}]]></imageExpression>
+			</image>
+			<textField>
+				<reportElement x="8" y="61" width="506" height="20" uuid="ae3ce630-408c-40a8-922c-50ea00388a80"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{PTittleBankName} + " Y "]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<detail>
+		<band height="43" splitType="Stretch">
+			<subreport>
+				<reportElement x="5" y="0" width="546" height="39" uuid="1a57d474-25f2-4d6c-a0ff-f809d65e8c18"/>
+				<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($F{headlines})]]></dataSourceExpression>
+				<subreportExpression><![CDATA[$P{SUBREPORT_DIR} + "ContratoAperturaCredito_subreporte1.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+		<band height="398">
+			<textField>
+				<reportElement x="8" y="6" width="539" height="392" uuid="1265a4a7-ec83-4fc4-8dc7-443232ab9bfb"/>
+				<textElement textAlignment="Justified" markup="styled"/>
+				<textFieldExpression><![CDATA["En adelante EL(LOS) CLIENTE(S), quien(es) actúa(n) de manera mancomunada, solidaria e ilimitada, ha(n) celebrado el Contrato de Apertura de Crédito que se regirá por las cláusulas que a continuación se incorporan y en lo no previsto en ellas por las disposiciones legales en la materia:" + "\n\n" +
+"<style isBold=\"true\">PRIMERA. OBJETO:</style>" + " En virtud del presente CONTRATO DE APERTURA DE CRÉDITO SIMPLE,  EL BANCO pone a disposición de EL(LOS) CLIENTE(S), una suma de " +($F{amountLetters}!=null?$F{amountLetters}:"-NO DEFINIDO-")+ ". (" +($F{amountApr}!=null? new java.text.DecimalFormat("$ #,##0.00").format($F{amountApr}):"-NO DEFINIDO-")+ "), la cual podrá ser utilizada por éste(os) en los términos y condiciones del presente contrato." + "\n\n" +
+"<style isBold=\"true\">SEGUNDA. VIGENCIA:</style>" + " La suma descrita en la cláusula anterior, podrá ser utilizada por EL(LOS) CLIENTE(S), por el término de un (1) mes contado a partir de la fecha de aprobación del cupo de crédito a su favor." + "\n\n" +
+"<style isBold=\"true\">TERCERA. UTILIZACIÓN:</style>" + " Las solicitudes de utilización de la suma puesta a disposición de EL(LOS) CLIENTE(S), será(n) efectuada(s) por éste(os) mediante los mecanismos que EL BANCO determine; y los valores correspondientes podrán ser depositados por EL BANCO, a elección de éste, en las cuentas bancarias o depósitos que EL(LOS) CLIENTE(ES) o alguno de ellos haya(n) establecido o establezca(n) con EL BANCO; o podrán ser entregadas directamente a EL(LOS) CLIENTE(S) en cheque o efectivo; o a un tercero a quien él(ellos) haya(n) autorizado expresamente para recibirlo. <style isBold=\"true\">PARÁGRAFO:</style> El saldo de la suma puesta a disposición de EL(LOS) CLIENTE(S) disminuirá con la respectiva utilización,  y una vez utilizado el cupo indicado en la cláusula primera, se extingue la obligación del BANCO en cuanto a la disposición de recursos se refiere, y en consecuencia no se realizarán nuevos desembolsos de dinero." + "\n\n" +
+"<style isBold=\"true\">CUARTA. REEMBOLSO DE LOS VALORES UTILIZADOS:</style>" + " Las sumas que sean desembolsadas por EL BANCO en desarrollo del presente Contrato, serán reembolsadas o pagadas por EL(LOS) CLIENTE(S) en el número de cuotas periódicas y en el plazo indicado en el documento denominado TABLA DE AMORTIZACIÓN que entregará EL BANCO a EL(LOS) CLIENTE(S) al momento de perfeccionar cada utilización. En caso que la línea de crédito con la cual EL BANCO haya aprobado el cupo permita desembolsos parciales, para efectos de la liquidación de la cuota periódica a pagar, EL BANCO adicionará el monto de la última utilización al saldo de las anteriores utilizaciones y diferirá esta sumatoria al plazo indicado para la utilización más reciente, el cual será decidido por EL(LOS) CLIENTE(S), pero nunca podrá ser superior a " +($F{termQuotaLetters}!=null?$F{termQuotaLetters}:"-NO DEFINIDO-") + "(" + ($F{termQuota}!=null?$F{termQuota}:"-NO DEFINIDO-")+ ") meses. En todo caso, el valor de la cuota periódica a pagar y los conceptos que ella comprende se reflejarán de igual forma en la mencionada TABLA DE AMORTIZACIÓN."]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="121">
+			<textField>
+				<reportElement x="7" y="8" width="542" height="107" uuid="f46ff96c-ddc3-4ec0-8220-51481582fa05"/>
+				<textElement textAlignment="Justified" markup="styled"/>
+				<textFieldExpression><![CDATA["<style isBold=\"true\">QUINTA. COMISIÓN MIPYME:</style>" + " EL(LOS) CLIENTE(S) pagará(n) al BANCO, por concepto de COMISIÓN DE LEY MIPYME, el valor que éste tenga establecido para tal efecto al momento perfeccionar cada desembolso que se realice en desarrollo de este contrato. Dicho valor podrá ser consultado por EL(LOS) CLIENTE(S) con anterioridad a cada desembolso, ya sea en las carteleras de información dispuestas al público en la red de oficinas del BANCO; en su página web; o directamente con el asesor bancario que en cada oportunidad lo(s) esté atendiendo; y en todo caso será informado en la TABLA DE AMORTIZACIÓN que se entregará al momento de perfeccionar cada desembolso. Este valor será liquidado cada año de vigencia del crédito sobre el saldo a capital que a ese momento quede por pagar, y se pagará junto con cada cuota de amortización del crédito."]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="85">
+			<textField>
+				<reportElement x="8" y="7" width="539" height="78" uuid="0cb22831-05f7-4257-9eb4-9a39229fc48d"/>
+				<textElement textAlignment="Justified" markup="styled"/>
+				<textFieldExpression><![CDATA["<style isBold=\"true\">SEXTA. COMISIÓN DE APERTURA:</style>" + " Independientemente de la utilización parcial o total, o no utilización de la suma puesta a disposición de EL(LOS) CLIENTE(S), éste(os) pagará(n) al BANCO, por concepto de COMISIÓN DE APERTURA, por una sola vez, una suma no reembolsable de  " +($F{lettersApercre}!=null? $F{lettersApercre}:"-NO DEFINIDO-")+ ". (" +($F{totalAmount}!=null?new java.text.DecimalFormat("$ #,##0.00").format($F{totalAmount}):"-NO DEFINIDO-")+ "). Esta suma no se reputa para ningún efecto como intereses, pues remunera la disponibilidad de fondos que se obliga EL BANCO a mantener a favor de EL(LOS)  CLIENTE(S), y podrá ser descontada del valor de la primera utilización que EL(LOS) CLIENTE(S) realice(n)."]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="76">
+			<textField>
+				<reportElement x="7" y="8" width="540" height="63" uuid="efc22743-ecbb-4922-97b7-6432b9d1c261"/>
+				<textElement textAlignment="Justified" markup="styled"/>
+				<textFieldExpression><![CDATA["<style isBold=\"true\">SÉPTIMA. GARANTÍAS Y PAGARÉ:</style>" + " Es entendido que todos los bienes de los que EL(LOS) CLIENTE(S) sea(n) dueño(s) sirven como garantía de pago de las sumas que desembolse EL BANCO en desarrollo del presente contrato. Para efectos de lo anterior, EL(LOS) CLIENTE(S) declara(n) que a la fecha de firma de este documento es(son) dueño(s) de los siguientes bienes:"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="49">
+			<frame>
+				<reportElement stretchType="RelativeToTallestObject" x="4" y="1" width="543" height="48" uuid="44ba87ee-cf8d-4016-b660-c8f926b6f408"/>
+				<box>
+					<topPen lineWidth="1.25"/>
+					<leftPen lineWidth="1.25"/>
+					<bottomPen lineWidth="1.25"/>
+					<rightPen lineWidth="1.25"/>
+				</box>
+				<subreport>
+					<reportElement x="4" y="4" width="534" height="40" uuid="428135d3-df74-4780-8544-a90f8943adc0"/>
+					<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($F{assets})]]></dataSourceExpression>
+					<subreportExpression><![CDATA[$P{SUBREPORT_DIR} + "ContratoAperturaCredito_subreporte4.jasper"]]></subreportExpression>
+				</subreport>
+			</frame>
+		</band>
+		<band height="154">
+			<textField>
+				<reportElement x="4" y="7" width="543" height="147" uuid="5462c35b-4b5a-4f7b-86b9-f095493840c2"/>
+				<textElement textAlignment="Justified"/>
+				<textFieldExpression><![CDATA["Adicionalmente, EL(LOS) CLIENTES(S) otorga(n) un pagaré con espacios en blanco, a la orden del BANCO, con las instrucciones necesarias para su diligenciamiento, instrumento a través del cual éste podrá hacer efectivo el cobro de las sumas que desembolse en desarrollo del presente contrato, así como los gastos y costos asociados con las mismas, tales como comisiones, seguros, intereses remuneratorios y de mora, gastos de cobranza prejudicial y judicial y honorarios, entre otros. Para este propósito, EL(LOS) CLIENTE(S) reconoce(n) como sumas a su cargo los valores que aparezcan en los registros contables del BANCO, sumas con las cuales podrá ser diligenciado el título valor en los espacios correspondientes." + "\n\n" +
+"Así mismo, en caso que para la aprobación del crédito se hayan tenido en cuenta garantías otorgadas por terceros tales como el Fondo Nacional de Garantías y otras entidades similares, EL(LOS) CLIENTE(S) asumirán el valor correspondiente a las comisiones que esas entidades cobren."]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="55">
+			<textField>
+				<reportElement x="5" y="6" width="540" height="43" uuid="0defeacf-5961-42bc-aed0-8eb1faaac3de"/>
+				<textElement textAlignment="Justified" markup="styled"/>
+				<textFieldExpression><![CDATA["<style isBold=\"true\">OCTAVA. REMUNERACIÓN:</style>" + " Sobre las sumas utilizadas, EL(LOS) CLIENTE(S) reconocerá(n) al BANCO  una tasa de interés de plazo equivalente a " +($F{rateEfAnnual}!=null?$F{rateEfAnnual}:"-NO DEFINIDO-")+ "% Efectivo Anual.  En caso de mora, reconocerán sobre los saldos adeudados, la tasa más alta establecida por las disposiciones legales en la materia."]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="83">
+			<textField>
+				<reportElement x="4" y="5" width="541" height="71" uuid="7c705793-0575-4206-8906-ccb5912a95cd"/>
+				<textElement textAlignment="Justified" markup="styled"/>
+				<textFieldExpression><![CDATA["<style isBold=\"true\">NOVENA. SEGURO DE VIDA DEUDORES:</style>" + " Junto con la cuota periódica de amortización, y con destino a la aseguradora, EL(LOS) CLIENTE(S) pagará(n) la prima correspondiente al seguro obligatorio de vida deudores, que cubre el saldo de la deuda en las condiciones fijadas en la respectiva póliza. En todo caso, el valor correspondiente a esta prima se indicará en la TABLA DE AMORTIZACIÓN que entregará EL BANCO a EL(LOS) CLIENTE(S) al momento de perfeccionar cada desembolso que se realice en desarrollo del presente contrato."]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="82">
+			<textField>
+				<reportElement x="4" y="6" width="538" height="70" uuid="00b860b3-079d-45c4-8eec-b8ecdbb94a75"/>
+				<textElement textAlignment="Justified" markup="styled"/>
+				<textFieldExpression><![CDATA["<style isBold=\"true\">DÉCIMA. GASTOS DE COBRANZA:</style>" + " En caso de incumplimiento en el pago de las sumas utilizadas por EL(LOS) CLIENTE(S), serán a su cargo los gastos de cobranza judicial o prejudicial, honorarios, costas y expensas, que se generen para el recaudo de las obligaciones a su cargo. Las tarifas y condiciones de tales conceptos, han sido oportuna y suficientemente informados a EL(LOS) CLIENTE(S), y en todo caso permanecerán expuestas en las carteleras de información al público que EL BANCO tiene dispuestas en todas sus oficinas."]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="122">
+			<textField>
+				<reportElement x="5" y="7" width="538" height="115" uuid="12ef0ac3-75ae-4245-a228-0f333c39b6c5"/>
+				<textElement textAlignment="Justified" markup="styled"/>
+				<textFieldExpression><![CDATA["<style isBold=\"true\">UNDÉCIMA. CAUSALES DE TERMINACIÓN DEL PRESENTE CONTRATO:</style>" + " Sin perjuicio de las demás disposiciones contractuales y las legales que resulten aplicables, en caso que se presente cualquiera de las siguientes causales, EL BANCO podrá dar por terminado, de manera unilateral, el presente contrato:" + "\n\n" +
+
+"1ª. Notorio deterioro de la situación económica de EL(LOS) CLIENTE(S) o de cualquiera de ellos, que a juicio del BANCO modifique las valoraciones efectuadas para la aprobación de este cupo de crédito." + "\n\n" +
+
+"2ª. Fallecimiento de uno o todos LOS CLIENTES, o disolución de la sociedad en caso de que sea una persona jurídica."]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="175">
+			<textField>
+				<reportElement x="6" y="0" width="538" height="170" uuid="741b9dc6-87ff-4d04-a16a-04644aff278a"/>
+				<textElement textAlignment="Justified"/>
+				<textFieldExpression><![CDATA["3ª. Detección de circunstancias que acrediten que uno o todos LOS CLIENTES ha(n) suministrado información imprecisa, inexacta o ajena a la verdad, en la tramitación o celebración de  cualquier tipo de operación o transacción con EL BANCO." + "\n\n" +
+
+"4ª. Cuando por cualquier circunstancia se haga imposible la ejecución del objeto del Contrato." + "\n\n" +
+"5ª.El no pago de la COMISIÓN DE APERTURA por parte de EL (LOS) CLIENTE(S), o la no suscripción del  pagaré a que alude la cláusula séptima." + "\n\n" +
+"6ª. Por señalamiento público o judicial de uno o todos LOS CLIENTES como autor(es) o partícipe(s) de actividades ilegales, infracciones o delitos; o si es(son) incluido(s) en listas para el control de lavado de activos o financiación del terrorismo administradas por cualquier autoridad nacional o extranjera, tales como la Oficina de Control de Activos en el Exterior (OFAC) del Departamento del Tesoro de los Estados Unidos de América."]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="80">
+			<textField>
+				<reportElement x="7" y="7" width="537" height="73" uuid="fb50a697-1760-4595-93f9-fa574abe2ba2"/>
+				<textElement textAlignment="Justified" markup="styled"/>
+				<textFieldExpression><![CDATA["<style isBold=\"true\">PARÁGRAFO PRIMERO:</style>" + " A la terminación del presente contrato, se mantendrán las obligaciones a cargo de EL(LOS) CLIENTE(S) derivadas de la ejecución del mismo." + "\n\n" +
+
+"<style isBold=\"true\">PARÁGRAFO SEGUNDO:</style>" + " La terminación anticipada del contrato no da lugar a la devolución de la comisión de apertura."]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="86">
+			<textField>
+				<reportElement x="7" y="8" width="536" height="70" uuid="1fc30393-b8ba-4060-aa61-f4adffa7f85a"/>
+				<textElement textAlignment="Justified" markup="styled"/>
+				<textFieldExpression><![CDATA["<style isBold=\"true\">DUODÉCIMA. AUTORIZACIÓN DE DÉBITO O COMPENSACIÓN:</style>" + " EL(LOS) CLIENTE(S) autoriza(n) de manera irrevocable al BANCO para, sin previo aviso, debitar o descontar de cualquier suma de dinero de la que por cualquier concepto sean titulares individual, solidaria o colectivamente en EL BANCO, todos los saldos que individual, solidaria o colectivamente por cualquier concepto resulten a su cargo en desarrollo del presente Contrato o de cualquier operación o transacción celebrada con EL BANCO."]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="95">
+			<textField>
+				<reportElement x="8" y="6" width="534" height="81" uuid="c2d4c105-2047-42dd-aad6-765a113c4348"/>
+				<textElement textAlignment="Justified" markup="styled"/>
+				<textFieldExpression><![CDATA["<style isBold=\"true\">DÉCIMA TERCERA. ADECUADA INFORMACIÓN:</style>" + " EL(LOS) CLIENTE(S) declara(n) que antes de suscribir el presente contrato lo leyó(eron) y fue(ron) adecuadamente informado(s) por parte de " + $F{bankName} + "acerca de las condiciones y características del mismo, y que todas las dudas que manifestó(aron) sobre el particular le(s) fue(ron) absueltas a satisfacción por los empleados de " + $F{bankName} + ", razón por la cual decidió(eron) perfeccionar la operación. De igual forma, manifiesta(n) que conserva(n) una copia del mismo y de la Tabla de Amortización con las condiciones particulares correspondientes al primer desembolso."]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="138">
+			<textField>
+				<reportElement x="8" y="8" width="534" height="123" uuid="4248a04b-6f3b-448b-bd76-dda8aee7f56e"/>
+				<textElement textAlignment="Justified" markup="styled"/>
+				<textFieldExpression><![CDATA["<style isBold=\"true\">DÉCIMA  CUARTA. ATENCIÓN AL CLIENTE:</style>" + " EL BANCO mantendrá a disposición de EL(LOS) CLIENTE(S) un Sistema de Atención. Así, en caso de tener dudas, solicitudes, quejas o reclamos, podrá(n) comunicarse con cualquiera de los siguientes canales: "+ $P{PPhoneMsg} +"; página web " + $P{PWebPage} + " (opción contáctenos); correo electrónico "+ $P{PSupportEmail} + "; nuestras oficinas a nivel nacional; y el Defensor del Consumidor Financiero, cuya principal función es la de ser vocero de los clientes y usuarios del Banco, cuyos datos de contacto estarán disponibles en las carteleras de información al público de la red de oficinas de EL BANCO y en su página web. En todo caso, para la presentación de peticiones, quejas y reclamos por parte de EL(LOS) CLIENTES(S), se deberá indicar el motivo, descripción de los hechos y los derechos que considere(n) vulnerados, asi como la identificación y demás datos que permitan contactarlo(s) para hacerle(s) llegar la correspondiente respuesta."]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="71">
+			<textField>
+				<reportElement x="8" y="6" width="534" height="58" uuid="9ab18a69-9c5f-4c13-80d3-d134a4b669f1"/>
+				<textElement markup="styled"/>
+				<textFieldExpression><![CDATA["En constancia se suscribe a los " + $F{dayLetters} + " (" + $F{day} + ") " + "días del mes de " + $F{monthLetters} + " de dos mil " + $F{yearLetters} + " (" + $F{year} + ") " + "\n\n" +
+
+"<style isBold=\"true\">EL(LOS) CLIENTE(S):</style>"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="49">
+			<subreport>
+				<reportElement x="8" y="7" width="258" height="38" uuid="69a02cea-fb5b-438a-943e-b80bd0c333e8"/>
+				<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($F{signaturesLeft})]]></dataSourceExpression>
+				<subreportExpression><![CDATA[$P{SUBREPORT_DIR} + "ContratoAperturaCredito_subreporte5.jasper"]]></subreportExpression>
+			</subreport>
+			<subreport>
+				<reportElement x="278" y="7" width="265" height="38" uuid="5930fb07-e2b7-4fb4-b1d9-18ba8a6890c4"/>
+				<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($F{signaturesRight})]]></dataSourceExpression>
+				<subreportExpression><![CDATA[$P{SUBREPORT_DIR} + "ContratoAperturaCredito_subreporte6.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+		<band height="95">
+			<staticText>
+				<reportElement x="8" y="32" width="357" height="62" uuid="227bc020-2521-49b8-965c-0e590f189320"/>
+				<box>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font size="10" isBold="false"/>
+					<paragraph lineSpacing="1_1_2" leftIndent="5"/>
+				</textElement>
+				<text><![CDATA[Firma:           ____________________________________
+Nombre:        ____________________________________
+Cargo:           ____________________________________
+]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="8" y="7" width="299" height="25" uuid="ef078fbe-61a7-498f-bddc-42c78dab47ba"/>
+				<box>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font size="10" isBold="true"/>
+					<paragraph lineSpacing="1_1_2" leftIndent="5"/>
+				</textElement>
+				<text><![CDATA[EL BANCO:
+
+]]></text>
+			</staticText>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="24">
+			<staticText>
+				<reportElement x="6" y="7" width="131" height="15" uuid="adbc87b2-9fe7-49a4-b9e9-1ed5be912454"/>
+				<box>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement>
+					<font size="8" isBold="true"/>
+					<paragraph leftIndent="3"/>
+				</textElement>
+				<text><![CDATA[Contrato de Apertura de Crédito:]]></text>
+			</staticText>
+			<textField evaluationTime="Report" pattern="" isBlankWhenNull="false">
+				<reportElement mode="Transparent" x="514" y="7" width="40" height="15" forecolor="#000000" backcolor="#FFFFFF" uuid="dfeca20f-108e-441b-a764-5ebe5e222992"/>
+				<textElement verticalAlignment="Middle" rotation="None" markup="none">
+					<font fontName="SansSerif" size="8" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="454" y="7" width="35" height="15" uuid="5b659db7-5f76-473b-a0b4-8e3d4b240719"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[Página]]></text>
+			</staticText>
+			<textField pattern="" isBlankWhenNull="false">
+				<reportElement mode="Transparent" x="488" y="7" width="26" height="15" forecolor="#000000" backcolor="#FFFFFF" uuid="9d45136f-57ec-423c-bf0f-98649af792ab"/>
+				<textElement verticalAlignment="Middle" rotation="None" markup="none">
+					<font fontName="SansSerif" size="8" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{PAGE_NUMBER}+" de "]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="140" y="7" width="100" height="15" uuid="46e2b2ae-e447-482f-9509-c15c4acb8c30"/>
+				<textElement>
+					<font size="8" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{loanBankId}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="8" y="4" width="534" height="1" uuid="4a8da6fe-3232-45e2-8fb9-7c57efe3ae2d"/>
+				<graphicElement>
+					<pen lineWidth="2.0"/>
+				</graphicElement>
+			</line>
+		</band>
+	</pageFooter>
+</jasperReport>

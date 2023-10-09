@@ -1,0 +1,126 @@
+<div ng-init="clearBars()">
+    <div class="cb-view-container-root container-fluid">
+        <div id="backButton" style="position:absolute; top:5px; right:5px;">
+            <button type="button" class="btn btn-default btn-xs" ng-click="onBackReturn($event)">
+                <span class="fa fa-close"></span>
+            </button>
+        </div>
+        <div id="bars">
+            <div id="chart" style="height:280px;" kendo-chart k-tooltip="{visible:true, template: '#= dataItem.nam #: #= kendo.format(\'{0:n2}\', value*1000)#'}" k-series="[{field: 'value'}]" k-series-defaults="{ type: 'column', stack: 'categ',categoryField: 'categ', gap: 0.8, template:' #= kendo.format(\'{0:c2}\', value)#'}" k-series-click="onBarClick" k-legend="{position: 'right', height: '90%', visible: true, background: 'rgb(255, 255, 255)',offsetY: -80,labels: { padding: {right: auto, }}}" k-data-source="dataProducts" k-category-axis="{labels: { padding: { top: 5 } },  majorGridLines: { visible: false }, minorGridLines: {visible: false}}" k-value-axis="{ labels: { format: '{0:n} K'}, line: { visible: false },  axisCrossingValue: 0}"></div>
+            <div class="text-muted text-center small" translate>COMMONS.LABELS.LBL_MSG_CURRENCY_GRAPHIC</div>
+        </div>
+        <div id="donuts" class="row">
+            <div class="col-xs-12" align="center">
+                <fieldset id="kpassive" class="cb-group cb-group-simple">
+                    <legend>
+                        <span class="cb-title" translate>MENU.LABELS.LBL_PASSIVE</span>
+                    </legend>
+                    <div kendo-chart style="height:280px;" k-series="[{field: 'amount',name: '#= group.amount #'}]" k-series-defaults="{ type: 'donut',stack: 'product',categoryField: 'product', gap: 0.1, labels: { visible: true, position: 'outsideEnd', culture: 'en-US', template: '#= kendo.format(\'{0:P}\', percentage)#',font: '9px Arial,Helvetica,sans-serif'}}" k-legend="{visible: false}" k-tooltip="{visible:true, color: 'white', template:  '{{'CLIENTVIEWER.LABELS.LBL_TOOLTIP_PRODUCT'|translate}}: #=dataItem.product# </br>{{'CLIENTVIEWER.LABELS.LBL_TOOLTIP_DESCRIPTION'|translate}}:#=dataItem.type#<br>{{'CLIENTVIEWER.LABELS.LBL_TOOLTIP_VALUE'|translate}}: #=kendo.format(\'{0:n}\', dataItem.amount)#</br>{{'CLIENTVIEWER.LABELS.LBL_TOOLTIP_NUMBER'|translate}}: #=dataItem.number#'}" k-data-source="dynamicData.liabilitiesSource.consolidatePosition" k-category-axis="{labels: { font: '11px Arial,Helvetica,sans-serif', padding: { top: 5 } },  majorGridLines: { visible: true }, minorGridLines: {visible: false}}" k-value-axis="{ labels: { format: '{0:n}' }, line: { visible: false },  axisCrossingValue: 0}"></div>
+                </fieldset>
+                <fieldset id="kdebts" class="cb-group cb-group-simple">
+                    <legend>
+                        <span class="cb-title" translate>MENU.LABELS.LBL_DEBTS</span>
+                    </legend>
+                    <div kendo-chart style="height:280px;" k-series="[{field: 'amount',name: '#= group.amount #'}]" k-series-defaults="{ type: 'donut',stack: 'product',categoryField: 'product', gap: 0.1, labels: { visible: true, position: 'outsideEnd', culture: 'en-US', template: '#= kendo.format(\'{0:P}\', percentage)#',font: '9px Arial,Helvetica,sans-serif'}}" k-legend="{visible: false}" k-tooltip="{visible:true, color: 'white', template:  '{{'CLIENTVIEWER.LABELS.LBL_TOOLTIP_PRODUCT'|translate}}: #=dataItem.product# </br>{{'CLIENTVIEWER.LABELS.LBL_TOOLTIP_DESCRIPTION'|translate}}:#=dataItem.type#<br>{{'CLIENTVIEWER.LABELS.LBL_TOOLTIP_VALUE'|translate}}: #=kendo.format(\'{0:n}\', dataItem.amount)#</br>{{'CLIENTVIEWER.LABELS.LBL_TOOLTIP_NUMBER'|translate}}: #=dataItem.number#'}" k-data-source="dynamicData.debtsSource.consolidatePosition" k-category-axis="{labels: { font: '11px Arial,Helvetica,sans-serif', padding: { top: 5 } },  majorGridLines: { visible: true }, minorGridLines: {visible: false}}" k-value-axis="{ labels: { format: '{0:n}' }, line: { visible: false },  axisCrossingValue: 0}"></div>
+                </fieldset>
+                <fieldset id="kcontigents" class="cb-group cb-group-simple">
+                    <legend>
+                        <span class="cb-title" translate>MENU.LABELS.LBL_CONTINGENTS</span>
+                    </legend>
+                    <div kendo-chart style="height:280px;" k-series="[{field: 'amount',name: '#= group.amount #'}]" k-series-defaults="{ type: 'donut',stack: 'product',categoryField: 'product', gap: 0.1, labels: { visible: true, position: 'outsideEnd', culture: 'en-US', template: '#= kendo.format(\'{0:P}\', percentage)#',font: '9px Arial,Helvetica,sans-serif'}}" k-legend="{visible: false}" k-tooltip="{visible:true, color: 'white', template:  '{{'CLIENTVIEWER.LABELS.LBL_TOOLTIP_PRODUCT'|translate}}: #=dataItem.product# </br>{{'CLIENTVIEWER.LABELS.LBL_TOOLTIP_DESCRIPTION'|translate}}:#=dataItem.type#<br>{{'CLIENTVIEWER.LABELS.LBL_TOOLTIP_VALUE'|translate}}: #=kendo.format(\'{0:n}\', dataItem.amount)#</br>{{'CLIENTVIEWER.LABELS.LBL_TOOLTIP_NUMBER'|translate}}: #=dataItem.number#'}" k-data-source="dynamicData.contingentsSource.consolidatePosition" k-category-axis="{labels: { font: '11px Arial,Helvetica,sans-serif', padding: { top: 5 } },  majorGridLines: { visible: true }, minorGridLines: {visible: false}}" k-value-axis="{ labels: { format: '{0:n}' }, line: { visible: false },  axisCrossingValue: 0}"></div>
+                </fieldset>
+                <fieldset id="kguarantees" class="cb-group cb-group-simple">
+                    <legend>
+                        <span class="cb-title" translate>MENU.LABELS.LBL_GUARANTEES</span>
+                    </legend>
+                    <div kendo-chart style="height:280px;" k-series="[{field: 'amount',name: '#= group.amount #'}]" k-series-defaults="{ type: 'donut',stack: 'product',categoryField: 'product', gap: 0.1, labels: { visible: true, position: 'outsideEnd', culture: 'en-US', template: '#= kendo.format(\'{0:P}\', percentage)#',font: '9px Arial,Helvetica,sans-serif'}}" k-legend="{visible: false}" k-tooltip="{visible:true, color: 'white', template:  '{{'CLIENTVIEWER.LABELS.LBL_TOOLTIP_PRODUCT'|translate}}: #=dataItem.product# </br>{{'CLIENTVIEWER.LABELS.LBL_TOOLTIP_DESCRIPTION'|translate}}:#=dataItem.type#<br>{{'CLIENTVIEWER.LABELS.LBL_TOOLTIP_VALUE'|translate}}: #=kendo.format(\'{0:n}\', dataItem.amount)#</br>{{'CLIENTVIEWER.LABELS.LBL_TOOLTIP_NUMBER'|translate}}: #=dataItem.number#'}" k-data-source="dynamicData.guaranteesSource.consolidatePosition" k-category-axis="{labels: { font: '11px Arial,Helvetica,sans-serif', padding: { top: 5 } },  majorGridLines: { visible: true }, minorGridLines: {visible: false}}" k-value-axis="{ labels: { format: '{0:n}' }, line: { visible: false },  axisCrossingValue: 0}"></div>
+                </fieldset>
+                <fieldset id="krisks" class="cb-group cb-group-simple">
+                    <legend>
+                        <span class="cb-title" translate>MENU.LABELS.LBL_RISKS</span>
+                    </legend>
+					<div kendo-chart style="height:280px;" k-series="[{field: 'amount',name: '#= group.amount #'}]" k-series-defaults="{ type: 'donut',stack: 'product',categoryField: 'product', gap: 0.1, labels: { visible: true, position: 'outsideEnd', culture: 'en-US', template: '#= kendo.format(\'{0:P}\', percentage)#',font: '9px Arial,Helvetica,sans-serif'}}" k-legend="{visible: false}" k-tooltip="{visible:true, color: 'white', template:  '{{'CLIENTVIEWER.LABELS.LBL_TOOLTIP_PRODUCT'|translate}}: #=dataItem.product# </br>{{'CLIENTVIEWER.LABELS.LBL_TOOLTIP_DESCRIPTION'|translate}}:#=dataItem.type#<br>{{'CLIENTVIEWER.LABELS.LBL_TOOLTIP_VALUE'|translate}}: #=kendo.format(\'{0:n}\', dataItem.amount)#</br>{{'CLIENTVIEWER.LABELS.LBL_TOOLTIP_NUMBER'|translate}}: #=dataItem.number#'}" k-data-source="dynamicData.IndirectPortfolioSource.consolidatePosition" k-category-axis="{labels: { font: '11px Arial,Helvetica,sans-serif', padding: { top: 5 } },  majorGridLines: { visible: true }, minorGridLines: {visible: false}}" k-value-axis="{ labels: { format: '{0:n}' }, line: { visible: false },  axisCrossingValue: 0}"></div>
+                </fieldset>
+            </div>
+        </div>
+
+        <div class="cb-group cb-group-collapsible" style="margin-top:20px;">
+            <ul id="panelbar" kendo-panel-bar>
+                <li class="k-state-active">
+                    <small class="text-muted" style="white-space:nowrap" translate>COMMONS.HEADERS.HDR_CALIFICATIONS</small>
+                    <div class="cb-view-container-root container-fluid">
+                        <div class="row">
+                            <div class="col-xs-5">
+                                <div class="panel panel-default">
+                                    <div class="panel-body">
+                                        <div style="display:table; width:100%;">
+                                            <div class="text-center" style="display:table-cell; vertical-align:middle;">
+                                                <div class="cb-text-lg" title="{{ riskObject.totalRisk | currency:'':2 }}">
+                                                    {{ abbreviateNumber(riskObject.totalRisk) }}
+                                                    <!--small>BOB</small-->
+                                                </div>
+                                                <small class="text-muted" translate>COMMONS.HEADERS.HDR_TOTAL_RISK</small>
+                                            </div>
+                                            <div class="text-center" style="display:table-cell; vertical-align:middle;">
+                                                <div>
+                                                    <span class="cb-text-lg" title="{{riskObject.directRisk | currency:'':2}}">{{ abbreviateNumber(riskObject.directRisk) }}</span>
+                                                    <!--small>BOB</small-->
+                                                </div>
+                                                <small class="text-muted" translate>COMMONS.HEADERS.HDR_DIRECT_RISK</small>
+                                                <div>
+                                                    <span class="cb-text-lg" title="{{riskObject.indirectRisk | currency:'':2}}">{{ abbreviateNumber(riskObject.indirectRisk) }}</span>
+                                                    <!--small>BOB</small-->
+                                                </div>
+                                                <small class="text-muted" translate>COMMONS.HEADERS.HDR_INDIRECT_RISK</small>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xs-3">
+                                <div class="panel panel-default" style="display:table; width:100%; min-height:100px;">
+                                    <div class="panel-body text-center" style="display:table-cell; vertical-align:middle;">
+                                        <div class="cb-text-lg" title="{{riskObject.contingent | currency:'':2}}">
+                                            {{ abbreviateNumber(riskObject.contingent) }}
+                                            <!--small>BOB</small-->
+                                        </div>
+                                        <small class="text-muted" translate>COMMONS.HEADERS.HDR_CONTINGENT</small>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xs-2">
+                                <div class="panel panel-default" style="display:table; width:100%; min-height:100px;">
+                                    <div class="panel-body text-center" style="display:table-cell; vertical-align:middle;">
+                                        <div class="cb-text-lg">{{portfolioRateObject.portfolioRate}}
+                                            <!--small>BOB</small-->
+                                        </div>
+                                        <small class="text-muted" translate>COMMONS.HEADERS.HDR_INTERNAL_RATE</small>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xs-2">
+                                <div class="panel panel-default" style="display:table; width:100%; min-height:100px;">
+                                    <div class="panel-body text-center" style="display:table-cell; vertical-align:middle;">
+                                        <div class="cb-text-lg">{{_customerScore}}
+                                            <!--small>BOB</small-->
+                                        </div>
+                                        <small class="text-muted" translate>COMMONS.HEADERS.HDR_SCORE</small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <fieldset class="cb-group cb-group-simple">
+                            <legend>
+                                <span class="cb-title" translate>COMMONS.HEADERS.HDR_INTERNAL_RATE</span>
+                            </legend>
+                            <div>
+                                <div kendo-grid k-data-source="internalRateSource" k-selectable="'row'" options="columnsInternalRate()" k-rebind="internalRateSource" k-resizable="true"></div>
+                            </div>
+                        </fieldset>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>

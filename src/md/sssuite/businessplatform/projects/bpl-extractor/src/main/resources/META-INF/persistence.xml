@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence xmlns="http://java.sun.com/xml/ns/persistence"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd"
+	version="2.0">
+	<persistence-unit name="jpa.ExtractorApplication"
+		transaction-type="RESOURCE_LOCAL">
+
+		<class>com.cobiscorp.ecobis.bpl.rules.engine.model.Rule</class>
+		<class>com.cobiscorp.ecobis.bpl.rules.engine.model.RuleVersion</class>
+		<class>com.cobiscorp.ecobis.bpl.rules.engine.model.RuleException</class>
+		<class>com.cobiscorp.ecobis.bpl.rules.engine.model.ConditionRule</class>
+		<class>com.cobiscorp.ecobis.bpl.rules.engine.model.Variable</class>
+		<class>com.cobiscorp.ecobis.bpl.rules.engine.model.Programa</class>
+		<class>com.cobiscorp.ecobis.bpl.rules.engine.model.SubTypeRule</class>
+		<class>com.cobiscorp.ecobis.bpl.rules.engine.model.SystemRule</class>
+		<class>com.cobiscorp.ecobis.bpl.rules.engine.model.TaskView</class>
+
+		<class>com.cobiscorp.ecobis.bpl.workflow.engine.model.Link</class>
+		<class>com.cobiscorp.ecobis.bpl.workflow.engine.model.LinkCondition</class>
+		<class>com.cobiscorp.ecobis.bpl.workflow.engine.model.Process</class>
+		<class>com.cobiscorp.ecobis.bpl.workflow.engine.model.ProcessType</class>
+		<class>com.cobiscorp.ecobis.bpl.workflow.engine.model.ProcessVersion</class>
+		<class>com.cobiscorp.ecobis.bpl.workflow.engine.model.Activity</class>
+		<class>com.cobiscorp.ecobis.bpl.workflow.engine.model.Step</class>
+		<class>com.cobiscorp.ecobis.bpl.workflow.engine.model.ProcessVariable</class>
+		<class>com.cobiscorp.ecobis.bpl.workflow.engine.model.MappingVariableProcess</class>
+		<class>com.cobiscorp.ecobis.bpl.workflow.engine.model.Hierarchy</class>
+		<class>com.cobiscorp.ecobis.bpl.workflow.engine.model.HierarchyRol</class>
+		<class>com.cobiscorp.ecobis.bpl.workflow.engine.model.Role</class>
+		<class>com.cobiscorp.ecobis.bpl.workflow.engine.model.User</class>
+		<class>com.cobiscorp.ecobis.bpl.workflow.engine.model.RoleUser</class>
+		<class>com.cobiscorp.ecobis.bpl.workflow.engine.model.LinkRole</class>
+		<class>com.cobiscorp.ecobis.bpl.workflow.engine.model.RoleType</class>
+		<class>com.cobiscorp.ecobis.bpl.workflow.engine.model.PolicyStep</class>
+		<class>com.cobiscorp.ecobis.bpl.workflow.engine.model.ProcessActivity</class>
+		<class>com.cobiscorp.ecobis.bpl.workflow.engine.model.ActivityRequirement</class>
+		<class>com.cobiscorp.ecobis.bpl.workflow.engine.model.Requirement</class>
+		<class>com.cobiscorp.ecobis.bpl.workflow.engine.model.ActivityResult</class>
+		<class>com.cobiscorp.ecobis.bpl.workflow.engine.model.Result</class>
+		<class>com.cobiscorp.ecobis.bpl.workflow.engine.model.HierarchyTypeTpl</class>
+		<class>com.cobiscorp.ecobis.bpl.workflow.engine.model.HierarchyLevelTpl</class>
+		<class>com.cobiscorp.ecobis.bpl.workflow.engine.model.HierarchyItem</class>
+		<class>com.cobiscorp.ecobis.bpl.workflow.engine.model.HierarchyItemTpl</class>
+		<class>com.cobiscorp.ecobis.bpl.workflow.engine.model.HierarchyUserTpl</class>
+		<class>com.cobiscorp.ecobis.bpl.workflow.engine.model.ActivityObservation</class>
+		<class>com.cobiscorp.ecobis.bpl.workflow.engine.model.Receptor</class>
+		<class>com.cobiscorp.ecobis.bpl.workflow.engine.model.Addressee</class>
+		<class>com.cobiscorp.ecobis.bpl.workflow.engine.model.InformationStep</class>
+		<class>com.cobiscorp.ecobis.bpl.workflow.engine.model.LoadBalance</class>
+		
+<class>com.cobiscorp.ecobis.bpl.workflow.engine.model.ApprovalException</class>
+		<class>com.cobiscorp.ecobis.bpl.workflow.engine.model.DocumentType</class>
+		
+		<class>com.cobiscorp.ecobis.bpl.cobis.engine.model.Catalog</class>
+		<class>com.cobiscorp.ecobis.bpl.cobis.engine.model.CobisTable</class>
+		<class>com.cobiscorp.ecobis.bpl.cobis.engine.model.Component</class>
+		<class>com.cobiscorp.ecobis.bpl.cobis.engine.model.Official</class>
+		<class>com.cobiscorp.ecobis.bpl.cobis.engine.model.Seqnos</class>
+
+		<exclude-unlisted-classes>true</exclude-unlisted-classes>
+		<properties>
+			<property name="openjpa.Log" value="SQL=TRACE,Runtime=TRACE" />
+		</properties>
+	</persistence-unit>
+
+</persistence>

@@ -1,0 +1,620 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="BuroCreditoInternoExterno.jrxml" pageWidth="612" pageHeight="792" columnWidth="572" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="9ab22525-e7a3-49a6-8b66-445b7cc4ee71">
+	<property name="ireport.zoom" value="1.4641000000000006"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="44"/>
+	<parameter name="SUBREPORT_DIR" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["/"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="cabFechHoraEmiReport" class="java.lang.String"/>
+	<parameter name="cabSucursal" class="java.lang.String"/>
+	<parameter name="cabFuncionario" class="java.lang.String"/>
+	<parameter name="cabFechaHoraConsultaBC" class="java.lang.String"/>
+	<parameter name="datGenClaveCliUnico" class="java.lang.Integer"/>
+	<parameter name="datGenNombres" class="java.lang.String"/>
+	<parameter name="datGenApellidos" class="java.lang.String"/>
+	<parameter name="datGenRFC" class="java.lang.String"/>
+	<parameter name="datGenFechaNacimiento" class="java.lang.String"/>
+	<parameter name="datGenCURP" class="java.lang.String"/>
+	<parameter name="datGenEstadoCivil" class="java.lang.String"/>
+	<parameter name="urlPathSantander" class="java.lang.String"/>
+	<field name="domicilios" class="java.util.List"/>
+	<field name="historico" class="java.util.List"/>
+	<field name="sisFinanciero" class="java.util.List"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<pageHeader>
+		<band height="117" splitType="Stretch">
+			<staticText>
+				<reportElement mode="Opaque" x="0" y="108" width="572" height="2" backcolor="#000000" uuid="5089c3a6-3d2a-490a-96d4-9b3e50fa8602"/>
+				<textElement textAlignment="Center">
+					<font fontName="SansSerif" size="13" isBold="true"/>
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToTallestObject" x="496" y="30" width="76" height="15" isPrintWhenDetailOverflows="true" uuid="15eb8841-d75c-478a-80f2-4b41f418285c"/>
+				<textElement>
+					<font size="7"/>
+					<paragraph leftIndent="2" rightIndent="2" spacingBefore="2" spacingAfter="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{cabFechHoraEmiReport}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement stretchType="RelativeToBandHeight" x="402" y="60" width="94" height="16" isPrintWhenDetailOverflows="true" uuid="8fc02981-297c-44c6-9c08-9a1020f75047"/>
+				<textElement>
+					<font size="7"/>
+					<paragraph leftIndent="2" rightIndent="2" spacingBefore="2" spacingAfter="2"/>
+				</textElement>
+				<text><![CDATA[Funcionario:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement stretchType="RelativeToBandHeight" x="402" y="30" width="94" height="15" isPrintWhenDetailOverflows="true" uuid="8727d21d-0f2a-4628-ad30-ffc38210889f"/>
+				<textElement>
+					<font size="7"/>
+					<paragraph leftIndent="2" rightIndent="2" spacingBefore="2" spacingAfter="2"/>
+				</textElement>
+				<text><![CDATA[Fecha y hora de la emisión :]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToTallestObject" x="496" y="44" width="76" height="16" isPrintWhenDetailOverflows="true" uuid="7e16400b-532c-468b-af97-080a7d6a4a20"/>
+				<textElement>
+					<font size="7"/>
+					<paragraph leftIndent="2" rightIndent="2" spacingBefore="2" spacingAfter="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{cabSucursal}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement stretchType="RelativeToBandHeight" x="402" y="44" width="94" height="16" isPrintWhenDetailOverflows="true" uuid="00c0a4d8-bfdf-494b-a409-00bc7f9d7f0f"/>
+				<textElement>
+					<font size="7"/>
+					<paragraph leftIndent="2" rightIndent="2" spacingBefore="2" spacingAfter="2"/>
+				</textElement>
+				<text><![CDATA[Sucursal:]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToTallestObject" x="496" y="60" width="76" height="16" isPrintWhenDetailOverflows="true" uuid="e9c0425b-c1d9-4513-8d33-230015074bff"/>
+				<textElement>
+					<font size="7"/>
+					<paragraph leftIndent="2" rightIndent="2" spacingBefore="2" spacingAfter="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{cabFuncionario}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement stretchType="RelativeToBandHeight" x="402" y="76" width="94" height="15" isPrintWhenDetailOverflows="true" uuid="39e81769-3047-4e5b-bac6-4995244cfe73"/>
+				<textElement>
+					<font size="7"/>
+					<paragraph leftIndent="2" rightIndent="2" spacingBefore="2" spacingAfter="2"/>
+				</textElement>
+				<text><![CDATA[Fecha Consulta a B:C]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToTallestObject" x="496" y="76" width="76" height="15" isPrintWhenDetailOverflows="true" uuid="ae4cb652-9123-4a92-994f-0b87a10e7892"/>
+				<textElement>
+					<font size="7"/>
+					<paragraph leftIndent="2" rightIndent="2" spacingBefore="2" spacingAfter="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{cabFechaHoraConsultaBC}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="1" y="56" width="572" height="20" uuid="57ce42e8-8878-43be-ab06-c045c3466a10"/>
+				<textElement textAlignment="Center">
+					<font fontName="SansSerif" size="13" isBold="true"/>
+				</textElement>
+				<text><![CDATA[REPORTE DE CRÉDITO ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="76" width="572" height="20" uuid="20269370-d17d-4a09-a92a-33ca4be091fe"/>
+				<textElement textAlignment="Center">
+					<font fontName="SansSerif" size="13" isBold="true"/>
+				</textElement>
+				<text><![CDATA[INTERNO Y EXTERNO]]></text>
+			</staticText>
+			<image>
+				<reportElement x="0" y="19" width="153" height="70" uuid="4fa26c73-b7be-4179-b61b-e0f8f0821c6a"/>
+				<imageExpression><![CDATA[$P{urlPathSantander}]]></imageExpression>
+			</image>
+		</band>
+	</pageHeader>
+	<detail>
+		<band height="30" splitType="Stretch">
+			<staticText>
+				<reportElement mode="Opaque" x="0" y="0" width="572" height="15" backcolor="#CCCCCC" uuid="f46c8b62-1a04-4815-9b40-9bea8db4b7b6"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font fontName="SansSerif" size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[DATOS GENERALES]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="73" y="15" width="98" height="15" backcolor="#CCCCCC" uuid="439c5e7c-b827-4969-9438-93f20e901007"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="7" isBold="true"/>
+				</textElement>
+				<text><![CDATA[NOMBRES]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="171" y="15" width="98" height="15" backcolor="#CCCCCC" uuid="6bd3c2be-db60-4b4b-b34a-865930ba98b2"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="7" isBold="true"/>
+				</textElement>
+				<text><![CDATA[APELLIDOS]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="269" y="15" width="67" height="15" backcolor="#CCCCCC" uuid="baba36c1-9626-4ce6-9cc0-d5b37bd9c6b8"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="7" isBold="true"/>
+				</textElement>
+				<text><![CDATA[RFC]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="504" y="15" width="68" height="15" backcolor="#CCCCCC" uuid="b49da369-9ba8-49f0-be46-8bb9dd7e9f47"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="7" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ESTADO CIVIL]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="0" y="15" width="73" height="15" backcolor="#CCCCCC" uuid="680309d8-38fc-4e04-bec8-e94d7502b1c7"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="7" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ID. CLIENTE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="336" y="15" width="78" height="15" backcolor="#CCCCCC" uuid="dbf0467b-9a42-4fdc-836b-1a8c4ef9d2e5"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="7" isBold="true"/>
+				</textElement>
+				<text><![CDATA[FECHA NACIMIENTO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="414" y="15" width="90" height="15" backcolor="#CCCCCC" uuid="c3a9cc9b-a586-451a-bb5e-9bf3451f7b8d"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="7" isBold="true"/>
+				</textElement>
+				<text><![CDATA[CURP]]></text>
+			</staticText>
+		</band>
+		<band height="15">
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="0" y="0" width="73" height="15" isPrintWhenDetailOverflows="true" uuid="dd602a6b-502a-443d-b190-fe8ab13dbd35"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font size="7"/>
+					<paragraph leftIndent="2" rightIndent="2" spacingBefore="2" spacingAfter="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{datGenClaveCliUnico}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="73" y="0" width="98" height="15" isPrintWhenDetailOverflows="true" uuid="f59cab74-3583-48d9-a4a6-c020c333eb39"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement>
+					<font size="7"/>
+					<paragraph leftIndent="2" rightIndent="2" spacingBefore="2" spacingAfter="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{datGenNombres}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="171" y="0" width="98" height="15" isPrintWhenDetailOverflows="true" uuid="e6b730d0-ef6d-4f3d-a414-e39151ad6079"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement>
+					<font size="7"/>
+					<paragraph leftIndent="2" rightIndent="2" spacingBefore="2" spacingAfter="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{datGenApellidos}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="269" y="0" width="67" height="15" isPrintWhenDetailOverflows="true" uuid="f1ee8cc5-c551-4cf8-ba9b-83a9830379ee"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font size="7"/>
+					<paragraph leftIndent="2" rightIndent="2" spacingBefore="2" spacingAfter="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{datGenRFC}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="336" y="0" width="78" height="15" isPrintWhenDetailOverflows="true" uuid="d5459ec2-6564-4e3f-a8c2-1b42fb3a68b3"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font size="7"/>
+					<paragraph leftIndent="2" rightIndent="2" spacingBefore="2" spacingAfter="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{datGenFechaNacimiento}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="414" y="0" width="90" height="15" isPrintWhenDetailOverflows="true" uuid="eadc73cf-735d-48a9-b771-70b908c0bd2f"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font size="7"/>
+					<paragraph leftIndent="2" rightIndent="2" spacingBefore="2" spacingAfter="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{datGenCURP}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="504" y="0" width="68" height="15" isPrintWhenDetailOverflows="true" uuid="542c8316-1041-41c0-8784-89d2d040e13e"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font size="7"/>
+					<paragraph leftIndent="2" rightIndent="2" spacingBefore="2" spacingAfter="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{datGenEstadoCivil}]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="25"/>
+		<band height="32">
+			<subreport>
+				<reportElement x="0" y="0" width="572" height="32" uuid="d9b2036f-7ad6-493c-91b2-0d22498b18f1"/>
+				<subreportParameter name="SUBREPORT_DIR"/>
+				<subreportParameter name="cabNoFolio"/>
+				<subreportParameter name="cabFechaConsulta"/>
+				<subreportParameter name="cabHoraConsulta"/>
+				<subreportParameter name="cabFechaHoraConsultaBC"/>
+				<subreportParameter name="datGenClaveCliUnico"/>
+				<subreportParameter name="datGenNombres"/>
+				<subreportParameter name="datGenApellidos"/>
+				<subreportParameter name="datGenRFC"/>
+				<subreportParameter name="datGenFechaNacimiento"/>
+				<subreportParameter name="datGenNumIdentif"/>
+				<subreportParameter name="datGenEstadoCivil"/>
+				<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($F{domicilios})]]></dataSourceExpression>
+				<subreportExpression><![CDATA[$P{SUBREPORT_DIR} + "BuroCreditoInternoExterno_domicilio.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+		<band height="25"/>
+		<band height="56">
+			<staticText>
+				<reportElement mode="Opaque" x="433" y="15" width="47" height="41" backcolor="#CCCCCC" uuid="c5f46ae5-877b-4df9-bacc-6915f9ee43d3"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="7" isBold="true"/>
+					<paragraph leftIndent="2" rightIndent="2" spacingBefore="2" spacingAfter="2"/>
+				</textElement>
+				<text><![CDATA[SALDO CAPITAL EN MORA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="200" y="15" width="55" height="20" backcolor="#CCCCCC" uuid="f9919711-10b4-49bb-a645-0418e47b9ded"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Bottom">
+					<font fontName="SansSerif" size="7" isBold="true"/>
+					<paragraph leftIndent="2" rightIndent="2" spacingBefore="2" spacingAfter="2"/>
+				</textElement>
+				<text><![CDATA[FECHA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="255" y="15" width="40" height="41" backcolor="#CCCCCC" uuid="662ade36-a353-4293-bc2c-22493131bb2f"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="7" isBold="true"/>
+					<paragraph leftIndent="2" rightIndent="2" spacingBefore="2" spacingAfter="2"/>
+				</textElement>
+				<text><![CDATA[DIAS ATRASO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="85" y="15" width="30" height="41" backcolor="#CCCCCC" uuid="a52cf14d-bc67-4be4-8ff1-29d6d91d45bf"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="7" isBold="true"/>
+					<paragraph leftIndent="2" rightIndent="2" spacingBefore="2" spacingAfter="2"/>
+				</textElement>
+				<text><![CDATA[NRO. CICLO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="480" y="15" width="55" height="41" backcolor="#CCCCCC" uuid="511853ba-f363-4a4a-a3c8-82fd14ace257"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="7" isBold="true"/>
+					<paragraph leftIndent="2" rightIndent="2" spacingBefore="2" spacingAfter="2"/>
+				</textElement>
+				<text><![CDATA[DÍAS MORA ACUMULADOS]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="159" y="15" width="41" height="41" backcolor="#CCCCCC" uuid="56128c79-d4e3-4c23-bc40-fbbefe934481"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="7" isBold="true"/>
+					<paragraph leftIndent="2" rightIndent="2" spacingBefore="2" spacingAfter="2"/>
+				</textElement>
+				<text><![CDATA[FECHA FIN]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="0" y="0" width="572" height="15" backcolor="#CCCCCC" uuid="780e14da-3e81-4eb0-bf89-7e4e6096add2"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font fontName="SansSerif" size="8" isBold="true" isStrikeThrough="false" isPdfEmbedded="false"/>
+					<paragraph leftIndent="2" rightIndent="2" spacingBefore="2" spacingAfter="2"/>
+				</textElement>
+				<text><![CDATA[HISTÓRICO INTERNO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="341" y="15" width="45" height="41" backcolor="#CCCCCC" uuid="6fdaa4e3-4dd0-4a11-992b-5e29333a6fcb"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="7" isBold="true"/>
+					<paragraph leftIndent="2" rightIndent="2" spacingBefore="2" spacingAfter="2"/>
+				</textElement>
+				<text><![CDATA[ESTADO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="0" y="15" width="31" height="41" backcolor="#CCCCCC" uuid="e9d54e76-4b2a-4153-ac96-aecbdcd430b4"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="7" isBold="true"/>
+					<paragraph leftIndent="2" rightIndent="2" spacingBefore="2" spacingAfter="2"/>
+				</textElement>
+				<text><![CDATA[NRO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="115" y="15" width="44" height="41" backcolor="#CCCCCC" uuid="5895a300-7567-4927-a086-f7d41ee6e341"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="7" isBold="true"/>
+					<paragraph leftIndent="2" rightIndent="2" spacingBefore="2" spacingAfter="2"/>
+				</textElement>
+				<text><![CDATA[FECHA APERTURA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="295" y="15" width="46" height="41" backcolor="#CCCCCC" uuid="75c58b27-3cc8-4246-ac7b-596860ff9c5d"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="7" isBold="true"/>
+					<paragraph leftIndent="2" rightIndent="2" spacingBefore="2" spacingAfter="2"/>
+				</textElement>
+				<text><![CDATA[MONTO APROBADO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="386" y="15" width="47" height="41" backcolor="#CCCCCC" uuid="45b8a921-3bdd-4144-99d3-faf592f62319"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="7" isBold="true"/>
+					<paragraph leftIndent="2" rightIndent="2" spacingBefore="2" spacingAfter="2"/>
+				</textElement>
+				<text><![CDATA[SALDO TOTAL CAPITAL]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="535" y="15" width="37" height="41" backcolor="#CCCCCC" uuid="10efd2f7-864f-4dde-9c17-6796f1769801"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="7" isBold="true"/>
+					<paragraph leftIndent="2" rightIndent="2" spacingBefore="2" spacingAfter="2"/>
+				</textElement>
+				<text><![CDATA[MÁXIMO DÍAS DE MORA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="31" y="15" width="54" height="41" backcolor="#CCCCCC" uuid="51b38ef2-92dc-4994-b2e2-e097f5225234"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="7" isBold="true"/>
+					<paragraph leftIndent="2" rightIndent="2" spacingBefore="2" spacingAfter="2"/>
+				</textElement>
+				<text><![CDATA[ID. CRÉDITO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="200" y="35" width="55" height="21" backcolor="#CCCCCC" uuid="79c75d38-5edd-41f0-b226-42e4a423e0ac"/>
+				<box>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Top">
+					<font fontName="SansSerif" size="7" isBold="true"/>
+					<paragraph leftIndent="2" rightIndent="2" spacingBefore="2" spacingAfter="2"/>
+				</textElement>
+				<text><![CDATA[LIQUIDACIÓN]]></text>
+			</staticText>
+		</band>
+		<band height="32">
+			<subreport>
+				<reportElement x="0" y="0" width="572" height="32" uuid="2ee5438e-93e8-4fe9-9068-9dadf5774751"/>
+				<subreportParameter name="SUBREPORT_DIR"/>
+				<subreportParameter name="cabNoFolio"/>
+				<subreportParameter name="cabFechaConsulta"/>
+				<subreportParameter name="cabHoraConsulta"/>
+				<subreportParameter name="cabFechaHoraConsultaBC"/>
+				<subreportParameter name="datGenClaveCliUnico"/>
+				<subreportParameter name="datGenNombres"/>
+				<subreportParameter name="datGenApellidos"/>
+				<subreportParameter name="datGenRFC"/>
+				<subreportParameter name="datGenFechaNacimiento"/>
+				<subreportParameter name="datGenNumIdentif"/>
+				<subreportParameter name="datGenEstadoCivil"/>
+				<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($F{historico})]]></dataSourceExpression>
+				<subreportExpression><![CDATA[$P{SUBREPORT_DIR} + "BuroCreditoInternoExterno_historico.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+		<band height="25"/>
+		<band height="32">
+			<subreport>
+				<reportElement x="0" y="0" width="572" height="32" uuid="1dca9b25-fda3-4e20-9498-d1c5fac292cc"/>
+				<subreportParameter name="SUBREPORT_DIR"/>
+				<subreportParameter name="cabNoFolio"/>
+				<subreportParameter name="cabFechaConsulta"/>
+				<subreportParameter name="cabHoraConsulta"/>
+				<subreportParameter name="cabFechaHoraConsultaBC"/>
+				<subreportParameter name="datGenClaveCliUnico"/>
+				<subreportParameter name="datGenNombres"/>
+				<subreportParameter name="datGenApellidos"/>
+				<subreportParameter name="datGenRFC"/>
+				<subreportParameter name="datGenFechaNacimiento"/>
+				<subreportParameter name="datGenNumIdentif"/>
+				<subreportParameter name="datGenEstadoCivil"/>
+				<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($F{sisFinanciero})]]></dataSourceExpression>
+				<subreportExpression><![CDATA[$P{SUBREPORT_DIR} + "BuroCreditoInternoExterno_sisFinanciero.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="15" splitType="Stretch">
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement x="1" y="0" width="286" height="15" uuid="df3a5f49-4691-4059-a1f5-2a603bbe68fc"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="7"/>
+					<paragraph leftIndent="2" rightIndent="2" spacingBefore="2" spacingAfter="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{PAGE_NUMBER}+ "  /  "]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" evaluationTime="Report" isBlankWhenNull="true">
+				<reportElement x="286" y="0" width="286" height="15" uuid="d921b1a4-aadf-489a-b8d1-f2716df63685"/>
+				<textElement verticalAlignment="Middle">
+					<font size="7"/>
+					<paragraph leftIndent="2" rightIndent="2" spacingBefore="2" spacingAfter="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+</jasperReport>

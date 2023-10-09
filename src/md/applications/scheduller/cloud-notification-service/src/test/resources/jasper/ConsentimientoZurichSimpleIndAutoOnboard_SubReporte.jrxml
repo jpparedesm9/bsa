@@ -1,0 +1,703 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="ConsentimientoZurichSimpleIndAutoOnboard_SubReporte" pageWidth="576" pageHeight="763" columnWidth="576" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="4983bf99-d250-462b-b20d-1bda0375a91d">
+	<property name="ireport.zoom" value="1.1000000000000008"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="427"/>
+	<style name="table">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<parameter name="SUBREPORT_DIR" class="java.lang.String">
+		<defaultValueExpression><![CDATA["/"]]></defaultValueExpression>
+	</parameter>
+	<field name="nombre" class="java.lang.String"/>
+	<field name="rfc" class="java.lang.String"/>
+	<field name="fechanac" class="java.lang.String"/>
+	<field name="domicilio" class="java.lang.String"/>
+	<field name="colonia" class="java.lang.String"/>
+	<field name="cp" class="java.lang.String"/>
+	<field name="email" class="java.lang.String"/>
+	<field name="certificado" class="java.lang.String"/>
+	<field name="fechaini" class="java.lang.String"/>
+	<field name="fechafin" class="java.lang.String"/>
+	<field name="poliza" class="java.lang.String"/>
+	<field name="razonsocial" class="java.lang.String"/>
+	<field name="primaneta" class="java.lang.Double"/>
+	<field name="derechopoliza" class="java.lang.Double"/>
+	<field name="primatotal" class="java.lang.Double"/>
+	<field name="fechaemi" class="java.lang.String"/>
+	<field name="contratante" class="java.lang.String"/>
+	<field name="rfccontratante" class="java.lang.String"/>
+	<field name="beneficiaryList" class="java.util.List"/>
+	<variable name="variable1" class="java.lang.Integer" resetType="Page" calculation="Count"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<detail>
+		<band height="36" splitType="Stretch">
+			<staticText>
+				<reportElement x="340" y="6" width="174" height="30" uuid="5b7d1ba7-cacf-4f27-a566-7c26ce4fc72a"/>
+				<textElement textAlignment="Center">
+					<font fontName="Arial" isBold="true" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<text><![CDATA[CONSENTIMIENTO / CERTIFICADO
+Microseguro de Vida Grupo]]></text>
+			</staticText>
+			<image>
+				<reportElement x="5" y="0" width="126" height="34" uuid="5a8438eb-ed1f-4009-8e6c-298b79fd3607"/>
+				<imageExpression><![CDATA["Logo_ZS.png"]]></imageExpression>
+			</image>
+		</band>
+		<band height="264" splitType="Stretch">
+			<rectangle>
+				<reportElement x="0" y="222" width="572" height="13" forecolor="#CCCCCC" backcolor="#CCCCCC" uuid="36a6b9ab-7711-4f39-b71a-0f6f7aa52c5f"/>
+			</rectangle>
+			<staticText>
+				<reportElement style="table_TD" mode="Opaque" x="456" y="110" width="116" height="24" uuid="ec9bf038-ce2f-4c52-829f-5f720873ecd5"/>
+				<textElement markup="none">
+					<font fontName="Arial" size="9" isBold="true" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<text><![CDATA[  RFC:]]></text>
+			</staticText>
+			<rectangle>
+				<reportElement x="2" y="78" width="568" height="5" forecolor="#000000" backcolor="#000000" uuid="412847a4-3f89-4e15-b2eb-79fcdc761c86"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="0" y="68" width="572" height="12" forecolor="#CCCCCC" backcolor="#CCCCCC" uuid="aa5d2344-7b1a-42ab-9bc5-583ae7b4cae4"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="2" y="10" width="568" height="5" forecolor="#000000" backcolor="#000000" uuid="3d71db5c-089e-4304-905e-68ac830dff7c"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="0" y="0" width="572" height="12" forecolor="#CCCCCC" backcolor="#CCCCCC" uuid="422c89cf-60c0-4f9a-a649-89bf4615e799"/>
+			</rectangle>
+			<staticText>
+				<reportElement style="table_TD" x="0" y="163" width="170" height="12" uuid="e75e4708-a122-4caa-8ef4-0b2634e6a3e4"/>
+				<textElement>
+					<font fontName="Arial" size="9"/>
+					<paragraph leftIndent="8" rightIndent="8"/>
+				</textElement>
+				<text><![CDATA[Fallecimiento]]></text>
+			</staticText>
+			<rectangle>
+				<reportElement x="2" y="105" width="568" height="5" forecolor="#000000" backcolor="#000000" uuid="33954b12-f280-4e59-b383-7fe224c1ff63"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="10" y="138" width="117" height="12" uuid="dae25124-f28d-4ac3-911b-e02858d29247"/>
+				<textElement markup="none">
+					<font fontName="Arial" size="9" isBold="true" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<text><![CDATA[Nombre o Razón Social:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="4" y="15" width="100" height="12" uuid="e0e0e1a0-a914-4701-a5e4-ce1a0246ec97"/>
+				<textElement>
+					<font fontName="Arial" size="9" isBold="true" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<text><![CDATA[Nombre Completo]]></text>
+			</staticText>
+			<rectangle>
+				<reportElement x="0" y="95" width="572" height="12" forecolor="#CCCCCC" backcolor="#CCCCCC" uuid="c78dd1b5-d938-44c3-8caf-efab68b2df51"/>
+			</rectangle>
+			<staticText>
+				<reportElement style="table_TD" x="343" y="83" width="113" height="12" uuid="cc0aca4a-5ea5-4af2-b593-1551357ac19d"/>
+				<textElement markup="none">
+					<font fontName="Arial" size="9" isBold="true" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<text><![CDATA[  Fecha Fin:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Transparent" x="414" y="15" width="100" height="12" forecolor="#000000" backcolor="#FFFFFF" uuid="4f6a63f3-3fb1-490e-900c-25a23305223e"/>
+				<textElement textAlignment="Left" verticalAlignment="Top" rotation="None" markup="none">
+					<font fontName="Arial" size="9" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="Helvetica-Bold" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[Fecha de Nacimiento]]></text>
+			</staticText>
+			<rectangle>
+				<reportElement x="0" y="150" width="572" height="12" forecolor="#CCCCCC" backcolor="#CCCCCC" uuid="5e0ed784-114e-4524-9462-678fa77e6e59"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="2" y="133" width="568" height="5" forecolor="#000000" backcolor="#000000" uuid="c23e357a-f906-4cea-8c06-137dcd827e86"/>
+			</rectangle>
+			<staticText>
+				<reportElement style="table_TD" mode="Transparent" x="0" y="150" width="170" height="13" uuid="5a40d749-22a8-408a-bf17-caf877496847"/>
+				<textElement textAlignment="Center" markup="none">
+					<font fontName="Arial" isBold="true" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<text><![CDATA[DESCRIPCIÓN DE COBERTURA]]></text>
+			</staticText>
+			<rectangle>
+				<reportElement x="0" y="123" width="572" height="12" forecolor="#CCCCCC" backcolor="#CCCCCC" uuid="221dc07f-438f-4f5f-aca3-5828db9fa317"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="2" y="123" width="339" height="15" uuid="3f245274-cff0-4b6d-ac87-8ed19535a9e0"/>
+				<textElement markup="none">
+					<font fontName="Arial" isBold="true" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<text><![CDATA[DATOS DEL RECLAMANTE SUSTITUTO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Transparent" x="4" y="55" width="149" height="13" forecolor="#000000" backcolor="#FFFFFF" uuid="aa54bf61-5cdb-4522-8ef5-2287bc3a7e9e"/>
+				<textElement textAlignment="Left" verticalAlignment="Top" rotation="None" markup="none">
+					<font fontName="Arial" size="9" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="Helvetica-Bold" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[Dirección de Correo Electrónico:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="table_TD" mode="Transparent" x="190" y="221" width="192" height="15" uuid="3eea27be-1c4f-4f49-b0e8-dcf381accdf0"/>
+				<textElement textAlignment="Center">
+					<font fontName="Arial" isBold="true" isStrikeThrough="false" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<text><![CDATA[Derecho de Póliza]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Transparent" x="289" y="42" width="39" height="13" forecolor="#000000" backcolor="#FFFFFF" uuid="2f5bfa51-4376-4dd4-b611-3606408eadcc"/>
+				<textElement textAlignment="Left" verticalAlignment="Top" rotation="None" markup="none">
+					<font fontName="Arial" size="9" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="Helvetica-Bold" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[Colonia:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="table_TD" mode="Transparent" x="382" y="221" width="190" height="15" uuid="fbcec0cf-4958-47b0-8d67-61ed7db3893b"/>
+				<textElement textAlignment="Center">
+					<font fontName="Arial" isBold="true" isStrikeThrough="false" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<text><![CDATA[Prima total]]></text>
+			</staticText>
+			<line>
+				<reportElement x="286" y="15" width="1" height="39" uuid="954b16aa-ddde-4b8d-899a-075de3c40927"/>
+			</line>
+			<staticText>
+				<reportElement mode="Transparent" x="519" y="42" width="22" height="13" forecolor="#000000" backcolor="#FFFFFF" uuid="d9792df8-8f18-413c-a20d-05404963c153"/>
+				<textElement textAlignment="Left" verticalAlignment="Top" rotation="None" markup="none">
+					<font fontName="Arial" size="9" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="Helvetica-Bold" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[CP:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="table_TD" x="220" y="83" width="123" height="12" uuid="8b765561-3da6-43f2-9bcc-8bb43cae5e56"/>
+				<textElement markup="none">
+					<font fontName="Arial" size="9" isBold="true" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<text><![CDATA[  Fecha Inicio:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="table_TD" mode="Opaque" x="456" y="83" width="116" height="12" uuid="89889f0e-af8a-4cc9-a97f-5b1313a1bce6"/>
+				<textElement markup="none">
+					<font fontName="Arial" size="9" isBold="true" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<text><![CDATA[  Póliza:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Transparent" x="288" y="15" width="100" height="12" forecolor="#000000" backcolor="#FFFFFF" uuid="86c30807-2983-46a8-b9f9-72f9307c98cb"/>
+				<textElement textAlignment="Left" verticalAlignment="Top" rotation="None" markup="none">
+					<font fontName="Arial" size="9" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="Helvetica-Bold" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[RFC]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Transparent" x="4" y="42" width="48" height="12" forecolor="#000000" backcolor="#FFFFFF" uuid="e92fa6ba-1786-4b2a-84ce-2536946566f8"/>
+				<textElement textAlignment="Left" verticalAlignment="Top" rotation="None" markup="none">
+					<font fontName="Arial" size="9" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="Helvetica-Bold" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[Domicilio:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="2" y="68" width="168" height="15" uuid="802692ad-0c50-427e-997a-75ea1e95114a"/>
+				<textElement markup="none">
+					<font fontName="Arial" isBold="true" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<text><![CDATA[DATOS DEL CERTIFICADO]]></text>
+			</staticText>
+			<line>
+				<reportElement x="412" y="15" width="1" height="26" uuid="9409424d-ddfd-4a81-b98d-ac8a6324452c"/>
+			</line>
+			<line>
+				<reportElement x="0" y="41" width="572" height="1" uuid="9d6efce7-bacb-493e-93bf-2c5d6fc6cb57"/>
+			</line>
+			<staticText>
+				<reportElement style="table_TD" x="0" y="83" width="220" height="12" uuid="6b4284cd-4d17-449e-92dc-6959a6be7029"/>
+				<textElement markup="none">
+					<font fontName="Arial" size="9" isBold="true" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<text><![CDATA[  Número de Certificado:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="2" y="0" width="140" height="15" uuid="eacaa0a1-b9a4-4491-90a0-e7614e271210"/>
+				<textElement>
+					<font fontName="Arial" isBold="true" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<text><![CDATA[DATOS DEL ASEGURADO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="10" y="110" width="105" height="12" uuid="06fbcae8-2dcf-48e7-aecf-bc6779293d5e"/>
+				<textElement markup="none">
+					<font fontName="Arial" size="9" isBold="true" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<text><![CDATA[Nombre o Razón Social:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="table_TD" mode="Transparent" x="0" y="221" width="190" height="15" uuid="7acbb7c4-981d-4137-932e-ccffe0aa6590"/>
+				<textElement textAlignment="Center">
+					<font fontName="Arial" isBold="true" isStrikeThrough="false" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<text><![CDATA[Prima Neta Única]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="54" width="572" height="1" uuid="47869805-086e-4e85-a8cd-28304565a5cc"/>
+			</line>
+			<rectangle>
+				<reportElement x="0" y="252" width="572" height="12" forecolor="#CCCCCC" backcolor="#CCCCCC" uuid="2bbe6e0f-82ec-4dbf-9b58-57b2254fba78"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="2" y="95" width="339" height="15" uuid="421be9c6-a43d-4795-af25-dd365c7077e5"/>
+				<textElement markup="none">
+					<font fontName="Arial" isBold="true" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<text><![CDATA[DATOS DEL CONTRATANTE Y BENEFICIARIO PREFERENTE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="table_TD" mode="Transparent" x="0" y="251" width="572" height="13" uuid="b67e8e96-d680-4291-86a5-99bafc90cfaa"/>
+				<textElement textAlignment="Left">
+					<font fontName="Arial" isBold="true" isStrikeThrough="false" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<text><![CDATA[ BENEFICIARIOS DESIGNADOS]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="table_TD" x="0" y="197" width="170" height="12" uuid="46713a72-5283-499e-b54d-53ede418ec85"/>
+				<textElement>
+					<font fontName="Arial" size="9"/>
+					<paragraph leftIndent="8" rightIndent="8"/>
+				</textElement>
+				<text><![CDATA[Enfermedades Graves]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="table_TD" x="0" y="209" width="170" height="12" uuid="795539b4-3895-4e0e-9541-572e5bd78100"/>
+				<textElement>
+					<font fontName="Arial" size="9"/>
+					<paragraph leftIndent="8" rightIndent="8"/>
+				</textElement>
+				<text><![CDATA[Anticipo por enfermedad terminal]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="4" y="27" width="280" height="14" uuid="3c0ba1ad-fc67-466a-be9f-d6685044c350"/>
+				<textElement>
+					<font fontName="Arial" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{nombre}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="288" y="28" width="122" height="14" uuid="0105af35-adbb-4f23-988e-b7ddc1a2e233"/>
+				<textElement>
+					<font fontName="Arial" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{rfc}]]></textFieldExpression>
+			</textField>
+			<textField pattern="dd/MM/yyyy">
+				<reportElement x="414" y="28" width="156" height="14" uuid="407dea43-6ac0-44dc-9bd4-5ace05f1463f"/>
+				<textElement>
+					<font fontName="Arial" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{fechanac}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="52" y="42" width="232" height="12" uuid="2bca37e0-4d1d-46e0-9d71-2f4523f598a7"/>
+				<textElement>
+					<font fontName="Arial" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{domicilio}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="327" y="42" width="185" height="12" uuid="89370679-7c78-4522-9f7c-2b1dc161ece2"/>
+				<textElement>
+					<font fontName="Arial" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{colonia}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="537" y="42" width="32" height="12" uuid="600db4fb-c0ab-4ce2-be9f-1ef8c4be862d"/>
+				<textElement>
+					<font fontName="Arial" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{cp}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="152" y="55" width="418" height="12" uuid="d37cf370-e43d-4be6-8cfb-938b3c789d68"/>
+				<textElement>
+					<font fontName="Arial" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{email}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="109" y="83" width="110" height="12" uuid="abafe25f-39df-441a-8140-462e7da11b51"/>
+				<textElement>
+					<font fontName="Arial" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{certificado}]]></textFieldExpression>
+			</textField>
+			<textField pattern="dd/MM/yyyy" isBlankWhenNull="false">
+				<reportElement x="282" y="83" width="60" height="12" uuid="630eb3e3-88dc-48d6-aa91-cf1e1fd0192d"/>
+				<textElement>
+					<font fontName="Arial" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{fechaini}]]></textFieldExpression>
+			</textField>
+			<textField pattern="dd/MM/yyyy">
+				<reportElement x="395" y="83" width="60" height="12" uuid="1acc8496-79fb-4113-9230-193aa5907cba"/>
+				<textElement>
+					<font fontName="Arial" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{fechafin}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="492" y="83" width="78" height="12" uuid="6b6d7c3e-c9c7-4030-b00d-c004d2a72097"/>
+				<textElement>
+					<font fontName="Arial" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{poliza}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="127" y="138" width="443" height="12" uuid="bd8433dd-d0ad-4438-8420-f2f848be7b4b"/>
+				<textElement>
+					<font fontName="Arial" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{razonsocial}]]></textFieldExpression>
+			</textField>
+			<textField pattern="¤ #,##0.00">
+				<reportElement style="table_TD" x="0" y="236" width="190" height="15" uuid="138d758d-4768-4fdd-a270-50e852ae7cca"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA["$ " + $F{primaneta} + "0 MXN"]]></textFieldExpression>
+			</textField>
+			<textField pattern="¤ #,##0.00">
+				<reportElement style="table_TD" x="190" y="236" width="192" height="15" uuid="94bdb5f1-16e9-4585-886c-0f4bded151da"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA["$ " + $F{derechopoliza} + "0 MXN"]]></textFieldExpression>
+			</textField>
+			<textField pattern="¤ #,##0.00">
+				<reportElement style="table_TD" x="382" y="236" width="190" height="15" uuid="5ab2a02a-f8c1-4dfa-9b4d-e7eebc0ae143"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA["$ " +  $F{primatotal} + "0 MXN"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="118" y="110" width="335" height="12" uuid="abaeefd9-472b-445f-ac70-1faf42319e76"/>
+				<textElement>
+					<font fontName="Arial" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{contratante}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="486" y="110" width="85" height="12" uuid="b4f17a09-4385-49de-9c60-7f6c6e9e7058"/>
+				<textElement>
+					<font fontName="Arial" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{rfccontratante}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement style="table_TD" x="0" y="174" width="170" height="23" uuid="dc51427c-35e8-4feb-bc97-2c8a0f8ded59"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial" size="9"/>
+					<paragraph leftIndent="8" rightIndent="8"/>
+				</textElement>
+				<text><![CDATA[Saldo Deudor]]></text>
+			</staticText>
+			<line>
+				<reportElement x="515" y="42" width="1" height="12" uuid="0c073827-f202-4b7d-b7b5-f33e823ebe8b"/>
+			</line>
+			<staticText>
+				<reportElement style="table_TD" x="170" y="163" width="402" height="11" uuid="7426245b-3bb9-41d0-b14e-964c8c7d2f93"/>
+				<textElement>
+					<font fontName="Arial" size="9"/>
+					<paragraph leftIndent="8" rightIndent="8"/>
+				</textElement>
+				<text><![CDATA[Suma Asegurada Fija de $20,000 MXN para beneficiarios del titular.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="table_TD" mode="Transparent" x="170" y="150" width="402" height="13" uuid="5dcaca33-87d0-47ca-b42a-84c37aebcfc3"/>
+				<textElement textAlignment="Center" markup="none">
+					<font fontName="Arial" isBold="true" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<text><![CDATA[Suma Asegurada o Regla para Determinarla]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="table_TD" x="170" y="174" width="402" height="23" uuid="c85c2370-4f75-476a-aaae-b93dd00153d8"/>
+				<textElement>
+					<font fontName="Arial" size="9"/>
+					<paragraph leftIndent="8" rightIndent="8"/>
+				</textElement>
+				<text><![CDATA[Saldo insoluto del crédito a la fecha del siniestro, integrado por capital e Intereses Ordinarios (No incluye moratorios, ni cuotas o pagos vencidos).]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="table_TD" x="170" y="197" width="402" height="12" uuid="ecc6725c-3a6c-4d7c-92da-df4aa8a15657"/>
+				<textElement>
+					<font fontName="Arial" size="9"/>
+					<paragraph leftIndent="8" rightIndent="8"/>
+				</textElement>
+				<text><![CDATA[Suma asegurada de $5,000 MXN al asegurado en caso de enfermedad grave.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="table_TD" x="170" y="209" width="402" height="12" uuid="30fdaf64-c3e2-473d-b8fa-7bd86e3acdb4"/>
+				<textElement>
+					<font fontName="Arial" size="9"/>
+					<paragraph leftIndent="8" rightIndent="8"/>
+				</textElement>
+				<text><![CDATA[Anticipo del 30% de la suma asegurada de fallecimiento.]]></text>
+			</staticText>
+		</band>
+		<band height="50">
+			<subreport>
+				<reportElement x="0" y="0" width="572" height="50" uuid="b4259811-bdba-4a0b-9eaa-a93943fbea22"/>
+				<subreportParameter name="DIR"/>
+				<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($F{beneficiaryList})]]></dataSourceExpression>
+				<subreportExpression><![CDATA[$P{SUBREPORT_DIR} + "ConsentimientoZurichSimpleIndAutoOnboard_SubBeneficiary.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+		<band height="15">
+			<rectangle>
+				<reportElement x="3" y="10" width="568" height="5" forecolor="#000000" backcolor="#000000" uuid="495e3c4c-9268-40a9-92fe-a794fafee7dd"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="1" y="0" width="572" height="12" forecolor="#CCCCCC" backcolor="#CCCCCC" uuid="f7dd2d3b-bfc6-409c-a106-2d1a99a285eb"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="2" y="0" width="339" height="15" uuid="417b4a2c-2dfc-4826-8591-ae0fe45a0b90"/>
+				<textElement markup="styled">
+					<font fontName="Arial" isBold="true" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<text><![CDATA[<b>AVISO DE PRIVACIDAD</b>]]></text>
+			</staticText>
+		</band>
+		<band height="15" splitType="Stretch">
+			<textField isStretchWithOverflow="true">
+				<reportElement stretchType="RelativeToTallestObject" x="1" y="0" width="572" height="15" isPrintWhenDetailOverflows="true" uuid="921279d4-77a3-4e56-9a01-dbb4286b5801"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Justified" markup="html">
+					<paragraph leftIndent="8" rightIndent="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Zurich Santander Seguros México, S.A., señalando como domicilio convencional para los efectos relacionados con el presente aviso el ubicado en Av. Juan Salvador Agraz #73, pisos 3 y 4 Col. Santa Fe Cuajimalpa, Del. Cuajimalpa de Morelos, C.P. 05348. México, CDMX hace de su conocimiento que sus datos personales serán protegidos de acuerdo a lo establecido por la Ley Federal de Protección de Datos Personales en Posesión de los Particulares así como por nuestra política de privacidad y que el tratamiento que se haga de sus datos será con la finalidad, enunciando sin limitar, de dar cumplimiento a las obligaciones contractuales pactadas entre las partes, la realización de actividades propias, relacionadas y derivadas de nuestro objeto social, así como para fines comerciales y promocionales. Usted podrá consultar nuestro aviso de privacidad completo en la página <b style=\"color:#0000FF\">www.zurichsantander.com.mx</b>"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="23">
+			<printWhenExpression><![CDATA[$F{beneficiaryList}.size() >= 20 && $F{beneficiaryList}.size() <= 21]]></printWhenExpression>
+			<break>
+				<reportElement x="0" y="13" width="100" height="1" uuid="087411f0-522e-44ab-9aa6-2c70c32cc8f7"/>
+			</break>
+		</band>
+		<band height="58">
+			<staticText>
+				<reportElement style="table_TD" x="2" y="15" width="572" height="28" uuid="56d573c0-b63c-471b-854f-f54622ea89ee"/>
+				<textElement textAlignment="Justified" markup="styled">
+					<font fontName="Arial"/>
+					<paragraph leftIndent="8" rightIndent="8"/>
+				</textElement>
+				<text><![CDATA[Av. Insurgentes Sur # 762, planta baja, Col. Del Valle, Del. Benito Juárez, C.P.03100, México, Ciudad de México Correo Electrónico: <style isBold="true" forecolor="blue">asesoria@condusef.gob.mx</style>, Página web: <style isBold="true" forecolor="blue">http://www.condusef.gob.mx</style>,Teléfonos: 55-5340 0999]]></text>
+			</staticText>
+			<rectangle>
+				<reportElement x="4" y="10" width="568" height="5" forecolor="#000000" backcolor="#000000" uuid="7080eb96-a4cb-41eb-a40c-5283ccdeeb81"/>
+			</rectangle>
+			<staticText>
+				<reportElement mode="Opaque" x="2" y="0" width="572" height="12" forecolor="#000000" backcolor="#CCCCCC" uuid="40e8dd05-f477-4154-aa48-0b5ca2023679"/>
+				<textElement markup="none">
+					<font fontName="Arial" isBold="true" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<text><![CDATA[CONDUSEF]]></text>
+			</staticText>
+			<textField pattern="dd/MM/yyyy">
+				<reportElement x="106" y="43" width="156" height="15" uuid="71bb24ff-4336-4b81-ba49-235c8e7a9cee"/>
+				<textElement>
+					<font fontName="Arial" size="9" isBold="true" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{fechaemi}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="2" y="43" width="104" height="15" uuid="ccaf44ec-7b70-4d0b-9ff5-7cee1d31e5ce"/>
+				<textElement>
+					<font fontName="Arial" isBold="true" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<text><![CDATA[  Fecha de Emisión:]]></text>
+			</staticText>
+		</band>
+		<band height="84">
+			<printWhenExpression><![CDATA[$F{beneficiaryList}.size() <= 1 || $F{beneficiaryList}.size() == 11]]></printWhenExpression>
+			<image>
+				<reportElement x="356" y="11" width="138" height="42" uuid="ba465f07-13d9-4424-8bd2-a3e27ef765d9"/>
+				<imageExpression><![CDATA["firmaZurich.png"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="24" y="57" width="235" height="27" uuid="28c14aed-6fbb-480e-8c14-d60ae29c7345"/>
+				<textElement>
+					<font size="9"/>
+				</textElement>
+				<text><![CDATA[Otorgo mi consentimiento para recibir la Documentación
+Contractual en el correo indicado en Datos del Asegurado.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="24" y="46" width="235" height="15" uuid="04f82f19-0a0b-4bf8-8df6-3ea4f5f3ee7f"/>
+				<textElement textAlignment="Center">
+					<font fontName="Arial" size="9" isBold="true" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<text><![CDATA[FIRMA DEL ASEGURADO]]></text>
+			</staticText>
+			<line>
+				<reportElement x="75" y="46" width="133" height="1" uuid="8df73125-ba31-47e5-8c9b-7416785756e9"/>
+			</line>
+			<staticText>
+				<reportElement x="328" y="47" width="212" height="15" uuid="56305379-84f4-4637-ab95-ee0af3eb393d"/>
+				<textElement textAlignment="Center">
+					<font fontName="Arial" size="9" isBold="true" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<text><![CDATA[ZURICH SANTANDER SEGUROS MEXICO, S.A.]]></text>
+			</staticText>
+			<line>
+				<reportElement x="328" y="47" width="212" height="1" uuid="9318364b-95cd-49f4-b25a-0b6c87e3a719"/>
+			</line>
+			<staticText>
+				<reportElement x="328" y="57" width="212" height="15" uuid="8cdc61bb-20d6-4ad0-9239-b596bb0c37cb"/>
+				<textElement textAlignment="Center">
+					<font size="9"/>
+				</textElement>
+				<text><![CDATA[Funcionario]]></text>
+			</staticText>
+		</band>
+		<band height="23">
+			<printWhenExpression><![CDATA[$F{beneficiaryList}.size() >= 12 && $F{beneficiaryList}.size() <= 17]]></printWhenExpression>
+			<break>
+				<reportElement x="0" y="10" width="100" height="1" uuid="c6d46f89-eae5-404f-9e8c-a929ed8339dd"/>
+			</break>
+		</band>
+		<band height="105">
+			<printWhenExpression><![CDATA[($F{beneficiaryList}.size() >= 2 && $F{beneficiaryList}.size() <= 10 ) || $F{beneficiaryList}.size() >= 12]]></printWhenExpression>
+			<image>
+				<reportElement x="356" y="32" width="138" height="42" uuid="ba465f07-13d9-4424-8bd2-a3e27ef765d9"/>
+				<imageExpression><![CDATA["firmaZurich.png"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="24" y="78" width="235" height="27" uuid="28c14aed-6fbb-480e-8c14-d60ae29c7345"/>
+				<textElement>
+					<font size="9"/>
+				</textElement>
+				<text><![CDATA[Otorgo mi consentimiento para recibir la Documentación
+Contractual en el correo indicado en Datos del Asegurado.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="24" y="67" width="235" height="15" uuid="04f82f19-0a0b-4bf8-8df6-3ea4f5f3ee7f"/>
+				<textElement textAlignment="Center">
+					<font fontName="Arial" size="9" isBold="true" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<text><![CDATA[FIRMA DEL ASEGURADO]]></text>
+			</staticText>
+			<line>
+				<reportElement x="75" y="67" width="133" height="1" uuid="8df73125-ba31-47e5-8c9b-7416785756e9"/>
+			</line>
+			<staticText>
+				<reportElement x="328" y="68" width="212" height="15" uuid="56305379-84f4-4637-ab95-ee0af3eb393d"/>
+				<textElement textAlignment="Center">
+					<font fontName="Arial" size="9" isBold="true" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<text><![CDATA[ZURICH SANTANDER SEGUROS MEXICO, S.A.]]></text>
+			</staticText>
+			<line>
+				<reportElement x="328" y="68" width="212" height="1" uuid="9318364b-95cd-49f4-b25a-0b6c87e3a719"/>
+			</line>
+			<staticText>
+				<reportElement x="328" y="78" width="212" height="15" uuid="8cdc61bb-20d6-4ad0-9239-b596bb0c37cb"/>
+				<textElement textAlignment="Center">
+					<font size="9"/>
+				</textElement>
+				<text><![CDATA[Funcionario]]></text>
+			</staticText>
+		</band>
+		<band height="33">
+			<staticText>
+				<reportElement x="1" y="4" width="572" height="29" uuid="54d2abb6-b95c-425c-89bd-1564602b5164"/>
+				<textElement textAlignment="Justified">
+					<font fontName="Arial" size="10" isBold="false" isItalic="true"/>
+					<paragraph leftIndent="8" rightIndent="8"/>
+				</textElement>
+				<text><![CDATA[“ADVERTENCIA: En el caso de que se nombre beneficiarios a menores de edad, NO SE DEBE señalar a un mayor de edad como representante de los menores para efecto de que, en su representación, cobre la indemnización.”]]></text>
+			</staticText>
+		</band>
+		<band height="41">
+			<staticText>
+				<reportElement mode="Opaque" x="1" y="0" width="572" height="41" uuid="dec12125-d9db-4090-8b0c-109e40db563f"/>
+				<textElement textAlignment="Justified" markup="styled">
+					<font fontName="Arial" isItalic="true"/>
+					<paragraph leftIndent="8" rightIndent="8"/>
+				</textElement>
+				<text><![CDATA[Usted puede acceder a este Contrato de Seguro a través del RECAS (Registro de Contratos de Adhesión de Seguros) de la Comisión Nacional para la Protección y Defensa de los Usuarios de Servicios Financieros (CONDUSEF), a través de la siguiente dirección electrónica: <style isBold="true" forecolor="blue">www.condusef.gob.mx</style> o en nuestra página de internet.]]></text>
+			</staticText>
+		</band>
+		<band height="33">
+			<printWhenExpression><![CDATA[$F{beneficiaryList}.size() >= 2 && $F{beneficiaryList}.size() <= 5]]></printWhenExpression>
+			<break>
+				<reportElement x="0" y="12" width="100" height="1" uuid="ccda89de-09e7-4d95-b615-e367f463da2f"/>
+			</break>
+			<textField pattern="dd/MM/yyyy">
+				<reportElement x="106" y="18" width="156" height="15" uuid="3ba13ed7-f79a-4cfd-9b99-2837fa1adb79"/>
+				<textElement>
+					<font fontName="Arial" size="9" isBold="true" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<textFieldExpression><![CDATA["   "]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="29">
+			<staticText>
+				<reportElement mode="Transparent" x="3" y="0" width="571" height="29" forecolor="#000000" backcolor="#FFFFFF" uuid="b973d017-5615-4fa6-9acc-f3cc2c20df96"/>
+				<textElement textAlignment="Justified" verticalAlignment="Top" rotation="None" markup="styled">
+					<font fontName="Arial" size="10" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="Helvetica" pdfEncoding="Cp1252" isPdfEmbedded="true"/>
+					<paragraph lineSpacing="Single" leftIndent="8" rightIndent="8"/>
+				</textElement>
+				<text><![CDATA[<style isBold="true" pdfFontName="Helvetica-Bold"><b>Zurich Santander Seguros México, S.A.,</b></style> Av. Juan Salvador Agraz #73, pisos 3 y 4 Col. Santa Fe Cuajimalpa, Del. Cuajimalpa de Morelos, C.P. 05348. México, CDMX, Tel. 51 69 43 00 en toda la República Mexicana.]]></text>
+			</staticText>
+		</band>
+		<band height="43">
+			<staticText>
+				<reportElement x="2" y="3" width="572" height="40" uuid="361b6ff6-c69c-4943-867f-e930a98ac68c"/>
+				<textElement textAlignment="Justified">
+					<font fontName="Arial"/>
+					<paragraph leftIndent="8" rightIndent="8"/>
+				</textElement>
+				<text><![CDATA[En cumplimiento a lo dispuesto en el artículo 202 de la Ley de Instituciones de Seguros y de Fianzas, la documentación contractual y la nota técnica que integran este producto de seguro, quedaron registradas ante la Comisión Nacional de Seguros y Fianzas, a partir del día 02 de Octubre de 2020, con el número CNSF-S0018-0461-2020 / CONDUSEF-004575-01]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="42" width="572" height="1" forecolor="#FF0033" uuid="0336cf22-2cce-4622-8b2f-c6caf3c71367"/>
+			</line>
+			<line>
+				<reportElement x="3" y="2" width="572" height="1" forecolor="#FF0033" uuid="90c95510-3773-4e4d-9503-f50b99f60ebc"/>
+			</line>
+		</band>
+	</detail>
+</jasperReport>

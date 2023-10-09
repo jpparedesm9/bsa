@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<procedure>
+  <database>cob_cartera</database>
+  <name>sp_prorroga_cuota</name>
+  <type>SQLSERVER</type>
+  <version>1</version>
+  <parameters>
+    <parameter name="@s_sesn" dataType="int" direction="in" />
+    <parameter name="@s_user" dataType="varchar" direction="in" />
+    <parameter name="@s_term" dataType="varchar" direction="in" />
+    <parameter name="@s_date" dataType="datetime" direction="in" />
+    <parameter name="@s_ofi" dataType="smallint" direction="in" />
+    <parameter name="@s_ssn" dataType="int" direction="in" />
+    <parameter name="@s_srv" dataType="varchar" direction="in" />
+    <parameter name="@s_lsrv" dataType="varchar" direction="in" />
+    <parameter name="@s_org" dataType="char" direction="in" />
+    <parameter name="@t_trn" dataType="int" direction="in" />
+    <parameter name="@i_operacion" dataType="char" direction="in" />
+    <parameter name="@i_modo" dataType="char" direction="in" />
+    <parameter name="@i_banco" dataType="varchar" direction="in" />
+    <parameter name="@i_fecha" dataType="datetime" direction="in" />
+    <parameter name="@i_formato_fecha" dataType="smallint" direction="in" />
+    <parameter name="@i_cuota" dataType="smallint" direction="in" />
+    <parameter name="@i_valor_calculado" dataType="money" direction="in" />
+    <parameter name="@i_fecha_vencimiento" dataType="datetime" direction="in" />
+    <parameter name="@i_fecha_max_prorroga" dataType="datetime" direction="in" />
+    <parameter name="@i_fecha_prorroga" dataType="datetime" direction="in" />
+    <parameter name="@i_concepto" dataType="char" direction="in" />
+    <parameter name="@i_valor" dataType="money" direction="in" />
+    <parameter name="@i_estado_div" dataType="varchar" direction="in" />
+  </parameters>
+  <queries>
+    <query>
+      <columns>
+        <column name="No. CUOTA" />
+        <column name="FECHA INICIO" />
+        <column name="FECHA VENCIMIENTO" />
+        <column name="PAGO CAPITAL" />
+        <column name="PAGO INTERES" />
+        <column name="PAGO OTROS" />
+        <column name="PAGO TOTAL" />
+        <column name="ESTADO" />
+      </columns>
+      <queryText>SELECT  "No. CUOTA" = de_dividendo,"FECHA INICIO" = CONVERT (VARCHAR (10),de_fechaini ,?),"FECHA VENCIMIENTO" = CONVERT (VARCHAR (10),de_fecha ,?),"PAGO CAPITAL" = CONVERT (MONEY,de_pago_cap ),"PAGO INTERES" = CONVERT (MONEY,de_pago_int ),"PAGO OTROS" = CONVERT (MONEY,de_pago_otr ),"PAGO TOTAL" = CONVERT (MONEY,de_pago ),"ESTADO" = de_estado </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="{1}" />
+      </columns>
+      <queryText>SELECT o_valor_cuota</queryText>
+    </query>
+  </queries>
+</procedure>

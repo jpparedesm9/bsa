@@ -1,0 +1,33 @@
+use cobis
+go
+
+if exists (select * from sys.objects where object_id = OBJECT_ID(N'cob_credito..fn_aleatoria'))
+	drop function fn_aleatoria
+go
+
+create function fn_aleatoria 
+(    
+    @w_size 	int --Tamaño de la cadena aleatoria
+)
+returns varchar(16)
+as
+begin  
+
+    DECLARE @w_strPass  varchar(16),
+            @w_cont  	int,
+			@w_index 	int
+
+    select @w_strPass = ''    
+
+    select @w_cont = 0
+    while @w_cont < @w_size
+    begin
+		select @w_index = ABS(Checksum(random_value) % 26) + 1 from random_val_view
+        select @w_strPass = @w_strPass + substring('ABCDEFGHIJKLMNOPQRSTUVWXYZ', @w_index, 1)
+        select @w_cont = @w_cont + 1
+    end  
+	
+return @w_strPass
+
+end
+go

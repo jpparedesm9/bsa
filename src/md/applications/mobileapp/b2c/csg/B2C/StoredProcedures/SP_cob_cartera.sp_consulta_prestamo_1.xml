@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<procedure>
+  <database>cob_cartera</database>
+  <name>sp_consulta_prestamo</name>
+  <type>SQLSERVER</type>
+  <version>1</version>
+  <parameters>
+    <parameter name="@i_cliente" dataType="int" direction="in" />
+    <parameter name="@i_operacion" dataType="char" direction="in" />
+    <parameter name="@i_op_operacion" dataType="int" direction="in" />
+    <parameter name="@i_toperacion" dataType="varchar" direction="" />
+  </parameters>
+  <queries>
+    <query>
+      <columns>
+        <column name="OPERACION" />
+        <column name="TIPOOPERACION" />
+        <column name="BANCO" />
+        <column name="INST_PROC" />
+        <column name="PERMITEPAGO" />
+        <column name="PERMITEDISPERSION" />
+        <column name="ETIQUETA" />
+        <column name="VALOR" />
+      </columns>
+      <queryText>SELECT  "OPERACION" = operacion,"TIPOOPERACION" = tipo_operacion,"ETIQUETA" = etiqueta,"VALOR" = valor </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="OPERACION" />
+        <column name="TIPOOPERACION" />
+        <column name="TIPOMOVIMIENTO" />
+        <column name="FECHAMOVIMIENTO" />
+        <column name="VALORMOVIMIENTO" />
+        <column name="ESTADOTRN" />
+      </columns>
+      <queryText></queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="FECHAULTIMOACCESO" />
+        <column name="CORREOELECTRONICO" />
+        <column name="SOCIOCOMERCIAL" />
+      </columns>
+      <queryText></queryText>
+    </query>
+  </queries>
+</procedure>

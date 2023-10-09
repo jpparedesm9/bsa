@@ -1,0 +1,1669 @@
+{
+  "id": {
+    "moduleId": "BUSIN",
+    "subModuleId": "commons",
+    "taskId": "T_VW_ORIAHEADER86",
+    "version": "1.0.0"
+  },
+  "name": {
+    "$ref": "../../../../BUSIN/relations/componentKeys.json#/commons/Forms/T_VW_ORIAHEADER86/name"
+  },
+  "modeEnabled": 4095,
+  "tempSaveStr": "F",
+  "autoCrudStr": "F",
+  "mainViewContainerId": "VC_VW_ORIAHEADER86",
+  "customizationLayer": 0,
+  "customizationLayerDescription": "ECU",
+  "viewContainers": [
+    {
+      "id": {
+        "moduleId": "BUSIN",
+        "subModuleId": "commons",
+        "taskId": "T_VW_ORIAHEADER86",
+        "viewContainerId": "VC_VW_ORIAHEADER86",
+        "taskVersion": "1.0.0"
+      },
+      "name": "F_HeaderView",
+      "description": " ",
+      "layoutType": "Group",
+      "order": 0,
+      "options": 0,
+      "collapsedStr": "F",
+      "enabled": 4095,
+      "customizationLayer": 0,
+      "customizationLayerDescription": "ECU",
+      "columnsNum": 1,
+      "colSpan": 1,
+      "collapsed": false,
+      "view": {
+        "id": {
+          "viewId": "VW_ORIAHEADER86",
+          "version": "1.0.0"
+        },
+        "description": "Vista para la Cabecera de flujos de credito SIMPLE",
+        "name": "HeaderView",
+        "customizationLayer": 0,
+        "customizationLayerDescription": "ECU",
+        "groups": [
+          {
+            "groupId": "GR_ORIAHEADER86_03",
+            "refViewId": "VW_ORIAHEADER86",
+            "refViewVersion": "1.0.0",
+            "collapsedStr": "F",
+            "columnsNum": 1,
+            "layoutType": "GroupLayout",
+            "enabled": 4095,
+            "visible": 4095,
+            "name": "[Grupo Sin Nombre]",
+            "order": 1,
+            "customizationLayer": 0,
+            "customizationLayerDescription": "ECU",
+            "colSpan": 1,
+            "orientation": "V",
+            "groups": [
+              {
+                "groupId": "GR_ORIAHEADER86_05",
+                "refViewId": "VW_ORIAHEADER86",
+                "refViewVersion": "1.0.0",
+                "collapsedStr": "F",
+                "columnsNum": 3,
+                "layoutType": "Group",
+                "enabled": 4095,
+                "visible": 4095,
+                "name": "GrpCredit",
+                "order": 0,
+                "customizationLayer": 0,
+                "customizationLayerDescription": "ECU",
+                "colSpan": 1,
+                "orientation": "V",
+                "entity": {
+                  "$ref": "../../../../BUSIN/entities/EN_ENIDADINO519.json#"
+                },
+                "visualAttributes": [
+                  {
+                    "visualAttributeId": "VA_ORIAHEADER8605_ORTR915",
+                    "colSpan": 1,
+                    "enabled": 4095,
+                    "order": 0,
+                    "queryVersion": " ",
+                    "readOnly": 8,
+                    "rowSpan": 0,
+                    "visible": 4095,
+                    "textRows": 0,
+                    "catalogName": "cl_oficina",
+                    "name": "oficina",
+                    "customizationLayer": 0,
+                    "customizationLayerDescription": "ECU",
+                    "attribute": {
+                      "$ref": "../../../../BUSIN/entities/EN_ENIDADINO519.json#/attributes/AT_ENI519ORTR52"
+                    },
+                    "label": {
+                      "labelId": "DLB_BUSIN_OFICINAJD_61287",
+                      "defaultValue": {
+                        "$ref": "../../../../BUSIN/assets/languages/BUSIN.json#/BUSIN/LBL/DLB_BUSIN_OFICINAJD_61287"
+                      },
+                      "hasI18N": false,
+                      "moduleId": "BUSIN",
+                      "customizationLayer": 0,
+                      "customizationLayerDescription": "ECU",
+                      "i18N": "F"
+                    },
+                    "userControl": {
+                      "userControlId": "ComboBox",
+                      "description": "Designer ComboBox",
+                      "customizationLayer": 0,
+                      "customizationLayerDescription": "ECU",
+                      "type": "I",
+                      "name": "Designer ComboBox"
+                    },
+                    "customEvents": [
+                      {
+                        "executionType": 1,
+                        "customEventId": "CEVA_104_DER8605_ORTR915_989",
+                        "enabled": "T",
+                        "customizationLayer": 0,
+                        "customizationLayerDescription": "ECU",
+                        "visualAttributeEventType": {
+                          "eventId": 104,
+                          "name": "Changed",
+                          "description": "Se ejecuta al cambiar el valor de un VisualAttribute"
+                        },
+                        "thereAnServerEvent": false,
+                        "thereAnClientEvent": true,
+                        "thereAnCallbackEvent": false,
+                        "isEnabled": true
+                      }
+                    ],
+                    "cacheDuration": 0,
+                    "options": 0,
+                    "elementColumnSpan": 1,
+                    "elementId": "VA_ORIAHEADER8605_ORTR915",
+                    "aggregateId": null,
+                    "aggregate": null,
+                    "width": null,
+                    "style": null,
+                    "componentStyle": null,
+                    "include": 4095,
+                    "responsiveLayouts": null,
+                    "responsivity": false,
+                    "attributeValidations": []
+                  },
+                  {
+                    "visualAttributeId": "VA_ORIAHEADER8605_ERTO640",
+                    "colSpan": 1,
+                    "enabled": 4095,
+                    "order": 1,
+                    "queryVersion": " ",
+                    "readOnly": 8,
+                    "rowSpan": 0,
+                    "visible": 4095,
+                    "textRows": 0,
+                    "name": "lineaCredito",
+                    "customizationLayer": 0,
+                    "customizationLayerDescription": "ECU",
+                    "attribute": {
+                      "$ref": "../../../../BUSIN/entities/EN_ENIDADINO519.json#/attributes/AT_ENI519ERTO37"
+                    },
+                    "label": {
+                      "labelId": "DLB_BUSIN_CREDILINE_85557",
+                      "defaultValue": {
+                        "$ref": "../../../../BUSIN/assets/languages/BUSIN.json#/BUSIN/LBL/DLB_BUSIN_CREDILINE_85557"
+                      },
+                      "hasI18N": true,
+                      "moduleId": "BUSIN",
+                      "customizationLayer": 0,
+                      "customizationLayerDescription": "ECU",
+                      "i18N": "T"
+                    },
+                    "userControl": {
+                      "userControlId": "ComboBox",
+                      "description": "Designer ComboBox",
+                      "customizationLayer": 0,
+                      "customizationLayerDescription": "ECU",
+                      "type": "I",
+                      "name": "Designer ComboBox"
+                    },
+                    "customEvents": [
+                      {
+                        "executionType": 1,
+                        "customEventId": "CEVA_110_DER8605_ERTO640_415",
+                        "enabled": "T",
+                        "customizationLayer": 0,
+                        "customizationLayerDescription": "ECU",
+                        "visualAttributeEventType": {
+                          "eventId": 110,
+                          "name": "LoadCatalogData",
+                          "description": "Sobreescribe la carga de datos de un catálogo"
+                        },
+                        "thereAnServerEvent": false,
+                        "thereAnClientEvent": true,
+                        "thereAnCallbackEvent": false,
+                        "isEnabled": true
+                      }
+                    ],
+                    "cacheDuration": 0,
+                    "options": 1,
+                    "elementColumnSpan": 1,
+                    "elementId": "VA_ORIAHEADER8605_ERTO640",
+                    "aggregateId": null,
+                    "aggregate": null,
+                    "width": null,
+                    "style": null,
+                    "componentStyle": null,
+                    "include": 4095,
+                    "responsiveLayouts": null,
+                    "responsivity": false,
+                    "attributeValidations": []
+                  },
+                  {
+                    "visualAttributeId": "VA_ORIAHEADER8605_TIRC927",
+                    "colSpan": 1,
+                    "enabled": 4095,
+                    "order": 2,
+                    "queryVersion": " ",
+                    "readOnly": 8,
+                    "rowSpan": 0,
+                    "visible": 4095,
+                    "textRows": 0,
+                    "name": "tipoProducto",
+                    "customizationLayer": 0,
+                    "customizationLayerDescription": "ECU",
+                    "attribute": {
+                      "$ref": "../../../../BUSIN/entities/EN_ENIDADINO519.json#/attributes/AT_ENI519TIRC04"
+                    },
+                    "label": {
+                      "labelId": "DLB_BUSIN_PROUCTTPE_88016",
+                      "defaultValue": {
+                        "$ref": "../../../../BUSIN/assets/languages/BUSIN.json#/BUSIN/LBL/DLB_BUSIN_PROUCTTPE_88016"
+                      },
+                      "hasI18N": true,
+                      "moduleId": "BUSIN",
+                      "customizationLayer": 0,
+                      "customizationLayerDescription": "ECU",
+                      "i18N": "T"
+                    },
+                    "userControl": {
+                      "userControlId": "ComboBox",
+                      "description": "Designer ComboBox",
+                      "customizationLayer": 0,
+                      "customizationLayerDescription": "ECU",
+                      "type": "I",
+                      "name": "Designer ComboBox"
+                    },
+                    "customEvents": [
+                      {
+                        "executionType": 1,
+                        "customEventId": "CEVA_104_DER8605_TIRC927_177",
+                        "enabled": "T",
+                        "customizationLayer": 0,
+                        "customizationLayerDescription": "ECU",
+                        "visualAttributeEventType": {
+                          "eventId": 104,
+                          "name": "Changed",
+                          "description": "Se ejecuta al cambiar el valor de un VisualAttribute"
+                        },
+                        "thereAnServerEvent": false,
+                        "thereAnClientEvent": true,
+                        "thereAnCallbackEvent": false,
+                        "isEnabled": true
+                      },
+                      {
+                        "executionType": 1,
+                        "customEventId": "CEVA_110_DER8605_TIRC927_582",
+                        "enabled": "T",
+                        "customizationLayer": 0,
+                        "customizationLayerDescription": "ECU",
+                        "visualAttributeEventType": {
+                          "eventId": 110,
+                          "name": "LoadCatalogData",
+                          "description": "Sobreescribe la carga de datos de un catálogo"
+                        },
+                        "thereAnServerEvent": false,
+                        "thereAnClientEvent": true,
+                        "thereAnCallbackEvent": false,
+                        "isEnabled": true
+                      }
+                    ],
+                    "cacheDuration": 0,
+                    "options": 0,
+                    "elementColumnSpan": 1,
+                    "elementId": "VA_ORIAHEADER8605_TIRC927",
+                    "aggregateId": null,
+                    "aggregate": null,
+                    "width": null,
+                    "style": null,
+                    "componentStyle": null,
+                    "include": 4095,
+                    "responsiveLayouts": null,
+                    "responsivity": false,
+                    "attributeValidations": []
+                  },
+                  {
+                    "visualAttributeId": "VA_ORIAHEADER8605_0000029",
+                    "colSpan": 1,
+                    "enabled": 4095,
+                    "order": 3,
+                    "queryVersion": " ",
+                    "readOnly": 8,
+                    "rowSpan": 0,
+                    "visible": 4095,
+                    "textRows": 0,
+                    "name": "spacer",
+                    "customizationLayer": 0,
+                    "customizationLayerDescription": "ECU",
+                    "label": {
+                      "labelId": "SYS_DSGNR_LBLESTETQ_00024",
+                      "defaultValue": {
+                        "$ref": "../../../../DSGNR/assets/languages/DSGNR.json#/DSGNR/LBL/SYS_DSGNR_LBLESTETQ_00024"
+                      },
+                      "hasI18N": true,
+                      "moduleId": "DSGNR",
+                      "customizationLayer": 0,
+                      "customizationLayerDescription": "ECU",
+                      "i18N": "T"
+                    },
+                    "userControl": {
+                      "userControlId": "Spacer",
+                      "description": "Designer Spacer",
+                      "customizationLayer": 0,
+                      "customizationLayerDescription": "ECU",
+                      "type": "I",
+                      "name": "Designer Spacer"
+                    },
+                    "cacheDuration": 0,
+                    "options": 0,
+                    "elementColumnSpan": 1,
+                    "elementId": "VA_ORIAHEADER8605_0000029",
+                    "customEvents": [],
+                    "aggregateId": null,
+                    "aggregate": null,
+                    "width": null,
+                    "style": null,
+                    "componentStyle": null,
+                    "include": 4095,
+                    "responsiveLayouts": null,
+                    "responsivity": false,
+                    "attributeValidations": []
+                  },
+                  {
+                    "visualAttributeId": "VA_ORIAHEADER8605_0000344",
+                    "colSpan": 1,
+                    "enabled": 4095,
+                    "order": 4,
+                    "queryVersion": " ",
+                    "readOnly": 8,
+                    "rowSpan": 0,
+                    "visible": 4095,
+                    "textRows": 0,
+                    "name": "spacer2",
+                    "customizationLayer": 0,
+                    "customizationLayerDescription": "ECU",
+                    "label": {
+                      "labelId": "SYS_DSGNR_LBLESTETQ_00024",
+                      "defaultValue": {
+                        "$ref": "../../../../DSGNR/assets/languages/DSGNR.json#/DSGNR/LBL/SYS_DSGNR_LBLESTETQ_00024"
+                      },
+                      "hasI18N": true,
+                      "moduleId": "DSGNR",
+                      "customizationLayer": 0,
+                      "customizationLayerDescription": "ECU",
+                      "i18N": "T"
+                    },
+                    "userControl": {
+                      "userControlId": "Spacer",
+                      "description": "Designer Spacer",
+                      "customizationLayer": 0,
+                      "customizationLayerDescription": "ECU",
+                      "type": "I",
+                      "name": "Designer Spacer"
+                    },
+                    "cacheDuration": 0,
+                    "options": 0,
+                    "elementColumnSpan": 1,
+                    "elementId": "VA_ORIAHEADER8605_0000344",
+                    "customEvents": [],
+                    "aggregateId": null,
+                    "aggregate": null,
+                    "width": null,
+                    "style": null,
+                    "componentStyle": null,
+                    "include": 4095,
+                    "responsiveLayouts": null,
+                    "responsivity": false,
+                    "attributeValidations": []
+                  },
+                  {
+                    "visualAttributeId": "VA_ORIAHEADER8605_SETO998",
+                    "colSpan": 1,
+                    "enabled": 4095,
+                    "order": 5,
+                    "queryVersion": " ",
+                    "readOnly": 8,
+                    "rowSpan": 0,
+                    "visible": 4095,
+                    "textRows": 0,
+                    "name": "sector",
+                    "customizationLayer": 0,
+                    "customizationLayerDescription": "ECU",
+                    "attribute": {
+                      "$ref": "../../../../BUSIN/entities/EN_ENIDADINO519.json#/attributes/AT_ENI519SETO20"
+                    },
+                    "label": {
+                      "labelId": "DLB_BUSIN_SEGMENTOZ_60870",
+                      "defaultValue": {
+                        "$ref": "../../../../BUSIN/assets/languages/BUSIN.json#/BUSIN/LBL/DLB_BUSIN_SEGMENTOZ_60870"
+                      },
+                      "hasI18N": true,
+                      "moduleId": "BUSIN",
+                      "customizationLayer": 0,
+                      "customizationLayerDescription": "ECU",
+                      "i18N": "T"
+                    },
+                    "userControl": {
+                      "userControlId": "ComboBox",
+                      "description": "Designer ComboBox",
+                      "customizationLayer": 0,
+                      "customizationLayerDescription": "ECU",
+                      "type": "I",
+                      "name": "Designer ComboBox"
+                    },
+                    "relatedVisualAttribute": "VA_ORIAHEADER8605_TIRC927",
+                    "customEvents": [
+                      {
+                        "executionType": 1,
+                        "customEventId": "CEVA_104_DER8605_SETO998_615",
+                        "enabled": "T",
+                        "customizationLayer": 0,
+                        "customizationLayerDescription": "ECU",
+                        "visualAttributeEventType": {
+                          "eventId": 104,
+                          "name": "Changed",
+                          "description": "Se ejecuta al cambiar el valor de un VisualAttribute"
+                        },
+                        "thereAnServerEvent": false,
+                        "thereAnClientEvent": true,
+                        "thereAnCallbackEvent": false,
+                        "isEnabled": true
+                      },
+                      {
+                        "executionType": 1,
+                        "customEventId": "CEVA_110_DER8605_SETO998_177",
+                        "enabled": "T",
+                        "customizationLayer": 0,
+                        "customizationLayerDescription": "ECU",
+                        "visualAttributeEventType": {
+                          "eventId": 110,
+                          "name": "LoadCatalogData",
+                          "description": "Sobreescribe la carga de datos de un catálogo"
+                        },
+                        "thereAnServerEvent": false,
+                        "thereAnClientEvent": true,
+                        "thereAnCallbackEvent": false,
+                        "isEnabled": true
+                      }
+                    ],
+                    "cacheDuration": 0,
+                    "options": 0,
+                    "elementColumnSpan": 1,
+                    "elementId": "VA_ORIAHEADER8605_SETO998",
+                    "aggregateId": null,
+                    "aggregate": null,
+                    "width": null,
+                    "style": null,
+                    "componentStyle": null,
+                    "include": 4095,
+                    "responsiveLayouts": null,
+                    "responsivity": false,
+                    "attributeValidations": [],
+                    "relatedVisualAttributeName": {
+                      "$ref": "../../../../BUSIN/entities/EN_ENIDADINO519.json#/attributes/AT_ENI519TIRC04/name"
+                    }
+                  },
+                  {
+                    "visualAttributeId": "VA_ORIAHEADER8605_OCRI261",
+                    "colSpan": 1,
+                    "enabled": 4095,
+                    "order": 6,
+                    "queryVersion": " ",
+                    "readOnly": 8,
+                    "rowSpan": 0,
+                    "visible": 4095,
+                    "textRows": 0,
+                    "name": "destinoFinanciero",
+                    "customizationLayer": 0,
+                    "customizationLayerDescription": "ECU",
+                    "attribute": {
+                      "$ref": "../../../../BUSIN/entities/EN_ENIDADINO519.json#/attributes/AT_ENI519OCRI94"
+                    },
+                    "label": {
+                      "labelId": "DLB_BUSIN_FNAALPOEL_12452",
+                      "defaultValue": {
+                        "$ref": "../../../../BUSIN/assets/languages/BUSIN.json#/BUSIN/LBL/DLB_BUSIN_FNAALPOEL_12452"
+                      },
+                      "hasI18N": true,
+                      "moduleId": "BUSIN",
+                      "customizationLayer": 0,
+                      "customizationLayerDescription": "ECU",
+                      "i18N": "T"
+                    },
+                    "userControl": {
+                      "userControlId": "ComboBox",
+                      "description": "Designer ComboBox",
+                      "customizationLayer": 0,
+                      "customizationLayerDescription": "ECU",
+                      "type": "I",
+                      "name": "Designer ComboBox"
+                    },
+                    "relatedVisualAttribute": "VA_ORIAHEADER8605_SETO998",
+                    "customEvents": [
+                      {
+                        "executionType": 1,
+                        "customEventId": "CEVA_110_DER8605_OCRI261_051",
+                        "enabled": "T",
+                        "customizationLayer": 0,
+                        "customizationLayerDescription": "ECU",
+                        "visualAttributeEventType": {
+                          "eventId": 110,
+                          "name": "LoadCatalogData",
+                          "description": "Sobreescribe la carga de datos de un catálogo"
+                        },
+                        "thereAnServerEvent": false,
+                        "thereAnClientEvent": true,
+                        "thereAnCallbackEvent": false,
+                        "isEnabled": true
+                      }
+                    ],
+                    "cacheDuration": 0,
+                    "options": 0,
+                    "elementColumnSpan": 1,
+                    "elementId": "VA_ORIAHEADER8605_OCRI261",
+                    "aggregateId": null,
+                    "aggregate": null,
+                    "width": null,
+                    "style": null,
+                    "componentStyle": null,
+                    "include": 4095,
+                    "responsiveLayouts": null,
+                    "responsivity": false,
+                    "attributeValidations": [],
+                    "relatedVisualAttributeName": {
+                      "$ref": "../../../../BUSIN/entities/EN_ENIDADINO519.json#/attributes/AT_ENI519SETO20/name"
+                    }
+                  },
+                  {
+                    "visualAttributeId": "VA_ORIAHEADER8605_0000740",
+                    "colSpan": 1,
+                    "enabled": 4095,
+                    "order": 7,
+                    "queryVersion": " ",
+                    "readOnly": 8,
+                    "rowSpan": 0,
+                    "visible": 4095,
+                    "textRows": 0,
+                    "name": "DestiEconCompose",
+                    "customizationLayer": 0,
+                    "customizationLayerDescription": "ECU",
+                    "maxRecords": 2,
+                    "attribute": {
+                      "$ref": "../../../../BUSIN/entities/EN_ENIDADINO519.json#/attributes/AT_ENI519EIIR12"
+                    },
+                    "label": {
+                      "labelId": "SYS_DSGNR_LBLESTETQ_00024",
+                      "defaultValue": {
+                        "$ref": "../../../../DSGNR/assets/languages/DSGNR.json#/DSGNR/LBL/SYS_DSGNR_LBLESTETQ_00024"
+                      },
+                      "hasI18N": true,
+                      "moduleId": "DSGNR",
+                      "customizationLayer": 0,
+                      "customizationLayerDescription": "ECU",
+                      "i18N": "T"
+                    },
+                    "userControl": {
+                      "userControlId": "CompositeVA",
+                      "description": "Composite Designer",
+                      "customizationLayer": 0,
+                      "customizationLayerDescription": "ECU",
+                      "type": "I",
+                      "name": "Composite Designer"
+                    },
+                    "cacheDuration": 0,
+                    "options": 0,
+                    "elementColumnSpan": 1,
+                    "elementId": "VA_ORIAHEADER8605_0000740",
+                    "visualAttributes": [
+                      {
+                        "visualAttributeId": "VA_ORIAHEADER8605_MIUS039",
+                        "colSpan": 1,
+                        "enabled": 4095,
+                        "order": 8,
+                        "queryVersion": " ",
+                        "readOnly": 0,
+                        "rowSpan": 0,
+                        "visible": 4095,
+                        "textRows": 0,
+                        "name": "DescripcionDetBusq",
+                        "customizationLayer": 0,
+                        "customizationLayerDescription": "ECU",
+                        "maxRecords": 20,
+                        "minChars": 4,
+                        "type": "contains",
+                        "attribute": {
+                          "$ref": "../../../../BUSIN/entities/EN_ENIDADINO519.json#/attributes/AT_ENI519MIUS48"
+                        },
+                        "label": {
+                          "labelId": "DLB_BUSIN_OOMICPRPE_26369",
+                          "defaultValue": {
+                            "$ref": "../../../../BUSIN/assets/languages/BUSIN.json#/BUSIN/LBL/DLB_BUSIN_OOMICPRPE_26369"
+                          },
+                          "hasI18N": true,
+                          "moduleId": "BUSIN",
+                          "customizationLayer": 0,
+                          "customizationLayerDescription": "ECU",
+                          "i18N": "T"
+                        },
+                        "userControl": {
+                          "userControlId": "ComboBox",
+                          "description": "Designer ComboBox",
+                          "customizationLayer": 0,
+                          "customizationLayerDescription": "ECU",
+                          "type": "I",
+                          "name": "Designer ComboBox"
+                        },
+                        "customEvents": [
+                          {
+                            "executionType": 1,
+                            "customEventId": "CEVA_104_DER8605_MIUS039_693",
+                            "enabled": "T",
+                            "customizationLayer": 0,
+                            "customizationLayerDescription": "ECU",
+                            "visualAttributeEventType": {
+                              "eventId": 104,
+                              "name": "Changed",
+                              "description": "Se ejecuta al cambiar el valor de un VisualAttribute"
+                            },
+                            "thereAnServerEvent": false,
+                            "thereAnClientEvent": true,
+                            "thereAnCallbackEvent": false,
+                            "isEnabled": true
+                          },
+                          {
+                            "executionType": 1,
+                            "customEventId": "CEVA_110_DER8605_MIUS039_394",
+                            "enabled": "T",
+                            "customizationLayer": 0,
+                            "customizationLayerDescription": "ECU",
+                            "visualAttributeEventType": {
+                              "eventId": 110,
+                              "name": "LoadCatalogData",
+                              "description": "Sobreescribe la carga de datos de un catálogo"
+                            },
+                            "thereAnServerEvent": false,
+                            "thereAnClientEvent": true,
+                            "thereAnCallbackEvent": false,
+                            "isEnabled": true
+                          }
+                        ],
+                        "cacheDuration": 0,
+                        "options": 32768,
+                        "elementColumnSpan": 1,
+                        "elementId": "VA_ORIAHEADER8605_MIUS039",
+                        "aggregateId": null,
+                        "aggregate": null,
+                        "width": null,
+                        "style": null,
+                        "componentStyle": null,
+                        "include": 4095,
+                        "responsiveLayouts": null,
+                        "responsivity": false,
+                        "attributeValidations": []
+                      },
+                      {
+                        "visualAttributeId": "VA_ORIAHEADER8605_EIIR755",
+                        "colSpan": 1,
+                        "enabled": 4095,
+                        "order": 9,
+                        "queryVersion": " ",
+                        "readOnly": 8,
+                        "rowSpan": 0,
+                        "visible": 4095,
+                        "textRows": 0,
+                        "name": "DescriptionDestEcon",
+                        "customizationLayer": 0,
+                        "customizationLayerDescription": "ECU",
+                        "imageId": "glyphicon glyphicon-align-justify",
+                        "userControl": {
+                          "userControlId": "Button",
+                          "description": "Designer Button",
+                          "customizationLayer": 0,
+                          "customizationLayerDescription": "ECU",
+                          "type": "A",
+                          "name": "Designer Button"
+                        },
+                        "customEvents": [
+                          {
+                            "executionType": 1,
+                            "customEventId": "CEVA_010_DER8605_EIIR755_109",
+                            "enabled": "T",
+                            "customizationLayer": 0,
+                            "customizationLayerDescription": "ECU",
+                            "visualAttributeEventType": {
+                              "eventId": 10,
+                              "name": "ExecuteCommand",
+                              "description": "Permite personalizar la acción a ejecutar de un command o de un ActionControl"
+                            },
+                            "thereAnServerEvent": false,
+                            "thereAnClientEvent": true,
+                            "thereAnCallbackEvent": false,
+                            "isEnabled": true
+                          }
+                        ],
+                        "cacheDuration": 0,
+                        "options": 32768,
+                        "elementColumnSpan": 1,
+                        "elementId": "VA_ORIAHEADER8605_EIIR755",
+                        "aggregateId": null,
+                        "aggregate": null,
+                        "width": null,
+                        "style": null,
+                        "componentStyle": null,
+                        "include": 4095,
+                        "responsiveLayouts": null,
+                        "responsivity": false,
+                        "attributeValidations": []
+                      }
+                    ],
+                    "customEvents": [],
+                    "aggregateId": null,
+                    "aggregate": null,
+                    "width": null,
+                    "style": null,
+                    "componentStyle": null,
+                    "include": 4095,
+                    "responsiveLayouts": null,
+                    "responsivity": false,
+                    "attributeValidations": []
+                  },
+                  {
+                    "visualAttributeId": "VA_ORIAHEADER8605_ENEO318",
+                    "colSpan": 1,
+                    "enabled": 4095,
+                    "order": 10,
+                    "queryVersion": " ",
+                    "readOnly": 8,
+                    "rowSpan": 0,
+                    "visible": 0,
+                    "textRows": 0,
+                    "name": "destinoEconomico",
+                    "customizationLayer": 0,
+                    "customizationLayerDescription": "ECU",
+                    "attribute": {
+                      "$ref": "../../../../BUSIN/entities/EN_ENIDADINO519.json#/attributes/AT_ENI519ENEO19"
+                    },
+                    "label": {
+                      "labelId": "DLB_BUSIN_OOMICPRPE_26369",
+                      "defaultValue": {
+                        "$ref": "../../../../BUSIN/assets/languages/BUSIN.json#/BUSIN/LBL/DLB_BUSIN_OOMICPRPE_26369"
+                      },
+                      "hasI18N": true,
+                      "moduleId": "BUSIN",
+                      "customizationLayer": 0,
+                      "customizationLayerDescription": "ECU",
+                      "i18N": "T"
+                    },
+                    "userControl": {
+                      "userControlId": "TextInputBox",
+                      "description": "Designer TextBox",
+                      "customizationLayer": 0,
+                      "customizationLayerDescription": "ECU",
+                      "type": "I",
+                      "name": "Designer TextBox"
+                    },
+                    "relatedVisualAttribute": "VA_ORIAHEADER8605_OCRI261",
+                    "cacheDuration": 0,
+                    "options": 0,
+                    "elementColumnSpan": 1,
+                    "elementId": "VA_ORIAHEADER8605_ENEO318",
+                    "customEvents": [],
+                    "aggregateId": null,
+                    "aggregate": null,
+                    "width": null,
+                    "style": null,
+                    "componentStyle": null,
+                    "include": 4095,
+                    "responsiveLayouts": null,
+                    "responsivity": false,
+                    "attributeValidations": [],
+                    "relatedVisualAttributeName": {
+                      "$ref": "../../../../BUSIN/entities/EN_ENIDADINO519.json#/attributes/AT_ENI519OCRI94/name"
+                    }
+                  },
+                  {
+                    "visualAttributeId": "VA_ORIAHEADER8605_OEIO709",
+                    "colSpan": 1,
+                    "enabled": 4095,
+                    "order": 11,
+                    "queryVersion": " ",
+                    "readOnly": 8,
+                    "rowSpan": 0,
+                    "visible": 4095,
+                    "textRows": 0,
+                    "name": "otroDestino",
+                    "customizationLayer": 0,
+                    "customizationLayerDescription": "ECU",
+                    "attribute": {
+                      "$ref": "../../../../BUSIN/entities/EN_ENIDADINO519.json#/attributes/AT_ENI519OEIO78"
+                    },
+                    "label": {
+                      "labelId": "DLB_BUSIN_DESTINOPJ_77271",
+                      "defaultValue": {
+                        "$ref": "../../../../BUSIN/assets/languages/BUSIN.json#/BUSIN/LBL/DLB_BUSIN_DESTINOPJ_77271"
+                      },
+                      "hasI18N": true,
+                      "moduleId": "BUSIN",
+                      "customizationLayer": 0,
+                      "customizationLayerDescription": "ECU",
+                      "i18N": "T"
+                    },
+                    "userControl": {
+                      "userControlId": "ComboBox",
+                      "description": "Designer ComboBox",
+                      "customizationLayer": 0,
+                      "customizationLayerDescription": "ECU",
+                      "type": "I",
+                      "name": "Designer ComboBox"
+                    },
+                    "relatedVisualAttribute": "VA_ORIAHEADER8605_SETO998",
+                    "customEvents": [
+                      {
+                        "executionType": 1,
+                        "customEventId": "CEVA_110_DER8605_OEIO709_772",
+                        "enabled": "T",
+                        "customizationLayer": 0,
+                        "customizationLayerDescription": "ECU",
+                        "visualAttributeEventType": {
+                          "eventId": 110,
+                          "name": "LoadCatalogData",
+                          "description": "Sobreescribe la carga de datos de un catálogo"
+                        },
+                        "thereAnServerEvent": false,
+                        "thereAnClientEvent": true,
+                        "thereAnCallbackEvent": false,
+                        "isEnabled": true
+                      }
+                    ],
+                    "cacheDuration": 0,
+                    "options": 16,
+                    "elementColumnSpan": 1,
+                    "elementId": "VA_ORIAHEADER8605_OEIO709",
+                    "aggregateId": null,
+                    "aggregate": null,
+                    "width": null,
+                    "style": null,
+                    "componentStyle": null,
+                    "include": 4095,
+                    "responsiveLayouts": null,
+                    "responsivity": false,
+                    "attributeValidations": [],
+                    "relatedVisualAttributeName": {
+                      "$ref": "../../../../BUSIN/entities/EN_ENIDADINO519.json#/attributes/AT_ENI519SETO20/name"
+                    }
+                  },
+                  {
+                    "visualAttributeId": "VA_ORIAHEADER8605_0000790",
+                    "colSpan": 3,
+                    "enabled": 4095,
+                    "order": 13,
+                    "queryVersion": " ",
+                    "readOnly": 8,
+                    "rowSpan": 0,
+                    "visible": 4095,
+                    "textRows": 0,
+                    "name": "SEPARATOR",
+                    "customizationLayer": 0,
+                    "customizationLayerDescription": "ECU",
+                    "userControl": {
+                      "userControlId": "Separator",
+                      "description": "Designer Separator",
+                      "customizationLayer": 0,
+                      "customizationLayerDescription": "ECU",
+                      "type": "I",
+                      "name": "Designer Separator"
+                    },
+                    "cacheDuration": 0,
+                    "options": 0,
+                    "elementColumnSpan": 3,
+                    "elementId": "VA_ORIAHEADER8605_0000790",
+                    "customEvents": [],
+                    "aggregateId": null,
+                    "aggregate": null,
+                    "width": null,
+                    "style": null,
+                    "componentStyle": null,
+                    "include": 4095,
+                    "responsiveLayouts": null,
+                    "responsivity": false,
+                    "attributeValidations": []
+                  }
+                ],
+                "independentValidation": "F",
+                "htmlSection": false,
+                "eventType": 0,
+                "numberOfColumnsInContainer": 3,
+                "elementColumnSpan": 1,
+                "collapsed": false,
+                "elementId": "GR_ORIAHEADER86_05",
+                "style": null,
+                "customEvents": []
+              },
+              {
+                "groupId": "GR_ORIAHEADER86_02",
+                "refViewId": "VW_ORIAHEADER86",
+                "refViewVersion": "1.0.0",
+                "collapsedStr": "F",
+                "columnsNum": 3,
+                "layoutType": "Group",
+                "enabled": 4095,
+                "visible": 4095,
+                "name": "GRUOP_HEADER",
+                "order": 2,
+                "customizationLayer": 0,
+                "customizationLayerDescription": "ECU",
+                "colSpan": 1,
+                "orientation": "V",
+                "entity": {
+                  "$ref": "../../../../BUSIN/entities/EN_RIGNLEADE477.json#"
+                },
+                "visualAttributes": [
+                  {
+                    "visualAttributeId": "VA_ORIAHEADER8602_URQT595",
+                    "colSpan": 1,
+                    "enabled": 4095,
+                    "order": 0,
+                    "queryVersion": " ",
+                    "readOnly": 8,
+                    "rowSpan": 0,
+                    "visible": 4095,
+                    "textRows": 0,
+                    "name": "CurrencyRequested",
+                    "orientation": "V",
+                    "customizationLayer": 0,
+                    "customizationLayerDescription": "ECU",
+                    "attribute": {
+                      "$ref": "../../../../BUSIN/entities/EN_RIGNLEADE477.json#/attributes/AT_RIG477URQT91"
+                    },
+                    "label": {
+                      "labelId": "DLB_BUSIN_RENEQESED_71054",
+                      "defaultValue": {
+                        "$ref": "../../../../BUSIN/assets/languages/BUSIN.json#/BUSIN/LBL/DLB_BUSIN_RENEQESED_71054"
+                      },
+                      "hasI18N": true,
+                      "moduleId": "BUSIN",
+                      "customizationLayer": 0,
+                      "customizationLayerDescription": "ECU",
+                      "i18N": "T"
+                    },
+                    "userControl": {
+                      "userControlId": "ComboBox",
+                      "description": "Designer ComboBox",
+                      "customizationLayer": 0,
+                      "customizationLayerDescription": "ECU",
+                      "type": "I",
+                      "name": "Designer ComboBox"
+                    },
+                    "labelToolTip": {
+                      "labelId": "DLB_BUSIN_RENEQESED_71054",
+                      "defaultValue": {
+                        "$ref": "../../../../BUSIN/assets/languages/BUSIN.json#/BUSIN/LBL/DLB_BUSIN_RENEQESED_71054"
+                      },
+                      "hasI18N": true,
+                      "moduleId": "BUSIN",
+                      "customizationLayer": 0,
+                      "customizationLayerDescription": "ECU",
+                      "i18N": "T"
+                    },
+                    "customEvents": [
+                      {
+                        "executionType": 1,
+                        "customEventId": "CEVA_104_DER8602_URQT595_894",
+                        "enabled": "T",
+                        "customizationLayer": 0,
+                        "customizationLayerDescription": "ECU",
+                        "visualAttributeEventType": {
+                          "eventId": 104,
+                          "name": "Changed",
+                          "description": "Se ejecuta al cambiar el valor de un VisualAttribute"
+                        },
+                        "thereAnServerEvent": false,
+                        "thereAnClientEvent": true,
+                        "thereAnCallbackEvent": false,
+                        "isEnabled": true
+                      },
+                      {
+                        "executionType": 1,
+                        "customEventId": "CEVA_110_DER8602_URQT595_770",
+                        "enabled": "T",
+                        "customizationLayer": 0,
+                        "customizationLayerDescription": "ECU",
+                        "visualAttributeEventType": {
+                          "eventId": 110,
+                          "name": "LoadCatalogData",
+                          "description": "Sobreescribe la carga de datos de un catálogo"
+                        },
+                        "thereAnServerEvent": false,
+                        "thereAnClientEvent": true,
+                        "thereAnCallbackEvent": false,
+                        "isEnabled": true
+                      }
+                    ],
+                    "cacheDuration": 0,
+                    "options": 1,
+                    "elementColumnSpan": 1,
+                    "elementId": "VA_ORIAHEADER8602_URQT595",
+                    "aggregateId": null,
+                    "aggregate": null,
+                    "width": null,
+                    "style": null,
+                    "componentStyle": null,
+                    "include": 4095,
+                    "responsiveLayouts": null,
+                    "responsivity": false,
+                    "attributeValidations": []
+                  },
+                  {
+                    "visualAttributeId": "VA_ORIAHEADER8602_OQUE134",
+                    "colSpan": 1,
+                    "enabled": 4095,
+                    "format": "|N:#,##0.00||USD|",
+                    "order": 1,
+                    "queryVersion": " ",
+                    "readOnly": 8,
+                    "rowSpan": 0,
+                    "visible": 4095,
+                    "textRows": 0,
+                    "name": "AmountRequested",
+                    "orientation": "V",
+                    "customizationLayer": 0,
+                    "customizationLayerDescription": "ECU",
+                    "attributeValidations": [
+                      {
+                        "id": "VV_ORIAHEADER8602_OQUE134_48",
+                        "minValue": "0",
+                        "compareOperator": 2,
+                        "customizationLayer": 0,
+                        "customizationLayerDescription": "ECU",
+                        "visualValidationType": {
+                          "visualValidationId": "Compare",
+                          "description": "Compare Validation"
+                        },
+                        "validateMessageLabel": {
+                          "labelId": "DLB_BUSIN_GEDTTDCRO_41910",
+                          "defaultValue": {
+                            "$ref": "../../../../BUSIN/assets/languages/BUSIN.json#/BUSIN/MSG/DLB_BUSIN_GEDTTDCRO_41910"
+                          },
+                          "hasI18N": true,
+                          "moduleId": "BUSIN",
+                          "customizationLayer": 0,
+                          "customizationLayerDescription": "ECU",
+                          "i18N": "T"
+                        }
+                      },
+                      {
+                        "id": "VV_ORIAHEADER8602_OQUE134_19",
+                        "compareOperator": 0,
+                        "customizationLayer": 0,
+                        "customizationLayerDescription": "ECU",
+                        "visualValidationType": {
+                          "visualValidationId": "CustomValidate",
+                          "description": "Custom Validation"
+                        }
+                      }
+                    ],
+                    "attribute": {
+                      "$ref": "../../../../BUSIN/entities/EN_RIGNLEADE477.json#/attributes/AT_RIG477OQUE10"
+                    },
+                    "label": {
+                      "labelId": "DLB_BUSIN_AMOUTREED_14545",
+                      "defaultValue": {
+                        "$ref": "../../../../BUSIN/assets/languages/BUSIN.json#/BUSIN/LBL/DLB_BUSIN_AMOUTREED_14545"
+                      },
+                      "hasI18N": true,
+                      "moduleId": "BUSIN",
+                      "customizationLayer": 0,
+                      "customizationLayerDescription": "ECU",
+                      "i18N": "T"
+                    },
+                    "userControl": {
+                      "userControlId": "TextInputBox",
+                      "description": "Designer TextBox",
+                      "customizationLayer": 0,
+                      "customizationLayerDescription": "ECU",
+                      "type": "I",
+                      "name": "Designer TextBox"
+                    },
+                    "labelToolTip": {
+                      "labelId": "DLB_BUSIN_AMOUTREED_14545",
+                      "defaultValue": {
+                        "$ref": "../../../../BUSIN/assets/languages/BUSIN.json#/BUSIN/LBL/DLB_BUSIN_AMOUTREED_14545"
+                      },
+                      "hasI18N": true,
+                      "moduleId": "BUSIN",
+                      "customizationLayer": 0,
+                      "customizationLayerDescription": "ECU",
+                      "i18N": "T"
+                    },
+                    "customEvents": [
+                      {
+                        "executionType": 1,
+                        "customEventId": "CEVA_104_DER8602_OQUE134_371",
+                        "enabled": "T",
+                        "customizationLayer": 0,
+                        "customizationLayerDescription": "ECU",
+                        "visualAttributeEventType": {
+                          "eventId": 104,
+                          "name": "Changed",
+                          "description": "Se ejecuta al cambiar el valor de un VisualAttribute"
+                        },
+                        "thereAnServerEvent": false,
+                        "thereAnClientEvent": true,
+                        "thereAnCallbackEvent": false,
+                        "isEnabled": true
+                      },
+                      {
+                        "executionType": 1,
+                        "visualAttributeEventType": {
+                          "name": "CustomValidate",
+                          "eventId": 316,
+                          "description": "Permite personalizar una validacion asociada a un visual attribute",
+                          "availableExecutionType": 1
+                        },
+                        "customEventId": "CEVA_316VA_ORIAHEADER8602_OQUE134_803",
+                        "filter": null,
+                        "enabled": "T",
+                        "customizationLayer": 0,
+                        "customizationLayerDescription": "ECU",
+                        "isEnabled": true
+                      }
+                    ],
+                    "cacheDuration": 0,
+                    "options": 0,
+                    "elementColumnSpan": 1,
+                    "elementId": "VA_ORIAHEADER8602_OQUE134",
+                    "aggregateId": null,
+                    "aggregate": null,
+                    "width": null,
+                    "style": null,
+                    "componentStyle": null,
+                    "include": 4095,
+                    "responsiveLayouts": null,
+                    "responsivity": false
+                  },
+                  {
+                    "visualAttributeId": "VA_ORIAHEADER8602_MICI826",
+                    "colSpan": 1,
+                    "enabled": 4095,
+                    "format": "|N:#,##0.00||USD|",
+                    "order": 2,
+                    "queryVersion": " ",
+                    "readOnly": 8,
+                    "rowSpan": 0,
+                    "visible": 4095,
+                    "textRows": 0,
+                    "name": "AmountAprobed",
+                    "customizationLayer": 0,
+                    "customizationLayerDescription": "ECU",
+                    "attributeValidations": [
+                      {
+                        "id": "VV_ORIAHEADER8602_MICI826_71",
+                        "visualAttribute2": "VA_ORIAHEADER8602_OQUE134",
+                        "compareOperator": 5,
+                        "customizationLayer": 0,
+                        "customizationLayerDescription": "ECU",
+                        "visualValidationType": {
+                          "visualValidationId": "Compare",
+                          "description": "Compare Validation"
+                        },
+                        "validateMessageLabel": {
+                          "labelId": "DLB_BUSIN_OOOORLARR_83157",
+                          "defaultValue": {
+                            "$ref": "../../../../BUSIN/assets/languages/BUSIN.json#/BUSIN/MSG/DLB_BUSIN_OOOORLARR_83157"
+                          },
+                          "hasI18N": true,
+                          "moduleId": "BUSIN",
+                          "customizationLayer": 0,
+                          "customizationLayerDescription": "ECU",
+                          "i18N": "T"
+                        }
+                      },
+                      {
+                        "id": "VV_ORIAHEADER8602_MICI826_84",
+                        "compareOperator": 0,
+                        "customizationLayer": 0,
+                        "customizationLayerDescription": "ECU",
+                        "visualValidationType": {
+                          "visualValidationId": "CustomValidate",
+                          "description": "Custom Validation"
+                        }
+                      }
+                    ],
+                    "attribute": {
+                      "$ref": "../../../../BUSIN/entities/EN_RIGNLEADE477.json#/attributes/AT_RIG477MICI25"
+                    },
+                    "label": {
+                      "labelId": "DLB_BUSIN_MNTAPRODO_28697",
+                      "defaultValue": {
+                        "$ref": "../../../../BUSIN/assets/languages/BUSIN.json#/BUSIN/LBL/DLB_BUSIN_MNTAPRODO_28697"
+                      },
+                      "hasI18N": true,
+                      "moduleId": "BUSIN",
+                      "customizationLayer": 0,
+                      "customizationLayerDescription": "ECU",
+                      "i18N": "T"
+                    },
+                    "userControl": {
+                      "userControlId": "TextInputBox",
+                      "description": "Designer TextBox",
+                      "customizationLayer": 0,
+                      "customizationLayerDescription": "ECU",
+                      "type": "I",
+                      "name": "Designer TextBox"
+                    },
+                    "labelToolTip": {
+                      "labelId": "DLB_BUSIN_MNTAPRODO_28697",
+                      "defaultValue": {
+                        "$ref": "../../../../BUSIN/assets/languages/BUSIN.json#/BUSIN/LBL/DLB_BUSIN_MNTAPRODO_28697"
+                      },
+                      "hasI18N": true,
+                      "moduleId": "BUSIN",
+                      "customizationLayer": 0,
+                      "customizationLayerDescription": "ECU",
+                      "i18N": "T"
+                    },
+                    "cacheDuration": 0,
+                    "options": 0,
+                    "elementColumnSpan": 1,
+                    "elementId": "VA_ORIAHEADER8602_MICI826",
+                    "customEvents": [
+                      {
+                        "executionType": 1,
+                        "visualAttributeEventType": {
+                          "name": "CustomValidate",
+                          "eventId": 316,
+                          "description": "Permite personalizar una validacion asociada a un visual attribute",
+                          "availableExecutionType": 1
+                        },
+                        "customEventId": "CEVA_316VA_ORIAHEADER8602_MICI826_705",
+                        "filter": null,
+                        "enabled": "T",
+                        "customizationLayer": 0,
+                        "customizationLayerDescription": "ECU",
+                        "isEnabled": true
+                      }
+                    ],
+                    "aggregateId": null,
+                    "aggregate": null,
+                    "width": null,
+                    "style": null,
+                    "componentStyle": null,
+                    "include": 4095,
+                    "responsiveLayouts": null,
+                    "responsivity": false
+                  },
+                  {
+                    "visualAttributeId": "VA_ORIAHEADER8602_FICE546",
+                    "colSpan": 1,
+                    "enabled": 4095,
+                    "order": 3,
+                    "queryVersion": " ",
+                    "readOnly": 8,
+                    "rowSpan": 0,
+                    "visible": 4095,
+                    "textRows": 0,
+                    "name": "TermComposite",
+                    "customizationLayer": 0,
+                    "customizationLayerDescription": "ECU",
+                    "maxRecords": 2,
+                    "attribute": {
+                      "$ref": "../../../../BUSIN/entities/EN_RIGNLEADE477.json#/attributes/AT_RIG477FICE32"
+                    },
+                    "label": {
+                      "labelId": "SYS_DSGNR_LBLESTETQ_00024",
+                      "defaultValue": {
+                        "$ref": "../../../../DSGNR/assets/languages/DSGNR.json#/DSGNR/LBL/SYS_DSGNR_LBLESTETQ_00024"
+                      },
+                      "hasI18N": true,
+                      "moduleId": "DSGNR",
+                      "customizationLayer": 0,
+                      "customizationLayerDescription": "ECU",
+                      "i18N": "T"
+                    },
+                    "userControl": {
+                      "userControlId": "CompositeVA",
+                      "description": "Composite Designer",
+                      "customizationLayer": 0,
+                      "customizationLayerDescription": "ECU",
+                      "type": "I",
+                      "name": "Composite Designer"
+                    },
+                    "cacheDuration": 0,
+                    "options": 0,
+                    "elementColumnSpan": 1,
+                    "elementId": "VA_ORIAHEADER8602_FICE546",
+                    "visualAttributes": [
+                      {
+                        "visualAttributeId": "VA_ORIAHEADER8602_TERM237",
+                        "colSpan": 1,
+                        "enabled": 4095,
+                        "format": "N:###0",
+                        "order": 4,
+                        "queryVersion": " ",
+                        "readOnly": 0,
+                        "rowSpan": 0,
+                        "visible": 4095,
+                        "textRows": 0,
+                        "name": "Term",
+                        "customizationLayer": 0,
+                        "customizationLayerDescription": "ECU",
+                        "attribute": {
+                          "$ref": "../../../../BUSIN/entities/EN_RIGNLEADE477.json#/attributes/AT_RIG477TERM59"
+                        },
+                        "label": {
+                          "labelId": "DLB_BUSIN_PLAZORQOZ_36959",
+                          "defaultValue": {
+                            "$ref": "../../../../BUSIN/assets/languages/BUSIN.json#/BUSIN/LBL/DLB_BUSIN_PLAZORQOZ_36959"
+                          },
+                          "hasI18N": true,
+                          "moduleId": "BUSIN",
+                          "customizationLayer": 0,
+                          "customizationLayerDescription": "ECU",
+                          "i18N": "T"
+                        },
+                        "userControl": {
+                          "userControlId": "TextInputBox",
+                          "description": "Designer TextBox",
+                          "customizationLayer": 0,
+                          "customizationLayerDescription": "ECU",
+                          "type": "I",
+                          "name": "Designer TextBox"
+                        },
+                        "customEvents": [
+                          {
+                            "executionType": 1,
+                            "customEventId": "CEVA_104_DER8602_TERM237_356",
+                            "enabled": "T",
+                            "customizationLayer": 0,
+                            "customizationLayerDescription": "ECU",
+                            "visualAttributeEventType": {
+                              "eventId": 104,
+                              "name": "Changed",
+                              "description": "Se ejecuta al cambiar el valor de un VisualAttribute"
+                            },
+                            "thereAnServerEvent": false,
+                            "thereAnClientEvent": true,
+                            "thereAnCallbackEvent": false,
+                            "isEnabled": true
+                          }
+                        ],
+                        "cacheDuration": 0,
+                        "options": 32768,
+                        "elementColumnSpan": 1,
+                        "elementId": "VA_ORIAHEADER8602_TERM237",
+                        "aggregateId": null,
+                        "aggregate": null,
+                        "width": null,
+                        "style": null,
+                        "componentStyle": null,
+                        "include": 4095,
+                        "responsiveLayouts": null,
+                        "responsivity": false,
+                        "attributeValidations": []
+                      },
+                      {
+                        "visualAttributeId": "VA_ORIAHEADER8602_NQUE773",
+                        "colSpan": 1,
+                        "enabled": 4095,
+                        "order": 5,
+                        "queryVersion": " ",
+                        "readOnly": 8,
+                        "rowSpan": 0,
+                        "visible": 4095,
+                        "textRows": 0,
+                        "name": "PaymentFrequency",
+                        "orientation": "V",
+                        "customizationLayer": 0,
+                        "customizationLayerDescription": "ECU",
+                        "attribute": {
+                          "$ref": "../../../../BUSIN/entities/EN_RIGNLEADE477.json#/attributes/AT_RIG477NQUE49"
+                        },
+                        "userControl": {
+                          "userControlId": "ComboBox",
+                          "description": "Designer ComboBox",
+                          "customizationLayer": 0,
+                          "customizationLayerDescription": "ECU",
+                          "type": "I",
+                          "name": "Designer ComboBox"
+                        },
+                        "labelToolTip": {
+                          "labelId": "DLB_BUSIN_PYTFREUNY_61581",
+                          "defaultValue": "Payment Frequency",
+                          "hasI18N": true,
+                          "moduleId": "BUSIN",
+                          "customizationLayer": 0,
+                          "customizationLayerDescription": "ECU",
+                          "i18N": "T"
+                        },
+                        "customEvents": [
+                          {
+                            "executionType": 1,
+                            "customEventId": "CEVA_104_DER8602_NQUE773_886",
+                            "enabled": "T",
+                            "customizationLayer": 0,
+                            "customizationLayerDescription": "ECU",
+                            "visualAttributeEventType": {
+                              "eventId": 104,
+                              "name": "Changed",
+                              "description": "Se ejecuta al cambiar el valor de un VisualAttribute"
+                            },
+                            "thereAnServerEvent": false,
+                            "thereAnClientEvent": true,
+                            "thereAnCallbackEvent": false,
+                            "isEnabled": true
+                          },
+                          {
+                            "executionType": 1,
+                            "customEventId": "CEVA_110_DER8602_NQUE773_817",
+                            "enabled": "T",
+                            "customizationLayer": 0,
+                            "customizationLayerDescription": "ECU",
+                            "visualAttributeEventType": {
+                              "eventId": 110,
+                              "name": "LoadCatalogData",
+                              "description": "Sobreescribe la carga de datos de un catálogo"
+                            },
+                            "thereAnServerEvent": false,
+                            "thereAnClientEvent": true,
+                            "thereAnCallbackEvent": false,
+                            "isEnabled": true
+                          }
+                        ],
+                        "cacheDuration": 0,
+                        "options": 32769,
+                        "elementColumnSpan": 1,
+                        "elementId": "VA_ORIAHEADER8602_NQUE773",
+                        "aggregateId": null,
+                        "aggregate": null,
+                        "width": null,
+                        "style": null,
+                        "componentStyle": null,
+                        "include": 4095,
+                        "responsiveLayouts": null,
+                        "responsivity": false,
+                        "attributeValidations": []
+                      }
+                    ],
+                    "customEvents": [],
+                    "aggregateId": null,
+                    "aggregate": null,
+                    "width": null,
+                    "style": null,
+                    "componentStyle": null,
+                    "include": 4095,
+                    "responsiveLayouts": null,
+                    "responsivity": false,
+                    "attributeValidations": []
+                  },
+                  {
+                    "visualAttributeId": "VA_ORIAHEADER8602_MNLA393",
+                    "colSpan": 1,
+                    "enabled": 0,
+                    "format": "|N:#,##0.00||USD|",
+                    "order": 6,
+                    "queryVersion": " ",
+                    "readOnly": 8,
+                    "rowSpan": 0,
+                    "visible": 0,
+                    "textRows": 0,
+                    "name": "AmountCalculated",
+                    "customizationLayer": 0,
+                    "customizationLayerDescription": "ECU",
+                    "attribute": {
+                      "$ref": "../../../../BUSIN/entities/EN_RIGNLEADE477.json#/attributes/AT_RIG477MNLA18"
+                    },
+                    "label": {
+                      "labelId": "SYS_DSGNR_LBLESTETQ_00024",
+                      "defaultValue": {
+                        "$ref": "../../../../DSGNR/assets/languages/DSGNR.json#/DSGNR/LBL/SYS_DSGNR_LBLESTETQ_00024"
+                      },
+                      "hasI18N": true,
+                      "moduleId": "DSGNR",
+                      "customizationLayer": 0,
+                      "customizationLayerDescription": "ECU",
+                      "i18N": "T"
+                    },
+                    "userControl": {
+                      "userControlId": "TextInputBox",
+                      "description": "Designer TextBox",
+                      "customizationLayer": 0,
+                      "customizationLayerDescription": "ECU",
+                      "type": "I",
+                      "name": "Designer TextBox"
+                    },
+                    "cacheDuration": 0,
+                    "options": 0,
+                    "elementColumnSpan": 1,
+                    "elementId": "VA_ORIAHEADER8602_MNLA393",
+                    "customEvents": [],
+                    "aggregateId": null,
+                    "aggregate": null,
+                    "width": null,
+                    "style": null,
+                    "componentStyle": null,
+                    "include": 4095,
+                    "responsiveLayouts": null,
+                    "responsivity": false,
+                    "attributeValidations": []
+                  },
+                  {
+                    "visualAttributeId": "VA_ORIAHEADER8602_RQSD735",
+                    "colSpan": 3,
+                    "enabled": 4095,
+                    "order": 7,
+                    "queryVersion": " ",
+                    "readOnly": 8,
+                    "rowSpan": 0,
+                    "visible": 4095,
+                    "textRows": 0,
+                    "name": "SEPARATOR",
+                    "customizationLayer": 0,
+                    "customizationLayerDescription": "ECU",
+                    "attribute": {
+                      "$ref": "../../../../BUSIN/entities/EN_RIGNLEADE477.json#/attributes/AT_RIG477RQSD66"
+                    },
+                    "userControl": {
+                      "userControlId": "Separator",
+                      "description": "Designer Separator",
+                      "customizationLayer": 0,
+                      "customizationLayerDescription": "ECU",
+                      "type": "I",
+                      "name": "Designer Separator"
+                    },
+                    "cacheDuration": 0,
+                    "options": 0,
+                    "elementColumnSpan": 3,
+                    "elementId": "VA_ORIAHEADER8602_RQSD735",
+                    "customEvents": [],
+                    "aggregateId": null,
+                    "aggregate": null,
+                    "width": null,
+                    "style": null,
+                    "componentStyle": null,
+                    "include": 4095,
+                    "responsiveLayouts": null,
+                    "responsivity": false,
+                    "attributeValidations": []
+                  },
+                  {
+                    "visualAttributeId": "VA_ORIAHEADER8602_TEIM754",
+                    "colSpan": 1,
+                    "enabled": 0,
+                    "order": 8,
+                    "queryVersion": " ",
+                    "readOnly": 4095,
+                    "rowSpan": 0,
+                    "visible": 0,
+                    "textRows": 0,
+                    "name": "TermLimit",
+                    "customizationLayer": 0,
+                    "customizationLayerDescription": "ECU",
+                    "attribute": {
+                      "$ref": "../../../../BUSIN/entities/EN_RIGNLEADE477.json#/attributes/AT_RIG477TEIM91"
+                    },
+                    "userControl": {
+                      "userControlId": "TextInputBox",
+                      "description": "Designer TextBox",
+                      "customizationLayer": 0,
+                      "customizationLayerDescription": "ECU",
+                      "type": "I",
+                      "name": "Designer TextBox"
+                    },
+                    "cacheDuration": 0,
+                    "options": 0,
+                    "elementColumnSpan": 1,
+                    "elementId": "VA_ORIAHEADER8602_TEIM754",
+                    "customEvents": [],
+                    "aggregateId": null,
+                    "aggregate": null,
+                    "width": null,
+                    "style": null,
+                    "componentStyle": null,
+                    "include": 4095,
+                    "responsiveLayouts": null,
+                    "responsivity": false,
+                    "attributeValidations": []
+                  }
+                ],
+                "independentValidation": "F",
+                "htmlSection": false,
+                "numberOfColumnsInContainer": 3,
+                "elementColumnSpan": 1,
+                "collapsed": false,
+                "elementId": "GR_ORIAHEADER86_02",
+                "style": null,
+                "customEvents": []
+              },
+              {
+                "groupId": "GR_ORIAHEADER86_06",
+                "refViewId": "VW_ORIAHEADER86",
+                "refViewVersion": "1.0.0",
+                "collapsedStr": "F",
+                "columnsNum": 1,
+                "layoutType": "Group",
+                "enabled": 4095,
+                "visible": 0,
+                "name": "GrpContextHide",
+                "order": 4,
+                "customizationLayer": 0,
+                "customizationLayerDescription": "ECU",
+                "colSpan": 1,
+                "orientation": "V",
+                "entity": {
+                  "$ref": "../../../../BUSIN/entities/EN_CONTEXTTB762.json#"
+                },
+                "independentValidation": "F",
+                "htmlSection": false,
+                "eventType": 0,
+                "numberOfColumnsInContainer": 1,
+                "elementColumnSpan": 1,
+                "collapsed": false,
+                "elementId": "GR_ORIAHEADER86_06",
+                "style": null,
+                "customEvents": []
+              }
+            ],
+            "independentValidation": "F",
+            "htmlSection": false,
+            "numberOfColumnsInContainer": 1,
+            "elementColumnSpan": 1,
+            "collapsed": false,
+            "elementId": "GR_ORIAHEADER86_03"
+          }
+        ],
+        "modules": [
+          {
+            "moduleId": "BUSIN"
+          }
+        ],
+        "module": {
+          "moduleId": "BUSIN"
+        }
+      },
+      "numberOfColumnsInContainer": 1,
+      "elementColumnSpan": 1,
+      "elementId": "VC_VW_ORIAHEADER86",
+      "customEvents": []
+    }
+  ],
+  "tempSave": false,
+  "autoCrud": false,
+  "isImported": true,
+  "commands": []
+}

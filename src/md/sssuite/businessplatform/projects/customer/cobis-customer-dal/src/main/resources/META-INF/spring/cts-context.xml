@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+	<context:annotation-config />
+
+	<bean id="CustomerDAO" class="com.cobiscorp.ecobis.customer.dal.impl.CustomerDAOImpl">
+	</bean>
+
+	<bean id="PhoneDAO" class="com.cobiscorp.ecobis.customer.dal.impl.PhoneDAOImpl">
+	</bean>
+
+	<bean id="POBoxDAO" class="com.cobiscorp.ecobis.customer.dal.impl.POBoxDAOImpl">
+	</bean>
+
+	<bean id="ProductDetailDAO"
+		class="com.cobiscorp.ecobis.customer.dal.impl.ProductDetailDAOImpl">
+	</bean>
+
+	<bean id="ClientDAO" class="com.cobiscorp.ecobis.customer.dal.impl.ClientDAOImpl">
+	</bean>
+
+	<bean id="CountryDAO" class="com.cobiscorp.ecobis.customer.dal.impl.CountryDAOImpl">
+	</bean>
+
+	<!-- Fin -->
+	<bean id="ActivityDAO" class="com.cobiscorp.ecobis.customer.dal.impl.ActivityDAOImpl">
+	</bean>
+
+	<bean id="BusinessSegmentDAO"
+		class="com.cobiscorp.ecobis.customer.dal.impl.BusinessSegmentDAOImpl">
+	</bean>
+
+	<bean id="ContactDAO" class="com.cobiscorp.ecobis.customer.dal.impl.ContactDAOImpl">
+	</bean>
+
+</beans>

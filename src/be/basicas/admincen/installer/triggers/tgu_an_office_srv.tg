@@ -1,0 +1,86 @@
+use cobis
+go
+if exists (select * from sysobjects where name = 'tgu_an_office_srv')
+    drop trigger tgu_an_office_srv
+go
+create trigger tgu_an_office_srv
+on an_office_srv
+for update
+as
+begin
+    declare
+        @w_os_office_id      int,
+        @w_os_srv_name       varchar(64),
+        @w_os_office_id_old  int,
+        @w_id                int
+ 
+    if update(os_office_id)
+    begin
+        rollback transaction
+        print 'No se puede actualizar la clave'
+    end
+    else
+    begin
+        declare cu_inserted cursor for
+            select
+                os_office_id,
+                os_srv_name
+            from inserted
+            order by os_office_id
+
+        declare cu_deleted cursor for
+            select
+                os_office_id
+            from deleted
+            order by os_office_id
+ 
+        open cu_deleted
+        open cu_inserted
+        fetch cu_inserted into
+            @w_os_office_id,
+            @w_os_srv_name
+
+        fetch cu_deleted into
+            @w_os_office_id_old
+ 
+        while @@FETCH_STATUS = 0
+        begin
+            select @w_id = sq_siguiente
+            from cob_distrib..di_seqnos
+            where sq_tabla = 'di_log'
+ 
+            update cob_distrib..di_seqnos
+            set sq_siguiente = sq_siguiente + 1
+            where sq_tabla = 'di_log'
+ 
+            insert into cob_distrib..di_log (
+            lg_id, lg_fecha, lg_operacion, lg_objeto)
+            values (@w_id, getdate(), 'U', 'cobis..sp_an_office_srv_tg')
+
+            insert into cob_distrib..di_parametro (
+                pa_id, pa_nombre, pa_tipodato, pa_longitud, pa_int)
+            values (@w_id, '@i_os_office_id', 56, isnull(datalength(@w_os_office_id), 0), @w_os_office_id)
+    
+            insert into cob_distrib..di_parametro (
+                pa_id, pa_nombre, pa_tipodato, pa_longitud, pa_varchar)
+            values (@w_id, '@i_os_srv_name', 39, isnull(datalength(@w_os_srv_name), 0), @w_os_srv_name)
+    
+            insert into cob_distrib..di_parametro (
+                pa_id, pa_nombre, pa_tipodato, pa_longitud, pa_int)
+            values (@w_id, '@i_os_office_id_old', 56, isnull(datalength(@w_os_office_id_old), 0), @w_os_office_id_old)
+
+            fetch cu_inserted into
+                @w_os_office_id,
+                @w_os_srv_name
+    
+            fetch cu_deleted into
+                @w_os_office_id_old
+ 
+        end
+        close cu_inserted
+        deallocate cu_inserted
+        close cu_deleted
+        deallocate cu_deleted
+    end
+end
+go

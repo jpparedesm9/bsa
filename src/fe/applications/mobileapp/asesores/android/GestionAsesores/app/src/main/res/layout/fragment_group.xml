@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include layout="@layout/layout_error"/>
+
+    <android.support.v7.widget.CardView
+        style="@style/Form.Container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/activity_horizontal_margin"
+        android:layout_marginStart="@dimen/activity_horizontal_margin"
+        android:layout_marginTop="@dimen/activity_horizontal_margin">
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/input_layout_number"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toLeftOf="@+id/input_layout_cycle"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <android.support.design.widget.TextInputEditText
+                    android:id="@+id/input_number"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:enabled="false"
+                    android:focusable="false"
+                    android:focusableInTouchMode="false"
+                    android:hint="@string/group_hint_number"
+                    android:inputType="numberSigned"/>
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/input_layout_cycle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                app:layout_constraintLeft_toRightOf="@+id/input_layout_number"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <android.support.design.widget.TextInputEditText
+                    android:id="@+id/input_cycle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:enabled="false"
+                    android:focusable="false"
+                    android:focusableInTouchMode="false"
+                    android:hint="@string/group_hint_cycle"
+                    android:inputType="numberSigned"/>
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/input_layout_name"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/input_layout_cycle">
+
+                <android.support.design.widget.TextInputEditText
+                    android:id="@+id/input_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/group_hint_name"
+                    android:imeOptions="actionDone"
+                    android:inputType="textPersonName"/>
+            </android.support.design.widget.TextInputLayout>
+
+            <Spinner
+                android:id="@+id/spinner_day_meeting"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toLeftOf="@+id/input_layout_time_meeting"
+                app:layout_constraintTop_toBottomOf="@+id/input_layout_name"/>
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/input_layout_time_meeting"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:focusable="false"
+                android:focusableInTouchMode="false"
+                app:layout_constraintLeft_toRightOf="@+id/spinner_day_meeting"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/input_layout_name">
+
+                <android.support.design.widget.TextInputEditText
+                    android:id="@+id/input_time_meeting"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:focusable="false"
+                    android:focusableInTouchMode="false"
+                    android:hint="@string/group_hint_time_meeting"
+                    android:imeOptions="actionNone"
+                    android:inputType="datetime"/>
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/input_layout_meeting_location"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toLeftOf="@+id/button_delete_location"
+                app:layout_constraintTop_toBottomOf="@+id/input_layout_time_meeting"
+                >
+
+                <com.cobis.gestionasesores.widgets.AddressInputEditText
+                    android:id="@+id/input_meeting_location"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    style="@style/Form.FieldReadOnly"
+                    android:hint="@string/group_hint_meeting_location"
+                    android:imeOptions="actionNone"/>
+            </android.support.design.widget.TextInputLayout>
+
+            <ImageButton
+                android:id="@+id/button_delete_location"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/touch_feedback"
+                android:clickable="true"
+                android:padding="8dp"
+                android:visibility="gone"
+                app:layout_constraintBottom_toTopOf="@+id/button_save_group_info"
+                app:layout_constraintLeft_toRightOf="@+id/input_layout_meeting_location"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/input_layout_time_meeting"
+                app:srcCompat="@drawable/ic_clear"
+                tools:src="@drawable/ic_delete"/>
+
+            <Button
+                android:id="@+id/button_save_group_info"
+                style="?borderlessButtonStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintHorizontal_bias="1"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/input_layout_meeting_location"
+                />
+        </android.support.constraint.ConstraintLayout>
+    </android.support.v7.widget.CardView>
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/layout_members_section"
+        style="@style/Form.Container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="@dimen/activity_vertical_margin"
+        android:layout_marginEnd="@dimen/activity_horizontal_margin"
+        android:layout_marginStart="@dimen/activity_horizontal_margin"
+        android:layout_marginTop="@dimen/activity_horizontal_margin">
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/text_members_header"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+                android:textStyle="bold"
+                app:layout_constraintBaseline_toBaselineOf="@+id/button_add_member"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toLeftOf="@+id/button_add_member"
+                app:layout_constraintTop_toTopOf="parent"/>
+
+            <Button
+                android:id="@+id/button_add_member"
+                style="?borderlessButtonStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="top"
+                android:text="@string/action_add"
+                app:layout_constraintLeft_toRightOf="@+id/text_members_header"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent"/>
+
+            <TextView
+                android:id="@+id/text_members_error"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:textAppearance="@style/TextAppearance.AppCompat.Caption"
+                android:textColor="@android:color/holo_red_light"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/text_members_header"/>
+            <!---Members-->
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/recycler_members"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/text_members_error"/>
+        </android.support.constraint.ConstraintLayout>
+    </android.support.v7.widget.CardView>
+</LinearLayout>

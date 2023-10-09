@@ -1,0 +1,18 @@
+use cobis
+go
+if exists (select * from sysobjects where name = 'tgu_an_module_dependency')
+    drop trigger tgu_an_module_dependency
+go
+create trigger tgu_an_module_dependency
+on an_module_dependency
+for update
+as
+begin
+ 
+    if update(md_mo_id) or update(md_dependency_id)
+    begin
+        rollback transaction
+        print 'No se puede actualizar la clave'
+    end
+end
+go

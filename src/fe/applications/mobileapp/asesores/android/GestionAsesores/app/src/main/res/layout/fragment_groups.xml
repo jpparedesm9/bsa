@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.SwipeRefreshLayout
+    android:id="@+id/swipe_refresh_layout"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:id="@+id/view_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/list_groups"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+
+        <LinearLayout
+            android:id="@+id/view_empty"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true"
+            android:gravity="center_horizontal|center_vertical"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <TextView
+                android:id="@+id/text_empty"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginBottom="@dimen/list_item_padding"
+                android:text="@string/groups_msg_empty"
+                android:textAppearance="@style/TextAppearance.AppCompat.Title"/>
+
+            <TextView
+                android:id="@+id/text_empty_add"
+                android:layout_width="wrap_content"
+                android:layout_height="48dp"
+                android:layout_gravity="center"
+                android:background="@drawable/touch_feedback"
+                android:gravity="center"
+                android:text="@string/groups_msg_add"
+                android:textAppearance="@style/TextAppearance.AppCompat.Subhead"/>
+        </LinearLayout>
+
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/action_button_add"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentEnd="true"
+            android:layout_margin="@dimen/fab_margin"
+            app:backgroundTint="@color/colorButton"
+            app:fabSize="normal"
+            app:srcCompat="@drawable/ic_add"
+            tools:srcCompat="@drawable/ic_add"/>
+    </RelativeLayout>
+</android.support.v4.widget.SwipeRefreshLayout>

@@ -1,0 +1,85 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<procedure>
+  <database>cob_custodia</database>
+  <name>sp_consdatos</name>
+  <type>SYBASE</type>
+  <version>1</version>
+  <parameters>
+    <parameter name="@s_ssn" dataType="int" direction="in" />
+    <parameter name="@s_user" dataType="varchar" direction="in" />
+    <parameter name="@s_term" dataType="varchar" direction="in" />
+    <parameter name="@s_date" dataType="datetime" direction="in" />
+    <parameter name="@s_srv" dataType="varchar" direction="in" />
+    <parameter name="@s_lsrv" dataType="varchar" direction="in" />
+    <parameter name="@s_ofi" dataType="smallint" direction="in" />
+    <parameter name="@s_rol" dataType="smallint" direction="in" />
+    <parameter name="@t_debug" dataType="char" direction="in" />
+    <parameter name="@t_file" dataType="varchar" direction="in" />
+    <parameter name="@t_from" dataType="varchar" direction="in" />
+    <parameter name="@t_trn" dataType="smallint" direction="in" />
+    <parameter name="@i_cuenta" dataType="varchar" direction="in" />
+    <parameter name="@i_tipo" dataType="varchar" direction="in" />
+    <parameter name="@i_ente" dataType="int" direction="in" />
+    <parameter name="@i_operacion" dataType="char" direction="in" />
+    <parameter name="@i_fecha" dataType="datetime" direction="in" />
+    <parameter name="@i_moneda" dataType="int" direction="in" />
+    <parameter name="@i_retorna" dataType="char" direction="in" />
+    <parameter name="@o_estado" dataType="varchar" direction="out" />
+    <parameter name="@o_disponible" dataType="money" direction="out" />
+    <parameter name="@o_monto_blq" dataType="money" direction="out" />
+    <parameter name="@o_cuenta" dataType="varchar" direction="out" />
+    <parameter name="@o_tasa" dataType="float" direction="out" />
+  </parameters>
+  <queries>
+    <query>
+      <columns>
+        <column name="AccountNumber" />
+        <column name="CustomerCode" />
+        <column name="CustomerName" />
+        <column name="Status" />
+        <column name="BlockedAmount" />
+        <column name="Rate" />
+        <column name="AvailableBalance" />
+        <column name="Currency" />
+      </columns>
+      <queryText>SELECT w_ctabanco, w_cliente, w_nombre, w_estado, w_monto_blq, w_tasa, w_saldo_disp, w_moneda</queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="AccountNumber" />
+        <column name="CustomerCode" />
+        <column name="CustomerName" />
+        <column name="Status" />
+      </columns>
+      <queryText>SELECT  "N�mero de Cuenta" = cc_cta_banco,"C�digo de cliente" = cl_cliente,"Nombre del cliente" = en_nomlar,"Estado " = cc_estado </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="AccountNumber" />
+      </columns>
+      <queryText>SELECT i_cuenta</queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="CurrencyMnemonic" />
+      </columns>
+      <queryText>SELECT  mo_nemonico </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="DepositNumber" />
+        <column name="Description" />
+        <column name="CustomerCode" />
+        <column name="CustomerName" />
+        <column name="Status" />
+        <column name="DueDate" />
+        <column name="Amount" />
+        <column name="PledgedAmount" />
+        <column name="Currency" />
+        <column name="Rate" />
+        <column name="BalanceTank" />
+      </columns>
+      <queryText></queryText>
+    </query>
+  </queries>
+</procedure>

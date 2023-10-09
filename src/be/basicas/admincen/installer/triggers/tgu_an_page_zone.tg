@@ -1,0 +1,175 @@
+use cobis
+go
+if exists (select * from sysobjects where name = 'tgu_an_page_zone')
+    drop trigger tgu_an_page_zone
+go
+create trigger tgu_an_page_zone
+on an_page_zone
+for update
+as
+begin
+    declare
+        @w_pz_id                 int,
+        @w_pz_zo_id              int,
+        @w_pz_la_id              int,
+        @w_pz_pa_id              int,
+        @w_pz_co_id              int,
+        @w_pz_order              int,
+        @w_pz_hor_size           int,
+        @w_pz_ver_size           int,
+        @w_pz_icon               varchar(40),
+        @w_pz_split_style        varchar(20),
+        @w_pz_id_parent          int,
+        @w_pz_component_optional tinyint,
+        @w_pz_he_id              int,
+        @w_pz_id_old             int,
+        @w_id                    int
+ 
+    if update(pz_id)
+    begin
+        rollback transaction
+        print 'No se puede actualizar la clave'
+    end
+    else
+    begin
+        declare cu_inserted cursor for
+            select
+                pz_id,
+                pz_zo_id,
+                pz_la_id,
+                pz_pa_id,
+                pz_co_id,
+                pz_order,
+                pz_hor_size,
+                pz_ver_size,
+                pz_icon,
+                pz_split_style,
+                pz_id_parent,
+                pz_component_optional,
+                pz_he_id
+            from inserted
+            order by pz_id
+
+        declare cu_deleted cursor for
+            select
+                pz_id
+            from deleted
+            order by pz_id
+ 
+        open cu_deleted
+        open cu_inserted
+           
+        fetch cu_inserted into
+            @w_pz_id,
+            @w_pz_zo_id,
+            @w_pz_la_id,
+            @w_pz_pa_id,
+            @w_pz_co_id,
+            @w_pz_order,
+            @w_pz_hor_size,
+            @w_pz_ver_size,
+            @w_pz_icon,
+            @w_pz_split_style,
+            @w_pz_id_parent,
+            @w_pz_component_optional,
+            @w_pz_he_id
+         
+        fetch cu_deleted into
+            @w_pz_id_old
+
+        while @@FETCH_STATUS=0
+        begin
+            select @w_id = sq_siguiente
+            from cob_distrib..di_seqnos
+            where sq_tabla = 'di_log'
+ 
+            update cob_distrib..di_seqnos
+            set sq_siguiente = sq_siguiente + 1
+            where sq_tabla = 'di_log'
+ 
+            insert into cob_distrib..di_log (
+                lg_id, lg_fecha, lg_operacion, lg_objeto)
+            values (@w_id, getdate(), 'U', 'cobis..sp_an_page_zone_tg')
+            
+            insert into cob_distrib..di_parametro (
+                pa_id, pa_nombre, pa_tipodato, pa_longitud, pa_int)
+            values (@w_id, '@i_pz_id', 56, isnull(datalength(@w_pz_id), 0), @w_pz_id)
+
+            insert into cob_distrib..di_parametro (
+                pa_id, pa_nombre, pa_tipodato, pa_longitud, pa_int)
+            values (@w_id, '@i_pz_zo_id', 56, isnull(datalength(@w_pz_zo_id), 0), @w_pz_zo_id)
+
+            insert into cob_distrib..di_parametro (
+                pa_id, pa_nombre, pa_tipodato, pa_longitud, pa_int)
+            values (@w_id, '@i_pz_la_id', 56, isnull(datalength(@w_pz_la_id), 0), @w_pz_la_id)
+
+            insert into cob_distrib..di_parametro (
+                pa_id, pa_nombre, pa_tipodato, pa_longitud, pa_int)
+            values (@w_id, '@i_pz_pa_id', 56, isnull(datalength(@w_pz_pa_id), 0), @w_pz_pa_id)
+
+            insert into cob_distrib..di_parametro (
+                pa_id, pa_nombre, pa_tipodato, pa_longitud, pa_int)
+            values (@w_id, '@i_pz_co_id', 56, isnull(datalength(@w_pz_co_id), 0), @w_pz_co_id)
+
+            insert into cob_distrib..di_parametro (
+                pa_id, pa_nombre, pa_tipodato, pa_longitud, pa_int)
+            values (@w_id, '@i_pz_order', 56, isnull(datalength(@w_pz_order), 0), @w_pz_order)
+
+            insert into cob_distrib..di_parametro (
+                pa_id, pa_nombre, pa_tipodato, pa_longitud, pa_int)
+            values (@w_id, '@i_pz_hor_size', 56, isnull(datalength(@w_pz_hor_size), 0), @w_pz_hor_size)
+
+            insert into cob_distrib..di_parametro (
+                pa_id, pa_nombre, pa_tipodato, pa_longitud, pa_int)
+            values (@w_id, '@i_pz_ver_size', 56, isnull(datalength(@w_pz_ver_size), 0), @w_pz_ver_size)
+
+            insert into cob_distrib..di_parametro (
+                pa_id, pa_nombre, pa_tipodato, pa_longitud, pa_varchar)
+            values (@w_id, '@i_pz_icon', 39, isnull(datalength(@w_pz_icon), 0), @w_pz_icon)
+
+            insert into cob_distrib..di_parametro (
+                pa_id, pa_nombre, pa_tipodato, pa_longitud, pa_varchar)
+            values (@w_id, '@i_pz_split_style', 39, isnull(datalength(@w_pz_split_style), 0), @w_pz_split_style)
+
+            insert into cob_distrib..di_parametro (
+                pa_id, pa_nombre, pa_tipodato, pa_longitud, pa_int)
+            values (@w_id, '@i_pz_id_parent', 56, isnull(datalength(@w_pz_id_parent), 0), @w_pz_id_parent)
+
+            insert into cob_distrib..di_parametro (
+                pa_id, pa_nombre, pa_tipodato, pa_longitud, pa_tinyint)
+            values (@w_id, '@i_pz_component_optional', 48, isnull(datalength(@w_pz_component_optional), 0), @w_pz_component_optional)
+            
+            insert into cob_distrib..di_parametro (
+                pa_id, pa_nombre, pa_tipodato, pa_longitud, pa_int)
+            values (@w_id, '@i_pz_he_id', 56, isnull(datalength(@w_pz_he_id), 0), @w_pz_he_id)
+
+            insert into cob_distrib..di_parametro (
+                pa_id, pa_nombre, pa_tipodato, pa_longitud, pa_int)
+            values (@w_id, '@i_pz_id_old', 56, isnull(datalength(@w_pz_id_old), 0), @w_pz_id_old)
+
+            fetch cu_inserted into
+                @w_pz_id,
+                @w_pz_zo_id,
+                @w_pz_la_id,
+                @w_pz_pa_id,
+                @w_pz_co_id,
+                @w_pz_order,
+                @w_pz_hor_size,
+                @w_pz_ver_size,
+                @w_pz_icon,
+                @w_pz_split_style,
+                @w_pz_id_parent,
+                @w_pz_component_optional,
+                @w_pz_he_id
+        
+            fetch cu_deleted into
+                @w_pz_id_old
+
+        end
+        close cu_inserted
+        deallocate cu_inserted
+        close cu_deleted
+        deallocate cu_deleted
+    end    
+end
+go

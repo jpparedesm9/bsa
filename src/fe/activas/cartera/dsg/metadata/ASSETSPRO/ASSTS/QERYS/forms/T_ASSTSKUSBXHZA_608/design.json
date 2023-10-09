@@ -1,0 +1,1365 @@
+{
+    "autoCrudStr": "F",
+    "commands": [
+    ],
+    "customEvents": [
+    ],
+    "customizationLayer": 0,
+    "customizationLayerDescription": "ECU",
+    "id": {
+        "moduleId": "ASSTS",
+        "subModuleId": "QERYS",
+        "taskId": "T_ASSTSKUSBXHZA_608",
+        "version": "1.0.0"
+    },
+    "isImported": false,
+    "mainViewContainerId": "VC_DEBITORDOC_486608",
+    "modeEnabled": 4095,
+    "name": {
+        "$ref": "../../../../ASSTS/relations/componentKeys.json#/QERYS/Forms/T_ASSTSKUSBXHZA_608/name"
+    },
+    "tempSaveStr": "F",
+    "viewContainers": [
+        {
+            "breadcrumbs": "Automatic",
+            "colSpan": 1,
+            "collapsedStr": "F",
+            "columnsNum": 1,
+            "componentStyle": null,
+            "customEvents": [
+                {
+                    "customEventId": "CEVC_002T_ASSTSKUSBXHZA_608_709",
+                    "customizationLayer": 0,
+                    "customizationLayerDescription": "ECU",
+                    "enabled": "T",
+                    "executionType": 3,
+                    "filter": null,
+                    "isEnabled": true,
+                    "viewContainerEventType": {
+                        "availableExecutionType": 7,
+                        "description": "InicializaciÃ³n de datos de un ViewContainer, despues de este evento se realiza el segimiento de cambios en los datos",
+                        "eventId": 2,
+                        "name": "InitData"
+                    }
+                }
+            ],
+            "customizationLayer": 0,
+            "customizationLayerDescription": "ECU",
+            "enabled": 4095,
+            "id": {
+                "moduleId": "ASSTS",
+                "subModuleId": "QERYS",
+                "taskId": "T_ASSTSKUSBXHZA_608",
+                "taskVersion": "1.0.0",
+                "viewContainerId": "VC_DEBITORDOC_486608"
+            },
+            "layoutType": "Group",
+            "name": "DebitOrderProcessingLog",
+            "options": 0,
+            "responsiveLayouts": null,
+            "responsivity": false,
+            "style": null,
+            "titleLabel": {
+                "defaultValue": {
+                    "$ref": "../../../../ASSTS/assets/languages/ASSTS.json#/ASSTS/LBL/LBL_ASSTS_LOGPROCNT_12701"
+                },
+                "labelId": "LBL_ASSTS_LOGPROCNT_12701",
+                "moduleId": "ASSTS"
+            },
+            "view": {
+                "groups": [
+                    {
+                        "collapsedStr": "F",
+                        "columnsNum": 1,
+                        "componentStyle": null,
+                        "customEvents": [
+                        ],
+                        "enabled": 4095,
+                        "eventType": 0,
+                        "groupId": "G_DEBITORSIS_408643",
+                        "groups": [
+                            {
+                                "collapsedStr": "F",
+                                "columnsNum": 4,
+                                "componentStyle": null,
+                                "customEvents": [
+                                ],
+                                "enabled": 4095,
+                                "entity": {
+                                    "$ref": "../../../../ASSTS/entities/EN_DEBITORDG_194.json#"
+                                },
+                                "eventType": 0,
+                                "groupId": "G_DEBITORNOG_439643",
+                                "htmlSection": "F",
+                                "independentValidation": "F",
+                                "layoutType": "Group",
+                                "name": "u1602",
+                                "orientation": "V",
+                                "parentLayoutType": "GroupLayout",
+                                "responsiveLayouts": null,
+                                "responsivity": false,
+                                "style": null,
+                                "visible": 4095,
+                                "visualAttributes": [
+                                    {
+                                        "aggregate": null,
+                                        "aggregateId": null,
+                                        "attribute": {
+                                            "$ref": "../../../../ASSTS/entities/EN_DEBITORDG_194.json#/attributes/AT99_ERRORTYP194"
+                                        },
+                                        "attributeValidations": [
+                                        ],
+                                        "cacheDuration": 0,
+                                        "catalogName": "ca_tipo_error",
+                                        "colSpan": 1,
+                                        "componentInGrid": false,
+                                        "componentStyle": null,
+                                        "customEvents": [
+                                            {
+                                                "customEventId": "CEVA_104VA_TEXTINPUTBOXYNP_541643_366",
+                                                "customizationLayer": 0,
+                                                "customizationLayerDescription": "ECU",
+                                                "enabled": "T",
+                                                "executionType": 1,
+                                                "filter": null,
+                                                "isEnabled": true,
+                                                "visualAttributeEventType": {
+                                                    "availableExecutionType": 7,
+                                                    "description": "Se ejecuta al cambiar el valor de un VisualAttribute",
+                                                    "eventId": 104,
+                                                    "name": "Changed"
+                                                }
+                                            }
+                                        ],
+                                        "customizationLayer": 0,
+                                        "customizationLayerDescription": "ECU",
+                                        "enabled": 4095,
+                                        "entityQuery": null,
+                                        "include": 4095,
+                                        "label": {
+                                            "defaultValue": {
+                                                "$ref": "../../../../ASSTS/assets/languages/ASSTS.json#/ASSTS/LBL/LBL_ASSTS_TIPOERROR_36798"
+                                            },
+                                            "labelId": "LBL_ASSTS_TIPOERROR_36798",
+                                            "moduleId": "ASSTS"
+                                        },
+                                        "maxRecords": null,
+                                        "minChars": null,
+                                        "name": "typeError",
+                                        "options": 2048,
+                                        "order": 1,
+                                        "queryId": null,
+                                        "queryMemberText": {
+                                            "attribute": {
+                                                "attributeId": null,
+                                                "name": null
+                                            },
+                                            "queryMemberId": null
+                                        },
+                                        "queryMemberValue": {
+                                            "attribute": {
+                                                "attributeId": null,
+                                                "name": null
+                                            },
+                                            "queryMemberId": null
+                                        },
+                                        "queryModule": null,
+                                        "queryVersion": null,
+                                        "readOnly": 8,
+                                        "responsiveLayouts": null,
+                                        "responsivity": false,
+                                        "sizeWidthComposite": null,
+                                        "style": null,
+                                        "type": null,
+                                        "userControl": {
+                                            "type": "I",
+                                            "userControlId": "ComboBox"
+                                        },
+                                        "visible": 4095,
+                                        "visualAttributeId": "VA_TEXTINPUTBOXYNP_541643",
+                                        "width": null,
+                                        "widthComposite": "D"
+                                    },
+                                    {
+                                        "aggregate": null,
+                                        "aggregateId": null,
+                                        "attribute": {
+                                            "$ref": "../../../../ASSTS/entities/EN_DEBITORDG_194.json#/attributes/AT15_FROMDATE194"
+                                        },
+                                        "attributeValidations": [
+                                            {
+                                                "compareOperator": -1,
+                                                "id": "VV_DATEFIELDDOSHLK_54164356",
+                                                "visualValidationType": {
+                                                    "description": "Custom Validation",
+                                                    "visualValidationId": "CustomValidate"
+                                                }
+                                            }
+                                        ],
+                                        "colSpan": 1,
+                                        "componentInGrid": false,
+                                        "componentStyle": null,
+                                        "customEvents": [
+                                            {
+                                                "customEventId": "CEVA_316VA_DATEFIELDDOSHLK_541643_896",
+                                                "customizationLayer": 0,
+                                                "customizationLayerDescription": "ECU",
+                                                "enabled": "T",
+                                                "executionType": 1,
+                                                "filter": null,
+                                                "isEnabled": true,
+                                                "visualAttributeEventType": {
+                                                    "availableExecutionType": 1,
+                                                    "description": "Permite personalizar una validacion asociada a un visual attribute",
+                                                    "eventId": 316,
+                                                    "name": "CustomValidate"
+                                                }
+                                            }
+                                        ],
+                                        "customizationLayer": 0,
+                                        "customizationLayerDescription": "ECU",
+                                        "enabled": 4095,
+                                        "format": null,
+                                        "include": 4095,
+                                        "label": {
+                                            "defaultValue": {
+                                                "$ref": "../../../../ASSTS/assets/languages/ASSTS.json#/ASSTS/LBL/LBL_ASSTS_FECHADESD_11676"
+                                            },
+                                            "labelId": "LBL_ASSTS_FECHADESD_11676",
+                                            "moduleId": "ASSTS"
+                                        },
+                                        "maxRecords": null,
+                                        "name": "fromDate",
+                                        "options": 0,
+                                        "order": 2,
+                                        "readOnly": 8,
+                                        "responsiveLayouts": null,
+                                        "responsivity": false,
+                                        "sizeWidthComposite": null,
+                                        "style": null,
+                                        "userControl": {
+                                            "type": "I",
+                                            "userControlId": "DateField"
+                                        },
+                                        "visible": 4095,
+                                        "visualAttributeId": "VA_DATEFIELDDOSHLK_541643",
+                                        "width": null,
+                                        "widthComposite": "D"
+                                    },
+                                    {
+                                        "aggregate": null,
+                                        "aggregateId": null,
+                                        "attribute": {
+                                            "$ref": "../../../../ASSTS/entities/EN_DEBITORDG_194.json#/attributes/AT57_UNTILDTA194"
+                                        },
+                                        "attributeValidations": [
+                                            {
+                                                "compareOperator": -1,
+                                                "id": "VV_DATEFIELDMYOWUX_62464352",
+                                                "visualValidationType": {
+                                                    "description": "Custom Validation",
+                                                    "visualValidationId": "CustomValidate"
+                                                }
+                                            }
+                                        ],
+                                        "colSpan": 1,
+                                        "componentInGrid": false,
+                                        "componentStyle": null,
+                                        "customEvents": [
+                                            {
+                                                "customEventId": "CEVA_316VA_DATEFIELDMYOWUX_624643_683",
+                                                "customizationLayer": 0,
+                                                "customizationLayerDescription": "ECU",
+                                                "enabled": "T",
+                                                "executionType": 1,
+                                                "filter": null,
+                                                "isEnabled": true,
+                                                "visualAttributeEventType": {
+                                                    "availableExecutionType": 1,
+                                                    "description": "Permite personalizar una validacion asociada a un visual attribute",
+                                                    "eventId": 316,
+                                                    "name": "CustomValidate"
+                                                }
+                                            }
+                                        ],
+                                        "customizationLayer": 0,
+                                        "customizationLayerDescription": "ECU",
+                                        "enabled": 4095,
+                                        "format": null,
+                                        "include": 4095,
+                                        "label": {
+                                            "defaultValue": {
+                                                "$ref": "../../../../ASSTS/assets/languages/ASSTS.json#/ASSTS/LBL/LBL_ASSTS_FECHAHATS_18279"
+                                            },
+                                            "labelId": "LBL_ASSTS_FECHAHATS_18279",
+                                            "moduleId": "ASSTS"
+                                        },
+                                        "maxRecords": null,
+                                        "name": "untilDate",
+                                        "options": 0,
+                                        "order": 3,
+                                        "readOnly": 8,
+                                        "responsiveLayouts": null,
+                                        "responsivity": false,
+                                        "sizeWidthComposite": null,
+                                        "style": null,
+                                        "userControl": {
+                                            "type": "I",
+                                            "userControlId": "DateField"
+                                        },
+                                        "visible": 4095,
+                                        "visualAttributeId": "VA_DATEFIELDMYOWUX_624643",
+                                        "width": null,
+                                        "widthComposite": "D"
+                                    },
+                                    {
+                                        "aggregate": null,
+                                        "aggregateId": null,
+                                        "attribute": {
+                                            "$ref": "../../../../ASSTS/entities/EN_DEBITORDG_194.json#/attributes/AT62_NUMBERAO194"
+                                        },
+                                        "attributeValidations": [
+                                            {
+                                                "compareOperator": 1,
+                                                "id": "VV_TEXTINPUTBOXRBR_51364314",
+                                                "visualValidationType": {
+                                                    "description": "Letters and Numbers, only Numbers, custom list, custom function, lock",
+                                                    "visualValidationId": "InputRestriction"
+                                                }
+                                            },
+                                            {
+                                                "compareOperator": -1,
+                                                "id": "VV_TEXTINPUTBOXRBR_51364325",
+                                                "regularExpression": "^[0-9]*$",
+                                                "validateMessageLabel": {
+                                                    "defaultValue": {
+                                                        "$ref": "../../../../ASSTS/assets/languages/ASSTS.json#/ASSTS/MSG/MSG_ASSTS_SOLONMESO_26076"
+                                                    },
+                                                    "labelId": "MSG_ASSTS_SOLONMESO_26076",
+                                                    "moduleId": "ASSTS"
+                                                },
+                                                "visualValidationType": {
+                                                    "description": "Regula Expression Validation",
+                                                    "visualValidationId": "RegularExpression"
+                                                }
+                                            }
+                                        ],
+                                        "colSpan": 1,
+                                        "componentInGrid": false,
+                                        "componentStyle": null,
+                                        "customEvents": [
+                                        ],
+                                        "customizationLayer": 0,
+                                        "customizationLayerDescription": "ECU",
+                                        "enabled": 4095,
+                                        "include": 4095,
+                                        "label": {
+                                            "defaultValue": {
+                                                "$ref": "../../../../ASSTS/assets/languages/ASSTS.json#/ASSTS/LBL/LBL_ASSTS_NMEROPRAT_45183"
+                                            },
+                                            "labelId": "LBL_ASSTS_NMEROPRAT_45183",
+                                            "moduleId": "ASSTS"
+                                        },
+                                        "maxRecords": null,
+                                        "name": "loanNumber",
+                                        "options": 0,
+                                        "order": 4,
+                                        "readOnly": 8,
+                                        "responsiveLayouts": null,
+                                        "responsivity": false,
+                                        "sizeWidthComposite": null,
+                                        "style": null,
+                                        "textRows": 0,
+                                        "userControl": {
+                                            "type": "I",
+                                            "userControlId": "TextInputBox"
+                                        },
+                                        "visible": 4095,
+                                        "visualAttributeId": "VA_TEXTINPUTBOXRBR_513643",
+                                        "width": null,
+                                        "widthComposite": "D"
+                                    },
+                                    {
+                                        "aggregate": null,
+                                        "aggregateId": null,
+                                        "attribute": {
+                                            "$ref": "../../../../ASSTS/entities/EN_DEBITORDG_194.json#/attributes/AT32_ACCOUNUN194"
+                                        },
+                                        "attributeValidations": [
+                                            {
+                                                "compareOperator": 1,
+                                                "id": "VV_TEXTINPUTBOXMRW_24264352",
+                                                "visualValidationType": {
+                                                    "description": "Letters and Numbers, only Numbers, custom list, custom function, lock",
+                                                    "visualValidationId": "InputRestriction"
+                                                }
+                                            },
+                                            {
+                                                "compareOperator": -1,
+                                                "id": "VV_TEXTINPUTBOXMRW_24264361",
+                                                "regularExpression": "^[0-9]*$",
+                                                "validateMessageLabel": {
+                                                    "defaultValue": {
+                                                        "$ref": "../../../../ASSTS/assets/languages/ASSTS.json#/ASSTS/MSG/MSG_ASSTS_SOLONMESO_26076"
+                                                    },
+                                                    "labelId": "MSG_ASSTS_SOLONMESO_26076",
+                                                    "moduleId": "ASSTS"
+                                                },
+                                                "visualValidationType": {
+                                                    "description": "Regula Expression Validation",
+                                                    "visualValidationId": "RegularExpression"
+                                                }
+                                            }
+                                        ],
+                                        "colSpan": 1,
+                                        "componentInGrid": false,
+                                        "componentStyle": null,
+                                        "customEvents": [
+                                        ],
+                                        "customizationLayer": 0,
+                                        "customizationLayerDescription": "ECU",
+                                        "enabled": 4095,
+                                        "include": 4095,
+                                        "label": {
+                                            "defaultValue": {
+                                                "$ref": "../../../../ASSTS/assets/languages/ASSTS.json#/ASSTS/LBL/LBL_ASSTS_NMEROCUAA_69356"
+                                            },
+                                            "labelId": "LBL_ASSTS_NMEROCUAA_69356",
+                                            "moduleId": "ASSTS"
+                                        },
+                                        "maxRecords": null,
+                                        "name": "accountNumber",
+                                        "options": 0,
+                                        "order": 5,
+                                        "readOnly": 8,
+                                        "responsiveLayouts": null,
+                                        "responsivity": false,
+                                        "sizeWidthComposite": null,
+                                        "style": null,
+                                        "textRows": 0,
+                                        "userControl": {
+                                            "type": "I",
+                                            "userControlId": "TextInputBox"
+                                        },
+                                        "visible": 4095,
+                                        "visualAttributeId": "VA_TEXTINPUTBOXMRW_242643",
+                                        "width": null,
+                                        "widthComposite": "D"
+                                    },
+                                    {
+                                        "aggregate": null,
+                                        "aggregateId": null,
+                                        "attribute": {
+                                            "$ref": "../../../../ASSTS/entities/EN_DEBITORDG_194.json#/attributes/AT54_FILENAMM194"
+                                        },
+                                        "attributeValidations": [
+                                        ],
+                                        "colSpan": 1,
+                                        "componentInGrid": false,
+                                        "componentStyle": null,
+                                        "customEvents": [
+                                        ],
+                                        "customizationLayer": 0,
+                                        "customizationLayerDescription": "ECU",
+                                        "enabled": 4095,
+                                        "format": "",
+                                        "include": 4095,
+                                        "label": {
+                                            "defaultValue": {
+                                                "$ref": "../../../../ASSTS/assets/languages/ASSTS.json#/ASSTS/LBL/LBL_ASSTS_ARCHIVOGS_24517"
+                                            },
+                                            "labelId": "LBL_ASSTS_ARCHIVOGS_24517",
+                                            "moduleId": "ASSTS"
+                                        },
+                                        "maxRecords": null,
+                                        "name": "filename",
+                                        "options": 0,
+                                        "order": 6,
+                                        "readOnly": 8,
+                                        "responsiveLayouts": null,
+                                        "responsivity": false,
+                                        "sizeWidthComposite": null,
+                                        "style": null,
+                                        "textRows": 0,
+                                        "userControl": {
+                                            "type": "I",
+                                            "userControlId": "TextInputBox"
+                                        },
+                                        "visible": 4095,
+                                        "visualAttributeId": "VA_FILENAMEPPTUVRV_958643",
+                                        "width": null,
+                                        "widthComposite": "D"
+                                    },
+                                    {
+                                        "aggregate": null,
+                                        "aggregateId": null,
+                                        "attribute": {
+                                            "$ref": "../../../../ASSTS/entities/EN_DEBITORDG_194.json#/attributes/AT76_REFERENE194"
+                                        },
+                                        "attributeValidations": [
+                                        ],
+                                        "colSpan": 1,
+                                        "componentInGrid": false,
+                                        "componentStyle": null,
+                                        "customEvents": [
+                                        ],
+                                        "customizationLayer": 0,
+                                        "customizationLayerDescription": "ECU",
+                                        "enabled": 4095,
+                                        "format": "",
+                                        "include": 4095,
+                                        "label": {
+                                            "defaultValue": {
+                                                "$ref": "../../../../ASSTS/assets/languages/ASSTS.json#/ASSTS/LBL/LBL_ASSTS_REFERENAI_72258"
+                                            },
+                                            "labelId": "LBL_ASSTS_REFERENAI_72258",
+                                            "moduleId": "ASSTS"
+                                        },
+                                        "maxRecords": null,
+                                        "name": "reference",
+                                        "options": 0,
+                                        "order": 7,
+                                        "readOnly": 8,
+                                        "responsiveLayouts": null,
+                                        "responsivity": false,
+                                        "sizeWidthComposite": null,
+                                        "style": null,
+                                        "textRows": 0,
+                                        "userControl": {
+                                            "type": "I",
+                                            "userControlId": "TextInputBox"
+                                        },
+                                        "visible": 4095,
+                                        "visualAttributeId": "VA_REFERENCEWNSUIW_805643",
+                                        "width": null,
+                                        "widthComposite": "D"
+                                    },
+                                    {
+                                        "aggregate": null,
+                                        "aggregateId": null,
+                                        "attribute": {
+                                            "$ref": "../../../../ASSTS/entities/EN_DEBITORDG_194.json#/attributes/AT31_CLIENTID194"
+                                        },
+                                        "attributeValidations": [
+                                            {
+                                                "compareOperator": 1,
+                                                "id": "VV_TEXTINPUTBOXNGO_79064368",
+                                                "visualValidationType": {
+                                                    "description": "Letters and Numbers, only Numbers, custom list, custom function, lock",
+                                                    "visualValidationId": "InputRestriction"
+                                                }
+                                            },
+                                            {
+                                                "compareOperator": -1,
+                                                "id": "VV_TEXTINPUTBOXNGO_79064352",
+                                                "maxValue": "2147483647",
+                                                "minValue": "0",
+                                                "validateMessageLabel": {
+                                                    "defaultValue": {
+                                                        "$ref": "../../../../ASSTS/assets/languages/ASSTS.json#/ASSTS/MSG/MSG_ASSTS_SEDEBERZE_11978"
+                                                    },
+                                                    "labelId": "MSG_ASSTS_SEDEBERZE_11978",
+                                                    "moduleId": "ASSTS"
+                                                },
+                                                "visualValidationType": {
+                                                    "description": "RangeValues Validation",
+                                                    "visualValidationId": "RangeValues"
+                                                }
+                                            },
+                                            {
+                                                "compareOperator": -1,
+                                                "id": "VV_TEXTINPUTBOXNGO_79064387",
+                                                "regularExpression": "^[0-9]*$",
+                                                "validateMessageLabel": {
+                                                    "defaultValue": {
+                                                        "$ref": "../../../../ASSTS/assets/languages/ASSTS.json#/ASSTS/MSG/MSG_ASSTS_SOLONMESO_26076"
+                                                    },
+                                                    "labelId": "MSG_ASSTS_SOLONMESO_26076",
+                                                    "moduleId": "ASSTS"
+                                                },
+                                                "visualValidationType": {
+                                                    "description": "Regula Expression Validation",
+                                                    "visualValidationId": "RegularExpression"
+                                                }
+                                            }
+                                        ],
+                                        "colSpan": 1,
+                                        "componentInGrid": false,
+                                        "componentStyle": null,
+                                        "customEvents": [
+                                            {
+                                                "customEventId": "CEVA_311VA_TEXTINPUTBOXNGO_790643_752",
+                                                "customizationLayer": 0,
+                                                "customizationLayerDescription": "ECU",
+                                                "enabled": "T",
+                                                "executionType": 1,
+                                                "filter": null,
+                                                "isEnabled": true,
+                                                "visualAttributeEventType": {
+                                                    "availableExecutionType": 1,
+                                                    "description": "Permite abrir una ventana modal desde TextInputButton",
+                                                    "eventId": 305,
+                                                    "name": "OpenEvent"
+                                                }
+                                            }
+                                        ],
+                                        "customizationLayer": 0,
+                                        "customizationLayerDescription": "ECU",
+                                        "enabled": 4095,
+                                        "include": 4095,
+                                        "label": {
+                                            "defaultValue": {
+                                                "$ref": "../../../../ASSTS/assets/languages/ASSTS.json#/ASSTS/LBL/LBL_ASSTS_CDIGOCLEN_93241"
+                                            },
+                                            "labelId": "LBL_ASSTS_CDIGOCLEN_93241",
+                                            "moduleId": "ASSTS"
+                                        },
+                                        "maxRecords": null,
+                                        "name": "clientId",
+                                        "options": 0,
+                                        "order": 8,
+                                        "readOnly": 8,
+                                        "responsiveLayouts": null,
+                                        "responsivity": false,
+                                        "sizeWidthComposite": null,
+                                        "style": null,
+                                        "userControl": {
+                                            "type": "I",
+                                            "userControlId": "TextInputButton"
+                                        },
+                                        "visible": 4095,
+                                        "visualAttributeId": "VA_TEXTINPUTBOXNGO_790643",
+                                        "width": null,
+                                        "widthComposite": "D"
+                                    },
+                                    {
+                                        "aggregate": null,
+                                        "aggregateId": null,
+                                        "attributeValidations": [
+                                        ],
+                                        "colSpan": 1,
+                                        "componentInGrid": false,
+                                        "componentStyle": null,
+                                        "customEvents": [
+                                        ],
+                                        "customizationLayer": 0,
+                                        "customizationLayerDescription": "ECU",
+                                        "enabled": 4095,
+                                        "entityQuery": "EN_DEBITORGE_499",
+                                        "include": 4095,
+                                        "label": {
+                                            "defaultValue": {
+                                                "$ref": "../../../../ASSTS/assets/languages/ASSTS.json#/ASSTS/LBL/LBL_ASSTS_BUSCARYEV_82731"
+                                            },
+                                            "labelId": "LBL_ASSTS_BUSCARYEV_82731",
+                                            "moduleId": "ASSTS"
+                                        },
+                                        "maxRecords": null,
+                                        "name": "VA_VABUTTONCIHBTPR_835643",
+                                        "options": 8,
+                                        "order": 9,
+                                        "queryId": "Q_DEBITOOI_1156",
+                                        "queryModule": "ASSTS",
+                                        "queryVersion": "1.0.0",
+                                        "responsiveLayouts": null,
+                                        "responsivity": false,
+                                        "sizeWidthComposite": null,
+                                        "style": null,
+                                        "userControl": {
+                                            "type": "A",
+                                            "userControlId": "Button"
+                                        },
+                                        "visible": 4095,
+                                        "visualAttributeId": "VA_VABUTTONCIHBTPR_835643",
+                                        "width": null,
+                                        "widthComposite": "D"
+                                    }
+                                ]
+                            },
+                            {
+                                "collapsedStr": "F",
+                                "columnsNum": 1,
+                                "componentStyle": null,
+                                "customEvents": [
+                                ],
+                                "enabled": 4095,
+                                "entity": {
+                                    "$ref": "../../../../ASSTS/entities/EN_DEBITORGE_499.json#"
+                                },
+                                "eventType": 0,
+                                "groupId": "G_DEBITORGSE_151643",
+                                "htmlSection": "F",
+                                "independentValidation": "F",
+                                "layoutType": "Group",
+                                "name": "u2933",
+                                "orientation": "V",
+                                "parentLayoutType": "GroupLayout",
+                                "queryView": {
+                                    "actionDesign": "Button",
+                                    "actions": [
+                                    ],
+                                    "allowPaging": true,
+                                    "allowPagingStr": "T",
+                                    "allowSorting": false,
+                                    "allowSortingStr": "F",
+                                    "componentStyle": null,
+                                    "confirmRowDeletion": false,
+                                    "confirmRowDeletionStr": "F",
+                                    "customEvents": [
+                                    ],
+                                    "customUrlDialog": null,
+                                    "customizationLayer": 0,
+                                    "customizationLayerDescription": "ECU",
+                                    "deleteCommandEnabled": false,
+                                    "deleteCommandEnabledStr": "F",
+                                    "dialogTitleLabelId": null,
+                                    "editCommandEnabled": false,
+                                    "editCommandEnabledStr": "F",
+                                    "editMode": "0",
+                                    "entityName": "DebitOrderProcessingLog",
+                                    "hasDetail": false,
+                                    "hasDetailString": "F",
+                                    "height": null,
+                                    "includeQueryMembers": [
+                                        "AT22_LOANNUBR499",
+                                        "AT77_ACCOUNBB499",
+                                        "AT42_ORDERGRN499",
+                                        "AT40_AMOUNTAY499",
+                                        "AT97_STATECSS499",
+                                        "AT18_NAMECLNT499",
+                                        "AT71_REFEREEE499",
+                                        "AT87_TYPEEROR499",
+                                        "AT58_CLIENTII499",
+                                        "AT96_FILENAMM499",
+                                        "AT47_DESCRIOC499"
+                                    ],
+                                    "insertCommandEnabled": false,
+                                    "insertCommandEnabledStr": "F",
+                                    "modalSize": null,
+                                    "modeSelection": "None",
+                                    "moduleIdDialog": null,
+                                    "multiSelectEnabledStr": "F",
+                                    "name": "QV_1156_57465",
+                                    "options": 2312,
+                                    "pageSize": 10,
+                                    "query": {
+                                        "$ref": "../../../../ASSTS/QERYS/queries/Q_DEBITOOI_1156.json#"
+                                    },
+                                    "queryId": "Q_DEBITOOI_1156",
+                                    "queryVersion": "1.0.0",
+                                    "queryViewCustomActions": [
+                                    ],
+                                    "queryViewId": "QV_1156_57465",
+                                    "queryViewType": "Grid",
+                                    "rowCommandAppearance": 0,
+                                    "style": null,
+                                    "subModuleIdDialog": null,
+                                    "taskIdDialog": null,
+                                    "taskVersionDialog": null,
+                                    "typeFormDialog": null,
+                                    "userControl": {
+                                        "customizationLayer": 0,
+                                        "customizationLayerDescription": "ECU",
+                                        "description": "Designer Grid",
+                                        "name": "Designer Grid",
+                                        "type": "I",
+                                        "userControlId": "Grid"
+                                    },
+                                    "viewContainerIdDialog": null
+                                },
+                                "queryViewId": "QV_1156_57465",
+                                "responsiveLayouts": null,
+                                "responsivity": false,
+                                "style": null,
+                                "visible": 4095,
+                                "visualAttributes": [
+                                    {
+                                        "aggregate": null,
+                                        "aggregateId": null,
+                                        "attribute": {
+                                            "$ref": "../../../../ASSTS/entities/EN_DEBITORGE_499.json#/attributes/AT42_ORDERGRN499"
+                                        },
+                                        "attributeValidations": [
+                                        ],
+                                        "colSpan": 1,
+                                        "componentInGrid": true,
+                                        "componentStyle": null,
+                                        "customEvents": [
+                                        ],
+                                        "customizationLayer": 0,
+                                        "customizationLayerDescription": "ECU",
+                                        "enabled": 4095,
+                                        "format": null,
+                                        "include": 4095,
+                                        "label": {
+                                            "defaultValue": {
+                                                "$ref": "../../../../ASSTS/assets/languages/ASSTS.json#/ASSTS/LBL/LBL_ASSTS_FECHAGEIR_41980"
+                                            },
+                                            "labelId": "LBL_ASSTS_FECHAGEIR_41980",
+                                            "moduleId": "ASSTS"
+                                        },
+                                        "maxRecords": null,
+                                        "name": "orderGenerationDate",
+                                        "options": 0,
+                                        "order": 11,
+                                        "readOnly": 8,
+                                        "responsiveLayouts": null,
+                                        "responsivity": false,
+                                        "sizeWidthComposite": null,
+                                        "style": null,
+                                        "userControl": {
+                                            "type": "I",
+                                            "userControlId": "DateField"
+                                        },
+                                        "visible": 4095,
+                                        "visualAttributeId": "VA_DATEFIELDCXZPAV_458643",
+                                        "width": "90",
+                                        "widthComposite": "D"
+                                    },
+                                    {
+                                        "aggregate": null,
+                                        "aggregateId": null,
+                                        "attribute": {
+                                            "$ref": "../../../../ASSTS/entities/EN_DEBITORGE_499.json#/attributes/AT37_UNTILDTT499"
+                                        },
+                                        "attributeValidations": [
+                                        ],
+                                        "colSpan": 1,
+                                        "componentInGrid": true,
+                                        "componentStyle": null,
+                                        "customEvents": [
+                                        ],
+                                        "customizationLayer": 0,
+                                        "customizationLayerDescription": "ECU",
+                                        "enabled": 0,
+                                        "format": null,
+                                        "include": 4095,
+                                        "maxRecords": null,
+                                        "name": "untilDate",
+                                        "options": 0,
+                                        "order": 13,
+                                        "readOnly": 8,
+                                        "responsiveLayouts": null,
+                                        "responsivity": false,
+                                        "sizeWidthComposite": null,
+                                        "style": null,
+                                        "userControl": {
+                                            "type": "I",
+                                            "userControlId": "DateField"
+                                        },
+                                        "visible": 0,
+                                        "visualAttributeId": "VA_DATEFIELDNEFSQR_671643",
+                                        "width": null,
+                                        "widthComposite": "D"
+                                    },
+                                    {
+                                        "aggregate": null,
+                                        "aggregateId": null,
+                                        "attribute": {
+                                            "$ref": "../../../../ASSTS/entities/EN_DEBITORGE_499.json#/attributes/AT69_FROMDAET499"
+                                        },
+                                        "attributeValidations": [
+                                        ],
+                                        "colSpan": 1,
+                                        "componentInGrid": true,
+                                        "componentStyle": null,
+                                        "customEvents": [
+                                        ],
+                                        "customizationLayer": 0,
+                                        "customizationLayerDescription": "ECU",
+                                        "enabled": 0,
+                                        "format": null,
+                                        "include": 4095,
+                                        "maxRecords": null,
+                                        "name": "fromDate",
+                                        "options": 0,
+                                        "order": 12,
+                                        "readOnly": 8,
+                                        "responsiveLayouts": null,
+                                        "responsivity": false,
+                                        "sizeWidthComposite": null,
+                                        "style": null,
+                                        "userControl": {
+                                            "type": "I",
+                                            "userControlId": "DateField"
+                                        },
+                                        "visible": 0,
+                                        "visualAttributeId": "VA_DATEFIELDZFBNAG_231643",
+                                        "width": null,
+                                        "widthComposite": "D"
+                                    },
+                                    {
+                                        "aggregate": null,
+                                        "aggregateId": null,
+                                        "attribute": {
+                                            "$ref": "../../../../ASSTS/entities/EN_DEBITORGE_499.json#/attributes/AT71_REFEREEE499"
+                                        },
+                                        "attributeValidations": [
+                                        ],
+                                        "colSpan": 1,
+                                        "componentInGrid": true,
+                                        "componentStyle": null,
+                                        "customEvents": [
+                                        ],
+                                        "customizationLayer": 0,
+                                        "customizationLayerDescription": "ECU",
+                                        "enabled": 4095,
+                                        "include": 4095,
+                                        "label": {
+                                            "defaultValue": {
+                                                "$ref": "../../../../ASSTS/assets/languages/ASSTS.json#/ASSTS/LBL/LBL_ASSTS_REFERENAI_72258"
+                                            },
+                                            "labelId": "LBL_ASSTS_REFERENAI_72258",
+                                            "moduleId": "ASSTS"
+                                        },
+                                        "maxRecords": null,
+                                        "name": "reference",
+                                        "options": 0,
+                                        "order": 3,
+                                        "readOnly": 8,
+                                        "responsiveLayouts": null,
+                                        "responsivity": false,
+                                        "sizeWidthComposite": null,
+                                        "style": null,
+                                        "textRows": 0,
+                                        "userControl": {
+                                            "type": "I",
+                                            "userControlId": "TextInputBox"
+                                        },
+                                        "visible": 4095,
+                                        "visualAttributeId": "VA_TEXTINPUTBOXARI_121643",
+                                        "width": "100",
+                                        "widthComposite": "D"
+                                    },
+                                    {
+                                        "aggregate": null,
+                                        "aggregateId": null,
+                                        "attribute": {
+                                            "$ref": "../../../../ASSTS/entities/EN_DEBITORGE_499.json#/attributes/AT58_CLIENTII499"
+                                        },
+                                        "attributeValidations": [
+                                        ],
+                                        "colSpan": 1,
+                                        "componentInGrid": true,
+                                        "componentStyle": null,
+                                        "customEvents": [
+                                        ],
+                                        "customizationLayer": 0,
+                                        "customizationLayerDescription": "ECU",
+                                        "enabled": 4095,
+                                        "include": 4095,
+                                        "label": {
+                                            "defaultValue": {
+                                                "$ref": "../../../../ASSTS/assets/languages/ASSTS.json#/ASSTS/LBL/LBL_ASSTS_IDCLIENTT_49211"
+                                            },
+                                            "labelId": "LBL_ASSTS_IDCLIENTT_49211",
+                                            "moduleId": "ASSTS"
+                                        },
+                                        "maxRecords": null,
+                                        "name": "clientId",
+                                        "options": 0,
+                                        "order": 9,
+                                        "readOnly": 8,
+                                        "responsiveLayouts": null,
+                                        "responsivity": false,
+                                        "sizeWidthComposite": null,
+                                        "style": null,
+                                        "textRows": 0,
+                                        "userControl": {
+                                            "type": "I",
+                                            "userControlId": "TextInputBox"
+                                        },
+                                        "visible": 4095,
+                                        "visualAttributeId": "VA_TEXTINPUTBOXFUX_836643",
+                                        "width": null,
+                                        "widthComposite": "D"
+                                    },
+                                    {
+                                        "aggregate": null,
+                                        "aggregateId": null,
+                                        "attribute": {
+                                            "$ref": "../../../../ASSTS/entities/EN_DEBITORGE_499.json#/attributes/AT18_NAMECLNT499"
+                                        },
+                                        "attributeValidations": [
+                                        ],
+                                        "colSpan": 1,
+                                        "componentInGrid": true,
+                                        "componentStyle": null,
+                                        "customEvents": [
+                                        ],
+                                        "customizationLayer": 0,
+                                        "customizationLayerDescription": "ECU",
+                                        "enabled": 4095,
+                                        "include": 4095,
+                                        "label": {
+                                            "defaultValue": {
+                                                "$ref": "../../../../ASSTS/assets/languages/ASSTS.json#/ASSTS/LBL/LBL_ASSTS_CLIENTEWV_22561"
+                                            },
+                                            "labelId": "LBL_ASSTS_CLIENTEWV_22561",
+                                            "moduleId": "ASSTS"
+                                        },
+                                        "maxRecords": null,
+                                        "name": "nameClient",
+                                        "options": 0,
+                                        "order": 10,
+                                        "readOnly": 8,
+                                        "responsiveLayouts": null,
+                                        "responsivity": false,
+                                        "sizeWidthComposite": null,
+                                        "style": null,
+                                        "textRows": 0,
+                                        "userControl": {
+                                            "type": "I",
+                                            "userControlId": "TextInputBox"
+                                        },
+                                        "visible": 4095,
+                                        "visualAttributeId": "VA_TEXTINPUTBOXHUS_291643",
+                                        "width": "100",
+                                        "widthComposite": "D"
+                                    },
+                                    {
+                                        "aggregate": null,
+                                        "aggregateId": null,
+                                        "attribute": {
+                                            "$ref": "../../../../ASSTS/entities/EN_DEBITORGE_499.json#/attributes/AT87_TYPEEROR499"
+                                        },
+                                        "attributeValidations": [
+                                        ],
+                                        "cacheDuration": 0,
+                                        "catalogName": "ca_tipo_error",
+                                        "colSpan": 1,
+                                        "componentInGrid": true,
+                                        "componentStyle": null,
+                                        "customEvents": [
+                                        ],
+                                        "customizationLayer": 0,
+                                        "customizationLayerDescription": "ECU",
+                                        "enabled": 4095,
+                                        "entityQuery": null,
+                                        "include": 4095,
+                                        "label": {
+                                            "defaultValue": {
+                                                "$ref": "../../../../ASSTS/assets/languages/ASSTS.json#/ASSTS/LBL/LBL_ASSTS_TIPOERROR_36798"
+                                            },
+                                            "labelId": "LBL_ASSTS_TIPOERROR_36798",
+                                            "moduleId": "ASSTS"
+                                        },
+                                        "maxRecords": null,
+                                        "minChars": null,
+                                        "name": "typeError",
+                                        "options": 0,
+                                        "order": 7,
+                                        "queryId": null,
+                                        "queryMemberText": {
+                                            "attribute": {
+                                                "attributeId": null,
+                                                "name": null
+                                            },
+                                            "queryMemberId": null
+                                        },
+                                        "queryMemberValue": {
+                                            "attribute": {
+                                                "attributeId": null,
+                                                "name": null
+                                            },
+                                            "queryMemberId": null
+                                        },
+                                        "queryModule": null,
+                                        "queryVersion": null,
+                                        "readOnly": 8,
+                                        "responsiveLayouts": null,
+                                        "responsivity": false,
+                                        "sizeWidthComposite": null,
+                                        "style": null,
+                                        "type": "none",
+                                        "userControl": {
+                                            "type": "I",
+                                            "userControlId": "ComboBox"
+                                        },
+                                        "visible": 4095,
+                                        "visualAttributeId": "VA_TEXTINPUTBOXMUK_368643",
+                                        "width": null,
+                                        "widthComposite": "D"
+                                    },
+                                    {
+                                        "aggregate": null,
+                                        "aggregateId": null,
+                                        "attribute": {
+                                            "$ref": "../../../../ASSTS/entities/EN_DEBITORGE_499.json#/attributes/AT47_DESCRIOC499"
+                                        },
+                                        "attributeValidations": [
+                                        ],
+                                        "colSpan": 1,
+                                        "componentInGrid": true,
+                                        "componentStyle": null,
+                                        "customEvents": [
+                                        ],
+                                        "customizationLayer": 0,
+                                        "customizationLayerDescription": "ECU",
+                                        "enabled": 4095,
+                                        "include": 4095,
+                                        "label": {
+                                            "defaultValue": {
+                                                "$ref": "../../../../ASSTS/assets/languages/ASSTS.json#/ASSTS/LBL/LBL_ASSTS_DESCRIPIO_25154"
+                                            },
+                                            "labelId": "LBL_ASSTS_DESCRIPIO_25154",
+                                            "moduleId": "ASSTS"
+                                        },
+                                        "maxRecords": null,
+                                        "name": "errorDescription",
+                                        "options": 0,
+                                        "order": 8,
+                                        "readOnly": 8,
+                                        "responsiveLayouts": null,
+                                        "responsivity": false,
+                                        "sizeWidthComposite": null,
+                                        "style": null,
+                                        "textRows": 0,
+                                        "userControl": {
+                                            "type": "I",
+                                            "userControlId": "TextInputBox"
+                                        },
+                                        "visible": 4095,
+                                        "visualAttributeId": "VA_TEXTINPUTBOXPBC_266643",
+                                        "width": "180",
+                                        "widthComposite": "D"
+                                    },
+                                    {
+                                        "aggregate": null,
+                                        "aggregateId": null,
+                                        "attribute": {
+                                            "$ref": "../../../../ASSTS/entities/EN_DEBITORGE_499.json#/attributes/AT97_STATECSS499"
+                                        },
+                                        "attributeValidations": [
+                                        ],
+                                        "colSpan": 1,
+                                        "componentInGrid": true,
+                                        "componentStyle": null,
+                                        "customEvents": [
+                                        ],
+                                        "customizationLayer": 0,
+                                        "customizationLayerDescription": "ECU",
+                                        "enabled": 4095,
+                                        "include": 4095,
+                                        "label": {
+                                            "defaultValue": {
+                                                "$ref": "../../../../ASSTS/assets/languages/ASSTS.json#/ASSTS/LBL/LBL_ASSTS_ESTADOEAI_33340"
+                                            },
+                                            "labelId": "LBL_ASSTS_ESTADOEAI_33340",
+                                            "moduleId": "ASSTS"
+                                        },
+                                        "maxRecords": null,
+                                        "name": "stateCobis",
+                                        "options": 0,
+                                        "order": 6,
+                                        "readOnly": 8,
+                                        "responsiveLayouts": null,
+                                        "responsivity": false,
+                                        "sizeWidthComposite": null,
+                                        "style": null,
+                                        "textRows": 0,
+                                        "userControl": {
+                                            "type": "I",
+                                            "userControlId": "TextInputBox"
+                                        },
+                                        "visible": 4095,
+                                        "visualAttributeId": "VA_TEXTINPUTBOXPER_629643",
+                                        "width": null,
+                                        "widthComposite": "D"
+                                    },
+                                    {
+                                        "aggregate": null,
+                                        "aggregateId": null,
+                                        "attribute": {
+                                            "$ref": "../../../../ASSTS/entities/EN_DEBITORGE_499.json#/attributes/AT22_LOANNUBR499"
+                                        },
+                                        "attributeValidations": [
+                                        ],
+                                        "colSpan": 1,
+                                        "componentInGrid": true,
+                                        "componentStyle": null,
+                                        "customEvents": [
+                                        ],
+                                        "customizationLayer": 0,
+                                        "customizationLayerDescription": "ECU",
+                                        "enabled": 4095,
+                                        "include": 4095,
+                                        "label": {
+                                            "defaultValue": {
+                                                "$ref": "../../../../ASSTS/assets/languages/ASSTS.json#/ASSTS/LBL/LBL_ASSTS_NUMPRSTOO_83774"
+                                            },
+                                            "labelId": "LBL_ASSTS_NUMPRSTOO_83774",
+                                            "moduleId": "ASSTS"
+                                        },
+                                        "maxRecords": null,
+                                        "name": "loanNumber",
+                                        "options": 0,
+                                        "order": 1,
+                                        "readOnly": 8,
+                                        "responsiveLayouts": null,
+                                        "responsivity": false,
+                                        "sizeWidthComposite": null,
+                                        "style": null,
+                                        "textRows": 0,
+                                        "userControl": {
+                                            "type": "I",
+                                            "userControlId": "TextInputBox"
+                                        },
+                                        "visible": 4095,
+                                        "visualAttributeId": "VA_TEXTINPUTBOXQVW_891643",
+                                        "width": "120",
+                                        "widthComposite": "D"
+                                    },
+                                    {
+                                        "aggregate": null,
+                                        "aggregateId": null,
+                                        "attribute": {
+                                            "$ref": "../../../../ASSTS/entities/EN_DEBITORGE_499.json#/attributes/AT40_AMOUNTAY499"
+                                        },
+                                        "attributeValidations": [
+                                        ],
+                                        "colSpan": 1,
+                                        "componentInGrid": true,
+                                        "componentStyle": null,
+                                        "customEvents": [
+                                        ],
+                                        "customizationLayer": 0,
+                                        "customizationLayerDescription": "ECU",
+                                        "enabled": 4095,
+                                        "format": "n",
+                                        "include": 4095,
+                                        "label": {
+                                            "defaultValue": {
+                                                "$ref": "../../../../ASSTS/assets/languages/ASSTS.json#/ASSTS/LBL/LBL_ASSTS_MONTODEGG_79201"
+                                            },
+                                            "labelId": "LBL_ASSTS_MONTODEGG_79201",
+                                            "moduleId": "ASSTS"
+                                        },
+                                        "maxRecords": null,
+                                        "name": "paymentAmount",
+                                        "options": 0,
+                                        "order": 5,
+                                        "readOnly": 8,
+                                        "responsiveLayouts": null,
+                                        "responsivity": false,
+                                        "sizeWidthComposite": null,
+                                        "style": null,
+                                        "textRows": 0,
+                                        "userControl": {
+                                            "type": "I",
+                                            "userControlId": "TextInputBox"
+                                        },
+                                        "visible": 4095,
+                                        "visualAttributeId": "VA_TEXTINPUTBOXTZZ_678643",
+                                        "width": null,
+                                        "widthComposite": "D"
+                                    },
+                                    {
+                                        "aggregate": null,
+                                        "aggregateId": null,
+                                        "attribute": {
+                                            "$ref": "../../../../ASSTS/entities/EN_DEBITORGE_499.json#/attributes/AT77_ACCOUNBB499"
+                                        },
+                                        "attributeValidations": [
+                                        ],
+                                        "colSpan": 1,
+                                        "componentInGrid": true,
+                                        "componentStyle": null,
+                                        "customEvents": [
+                                        ],
+                                        "customizationLayer": 0,
+                                        "customizationLayerDescription": "ECU",
+                                        "enabled": 4095,
+                                        "include": 4095,
+                                        "label": {
+                                            "defaultValue": {
+                                                "$ref": "../../../../ASSTS/assets/languages/ASSTS.json#/ASSTS/LBL/LBL_ASSTS_NMEROCUAA_69356"
+                                            },
+                                            "labelId": "LBL_ASSTS_NMEROCUAA_69356",
+                                            "moduleId": "ASSTS"
+                                        },
+                                        "maxRecords": null,
+                                        "name": "accountNumber",
+                                        "options": 0,
+                                        "order": 2,
+                                        "readOnly": 8,
+                                        "responsiveLayouts": null,
+                                        "responsivity": false,
+                                        "sizeWidthComposite": null,
+                                        "style": null,
+                                        "textRows": 0,
+                                        "userControl": {
+                                            "type": "I",
+                                            "userControlId": "TextInputBox"
+                                        },
+                                        "visible": 4095,
+                                        "visualAttributeId": "VA_TEXTINPUTBOXULU_210643",
+                                        "width": "100",
+                                        "widthComposite": "D"
+                                    },
+                                    {
+                                        "aggregate": null,
+                                        "aggregateId": null,
+                                        "attribute": {
+                                            "$ref": "../../../../ASSTS/entities/EN_DEBITORGE_499.json#/attributes/AT96_FILENAMM499"
+                                        },
+                                        "attributeValidations": [
+                                        ],
+                                        "colSpan": 1,
+                                        "componentInGrid": true,
+                                        "componentStyle": null,
+                                        "customEvents": [
+                                        ],
+                                        "customizationLayer": 0,
+                                        "customizationLayerDescription": "ECU",
+                                        "enabled": 4095,
+                                        "include": 4095,
+                                        "label": {
+                                            "defaultValue": {
+                                                "$ref": "../../../../ASSTS/assets/languages/ASSTS.json#/ASSTS/LBL/LBL_ASSTS_ARCHIVOGS_24517"
+                                            },
+                                            "labelId": "LBL_ASSTS_ARCHIVOGS_24517",
+                                            "moduleId": "ASSTS"
+                                        },
+                                        "maxRecords": null,
+                                        "name": "filename",
+                                        "options": 0,
+                                        "order": 4,
+                                        "readOnly": 8,
+                                        "responsiveLayouts": null,
+                                        "responsivity": false,
+                                        "sizeWidthComposite": null,
+                                        "style": null,
+                                        "textRows": 0,
+                                        "userControl": {
+                                            "type": "I",
+                                            "userControlId": "TextInputBox"
+                                        },
+                                        "visible": 4095,
+                                        "visualAttributeId": "VA_TEXTINPUTBOXXZG_431643",
+                                        "width": "150",
+                                        "widthComposite": "D"
+                                    }
+                                ]
+                            }
+                        ],
+                        "layoutType": "GroupLayout",
+                        "name": "s1974",
+                        "style": null,
+                        "visible": 4095
+                    }
+                ],
+                "id": {
+                    "version": "1.0.0",
+                    "viewId": "VW_DEBITORDPN_643"
+                },
+                "modules": [
+                    {
+                        "moduleId": "ASSTS"
+                    }
+                ],
+                "name": "View of DebitOrderProcessingLog"
+            }
+        }
+    ]
+}

@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+	<context:annotation-config />
+
+	<bean id="ContractInformationImpl"
+		class="com.cobiscorp.ecobis.external.services.bl.impl.ContractInformationImpl">
+		<property name="serviceIntegration" ref="serviceIntegration" />
+	</bean>
+
+	<bean id="ContractInformationHisImpl"
+		class="com.cobiscorp.ecobis.external.services.bl.impl.ContractInformationHisImpl">
+		<property name="serviceIntegration" ref="serviceIntegration" />
+	</bean>
+
+	<bean id="CreditCardManagerImpl"
+		class="com.cobiscorp.ecobis.external.services.bl.impl.CreditCardManagerImpl">
+		<property name="serviceIntegration" ref="serviceIntegration" />
+		<property name="cacheManager" ref="cacheManager" />
+
+	</bean>
+
+	<bean id="CreditCardContingentsManagerImpl"
+		class="com.cobiscorp.ecobis.external.services.bl.impl.CreditCardContingentsManagerImpl">
+
+
+
+	</bean>
+	<bean id="CreditCardDebtsManagerImpl"
+		class="com.cobiscorp.ecobis.external.services.bl.impl.CreditCardDebtsManagerImpl">
+
+
+
+	</bean>
+
+	<bean id="CreditCardHisManagerImpl"
+		class="com.cobiscorp.ecobis.external.services.bl.impl.CreditCardHisManagerImpl">
+		<property name="serviceIntegration" ref="serviceIntegration" />
+	</bean>
+
+	<bean id="DebitCardManagerImpl"
+		class="com.cobiscorp.ecobis.external.services.bl.impl.DebitCardManagerImpl">
+		<property name="serviceIntegration" ref="serviceIntegration" />
+	</bean>
+
+	<bean id="DebitCardHisManagerImpl"
+		class="com.cobiscorp.ecobis.external.services.bl.impl.DebitCardHisManagerImpl">
+		<property name="serviceIntegration" ref="serviceIntegration" />
+	</bean>
+
+	<bean id="DraftManagerImpl"
+		class="com.cobiscorp.ecobis.external.services.bl.impl.DraftManagerImpl">
+		<property name="serviceIntegration" ref="serviceIntegration" />
+	</bean>
+
+	<bean id="DraftInManagerImpl"
+		class="com.cobiscorp.ecobis.external.services.bl.impl.DraftInManagerImpl">
+		<property name="serviceIntegration" ref="serviceIntegration" />
+	</bean>
+
+	<bean id="TransferenceManagerImpl"
+		class="com.cobiscorp.ecobis.external.services.bl.impl.TransferenceManagerImpl">
+		<property name="serviceIntegration" ref="serviceIntegration" />
+	</bean>
+
+	<bean id="RemittancesManagerImpl"
+		class="com.cobiscorp.ecobis.external.services.bl.impl.RemittancesManagerImpl">
+		<property name="serviceIntegration" ref="serviceIntegration" />
+	</bean>
+
+</beans>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<blueprint xmlns="http://www.osgi.org/xmlns/blueprint/v1.0.0">
+
+	<reference id="spOrchestratorOsgi"
+		interface="com.cobiscorp.cobis.cts.services.orchestrator.ISPOrchestrator" />
+
+	<bean id="disbursementBusinessExecutor"
+		class="com.cobis.cloud.sofom.operationsexecution.disbursementbusiness.batch.DisbursementBusinessExecutor">
+		<property name="spOrchestrator" ref="spOrchestratorOsgi" />
+	</bean>
+
+	<service ref="disbursementBusinessExecutor"
+		interface="com.cobiscorp.cobis.scheduler.api.ICobisJob">
+		<service-properties>
+			<entry key="service.impl" value="DisbursementBusinessExecutor" />
+		</service-properties>
+	</service>
+
+</blueprint>

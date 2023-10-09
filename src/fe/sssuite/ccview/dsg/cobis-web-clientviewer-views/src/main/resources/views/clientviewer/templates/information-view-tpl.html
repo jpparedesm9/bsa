@@ -1,0 +1,15 @@
+
+<div class="cb-viewport">
+	<div id="customerInfoSplitter" kendo-splitter k-orientation="orientationh" k-rebind="orientationh" 
+	k-panes="[ {size: '200px', collapsible: true},{}]">
+	
+			<ul class="nav nav-pills nav-stacked">
+				<li ng-class="{active:currentView==group.mnemonic}" ng-repeat="group in groupsClient" ng-if="getVisibleSectionClient(group.typeClient)"><a href="javascript://" ng-click="setCurrentView(group.mnemonic, $event)" translate>{{group.name}}</a></li>
+			</ul>
+	
+	
+		
+	<div ng-show ="currentView" designer-form-load form="vc.viewState.clientDinamicInformation"  class="cb-sub-scrollable"></div>
+	
+  </div>
+</div>

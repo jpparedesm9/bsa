@@ -1,0 +1,80 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<serviceClass name="Currency" nsBase="COBISCorp.eCOBIS.BusinessProcess.General" namespace="COBISCorp.eCOBIS.BusinessProcess.General.Service" package="cobiscorp.ecobis.businessprocess.general.service" ns="http://service.general.businessprocess.ecobis.cobiscorp" module="BusinessProcess.General" productName="COBISCorp.eCOBIS.BusinessProcess.Service" productVersion="2.0.0.0">
+  <productProperties>
+    <property name="MavenGroupId" value="com.cobiscorp.processapi" />
+    <property name="MavenArtifactId" value="COBISCorp.eCOBIS.BusinessProcess.Service" />
+    <property name="MavenVersion" value="2.0.0.0" />
+  </productProperties>
+  <partialClass name="Currency">
+    <services>
+      <service id="BusinessProcess.General.Currency.GetCodeCurrency" netName="GetCodeCurrency" javaName="getCodeCurrency" mappingType="STORED_PROCEDURE" mapId="a22f44365b5f2941815eec4d013a94b2">
+        <documentations default="Español">
+          <documentation id="Español">Obtiene el codigo de la moneda</documentation>
+          <documentation id="English">Gets the currency code</documentation>
+        </documentations>
+        <SRVMapping name="cobis..sp_consulta_moneda" trnCode="73901">
+          <DTOs>
+            <DTO direction="in" name="CurrencyCode" alias="inCurrencyCode" namespace="COBISCorp.eCOBIS.BusinessProcess.General.DTO" package="cobiscorp.ecobis.businessprocess.general.dto" ns="http://dto.general.businessprocess.ecobis.cobiscorp" required="true" />
+            <DTO direction="return" name="CurrencyCode" alias="returnCurrencyCode" namespace="COBISCorp.eCOBIS.BusinessProcess.General.DTO" package="cobiscorp.ecobis.businessprocess.general.dto" ns="http://dto.general.businessprocess.ecobis.cobiscorp" required="true">
+              <properties>
+                <property name="codigo" propertyNet="Codigo" propertyJava="codigo" setterJavaMethod="setCodigo" getterJavaMethod="getCodigo" xsdType="int" netType="int" javaType="int" cobisMapping="" isInherit="false" isComplexType="false" isCollectionType="false" required="true" encrypted="false" maxLength="0" />
+                <property name="codigo_moneda" propertyNet="Codigo_moneda" propertyJava="codigo_moneda" setterJavaMethod="setCodigo_moneda" getterJavaMethod="getCodigo_moneda" xsdType="int" netType="int" javaType="int" cobisMapping="" isInherit="false" isComplexType="false" isCollectionType="false" required="true" encrypted="false" maxLength="0" />
+                <property name="cuenta" propertyNet="Cuenta" propertyJava="cuenta" setterJavaMethod="setCuenta" getterJavaMethod="getCuenta" xsdType="string" netType="string" javaType="String" cobisMapping="" isInherit="false" isComplexType="false" isCollectionType="false" required="false" encrypted="false" maxLength="0" />
+                <property name="descripcion" propertyNet="Descripcion" propertyJava="descripcion" setterJavaMethod="setDescripcion" getterJavaMethod="getDescripcion" xsdType="string" netType="string" javaType="String" cobisMapping="" isInherit="false" isComplexType="false" isCollectionType="false" required="false" encrypted="false" maxLength="0" />
+                <property name="moneda_sobregiro" propertyNet="Moneda_sobregiro" propertyJava="moneda_sobregiro" setterJavaMethod="setMoneda_sobregiro" getterJavaMethod="getMoneda_sobregiro" xsdType="int" netType="int" javaType="int" cobisMapping="" isInherit="false" isComplexType="false" isCollectionType="false" required="true" encrypted="false" maxLength="0" />
+                <property name="nombre_moneda" propertyNet="Nombre_moneda" propertyJava="nombre_moneda" setterJavaMethod="setNombre_moneda" getterJavaMethod="getNombre_moneda" xsdType="string" netType="string" javaType="String" cobisMapping="" isInherit="false" isComplexType="false" isCollectionType="false" required="false" encrypted="false" maxLength="0" />
+                <property name="operacion" propertyNet="Operacion" propertyJava="operacion" setterJavaMethod="setOperacion" getterJavaMethod="getOperacion" xsdType="string" netType="string" javaType="String" cobisMapping="" isInherit="false" isComplexType="false" isCollectionType="false" required="false" encrypted="false" maxLength="0" />
+                <property name="tipo" propertyNet="Tipo" propertyJava="tipo" setterJavaMethod="setTipo" getterJavaMethod="getTipo" xsdType="string" netType="string" javaType="String" cobisMapping="" isInherit="false" isComplexType="false" isCollectionType="false" required="false" encrypted="false" maxLength="0" />
+              </properties>
+            </DTO>
+            <DTO direction="out" name="CurrencyCode" alias="outCurrencyCode" namespace="COBISCorp.eCOBIS.BusinessProcess.General.DTO" package="cobiscorp.ecobis.businessprocess.general.dto" ns="http://dto.general.businessprocess.ecobis.cobiscorp" required="true">
+              <properties>
+                <property name="codigo" propertyNet="Codigo" propertyJava="codigo" setterJavaMethod="setCodigo" getterJavaMethod="getCodigo" xsdType="int" netType="int" javaType="int" cobisMapping="" isInherit="false" isComplexType="false" isCollectionType="false" required="true" encrypted="false" maxLength="0" />
+                <property name="codigo_moneda" propertyNet="Codigo_moneda" propertyJava="codigo_moneda" setterJavaMethod="setCodigo_moneda" getterJavaMethod="getCodigo_moneda" xsdType="int" netType="int" javaType="int" cobisMapping="" isInherit="false" isComplexType="false" isCollectionType="false" required="true" encrypted="false" maxLength="0" />
+                <property name="cuenta" propertyNet="Cuenta" propertyJava="cuenta" setterJavaMethod="setCuenta" getterJavaMethod="getCuenta" xsdType="string" netType="string" javaType="String" cobisMapping="" isInherit="false" isComplexType="false" isCollectionType="false" required="false" encrypted="false" maxLength="0" />
+                <property name="descripcion" propertyNet="Descripcion" propertyJava="descripcion" setterJavaMethod="setDescripcion" getterJavaMethod="getDescripcion" xsdType="string" netType="string" javaType="String" cobisMapping="" isInherit="false" isComplexType="false" isCollectionType="false" required="false" encrypted="false" maxLength="0" />
+                <property name="moneda_sobregiro" propertyNet="Moneda_sobregiro" propertyJava="moneda_sobregiro" setterJavaMethod="setMoneda_sobregiro" getterJavaMethod="getMoneda_sobregiro" xsdType="int" netType="int" javaType="int" cobisMapping="" isInherit="false" isComplexType="false" isCollectionType="false" required="true" encrypted="false" maxLength="0" />
+                <property name="nombre_moneda" propertyNet="Nombre_moneda" propertyJava="nombre_moneda" setterJavaMethod="setNombre_moneda" getterJavaMethod="getNombre_moneda" xsdType="string" netType="string" javaType="String" cobisMapping="" isInherit="false" isComplexType="false" isCollectionType="false" required="false" encrypted="false" maxLength="0" />
+                <property name="operacion" propertyNet="Operacion" propertyJava="operacion" setterJavaMethod="setOperacion" getterJavaMethod="getOperacion" xsdType="string" netType="string" javaType="String" cobisMapping="" isInherit="false" isComplexType="false" isCollectionType="false" required="false" encrypted="false" maxLength="0" />
+                <property name="tipo" propertyNet="Tipo" propertyJava="tipo" setterJavaMethod="setTipo" getterJavaMethod="getTipo" xsdType="string" netType="string" javaType="String" cobisMapping="" isInherit="false" isComplexType="false" isCollectionType="false" required="false" encrypted="false" maxLength="0" />
+              </properties>
+            </DTO>
+          </DTOs>
+          <parameterMappings>
+            <parameter name="@i_tipo" direction="in" mappingDirection="in" dataType="varchar" CTSDataType="SQLVARCHAR" JavaSQLType="VARCHAR" mappingType="DTO" allowNull="false" DTOAlias="inCurrencyCode" DTOPropertyName="tipo" />
+            <parameter name="@i_operacion" direction="in" mappingDirection="in" dataType="varchar" CTSDataType="SQLVARCHAR" JavaSQLType="VARCHAR" mappingType="DTO" allowNull="false" DTOAlias="inCurrencyCode" DTOPropertyName="operacion" />
+            <parameter name="@i_descripcion" direction="in" mappingDirection="in" dataType="varchar" CTSDataType="SQLVARCHAR" JavaSQLType="VARCHAR" mappingType="DTO" allowNull="false" DTOAlias="inCurrencyCode" DTOPropertyName="descripcion" />
+            <parameter name="@i_codigo" direction="in" mappingDirection="in" dataType="int" CTSDataType="SQLINT4" JavaSQLType="INTEGER" mappingType="DTO" allowNull="false" DTOAlias="inCurrencyCode" DTOPropertyName="codigo" />
+            <parameter name="@i_cuenta" direction="in" mappingDirection="in" dataType="varchar" CTSDataType="SQLVARCHAR" JavaSQLType="VARCHAR" mappingType="DTO" allowNull="false" DTOAlias="inCurrencyCode" DTOPropertyName="cuenta" />
+          </parameterMappings>
+          <resultMappings>
+            <result>
+              <DTOResult DTOAlias="returnCurrencyCode" MapReturn="true">
+                <columnMapping position="0" name="codigo_moneda" DTOPropertyName="codigo_moneda" DataType="int" Format="" />
+                <columnMapping position="1" name="descripcion_moneda" DTOPropertyName="nombre_moneda" DataType="string" Format="" />
+              </DTOResult>
+            </result>
+            <result>
+              <DTOResult DTOAlias="returnCurrencyCode" MapReturn="true">
+                <columnMapping position="0" name="codigo_moneda" DTOPropertyName="codigo_moneda" DataType="int" Format="" />
+              </DTOResult>
+            </result>
+            <result>
+              <DTOResult DTOAlias="returnCurrencyCode" MapReturn="true">
+                <columnMapping position="0" name="nombre_moneda" DTOPropertyName="nombre_moneda" DataType="string" Format="" />
+              </DTOResult>
+            </result>
+            <result>
+              <DTOResult DTOAlias="returnCurrencyCode" MapReturn="true">
+                <columnMapping position="0" name="moneda_sobregiro" DTOPropertyName="moneda_sobregiro" DataType="string" Format="" />
+              </DTOResult>
+            </result>
+          </resultMappings>
+          <MappingProperties>
+            <MappingProperty key="singleResult1" value="true" />
+          </MappingProperties>
+        </SRVMapping>
+      </service>
+    </services>
+  </partialClass>
+</serviceClass>

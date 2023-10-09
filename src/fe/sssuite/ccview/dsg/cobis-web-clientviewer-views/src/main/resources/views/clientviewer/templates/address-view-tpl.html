@@ -1,0 +1,38 @@
+<div ng-controller="clientviewer.addressController" class="k-widget k-header k-tabstrip">
+    <fieldset  id="organizer" class="cb-content">
+        <ul kendo-panel-bar id="pnDirectionsDet" class="cb-collapsible">
+            <li class="k-state-active" ng-show="isVisibleDirections">
+                <span class="k-link k-state-selected" translate>ADDRESS.LABELS.LBL_ADDRESS</span><br/>
+				<div>
+					<button class="k-button k-primary" id="btnExcelExport">Export to Excel</button>
+					<div id = "grdDirections" kendo-grid k-data-source="seriesDirections" k-selectable="'row'" k-columns="addressColumns">
+						<div k-detail-template>
+                			<kendo-tabstrip>	
+                				<ul>
+                    				<li class="k-state-active"></li>
+                				</ul>              
+                				<div>                					
+                    				<div kendo-grid k-options="queryClientPhones(dataItem)" k-data-source="seriesPhones" k-columns=phoneColumns></div>
+                				</div>	                		
+               				 </kendo-tabstrip>
+            			</div>						
+					</div>								
+				</div>					
+            </li>
+			<li class="k-state-active" ng-show="isVisibleEmails">
+                <span class="k-link k-state-selected" translate>ADDRESS.LABELS.LBL_EMAILS</span><br/>
+				<div>				
+					<div kendo-grid k-data-source="seriesEmails" k-selectable="'row'" k-columns="emailsColumns" >
+					</div>
+				</div>					
+            </li>
+            <li class="k-state-active" ng-show="isVisibleContact">
+                <span class="k-link k-state-selected" translate>ADDRESS.LABELS.LBL_CONTACTS</span><br/>
+				<div>				
+					<div kendo-grid k-data-source=seriesContact k-selectable="'row'" k-columns="contactColumns" >
+					</div>					
+				</div>					
+            </li>		
+        </ul>
+    </fieldset>
+</div>

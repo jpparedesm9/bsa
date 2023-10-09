@@ -1,0 +1,37 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.cobiscorp.ecobis</groupId>
+	<artifactId>cobis-notification-build</artifactId>
+	<version>1.0.0</version>
+	<packaging>pom</packaging>
+	<name>cobis-notification-build</name>
+	<url>http://www.cobiscorp.com/</url>
+
+
+	<profiles>
+		<profile>
+			<id>env-development</id>
+			<activation>
+				<activeByDefault>true</activeByDefault>
+			</activation>        
+			<modules>
+				<module>../../../../../src/md/applications/scheduller/cloud-configuration</module>
+				<module>../../../../../src/md/applications/scheduller/cloud-util-jdbc</module>
+				<module>../../../../../src/md/applications/scheduller/cloud-util-marshall</module>
+				<module>../../../../../src/md/applications/scheduller/cloud-notification-service</module>
+				<module>../cobis-notification-installer</module>
+			</modules>
+		</profile>
+		<profile>
+			<id>env-hardening</id>
+			<modules>
+				<module>../../../../../src/md/applications/scheduller/cloud-configuration</module>
+				<module>../../../../../src/md/applications/scheduller/cloud-util-jdbc</module>
+				<module>../../../../../src/md/applications/scheduller/cloud-util-marshall</module>
+				<module>../../../../../src/md/applications/scheduller/cloud-notification-service</module>
+				<module>../cobis-notification-installer</module>
+			</modules>
+		</profile>
+	</profiles>
+
+</project>

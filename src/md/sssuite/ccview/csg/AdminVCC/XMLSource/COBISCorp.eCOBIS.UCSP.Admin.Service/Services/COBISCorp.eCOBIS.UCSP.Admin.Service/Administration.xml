@@ -1,0 +1,230 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<serviceClass name="Administration" nsBase="COBISCorp.eCOBIS.UCSP.Admin" namespace="COBISCorp.eCOBIS.UCSP.Admin.Service" package="cobiscorp.ecobis.ucsp.admin.service" ns="http://service.admin.ucsp.ecobis.cobiscorp" module="UCSP.Admin" productName="COBISCorp.eCOBIS.UCSP.Admin.Service" productVersion="4.2.0.0">
+  <productProperties>
+    <property name="MavenGroupId" value="com.cobiscorp.processapi" />
+    <property name="MavenArtifactId" value="$(/product/@name)$" />
+    <property name="MavenVersion" value="$(/product/@version)$" />
+  </productProperties>
+  <partialClass name="Administration">
+    <services>
+      <service id="UCSP.Admin.Administration.DefaultConfigurationVCC" netName="DefaultConfigurationVCC" javaName="defaultConfigurationVCC" mappingType="STORED_PROCEDURE" mapId="67c2818ea270471ce6c526e5737971c4">
+        <documentations default="Español">
+          <documentation id="Español">Retorna la Configuracion por defecto de la VCC</documentation>
+        </documentations>
+        <SRVMapping name="cob_pac..sp_admin_vcc" trnCode="731001">
+          <DTOs>
+            <DTO direction="return" name="ProductAdmin" alias="returnProductAdmin" namespace="COBISCorp.eCOBIS.UCSP.Admin.DTO" package="cobiscorp.ecobis.ucsp.admin.dto" ns="http://dto.admin.ucsp.ecobis.cobiscorp" required="true">
+              <properties>
+                <property name="id" propertyNet="Id" propertyJava="id" setterJavaMethod="setId" getterJavaMethod="getId" xsdType="int" netType="int" javaType="int" cobisMapping="" isInherit="false" isComplexType="false" isCollectionType="false" required="true" encrypted="false" maxLength="0" />
+                <property name="rolId" propertyNet="RolId" propertyJava="rolId" setterJavaMethod="setRolId" getterJavaMethod="getRolId" xsdType="int" netType="int" javaType="int" cobisMapping="" isInherit="false" isComplexType="false" isCollectionType="false" required="true" encrypted="false" maxLength="0" />
+                <property name="mnemonic" propertyNet="Mnemonic" propertyJava="mnemonic" setterJavaMethod="setMnemonic" getterJavaMethod="getMnemonic" xsdType="string" netType="string" javaType="String" cobisMapping="" isInherit="false" isComplexType="false" isCollectionType="false" required="false" encrypted="false" maxLength="0" />
+                <property name="name" propertyNet="Name" propertyJava="name" setterJavaMethod="setName" getterJavaMethod="getName" xsdType="string" netType="string" javaType="String" cobisMapping="" isInherit="false" isComplexType="false" isCollectionType="false" required="false" encrypted="false" maxLength="0" />
+                <property name="description" propertyNet="Description" propertyJava="description" setterJavaMethod="setDescription" getterJavaMethod="getDescription" xsdType="string" netType="string" javaType="String" cobisMapping="" isInherit="false" isComplexType="false" isCollectionType="false" required="false" encrypted="false" maxLength="0" />
+                <property name="parent" propertyNet="Parent" propertyJava="parent" setterJavaMethod="setParent" getterJavaMethod="getParent" xsdType="int" netType="int" javaType="int" cobisMapping="" isInherit="false" isComplexType="false" isCollectionType="false" required="true" encrypted="false" maxLength="0" />
+                <property name="isvisible" propertyNet="Isvisible" propertyJava="isvisible" setterJavaMethod="setIsvisible" getterJavaMethod="getIsvisible" xsdType="byte" netType="sbyte" javaType="byte" cobisMapping="" isInherit="false" isComplexType="false" isCollectionType="false" required="true" encrypted="false" maxLength="0" />
+                <property name="isencrypted" propertyNet="Isencrypted" propertyJava="isencrypted" setterJavaMethod="setIsencrypted" getterJavaMethod="getIsencrypted" xsdType="byte" netType="sbyte" javaType="byte" cobisMapping="" isInherit="false" isComplexType="false" isCollectionType="false" required="true" encrypted="false" maxLength="0" />
+                <property name="rolName" propertyNet="RolName" propertyJava="rolName" setterJavaMethod="setRolName" getterJavaMethod="getRolName" xsdType="string" netType="string" javaType="String" cobisMapping="" isInherit="false" isComplexType="false" isCollectionType="false" required="false" encrypted="false" maxLength="0" />
+              </properties>
+            </DTO>
+            <DTO direction="out" name="ProductAdminListResponse" alias="outProductAdminListResponse" namespace="COBISCorp.eCOBIS.UCSP.Admin.DTO" package="cobiscorp.ecobis.ucsp.admin.dto" ns="http://dto.admin.ucsp.ecobis.cobiscorp" required="true">
+              <properties>
+                <property name="listConfiguration" propertyNet="ListConfiguration" propertyJava="listConfiguration" setterJavaMethod="setListConfiguration" getterJavaMethod="getListConfiguration" xsdType="GenericList" netType="List&lt;ProductAdmin&gt;" javaType="ArrayList&lt;ProductAdmin&gt;" cobisMapping="" isInherit="false" isComplexType="true" isCollectionType="true" required="true" encrypted="false" maxLength="0" XSDElementType="ProductAdmin" netElementType="ProductAdmin" javaElementType="ProductAdmin" />
+              </properties>
+            </DTO>
+          </DTOs>
+          <parameterMappings>
+            <parameter name="@i_operacion" direction="in" mappingDirection="in" dataType="char" CTSDataType="SQLCHAR" JavaSQLType="CHAR" mappingType="CONSTANT" allowNull="false" contantValue="E" />
+          </parameterMappings>
+          <resultMappings>
+            <result>
+              <DTOResult DTOAlias="returnProductAdmin" MapReturn="true">
+                <columnMapping position="0" name="pr_id" DTOPropertyName="id" DataType="int" Format="" />
+                <columnMapping position="1" name=" pr_rol_id" DTOPropertyName="rolId" DataType="int" Format="" />
+                <columnMapping position="2" name=" pr_mnemonic" DTOPropertyName="mnemonic" DataType="string" Format="" />
+                <columnMapping position="3" name=" pr_name" DTOPropertyName="name" DataType="string" Format="" />
+                <columnMapping position="4" name=" pr_description" DTOPropertyName="description" DataType="string" Format="" />
+                <columnMapping position="5" name=" pr_parent" DTOPropertyName="parent" DataType="int" Format="" />
+                <columnMapping position="6" name=" pr_isvisible" DTOPropertyName="isvisible" DataType="byte" Format="" />
+                <columnMapping position="7" name=" pr_isencrypted" DTOPropertyName="isencrypted" DataType="byte" Format="" />
+                <columnMapping position="8" name=" pr_rol_name" DTOPropertyName="rolName" DataType="string" Format="" />
+              </DTOResult>
+            </result>
+          </resultMappings>
+          <MappingProperties>
+            <MappingProperty key="BLIQueryPropertyName1" value="ListConfiguration" />
+          </MappingProperties>
+        </SRVMapping>
+      </service>
+      <service id="UCSP.Admin.Administration.DeleteConfigurationVCC" netName="DeleteConfigurationVCC" javaName="deleteConfigurationVCC" mappingType="STORED_PROCEDURE" mapId="26004ae468910a90a96a7a74c2e58694">
+        <documentations default="Español">
+          <documentation id="Español">Elimina la configuracion de un rol especifico</documentation>
+        </documentations>
+        <SRVMapping name="cob_pac..sp_admin_vcc" trnCode="731001">
+          <DTOs>
+            <DTO direction="in" name="ProductAdmin" alias="inProductAdmin" namespace="COBISCorp.eCOBIS.UCSP.Admin.DTO" package="cobiscorp.ecobis.ucsp.admin.dto" ns="http://dto.admin.ucsp.ecobis.cobiscorp" required="true" />
+          </DTOs>
+          <parameterMappings>
+            <parameter name="@i_pr_rol_id" direction="in" mappingDirection="in" dataType="int" CTSDataType="SQLINT4" JavaSQLType="INTEGER" mappingType="DTO" allowNull="false" DTOAlias="inProductAdmin" DTOPropertyName="rolId" />
+            <parameter name="@i_operacion" direction="in" mappingDirection="in" dataType="char" CTSDataType="SQLCHAR" JavaSQLType="CHAR" mappingType="CONSTANT" allowNull="false" contantValue="D" />
+          </parameterMappings>
+          <resultMappings />
+          <MappingProperties />
+        </SRVMapping>
+      </service>
+      <service id="UCSP.Admin.Administration.GetAllRoleAssociatesVCC" netName="GetAllRoleAssociatesVCC" javaName="getAllRoleAssociatesVCC" mappingType="STORED_PROCEDURE" mapId="bfee96e84950399dec7e8838ed213ca4">
+        <documentations default="Español">
+          <documentation id="Español">Realiza la Consulta de los Roles asociados a la VCC</documentation>
+        </documentations>
+        <SRVMapping name="cob_pac..sp_admin_vcc" trnCode="731001">
+          <DTOs>
+            <DTO direction="return" name="Role" alias="returnRole" namespace="COBISCorp.eCOBIS.UCSP.Admin.DTO" package="cobiscorp.ecobis.ucsp.admin.dto" ns="http://dto.admin.ucsp.ecobis.cobiscorp" required="true">
+              <properties>
+                <property name="rol" propertyNet="Rol" propertyJava="rol" setterJavaMethod="setRol" getterJavaMethod="getRol" xsdType="int" netType="int" javaType="int" cobisMapping="" isInherit="false" isComplexType="false" isCollectionType="false" required="true" encrypted="false" maxLength="0" />
+                <property name="descripcion" propertyNet="Descripcion" propertyJava="descripcion" setterJavaMethod="setDescripcion" getterJavaMethod="getDescripcion" xsdType="string" netType="string" javaType="String" cobisMapping="" isInherit="false" isComplexType="false" isCollectionType="false" required="false" encrypted="false" maxLength="0" />
+              </properties>
+            </DTO>
+            <DTO direction="out" name="RoleListResponse" alias="outRoleListResponse" namespace="COBISCorp.eCOBIS.UCSP.Admin.DTO" package="cobiscorp.ecobis.ucsp.admin.dto" ns="http://dto.admin.ucsp.ecobis.cobiscorp" required="true">
+              <properties>
+                <property name="listRoles" propertyNet="ListRoles" propertyJava="listRoles" setterJavaMethod="setListRoles" getterJavaMethod="getListRoles" xsdType="GenericList" netType="List&lt;Role&gt;" javaType="ArrayList&lt;Role&gt;" cobisMapping="" isInherit="false" isComplexType="true" isCollectionType="true" required="true" encrypted="false" maxLength="0" XSDElementType="Role" netElementType="Role" javaElementType="Role" />
+              </properties>
+            </DTO>
+          </DTOs>
+          <parameterMappings>
+            <parameter name="@i_operacion" direction="in" mappingDirection="in" dataType="char" CTSDataType="SQLCHAR" JavaSQLType="CHAR" mappingType="CONSTANT" allowNull="false" contantValue="R" />
+          </parameterMappings>
+          <resultMappings>
+            <result>
+              <DTOResult DTOAlias="returnRole" MapReturn="true">
+                <columnMapping position="0" name="ro_rol" DTOPropertyName="rol" DataType="int" Format="" />
+                <columnMapping position="1" name=" ro_descripcion" DTOPropertyName="descripcion" DataType="string" Format="" />
+              </DTOResult>
+            </result>
+          </resultMappings>
+          <MappingProperties>
+            <MappingProperty key="BLIQueryPropertyName1" value="ListRoles" />
+          </MappingProperties>
+        </SRVMapping>
+      </service>
+      <service id="UCSP.Admin.Administration.GetAllRoleConfigurationVCC" netName="GetAllRoleConfigurationVCC" javaName="getAllRoleConfigurationVCC" mappingType="STORED_PROCEDURE" mapId="b87057dedb43ef536b87531530583539">
+        <documentations default="Español">
+          <documentation id="Español">Consulta todos los roles Configurados.</documentation>
+        </documentations>
+        <SRVMapping name="cob_pac..sp_admin_vcc" trnCode="731001">
+          <DTOs>
+            <DTO direction="return" name="Role" alias="returnRole" namespace="COBISCorp.eCOBIS.UCSP.Admin.DTO" package="cobiscorp.ecobis.ucsp.admin.dto" ns="http://dto.admin.ucsp.ecobis.cobiscorp" required="true">
+              <properties>
+                <property name="rol" propertyNet="Rol" propertyJava="rol" setterJavaMethod="setRol" getterJavaMethod="getRol" xsdType="int" netType="int" javaType="int" cobisMapping="" isInherit="false" isComplexType="false" isCollectionType="false" required="true" encrypted="false" maxLength="0" />
+                <property name="descripcion" propertyNet="Descripcion" propertyJava="descripcion" setterJavaMethod="setDescripcion" getterJavaMethod="getDescripcion" xsdType="string" netType="string" javaType="String" cobisMapping="" isInherit="false" isComplexType="false" isCollectionType="false" required="false" encrypted="false" maxLength="0" />
+              </properties>
+            </DTO>
+            <DTO direction="out" name="RoleListResponse" alias="outRoleListResponse" namespace="COBISCorp.eCOBIS.UCSP.Admin.DTO" package="cobiscorp.ecobis.ucsp.admin.dto" ns="http://dto.admin.ucsp.ecobis.cobiscorp" required="true">
+              <properties>
+                <property name="listRoles" propertyNet="ListRoles" propertyJava="listRoles" setterJavaMethod="setListRoles" getterJavaMethod="getListRoles" xsdType="GenericList" netType="List&lt;Role&gt;" javaType="ArrayList&lt;Role&gt;" cobisMapping="" isInherit="false" isComplexType="true" isCollectionType="true" required="true" encrypted="false" maxLength="0" XSDElementType="Role" netElementType="Role" javaElementType="Role" />
+              </properties>
+            </DTO>
+          </DTOs>
+          <parameterMappings>
+            <parameter name="@i_operacion" direction="in" mappingDirection="in" dataType="char" CTSDataType="SQLCHAR" JavaSQLType="CHAR" mappingType="CONSTANT" allowNull="false" contantValue="C" />
+          </parameterMappings>
+          <resultMappings>
+            <result>
+              <DTOResult DTOAlias="returnRole" MapReturn="true">
+                <columnMapping position="0" name="ro_rol" DTOPropertyName="rol" DataType="int" Format="" />
+                <columnMapping position="1" name=" ro_descripcion" DTOPropertyName="descripcion" DataType="string" Format="" />
+              </DTOResult>
+            </result>
+          </resultMappings>
+          <MappingProperties>
+            <MappingProperty key="BLIQueryPropertyName1" value="ListRoles" />
+          </MappingProperties>
+        </SRVMapping>
+      </service>
+      <service id="UCSP.Admin.Administration.InsertConfigurationVCC" netName="InsertConfigurationVCC" javaName="insertConfigurationVCC" mappingType="STORED_PROCEDURE" mapId="adce193dd842c954ffb024f27b797a55">
+        <documentations default="Español">
+          <documentation id="Español">Realiza la insercción de la configuración de la VCC</documentation>
+        </documentations>
+        <SRVMapping name="cob_pac..sp_admin_vcc" trnCode="731001">
+          <DTOs>
+            <DTO direction="in" name="ProductAdmin" alias="inProductAdmin" namespace="COBISCorp.eCOBIS.UCSP.Admin.DTO" package="cobiscorp.ecobis.ucsp.admin.dto" ns="http://dto.admin.ucsp.ecobis.cobiscorp" required="true" />
+          </DTOs>
+          <parameterMappings>
+            <parameter name="@i_pr_rol_id" direction="in" mappingDirection="in" dataType="int" CTSDataType="SQLINT4" JavaSQLType="INTEGER" mappingType="DTO" allowNull="false" DTOAlias="inProductAdmin" DTOPropertyName="rolId" />
+            <parameter name="@i_pr_rol_name" direction="in" mappingDirection="in" dataType="varchar" CTSDataType="SQLVARCHAR" JavaSQLType="VARCHAR" mappingType="DTO" allowNull="false" DTOAlias="inProductAdmin" DTOPropertyName="rolName" />
+            <parameter name="@i_operacion" direction="in" mappingDirection="in" dataType="char" CTSDataType="SQLCHAR" JavaSQLType="CHAR" mappingType="CONSTANT" allowNull="false" contantValue="I" />
+          </parameterMappings>
+          <resultMappings />
+          <MappingProperties />
+        </SRVMapping>
+      </service>
+      <service id="UCSP.Admin.Administration.QueryConfigurationVCC" netName="QueryConfigurationVCC" javaName="queryConfigurationVCC" mappingType="STORED_PROCEDURE" mapId="ad01877f7a11b75cc29deeda0894eefc">
+        <documentations default="Español">
+          <documentation id="Español">Consulta la configuracion de la VCC</documentation>
+        </documentations>
+        <SRVMapping name="cob_pac..sp_admin_vcc" trnCode="731001">
+          <DTOs>
+            <DTO direction="in" name="ProductAdmin" alias="inProductAdmin" namespace="COBISCorp.eCOBIS.UCSP.Admin.DTO" package="cobiscorp.ecobis.ucsp.admin.dto" ns="http://dto.admin.ucsp.ecobis.cobiscorp" required="true" />
+            <DTO direction="return" name="ProductAdmin" alias="returnProductAdmin" namespace="COBISCorp.eCOBIS.UCSP.Admin.DTO" package="cobiscorp.ecobis.ucsp.admin.dto" ns="http://dto.admin.ucsp.ecobis.cobiscorp" required="true">
+              <properties>
+                <property name="id" propertyNet="Id" propertyJava="id" setterJavaMethod="setId" getterJavaMethod="getId" xsdType="int" netType="int" javaType="int" cobisMapping="" isInherit="false" isComplexType="false" isCollectionType="false" required="true" encrypted="false" maxLength="0" />
+                <property name="rolId" propertyNet="RolId" propertyJava="rolId" setterJavaMethod="setRolId" getterJavaMethod="getRolId" xsdType="int" netType="int" javaType="int" cobisMapping="" isInherit="false" isComplexType="false" isCollectionType="false" required="true" encrypted="false" maxLength="0" />
+                <property name="mnemonic" propertyNet="Mnemonic" propertyJava="mnemonic" setterJavaMethod="setMnemonic" getterJavaMethod="getMnemonic" xsdType="string" netType="string" javaType="String" cobisMapping="" isInherit="false" isComplexType="false" isCollectionType="false" required="false" encrypted="false" maxLength="0" />
+                <property name="name" propertyNet="Name" propertyJava="name" setterJavaMethod="setName" getterJavaMethod="getName" xsdType="string" netType="string" javaType="String" cobisMapping="" isInherit="false" isComplexType="false" isCollectionType="false" required="false" encrypted="false" maxLength="0" />
+                <property name="description" propertyNet="Description" propertyJava="description" setterJavaMethod="setDescription" getterJavaMethod="getDescription" xsdType="string" netType="string" javaType="String" cobisMapping="" isInherit="false" isComplexType="false" isCollectionType="false" required="false" encrypted="false" maxLength="0" />
+                <property name="parent" propertyNet="Parent" propertyJava="parent" setterJavaMethod="setParent" getterJavaMethod="getParent" xsdType="int" netType="int" javaType="int" cobisMapping="" isInherit="false" isComplexType="false" isCollectionType="false" required="true" encrypted="false" maxLength="0" />
+                <property name="isvisible" propertyNet="Isvisible" propertyJava="isvisible" setterJavaMethod="setIsvisible" getterJavaMethod="getIsvisible" xsdType="byte" netType="sbyte" javaType="byte" cobisMapping="" isInherit="false" isComplexType="false" isCollectionType="false" required="true" encrypted="false" maxLength="0" />
+                <property name="isencrypted" propertyNet="Isencrypted" propertyJava="isencrypted" setterJavaMethod="setIsencrypted" getterJavaMethod="getIsencrypted" xsdType="byte" netType="sbyte" javaType="byte" cobisMapping="" isInherit="false" isComplexType="false" isCollectionType="false" required="true" encrypted="false" maxLength="0" />
+                <property name="rolName" propertyNet="RolName" propertyJava="rolName" setterJavaMethod="setRolName" getterJavaMethod="getRolName" xsdType="string" netType="string" javaType="String" cobisMapping="" isInherit="false" isComplexType="false" isCollectionType="false" required="false" encrypted="false" maxLength="0" />
+              </properties>
+            </DTO>
+            <DTO direction="out" name="ProductAdminListResponse" alias="outProductAdminListResponse" namespace="COBISCorp.eCOBIS.UCSP.Admin.DTO" package="cobiscorp.ecobis.ucsp.admin.dto" ns="http://dto.admin.ucsp.ecobis.cobiscorp" required="true">
+              <properties>
+                <property name="listConfiguration" propertyNet="ListConfiguration" propertyJava="listConfiguration" setterJavaMethod="setListConfiguration" getterJavaMethod="getListConfiguration" xsdType="GenericList" netType="List&lt;ProductAdmin&gt;" javaType="ArrayList&lt;ProductAdmin&gt;" cobisMapping="" isInherit="false" isComplexType="true" isCollectionType="true" required="true" encrypted="false" maxLength="0" XSDElementType="ProductAdmin" netElementType="ProductAdmin" javaElementType="ProductAdmin" />
+              </properties>
+            </DTO>
+          </DTOs>
+          <parameterMappings>
+            <parameter name="@i_pr_rol_id" direction="in" mappingDirection="in" dataType="int" CTSDataType="SQLINT4" JavaSQLType="INTEGER" mappingType="DTO" allowNull="false" DTOAlias="inProductAdmin" DTOPropertyName="rolId" />
+            <parameter name="@i_operacion" direction="in" mappingDirection="in" dataType="char" CTSDataType="SQLCHAR" JavaSQLType="CHAR" mappingType="CONSTANT" allowNull="false" contantValue="Q" />
+          </parameterMappings>
+          <resultMappings>
+            <result>
+              <DTOResult DTOAlias="returnProductAdmin" MapReturn="true">
+                <columnMapping position="0" name="pr_id" DTOPropertyName="id" DataType="int" Format="" />
+                <columnMapping position="1" name=" pr_rol_id" DTOPropertyName="rolId" DataType="int" Format="" />
+                <columnMapping position="2" name=" pr_mnemonic" DTOPropertyName="mnemonic" DataType="string" Format="" />
+                <columnMapping position="3" name=" pr_name" DTOPropertyName="name" DataType="string" Format="" />
+                <columnMapping position="4" name=" pr_description" DTOPropertyName="description" DataType="string" Format="" />
+                <columnMapping position="5" name=" pr_parent" DTOPropertyName="parent" DataType="int" Format="" />
+                <columnMapping position="6" name=" pr_isvisible" DTOPropertyName="isvisible" DataType="byte" Format="" />
+                <columnMapping position="7" name=" pr_isencrypted" DTOPropertyName="isencrypted" DataType="byte" Format="" />
+                <columnMapping position="8" name=" pr_rol_name" DTOPropertyName="rolName" DataType="string" Format="" />
+              </DTOResult>
+            </result>
+          </resultMappings>
+          <MappingProperties>
+            <MappingProperty key="BLIQueryPropertyName1" value="ListConfiguration" />
+          </MappingProperties>
+        </SRVMapping>
+      </service>
+      <service id="UCSP.Admin.Administration.UpdateConfigurationVCC" netName="UpdateConfigurationVCC" javaName="updateConfigurationVCC" mappingType="STORED_PROCEDURE" mapId="07fd215cc52f6b2f519f6eea0329ffea">
+        <documentations default="Español">
+          <documentation id="Español">Actuliza la configuracion de la VCC</documentation>
+        </documentations>
+        <SRVMapping name="cob_pac..sp_admin_vcc" trnCode="731001">
+          <DTOs>
+            <DTO direction="in" name="ProductAdmin" alias="inProductAdmin" namespace="COBISCorp.eCOBIS.UCSP.Admin.DTO" package="cobiscorp.ecobis.ucsp.admin.dto" ns="http://dto.admin.ucsp.ecobis.cobiscorp" required="true" />
+          </DTOs>
+          <parameterMappings>
+            <parameter name="@i_pr_id" direction="in" mappingDirection="in" dataType="numeric" CTSDataType="SQLNUMERIC" JavaSQLType="NUMERIC" mappingType="DTO" allowNull="false" DTOAlias="inProductAdmin" DTOPropertyName="id" />
+            <parameter name="@i_pr_rol_id" direction="in" mappingDirection="in" dataType="int" CTSDataType="SQLINT4" JavaSQLType="INTEGER" mappingType="DTO" allowNull="false" DTOAlias="inProductAdmin" DTOPropertyName="rolId" />
+            <parameter name="@i_pr_isvisible" direction="in" mappingDirection="in" dataType="bit" CTSDataType="SQLBIT" JavaSQLType="BIT" mappingType="DTO" allowNull="false" DTOAlias="inProductAdmin" DTOPropertyName="isvisible" />
+            <parameter name="@i_pr_isencrypted" direction="in" mappingDirection="in" dataType="bit" CTSDataType="SQLBIT" JavaSQLType="BIT" mappingType="DTO" allowNull="false" DTOAlias="inProductAdmin" DTOPropertyName="isencrypted" />
+            <parameter name="@i_operacion" direction="in" mappingDirection="in" dataType="char" CTSDataType="SQLCHAR" JavaSQLType="CHAR" mappingType="CONSTANT" allowNull="false" contantValue="U" />
+          </parameterMappings>
+          <resultMappings />
+          <MappingProperties />
+        </SRVMapping>
+      </service>
+    </services>
+  </partialClass>
+</serviceClass>

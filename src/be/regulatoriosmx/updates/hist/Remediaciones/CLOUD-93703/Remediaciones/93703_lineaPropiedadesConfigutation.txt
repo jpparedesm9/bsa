@@ -1,0 +1,27 @@
+-- Seguir los pasos para agregar lineas de codigo en el archivo 'configuration.properties' ubicado en la ruta \Notificador\notification
+1.- Sacar respaldo del archivo configuration.properties ubicado ubicado en la ruta: \Notificador\notification
+2.- Abrir el archivo configuration.properties
+
+ Crear las siguientes carpetas como se indica en los puntos 3 y 4:
+3.- Crear la carpeta  en la direccion  C:\INTERFACTURA\estctaext ubicada en la capa de Internet 
+donde se encuentra el notificador,si no existen las carpetas crearlas segun como indica el path.
+
+Nota: Esta carpeta servira para  agregaran los archivos xml de Interfactura.
+Importante para Produccion.
+En Produccion ya esta creado el directorio del Ftp en el cual se debe colocar los archivo xml de Interfactura y el cual se debe colocar como ruta para  'INFACXML.path' que se indica al ultimo del documento.
+
+4.- Crear la carpeta  si no existe en la direccion  C:\INTERFACTURA\estctahist ubicada en la capa de Internet donde se encuentra el notificador,si no existen las carpetas crearlas segun como indica el path.
+Nota: Esta carpeta servira para  almacenar los archivos xml que fueron procesados 
+
+Importante para Produccion.
+En Produccion ya esta creado el directorio del Ftp en el cual se debe colocar los archivo procesados de Interfactura y el cual se debe colocar como ruta para  'INFACXMLHist.path' que se indica al ultimo del documento.
+
+5.- Agregar las siguientes lineas al ultimo del archivo.
+
+ EJEMPLO
+  /* Debe quedar algo similar a lo siguiente:
+  
+INFACXML.path= C:/INTERFACTURA/estctaext/
+INFACXMLHist.path=C:/INTERFACTURA/estctahist/
+
+ 

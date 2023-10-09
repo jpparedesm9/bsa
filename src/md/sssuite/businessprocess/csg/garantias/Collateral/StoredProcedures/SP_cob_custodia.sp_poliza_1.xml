@@ -1,0 +1,492 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<procedure>
+  <database>cob_custodia</database>
+  <name>sp_poliza</name>
+  <type>SYBASE</type>
+  <version>1</version>
+  <parameters>
+    <parameter name="@s_sesn" dataType="int" direction="in" />
+    <parameter name="@s_ofi" dataType="smallint" direction="in" />
+    <parameter name="@s_rol" dataType="smallint" direction="in" />
+    <parameter name="@s_ssn" dataType="int" direction="in" />
+    <parameter name="@s_date" dataType="datetime" direction="in" />
+    <parameter name="@s_user" dataType="varchar" direction="in" />
+    <parameter name="@s_term" dataType="varchar" direction="in" />
+    <parameter name="@t_debug" dataType="char" direction="in" />
+    <parameter name="@t_file" dataType="varchar" direction="in" />
+    <parameter name="@t_from" dataType="varchar" direction="in" />
+    <parameter name="@s_srv" dataType="varchar" direction="in" />
+    <parameter name="@s_lsrv" dataType="varchar" direction="in" />
+    <parameter name="@t_trn" dataType="smallint" direction="in" />
+    <parameter name="@i_operacion" dataType="char" direction="in" />
+    <parameter name="@i_modo" dataType="smallint" direction="in" />
+    <parameter name="@i_tramite" dataType="int" direction="in" />
+    <parameter name="@i_banco" dataType="varchar" direction="in" />
+    <parameter name="@i_param1" dataType="varchar" direction="in" />
+    <parameter name="@i_param2" dataType="varchar" direction="in" />
+    <parameter name="@i_formato_fecha" dataType="smallint" direction="in" />
+    <parameter name="@i_filial" dataType="tinyint" direction="in" />
+    <parameter name="@i_sucursal" dataType="smallint" direction="in" />
+    <parameter name="@i_tipo" dataType="varchar" direction="in" />
+    <parameter name="@i_custodia" dataType="int" direction="in" />
+    <parameter name="@i_codigo_compuesto" dataType="varchar" direction="in" />
+    <parameter name="@i_secuencial" dataType="int" direction="in" />
+    <parameter name="@i_secuencial_ren" dataType="int" direction="in" />
+    <parameter name="@i_aseguradora" dataType="varchar" direction="in" />
+    <parameter name="@i_poliza" dataType="varchar" direction="in" />
+    <parameter name="@i_tipo_seguro" dataType="varchar" direction="in" />
+    <parameter name="@i_corredor" dataType="smallint" direction="in" />
+    <parameter name="@i_tpago_prima" dataType="char" direction="in" />
+    <parameter name="@i_financiado" dataType="char" direction="in" />
+    <parameter name="@i_emitido_bco" dataType="char" direction="in" />
+    <parameter name="@i_fecha_renovacion" dataType="datetime" direction="in" />
+    <parameter name="@i_nro_pagos" dataType="smallint" direction="in" />
+    <parameter name="@i_fvigencia_inicio" dataType="datetime" direction="in" />
+    <parameter name="@i_fvigencia_fin" dataType="datetime" direction="in" />
+    <parameter name="@i_moneda" dataType="tinyint" direction="in" />
+    <parameter name="@i_fendoso_ini" dataType="datetime" direction="in" />
+    <parameter name="@i_fendoso_fin" dataType="datetime" direction="in" />
+    <parameter name="@i_monto_endoso" dataType="money" direction="in" />
+    <parameter name="@i_monto_poliza" dataType="money" direction="in" />
+    <parameter name="@i_prima_bruto" dataType="money" direction="in" />
+    <parameter name="@i_monto_dscto" dataType="money" direction="in" />
+    <parameter name="@i_monto_impuesto" dataType="money" direction="in" />
+    <parameter name="@i_total_prima" dataType="money" direction="in" />
+    <parameter name="@i_prima_cuota" dataType="money" direction="in" />
+    <parameter name="@i_comision_asegura" dataType="float" direction="in" />
+    <parameter name="@i_comision_banco" dataType="float" direction="in" />
+    <parameter name="@i_estado_poliza" dataType="varchar" direction="in" />
+    <parameter name="@i_clase" dataType="varchar" direction="in" />
+    <parameter name="@i_codigo_externo" dataType="varchar" direction="in" />
+    <parameter name="@i_descripcion" dataType="varchar" direction="in" />
+    <parameter name="@i_ente" dataType="int" direction="in" />
+    <parameter name="@i_porc_obligacion" dataType="float" direction="in" />
+    <parameter name="@i_cobertura" dataType="smallint" direction="in" />
+    <parameter name="@i_instruccion" dataType="smallint" direction="in" />
+    <parameter name="@i_variable" dataType="varchar" direction="in" />
+    <parameter name="@i_uso" dataType="varchar" direction="in" />
+    <parameter name="@i_val_cob_minimo" dataType="money" direction="in" />
+    <parameter name="@i_val_cob_maximo" dataType="money" direction="in" />
+    <parameter name="@i_val_cob_prima" dataType="money" direction="in" />
+    <parameter name="@i_por_cob_prima" dataType="float" direction="in" />
+    <parameter name="@i_val_cob_deducible" dataType="money" direction="in" />
+    <parameter name="@i_por_cob_deducible" dataType="float" direction="in" />
+    <parameter name="@i_cob_nocumple" dataType="varchar" direction="in" />
+    <parameter name="@i_cobrado_cuota" dataType="char" direction="in" />
+    <parameter name="@i_cobrado_liq" dataType="char" direction="in" />
+    <parameter name="@i_titular" dataType="int" direction="in" />
+    <parameter name="@i_lote" dataType="int" direction="in" />
+    <parameter name="@i_workflow" dataType="char" direction="in" />
+    <parameter name="@i_auto" dataType="char" direction="in" />
+    <parameter name="@i_capital" dataType="char" direction="in" />
+    <parameter name="@i_factor" dataType="float" direction="in" />
+    <parameter name="@i_recargo" dataType="float" direction="in" />
+    <parameter name="@i_estado" dataType="char" direction="in" />
+    <parameter name="@i_grupo_seguro" dataType="varchar" direction="in" />
+    <parameter name="@i_tabla_temporal" dataType="char" direction="in" />
+    <parameter name="@i_factor_svida" dataType="float" direction="in" />
+    <parameter name="@i_aseguradora_sig" dataType="varchar" direction="in" />
+    <parameter name="@i_valorcat" dataType="varchar" direction="in" />
+    <parameter name="@o_secuencial" dataType="int" direction="out" />
+  </parameters>
+  <queries>
+    <query>
+      <columns>
+        <column name="insuranceCode" />
+        <column name="descriptionInsurance" />
+        <column name="insuranceDiscount" />
+        <column name="insuranceItbm" />
+      </columns>
+      <queryText>SELECT  "17535" = as_aseguradora,"17957" = (SELECT  SUBSTRING (A.valor, 1, 30) FROM cobis..cl_catalogo A  ,cobis..cl_tabla B   WHERE B.codigo = A.tabla AND B.tabla = "cu_des_aseguradora" AND A.codigo = X.as_aseguradora     ),"17908" = as_descuento,"17910" = as_itbm </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="insuranceCode" />
+        <column name="descriptionInsurance" />
+        <column name="insuranceDiscount" />
+        <column name="insuranceItbm" />
+      </columns>
+      <queryText>SELECT  as_aseguradora,(SELECT  SUBSTRING (A.valor, 1, 30) FROM cobis..cl_catalogo A  ,cobis..cl_tabla B   WHERE B.codigo = A.tabla AND B.tabla = "cu_des_aseguradora" AND A.codigo = X.as_aseguradora     ),as_descuento,as_itbm </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="initialEffectiveDate" />
+        <column name="finalEffectiveDate" />
+        <column name="policyAmount" />
+        <column name="initialEndorsementDate" />
+        <column name="finalEndorsementDate" />
+        <column name="amountEndorsement" />
+        <column name="statusPolicy" />
+        <column name="currency" />
+        <column name="policyHolder" />
+      </columns>
+      <queryText>SELECT ctx.convertString(w_fvigencia_inicio ,i_formato_fecha), ctx.convertString(w_fvigencia_fin ,i_formato_fecha), w_monto_poliza, ctx.convertString(w_fendoso_ini ,i_formato_fecha), ctx.convertString(w_fendoso_fin ,i_formato_fecha), w_monto_endoso, w_estado_poliza, w_moneda, w_titular</queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="sequentialPolicy" />
+      </columns>
+      <queryText>SELECT i_secuencial</queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="17733" />
+        <column name="17734" />
+        <column name="17736" />
+        <column name="17737" />
+        <column name="17738" />
+        <column name="17735" />
+        <column name="17739" />
+      </columns>
+      <queryText>SELECT  "17733" = po_aseguradora,"17734" = po_poliza,"17736" = po_codigo_externo,"17737" = po_fvigencia_inicio,"17738" = po_fvigencia_fin,"17735" = po_monto_poliza,"17739" = po_fendoso_ini </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="17733" />
+        <column name="17734" />
+        <column name="17736" />
+        <column name="17737" />
+        <column name="17738" />
+        <column name="17735" />
+        <column name="17739" />
+      </columns>
+      <queryText>SELECT  "17733" = po_aseguradora,"17734" = po_poliza,"17736" = po_codigo_externo,"17737" = po_fvigencia_inicio,"17738" = po_fvigencia_fin,"17735" = po_monto_poliza,"17739" = po_fendoso_ini </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="BeneficiaryCode" />
+        <column name="BeneficiaryName" />
+        <column name="birthdayBeneficiary" />
+        <column name="ageBeneficiary" />
+        <column name="percentage" />
+        <column name="lifeFactor" />
+        <column name="estimatedValuePremium" />
+        <column name="rate" />
+        <column name="surchargePercentage" />
+        <column name="surcharge" />
+        <column name="totalPremium" />
+      </columns>
+      <queryText>SELECT  "83900" = bp_ente,"83901" = en_nomlar,"83902" = CONVERT (VARCHAR (10),p_fecha_nac ,?),"83903" = bp_edad,"83904" = bp_porcentaje,"83933" = LTRIM (RTRIM (STR ((bp_factor_vida), 20, 6))),"83932" = bp_valor_calc_prima,"Tarifa" = CASE bp_tipo_tarifa WHEN "I" THEN "INDIVIDUAL" WHEN "M" THEN "MANCOMUNADA" ELSE "" END,"% Recargo" = ISNULL (bp_recargo, 0),"Recargo" = ISNULL (bp_recargo_valor, 0),"Total Prima" = ISNULL (bp_valor_calc_prima, 0) + ISNULL (bp_recargo_valor, 0) </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="coverage" />
+        <column name="coverageDescription" />
+        <column name="coverageValue1" />
+        <column name="coverageValue2" />
+        <column name="premium" />
+        <column name="percentagePremium" />
+        <column name="deductible" />
+        <column name="percentageDeductible" />
+        <column name="totalPremium" />
+      </columns>
+      <queryText>SELECT  "17388" = cp_cobertura,"83846" = (SELECT  A.valor FROM cobis..cl_catalogo A  ,cobis..cl_tabla B   WHERE B.codigo = A.tabla AND B.tabla = "cu_cob_poliza" AND A.codigo = X.co_cod_cobertura     ),"83836" = cp_valor_cob1,"83837" = cp_valor_cob2,"83880" = cp_prima,"83881" = cp_porcentaje_prima,"83882" = cp_deducible,"83883" = cp_porcentaje_deducible,"83932" = cp_valor_calc_prima </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="coverage" />
+        <column name="coverageDescription" />
+        <column name="coverageValue1" />
+        <column name="coverageValue2" />
+        <column name="premium" />
+        <column name="percentagePremium" />
+        <column name="deductible" />
+        <column name="percentageDeductible" />
+        <column name="totalPremium" />
+      </columns>
+      <queryText>SELECT  "17388" = cp_cobertura,"83846" = (SELECT  A.valor FROM cobis..cl_catalogo A  ,cobis..cl_tabla B   WHERE B.codigo = A.tabla AND B.tabla = "cu_cob_poliza" AND A.codigo = X.co_cod_cobertura     ),"83836" = cp_valor_cob1,"83837" = cp_valor_cob2,"83840" = cp_prima,"83874" = cp_porcentaje_prima,"83841" = cp_deducible,"83842" = cp_porcentaje_deducible,"83932" = cp_valor_calc_prima </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="birthdayBeneficiary" />
+        <column name="ageBeneficiary" />
+      </columns>
+      <queryText>SELECT w_descripcion, w_edad</queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="instructionNumber" />
+      </columns>
+      <queryText>SELECT w_instruccion</queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="requestedApproval" />
+      </columns>
+      <queryText>SELECT w_solicita_aprob</queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="coverageNumber" />
+        <column name="descriptionInsurance" />
+        <column name="typeCoverage" />
+      </columns>
+      <queryText>SELECT  "83846" = co_cobertura,"83851" = (SELECT  A.valor FROM cobis..cl_catalogo A  ,cobis..cl_tabla B   WHERE B.codigo = A.tabla AND B.tabla = "cu_cob_poliza" AND A.codigo = X.co_cod_cobertura     ),"83847" = co_tipo </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="sequential" />
+        <column name="insuredMin" />
+        <column name="insuredMax" />
+        <column name="premium" />
+        <column name="percentagePremium" />
+        <column name="deductible" />
+        <column name="percentageDeductible" />
+      </columns>
+      <queryText>SELECT  "17388" = rc_secuencia,"83836" = rc_asegurado_min,"83837" = rc_asegurado_max,"83840" = rc_prima,"83874" = rc_prima_porc,"83841" = rc_deducible,"83842" = rc_deducible_porc </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="sequential" />
+        <column name="insuredMin" />
+        <column name="insuredMax" />
+        <column name="premium" />
+        <column name="percentagePremium" />
+        <column name="deductible" />
+        <column name="percentageDeductible" />
+      </columns>
+      <queryText>SELECT  "17388" = rc_secuencia,"83836" = rc_asegurado_min,"83837" = rc_asegurado_max,"83880" = rc_prima,"83881" = rc_prima_porc,"83882" = rc_deducible,"83883" = rc_deducible_porc </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="sequential" />
+        <column name="insuredMin" />
+        <column name="insuredMax" />
+        <column name="premium" />
+        <column name="percentagePremium" />
+        <column name="deductible" />
+        <column name="percentageDeductible" />
+      </columns>
+      <queryText>SELECT  "17388" = rc_secuencia,"83836" = rc_asegurado_min,"83837" = rc_asegurado_max,"83840" = rc_prima,"83874" = rc_prima_porc,"83841" = rc_deducible,"83842" = rc_deducible_porc </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="brokerCode" />
+        <column name="brokerName" />
+      </columns>
+      <queryText>SELECT  "83829" = cs_codigo,"17347" = cs_nombre </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="insuranceCode" />
+        <column name="insuranceName" />
+        <column name="recoveryMode" />
+        <column name="paymentMode" />
+        <column name="provisionMode" />
+        <column name="relationshipGuarantee" />
+        <column name="appliesCob" />
+        <column name="descriptionInsurance" />
+        <column name="insuranceGroup" />
+        <column name="insuranceGroupDescription" />
+      </columns>
+      <queryText>SELECT  "17929" = ts_codigo,"17930" = ts_nombre,"17931" = (SELECT  A.valor FROM cobis..cl_catalogo A  ,cobis..cl_tabla B   WHERE B.codigo = A.tabla AND B.tabla = "cu_cobro_seguro" AND A.codigo = X.ts_modalidad     ),"17932" = (SELECT  A.valor FROM cobis..cl_catalogo A  ,cobis..cl_tabla B   WHERE B.codigo = A.tabla AND B.tabla = "cu_pago_seguro" AND A.codigo = X.ts_modalidad_pago     ),"17952" = (SELECT  A.valor FROM cobis..cl_catalogo A  ,cobis..cl_tabla B   WHERE B.codigo = A.tabla AND B.tabla = "cu_provision_seguro" AND A.codigo = X.ts_modalidad_prov     ),"17955" = CASE ts_relacion_gar WHEN "S" THEN "SI" ELSE "NO" END,"17956" = CASE ts_aplica_cob WHEN "S" THEN "SI" ELSE "NO" END,"17957" = (SELECT  A.valor FROM cobis..cl_catalogo A  ,cobis..cl_tabla B   WHERE B.codigo = A.tabla AND B.tabla = "cu_des_aseguradora" AND A.codigo = X.ts_aseg_default     ),"18036" = ts_grupo_seguro,"18037" = (SELECT  A.valor FROM cobis..cl_catalogo A  ,cobis..cl_tabla B   WHERE B.codigo = A.tabla AND B.tabla = "cu_grupos_seguros" AND A.codigo = X.ts_grupo_seguro     ) </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="insurance" />
+        <column name="descriptionInsurance" />
+        <column name="policy" />
+        <column name="insuranceType" />
+        <column name="coverageDescription" />
+        <column name="brokerCode" />
+        <column name="brokerName" />
+        <column name="paymentMode" />
+        <column name="funded" />
+        <column name="bankIssued" />
+        <column name="recoveryMode" />
+        <column name="renewalDate" />
+        <column name="numberPayments" />
+        <column name="effectiveStartDate" />
+        <column name="effectiveEndDate" />
+        <column name="currency" />
+        <column name="currencyDescription" />
+        <column name="initialEndorsementDate" />
+        <column name="finalEndorsementDate" />
+        <column name="amountEndorsement" />
+        <column name="policyAmount" />
+        <column name="totalPremium" />
+        <column name="discountAmount" />
+        <column name="taxAmount" />
+        <column name="premium" />
+        <column name="quotaPremium" />
+        <column name="insuranceCommission" />
+        <column name="bankCommission" />
+        <column name="class" />
+        <column name="classDescription" />
+        <column name="instrucction" />
+        <column name="description" />
+        <column name="statusPolicy" />
+        <column name="statusPolicyDescription" />
+        <column name="externalCode" />
+        <column name="coveragePolicy" />
+        <column name="coveragePolicyDescription" />
+        <column name="holder" />
+        <column name="creditCode" />
+        <column name="custodyStatus" />
+        <column name="statusOperation" />
+        <column name="custodyStatusPolicy" />
+      </columns>
+      <queryText>SELECT w_aseguradora, w_des_aseguradora, w_poliza, w_tipo_seguro, w_des_cobertura, w_corredor, w_des_corredor, w_tpago_prima, w_financiado, w_emitido_bco, w_fcobro, ctx.convertString(w_fecha_renovacion ,i_formato_fecha), w_nro_pagos, ctx.convertString(w_fvigencia_inicio ,i_formato_fecha), ctx.convertString(w_fvigencia_fin ,i_formato_fecha), ctx.ISNULL(ctx.convertString(w_moneda), ""), w_des_moneda, ctx.convertString(w_fendoso_ini ,i_formato_fecha), ctx.convertString(w_fendoso_fin ,i_formato_fecha), w_monto_endoso, w_monto_poliza, w_prima_bruto, w_monto_dscto, w_monto_impuesto, w_total_prima, w_prima_cuota, w_comision_asegura, w_comision_banco, w_clase, w_des_clase, w_instruccion, w_descripcion, w_estado_poliza, w_des_estado_poliza, w_codigo_externo, w_cobertura, w_des_cob_poliza, w_titular, i_tramite, w_cu_estado, w_estado_op, w_cu_estado_poliza</queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="{1}" />
+      </columns>
+      <queryText>SELECT w_des_cobertura</queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="brokerName" />
+      </columns>
+      <queryText>SELECT  cs_nombre </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="insuranceCode" />
+        <column name="insuranceName" />
+        <column name="recoveryModeCode" />
+        <column name="recoveryMode" />
+        <column name="paymentModeCode" />
+        <column name="paymentMode" />
+        <column name="provisionModeCode" />
+        <column name="provisionMode" />
+        <column name="relationshipGuarantee" />
+        <column name="appliesCob" />
+        <column name="descriptionInsurance" />
+        <column name="insuranceDefault" />
+        <column name="insuranceDiscount" />
+        <column name="insuranceItbm" />
+        <column name="fInsuranceDiscount" />
+        <column name="manualPremium" />
+        <column name="insuranceGroup" />
+        <column name="insuranceGroupDescription" />
+      </columns>
+      <queryText>SELECT  ts_codigo,ts_nombre,ts_modalidad,(SELECT  A.valor FROM cobis..cl_catalogo A  ,cobis..cl_tabla B   WHERE B.codigo = A.tabla AND B.tabla = "cu_cobro_seguro" AND A.codigo = X.ts_modalidad     ),ts_modalidad_pago,(SELECT  A.valor FROM cobis..cl_catalogo A  ,cobis..cl_tabla B   WHERE B.codigo = A.tabla AND B.tabla = "cu_pago_seguro" AND A.codigo = X.ts_modalidad_pago     ),ts_modalidad_prov,(SELECT  A.valor FROM cobis..cl_catalogo A  ,cobis..cl_tabla B   WHERE B.codigo = A.tabla AND B.tabla = "cu_provision_seguro" AND A.codigo = X.ts_modalidad_prov     ),CASE ts_relacion_gar WHEN "S" THEN "SI" ELSE "NO" END,CASE ts_aplica_cob WHEN "S" THEN "SI" ELSE "NO" END,(SELECT  A.valor FROM cobis..cl_catalogo A  ,cobis..cl_tabla B   WHERE B.codigo = A.tabla AND B.tabla = "cu_des_aseguradora" AND A.codigo = X.ts_aseg_default     ),ts_aseg_default,as_descuento,as_itbm,ts_fdescuento,ts_prima_manual,ts_grupo_seguro,(SELECT  A.valor FROM cobis..cl_catalogo A  ,cobis..cl_tabla B   WHERE B.codigo = A.tabla AND B.tabla = "cu_grupos_seguros" AND A.codigo = X.ts_grupo_seguro     ) </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="descriptionInsurance" />
+      </columns>
+      <queryText>SELECT  A.valor </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="insurance" />
+        <column name="sequential" />
+        <column name="policy" />
+        <column name="externalGuaranteeCode" />
+      </columns>
+      <queryText>SELECT  po_aseguradora,po_secuencial,po_poliza,po_codigo_externo </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="insurance" />
+        <column name="sequential" />
+        <column name="policy" />
+        <column name="externalGuaranteeCode" />
+      </columns>
+      <queryText>SELECT  po_aseguradora,po_secuencial,po_poliza,po_codigo_externo </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="Sequential" />
+        <column name="Insurance" />
+        <column name="Policy" />
+        <column name="InsuranceType" />
+        <column name="InsuranceTypeDescription" />
+        <column name="PolicyAmount" />
+        <column name="BrokerName" />
+        <column name="InsurancePayment" />
+        <column name="Funded" />
+        <column name="FundedAmount" />
+        <column name="YearsCalculation" />
+        <column name="BankIssued" />
+        <column name="CurrencyDescription" />
+        <column name="EffectiveStartDate" />
+        <column name="EffectiveEndDate" />
+        <column name="RenewalDate" />
+        <column name="AnnualPremium" />
+        <column name="OperationInstruction" />
+        <column name="Status" />
+        <column name="LastPaymentDate" />
+        <column name="PayableValue" />
+        <column name="YearsToPay" />
+        <column name="PolicyDescription" />
+        <column name="ExternalGuaranteeCode" />
+      </columns>
+      <queryText>SELECT  "17388" = po_secuencial,"234177" = (SELECT  A.valor FROM cobis..cl_catalogo A  ,cobis..cl_tabla B   WHERE B.codigo = A.tabla AND B.tabla = "cu_des_aseguradora" AND A.codigo = X.po_aseguradora     ),"15853" = po_poliza,"T.Seg." = X.po_tipo_seguro,"233995" = (SELECT  ts_nombre FROM cob_custodia..cu_tipo_seguro   WHERE ts_codigo = X.po_tipo_seguro     ),"17997" = po_monto_poliza,"18013" = (SELECT  cs_nombre FROM cob_custodia..cu_corredor_seguro   WHERE cs_codigo = X.po_corredor     ),"83939" = po_tpago_prima,"18014" = po_financiado,"84014" = CASE po_financiado WHEN "S" THEN po_total_seguro ELSE 0.00 END,"17999" = po_anios_calculo,"84045" = po_emitido_bco,"16037" = (SELECT  mo_descripcion FROM cobis..cl_moneda   WHERE mo_moneda = X.po_moneda     ),"17380" = CONVERT (VARCHAR (10),po_fvigencia_inicio ,?),"17381" = CONVERT (VARCHAR (10),po_fvigencia_fin ,?),"83938" = CONVERT (VARCHAR (10),po_fecha_renovacion ,?),"84046" = po_total_prima,"83940" = po_instruccion,"14737" = (SELECT  A.valor FROM cobis..cl_catalogo A  ,cobis..cl_tabla B   WHERE B.codigo = A.tabla AND B.tabla = "cu_estado_poliza" AND A.codigo = X.po_estado_poliza     ),"62390" = CONVERT (VARCHAR (10),po_fecha_ult_pago ,?),"84015" = CASE po_emitido_bco WHEN "S" THEN ISNULL (po_total_seguro, 0) - ISNULL (po_saldo_anual, 0) ELSE 0.00 END,"84016" = CASE po_tpago_prima WHEN "A" THEN (X.po_anios_calculo - (SELECT  COUNT (1) FROM cob_cartera..ca_pago_aseguradora  ,cob_cartera..ca_pago_aseguradora_det   WHERE pa_lote = pd_lote AND pd_poliza_int = X.po_secuencial AND pd_estado = "P"     )) ELSE 0.00 END,"15234" = po_descripcion,"17673" = po_codigo_externo </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="insurance" />
+        <column name="sequential" />
+        <column name="policy" />
+        <column name="externalGuaranteeCode" />
+      </columns>
+      <queryText>SELECT  po_aseguradora,po_secuencial,po_poliza,po_codigo_externo </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="234276" />
+        <column name="234277" />
+        <column name="234278" />
+        <column name="234279" />
+        <column name="234280" />
+        <column name="233713" />
+        <column name="234281" />
+        <column name="233845" />
+        <column name="233851" />
+        <column name="234179" />
+        <column name="234282" />
+        <column name="234283" />
+      </columns>
+      <queryText>SELECT  "234276" = CONVERT (VARCHAR (10),pa_fecha_proceso ,?),"234277" = pa_lote,"234278" = (SELECT  A.valor FROM cobis..cl_catalogo A  ,cobis..cl_tabla B   WHERE B.codigo = A.tabla AND B.tabla = "cu_estado_lote" AND A.codigo = X.pa_estado     ),"234279" = CASE pa_tbeneficiario WHEN "A" THEN "ASEGURADORA" WHEN "C" THEN "CLIENTE" WHEN "D" THEN "DISMINUCION" WHEN "L" THEN "DESEMBOLSO"  END,"234280" = CASE pa_tbeneficiario WHEN "A" THEN (SELECT  A.valor FROM cobis..cl_catalogo A  ,cobis..cl_tabla B   WHERE B.codigo = A.tabla AND B.tabla = "cu_des_aseguradora" AND A.codigo = X.pa_beneficiario     ) WHEN "C" THEN (SELECT  en_nomlar FROM cobis..cl_ente   WHERE en_ente = CONVERT (INT,X.pa_beneficiario )     ) ELSE "INTERNO" END,"233713" = (SELECT  cp_descripcion FROM cob_cartera..ca_producto   WHERE cp_producto = X.pa_fpago     ),"234281" = pa_cta_beneficiario,"233845" = (SELECT  co_descripcion FROM cob_cartera..ca_concepto   WHERE co_concepto = Y.pd_concepto     ),"233851" = pd_monto,"234179" = CASE pd_acepta_pago WHEN "S" THEN "SI" ELSE "NO" END,"234282" = pd_num_pago,"234283" = CASE pd_estado WHEN "I" THEN "INGRESADO" WHEN "E" THEN "ERROR" WHEN "P" THEN "PROCESADO" WHEN "R" THEN "REVERSADO"  END </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="{1}" />
+        <column name="{2}" />
+        <column name="{3}" />
+      </columns>
+      <queryText>SELECT  po_poliza,po_cliente_titular,(SELECT  en_nomlar FROM cobis..cl_ente   WHERE en_ente = X.po_cliente_titular     ) </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="83900" />
+        <column name="83901" />
+        <column name="83902" />
+        <column name="83903" />
+        <column name="% Banco" />
+        <column name="% Aseguradora" />
+        <column name="% Total" />
+        <column name="% Fac. Propuesto" />
+      </columns>
+      <queryText>SELECT  "83900" = bp_ente,"83901" = en_nomlar,"83902" = CONVERT (VARCHAR (10),p_fecha_nac ,?),"83903" = bp_edad,"% Banco" = LTRIM (RTRIM (STR (bp_factor_bco, 20, 6))),"% Aseguradora" = LTRIM (RTRIM (STR (bp_factor_vida, 20, 6))),"% Total" = LTRIM (RTRIM (STR (bp_factor_vida + bp_factor_bco, 20, 6))),"% Fac. Propuesto" = LTRIM (RTRIM (STR (bp_factor_propuesto, 20, 6))) </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="83900" />
+        <column name="83901" />
+        <column name="83902" />
+        <column name="83903" />
+        <column name="% Banco" />
+        <column name="% Aseguradora" />
+        <column name="% Total" />
+        <column name="% Fac. Propuesto" />
+        <column name="Est. Aprob." />
+        <column name="Aprobador" />
+        <column name="Fec. Aprob" />
+      </columns>
+      <queryText>SELECT  "83900" = bp_ente,"83901" = en_nomlar,"83902" = CONVERT (VARCHAR (10),p_fecha_nac ,?),"83903" = bp_edad,"% Banco" = LTRIM (RTRIM (STR (bp_factor_bco, 20, 6))),"% Aseguradora" = LTRIM (RTRIM (STR (bp_factor_vida, 20, 6))),"% Total" = LTRIM (RTRIM (STR (bp_factor_vida + bp_factor_bco, 20, 6))),"% Fac. Propuesto" = LTRIM (RTRIM (STR (bp_factor_propuesto, 20, 6))),"Est. Aprob." = bp_estado_apr,"Aprobador" = bp_aprobador,"Fec. Aprob" = CONVERT (VARCHAR (10),bp_fecha_aprob ,?) </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="{1}" />
+        <column name="{2}" />
+        <column name="{3}" />
+        <column name="{4}" />
+      </columns>
+      <queryText></queryText>
+    </query>
+  </queries>
+</procedure>

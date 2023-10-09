@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="detallePagosCredito" pageWidth="554" pageHeight="842" columnWidth="554" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="54fd2ba7-a013-47c7-aab9-9900b322262d">
+	<property name="ireport.zoom" value="1.100000000000001"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<field name="numberSeq" class="java.lang.Integer"/>
+	<field name="amount" class="java.lang.String"/>
+	<field name="dueDate" class="java.lang.String"/>
+	<columnHeader>
+		<band height="70" splitType="Stretch">
+			<staticText>
+				<reportElement mode="Opaque" x="105" y="0" width="217" height="70" backcolor="#CCCCCC" uuid="211d3a59-0b9e-42b5-9d24-1cb6974e8cfc"/>
+				<box topPadding="3" leftPadding="5" bottomPadding="3" rightPadding="5">
+					<topPen lineWidth="0.75"/>
+					<leftPen lineWidth="0.75"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.75"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[Monto
+
+Incluye IVA, por lo que pueden existir pequeñas variaciones en cada pago]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="322" y="0" width="233" height="70" backcolor="#CCCCCC" uuid="dc3d9f81-75ff-4278-8ea9-bd04b3b69437"/>
+				<box topPadding="3" leftPadding="5" bottomPadding="3" rightPadding="5">
+					<topPen lineWidth="0.75"/>
+					<leftPen lineWidth="0.75"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.75"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[Cuándo se realizan los pagos
+
+De acuerdo al día de pago manifestado en la carátula del presente contrato]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="0" y="0" width="105" height="70" backcolor="#CCCCCC" uuid="4498691b-ca24-42f9-bc01-1d6c44d70c20"/>
+				<box topPadding="3" leftPadding="5" bottomPadding="3" rightPadding="5">
+					<topPen lineWidth="0.75"/>
+					<leftPen lineWidth="0.75"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.75"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[Número]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="21" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="105" height="21" uuid="ee30a4c6-0639-431d-b552-ef97110a83ed"/>
+				<box>
+					<topPen lineWidth="0.75"/>
+					<leftPen lineWidth="0.75"/>
+					<bottomPen lineWidth="0.75"/>
+					<rightPen lineWidth="0.75"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{numberSeq}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="105" y="0" width="217" height="21" uuid="1b231b78-01ca-4b7e-b04e-38560d2d47e2"/>
+				<box>
+					<topPen lineWidth="0.75"/>
+					<leftPen lineWidth="0.75"/>
+					<bottomPen lineWidth="0.75"/>
+					<rightPen lineWidth="0.75"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{amount}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="322" y="0" width="233" height="21" uuid="bde9f94f-c9ef-4118-8f10-7fce73b0b12e"/>
+				<box>
+					<topPen lineWidth="0.75"/>
+					<leftPen lineWidth="0.75"/>
+					<bottomPen lineWidth="0.75"/>
+					<rightPen lineWidth="0.75"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{dueDate}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<configuration>
+  <appSettings>
+    <!-- Este parámetro DEBE SER CAMBIADO para que corresponda con el assembly principal
+    que se instalará. -->
+    <add key="mainAssemblyName" value="CTA.Ahos.Correspondents.Installer" />
+    <!-- Expresiones regulares para indicar de forma explícita que archivos pueden ser
+        copiados y cuales no deben ser copiados. El orden de validación es:
+                1. NEGADOS
+                2. PERMITIDOS -->
+    <add key="deny" value="nothing" />
+    <add key="allow" value="(.*).dll;(.*).jpg;(.*).mdb;(.*).xls;(.*).rpt" />
+    <!--Permite indicar que archivos se deben copiar a los directorios de ejecución de CEN-->
+    <add key="copyToCen" value="(.*.resources).dll" />
+    <!--Permite indicar que carpetas deben ser copiadas al repositorio común de aplicaciones 'StoreName'-->
+    <add key="includeFolders" value="CTA" />
+    <!--Permite indicar que tipos de archivos no deben ser reemplazarlos en caso de actualizaciones del instalador-->
+    <add key="ifExistsLeave" value="(.*).txt" />
+    <add key="ClientSettingsProvider.ServiceUri" value="" />
+  </appSettings>
+  <startup>
+    <supportedRuntime version="v4.0" sku=".NETFramework,Version=v4.0" />
+  </startup>
+  <system.web>
+    <membership defaultProvider="ClientAuthenticationMembershipProvider">
+      <providers>
+        <add name="ClientAuthenticationMembershipProvider" type="System.Web.ClientServices.Providers.ClientFormsAuthenticationMembershipProvider, System.Web.Extensions, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" serviceUri="" />
+      </providers>
+    </membership>
+    <roleManager defaultProvider="ClientRoleProvider" enabled="true">
+      <providers>
+        <add name="ClientRoleProvider" type="System.Web.ClientServices.Providers.ClientRoleProvider, System.Web.Extensions, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" serviceUri="" cacheTimeout="86400" />
+      </providers>
+    </roleManager>
+  </system.web>
+</configuration>

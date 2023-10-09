@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<procedure>
+  <database>cob_cartera</database>
+  <name>sp_detalle_reajuste</name>
+  <type>SYBASE</type>
+  <version>1</version>
+  <parameters>
+    <parameter name="@s_user" dataType="varchar" direction="in" />
+    <parameter name="@s_date" dataType="datetime" direction="in" />
+    <parameter name="@s_ofi" dataType="smallint" direction="in" />
+    <parameter name="@s_term" dataType="varchar" direction="in" />
+    <parameter name="@i_operacion" dataType="char" direction="in" />
+    <parameter name="@i_secuencial" dataType="int" direction="in" />
+    <parameter name="@i_concepto" dataType="varchar" direction="in" />
+    <parameter name="@i_referencial" dataType="varchar" direction="in" />
+    <parameter name="@i_signo" dataType="char" direction="in" />
+    <parameter name="@i_factor" dataType="float" direction="in" />
+    <parameter name="@i_porcentaje" dataType="float" direction="in" />
+    <parameter name="@i_banco" dataType="varchar" direction="in" />
+  </parameters>
+  <queries>
+    <query>
+      <columns>
+        <column name="CONCEPTO" />
+        <column name="REFERENCIAL" />
+        <column name="SIGNO" />
+        <column name="FACTOR" />
+        <column name="PORCENTAJE" />
+      </columns>
+      <queryText>SELECT  "CONCEPTO" = red_concepto,"REFERENCIAL" = red_referencial,"SIGNO" = red_signo,"FACTOR" = red_factor,"PORCENTAJE" = red_porcentaje </queryText>
+    </query>
+  </queries>
+</procedure>

@@ -1,0 +1,636 @@
+{
+    "autoCrudStr": "F",
+    "commands": [
+    ],
+    "customEvents": [
+    ],
+    "customizationLayer": 0,
+    "customizationLayerDescription": "ECU",
+    "id": {
+        "moduleId": "BUSIN",
+        "subModuleId": "commons",
+        "taskId": "T_VW_VWNDETAILW30",
+        "version": "1.0.0"
+    },
+    "isImported": true,
+    "mainViewContainerId": "VC_VW_VWNDETAILW30",
+    "modeEnabled": 4095,
+    "name": {
+        "$ref": "../../../../BUSIN/relations/componentKeys.json#/commons/Forms/T_VW_VWNDETAILW30/name"
+    },
+    "tempSaveStr": "F",
+    "viewContainers": [
+        {
+            "colSpan": 1,
+            "collapsedStr": "F",
+            "columnsNum": 1,
+            "componentStyle": null,
+            "customEvents": [
+            ],
+            "customizationLayer": 0,
+            "customizationLayerDescription": "ECU",
+            "description": " ",
+            "enabled": 4095,
+            "id": {
+                "moduleId": "BUSIN",
+                "subModuleId": "commons",
+                "taskId": "T_VW_VWNDETAILW30",
+                "taskVersion": "1.0.0",
+                "viewContainerId": "VC_VW_VWNDETAILW30"
+            },
+            "layoutType": "Group",
+            "name": "F_VWarrantyDetailView",
+            "options": 0,
+            "responsiveLayouts": null,
+            "responsivity": false,
+            "style": null,
+            "view": {
+                "groups": [
+                    {
+                        "colSpan": 1,
+                        "collapsedStr": "F",
+                        "columnsNum": 1,
+                        "componentStyle": null,
+                        "customEvents": [
+                        ],
+                        "enabled": 4095,
+                        "eventType": 0,
+                        "groupId": "GR_VWNDETAILW30_26",
+                        "groups": [
+                            {
+                                "colSpan": 1,
+                                "collapsedStr": "F",
+                                "columnsNum": 1,
+                                "componentStyle": null,
+                                "customEvents": [
+                                ],
+                                "enabled": 4095,
+                                "entity": {
+                                    "$ref": "../../../../BUSIN/entities/EN_WARRANTYB710.json#"
+                                },
+                                "eventType": 0,
+                                "groupId": "GR_VWNDETAILW30_61",
+                                "htmlSection": "F",
+                                "independentValidation": "F",
+                                "layoutType": "Group",
+                                "name": "Panel de Acordeón para Warranty",
+                                "orientation": "V",
+                                "queryView": {
+                                    "actionDesign": "Button",
+                                    "actions": [
+                                        "Create",
+                                        "Delete"
+                                    ],
+                                    "allowPaging": false,
+                                    "allowPagingStr": "F",
+                                    "allowSorting": false,
+                                    "allowSortingStr": "F",
+                                    "confirmRowDeletion": true,
+                                    "confirmRowDeletionStr": "T",
+                                    "customEvents": [
+                                    ],
+                                    "customUrlDialog": null,
+                                    "customizationLayer": 0,
+                                    "customizationLayerDescription": "ECU",
+                                    "deleteCommandEnabled": true,
+                                    "deleteCommandEnabledStr": "T",
+                                    "dialogTitleLabelId": null,
+                                    "editCommandEnabled": false,
+                                    "editCommandEnabledStr": "F",
+                                    "editMode": "0",
+                                    "entityName": "Warranty",
+                                    "hasDetail": false,
+                                    "hasDetailString": "F",
+                                    "height": null,
+                                    "includeQueryMembers": [
+                                        "AT_WAR710CODT71",
+                                        "AT_WAR710TYPE01",
+                                        "AT_WAR710CRII81",
+                                        "AT_WAR710INTI51",
+                                        "AT_WAR710ATAS35",
+                                        "AT_WAR710PMET71",
+                                        "AT_WAR710VUAA77",
+                                        "AT_WAR710STAT86"
+                                    ],
+                                    "insertCommandEnabled": true,
+                                    "insertCommandEnabledStr": "T",
+                                    "modalSize": null,
+                                    "modeSelection": "Simple",
+                                    "moduleIdDialog": null,
+                                    "multiSelectEnabledStr": "S",
+                                    "name": "GWarrantyDetail",
+                                    "options": 2048,
+                                    "pageSize": null,
+                                    "query": {
+                                        "$ref": "../../../../BUSIN/FLCRE/queries/Q_WANTYDIL_5919.json#"
+                                    },
+                                    "queryId": "Q_WANTYDIL_5919",
+                                    "queryVersion": "1.0.0",
+                                    "queryViewCustomActions": [
+                                        {
+                                            "commandType": 0,
+                                            "customActionId": "CEQV_207_QV_WANTY5919_76_498",
+                                            "customizationLayer": 0,
+                                            "customizationLayerDescription": "ECU",
+                                            "enabled": "T",
+                                            "executionType": 1,
+                                            "name": "BeforeEntWarranty",
+                                            "queryViewEventType": {
+                                                "description": "Se ejecuta antes de la edición o inserción en linea de la grilla.",
+                                                "eventId": 207,
+                                                "name": "BeforeEnterInLineRow"
+                                            },
+                                            "thereAnCallbackEvent": false,
+                                            "thereAnClientEvent": true,
+                                            "thereAnServerEvent": false
+                                        },
+                                        {
+                                            "commandType": 0,
+                                            "customActionId": "CEQV_200_QV_WANTY5919_76_991",
+                                            "customizationLayer": 0,
+                                            "customizationLayerDescription": "ECU",
+                                            "enabled": "T",
+                                            "executionType": 1,
+                                            "name": "Insertwarranty",
+                                            "queryViewEventType": {
+                                                "description": "Se ejecuta antes de que los datos insertados en una grilla sean comprometidos",
+                                                "eventId": 200,
+                                                "name": "RowInserting"
+                                            },
+                                            "thereAnCallbackEvent": false,
+                                            "thereAnClientEvent": true,
+                                            "thereAnServerEvent": false
+                                        },
+                                        {
+                                            "commandType": 0,
+                                            "customActionId": "CEQV_204_QV_WANTY5919_76_941",
+                                            "customizationLayer": 0,
+                                            "customizationLayerDescription": "ECU",
+                                            "enabled": "T",
+                                            "executionType": 1,
+                                            "name": "DeleteWuarranty",
+                                            "queryViewEventType": {
+                                                "description": "Se ejecuta antes de que los datos eliminados en una grilla sean comprometidos.",
+                                                "eventId": 204,
+                                                "name": "RowDeleting"
+                                            },
+                                            "thereAnCallbackEvent": false,
+                                            "thereAnClientEvent": true,
+                                            "thereAnServerEvent": false
+                                        },
+                                        {
+                                            "commandType": 0,
+                                            "customActionId": "CEQV_208_QV_WANTY5919_76_945",
+                                            "customizationLayer": 0,
+                                            "customizationLayerDescription": "ECU",
+                                            "enabled": "T",
+                                            "executionType": 1,
+                                            "name": "SelectingWarranty",
+                                            "queryViewEventType": {
+                                                "description": "Se ejecuta antes de que los datos modificados en una grilla sean comprometidos.",
+                                                "eventId": 208,
+                                                "name": "RowSelecting"
+                                            },
+                                            "thereAnCallbackEvent": false,
+                                            "thereAnClientEvent": true,
+                                            "thereAnServerEvent": false
+                                        },
+                                        {
+                                            "commandType": 0,
+                                            "customActionId": "CEQV_206_QV_WANTY5919_76_354",
+                                            "customizationLayer": 0,
+                                            "customizationLayerDescription": "ECU",
+                                            "enabled": "T",
+                                            "executionType": 1,
+                                            "name": "AfterLeaveWarranty",
+                                            "queryViewEventType": {
+                                                "description": "Se ejecuta despues de aceptar la edición o inserción en linea de la grilla.",
+                                                "eventId": 206,
+                                                "name": "AfterLeaveInLineRow"
+                                            },
+                                            "thereAnCallbackEvent": false,
+                                            "thereAnClientEvent": true,
+                                            "thereAnServerEvent": false
+                                        }
+                                    ],
+                                    "queryViewId": "QV_WANTY5919_76",
+                                    "queryViewType": "Grid",
+                                    "rowCommandAppearance": 0,
+                                    "subModuleIdDialog": null,
+                                    "taskIdDialog": "1.0.0",
+                                    "taskVersionDialog": "1.0.0",
+                                    "typeFormDialog": null,
+                                    "userControl": {
+                                        "customizationLayer": 0,
+                                        "customizationLayerDescription": "ECU",
+                                        "description": "Designer Grid",
+                                        "name": "Designer Grid",
+                                        "type": "I",
+                                        "userControlId": "Grid"
+                                    },
+                                    "viewContainerIdDialog": null
+                                },
+                                "queryViewId": "QV_WANTY5919_76",
+                                "refViewId": "VW_VWNDETAILW30",
+                                "refViewVersion": "1.0.0",
+                                "responsiveLayouts": null,
+                                "responsivity": false,
+                                "style": null,
+                                "visible": 4095,
+                                "visualAttributes": [
+                                    {
+                                        "aggregate": null,
+                                        "aggregateId": null,
+                                        "attribute": {
+                                            "$ref": "../../../../BUSIN/entities/EN_WARRANTYB710.json#/attributes/AT_WAR710ATAS35"
+                                        },
+                                        "attributeValidations": [
+                                        ],
+                                        "colSpan": 1,
+                                        "componentStyle": null,
+                                        "customEvents": [
+                                        ],
+                                        "customizationLayer": 0,
+                                        "customizationLayerDescription": "ECU",
+                                        "enabled": 4095,
+                                        "include": 4095,
+                                        "label": {
+                                            "customizationLayer": 0,
+                                            "customizationLayerDescription": "ECU",
+                                            "defaultValue": {
+                                                "$ref": "../../../../BUSIN/assets/languages/BUSIN.json#/BUSIN/LBL/DLB_BUSIN_VUATODATE_41694"
+                                            },
+                                            "hasI18N": true,
+                                            "i18N": "T",
+                                            "labelId": "DLB_BUSIN_VUATODATE_41694",
+                                            "moduleId": "BUSIN"
+                                        },
+                                        "maxRecords": null,
+                                        "name": "DateAppraisedValue",
+                                        "options": 0,
+                                        "order": 4,
+                                        "readOnly": 8,
+                                        "responsiveLayouts": null,
+                                        "responsivity": false,
+                                        "sizeWidthComposite": null,
+                                        "style": null,
+                                        "textRows": 0,
+                                        "userControl": {
+                                            "type": "I",
+                                            "userControlId": "TextInputBox"
+                                        },
+                                        "visible": 4095,
+                                        "visualAttributeId": "VA_VWNDETAILW3061_ATAS145",
+                                        "width": "100",
+                                        "widthComposite": "D"
+                                    },
+                                    {
+                                        "aggregate": null,
+                                        "aggregateId": null,
+                                        "attribute": {
+                                            "$ref": "../../../../BUSIN/entities/EN_WARRANTYB710.json#/attributes/AT_WAR710CODT71"
+                                        },
+                                        "attributeValidations": [
+                                        ],
+                                        "colSpan": 1,
+                                        "componentStyle": null,
+                                        "customEvents": [
+                                        ],
+                                        "customizationLayer": 0,
+                                        "customizationLayerDescription": "ECU",
+                                        "enabled": 4095,
+                                        "include": 4095,
+                                        "label": {
+                                            "customizationLayer": 0,
+                                            "customizationLayerDescription": "ECU",
+                                            "defaultValue": {
+                                                "$ref": "../../../../BUSIN/assets/languages/BUSIN.json#/BUSIN/LBL/DLB_BUSIN_DWARRANTY_01979"
+                                            },
+                                            "hasI18N": true,
+                                            "i18N": "T",
+                                            "labelId": "DLB_BUSIN_DWARRANTY_01979",
+                                            "moduleId": "BUSIN"
+                                        },
+                                        "maxRecords": null,
+                                        "name": "CodeWarranty",
+                                        "options": 0,
+                                        "order": 0,
+                                        "readOnly": 8,
+                                        "responsiveLayouts": null,
+                                        "responsivity": false,
+                                        "sizeWidthComposite": null,
+                                        "style": null,
+                                        "textRows": 0,
+                                        "userControl": {
+                                            "type": "I",
+                                            "userControlId": "TextInputBox"
+                                        },
+                                        "visible": 4095,
+                                        "visualAttributeId": "VA_VWNDETAILW3061_CODT683",
+                                        "width": "180",
+                                        "widthComposite": "D"
+                                    },
+                                    {
+                                        "aggregate": null,
+                                        "aggregateId": null,
+                                        "attribute": {
+                                            "$ref": "../../../../BUSIN/entities/EN_WARRANTYB710.json#/attributes/AT_WAR710CRII81"
+                                        },
+                                        "attributeValidations": [
+                                        ],
+                                        "colSpan": 1,
+                                        "componentStyle": null,
+                                        "customEvents": [
+                                        ],
+                                        "customizationLayer": 0,
+                                        "customizationLayerDescription": "ECU",
+                                        "enabled": 4095,
+                                        "include": 4095,
+                                        "label": {
+                                            "customizationLayer": 0,
+                                            "customizationLayerDescription": "ECU",
+                                            "defaultValue": {
+                                                "$ref": "../../../../BUSIN/assets/languages/BUSIN.json#/BUSIN/LBL/DLB_BUSIN_DESCRIPCI_06123"
+                                            },
+                                            "hasI18N": true,
+                                            "i18N": "T",
+                                            "labelId": "DLB_BUSIN_DESCRIPCI_06123",
+                                            "moduleId": "BUSIN"
+                                        },
+                                        "maxRecords": null,
+                                        "name": "Description",
+                                        "options": 0,
+                                        "order": 2,
+                                        "readOnly": 8,
+                                        "responsiveLayouts": null,
+                                        "responsivity": false,
+                                        "sizeWidthComposite": null,
+                                        "style": null,
+                                        "textRows": 0,
+                                        "userControl": {
+                                            "type": "I",
+                                            "userControlId": "TextInputBox"
+                                        },
+                                        "visible": 4095,
+                                        "visualAttributeId": "VA_VWNDETAILW3061_CRII574",
+                                        "width": "200",
+                                        "widthComposite": "D"
+                                    },
+                                    {
+                                        "aggregate": null,
+                                        "aggregateId": null,
+                                        "attribute": {
+                                            "$ref": "../../../../BUSIN/entities/EN_WARRANTYB710.json#/attributes/AT_WAR710INTI51"
+                                        },
+                                        "attributeValidations": [
+                                        ],
+                                        "colSpan": 1,
+                                        "componentStyle": null,
+                                        "customEvents": [
+                                        ],
+                                        "customizationLayer": 0,
+                                        "customizationLayerDescription": "ECU",
+                                        "enabled": 4095,
+                                        "format": "N:#,##0.00",
+                                        "include": 4095,
+                                        "label": {
+                                            "customizationLayer": 0,
+                                            "customizationLayerDescription": "ECU",
+                                            "defaultValue": {
+                                                "$ref": "../../../../BUSIN/assets/languages/BUSIN.json#/BUSIN/LBL/DLB_BUSIN_NITIALVLU_66179"
+                                            },
+                                            "hasI18N": true,
+                                            "i18N": "T",
+                                            "labelId": "DLB_BUSIN_NITIALVLU_66179",
+                                            "moduleId": "BUSIN"
+                                        },
+                                        "maxRecords": null,
+                                        "name": "InitialValue",
+                                        "options": 0,
+                                        "order": 3,
+                                        "readOnly": 8,
+                                        "responsiveLayouts": null,
+                                        "responsivity": false,
+                                        "sizeWidthComposite": null,
+                                        "style": null,
+                                        "textRows": 0,
+                                        "userControl": {
+                                            "type": "I",
+                                            "userControlId": "TextInputBox"
+                                        },
+                                        "visible": 4095,
+                                        "visualAttributeId": "VA_VWNDETAILW3061_INTI334",
+                                        "width": "100",
+                                        "widthComposite": "D"
+                                    },
+                                    {
+                                        "aggregate": null,
+                                        "aggregateId": null,
+                                        "attribute": {
+                                            "$ref": "../../../../BUSIN/entities/EN_WARRANTYB710.json#/attributes/AT_WAR710PMET71"
+                                        },
+                                        "attributeValidations": [
+                                        ],
+                                        "colSpan": 1,
+                                        "componentStyle": null,
+                                        "customEvents": [
+                                        ],
+                                        "customizationLayer": 0,
+                                        "customizationLayerDescription": "ECU",
+                                        "enabled": 4095,
+                                        "format": "N:#,##0.00",
+                                        "include": 4095,
+                                        "label": {
+                                            "customizationLayer": 0,
+                                            "customizationLayerDescription": "ECU",
+                                            "defaultValue": {
+                                                "$ref": "../../../../BUSIN/assets/languages/BUSIN.json#/BUSIN/LBL/DLB_BUSIN_APPOIONEA_90622"
+                                            },
+                                            "hasI18N": true,
+                                            "i18N": "T",
+                                            "labelId": "DLB_BUSIN_APPOIONEA_90622",
+                                            "moduleId": "BUSIN"
+                                        },
+                                        "maxRecords": null,
+                                        "name": "ValueApportionment",
+                                        "options": 0,
+                                        "order": 5,
+                                        "readOnly": 8,
+                                        "responsiveLayouts": null,
+                                        "responsivity": false,
+                                        "sizeWidthComposite": null,
+                                        "style": null,
+                                        "textRows": 0,
+                                        "userControl": {
+                                            "type": "I",
+                                            "userControlId": "TextInputBox"
+                                        },
+                                        "visible": 4095,
+                                        "visualAttributeId": "VA_VWNDETAILW3061_PMET580",
+                                        "width": "100",
+                                        "widthComposite": "D"
+                                    },
+                                    {
+                                        "aggregate": null,
+                                        "aggregateId": null,
+                                        "attribute": {
+                                            "$ref": "../../../../BUSIN/entities/EN_WARRANTYB710.json#/attributes/AT_WAR710STAT86"
+                                        },
+                                        "attributeValidations": [
+                                        ],
+                                        "colSpan": 1,
+                                        "componentStyle": null,
+                                        "customEvents": [
+                                        ],
+                                        "customizationLayer": 0,
+                                        "customizationLayerDescription": "ECU",
+                                        "enabled": 4095,
+                                        "include": 4095,
+                                        "label": {
+                                            "customizationLayer": 0,
+                                            "customizationLayerDescription": "ECU",
+                                            "defaultValue": {
+                                                "$ref": "../../../../BUSIN/assets/languages/BUSIN.json#/BUSIN/LBL/DLB_BUSIN_STATUSUAS_80798"
+                                            },
+                                            "hasI18N": true,
+                                            "i18N": "T",
+                                            "labelId": "DLB_BUSIN_STATUSUAS_80798",
+                                            "moduleId": "BUSIN"
+                                        },
+                                        "maxRecords": null,
+                                        "name": "State",
+                                        "options": 0,
+                                        "order": 10,
+                                        "readOnly": 8,
+                                        "responsiveLayouts": null,
+                                        "responsivity": false,
+                                        "sizeWidthComposite": null,
+                                        "style": null,
+                                        "textRows": 0,
+                                        "userControl": {
+                                            "type": "I",
+                                            "userControlId": "TextInputBox"
+                                        },
+                                        "visible": 4095,
+                                        "visualAttributeId": "VA_VWNDETAILW3061_STAT447",
+                                        "width": "100",
+                                        "widthComposite": "D"
+                                    },
+                                    {
+                                        "aggregate": null,
+                                        "aggregateId": null,
+                                        "attribute": {
+                                            "$ref": "../../../../BUSIN/entities/EN_WARRANTYB710.json#/attributes/AT_WAR710TYPE01"
+                                        },
+                                        "attributeValidations": [
+                                        ],
+                                        "colSpan": 1,
+                                        "componentStyle": null,
+                                        "customEvents": [
+                                        ],
+                                        "customizationLayer": 0,
+                                        "customizationLayerDescription": "ECU",
+                                        "enabled": 4095,
+                                        "include": 4095,
+                                        "label": {
+                                            "customizationLayer": 0,
+                                            "customizationLayerDescription": "ECU",
+                                            "defaultValue": {
+                                                "$ref": "../../../../BUSIN/assets/languages/BUSIN.json#/BUSIN/LBL/DLB_BUSIN_TYPEYLJIK_10770"
+                                            },
+                                            "hasI18N": true,
+                                            "i18N": "T",
+                                            "labelId": "DLB_BUSIN_TYPEYLJIK_10770",
+                                            "moduleId": "BUSIN"
+                                        },
+                                        "maxRecords": null,
+                                        "name": "Type",
+                                        "options": 0,
+                                        "order": 1,
+                                        "readOnly": 8,
+                                        "responsiveLayouts": null,
+                                        "responsivity": false,
+                                        "sizeWidthComposite": null,
+                                        "style": null,
+                                        "textRows": 0,
+                                        "userControl": {
+                                            "type": "I",
+                                            "userControlId": "TextInputBox"
+                                        },
+                                        "visible": 4095,
+                                        "visualAttributeId": "VA_VWNDETAILW3061_TYPE104",
+                                        "width": "120",
+                                        "widthComposite": "D"
+                                    },
+                                    {
+                                        "aggregate": null,
+                                        "aggregateId": null,
+                                        "attribute": {
+                                            "$ref": "../../../../BUSIN/entities/EN_WARRANTYB710.json#/attributes/AT_WAR710VUAA77"
+                                        },
+                                        "attributeValidations": [
+                                        ],
+                                        "colSpan": 1,
+                                        "componentStyle": null,
+                                        "customEvents": [
+                                        ],
+                                        "customizationLayer": 0,
+                                        "customizationLayerDescription": "ECU",
+                                        "enabled": 4095,
+                                        "format": "N:#,##0.00",
+                                        "include": 4095,
+                                        "label": {
+                                            "customizationLayer": 0,
+                                            "customizationLayerDescription": "ECU",
+                                            "defaultValue": {
+                                                "$ref": "../../../../BUSIN/assets/languages/BUSIN.json#/BUSIN/LBL/DLB_BUSIN_VAEAAILAL_53568"
+                                            },
+                                            "hasI18N": true,
+                                            "i18N": "T",
+                                            "labelId": "DLB_BUSIN_VAEAAILAL_53568",
+                                            "moduleId": "BUSIN"
+                                        },
+                                        "maxRecords": null,
+                                        "name": "ValueAvailable",
+                                        "options": 0,
+                                        "order": 7,
+                                        "readOnly": 8,
+                                        "responsiveLayouts": null,
+                                        "responsivity": false,
+                                        "sizeWidthComposite": null,
+                                        "style": null,
+                                        "textRows": 0,
+                                        "userControl": {
+                                            "type": "I",
+                                            "userControlId": "TextInputBox"
+                                        },
+                                        "visible": 4095,
+                                        "visualAttributeId": "VA_VWNDETAILW3061_VUAA272",
+                                        "width": "100",
+                                        "widthComposite": "D"
+                                    }
+                                ]
+                            }
+                        ],
+                        "layoutType": "GroupLayout",
+                        "name": "Contenedor",
+                        "refViewId": "VW_VWNDETAILW30",
+                        "refViewVersion": "1.0.0",
+                        "style": null,
+                        "visible": 4095
+                    }
+                ],
+                "id": {
+                    "version": "1.0.0",
+                    "viewId": "VW_VWNDETAILW30"
+                },
+                "modules": [
+                    {
+                        "moduleId": "BUSIN"
+                    }
+                ],
+                "name": "VWarrantyDetailView"
+            }
+        }
+    ]
+}

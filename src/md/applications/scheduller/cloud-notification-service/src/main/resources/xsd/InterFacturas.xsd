@@ -1,0 +1,231 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+          <!-- XML Schema Generated from XML Document on Fri Mar 02 2018 09:54:40 GMT-0500 (Hora est. Pacífico, Sudamérica) -->
+          <!-- with XmlGrid.net Free Online Service http://xmlgrid.net -->
+       <xs:element name="Comprobante">
+              <xs:complexType>
+                     <xs:sequence>
+                            <xs:element name="Emisor">
+                                   <xs:complexType>
+                                          <xs:attribute name="Rfc" type="xs:string"></xs:attribute>
+                                          <xs:attribute name="Nombre" type="xs:string"></xs:attribute>
+                                          <xs:attribute name="RegimenFiscal" type="xs:int"></xs:attribute>
+                                      </xs:complexType>
+                               </xs:element>
+                            <xs:element name="Receptor">
+                                   <xs:complexType>
+                                          <xs:attribute name="Rfc" type="xs:string"></xs:attribute>
+                                          <xs:attribute name="Nombre" type="xs:string"></xs:attribute>
+                                          <xs:attribute name="UsoCFDI" type="xs:string"></xs:attribute>
+                                      </xs:complexType>
+                               </xs:element>
+                            <xs:element name="Conceptos">
+                                   <xs:complexType>
+                                          <xs:sequence>
+                                                 <xs:element name="Concepto">
+                                                        <xs:complexType>
+                                                               <xs:sequence>
+                                                                      <xs:element name="Impuestos">
+                                                                             <xs:complexType>
+                                                                                    <xs:sequence>
+                                                                                           <xs:element name="Traslados">
+                                                                                                  <xs:complexType>
+                                                                                                         <xs:sequence>
+                                                                                                                <xs:element name="Traslado">
+                                                                                                                       <xs:complexType>
+                                                                                                                              <xs:attribute name="Base" type="xs:double"></xs:attribute>
+                                                                                                                              <xs:attribute name="Impuesto" type="xs:int"></xs:attribute>
+                                                                                                                              <xs:attribute name="TipoFactor" type="xs:string"></xs:attribute>
+                                                                                                                              <xs:attribute name="TasaOCuota" type="xs:double"></xs:attribute>
+                                                                                                                              <xs:attribute name="Importe" type="xs:double"></xs:attribute>
+                                                                                                                          </xs:complexType>
+                                                                                                                   </xs:element>
+                                                                                                            </xs:sequence>
+                                                                                                     </xs:complexType>
+                                                                                              </xs:element>
+                                                                                       </xs:sequence>
+                                                                                </xs:complexType>
+                                                                         </xs:element>
+                                                                  </xs:sequence>
+                                                               <xs:attribute name="ClaveProdServ" type="xs:int"></xs:attribute>
+                                                               <xs:attribute name="Cantidad" type="xs:int"></xs:attribute>
+                                                               <xs:attribute name="ClaveUnidad" type="xs:string"></xs:attribute>
+                                                               <xs:attribute name="Unidad" type="xs:string"></xs:attribute>
+                                                               <xs:attribute name="Descripcion" type="xs:string"></xs:attribute>
+                                                               <xs:attribute name="ValorUnitario" type="xs:double"></xs:attribute>
+                                                               <xs:attribute name="Importe" type="xs:double"></xs:attribute>
+                                                               <xs:attribute name="Descuento" type="xs:double"></xs:attribute>
+                                                           </xs:complexType>
+                                                    </xs:element>
+                                             </xs:sequence>
+                                      </xs:complexType>
+                               </xs:element>
+                            <xs:element name="Impuestos">
+                                   <xs:complexType>
+                                          <xs:sequence>
+                                                 <xs:element name="Traslados">
+                                                        <xs:complexType>
+                                                               <xs:sequence>
+                                                                      <xs:element name="Traslado">
+                                                                             <xs:complexType>
+                                                                                    <xs:attribute name="Impuesto" type="xs:int"></xs:attribute>
+                                                                                    <xs:attribute name="TipoFactor" type="xs:string"></xs:attribute>
+                                                                                    <xs:attribute name="TasaOCuota" type="xs:double"></xs:attribute>
+                                                                                    <xs:attribute name="Importe" type="xs:double"></xs:attribute>
+                                                                                </xs:complexType>
+                                                                         </xs:element>
+                                                                  </xs:sequence>
+                                                           </xs:complexType>
+                                                    </xs:element>
+                                             </xs:sequence>
+                                          <xs:attribute name="TotalImpuestosRetenidos" type="xs:double"></xs:attribute>
+                                          <xs:attribute name="TotalImpuestosTrasladados" type="xs:double"></xs:attribute>
+                                      </xs:complexType>
+                               </xs:element>
+                            <xs:element name="Complemento">
+                                   <xs:complexType>
+                                          <xs:sequence>
+                                                 <xs:element name="TimbreFiscalDigital">
+                                                        <xs:complexType>
+                                                               <xs:attribute name="xmlns:tfd" type="xs:string"></xs:attribute>
+                                                               <xs:attribute name="Version" type="xs:double"></xs:attribute>
+                                                               <xs:attribute name="UUID" type="xs:string"></xs:attribute>
+                                                               <xs:attribute name="FechaTimbrado" type="xs:dateTime"></xs:attribute>
+                                                               <xs:attribute name="RfcProvCertif" type="xs:string"></xs:attribute>
+                                                               <xs:attribute name="SelloCFD" type="xs:string"></xs:attribute>
+                                                               <xs:attribute name="NoCertificadoSAT" type="xs:string"></xs:attribute>
+                                                               <xs:attribute name="SelloSAT" type="xs:string"></xs:attribute>
+                                                               <xs:attribute name="xsi:schemaLocation" type="xs:string"></xs:attribute>
+                                                           </xs:complexType>
+                                                    </xs:element>
+                                             </xs:sequence>
+                                      </xs:complexType>
+                               </xs:element>
+                            <xs:element name="Addenda">
+                                   <xs:complexType>
+                                          <xs:sequence>
+                                                 <xs:element name="FacturaInterfactura">
+                                                        <xs:complexType>
+                                                               <xs:sequence>
+                                                                      <xs:element name="Emisor">
+                                                                             <xs:complexType>
+                                                                                    <xs:attribute name="RI" type="xs:string"></xs:attribute>
+                                                                                </xs:complexType>
+                                                                         </xs:element>
+                                                                      <xs:element name="Receptor">
+                                                                             <xs:complexType>
+                                                                                    <xs:attribute name="RI" type="xs:int"></xs:attribute>
+                                                                                    <xs:attribute name="Activo" type="xs:string"></xs:attribute>
+                                                                                </xs:complexType>
+                                                                         </xs:element>
+                                                                      <xs:element name="Encabezado">
+                                                                             <xs:complexType>
+                                                                                    <xs:sequence>
+                                                                                           <xs:element name="Cuerpo">
+                                                                                                  <xs:complexType>
+                                                                                                         <xs:sequence>
+                                                                                                                <xs:element name="Traslado">
+                                                                                                                       <xs:complexType>
+                                                                                                                              <xs:attribute name="CodigoMultiple" type="xs:string"></xs:attribute>
+                                                                                                                              <xs:attribute name="cfdiBase" type="xs:double"></xs:attribute>
+                                                                                                                              <xs:attribute name="cfdiImpuesto" type="xs:int"></xs:attribute>
+                                                                                                                              <xs:attribute name="cfdiTipoFactor" type="xs:string"></xs:attribute>
+                                                                                                                              <xs:attribute name="cfdiTasaOCuota" type="xs:double"></xs:attribute>
+                                                                                                                              <xs:attribute name="cfdiImporte" type="xs:double"></xs:attribute>
+                                                                                                                          </xs:complexType>
+                                                                                                                   </xs:element>
+                                                                                                            </xs:sequence>
+                                                                                                         <xs:attribute name="Renglon" type="xs:int"></xs:attribute>
+                                                                                                         <xs:attribute name="Codigo" type="xs:string"></xs:attribute>
+                                                                                                         <xs:attribute name="Cantidad" type="xs:int"></xs:attribute>
+                                                                                                         <xs:attribute name="Concepto" type="xs:string"></xs:attribute>
+                                                                                                         <xs:attribute name="PUnitario" type="xs:double"></xs:attribute>
+                                                                                                         <xs:attribute name="Importe" type="xs:double"></xs:attribute>
+                                                                                                         <xs:attribute name="UM" type="xs:string"></xs:attribute>
+                                                                                                         <xs:attribute name="cfdiClaveProdServ" type="xs:string"></xs:attribute>
+                                                                                                         <xs:attribute name="cfdiClaveUnidad" type="xs:string"></xs:attribute>
+                                                                                                         <xs:attribute name="cfdiDescuento" type="xs:double"></xs:attribute>
+                                                                                                         <xs:attribute name="cfdiBase" type="xs:double"></xs:attribute>
+                                                                                                     </xs:complexType>
+                                                                                              </xs:element>
+                                                                                       </xs:sequence>
+                                                                                    <xs:attribute name="IdInterno" type="xs:int"></xs:attribute>
+                                                                                    <xs:attribute name="TemplateId" type="xs:int"></xs:attribute>
+                                                                                    <xs:attribute name="Folio" type="xs:int"></xs:attribute>
+                                                                                    <xs:attribute name="FolioSerie" type="xs:string"></xs:attribute>
+                                                                                    <xs:attribute name="SerieFolio" type="xs:string"></xs:attribute>
+                                                                                    <xs:attribute name="Serie" type="xs:string"></xs:attribute>
+                                                                                    <xs:attribute name="MonedaDoc" type="xs:string"></xs:attribute>
+                                                                                    <xs:attribute name="MonedaDesc" type="xs:string"></xs:attribute>
+                                                                                    <xs:attribute name="Status" type="xs:int"></xs:attribute>
+                                                                                    <xs:attribute name="CFD" type="xs:string"></xs:attribute>
+                                                                                    <xs:attribute name="Estatus" type="xs:string"></xs:attribute>
+                                                                                    <xs:attribute name="ProcesoId" type="xs:int"></xs:attribute>
+                                                                                    <xs:attribute name="Fecha" type="xs:dateTime"></xs:attribute>
+                                                                                    <xs:attribute name="CondicionPago" type="xs:string"></xs:attribute>
+                                                                                    <xs:attribute name="Descuento" type="xs:double"></xs:attribute>
+                                                                                    <xs:attribute name="SubTotal" type="xs:double"></xs:attribute>
+                                                                                    <xs:attribute name="Iva" type="xs:double"></xs:attribute>
+                                                                                    <xs:attribute name="Total" type="xs:double"></xs:attribute>
+                                                                                    <xs:attribute name="IVAPCT" type="xs:double"></xs:attribute>
+                                                                                    <xs:attribute name="Moneda" type="xs:string"></xs:attribute>
+                                                                                    <xs:attribute name="LugarExpedicion" type="xs:int"></xs:attribute>
+                                                                                    <xs:attribute name="TipoCambio" type="xs:string"></xs:attribute>
+                                                                                    <xs:attribute name="FechaOperacion" type="xs:date"></xs:attribute>
+                                                                                    <xs:attribute name="TipoDocumento" type="xs:string"></xs:attribute>
+                                                                                    <xs:attribute name="TotalFactura" type="xs:string"></xs:attribute>
+                                                                                    <xs:attribute name="TextoLibre1" type="xs:string"></xs:attribute>
+                                                                                    <xs:attribute name="TextoLibre2" type="xs:string"></xs:attribute>
+                                                                                    <xs:attribute name="TextoLibre3" type="xs:string"></xs:attribute>
+                                                                                    <xs:attribute name="metodoDePago" type="xs:string"></xs:attribute>
+                                                                                    <xs:attribute name="formaDePago" type="xs:string"></xs:attribute>
+                                                                                    <xs:attribute name="FolioReferencia" type="xs:string"></xs:attribute>
+                                                                                    <xs:attribute name="IdExterno" type="xs:string"></xs:attribute>
+                                                                                    <xs:attribute name="NumCtaPago" type="xs:string"></xs:attribute>
+                                                                                    <xs:attribute name="RegimenFiscalEmisor" type="xs:int"></xs:attribute>
+                                                                                    <xs:attribute name="FolioExterno" type="xs:int"></xs:attribute>
+                                                                                    <xs:attribute name="Underpayment" type="xs:string"></xs:attribute>
+                                                                                    <xs:attribute name="Overpayment" type="xs:string"></xs:attribute>
+                                                                                    <xs:attribute name="cfdiUsoCFDI" type="xs:string"></xs:attribute>
+                                                                                    <xs:attribute name="cfdiFormaPago" type="xs:string"></xs:attribute>
+                                                                                    <xs:attribute name="cfdiMetodoPago" type="xs:string"></xs:attribute>
+                                                                                    <xs:attribute name="cfdiTipoRelacion" type="xs:string"></xs:attribute>
+                                                                                    <xs:attribute name="cadenaOriginal" type="xs:string"></xs:attribute>
+                                                                                    <xs:attribute name="cadenaOriginalTimbre" type="xs:string"></xs:attribute>
+                                                                                    <xs:attribute name="cadenaOriginalEmisor" type="xs:string"></xs:attribute>
+                                                                                    <xs:attribute name="importeConLetra" type="xs:string"></xs:attribute>
+                                                                                </xs:complexType>
+                                                                         </xs:element>
+                                                                  </xs:sequence>
+                                                               <xs:attribute name="TipoDocumentoId" type="xs:int"></xs:attribute>
+                                                               <xs:attribute name="TipoDocumento" type="xs:string"></xs:attribute>
+                                                               <xs:attribute name="Id" type="xs:int"></xs:attribute>
+                                                           </xs:complexType>
+                                                    </xs:element>
+                                             </xs:sequence>
+                                          <xs:attribute name="xmlns:if" type="xs:string"></xs:attribute>
+                                          <xs:attribute name="xsi:schemaLocation" type="xs:string"></xs:attribute>
+                                      </xs:complexType>
+                               </xs:element>
+                        </xs:sequence>
+                     <xs:attribute name="xmlns:xsi" type="xs:string"></xs:attribute>
+                     <xs:attribute name="xmlns:cfdi" type="xs:string"></xs:attribute>
+                     <xs:attribute name="Version" type="xs:double"></xs:attribute>
+                     <xs:attribute name="Serie" type="xs:string"></xs:attribute>
+                     <xs:attribute name="Folio" type="xs:int"></xs:attribute>
+                     <xs:attribute name="Fecha" type="xs:dateTime"></xs:attribute>
+                     <xs:attribute name="Sello" type="xs:string"></xs:attribute>
+                     <xs:attribute name="FormaPago" type="xs:int"></xs:attribute>
+                     <xs:attribute name="NoCertificado" type="xs:string"></xs:attribute>
+                     <xs:attribute name="Certificado" type="xs:string"></xs:attribute>
+                     <xs:attribute name="SubTotal" type="xs:double"></xs:attribute>
+                     <xs:attribute name="Descuento" type="xs:double"></xs:attribute>
+                     <xs:attribute name="Moneda" type="xs:string"></xs:attribute>
+                     <xs:attribute name="Total" type="xs:double"></xs:attribute>
+                     <xs:attribute name="TipoDeComprobante" type="xs:string"></xs:attribute>
+                     <xs:attribute name="MetodoPago" type="xs:string"></xs:attribute>
+                     <xs:attribute name="LugarExpedicion" type="xs:int"></xs:attribute>
+                     <xs:attribute name="xsi:schemaLocation" type="xs:string"></xs:attribute>
+                 </xs:complexType>
+          </xs:element>
+   </xs:schema>

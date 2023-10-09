@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingBottom="@dimen/activity_vertical_margin"
+        android:paddingEnd="@dimen/activity_horizontal_margin"
+        android:paddingStart="@dimen/activity_horizontal_margin"
+        android:paddingTop="@dimen/activity_vertical_margin">
+
+        <include layout="@layout/layout_error"/>
+
+        <RelativeLayout
+            android:id="@+id/layout_parent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/input_layout_group_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <android.support.design.widget.TextInputEditText
+                    android:id="@+id/input_group_name"
+                    style="@style/Form.FieldReadOnly"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/form_hint_group_name"
+                    android:inputType="text"/>
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/input_layout_application_date"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/input_layout_group_name">
+
+                <android.support.design.widget.TextInputEditText
+                    android:id="@+id/input_application_date"
+                    style="@style/Form.FieldReadOnly"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/form_hint_app_date"
+                    android:inputType="text"/>
+            </android.support.design.widget.TextInputLayout>
+
+            <LinearLayout
+                android:id="@+id/layout_amounts"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/input_layout_application_date"
+                android:baselineAligned="false"
+                android:orientation="horizontal">
+
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1">
+
+                    <com.cobis.gestionasesores.widgets.currencyfield.CurrencyInputEditText
+                        android:id="@+id/input_group_amount"
+                        style="@style/Form.FieldReadOnly"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/solidarity_payment_hint_group_amount"/>
+                </android.support.design.widget.TextInputLayout>
+
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1">
+
+                    <com.cobis.gestionasesores.widgets.currencyfield.CurrencyInputEditText
+                        android:id="@+id/input_payment_due"
+                        style="@style/Form.FieldReadOnly"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/solidarity_payment_hint_payment_due"
+                        android:textColor="@color/md_red_500"/>
+                </android.support.design.widget.TextInputLayout>
+            </LinearLayout>
+
+            <android.support.v7.widget.SwitchCompat
+                android:id="@+id/switch_debit_account"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/layout_amounts"
+                android:text="@string/solidarity_payment_hint_account_debit"
+                android:theme="@style/SwitchTheme"/>
+
+            <Button
+                android:id="@+id/btn_more_information"
+                style="?borderlessButtonStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_below="@+id/switch_debit_account"
+                android:text="@string/solidarity_payment_more_info_btn"/>
+
+            <TextView
+                android:id="@+id/text_list_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/btn_more_information"
+                android:text="@string/solidarity_payment_list_title"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:id="@+id/text_error"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/text_list_label"
+                android:textAppearance="@style/TextAppearance.Design.Error"
+                android:textColor="@color/md_red_500"
+                android:visibility="gone"/>
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/list_solidarity_members"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_above="@+id/layout_amount_covered"
+                android:layout_below="@+id/text_error"
+                tools:listitem="@layout/row_solidarity_member"/>
+
+            <LinearLayout
+                android:id="@+id/layout_amount_covered"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:background="@color/colorPrimary"
+                android:orientation="horizontal"
+                android:padding="@dimen/list_item_padding">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/solidarity_payment_hint_payment_covered"
+                    android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
+                    android:textColor="@android:color/white"/>
+
+                <TextView
+                    android:id="@+id/text_covered_amount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
+                    android:textColor="@android:color/white"
+                    tools:text="5000.00"/>
+            </LinearLayout>
+        </RelativeLayout>
+    </LinearLayout>
+</ScrollView>

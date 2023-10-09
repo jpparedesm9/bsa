@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="IncumplimientoAvalista" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="810d174d-6b23-4ad8-b743-9d4240eeab63">
+	<property name="ireport.zoom" value="1.2100000000000009"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="NOMBREGARANTE" class="java.lang.String"/>
+	<parameter name="MONTO" class="java.math.BigDecimal">
+		<parameterDescription><![CDATA[]]></parameterDescription>
+	</parameter>
+	<parameter name="NOCUOTAS" class="java.lang.Integer"/>
+	<parameter name="FECHA" class="java.util.Date"/>
+	<parameter name="FUNCIONARIO" class="java.lang.String"/>
+	<parameter name="CARGO" class="java.lang.String"/>
+	<parameter name="PIEPAGINA" class="java.lang.String"/>
+	<parameter name="NOMBREEMPRESA" class="java.lang.String"/>
+	<parameter name="FECHACARTA" class="java.lang.String"/>
+	<parameter name="FECHAPRESTAMO" class="java.lang.String"/>
+	<parameter name="SIMBOLOMONEDA" class="java.lang.String"/>
+	<parameter name="NOMBRESUCURSAL" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="institucion" class="java.lang.String"/>
+	<field name="referencia" class="java.lang.String"/>
+	<variable name="MONTO" class="java.lang.String">
+		<variableExpression><![CDATA[new java.text.DecimalFormat("#,##0.00", new DecimalFormatSymbols(Locale.ENGLISH)).format($P{MONTO}.doubleValue())]]></variableExpression>
+	</variable>
+	<variable name="FECHA" class="java.lang.String">
+		<variableExpression><![CDATA[new java.text.SimpleDateFormat("dd/MM/yyyy").format($P{FECHA})]]></variableExpression>
+	</variable>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="42" splitType="Stretch">
+			<image scaleImage="FillFrame">
+				<reportElement x="0" y="0" width="130" height="40" uuid="87203da3-3b57-4c39-bebb-334bd37564fa"/>
+				<imageExpression><![CDATA["logo-tuiio.png"]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="20" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="56" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="17" width="555" height="18" uuid="f6cac328-150a-4b2c-a4a5-95f5c8753568"/>
+				<textElement verticalAlignment="Middle" markup="html"/>
+				<textFieldExpression><![CDATA["Estimado Señor (a): "]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="34" width="555" height="18" uuid="3ff14b2a-7409-48f7-aa16-e41e4c1fb920"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$P{NOMBREGARANTE}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="0" width="555" height="18" uuid="ab541d8c-8f16-4bf7-9520-0da64b0ea287"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$P{FECHACARTA}]]></textFieldExpression>
+			</textField>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="229" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="3" width="555" height="107" uuid="f4376324-d542-4314-807a-a6c79dfd1484"/>
+				<textElement textAlignment="Justified" markup="html"/>
+				<textFieldExpression><![CDATA["El objetivo de la presente carta es notificarle del vencimiento del préstamo <b>" + $F{referencia} + "</b> del que usted es garante. El monto exigible de la obligación llega a <b>" + $P{SIMBOLOMONEDA} + " " + $V{MONTO} + ",</b> que corresponden a <b>" + $P{NOCUOTAS}.toString() + "</b> cuotas que vencieron a partir de <b>" + $P{FECHAPRESTAMO} + "</b>. " +
+"<br/>" + "<br/>" + "<br/>" +
+"Debido a esto, le pedimos se acerque de forma inmediata a nuestra sucursal <b>" + $P{NOMBRESUCURSAL} + "</b> ubicada en <b>" + $F{institucion} + ",</b> para coordinar su forma de pago."]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="157" width="555" height="18" uuid="5e8a3509-beae-4eb8-a6a0-427ab84c73ff"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA["Atentamente."]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="174" width="555" height="18" uuid="78a24e03-7fa4-485e-a9e5-af5a7ab40bb3"/>
+				<textElement verticalAlignment="Middle" markup="html"/>
+				<textFieldExpression><![CDATA[" " + $P{FUNCIONARIO} + "."]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="191" width="555" height="18" uuid="563739fc-1956-41be-bea4-c2fc40a689e0"/>
+				<textElement verticalAlignment="Middle" markup="html"/>
+				<textFieldExpression><![CDATA[" " +$P{CARGO} + ". "]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="208" width="555" height="18" uuid="81ed152b-5454-4aa6-82c9-5631b1499295"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$P{NOMBREEMPRESA}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="16" splitType="Stretch">
+			<textField>
+				<reportElement mode="Opaque" x="0" y="0" width="555" height="14" forecolor="#000000" backcolor="#FFFFFF" uuid="82bb3043-79be-4c7e-9f72-c95043a825cc"/>
+				<textElement textAlignment="Center">
+					<font size="7" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{PIEPAGINA}]]></textFieldExpression>
+			</textField>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="19" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="13" splitType="Stretch"/>
+	</summary>
+</jasperReport>

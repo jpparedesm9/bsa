@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<product path="D:/GIT2/bsa/src/md/activas/cartera/csg/Payments/Products/COBISCorp.eCOBIS.Payments.Service" appPath="C:/Program Files (x86)/COBIS/COBIS Services Generator/" name="COBISCorp.eCOBIS.Payments.Service" productNS="http://service.payments.ecobis.cobiscorp" description="Servicios para pagos masivos" documentationLanguage="Español" year="2019" version="1.0.0.0" type="SERVICE" GUID="E50EB46B-70C1-418F-8560-63EA22909A04">
+  <namespaces>
+    <namespace type="class" base="COBISCorp.eCOBIS.Payments" name="COBISCorp.eCOBIS.Payments.Service" package="cobiscorp.ecobis.payments.service" ns="http://service.payments.ecobis.cobiscorp" folder="" />
+  </namespaces>
+  <templates>
+    <template id="ServiceCTS302" productName="COBISCorp.eCOBIS.Payments.Service" outputFolder="c:\COBIS-SG\Output\CTS\COBISCorp.eCOBIS.Payments.Service" package="true" packageType="Jar">
+      <templateFiles>
+        <templateFile filePath="Annotations\JavaInterface.xslt" enabled="true" override="true" />
+        <templateFile filePath="Annotations\JavaService.xslt" enabled="true" override="true" />
+        <templateFile filePath="Annotations\OSGIClass.xslt" enabled="true" override="true" />
+        <templateFile filePath="Annotations\Interceptor.xslt" enabled="true" override="false" />
+        <templateFile filePath="..\Commons\Java\buildProperties.xslt" enabled="true" override="true" />
+        <templateFile filePath="..\Commons\Java\build.xslt" enabled="true" override="true" />
+      </templateFiles>
+    </template>
+  </templates>
+  <DTOs />
+  <classes>
+    <class name="MassivePayment" nsBase="COBISCorp.eCOBIS.Payments" namespace="COBISCorp.eCOBIS.Payments.Service" package="cobiscorp.ecobis.payments.service" ns="http://service.payments.ecobis.cobiscorp" version="1">
+      <partialClasses>
+        <partialClass name="MassivePayment">
+          <services>
+            <service name="ExecutePayments" id="Payments.MassivePayment.ExecutePayments">
+              <procedure name="sp_pagos_corresponsal_masivos" database="cob_cartera" version="1" />
+            </service>
+            <service name="GetPaymentsResult" id="Payments.MassivePayment.GetPaymentsResult">
+              <procedure name="sp_pagos_corresponsal_masivos" database="cob_cartera" version="1" />
+            </service>
+            <service name="RegisterPayment" id="Payments.MassivePayment.RegisterPayment">
+              <procedure name="sp_pagos_corresponsal_masivos" database="cob_cartera" version="1" />
+            </service>
+            <service name="ValidatePayments" id="Payments.MassivePayment.ValidatePayments">
+              <procedure name="sp_pagos_corresponsal_masivos" database="cob_cartera" version="1" />
+            </service>
+          </services>
+        </partialClass>
+      </partialClasses>
+    </class>
+  </classes>
+  <packagers>
+    <packager type="SGPackageJava" AntTask="sign-archive" KeyAlias="cobisapp" KeyPassword="cobisappadminadmin" KeyCertificatePassword="cobisappadmin" KeyFileName="cobisapp.keystore" RelativeFolder="True" TemplateId="ServiceCTS302" />
+  </packagers>
+  <references>
+    <reference name="COBISCorp.eCOBIS.Payments.DTO" type="DTO" version="1.0.0.0" GUID="8DE753BF-370C-4C67-BA8A-42ECC0E954CA">
+      <templates>
+        <template id="DTOJavaPOJO" productName="COBISCorp.eCOBIS.Payments.DTO" outputFolder="c:\COBIS-SG\Output\CTS\COBISCorp.eCOBIS.Payments.DTO" package="true" packageType="Jar">
+          <templateFiles>
+            <templateFile filePath="JavaPOJO\JavaDTO.xslt" enabled="true" override="true" />
+            <templateFile filePath="..\Commons\Java\buildProperties.xslt" enabled="true" override="true" />
+            <templateFile filePath="..\Commons\Java\build.xslt" enabled="true" override="true" />
+          </templateFiles>
+        </template>
+      </templates>
+      <namespaces>
+        <namespace type="dto" base="COBISCorp.eCOBIS.Payments" name="COBISCorp.eCOBIS.Payments.DTO" package="cobiscorp.ecobis.payments.dto" ns="http://dto.payments.ecobis.cobiscorp" folder="DTO" />
+      </namespaces>
+    </reference>
+  </references>
+  <productProperties>
+    <property name="MavenGroupId" value="com.cobiscorp.processapi" />
+    <property name="MavenArtifactId" value="COBISCorp.eCOBIS.Payments.Service" />
+    <property name="MavenVersion" value="1.0.0.0" />
+  </productProperties>
+</product>

@@ -1,0 +1,67 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.cobiscorp.ecobis</groupId>
+	<artifactId>cobis-business-commons-platform-build</artifactId>
+	<version>1.0.0</version>
+	<packaging>pom</packaging>
+	<name>${project.artifactId}</name>
+	<url>http://www.cobiscorp.com/</url>
+
+
+
+	<properties>
+		<maven-javadoc-plugin.version>2.10.3</maven-javadoc-plugin.version>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+	</properties>
+
+	<profiles>
+		<profile>
+			<id>env-development</id>
+			<activation>
+				<activeByDefault>true</activeByDefault>
+			</activation>
+			<modules>
+				<module>../../../source/middleware/MVN/busin-commons-dto</module>
+				<module>../../../source/middleware/MVN/busin-commons-services</module>
+				<module>../../../source/middleware/MVN/business-commons-platform-utils</module>
+				<module>../../../source/middleware/MVN/business-commons-platform-services</module>
+				<module>../cobis-business-commons-platform-installer</module>
+			</modules>
+		</profile>
+		<profile>
+			<id>env-hardening</id>
+			<modules>
+				<module>../../../source/middleware/MVN/busin-commons-dto</module>
+				<module>../../../source/middleware/MVN/busin-commons-services</module>
+				<module>../../../source/middleware/MVN/business-commons-platform-utils</module>
+				<module>../../../source/middleware/MVN/business-commons-platform-services</module>
+				<module>../cobis-business-commons-platform-installer</module>
+			</modules>
+		</profile>
+		<profile>
+			<id>Purge</id>
+			<build>
+				<plugins>
+					<plugin>
+						<artifactId>maven-dependency-plugin</artifactId>
+						<version>2.10</version>
+						<executions>
+							<execution>
+								<id>purge-local-dependencies</id>
+								<phase>process-sources</phase>
+								<goals>
+									<goal>purge-local-repository</goal>
+								</goals>
+								<!-- >configuration> <actTransitively>true</actTransitively> <manualInclude>com.cobiscorp.processapi:COBISCorp.eCOBIS.Businessprocess.Creditmanagement.DTO</manualInclude> 
+									<reResolve>true</reResolve> </configuration -->
+							</execution>
+						</executions>
+					</plugin>
+				</plugins>
+			</build>
+		</profile>
+	</profiles>
+
+
+</project>

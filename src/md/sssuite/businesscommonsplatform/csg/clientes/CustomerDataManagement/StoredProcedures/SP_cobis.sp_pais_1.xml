@@ -1,0 +1,145 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<procedure>
+  <database>cobis</database>
+  <name>sp_pais</name>
+  <type>SYBASE</type>
+  <version>1</version>
+  <parameters>
+    <parameter name="@s_ssn" dataType="int" direction="in" />
+    <parameter name="@s_user" dataType="varchar" direction="in" />
+    <parameter name="@s_sesn" dataType="int" direction="in" />
+    <parameter name="@s_term" dataType="varchar" direction="in" />
+    <parameter name="@s_date" dataType="datetime" direction="in" />
+    <parameter name="@s_srv" dataType="varchar" direction="in" />
+    <parameter name="@s_lsrv" dataType="varchar" direction="in" />
+    <parameter name="@s_rol" dataType="smallint" direction="in" />
+    <parameter name="@s_ofi" dataType="smallint" direction="in" />
+    <parameter name="@s_org_err" dataType="char" direction="in" />
+    <parameter name="@s_error" dataType="int" direction="in" />
+    <parameter name="@s_sev" dataType="tinyint" direction="in" />
+    <parameter name="@s_msg" dataType="varchar" direction="in" />
+    <parameter name="@s_org" dataType="char" direction="in" />
+    <parameter name="@t_debug" dataType="char" direction="in" />
+    <parameter name="@t_file" dataType="varchar" direction="in" />
+    <parameter name="@t_from" dataType="varchar" direction="in" />
+    <parameter name="@t_trn" dataType="smallint" direction="in" />
+    <parameter name="@i_operacion" dataType="varchar" direction="in" />
+    <parameter name="@i_modo" dataType="tinyint" direction="in" />
+    <parameter name="@i_tipo" dataType="varchar" direction="in" />
+    <parameter name="@i_pais" dataType="smallint" direction="in" />
+    <parameter name="@i_descripcion" dataType="varchar" direction="in" />
+    <parameter name="@i_abreviatura" dataType="varchar" direction="in" />
+    <parameter name="@i_nacionalidad" dataType="varchar" direction="in" />
+    <parameter name="@i_continente" dataType="varchar" direction="in" />
+    <parameter name="@i_estado" dataType="varchar" direction="in" />
+    <parameter name="@i_central_transmit" dataType="varchar" direction="in" />
+    <parameter name="@i_valor" dataType="varchar" direction="in" />
+    <parameter name="@i_pais_alf" dataType="varchar" direction="in" />
+  </parameters>
+  <queries>
+    <query>
+      <columns>
+        <column name="PAIS" />
+        <column name="DESCRIPCION" />
+        <column name="ABREVIATURA" />
+        <column name="NACIONALIDAD" />
+        <column name="COD. CONT." />
+        <column name="CONTINENTE" />
+        <column name="ESTADO" />
+      </columns>
+      <queryText>SELECT  "PAIS" = pa_pais,"DESCRIPCION" = CONVERT (CHAR (30),pa_descripcion ),"ABREVIATURA" = pa_abreviatura,"NACIONALIDAD" = CONVERT (CHAR (30),pa_nacionalidad ),"COD. CONT." = pa_continente,"CONTINENTE" = CONVERT (CHAR (30),valor ),"ESTADO" = pa_estado </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="PAIS" />
+        <column name="DESCRIPCION" />
+        <column name="ABREVIATURA" />
+        <column name="NACIONALIDAD" />
+        <column name="COD. CONT." />
+        <column name="CONTINENTE" />
+        <column name="ESTADO" />
+      </columns>
+      <queryText>SELECT  "PAIS" = pa_pais,"DESCRIPCION" = CONVERT (CHAR (30),pa_descripcion ),"ABREVIATURA" = pa_abreviatura,"NACIONALIDAD" = CONVERT (CHAR (30),pa_nacionalidad ),"COD. CONT." = pa_continente,"CONTINENTE" = CONVERT (CHAR (30),valor ),"ESTADO" = pa_estado </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="PAIS" />
+        <column name="DESCRIPCION" />
+        <column name="ABREVIATURA" />
+        <column name="NACIONALIDAD" />
+        <column name="COD. CONT." />
+        <column name="CONTINENTE" />
+      </columns>
+      <queryText>SELECT  "PAIS" = pa_pais,"DESCRIPCION" = CONVERT (CHAR (30),pa_descripcion ),"ABREVIATURA" = pa_abreviatura,"NACIONALIDAD" = pa_nacionalidad,"COD. CONT." = pa_continente,"CONTINENTE" = CONVERT (CHAR (30),valor ) </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="PAIS" />
+        <column name="DESCRIPCION" />
+        <column name="ABREVIATURA" />
+        <column name="NACIONALIDAD" />
+        <column name="COD. CONT." />
+        <column name="CONTINENTE" />
+      </columns>
+      <queryText>SELECT  "PAIS" = pa_pais,"DESCRIPCION" = CONVERT (CHAR (30),pa_descripcion ),"ABREVIATURA" = pa_abreviatura,"NACIONALIDAD" = CONVERT (CHAR (30),pa_nacionalidad ),"COD. CONT." = pa_continente,"CONTINENTE" = CONVERT (CHAR (30),valor ) </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="{1}" />
+        <column name="{2}" />
+        <column name="{3}" />
+        <column name="{4}" />
+        <column name="{5}" />
+        <column name="{6}" />
+      </columns>
+      <queryText>SELECT  pa_pais,pa_descripcion,pa_abreviatura,pa_nacionalidad,pa_continente,valor </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="COD." />
+        <column name="NOMBRE" />
+        <column name="NACIONALIDAD" />
+      </columns>
+      <queryText>SELECT  "COD." = pa_pais,"NOMBRE" = CONVERT (CHAR (30),pa_descripcion ),"NACIONALIDAD" = CONVERT (CHAR (30),pa_nacionalidad ) </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="COD." />
+        <column name="NOMBRE" />
+        <column name="NACIONALIDAD" />
+      </columns>
+      <queryText>SELECT  "COD." = pa_pais,"NOMBRE" = CONVERT (CHAR (30),pa_descripcion ),"NACIONALIDAD" = CONVERT (CHAR (30),pa_nacionalidad ) </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="COD." />
+        <column name="NOMBRE" />
+        <column name="NACIONALIDAD" />
+      </columns>
+      <queryText>SELECT  "COD." = pa_pais,"NOMBRE" = CONVERT (CHAR (30),pa_descripcion ),"NACIONALIDAD" = CONVERT (CHAR (30),pa_nacionalidad ) </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="{1}" />
+        <column name="{2}" />
+      </columns>
+      <queryText>SELECT  CONVERT (CHAR (30),pa_descripcion ),CONVERT (CHAR (30),pa_nacionalidad ) </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="COD." />
+        <column name="NOMBRE" />
+        <column name="NACIONALIDAD" />
+      </columns>
+      <queryText>SELECT  "COD." = pa_pais,"NOMBRE" = CONVERT (CHAR (30),pa_descripcion ),"NACIONALIDAD" = CONVERT (CHAR (30),pa_nacionalidad ) </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="COD." />
+        <column name="NOMBRE" />
+        <column name="NACIONALIDAD" />
+      </columns>
+      <queryText>SELECT  "COD." = pa_pais,"NOMBRE" = CONVERT (CHAR (30),pa_descripcion ),"NACIONALIDAD" = CONVERT (CHAR (30),pa_nacionalidad ) </queryText>
+    </query>
+  </queries>
+</procedure>

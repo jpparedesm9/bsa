@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="Windows-1252"?>
+<xs:schema attributeFormDefault="unqualified"
+	elementFormDefault="qualified"
+	xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:element name="CorresponsalPayment">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="Payment" maxOccurs="unbounded"
+					minOccurs="0">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element type="xs:dateTime" name="START_DATE" />
+							<xs:element type="xs:string" name="CLIENT_NAME" />
+							<xs:element type="xs:dateTime" name="EFFECTIVE_DATE" />
+							<xs:element type="xs:decimal" name="AMOUNT" />
+							<xs:element type="xs:string" name="OFFICE" />
+							<xs:element type="xs:int" name="FEE_NUMBER" />
+							<xs:element type="xs:string" name="MAIL" />
+							<xs:element type="xs:int" name="CLIENTE" />
+							<xs:element maxOccurs="unbounded" name="Referencia">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="institucion" type="xs:string" />
+										<xs:element name="referencia" type="xs:string" />
+										<xs:element name="nroConvenio" type="xs:string" />									
+										<xs:element name="barCode" type="xs:anySimpleType" />									
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

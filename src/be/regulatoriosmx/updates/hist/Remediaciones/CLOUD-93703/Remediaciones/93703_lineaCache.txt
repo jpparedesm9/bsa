@@ -1,0 +1,24 @@
+-- Seguir los pasos para agregar lineas de codigo en el archivo 'cts-cache.xml' ubicado en '\Cobishome\CTS_MF\services-as\cache\'
+1.- Sacar respaldo del archivo cts-cache.xml ubicado ubicado en la ruta: \Cobishome\CTS_MF\services-as\cache\ 
+1.- Abrir el archivo cts-cache.xml
+2.- Agregar las siguientes lineas antes de la etiqueta de cierre </ehcache>
+
+  <cache name="AccountStateReport" maxElementsInMemory="3000" maxElementsOnDisk="4000" eternal="false" timeToIdleSeconds="7200" timeToLiveSeconds="7200" overflowToDisk="false" diskSpoolBufferSizeMB="30" diskPersistent="false" diskExpiryThreadIntervalSeconds="900" memoryStoreEvictionPolicy="LRU">
+    <cacheEventListenerFactory class="com.cobiscorp.cobis.cache.impl.COBISCacheEventListenerFactory"/>
+  </cache>
+  
+  /* Debe quedar algo similar a 
+.
+.
+.
+.  
+  <cache name="PrelacionNivelCuenta" maxElementsInMemory="3000" maxElementsOnDisk="4000" eternal="false" timeToIdleSeconds="7200" timeToLiveSeconds="7200" overflowToDisk="false" diskSpoolBufferSizeMB="30" diskPersistent="false" diskExpiryThreadIntervalSeconds="900" memoryStoreEvictionPolicy="LRU">
+    <cacheEventListenerFactory class="com.cobiscorp.cobis.cache.impl.COBISCacheEventListenerFactory"/>
+  </cache>
+  <cache name="AccountStateReport" maxElementsInMemory="3000" maxElementsOnDisk="4000" eternal="false" timeToIdleSeconds="7200" timeToLiveSeconds="7200" overflowToDisk="false" diskSpoolBufferSizeMB="30" diskPersistent="false" diskExpiryThreadIntervalSeconds="900" memoryStoreEvictionPolicy="LRU">
+    <cacheEventListenerFactory class="com.cobiscorp.cobis.cache.impl.COBISCacheEventListenerFactory"/>
+  </cache>  
+</ehcache>  
+  */
+  
+

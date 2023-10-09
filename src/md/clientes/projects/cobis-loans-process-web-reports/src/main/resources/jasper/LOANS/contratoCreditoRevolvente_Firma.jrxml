@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="contratoCreditoInclusion_Firma" pageWidth="507" pageHeight="794" whenNoDataType="AllSectionsNoDetail" columnWidth="507" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="deec1b21-1036-4734-948b-164547062a2b">
+	<property name="ireport.zoom" value="1.5"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="SUBREPORT_DIR" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["/"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="urlPathSantander" class="java.lang.String"/>
+	<field name="nombre" class="java.lang.String"/>
+	<field name="cargo" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<detail>
+		<band height="34" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="22" width="507" height="10" uuid="978e89b0-f8a4-4d4d-a509-df12916680cf"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+				</box>
+				<textElement verticalAlignment="Top">
+					<font fontName="SansSerif" size="8" isBold="true"/>
+					<paragraph leftIndent="10" rightIndent="5" spacingBefore="2"/>
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="20" width="507" height="14" uuid="e9469210-0d43-416e-baa2-d1df7f0eb608"/>
+				<box>
+					<topPen lineWidth="0.0"/>
+				</box>
+				<textElement verticalAlignment="Top">
+					<font fontName="SansSerif" size="8" isBold="true"/>
+					<paragraph leftIndent="10" rightIndent="5" spacingBefore="2"/>
+				</textElement>
+				<text><![CDATA[NOMBRE Y FIRMA]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="0" y="11" width="507" height="14" uuid="3bb62127-79d0-464d-b76b-63a0c04319cf"/>
+				<textElement>
+					<font size="8"/>
+					<paragraph leftIndent="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{nombre}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

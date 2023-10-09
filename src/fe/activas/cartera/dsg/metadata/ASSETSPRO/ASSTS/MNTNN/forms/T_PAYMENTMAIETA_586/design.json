@@ -1,0 +1,295 @@
+{
+  "id": {
+    "moduleId": "ASSTS",
+    "subModuleId": "MNTNN",
+    "taskId": "T_PAYMENTMAIETA_586",
+    "version": "1.0.0"
+  },
+  "name": {
+    "$ref": "../../../../ASSTS/relations/componentKeys.json#/MNTNN/Forms/T_PAYMENTMAIETA_586/name"
+  },
+  "modeEnabled": 4095,
+  "tempSaveStr": "F",
+  "autoCrudStr": "F",
+  "mainViewContainerId": "VC_PAYMENTMNE_706586",
+  "customizationLayer": 0,
+  "customizationLayerDescription": "ECU",
+  "viewContainers": [
+    {
+      "layoutType": "Group",
+      "collapsedStr": "F",
+      "id": {
+        "moduleId": "ASSTS",
+        "subModuleId": "MNTNN",
+        "taskId": "T_PAYMENTMAIETA_586",
+        "taskVersion": "1.0.0",
+        "viewContainerId": "VC_PAYMENTMNE_706586"
+      },
+      "name": "Payment maintenance",
+      "options": 0,
+      "enabled": 11,
+      "componentStyle": null,
+      "colSpan": 1,
+      "customizationLayer": 0,
+      "customizationLayerDescription": "ECU",
+      "customEvents": [
+        {
+          "viewContainerEventType": {
+            "name": "InitData",
+            "eventId": 2,
+            "description": "Inicialización de datos de un ViewContainer, despues de este evento se realiza el segimiento de cambios en los datos",
+            "availableExecutionType": 7
+          },
+          "executionType": 7,
+          "customEventId": "CEVC_002T_PAYMENTMAIETA_586_747",
+          "filter": null,
+          "enabled": "T",
+          "customizationLayer": 0,
+          "customizationLayerDescription": "ECU",
+          "isEnabled": true
+        },
+        {
+          "viewContainerEventType": {
+            "name": "onCloseModal",
+            "eventId": 501,
+            "description": "Evento que actua como listener cuando se cierra ventanas modales.",
+            "availableExecutionType": 7
+          },
+          "executionType": 1,
+          "customEventId": "CEVC_501T_PAYMENTMAIETA_586_164",
+          "filter": null,
+          "enabled": "T",
+          "customizationLayer": 0,
+          "customizationLayerDescription": "ECU",
+          "isEnabled": true
+        },
+        {
+          "executionType": 1,
+          "viewContainerEventType": {
+            "name": "Render",
+            "eventId": 8,
+            "description": "Se ejecuta antes de renderizar un ViewContainer, permite realizar personalizaciones visuales",
+            "availableExecutionType": 1
+          },
+          "customEventId": "CEVC_008T_PAYMENTMAIETA_586_621",
+          "filter": null,
+          "enabled": "T",
+          "customizationLayer": 0,
+          "customizationLayerDescription": "ECU",
+          "isEnabled": true
+        }
+      ],
+      "responsiveLayouts": null,
+      "responsivity": false,
+      "columnsNum": 1,
+      "view": {
+        "id": {
+          "viewId": "VW_PAYMENTMCI_448",
+          "version": "1.0.0"
+        },
+        "name": "View of Payment maintenance",
+        "groups": [
+          {
+            "collapsedStr": "F",
+            "groupId": "G_PAYMENTNEA_454448",
+            "name": "Group1844",
+            "layoutType": "Group",
+            "enabled": 4095,
+            "visible": 4095,
+            "style": null,
+            "componentStyle": null,
+            "customEvents": [],
+            "eventType": 0,
+            "columnsNum": 1,
+            "entity": {
+              "$ref": "../../../../ASSTS/entities/EN_METHODSRT_271.json#"
+            },
+            "visualAttributes": [
+              {
+                "visualAttributeId": "VA_TEXTINPUTBOXPMD_289448",
+                "name": "product",
+                "userControl": {
+                  "userControlId": "TextInputBox",
+                  "type": "I"
+                },
+                "customEvents": [],
+                "options": 0,
+                "label": {
+                  "moduleId": "ASSTS",
+                  "labelId": "LBL_ASSTS_IDENTIFRD_90451",
+                  "defaultValue": {
+                    "$ref": "../../../../ASSTS/assets/languages/ASSTS.json#/ASSTS/LBL/LBL_ASSTS_IDENTIFRD_90451"
+                  }
+                },
+                "aggregateId": null,
+                "aggregate": null,
+                "width": null,
+                "style": null,
+                "componentStyle": null,
+                "customizationLayer": 0,
+                "customizationLayerDescription": "ECU",
+                "include": 4095,
+                "order": 1,
+                "colSpan": 1,
+                "responsivity": false,
+                "responsiveLayouts": null,
+                "maxRecords": null,
+                "attribute": {
+                  "$ref": "../../../../ASSTS/entities/EN_METHODSRT_271.json#/attributes/AT44_PRODUCTT271"
+                },
+                "attributeValidations": [],
+                "enabled": 4095,
+                "visible": 4095,
+                "readOnly": 8,
+                "textRows": 0
+              },
+              {
+                "visualAttributeId": "VA_TEXTINPUTBOXWRT_921448",
+                "name": "description",
+                "userControl": {
+                  "userControlId": "TextInputBox",
+                  "type": "I"
+                },
+                "customEvents": [],
+                "options": 0,
+                "label": {
+                  "moduleId": "ASSTS",
+                  "labelId": "LBL_ASSTS_DESCRIPNI_65857",
+                  "defaultValue": {
+                    "$ref": "../../../../ASSTS/assets/languages/ASSTS.json#/ASSTS/LBL/LBL_ASSTS_DESCRIPNI_65857"
+                  }
+                },
+                "aggregateId": null,
+                "aggregate": null,
+                "width": null,
+                "style": null,
+                "componentStyle": null,
+                "customizationLayer": 0,
+                "customizationLayerDescription": "ECU",
+                "include": 4095,
+                "order": 2,
+                "colSpan": 1,
+                "responsivity": false,
+                "responsiveLayouts": null,
+                "maxRecords": null,
+                "attribute": {
+                  "$ref": "../../../../ASSTS/entities/EN_METHODSRT_271.json#/attributes/AT87_DESCRIPO271"
+                },
+                "attributeValidations": [],
+                "enabled": 4095,
+                "visible": 4095,
+                "readOnly": 8,
+                "textRows": 0
+              }
+            ],
+            "independentValidation": "F",
+            "orientation": "V",
+            "htmlSection": "F",
+            "queryView": {
+              "queryViewId": "QV_7546_25470",
+              "name": "QV_7546_25470",
+              "queryViewType": "Grid",
+              "entityName": "MethodsRetention",
+              "query": {
+                "$ref": "../../../../ASSTS/MNTNN/queries/Q_METHODIR_7546.json#"
+              },
+              "queryId": "Q_METHODIR_7546",
+              "queryVersion": "1.0.0",
+              "queryViewCustomActions": [
+                {
+                  "queryViewEventType": {
+                    "name": "RowDeleting",
+                    "eventId": 204,
+                    "description": "Se ejecuta antes de que los datos eliminados en una grilla sean comprometidos.",
+                    "availableExecutionType": 7
+                  },
+                  "queryView": "QV_7546_25470",
+                  "customActionId": "CEQV_204QV_7546_25470_211",
+                  "filter": null,
+                  "enabled": "T",
+                  "name": "RowDeleting",
+                  "serviceName": null,
+                  "commandName": "RowDeleting",
+                  "commandType": 0,
+                  "commandImageId": null,
+                  "commandOrder": null,
+                  "userControl": {
+                    "userControlId": "Button",
+                    "description": "Designer Button",
+                    "customizationLayer": "0",
+                    "type": "A",
+                    "customizationLayerDescription": "ECU"
+                  },
+                  "action": null,
+                  "customizationLayer": 0,
+                  "customizationLayerDescription": "ECU",
+                  "executionType": 7
+                }
+              ],
+              "options": 0,
+              "hasDetail": false,
+              "hasDetailString": "F",
+              "userControl": {
+                "userControlId": "Grid",
+                "description": "Designer Grid",
+                "customizationLayer": 0,
+                "customizationLayerDescription": "ECU",
+                "type": "I",
+                "name": "Designer Grid"
+              },
+              "customizationLayerDescription": "ECU",
+              "customizationLayer": 0,
+              "pageSize": 10,
+              "confirmRowDeletion": false,
+              "confirmRowDeletionStr": "F",
+              "allowSorting": false,
+              "allowSortingStr": "F",
+              "allowPaging": true,
+              "allowPagingStr": "T",
+              "deleteCommandEnabled": true,
+              "deleteCommandEnabledStr": "T",
+              "insertCommandEnabled": true,
+              "insertCommandEnabledStr": "T",
+              "editCommandEnabled": true,
+              "editCommandEnabledStr": "T",
+              "editMode": "3",
+              "rowCommandAppearance": 0,
+              "multiSelectEnabledStr": "F",
+              "modeSelection": "None",
+              "actionDesign": "Button",
+              "actions": [
+                "Update",
+                "Delete",
+                "Create"
+              ],
+              "moduleIdDialog": "ASSTS",
+              "subModuleIdDialog": "MNTNN",
+              "taskIdDialog": "T_PAYMENTMAIDLT_828",
+              "viewContainerIdDialog": "VC_PAYMENTMDA_338828",
+              "taskVersionDialog": "1.0.0",
+              "customUrlDialog": null,
+              "dialogTitleLabelId": null,
+              "includeQueryMembers": [
+                "AT44_PRODUCTT271",
+                "AT87_DESCRIPO271"
+              ],
+              "customEvents": [],
+              "componentInGrid": true
+            },
+            "queryViewId": "QV_7546_25470",
+            "responsiveLayouts": null,
+            "responsivity": false
+          }
+        ],
+        "modules": [
+          {
+            "moduleId": "ASSTS"
+          }
+        ]
+      }
+    }
+  ],
+  "commands": [],
+  "isImported": false,
+  "customEvents": []
+}

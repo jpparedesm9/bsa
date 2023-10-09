@@ -1,0 +1,28 @@
+<config>
+  <general>
+    <dbms>
+      <dbms-name>SYBCTS</dbms-name>
+      <serviceProvider>DataSource</serviceProvider>
+    </dbms>
+    <log-level>INFO</log-level>
+  </general>
+  <own>
+    <authentication-mode>DYNAMIC</authentication-mode>
+    <authenticationservices>
+      <service name="COBISAuthenticationServiceNCS" identifier="COBISNCS" class="com.cobiscorp.cobis.cts.services.authentication.IAuthenticationServiceNCS" config-file="cobis-authentication-service-config.xml" linked="false" description="Servicio de autenticacion NCS"/>
+      <service name="COBISAuthenticationServiceSimple" identifier="COBISSIMPLE" class="com.cobiscorp.cobis.cts.services.authentication.IAuthenticationService" config-file="cobis-authentication-service-config.xml" linked="false" description="Servicio de autenticacion Simple"/>
+      <service name="COBISAuthenticationServiceBV" identifier="COBISBV" class="com.cobiscorp.cobis.cts.services.authentication.IAuthenticationService" config-file="cobisbv-authentication-service-config.xml" linked="false" description="Servicio de autenticacion de Banca Virtual" exclude-sp_intento="true"/>
+      <service name="COBISAuthenticationServiceLDAP" identifier="COBISLDAP" class="com.cobiscorp.cobis.cts.services.authentication.IAuthenticationService" config-file="cobis-ldap-authentication-service-config.xml" linked="false" description="Servicio de autenticacion LDAP" exclude-sp_intento="true"/>
+	  <service name="COBISAuthenticationServiceBM" identifier="COBISBM" class="com.cobiscorp.cobis.cts.services.authentication.IAuthenticationService" CONFIG_FILE_LABEL="cobisbm-authentication-service-config.xml" linked="false" description="Servicio de autenticacion de Banca M?vil" EXCLUDE_SP_INTENTO_LABEL="true"/>
+    </authenticationservices>
+    <pwd_clear>N</pwd_clear>
+    <complex-password>1</complex-password>
+    <kpe-negotiation>true</kpe-negotiation>
+    <offset-keys>
+      <cryption-key>KPE</cryption-key>
+      <decryption-key>KPV</decryption-key>
+    </offset-keys>
+    <file-cobis-session-manager>session/cobis-session-manager-config.xml</file-cobis-session-manager>
+    <secureAuthenticationSources/>
+  </own>
+</config>

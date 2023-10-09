@@ -1,0 +1,434 @@
+{
+  "id": {
+    "moduleId": "BUSIN",
+    "subModuleId": "FLCRE",
+    "taskId": "T_FLCRE_35_OINLS57",
+    "version": "1.0.0"
+  },
+  "name": {
+    "$ref": "../../../../BUSIN/relations/componentKeys.json#/FLCRE/Forms/T_FLCRE_35_OINLS57/name"
+  },
+  "modeEnabled": 4095,
+  "tempSaveStr": "F",
+  "autoCrudStr": "F",
+  "customizationLayer": 0,
+  "customizationLayerDescription": "ECU",
+  "commands": [
+    {
+      "id": {
+        "commandId": "CM_OINLS57SAV83",
+        "moduleId": "BUSIN",
+        "subModuleId": "FLCRE",
+        "taskId": "T_FLCRE_35_OINLS57",
+        "taskVersion": "1.0.0"
+      },
+      "name": "Save",
+      "causesValidationAsString": "T",
+      "causesValidation": true,
+      "showInMode": 4095,
+      "enabled": 4095,
+      "closeAsString": "F",
+      "close": false,
+      "order": 1,
+      "customizationLayer": 0,
+      "customizationLayerDescription": "ECU",
+      "commandType": 0,
+      "options": 0,
+      "label": {
+        "labelId": "DLB_BUSIN_SAVELKIAQ_89169",
+        "defaultValue": {
+          "$ref": "../../../../BUSIN/assets/languages/BUSIN.json#/BUSIN/LBL/DLB_BUSIN_SAVELKIAQ_89169"
+        },
+        "hasI18N": true,
+        "moduleId": "BUSIN",
+        "customizationLayer": 0,
+        "customizationLayerDescription": "ECU",
+        "i18N": "T"
+      },
+      "labelToolTip": {
+        "labelId": "DLB_BUSIN_SAVELKIAQ_89169",
+        "defaultValue": {
+          "$ref": "../../../../BUSIN/assets/languages/BUSIN.json#/BUSIN/LBL/DLB_BUSIN_SAVELKIAQ_89169"
+        },
+        "hasI18N": true,
+        "moduleId": "BUSIN",
+        "customizationLayer": 0,
+        "customizationLayerDescription": "ECU",
+        "i18N": "T"
+      },
+      "userControl": {
+        "userControlId": "Button",
+        "description": "Designer Button",
+        "customizationLayer": 0,
+        "customizationLayerDescription": "ECU",
+        "type": "A",
+        "name": "Designer Button"
+      },
+      "customEvents": [
+        {
+          "executionType": 1,
+          "customEventId": "CECM_010_CM_OINLS57SAV83_299",
+          "enabled": "T",
+          "customizationLayer": 0,
+          "customizationLayerDescription": "ECU",
+          "commandEventType": {
+            "eventId": 10,
+            "name": "ExecuteCommand",
+            "description": "Permite personalziar la acción a ejecutar de un command"
+          },
+          "thereAnServerEvent": false,
+          "thereAnClientEvent": true,
+          "thereAnCallbackEvent": false,
+          "isEnabled": true
+        }
+      ]
+    }
+  ],
+  "viewContainers": [
+    {
+      "id": {
+        "moduleId": "BUSIN",
+        "subModuleId": "FLCRE",
+        "taskId": "T_FLCRE_35_OINLS57",
+        "viewContainerId": "VC_OINLS57_FFALY_328",
+        "taskVersion": "1.0.0"
+      },
+      "name": "Formulario de la vista OfficerAnalysisView",
+      "layoutType": "Group",
+      "order": 0,
+      "options": 0,
+      "collapsedStr": "F",
+      "enabled": 4095,
+      "customizationLayer": 0,
+      "customizationLayerDescription": "ECU",
+      "columnsNum": 1,
+      "colSpan": 1,
+      "view": {
+        "id": {
+          "viewId": "VW_OFICANSSEW26",
+          "version": "1.0.0"
+        },
+        "description": "Vista para moratoria",
+        "name": "ArrearsView",
+        "customizationLayer": 0,
+        "customizationLayerDescription": "ECU",
+        "groups": [
+          {
+            "groupId": "GR_OFICANSSEW26_04",
+            "refViewId": "VW_OFICANSSEW26",
+            "refViewVersion": "1.0.0",
+            "collapsedStr": "F",
+            "columnsNum": 1,
+            "layoutType": "GroupLayout",
+            "enabled": 4095,
+            "visible": 4095,
+            "name": "GPOfficerAnalysis",
+            "order": 2,
+            "customizationLayer": 0,
+            "customizationLayerDescription": "ECU",
+            "colSpan": 1,
+            "orientation": "V",
+            "groups": [
+              {
+                "groupId": "GR_OFICANSSEW26_03",
+                "refViewId": "VW_OFICANSSEW26",
+                "refViewVersion": "1.0.0",
+                "collapsedStr": "F",
+                "columnsNum": 3,
+                "layoutType": "Group",
+                "enabled": 4095,
+                "visible": 4095,
+                "name": "[Grupo Sin Nombre]",
+                "order": 1,
+                "customizationLayer": 0,
+                "customizationLayerDescription": "ECU",
+                "colSpan": 1,
+                "orientation": "V",
+                "entity": {
+                  "$ref": "../../../../BUSIN/entities/EN_FICRALYSS039.json#"
+                },
+                "titleLabel": {
+                  "labelId": "DLB_BUSIN_GEOGAITIO_83190",
+                  "defaultValue": {
+                    "$ref": "../../../../BUSIN/assets/languages/BUSIN.json#/BUSIN/LBL/DLB_BUSIN_GEOGAITIO_83190"
+                  },
+                  "hasI18N": true,
+                  "moduleId": "BUSIN",
+                  "customizationLayer": 0,
+                  "customizationLayerDescription": "ECU",
+                  "i18N": "T"
+                },
+                "visualAttributes": [
+                  {
+                    "visualAttributeId": "VA_OFICANSSEW2603_PONE992",
+                    "colSpan": 1,
+                    "enabled": 4095,
+                    "order": 0,
+                    "queryVersion": " ",
+                    "readOnly": 8,
+                    "rowSpan": 0,
+                    "visible": 4095,
+                    "textRows": 0,
+                    "name": "Province",
+                    "orientation": "V",
+                    "customizationLayer": 0,
+                    "customizationLayerDescription": "ECU",
+                    "attribute": {
+                      "$ref": "../../../../BUSIN/entities/EN_FICRALYSS039.json#/attributes/AT_FIC039PONE98"
+                    },
+                    "label": {
+                      "labelId": "DLB_BUSIN_PROVINCEI_05002",
+                      "defaultValue": {
+                        "$ref": "../../../../BUSIN/assets/languages/BUSIN.json#/BUSIN/LBL/DLB_BUSIN_PROVINCEI_05002"
+                      },
+                      "hasI18N": true,
+                      "moduleId": "BUSIN",
+                      "customizationLayer": 0,
+                      "customizationLayerDescription": "ECU",
+                      "i18N": "T"
+                    },
+                    "userControl": {
+                      "userControlId": "ComboBox",
+                      "description": "Designer ComboBox",
+                      "customizationLayer": 0,
+                      "customizationLayerDescription": "ECU",
+                      "type": "I",
+                      "name": "Designer ComboBox"
+                    },
+                    "labelToolTip": {
+                      "labelId": "DLB_BUSIN_PROVINCEI_05002",
+                      "defaultValue": {
+                        "$ref": "../../../../BUSIN/assets/languages/BUSIN.json#/BUSIN/LBL/DLB_BUSIN_PROVINCEI_05002"
+                      },
+                      "hasI18N": true,
+                      "moduleId": "BUSIN",
+                      "customizationLayer": 0,
+                      "customizationLayerDescription": "ECU",
+                      "i18N": "T"
+                    },
+                    "customEvents": [
+                      {
+                        "executionType": 1,
+                        "customEventId": "CEVA_110_SEW2603_PONE992_936",
+                        "enabled": "T",
+                        "customizationLayer": 0,
+                        "customizationLayerDescription": "ECU",
+                        "visualAttributeEventType": {
+                          "eventId": 110,
+                          "name": "LoadCatalogData",
+                          "description": "Sobreescribe la carga de datos de un catálogo"
+                        },
+                        "thereAnServerEvent": false,
+                        "thereAnClientEvent": true,
+                        "thereAnCallbackEvent": false,
+                        "isEnabled": true
+                      }
+                    ],
+                    "cacheDuration": 0,
+                    "options": 1,
+                    "elementColumnSpan": 1,
+                    "elementId": "VA_OFICANSSEW2603_PONE992",
+                    "aggregateId": null,
+                    "aggregate": null,
+                    "width": null,
+                    "style": null,
+                    "componentStyle": null,
+                    "include": 4095,
+                    "responsiveLayouts": null,
+                    "responsivity": false,
+                    "attributeValidations": []
+                  },
+                  {
+                    "visualAttributeId": "VA_OFICANSSEW2603_CITY183",
+                    "colSpan": 1,
+                    "enabled": 4095,
+                    "order": 1,
+                    "queryVersion": " ",
+                    "readOnly": 8,
+                    "rowSpan": 0,
+                    "visible": 4095,
+                    "textRows": 0,
+                    "name": "City",
+                    "orientation": "V",
+                    "customizationLayer": 0,
+                    "customizationLayerDescription": "ECU",
+                    "attribute": {
+                      "$ref": "../../../../BUSIN/entities/EN_FICRALYSS039.json#/attributes/AT_FIC039CITY75"
+                    },
+                    "label": {
+                      "labelId": "DLB_BUSIN_CANTONLBL_89836",
+                      "defaultValue": {
+                        "$ref": "../../../../BUSIN/assets/languages/BUSIN.json#/BUSIN/LBL/DLB_BUSIN_CANTONLBL_89836"
+                      },
+                      "hasI18N": true,
+                      "moduleId": "BUSIN",
+                      "customizationLayer": 0,
+                      "customizationLayerDescription": "ECU",
+                      "i18N": "T"
+                    },
+                    "userControl": {
+                      "userControlId": "ComboBox",
+                      "description": "Designer ComboBox",
+                      "customizationLayer": 0,
+                      "customizationLayerDescription": "ECU",
+                      "type": "I",
+                      "name": "Designer ComboBox"
+                    },
+                    "relatedVisualAttribute": "VA_OFICANSSEW2603_PONE992",
+                    "labelToolTip": {
+                      "labelId": "DLB_BUSIN_CANTONLBL_89836",
+                      "defaultValue": {
+                        "$ref": "../../../../BUSIN/assets/languages/BUSIN.json#/BUSIN/LBL/DLB_BUSIN_CANTONLBL_89836"
+                      },
+                      "hasI18N": true,
+                      "moduleId": "BUSIN",
+                      "customizationLayer": 0,
+                      "customizationLayerDescription": "ECU",
+                      "i18N": "T"
+                    },
+                    "customEvents": [
+                      {
+                        "executionType": 1,
+                        "customEventId": "CEVA_110_SEW2603_CITY183_227",
+                        "enabled": "T",
+                        "customizationLayer": 0,
+                        "customizationLayerDescription": "ECU",
+                        "visualAttributeEventType": {
+                          "eventId": 110,
+                          "name": "LoadCatalogData",
+                          "description": "Sobreescribe la carga de datos de un catálogo"
+                        },
+                        "thereAnServerEvent": false,
+                        "thereAnClientEvent": true,
+                        "thereAnCallbackEvent": false,
+                        "isEnabled": true
+                      }
+                    ],
+                    "cacheDuration": 0,
+                    "options": 1,
+                    "elementColumnSpan": 1,
+                    "elementId": "VA_OFICANSSEW2603_CITY183",
+                    "aggregateId": null,
+                    "aggregate": null,
+                    "width": null,
+                    "style": null,
+                    "componentStyle": null,
+                    "include": 4095,
+                    "responsiveLayouts": null,
+                    "responsivity": false,
+                    "attributeValidations": [],
+                    "relatedVisualAttributeName": {
+                      "$ref": "../../../../BUSIN/entities/EN_FICRALYSS039.json#/attributes/AT_FIC039PONE98/name"
+                    }
+                  },
+                  {
+                    "visualAttributeId": "VA_OFICANSSEW2603_RQIA102",
+                    "colSpan": 1,
+                    "enabled": 4095,
+                    "order": 2,
+                    "queryVersion": " ",
+                    "readOnly": 8,
+                    "rowSpan": 0,
+                    "visible": 4095,
+                    "textRows": 0,
+                    "name": "Parroquia",
+                    "customizationLayer": 0,
+                    "customizationLayerDescription": "ECU",
+                    "attribute": {
+                      "$ref": "../../../../BUSIN/entities/EN_FICRALYSS039.json#/attributes/AT_FIC039RQIA94"
+                    },
+                    "label": {
+                      "labelId": "DLB_BUSIN_PARROQUIA_17731",
+                      "defaultValue": {
+                        "$ref": "../../../../BUSIN/assets/languages/BUSIN.json#/BUSIN/LBL/DLB_BUSIN_PARROQUIA_17731"
+                      },
+                      "hasI18N": true,
+                      "moduleId": "BUSIN",
+                      "customizationLayer": 0,
+                      "customizationLayerDescription": "ECU",
+                      "i18N": "T"
+                    },
+                    "userControl": {
+                      "userControlId": "ComboBox",
+                      "description": "Designer ComboBox",
+                      "customizationLayer": 0,
+                      "customizationLayerDescription": "ECU",
+                      "type": "I",
+                      "name": "Designer ComboBox"
+                    },
+                    "relatedVisualAttribute": "VA_OFICANSSEW2603_CITY183",
+                    "customEvents": [
+                      {
+                        "executionType": 1,
+                        "customEventId": "CEVA_110_SEW2603_RQIA102_866",
+                        "enabled": "T",
+                        "customizationLayer": 0,
+                        "customizationLayerDescription": "ECU",
+                        "visualAttributeEventType": {
+                          "eventId": 110,
+                          "name": "LoadCatalogData",
+                          "description": "Sobreescribe la carga de datos de un catálogo"
+                        },
+                        "thereAnServerEvent": false,
+                        "thereAnClientEvent": true,
+                        "thereAnCallbackEvent": false,
+                        "isEnabled": true
+                      }
+                    ],
+                    "cacheDuration": 0,
+                    "options": 0,
+                    "elementColumnSpan": 1,
+                    "elementId": "VA_OFICANSSEW2603_RQIA102",
+                    "aggregateId": null,
+                    "aggregate": null,
+                    "width": null,
+                    "style": null,
+                    "componentStyle": null,
+                    "include": 4095,
+                    "responsiveLayouts": null,
+                    "responsivity": false,
+                    "attributeValidations": [],
+                    "relatedVisualAttributeName": {
+                      "$ref": "../../../../BUSIN/entities/EN_FICRALYSS039.json#/attributes/AT_FIC039CITY75/name"
+                    }
+                  }
+                ],
+                "independentValidation": "F",
+                "htmlSection": false,
+                "numberOfColumnsInContainer": 3,
+                "elementColumnSpan": 1,
+                "collapsed": false,
+                "elementId": "GR_OFICANSSEW26_03",
+                "style": null,
+                "customEvents": []
+              }
+            ],
+            "independentValidation": "F",
+            "htmlSection": false,
+            "numberOfColumnsInContainer": 1,
+            "elementColumnSpan": 1,
+            "collapsed": false,
+            "elementId": "GR_OFICANSSEW26_04"
+          }
+        ],
+        "modules": [
+          {
+            "moduleId": "BUSIN"
+          }
+        ],
+        "module": {
+          "moduleId": "BUSIN"
+        }
+      },
+      "numberOfColumnsInContainer": 1,
+      "elementColumnSpan": 1,
+      "collapsed": false,
+      "elementId": "VC_OINLS57_FFALY_328",
+      "customEvents": []
+    }
+  ],
+  "tempSave": false,
+  "autoCrud": false,
+  "isImported": true,
+  "mainViewContainerId": "VC_OINLS57_FFALY_328"
+}

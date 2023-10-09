@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<procedure>
+  <database>cob_cartera</database>
+  <name>sp_lcr_ficha_pago</name>
+  <type>SQLSERVER</type>
+  <version>1</version>
+  <parameters>
+    <parameter name="@s_user" dataType="varchar" direction="in" />
+    <parameter name="@s_term" dataType="varchar" direction="in" />
+    <parameter name="@i_opcion" dataType="char" direction="in" />
+    <parameter name="@i_banco" dataType="varchar" direction="in" />
+    <parameter name="@i_tipo" dataType="tinyint" direction="in" />
+    <parameter name="@i_secuencial" dataType="int" direction="in" />
+    <parameter name="@i_operacionca" dataType="int" direction="in" />
+    <parameter name="@o_banco" dataType="varchar" direction="out" />
+    <parameter name="@o_nombre" dataType="varchar" direction="out" />
+    <parameter name="@o_fecha_pago" dataType="datetime" direction="out" />
+    <parameter name="@o_pago_total" dataType="money" direction="out" />
+    <parameter name="@o_cuota_minima" dataType="money" direction="out" />
+    <parameter name="@o_institucion" dataType="varchar" direction="out" />
+    <parameter name="@o_referencia" dataType="varchar" direction="out" />
+    <parameter name="@o_convenio" dataType="varchar" direction="out" />
+  </parameters>
+  <queries>
+    <query>
+      <columns>
+        <column name="SECUENCIAL" />
+        <column name="FECHA_PROX_PAGO" />
+        <column name="PAGO_MINIMO" />
+        <column name="PAGO_SIN_INTERES" />
+        <column name="CREDITO" />
+        <column name="NOMBRE_DEL_CLIENTE" />
+      </columns>
+      <queryText>SELECT  "SECUENCIAL" = lr_secuencial,"FECHA_PROX_PAGO" = CONVERT (VARCHAR,DATEPART (dd, lr_fecha_corte) ) + "-" + (CASE DATEPART (mm, lr_fecha_corte) WHEN "01" THEN "Ene" WHEN "02" THEN "Feb" WHEN "03" THEN "Mar" WHEN "04" THEN "Abr" WHEN "05" THEN "May" WHEN "06" THEN "Jun" WHEN "07" THEN "Jul" WHEN "08" THEN "Ago" WHEN "09" THEN "Sep" WHEN "10" THEN "Oct" WHEN "11" THEN "Nov" WHEN "12" THEN "Dic"  END) + "-" + CONVERT (VARCHAR,DATEPART (yyyy, lr_fecha_corte) ),"PAGO_MINIMO" = lr_cuota_minima,"PAGO_SIN_INTERES" = lr_pago_total,"CREDITO" = lr_banco,"NOMBRE_DEL_CLIENTE" = lr_nombre_cl </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="INSTITUCION" />
+        <column name="REFERENCIA" />
+        <column name="CONVENIO" />
+      </columns>
+      <queryText>SELECT  "INSTITUCION" = lrd_institucion,"REFERENCIA" = lrd_referencia,"CONVENIO" = lrd_convenio </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="SECUENCIAL" />
+        <column name="FECHA_PROX_PAGO" />
+        <column name="PAGO_MINIMO" />
+        <column name="PAGO_SIN_INTERES" />
+        <column name="CREDITO" />
+        <column name="NOMBRE_DEL_CLIENTE" />
+      </columns>
+      <queryText>SELECT  "SECUENCIAL" = lr_secuencial,"FECHA_PROX_PAGO" = CONVERT (VARCHAR,DATEPART (dd, lr_fecha_corte) ) + "-" + (CASE DATEPART (mm, lr_fecha_corte) WHEN "01" THEN "Ene" WHEN "02" THEN "Feb" WHEN "03" THEN "Mar" WHEN "04" THEN "Abr" WHEN "05" THEN "May" WHEN "06" THEN "Jun" WHEN "07" THEN "Jul" WHEN "08" THEN "Ago" WHEN "09" THEN "Sep" WHEN "10" THEN "Oct" WHEN "11" THEN "Nov" WHEN "12" THEN "Dic"  END) + "-" + CONVERT (VARCHAR,DATEPART (yyyy, lr_fecha_corte) ),"PAGO_MINIMO" = lr_cuota_minima,"PAGO_SIN_INTERES" = lr_pago_total,"CREDITO" = lr_banco,"NOMBRE_DEL_CLIENTE" = lr_nombre_cl </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="INSTITUCION" />
+        <column name="REFERENCIA" />
+        <column name="CONVENIO" />
+      </columns>
+      <queryText>SELECT  "INSTITUCION" = lrd_institucion,"REFERENCIA" = lrd_referencia,"CONVENIO" = lrd_convenio </queryText>
+    </query>
+  </queries>
+</procedure>

@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<procedure>
+  <database>cob_cartera</database>
+  <name>sp_qr_renova_opera</name>
+  <type>SYBASE</type>
+  <version>1</version>
+  <parameters>
+    <parameter name="@s_user" dataType="varchar" direction="in" />
+    <parameter name="@s_term" dataType="varchar" direction="in" />
+    <parameter name="@s_date" dataType="datetime" direction="in" />
+    <parameter name="@s_ofi" dataType="smallint" direction="in" />
+    <parameter name="@i_ente" dataType="int" direction="in" />
+    <parameter name="@i_moneda" dataType="smallint" direction="in" />
+    <parameter name="@i_formato_fecha" dataType="smallint" direction="in" />
+    <parameter name="@i_operacion" dataType="char" direction="in" />
+  </parameters>
+  <queries>
+    <query>
+      <columns>
+        <column name="op_toperacion" />
+        <column name="op_operacion" />
+        <column name="op_banco" />
+        <column name="linea" />
+        <column name="op_monto" />
+        <column name="op_plazo" />
+        <column name="saldo_capital" />
+        <column name="saldo_interes" />
+        <column name="saldo_mora" />
+        <column name="saldo_otros" />
+        <column name="plazo_residual" />
+        <column name="op_estado" />
+        <column name="moneda" />
+        <column name="cuotas_vencidas" />
+        <column name="op_cliente" />
+        <column name="op_nombre" />
+      </columns>
+      <queryText>SELECT  "op_toperacion" = op_toperacion,"op_operacion" = op_operacion,"op_banco" = op_banco,"linea" = (SELECT  c.valor FROM cobis..cl_tabla t  ,cobis..cl_catalogo c   WHERE t.codigo = c.tabla AND t.tabla = "ca_toperacion" AND c.codigo = o.op_toperacion     ),"op_monto" = op_monto,"op_plazo" = op_plazo,"saldo_capital" = (SELECT  ISNULL (SUM ((am_cuota + am_gracia) - am_pagado), 0) FROM cob_cartera..ca_amortizacion  ,cob_cartera..ca_concepto   WHERE am_concepto = co_concepto AND am_operacion = o.op_operacion AND co_categoria = "C"     ),"saldo_interes" = (SELECT  ISNULL (SUM ((am_cuota + am_gracia) - am_pagado), 0) FROM cob_cartera..ca_amortizacion  ,cob_cartera..ca_concepto   WHERE am_concepto = co_concepto AND am_operacion = o.op_operacion AND co_categoria = "I"     ),"saldo_mora" = (SELECT  ISNULL (SUM ((am_cuota + am_gracia) - am_pagado), 0) FROM cob_cartera..ca_amortizacion  ,cob_cartera..ca_concepto   WHERE am_concepto = co_concepto AND am_operacion = o.op_operacion AND co_categoria = "M"     ),"saldo_otros" = (SELECT  ISNULL (SUM ((am_cuota + am_gracia) - am_pagado), 0) FROM cob_cartera..ca_amortizacion  ,cob_cartera..ca_concepto   WHERE am_concepto = co_concepto AND am_operacion = o.op_operacion AND co_categoria NOT IN ("C","I","M")     ),"plazo_residual" = (SELECT  COUNT (1) FROM cob_cartera..ca_dividendo   WHERE di_estado IN (?,?) AND di_operacion = o.op_operacion     ),"op_estado" = op_estado,"moneda" = (SELECT  mo_nemonico FROM cobis..cl_moneda   WHERE mo_moneda = CONVERT (CHAR (10),o.op_moneda )     ),"cuotas_vencidas" = (SELECT  COUNT (1) FROM cob_cartera..ca_dividendo   WHERE di_estado = ? AND di_operacion = o.op_operacion     ),"op_cliente" = op_cliente,"op_nombre" = op_nombre </queryText>
+    </query>
+  </queries>
+</procedure>

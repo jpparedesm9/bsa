@@ -1,0 +1,179 @@
+/********************************************************************************/
+/* Archivo:     cl_ttransaccion_i.tg                                            */
+/* Trigger:     tgi_cl_ttransaccion                                             */
+/* Producto:    ADMINISTRACION                                                  */
+/********************************************************************************/
+/*                                 IMPORTANTE                                   */
+/* Este programa es parte de los paquetes bancarios propiedad de COBISCorp.     */
+/* Su uso no autorizado queda expresamente prohibido asi como cualquier         */
+/* alteracion o agregado hecho por alguno de usuarios sin el debido             */
+/* consentimiento por escrito de la Presidencia Ejecutiva de COBISCorp          */
+/* o su representante.                                                          */
+/********************************************************************************/
+/*                                PROPOSITO                                     */
+/* Disparador de insercion de la tabla cl_ttransaccion                          */
+/********************************************************************************/
+/*                                MODIFICACIONES                                */
+/********************************************************************************/
+/* FECHA        VERSION  AUTOR   RAZON                                          */
+/********************************************************************************/
+/* 11-May-2012  4.0.0.0  PCL     Internacionalizacion                           */
+/* 19-Oct-2012  4.3.0.0  PCL     Correccion cursor ambiente Unix (CIB4.3.0.0)   */
+/* 03-May-2016           ELO     Migracion de Sybase a SQLServer                */
+/********************************************************************************/
+
+use cobis
+go
+if exists (select * from sysobjects where name = 'tgi_cl_ttransaccion')
+    drop trigger tgi_cl_ttransaccion
+go
+create trigger tgi_cl_ttransaccion
+on cl_ttransaccion
+for insert
+as
+begin
+    declare
+        @w_tn_trn_code      int,
+        @w_tn_descripcion   varchar(64),
+        @w_tn_nemonico      char(6),
+        @w_tn_desc_larga    varchar(254),
+        @w_id               int,
+        @w_culture          VARCHAR(10),
+        @w_pc_id            INT,
+        @w_secuencial       INT,
+        @w_culture_ad       VARCHAR(10)
+
+    declare cu_inserted cursor for
+              select
+                    tn_trn_code,
+                    tn_descripcion,
+                    tn_nemonico,
+                    tn_desc_larga
+              from inserted
+
+              open cu_inserted
+              fetch cu_inserted into
+                    @w_tn_trn_code,
+                    @w_tn_descripcion,
+                    @w_tn_nemonico,
+                    @w_tn_desc_larga
+
+    while @@FETCH_STATUS = 0
+    begin
+
+            /****************************************/
+            /* Internacionalizacion                 */
+
+            SELECT
+                @w_pc_id = NULL,
+                @w_secuencial = NULL
+
+            SELECT @w_culture = 'NEUTRAL'
+            EXEC sp_ad_obtiene_cultura_defecto
+                @o_culture = @w_culture OUT
+
+            IF @w_culture IS NOT NULL
+            BEGIN
+                SELECT  @w_pc_id = pc_id
+                FROM    cl_ttransaccion_i18n
+                WHERE   pc_codigo_int = @w_tn_trn_code
+
+                IF @w_pc_id IS NULL
+                BEGIN
+                   EXEC sp_cseqnos
+                       @i_tabla = 'ad_pseudo_catalogo',
+                       @o_siguiente = @w_secuencial OUT
+
+                    INSERT INTO ad_pseudo_catalogo
+                        (pc_id, pc_tipo, pc_identificador, pc_codigo, pc_codigo_int)
+                    VALUES
+                        (@w_secuencial, 'T', 'c-cobis-cl_ttransaccion', NULL, @w_tn_trn_code)
+
+                    SELECT @w_pc_id = @w_secuencial
+                END
+
+                IF EXISTS ( SELECT 1
+                            FROM ad_recurso
+                            WHERE re_pc_id = @w_pc_id
+                            AND re_cultura = @w_culture )
+                    UPDATE ad_recurso
+                    SET re_valor = @w_tn_descripcion
+                    WHERE re_pc_id = @w_pc_id
+                    AND re_cultura = @w_culture
+                ELSE
+                    INSERT INTO ad_recurso
+                        (re_pc_id, re_cultura, re_valor)
+                    VALUES
+                        (@w_pc_id, @w_culture, @w_tn_descripcion)
+
+
+                /*************************************************/
+                /* Valores por defecto para culturas adicionales */
+
+                DECLARE cursor_cultura CURSOR FOR
+                SELECT RTRIM(CAT.codigo)
+                FROM cobis..cl_catalogo CAT INNER JOIN cobis..cl_tabla TAB
+                    ON CAT.tabla = TAB.codigo
+                WHERE TAB.tabla = 'ad_cultura'
+                AND CAT.estado = 'V'
+                AND CAT.codigo <> @w_culture
+
+                OPEN cursor_cultura
+
+                FETCH cursor_cultura
+                INTO @w_culture_ad
+
+                IF (@@FETCH_STATUS = -1)
+                BEGIN
+                    CLOSE cursor_cultura
+                    DEALLOCATE cursor_cultura
+                END
+                ELSE
+                BEGIN
+                    WHILE (@@FETCH_STATUS = 0)
+                    BEGIN
+
+                        IF NOT EXISTS ( SELECT 1
+                                        FROM ad_recurso
+                                        WHERE re_pc_id = @w_pc_id
+                                        AND re_cultura = @w_culture_ad )
+                            INSERT INTO ad_recurso
+                                (re_pc_id, re_cultura, re_valor)
+                            VALUES
+                                (@w_pc_id, @w_culture_ad, '[' + @w_culture_ad + '] ' + @w_tn_descripcion)
+                        ELSE
+                            UPDATE ad_recurso
+                            SET re_valor = '[' + @w_culture_ad + '] ' + @w_tn_descripcion
+                            WHERE re_pc_id = @w_pc_id
+                            AND re_cultura = @w_culture_ad
+
+                        FETCH cursor_cultura
+                        INTO @w_culture_ad
+
+                    END
+
+                    CLOSE cursor_cultura
+
+                    DEALLOCATE cursor_cultura
+                END
+
+                /* Valores por defecto para culturas adicionales */
+                /*************************************************/
+
+            END
+
+            /* Internacionalizacion                 */
+            /****************************************/
+
+
+                fetch cu_inserted into
+                       @w_tn_trn_code,
+                       @w_tn_descripcion,
+                       @w_tn_nemonico,
+                       @w_tn_desc_larga
+
+        end
+        close cu_inserted
+        deallocate cu_inserted
+end
+go

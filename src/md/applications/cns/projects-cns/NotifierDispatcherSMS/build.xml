@@ -1,0 +1,117 @@
+<?xml version="1.0"?>
+<project name="NotifierDispatcherSMS" default="install-plugin">
+
+	<property file="build.properties" />
+	<property name="root.dir" location="../COBISConstruction" />
+	<import file="${root.dir}/cobis.xml" />
+
+	<target name="classpath">
+		<path id="compile.classpath">
+			<fileset dir="../COBISLibraries/log4j">
+				<include name="**/*.jar" />
+			</fileset>
+			<fileset dir="../COBISLibraries/dom4j">
+				<include name="**/*.jar" />
+			</fileset>
+			<fileset dir="../COBISLibraries/cobis">
+				<include name="**/*.jar" />
+			</fileset>
+			<fileset dir="../COBISLibraries/felix">
+				<include name="**/*.jar" />
+			</fileset>
+			<fileset dir="../NotifierCore/build/dist">
+				<include name="**/*.jar" />
+			</fileset>
+			<fileset dir="../Notifier/lib">
+				<include name="mail.jar" />
+			</fileset>
+		</path>
+		<path id="test.compile.classpath">
+			<fileset dir="../COBISLibraries/dom4j">
+				<include name="**/*.jar" />
+			</fileset>
+			<fileset dir="../COBISLibraries/mq">
+				<include name="**/*.jar" />
+			</fileset>
+			<fileset dir="../COBISLibraries/jee">
+				<include name="**/*.jar" />
+			</fileset>
+			<fileset dir="../COBISLibraries/junit">
+				<include name="**/*.jar" />
+			</fileset>
+			<fileset dir="../COBISLibraries/cobis">
+				<include name="**/*.jar" />
+			</fileset>
+			<fileset dir="../COBISLibraries/felix">
+				<include name="**/*.jar" />
+			</fileset>
+			<fileset dir="../COBISLibraries/bdd/sqlserver">
+				<include name="**/*.jar" />
+			</fileset>
+			<fileset dir="../COBISLibraries/bdd/sybase">
+				<include name="**/*.jar" />
+			</fileset>
+			<fileset dir="../COBISLibraries/jtds">
+				<include name="COBISJtds3-*.jar" />
+			</fileset>
+
+
+		</path>
+	</target>
+
+	<target name="archive-impl-lib-copy">
+		<!--<copy todir="${build.classes.dir}/OSGI-INF/lib">
+			
+			<fileset dir="../COBISLibraries/log4j">
+				<include name="**/*.jar" />
+			</fileset>
+		
+			<fileset dir="./lib">
+				<include name="**/*.jar" />
+			</fileset>
+		</copy>	-->
+	</target>
+
+	<target name="archive-impl" depends="clean, init, prepare-impl, mark-version-impl, compile, archive-impl-lib-copy">
+		<jar destfile="${dist.dir}/${ant.project.name}-${project.version}.jar">
+			<fileset dir="${build.classes.dir}">
+				<include name="**/*.class" />
+				<include name="**/*.properties" />
+				<include name="**/*.xml" />
+				<include name="**/*.jar" />
+			</fileset>
+			<fileset dir="${build.resources.dir}">
+				<include name="**/*.xml" />
+				<include name="**/*.jar" />
+			</fileset>
+			<manifest>
+				<attribute name="Manifest-Version" value="1.0" />
+				<attribute name="Service-Component" value="${Service.Component}" />
+				<attribute name="Bundle-Name" value="${ant.project.name}" />
+				<attribute name="Bundle-Classpath" value="${Bundle.Classpath}" />
+				<attribute name="Bundle-Version" value="${project.version}" />
+				<attribute name="Bundle-SymbolicName" value="${Bundle.SymbolicName}" />
+				<!--<attribute name="Export-Package" value="${Export.Package}" />-->
+				<attribute name="Import-Package" value="${Import.Package}" />
+			</manifest>
+		</jar>
+	</target>
+	<target name="jar-entry" depends="clean, init, prepare-api, mark-version-api, compile">
+		<jar destfile="../COBISMG/WebContent/WEB-INF/lib/${ant.project.name}-${project.version}.jar">
+			<fileset dir="${build.classes.dir}">
+				<include name="com/cobiscorp/cobis/mobileservices/handler/IServletRequestHandler.class" />
+				<include name="**/*.properties" />
+				<include name="**/*.xml" />
+			</fileset>
+			<manifest>
+				<attribute name="Manifest-Version" value="1.0" />
+			</manifest>
+		</jar>
+	</target>
+
+	<target name="archive" depends="archive-impl">
+	</target>
+
+
+
+</project>

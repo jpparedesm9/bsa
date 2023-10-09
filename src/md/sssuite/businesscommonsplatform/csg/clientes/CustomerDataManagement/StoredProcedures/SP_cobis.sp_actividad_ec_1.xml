@@ -1,0 +1,205 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<procedure>
+  <database>cobis</database>
+  <name>sp_actividad_ec</name>
+  <type>SYBASE</type>
+  <version>1</version>
+  <parameters>
+    <parameter name="@s_ssn" dataType="int" direction="in" />
+    <parameter name="@s_user" dataType="varchar" direction="in" />
+    <parameter name="@s_term" dataType="varchar" direction="in" />
+    <parameter name="@s_date" dataType="datetime" direction="in" />
+    <parameter name="@s_srv" dataType="varchar" direction="in" />
+    <parameter name="@s_lsrv" dataType="varchar" direction="in" />
+    <parameter name="@s_rol" dataType="smallint" direction="in" />
+    <parameter name="@s_org_err" dataType="char" direction="in" />
+    <parameter name="@s_error" dataType="int" direction="in" />
+    <parameter name="@s_sev" dataType="tinyint" direction="in" />
+    <parameter name="@s_msg" dataType="varchar" direction="in" />
+    <parameter name="@s_org" dataType="char" direction="in" />
+    <parameter name="@t_debug" dataType="char" direction="in" />
+    <parameter name="@t_file" dataType="varchar" direction="in" />
+    <parameter name="@t_from" dataType="varchar" direction="in" />
+    <parameter name="@t_trn" dataType="smallint" direction="in" />
+    <parameter name="@t_show_version" dataType="bit" direction="in" />
+    <parameter name="@i_operacion" dataType="char" direction="in" />
+    <parameter name="@i_modo" dataType="tinyint" direction="in" />
+    <parameter name="@i_tipo" dataType="char" direction="in" />
+    <parameter name="@i_cuenta" dataType="smallint" direction="in" />
+    <parameter name="@i_descripcion" dataType="varchar" direction="in" />
+    <parameter name="@i_categoria" dataType="char" direction="in" />
+    <parameter name="@i_estado" dataType="varchar" direction="in" />
+    <parameter name="@i_codigo" dataType="varchar" direction="in" />
+    <parameter name="@i_industria" dataType="varchar" direction="in" />
+    <parameter name="@i_valor" dataType="varchar" direction="in" />
+    <parameter name="@i_codSubsector" dataType="varchar" direction="in" />
+    <parameter name="@i_codSector" dataType="varchar" direction="in" />
+    <parameter name="@i_homolog_pn" dataType="varchar" direction="in" />
+    <parameter name="@i_homolog_pj" dataType="varchar" direction="in" />
+  </parameters>
+  <queries>
+    <query>
+      <columns>
+        <column name="**  Stored Procedure  **" />
+        <column name="s_ssn" />
+        <column name="s_user" />
+        <column name="s_term" />
+        <column name="s_srv" />
+        <column name="s_lsrv" />
+        <column name="t_file" />
+        <column name="t_from" />
+        <column name="t_trn" />
+        <column name="i_operacion" />
+        <column name="i_cuenta" />
+        <column name="i_descripcion" />
+        <column name="i_categoria" />
+        <column name="i_estado" />
+        <column name="i_homolog_pn" />
+        <column name="i_homolog_pj" />
+      </columns>
+      <queryText>SELECT "**  Stored Procedure  **"=w_sp_name,"s_ssn"=s_ssn,"s_user"=s_user,"s_term"=s_term,"s_srv"=s_srv,"s_lsrv"=s_lsrv,"t_file"=t_file,"t_from"=t_from,"t_trn"=t_trn,"i_operacion"=i_operacion,"i_cuenta"=i_cuenta,"i_descripcion"=i_descripcion,"i_categoria"=i_categoria,"i_estado"=i_estado,"i_homolog_pn"=i_homolog_pn,"i_homolog_pj"=i_homolog_pj</queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="CODIGO" />
+        <column name="DESCRIPCION" />
+        <column name="ESTADO" />
+        <column name="COD. SUBSECTOR ECO." />
+        <column name="SUBSECTOR ECO." />
+        <column name="HOMOLOGACION EDV P.N." />
+        <column name="HOMOLOGACION EDV P.J." />
+      </columns>
+      <queryText>SELECT  "CODIGO" = ac_codigo,"DESCRIPCION" = ac_descripcion,"ESTADO" = ac_estado,"COD. SUBSECTOR ECO." = ac_codSubsector,"SUBSECTOR ECO." = (SELECT  d.valor FROM cobis..cl_tabla c  ,cobis..cl_catalogo d   WHERE f.ac_codSubsector = d.codigo AND c.tabla = "cl_subsector_ec" AND c.codigo = d.tabla     ),"HOMOLOGACION EDV P.N." = ac_homolog_pn,"HOMOLOGACION EDV P.J." = ac_homolog_pj </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="CODIGO" />
+        <column name="DESCRIPCION" />
+        <column name="ESTADO" />
+        <column name="COD. SUBSECTOR ECO." />
+        <column name="SUBSECTOR ECO." />
+        <column name="HOMOLOGACION EDV P.N." />
+        <column name="HOMOLOGACION EDV P.J." />
+      </columns>
+      <queryText>SELECT  "CODIGO" = ac_codigo,"DESCRIPCION" = ac_descripcion,"ESTADO" = ac_estado,"COD. SUBSECTOR ECO." = ac_codSubsector,"SUBSECTOR ECO." = (SELECT  d.valor FROM cobis..cl_tabla c  ,cobis..cl_catalogo d   WHERE f.ac_codSubsector = d.codigo AND c.tabla = "cl_subsector_ec" AND c.codigo = d.tabla     ),"HOMOLOGACION EDV P.N." = ac_homolog_pn,"HOMOLOGACION EDV P.J." = ac_homolog_pj </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="CODIGO" />
+        <column name="VALOR" />
+        <column name="ESTADO" />
+        <column name="COD. SUBSECTOR ECO." />
+        <column name="SUBSECTOR ECO." />
+      </columns>
+      <queryText>SELECT  "CODIGO" = ac_codigo,"VALOR" = ac_descripcion,"ESTADO" = ac_estado,"COD. SUBSECTOR ECO." = ac_codSubsector,"SUBSECTOR ECO." = (SELECT  se_descripcion FROM cobis..cl_subsector_ec   WHERE se_codigo = ?     ) </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="CODIGO" />
+        <column name="VALOR" />
+        <column name="ESTADO" />
+        <column name="COD. SUBSECTOR ECO." />
+        <column name="SUBSECTOR ECO." />
+      </columns>
+      <queryText>SELECT  "CODIGO" = ac_codigo,"VALOR" = ac_descripcion,"ESTADO" = ac_estado,"COD. SUBSECTOR ECO." = ac_codSubsector,"SUBSECTOR ECO." = (SELECT  se_descripcion FROM cobis..cl_subsector_ec   WHERE se_codigo = ?     ) </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="CODIGO" />
+        <column name="VALOR" />
+        <column name="ESTADO" />
+        <column name="COD. SUBSECTOR ECO." />
+        <column name="SUBSECTOR ECO." />
+        <column name="COD.  SECTOR ECO." />
+      </columns>
+      <queryText>SELECT  "CODIGO" = ac_codigo,"VALOR" = ac_descripcion,"ESTADO" = ac_estado,"COD. SUBSECTOR ECO." = ac_codSubsector,"SUBSECTOR ECO." = d.se_descripcion,"COD.  SECTOR ECO." = e.se_codigo </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="CODIGO" />
+        <column name="VALOR" />
+        <column name="ESTADO" />
+        <column name="COD. SUBSECTOR ECO." />
+        <column name="SUBSECTOR ECO." />
+        <column name="COD.  SECTOR ECO." />
+      </columns>
+      <queryText>SELECT  "CODIGO" = ac_codigo,"VALOR" = ac_descripcion,"ESTADO" = ac_estado,"COD. SUBSECTOR ECO." = ac_codSubsector,"SUBSECTOR ECO." = d.se_descripcion,"COD.  SECTOR ECO." = e.se_codigo </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="CODIGO" />
+        <column name="DESCRIPCION" />
+        <column name="ESTADO" />
+        <column name="COD. SUBSECTOR ECO." />
+        <column name="SUBSECTOR ECO." />
+      </columns>
+      <queryText>SELECT  "CODIGO" = ac_codigo,"DESCRIPCION" = ac_descripcion,"ESTADO" = ac_estado,"COD. SUBSECTOR ECO." = ac_codSubsector,"SUBSECTOR ECO." = (SELECT  se_descripcion FROM cobis..cl_subsector_ec   WHERE se_codigo = ?     ) </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="CODIGO" />
+        <column name="DESCIPCION" />
+        <column name="ESTADO" />
+        <column name="COD. SUBSECTOR ECO." />
+        <column name="SUBSECTOR ECO." />
+      </columns>
+      <queryText>SELECT  "CODIGO" = ac_codigo,"DESCIPCION" = ac_descripcion,"ESTADO" = ac_estado,"COD. SUBSECTOR ECO." = ac_codSubsector,"SUBSECTOR ECO." = (SELECT  se_descripcion FROM cobis..cl_subsector_ec   WHERE se_codigo = ?     ) </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="{1}" />
+      </columns>
+      <queryText>SELECT  ac_descripcion </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="CODIGO" />
+        <column name="DESCRIPCION" />
+        <column name="ESTADO" />
+        <column name="COD. SUBSECTOR ECO." />
+        <column name="SUBSECTOR ECO." />
+      </columns>
+      <queryText>SELECT  "CODIGO" = ac_codigo,"DESCRIPCION" = ac_descripcion,"ESTADO" = ac_estado,"COD. SUBSECTOR ECO." = ac_codSubsector,"SUBSECTOR ECO." = d.se_descripcion </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="{1}" />
+      </columns>
+      <queryText>SELECT  ac_descripcion </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="{1}" />
+        <column name="{2}" />
+      </columns>
+      <queryText>SELECT  ac_codigo,ac_descripcion </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="{1}" />
+        <column name="{2}" />
+      </columns>
+      <queryText>SELECT  ac_codigo,ac_descripcion </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="CODIGO" />
+        <column name="DESCRIPCION" />
+        <column name="ESTADO" />
+        <column name="COD. SUBSECTOR ECO." />
+        <column name="SUBSECTOR ECO." />
+      </columns>
+      <queryText>SELECT  "CODIGO" = ac_codigo,"DESCRIPCION" = ac_descripcion,"ESTADO" = ac_estado,"COD. SUBSECTOR ECO." = ac_codSubsector,"SUBSECTOR ECO." = (SELECT  se_descripcion FROM cobis..cl_subsector_ec   WHERE se_codigo = ?     ) </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="CODIGO" />
+        <column name="DESCRIPCION" />
+        <column name="ESTADO" />
+        <column name="COD. SUBSECTOR ECO." />
+        <column name="SUBSECTOR ECO." />
+      </columns>
+      <queryText>SELECT  "CODIGO" = ac_codigo,"DESCRIPCION" = ac_descripcion,"ESTADO" = ac_estado,"COD. SUBSECTOR ECO." = ac_codSubsector,"SUBSECTOR ECO." = (SELECT  se_descripcion FROM cobis..cl_subsector_ec   WHERE se_codigo = ?     ) </queryText>
+    </query>
+  </queries>
+</procedure>

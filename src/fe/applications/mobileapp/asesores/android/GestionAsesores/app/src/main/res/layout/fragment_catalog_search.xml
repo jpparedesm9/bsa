@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="?dialogPreferredPadding">
+
+    <TextView
+        android:id="@+id/text_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:textAppearance="@style/TextAppearance.AppCompat.Title"/>
+
+    <EditText
+        android:id="@+id/edit_text_keyword"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/search_catalog_hint_keyword"
+        android:inputType="text"/>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/list_catalog_item"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+    <TextView
+        android:id="@+id/text_search_msg"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:minHeight="?listPreferredItemHeightSmall"
+        android:text="@string/search_catalog_no_results_msg"
+        android:visibility="gone"/>
+</LinearLayout>

@@ -1,0 +1,195 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<procedure>
+  <database>cob_credito</database>
+  <name>sp_gar_propuesta</name>
+  <type>SYBASE</type>
+  <version>1</version>
+  <parameters>
+    <parameter name="@s_ssn" dataType="int" direction="in" />
+    <parameter name="@s_user" dataType="varchar" direction="in" />
+    <parameter name="@s_sesn" dataType="int" direction="in" />
+    <parameter name="@s_term" dataType="varchar" direction="in" />
+    <parameter name="@s_date" dataType="datetime" direction="in" />
+    <parameter name="@s_srv" dataType="varchar" direction="in" />
+    <parameter name="@s_lsrv" dataType="varchar" direction="in" />
+    <parameter name="@s_rol" dataType="smallint" direction="in" />
+    <parameter name="@s_ofi" dataType="smallint" direction="in" />
+    <parameter name="@s_org_err" dataType="char" direction="in" />
+    <parameter name="@s_error" dataType="int" direction="in" />
+    <parameter name="@s_sev" dataType="tinyint" direction="in" />
+    <parameter name="@s_msg" dataType="varchar" direction="in" />
+    <parameter name="@s_org" dataType="char" direction="in" />
+    <parameter name="@t_rty" dataType="char" direction="in" />
+    <parameter name="@t_trn" dataType="smallint" direction="in" />
+    <parameter name="@t_debug" dataType="char" direction="in" />
+    <parameter name="@t_file" dataType="varchar" direction="in" />
+    <parameter name="@t_from" dataType="varchar" direction="in" />
+    <parameter name="@i_operacion" dataType="char" direction="in" />
+    <parameter name="@i_tramite" dataType="int" direction="in" />
+    <parameter name="@i_garantia" dataType="varchar" direction="in" />
+    <parameter name="@i_deudor" dataType="int" direction="in" />
+    <parameter name="@i_clase" dataType="char" direction="in" />
+    <parameter name="@i_estado" dataType="char" direction="in" />
+    <parameter name="@i_modo" dataType="tinyint" direction="in" />
+    <parameter name="@i_opcion" dataType="tinyint" direction="in" />
+    <parameter name="@i_porcentaje_resp" dataType="float" direction="in" />
+    <parameter name="@i_valor_resp_garantia" dataType="money" direction="in" />
+    <parameter name="@i_saldo_cap" dataType="money" direction="in" />
+    <parameter name="@i_prendado" dataType="money" direction="in" />
+    <parameter name="@i_operacion_banco" dataType="varchar" direction="in" />
+    <parameter name="@i_producto" dataType="varchar" direction="in" />
+    <parameter name="@i_formato_fecha" dataType="tinyint" direction="in" />
+    <parameter name="@i_impresion" dataType="char" direction="in" />
+    <parameter name="@i_debug" dataType="char" direction="in" />
+    <parameter name="@i_fecha_cic" dataType="datetime" direction="in" />
+  </parameters>
+  <queries>
+    <query>
+      <columns>
+        <column name="status" />
+        <column name="statusId" />
+        <column name="guaranteeNumber" />
+        <column name="type" />
+        <column name="warrantyType" />
+        <column name="classOpen" />
+        <column name="guarantor" />
+        <column name="valueUSD" />
+        <column name="currency" />
+        <column name="currentValue" />
+        <column name="initialValue" />
+        <column name="mrc" />
+        <column name="mrcValue" />
+        <column name="lastInspection" />
+        <column name="account" />
+        <column name="accountType" />
+        <column name="depreciationPercent" />
+        <column name="location" />
+        <column name="identification" />
+        <column name="policy" />
+        <column name="dateLastAppraisal" />
+        <column name="addressPrenda" />
+        <column name="95139" />
+        <column name="95140" />
+        <column name="15234" />
+        <column name="95141" />
+        <column name="95142" />
+        <column name="95143" />
+        <column name="95144" />
+        <column name="95145" />
+      </columns>
+      <queryText></queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="status" />
+        <column name="guaranteeNumber" />
+        <column name="type" />
+        <column name="guarantor" />
+        <column name="valueUSD" />
+        <column name="currency" />
+        <column name="currentValue" />
+        <column name="initialValue" />
+        <column name="mrc" />
+        <column name="mrcValue" />
+        <column name="lastInspection" />
+        <column name="account" />
+        <column name="accountType" />
+        <column name="depreciationPercent" />
+        <column name="location" />
+        <column name="identification" />
+        <column name="policy" />
+        <column name="amount" />
+      </columns>
+      <queryText></queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="status" />
+        <column name="guaranteeNumber" />
+        <column name="type" />
+        <column name="guarantor" />
+        <column name="valueUSD" />
+        <column name="currency" />
+        <column name="currentValue" />
+        <column name="initialValue" />
+        <column name="mrc" />
+        <column name="mrcValue" />
+        <column name="lastInspection" />
+        <column name="account" />
+        <column name="accountType" />
+      </columns>
+      <queryText></queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="supportsOperation" />
+      </columns>
+      <queryText></queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="creditCode" />
+        <column name="guarantee" />
+        <column name="classGuarantee" />
+        <column name="debtorCode" />
+        <column name="status" />
+        <column name="percentageSupport" />
+        <column name="valueLocalCurrency" />
+      </columns>
+      <queryText></queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="idGarantia" />
+        <column name="tipoGarantia" />
+        <column name="descripcionTipoGarantia" />
+        <column name="tipo" />
+        <column name="clase_gar" />
+        <column name="idGarante" />
+        <column name="garantePrimario" />
+        <column name="documentosCustodia" />
+        <column name="sujetaRegistro" />
+        <column name="moneda" />
+        <column name="descMoneda" />
+        <column name="monto" />
+        <column name="institucion" />
+        <column name="montoCubierto" />
+        <column name="porcentajeCubierto" />
+        <column name="numFianzaIndividual" />
+        <column name="valor" />
+        <column name="fechaEmision" />
+        <column name="entidadEmisora" />
+        <column name="fechaVencimiento" />
+        <column name="fechaAvaluo" />
+        <column name="vnr" />
+        <column name="valorDisponible" />
+        <column name="descripcionGarantia" />
+        <column name="codigo" />
+        <column name="desmaterializado" />
+        <column name="garanteCed" />
+        <column name="garanteNom" />
+        <column name="garanteEstCivil" />
+        <column name="garanteProfesion" />
+        <column name="garanteDireccion" />
+        <column name="duenioGarNombre" />
+        <column name="duenioGarCed" />
+        <column name="descripcionGarantia" />
+      </columns>
+      <queryText></queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="codigoExterno" />
+        <column name=" tipoCustodia" />
+        <column name="fechaEmision" />
+        <column name="fechaVencimiento" />
+        <column name="entidadEmisora" />
+        <column name="valorActual" />
+        <column name="idMoneda" />
+        <column name="descMoneda" />
+        <column name="claseGarantia" />
+      </columns>
+      <queryText></queryText>
+    </query>
+  </queries>
+</procedure>

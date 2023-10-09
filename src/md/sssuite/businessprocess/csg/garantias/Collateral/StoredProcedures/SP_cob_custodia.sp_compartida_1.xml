@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<procedure>
+  <database>cob_custodia</database>
+  <name>sp_compartida</name>
+  <type>SYBASE</type>
+  <version>1</version>
+  <parameters>
+    <parameter name="@s_ssn" dataType="int" direction="in" />
+    <parameter name="@s_date" dataType="datetime" direction="in" />
+    <parameter name="@s_user" dataType="varchar" direction="in" />
+    <parameter name="@s_term" dataType="varchar" direction="in" />
+    <parameter name="@s_corr" dataType="char" direction="in" />
+    <parameter name="@s_ssn_corr" dataType="int" direction="in" />
+    <parameter name="@s_ofi" dataType="smallint" direction="in" />
+    <parameter name="@s_srv" dataType="varchar" direction="in" />
+    <parameter name="@s_lsrv" dataType="varchar" direction="in" />
+    <parameter name="@t_rty" dataType="char" direction="in" />
+    <parameter name="@t_from" dataType="varchar" direction="in" />
+    <parameter name="@t_trn" dataType="smallint" direction="in" />
+    <parameter name="@i_operacion" dataType="char" direction="in" />
+    <parameter name="@i_modo" dataType="smallint" direction="in" />
+    <parameter name="@i_filial" dataType="tinyint" direction="in" />
+    <parameter name="@i_sucursal" dataType="smallint" direction="in" />
+    <parameter name="@i_tipo" dataType="varchar" direction="in" />
+    <parameter name="@i_custodia" dataType="int" direction="in" />
+    <parameter name="@i_valor_compartida" dataType="float" direction="in" />
+    <parameter name="@i_fecha_comp" dataType="datetime" direction="in" />
+    <parameter name="@i_grado_comp" dataType="varchar" direction="in" />
+    <parameter name="@i_porcentaje_comp" dataType="float" direction="in" />
+    <parameter name="@i_entidad" dataType="int" direction="in" />
+    <parameter name="@i_valor_contable" dataType="float" direction="in" />
+    <parameter name="@i_porcentaje_banco" dataType="float" direction="in" />
+    <parameter name="@i_formato_fecha" dataType="int" direction="in" />
+  </parameters>
+  <queries>
+    <query>
+      <columns>
+        <column name="SECUENCIAL" />
+        <column name="CODIGO ENTIDAD" />
+        <column name="NOMBRE ENTIDAD" />
+        <column name="VALOR COMPARTIDO" />
+        <column name="GRADO" />
+        <column name="NOMBRE GRADO" />
+        <column name="PORCENTAJE" />
+        <column name="VALOR CONTABLE" />
+        <column name="PORCENtAJE BANCO" />
+        <column name="FECHA" />
+      </columns>
+      <queryText>SELECT  "SECUENCIAL" = X.co_codigo_externo,"CODIGO ENTIDAD" = X.co_entidad,"NOMBRE ENTIDAD" = (SELECT  ba_descripcion </queryText>
+    </query>
+  </queries>
+</procedure>

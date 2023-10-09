@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="pagare_detalle" pageWidth="547" pageHeight="794" whenNoDataType="AllSectionsNoDetail" columnWidth="547" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="deec1b21-1036-4734-948b-164547062a2b">
+	<property name="ireport.zoom" value="1.5"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="SUBREPORT_DIR" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["/"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="urlPathSantander" class="java.lang.String"/>
+	<field name="nombreCamp01" class="java.lang.String"/>
+	<field name="montoOtorgadoCamp02" class="java.lang.String"/>
+	<field name="aPartirCamp03" class="java.lang.String"/>
+	<field name="plazoCamp04" class="java.lang.String"/>
+	<field name="periodicidadCamp05" class="java.lang.String"/>
+	<field name="pagoMensualCamp06" class="java.lang.String"/>
+	<field name="montoPagoFinalCamp07" class="java.lang.String"/>
+	<field name="tasaCamp08" class="java.lang.Double"/>
+	<field name="fechaCamp09" class="java.lang.String"/>
+	<field name="numCreditoCamp10" class="java.lang.String"/>
+	<field name="fechaEmiCamp11" class="java.lang.String"/>
+	<field name="nombreSuscriptor" class="java.lang.String"/>
+	<field name="aval" class="java.util.List"/>
+	<field name="lineaFirma" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<detail>
+		<band height="71" splitType="Stretch">
+			<image>
+				<reportElement x="1" y="2" width="124" height="55" uuid="f3fef1b3-1558-4d7b-9b05-adfda4891775"/>
+				<imageExpression><![CDATA[$P{urlPathSantander}]]></imageExpression>
+			</image>
+			<break>
+				<reportElement x="0" y="0" width="100" height="1" uuid="bce18ba3-6b8e-45a5-ae66-9df0b5f20f53"/>
+			</break>
+		</band>
+		<band height="14" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="547" height="14" uuid="5c5c486e-f4d8-449f-a321-f2185bf270d7"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[PAGARÉ CRÉDITO GRUPAL]]></text>
+			</staticText>
+		</band>
+		<band height="10" splitType="Stretch"/>
+		<band height="13" splitType="Stretch">
+			<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true">
+				<reportElement positionType="Float" stretchType="RelativeToBandHeight" x="0" y="0" width="547" height="13" isPrintWhenDetailOverflows="true" uuid="782b76db-b133-4f86-9754-876fe1769ac9"/>
+				<textElement textAlignment="Justified" verticalAlignment="Top">
+					<font size="8"/>
+					<paragraph leftIndent="2" rightIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Por este pagaré "+$F{nombreCamp01}+" (EL SUSCRIPTOR) en éste acto prometo incondicionalmente pagar a la orden de SANTANDER INCLUSIÓN FINANCIERA, SOCIEDAD ANÓNIMA DE CAPITAL VARIABLE SOCIEDAD FINANCIERA DE OBJETO MÚLTIPLE, ENTIDAD REGULADA, GRUPO FINANCIERO SANTANDER MEXICO (LA SOFOM), en su domicilio ubicado en Av. Prolongación Paseo de la Reforma No. 500 Col. Lomas de Santa Fe, Delegación Álvaro Obregón CP. 01219 Ciudad de México, o en cualquiera de sus sucursales, la suerte principal de $ "+$F{montoOtorgadoCamp02}+". "]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="10" splitType="Stretch"/>
+		<band height="13" splitType="Stretch">
+			<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true">
+				<reportElement positionType="Float" stretchType="RelativeToBandHeight" x="0" y="0" width="547" height="13" isPrintWhenDetailOverflows="true" uuid="26b8b0c7-d3aa-4fac-9177-9d7faee2caa1"/>
+				<textElement textAlignment="Justified" verticalAlignment="Top">
+					<font size="8"/>
+					<paragraph leftIndent="2" rightIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA["EL SUSCRIPTOR se obliga a pagar a LA SOFOM la citada suerte principal, a partir del "+$F{aPartirCamp03}+", día de la fecha en que “LA SOFOM” deposite la suma principal, mediante "+$F{plazoCamp04}+" pagos "+$F{periodicidadCamp05}+",  a razón de $ "+$F{pagoMensualCamp06}+", cada uno de ellos y un último pago a razón de $ "+$F{montoPagoFinalCamp07}+". A los pagos de capital se le sumarán los intereses, accesorios e impuestos que se generen, en su caso."]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="10" splitType="Stretch"/>
+		<band height="13" splitType="Stretch">
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="Float" stretchType="RelativeToBandHeight" x="0" y="0" width="547" height="13" isPrintWhenDetailOverflows="true" uuid="e1a1438e-72ae-4dce-af68-49823df50181"/>
+				<textElement textAlignment="Justified" verticalAlignment="Top">
+					<font size="8"/>
+					<paragraph leftIndent="2" rightIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA["La suma principal de este PAGARÉ generará intereses ordinarios (Los Intereses Ordinarios) desde su fecha de suscripción y hasta su total y completo pago, los cuales serán calculados a razón de aplicar el saldo insoluto del principal, una tasa de interés (en adelante la Tasa de Interés Ordinaria ) del "+$F{tasaCamp08}+" % anual. Los Intereses Ordinarios serán calculados sobre saldos insolutos y con base en un año de 360 (trescientos sesenta) días y serán pagaderos por el Suscriptor, sin requisito o trámite previo, conjuntamente con las amortizaciones del principal, precisamente en las fechas de pago establecidas en el párrafo inmediato anterior."]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="10" splitType="Stretch"/>
+		<band height="13" splitType="Stretch">
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="Float" stretchType="RelativeToBandHeight" x="0" y="0" width="547" height="13" isPrintWhenDetailOverflows="true" uuid="5c6d61a8-0825-48aa-b320-ade0e3e3a56d"/>
+				<textElement textAlignment="Justified" verticalAlignment="Top">
+					<font size="8"/>
+					<paragraph leftIndent="2" rightIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA["En caso de que EL SUSCRIPTOR deje de pagar puntualmente cualquier suma que estuviere obligado a cubrir conforme a este pagaré, las cantidades no pagadas causarán la ejecución de la Comisión por Gastos de Cobranza correspondiente a partir de la fecha en que debió ser cubierta hasta la fecha de su pago total, o en su defecto hasta alcanzar el máximo de 90 días de atraso."]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="10" splitType="Stretch"/>
+		<band height="13" splitType="Stretch">
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="Float" stretchType="RelativeToBandHeight" x="0" y="0" width="547" height="13" isPrintWhenDetailOverflows="true" uuid="1845aefa-0cc2-4ce0-82c2-c814734188a9"/>
+				<textElement textAlignment="Justified" verticalAlignment="Top">
+					<font size="8"/>
+					<paragraph leftIndent="2" rightIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA["LOS AVALISTAS firman esté pagaré obligándose expresamente a responder solidaria e ilimitadamente en favor de “LA SOFOM”, por todas y cada una de las obligaciones a cargo de EL SUSCRIPTOR."]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="10" splitType="Stretch"/>
+		<band height="13" splitType="Stretch">
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="Float" stretchType="RelativeToBandHeight" x="0" y="0" width="547" height="13" isPrintWhenDetailOverflows="true" uuid="e9f93de7-e020-4a2c-9d7e-5ace2f06bfe7"/>
+				<textElement textAlignment="Justified" verticalAlignment="Top">
+					<font size="8"/>
+					<paragraph leftIndent="2" rightIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA["La falta de pago oportuno de cualquier exhibición producirá el vencimiento anticipado de este título por lo que SANTANDER INCLUSIÓN FINANCIERA, SOCIEDAD ANÓNIMA DE CAPITAL VARIABLE, SOCIEDAD FINANCIERA DE OBJETO MÚLTIPLE, ENTIDAD REGULADA, GRUPO FINANCIERO SANTANDER MEXICO  o quien ésta determine podrá exigir, el saldo total adeudado más sus accesorios."]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="10" splitType="Stretch"/>
+		<band height="13" splitType="Stretch">
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="Float" stretchType="RelativeToBandHeight" x="0" y="0" width="547" height="13" isPrintWhenDetailOverflows="true" uuid="b2585533-0015-412e-9e26-b273be971651"/>
+				<textElement textAlignment="Justified" verticalAlignment="Top">
+					<font size="8"/>
+					<paragraph leftIndent="2" rightIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA["EL SUSCRIPTOR pagará todas las sumas aquí establecidas, incluyendo las comisiones generadas, sin necesidad de requerimiento o cobro previo, en las fechas de pago previstas en el segundo párrafo."]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="10" splitType="Stretch"/>
+		<band height="13" splitType="Stretch">
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="Float" stretchType="RelativeToBandHeight" x="0" y="0" width="547" height="13" isPrintWhenDetailOverflows="true" uuid="dd1fbdd2-81c3-4b9f-8e5d-325918d19ef8"/>
+				<textElement textAlignment="Justified" verticalAlignment="Top">
+					<font size="8"/>
+					<paragraph leftIndent="2" rightIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA["El presente PAGARÉ forma parte integrante del Contrato de Apertura de Crédito Simple (“CONTRATO DE CREDITO GRUPAL”) celebrado con fecha "+$F{fechaCamp09}+" , al que se le asignó el número de crédito "+$F{numCreditoCamp10}+", por lo que el SUSCRIPTOR, en su carácter de ACREDITADO, queda obligado a firmar el presente pagaré de manera conjunta con el CONTRATO DE CRÉDITO GRUPAL, para el efecto de acreditar la disposición del crédito."]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="10" splitType="Stretch"/>
+		<band height="13" splitType="Stretch">
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="Float" stretchType="RelativeToBandHeight" x="0" y="0" width="547" height="13" isPrintWhenDetailOverflows="true" uuid="f71fca62-47cd-4e9f-91ba-aae772d15c42"/>
+				<textElement textAlignment="Justified" verticalAlignment="Top">
+					<font size="8"/>
+					<paragraph leftIndent="2" rightIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Para todo lo relativo a la interpretación, cumplimiento o requerimiento judicial de las obligaciones contraídas en éste pagaré EL SUSCRIPTOR y EL AVALISTA se someten expresamente a la jurisdicción de los tribunales competentes de la Ciudad de México o del domicilio de EL SUSCRIPTOR a elección de la parte actora, renunciando por lo mismo las partes al fuero de cualquier otro domicilio. En caso de litigio para obtener el pago de la suma principal amparada por este pagaré e intereses devengados en su caso, EL SUSCRIPTOR conviene en cubrir la cantidad adicional por concepto de gastos y honorarios legales que los tribunales determinen razonablemente."]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="10" splitType="Stretch"/>
+		<band height="13" splitType="Stretch">
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="Float" stretchType="RelativeToBandHeight" x="0" y="0" width="547" height="13" isPrintWhenDetailOverflows="true" uuid="155c95bd-02a3-453b-8b99-b34b601999b8"/>
+				<textElement textAlignment="Justified" verticalAlignment="Top">
+					<font size="8"/>
+					<paragraph leftIndent="2" rightIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA["El presente pagaré consta de 1 hoja(s), leído que fue por las partes, y enterados de su contenido y alcance legales, se firma en la Ciudad de México, el día "+$F{fechaEmiCamp11}+"."]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="33" splitType="Stretch"/>
+		<band height="73" splitType="Stretch">
+			<subreport>
+				<reportElement positionType="Float" stretchType="RelativeToBandHeight" x="270" y="0" width="277" height="73" uuid="c3a6b9e6-ccde-4055-af91-72b89953346f"/>
+				<subreportParameter name="urlPathSantander">
+					<subreportParameterExpression><![CDATA[$P{urlPathSantander}]]></subreportParameterExpression>
+				</subreportParameter>
+				<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($F{aval})]]></dataSourceExpression>
+				<subreportExpression><![CDATA[$P{SUBREPORT_DIR} + "pagare_aval.jasper"]]></subreportExpression>
+			</subreport>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToTallestObject" x="0" y="61" width="270" height="12" uuid="2706b4d9-a5ed-46ca-9d28-4c9bfe7a1a76"/>
+				<textElement textAlignment="Center" verticalAlignment="Top">
+					<font size="8"/>
+					<paragraph leftIndent="2" rightIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{nombreSuscriptor}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="0" y="41" width="270" height="12" uuid="b4ed1155-02f5-46fd-ba5a-500d116c4bb8"/>
+				<textElement textAlignment="Center" verticalAlignment="Top">
+					<font size="8" isBold="true"/>
+					<paragraph leftIndent="2" rightIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA["-------------------------------------------------------------"]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="0" y="2" width="270" height="12" uuid="4c5eb0c5-ed93-44d9-bfcb-3885fecd64d4"/>
+				<textElement textAlignment="Center" verticalAlignment="Top">
+					<font size="8" isBold="true"/>
+					<paragraph leftIndent="2" rightIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA["SUSCRIPTOR"]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="0" y="13" width="270" height="14" uuid="58c7e8f7-2507-4e4f-ae52-e0a922ace297"/>
+				<textElement textAlignment="Center" verticalAlignment="Top">
+					<font size="8" isBold="true"/>
+					<paragraph leftIndent="2" rightIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA["  "]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="0" y="26" width="270" height="14" uuid="183002bb-c24c-4cc6-acce-5359ba0e0f8f"/>
+				<textElement textAlignment="Center" verticalAlignment="Top">
+					<font size="8" isBold="true"/>
+					<paragraph leftIndent="2" rightIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA["  "]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="0" y="52" width="270" height="10" uuid="200b73a3-89de-4e9e-a73d-ae6cb561d809"/>
+				<textElement textAlignment="Center" verticalAlignment="Top">
+					<font size="8" isBold="true"/>
+					<paragraph leftIndent="2" rightIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA["  "]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="14">
+			<staticText>
+				<reportElement x="0" y="0" width="547" height="14" uuid="148e965c-05f0-448c-b3eb-3769b5b04bcb"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[1 / 1]]></text>
+			</staticText>
+		</band>
+	</pageFooter>
+</jasperReport>

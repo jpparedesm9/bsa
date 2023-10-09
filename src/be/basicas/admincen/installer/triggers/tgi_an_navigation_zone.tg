@@ -1,0 +1,90 @@
+use cobis
+go
+if exists (select * from sysobjects where name = 'tgi_an_navigation_zone')
+    drop trigger tgi_an_navigation_zone
+go
+create trigger tgi_an_navigation_zone
+on an_navigation_zone
+for insert
+as
+begin
+    declare
+        @w_nz_id        int,
+        @w_nz_la_id     int,
+        @w_nz_co_id     int,
+        @w_nz_name      varchar(40),
+        @w_nz_icon      varchar(40),
+        @w_nz_order     int,
+        @w_id           int
+ 
+    declare cu_inserted cursor for
+        select
+            nz_id,
+            nz_la_id,
+            nz_co_id,
+            nz_name,
+            nz_icon,
+            nz_order
+        from inserted
+ 
+    open cu_inserted
+    fetch cu_inserted into
+        @w_nz_id,
+        @w_nz_la_id,
+        @w_nz_co_id,
+        @w_nz_name,
+        @w_nz_icon,
+        @w_nz_order
+                 
+    while @@FETCH_STATUS=0
+    begin
+        select @w_id = sq_siguiente
+        from cob_distrib..di_seqnos
+        where sq_tabla = 'di_log'
+ 
+        update cob_distrib..di_seqnos
+        set sq_siguiente = sq_siguiente + 1
+        where sq_tabla = 'di_log'
+ 
+        insert into cob_distrib..di_log (
+            lg_id, lg_fecha, lg_operacion, lg_objeto)
+        values (@w_id, getdate(), 'I', 'cobis..sp_an_navigation_z_tg')
+        
+        insert into cob_distrib..di_parametro (
+            pa_id, pa_nombre, pa_tipodato, pa_longitud, pa_int)
+        values (@w_id, '@i_nz_id', 56, isnull(datalength(@w_nz_id), 0), @w_nz_id)
+
+        insert into cob_distrib..di_parametro (
+            pa_id, pa_nombre, pa_tipodato, pa_longitud, pa_int)
+        values (@w_id, '@i_nz_la_id', 56, isnull(datalength(@w_nz_la_id), 0), @w_nz_la_id)
+        
+        insert into cob_distrib..di_parametro (
+            pa_id, pa_nombre, pa_tipodato, pa_longitud, pa_int)
+        values (@w_id, '@i_nz_co_id', 56, isnull(datalength(@w_nz_co_id), 0), @w_nz_co_id)
+        
+        insert into cob_distrib..di_parametro (
+            pa_id, pa_nombre, pa_tipodato, pa_longitud, pa_varchar)
+        values (@w_id, '@i_nz_name', 39, isnull(datalength(@w_nz_name), 0), @w_nz_name)
+        
+        insert into cob_distrib..di_parametro (
+            pa_id, pa_nombre, pa_tipodato, pa_longitud, pa_varchar)
+        values (@w_id, '@i_nz_icon', 39, isnull(datalength(@w_nz_icon), 0), @w_nz_icon)
+
+        insert into cob_distrib..di_parametro (
+            pa_id, pa_nombre, pa_tipodato, pa_longitud, pa_int)
+        values (@w_id, '@i_nz_order', 56, isnull(datalength(@w_nz_order), 0), @w_nz_order)
+
+        fetch cu_inserted into
+            @w_nz_id,
+            @w_nz_la_id,
+            @w_nz_co_id,
+            @w_nz_name,
+            @w_nz_icon,
+            @w_nz_order
+
+    end
+    close cu_inserted
+    deallocate cu_inserted
+    
+end
+go

@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<procedure>
+  <database>cob_cartera</database>
+  <name>sp_lcr_gen_ref_srv</name>
+  <type>SQLSERVER</type>
+  <version>1</version>
+  <parameters>
+    <parameter name="@s_ssn" dataType="int" direction="in" />
+    <parameter name="@s_ofi" dataType="smallint" direction="in" />
+    <parameter name="@s_user" dataType="varchar" direction="in" />
+    <parameter name="@s_date" dataType="datetime" direction="in" />
+    <parameter name="@s_srv" dataType="varchar" direction="in" />
+    <parameter name="@s_term" dataType="varchar" direction="in" />
+    <parameter name="@s_rol" dataType="smallint" direction="in" />
+    <parameter name="@s_lsrv" dataType="varchar" direction="in" />
+    <parameter name="@s_sesn" dataType="int" direction="in" />
+    <parameter name="@s_org" dataType="char" direction="in" />
+    <parameter name="@s_org_err" dataType="int" direction="in" />
+    <parameter name="@s_error" dataType="int" direction="in" />
+    <parameter name="@s_sev" dataType="tinyint" direction="in" />
+    <parameter name="@s_msg" dataType="varchar" direction="in" />
+    <parameter name="@t_rty" dataType="char" direction="in" />
+    <parameter name="@t_trn" dataType="int" direction="in" />
+    <parameter name="@t_debug" dataType="char" direction="in" />
+    <parameter name="@t_file" dataType="varchar" direction="in" />
+    <parameter name="@t_from" dataType="varchar" direction="in" />
+    <parameter name="@i_canal" dataType="varchar" direction="in" />
+    <parameter name="@i_banco" dataType="varchar" direction="in" />
+    <parameter name="@i_monto" dataType="money" direction="in" />
+    <parameter name="@i_renovar" dataType="char" direction="in" />
+    <parameter name="@i_forma_desembolso" dataType="varchar" direction="in" />
+    <parameter name="@i_cuenta" dataType="varchar" direction="in" />
+    <parameter name="@i_en_linea" dataType="char" direction="in" />
+    <parameter name="@i_fecha_valor" dataType="datetime" direction="in" />
+    <parameter name="@i_secuencial" dataType="int" direction="in" />
+    <parameter name="@o_msg" dataType="varchar" direction="out" />
+    <parameter name="@i_monto_iva" dataType="money" direction="in" />
+    <parameter name="@i_monto_com" dataType="money" direction="in" />
+    <parameter name="@i_monto_cap" dataType="money" direction="in" />
+  </parameters>
+  <queries>
+    <query>
+      <columns>
+        <column name="Institucion" />
+        <column name="Referencia" />
+        <column name="Tipo" />
+        <column name="Fecha_operacion" />
+        <column name="Hora_operacion" />
+        <column name="Folio" />
+        <column name="Estado" />
+        <column name="Mensaje" />
+        <column name="Socio" />
+      </columns>
+      <queryText>SELECT "Institucion"="SANTANDER INCLUSIÓN FINANCIERA","Referencia"=w_referencia,"Tipo"="SOLICITUD DE VALE ELECTRÓNICO","Fecha_operacion"=ctx.GETDATE(),"Hora_operacion"=ctx.GETDATE(),"Folio"=w_folio,"Estado"="EN PROCESO","Socio"="SODIMAR"</queryText>
+    </query>
+  </queries>
+</procedure>

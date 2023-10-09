@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<procedure>
+  <database>cob_credito</database>
+  <name>sp_pregunta_cal</name>
+  <type>SYBASE</type>
+  <version>1</version>
+  <parameters>
+    <parameter name="@t_debug" dataType="char" direction="in" />
+    <parameter name="@t_file" dataType="varchar" direction="in" />
+    <parameter name="@t_from" dataType="varchar" direction="in" />
+    <parameter name="@t_show_version" dataType="bit" direction="in" />
+    <parameter name="@t_trn" dataType="smallint" direction="in" />
+    <parameter name="@i_operacion" dataType="char" direction="in" />
+    <parameter name="@i_ente" dataType="int" direction="in" />
+    <parameter name="@i_pregunta_uno" dataType="varchar" direction="in" />
+    <parameter name="@i_respuesta_uno" dataType="char" direction="in" />
+    <parameter name="@i_pregunta_dos" dataType="varchar" direction="in" />
+    <parameter name="@i_respuesta_dos" dataType="char" direction="in" />
+    <parameter name="@i_pregunta_tres" dataType="varchar" direction="in" />
+    <parameter name="@i_respuesta_tres" dataType="char" direction="in" />
+    <parameter name="@i_pregunta_cuatro" dataType="varchar" direction="in" />
+    <parameter name="@i_respuesta_cuatro" dataType="char" direction="in" />
+    <parameter name="@i_pregunta_cinco" dataType="varchar" direction="in" />
+    <parameter name="@i_respuesta_cinco" dataType="char" direction="in" />
+    <parameter name="@i_pregunta_seis" dataType="varchar" direction="in" />
+    <parameter name="@i_respuesta_seis" dataType="char" direction="in" />
+    <parameter name="@i_tramite" dataType="int" direction="in" />
+    <parameter name="@i_formato_fecha" dataType="int" direction="in" />
+    <parameter name="@i_calificacion_fie" dataType="char" direction="in" />
+    <parameter name="@i_ant_cal_fie" dataType="char" direction="in" />
+    <parameter name="@i_max_discount" dataType="int" direction="in" />
+    <parameter name="@i_apply_crop" dataType="char" direction="in" />
+    <parameter name="@i_rebate_type" dataType="float" direction="in" />
+    <parameter name="@i_tariff_rate" dataType="float" direction="in" />
+    <parameter name="@i_proposed_rate" dataType="float" direction="in" />
+    <parameter name="@i_rebate_request" dataType="varchar" direction="" />
+    <parameter name="@i_rebate" dataType="float" direction="" />
+  </parameters>
+  <queries>
+    <query>
+      <columns>
+        <column name="Tramite" />
+        <column name="Puntuacion" />
+        <column name="Pregunta1" />
+        <column name="Respuesta1" />
+        <column name="Pregunta2" />
+        <column name="Respuesta2" />
+        <column name="Pregunta3" />
+        <column name="Respuesta3" />
+        <column name="Pregunta4" />
+        <column name="Respuesta4" />
+        <column name="Pregunta5" />
+        <column name="Respuesta5" />
+        <column name="Pregunta6" />
+        <column name="Respuesta6" />
+        <column name="Calificacion" />
+        <column name="CalAnterior" />
+        <column name="MaxDiscount" />
+        <column name="ApplyCrop" />
+        <column name="TariffRate" />
+        <column name="RebateType" />
+        <column name="ProposedRate" />
+        <column name="Fecha_Registro" />
+        <column name="RebateRequest" />
+        <column name="CommercialRebate" />
+      </columns>
+      <queryText>SELECT  "Tramite" = pc_tramite,"Puntuacion" = pc_puntuacion,"Pregunta 1" = pc_pregunta_uno,"Respuesta 1" = pc_respuesta_uno,"Pregunta 2" = pc_pregunta_dos,"Respuesta 2" = pc_respuesta_dos,"Pregunta 3" = pc_pregunta_tres,"Respuesta 3" = pc_respuesta_tres,"Pregunta 4" = pc_pregunta_cuatro,"Respuesta 4" = pc_respuesta_cuatro,"Pregunta 5" = pc_pregunta_cinco,"Respuesta 5" = pc_respuesta_cinco,"Pregunta 6" = pc_pregunta_seis,"Respuesta 6" = pc_respuesta_seis </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="puntuacion" />
+      </columns>
+      <queryText></queryText>
+    </query>
+  </queries>
+</procedure>

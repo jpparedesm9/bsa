@@ -1,0 +1,162 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.cobiscorp.ecobis</groupId>
+	<artifactId>cobis-customer-build</artifactId>
+	<version>1.1.0</version>
+	<packaging>pom</packaging>
+	<name>${project.artifactId}</name>
+	<url>http://www.cobiscorp.com/</url>
+
+	<profiles>
+		<profile>
+			<id>env-development</id>
+			<activation>
+				<activeByDefault>true</activeByDefault>
+			</activation>
+			<modules>
+				<!-- proyectos de ejemplo -->
+			    <module>../../../../source/middleware/customer/cobis-commons-dal</module>
+				<module>../../../../source/middleware/customer/cobis-customer-api</module>
+				<module>../../../../source/middleware/customer/cobis-customer-bl</module>
+				<module>../../../../source/middleware/customer/cobis-customer-dal</module>
+				<module>../../../../source/middleware/customer/cobis-customer-services</module>
+				<module>../../../../source/middleware/customer/cobis-customer-web-services</module>
+				<module>../../../../source/middleware/customer/customer-commons/cobis-customer-commons-api</module>
+				<module>../../../../source/middleware/customer/customer-commons/cobis-customer-commons-dal</module>
+				<module>../../../../source/middleware/customer/customer-commons/cobis-customer-commons-bl</module>
+				<module>../../../../source/middleware/customer/customer-commons/cobis-customer-commons-services</module>
+				<module>../../../../source/middleware/customer/customer-commons/cobis-customer-commons-web-services</module>
+				<module>../../../../source/middleware/customer/customer-commons/customer-commons-utils</module>
+				<module>../../../../source/middleware/customer/customer-commons/customer-commons-services</module>
+				<!--ALFRESCO-->
+				<module>../../../../source/middleware/customer/cobis-web-customer-servlet-file</module>
+				<module>../../../../source/middleware/customer/cobis-web-servlet-storage-util</module>
+
+
+				<module>../../../../source/frontend/customer/web/cobis-reports-customer-web-reports</module>
+				<module>../../../../source/frontend/customer/web/cstmr.domains</module>
+				<module>../../../../source/frontend/customer/web/cstmr.commons.events</module>
+
+				<module>../../../../source/frontend/customer/web/cstmr.cstmr.scanneddocuments.customevents</module>
+				<module>../../../../source/frontend/customer/web/cstmr.cstmr.scanneddocuments.services</module>
+				<module>../../../../source/frontend/customer/web/cstmr.cstmr.scanneddocumentsdetail.customevents</module>
+				<module>../../../../source/frontend/customer/web/cstmr.cstmr.scanneddocumentsdetail.services</module>
+
+				<module>../../../../source/frontend/customer/web/cstmr.cstmr.addressform.customevents</module>
+				<module>../../../../source/frontend/customer/web/cstmr.cstmr.addressform.services</module>
+		        <!--nuevo -->
+		    	<module>../../../../source/frontend/customer/web/cstmr.cstmr.businessform.customevents</module>
+				<module>../../../../source/frontend/customer/web/cstmr.cstmr.businessform.services</module>
+				<module>../../../../source/frontend/customer/web/cstmr.cstmr.businesspopupform.customevents</module>
+				<module>../../../../source/frontend/customer/web/cstmr.cstmr.businesspopupform.services</module>
+				<!---->
+			   <module>../../../../source/frontend/customer/web/cstmr.cstmr.customercomposite.customevents</module>
+				<module>../../../../source/frontend/customer/web/cstmr.cstmr.customercomposite.services</module>
+				<module>../../../../source/frontend/customer/web/cstmr.cstmr.economicactivityform.customevents</module>
+				<module>../../../../source/frontend/customer/web/cstmr.cstmr.economicactivityform.services</module>
+				<module>../../../../source/frontend/customer/web/cstmr.cstmr.economicactivitypopupform.customevents</module>
+				<module>../../../../source/frontend/customer/web/cstmr.cstmr.economicactivitypopupform.services</module>
+				<module>../../../../source/frontend/customer/web/cstmr.cstmr.legalpersoncomposite.customevents</module>
+				<module>../../../../source/frontend/customer/web/cstmr.cstmr.legalpersoncomposite.services</module>	
+				<!--nuevos-->
+				<!--cambio de lugar el prospect-->
+				<module>../../../../source/frontend/customer/web/cstmr.cstmr.prospectcomposite.customevents</module>
+				<module>../../../../source/frontend/customer/web/cstmr.cstmr.prospectcomposite.services</module>
+				<module>../../../../source/frontend/customer/web/cstmr.cstmr.referencesform.customevents</module>
+				<module>../../../../source/frontend/customer/web/cstmr.cstmr.referencesform.services</module>	
+				<module>../../../../source/frontend/customer/web/cstmr.cstmr.referencespopupform.customevents</module>
+				<module>../../../../source/frontend/customer/web/cstmr.cstmr.referencespopupform.services</module>
+				<module>../../../../source/frontend/customer/web/cstmr.cstmr.relationform.customevents</module>
+				<module>../../../../source/frontend/customer/web/cstmr.cstmr.relationform.services</module>
+				<module>../../../../source/frontend/customer/web/cstmr.cstmr.modificationcurprfcform.customevents</module>
+				<module>../../../../source/frontend/customer/web/cstmr.cstmr.modificationcurprfcform.services</module>
+				<!--Traspasos-->
+                <module>../../../../source/frontend/customer/web/cstmr.cstmr.transferrequestform.customevents</module>
+				<module>../../../../source/frontend/customer/web/cstmr.cstmr.transferrequestform.services</module>
+                <module>../../../../source/frontend/customer/web/cstmr.cstmr.authorizationtransferform.customevents</module>
+				<module>../../../../source/frontend/customer/web/cstmr.cstmr.authorizationtransferform.services</module>
+                <module>../../../../source/frontend/customer/web/cstmr.cstmr.authorizationtransferdetailform.customevents</module>
+				<module>../../../../source/frontend/customer/web/cstmr.cstmr.authorizationtransferdetailform.services</module>
+				<!--Matriz de Alertas-->
+				<module>../../../../source/frontend/customer/web/cstmr.cstmr.addalertsform.customevents</module>
+				<module>../../../../source/frontend/customer/web/cstmr.cstmr.addalertsform.services</module>
+				<module>../../../../source/frontend/customer/web/cstmr.cstmr.viewalertsform.customevents</module>
+				<module>../../../../source/frontend/customer/web/cstmr.cstmr.viewalertsform.services</module>
+				<!---->
+				<module>../../../../source/frontend/customer/web/cobis-web-customer-views</module>
+
+				<module>../cobis-customer-installer</module>
+				<!-- fin de proyectos de ejemplo -->
+			</modules>
+		</profile>
+		<profile>
+			<id>env-hardening</id>
+			<modules>
+				<!-- proyectos de ejemplo -->
+						<!-- proyectos de ejemplo -->
+				<module>../../../../source/middleware/customer/cobis-commons-dal</module>
+				<module>../../../../source/middleware/customer/cobis-customer-api</module>
+				<module>../../../../source/middleware/customer/cobis-customer-bl</module>
+				<module>../../../../source/middleware/customer/cobis-customer-dal</module>
+				<module>../../../../source/middleware/customer/cobis-customer-services</module>
+				<module>../../../../source/middleware/customer/cobis-customer-web-services</module>
+				<module>../../../../source/middleware/customer/customer-commons/cobis-customer-commons-api</module>
+				<module>../../../../source/middleware/customer/customer-commons/cobis-customer-commons-dal</module>
+				<module>../../../../source/middleware/customer/customer-commons/cobis-customer-commons-bl</module>
+				<module>../../../../source/middleware/customer/customer-commons/cobis-customer-commons-services</module>
+				<module>../../../../source/middleware/customer/customer-commons/cobis-customer-commons-web-services</module>
+				<module>../../../../source/middleware/customer/customer-commons/customer-commons-utils</module>
+				<module>../../../../source/middleware/customer/customer-commons/customer-commons-services</module>
+				<module>../../../../source/frontend/customer/web/cobis-reports-customer-web-reports</module>
+				<module>../../../../source/frontend/customer/web/cstmr.domains</module>
+				<module>../../../../source/frontend/customer/web/cstmr.commons.events</module>
+				<module>../../../../source/frontend/customer/web/cstmr.cstmr.addressform.customevents</module>
+				<module>../../../../source/frontend/customer/web/cstmr.cstmr.addressform.services</module>
+		        <!--nuevo -->
+		    	<module>../../../../source/frontend/customer/web/cstmr.cstmr.businessform.customevents</module>
+				<module>../../../../source/frontend/customer/web/cstmr.cstmr.businessform.services</module>
+				<module>../../../../source/frontend/customer/web/cstmr.cstmr.businesspopupform.customevents</module>
+				<module>../../../../source/frontend/customer/web/cstmr.cstmr.businesspopupform.services</module>
+				<!---->
+			   <module>../../../../source/frontend/customer/web/cstmr.cstmr.customercomposite.customevents</module>
+				<module>../../../../source/frontend/customer/web/cstmr.cstmr.customercomposite.services</module>
+				<module>../../../../source/frontend/customer/web/cstmr.cstmr.economicactivityform.customevents</module>
+				<module>../../../../source/frontend/customer/web/cstmr.cstmr.economicactivityform.services</module>
+				<module>../../../../source/frontend/customer/web/cstmr.cstmr.economicactivitypopupform.customevents</module>
+				<module>../../../../source/frontend/customer/web/cstmr.cstmr.economicactivitypopupform.services</module>
+				<module>../../../../source/frontend/customer/web/cstmr.cstmr.legalpersoncomposite.customevents</module>
+				<module>../../../../source/frontend/customer/web/cstmr.cstmr.legalpersoncomposite.services</module>	
+				<!--nuevos-->
+				<!--cambio de lugar el prospect-->
+				<module>../../../../source/frontend/customer/web/cstmr.cstmr.prospectcomposite.customevents</module>
+				<module>../../../../source/frontend/customer/web/cstmr.cstmr.prospectcomposite.services</module>
+				<module>../../../../source/frontend/customer/web/cstmr.cstmr.referencesform.customevents</module>
+				<module>../../../../source/frontend/customer/web/cstmr.cstmr.referencesform.services</module>	
+				<module>../../../../source/frontend/customer/web/cstmr.cstmr.referencespopupform.customevents</module>
+				<module>../../../../source/frontend/customer/web/cstmr.cstmr.referencespopupform.services</module>
+				<module>../../../../source/frontend/customer/web/cstmr.cstmr.relationform.customevents</module>
+				<module>../../../../source/frontend/customer/web/cstmr.cstmr.relationform.services</module>
+				<module>../../../../source/frontend/customer/web/cstmr.cstmr.modificationcurprfcform.customevents</module>
+				<module>../../../../source/frontend/customer/web/cstmr.cstmr.modificationcurprfcform.services</module>
+				<!--Traspasos-->
+                <module>../../../../source/frontend/customer/web/cstmr.cstmr.transferrequestform.customevents</module>
+				<module>../../../../source/frontend/customer/web/cstmr.cstmr.transferrequestform.services</module>
+                <module>../../../../source/frontend/customer/web/cstmr.cstmr.authorizationtransferform.customevents</module>
+				<module>../../../../source/frontend/customer/web/cstmr.cstmr.authorizationtransferform.services</module>
+                <module>../../../../source/frontend/customer/web/cstmr.cstmr.authorizationtransferdetailform.customevents</module>
+				<module>../../../../source/frontend/customer/web/cstmr.cstmr.authorizationtransferdetailform.services</module>
+								<!--Matriz de Alertas-->
+				<module>../../../../source/frontend/customer/web/cstmr.cstmr.addalertsform.customevents</module>
+				<module>../../../../source/frontend/customer/web/cstmr.cstmr.addalertsform.services</module>
+				<module>../../../../source/frontend/customer/web/cstmr.cstmr.viewalertsform.customevents</module>
+				<module>../../../../source/frontend/customer/web/cstmr.cstmr.viewalertsform.services</module>
+<!---->
+				<module>../../../../source/frontend/customer/web/cobis-web-customer-views</module>
+				<module>../cobis-customer-installer</module>
+				<!-- fin de proyectos de ejemplo -->
+			</modules>
+		</profile>
+	</profiles>
+
+</project>

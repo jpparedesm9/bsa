@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<procedure>
+  <database>cob_custodia</database>
+  <name>sp_consult3</name>
+  <type>SYBASE</type>
+  <version>1</version>
+  <parameters>
+    <parameter name="@s_date" dataType="datetime" direction="in" />
+    <parameter name="@t_trn" dataType="smallint" direction="in" />
+    <parameter name="@t_debug" dataType="char" direction="in" />
+    <parameter name="@t_file" dataType="varchar" direction="in" />
+    <parameter name="@t_from" dataType="varchar" direction="in" />
+    <parameter name="@i_operacion" dataType="char" direction="in" />
+    <parameter name="@i_filial" dataType="tinyint" direction="in" />
+    <parameter name="@i_sucursal" dataType="smallint" direction="in" />
+    <parameter name="@i_tipo_cust" dataType="varchar" direction="in" />
+    <parameter name="@i_custodia" dataType="int" direction="in" />
+    <parameter name="@i_codigo_externo" dataType="varchar" direction="in" />
+    <parameter name="@i_producto" dataType="varchar" direction="in" />
+    <parameter name="@i_operac" dataType="varchar" direction="in" />
+    <parameter name="@i_modo" dataType="tinyint" direction="in" />
+    <parameter name="@i_tipo" dataType="tinyint" direction="in" />
+    <parameter name="@i_tramite" dataType="int" direction="in" />
+    <parameter name="@i_formato_fecha" dataType="tinyint" direction="in" />
+  </parameters>
+  <queries>
+    <query>
+      <columns>
+        <column name="LINEID" />
+        <column name="LINE TYPE" />
+        <column name="LIMIT" />
+        <column name="AMOUNT USED" />
+        <column name="DUE DATE" />
+        <column name="DEBTOR" />
+        <column name="CURRENCY" />
+        <column name="CREDIT CODE" />
+        <column name="AVAILABLE AMOUNT" />
+        <column name="ACCOUNT" />
+        <column name="CARD No." />
+      </columns>
+      <queryText></queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="OPERATION TYPE" />
+        <column name="OPERATION" />
+        <column name="CURRENCY" />
+        <column name="APPROVED AMOUNT" />
+        <column name="PRINCIPAL BALANCE" />
+        <column name="DUE DATE" />
+        <column name="BORROWER ID" />
+        <column name="BORROWER NAME" />
+        <column name="CREDIT CODE" />
+      </columns>
+      <queryText></queryText>
+    </query>
+  </queries>
+</procedure>

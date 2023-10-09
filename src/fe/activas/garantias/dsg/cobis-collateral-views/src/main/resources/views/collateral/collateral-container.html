@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html ng-app="collateral" lang="en">
+
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title translate>COMMONS.CONTAINER.TIT_CONTAINER</title>
+
+<script id="CEN" src="${contextPath}/cobis/web/scripts/commons/cobis.censupport.js"></script>
+<script src="${contextPath}/cobis/web/scripts/lib/jquery/jquery-1.9.1.min.js"></script>
+<script src="${contextPath}/cobis/web/scripts/lib/jquery/jquery.blockUI.js" type="text/javascript"></script>
+<script src="${contextPath}/cobis/web/scripts/lib/jquery/jquery.validate.min.js" type="text/javascript"></script>
+<script src="${contextPath}/cobis/web/scripts/lib/angular/angular.js"></script>
+<script src="${contextPath}/cobis/web/scripts/lib/angular/angular-resource.min.js"></script>
+<script src="${contextPath}/cobis/web/scripts/lib/angular/angular-route.min.js"></script>
+<script src="${contextPath}/cobis/web/scripts/lib/angular/angular-translate.min.js"></script>
+<script src="${contextPath}/cobis/web/scripts/lib/angular/angular-translate-loader-partial.min.js"></script>
+<script src="${contextPath}/cobis/web/scripts/lib/angular/angular-translate-storage-local.min.js" type="text/javascript"></script>
+<script src="${contextPath}/cobis/web/scripts/lib/angular/angular-translate-storage-cookie.min.js" type="text/javascript"></script>
+<script src="${contextPath}/cobis/web/scripts/lib/angular/ocLazyLoad.min.js"></script>
+<script src="${contextPath}/cobis/web/scripts/lib/bootstrap/bootstrap.min.js"></script>
+<script src="${contextPath}/cobis/web/scripts/lib/bootstrap/ui-bootstrap-tpls.min.js"></script>
+<script src="${contextPath}/cobis/web/scripts/lib/kendo/kendo.web.min.js"></script>
+<script src="${contextPath}/cobis/web/scripts/lib/kendo/ExtComboBox.js"></script>
+<script src="${contextPath}/cobis/web/scripts/lib/kendo/ExtDatePicker.js"></script>
+<script src="${contextPath}/cobis/web/scripts/lib/kendo/ExtMaskedTextBox.js"></script>
+<script src="${contextPath}/cobis/web/scripts/lib/kendo/kiui.min.js"></script>
+<script src="${contextPath}/cobis/web/scripts/lib/kendo/ExtComboMultiSelect.js"></script>
+<script src="${contextPath}/cobis/web/scripts/lib/kendo/ExtTimePicker.js"></script>
+<script src="${contextPath}/cobis/web/scripts/lib/kendo/ExtGrid.js"></script>
+<script src="${contextPath}/cobis/web/scripts/lib/kendo/jszip.min.js"></script>
+<script src="${contextPath}/cobis/web/scripts/lib/angular/angular-cookies.min.js"></script>
+<script src="${contextPath}/cobis/web/scripts/lib/script/script.js"></script>
+<script src="${contextPath}/cobis/web/scripts/commons/cobis.commons.js"></script>
+<script src="${contextPath}/cobis/web/scripts/commons/module.cobis.js"></script>
+<script src="${contextPath}/cobis/web/scripts/commons/designerCommons.js"></script>
+<script src="${contextPath}/cobis/web/scripts/commons/designerBreadcrumbs.js"></script>
+<script src="${contextPath}/cobis/web/scripts/commons/designerDirectives.js"></script>
+<script src="${contextPath}/cobis/web/scripts/commons/designerCRUD.js"></script>
+<script src="${contextPath}/cobis/web/scripts/commons/designer.js"></script>
+<script src="${contextPath}/cobis/web/scripts/commons/designerCustomEvents.js"></script>
+<script src="${contextPath}/cobis/web/scripts/commons/designerPopover.js"></script>
+<link href="${contextPath}/cobis/web/styles/bootstrap/bootstrap.min.css" rel="stylesheet" />
+<link href="${contextPath}/cobis/web/styles/theme.css" rel="stylesheet" />
+<link href="${contextPath}/cobis/web/views/WARRA/header/assets/styles/WARRANTY.css" rel="stylesheet" />
+<script type="text/javascript" src="controllers/collateral-container-ctrl.js"></script>
+<script type="text/javascript" src="services/collateral-container-srv.js"></script>
+
+    <style>
+        .popover-title {
+            color: #333;
+        }
+		#VC_RRCAI67_WACRI_884+.cb-navbar nav {
+			position: fixed;
+			right: 0;
+			left: 0;
+		}
+		
+		#NAVIGATIONBUTTONBAR {
+			position: fixed;
+			right: 0;
+			left: 0;
+		}
+    </style>
+
+</head>
+<!-- Change the app name -->
+
+<body>
+	<div ng-controller="collateral.collateralContainerController" class="ng-scope">
+	<div id="validator"  class="cb-view" kendo-validator="validator" k-options="validatorOptions"></div>
+		<div class="cb-viewport cb-flex cb-column">
+			<div class="cb-form-header cb-no-margin" style="height:113px">
+					<div designer-form-load form="vc.viewState.header" ></div>
+			</div>
+			<div id="container" class="k-tabstrip-wrapper cb-flex cb-grow " >
+				<div kendo-tab-strip class="cb-flex cb-column cb-grow" style="width:90%">
+					<ul>
+						<li id="tab1" class="k-state-active">
+						</li>
+					</ul>
+					<div  class="cb-grow cb-no-padding" style="position:relative; padding:0;overflow:overlay">
+						<div designer-form-load form="vc.viewState.content" ></div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>
+

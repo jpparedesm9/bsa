@@ -1,0 +1,30 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.cobiscorp.ecobis</groupId>
+	<artifactId>cobis-web-assets-busin-build</artifactId>
+	<version>1.0.0</version>
+	<packaging>pom</packaging>
+	<name>obis-web-assets-busin-build</name>
+	<url>http://www.cobiscorp.com/</url>
+	<profiles>
+		<profile>
+			<id>env-hardening</id>
+			<modules>
+				<module>../../source/frontend/web/commons/busin.domains</module>
+				<module>../../source/frontend/web/commons/busin.services</module>
+				<module>../../source/frontend/web/commons/busin-commons-dto</module>
+				<module>../../source/frontend/web/commons/busin-commons-services</module>				
+				<module>../../source/frontend/web/commons/busin.flcre.commons</module>				
+				<module>../../source/frontend/web/events/busin.flcre.tpaymentplan.customevents</module>
+				<module>../../source/frontend/web/events/busin.flcre.category.customevents</module>
+				<module>../../source/frontend/web/events/busin.flcre.entrywarranty.customevents</module>
+				<module>../../source/frontend/web/events/busin.flcre.guaranteessearch.customevents</module>
+				<!-- <module>../../source/frontend/events/busin.flcre.warrantiescreation.customevents</module> -->
+				<module>../../source/frontend/web/events/busin.flcre.plazofijoporcliente.customevents</module>
+				<module>../../source/frontend/web/view/cobis-business-process-web-views</module>				
+				<module>../cobis-web-assets-busin-installer</module>
+			</modules>
+		</profile>
+	</profiles>
+</project>

@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<procedure>
+  <database>cob_cartera</database>
+  <name>sp_consulta_operaciones</name>
+  <type>SQLSERVER</type>
+  <version>1</version>
+  <parameters>
+    <parameter name="@s_user" dataType="varchar" direction="in" />
+    <parameter name="@s_term" dataType="varchar" direction="in" />
+    <parameter name="@s_date" dataType="datetime" direction="in" />
+    <parameter name="@i_operacion" dataType="char" direction="in" />
+    <parameter name="@i_id_persona_grupo" dataType="int" direction="in" />
+    <parameter name="@i_tipo" dataType="char" direction="in" />
+    <parameter name="@i_corresponsal" dataType="varchar" direction="in" />
+    <parameter name="@i_debug" dataType="char" direction="in" />
+  </parameters>
+  <queries>
+    <query>
+      <columns>
+        <column name="ID_OPERACION" />
+        <column name="TIPO_OPERACION" />
+        <column name="MONTO_PAGO" />
+        <column name="MONTO_MAXIMO" />
+        <column name="MONTO_MINIMO" />
+        <column name="REFERENCIA" />
+        <column name="FECHA_LIMITE_PAGO" />
+        <column name="CORREO" />
+        <column name="ID_ULT_PAGO" />
+        <column name="MONTO_SUGERIDO" />
+        <column name="NOMBRE" />
+      </columns>
+      <queryText>SELECT  "ID_OPERACION" = 0,"TIPO_OPERACION" = 0,"MONTO_PAGO" = 0,"MONTO_MAXIMO" = 0,"MONTO_MINIMO" = 0,"REFERENCIA" = 0,"FECHA_LIMITE_PAGO" = 0,"CORREO" = email,"ID_ULT_PAGO" = id_ult_pago,"MONTO_SUGERIDO" = 0,"NOMBRE" = 0 </queryText>
+    </query>
+  </queries>
+</procedure>

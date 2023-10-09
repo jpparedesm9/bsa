@@ -1,0 +1,57 @@
+use cobis
+go
+if exists (select * from sysobjects where name = 'tgd_an_role_module')
+    drop trigger tgd_an_role_module
+go
+create trigger tgd_an_role_module
+on an_role_module
+for delete
+as
+begin
+    declare
+        @w_rm_mo_id     int,
+        @w_rm_rol       tinyint,
+        @w_id           int
+ 
+    declare cu_deleted cursor for
+        select
+            rm_mo_id,
+            rm_rol
+        from deleted
+ 
+    open cu_deleted
+    fetch cu_deleted into
+        @w_rm_mo_id,
+        @w_rm_rol
+ 
+    while @@FETCH_STATUS=0
+    begin
+        select @w_id = sq_siguiente
+        from cob_distrib..di_seqnos
+        where sq_tabla = 'di_log'
+ 
+        update cob_distrib..di_seqnos
+        set sq_siguiente = sq_siguiente + 1
+        where sq_tabla = 'di_log'
+ 
+        insert into cob_distrib..di_log (
+            lg_id, lg_fecha, lg_operacion, lg_objeto)
+        values (@w_id, getdate(), 'D', 'cobis..sp_an_role_module_tg')
+        
+        insert into cob_distrib..di_parametro (
+            pa_id, pa_nombre, pa_tipodato, pa_longitud, pa_int)
+        values (@w_id, '@i_rm_mo_id', 56, isnull(datalength(@w_rm_mo_id), 0), @w_rm_mo_id)
+
+        insert into cob_distrib..di_parametro (
+            pa_id, pa_nombre, pa_tipodato, pa_longitud, pa_tinyint)
+        values (@w_id, '@i_rm_rol', 48, isnull(datalength(@w_rm_rol), 0), @w_rm_rol)
+        
+        fetch cu_deleted into
+                @w_rm_mo_id,
+                @w_rm_rol
+ 
+    end
+    close cu_deleted
+    deallocate cu_deleted    
+end
+go

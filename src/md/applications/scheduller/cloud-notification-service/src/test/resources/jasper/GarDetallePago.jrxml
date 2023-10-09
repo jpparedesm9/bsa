@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="GarDetallePago" pageWidth="555" pageHeight="802" whenNoDataType="AllSectionsNoDetail" columnWidth="555" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="deec1b21-1036-4734-948b-164547062a2b">
+	<property name="ireport.zoom" value="1.5"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="SUBREPORT_DIR" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["/"]]></defaultValueExpression>
+	</parameter>
+	<field name="nombreCliente" class="java.lang.String"/>
+	<field name="seguroVida" class="java.lang.Double"/>
+	<field name="pagoAdelantado" class="java.lang.Double"/>
+	<field name="asistenciaMedica" class="java.lang.Double"/>
+	<variable name="sumSegVida" class="java.lang.Double" calculation="Sum">
+		<variableExpression><![CDATA[$F{seguroVida}]]></variableExpression>
+	</variable>
+	<variable name="sumPagoAdel" class="java.lang.Double" calculation="Sum">
+		<variableExpression><![CDATA[$F{pagoAdelantado}]]></variableExpression>
+	</variable>
+	<variable name="sumTotal" class="java.lang.Double" calculation="Sum">
+		<variableExpression><![CDATA[new Double(($F{seguroVida}.doubleValue())+($F{asistenciaMedica}.doubleValue())+($F{pagoAdelantado}.doubleValue()))]]></variableExpression>
+	</variable>
+	<variable name="sumAsistenciaMedica" class="java.lang.Double" calculation="Sum">
+		<variableExpression><![CDATA[$F{asistenciaMedica}]]></variableExpression>
+	</variable>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<columnHeader>
+		<band height="45">
+			<staticText>
+				<reportElement positionType="Float" stretchType="RelativeToBandHeight" x="1" y="0" width="232" height="45" uuid="bd307ebd-7a5d-4340-a6af-414be1ec8739"/>
+				<box>
+					<topPen lineWidth="0.5" lineColor="#00C7B1"/>
+					<bottomPen lineWidth="0.5" lineColor="#00C7B1"/>
+					<rightPen lineWidth="0.5" lineColor="#00C7B1"/>
+				</box>
+				<textElement verticalAlignment="Middle" markup="none">
+					<font fontName="SansSerif" size="8" isBold="true"/>
+					<paragraph leftIndent="3"/>
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="233" y="0" width="96" height="45" uuid="755c1921-c4f2-47f4-ac38-5febcade4c98"/>
+				<box>
+					<topPen lineWidth="0.5" lineColor="#00C7B1"/>
+					<leftPen lineWidth="0.5" lineColor="#00C7B1"/>
+					<bottomPen lineWidth="0.5" lineColor="#00C7B1"/>
+					<rightPen lineWidth="0.0" lineColor="#00C7B1"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="html">
+					<font fontName="SansSerif" size="10" isBold="false" pdfFontName="Helvetica-Bold"/>
+					<paragraph leftIndent="3"/>
+				</textElement>
+				<text><![CDATA[<b>SEGURO</b> DE VIDA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" stretchType="RelativeToBandHeight" x="445" y="0" width="110" height="45" uuid="c7fb3a27-cba5-4f73-ab7c-b31568e757f2"/>
+				<box>
+					<topPen lineWidth="0.5" lineColor="#00C7B1"/>
+					<leftPen lineWidth="0.5" lineColor="#00C7B1"/>
+					<bottomPen lineWidth="0.5" lineColor="#00C7B1"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="html">
+					<font fontName="SansSerif" size="10" isBold="false"/>
+					<paragraph leftIndent="3"/>
+				</textElement>
+				<text><![CDATA[<b>PAGO</b> ADELANTADO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="329" y="0" width="116" height="45" uuid="8a7f4963-1d46-4479-bee4-c703ea979afd"/>
+				<box>
+					<topPen lineWidth="0.5" lineColor="#00C7B1"/>
+					<leftPen lineWidth="0.5" lineColor="#00C7B1"/>
+					<bottomPen lineWidth="0.5" lineColor="#00C7B1"/>
+					<rightPen lineWidth="0.0" lineColor="#00C7B1"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="html">
+					<font fontName="SansSerif" size="10" isBold="false" pdfFontName="Helvetica-Bold"/>
+					<paragraph leftIndent="3"/>
+				</textElement>
+				<text><![CDATA[<b>ASISTENCIA MÉDICA </b>(OPCIONAL)]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="16">
+			<textField isBlankWhenNull="true">
+				<reportElement x="1" y="0" width="232" height="16" uuid="4b7a8a0d-e1bb-4220-b01d-4121b399ace6"/>
+				<box>
+					<topPen lineWidth="0.5" lineColor="#00C7B1"/>
+					<bottomPen lineWidth="0.5" lineColor="#00C7B1"/>
+					<rightPen lineWidth="0.5" lineColor="#00C7B1"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{nombreCliente}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0.00" isBlankWhenNull="true">
+				<reportElement x="233" y="0" width="96" height="16" uuid="e24d450a-9222-49e1-8e65-3b4dc949b036"/>
+				<box>
+					<topPen lineWidth="0.5" lineColor="#00C7B1"/>
+					<leftPen lineWidth="0.5" lineColor="#00C7B1"/>
+					<bottomPen lineWidth="0.5" lineColor="#00C7B1"/>
+					<rightPen lineWidth="0.5" lineColor="#00C7B1"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{seguroVida}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0.00" isBlankWhenNull="true">
+				<reportElement x="445" y="0" width="110" height="16" uuid="f07834c7-8a6e-45ec-acb4-560bf3d5edf6"/>
+				<box>
+					<topPen lineWidth="0.5" lineColor="#00C7B1"/>
+					<leftPen lineWidth="0.5" lineColor="#00C7B1"/>
+					<bottomPen lineWidth="0.5" lineColor="#00C7B1"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{pagoAdelantado}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0.00" isBlankWhenNull="true">
+				<reportElement x="329" y="0" width="116" height="16" uuid="13ec6c30-3b1b-479b-8bf9-9b746871e2ee"/>
+				<box>
+					<topPen lineWidth="0.5" lineColor="#00C7B1"/>
+					<leftPen lineWidth="0.5" lineColor="#00C7B1"/>
+					<bottomPen lineWidth="0.5" lineColor="#00C7B1"/>
+					<rightPen lineWidth="0.5" lineColor="#00C7B1"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{asistenciaMedica}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="16">
+			<textField pattern="#,##0.00" isBlankWhenNull="true">
+				<reportElement x="233" y="0" width="96" height="16" uuid="679e75b2-9b96-4c4a-a7c8-27cd511542b3"/>
+				<box>
+					<topPen lineWidth="0.5" lineColor="#00C7B1"/>
+					<leftPen lineWidth="0.5" lineColor="#00C7B1"/>
+					<bottomPen lineWidth="0.5" lineColor="#00C7B1"/>
+					<rightPen lineWidth="0.5" lineColor="#00C7B1"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{sumSegVida}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0.00" isBlankWhenNull="true">
+				<reportElement x="445" y="0" width="110" height="16" uuid="a4393707-e829-46da-9aba-52ca169a3d06"/>
+				<box>
+					<topPen lineWidth="0.5" lineColor="#00C7B1"/>
+					<leftPen lineWidth="0.5" lineColor="#00C7B1"/>
+					<bottomPen lineWidth="0.5" lineColor="#00C7B1"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{sumPagoAdel}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement positionType="Float" stretchType="RelativeToBandHeight" x="1" y="0" width="232" height="16" uuid="11070947-25e9-4cf8-8114-ef7dc5e348f1"/>
+				<box>
+					<topPen lineWidth="0.5" lineColor="#00C7B1"/>
+					<bottomPen lineWidth="0.5" lineColor="#00C7B1"/>
+					<rightPen lineWidth="0.5" lineColor="#00C7B1"/>
+				</box>
+				<textElement verticalAlignment="Middle" markup="none">
+					<font fontName="SansSerif" size="8" isBold="true"/>
+					<paragraph leftIndent="3"/>
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<textField pattern="#,##0.00" isBlankWhenNull="true">
+				<reportElement x="329" y="0" width="116" height="16" uuid="aa245ea9-e475-40e7-a7ab-35afa746382a"/>
+				<box>
+					<topPen lineWidth="0.5" lineColor="#00C7B1"/>
+					<leftPen lineWidth="0.5" lineColor="#00C7B1"/>
+					<bottomPen lineWidth="0.5" lineColor="#00C7B1"/>
+					<rightPen lineWidth="0.5" lineColor="#00C7B1"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{sumAsistenciaMedica}]]></textFieldExpression>
+			</textField>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="16">
+			<staticText>
+				<reportElement x="1" y="0" width="334" height="16" forecolor="#000000" uuid="bec07719-f97e-476f-81dd-ee06cfa1fe00"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="10" isBold="true" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<text><![CDATA[TOTAL A PAGAR]]></text>
+			</staticText>
+			<textField pattern="#,##0.00" isBlankWhenNull="true">
+				<reportElement x="445" y="0" width="110" height="16" uuid="bf828c47-ebcb-41a6-8410-2081da744089"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8" isBold="true" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{sumTotal}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+</jasperReport>

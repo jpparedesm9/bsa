@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<procedure>
+  <database>cob_cartera</database>
+  <name>sp_tcca_destino</name>
+  <type>SYBASE</type>
+  <version>1</version>
+  <parameters>
+    <parameter name="@i_operacion" dataType="char" direction="in" />
+    <parameter name="@i_tipo_cca" dataType="varchar" direction="in" />
+    <parameter name="@i_destino" dataType="varchar" direction="in" />
+    <parameter name="@i_actividad" dataType="varchar" direction="in" />
+    <parameter name="@i_tipo_cca_b" dataType="varchar" direction="in" />
+    <parameter name="@i_destino_b" dataType="varchar" direction="in" />
+    <parameter name="@i_modo" dataType="tinyint" direction="in" />
+  </parameters>
+  <queries>
+    <query>
+      <columns>
+        <column name="Tipo Cartera" />
+        <column name="Desc.Cartera" />
+        <column name="Destino" />
+        <column name="Desc.Destino" />
+        <column name="Actividad" />
+        <column name="Desc.Actividad" />
+      </columns>
+      <queryText>SELECT  "Tipo Cartera" = td_tipo_cca,"Desc.Cartera" = (SELECT  valor FROM cobis..cl_catalogo y  ,cobis..cl_tabla t   WHERE t.tabla = "ca_tipo_cartera" AND y.tabla = t.codigo AND y.codigo = a.td_tipo_cca     ),"Destino" = td_destino,"Desc.Destino" = (SELECT  valor FROM cobis..cl_catalogo y  ,cobis..cl_tabla t   WHERE t.tabla = "cr_destino" AND y.tabla = t.codigo AND y.codigo = a.td_destino     ),"Actividad" = td_act_economica,"Desc.Actividad" = (SELECT  ae_descripcion FROM cobis..cl_act_economica   WHERE ae_codigo = a.td_act_economica     ) </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="{1}" />
+      </columns>
+      <queryText>SELECT 20</queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="{1}" />
+        <column name="{2}" />
+        <column name="{3}" />
+        <column name="{4}" />
+        <column name="{5}" />
+        <column name="{6}" />
+      </columns>
+      <queryText>SELECT w_tipo_cca, w_tipo_cca_des, w_destino, w_destino_des, w_actividad, w_actividad_des</queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="Destino Finan." />
+        <column name="Descripcion" />
+      </columns>
+      <queryText>SELECT  "Destino Finan." = td_destino,"Descripcion" = (SELECT  valor FROM cobis..cl_catalogo y  ,cobis..cl_tabla t   WHERE t.tabla = "cr_destino" AND y.tabla = t.codigo AND y.codigo = a.td_destino     ) </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="Destino Finan" />
+        <column name="Descripcion" />
+      </columns>
+      <queryText>SELECT  "Destino Finan" = b.codigo,"Descripcion" = b.valor </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="Descripcion" />
+      </columns>
+      <queryText>SELECT  "Descripcion" = b.valor </queryText>
+    </query>
+  </queries>
+</procedure>

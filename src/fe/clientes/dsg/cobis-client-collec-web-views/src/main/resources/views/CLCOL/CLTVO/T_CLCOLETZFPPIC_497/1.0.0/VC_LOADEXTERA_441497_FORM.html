@@ -1,0 +1,119 @@
+<!-- Designer Generator v 6.4.0.5 - SPR 2019-03 15/02/2019 -->
+<html>
+ <head></head>
+ <body>
+  <div id="bc_VC_LOADEXTERA_441497" class="cb-breadcrumb" ng-if="!vc.isModal(this) && !vc.isDetailGrid(this) && !isDesignerInclude" ng-class="vc.viewState.VC_LOADEXTERA_441497.style"> 
+   <ol class="breadcrumb"> 
+    <li>Inicio</li> 
+    <li ng-repeat="breadcrumb in breadcrumbs.get() track by breadcrumb.path" ng-class="{ active: !$last }"> {{ breadcrumb.label | translate }} </li> 
+   </ol> 
+  </div> 
+  <!-- Inicio item VW_LOADEXTEVA_757--> 
+  <div id="VC_LOADEXTERA_441497" ng-keydown="vc.viewState.keyDown($event)" class=" cb-view-container-root cb-view-container cb-group-layout" ng-class="{'container':!vc.isModal(this) && !vc.isDetailGrid(this) && !isDesignerInclude && true, 'container-fluid':vc.isModal(this) || isDesignerInclude || false}"> 
+   <div id="G_LOADEXTVDO_653757" ng-show="vc.viewState.G_LOADEXTVDO_653757.visible" ng-class="vc.viewState.G_LOADEXTVDO_653757.style" class="cb-group cb-group-simple"> 
+    <div kendo-validator="G_LOADEXTVDO_653757" k-options="validatorOptions" id="G_LOADEXTVDO_653757_VAL"> 
+     <div class="form-vertical"> 
+      <div class="row"> 
+       <div class="col-xs-6" ng-show="vc.viewState.VA_1BNOXXDXEIKXBOP_815757.visible"> 
+        <div class="form-group" id="VA_1BNOXXDXEIKXBOP_815757_DIV"> 
+         <label for="VA_1BNOXXDXEIKXBOP_815757" title="{{vc.viewState.VA_1BNOXXDXEIKXBOP_815757.label|translate:vc.viewState.VA_1BNOXXDXEIKXBOP_815757.labelArgs}}" ng-show="vc.viewState.VA_1BNOXXDXEIKXBOP_815757.visible" class="control-label">{{vc.viewState.VA_1BNOXXDXEIKXBOP_815757.label|translate:vc.viewState.VA_1BNOXXDXEIKXBOP_815757.labelArgs}}</label> 
+         <div class="cb-control"> 
+          <div class="input-group"> 
+           <div ng-hide="vc.viewState.uploadVisible"> 
+            <input name="fileUploader" id="fileUploader" type="file" kendo-upload k-async="{
+saveUrl: '${contextPath}/cobis/web/cobis-designer-engine-web/actions/fileupload?',
+autoUpload: true
+}" k-select="vc.onFileSelect" k-upload="vc.onFileUpload" k-success="vc.onSuccess" k-multiple="false" /> 
+           </div> 
+           <input id="VA_1BNOXXDXEIKXBOP_815757" type="text" class="form-control" name="CollectiveAdvisorFile_nameFile" ng-model="vc.model.CollectiveAdvisorFile.nameFile" designer-restrict-input="lock" ng-disabled="vc.viewState.VA_1BNOXXDXEIKXBOP_815757.disabled || vc.viewState.VA_1BNOXXDXEIKXBOP_815757.disabledingroup" data-validation-code="{{vc.viewState.VA_1BNOXXDXEIKXBOP_815757.validationCode}}" /> 
+           <div class="input-group-btn"> 
+            <div ng-hide="vc.viewState.VA_1BNOXXDXEIKXBOP_815757.disableUpload"> 
+             <button class="btn btn-default btn-block" alt="Adjuntar archivo" ng-disabled="vc.viewState.VA_1BNOXXDXEIKXBOP_815757.disabled || vc.viewState.VA_1BNOXXDXEIKXBOP_815757.disabledingroup" ng-mouseup="vc.clickFileUploader()" ng-mousedown="vc.executeCommand('VA_1BNOXXDXEIKXBOP_815757','DSG_UPLOAD_FILE_',validator,false, false,'', false)" ng-show="vc.viewState.VA_1BNOXXDXEIKXBOP_815757.visible" ng-class="vc.viewState.VA_1BNOXXDXEIKXBOP_815757.style"> <span class="glyphicon glyphicon-paperclip"></span> </button> 
+            </div> 
+            <div ng-show="vc.viewState.VA_1BNOXXDXEIKXBOP_815757.disableUpload"> 
+             <button class="btn btn-primary btn-block" ng-show="vc.viewState.VA_1BNOXXDXEIKXBOP_815757.visible" ng-class="vc.viewState.VA_1BNOXXDXEIKXBOP_815757.style"> <span class="glyphicon glyphicon-ok"></span> </button> 
+            </div> 
+           </div> 
+           <div class="input-group-btn"> 
+            <button class="btn btn-default btn-block" alt="Eliminar archivo" ng-disabled="!vc.viewState.VA_1BNOXXDXEIKXBOP_815757.disableUpload" ng-click="vc.removeFile('VA_1BNOXXDXEIKXBOP_815757')" ng-show="vc.viewState.VA_1BNOXXDXEIKXBOP_815757.visible" ng-class="vc.viewState.VA_1BNOXXDXEIKXBOP_815757.style"> <span class="glyphicon glyphicon-remove-circle"></span> </button> 
+           </div> 
+          </div> 
+         </div> 
+        </div> 
+       </div> 
+       <div class="col-xs-3" ng-show="vc.viewState.VA_VABUTTONMZTUDER_769757.visible"> 
+        <div class="form-group"> 
+         <label class="control-label">&nbsp;</label> 
+         <div class="cb-control"> 
+          <button id="VA_VABUTTONMZTUDER_769757" class="btn btn-default btn-block" ng-click="vc.executeCommand('VA_VABUTTONMZTUDER_769757','',validator,false, false,'', false)" ng-disabled="vc.viewState.VA_VABUTTONMZTUDER_769757.disabled || vc.viewState.VA_VABUTTONMZTUDER_769757.disabledingroup" ng-show="vc.viewState.VA_VABUTTONMZTUDER_769757.visible" ng-class="vc.viewState.VA_VABUTTONMZTUDER_769757.style"> {{vc.viewState.VA_VABUTTONMZTUDER_769757.label|translate}} </button> 
+         </div> 
+        </div> 
+       </div> 
+       <div class="col-xs-3" ng-show="vc.viewState.VA_VABUTTONQOPUGSB_200757.visible"> 
+        <div class="form-group"> 
+         <label class="control-label">&nbsp;</label> 
+         <div class="cb-control"> 
+          <button id="VA_VABUTTONQOPUGSB_200757" class="btn btn-default btn-block" ng-click="vc.executeCommand('VA_VABUTTONQOPUGSB_200757','VA_VABUTTONQOPUGSB_200757',validator,false, false,'', false)" ng-disabled="vc.viewState.VA_VABUTTONQOPUGSB_200757.disabled || vc.viewState.VA_VABUTTONQOPUGSB_200757.disabledingroup" ng-show="vc.viewState.VA_VABUTTONQOPUGSB_200757.visible" ng-class="vc.viewState.VA_VABUTTONQOPUGSB_200757.style"> {{vc.viewState.VA_VABUTTONQOPUGSB_200757.label|translate}} </button> 
+         </div> 
+        </div> 
+       </div> 
+      </div> 
+     </div> 
+    </div> 
+   </div> 
+   <div id="G_LOADEXTLRO_415757" ng-show="vc.viewState.G_LOADEXTLRO_415757.visible" ng-class="vc.viewState.G_LOADEXTLRO_415757.style" class="cb-group cb-group-simple"> 
+    <div kendo-validator="G_LOADEXTLRO_415757" k-options="validatorOptions" id="G_LOADEXTLRO_415757_VAL"> 
+     <div class="form-vertical"> 
+      <div class="row"> 
+       <div class="col-xs-3" ng-show="vc.viewState.VA_VABUTTONXICAMDT_820757.visible"> 
+        <div class="form-group"> 
+         <label class="control-label">&nbsp;</label> 
+         <div class="cb-control"> 
+          <button id="VA_VABUTTONXICAMDT_820757" class="btn btn-default btn-block" ng-click="vc.executeCommand('VA_VABUTTONXICAMDT_820757','',validator,false, false,'', false)" ng-disabled="vc.viewState.VA_VABUTTONXICAMDT_820757.disabled || vc.viewState.VA_VABUTTONXICAMDT_820757.disabledingroup" ng-show="vc.viewState.VA_VABUTTONXICAMDT_820757.visible" ng-class="vc.viewState.VA_VABUTTONXICAMDT_820757.style"> {{vc.viewState.VA_VABUTTONXICAMDT_820757.label|translate}} </button> 
+         </div> 
+        </div> 
+       </div> 
+       <div class="col-xs-3" ng-show="vc.viewState.Spacer1328.visible"> 
+        <div class="form-group cb-spacer"> 
+         <label class="control-label">&nbsp;</label> 
+         <span class="cb-control"></span> 
+        </div> 
+       </div> 
+       <div class="col-xs-3" ng-show="vc.viewState.VA_VASIMPLELABELLL_604757.visible"> 
+        <div class="form-group"> 
+         <label class="control-label">&nbsp;</label> 
+         <div class="cb-control"> 
+          <label id="VA_VASIMPLELABELLL_604757" ng-show="vc.viewState.VA_VASIMPLELABELLL_604757.visible" ng-class="vc.viewState.VA_VASIMPLELABELLL_604757.style"> {{vc.viewState.VA_VASIMPLELABELLL_604757.label|translate}} </label>
+         </div> 
+        </div> 
+       </div> 
+       <div class="col-xs-3" ng-show="vc.viewState.VA_VASIMPLELABELLL_164757.visible"> 
+        <div class="form-group"> 
+         <label class="control-label">&nbsp;</label> 
+         <div class="cb-control"> 
+          <label id="VA_VASIMPLELABELLL_164757" ng-show="vc.viewState.VA_VASIMPLELABELLL_164757.visible" ng-class="vc.viewState.VA_VASIMPLELABELLL_164757.style"> {{'&nbsp;'}} </label>
+         </div> 
+        </div> 
+       </div> 
+      </div> 
+     </div> 
+    </div> 
+   </div> 
+   <div id="G_LOADEXTLSS_819757" ng-show="vc.viewState.G_LOADEXTLSS_819757.visible" ng-class="vc.viewState.G_LOADEXTLSS_819757.style" class="cb-group cb-group-simple"> 
+    <div kendo-validator="G_LOADEXTLSS_819757" k-options="validatorOptions" id="G_LOADEXTLSS_819757_VAL"> 
+     <div id="QV_3718_27394" kendo-ext-grid="grids.QV_3718_27394" k-data-source="vc.model.CollectiveAdvisor" k-column-menu="false" k-excel="vc.grids.QV_3718_27394.events.excel" k-sortable="false" k-pageable="{refresh: false, pageSizes: false, buttonCount: 5}" k-editable="vc.grids.QV_3718_27394.editable" k-toolbar="vc.grids.QV_3718_27394.toolbar" k-resizable="false" k-groupable="false" k-reorderable="false" k-filterable="false" k-scrollable="true" k-selectable="false" k-excel-export="vc.grids.QV_3718_27394.events.excelExport" k-data-bound="vc.grids.QV_3718_27394.events.dataBound" k-columns="vc.grids.QV_3718_27394.columns" k-cancel="vc.grids.QV_3718_27394.events.cancel" k-edit="vc.grids.QV_3718_27394.events.edit" ng-class="vc.viewState.QV_3718_27394.style" k-ng-delay="vc.afterInitData"></div> 
+    </div> 
+   </div> 
+  </div> 
+  <!-- Fin item VW_LOADEXTEVA_757--> 
+  <div class="cb-view-loading cb-view-loading-preload"> 
+   <div class="cb-view-loading-icon"></div> 
+  </div> 
+  <div class="cb-navbar cb-navbar-bottom" ng-if="vc.childVc && vc.autoSyncNavigation"> 
+   <nav ng-class="vc.getCssClass('',['navbar', 'navbar-default'] ,{'navbar-fixed-bottom': !vc.isModal(this)})"> 
+    <button id="T_CLCOLETZFPPIC_497_ACCEPT" class="btn btn-primary navbar-btn" ng-click="vc.accept(validator, $event, false, 'VC_LOADEXTERA_441497')" ng-disabled="vc.viewState.T_CLCOLETZFPPIC_497_ACCEPT.disabled || vc.viewState.T_CLCOLETZFPPIC_497_ACCEPT.disabledingroup" ng-show="vc.viewState.T_CLCOLETZFPPIC_497_ACCEPT.visible" ng-class="vc.viewState.T_CLCOLETZFPPIC_497_ACCEPT.style">{{'DSGNR.SYS_DSGNR_LBLACEPT0_00007'|translate}}</button> 
+    <button id="T_CLCOLETZFPPIC_497_CANCEL" class="btn btn-default navbar-btn" ng-click="vc.cancel(validator, $event)" ng-disabled="vc.viewState.T_CLCOLETZFPPIC_497_CANCEL.disabled || vc.viewState.T_CLCOLETZFPPIC_497_CANCEL.disabledingroup" ng-show="vc.viewState.T_CLCOLETZFPPIC_497_CANCEL.visible" ng-class="vc.viewState.T_CLCOLETZFPPIC_497_CANCEL.style">{{'DSGNR.SYS_DSGNR_LBLCANCEL_00006'|translate}}</button> 
+   </nav> 
+  </div>
+ </body>
+</html>

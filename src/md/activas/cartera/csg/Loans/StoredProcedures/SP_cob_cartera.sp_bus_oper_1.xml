@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<procedure>
+  <database>cob_cartera</database>
+  <name>sp_bus_oper</name>
+  <type>SQLSERVER</type>
+  <version>1</version>
+  <parameters>
+    <parameter name="@i_banco" dataType="varchar" direction="in" />
+    <parameter name="@i_formato_fecha" dataType="int" direction="in" />
+  </parameters>
+  <queries>
+    <query>
+      <columns>
+        <column name="TOperacion" />
+        <column name="Oficina" />
+        <column name="Moneda" />
+        <column name="Oficial" />
+        <column name="Banco" />
+        <column name="Fecha" />
+        <column name="Cliente" />
+        <column name="Nombre" />
+      </columns>
+      <queryText>SELECT "TOperacion"=w_toperacion,"Oficina"=w_oficina,"Moneda"=w_moneda,"Oficial"=w_oficial,"Banco"=w_banco,"Fecha"=w_fecha_ini,"Cliente"=w_cliente,"Nombre"=w_nombre</queryText>
+    </query>
+  </queries>
+</procedure>

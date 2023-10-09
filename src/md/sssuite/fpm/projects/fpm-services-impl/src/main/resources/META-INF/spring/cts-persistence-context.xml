@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:jee="http://www.springframework.org/schema/jee"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/jee http://www.springframework.org/schema/jee/spring-jee.xsd">
+
+	<bean id="jpaVendorAdapter" class="org.springframework.orm.jpa.vendor.OpenJpaVendorAdapter">
+		<property name="database" value="${databaseName}" />
+		<property name="showSql" value="false" />
+		<property name="generateDdl" value="false" />
+	</bean>
+
+	<bean id="dataSource" class="com.cobiscorp.cobis.jndi.CobisJndiObject">
+		<property name="jndiName" value="jdbc/CTS_BDD_MF" />
+		<property name="jndiEnvironment">
+			<props>
+				<prop key="java.naming.factory.initial">com.ibm.websphere.naming.WsnInitialContextFactory</prop>
+			</props>
+		</property>
+	</bean>
+
+	<bean id="entityManagerFactory"
+		class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
+		<property name="dataSource" ref="dataSource" />
+		<property name="jpaVendorAdapter" ref="jpaVendorAdapter" />
+		<property name="persistenceUnitName" value="JpaFpmAdministration" />
+		<property name="jpaPropertyMap">
+			<map>
+				<entry key="openjpa.jdbc.DBDictionary" value="${jpa.dbType}(CatalogSeparator='..',SetStringRightTruncationOn=false)" />
+				<entry key="openjpa.TransactionMode" value="managed" />
+				<entry key="openjpa.ConnectionFactoryMode" value="managed" />
+				<entry key="openjpa.Log" value="SQL=TRACE" />
+				<entry key="openjpa.ConnectionFactoryProperties" value="printParameters=true" />
+				<entry key="openjpa.Compatibility" value="CheckDatabaseForCascadePersistToDetachedEntity=true"/>
+			</map>
+		</property>
+	</bean>
+
+</beans>

@@ -1,0 +1,129 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<procedure>
+  <database>cob_credito</database>
+  <name>sp_deudores</name>
+  <type>SYBASE</type>
+  <version>1</version>
+  <parameters>
+    <parameter name="@s_ssn" dataType="int" direction="in" />
+    <parameter name="@s_date" dataType="datetime" direction="in" />
+    <parameter name="@s_user" dataType="varchar" direction="in" />
+    <parameter name="@s_term" dataType="varchar" direction="in" />
+    <parameter name="@s_ofi" dataType="smallint" direction="in" />
+    <parameter name="@s_srv" dataType="varchar" direction="in" />
+    <parameter name="@s_lsrv" dataType="varchar" direction="in" />
+    <parameter name="@s_sesn" dataType="int" direction="in" />
+    <parameter name="@t_rty" dataType="char" direction="in" />
+    <parameter name="@t_trn" dataType="smallint" direction="in" />
+    <parameter name="@t_debug" dataType="char" direction="in" />
+    <parameter name="@t_file" dataType="varchar" direction="in" />
+    <parameter name="@t_from" dataType="varchar" direction="in" />
+    <parameter name="@i_operacion" dataType="char" direction="in" />
+    <parameter name="@i_tramite" dataType="int" direction="in" />
+    <parameter name="@i_cliente" dataType="int" direction="in" />
+    <parameter name="@i_rol" dataType="varchar" direction="in" />
+    <parameter name="@i_ced_ruc" dataType="varchar" direction="in" />
+    <parameter name="@i_titular" dataType="int" direction="in" />
+    <parameter name="@i_operacion_cca" dataType="varchar" direction="in" />
+    <parameter name="@i_secuencial" dataType="tinyint" direction="in" />
+    <parameter name="@i_cartera" dataType="char" direction="in" />
+    <parameter name="@i_referencia" dataType="varchar" direction="in" />
+    <parameter name="@i_producto" dataType="varchar" direction="in" />
+    <parameter name="@i_cobranza" dataType="int" direction="in" />
+    <parameter name="@i_ssn" dataType="int" direction="in" />
+    <parameter name="@i_canal" dataType="tinyint" direction="in" />
+    <parameter name="@i_formato_fecha" dataType="int" direction="in" />
+    <parameter name="@i_fecha_cic" dataType="datetime" direction="in" />
+    <parameter name="@i_opcion" dataType="char" direction="in" />
+  </parameters>
+  <queries>
+    <query>
+      <columns>
+        <column name="{1}" />
+      </columns>
+      <queryText>SELECT w_seccliente</queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="Rol" />
+        <column name="Cliente" />
+        <column name="Nombre" />
+        <column name="Ced/NIT" />
+        <column name="Relacion con la Inst." />
+        <column name=" Tipo Identicacion" />
+      </columns>
+      <queryText>SELECT  "Rol" = de_rol,"Cliente" = de_cliente,"Nombre" = SUBSTRING (en_nomlar, 1, DATALENGTH (en_nomlar)),"Ced/NIT" = SUBSTRING (en_ced_ruc, 1, DATALENGTH (en_ced_ruc)),"Relacion con la Inst." = en_tipo_vinculacion + " (" + (SELECT  B.valor FROM cobis..cl_tabla A  ,cobis..cl_catalogo B   WHERE A.tabla = "cl_relacion_banco" AND B.tabla = A.codigo AND B.codigo = c.en_tipo_vinculacion     ) + ")" </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="Rol" />
+        <column name="Cliente" />
+        <column name="Nombre" />
+        <column name="Ced/NIT" />
+        <column name="Relacion con la Inst." />
+      </columns>
+      <queryText>SELECT  "Rol" = "D","Cliente" = gr_grupo,"Nombre" = SUBSTRING (gr_nombre, 1, DATALENGTH (gr_nombre)),"Ced/NIT" = SUBSTRING (gr_ruc, 1, DATALENGTH (gr_ruc)),"Relacion con la Inst." = gr_tipo_vinculacion + " (" + (SELECT  B.valor FROM cobis..cl_tabla A  ,cobis..cl_catalogo B   WHERE A.tabla = "cl_relacion_banco" AND B.tabla = A.codigo AND B.codigo = c.gr_tipo_vinculacion     ) + ")" </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="Rol" />
+        <column name="Cliente" />
+        <column name="Nombre" />
+        <column name="Ced/NIT" />
+        <column name="Relacion con la Inst." />
+        <column name="Tipo Identicacion" />
+        <column name="Calificacion" />
+        <column name="FechaCIC" />
+        <column name="Tipo" />
+        <column name="SubTipo" />
+        <column name="Nit" />
+      </columns>
+      <queryText>SELECT  "Rol" = "D","Cliente" = en_ente,"Nombre" = SUBSTRING (en_nomlar, 1, DATALENGTH (en_nomlar)),"Ced/NIT" = SUBSTRING (en_ced_ruc, 1, DATALENGTH (en_ced_ruc)),"Relacion con la Inst." = en_tipo_vinculacion + " (" + (SELECT  B.valor FROM cobis..cl_tabla A  ,cobis..cl_catalogo B   WHERE A.tabla = "cl_relacion_banco" AND B.tabla = A.codigo AND B.codigo = c.en_tipo_vinculacion     ) + ")" </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="{1}" />
+        <column name="{2}" />
+        <column name="{3}" />
+        <column name="{4}" />
+      </columns>
+      <queryText>SELECT w_tramite, w_cliente, w_nom_cliente, w_rol</queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="{1}" />
+        <column name="{2}" />
+        <column name="{3}" />
+      </columns>
+      <queryText>SELECT DISTINCT de_cliente,SUBSTRING (en_nomlar, 1, DATALENGTH (en_nomlar)),de_rol </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="ssn" />
+      </columns>
+      <queryText></queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="NombreCompleto" />
+        <column name="TipoDocumento" />
+        <column name="Identificacion" />
+        <column name="Calificacion" />
+        <column name="EstadoCivil" />
+        <column name="Nit" />
+        <column name="FecNac" />
+        <column name="TipoVivienda" />
+        <column name="PrimerNombre" />
+        <column name="SegundoNombre" />
+        <column name="PrimerApellido" />
+        <column name="SegundoApellido" />
+        <column name="NumHijos" />
+        <column name="Profesion" />
+        <column name="Tipo" />
+        <column name="SubTipo" />
+        <column name="Direccion" />
+      </columns>
+      <queryText></queryText>
+    </query>
+  </queries>
+</procedure>

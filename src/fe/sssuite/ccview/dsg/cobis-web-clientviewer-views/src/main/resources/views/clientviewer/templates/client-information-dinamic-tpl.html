@@ -1,0 +1,43 @@
+<div id="products">
+    <ul kendo-panel-bar k-on-select="onSelect(kendoEvent)" ng-if="groupsClient != null && groupsClient.length > 0" >
+        <li ng-repeat="group in groupsClient" >
+            <span>
+                <button class="btn btn-default btn-xs btn-more-detail" ng-click="setCurrentView(group.mnemonic, $event)" title="Ver más detalle">
+                    <span class="fa fa-angle-double-left"></span>
+                </button>{{group.name}} - {{getTotalAmount(group.dtoId.properties[0].name)}}
+                <span class="badge">{{getItem(group.dtoId.dtoName, group.dtoId.properties[1].name)}}</span>
+            </span>
+			<div style="padding:15px;"></div>
+            <div ng-repeat="groupDetail in group.conditionDefaultProductSons">
+                <fieldset ng-repeat="headerProduct in getObject(groupDetail.dtoId.dtoName) | grouping:getGroupingField(groupDetail.dtoId)" class="cb-group cb-group-simple">
+                    <legend>{{getHeader(headerProduct,groupDetail.dtoId)}}</legend>
+                    <ul class="list-group">
+                        <li ng-repeat="detailProduct in getObject(groupDetail.dtoId.dtoName) | filterOperationType:getProperty(headerProduct, getGroupingField(groupDetail.dtoId)):getGroupingField(groupDetail.dtoId)" class="list-group-item">
+                            <div class="row">
+                                <div ng-repeat="property in getPropertiesSumaryPrimaryKey(groupDetail.dtoId)" class="col-xs-6 text-muted cb-text-sm">
+                                    <span>{{property.text}}</span>
+                                    <div class="btn-group">
+                                        <a href="#" data-toggle="dropdown">{{getProperty(detailProduct,property.name)}}</a>
+                                        <ul class="dropdown-menu">
+					    <li ng-repeat="process in processes | filterProcess: getProcessFilterField(detailProduct,groupDetail.dtoId):'S':'S':'X':group.mnemonic">
+                                                <a href="#" ng-click="rootProcessClick(  detailProduct  , process.flowId)">{{process.processName}}</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div ng-repeat="property in getPropertiesSumary(groupDetail.dtoId)" class="col-xs-6 text-muted cb-text-sm">
+                                    <span>{{property.text}}</span>
+                                    <div title="{{property.text}}">{{getProperty(detailProduct,property.name)}}</div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </fieldset>
+            </div>
+        </li>
+
+    </ul>
+</div>
+
+
+

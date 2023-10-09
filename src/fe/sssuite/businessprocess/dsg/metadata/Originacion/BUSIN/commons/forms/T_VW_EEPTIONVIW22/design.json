@@ -1,0 +1,734 @@
+{
+  "id": {
+    "moduleId": "BUSIN",
+    "subModuleId": "commons",
+    "taskId": "T_VW_EEPTIONVIW22",
+    "version": "1.0.0"
+  },
+  "name": {
+    "$ref": "../../../../BUSIN/relations/componentKeys.json#/commons/Forms/T_VW_EEPTIONVIW22/name"
+  },
+  "modeEnabled": 4095,
+  "tempSaveStr": "F",
+  "autoCrudStr": "F",
+  "mainViewContainerId": "VC_VW_EEPTIONVIW22",
+  "customizationLayer": 0,
+  "customizationLayerDescription": "ECU",
+  "viewContainers": [
+    {
+      "id": {
+        "moduleId": "BUSIN",
+        "subModuleId": "commons",
+        "taskId": "T_VW_EEPTIONVIW22",
+        "viewContainerId": "VC_VW_EEPTIONVIW22",
+        "taskVersion": "1.0.0"
+      },
+      "name": "F_ExceptionsView",
+      "description": " ",
+      "layoutType": "Group",
+      "order": 0,
+      "options": 0,
+      "collapsedStr": "F",
+      "enabled": 4095,
+      "customizationLayer": 0,
+      "customizationLayerDescription": "ECU",
+      "columnsNum": 1,
+      "colSpan": 1,
+      "collapsed": false,
+      "view": {
+        "id": {
+          "viewId": "VW_EEPTIONVIW22",
+          "version": "1.0.0"
+        },
+        "description": "Vista para las excepciones mostradas en grilla y autorización de las mismas",
+        "name": "ExceptionsView",
+        "customizationLayer": 0,
+        "customizationLayerDescription": "ECU",
+        "groups": [
+          {
+            "groupId": "GR_EEPTIONVIW22_02",
+            "refViewId": "VW_EEPTIONVIW22",
+            "refViewVersion": "1.0.0",
+            "collapsedStr": "F",
+            "columnsNum": 1,
+            "layoutType": "GroupLayout",
+            "enabled": 4095,
+            "visible": 4095,
+            "name": "GrpGeneral",
+            "order": 0,
+            "customizationLayer": 0,
+            "customizationLayerDescription": "ECU",
+            "colSpan": 1,
+            "orientation": "V",
+            "groups": [
+              {
+                "groupId": "GR_EEPTIONVIW22_03",
+                "refViewId": "VW_EEPTIONVIW22",
+                "refViewVersion": "1.0.0",
+                "collapsedStr": "F",
+                "columnsNum": 1,
+                "layoutType": "Group",
+                "enabled": 4095,
+                "visible": 4095,
+                "name": "GrpExceptionGrid",
+                "order": 0,
+                "customizationLayer": 0,
+                "customizationLayerDescription": "ECU",
+                "queryView": {
+                  "queryViewId": "QV_UERXC4756_18",
+                  "deleteCommandEnabledStr": "F",
+                  "insertCommandEnabledStr": "F",
+                  "editCommandEnabledStr": "F",
+                  "confirmRowDeletionStr": "F",
+                  "multiSelectEnabledStr": "S",
+                  "rowCommandAppearance": 0,
+                  "editMode": "0",
+                  "allowSortingStr": "F",
+                  "allowPagingStr": "F",
+                  "name": "GridExceptions",
+                  "customizationLayer": 0,
+                  "customizationLayerDescription": "ECU",
+                  "hasDetailString": "T",
+                  "options": 1,
+                  "hasDetail": true,
+                  "query": {
+                    "$ref": "../../../../BUSIN/FLCRE/queries/Q_UERXCPTS_4756.json#"
+                  },
+                  "queryId": "Q_UERXCPTS_4756",
+                  "queryVersion": "1.0.0",
+                  "userControl": {
+                    "userControlId": "Grid",
+                    "description": "Designer Grid",
+                    "customizationLayer": 0,
+                    "customizationLayerDescription": "ECU",
+                    "type": "I",
+                    "name": "Designer Grid"
+                  },
+                  "taskVersionDialog": "1.0.0",
+                  "deleteCommandEnabled": false,
+                  "insertCommandEnabled": false,
+                  "editCommandEnabled": false,
+                  "confirmRowDeletion": false,
+                  "allowSorting": false,
+                  "allowPaging": false,
+                  "includeQueryMembers": [
+                    "AT_EXC513TYPE30",
+                    "AT_EXC513NONI25",
+                    "AT_EXC513RTIO01",
+                    "AT_EXC513DETA22",
+                    "AT_EXC513ENTE92",
+                    "AT_EXC513OCIA20",
+                    "AT_EXC513SETO85",
+                    "AT_EXC513EULT52"
+                  ],
+                  "entityName": "Exceptions",
+                  "customEvents": [
+                    {
+                      "executionType": 1,
+                      "queryViewEventType": {
+                        "name": "hasDetail",
+                        "eventId": 313,
+                        "description": "Evento de detalle de grilla",
+                        "availableExecutionType": 1
+                      }
+                    }
+                  ],
+                  "queryViewCustomActions": [],
+                  "actions": []
+                },
+                "queryViewId": "QV_UERXC4756_18",
+                "colSpan": 1,
+                "orientation": "V",
+                "entity": {
+                  "$ref": "../../../../BUSIN/entities/EN_EXCEPTINS513.json#"
+                },
+                "visualAttributes": [
+                  {
+                    "visualAttributeId": "VA_EEPTIONVIW2203_TYPE521",
+                    "colSpan": 1,
+                    "enabled": 4095,
+                    "order": 0,
+                    "queryVersion": " ",
+                    "readOnly": 8,
+                    "rowSpan": 0,
+                    "visible": 4095,
+                    "textRows": 0,
+                    "name": "Type",
+                    "customizationLayer": 0,
+                    "customizationLayerDescription": "ECU",
+                    "attribute": {
+                      "$ref": "../../../../BUSIN/entities/EN_EXCEPTINS513.json#/attributes/AT_EXC513TYPE30"
+                    },
+                    "label": {
+                      "labelId": "DLB_BUSIN_TIPOLRXRX_31531",
+                      "defaultValue": {
+                        "$ref": "../../../../BUSIN/assets/languages/BUSIN.json#/BUSIN/LBL/DLB_BUSIN_TIPOLRXRX_31531"
+                      },
+                      "hasI18N": true,
+                      "moduleId": "BUSIN",
+                      "customizationLayer": 0,
+                      "customizationLayerDescription": "ECU",
+                      "i18N": "T"
+                    },
+                    "userControl": {
+                      "userControlId": "TextInputBox",
+                      "description": "Designer TextBox",
+                      "customizationLayer": 0,
+                      "customizationLayerDescription": "ECU",
+                      "type": "I",
+                      "name": "Designer TextBox"
+                    },
+                    "cacheDuration": 0,
+                    "options": 0,
+                    "elementColumnSpan": 1,
+                    "elementId": "VA_EEPTIONVIW2203_TYPE521",
+                    "customEvents": [],
+                    "aggregateId": null,
+                    "aggregate": null,
+                    "width": null,
+                    "style": null,
+                    "componentStyle": null,
+                    "include": 4095,
+                    "responsiveLayouts": null,
+                    "responsivity": false,
+                    "attributeValidations": []
+                  },
+                  {
+                    "visualAttributeId": "VA_EEPTIONVIW2203_NONI575",
+                    "colSpan": 1,
+                    "enabled": 4095,
+                    "order": 1,
+                    "queryVersion": " ",
+                    "readOnly": 8,
+                    "rowSpan": 0,
+                    "visible": 4095,
+                    "textRows": 0,
+                    "name": "mnemonic",
+                    "customizationLayer": 0,
+                    "customizationLayerDescription": "ECU",
+                    "attribute": {
+                      "$ref": "../../../../BUSIN/entities/EN_EXCEPTINS513.json#/attributes/AT_EXC513NONI25"
+                    },
+                    "label": {
+                      "labelId": "DLB_BUSIN_IDMNUIEUV_49873",
+                      "defaultValue": {
+                        "$ref": "../../../../BUSIN/assets/languages/BUSIN.json#/BUSIN/LBL/DLB_BUSIN_IDMNUIEUV_49873"
+                      },
+                      "hasI18N": false,
+                      "moduleId": "BUSIN",
+                      "customizationLayer": 0,
+                      "customizationLayerDescription": "ECU",
+                      "i18N": "F"
+                    },
+                    "userControl": {
+                      "userControlId": "TextInputBox",
+                      "description": "Designer TextBox",
+                      "customizationLayer": 0,
+                      "customizationLayerDescription": "ECU",
+                      "type": "I",
+                      "name": "Designer TextBox"
+                    },
+                    "cacheDuration": 0,
+                    "options": 0,
+                    "elementColumnSpan": 1,
+                    "elementId": "VA_EEPTIONVIW2203_NONI575",
+                    "customEvents": [],
+                    "aggregateId": null,
+                    "aggregate": null,
+                    "width": null,
+                    "style": null,
+                    "componentStyle": null,
+                    "include": 4095,
+                    "responsiveLayouts": null,
+                    "responsivity": false,
+                    "attributeValidations": []
+                  },
+                  {
+                    "visualAttributeId": "VA_EEPTIONVIW2203_RTIO567",
+                    "colSpan": 0,
+                    "enabled": 4095,
+                    "order": 2,
+                    "readOnly": 8,
+                    "rowSpan": 0,
+                    "visible": 4095,
+                    "textRows": 0,
+                    "name": "description",
+                    "customizationLayer": 0,
+                    "customizationLayerDescription": "ECU",
+                    "attribute": {
+                      "$ref": "../../../../BUSIN/entities/EN_EXCEPTINS513.json#/attributes/AT_EXC513RTIO01"
+                    },
+                    "label": {
+                      "labelId": "DLB_BUSIN_DESCRIPCI_06123",
+                      "defaultValue": {
+                        "$ref": "../../../../BUSIN/assets/languages/BUSIN.json#/BUSIN/LBL/DLB_BUSIN_DESCRIPCI_06123"
+                      },
+                      "hasI18N": true,
+                      "moduleId": "BUSIN",
+                      "customizationLayer": 0,
+                      "customizationLayerDescription": "ECU",
+                      "i18N": "T"
+                    },
+                    "userControl": {
+                      "userControlId": "TextInputBox",
+                      "description": "Designer TextBox",
+                      "customizationLayer": 0,
+                      "customizationLayerDescription": "ECU",
+                      "type": "I",
+                      "name": "Designer TextBox"
+                    },
+                    "cacheDuration": 0,
+                    "options": 0,
+                    "elementColumnSpan": 0,
+                    "elementId": "VA_EEPTIONVIW2203_RTIO567",
+                    "customEvents": [],
+                    "aggregateId": null,
+                    "aggregate": null,
+                    "width": null,
+                    "style": null,
+                    "componentStyle": null,
+                    "include": 4095,
+                    "responsiveLayouts": null,
+                    "responsivity": false,
+                    "attributeValidations": []
+                  },
+                  {
+                    "visualAttributeId": "VA_EEPTIONVIW2203_DETA578",
+                    "colSpan": 1,
+                    "enabled": 4095,
+                    "order": 3,
+                    "queryVersion": " ",
+                    "readOnly": 8,
+                    "rowSpan": 0,
+                    "visible": 4095,
+                    "textRows": 0,
+                    "name": "detail",
+                    "customizationLayer": 0,
+                    "customizationLayerDescription": "ECU",
+                    "attribute": {
+                      "$ref": "../../../../BUSIN/entities/EN_EXCEPTINS513.json#/attributes/AT_EXC513DETA22"
+                    },
+                    "label": {
+                      "labelId": "DLB_BUSIN_ETAPALBLO_86425",
+                      "defaultValue": {
+                        "$ref": "../../../../BUSIN/assets/languages/BUSIN.json#/BUSIN/LBL/DLB_BUSIN_ETAPALBLO_86425"
+                      },
+                      "hasI18N": true,
+                      "moduleId": "BUSIN",
+                      "customizationLayer": 0,
+                      "customizationLayerDescription": "ECU",
+                      "i18N": "T"
+                    },
+                    "userControl": {
+                      "userControlId": "TextInputBox",
+                      "description": "Designer TextBox",
+                      "customizationLayer": 0,
+                      "customizationLayerDescription": "ECU",
+                      "type": "I",
+                      "name": "Designer TextBox"
+                    },
+                    "cacheDuration": 0,
+                    "options": 0,
+                    "elementColumnSpan": 1,
+                    "elementId": "VA_EEPTIONVIW2203_DETA578",
+                    "customEvents": [],
+                    "aggregateId": null,
+                    "aggregate": null,
+                    "width": null,
+                    "style": null,
+                    "componentStyle": null,
+                    "include": 4095,
+                    "responsiveLayouts": null,
+                    "responsivity": false,
+                    "attributeValidations": []
+                  },
+                  {
+                    "visualAttributeId": "VA_EEPTIONVIW2203_ENTE040",
+                    "colSpan": 0,
+                    "enabled": 4095,
+                    "order": 4,
+                    "readOnly": 8,
+                    "rowSpan": 0,
+                    "visible": 4095,
+                    "textRows": 0,
+                    "name": "EndDate",
+                    "customizationLayer": 0,
+                    "customizationLayerDescription": "ECU",
+                    "attribute": {
+                      "$ref": "../../../../BUSIN/entities/EN_EXCEPTINS513.json#/attributes/AT_EXC513ENTE92"
+                    },
+                    "label": {
+                      "labelId": "DLB_BUSIN_ENDDATENH_77479",
+                      "defaultValue": {
+                        "$ref": "../../../../BUSIN/assets/languages/BUSIN.json#/BUSIN/LBL/DLB_BUSIN_ENDDATENH_77479"
+                      },
+                      "hasI18N": true,
+                      "moduleId": "BUSIN",
+                      "customizationLayer": 0,
+                      "customizationLayerDescription": "ECU",
+                      "i18N": "T"
+                    },
+                    "userControl": {
+                      "userControlId": "TextInputBox",
+                      "description": "Designer TextBox",
+                      "customizationLayer": 0,
+                      "customizationLayerDescription": "ECU",
+                      "type": "I",
+                      "name": "Designer TextBox"
+                    },
+                    "cacheDuration": 0,
+                    "options": 0,
+                    "elementColumnSpan": 0,
+                    "elementId": "VA_EEPTIONVIW2203_ENTE040",
+                    "customEvents": [],
+                    "aggregateId": null,
+                    "aggregate": null,
+                    "width": null,
+                    "style": null,
+                    "componentStyle": null,
+                    "include": 4095,
+                    "responsiveLayouts": null,
+                    "responsivity": false,
+                    "attributeValidations": []
+                  },
+                  {
+                    "visualAttributeId": "VA_EEPTIONVIW2203_OCIA285",
+                    "colSpan": 1,
+                    "enabled": 4095,
+                    "order": 5,
+                    "queryVersion": " ",
+                    "readOnly": 8,
+                    "rowSpan": 0,
+                    "visible": 4095,
+                    "textRows": 0,
+                    "name": "Official",
+                    "customizationLayer": 0,
+                    "customizationLayerDescription": "ECU",
+                    "attribute": {
+                      "$ref": "../../../../BUSIN/entities/EN_EXCEPTINS513.json#/attributes/AT_EXC513OCIA20"
+                    },
+                    "label": {
+                      "labelId": "DLB_BUSIN_OFFICIALR_02742",
+                      "defaultValue": {
+                        "$ref": "../../../../BUSIN/assets/languages/BUSIN.json#/BUSIN/LBL/DLB_BUSIN_OFFICIALR_02742"
+                      },
+                      "hasI18N": true,
+                      "moduleId": "BUSIN",
+                      "customizationLayer": 0,
+                      "customizationLayerDescription": "ECU",
+                      "i18N": "T"
+                    },
+                    "userControl": {
+                      "userControlId": "TextInputBox",
+                      "description": "Designer TextBox",
+                      "customizationLayer": 0,
+                      "customizationLayerDescription": "ECU",
+                      "type": "I",
+                      "name": "Designer TextBox"
+                    },
+                    "cacheDuration": 0,
+                    "options": 0,
+                    "elementColumnSpan": 1,
+                    "elementId": "VA_EEPTIONVIW2203_OCIA285",
+                    "customEvents": [],
+                    "aggregateId": null,
+                    "aggregate": null,
+                    "width": null,
+                    "style": null,
+                    "componentStyle": null,
+                    "include": 4095,
+                    "responsiveLayouts": null,
+                    "responsivity": false,
+                    "attributeValidations": []
+                  },
+                  {
+                    "visualAttributeId": "VA_EEPTIONVIW2203_SETO198",
+                    "colSpan": 1,
+                    "enabled": 4095,
+                    "order": 6,
+                    "queryVersion": " ",
+                    "readOnly": 8,
+                    "rowSpan": 0,
+                    "visible": 4095,
+                    "textRows": 0,
+                    "name": "Observations",
+                    "customizationLayer": 0,
+                    "customizationLayerDescription": "ECU",
+                    "attribute": {
+                      "$ref": "../../../../BUSIN/entities/EN_EXCEPTINS513.json#/attributes/AT_EXC513SETO85"
+                    },
+                    "label": {
+                      "labelId": "DLB_BUSIN_SERVACINS_39064",
+                      "defaultValue": {
+                        "$ref": "../../../../BUSIN/assets/languages/BUSIN.json#/BUSIN/LBL/DLB_BUSIN_SERVACINS_39064"
+                      },
+                      "hasI18N": true,
+                      "moduleId": "BUSIN",
+                      "customizationLayer": 0,
+                      "customizationLayerDescription": "ECU",
+                      "i18N": "T"
+                    },
+                    "userControl": {
+                      "userControlId": "TextInputBox",
+                      "description": "Designer TextBox",
+                      "customizationLayer": 0,
+                      "customizationLayerDescription": "ECU",
+                      "type": "I",
+                      "name": "Designer TextBox"
+                    },
+                    "cacheDuration": 0,
+                    "options": 0,
+                    "elementColumnSpan": 1,
+                    "elementId": "VA_EEPTIONVIW2203_SETO198",
+                    "customEvents": [],
+                    "aggregateId": null,
+                    "aggregate": null,
+                    "width": null,
+                    "style": null,
+                    "componentStyle": null,
+                    "include": 4095,
+                    "responsiveLayouts": null,
+                    "responsivity": false,
+                    "attributeValidations": []
+                  },
+                  {
+                    "visualAttributeId": "VA_EEPTIONVIW2203_EULT694",
+                    "colSpan": 1,
+                    "enabled": 4095,
+                    "order": 7,
+                    "queryVersion": " ",
+                    "readOnly": 8,
+                    "rowSpan": 0,
+                    "visible": 4095,
+                    "textRows": 0,
+                    "name": "Aproved",
+                    "customizationLayer": 0,
+                    "customizationLayerDescription": "ECU",
+                    "attribute": {
+                      "$ref": "../../../../BUSIN/entities/EN_EXCEPTINS513.json#/attributes/AT_EXC513EULT52"
+                    },
+                    "label": {
+                      "labelId": "DLB_BUSIN_AUTORIZAR_89338",
+                      "defaultValue": {
+                        "$ref": "../../../../BUSIN/assets/languages/BUSIN.json#/BUSIN/LBL/DLB_BUSIN_AUTORIZAR_89338"
+                      },
+                      "hasI18N": true,
+                      "moduleId": "BUSIN",
+                      "customizationLayer": 0,
+                      "customizationLayerDescription": "ECU",
+                      "i18N": "T"
+                    },
+                    "userControl": {
+                      "userControlId": "CheckBox",
+                      "description": "Designer CheckBox",
+                      "customizationLayer": 0,
+                      "customizationLayerDescription": "ECU",
+                      "type": "I",
+                      "name": "Designer CheckBox"
+                    },
+                    "cacheDuration": 0,
+                    "options": 4,
+                    "elementColumnSpan": 1,
+                    "elementId": "VA_EEPTIONVIW2203_EULT694",
+                    "customEvents": [],
+                    "aggregateId": null,
+                    "aggregate": null,
+                    "width": null,
+                    "style": null,
+                    "componentStyle": null,
+                    "include": 4095,
+                    "responsiveLayouts": null,
+                    "responsivity": false,
+                    "attributeValidations": []
+                  }
+                ],
+                "independentValidation": "F",
+                "htmlSection": false,
+                "eventType": 0,
+                "numberOfColumnsInContainer": 1,
+                "elementColumnSpan": 1,
+                "collapsed": false,
+                "elementId": "GR_EEPTIONVIW22_03",
+                "style": null,
+                "customEvents": []
+              },
+              {
+                "groupId": "GR_EEPTIONVIW22_05",
+                "refViewId": "VW_EEPTIONVIW22",
+                "refViewVersion": "1.0.0",
+                "collapsedStr": "F",
+                "columnsNum": 1,
+                "layoutType": "Group",
+                "enabled": 8,
+                "visible": 0,
+                "name": "GrpVariableException",
+                "order": 1,
+                "customizationLayer": 0,
+                "customizationLayerDescription": "ECU",
+                "queryView": {
+                  "queryViewId": "QV_EAIBL2309_87",
+                  "deleteCommandEnabledStr": "F",
+                  "insertCommandEnabledStr": "F",
+                  "editCommandEnabledStr": "F",
+                  "confirmRowDeletionStr": "F",
+                  "rowCommandAppearance": 0,
+                  "allowSortingStr": "F",
+                  "allowPagingStr": "F",
+                  "name": "GridVariableException",
+                  "customizationLayer": 0,
+                  "customizationLayerDescription": "ECU",
+                  "hasDetailString": "F",
+                  "hasDetail": false,
+                  "query": {
+                    "$ref": "../../../../BUSIN/FLCRE/queries/Q_EAIBLEEP_2309.json#"
+                  },
+                  "queryId": "Q_EAIBLEEP_2309",
+                  "queryVersion": "1.0.0",
+                  "userControl": {
+                    "userControlId": "Grid",
+                    "description": "Designer Grid",
+                    "customizationLayer": 0,
+                    "customizationLayerDescription": "ECU",
+                    "type": "I",
+                    "name": "Designer Grid"
+                  },
+                  "taskVersionDialog": "1.0.0",
+                  "deleteCommandEnabled": false,
+                  "insertCommandEnabled": false,
+                  "editCommandEnabled": false,
+                  "confirmRowDeletion": false,
+                  "allowSorting": false,
+                  "allowPaging": false,
+                  "includeQueryMembers": [
+                    "AT_ABL836RABM62",
+                    "AT_ABL836VBLE29"
+                  ],
+                  "entityName": "VariableExceptions",
+                  "customEvents": [],
+                  "queryViewCustomActions": [],
+                  "actions": []
+                },
+                "queryViewId": "QV_EAIBL2309_87",
+                "colSpan": 1,
+                "orientation": "V",
+                "entity": {
+                  "$ref": "../../../../BUSIN/entities/EN_ABLEECPTO836.json#"
+                },
+                "independentValidation": "F",
+                "htmlSection": false,
+                "eventType": 0,
+                "numberOfColumnsInContainer": 1,
+                "elementColumnSpan": 1,
+                "collapsed": false,
+                "elementId": "GR_EEPTIONVIW22_05",
+                "visualAttributes": [
+                  {
+                    "visualAttributeId": "VA_TEXTINPUTBOXQBN_359_05",
+                    "name": "VariableName",
+                    "userControl": {
+                      "userControlId": "TextInputBox",
+                      "type": "I"
+                    },
+                    "customEvents": [],
+                    "options": 0,
+                    "aggregateId": null,
+                    "aggregate": null,
+                    "width": null,
+                    "style": null,
+                    "componentStyle": null,
+                    "customizationLayer": 0,
+                    "customizationLayerDescription": "ECU",
+                    "include": 4095,
+                    "order": 1,
+                    "colSpan": 1,
+                    "responsiveLayouts": null,
+                    "responsivity": false,
+                    "maxRecords": null,
+                    "label": {
+                      "moduleId": "BUSIN",
+                      "labelId": "DLB_BUSIN_VARIABLEV_12696",
+                      "defaultValue": {
+                        "$ref": "../../../../BUSIN/assets/languages/BUSIN.json#/BUSIN/LBL/DLB_BUSIN_VARIABLEV_12696"
+                      }
+                    },
+                    "attribute": {
+                      "$ref": "../../../../BUSIN/entities/EN_ABLEECPTO836.json#/attributes/AT_ABL836RABM62"
+                    },
+                    "attributeValidations": [],
+                    "enabled": 4095,
+                    "visible": 4095,
+                    "readOnly": 8,
+                    "textRows": 0
+                  },
+                  {
+                    "visualAttributeId": "VA_TEXTINPUTBOXAJO_372_05",
+                    "name": "VariableValue",
+                    "userControl": {
+                      "userControlId": "TextInputBox",
+                      "type": "I"
+                    },
+                    "customEvents": [],
+                    "options": 0,
+                    "aggregateId": null,
+                    "aggregate": null,
+                    "width": null,
+                    "style": null,
+                    "componentStyle": null,
+                    "customizationLayer": 0,
+                    "customizationLayerDescription": "ECU",
+                    "include": 4095,
+                    "order": 2,
+                    "colSpan": 1,
+                    "responsiveLayouts": null,
+                    "responsivity": false,
+                    "maxRecords": null,
+                    "label": {
+                      "moduleId": "BUSIN",
+                      "labelId": "DLB_BUSIN_VALORDWSB_39301",
+                      "defaultValue": {
+                        "$ref": "../../../../BUSIN/assets/languages/BUSIN.json#/BUSIN/LBL/DLB_BUSIN_VALORDWSB_39301"
+                      }
+                    },
+                    "attribute": {
+                      "$ref": "../../../../BUSIN/entities/EN_ABLEECPTO836.json#/attributes/AT_ABL836VBLE29"
+                    },
+                    "attributeValidations": [],
+                    "enabled": 4095,
+                    "visible": 4095,
+                    "readOnly": 8,
+                    "textRows": 0
+                  }
+                ],
+                "style": null,
+                "customEvents": []
+              }
+            ],
+            "independentValidation": "F",
+            "htmlSection": false,
+            "eventType": 0,
+            "numberOfColumnsInContainer": 1,
+            "elementColumnSpan": 1,
+            "collapsed": false,
+            "elementId": "GR_EEPTIONVIW22_02"
+          }
+        ],
+        "modules": [
+          {
+            "moduleId": "BUSIN"
+          }
+        ],
+        "module": {
+          "moduleId": "BUSIN"
+        }
+      },
+      "numberOfColumnsInContainer": 1,
+      "elementColumnSpan": 1,
+      "elementId": "VC_VW_EEPTIONVIW22",
+      "customEvents": []
+    }
+  ],
+  "tempSave": false,
+  "autoCrud": false,
+  "isImported": true,
+  "commands": []
+}

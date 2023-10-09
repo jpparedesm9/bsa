@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+	<context:annotation-config />
+
+
+	<bean id="MaxDebtServiceImpl"
+		class="com.cobiscorp.ecobis.clientviewer.impl.MaxDebtServiceImpl">
+		<property name="maxDebtManager" ref="MaxDebtManager" />
+	</bean>
+
+	<bean id="ConsolidatePositionServiceImpl"
+		class="com.cobiscorp.ecobis.clientviewer.impl.ConsolidatePositionServiceImpl">
+		<property name="consolidatePositionManager" ref="ConsolidatePositionManager" />
+	</bean>
+
+	<bean id="QueryProductsServiceImpl"
+		class="com.cobiscorp.ecobis.clientviewer.impl.QueryProductsServiceImpl">
+		<property name="queryProductsManager" ref="QueryProductsManager" />
+	</bean>
+
+	<bean id="PrepareProductsDataServiceImpl"
+		class="com.cobiscorp.ecobis.clientviewer.impl.PrepareProductsDataServiceImpl">
+		<property name="prepareProductsDataManager" ref="PrepareProductsDataManager" />
+	</bean>
+
+
+	<bean id="ScoreServiceImpl" class="com.cobiscorp.ecobis.clientviewer.impl.ScoreServiceImpl">
+		<property name="iScoreManager" ref="IScoreManager" />
+	</bean>
+
+	<bean id="RateServiceImpl" class="com.cobiscorp.ecobis.clientviewer.impl.RateServiceImpl">
+		<property name="rateManager" ref="IRateManager" />
+	</bean>
+
+
+	<bean id="AdministratorServiceImpl"
+		class="com.cobiscorp.ecobis.clientviewer.admin.impl.AdministratorServiceImpl">
+		<property name="administratorManager" ref="AdministratorManager" />
+	</bean>
+
+	<bean id="CustomerServiceImpl"
+		class="com.cobiscorp.ecobis.clientviewer.impl.CustomerServiceImpl">
+		<property name="customerManager" ref="CustomerManager" />
+	</bean>
+</beans>

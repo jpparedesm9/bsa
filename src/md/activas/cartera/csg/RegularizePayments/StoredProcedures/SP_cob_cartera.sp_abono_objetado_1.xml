@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<procedure>
+  <database>cob_cartera</database>
+  <name>sp_abono_objetado</name>
+  <type>SYBASE</type>
+  <version>1</version>
+  <parameters>
+    <parameter name="@s_date" dataType="datetime" direction="in" />
+    <parameter name="@s_user" dataType="varchar" direction="in" />
+    <parameter name="@s_ofi" dataType="int" direction="in" />
+    <parameter name="@s_term" dataType="varchar" direction="in" />
+    <parameter name="@i_operacion" dataType="char" direction="in" />
+    <parameter name="@i_criterio" dataType="char" direction="in" />
+    <parameter name="@i_valor_busqueda" dataType="int" direction="in" />
+    <parameter name="@i_secuencial" dataType="int" direction="in" />
+    <parameter name="@i_formato_fecha" dataType="int" direction="in" />
+    <parameter name="@i_idPago" dataType="int" direction="in" />
+    <parameter name="@i_banco" dataType="varchar" direction="in" />
+    <parameter name="@i_toperacion" dataType="varchar" direction="in" />
+    <parameter name="@i_monto_pago" dataType="money" direction="in" />
+    <parameter name="@i_fecha_valor" dataType="datetime" direction="in" />
+    <parameter name="@i_forma_pago" dataType="varchar" direction="in" />
+  </parameters>
+  <queries>
+    <query>
+      <columns>
+        <column name="sec" />
+        <column name="ID._PAGO" />
+        <column name="TIPO_PRESTAMO" />
+        <column name="MONTO_REGULARIZAR" />
+        <column name="FECHA_VALOR" />
+        <column name="ID_PRESTAMO" />
+      </columns>
+      <queryText>SELECT  "sec" = ao_id,"ID._PAGO" = ao_id_pago,"TIPO_PRESTAMO" = ao_toperacion,"MONTO_REGULARIZAR" = ao_monto_pago,"FECHA_VALOR" = ao_fecha_valor,"ID_PRESTAMO" = ao_operacion </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="sec" />
+        <column name="ID_PAGO" />
+        <column name="TIPO_PRESTAMO" />
+        <column name="MONTO_REGULARIZAR" />
+        <column name="FECHA_VALOR" />
+        <column name="ID_PRESTAMO" />
+      </columns>
+      <queryText>SELECT  "sec" = ao_id,"ID_PAGO" = ao_id_pago,"TIPO_PRESTAMO" = ao_toperacion,"MONTO_REGULARIZAR" = ao_monto_pago,"FECHA_VALOR" = ao_fecha_valor,"ID_PRESTAMO" = ao_operacion </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="Fecha" />
+        <column name="Movimiento" />
+        <column name="Importe" />
+        <column name="No de Folio" />
+      </columns>
+      <queryText>SELECT  "Fecha" = tr_fecha_mov,"Movimiento" = "Pago en Revisión","Importe" = dtr_monto,"No de Folio" = tr_secuencial </queryText>
+    </query>
+  </queries>
+</procedure>

@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<procedure>
+  <database>cob_cartera</database>
+  <name>sp_lcr_crear_ente_colectivo</name>
+  <type>SYBASE</type>
+  <version>1</version>
+  <parameters>
+    <parameter name="@s_date" dataType="datetime" direction="in" />
+    <parameter name="@s_user" dataType="varchar" direction="in" />
+    <parameter name="@s_ofi" dataType="int" direction="in" />
+    <parameter name="@s_term" dataType="varchar" direction="in" />
+    <parameter name="@s_srv" dataType="varchar" direction="in" />
+    <parameter name="@s_lsrv" dataType="varchar" direction="in" />
+    <parameter name="@s_ssn" dataType="int" direction="in" />
+    <parameter name="@s_rol" dataType="int" direction="in" />
+    <parameter name="@s_sesn" dataType="int" direction="in" />
+    <parameter name="@s_org" dataType="varchar" direction="in" />
+    <parameter name="@s_culture" dataType="varchar" direction="in" />
+    <parameter name="@i_operacion" dataType="char" direction="in" />
+    <parameter name="@i_crear_persona" dataType="char" direction="in" />
+    <parameter name="@i_crear_tramite" dataType="char" direction="in" />
+    <parameter name="@t_trn" dataType="int" direction="in" />
+    <parameter name="@i_apellido_1" dataType="varchar" direction="in" />
+    <parameter name="@i_apellido_2" dataType="varchar" direction="in" />
+    <parameter name="@i_nombre_1" dataType="varchar" direction="in" />
+    <parameter name="@i_nombre_2" dataType="varchar" direction="in" />
+    <parameter name="@i_fecha_nac" dataType="varchar" direction="in" />
+    <parameter name="@i_entidad_fed_nac" dataType="varchar" direction="in" />
+    <parameter name="@i_genero" dataType="varchar" direction="in" />
+    <parameter name="@i_calle_dom" dataType="varchar" direction="in" />
+    <parameter name="@i_numero_int_dom" dataType="varchar" direction="in" />
+    <parameter name="@i_numero_ext_dom" dataType="varchar" direction="in" />
+    <parameter name="@i_colonia_dom" dataType="varchar" direction="in" />
+    <parameter name="@i_cp_domicilio" dataType="varchar" direction="in" />
+    <parameter name="@i_correo_elec" dataType="varchar" direction="in" />
+    <parameter name="@i_celular" dataType="varchar" direction="in" />
+    <parameter name="@i_colectivo" dataType="varchar" direction="in" />
+    <parameter name="@i_nivel_colectivo" dataType="varchar" direction="in" />
+    <parameter name="@i_rfc" dataType="varchar" direction="in" />
+    <parameter name="@i_curp" dataType="varchar" direction="in" />
+    <parameter name="@i_actividad_eco" dataType="varchar" direction="in" />
+    <parameter name="@i_ventas_mensuales" dataType="varchar" direction="in" />
+    <parameter name="@i_numero_hijos" dataType="varchar" direction="in" />
+    <parameter name="@i_periodicidad" dataType="varchar" direction="in" />
+    <parameter name="@o_msg" dataType="varchar" direction="out" />
+    <parameter name="@o_sev" dataType="int" direction="out" />
+    <parameter name="@i_oficina" dataType="varchar" direction="in" />
+    <parameter name="@i_oficial" dataType="varchar" direction="in" />
+    <parameter name="@i_archivo" dataType="varchar" direction="in" />
+    <parameter name="@i_reg_exito" dataType="int" direction="in" />
+    <parameter name="@i_total" dataType="int" direction="in" />
+    <parameter name="@i_estado" dataType="char" direction="in" />
+    <parameter name="@o_ente" dataType="int" direction="out" />
+  </parameters>
+  <queries>
+    <query>
+      <columns>
+        <column name="am_nombre_archivo" />
+        <column name="am_fecha_carga" />
+        <column name="am_login" />
+        <column name="am_cant_reg_exito" />
+        <column name="am_total" />
+        <column name="am_estado" />
+      </columns>
+      <queryText></queryText>
+    </query>
+  </queries>
+</procedure>

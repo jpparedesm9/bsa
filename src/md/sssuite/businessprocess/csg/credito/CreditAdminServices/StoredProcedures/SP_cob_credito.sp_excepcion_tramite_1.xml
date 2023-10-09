@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<procedure>
+  <database>cob_credito</database>
+  <name>sp_excepcion_tramite</name>
+  <type>SYBASE</type>
+  <version>1</version>
+  <parameters>
+    <parameter name="@t_trn" dataType="int" direction="in" />
+    <parameter name="@s_date" dataType="datetime" direction="in" />
+    <parameter name="@i_operacion" dataType="char" direction="in" />
+    <parameter name="@i_tramite" dataType="int" direction="in" />
+    <parameter name="@i_regla" dataType="varchar" direction="in" />
+    <parameter name="@i_autorizante" dataType="varchar" direction="in" />
+    <parameter name="@i_autorizada" dataType="bit" direction="in" />
+    <parameter name="@i_cliente" dataType="int" direction="in" />
+    <parameter name="@i_observacion" dataType="varchar" direction="in" />
+  </parameters>
+  <queries>
+    <query>
+      <columns>
+        <column name="{1}" />
+        <column name="{2}" />
+        <column name="{3}" />
+        <column name="{4}" />
+        <column name="{5}" />
+      </columns>
+      <queryText>SELECT  et_regla,et_fecha_autorizacion,et_autorizante,et_autorizada </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="{1}" />
+        <column name="{2}" />
+        <column name="{3}" />
+        <column name="{4}" />
+        <column name="{5}" />
+        <column name="{6}" />
+        <column name="{7}" />
+        <column name="{8}" />
+        <column name="{9}" />
+        <column name="{10}" />
+      </columns>
+      <queryText>SELECT  tr_tramite,tr_numero_op_banco,tr_toperacion,et_regla,rl_name,et_fecha_autorizacion,et_autorizante,fu_nombre,et_autorizada,"" </queryText>
+    </query>
+  </queries>
+</procedure>

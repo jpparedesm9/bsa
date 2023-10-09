@@ -1,0 +1,81 @@
+use cobis
+go
+if exists (select * from sysobjects where name = 'tgi_an_query_action')
+    drop trigger tgi_an_query_action
+go
+create trigger tgi_an_query_action
+on an_query_action
+for insert
+as
+begin
+    declare
+        @w_qa_query_id              int,
+        @w_qa_type                  tinyint,
+        @w_qa_is_input_dto_required tinyint,
+        @w_qa_method_name           varchar(32),
+        @w_qa_qc_id                 int,
+        @w_id                       int
+
+    declare cu_inserted cursor for
+        select
+            qa_query_id,
+            qa_type,
+            qa_is_input_dto_required,
+            qa_method_name,
+            qa_qc_id
+        from inserted
+
+    open cu_inserted
+    fetch cu_inserted into
+        @w_qa_query_id,
+        @w_qa_type,
+        @w_qa_is_input_dto_required,
+        @w_qa_method_name,
+        @w_qa_qc_id
+
+    while @@FETCH_STATUS = 0
+    begin
+        select @w_id = sq_siguiente
+        from cob_distrib..di_seqnos
+        where sq_tabla = 'di_log'
+
+        update cob_distrib..di_seqnos
+        set sq_siguiente = sq_siguiente + 1
+        where sq_tabla = 'di_log'
+
+        insert into cob_distrib..di_log (
+            lg_id, lg_fecha, lg_operacion, lg_objeto)
+        values (@w_id, getdate(), 'I', 'cobis..sp_an_query_action_tg')
+       
+        insert into cob_distrib..di_parametro (
+            pa_id, pa_nombre, pa_tipodato, pa_longitud, pa_int)
+        values (@w_id, '@i_qa_query_id', 56, isnull(datalength(@w_qa_query_id), 0), @w_qa_query_id)
+
+        insert into cob_distrib..di_parametro (
+            pa_id, pa_nombre, pa_tipodato, pa_longitud, pa_tinyint)
+        values (@w_id, '@i_qa_type', 48, isnull(datalength(@w_qa_type), 0), @w_qa_type)
+
+        insert into cob_distrib..di_parametro (
+            pa_id, pa_nombre, pa_tipodato, pa_longitud, pa_tinyint)
+        values (@w_id, '@i_qa_is_input_dto_required', 48, isnull(datalength(@w_qa_is_input_dto_required), 0), @w_qa_is_input_dto_required)
+
+        insert into cob_distrib..di_parametro (
+            pa_id, pa_nombre, pa_tipodato, pa_longitud, pa_varchar)
+        values (@w_id, '@i_qa_method_name', 39, isnull(datalength(@w_qa_method_name), 0), @w_qa_method_name)
+
+        insert into cob_distrib..di_parametro (
+            pa_id, pa_nombre, pa_tipodato, pa_longitud, pa_int)
+        values (@w_id, '@i_qa_qc_id', 56, isnull(datalength(@w_qa_qc_id), 0), @w_qa_qc_id)
+
+        fetch cu_inserted into
+            @w_qa_query_id,
+            @w_qa_type,
+            @w_qa_is_input_dto_required,
+            @w_qa_method_name,
+            @w_qa_qc_id
+
+    end
+    close cu_inserted
+    deallocate cu_inserted
+end
+go

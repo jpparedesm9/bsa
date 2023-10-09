@@ -1,0 +1,154 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<serviceClass name="Disbursement" nsBase="COBISCorp.eCOBIS.BusinessProcess.LoanRequest" namespace="COBISCorp.eCOBIS.BusinessProcess.LoanRequest.Service" package="cobiscorp.ecobis.businessprocess.loanrequest.service" ns="http://service.loanrequest.businessprocess.ecobis.cobiscorp" module="BusinessProcess.LoanRequest" productName="COBISCorp.eCOBIS.BusinessProcess.Service" productVersion="2.0.0.0">
+  <productProperties>
+    <property name="MavenGroupId" value="com.cobiscorp.processapi" />
+    <property name="MavenArtifactId" value="COBISCorp.eCOBIS.BusinessProcess.Service" />
+    <property name="MavenVersion" value="2.0.0.0" />
+  </productProperties>
+  <partialClass name="Disbursement">
+    <services>
+      <service id="BusinessProcess.LoanRequest.Disbursement.GetInfoOperation" netName="GetInfoOperation" javaName="getInfoOperation" mappingType="STORED_PROCEDURE" mapId="e0e3d26ca9ebcf92f025062d5ed7257c">
+        <documentations default="Español">
+          <documentation id="Español">Obtiene la información necesaria sobre la operación que se realizo</documentation>
+          <documentation id="English">Obtains the necessary information on the operation being performed</documentation>
+        </documentations>
+        <SRVMapping name="cob_cartera..sp_consulta_info_operacion" trnCode="73904">
+          <DTOs>
+            <DTO direction="in" name="InfoOperation" alias="inInfoOperation" namespace="COBISCorp.eCOBIS.BusinessProcess.LoanRequest.DTO" package="cobiscorp.ecobis.businessprocess.loanrequest.dto" ns="http://dto.loanrequest.businessprocess.ecobis.cobiscorp" required="true" />
+            <DTO direction="return" name="InfoOperation" alias="returnInfoOperation" namespace="COBISCorp.eCOBIS.BusinessProcess.LoanRequest.DTO" package="cobiscorp.ecobis.businessprocess.loanrequest.dto" ns="http://dto.loanrequest.businessprocess.ecobis.cobiscorp" required="true">
+              <properties>
+                <property name="codigoCliente" propertyNet="CodigoCliente" propertyJava="codigoCliente" setterJavaMethod="setCodigoCliente" getterJavaMethod="getCodigoCliente" xsdType="int" netType="int" javaType="int" cobisMapping="" isInherit="false" isComplexType="false" isCollectionType="false" required="true" encrypted="false" maxLength="0" />
+                <property name="moneda" propertyNet="Moneda" propertyJava="moneda" setterJavaMethod="setMoneda" getterJavaMethod="getMoneda" xsdType="int" netType="int" javaType="int" cobisMapping="" isInherit="false" isComplexType="false" isCollectionType="false" required="true" encrypted="false" maxLength="0" />
+                <property name="monto" propertyNet="Monto" propertyJava="monto" setterJavaMethod="setMonto" getterJavaMethod="getMonto" xsdType="decimal" netType="Decimal" javaType="java.math.BigDecimal" cobisMapping="" isInherit="false" isComplexType="false" isCollectionType="false" required="true" encrypted="false" maxLength="0" />
+                <property name="montoAprobado" propertyNet="MontoAprobado" propertyJava="montoAprobado" setterJavaMethod="setMontoAprobado" getterJavaMethod="getMontoAprobado" xsdType="decimal" netType="Decimal" javaType="java.math.BigDecimal" cobisMapping="" isInherit="false" isComplexType="false" isCollectionType="false" required="true" encrypted="false" maxLength="0" />
+                <property name="nombreCliente" propertyNet="NombreCliente" propertyJava="nombreCliente" setterJavaMethod="setNombreCliente" getterJavaMethod="getNombreCliente" xsdType="string" netType="string" javaType="String" cobisMapping="" isInherit="false" isComplexType="false" isCollectionType="false" required="false" encrypted="false" maxLength="0" />
+                <property name="nombreOficina" propertyNet="NombreOficina" propertyJava="nombreOficina" setterJavaMethod="setNombreOficina" getterJavaMethod="getNombreOficina" xsdType="string" netType="string" javaType="String" cobisMapping="" isInherit="false" isComplexType="false" isCollectionType="false" required="false" encrypted="false" maxLength="0" />
+                <property name="oficina" propertyNet="Oficina" propertyJava="oficina" setterJavaMethod="setOficina" getterJavaMethod="getOficina" xsdType="int" netType="int" javaType="int" cobisMapping="" isInherit="false" isComplexType="false" isCollectionType="false" required="true" encrypted="false" maxLength="0" />
+                <property name="operacion" propertyNet="Operacion" propertyJava="operacion" setterJavaMethod="setOperacion" getterJavaMethod="getOperacion" xsdType="int" netType="int" javaType="int" cobisMapping="" isInherit="false" isComplexType="false" isCollectionType="false" required="true" encrypted="false" maxLength="0" />
+                <property name="toperacion" propertyNet="Toperacion" propertyJava="toperacion" setterJavaMethod="setToperacion" getterJavaMethod="getToperacion" xsdType="string" netType="string" javaType="String" cobisMapping="" isInherit="false" isComplexType="false" isCollectionType="false" required="false" encrypted="false" maxLength="0" />
+                <property name="tramite" propertyNet="Tramite" propertyJava="tramite" setterJavaMethod="setTramite" getterJavaMethod="getTramite" xsdType="int" netType="int" javaType="int" cobisMapping="" isInherit="false" isComplexType="false" isCollectionType="false" required="true" encrypted="false" maxLength="0" />
+                <property name="nombreMoneda" propertyNet="NombreMoneda" propertyJava="nombreMoneda" setterJavaMethod="setNombreMoneda" getterJavaMethod="getNombreMoneda" xsdType="string" netType="string" javaType="String" cobisMapping="" isInherit="false" isComplexType="false" isCollectionType="false" required="false" encrypted="false" maxLength="0" />
+                <property name="banco" propertyNet="Banco" propertyJava="banco" setterJavaMethod="setBanco" getterJavaMethod="getBanco" xsdType="string" netType="string" javaType="String" cobisMapping="" isInherit="false" isComplexType="false" isCollectionType="false" required="false" encrypted="false" maxLength="0" />
+              </properties>
+            </DTO>
+            <DTO direction="out" name="InfoOperation" alias="outInfoOperation" namespace="COBISCorp.eCOBIS.BusinessProcess.LoanRequest.DTO" package="cobiscorp.ecobis.businessprocess.loanrequest.dto" ns="http://dto.loanrequest.businessprocess.ecobis.cobiscorp" required="true">
+              <properties>
+                <property name="codigoCliente" propertyNet="CodigoCliente" propertyJava="codigoCliente" setterJavaMethod="setCodigoCliente" getterJavaMethod="getCodigoCliente" xsdType="int" netType="int" javaType="int" cobisMapping="" isInherit="false" isComplexType="false" isCollectionType="false" required="true" encrypted="false" maxLength="0" />
+                <property name="moneda" propertyNet="Moneda" propertyJava="moneda" setterJavaMethod="setMoneda" getterJavaMethod="getMoneda" xsdType="int" netType="int" javaType="int" cobisMapping="" isInherit="false" isComplexType="false" isCollectionType="false" required="true" encrypted="false" maxLength="0" />
+                <property name="monto" propertyNet="Monto" propertyJava="monto" setterJavaMethod="setMonto" getterJavaMethod="getMonto" xsdType="decimal" netType="Decimal" javaType="java.math.BigDecimal" cobisMapping="" isInherit="false" isComplexType="false" isCollectionType="false" required="true" encrypted="false" maxLength="0" />
+                <property name="montoAprobado" propertyNet="MontoAprobado" propertyJava="montoAprobado" setterJavaMethod="setMontoAprobado" getterJavaMethod="getMontoAprobado" xsdType="decimal" netType="Decimal" javaType="java.math.BigDecimal" cobisMapping="" isInherit="false" isComplexType="false" isCollectionType="false" required="true" encrypted="false" maxLength="0" />
+                <property name="nombreCliente" propertyNet="NombreCliente" propertyJava="nombreCliente" setterJavaMethod="setNombreCliente" getterJavaMethod="getNombreCliente" xsdType="string" netType="string" javaType="String" cobisMapping="" isInherit="false" isComplexType="false" isCollectionType="false" required="false" encrypted="false" maxLength="0" />
+                <property name="nombreOficina" propertyNet="NombreOficina" propertyJava="nombreOficina" setterJavaMethod="setNombreOficina" getterJavaMethod="getNombreOficina" xsdType="string" netType="string" javaType="String" cobisMapping="" isInherit="false" isComplexType="false" isCollectionType="false" required="false" encrypted="false" maxLength="0" />
+                <property name="oficina" propertyNet="Oficina" propertyJava="oficina" setterJavaMethod="setOficina" getterJavaMethod="getOficina" xsdType="int" netType="int" javaType="int" cobisMapping="" isInherit="false" isComplexType="false" isCollectionType="false" required="true" encrypted="false" maxLength="0" />
+                <property name="operacion" propertyNet="Operacion" propertyJava="operacion" setterJavaMethod="setOperacion" getterJavaMethod="getOperacion" xsdType="int" netType="int" javaType="int" cobisMapping="" isInherit="false" isComplexType="false" isCollectionType="false" required="true" encrypted="false" maxLength="0" />
+                <property name="toperacion" propertyNet="Toperacion" propertyJava="toperacion" setterJavaMethod="setToperacion" getterJavaMethod="getToperacion" xsdType="string" netType="string" javaType="String" cobisMapping="" isInherit="false" isComplexType="false" isCollectionType="false" required="false" encrypted="false" maxLength="0" />
+                <property name="tramite" propertyNet="Tramite" propertyJava="tramite" setterJavaMethod="setTramite" getterJavaMethod="getTramite" xsdType="int" netType="int" javaType="int" cobisMapping="" isInherit="false" isComplexType="false" isCollectionType="false" required="true" encrypted="false" maxLength="0" />
+                <property name="nombreMoneda" propertyNet="NombreMoneda" propertyJava="nombreMoneda" setterJavaMethod="setNombreMoneda" getterJavaMethod="getNombreMoneda" xsdType="string" netType="string" javaType="String" cobisMapping="" isInherit="false" isComplexType="false" isCollectionType="false" required="false" encrypted="false" maxLength="0" />
+                <property name="banco" propertyNet="Banco" propertyJava="banco" setterJavaMethod="setBanco" getterJavaMethod="getBanco" xsdType="string" netType="string" javaType="String" cobisMapping="" isInherit="false" isComplexType="false" isCollectionType="false" required="false" encrypted="false" maxLength="0" />
+              </properties>
+            </DTO>
+          </DTOs>
+          <parameterMappings>
+            <parameter name="@i_tramite" direction="in" mappingDirection="in" dataType="int" CTSDataType="SQLINT4" JavaSQLType="INTEGER" mappingType="DTO" allowNull="false" DTOAlias="inInfoOperation" DTOPropertyName="tramite" />
+          </parameterMappings>
+          <resultMappings>
+            <result>
+              <DTOResult DTOAlias="returnInfoOperation" MapReturn="true">
+                <columnMapping position="0" name="Tipo Operacion" DTOPropertyName="toperacion" DataType="string" />
+                <columnMapping position="1" name="Operacion" DTOPropertyName="operacion" DataType="int" />
+                <columnMapping position="2" name="Moneda" DTOPropertyName="moneda" DataType="int" />
+                <columnMapping position="3" name="NombreMoneda" DTOPropertyName="nombreMoneda" DataType="string" />
+                <columnMapping position="4" name="Oficina" DTOPropertyName="oficina" DataType="int" />
+                <columnMapping position="5" name="Nombre Oficina" DTOPropertyName="nombreOficina" DataType="string" />
+                <columnMapping position="6" name="Monto" DTOPropertyName="monto" DataType="decimal" />
+                <columnMapping position="7" name="Monto Aprobado" DTOPropertyName="montoAprobado" DataType="decimal" />
+                <columnMapping position="8" name="Codigo Cliente" DTOPropertyName="codigoCliente" DataType="int" />
+                <columnMapping position="9" name="Nombre Cliente" DTOPropertyName="nombreCliente" DataType="string" />
+                <columnMapping position="10" name="banco" DTOPropertyName="banco" DataType="string" />
+              </DTOResult>
+            </result>
+          </resultMappings>
+          <MappingProperties>
+            <MappingProperty key="singleResult1" value="true" />
+          </MappingProperties>
+        </SRVMapping>
+      </service>
+      <service id="BusinessProcess.LoanRequest.Disbursement.GetQueryDisbursement" netName="GetQueryDisbursement" javaName="getQueryDisbursement" mappingType="STORED_PROCEDURE" mapId="d9bd3e8809c72d9493d84928ab8c4497">
+        <SRVMapping name="cob_cartera..sp_desembolso" trnCode="7032">
+          <DTOs>
+            <DTO direction="in" name="InQueryDisbursement" alias="inInQueryDisbursement" namespace="COBISCorp.eCOBIS.BusinessProcess.LoanRequest.DTO" package="cobiscorp.ecobis.businessprocess.loanrequest.dto" ns="http://dto.loanrequest.businessprocess.ecobis.cobiscorp" required="true" />
+            <DTO direction="return" name="QueryDisbursement" alias="returnQueryDisbursement" namespace="COBISCorp.eCOBIS.BusinessProcess.LoanRequest.DTO" package="cobiscorp.ecobis.businessprocess.loanrequest.dto" ns="http://dto.loanrequest.businessprocess.ecobis.cobiscorp" required="true">
+              <properties>
+                <property name="account" propertyNet="Account" propertyJava="account" setterJavaMethod="setAccount" getterJavaMethod="getAccount" xsdType="string" netType="string" javaType="String" cobisMapping="" isInherit="false" isComplexType="false" isCollectionType="false" required="false" encrypted="false" maxLength="0" />
+                <property name="ammountDsCur" propertyNet="AmmountDsCur" propertyJava="ammountDsCur" setterJavaMethod="setAmmountDsCur" getterJavaMethod="getAmmountDsCur" xsdType="string" netType="string" javaType="String" cobisMapping="" isInherit="false" isComplexType="false" isCollectionType="false" required="false" encrypted="false" maxLength="0" />
+                <property name="ammountNCur" propertyNet="AmmountNCur" propertyJava="ammountNCur" setterJavaMethod="setAmmountNCur" getterJavaMethod="getAmmountNCur" xsdType="string" netType="string" javaType="String" cobisMapping="" isInherit="false" isComplexType="false" isCollectionType="false" required="false" encrypted="false" maxLength="0" />
+                <property name="ammountOpCur" propertyNet="AmmountOpCur" propertyJava="ammountOpCur" setterJavaMethod="setAmmountOpCur" getterJavaMethod="getAmmountOpCur" xsdType="string" netType="string" javaType="String" cobisMapping="" isInherit="false" isComplexType="false" isCollectionType="false" required="false" encrypted="false" maxLength="0" />
+                <property name="automatic" propertyNet="Automatic" propertyJava="automatic" setterJavaMethod="setAutomatic" getterJavaMethod="getAutomatic" xsdType="char" netType="char" javaType="char" cobisMapping="" isInherit="false" isComplexType="false" isCollectionType="false" required="true" encrypted="false" maxLength="0" />
+                <property name="beneficiary" propertyNet="Beneficiary" propertyJava="beneficiary" setterJavaMethod="setBeneficiary" getterJavaMethod="getBeneficiary" xsdType="string" netType="string" javaType="String" cobisMapping="" isInherit="false" isComplexType="false" isCollectionType="false" required="false" encrypted="false" maxLength="0" />
+                <property name="comments" propertyNet="Comments" propertyJava="comments" setterJavaMethod="setComments" getterJavaMethod="getComments" xsdType="string" netType="string" javaType="String" cobisMapping="" isInherit="false" isComplexType="false" isCollectionType="false" required="false" encrypted="false" maxLength="0" />
+                <property name="currency" propertyNet="Currency" propertyJava="currency" setterJavaMethod="setCurrency" getterJavaMethod="getCurrency" xsdType="int" netType="int" javaType="int" cobisMapping="" isInherit="false" isComplexType="false" isCollectionType="false" required="true" encrypted="false" maxLength="0" />
+                <property name="currencyDesc" propertyNet="CurrencyDesc" propertyJava="currencyDesc" setterJavaMethod="setCurrencyDesc" getterJavaMethod="getCurrencyDesc" xsdType="string" netType="string" javaType="String" cobisMapping="" isInherit="false" isComplexType="false" isCollectionType="false" required="false" encrypted="false" maxLength="0" />
+                <property name="customer" propertyNet="Customer" propertyJava="customer" setterJavaMethod="setCustomer" getterJavaMethod="getCustomer" xsdType="string" netType="string" javaType="String" cobisMapping="" isInherit="false" isComplexType="false" isCollectionType="false" required="false" encrypted="false" maxLength="0" />
+                <property name="descripcion" propertyNet="Descripcion" propertyJava="descripcion" setterJavaMethod="setDescripcion" getterJavaMethod="getDescripcion" xsdType="char" netType="char" javaType="char" cobisMapping="" isInherit="false" isComplexType="false" isCollectionType="false" required="true" encrypted="false" maxLength="0" />
+                <property name="disbursementNo" propertyNet="DisbursementNo" propertyJava="disbursementNo" setterJavaMethod="setDisbursementNo" getterJavaMethod="getDisbursementNo" xsdType="int" netType="int" javaType="int" cobisMapping="" isInherit="false" isComplexType="false" isCollectionType="false" required="true" encrypted="false" maxLength="0" />
+                <property name="instruction" propertyNet="Instruction" propertyJava="instruction" setterJavaMethod="setInstruction" getterJavaMethod="getInstruction" xsdType="int" netType="int" javaType="int" cobisMapping="" isInherit="false" isComplexType="false" isCollectionType="false" required="true" encrypted="false" maxLength="0" />
+                <property name="office" propertyNet="Office" propertyJava="office" setterJavaMethod="setOffice" getterJavaMethod="getOffice" xsdType="int" netType="int" javaType="int" cobisMapping="" isInherit="false" isComplexType="false" isCollectionType="false" required="true" encrypted="false" maxLength="0" />
+                <property name="officeDesc" propertyNet="OfficeDesc" propertyJava="officeDesc" setterJavaMethod="setOfficeDesc" getterJavaMethod="getOfficeDesc" xsdType="string" netType="string" javaType="String" cobisMapping="" isInherit="false" isComplexType="false" isCollectionType="false" required="false" encrypted="false" maxLength="0" />
+                <property name="officeTax" propertyNet="OfficeTax" propertyJava="officeTax" setterJavaMethod="setOfficeTax" getterJavaMethod="getOfficeTax" xsdType="int" netType="int" javaType="int" cobisMapping="" isInherit="false" isComplexType="false" isCollectionType="false" required="true" encrypted="false" maxLength="0" />
+                <property name="officeTaxDesc" propertyNet="OfficeTaxDesc" propertyJava="officeTaxDesc" setterJavaMethod="setOfficeTaxDesc" getterJavaMethod="getOfficeTaxDesc" xsdType="string" netType="string" javaType="String" cobisMapping="" isInherit="false" isComplexType="false" isCollectionType="false" required="false" encrypted="false" maxLength="0" />
+                <property name="product" propertyNet="Product" propertyJava="product" setterJavaMethod="setProduct" getterJavaMethod="getProduct" xsdType="string" netType="string" javaType="String" cobisMapping="" isInherit="false" isComplexType="false" isCollectionType="false" required="false" encrypted="false" maxLength="0" />
+                <property name="quoteDsCur" propertyNet="QuoteDsCur" propertyJava="quoteDsCur" setterJavaMethod="setQuoteDsCur" getterJavaMethod="getQuoteDsCur" xsdType="double" netType="double" javaType="double" cobisMapping="" isInherit="false" isComplexType="false" isCollectionType="false" required="true" encrypted="false" maxLength="0" />
+                <property name="quoteOpCur" propertyNet="QuoteOpCur" propertyJava="quoteOpCur" setterJavaMethod="setQuoteOpCur" getterJavaMethod="getQuoteOpCur" xsdType="double" netType="double" javaType="double" cobisMapping="" isInherit="false" isComplexType="false" isCollectionType="false" required="true" encrypted="false" maxLength="0" />
+                <property name="sequential" propertyNet="Sequential" propertyJava="sequential" setterJavaMethod="setSequential" getterJavaMethod="getSequential" xsdType="int" netType="int" javaType="int" cobisMapping="" isInherit="false" isComplexType="false" isCollectionType="false" required="true" encrypted="false" maxLength="0" />
+                <property name="tquoteDsCur" propertyNet="TquoteDsCur" propertyJava="tquoteDsCur" setterJavaMethod="setTquoteDsCur" getterJavaMethod="getTquoteDsCur" xsdType="char" netType="char" javaType="char" cobisMapping="" isInherit="false" isComplexType="false" isCollectionType="false" required="true" encrypted="false" maxLength="0" />
+                <property name="tquoteOpCur" propertyNet="TquoteOpCur" propertyJava="tquoteOpCur" setterJavaMethod="setTquoteOpCur" getterJavaMethod="getTquoteOpCur" xsdType="char" netType="char" javaType="char" cobisMapping="" isInherit="false" isComplexType="false" isCollectionType="false" required="true" encrypted="false" maxLength="0" />
+              </properties>
+            </DTO>
+            <DTO direction="out" name="DisbursementResponse" alias="outDisbursementResponse" namespace="COBISCorp.eCOBIS.BusinessProcess.LoanRequest.DTO" package="cobiscorp.ecobis.businessprocess.loanrequest.dto" ns="http://dto.loanrequest.businessprocess.ecobis.cobiscorp" required="true">
+              <properties>
+                <property name="disbursementList" propertyNet="DisbursementList" propertyJava="disbursementList" setterJavaMethod="setDisbursementList" getterJavaMethod="getDisbursementList" xsdType="GenericList" netType="List&lt;QueryDisbursement&gt;" javaType="ArrayList&lt;QueryDisbursement&gt;" cobisMapping="" isInherit="false" isComplexType="true" isCollectionType="true" required="true" encrypted="false" maxLength="0" XSDElementType="QueryDisbursement" netElementType="QueryDisbursement" javaElementType="QueryDisbursement" />
+              </properties>
+            </DTO>
+          </DTOs>
+          <parameterMappings>
+            <parameter name="@i_operacion" direction="in" mappingDirection="in" dataType="char" CTSDataType="SQLCHAR" JavaSQLType="CHAR" mappingType="CONSTANT" allowNull="false" contantValue="S" />
+            <parameter name="@i_banco_real" direction="in" mappingDirection="in" dataType="varchar" CTSDataType="SQLVARCHAR" JavaSQLType="VARCHAR" mappingType="DTO" allowNull="false" DTOAlias="inInQueryDisbursement" DTOPropertyName="operationNumber" />
+            <parameter name="@i_banco_ficticio" direction="in" mappingDirection="in" dataType="varchar" CTSDataType="SQLVARCHAR" JavaSQLType="VARCHAR" mappingType="DTO" allowNull="false" DTOAlias="inInQueryDisbursement" DTOPropertyName="operationNumber" />
+          </parameterMappings>
+          <resultMappings>
+            <result>
+              <DTOResult DTOAlias="returnQueryDisbursement" MapReturn="true">
+                <columnMapping position="0" name="disbursement" DTOPropertyName="disbursementNo" DataType="int" Format="" />
+                <columnMapping position="1" name="product" DTOPropertyName="product" DataType="string" Format="" />
+                <columnMapping position="2" name="currency" DTOPropertyName="currency" DataType="int" Format="" />
+                <columnMapping position="3" name="currencyDesc" DTOPropertyName="currencyDesc" DataType="string" Format="" />
+                <columnMapping position="4" name="ammountDsCur" DTOPropertyName="ammountDsCur" DataType="string" Format="" />
+                <columnMapping position="5" name="tquoteDsCurr" DTOPropertyName="tquoteDsCur" DataType="char" Format="" />
+                <columnMapping position="6" name="quoteDsCur" DTOPropertyName="quoteDsCur" DataType="double" Format="" />
+                <columnMapping position="7" name="ammountOpCur" DTOPropertyName="ammountOpCur" DataType="string" Format="" />
+                <columnMapping position="8" name="tquoteOpCur" DTOPropertyName="tquoteOpCur" DataType="char" Format="" />
+                <columnMapping position="9" name="quoteOptCurr" DTOPropertyName="quoteOpCur" DataType="double" Format="" />
+                <columnMapping position="10" name="ammountNCur" DTOPropertyName="ammountNCur" DataType="string" Format="" />
+                <columnMapping position="11" name="account" DTOPropertyName="account" DataType="string" Format="" />
+                <columnMapping position="12" name="beneficiary" DTOPropertyName="beneficiary" DataType="string" Format="" />
+                <columnMapping position="13" name="office" DTOPropertyName="office" DataType="int" Format="" />
+                <columnMapping position="14" name="officeDesc" DTOPropertyName="officeDesc" DataType="string" Format="" />
+                <columnMapping position="15" name="instruction" DTOPropertyName="instruction" DataType="int" Format="" />
+                <columnMapping position="16" name="sequential" DTOPropertyName="sequential" DataType="int" Format="" />
+                <columnMapping position="17" name="automatic" DTOPropertyName="automatic" DataType="char" Format="" />
+                <columnMapping position="18" name="description" DTOPropertyName="descripcion" DataType="char" Format="" />
+                <columnMapping position="19" name="officeTax" DTOPropertyName="officeTax" DataType="int" Format="" />
+                <columnMapping position="20" name="officeTaxDesc" DTOPropertyName="officeTaxDesc" DataType="string" Format="" />
+                <columnMapping position="21" name="customer" DTOPropertyName="customer" DataType="string" Format="" />
+                <columnMapping position="22" name="comments" DTOPropertyName="comments" DataType="string" Format="" />
+              </DTOResult>
+            </result>
+          </resultMappings>
+          <MappingProperties>
+            <MappingProperty key="BLIQueryPropertyName1" value="DisbursementList" />
+          </MappingProperties>
+        </SRVMapping>
+      </service>
+    </services>
+  </partialClass>
+</serviceClass>

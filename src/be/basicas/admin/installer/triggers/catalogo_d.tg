@@ -1,0 +1,86 @@
+/********************************************************************************/
+/* Archivo:     catalogo_d.tg                                                   */
+/* Trigger:     tgd_cl_catalogo                                                 */
+/* Producto:    ADMINISTRACION                                                  */
+/********************************************************************************/
+/*                                 IMPORTANTE                                   */
+/* Este programa es parte de los paquetes bancarios propiedad de COBISCorp.     */
+/* Su uso no autorizado queda expresamente prohibido asi como cualquier         */
+/* alteracion o agregado hecho por alguno de usuarios sin el debido             */
+/* consentimiento por escrito de la Presidencia Ejecutiva de COBISCorp          */
+/* o su representante.                                                          */
+/********************************************************************************/
+/*                                PROPOSITO                                     */
+/* Disparador de informacion de catalogos                                       */
+/********************************************************************************/
+/*                                MODIFICACIONES                                */
+/********************************************************************************/
+/* FECHA        VERSION  AUTOR   RAZON                                          */
+/********************************************************************************/
+/* 20-Mar-2012  4.0.0.0  PCL     Internacionalizacion (CIB4.1.0.5)              */
+/* 03-May-2016           ELO     Migracion de Sybase a SQLServer                */
+/********************************************************************************/
+
+use cobis
+go
+if exists (select * from sysobjects where name = 'tgd_cl_catalogo')
+    drop trigger tgd_cl_catalogo
+go
+create trigger tgd_cl_catalogo
+on cl_catalogo
+for delete
+as
+begin
+    declare
+        @w_tabla    smallint,
+        @w_codigo   varchar(10),
+        @w_id       int,
+        @w_pc_id    INT
+
+    declare cu_deleted cursor for
+              select
+                    tabla,
+                    codigo
+              from deleted
+
+              open cu_deleted
+              fetch cu_deleted into
+                    @w_tabla,
+                    @w_codigo
+
+    while @@FETCH_STATUS = 0
+        begin
+            /****************************************/
+            /* Internacionalizacion                 */
+
+            SELECT @w_pc_id = NULL
+
+            SELECT  @w_pc_id = pc_id
+            FROM    ad_catalogo_i18n
+            WHERE   pc_identificador = (    SELECT tabla
+                                            FROM cl_tabla
+                                            WHERE codigo = @w_tabla )
+            AND     pc_codigo = @w_codigo
+
+            IF @w_pc_id IS NOT NULL
+            BEGIN
+                DELETE FROM ad_recurso
+                WHERE re_pc_id = @w_pc_id
+
+                DELETE FROM ad_pseudo_catalogo
+                WHERE pc_id = @w_pc_id
+            END
+
+            /* Internacionalizacion                 */
+            /****************************************/
+
+
+                fetch cu_deleted into
+                       @w_tabla,
+                       @w_codigo
+
+        end
+        close cu_deleted
+        deallocate cu_deleted
+end
+go

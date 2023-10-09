@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<procedure>
+  <database>cob_sincroniza</database>
+  <name>sp_sincroniza</name>
+  <type>SYBASE</type>
+  <version>1</version>
+  <parameters>
+    <parameter name="@s_ssn" dataType="int" direction="in" />
+    <parameter name="@s_user" dataType="varchar" direction="in" />
+    <parameter name="@s_term" dataType="varchar" direction="in" />
+    <parameter name="@s_date" dataType="datetime" direction="in" />
+    <parameter name="@s_sesn" dataType="int" direction="in" />
+    <parameter name="@s_culture" dataType="varchar" direction="in" />
+    <parameter name="@s_srv" dataType="varchar" direction="in" />
+    <parameter name="@s_lsrv" dataType="varchar" direction="in" />
+    <parameter name="@s_ofi" dataType="smallint" direction="in" />
+    <parameter name="@s_rol" dataType="smallint" direction="in" />
+    <parameter name="@s_org_err" dataType="char" direction="in" />
+    <parameter name="@s_error" dataType="int" direction="in" />
+    <parameter name="@s_sev" dataType="tinyint" direction="in" />
+    <parameter name="@s_msg" dataType="varchar" direction="in" />
+    <parameter name="@s_org" dataType="char" direction="in" />
+    <parameter name="@t_debug" dataType="char" direction="in" />
+    <parameter name="@t_file" dataType="varchar" direction="in" />
+    <parameter name="@t_from" dataType="varchar" direction="in" />
+    <parameter name="@t_trn" dataType="smallint" direction="in" />
+    <parameter name="@t_show_version" dataType="bit" direction="in" />
+    <parameter name="@i_operacion" dataType="char" direction="in" />
+    <parameter name="@i_tipo" dataType="char" direction="in" />
+    <parameter name="@i_modo" dataType="int" direction="in" />
+    <parameter name="@i_id" dataType="varchar" direction="in" />
+    <parameter name="@i_id_sync" dataType="int" direction="in" />
+    <parameter name="@i_page" dataType="int" direction="in" />
+    <parameter name="@i_page_size" dataType="int" direction="in" />
+    <parameter name="@i_usuario" dataType="varchar" direction="in" />
+    <parameter name="@i_estado" dataType="char" direction="in" />
+    <parameter name="@i_fecha_ing" dataType="varchar" direction="in" />
+    <parameter name="@i_fecha_sin" dataType="varchar" direction="in" />
+    <parameter name="@i_codigo" dataType="int" direction="in" />
+  </parameters>
+  <queries>
+    <query>
+      <columns>
+        <column name="sa_dato_xml" />
+        <column name="sa_id" />
+        <column name="sa_observacion" />
+        <column name="sa_accion" />
+      </columns>
+      <queryText>SELECT  "sa_dato_xml" = sid_xml,"sa_id" = sid_secuencial,"sa_observacion" = sid_observacion,"sa_accion" = sid_accion </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="sa_id" />
+        <column name="sa_observacion" />
+        <column name="sa_accion" />
+      </columns>
+      <queryText>SELECT "sa_id"=sid_id,"sa_observacion"=sid_observacion,"sa_accion"=sid_accion</queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="secuencial" />
+        <column name="entidad" />
+        <column name="entidadDesc" />
+        <column name="usuario" />
+        <column name="estado" />
+        <column name="fechaIngreso" />
+        <column name="fechaSincron" />
+      </columns>
+      <queryText>SELECT  "secuencial" = si_secuencial,"entidad" = si_cod_entidad,"entidadDesc" = si_des_entidad,"usuario" = si_usuario,"estado" = si_estado,"fechaIngreso" = si_fecha_ing,"fechaSincron" = si_fecha_sin </queryText>
+    </query>
+  </queries>
+</procedure>

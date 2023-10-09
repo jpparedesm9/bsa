@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<procedure>
+  <database>cob_cartera</database>
+  <name>sp_proyeccion_cuota</name>
+  <type>SYBASE</type>
+  <version>1</version>
+  <parameters>
+    <parameter name="@s_user" dataType="varchar" direction="in" />
+    <parameter name="@s_date" dataType="datetime" direction="in" />
+    <parameter name="@s_ofi" dataType="smallint" direction="in" />
+    <parameter name="@s_term" dataType="varchar" direction="in" />
+    <parameter name="@i_banco" dataType="varchar" direction="in" />
+    <parameter name="@i_fecha" dataType="datetime" direction="in" />
+    <parameter name="@i_debug" dataType="char" direction="in" />
+    <parameter name="@i_tipo_cobro" dataType="char" direction="in" />
+    <parameter name="@i_dividendo" dataType="int" direction="in" />
+    <parameter name="@i_tipo_proyeccion" dataType="char" direction="in" />
+    <parameter name="@i_formato_fecha" dataType="int" direction="in" />
+    <parameter name="@i_monto_pago" dataType="money" direction="in" />
+    <parameter name="@i_tasa_prepago" dataType="float" direction="in" />
+    <parameter name="@i_dias_vence" dataType="int" direction="in" />
+    <parameter name="@i_extracto" dataType="char" direction="in" />
+    <parameter name="@i_proy" dataType="char" direction="in" />
+    <parameter name="@o_saldo" dataType="money" direction="out" />
+    <parameter name="@o_saldo_prox" dataType="money" direction="out" />
+  </parameters>
+  <queries>
+    <query>
+      <columns>
+        <column name="CEDULA/RUC" />
+        <column name="FECHA DE CALCULO " />
+        <column name="MONTO (VIG + VENC)" />
+        <column name="MONTO VENCIDO" />
+      </columns>
+      <queryText>SELECT  "CEDULA/RUC" = ISNULL (vx_ced_ruc, ""),"FECHA DE CALCULO " = CONVERT (VARCHAR (10),? ,103),"MONTO (VIG + VENC)" = ISNULL (vx_monto, 0),"MONTO VENCIDO" = ISNULL (vx_valor_vencido, 0) </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="{1}" />
+      </columns>
+      <queryText>SELECT w_saldo_cap</queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="{1}" />
+      </columns>
+      <queryText>SELECT w_saldo_cap</queryText>
+    </query>
+  </queries>
+</procedure>

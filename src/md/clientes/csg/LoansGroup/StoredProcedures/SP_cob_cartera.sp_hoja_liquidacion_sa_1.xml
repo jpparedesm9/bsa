@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<procedure>
+  <database>cob_cartera</database>
+  <name>sp_hoja_liquidacion_sa</name>
+  <type>SYBASE</type>
+  <version>1</version>
+  <parameters>
+    <parameter name="@i_banco" dataType="varchar" direction="in" />
+    <parameter name="@i_opcion" dataType="char" direction="in" />
+    <parameter name="@s_date" dataType="datetime" direction="in" />
+    <parameter name="@s_user" dataType="varchar" direction="in" />
+  </parameters>
+  <queries>
+    <query>
+      <columns>
+        <column name="{1}" />
+        <column name="{2}" />
+        <column name="{3}" />
+        <column name="{4}" />
+        <column name="{5}" />
+        <column name="{6}" />
+        <column name="{7}" />
+        <column name="{8}" />
+        <column name="{9}" />
+        <column name="{10}" />
+        <column name="{11}" />
+        <column name="{12}" />
+        <column name="{13}" />
+        <column name="{14}" />
+      </columns>
+      <queryText>SELECT w_fecha_liq, w_monto_financiado, w_grupo, w_nombre_grupo, w_ciclos, w_fecha, w_oficina, w_nombre_oficina, w_tasa, w_grupal, w_fecha_fin, w_plazo, w_periodicidad, w_tasa_mora</queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="Prestamo" />
+        <column name="Nombre del Cliente" />
+        <column name="Monto Aprobado" />
+        <column name="Valores Descontar" />
+        <column name="Ahorro" />
+        <column name="Incentivo" />
+        <column name="Neto a Entregar" />
+        <column name="Cheque" />
+        <column name="Operacion" />
+      </columns>
+      <queryText>SELECT  "Prestamo" = A.op_banco,"Nombre del Cliente" = SUBSTRING (A.op_nombre, 1, 35),"Monto Aprobado" = A.op_monto,"Valores Descontar" = (SELECT  ISNULL (SUM (ro_valor), 0) FROM cob_cartera..ca_rubro_op   WHERE ro_operacion = A.op_operacion AND ro_concepto = ? AND ro_fpago IN ("L","F")     ),"Ahorro" = ISNULL ((tg_monto * ? / 100), 0),"Incentivo" = ISNULL ((SELECT  ISNULL (dc_incentivos, 0) FROM cob_cartera..ca_det_ciclo   WHERE dc_operacion = A.op_operacion     ), 0),"Neto a Entregar" = (SELECT  ISNULL (SUM (C.dm_monto_mop), 0) FROM cob_cartera..ca_desembolso C   WHERE C.dm_operacion = A.op_operacion AND C.dm_estado IN ("A","NA")     ),"Cheque" = (SELECT  MIN (C.dm_cuenta) FROM cob_cartera..ca_desembolso C   WHERE C.dm_operacion = A.op_operacion AND C.dm_estado IN ("A","NA")     ),"Operacion" = A.op_cliente </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="Prestamo" />
+        <column name="Nombre del Cliente" />
+        <column name="Monto Aprobado" />
+        <column name="Valores Descontar" />
+        <column name="Ahorro" />
+        <column name="Incentivo" />
+        <column name="Neto a Entregar" />
+        <column name="Cheque" />
+        <column name="Operacion" />
+      </columns>
+      <queryText>SELECT  "Prestamo" = A.op_banco,"Nombre del Cliente" = SUBSTRING (A.op_nombre, 1, 35),"Monto Aprobado" = A.op_monto,"Valores Descontar" = ISNULL ((SELECT  SUM (ro_valor) FROM cob_cartera..ca_rubro_op   WHERE ro_operacion = A.op_operacion AND ro_concepto = ? AND ro_fpago IN ("L","F")     ), 0),"Ahorro" = (SELECT  ISNULL (op_monto * ? / 100, 0)  ),"Incentivo" = 0,"Neto a Entregar" = (SELECT  ISNULL (SUM (C.dm_monto_mop), 0) FROM cob_cartera..ca_desembolso C   WHERE C.dm_operacion = A.op_operacion AND C.dm_estado IN ("A","NA")     ),"Cheque" = (SELECT  MIN (C.dm_cuenta) FROM cob_cartera..ca_desembolso C   WHERE C.dm_operacion = A.op_operacion AND C.dm_estado IN ("A","NA")     ),"Operacion" = A.op_cliente </queryText>
+    </query>
+  </queries>
+</procedure>

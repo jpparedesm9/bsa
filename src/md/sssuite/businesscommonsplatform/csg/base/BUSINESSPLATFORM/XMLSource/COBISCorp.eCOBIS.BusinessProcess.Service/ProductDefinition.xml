@@ -1,0 +1,236 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<product path="d:/T52/Test_SSSuite_5.2.0.0/BusinessCommonsPlatform/source/middleware/SG/base/BUSINESSPLATFORM/Products/COBISCorp.eCOBIS.BusinessProcess.Service" appPath="C:/Program Files (x86)/COBIS/COBIS Services Generator/" name="COBISCorp.eCOBIS.BusinessProcess.Service" productNS="http://service.businessprocess.ecobis.cobiscorp" description="Servicos de los procesos de Negocios" documentationLanguage="Español" year="2017" version="2.0.0.0" type="SERVICE" GUID="F0112316-8E1B-4FA5-8540-A615F6B24063">
+  <namespaces>
+    <namespace type="class" base="COBISCorp.eCOBIS.BusinessProcess.Customers" name="COBISCorp.eCOBIS.BusinessProcess.Customers.Service" package="cobiscorp.ecobis.businessprocess.customers.service" ns="http://service.customers.businessprocess.ecobis.cobiscorp" folder="Customers" />
+    <namespace type="class" base="COBISCorp.eCOBIS.BusinessProcess.General" name="COBISCorp.eCOBIS.BusinessProcess.General.Service" package="cobiscorp.ecobis.businessprocess.general.service" ns="http://service.general.businessprocess.ecobis.cobiscorp" folder="General" />
+    <namespace type="class" base="COBISCorp.eCOBIS.BusinessProcess.LoanRequest" name="COBISCorp.eCOBIS.BusinessProcess.LoanRequest.Service" package="cobiscorp.ecobis.businessprocess.loanrequest.service" ns="http://service.loanrequest.businessprocess.ecobis.cobiscorp" folder="LoanRequest" />
+    <namespace type="class" base="COBISCorp.eCOBIS.BusinessProcess.Simulacion" name="COBISCorp.eCOBIS.BusinessProcess.Simulacion.Service" package="cobiscorp.ecobis.businessprocess.simulacion.service" ns="http://service.simulacion.businessprocess.ecobis.cobiscorp" folder="Simulacion" />
+  </namespaces>
+  <templates>
+    <template id="ServiceCTS302" productName="COBISCorp.eCOBIS.BusinessProcess.Service" outputFolder="c:\COBIS-SG\Output\CTS\COBISCorp.eCOBIS.BusinessProcess.Service" package="true" packageType="Jar">
+      <templateFiles>
+        <templateFile filePath="Annotations\JavaInterface.xslt" enabled="true" override="true" />
+        <templateFile filePath="Annotations\JavaService.xslt" enabled="true" override="true" />
+        <templateFile filePath="Annotations\OSGIClass.xslt" enabled="true" override="true" />
+        <templateFile filePath="Annotations\Interceptor.xslt" enabled="true" override="false" />
+        <templateFile filePath="..\Commons\Java\buildProperties.xslt" enabled="true" override="true" />
+        <templateFile filePath="..\Commons\Java\build.xslt" enabled="true" override="true" />
+      </templateFiles>
+    </template>
+  </templates>
+  <DTOs />
+  <classes>
+    <class name="CustomerJobs" nsBase="COBISCorp.eCOBIS.BusinessProcess.Customers" namespace="COBISCorp.eCOBIS.BusinessProcess.Customers.Service" package="cobiscorp.ecobis.businessprocess.customers.service" ns="http://service.customers.businessprocess.ecobis.cobiscorp" version="1">
+      <partialClasses>
+        <partialClass name="CustomerJobs">
+          <services>
+            <service name="DeleteCustomerJob" id="BusinessProcess.Customers.CustomerJobs.DeleteCustomerJob">
+              <procedure name="sp_empleo" database="cobis" version="1" />
+            </service>
+            <service name="InsertCustomerJobs" id="BusinessProcess.Customers.CustomerJobs.InsertCustomerJobs">
+              <procedure name="sp_empleo" database="cobis" version="1" />
+            </service>
+            <service name="SearchCustomerJobs" id="BusinessProcess.Customers.CustomerJobs.SearchCustomerJobs">
+              <procedure name="sp_empleo" database="cobis" version="1" />
+            </service>
+            <service name="UpdateCustomerJobs" id="BusinessProcess.Customers.CustomerJobs.UpdateCustomerJobs">
+              <procedure name="sp_empleo" database="cobis" version="1" />
+            </service>
+          </services>
+        </partialClass>
+      </partialClasses>
+    </class>
+    <class name="OfficeJobs" nsBase="COBISCorp.eCOBIS.BusinessProcess.Customers" namespace="COBISCorp.eCOBIS.BusinessProcess.Customers.Service" package="cobiscorp.ecobis.businessprocess.customers.service" ns="http://service.customers.businessprocess.ecobis.cobiscorp" version="1">
+      <partialClasses>
+        <partialClass name="OfficeJobs">
+          <services>
+            <service name="SearchOfficeJob" id="BusinessProcess.Customers.OfficeJobs.SearchOfficeJob">
+              <procedure name="sp_ocupacion" database="cobis" version="1" />
+            </service>
+          </services>
+        </partialClass>
+      </partialClasses>
+    </class>
+    <class name="QueryCustomer" nsBase="COBISCorp.eCOBIS.BusinessProcess.Customers" namespace="COBISCorp.eCOBIS.BusinessProcess.Customers.Service" package="cobiscorp.ecobis.businessprocess.customers.service" ns="http://service.customers.businessprocess.ecobis.cobiscorp" version="1">
+      <partialClasses>
+        <partialClass name="QueryCustomer">
+          <services>
+            <service name="QueryCustomerEntailment" id="BusinessProcess.Customers.QueryCustomer.QueryCustomerEntailment">
+              <procedure name="sp_consulta_cliente_busin" database="cob_pac" version="1" />
+            </service>
+          </services>
+        </partialClass>
+      </partialClasses>
+    </class>
+    <class name="CreditLine" nsBase="COBISCorp.eCOBIS.BusinessProcess.General" namespace="COBISCorp.eCOBIS.BusinessProcess.General.Service" package="cobiscorp.ecobis.businessprocess.general.service" ns="http://service.general.businessprocess.ecobis.cobiscorp" version="1">
+      <partialClasses>
+        <partialClass name="CreditLine">
+          <services>
+            <service name="GetLineOperation" id="BusinessProcess.General.CreditLine.GetLineOperation">
+              <procedure name="sp_cons_op_lin_wf" database="cob_credito" version="1" />
+            </service>
+            <service name="GetOperation" id="BusinessProcess.General.CreditLine.GetOperation">
+              <procedure name="sp_consulta_operacion_linea" database="cob_credito" version="1" />
+            </service>
+            <service name="GetOperationCreditLine" id="BusinessProcess.General.CreditLine.GetOperationCreditLine">
+              <procedure name="sp_consulta_operacion_linea" database="cob_credito" version="1" />
+            </service>
+            <service name="GetOperationName" id="BusinessProcess.General.CreditLine.GetOperationName">
+              <procedure name="sp_consulta_operacion_linea" database="cob_credito" version="1" />
+            </service>
+          </services>
+        </partialClass>
+      </partialClasses>
+    </class>
+    <class name="Currency" nsBase="COBISCorp.eCOBIS.BusinessProcess.General" namespace="COBISCorp.eCOBIS.BusinessProcess.General.Service" package="cobiscorp.ecobis.businessprocess.general.service" ns="http://service.general.businessprocess.ecobis.cobiscorp" version="1">
+      <partialClasses>
+        <partialClass name="Currency">
+          <services>
+            <service name="GetCodeCurrency" id="BusinessProcess.General.Currency.GetCodeCurrency">
+              <procedure name="sp_consulta_moneda" database="cobis" version="1" />
+            </service>
+          </services>
+        </partialClass>
+      </partialClasses>
+    </class>
+    <class name="EconomicActivity" nsBase="COBISCorp.eCOBIS.BusinessProcess.General" namespace="COBISCorp.eCOBIS.BusinessProcess.General.Service" package="cobiscorp.ecobis.businessprocess.general.service" ns="http://service.general.businessprocess.ecobis.cobiscorp" version="1">
+      <partialClasses>
+        <partialClass name="EconomicActivity">
+          <services>
+            <service name="QueryEconomicActivity" id="BusinessProcess.General.EconomicActivity.QueryEconomicActivity">
+              <procedure name="sp_actividad_ec" database="cobis" version="1" />
+            </service>
+          </services>
+        </partialClass>
+      </partialClasses>
+    </class>
+    <class name="Officer" nsBase="COBISCorp.eCOBIS.BusinessProcess.General" namespace="COBISCorp.eCOBIS.BusinessProcess.General.Service" package="cobiscorp.ecobis.businessprocess.general.service" ns="http://service.general.businessprocess.ecobis.cobiscorp" version="1">
+      <partialClasses>
+        <partialClass name="Officer">
+          <services>
+            <service name="GetCodeOfficer" id="BusinessProcess.General.Officer.GetCodeOfficer">
+              <procedure name="sp_consulta_oficial" database="cobis" version="1" />
+            </service>
+            <service name="UpdateCreditOfficer" id="BusinessProcess.General.Officer.UpdateCreditOfficer">
+              <procedure name="sp_update_officer" database="cob_credito" version="1" />
+            </service>
+          </services>
+        </partialClass>
+      </partialClasses>
+    </class>
+    <class name="Reestructuring" nsBase="COBISCorp.eCOBIS.BusinessProcess.General" namespace="COBISCorp.eCOBIS.BusinessProcess.General.Service" package="cobiscorp.ecobis.businessprocess.general.service" ns="http://service.general.businessprocess.ecobis.cobiscorp" version="1">
+      <partialClasses>
+        <partialClass name="Reestructuring">
+          <services>
+            <service name="GetReestructuredBaseOperation" id="BusinessProcess.General.Reestructuring.GetReestructuredBaseOperation">
+              <procedure name="sp_rees_base" database="cob_cartera" version="1" />
+            </service>
+            <service name="GetReestructuredProduct" id="BusinessProcess.General.Reestructuring.GetReestructuredProduct">
+              <procedure name="sp_rees_op_base" database="cob_cartera" version="1" />
+            </service>
+          </services>
+        </partialClass>
+      </partialClasses>
+    </class>
+    <class name="CreditOperation" nsBase="COBISCorp.eCOBIS.BusinessProcess.LoanRequest" namespace="COBISCorp.eCOBIS.BusinessProcess.LoanRequest.Service" package="cobiscorp.ecobis.businessprocess.loanrequest.service" ns="http://service.loanrequest.businessprocess.ecobis.cobiscorp" version="1">
+      <partialClasses>
+        <partialClass name="CreditOperation">
+          <services>
+            <service name="GetProcessedNumber" id="BusinessProcess.LoanRequest.CreditOperation.GetProcessedNumber">
+              <procedure name="sp_consulta_tramite" database="cob_credito" version="1" />
+            </service>
+          </services>
+        </partialClass>
+      </partialClasses>
+    </class>
+    <class name="Disbursement" nsBase="COBISCorp.eCOBIS.BusinessProcess.LoanRequest" namespace="COBISCorp.eCOBIS.BusinessProcess.LoanRequest.Service" package="cobiscorp.ecobis.businessprocess.loanrequest.service" ns="http://service.loanrequest.businessprocess.ecobis.cobiscorp" version="1">
+      <partialClasses>
+        <partialClass name="Disbursement">
+          <services>
+            <service name="GetInfoOperation" id="BusinessProcess.LoanRequest.Disbursement.GetInfoOperation">
+              <procedure name="sp_consulta_info_operacion" database="cob_cartera" version="1" />
+            </service>
+            <service name="GetQueryDisbursement" id="BusinessProcess.LoanRequest.Disbursement.GetQueryDisbursement">
+              <procedure name="sp_desembolso" database="cob_cartera" version="1" />
+            </service>
+          </services>
+        </partialClass>
+      </partialClasses>
+    </class>
+    <class name="DocumentPrint" nsBase="COBISCorp.eCOBIS.BusinessProcess.LoanRequest" namespace="COBISCorp.eCOBIS.BusinessProcess.LoanRequest.Service" package="cobiscorp.ecobis.businessprocess.loanrequest.service" ns="http://service.loanrequest.businessprocess.ecobis.cobiscorp" version="1">
+      <partialClasses>
+        <partialClass name="DocumentPrint">
+          <services>
+            <service name="DocumentByProcess" id="BusinessProcess.LoanRequest.DocumentPrint.DocumentByProcess">
+              <procedure name="sp_document_imp" database="cob_credito" version="1" />
+            </service>
+          </services>
+        </partialClass>
+      </partialClasses>
+    </class>
+    <class name="ValidateLineCredit" nsBase="COBISCorp.eCOBIS.BusinessProcess.LoanRequest" namespace="COBISCorp.eCOBIS.BusinessProcess.LoanRequest.Service" package="cobiscorp.ecobis.businessprocess.loanrequest.service" ns="http://service.loanrequest.businessprocess.ecobis.cobiscorp" version="1">
+      <partialClasses>
+        <partialClass name="ValidateLineCredit">
+          <services>
+            <service name="ValidateUseOfLineCredit" id="BusinessProcess.LoanRequest.ValidateLineCredit.ValidateUseOfLineCredit">
+              <procedure name="sp_utilizacion" database="cob_credito" version="1" />
+            </service>
+          </services>
+        </partialClass>
+      </partialClasses>
+    </class>
+    <class name="Simulation" nsBase="COBISCorp.eCOBIS.BusinessProcess.Simulacion" namespace="COBISCorp.eCOBIS.BusinessProcess.Simulacion.Service" package="cobiscorp.ecobis.businessprocess.simulacion.service" ns="http://service.simulacion.businessprocess.ecobis.cobiscorp" version="1">
+      <partialClasses>
+        <partialClass name="Simulation">
+          <services>
+            <service name="GetInfoSimulation" id="BusinessProcess.Simulacion.Simulation.GetInfoSimulation">
+              <procedure name="sp_consulta_datos_simulacion" database="cob_cartera" version="1" />
+            </service>
+            <service name="GetNumberOperation" id="BusinessProcess.Simulacion.Simulation.GetNumberOperation">
+              <procedure name="sp_consulta_numero_operacion" database="cob_cartera" version="1" />
+            </service>
+            <service name="GetSimulationNumber" id="BusinessProcess.Simulacion.Simulation.GetSimulationNumber">
+              <procedure name="sp_consulta_simulacion" database="cob_cartera" version="1" />
+            </service>
+            <service name="InsertFinalTables" id="BusinessProcess.Simulacion.Simulation.InsertFinalTables">
+              <procedure name="sp_pasodef" database="cob_cartera" version="1" />
+            </service>
+            <service name="InsertSimulationProcess" id="BusinessProcess.Simulacion.Simulation.InsertSimulationProcess">
+              <procedure name="sp_paso_simulacion" database="cob_credito" version="1" />
+            </service>
+            <service name="InsertTemporaryTables" id="BusinessProcess.Simulacion.Simulation.InsertTemporaryTables">
+              <procedure name="sp_pasotmp" database="cob_cartera" version="1" />
+            </service>
+          </services>
+        </partialClass>
+      </partialClasses>
+    </class>
+  </classes>
+  <packagers>
+    <packager type="SGPackageJava" AntTask="sign-archive" KeyAlias="COBISLoanRequest" KeyPassword="loanadminadmin" KeyCertificatePassword="loanadmin" KeyFileName="COBISLoanRequest.keystore" RelativeFolder="True" TemplateId="ServiceCTS302" />
+  </packagers>
+  <references>
+    <reference name="COBISCorp.eCOBIS.BusinessProcess.DTO" type="DTO" version="2.0.0.0" GUID="BAFAB049-B0B5-4A29-946C-873A682D1F51">
+      <templates>
+        <template id="DTOJavaPOJO" productName="COBISCorp.eCOBIS.BusinessProcess.DTO" outputFolder="c:\COBIS-SG\Output\CTS\COBISCorp.eCOBIS.BusinessProcess.DTO" package="true" packageType="Jar">
+          <templateFiles>
+            <templateFile filePath="JavaPOJO\JavaDTO.xslt" enabled="true" override="true" />
+            <templateFile filePath="..\Commons\Java\buildProperties.xslt" enabled="true" override="true" />
+            <templateFile filePath="..\Commons\Java\build.xslt" enabled="true" override="true" />
+          </templateFiles>
+        </template>
+      </templates>
+      <namespaces>
+        <namespace type="dto" base="COBISCorp.eCOBIS.BusinessProcess.Customers" name="COBISCorp.eCOBIS.BusinessProcess.Customers.DTO" package="cobiscorp.ecobis.businessprocess.customers.dto" ns="http://dto.customers.businessprocess.ecobis.cobiscorp" folder="Customers\DTO" />
+        <namespace type="dto" base="COBISCorp.eCOBIS.BusinessProcess.General" name="COBISCorp.eCOBIS.BusinessProcess.General.DTO" package="cobiscorp.ecobis.businessprocess.general.dto" ns="http://dto.general.businessprocess.ecobis.cobiscorp" folder="General\DTO" />
+        <namespace type="dto" base="COBISCorp.eCOBIS.BusinessProcess.LoanRequest" name="COBISCorp.eCOBIS.BusinessProcess.LoanRequest.DTO" package="cobiscorp.ecobis.businessprocess.loanrequest.dto" ns="http://dto.loanrequest.businessprocess.ecobis.cobiscorp" folder="LoanRequest\DTO" />
+        <namespace type="dto" base="COBISCorp.eCOBIS.BusinessProcess.Simulacion" name="COBISCorp.eCOBIS.BusinessProcess.Simulacion.DTO" package="cobiscorp.ecobis.businessprocess.simulacion.dto" ns="http://dto.simulacion.businessprocess.ecobis.cobiscorp" folder="Simulacion\DTO" />
+      </namespaces>
+    </reference>
+  </references>
+  <productProperties>
+    <property name="MavenGroupId" value="com.cobiscorp.processapi" />
+    <property name="MavenArtifactId" value="COBISCorp.eCOBIS.BusinessProcess.Service" />
+    <property name="MavenVersion" value="2.0.0.0" />
+  </productProperties>
+</product>

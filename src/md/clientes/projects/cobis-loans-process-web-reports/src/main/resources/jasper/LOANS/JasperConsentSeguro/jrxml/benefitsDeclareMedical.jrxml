@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version last-->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="benefitsDeclareMedical" pageWidth="575" pageHeight="400" columnWidth="545" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="63e1f6be-b8d2-4224-837e-65db445a6a97">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+	<property name="com.jaspersoft.studio.unit." value="pixel"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="fullNameBenefits" class="java.lang.String">
+		<fieldDescription><![CDATA[fullNameBenefits]]></fieldDescription>
+	</field>
+	<field name="relationshipBenefits" class="java.lang.String">
+		<fieldDescription><![CDATA[relationshipBenefits]]></fieldDescription>
+	</field>
+	<field name="birthdateBenefits" class="java.lang.String">
+		<fieldDescription><![CDATA[birthdateBenefits]]></fieldDescription>
+	</field>
+	<field name="percentageBenefits" class="java.lang.String">
+		<fieldDescription><![CDATA[percentageBenefits]]></fieldDescription>
+	</field>
+	<field name="totalPorcentage" class="java.lang.String">
+		<fieldDescription><![CDATA[totalPorcentage]]></fieldDescription>
+	</field>
+	<title>
+		<band height="20">
+			<staticText>
+				<reportElement x="0" y="0" width="250" height="20" uuid="61b37694-2d7c-4a2e-80c6-b9fd5fa6f41a"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font size="9" isBold="true"/>
+					<paragraph firstLineIndent="1" leftIndent="1" rightIndent="1" spacingBefore="1" spacingAfter="1"/>
+				</textElement>
+				<text><![CDATA[NOMBRE COMPLETO:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="250" y="0" width="100" height="20" uuid="09ee4d9d-053d-42c0-873d-0ec1e9809fab"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="9" isBold="true"/>
+					<paragraph firstLineIndent="1" leftIndent="1" rightIndent="1" spacingBefore="1" spacingAfter="1"/>
+				</textElement>
+				<text><![CDATA[PARENTESCO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="350" y="0" width="120" height="20" uuid="6cef6530-fd75-4184-905c-cd678b6726e5"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="9" isBold="true"/>
+					<paragraph firstLineIndent="1" leftIndent="1" rightIndent="1" spacingBefore="1" spacingAfter="1"/>
+				</textElement>
+				<text><![CDATA[FECHA DE NACIMIENTO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="470" y="0" width="105" height="20" uuid="2a8cf2fa-6377-4365-aeb7-5228824f4ddc"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="9" isBold="true"/>
+					<paragraph firstLineIndent="1" leftIndent="1" rightIndent="1" spacingBefore="1" spacingAfter="1"/>
+				</textElement>
+				<text><![CDATA[%]]></text>
+			</staticText>
+		</band>
+	</title>
+	<detail>
+		<band height="20" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="250" height="20" uuid="e6fbdd89-3b41-460b-9050-e2fcd7e032f2"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font size="8"/>
+					<paragraph firstLineIndent="1"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{fullNameBenefits}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="250" y="0" width="100" height="20" uuid="945336e5-8ec9-4695-b3e6-6b28214a6a4c"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{relationshipBenefits}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="350" y="0" width="120" height="20" uuid="0ac1a28d-319e-471d-b5f1-d1fb11a84b69"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{birthdateBenefits}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="470" y="0" width="105" height="20" uuid="cf3ea30d-7386-448b-a548-22b652328df7"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{percentageBenefits}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<summary>
+		<band height="20" splitType="Stretch">
+			<textField>
+				<reportElement x="470" y="0" width="105" height="20" uuid="badacd16-f65f-4481-a966-621477250af3"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{totalPorcentage}]]></textFieldExpression>
+			</textField>
+		</band>
+	</summary>
+</jasperReport>

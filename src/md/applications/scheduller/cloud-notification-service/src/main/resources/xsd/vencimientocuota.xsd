@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema attributeFormDefault="unqualified"
+	elementFormDefault="qualified"
+	xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:element name="VencimientosCuotas">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element maxOccurs="unbounded" name="Prestamos">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="clienteId" type="xs:unsignedShort" />
+							<xs:element name="fecha_proceso" type="xs:dateTime" />
+							<xs:element name="clienteName" type="xs:string" />
+							<xs:element name="mail" type="xs:string" />
+							<xs:element name="fecha_liq" type="xs:dateTime" />
+							<xs:element name="moneda" type="xs:unsignedByte" />
+							<xs:element name="fecha_vig" type="xs:dateTime" />
+							<xs:element name="dividendo" type="xs:unsignedByte" />
+							<xs:element name="monto" type="xs:decimal" />
+							<xs:element name="institucion" type="xs:string" />
+							<xs:element name="oficinaName" type="xs:string" />
+							<xs:element maxOccurs="unbounded" name="Referencia">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="clienteId" type="xs:int" />
+										<xs:element name="institucion" type="xs:string" />
+										<xs:element name="referencia" type="xs:string" />
+										<xs:element name="nro_convenio" type="xs:string" />
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

@@ -1,0 +1,49 @@
+use cobis
+go
+if exists (select * from sysobjects where name = 'tgd_an_page_zone')
+    drop trigger tgd_an_page_zone
+go
+create trigger tgd_an_page_zone
+on an_page_zone
+for delete
+as
+begin
+    declare
+        @w_pz_id         int,
+        @w_id            int
+ 
+    declare cu_deleted cursor for
+        select
+            pz_id
+        from deleted
+ 
+    open cu_deleted
+    fetch cu_deleted into
+        @w_pz_id
+ 
+    while @@FETCH_STATUS=0
+    begin
+        select @w_id = sq_siguiente
+        from cob_distrib..di_seqnos
+        where sq_tabla = 'di_log'
+ 
+        update cob_distrib..di_seqnos
+        set sq_siguiente = sq_siguiente + 1
+        where sq_tabla = 'di_log'
+ 
+        insert into cob_distrib..di_log (
+            lg_id, lg_fecha, lg_operacion, lg_objeto)
+        values (@w_id, getdate(), 'D', 'cobis..sp_an_page_zone_tg')
+        
+        insert into cob_distrib..di_parametro (
+            pa_id, pa_nombre, pa_tipodato, pa_longitud, pa_int)
+        values (@w_id, '@i_pz_id', 56, isnull(datalength(@w_pz_id), 0), @w_pz_id)
+
+        fetch cu_deleted into
+                @w_pz_id
+ 
+    end
+    close cu_deleted
+    deallocate cu_deleted    
+end
+go

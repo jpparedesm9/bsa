@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<procedure>
+  <database>cob_cartera</database>
+  <name>sp_consulta_estado</name>
+  <type>SYBASE</type>
+  <version>1</version>
+  <parameters />
+  <queries>
+    <query>
+      <columns>
+        <column name="Codigo " />
+        <column name="Descripcion " />
+        <column name="Procesa " />
+        <column name="Acepta Pago" />
+      </columns>
+      <queryText>SELECT  Codigo = es_codigo,Descripcion = SUBSTRING (es_descripcion, 1, 20),Procesa = es_procesa,"Acepta Pago" = es_acepta_pago </queryText>
+    </query>
+  </queries>
+</procedure>

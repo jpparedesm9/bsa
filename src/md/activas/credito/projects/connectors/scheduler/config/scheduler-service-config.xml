@@ -1,0 +1,47 @@
+<config>
+  <own>
+    <user-config>scheduler.algncon</user-config>
+    <backEndId>TENANT_COBIS</backEndId>
+    <targetId>central</targetId>
+    <table-prefix>cobis..QRTZ_</table-prefix>
+    <jobs>
+      <job name="FinantialGateway" active="true" thread-count="1">
+        <triggers>
+          <trigger name="trFinantialGateway">0 0 8-20 ? * MON-FRI *</trigger>
+        </triggers>
+        <filter>(service.impl=FinantialGateway)</filter>
+      </job>
+	  <job name="SynchronizationExecutor" active="true" thread-count="1">
+        <triggers>
+          <trigger name="trSynchronizationExecutor">0 3/5 * * * ? *</trigger>
+        </triggers>
+        <filter>(service.impl=SynchronizationExecutor)</filter>
+      </job>
+	   <job name="ReverseLcrExecutor" active="true" thread-count="1">
+        <triggers>
+          <trigger name="trReverseLcrExecutor">0 0/2 8-20 ? * MON-FRI *</trigger>
+        </triggers>
+        <filter>(service.impl=ReverseLcrExecutor)</filter>
+      </job>
+	  <job name="SantanderAccountBucJob" active="true" thread-count="1">
+        <triggers>
+          <trigger name="trSantanderAccountBucJob">0 1/3 8-20 ? * MON-FRI *</trigger>
+        </triggers>
+        <filter>(service.impl=SantanderAccountBucJob)</filter>
+    </job>
+	<job name="WarrantyPayment" active="true" thread-count="1">
+        <triggers>
+          <trigger name="trWarrantyPayment">0 5/10 8-20 ? * MON-FRI *</trigger>
+        </triggers>
+        <filter>(service.impl=WarrantyPayment)</filter>
+    </job>	
+	<job name="DisbursementBusinessExecutor" active="true" thread-count="1">
+        <triggers>
+          <trigger name="trDisbursementBusinessExecutor">0 0/3 * 1/1 * ? *</trigger>
+        </triggers>
+        <filter>(service.impl=DisbursementBusinessExecutor)</filter>
+    </job>	
+    </jobs>
+    
+  </own>
+</config>

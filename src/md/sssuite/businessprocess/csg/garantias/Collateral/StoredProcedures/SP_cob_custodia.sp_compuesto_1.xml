@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<procedure>
+  <database>cob_custodia</database>
+  <name>sp_compuesto</name>
+  <type>SYBASE</type>
+  <version>1</version>
+  <parameters>
+    <parameter name="@s_date" dataType="datetime" direction="in" />
+    <parameter name="@t_trn" dataType="smallint" direction="in" />
+    <parameter name="@t_debug" dataType="char" direction="in" />
+    <parameter name="@t_file" dataType="varchar" direction="in" />
+    <parameter name="@t_from" dataType="varchar" direction="in" />
+    <parameter name="@i_operacion" dataType="char" direction="in" />
+    <parameter name="@i_compuesto" dataType="varchar" direction="in" />
+    <parameter name="@o_filial" dataType="tinyint" direction="out" />
+    <parameter name="@o_sucursal" dataType="smallint" direction="out" />
+    <parameter name="@o_tipo" dataType="varchar" direction="out" />
+    <parameter name="@o_custodia" dataType="int" direction="out" />
+  </parameters>
+  <queries>
+    <query>
+      <columns>
+        <column name="subsidiary" />
+        <column name="branchOffice" />
+        <column name="custody" />
+        <column name="type" />
+      </columns>
+      <queryText>SELECT w_filial, w_sucursal, w_custodia, w_tipo</queryText>
+    </query>
+  </queries>
+</procedure>

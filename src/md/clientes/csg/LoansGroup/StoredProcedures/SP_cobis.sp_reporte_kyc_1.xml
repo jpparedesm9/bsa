@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<procedure>
+  <database>cobis</database>
+  <name>sp_reporte_kyc</name>
+  <type>SYBASE</type>
+  <version>1</version>
+  <parameters>
+    <parameter name="@s_ssn" dataType="int" direction="in" />
+    <parameter name="@s_user" dataType="varchar" direction="in" />
+    <parameter name="@s_term" dataType="varchar" direction="in" />
+    <parameter name="@s_date" dataType="datetime" direction="in" />
+    <parameter name="@s_sesn" dataType="int" direction="in" />
+    <parameter name="@s_culture" dataType="varchar" direction="in" />
+    <parameter name="@s_srv" dataType="varchar" direction="in" />
+    <parameter name="@s_lsrv" dataType="varchar" direction="in" />
+    <parameter name="@s_ofi" dataType="smallint" direction="in" />
+    <parameter name="@s_rol" dataType="smallint" direction="in" />
+    <parameter name="@s_org_err" dataType="char" direction="in" />
+    <parameter name="@s_error" dataType="int" direction="in" />
+    <parameter name="@s_sev" dataType="tinyint" direction="in" />
+    <parameter name="@s_msg" dataType="varchar" direction="in" />
+    <parameter name="@s_org" dataType="char" direction="in" />
+    <parameter name="@t_debug" dataType="char" direction="in" />
+    <parameter name="@t_file" dataType="varchar" direction="in" />
+    <parameter name="@t_from" dataType="varchar" direction="in" />
+    <parameter name="@t_trn" dataType="int" direction="in" />
+    <parameter name="@t_show_version" dataType="bit" direction="in" />
+    <parameter name="@i_tramite" dataType="int" direction="in" />
+    <parameter name="@i_operacion" dataType="char" direction="in" />
+  </parameters>
+  <queries>
+    <query>
+      <columns>
+        <column name="fechaProceso" />
+        <column name="nombre" />
+        <column name="genero" />
+        <column name="rfcHomoclave" />
+        <column name="ciudadNac" />
+        <column name="fechaNac" />
+        <column name="paisNac" />
+        <column name="nacionalidad" />
+        <column name="calleNumero" />
+        <column name="colonia" />
+        <column name="municipio" />
+        <column name="estado" />
+        <column name="codPostal" />
+        <column name="pais" />
+        <column name="ocupacion" />
+        <column name="actEcoGenerica" />
+        <column name="actEcoEspecifica" />
+        <column name="curp" />
+        <column name="telefono" />
+        <column name="correoElectronico" />
+        <column name="firmaElectronicaAvanzada" />
+        <column name="origenRecursos" />
+        <column name="destinoRecursos" />
+        <column name="respA" />
+        <column name="respB" />
+        <column name="respC" />
+        <column name="numEstimadoOperEnv" />
+        <column name="montoEstimadoOperEnv" />
+        <column name="numEstimadoOperRec" />
+        <column name="montoEstimadoOperRec" />
+        <column name="numEstimadoOperEfe" />
+        <column name="montoEstimadoOperEfe" />
+        <column name="numEstimadoOperNoEfe" />
+        <column name="montoEstimadoOperNoEfe" />
+        <column name="nombreEjecutivo" />
+        <column name="codigo" />
+        <column name="numContraparte" />
+        <column name="canalContratacion" />
+        <column name="fechaNacConst" />
+      </columns>
+      <queryText>SELECT  "codigo" = en_ente,"fecha" = (SELECT  fp_fecha FROM cobis..ba_fecha_proceso        ),"nombre" = en_nomlar,"genero" = (SELECT  valor FROM cobis..cl_catalogo   WHERE codigo = p_sexo AND tabla     ),"rfc" = en_nit,"ciudadNac" = p_depa_nac,"fecha_Nac" = p_fecha_nac,"paisNac" = p_pais_emi,"nacionalidad" = (SELECT  valor FROM cobis..cl_catalogo   WHERE codigo = en_nac_aux AND tabla     ),"domicilio" = CONVERT (VARCHAR (10),di_calle ) + " " + CONVERT (VARCHAR (10),di_nro ) + " (" + CONVERT (VARCHAR (10),di_nro_interno ) + ")","colonia" = (SELECT  valor FROM cobis..cl_catalogo   WHERE codigo = CONVERT (VARCHAR (10),di_parroquia ) AND tabla     ),"municipio" = (SELECT  valor FROM cobis..cl_catalogo   WHERE codigo = CONVERT (VARCHAR (10),di_ciudad ) AND tabla     ),"estado" = (SELECT  valor FROM cobis..cl_catalogo   WHERE codigo = CONVERT (VARCHAR (10),di_provincia ) AND tabla     ),"codPostal" = di_codpostal,"pais" = di_pais,"pais" = di_pais </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="codigo" />
+        <column name="nombre" />
+      </columns>
+      <queryText>SELECT  "codigo" = en_ente,"nombre" = en_nombre </queryText>
+    </query>
+  </queries>
+</procedure>

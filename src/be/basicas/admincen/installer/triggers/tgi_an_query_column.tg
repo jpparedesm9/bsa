@@ -1,0 +1,121 @@
+use cobis
+go
+if exists (select * from sysobjects where name = 'tgi_an_query_column')
+    drop trigger tgi_an_query_column
+go
+create trigger tgi_an_query_column
+on an_query_column
+for insert
+as
+begin
+    declare
+        @w_cl_query_id              int,
+        @w_cl_order                 tinyint,
+        @w_cl_la_id                 int,
+        @w_cl_datatype              char(1),
+        @w_cl_name                  varchar(32),
+        @w_cl_width                 int,
+        @w_cl_allow_search          tinyint,
+        @w_cl_is_id                 tinyint,
+        @w_cl_is_description        tinyint,
+        @w_cl_catalog_table         varchar(32),
+        @w_id                       int
+
+    declare cu_inserted cursor for
+        select
+            cl_query_id,
+            cl_order,
+            cl_la_id,
+            cl_datatype,
+            cl_name,
+            cl_width,
+            cl_allow_search,
+            cl_is_id,
+            cl_is_description,
+            cl_catalog_table
+        from inserted
+
+    open cu_inserted
+    fetch cu_inserted into
+        @w_cl_query_id,
+        @w_cl_order,
+        @w_cl_la_id,
+        @w_cl_datatype,
+        @w_cl_name,
+        @w_cl_width,
+        @w_cl_allow_search,
+        @w_cl_is_id,
+        @w_cl_is_description,
+        @w_cl_catalog_table
+
+    while @@FETCH_STATUS = 0
+    begin
+        select @w_id = sq_siguiente
+        from cob_distrib..di_seqnos
+        where sq_tabla = 'di_log'
+
+        update cob_distrib..di_seqnos
+        set sq_siguiente = sq_siguiente + 1
+        where sq_tabla = 'di_log'
+
+        insert into cob_distrib..di_log (
+            lg_id, lg_fecha, lg_operacion, lg_objeto)
+        values (@w_id, getdate(), 'I', 'cobis..sp_an_query_column_tg')
+       
+        insert into cob_distrib..di_parametro (
+            pa_id, pa_nombre, pa_tipodato, pa_longitud, pa_int)
+        values (@w_id, '@i_cl_query_id', 56, isnull(datalength(@w_cl_query_id), 0), @w_cl_query_id)
+
+        insert into cob_distrib..di_parametro (
+            pa_id, pa_nombre, pa_tipodato, pa_longitud, pa_tinyint)
+        values (@w_id, '@i_cl_order', 48, isnull(datalength(@w_cl_order), 0), @w_cl_order)
+
+        insert into cob_distrib..di_parametro (
+            pa_id, pa_nombre, pa_tipodato, pa_longitud, pa_int)
+        values (@w_id, '@i_cl_la_id', 56, isnull(datalength(@w_cl_la_id), 0), @w_cl_la_id)
+
+        insert into cob_distrib..di_parametro (
+            pa_id, pa_nombre, pa_tipodato, pa_longitud, pa_varchar)
+        values (@w_id, '@i_cl_datatype', 39, isnull(datalength(@w_cl_datatype), 0), @w_cl_datatype)
+
+        insert into cob_distrib..di_parametro (
+            pa_id, pa_nombre, pa_tipodato, pa_longitud, pa_varchar)
+        values (@w_id, '@i_cl_name', 39, isnull(datalength(@w_cl_name), 0), @w_cl_name)
+
+        insert into cob_distrib..di_parametro (
+            pa_id, pa_nombre, pa_tipodato, pa_longitud, pa_int)
+        values (@w_id, '@i_cl_width', 56, isnull(datalength(@w_cl_width), 0), @w_cl_width)
+
+        insert into cob_distrib..di_parametro (
+            pa_id, pa_nombre, pa_tipodato, pa_longitud, pa_tinyint)
+        values (@w_id, '@i_cl_allow_search', 48, isnull(datalength(@w_cl_allow_search), 0), @w_cl_allow_search)
+
+        insert into cob_distrib..di_parametro (
+            pa_id, pa_nombre, pa_tipodato, pa_longitud, pa_tinyint)
+        values (@w_id, '@i_cl_is_id', 48, isnull(datalength(@w_cl_is_id), 0), @w_cl_is_id)
+
+        insert into cob_distrib..di_parametro (
+            pa_id, pa_nombre, pa_tipodato, pa_longitud, pa_tinyint)
+        values (@w_id, '@i_cl_is_description', 48, isnull(datalength(@w_cl_is_description), 0), @w_cl_is_description)
+
+        insert into cob_distrib..di_parametro (
+            pa_id, pa_nombre, pa_tipodato, pa_longitud, pa_varchar)
+        values (@w_id, '@i_cl_catalog_table', 39, isnull(datalength(@w_cl_catalog_table), 0), @w_cl_catalog_table)
+
+        fetch cu_inserted into
+            @w_cl_query_id,
+            @w_cl_order,
+            @w_cl_la_id,
+            @w_cl_datatype,
+            @w_cl_name,
+            @w_cl_width,
+            @w_cl_allow_search,
+            @w_cl_is_id,
+            @w_cl_is_description,
+            @w_cl_catalog_table
+
+    end
+    close cu_inserted
+    deallocate cu_inserted
+end
+go

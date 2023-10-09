@@ -1,0 +1,264 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+	<context:annotation-config />
+
+	<bean id="companyManagerService"
+		class="com.cobiscorp.ecobis.fpm.administration.service.impl.CompanyManager">
+		<property name="entityManager">
+			<bean class="org.springframework.orm.jpa.support.SharedEntityManagerBean">
+				<property name="entityManagerFactory" ref="entityManagerFactory" />
+			</bean>
+		</property>
+	</bean>
+	<bean id="nodeProductManagerService"
+		class="com.cobiscorp.ecobis.fpm.administration.service.impl.NodeProductManager">
+		<property name="bankinProduct" ref="bankingProductManagerService" />
+		<property name="entityManager">
+			<bean class="org.springframework.orm.jpa.support.SharedEntityManagerBean">
+				<property name="entityManagerFactory" ref="entityManagerFactory" />
+			</bean>
+		</property>
+	</bean>
+	<bean id="dictionaryManagerService"
+		class="com.cobiscorp.ecobis.fpm.administration.service.impl.DictionaryManager">
+		<property name="generalParameterService" ref="generalParametersManagerService" />
+		<property name="itemsManagerService" ref="itemsManagerService" />
+		<property name="entityManager">
+			<bean class="org.springframework.orm.jpa.support.SharedEntityManagerBean">
+				<property name="entityManagerFactory" ref="entityManagerFactory" />
+			</bean>
+		</property>
+	</bean>
+
+	<bean id="bankingProductManagerService"
+		class="com.cobiscorp.ecobis.fpm.operation.service.impl.BankingProductManager">
+		<property name="generalParametersService" ref="generalParametersManagerService" />
+		<property name="itemsService" ref="itemsManagerService" />
+		<property name="nodeProductService" ref="nodeProductManagerService"></property>
+		<property name="catalogManager" ref="catalogServiceRef"></property>
+		<property name="serviceExecutor" ref="serviceExecutorRef" />
+		<property name="accountingProfileService" ref="accountingProfileManagerService" />
+		<property name="itemStatusService" ref="itemStatusManagerService" />
+		<property name="operationStatusService" ref="operationStatusManagerService" />
+		<property name="economicDestinationService" ref="economicDestinationManagerService" />
+		<property name="purposeManager" ref="purposeManagerService" />
+		<property name="rulesManager" ref="ruleManager" />
+		<property name="evaluatorManager" ref="evaluatorManagerService" />
+		<property name="entityManager">
+			<bean class="org.springframework.orm.jpa.support.SharedEntityManagerBean">
+				<property name="entityManagerFactory" ref="entityManagerFactory" />
+			</bean>
+		</property>
+
+	</bean>
+	<bean id="bankingProductHistoryManagerService"
+		class="com.cobiscorp.ecobis.fpm.operation.service.impl.BankingProductHistoryManager">
+		<property name="catalogManager" ref="catalogServiceRef" />
+		<property name="entityManager">
+			<bean class="org.springframework.orm.jpa.support.SharedEntityManagerBean">
+				<property name="entityManagerFactory" ref="entityManagerFactory" />
+			</bean>
+		</property>
+	</bean>
+	<bean id="itemsManagerService"
+		class="com.cobiscorp.ecobis.fpm.operation.service.impl.ItemsManager">
+		<property name="generalParametersManager" ref="generalParametersManagerService" />
+		<property name="bankingProductManager" ref="bankingProductManagerService" />
+		<property name="mappingManagerService" ref="mappingManagerService"></property>
+		<property name="catalogManagerService" ref="catalogServiceRef"></property>
+		<property name="dicManagerService" ref="dictionaryManagerService"></property>
+		<property name="entityManager">
+			<bean class="org.springframework.orm.jpa.support.SharedEntityManagerBean">
+				<property name="entityManagerFactory" ref="entityManagerFactory" />
+			</bean>
+		</property>
+		<property name="cacheManager" ref="cacheManagerRef"></property>
+	</bean>
+	<bean id="renderManagerService"
+		class="com.cobiscorp.ecobis.fpm.operation.service.impl.RenderManager">
+	<property name="entityManager">
+			<bean class="org.springframework.orm.jpa.support.SharedEntityManagerBean">
+				<property name="entityManagerFactory" ref="entityManagerFactory" />
+			</bean>
+		</property>
+	</bean>
+	<bean id="generalParametersManagerService"
+		class="com.cobiscorp.ecobis.fpm.operation.service.impl.GeneralParametersManager">
+		<property name="bankingProductService" ref="bankingProductManagerService"></property>
+		<property name="entityManager">
+			<bean class="org.springframework.orm.jpa.support.SharedEntityManagerBean">
+				<property name="entityManagerFactory" ref="entityManagerFactory" />
+			</bean>
+		</property>
+	</bean>
+	<bean id="mappingManagerService"
+		class="com.cobiscorp.ecobis.fpm.operation.service.impl.MappingFieldManager">
+		<property name="bankingProductService" ref="bankingProductManagerService"></property>
+		<property name="entityManager">
+			<bean class="org.springframework.orm.jpa.support.SharedEntityManagerBean">
+				<property name="entityManagerFactory" ref="entityManagerFactory" />
+			</bean>
+		</property>
+		
+	</bean>
+	<bean id="accountingProfileManagerService"
+		class="com.cobiscorp.ecobis.fpm.portfolio.administration.service.impl.AccountingProfileManager">
+		<property name="bankingProductService" ref="bankingProductManagerService"></property>
+		<property name="portfolioCatalogService" ref="portfolioCatalogServiceRef"></property>
+		<property name="entityManager">
+			<bean class="org.springframework.orm.jpa.support.SharedEntityManagerBean">
+				<property name="entityManagerFactory" ref="entityManagerFactory" />
+			</bean>
+		</property>
+	</bean>
+	<bean id="itemStatusManagerService"
+		class="com.cobiscorp.ecobis.fpm.portfolio.administration.service.impl.ItemStatusManager">
+		<property name="bankingProductService" ref="bankingProductManagerService"></property>
+		<property name="itemService" ref="itemsManagerService"></property>
+		<property name="portfolioCatalogService" ref="portfolioCatalogServiceRef"></property>
+		<property name="entityManager">
+			<bean class="org.springframework.orm.jpa.support.SharedEntityManagerBean">
+				<property name="entityManagerFactory" ref="entityManagerFactory" />
+			</bean>
+		</property>
+	</bean>
+	<bean id="operationStatusManagerService"
+		class="com.cobiscorp.ecobis.fpm.portfolio.administration.service.impl.OperationStatusManager">
+		<property name="bankingProductService" ref="bankingProductManagerService"></property>
+		<property name="catalogService" ref="catalogServiceRef"></property>
+		<property name="portfolioCatalogService" ref="portfolioCatalogServiceRef"></property>
+		<property name="entityManager">
+			<bean class="org.springframework.orm.jpa.support.SharedEntityManagerBean">
+				<property name="entityManagerFactory" ref="entityManagerFactory" />
+			</bean>
+		</property>
+	</bean>
+	<bean id="purposeManagerService"
+		class="com.cobiscorp.ecobis.fpm.portfolio.administration.service.impl.PurposeManager">
+		<property name="portfolioCatalogService" ref="portfolioCatalogServiceRef" />
+		<property name="bankingProductService" ref="bankingProductManagerService" />
+		<property name="entityManager">
+			<bean class="org.springframework.orm.jpa.support.SharedEntityManagerBean">
+				<property name="entityManagerFactory" ref="entityManagerFactory" />
+			</bean>
+		</property>
+	</bean>
+	<bean id="economicDestinationManagerService"
+		class="com.cobiscorp.ecobis.fpm.portfolio.administration.service.impl.EconomicDestinationManager">
+		<property name="portfolioCatalogService" ref="portfolioCatalogServiceRef" />
+		<property name="bankingProductService" ref="bankingProductManagerService" />
+		<property name="entityManager">
+			<bean class="org.springframework.orm.jpa.support.SharedEntityManagerBean">
+				<property name="entityManagerFactory" ref="entityManagerFactory" />
+			</bean>
+		</property>
+	</bean>
+	<bean id="generalParametersManagerInterceptor"
+		class="com.cobiscorp.ecobis.fpm.operation.service.impl.interceptors.GeneralParametersManagerInterceptor">
+		<property name="bankingProductManager" ref="bankingProductManagerService"></property>
+
+	</bean>
+	<bean id="nodeProductManagerInterceptor"
+		class="com.cobiscorp.ecobis.fpm.administration.service.impl.interceptors.NodeProductManagerInterceptor">
+		
+	</bean>
+	<bean id="itemsManagerInterceptor"
+		class="com.cobiscorp.ecobis.fpm.operation.service.impl.interceptors.ItemsManagerInterceptor">
+		<property name="bankingProductManager" ref="bankingProductManagerService"></property>
+		
+	</bean>
+	<bean id="accountingProfileManagerInterceptor"
+		class="com.cobiscorp.ecobis.fpm.portfolio.administration.service.impl.interceptors.AccountingProfileManagerInterceptor">
+		<property name="bankingProductManager" ref="bankingProductManagerService"></property>
+		
+	</bean>
+	<bean id="itemStatusManagerInterceptor"
+		class="com.cobiscorp.ecobis.fpm.portfolio.administration.service.impl.interceptors.ItemStatusManagerInterceptor">
+		<property name="bankingProductManager" ref="bankingProductManagerService"></property>
+		
+	</bean>
+	<bean id="operationStatusManagerInterceptor"
+		class="com.cobiscorp.ecobis.fpm.portfolio.administration.service.impl.interceptors.OperationStatusManagerInterceptor">
+		<property name="bankingProductManager" ref="bankingProductManagerService"></property>
+		
+	</bean>
+
+	<bean id="bankingProductManagerInterceptor"
+		class="com.cobiscorp.ecobis.fpm.operation.service.impl.interceptors.BankingProductManagerInterceptor">
+		<property name="bankingProductManager" ref="bankingProductManagerService"></property>
+		<property name="nodeProductManager" ref="nodeProductManagerService"></property>
+		
+	</bean>
+	<bean id="purposeManagerInterceptor"
+		class="com.cobiscorp.ecobis.fpm.portfolio.administration.service.impl.interceptors.PurposeManagerInterceptor">
+		<property name="bankingProductManager" ref="bankingProductManagerService"></property>
+		
+	</bean>
+	<bean id="economicDestinationManagerInterceptor"
+		class="com.cobiscorp.ecobis.fpm.portfolio.administration.service.impl.interceptors.EconomicDestinationManagerInterceptor">
+		<property name="bankingProductManager" ref="bankingProductManagerService"></property>
+		
+	</bean>
+	<bean id="defaultValuesManagerService"
+		class="com.cobiscorp.ecobis.fpm.interceptors.service.impl.DefaultValuesManager">
+		
+	</bean>
+
+	<bean id="evaluatorManagerService" class="com.cobiscorp.ecobis.fpm.service.utils.EvaluatorManager">
+		<property name="storedProcedureUtils" ref="storedProcedureUtils"></property>
+		
+	</bean>
+
+	<bean id="serviceTransactionManager"
+		class="com.cobiscorp.ecobis.fpm.administration.service.impl.ServiceTransactionManager">
+		<property name="entityManager">
+			<bean class="org.springframework.orm.jpa.support.SharedEntityManagerBean">
+				<property name="entityManagerFactory" ref="entityManagerFactory" />
+			</bean>
+		</property>
+	</bean>
+	<bean id="paymentTypeFieldsManager"
+		class="com.cobiscorp.ecobis.fpm.administration.service.impl.PaymentTypeFieldsManager">
+		<property name="entityManager">
+			<bean class="org.springframework.orm.jpa.support.SharedEntityManagerBean">
+				<property name="entityManagerFactory" ref="entityManagerFactory" />
+			</bean>
+		</property>
+	</bean>
+	<bean id="BankingProductAssociationManager"
+		class="com.cobiscorp.ecobis.fpm.operation.service.impl.BankingProductAssociationManager">
+		<property name="entityManager">
+			<bean class="org.springframework.orm.jpa.support.SharedEntityManagerBean">
+				<property name="entityManagerFactory" ref="entityManagerFactory" />
+			</bean>
+		</property>
+	</bean>
+	<bean id="AssociationTransactionManager"
+		class="com.cobiscorp.ecobis.fpm.administration.service.impl.AssociationTransactionManager">
+		<property name="entityManager">
+			<bean class="org.springframework.orm.jpa.support.SharedEntityManagerBean">
+				<property name="entityManagerFactory" ref="entityManagerFactory" />
+			</bean>
+		</property>
+	</bean>
+	<bean id="AssociationChannelManager"
+		class="com.cobiscorp.ecobis.fpm.administration.service.impl.AssociationChannelManager">
+	<property name="entityManager">
+			<bean class="org.springframework.orm.jpa.support.SharedEntityManagerBean">
+				<property name="entityManagerFactory" ref="entityManagerFactory" />
+			</bean>
+		</property>
+	</bean>
+	<bean id="UnitFunctionalityValuesManager"
+		class="com.cobiscorp.ecobis.fpm.operation.service.impl.UnitFunctionalityValuesManager">
+		<property name="entityManager">
+			<bean class="org.springframework.orm.jpa.support.SharedEntityManagerBean">
+				<property name="entityManagerFactory" ref="entityManagerFactory" />
+			</bean>
+		</property>
+	</bean>
+</beans>

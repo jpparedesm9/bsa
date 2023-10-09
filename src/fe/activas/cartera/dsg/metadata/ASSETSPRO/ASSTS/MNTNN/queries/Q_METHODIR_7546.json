@@ -1,0 +1,90 @@
+{
+    "id": {
+        "queryId": "Q_METHODIR_7546",
+        "version": "1.0.0"
+    },
+    "name": {
+        "$ref": "../../../ASSTS/relations/componentKeys.json#/MNTNN/Queries/Q_METHODIR_7546/name"
+    },
+    "mainEntityId": "EN_METHODSRT_271",
+    "mainEntityVersion": "1.0.0",
+    "mainEntityName": "",
+    "isAutomatic": true,
+    "sqlWhere": null,
+    "customizationLayer": 0,
+    "customizationLayerDescription": "ECU",
+    "queryMembers": [
+        {
+            "queryMemberId": "QM_METHO55D65365_01",
+            "label": {
+                "moduleId": "ASSTS",
+                "labelId": "LBL_ASSTS_IDENTIFRD_90451",
+                "defaultValue": {
+                    "$ref": "../../../ASSTS/assets/languages/ASSTS.json#/ASSTS/LBL/LBL_ASSTS_IDENTIFRD_90451"
+                }
+            },
+            "defaultValue": null,
+            "defaultValueDataType": null,
+            "operator": null,
+            "functionQM": null,
+            "orderBy": null,
+            "orderByDirection": null,
+            "customizationLayer": "",
+            "customizationLayerDescription": "",
+            "alias": "product",
+            "order": 1,
+            "selectStr": "T",
+            "whereStr": "F",
+            "select": true,
+            "where": false,
+            "attribute": {
+                "$ref": "../../../ASSTS/entities/EN_METHODSRT_271.json#/attributes/AT44_PRODUCTT271"
+            }
+        },
+        {
+            "queryMemberId": "QM_METHO456RD946_02",
+            "label": null,
+            "defaultValue": null,
+            "defaultValueDataType": null,
+            "operator": null,
+            "functionQM": null,
+            "orderBy": null,
+            "orderByDirection": null,
+            "customizationLayer": "",
+            "customizationLayerDescription": "",
+            "alias": "description",
+            "order": 2,
+            "selectStr": "T",
+            "whereStr": "F",
+            "select": true,
+            "where": false,
+            "attribute": {
+                "$ref": "../../../ASSTS/entities/EN_METHODSRT_271.json#/attributes/AT87_DESCRIPO271"
+            }
+        }
+    ],
+    "subModules": [
+        {
+            "id": {
+                "moduleId": "ASSTS",
+                "subModuleId": "MNTNN"
+            }
+        }
+    ],
+    "customEvents": [
+        {
+            "customEventId": "CEQY_130_Q_METHODIR_7546_440",
+            "queryEventType": {
+                "name": "ExecuteQuery",
+                "eventId": 130,
+                "description": "Sobreescribe la ejecución de un Query",
+                "availableExecutionType": 3
+            },
+            "enabled": "T",
+            "executionType": 3,
+            "customizationLayerDescription": "ECU",
+            "customizationLayer": 0
+        }
+    ],
+    "isImported": false
+}

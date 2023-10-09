@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<procedure>
+  <database>cobis</database>
+  <name>sp_respuesta_bio</name>
+  <type>SYBASE</type>
+  <version>1</version>
+  <parameters>
+    <parameter name="@t_debug" dataType="char" direction="in" />
+    <parameter name="@t_from" dataType="varchar" direction="in" />
+    <parameter name="@s_ssn" dataType="int" direction="in" />
+    <parameter name="@s_user" dataType="varchar" direction="in" />
+    <parameter name="@s_sesn" dataType="int" direction="in" />
+    <parameter name="@s_term" dataType="varchar" direction="in" />
+    <parameter name="@s_date" dataType="datetime" direction="in" />
+    <parameter name="@s_srv" dataType="varchar" direction="in" />
+    <parameter name="@s_lsrv" dataType="varchar" direction="in" />
+    <parameter name="@s_ofi" dataType="smallint" direction="in" />
+    <parameter name="@t_file" dataType="varchar" direction="in" />
+    <parameter name="@s_rol" dataType="smallint" direction="in" />
+    <parameter name="@s_org_err" dataType="char" direction="in" />
+    <parameter name="@s_error" dataType="int" direction="in" />
+    <parameter name="@s_sev" dataType="tinyint" direction="in" />
+    <parameter name="@s_msg" dataType="varchar" direction="in" />
+    <parameter name="@s_org" dataType="char" direction="in" />
+    <parameter name="@s_culture" dataType="varchar" direction="in" />
+    <parameter name="@t_trn" dataType="int" direction="in" />
+    <parameter name="@i_ente" dataType="int" direction="in" />
+    <parameter name="@i_operacion" dataType="char" direction="in" />
+    <parameter name="@i_ano_registro" dataType="varchar" direction="in" />
+    <parameter name="@i_clave_elector" dataType="varchar" direction="in" />
+    <parameter name="@i_apellido_paterno" dataType="varchar" direction="in" />
+    <parameter name="@i_ano_emision" dataType="varchar" direction="in" />
+    <parameter name="@i_no_emi_creden" dataType="varchar" direction="in" />
+    <parameter name="@i_nombre" dataType="varchar" direction="in" />
+    <parameter name="@i_apellido_materno" dataType="varchar" direction="in" />
+    <parameter name="@i_indice_izquierdo" dataType="int" direction="in" />
+    <parameter name="@i_indice_derecho" dataType="int" direction="in" />
+    <parameter name="@i_hash" dataType="varchar" direction="in" />
+    <parameter name="@i_tipo_sit_regis" dataType="varchar" direction="in" />
+    <parameter name="@i_tipo_reporte_rob" dataType="varchar" direction="in" />
+    <parameter name="@i_tipo" dataType="char" direction="in" />
+    <parameter name="@i_tipo_ente" dataType="char" direction="in" />
+    <parameter name="@i_amount" dataType="varchar" direction="in" />
+    <parameter name="@i_flag" dataType="char" direction="in" />
+    <parameter name="@o_respuesta" dataType="char" direction="out" />
+    <parameter name="@i_sequential" dataType="varchar" direction="in" />
+    <parameter name="@o_clave_usuario" dataType="int" direction="out" />
+    <parameter name="@o_ssn" dataType="int" direction="out" />
+    <parameter name="@i_inst_proc" dataType="int" direction="in" />
+    <parameter name="@i_valida_huella" dataType="char" direction="in" />
+    <parameter name="@i_login" dataType="varchar" direction="in" />
+    <parameter name="@o_oficina" dataType="smallint" direction="out" />
+  </parameters>
+  <queries>
+    <query>
+      <columns>
+        <column name="secuencia" />
+        <column name="ente" />
+        <column name="fechaRegistro" />
+        <column name="tipoSituacionRegistral" />
+        <column name="tipoReporteRoboExtravio" />
+        <column name="anoRegistro" />
+        <column name="claveElector" />
+        <column name="apellidoPaterno" />
+        <column name="anoRemision" />
+        <column name="numeroEmisionCredencial" />
+        <column name="nombre" />
+        <column name="apellidoMaterno" />
+        <column name="indiceIzquierdo" />
+        <column name="indiceDerecho" />
+        <column name="hash" />
+      </columns>
+      <queryText>SELECT  "secuencia" = rb_secuencia,"ente" = rb_ente,"fechaRegistro" = rb_fecha_registro,"tipoSituacionRegistral" = rb_tipo_situacion_registral,"tipoReporteRoboExtravio" = rb_tipo_reporte_robo_extravio,"anoRegistro" = rb_ano_registro,"claveElector" = rb_clave_elector,"apellidoPaterno" = rb_apellido_paterno,"anoRemision" = rb_ano_emision,"numeroEmisionCredencial" = rb_numero_emision_credencial,"nombre" = rb_nombre,"apellidoMaterno" = rb_apellido_materno,"indiceIzquierdo" = rb_indice_izquierdo,"indiceDerecho" = rb_indice_derecho,"hash" = rb_hash </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="eb_ente" />
+        <column name="eb_huella_dactilar" />
+        <column name="ocr" />
+        <column name="cic" />
+        <column name="nombre" />
+        <column name="apellidoPaterno" />
+        <column name="apellidoMaterno" />
+        <column name="anioRegistro" />
+        <column name="anioEmision" />
+        <column name="numeroEmisionCredencial" />
+        <column name="claveElector" />
+        <column name="curp" />
+        <column name="resultado" />
+        <column name="validaHuella" />
+        <column name="city" />
+        <column name="birthday" />
+        <column name="buc" />
+        <column name="channel" />
+        <column name="rol" />
+        <column name="monto" />
+        <column name="nombreCompleto" />
+      </columns>
+      <queryText></queryText>
+    </query>
+  </queries>
+</procedure>

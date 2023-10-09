@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="tablaAmortizacion_subReporteTablaInd" pageWidth="555" pageHeight="802" whenNoDataType="AllSectionsNoDetail" columnWidth="555" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="deec1b21-1036-4734-948b-164547062a2b">
+	<property name="ireport.zoom" value="1.5"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="SUBREPORT_DIR" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["/"]]></defaultValueExpression>
+	</parameter>
+	<field name="dividend" class="java.lang.Integer"/>
+	<field name="expirationDate" class="java.lang.String"/>
+	<field name="balance" class="java.lang.Double"/>
+	<field name="capital" class="java.lang.Double"/>
+	<field name="criminalInterest" class="java.lang.Double"/>
+	<field name="others" class="java.lang.Double"/>
+	<field name="share" class="java.lang.Double"/>
+	<field name="ordinarInterest" class="java.lang.Double"/>
+	<field name="interestIVA" class="java.lang.Double"/>
+	<variable name="capitalSum" class="java.lang.Double" resetType="Column" calculation="Sum">
+		<variableExpression><![CDATA[$F{capital}]]></variableExpression>
+	</variable>
+	<variable name="interestSum" class="java.lang.Double" resetType="Column" calculation="Sum">
+		<variableExpression><![CDATA[]]></variableExpression>
+	</variable>
+	<variable name="criminalInterest" class="java.lang.Double" resetType="Column" calculation="Sum">
+		<variableExpression><![CDATA[$F{criminalInterest}]]></variableExpression>
+	</variable>
+	<variable name="othersSum" class="java.lang.Double" resetType="Column" calculation="Sum">
+		<variableExpression><![CDATA[$F{others}]]></variableExpression>
+	</variable>
+	<variable name="shareSum" class="java.lang.Double" calculation="Sum">
+		<variableExpression><![CDATA[$F{share}]]></variableExpression>
+		<initialValueExpression><![CDATA[]]></initialValueExpression>
+	</variable>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="41" splitType="Stretch">
+			<staticText>
+				<reportElement positionType="Float" stretchType="RelativeToBandHeight" x="0" y="15" width="65" height="26" uuid="7a16b8ac-350a-47bc-a97f-2e21f05ddb01"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8" isBold="false"/>
+					<paragraph leftIndent="2" rightIndent="2"/>
+				</textElement>
+				<text><![CDATA[Periodo]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" stretchType="RelativeToBandHeight" x="65" y="15" width="98" height="26" uuid="502bc90a-cfd4-4b8b-af51-179294fa80ef"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8" isBold="false"/>
+					<paragraph leftIndent="2" rightIndent="2"/>
+				</textElement>
+				<text><![CDATA[Saldo de Capital]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" stretchType="RelativeToBandHeight" x="163" y="15" width="98" height="26" uuid="2bf7e975-8085-48da-9fda-a9f1e8ea41b3"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8" isBold="false"/>
+					<paragraph leftIndent="2" rightIndent="2"/>
+				</textElement>
+				<text><![CDATA[Capital]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" stretchType="RelativeToBandHeight" x="457" y="15" width="98" height="26" uuid="1efcf597-648e-4f99-807a-4c289cb50ed0"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8" isBold="false"/>
+					<paragraph leftIndent="2" rightIndent="2"/>
+				</textElement>
+				<text><![CDATA[CUOTA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" stretchType="RelativeToBandHeight" x="359" y="15" width="98" height="26" uuid="1c33006a-9374-4fb9-ada3-2f9eabecf223"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8" isBold="false"/>
+					<paragraph leftIndent="2" rightIndent="2"/>
+				</textElement>
+				<text><![CDATA[IVA de Intereses]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" stretchType="RelativeToBandHeight" x="261" y="15" width="98" height="26" uuid="5d2251a4-ca3f-4bc1-8de4-4231fb8d8d95"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8" isBold="false"/>
+					<paragraph leftIndent="2" rightIndent="2"/>
+				</textElement>
+				<text><![CDATA[Intereses Ordinarios]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" stretchType="RelativeToBandHeight" x="0" y="0" width="555" height="15" uuid="1446b6e3-33b3-4839-8fa9-08ad0a9cafdf"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8" isBold="false"/>
+					<paragraph leftIndent="2" rightIndent="2"/>
+				</textElement>
+				<text><![CDATA[INCREMENTANDO EL VALOR DE LA CUOTA PARA DISMINUIR CUOTA BALON]]></text>
+			</staticText>
+		</band>
+	</title>
+	<detail>
+		<band height="14">
+			<textField isBlankWhenNull="true">
+				<reportElement x="0" y="0" width="65" height="14" uuid="164bc016-ffa4-4fed-80d0-6a76add47a7b"/>
+				<textElement textAlignment="Center">
+					<font size="8"/>
+					<paragraph leftIndent="2" rightIndent="2" spacingBefore="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{dividend}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0.00" isBlankWhenNull="true">
+				<reportElement x="91" y="0" width="50" height="14" uuid="37b1e619-c442-47b3-a4cb-39db4e6bad01"/>
+				<textElement textAlignment="Right">
+					<font size="8"/>
+					<paragraph leftIndent="2" rightIndent="2" spacingBefore="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{balance}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0.00" isBlankWhenNull="true">
+				<reportElement x="189" y="0" width="50" height="14" uuid="3b784a64-e643-481c-8f2f-a5843b09e7af"/>
+				<textElement textAlignment="Right">
+					<font size="8"/>
+					<paragraph leftIndent="2" rightIndent="2" spacingBefore="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{capital}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0.00" isBlankWhenNull="true">
+				<reportElement x="483" y="0" width="50" height="14" uuid="e32080a5-74a2-401f-af77-7e6bf6a518fb"/>
+				<textElement textAlignment="Right">
+					<font size="8"/>
+					<paragraph leftIndent="2" rightIndent="2" spacingBefore="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{share}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0.00" isBlankWhenNull="true">
+				<reportElement x="385" y="0" width="50" height="14" uuid="73dd085a-d849-45ac-a374-784bccb00bf2"/>
+				<textElement textAlignment="Right">
+					<font size="8"/>
+					<paragraph spacingBefore="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{interestIVA}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0.00" isBlankWhenNull="true">
+				<reportElement x="287" y="0" width="50" height="14" uuid="0711bad4-8977-44f9-81dd-abc442466ee3"/>
+				<textElement textAlignment="Right">
+					<font size="8"/>
+					<paragraph spacingBefore="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{ordinarInterest}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement positionType="Float" stretchType="RelativeToBandHeight" x="75" y="0" width="16" height="14" uuid="c85475ee-a497-4615-94e9-412747c80761"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8" isBold="false"/>
+					<paragraph leftIndent="2" rightIndent="2" spacingBefore="2"/>
+				</textElement>
+				<text><![CDATA[$]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" stretchType="RelativeToBandHeight" x="174" y="0" width="16" height="14" uuid="7f082038-8743-4460-a8d9-9985b0ab9791"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8" isBold="false"/>
+					<paragraph leftIndent="2" rightIndent="2" spacingBefore="2"/>
+				</textElement>
+				<text><![CDATA[$]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" stretchType="RelativeToBandHeight" x="271" y="0" width="16" height="14" uuid="b07b83be-3eb7-4fa9-b9bd-31ddf59e5c16"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8" isBold="false"/>
+					<paragraph leftIndent="2" rightIndent="2" spacingBefore="2"/>
+				</textElement>
+				<text><![CDATA[$]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" stretchType="RelativeToBandHeight" x="370" y="0" width="16" height="14" uuid="c40d1008-504d-4405-9d72-7663be2581df"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8" isBold="false"/>
+					<paragraph leftIndent="2" rightIndent="2" spacingBefore="2"/>
+				</textElement>
+				<text><![CDATA[$]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" stretchType="RelativeToBandHeight" x="468" y="0" width="16" height="14" uuid="c3f7cba6-01aa-4db0-b059-8bbbed3bf649"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8" isBold="false"/>
+					<paragraph leftIndent="2" rightIndent="2" spacingBefore="2"/>
+				</textElement>
+				<text><![CDATA[$]]></text>
+			</staticText>
+		</band>
+	</detail>
+	<summary>
+		<band height="14" splitType="Stretch">
+			<textField pattern="#,##0.00" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="483" y="0" width="50" height="14" isPrintWhenDetailOverflows="true" uuid="445be8c5-419a-4df3-b441-0ac0601b36c9"/>
+				<textElement textAlignment="Right">
+					<font size="8"/>
+					<paragraph leftIndent="2" rightIndent="2" spacingBefore="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{shareSum}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement positionType="Float" stretchType="RelativeToBandHeight" x="468" y="0" width="16" height="14" uuid="e90388f9-987e-4f0c-8ddf-ad0add11e674"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8" isBold="false"/>
+					<paragraph leftIndent="2" rightIndent="2" spacingBefore="2"/>
+				</textElement>
+				<text><![CDATA[$]]></text>
+			</staticText>
+		</band>
+	</summary>
+</jasperReport>

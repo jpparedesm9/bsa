@@ -1,0 +1,199 @@
+{
+  "id": {
+    "moduleId": "BUSIN",
+    "subModuleId": "FLCRE",
+    "taskId": "T_FLCRE_68_ITCII49",
+    "version": "1.0.0"
+  },
+  "name": {
+    "$ref": "../../../relations/componentKeys.json#/FLCRE/CompositeForms/T_FLCRE_68_ITCII49/name"
+  },
+  "modeEnabled": 4095,
+  "tempSaveStr": "F",
+  "autoCrudStr": "F",
+  "customizationLayer": 0,
+  "customizationLayerDescription": "ECU",
+  "commands": [
+    {
+      "id": {
+        "commandId": "CM_ITCII49ITT66",
+        "moduleId": "BUSIN",
+        "subModuleId": "FLCRE",
+        "taskId": "T_FLCRE_68_ITCII49",
+        "taskVersion": "1.0.0"
+      },
+      "name": "PrintOut",
+      "causesValidationAsString": "F",
+      "causesValidation": false,
+      "showInMode": 4095,
+      "enabled": 4095,
+      "closeAsString": "F",
+      "close": false,
+      "order": 1,
+      "customizationLayer": 0,
+      "customizationLayerDescription": "ECU",
+      "commandType": 0,
+      "label": {
+        "labelId": "DLB_BUSIN_IMPRIMIRH_85279",
+        "defaultValue": {
+          "$ref": "../../../../BUSIN/assets/languages/BUSIN.json#/BUSIN/LBL/DLB_BUSIN_IMPRIMIRH_85279"
+        },
+        "hasI18N": true,
+        "moduleId": "BUSIN",
+        "customizationLayer": 0,
+        "customizationLayerDescription": "ECU",
+        "i18N": "T"
+      },
+      "userControl": {
+        "userControlId": "Button",
+        "description": "Designer Button",
+        "customizationLayer": 0,
+        "customizationLayerDescription": "ECU",
+        "type": "A",
+        "name": "Designer Button"
+      },
+      "customEvents": [
+        {
+          "executionType": 1,
+          "customEventId": "CECM_010_CM_ITCII49ITT66_512",
+          "enabled": "T",
+          "customizationLayer": 0,
+          "customizationLayerDescription": "ECU",
+          "commandEventType": {
+            "eventId": 10,
+            "name": "ExecuteCommand",
+            "description": "Permite personalziar la acción a ejecutar de un command"
+          },
+          "thereAnServerEvent": false,
+          "thereAnClientEvent": true,
+          "thereAnCallbackEvent": false,
+          "isEnabled": true
+        }
+      ]
+    }
+  ],
+  "viewContainers": [
+    {
+      "id": {
+        "moduleId": "BUSIN",
+        "subModuleId": "FLCRE",
+        "taskId": "T_FLCRE_68_ITCII49",
+        "viewContainerId": "VC_ITCII49_TNYFM_899",
+        "taskVersion": "1.0.0"
+      },
+      "name": "PrintingActivityForm",
+      "description": "consulta en el Inbox las solicitudes en Actividad de Impresión",
+      "layoutType": "Group",
+      "order": 0,
+      "options": 0,
+      "collapsedStr": "F",
+      "enabled": 4095,
+      "customizationLayer": 0,
+      "customizationLayerDescription": "ECU",
+      "columnsNum": 1,
+      "colSpan": 1,
+      "viewContainers": [
+        {
+          "id": {
+            "moduleId": "BUSIN",
+            "subModuleId": "commons",
+            "taskId": "T_VW_WTTTEPRCES08",
+            "viewContainerId": "VC_VW_WTTTEPRCES08",
+            "taskVersion": "1.0.0"
+          },
+          "name": "T_VW_WTTTEPRCES08",
+          "description": " ",
+          "layoutType": "Group",
+          "order": 0,
+          "options": 0,
+          "collapsedStr": "F",
+          "parentId": "VC_ITCII49_TNYFM_899",
+          "enabled": 4095,
+          "customizationLayer": 0,
+          "customizationLayerDescription": "ECU",
+          "columnsNum": 1,
+          "colSpan": 1,
+          "view": {
+            "$ref": "../../../../BUSIN/commons/forms/T_VW_WTTTEPRCES08/design.json#/viewContainers/0/view"
+          },
+          "numberOfColumnsInContainer": 1,
+          "elementColumnSpan": 1,
+          "collapsed": false,
+          "elementId": "VC_ITCII49_GTLED_815",
+          "customEvents": []
+        },
+        {
+          "id": {
+            "moduleId": "BUSIN",
+            "subModuleId": "commons",
+            "taskId": "T_VW_DOCUNODCVW73",
+            "viewContainerId": "VC_VW_DOCUNODCVW73",
+            "taskVersion": "1.0.0"
+          },
+          "name": "T_VW_DOCUNODCVW73",
+          "description": " ",
+          "layoutType": "Group",
+          "order": 3,
+          "options": 0,
+          "collapsedStr": "F",
+          "parentId": "VC_ITCII49_TNYFM_899",
+          "enabled": 4095,
+          "customizationLayer": 0,
+          "customizationLayerDescription": "ECU",
+          "columnsNum": 1,
+          "colSpan": 1,
+          "view": {
+            "$ref": "../../../../BUSIN/commons/forms/T_VW_DOCUNODCVW73/design.json#/viewContainers/0/view"
+          },
+          "numberOfColumnsInContainer": 1,
+          "elementColumnSpan": 1,
+          "collapsed": false,
+          "elementId": "VC_ITCII49_UOSNR_822",
+          "customEvents": []
+        }
+      ],
+      "customEvents": [
+        {
+          "executionType": 1,
+          "customEventId": "CEVC_002_ITCII49_TNYFM_899_312",
+          "enabled": "T",
+          "customizationLayer": 0,
+          "customizationLayerDescription": "ECU",
+          "viewContainerEventType": {
+            "eventId": 2,
+            "name": "InitData",
+            "description": "Inicialización de datos de un ViewContainer, despues de este evento se realiza el segimiento de cambios en los datos"
+          },
+          "thereAnServerEvent": false,
+          "thereAnClientEvent": true,
+          "thereAnCallbackEvent": false,
+          "isEnabled": true
+        },
+        {
+          "executionType": 1,
+          "customEventId": "CEVC_008_ITCII49_TNYFM_899_342",
+          "enabled": "T",
+          "customizationLayer": 0,
+          "customizationLayerDescription": "ECU",
+          "viewContainerEventType": {
+            "eventId": 8,
+            "name": "Render",
+            "description": "Se ejecuta antes de renderizar un ViewContainer, permite realizar personalizaciones visuales"
+          },
+          "thereAnServerEvent": false,
+          "thereAnClientEvent": true,
+          "thereAnCallbackEvent": false,
+          "isEnabled": true
+        }
+      ],
+      "numberOfColumnsInContainer": 1,
+      "elementColumnSpan": 1,
+      "collapsed": false,
+      "elementId": "VC_ITCII49_TNYFM_899"
+    }
+  ],
+  "tempSave": false,
+  "autoCrud": false,
+  "customEvents": [],
+  "isImported": true
+}

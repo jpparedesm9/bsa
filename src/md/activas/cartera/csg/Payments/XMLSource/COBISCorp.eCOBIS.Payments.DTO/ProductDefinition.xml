@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<product path="D:/GIT2/bsa/src/md/activas/cartera/csg/Payments/Products/COBISCorp.eCOBIS.Payments.DTO" appPath="C:/Program Files (x86)/COBIS/COBIS Services Generator/" name="COBISCorp.eCOBIS.Payments.DTO" productNS="http://dto.payments.ecobis.cobiscorp" description="Para ejecutar pagos masivos" documentationLanguage="Español" year="2019" version="1.0.0.0" type="DTO" GUID="F0B850A4-36D8-4C72-9CD2-490FF2E2A31D">
+  <namespaces>
+    <namespace type="dto" base="COBISCorp.eCOBIS.Payments" name="COBISCorp.eCOBIS.Payments.DTO" package="cobiscorp.ecobis.payments.dto" ns="http://dto.payments.ecobis.cobiscorp" folder="DTO" />
+  </namespaces>
+  <templates>
+    <template id="DTOJavaPOJO" productName="COBISCorp.eCOBIS.Payments.DTO" outputFolder="c:\COBIS-SG\Output\CTS\COBISCorp.eCOBIS.Payments.DTO" package="true" packageType="Jar">
+      <templateFiles>
+        <templateFile filePath="JavaPOJO\JavaDTO.xslt" enabled="true" override="true" />
+        <templateFile filePath="..\Commons\Java\buildProperties.xslt" enabled="true" override="true" />
+        <templateFile filePath="..\Commons\Java\build.xslt" enabled="true" override="true" />
+      </templateFiles>
+    </template>
+  </templates>
+  <DTOs>
+    <DTO name="PaymentRecord" nsBase="COBISCorp.eCOBIS.Payments" namespace="COBISCorp.eCOBIS.Payments.DTO" package="cobiscorp.ecobis.payments.dto" ns="http://dto.payments.ecobis.cobiscorp" version="1" />
+    <DTO name="PaymentProcessResponse" nsBase="COBISCorp.eCOBIS.Payments" namespace="COBISCorp.eCOBIS.Payments.DTO" package="cobiscorp.ecobis.payments.dto" ns="http://dto.payments.ecobis.cobiscorp" version="1" />
+  </DTOs>
+  <classes />
+  <packagers>
+    <packager type="SGPackageJava" AntTask="sign-archive" KeyAlias="cobisapp" KeyPassword="cobisappadminadmin" KeyCertificatePassword="cobisappadmin" KeyFileName="cobisapp.keystore" RelativeFolder="True" TemplateId="DTOJavaPOJO" />
+  </packagers>
+  <productProperties>
+    <property name="MavenGroupId" value="com.cobiscorp.processapi" />
+    <property name="MavenArtifactId" value="COBISCorp.eCOBIS.Payments.DTO" />
+    <property name="MavenVersion" value="1.0.0.0" />
+  </productProperties>
+</product>

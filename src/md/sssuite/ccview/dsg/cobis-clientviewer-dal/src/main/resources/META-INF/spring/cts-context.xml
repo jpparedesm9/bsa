@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+	<context:annotation-config />
+
+	<bean id="AffiliationsDAOImpl"
+		class="com.cobiscorp.ecobis.clientviewer.dal.impl.AffiliationsDAOImpl">
+	</bean>
+
+	<bean id="RatesDAOImpl" class="com.cobiscorp.ecobis.clientviewer.dal.impl.RatesDAOImpl">
+	</bean>
+
+	<bean id="SummaryCreditsDAOImpl"
+		class="com.cobiscorp.ecobis.clientviewer.dal.impl.SummaryCreditsDAOImpl">
+	</bean>
+
+	<bean id="SummaryDebtsDAOImpl"
+		class="com.cobiscorp.ecobis.clientviewer.dal.impl.SummaryDebtsDAOImpl">
+	</bean>
+
+	<bean id="CurrencyDAOImpl"
+		class="com.cobiscorp.ecobis.clientviewer.dal.impl.CurrencyDAOImpl">
+	</bean>
+
+	<bean id="SummaryInvestmentsDAOImpl"
+		class="com.cobiscorp.ecobis.clientviewer.dal.impl.SummaryInvestmentsDAOImpl">
+	</bean>
+
+	<bean id="SummaryOthersDAOImpl"
+		class="com.cobiscorp.ecobis.clientviewer.dal.impl.SummaryOthersDAOImpl">
+	</bean>
+
+	<bean id="SummaryPersonalWarrantiesDAOImpl"
+		class="com.cobiscorp.ecobis.clientviewer.dal.impl.SummaryPersonalWarrantiesDAOImpl">
+	</bean>
+
+	<bean id="SummaryWarrantiesDAOImpl"
+		class="com.cobiscorp.ecobis.clientviewer.dal.impl.SummaryWarrantiesDAOImpl">
+	</bean>
+
+
+	<bean id="ScoreCustomerDAOImpl" class="com.cobiscorp.ecobis.clientviewer.dal.impl.ScoreDAOImpl">
+	</bean>
+
+	<bean id="AdministratorDAOImpl"
+		class="com.cobiscorp.ecobis.clientviewer.admin.dal.impl.AdministratorDAOImpl">
+		<property name="seqnosQuery" ref="seqnosQuery"></property>
+	</bean>
+</beans>

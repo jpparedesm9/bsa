@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.example.org/EstadoCuenta" xmlns:tns="http://www.example.org/EstadoCuenta" elementFormDefault="qualified">
+
+    <element name="EstadoCuenta" type="tns:EstadoCuenta"></element>
+    
+    <complexType name="EstadoCuenta">
+    	<sequence>
+    		<element name="Cuenta" type="tns:Cuenta"></element>
+    		<element name="Movimientos" type="tns:Movimientos"></element>
+    	</sequence>
+    </complexType>
+
+    <complexType name="Cuenta">
+    	<attribute name="numero" type="string"></attribute>
+    	<attribute name="codigo" type="int"></attribute>
+    	<attribute name="tasa" type="float"></attribute>
+    	<attribute name="saldo" type="float"></attribute>
+    	<attribute name="nombreCuenta" type="string"></attribute>
+    	<attribute name="fechaCorte" type="date"></attribute>
+    	<attribute name="fechaCierre" type="date"></attribute>
+    	<attribute name="oficina" type="string"></attribute>
+    	<attribute name="direccion" type="string"></attribute>
+    	<attribute name="fechaPeriodoDesde" type="date"></attribute>
+    	<attribute name="fechaPeriodoHasta" type="date"></attribute>
+    	<attribute name="saldoAnterior" type="float"></attribute>
+    	<attribute name="totalIntereses" type="float"></attribute>
+    	<attribute name="saldoFechaCorte" type="float"></attribute>
+    	<attribute name="mensaje1" type="string"></attribute>
+    	<attribute name="mensaje2" type="string"></attribute>
+    	<attribute name="mensaje3" type="string"></attribute>
+    </complexType>
+
+    <complexType name="Movimientos">
+    	<sequence>
+    		<element name="Movimiento" type="tns:Movimiento"
+    			maxOccurs="unbounded" minOccurs="0">
+    		</element>
+    	</sequence>
+    </complexType>
+
+    <complexType name="Movimiento">
+    	<attribute name="fecha" type="date"></attribute>
+    	<attribute name="descripcion" type="string"></attribute>
+    	<attribute name="oficina" type="string"></attribute>
+    	<attribute name="depositos" type="float"></attribute>
+    	<attribute name="retiros" type="float"></attribute>
+    	<attribute name="saldo" type="float"></attribute>
+    </complexType>
+</schema>

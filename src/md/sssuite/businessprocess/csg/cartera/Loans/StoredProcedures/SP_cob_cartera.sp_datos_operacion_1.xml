@@ -1,0 +1,338 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<procedure>
+  <database>cob_cartera</database>
+  <name>sp_datos_operacion</name>
+  <type>SYBASE</type>
+  <version>1</version>
+  <parameters>
+    <parameter name="@s_culture" dataType="varchar" direction="in" />
+    <parameter name="@s_ssn" dataType="int" direction="in" />
+    <parameter name="@s_date" dataType="datetime" direction="in" />
+    <parameter name="@s_user" dataType="varchar" direction="in" />
+    <parameter name="@s_term" dataType="varchar" direction="in" />
+    <parameter name="@s_corr" dataType="char" direction="in" />
+    <parameter name="@s_ssn_corr" dataType="int" direction="in" />
+    <parameter name="@s_ofi" dataType="smallint" direction="in" />
+    <parameter name="@t_show_version" dataType="bit" direction="in" />
+    <parameter name="@t_rty" dataType="char" direction="in" />
+    <parameter name="@t_debug" dataType="char" direction="in" />
+    <parameter name="@t_file" dataType="varchar" direction="in" />
+    <parameter name="@t_trn" dataType="int" direction="in" />
+    <parameter name="@i_banco" dataType="varchar" direction="in" />
+    <parameter name="@i_operacion" dataType="char" direction="in" />
+    <parameter name="@i_formato_fecha" dataType="int" direction="in" />
+    <parameter name="@i_secuencial_ing" dataType="int" direction="in" />
+    <parameter name="@i_toperacion" dataType="varchar" direction="in" />
+    <parameter name="@i_moneda" dataType="tinyint" direction="in" />
+    <parameter name="@i_siguiente" dataType="int" direction="in" />
+    <parameter name="@i_dividendo" dataType="smallint" direction="in" />
+    <parameter name="@i_numero" dataType="smallint" direction="in" />
+    <parameter name="@i_sucursal" dataType="int" direction="in" />
+    <parameter name="@i_filial" dataType="int" direction="in" />
+    <parameter name="@i_oficina" dataType="smallint" direction="in" />
+    <parameter name="@i_concepto" dataType="varchar" direction="in" />
+    <parameter name="@i_fecha_abono" dataType="datetime" direction="in" />
+    <parameter name="@i_opcion" dataType="tinyint" direction="in" />
+    <parameter name="@i_codigo_externo" dataType="varchar" direction="in" />
+    <parameter name="@i_num_negocio" dataType="varchar" direction="in" />
+    <parameter name="@i_cliente" dataType="int" direction="in" />
+    <parameter name="@i_modo" dataType="smallint" direction="in" />
+    <parameter name="@i_dtr_dividendo" dataType="smallint" direction="in" />
+    <parameter name="@i_dtr_concepto" dataType="varchar" direction="in" />
+    <parameter name="@i_li_num_banco" dataType="varchar" direction="in" />
+    <parameter name="@i_canal" dataType="tinyint" direction="in" />
+  </parameters>
+  <queries>
+    <query>
+      <columns>
+        <column name="233301" />
+        <column name="233302" />
+        <column name="233303" />
+        <column name="233895" />
+        <column name="233304" />
+        <column name="233305" />
+        <column name="233306" />
+        <column name="233307" />
+        <column name="233308" />
+        <column name="233309" />
+        <column name="233914" />
+        <column name="233351" />
+        <column name="234257" />
+        <column name="233311" />
+      </columns>
+      <queryText>SELECT  "233301" = ab_secuencial_ing,"233302" = ab_secuencial_pag,"233303" = SUBSTRING (CONVERT (VARCHAR,ab_fecha_ing ,?), 1, 15),"233895" = SUBSTRING (CONVERT (VARCHAR,ab_fecha_pag ,?), 1, 15),"233304" = ab_usuario,"233305" = ab_oficina,"233306" = ab_dias_retencion,"233307" = ab_cuota_completa,"233308" = ab_aceptar_anticipos,"233309" = CASE ab_tipo_reduccion WHEN "N" THEN "Pago Normal/Adelantado" WHEN "C" THEN "Extraordinario - Reduccion cuota" WHEN "T" THEN "Extraordinario - Reduccion tiempo" ELSE "**ERROR**" END,"233914" = CASE ab_tipo_cobro WHEN "P" THEN "Proyectado" WHEN "A" THEN "Acumulado" ELSE "**ERROR**" END,"233351" = ab_tipo_prioridad,"234257" = CASE ab_tipo_aplicacion WHEN "D" THEN "Por Cuota" WHEN "C" THEN "Por Rubro" ELSE "**ERROR**" END,"233311" = ab_estado + " - " + (SELECT  b.valor </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="{1}" />
+        <column name="{2}" />
+        <column name="{3}" />
+        <column name="{4}" />
+        <column name="{5}" />
+        <column name="{6}" />
+        <column name="{7}" />
+        <column name="{8}" />
+        <column name="{9}" />
+        <column name="{10}" />
+      </columns>
+      <queryText>SELECT  op_tipo_cobro,op_aceptar_anticipos,op_tipo_reduccion,op_tipo_aplicacion,op_cuota_completa,op_fecha_fin,op_tipo_prioridad,op_efecto_pago,op_moneda,mo_descripcion </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="233319" />
+        <column name="233320" />
+        <column name="233321" />
+        <column name="233313" />
+        <column name="233322" />
+      </columns>
+      <queryText>SELECT  "233319" = ts_secuencial,"233320" = CONVERT (VARCHAR (20),ts_fecha ,?),"233321" = ts_dividendo,"233313" = ts_concepto,"233322" = ts_porcentaje </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="233323" />
+        <column name="233324" />
+        <column name="233325" />
+        <column name="233326" />
+        <column name="233327" />
+        <column name="233329" />
+      </columns>
+      <queryText>SELECT  "233323" = cl_cliente,"233324" = cl_rol,"233325" = SUBSTRING (en_nomlar, 1, DATALENGTH (en_nomlar)),"233326" = te_valor,"233327" = di_descripcion,"233329" = ? </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="{1}" />
+        <column name="{2}" />
+        <column name="{3}" />
+        <column name="{4}" />
+      </columns>
+      <queryText>SELECT  ro_concepto,co_descripcion,ro_tipo_rubro,ro_porcentaje </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="{1}" />
+      </columns>
+      <queryText>SELECT w_count</queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="{1}" />
+        <column name="{2}" />
+        <column name="{3}" />
+      </columns>
+      <queryText>SELECT  rb_dividendo,rb_concepto,rb_valor </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="{1}" />
+      </columns>
+      <queryText>SELECT w_count</queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="233313" />
+        <column name="233311" />
+        <column name="233328" />
+        <column name="233331" />
+        <column name="233332" />
+        <column name="233333" />
+        <column name="233334" />
+        <column name="234544" />
+        <column name="233335" />
+      </columns>
+      <queryText>SELECT  "233313" = am_concepto,"233311" = SUBSTRING (es_descripcion, 1, 14),"233328" = am_periodo,"233331" = am_cuota,"233332" = am_gracia,"233333" = am_pagado,"233334" = am_acumulado,"234544" = am_valor,"233335" = am_secuencia </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="233336" />
+        <column name="233337" />
+        <column name="233338" />
+        <column name="233311" />
+        <column name="233339" />
+      </columns>
+      <queryText>SELECT  "233336" = in_numero,"233337" = ti_descripcion,"233338" = RTRIM (in_texto),"233311" = in_estado,"233339" = CASE WHEN in_login_aprob IS NOT NULL THEN (SELECT  fu_nombre </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="REFERENCIA " />
+        <column name="TIPO " />
+        <column name="ACEPTANTE " />
+        <column name="" />
+        <column name="VALOR REAL" />
+        <column name="MON. " />
+        <column name="INGRESO" />
+        <column name="Secuencial" />
+      </columns>
+      <queryText>SELECT DISTINCT REFERENCIA = do_num_doc,TIPO = RTRIM (do_tipo_doc) + " " + SUBSTRING (tc_descripcion, 1, 10),ACEPTANTE = do_aceptante,"" = SUBSTRING (en_nomlar, 1, DATALENGTH (en_nomlar)),"VALOR REAL" = do_valor_bruto,"MON. " = do_moneda,"INGRESO" = CONVERT (VARCHAR (10),do_fecha_proc ,?),"Secuencial" = do_documento </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="233345" />
+        <column name="233337" />
+        <column name="233346" />
+        <column name="" />
+        <column name="233372" />
+        <column name="233343" />
+        <column name="233344" />
+      </columns>
+      <queryText>SELECT DISTINCT "233345" = SUBSTRING (cu_codigo_externo, 1, 20),"233337" = SUBSTRING (cu_tipo, 1, 15) + "   " + SUBSTRING (tc_descripcion, 1, 20),"233346" = cu_garante,"" = SUBSTRING (en_nomlar, 1, DATALENGTH (en_nomlar)),"233372" = cu_valor_actual,"233343" = cu_moneda,"233344" = CONVERT (VARCHAR (10),cu_fecha_ingreso ,?) </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="233313" />
+        <column name="233348" />
+        <column name="233700" />
+        <column name="233713" />
+        <column name="233322" />
+        <column name="233920" />
+        <column name="233372" />
+        <column name="233615" />
+        <column name="233352" />
+        <column name="233353" />
+        <column name="233354" />
+        <column name="233355" />
+        <column name="233356" />
+        <column name="233357" />
+        <column name="233358" />
+        <column name="233359" />
+        <column name="233332" />
+        <column name="233360" />
+        <column name="233361" />
+        <column name="233362" />
+        <column name="83820" />
+        <column name="233363" />
+        <column name="233257" />
+        <column name="233862" />
+        <column name="233866" />
+        <column name="234013" />
+        <column name="234147" />
+        <column name="234069" />
+        <column name="234070" />
+        <column name="234071" />
+        <column name="234275" />
+        <column name="234516" />
+      </columns>
+      <queryText>SELECT  "233313" = ro_concepto,"233348" = SUBSTRING (co_descripcion, 1, 30),"233700" = ro_tipo_rubro,"233713" = (SELECT  b.valor FROM cobis..cl_tabla a  ,cobis..cl_catalogo b   WHERE a.tabla = "ca_fpago_rubro" AND a.codigo = b.tabla AND b.codigo = x.ro_fpago     ),"233322" = ro_porcentaje,"233920" = ro_porcentaje_tea,"233372" = ro_valor,"233615" = ro_prioridad,"233352" = ro_paga_mora,"233353" = ro_provisiona,"233354" = ro_signo,"233355" = ro_factor,"233356" = ro_referencial,"233357" = ro_signo_reajuste,"233358" = ro_factor_reajuste,"233359" = ro_referencial_reajuste,"233332" = ro_gracia,"233360" = ro_concepto_asociado,"233361" = ro_fecha_desde,"233362" = ro_fecha_hasta,"83820" = ro_fdescuento,"233363" = ro_cuenta_abono,"233257" = CASE ro_afectacion WHEN 1 THEN "Disminuye" WHEN - 1 THEN "Aumenta" WHEN 0 THEN "Ninguno" ELSE "" END,"233862" = ro_diferir,"233866" = ISNULL (ro_saldo_diferir, 0),"234013" = CASE ru_banco WHEN "P" THEN ISNULL (ro_saldo_xpagar, ro_valor) WHEN "T" THEN ISNULL (ro_saldo_xpagar, ro_valor) ELSE ro_saldo_xpagar END,"234147" = CASE ru_banco WHEN "P" THEN ABS (ISNULL (ro_saldo_xpagar - ro_valor - ISNULL (ro_gracia, 0), 0)) WHEN "T" THEN ABS (ISNULL (ro_saldo_xpagar - ro_valor - ISNULL (ro_gracia, 0), 0)) ELSE 0 END,"234069" = (SELECT  ts_nombre FROM cob_custodia..cu_tipo_seguro   WHERE ts_codigo = x.ro_tipo_seguro     ),"234070" = ISNULL (ro_provision_acum, 0),"234071" = ISNULL (ro_provision_actual, 0),"234275" = CASE ru_tipo_seguro WHEN NULL THEN 0.00 ELSE (ISNULL (ro_provision_acum, 0) - (SELECT  SUM (am_pagado) FROM cob_cartera..ca_amortizacion   WHERE am_operacion = ? AND am_concepto = x.ro_concepto     )) END,"234516" = ro_tasa_minima </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="230037" />
+        <column name="230985" />
+      </columns>
+      <queryText>SELECT DISTINCT "230037" = li_num_banco,"230985" = en_nomlar </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="230037" />
+        <column name="230985" />
+      </columns>
+      <queryText>SELECT DISTINCT "230037" = li_num_banco,"230985" = en_nomlar </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="205760" />
+        <column name="17596" />
+        <column name="EMISOR" />
+        <column name="62300" />
+        <column name="82572" />
+        <column name="17238" />
+        <column name="17237" />
+        <column name="233180" />
+        <column name="233179" />
+      </columns>
+      <queryText>SELECT  "205760" = op_banco,"17596" = fa_num_negocio,"EMISOR" = do_emisor,"62300" = fa_valor,"82572" = fa_moneda,"17238" = CONVERT (VARCHAR (10),fa_fecini_neg ,?),"17237" = CONVERT (VARCHAR (10),fa_fecfin_neg ,?),"233180" = fa_dividendo,"233179" = fa_referencia </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="205760" />
+        <column name="17596" />
+        <column name="61378" />
+        <column name="62300" />
+        <column name="82572" />
+        <column name="17238" />
+        <column name="17237" />
+        <column name="233180" />
+        <column name="233179" />
+      </columns>
+      <queryText>SELECT  "205760" = op_banco,"17596" = fa_num_negocio,"61378" = fa_grupo,"62300" = fa_valor,"82572" = fa_moneda,"17238" = CONVERT (VARCHAR (10),fa_fecini_neg ,?),"17237" = CONVERT (VARCHAR (10),fa_fecfin_neg ,?),"233180" = fa_dividendo,"233179" = fa_referencia </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="{1}" />
+        <column name="{2}" />
+        <column name="{3}" />
+        <column name="{4}" />
+        <column name="{5}" />
+        <column name="{6}" />
+        <column name="{7}" />
+        <column name="{8}" />
+        <column name="{9}" />
+        <column name="{10}" />
+        <column name="{11}" />
+        <column name="{12}" />
+        <column name="{13}" />
+        <column name="{14}" />
+        <column name="{15}" />
+        <column name="{16}" />
+        <column name="{17}" />
+        <column name="{18}" />
+        <column name="{19}" />
+        <column name="{20}" />
+        <column name="{21}" />
+        <column name="{22}" />
+        <column name="{23}" />
+        <column name="{24}" />
+        <column name="{25}" />
+        <column name="{26}" />
+        <column name="{27}" />
+        <column name="{28}" />
+        <column name="{29}" />
+        <column name="{30}" />
+        <column name="{31}" />
+        <column name="{32}" />
+        <column name="{33}" />
+        <column name="{34}" />
+        <column name="{35}" />
+        <column name="{36}" />
+        <column name="{37}" />
+        <column name="{38}" />
+        <column name="{39}" />
+        <column name="{40}" />
+        <column name="{41}" />
+        <column name="{42}" />
+        <column name="{43}" />
+        <column name="{44}" />
+        <column name="{45}" />
+        <column name="{46}" />
+        <column name="{47}" />
+        <column name="{48}" />
+        <column name="{49}" />
+        <column name="{50}" />
+        <column name="{51}" />
+        <column name="{52}" />
+        <column name="{53}" />
+        <column name="{54}" />
+        <column name="{55}" />
+        <column name="{56}" />
+        <column name="{57}" />
+        <column name="{58}" />
+        <column name="{59}" />
+        <column name="{60}" />
+      </columns>
+      <queryText>SELECT ctx.ISNULL(w_capital_pendiente, 0), ctx.ISNULL(w_interes_pendiente, 0), ctx.ISNULL(w_mora, 0), ctx.ISNULL(w_otros_pendiente, 0), ctx.ISNULL(w_pagodia, 0), ctx.ISNULL(w_monto_aprobado, 0), ctx.ISNULL(w_monto_desembolsado, 0), ctx.ISNULL(w_saldo, 0), ctx.ISNULL(w_capital_ven, 0), ctx.ISNULL(w_capital_vig, 0), ctx.ISNULL(w_interes_ven, 0), ctx.ISNULL(w_interes_vig, 0), ctx.ISNULL(w_mora, 0), ctx.ISNULL(w_otros_ven, 0), ctx.ISNULL(w_otros_vig, 0), ctx.ISNULL(w_cappagoadel, 0), ctx.ISNULL(w_capproxcuota, 0), ctx.ISNULL(w_otrosproxcuota, 0), w_cuota, w_des_diapago, w_fecha_desden, w_fecha_desdem, ctx.ISNULL(w_tasa_intsn, 0), ctx.ISNULL(w_tasa_intsm, 0), w_fecha_desde_mora_cap, ctx.ISNULL(w_diasmora_cap, 0), w_fecha_desde_mora_ints, ctx.ISNULL(w_diasmora_ints, 0), ctx.ISNULL(w_nocuotamora, 0), w_saldo_interes, w_signo, ctx.ISNULL(w_factor, 0), w_referencial, w_signom, ctx.ISNULL(w_factorm, 0), w_referencialm, ctx.ISNULL(w_porcentaje_tea, 0), w_subsidio, ctx.ISNULL(w_porcentaje_subsidio, 0), ctx.ISNULL(w_feci_vig, 0), ctx.ISNULL(w_seguro_vig, 0), ctx.ISNULL(w_feci_ven, 0), ctx.ISNULL(w_seguro_ven, 0), ctx.ISNULL(w_total_vig, 0), ctx.ISNULL(w_total_ven, 0), ctx.ISNULL((w_total_vig + w_total_ven), 0), ctx.ISNULL(w_valor_provision, 0), ctx.ISNULL(w_tr_tasa_asociada, ""), ctx.ISNULL(w_feci_acum, 0), ctx.ISNULL(w_seguro_acum, 0), w_cuota_pactada, w_fecha_ult_pago, w_reajustable, w_tasa_minima, w_otros_vig + w_otros_ven, w_saldo_prestamo, w_fecha_pagado_hasta, w_tea, w_teac, w_fecha_desde_mora</queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="233301" />
+        <column name="233241" />
+        <column name="233243" />
+        <column name="234549" />
+        <column name="232903" />
+        <column name="233311" />
+        <column name="233249" />
+        <column name="233250" />
+        <column name="233880" />
+      </columns>
+      <queryText>SELECT  "233301" = pt_secuencial,"233241" = CONVERT (VARCHAR (10),tr_fecha_mov ,?),"233243" = pt_tipo_tran,"234549" = pt_dividendo,"232903" = pt_monto_mop,"233311" = pt_estado + " - " + (SELECT  b.valor FROM cobis..cl_tabla a  ,cobis..cl_catalogo b   WHERE a.tabla = "ca_estado_abono" AND a.codigo = b.tabla AND b.codigo = x.pt_estado     ),"233249" = tr_usuario,"233250" = tr_terminal,"233880" = (SELECT  valor FROM cobis..cl_catalogo y  ,cobis..cl_tabla t   WHERE t.tabla = "ca_causa_reversa" AND y.tabla = t.codigo AND y.codigo = a.tr_causa_rev     ) </queryText>
+    </query>
+  </queries>
+</procedure>

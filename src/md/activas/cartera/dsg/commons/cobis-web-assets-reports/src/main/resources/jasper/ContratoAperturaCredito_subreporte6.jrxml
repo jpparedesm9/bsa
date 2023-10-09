@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="ContratoAperturaCredito_subreporte6" pageWidth="595" pageHeight="842" whenNoDataType="AllSectionsNoDetail" columnWidth="590" leftMargin="0" rightMargin="5" topMargin="15" bottomMargin="5" uuid="11dad5b6-85fe-4cfd-ab64-d8a59e3e0730">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<field name="nameClient" class="java.lang.String"/>
+	<field name="typeDoc" class="java.lang.String"/>
+	<field name="indentityCard" class="java.lang.String"/>
+	<field name="address" class="java.lang.String"/>
+	<field name="city" class="java.lang.String"/>
+	<field name="phone" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<detail>
+		<band height="112" splitType="Stretch">
+			<textField>
+				<reportElement x="3" y="5" width="238" height="107" uuid="2156de77-9ed3-4ac2-979c-33a824c4131f"/>
+				<textElement markup="styled"/>
+				<textFieldExpression><![CDATA["_____________________________________"
++ "\n" + "Firma:"
++ "\n" + ($F{nameClient} == null ? "" : $F{nameClient})
++ "\n" + ($F{typeDoc} == null ? "" : $F{typeDoc}) + ": " + ($F{indentityCard} == null ? "":$F{indentityCard})
++ "\n" + ($F{address} == null ? "" : $F{address} + " ") + ($F{city} == null ? "" : $F{city})
++ "\n" + "Teléfono: " + ($F{phone} == null ? "": $F{phone})]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

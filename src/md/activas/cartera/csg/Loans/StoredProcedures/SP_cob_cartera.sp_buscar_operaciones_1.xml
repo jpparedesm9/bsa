@@ -1,0 +1,89 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<procedure>
+  <database>cob_cartera</database>
+  <name>sp_buscar_operaciones</name>
+  <type>SQLSERVER</type>
+  <version>1</version>
+  <parameters>
+    <parameter name="@s_user" dataType="varchar" direction="in" />
+    <parameter name="@i_banco" dataType="varchar" direction="in" />
+    <parameter name="@i_tramite" dataType="int" direction="in" />
+    <parameter name="@i_cliente" dataType="int" direction="in" />
+    <parameter name="@i_oficina" dataType="smallint" direction="in" />
+    <parameter name="@i_moneda" dataType="tinyint" direction="in" />
+    <parameter name="@i_oficial" dataType="int" direction="in" />
+    <parameter name="@i_fecha_ini" dataType="datetime" direction="in" />
+    <parameter name="@i_toperacion" dataType="varchar" direction="in" />
+    <parameter name="@i_lin_credito" dataType="varchar" direction="in" />
+    <parameter name="@i_estado" dataType="varchar" direction="in" />
+    <parameter name="@i_migrada" dataType="varchar" direction="in" />
+    <parameter name="@i_fecha_reajuste" dataType="datetime" direction="in" />
+    <parameter name="@i_siguiente" dataType="int" direction="in" />
+    <parameter name="@i_formato_fecha" dataType="int" direction="in" />
+    <parameter name="@i_condicion_est" dataType="tinyint" direction="in" />
+    <parameter name="@i_fecha_a_reajustar" dataType="datetime" direction="in" />
+    <parameter name="@i_tipo_op" dataType="char" direction="in" />
+    <parameter name="@i_ref_red" dataType="varchar" direction="in" />
+    <parameter name="@i_find_inst_op" dataType="char" direction="in" />
+    <parameter name="@i_ref_exterior" dataType="varchar" direction="in" />
+    <parameter name="@i_num_deuda_ext" dataType="varchar" direction="in" />
+    <parameter name="@i_comex" dataType="varchar" direction="in" />
+    <parameter name="@i_web" dataType="char" direction="in" />
+    <parameter name="@i_num_documento" dataType="varchar" direction="in" />
+    <parameter name="@i_grupal" dataType="char" direction="in" />
+    <parameter name="@i_categoria" dataType="int" direction="in" />
+    <parameter name="@i_grupo" dataType="int" direction="in" />
+    <parameter name="@i_resumen_grupal" dataType="char" direction="in" />
+  </parameters>
+  <queries>
+    <query>
+      <columns>
+        <column name="Lin.Credito    " />
+        <column name="Moneda" />
+        <column name="No.Operacion" />
+        <column name="Monto Operacion" />
+        <column name="Cliente" />
+        <column name="Desembolso" />
+        <column name="Vencimiento" />
+        <column name="Reg/Oficial" />
+        <column name="Oficina" />
+        <column name="Cup.Cr�dito" />
+        <column name="Op.Migrada" />
+        <column name="Op.Anterior" />
+        <column name="Estado" />
+        <column name="Tramite" />
+        <column name="Cod.Cli" />
+        <column name="Secuencial" />
+        <column name="Reaj.Especial" />
+        <column name="Ref.Redescont" />
+        <column name="Clase Oper." />
+        <column name="Grupal" />
+      </columns>
+      <queryText>SELECT  "Lin.Credito    " = SUBSTRING (bot_toperacion, 1, 30),"Moneda" = bot_moneda,"No.Operacion" = bot_banco,"Monto Operacion" = CONVERT (FLOAT,bot_monto ),"Cliente" = SUBSTRING (bot_nombre, 1, 30),"Desembolso" = CONVERT (VARCHAR (16),bot_fecha_ini ,?),"Vencimiento" = CONVERT (VARCHAR (10),bot_fecha_fin ,?),"Reg/Oficial" = bot_oficial,"Oficina" = bot_oficina,"Cup.Cr�dito" = bot_lin_credito,"Op.Migrada" = SUBSTRING (bot_migrada, 1, 20),"Op.Anterior" = SUBSTRING (bot_anterior, 1, 20),"Estado" = SUBSTRING (es_descripcion, 1, 20),"Tramite" = CONVERT (VARCHAR (13),bot_tramite ),"Cod.Cli" = bot_cliente,"Secuencial" = bot_operacion,"Reaj.Especial" = bot_reajuste_especial,"Ref.Redescont" = bot_nro_red,"Clase Oper." = bot_tipo </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="Lin.Cr�dito    " />
+        <column name="Moneda" />
+        <column name="No.Operaci�n" />
+        <column name="Monto Operaci�n" />
+        <column name="Cliente" />
+        <column name="Desembolso" />
+        <column name="Vencimiento" />
+        <column name="Reg/Oficial" />
+        <column name="Oficina" />
+        <column name="Cup.Cr�dito" />
+        <column name="Op.Migrada" />
+        <column name="Op.Anterior" />
+        <column name="Estado" />
+        <column name="Tr�mite" />
+        <column name="Cod.Cli" />
+        <column name="Secuencial" />
+        <column name="Reaj.Especial" />
+        <column name="Ref.Redescont" />
+        <column name="Clase Oper." />
+      </columns>
+      <queryText>SELECT  "Lin.Cr�dito    " = SUBSTRING (bot_toperacion, 1, 30),"Moneda" = bot_moneda,"No.Operaci�n" = bot_banco,"Monto Operaci�n" = CONVERT (FLOAT,bot_monto ),"Cliente" = SUBSTRING (bot_nombre, 1, 30),"Desembolso" = CONVERT (VARCHAR (16),bot_fecha_ini ,?),"Vencimiento" = CONVERT (VARCHAR (10),bot_fecha_fin ,?),"Reg/Oficial" = bot_oficial,"Oficina" = bot_oficina,"Cup.Cr�dito" = bot_lin_credito,"Op.Migrada" = SUBSTRING (bot_migrada, 1, 20),"Op.Anterior" = SUBSTRING (bot_anterior, 1, 20),"Estado" = SUBSTRING (es_descripcion, 1, 20),"Tr�mite" = CONVERT (VARCHAR (13),bot_tramite ),"Cod.Cli" = bot_cliente,"Secuencial" = bot_operacion,"Reaj.Especial" = bot_reajuste_especial,"Ref.Redescont" = bot_nro_red,"Clase Oper." = bot_tipo </queryText>
+    </query>
+  </queries>
+</procedure>

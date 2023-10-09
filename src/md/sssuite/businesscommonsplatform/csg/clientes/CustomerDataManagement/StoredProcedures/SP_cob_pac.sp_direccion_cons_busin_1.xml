@@ -1,0 +1,195 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<procedure>
+  <database>cob_pac</database>
+  <name>sp_direccion_cons_busin</name>
+  <type>SQLSERVER</type>
+  <version>1</version>
+  <parameters>
+    <parameter name="@s_ssn" dataType="int" direction="in" />
+    <parameter name="@s_user" dataType="varchar" direction="in" />
+    <parameter name="@s_term" dataType="varchar" direction="in" />
+    <parameter name="@s_date" dataType="datetime" direction="in" />
+    <parameter name="@s_srv" dataType="varchar" direction="in" />
+    <parameter name="@s_lsrv" dataType="varchar" direction="in" />
+    <parameter name="@s_ofi" dataType="smallint" direction="in" />
+    <parameter name="@s_rol" dataType="smallint" direction="in" />
+    <parameter name="@s_org_err" dataType="char" direction="in" />
+    <parameter name="@s_error" dataType="int" direction="in" />
+    <parameter name="@s_sev" dataType="tinyint" direction="in" />
+    <parameter name="@s_msg" dataType="varchar" direction="in" />
+    <parameter name="@s_org" dataType="char" direction="in" />
+    <parameter name="@t_debug" dataType="char" direction="in" />
+    <parameter name="@t_file" dataType="varchar" direction="in" />
+    <parameter name="@t_from" dataType="varchar" direction="in" />
+    <parameter name="@t_trn" dataType="smallint" direction="in" />
+    <parameter name="@t_show_version" dataType="bit" direction="in" />
+    <parameter name="@i_operacion" dataType="char" direction="in" />
+    <parameter name="@i_ente" dataType="int" direction="in" />
+    <parameter name="@i_direccion" dataType="tinyint" direction="in" />
+    <parameter name="@i_descripcion" dataType="varchar" direction="in" />
+    <parameter name="@i_tipo" dataType="varchar" direction="in" />
+    <parameter name="@i_calle" dataType="varchar" direction="in" />
+    <parameter name="@i_casa" dataType="varchar" direction="in" />
+    <parameter name="@i_formato_fecha" dataType="int" direction="in" />
+    <parameter name="@i_secuencial" dataType="int" direction="in" />
+    <parameter name="@i_tipo_prop" dataType="char" direction="in" />
+  </parameters>
+  <queries>
+    <query>
+      <columns>
+        <column name="COD. DIRECCION" />
+        <column name="COD. DEPARTAMENTO" />
+        <column name="DEPARTAMENTO" />
+        <column name="COD. PROVINCIA" />
+        <column name="PROVINCIA" />
+        <column name="COD. CIUDAD" />
+        <column name="CIUDAD" />
+        <column name="DIRECCION" />
+        <column name="TIPO TELEFONO" />
+        <column name="COD. AREA" />
+        <column name="NUMERO TELEFONO" />
+      </columns>
+      <queryText>SELECT  "COD. DIRECCION" = di_direccion,"COD. DEPARTAMENTO" = di_departamento,"DEPARTAMENTO" = (SELECT  b.valor FROM cobis..cl_tabla a  ,cobis..cl_catalogo b   WHERE a.tabla = "cl_depart_pais" AND a.codigo = b.tabla AND b.codigo = CONVERT (VARCHAR (10),c.di_departamento )     ),"COD. PROVINCIA" = di_provincia,"PROVINCIA" = (SELECT  b.valor FROM cobis..cl_tabla a  ,cobis..cl_catalogo b   WHERE a.tabla = "cobis..cl_provincia" AND a.codigo = b.tabla AND b.codigo = CONVERT (VARCHAR (10),c.di_provincia )     ),"COD. CIUDAD" = di_ciudad,"CIUDAD" = (SELECT  b.valor FROM cobis..cl_tabla a  ,cobis..cl_catalogo b   WHERE a.tabla = "cobis..cl_ciudad" AND a.codigo = b.tabla AND b.codigo = CONVERT (VARCHAR (10),c.di_ciudad )     ),"DIRECCION" = di_calle + " " + di_edificio + " " + di_casa + " " + di_barrio,"TIPO TELEFONO" = te_tipo_telefono,"COD. AREA" = te_area,"NUMERO TELEFONO" = te_valor </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="COD. DIRECCION" />
+        <column name="COD. TIPO" />
+        <column name="TIPO" />
+        <column name="COD. PAIS" />
+        <column name="PAIS" />
+        <column name="COD. PROVINCIA" />
+        <column name="PROVINCIA" />
+        <column name="COD. CIUDAD" />
+        <column name="CIUDAD" />
+        <column name="COD. PAQRROQUIA" />
+        <column name="PARROQUIA" />
+        <column name="DIRECCION" />
+        <column name="CALLE" />
+        <column name="BARRIO" />
+        <column name="PRINCIPAL" />
+        <column name="CORRESPONDENCIA" />
+        <column name="COD. DPTO" />
+        <column name="DEPARTAMENTO" />
+        <column name="TIEMPO RESIDENCIA" />
+        <column name=" COD. BARRIO" />
+        <column name="LATITUD" />
+        <column name=" LONGITUD" />
+        <column name=" ID_CODIGO_BARRIO" />
+        <column name=" NRO_CALLE" />
+        <column name=" COD_POSTAL" />
+        <column name=" NRO_RESIDENTES" />
+        <column name=" NRO_CALLE_INTER" />
+        <column name="MESES_VIGENCIA" />
+        <column name="COD.NEGOCIO" />
+        <column name="TIPO VIVIENDA" />
+        <column name="CIUDAD POBLACION" />
+        <column name=" NOMBRE CLIENTE" />
+        <column name="REFERENCIA" />
+        <column name="VERIFICACION" />
+      </columns>
+      <queryText>SELECT  "COD. DIRECCION" = di_direccion,"COD. TIPO" = di_tipo,"TIPO" = (SELECT  b.valor FROM cobis..cl_tabla a  ,cobis..cl_catalogo b   WHERE a.tabla = "cl_tdireccion" AND a.codigo = b.tabla AND b.codigo = CONVERT (VARCHAR (10),c.di_tipo )     ),"COD. PAIS" = di_pais,"PAIS" = (SELECT  b.valor FROM cobis..cl_tabla a  ,cobis..cl_catalogo b   WHERE a.tabla = "cl_pais" AND a.codigo = b.tabla AND b.codigo = CONVERT (VARCHAR (10),c.di_pais )     ),"COD. PROVINCIA" = di_provincia,"PROVINCIA" = (SELECT  b.valor FROM cobis..cl_tabla a  ,cobis..cl_catalogo b   WHERE a.tabla = "cl_provincia" AND a.codigo = b.tabla AND b.codigo = CONVERT (VARCHAR (10),c.di_provincia )     ),"COD. CIUDAD" = di_ciudad,"CIUDAD" = (SELECT  b.valor FROM cobis..cl_tabla a  ,cobis..cl_catalogo b   WHERE a.tabla = "cl_ciudad" AND a.codigo = b.tabla AND b.codigo = CONVERT (VARCHAR (10),c.di_ciudad )     ),"COD. PAQRROQUIA" = di_parroquia,"PARROQUIA" = (SELECT  b.valor FROM cobis..cl_tabla a  ,cobis..cl_catalogo b   WHERE a.tabla = "cl_parroquia" AND a.codigo = b.tabla AND b.codigo = CONVERT (VARCHAR (10),c.di_parroquia )     ),"DIRECCION" = di_descripcion,"CALLE" = di_calle,"BARRIO" = di_barrio,"PRINCIPAL" = di_principal,"CORRESPONDENCIA" = di_correspondencia,"COD. DPTO" = di_departamento,"DEPARTAMENTO" = (SELECT  b.valor FROM cobis..cl_tabla a  ,cobis..cl_catalogo b   WHERE a.tabla = "cl_depart_pais" AND a.codigo = b.tabla AND b.codigo = CONVERT (VARCHAR (10),c.di_departamento )     ),"TIEMPO RESIDENCIA" = di_tiempo_reside </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="{1}" />
+        <column name="{2}" />
+        <column name="{3}" />
+        <column name="{4}" />
+        <column name="{5}" />
+        <column name="{6}" />
+        <column name="{7}" />
+        <column name="{8}" />
+        <column name="{9}" />
+        <column name="{10}" />
+        <column name="{11}" />
+        <column name="{12}" />
+        <column name="{13}" />
+        <column name="{14}" />
+        <column name="{15}" />
+        <column name="{16}" />
+        <column name="{17}" />
+        <column name="{18}" />
+        <column name="{19}" />
+        <column name="{20}" />
+        <column name="{21}" />
+        <column name="{22}" />
+        <column name="{23}" />
+        <column name="{24}" />
+        <column name="{25}" />
+        <column name="{26}" />
+        <column name="{27}" />
+        <column name="{28}" />
+        <column name="{29}" />
+        <column name="{30}" />
+        <column name="{31}" />
+        <column name="{32}" />
+        <column name="{33}" />
+        <column name="{34}" />
+        <column name="{35}" />
+        <column name="{36}" />
+        <column name="{37}" />
+        <column name="{38}" />
+        <column name="{39}" />
+        <column name="{40}" />
+        <column name="{41}" />
+        <column name="{42}" />
+        <column name="{43}" />
+      </columns>
+      <queryText>SELECT o_direccion, ctx.ISNULL(o_descripcion, ""), o_tipo, o_tinombre, o_principal, o_pais, o_despais, o_cod_prov, o_provincia, o_canton, o_descanton, o_distrito, o_desdistrito, o_codbarrio, ctx.ISNULL(o_barrio, ""), o_correspondencia, o_alquilada, o_montoalquiler, o_cobro, o_otrasenas, o_zona, o_zona_nombre, ctx.convertString(o_fecha_registro ,i_formato_fecha), ctx.convertString(o_fecha_modificacion ,i_formato_fecha), ctx.convertString(o_verificado ,i_formato_fecha), o_funcionario, ctx.convertString(o_fecha_ver ,i_formato_fecha), o_codpostal, o_sector, ctx.ISNULL(o_casa, ""), o_calle, o_edificio, o_dir_comer, o_rural_urbano, o_nom_rural_urbano, o_departamento, o_nom_depart, o_fact_serv_pu, o_tipo_prop, o_nom_tipo_prop, o_montoalquiler, o_nombre_agencia, o_fuente_verif</queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="SEC." />
+        <column name="NUMERO" />
+        <column name="COD." />
+        <column name="TIPO TELEFONO" />
+        <column name="COD AREA" />
+      </columns>
+      <queryText>SELECT  "SEC." = te_secuencial,"NUMERO" = RTRIM (LTRIM (te_valor)),"COD." = RTRIM (LTRIM (cobis..cl_catalogo.codigo)),"TIPO TELEFONO" = RTRIM (LTRIM (cobis..cl_catalogo.valor)),"COD AREA" = te_area </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="SEC." />
+        <column name="DESCRIPCION" />
+      </columns>
+      <queryText>SELECT  "SEC." = di_direccion,"DESCRIPCION" = (LTRIM (di_barrio + " " + di_calle + " " + di_casa + " " + CONVERT (VARCHAR (100),di_descripcion ))) </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name=" COD. DIRECCION" />
+        <column name="COD. TIPO" />
+        <column name="TIPO" />
+        <column name="COD. PAIS" />
+        <column name="PAIS" />
+        <column name="COD. PROVINCIA" />
+        <column name="PROVINCIA" />
+        <column name="COD. CIUDAD" />
+        <column name="CIUDAD" />
+        <column name="COD. PAQRROQUIA" />
+        <column name="PARROQUIA" />
+        <column name="DIRECCION" />
+        <column name="CALLE" />
+        <column name="BARRIO" />
+        <column name="PRINCIPAL" />
+        <column name="CORRESPONDENCIA" />
+        <column name="COD. DPTO" />
+        <column name="DEPARTAMENTO" />
+        <column name="TIEMPO RESIDENCIA" />
+        <column name=" COD. BARRIO" />
+        <column name="LATITUD" />
+        <column name=" LONGITUD" />
+        <column name=" ID_CODIGO_BARRIO" />
+        <column name=" NRO_CALLE" />
+        <column name=" COD_POSTAL" />
+        <column name=" NRO_RESIDENTES" />
+        <column name=" NRO_CALLE_INTER" />
+        <column name="MESES_VIGENCIA" />
+        <column name="COD.NEGOCIO" />
+        <column name="TIPO VIVIENDA" />
+        <column name="CIUDAD POBLACION" />
+      </columns>
+      <queryText></queryText>
+    </query>
+  </queries>
+</procedure>

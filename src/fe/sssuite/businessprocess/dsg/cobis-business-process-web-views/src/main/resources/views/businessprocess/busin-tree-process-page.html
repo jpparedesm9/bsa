@@ -1,0 +1,28 @@
+<div class="cb-view" ng-controller="busin.treeProcessController">
+	<div class="cb-view-container-root" style="height:500px; margin:-15px;">
+		<form id="container" class="cb-viewport">           
+			<div id="validator" kendo-splitter k-orientation="orientationh" k-rebind="orientationh" 
+					k-panes="[ { collapsible: true, resizable: true, size: '28%'},
+							   { collapsible: false, resizable: true, size: '100%'}]" kendo-validator="validator" >
+				<div ng-init="setTreeView()">						
+					<div designer-form-load form="vc.viewState.dynamicTreeGroup" />
+				</div>
+				<div>
+					<div designer-form-load form="vc.viewState.dynamicGroup"/>													
+				</div>
+			</div>            
+		</form>
+	</div>
+	<div class="cb-navbar cb-navbar-bottom">
+		<nav id="NAVIGATIONBUTTONBAR" class="navbar navbar-default navbar-fixed-bottom">
+			<button id="vc.viewState.SAVEBUTTON" ng-click="saveOnClick(vc.currentTaskLoaded)" class="btn btn-primary navbar-btn" ng-disabled="vc.viewState.SAVEBUTTON.disabled || vc.viewState.SAVEBUTTON.disabledingroup" ng-show="vc.viewState.SAVEBUTTON.visible"> 
+				{{vc.viewState.SAVEBUTTON.label|translate}}
+			</button>									
+
+			<button id="vc.viewState.FINISHBUTTON" ng-click="finishOnClick()" class="btn btn-default navbar-btn" ng-disabled="vc.viewState.FINISHBUTTON.disabled || vc.viewState.FINISHBUTTON.disabledingroup" ng-show="vc.viewState.FINISHBUTTON.visible"> 
+				{{vc.viewState.FINISHBUTTON.label|translate}}
+			</button>								
+		</nav>					
+	</div>	
+</div>	
+

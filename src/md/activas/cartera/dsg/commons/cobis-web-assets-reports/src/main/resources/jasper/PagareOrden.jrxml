@@ -1,0 +1,546 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="PagareOrden" pageWidth="594" pageHeight="842" whenNoDataType="AllSectionsNoDetail" columnWidth="514" leftMargin="40" rightMargin="40" topMargin="14" bottomMargin="14" uuid="770ee5f8-0225-4141-a2e4-670c8c00777f">
+	<property name="ireport.zoom" value="1.5"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="3277"/>
+	<parameter name="PReportTitle" class="java.lang.String"/>
+	<parameter name="PUrlLogo" class="java.lang.String"/>
+	<field name="officeIdentityCard" class="java.lang.String"/>
+	<field name="date" class="java.lang.String"/>
+	<field name="name" class="java.lang.String"/>
+	<field name="bankName" class="java.lang.String"/>
+	<variable name="fecha" class="java.util.Date">
+		<variableExpression><![CDATA[new java.util.Date()]]></variableExpression>
+	</variable>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<pageHeader>
+		<band height="36"/>
+	</pageHeader>
+	<detail>
+		<band height="53" splitType="Stretch">
+			<textField>
+				<reportElement mode="Transparent" x="1" y="25" width="513" height="23" uuid="70ca89fa-1e7a-47b4-b1f1-33881379c93f"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{PReportTitle}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="1" y="5" width="233" height="20" uuid="839d4867-e7ee-4f76-860d-591d1e3d50f1"/>
+				<textElement textAlignment="Justified" markup="none"/>
+				<textFieldExpression><![CDATA[$F{date}]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="24">
+			<textField>
+				<reportElement x="1" y="0" width="513" height="20" uuid="946214d4-192d-4397-909d-edb098daa95f"/>
+				<textElement textAlignment="Center" markup="none"/>
+				<textFieldExpression><![CDATA["No. " + ($F{officeIdentityCard}!=null?$F{officeIdentityCard}:"-NO DEFINIDO-")]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="87">
+			<textField>
+				<reportElement x="1" y="0" width="513" height="81" uuid="e48bed78-2905-4a1d-a501-ca96fc58a4f3"/>
+				<textElement textAlignment="Justified" markup="styled">
+					<font size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA["El(los) suscrito(s) deudor(es) y codeudor(es), identificado(s) como aparece al pie de mi(nuestras) firma(s), manifiesto(amos) que:" + "\n\n" + "<style isBold=\"true\">PRIMERO.  OBLIGACIÓN DE PAGO:</style>" + " Pagaré(mos) de manera solidaria, incondicional  e indivisible a la orden de " +($F{name}!=null?$F{name}:"-NO DEFINIDO-")+ ", establecimiento bancario, en adelante EL ACREEDOR, o a quien sus derechos represente, las siguientes sumas de dinero:"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="91">
+			<staticText>
+				<reportElement x="0" y="0" width="139" height="15" uuid="278e0075-b2fa-461c-b4f5-8ff6a572dcc1"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font size="10" isBold="true"/>
+					<paragraph leftIndent="3"/>
+				</textElement>
+				<text><![CDATA[Concepto]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="139" y="0" width="180" height="15" uuid="78312029-da99-4a3d-87f6-cb0c88a14c1e"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Valor en Letras]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="319" y="0" width="195" height="15" uuid="59bb39ac-1d7d-4b48-9b3d-54dafaa9109e"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Valor en Números]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="15" width="139" height="15" uuid="64d5a862-8192-4034-9b37-d0de2537ac03"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement>
+					<font size="10"/>
+					<paragraph leftIndent="3"/>
+				</textElement>
+				<text><![CDATA[Capital]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="30" width="139" height="15" uuid="b0458e03-36a2-4988-a3f8-4952c8dd19d6"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement>
+					<font size="10"/>
+					<paragraph leftIndent="3"/>
+				</textElement>
+				<text><![CDATA[Intereses Remuneratorios]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="45" width="139" height="15" uuid="c9c70b40-8ff2-448f-8c4d-99bd7cd8ca65"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement>
+					<font size="10"/>
+					<paragraph leftIndent="3"/>
+				</textElement>
+				<text><![CDATA[Comisiones]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="60" width="139" height="15" uuid="2bbf4be9-f0e1-4a1a-9e83-c1f6a819246d"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement>
+					<font size="10"/>
+					<paragraph leftIndent="3"/>
+				</textElement>
+				<text><![CDATA[Seguros]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="139" y="15" width="180" height="15" uuid="e513cdb8-1255-4efe-b0f7-fe4209590a2a"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="139" y="30" width="180" height="15" uuid="9e968a4f-e38f-4d79-bf2f-24566b746d51"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="139" y="45" width="180" height="15" uuid="5b4f50f2-2e45-4af3-952d-96f51eef495a"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="139" y="60" width="180" height="15" uuid="2805c9a4-cac1-4f29-aaea-250e9c0d7ac7"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="319" y="15" width="195" height="15" uuid="96e3daf1-aad0-4c10-91ea-cc49d69fbb61"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="319" y="30" width="195" height="15" uuid="307ec0bd-5a8f-4849-9331-34e05cf4cda3"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="319" y="45" width="195" height="15" uuid="e15030b2-d9ed-4964-8a1e-5742f594a003"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="319" y="60" width="195" height="15" uuid="20793bc9-f4eb-40f7-8a94-feeecf8e4910"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+		</band>
+		<band height="460">
+			<textField>
+				<reportElement x="1" y="0" width="513" height="456" uuid="361f4d9d-0282-403d-9d63-898a328c72c3"/>
+				<textElement textAlignment="Justified" markup="styled">
+					<font size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["<style isBold=\"true\">SEGUNDO. FECHA DE VENCIMIENTO:</style>" + " Las sumas antes descritas serán pagadas el día ________________________ (___) del mes de _____________________ de dos mil ______ (20__), en las oficinas del ACREEDOR o en el sitio en que éste posteriormente me(nos) indique."
++ "\n\n" + "<style isBold=\"true\">TERCERO. INTERESES DE MORA:</style>" + " En caso de incumplimiento pagaré(mos) sobre el capital intereses de mora a la tasa más alta permitida de conformidad con las disposiciones legales en la materia, sin perjuicio de las demás acciones a favor del ACREEDOR para obtener el recaudo de los valores adeudados."
++ "\n\n" + "<style isBold=\"true\">CUARTO. GASTOS Y HONORARIOS:</style>" + " Serán a mi(nuestro) cargo todas las sumas causadas en el recaudo judicial y extrajudicial de la obligación aquí contenida, incluyendo dentro de ellas los honorarios de cobranza, en los términos definidos en las disposiciones del ACREEDOR, las cuales declaro(amos) conocer suficientemente."
++ "\n\n" + "<style isBold=\"true\">QUINTO. COMPENSACIÓN:</style>" + " Autorizo(amos) de manera irrevocable al ACREEDOR para, sin previo aviso, debitar o descontar de cualquier suma de dinero, de la que por cualquier concepto sea(mos) titular(es) individual, solidaria o colectivamente en " +($F{bankName}!=null?$F{bankName}:"-NO DEFINIDO-")+ ", todos los saldos que individual, solidaria o colectivamente por cualquier concepto resulten a mi(nuestro) cargo en virtud del presente Pagaré o de cualquier operación o transacción celebrada con EL ACREEDOR."
++ "\n\n" + "<style isBold=\"true\">SEXTO. RENUNCIA A EXHIBICIÓN, PROTESTO Y CONSTITUCIÓN EN MORA:</style>" + " Expresamente renuncio(amos) a la exhibición del título para el pago, al aviso de rechazo, al protesto y a la constitución en mora."
++ "\n\n" + "<style isBold=\"true\">SÉPTIMO. CESIÓN Y ENDOSO:</style>" + " Acepto(amos) desde ahora cualquier cesión o endoso que a cualquier título efectúe EL ACREEDOR respecto del presente título valor, así como de la garantía que lo ampara, sin que para su efectividad sean necesarias nuevas autorizaciones o aceptaciones."
++ "\n\n" + "<style isBold=\"true\">OCTAVO. ALCANCE DE LA RESPONSABILIDAD:</style>" + " Entre los distintos suscriptores nos conferimos poder y representación recíproca para que todas las prórrogas, renovaciones, refinanciaciones o ampliaciones que EL ACREEDOR otorgue, sean válidas para todos aún en el evento en que sean convenidas con uno sólo de nosotros; así como para efectos de recibir las cartas de cobro que eventualmente EL ACREEDOR nos remitirá, y también para recibir información relacionada con el reporte de nuestro comportamiento de pagos ante las Centrales de Riesgos."
++ "\n\n" + "<style isBold=\"true\">NOVENO. GARANTÍAS:</style>" + " Toda garantía constituida conjunta o separadamente por el(los) suscriptor(es) de este título a favor de EL ACREEDOR, o que EL ACREEDOR llegare a adquirir por cualquier medio legal de otras personas, amparará las obligaciones contenidas en este título así como sus prórrogas y demás modificaciones."]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="468">
+			<textField>
+				<reportElement x="1" y="0" width="513" height="457" uuid="6a87ea1a-fb06-4a1b-a710-f487b1d0cc10"/>
+				<box topPadding="5" leftPadding="5" bottomPadding="5" rightPadding="5">
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Justified" markup="styled">
+					<font size="10" isBold="false" isItalic="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["<style isBold=\"true\">DÉCIMO. INSTRUCCIONES PARA EL DILIGENCIAMIENTO:</style>" + " Autorizo(amos) de manera irrevocable al ACREEDOR para que  sin previo aviso diligencie el presente pagaré, de conformidad con las siguientes instrucciones:"
++ "\n\n" + "1a.  El pagaré podrá ser diligenciado en el momento en que EL ACREEDOR lo estime conveniente."
++ "\n\n" + "2a.  Los espacios dejados en blanco se diligenciarán de conformidad con los siguientes parámetros:"
++ "\n\n" + "2.1. " +"<style isBold=\"true\">El número del pagaré</style>" + " será aquél que EL ACREEDOR libremente le asigne."
++ "\n\n" + "2.2. " + "<style isBold=\"true\">Capital:</style>" + " Con el valor de aquéllas sumas que de acuerdo con los registros contables del ACREEDOR le adeude(mos) en la fecha de diligenciamiento del pagaré, por concepto de operaciones activas de crédito o en general por cualquier cuenta deudora a mi(nuestro) cargo y a su favor.  Para la efectividad de la presente estipulación reconozco(cemos) como válidos sin reserva alguna los asientos contables del ACREEDOR."
++ "\n\n" + "2.3. " + "<style isBold=\"true\">Intereses Remuneratorios:</style>" + " Con el valor de aquéllas sumas que a la fecha de diligenciamiento del pagaré adeude(mos) AL ACREEDOR como remuneración pactada a la tasa vigente al momento del desembolso del crédito de conformidad con las disposiciones legales aplicables."
++ "\n\n" + "2.4. " + "<style isBold=\"true\">Comisiones:</style>" + " Con el valor de los costos y gastos que hagan referencia a la prestación de servicios asociados con operaciones de crédito, tales como Comisión Mipyme y Fondo Nacional de Garantías a la tarifa o en la cuantía que las normas sobre la materia autoricen cobrar."
++ "\n\n" + "2.5. " + "<style isBold=\"true\">Seguros:</style>" + " Con el valor de las primas correspondientes a seguros asociados a las operaciones activas de crédito o garantías reales que tenga a nuestro cargo y a favor del ACREEDOR, tales como seguro de vida deudores, seguro de incendio, terremoto, etc., cuyo pago haya realizado en mi nombre el ACREEDOR."
++ "\n\n" + "2.6. " + "<style isBold=\"true\">Fecha de Vencimiento:</style>" + " La fecha de vencimiento será aquella en que conjunta o individualmente incurra(mos) en mora, de conformidad con las condiciones previstas en el presente documento."
++ "\n\n" + "2.7. " + "<style isBold=\"true\">Fecha de Suscripción:</style>" + " La fecha de suscripción o firma será aquella en que el Banco realice el primer desembolso del crédito."
++ "\n\n" + "<style isBold=\"true\">PARÁGRAFO:</style>" + " Las instrucciones aquí impartidas se entienden igualmente vinculantes frente a cualquier tenedor legítimo del Pagaré que he(mos) otorgado."]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="248">
+			<textField>
+				<reportElement x="0" y="0" width="513" height="239" uuid="9fc56db3-b7bd-4647-869d-c416203fa2ff"/>
+				<textElement textAlignment="Justified" markup="styled">
+					<font size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA["<style isBold=\"true\">UNDÉCIMO. ACELERACIÓN DEL PLAZO:</style>" + " Autorizo(amos) igualmente al ACREEDOR  para que, sin necesidad de requerimiento judicial o extrajudicial, me(nos) constituya en mora o incumplimiento; declare vencido el plazo de las obligaciones a mi(nuestro) cargo; y exija su pago total inmediato, judicial o extrajudicialmente, en los siguientes casos:"
++ "\n\n" + "A) Cuando incumpla(mos) individual o colectivamente cualquiera de las obligaciones que haya(mos) contraído con EL ACREEDOR."
++ "\n\n" + "B) Si mis(nuestros) bienes individual o colectivamente fueren perseguidos por terceros, en ejercicio de cualquier acción;"
++ "\n\n" + "C) Si a juicio del ACREEDOR, se presenta variación en la situación financiera, jurídica, o económica de alguno de los suscriptores del presente documento."
++ "\n\n" + "D) Si cualquiera de los obligados al pago del crédito es incluido en listas para el control de lavado de activos o financiación del terrorismo administradas por cualquier autoridad nacional o extranjera, tales como la Oficina de Control de Activos en el Exterior (OFAC) del Departamento del Tesoro de los Estados Unidos de América."
++ "\n\n" + "E) Si diere(mos) a las sumas de dinero desembolsadas, una destinación distinta a la informada al Banco."]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="728">
+			<textField>
+				<reportElement x="0" y="-1" width="514" height="721" uuid="6092731c-ddea-401e-b15b-363af1926198"/>
+				<textElement textAlignment="Justified" markup="styled">
+					<font size="10" isBold="false" isItalic="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["F) Si no tomare(mos) los seguros a que estamos obligados por virtud del crédito, o no pagare(mos) o reembolsare(mos) las respectivas primas."
++ "\n\n" + "G) Si suministro(amos) información o documentación falsa o inexacta al Banco."
++ "\n\n" + "H) Si alguno de los obligados al pago del crédito fallece, o incurre en inhabilidad o incapacidad total y permanente."
++ "\n\n" + "<style isBold=\"true\">DUODÉCIMO. GASTOS E IMPUESTOS:</style>" + " Los gastos e impuestos derivados del otorgamiento del presente título valor serán a mi(nuestro) cargo."
++ "\n\n" + "<style isBold=\"true\">DÉCIMO TERCERO. MÉRITO EJECUTIVO:</style>" + " El pagaré diligenciado presta mérito ejecutivo, pudiendo EL ACREEDOR en consecuencia iniciar el ejercicio de sus derechos acudiendo a las acciones que estime conducentes."
++ "\n\n" + "<style isBold=\"true\">DÉCIMO CUARTO. AUTORIZACIÓN PARA TRATAMIENTO DE DATOS PERSONALES:</style>" + " Cada uno de los suscriptores del presente documento autorizan expresamente al ACREEDOR para:"
++ "\n\n" + "<style isBold=\"true\">1.</style>" + " Que reporte, actualice y retire de o ante las Centrales de Información Financiera legalmente establecidas en Colombia, tales como DATACRÉDITO y CIFIN, la información relativa a mis datos de contacto y a mi comportamiento o hábitos derivados de cualquier relación comercial o financiera que establezca con " + ($F{bankName}!=null?$F{bankName}:"-NO DEFINIDO-") + ". Así mismo, lo autorizo para que consulte y reciba de las mencionadas Centrales toda la información relacionada con los vínculos comerciales o financieros que tenga, haya tenido o llegue a tener con otras entidades financieras o no financieras que reporten información a tales entidades. Lo anterior, con el fin de que " + ($F{bankName}!=null?$F{bankName}:"-NO DEFINIDO-") + " pueda adelantar adecuadamente todos sus procesos de análisis de riesgo de crédito y dé cumplimiento a la normatividad relacionada con Habeas Data Financiero. Declaro que soy consciente de que en el evento en que incumpla cualquiera de las obligaciones que adquiera frente a el Banco ya sea en mi calidad de deudor, codeudor, o titular de alguno de los productos de su Portafolio; la información que éste reporte será negativa, y en consecuencia podrá generar consecuencias perjudiciales para mi acceso al crédito y a otros productos o servicios ofrecidos por personas naturales o jurídicas, entidades públicas o privadas; tanto del sector real como del financiero. Para efectos del aviso previo al reporte negativo que prevé la Ley 1266, " +($F{bankName}!=null?$F{bankName}:"-NO DEFINIDO-") + " podrá enviarme mensajes de texto a mi celular, o correos electrónicos, o comunicaciones físicas, a las direcciones y números indicados en el formulario de solicitud del crédito."
++ "\n\n" + "<style isBold=\"true\">2.</style>" + " Que obtenga, compile, intercambie, envíe, compre, divulgue, modifique, emplee, recolecte, almacene, use, ponga en circulación, ofrezca, venda, suprima y en general adelante el tratamiento de mis datos personales de conformidad con las siguientes limitaciones: " + "<style isBold=\"true\">1)</style>" + " El ACREEDOR podrá  efectuar tratamiento de mis datos personales con el fin de administrar adecuadamente la relación comercial o financiera que tengamos; contactarme para adelantar evaluaciones de servicios, encuestas de satisfacción, ofrecimiento de nuevos productos o servicios, efectuar gestiones de cobranza, o similares. Esta autorización incluye tomar mi huella digital (dato sensible) y administrarla con el fin de facilitar mi vinculación a dicho Banco; el manejo de los productos que adquiera con el mismo; y en especial validar mi identidad en la realización de transacciones financieras. En todo caso, mi  huella digital no podrá ser vendida, distribuida, transferida o cedida a terceros, salvo que medie orden de autoridad competente en ese sentido. " + "<style isBold=\"true\">2)</style>" + " El ACREEDOR podrá entregar mis datos personales a entidades radicadas en Colombia o en el exterior, sean públicas o privadas, siempre y cuando: Sean empresas o entidades con las que " + ($F{bankName}!=null?$F{bankName}:"-NO DEFINIDO-") + " se relacione por vínculos de participación accionaria, o sean su matriz o subsidiaria; o la entrega de mis datos personales tenga como finalidad la estructuración, diseño e implementación de ofertas de productos o servicios, o en general propuestas de valor adicionales a las que el Banco está en capacidad de ofrecerme de manera autónoma, ya sea a través de programas gubernamentales o de proyectos de carácter privado; o tenga como finalidad facilitar el desarrollo del objeto social del ACREEDOR mediante la tercerización de sus procesos, tales como archivo físico, almacenamiento de datos digitales, cobranza, gestión de riesgos, desarrollo de software, contacto de clientes, investigación de mercados, elaboración de análisis estadísticos, análisis de riesgos, elaboración de estrategias comerciales, de profundización de mercados, mercadeo, promociones, estudios de impacto social, establecimiento de nuevos canales de atención, y demás fines relacionados y conexos."]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="194">
+			<textField>
+				<reportElement x="0" y="0" width="514" height="159" uuid="8ac4635d-72bf-4149-84c4-aac225e682f9"/>
+				<textElement textAlignment="Justified" markup="none">
+					<font size="10" isBold="false" isItalic="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["En todo caso, la presente autorización se otorga dentro de los parámetros previstos para el efecto por la Constitución y las Leyes; de tal manera que la información tratada por el ACREEDOR o por los terceros a quienes él les entregue mis datos debe ser veraz, completa, exacta, comprobable, comprensible y permanentemente actualizada; y en todo caso, me reservo el derecho de conocer en todo momento la información de la cual soy titular, y de solicitar las rectificaciones y/o actualizaciones a que pueda haber lugar. De igual manera, el tratamiento de mis datos personales por parte del ACREEDOR y de los terceros a quienes aquí he autorizado deberá contemplar medidas de seguridad y confidencialidad que restrinjan el acceso a tal información por parte de personas no autorizadas."
++ "\n\n" + "Hago(hacemos) expreso reconocimiento de que he(mos) leído, entendido y conservo(amos) copia del presente documento. En constancia lo suscribo(imos) a los _________________________________ (____) días del mes de _______________ de 20____."]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="104">
+			<staticText>
+				<reportElement x="0" y="0" width="204" height="83" uuid="15a413a3-3dae-493c-92c5-3b96e6b1f8f9"/>
+				<box>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font size="8" isBold="false"/>
+					<paragraph lineSpacing="1_1_2" leftIndent="5"/>
+				</textElement>
+				<text><![CDATA[Firma:	________________________________
+Nombre:	________________________________
+Doc Iden.	________________________________
+Dirección:	________________________________
+Tel.	________________________________]]></text>
+			</staticText>
+			<rectangle>
+				<reportElement x="205" y="0" width="50" height="83" uuid="e67918dc-2b4b-4999-81cd-d3f7830e0055"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="256" y="0" width="201" height="83" uuid="e7bbb347-7e5f-4c3d-8559-c5b9484e3279"/>
+				<box>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font size="8" isBold="false"/>
+					<paragraph lineSpacing="1_1_2" leftIndent="10"/>
+				</textElement>
+				<text><![CDATA[Firma:	_______________________________
+Nombre:	_______________________________
+Doc Iden.	_______________________________
+Dirección:	_______________________________
+Tel.	_______________________________]]></text>
+			</staticText>
+			<rectangle>
+				<reportElement x="458" y="0" width="50" height="83" uuid="64b99c96-e3d4-4dfc-b4c6-6ade36b31663"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="205" y="83" width="50" height="15" uuid="991d0510-7d6f-44ff-9271-d326c0f64602"/>
+				<textElement textAlignment="Center">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[Huella]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="458" y="83" width="50" height="15" uuid="999ab41d-5283-463d-ad85-2f8d013f1c2c"/>
+				<textElement textAlignment="Center">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[Huella]]></text>
+			</staticText>
+		</band>
+		<band height="102">
+			<staticText>
+				<reportElement x="0" y="0" width="204" height="83" uuid="227bc020-2521-49b8-965c-0e590f189320"/>
+				<box>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font size="8" isBold="false"/>
+					<paragraph lineSpacing="1_1_2" leftIndent="5"/>
+				</textElement>
+				<text><![CDATA[Firma:	________________________________
+Nombre:	________________________________
+Doc Iden.	________________________________
+Dirección:	________________________________
+Tel.	________________________________]]></text>
+			</staticText>
+			<rectangle>
+				<reportElement x="205" y="0" width="50" height="83" uuid="8d39bdf3-4fb1-4c91-bd69-cdc4569ef72f"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="205" y="83" width="50" height="15" uuid="c2600365-7a0e-4114-9239-d9000895bf05"/>
+				<textElement textAlignment="Center">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[Huella]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="256" y="0" width="201" height="83" uuid="6a82abde-fa36-459a-929d-8c8f98871e7a"/>
+				<box>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font size="8" isBold="false"/>
+					<paragraph lineSpacing="1_1_2" leftIndent="10"/>
+				</textElement>
+				<text><![CDATA[Firma:	_______________________________
+Nombre:	_______________________________
+Doc Iden.	_______________________________
+Dirección:	_______________________________
+Tel.	_______________________________]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="458" y="83" width="50" height="15" uuid="f315beab-ffc7-4f29-a1e8-343138651403"/>
+				<textElement textAlignment="Center">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[Huella]]></text>
+			</staticText>
+			<rectangle>
+				<reportElement x="458" y="0" width="50" height="83" uuid="fb7235ba-a6b5-42e7-876c-55b008a498a1"/>
+			</rectangle>
+		</band>
+		<band height="98">
+			<staticText>
+				<reportElement x="0" y="0" width="204" height="83" uuid="5b2149a5-fd01-4b8a-9113-df4359e384ca"/>
+				<box>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font size="8" isBold="false"/>
+					<paragraph lineSpacing="1_1_2" leftIndent="5"/>
+				</textElement>
+				<text><![CDATA[Firma:	________________________________
+Nombre:	________________________________
+Doc Iden.	________________________________
+Dirección:	________________________________
+Tel.	________________________________]]></text>
+			</staticText>
+			<rectangle>
+				<reportElement x="205" y="0" width="50" height="83" uuid="cb2cef41-f138-4996-8c43-dcf54d8a755c"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="256" y="0" width="201" height="83" uuid="d943b133-b830-47c6-9787-01e3d79b51b5"/>
+				<box>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font size="8" isBold="false"/>
+					<paragraph lineSpacing="1_1_2" leftIndent="10"/>
+				</textElement>
+				<text><![CDATA[Firma:	_______________________________
+Nombre:	_______________________________
+Doc Iden.	_______________________________
+Dirección:	_______________________________
+Tel.	_______________________________]]></text>
+			</staticText>
+			<rectangle>
+				<reportElement x="458" y="0" width="50" height="83" uuid="840442ec-c196-47c4-a9dc-f45ddb055cb3"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="205" y="83" width="50" height="15" uuid="d391b331-012d-407b-924f-f89c20915eac"/>
+				<textElement textAlignment="Center">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[Huella]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="458" y="83" width="50" height="15" uuid="85e57e9d-3fa3-49c6-bf44-acf651c50b8d"/>
+				<textElement textAlignment="Center">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[Huella]]></text>
+			</staticText>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="50">
+			<textField evaluationTime="Report">
+				<reportElement x="1" y="5" width="203" height="20" uuid="f10b9c96-4129-41bd-ad8e-762c49bf810f"/>
+				<textElement textAlignment="Justified" markup="styled"/>
+				<textFieldExpression><![CDATA["<style isBold=\"true\">Pagaré No:</style>" + " " + ($F{officeIdentityCard}!=null?$F{officeIdentityCard}:"-NO DEFINIDO-")
++ "                                                                                                                  " +
+"<style isBold=\"true\">Pagina</style>" + " " + $V{PAGE_NUMBER} + " de " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="434" y="5" width="46" height="15" uuid="e950e3a9-a5f6-4c2c-9b5f-d283bc04fb69"/>
+				<textElement markup="styled">
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Página " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement x="479" y="5" width="35" height="15" uuid="5503e925-660b-42a6-b3a0-c3777762d0e5"/>
+				<textElement markup="styled">
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[" de " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="1" y="3" width="513" height="1" uuid="ab5a0128-1cda-4543-bbe4-af73388d6fda"/>
+			</line>
+		</band>
+	</pageFooter>
+</jasperReport>

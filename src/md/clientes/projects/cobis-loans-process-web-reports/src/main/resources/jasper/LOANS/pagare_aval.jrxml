@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="aval" pageWidth="277" pageHeight="794" whenNoDataType="AllSectionsNoDetail" columnWidth="277" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="deec1b21-1036-4734-948b-164547062a2b">
+	<property name="ireport.zoom" value="1.5"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="SUBREPORT_DIR" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["/"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="urlPathSantander" class="java.lang.String"/>
+	<field name="nombreAval" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<detail>
+		<band height="54">
+			<textField isBlankWhenNull="true">
+				<reportElement x="0" y="42" width="277" height="12" uuid="92251679-0561-4190-be20-93b78942e507"/>
+				<textElement textAlignment="Center" verticalAlignment="Top">
+					<font size="8" isBold="true"/>
+					<paragraph leftIndent="2" rightIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA["-------------------------------------------------------------"]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="0" y="14" width="277" height="14" uuid="88050225-7a09-41c0-9415-796634aae9fc"/>
+				<textElement textAlignment="Center" verticalAlignment="Top">
+					<font size="8" isBold="true"/>
+					<paragraph leftIndent="2" rightIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA["  "]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="0" y="28" width="277" height="14" uuid="10f5917c-1317-4b0a-8dde-23481c52c85b"/>
+				<textElement textAlignment="Center" verticalAlignment="Top">
+					<font size="8" isBold="true"/>
+					<paragraph leftIndent="2" rightIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA["  "]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="0" y="0" width="277" height="12" uuid="0d201d3e-e63d-413e-b188-7ed24bdd5a3a"/>
+				<textElement textAlignment="Center" verticalAlignment="Top">
+					<font size="8" isBold="true"/>
+					<paragraph leftIndent="2" rightIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA["AVAL"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="10">
+			<textField isBlankWhenNull="true">
+				<reportElement x="0" y="0" width="277" height="10" uuid="75ecada9-8df8-47ee-ae6b-699cc4cfabf0"/>
+				<textElement textAlignment="Center" verticalAlignment="Top">
+					<font size="8" isBold="true"/>
+					<paragraph leftIndent="2" rightIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA["  "]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="12">
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToTallestObject" x="0" y="0" width="277" height="12" uuid="a0158c5e-bbdb-4fdc-860f-6a58aaccc90a"/>
+				<textElement textAlignment="Center" verticalAlignment="Top">
+					<font size="8"/>
+					<paragraph leftIndent="2" rightIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{nombreAval}]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="15"/>
+	</detail>
+</jasperReport>

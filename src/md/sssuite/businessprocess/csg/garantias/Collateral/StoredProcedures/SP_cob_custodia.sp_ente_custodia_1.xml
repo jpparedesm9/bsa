@@ -1,0 +1,103 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<procedure>
+  <database>cob_custodia</database>
+  <name>sp_ente_custodia</name>
+  <type>SYBASE</type>
+  <version>1</version>
+  <parameters>
+    <parameter name="@s_ssn" dataType="int" direction="in" />
+    <parameter name="@s_date" dataType="datetime" direction="in" />
+    <parameter name="@s_user" dataType="varchar" direction="in" />
+    <parameter name="@s_term" dataType="varchar" direction="in" />
+    <parameter name="@s_corr" dataType="char" direction="in" />
+    <parameter name="@s_ssn_corr" dataType="int" direction="in" />
+    <parameter name="@s_ofi" dataType="smallint" direction="in" />
+    <parameter name="@t_rty" dataType="char" direction="in" />
+    <parameter name="@t_trn" dataType="smallint" direction="in" />
+    <parameter name="@t_debug" dataType="char" direction="in" />
+    <parameter name="@t_file" dataType="varchar" direction="in" />
+    <parameter name="@t_from" dataType="varchar" direction="in" />
+    <parameter name="@i_operacion" dataType="char" direction="in" />
+    <parameter name="@i_modo" dataType="smallint" direction="in" />
+    <parameter name="@i_ente" dataType="int" direction="in" />
+    <parameter name="@i_oficial" dataType="int" direction="in" />
+    <parameter name="@i_ente1" dataType="int" direction="in" />
+    <parameter name="@i_ente2" dataType="int" direction="in" />
+    <parameter name="@i_ente3" dataType="int" direction="in" />
+    <parameter name="@i_nombre" dataType="varchar" direction="in" />
+    <parameter name="@i_ced_ruc" dataType="varchar" direction="in" />
+    <parameter name="@i_cuenta" dataType="varchar" direction="in" />
+    <parameter name="@i_tipo_ente" dataType="char" direction="in" />
+    <parameter name="@i_cond1" dataType="varchar" direction="in" />
+    <parameter name="@i_param1" dataType="varchar" direction="in" />
+    <parameter name="@i_codigo_externo" dataType="varchar" direction="in" />
+    <parameter name="@i_oficina" dataType="smallint" direction="in" />
+    <parameter name="@i_valor" dataType="varchar" direction="in" />
+    <parameter name="@o_tipo_cta" dataType="char" direction="out" />
+  </parameters>
+  <queries>
+    <query>
+      <columns>
+        <column name="17586" />
+        <column name="17587" />
+        <column name="17588" />
+        <column name="17589" />
+      </columns>
+      <queryText>SELECT  "17586" = en_ente,"17587" = SUBSTRING (en_nomlar, 1, 20),"17588" = SUBSTRING (en_ced_ruc, 1, 20),"17589" = en_oficial </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="17586" />
+        <column name="17587" />
+        <column name="17588" />
+        <column name="17589" />
+      </columns>
+      <queryText>SELECT  "17586" = en_ente,"17587" = SUBSTRING (en_nomlar, 1, 20),"17588" = SUBSTRING (en_ced_ruc, 1, 20),"17589" = en_oficial </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="marriedName" />
+      </columns>
+      <queryText>SELECT  SUBSTRING (en_nomlar, 1, 20) </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="AccountType" />
+      </columns>
+      <queryText>SELECT o_tipo_cta</queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="CustomerInformation" />
+        <column name="OfficerInformation" />
+      </columns>
+      <queryText>SELECT  SUBSTRING (a.en_nomlar, 1, 20),(SELECT  fu_nombre FROM cobis..cc_oficial  ,cobis..cl_funcionario   WHERE a.en_oficial = oc_oficial AND oc_funcionario = fu_funcionario     ) </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="officerName" />
+      </columns>
+      <queryText>SELECT  fu_nombre </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="officialCode" />
+        <column name="officialName" />
+      </columns>
+      <queryText>SELECT  "17589" = oc_oficial,"17594" = fu_nombre </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="AccountType" />
+        <column name="AccountNumber" />
+      </columns>
+      <queryText></queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="idOwnerGuarantee" />
+      </columns>
+      <queryText></queryText>
+    </query>
+  </queries>
+</procedure>

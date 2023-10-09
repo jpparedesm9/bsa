@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd
+		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd">
+
+	<bean id="catalogServiceRef" class="com.cobiscorp.ecobis.fpm.mock.CatalogManagerMock"></bean>
+	<bean id="portfolioCatalogServiceRef" class="com.cobiscorp.ecobis.fpm.mock.PortfolioCatalogManagerMock"/>
+	<bean id="serviceExecutorRef" class="com.cobiscorp.ecobis.fpm.mock.ServiceExecutorMock"/>
+	<bean id="cacheManagerRef" class="com.cobiscorp.ecobis.fpm.mock.CacheManagerMock"></bean>
+	
+<bean id="storedProcedureUtils" class="com.cobiscorp.ecobis.fpm.mock.StoreProcedureUtilsMock"/>	
+	<bean id="ruleManager" class="com.cobiscorp.ecobis.fpm.mock.RuleManagerMock"/>
+	
+	<bean id="transactionManager" class="org.springframework.orm.jpa.JpaTransactionManager">
+		<property name="entityManagerFactory" ref="entityManagerFactory" />
+	</bean>
+
+
+	
+	<tx:advice id="transactionalAdvice" transaction-manager="transactionManager">
+		<tx:attributes>
+			<tx:method name="*" propagation="REQUIRED" rollback-for="RuntimeException" />
+		</tx:attributes>
+	</tx:advice>
+
+	<aop:config>
+		<aop:pointcut id="transactionalOperationsSSN"
+			expression="execution(* com.cobiscorp.ecobis.fpm.administration.service.ICompanyManager.*(..))" />
+		<aop:advisor pointcut-ref="transactionalOperationsSSN"
+			advice-ref="transactionalAdvice" />
+	</aop:config>
+	<aop:config>
+		<aop:pointcut id="nodeProductOperationsSSN"
+			expression="execution(* com.cobiscorp.ecobis.fpm.administration.service.INodeProductManager.*(..))" />
+
+		<aop:advisor pointcut-ref="nodeProductOperationsSSN"
+			advice-ref="transactionalAdvice" />
+	</aop:config>
+	<aop:config>
+		<aop:pointcut id="dictionaryOperationsSSN"
+			expression="execution(* com.cobiscorp.ecobis.fpm.administration.service.IDictionaryManager.*(..))" />
+		<aop:advisor pointcut-ref="dictionaryOperationsSSN"
+			advice-ref="transactionalAdvice" />
+	</aop:config>
+
+	<aop:config>
+		<aop:pointcut id="bankingProductOperationsSSN"
+			expression="execution(* com.cobiscorp.ecobis.fpm.operation.service.IBankingProductManager.*(..))" />
+		<aop:advisor pointcut-ref="bankingProductOperationsSSN"
+			advice-ref="transactionalAdvice" />
+		<aop:aspect ref="bankingProductManagerInterceptor">
+			<aop:after method="applyChange"
+				pointcut="execution(* com.cobiscorp.ecobis.fpm.operation.service.IBankingProductManager.applyChange(..))" />
+		</aop:aspect>
+			
+	</aop:config>
+	<aop:config>
+		<aop:pointcut id="itemsOperationsSSN"
+			expression="execution(* com.cobiscorp.ecobis.fpm.operation.service.IItemsManager.*(..))" />
+		<aop:advisor pointcut-ref="itemsOperationsSSN" advice-ref="transactionalAdvice" />
+	</aop:config>
+	<aop:config>
+		<aop:pointcut id="renderOperationsSSN"
+			expression="execution(* com.cobiscorp.ecobis.fpm.operation.service.IRenderManager.*(..))" />
+		<aop:advisor pointcut-ref="renderOperationsSSN"
+			advice-ref="transactionalAdvice" />
+	</aop:config>
+	<aop:config>
+		<aop:pointcut id="generalParametersOperationsSSN"
+			expression="execution(* com.cobiscorp.ecobis.fpm.operation.service.IGeneralParametersManager.*(..))" />
+		<aop:advisor pointcut-ref="generalParametersOperationsSSN"
+			advice-ref="transactionalAdvice" />			
+		<aop:aspect ref="generalParametersManagerInterceptor">
+			<aop:after method="saveGeneralParametersValues"
+				pointcut="execution(* com.cobiscorp.ecobis.fpm.operation.service.IGeneralParametersManager.saveGeneralParametersValues*(..))" />
+		</aop:aspect>
+	</aop:config>
+	<aop:config>
+		<aop:pointcut id="mappingManagerServiceSSN"
+			expression="execution(* com.cobiscorp.ecobis.fpm.operation.service.IMappingFieldManager.*(..))" />
+		<aop:advisor pointcut-ref="mappingManagerServiceSSN"
+			advice-ref="transactionalAdvice" />
+	</aop:config>
+
+	<aop:config>
+		<aop:pointcut id="mappingManagerAccountingProfileSSN"
+			expression="execution(* com.cobiscorp.ecobis.fpm.portfolio.administration.service.IAccountingProfileManager.*(..))" />
+		<aop:advisor pointcut-ref="mappingManagerAccountingProfileSSN"
+			advice-ref="transactionalAdvice" />
+
+		
+	</aop:config>
+	
+	<aop:config>
+		<aop:pointcut id="mappingManagerItemStatusSSN"
+			expression="execution(* com.cobiscorp.ecobis.fpm.portfolio.administration.service.IItemStatusManager.*(..))" />
+		<aop:advisor pointcut-ref="mappingManagerItemStatusSSN"
+			advice-ref="transactionalAdvice" />
+
+		
+	</aop:config>
+	
+	<aop:config>
+		<aop:pointcut id="OperationStatusSSN"
+			expression="execution(* com.cobiscorp.ecobis.fpm.portfolio.administration.service.IOperationStatusManager.*(..))" />
+		<aop:advisor pointcut-ref="OperationStatusSSN"
+			advice-ref="transactionalAdvice" />
+
+		
+	</aop:config>
+	<aop:config>
+		<aop:pointcut id="mappingManagerEconomicDestinationSSN"
+			expression="execution(* com.cobiscorp.ecobis.fpm.portfolio.administration.service.IEconomicDestinationManager.*(..))" />
+		<aop:advisor pointcut-ref="mappingManagerEconomicDestinationSSN"
+			advice-ref="transactionalAdvice" />
+
+		
+	</aop:config>
+	<aop:config>
+		<aop:pointcut id="serviceTransactionManagerSSN"
+			expression="execution(* com.cobiscorp.ecobis.fpm.administration.service.IServiceTransactionManager.*(..))" />
+
+		<aop:advisor pointcut-ref="serviceTransactionManagerSSN"
+			advice-ref="transactionalAdvice" />
+	</aop:config>
+	
+	<aop:config>
+	<aop:pointcut id="paymentTypeFieldsManagerSSN"
+		expression="execution(* com.cobiscorp.ecobis.fpm.administration.service.IPaymentTypeFieldsManager.*(..))" />
+		<aop:advisor pointcut-ref="paymentTypeFieldsManagerSSN"
+			advice-ref="transactionalAdvice" />
+	</aop:config>
+	<aop:config>
+	<aop:pointcut id="BankingProductAssociationManagerSSN"
+		expression="execution(* com.cobiscorp.ecobis.fpm.operation.service.IBankingProductAssociationManager.*(..))" />
+		<aop:advisor pointcut-ref="BankingProductAssociationManagerSSN"
+			advice-ref="transactionalAdvice" />
+	</aop:config>
+	
+	<aop:config>
+		<aop:pointcut id="associationTransactionOperation"
+			expression="execution(* com.cobiscorp.ecobis.fpm.administration.service.IAssociationTransactionManager.*(..))" />
+		<aop:advisor pointcut-ref="associationTransactionOperation"
+			advice-ref="transactionalAdvice" />
+	</aop:config>
+	
+	<aop:config>
+		<aop:pointcut id="associationChannelOperation"
+			expression="execution(* com.cobiscorp.ecobis.fpm.administration.service.IAssociationChannelManager.*(..))" />
+		<aop:advisor pointcut-ref="associationChannelOperation"
+			advice-ref="transactionalAdvice" />
+	</aop:config>
+	
+	<aop:config>
+		<aop:pointcut id="UnitFunctionalityValuesManager"
+			expression="execution(* com.cobiscorp.ecobis.fpm.operation.service.IUnitFunctionalityValues.*(..))" />
+		<aop:advisor pointcut-ref="UnitFunctionalityValuesManager"
+			advice-ref="transactionalAdvice" />
+	</aop:config>
+	
+	
+</beans>

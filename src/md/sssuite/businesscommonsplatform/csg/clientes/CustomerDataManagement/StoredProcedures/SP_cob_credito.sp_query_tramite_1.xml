@@ -1,0 +1,177 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<procedure>
+  <database>cob_credito</database>
+  <name>sp_query_tramite</name>
+  <type>SYBASE</type>
+  <version>1</version>
+  <parameters>
+    <parameter name="@t_debug" dataType="char" direction="in" />
+    <parameter name="@t_file" dataType="varchar" direction="in" />
+    <parameter name="@t_from" dataType="varchar" direction="in" />
+    <parameter name="@t_show_version" dataType="bit" direction="in" />
+    <parameter name="@i_tramite" dataType="int" direction="in" />
+    <parameter name="@i_numero_op_banco" dataType="char" direction="in" />
+    <parameter name="@i_linea_credito" dataType="char" direction="in" />
+    <parameter name="@i_producto" dataType="varchar" direction="in" />
+    <parameter name="@i_es_acta" dataType="char" direction="in" />
+    <parameter name="@i_formato_fecha" dataType="tinyint" direction="in" />
+  </parameters>
+  <queries>
+    <query>
+      <columns>
+        <column name="{1}" />
+        <column name="{2}" />
+        <column name="{3}" />
+        <column name="{4}" />
+        <column name="{5}" />
+        <column name="{6}" />
+        <column name="{7}" />
+        <column name="{8}" />
+        <column name="{9}" />
+        <column name="{10}" />
+        <column name="{11}" />
+        <column name="{12}" />
+        <column name="{13}" />
+        <column name="{14}" />
+        <column name="{15}" />
+        <column name="{16}" />
+        <column name="{17}" />
+        <column name="{18}" />
+        <column name="{19}" />
+        <column name="{20}" />
+        <column name="{21}" />
+        <column name="{22}" />
+        <column name="{23}" />
+        <column name="{24}" />
+        <column name="{25}" />
+        <column name="{26}" />
+        <column name="{27}" />
+        <column name="{28}" />
+        <column name="{29}" />
+        <column name="{30}" />
+        <column name="{31}" />
+        <column name="{32}" />
+        <column name="{33}" />
+        <column name="{34}" />
+        <column name="{35}" />
+        <column name="{36}" />
+        <column name="{37}" />
+        <column name="{38}" />
+        <column name="{39}" />
+        <column name="{40}" />
+        <column name="{41}" />
+        <column name="{42}" />
+        <column name="{43}" />
+        <column name="{44}" />
+        <column name="{45}" />
+        <column name="{46}" />
+        <column name="{47}" />
+        <column name="{48}" />
+        <column name="{49}" />
+        <column name="{50}" />
+        <column name="{51}" />
+        <column name="{52}" />
+        <column name="{53}" />
+        <column name="{54}" />
+        <column name="{55}" />
+        <column name="{56}" />
+        <column name="{57}" />
+        <column name="{58}" />
+        <column name="{59}" />
+        <column name="{60}" />
+        <column name="{61}" />
+        <column name="{62}" />
+        <column name="{63}" />
+        <column name="{64}" />
+        <column name="{65}" />
+        <column name="{66}" />
+        <column name="{67}" />
+        <column name="{68}" />
+        <column name="{69}" />
+        <column name="{70}" />
+        <column name="{71}" />
+        <column name="{72}" />
+        <column name="{73}" />
+        <column name="{74}" />
+        <column name="{75}" />
+        <column name="{76}" />
+        <column name="{77}" />
+        <column name="{78}" />
+        <column name="{79}" />
+        <column name="{80}" />
+        <column name="{81}" />
+        <column name="{82}" />
+        <column name="{83}" />
+        <column name="{84}" />
+        <column name="{85}" />
+        <column name="{86}" />
+        <column name="{87}" />
+        <column name="{88}" />
+        <column name="{89}" />
+        <column name="{90}" />
+        <column name="{91}" />
+        <column name="{92}" />
+        <column name="{93}" />
+        <column name="{94}" />
+        <column name="{95}" />
+        <column name="{96}" />
+        <column name="{97}" />
+        <column name="{98}" />
+        <column name="{99}" />
+        <column name="{100}" />
+        <column name="{101}" />
+        <column name="{102}" />
+        <column name="{103}" />
+        <column name="{104}" />
+        <column name="{105}" />
+        <column name="{106}" />
+        <column name="{107}" />
+        <column name="{108}" />
+        <column name="{109}" />
+        <column name="{110}" />
+        <column name="{111}" />
+        <column name="{112}" />
+        <column name="{113}" />
+        <column name="{114}" />
+        <column name="{115}" />
+        <column name="{116}" />
+        <column name="{117}" />
+        <column name="{118}" />
+        <column name="{119}" />
+        <column name="{120}" />
+        <column name="{121}" />
+      </columns>
+      <queryText>SELECT w_tramite, w_desc_ruta, w_tipo, w_desc_tipo, w_oficina_tr, w_desc_oficina, w_usuario_tr, w_nom_usuario_tr, w_fecha_crea, w_oficial, w_ciudad, w_desc_ciudad, w_estado, w_secuencia, w_numero_op_banco, w_proposito, w_des_proposito, w_razon, w_des_razon, w_txt_razon, w_efecto, w_des_efecto, w_cliente, w_grupo, w_fecha_inicio, w_num_dias, w_per_revision, w_condicion_especial, w_toperacion, w_producto, w_li_num_banco, w_monto, w_moneda, w_periodo, w_num_periodos, w_destino, w_ciudad_destino, w_renovacion, w_fecha_reajuste, w_monto_desembolso, w_periodo_reajuste, w_reajuste_especial, w_forma_pago, w_cuenta, w_cuota_completa, w_tipo_cobro, w_tipo_reduccion, w_aceptar_anticipos, w_precancelacion, w_tipo_aplicacion, w_renovable, w_reajustable, w_val_tasaref, w_fecha_concesion, w_sector, w_des_oficial, w_des_sector, w_des_nivel_ap, w_nom_ciudad, w_nom_cliente, w_ciruc_cliente, w_nom_grupo, w_des_per_revision, w_des_segmento, w_des_toperacion, w_des_moneda, w_des_periodo, w_des_destino, w_des_fpago, w_paso, w_cont_dividendos, w_banco_rest, w_operacion_rest, w_toperacion_rest, w_fecha_vto_rest, w_monto_rest, w_saldo_rest, w_moneda_rest, w_renovacion_rest, w_renovable_rest, w_fecha_ini_rest, w_producto_rest, w_origen_fondo, w_des_origen_fondo, w_fondos_propios, w_sector_contable, w_des_sector_contable, w_plazo + " (" + w_des_plazo, w_proposito_op + " (" + w_des_proposito_op, w_tipo_top, w_causa, w_migrada, w_tipo_prioridad, w_descripcion, w_efecto_pago, w_monto_solicitado, w_cuota, w_frec_pago, w_moneda_solicitada, w_provincia, w_monto_desembolso_tr, w_pplazo, w_tplazo, w_sindicado, w_tipo_cartera, w_destino_descripcion, w_mes_cic, w_anio_cic, w_fecha_reporte_cic, w_mes_infocred, w_anio_infocred, w_fecha_reporte_infocred, w_patrimonio, w_ventas, w_num_personal_ocupado, w_tipo_credito, w_indice_tamano_actividad, w_objeto, w_actividad, w_descripcion_oficial, w_origen_fondos</queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="{1}" />
+        <column name="{2}" />
+        <column name="{3}" />
+        <column name="{4}" />
+        <column name="{5}" />
+        <column name="{6}" />
+        <column name="{7}" />
+        <column name="{8}" />
+        <column name="{9}" />
+        <column name="{10}" />
+        <column name="{11}" />
+        <column name="{12}" />
+        <column name="{13}" />
+        <column name="{14}" />
+        <column name="{15}" />
+        <column name="{16}" />
+        <column name="{17}" />
+        <column name="{18}" />
+        <column name="{19}" />
+      </columns>
+      <queryText>SELECT w_linea_cancelar_str, ctx.convertString(w_fecha_irenova ,i_formato_fecha), w_subsidio, w_porcentaje_subsidio, w_tasa_asociada, w_abono_ini, w_opcion_compra, w_beneficiario, w_financia, w_tpreferencial, w_porcentaje_preferencial, w_monto_preferencial, w_asunto, w_tipo_amortizacion, w_dias_prorroga, w_numero_prorrogas, w_dias_a_prorrogar, w_etapa_inicial, w_anticipo</queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="" />
+      </columns>
+      <queryText></queryText>
+    </query>
+  </queries>
+</procedure>

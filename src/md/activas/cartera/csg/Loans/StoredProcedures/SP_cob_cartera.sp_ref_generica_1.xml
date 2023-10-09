@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<procedure>
+  <database>cob_cartera</database>
+  <name>sp_ref_generica</name>
+  <type>SQLSERVER</type>
+  <version>1</version>
+  <parameters>
+    <parameter name="@s_user" dataType="varchar" direction="in" />
+    <parameter name="@s_term" dataType="varchar" direction="in" />
+    <parameter name="@i_id_referencia" dataType="varchar" direction="in" />
+    <parameter name="@o_referencia_std" dataType="varchar" direction="out" />
+    <parameter name="@o_referencia_oxxo" dataType="varchar" direction="out" />
+    <parameter name="@o_referencia_elv" dataType="varchar" direction="out" />
+  </parameters>
+  <queries>
+    <query>
+      <columns>
+        <column name="monto" />
+        <column name="fecha_ini" />
+        <column name="cliente_nombre" />
+        <column name="fecha_fin" />
+        <column name="oficina_nombre" />
+        <column name="ref_std" />
+        <column name="ref_elv" />
+        <column name="ref_oxxo" />
+        <column name="conv_std" />
+        <column name="conv_elav" />
+        <column name="conv_oxxo" />
+      </columns>
+      <queryText>SELECT "monto"=w_monto,"fecha_ini"=w_fecha_liq,"cliente_nombre"=w_cliente,"fecha_fin"=w_fecha_ven,"oficina_nombre"=w_nombre_of,"ref_std"=w_ref_std_out,"ref_elv"=w_ref_elv_out,"ref_oxxo"=w_ref_oxxo_out</queryText>
+    </query>
+  </queries>
+</procedure>

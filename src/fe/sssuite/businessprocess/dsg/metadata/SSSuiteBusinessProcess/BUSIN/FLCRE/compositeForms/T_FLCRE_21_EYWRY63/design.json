@@ -1,0 +1,273 @@
+{
+    "autoCrudStr": "F",
+    "commands": [
+        {
+            "action": null,
+            "causesValidation": true,
+            "causesValidationAsString": "T",
+            "close": false,
+            "closeAsString": "F",
+            "commandType": 0,
+            "customEvents": [
+                {
+                    "commandEventType": {
+                        "availableExecutionType": 7,
+                        "description": "Permite personalizar la acción a ejecutar de un command o de un ActionControl",
+                        "eventId": 10,
+                        "name": "ExecuteCommand"
+                    },
+                    "customEventId": "CECM_010CM_EYWRY63SOA19_274",
+                    "customizationLayer": 0,
+                    "customizationLayerDescription": "ECU",
+                    "enabled": "T",
+                    "executionType": 7,
+                    "filter": null,
+                    "isEnabled": true
+                }
+            ],
+            "customizationLayer": 0,
+            "customizationLayerDescription": "ECU",
+            "enabled": 4095,
+            "group": null,
+            "id": {
+                "commandId": "CM_EYWRY63SOA19",
+                "moduleId": "BUSIN",
+                "subModuleId": "FLCRE",
+                "taskId": "T_FLCRE_21_EYWRY63",
+                "taskVersion": "1.0.0"
+            },
+            "imageId": null,
+            "label": {
+                "defaultValue": {
+                    "$ref": "../../../../BUSIN/assets/languages/BUSIN.json#/BUSIN/LBL/DLB_BUSIN_ASSOCIATE_40673"
+                },
+                "labelId": "DLB_BUSIN_ASSOCIATE_40673",
+                "moduleId": "BUSIN"
+            },
+            "layoutType": "Command",
+            "name": "Associate",
+            "options": 0,
+            "order": 1,
+            "showInMode": 4095,
+            "userControl": {
+                "customizationLayer": 0,
+                "customizationLayerDescription": "ECU",
+                "description": "Designer Button",
+                "name": "Designer Button",
+                "type": "A",
+                "userControlId": "Button"
+            },
+            "validationGroup": null
+        }
+    ],
+    "customEvents": [
+    ],
+    "customizationLayer": 0,
+    "customizationLayerDescription": "ECU",
+    "id": {
+        "moduleId": "BUSIN",
+        "subModuleId": "FLCRE",
+        "taskId": "T_FLCRE_21_EYWRY63",
+        "version": "1.0.0"
+    },
+    "isImported": true,
+    "mainViewContainerId": "VC_EYWRY63_FMRRT_302",
+    "modeEnabled": 4095,
+    "name": {
+        "$ref": "../../../relations/componentKeys.json#/FLCRE/CompositeForms/T_FLCRE_21_EYWRY63/name"
+    },
+    "tempSaveStr": "F",
+    "viewContainers": [
+        {
+            "colSpan": 1,
+            "collapsedStr": "F",
+            "columnsNum": 1,
+            "componentStyle": null,
+            "customEvents": [
+                {
+                    "customEventId": "CEVC_008_EYWRY63_FMRRT_302_610",
+                    "customizationLayer": 0,
+                    "customizationLayerDescription": "ECU",
+                    "enabled": "T",
+                    "executionType": 1,
+                    "isEnabled": true,
+                    "thereAnCallbackEvent": false,
+                    "thereAnClientEvent": true,
+                    "thereAnServerEvent": false,
+                    "viewContainerEventType": {
+                        "description": "Se ejecuta antes de renderizar un ViewContainer, permite realizar personalizaciones visuales",
+                        "eventId": 8,
+                        "name": "Render"
+                    }
+                },
+                {
+                    "customEventId": "CEVC_002T_FLCRE_21_EYWRY63_228",
+                    "customizationLayer": 0,
+                    "customizationLayerDescription": "ECU",
+                    "enabled": "T",
+                    "executionType": 7,
+                    "filter": null,
+                    "isEnabled": true,
+                    "viewContainerEventType": {
+                        "availableExecutionType": 7,
+                        "description": "Inicialización de datos de un ViewContainer, despues de este evento se realiza el segimiento de cambios en los datos",
+                        "eventId": 2,
+                        "name": "InitData"
+                    }
+                }
+            ],
+            "customizationLayer": 0,
+            "customizationLayerDescription": "ECU",
+            "description": "Actividad de Ingreso de Garantias",
+            "enabled": 4095,
+            "id": {
+                "moduleId": "BUSIN",
+                "subModuleId": "FLCRE",
+                "taskId": "T_FLCRE_21_EYWRY63",
+                "taskVersion": "1.0.0",
+                "viewContainerId": "VC_EYWRY63_FMRRT_302"
+            },
+            "layoutType": "Group",
+            "name": "FormEntryWarranty",
+            "options": 0,
+            "responsiveLayouts": null,
+            "responsivity": false,
+            "style": null,
+            "viewContainers": [
+                {
+                    "colSpan": 1,
+                    "collapsedStr": "F",
+                    "columnsNum": 1,
+                    "componentStyle": {
+                        "componentStyleId": "cabecera",
+                        "name": "cabecera"
+                    },
+                    "customEvents": [
+                    ],
+                    "customizationLayer": 0,
+                    "customizationLayerDescription": "ECU",
+                    "description": " ",
+                    "enabled": 4095,
+                    "id": {
+                        "moduleId": "BUSIN",
+                        "subModuleId": "commons",
+                        "taskId": "T_VW_WTTTEPRCES08",
+                        "taskVersion": "1.0.0",
+                        "viewContainerId": "VC_EYWRY63_ADRSG_549"
+                    },
+                    "layoutType": "Group",
+                    "name": "T_VW_tittleProcess",
+                    "options": 1,
+                    "parentId": "VC_EYWRY63_FMRRT_302",
+                    "responsiveLayouts": null,
+                    "responsivity": false,
+                    "style": null,
+                    "view": {
+                        "$ref": "../../../../BUSIN/commons/forms/T_VW_WTTTEPRCES08/design.json#/viewContainers/0/view"
+                    }
+                },
+                {
+                    "colSpan": 1,
+                    "collapsedStr": "F",
+                    "columnsNum": 1,
+                    "componentStyle": null,
+                    "customEvents": [
+                    ],
+                    "customizationLayer": 0,
+                    "customizationLayerDescription": "ECU",
+                    "description": " ",
+                    "enabled": 4095,
+                    "id": {
+                        "moduleId": "BUSIN",
+                        "subModuleId": "commons",
+                        "taskId": "T_VW_UARNTEESEW96",
+                        "taskVersion": "1.0.0",
+                        "viewContainerId": "VC_EYWRY63_RPSNO_481"
+                    },
+                    "layoutType": "Group",
+                    "name": "T_GuaranteesView",
+                    "options": 0,
+                    "parentId": "VC_EYWRY63_FMRRT_302",
+                    "responsiveLayouts": null,
+                    "responsivity": false,
+                    "style": null,
+                    "view": {
+                        "$ref": "../../../../BUSIN/commons/forms/T_VW_UARNTEESEW96/design.json#/viewContainers/0/view"
+                    }
+                },
+                {
+                    "colSpan": 1,
+                    "collapsedStr": "F",
+                    "columnsNum": 1,
+                    "componentStyle": null,
+                    "customEvents": [
+                    ],
+                    "customizationLayer": 0,
+                    "customizationLayerDescription": "ECU",
+                    "description": " ",
+                    "enabled": 4095,
+                    "id": {
+                        "moduleId": "BUSIN",
+                        "subModuleId": "commons",
+                        "taskId": "T_VW_PRSAUARNTE35",
+                        "taskVersion": "1.0.0",
+                        "viewContainerId": "VC_EYWRY63_UPNNE_629"
+                    },
+                    "layoutType": "Group",
+                    "name": "T_PersonalGuarantorView",
+                    "options": 0,
+                    "parentId": "VC_EYWRY63_FMRRT_302",
+                    "responsiveLayouts": null,
+                    "responsivity": false,
+                    "style": null,
+                    "titleLabel": {
+                        "defaultValue": {
+                            "$ref": "../../../../BUSIN/assets/languages/BUSIN.json#/BUSIN/LBL/DLB_BUSIN_ERSOALWAY_81979"
+                        },
+                        "labelId": "DLB_BUSIN_ERSOALWAY_81979",
+                        "moduleId": "BUSIN"
+                    },
+                    "view": {
+                        "$ref": "../../../../BUSIN/commons/forms/T_VW_PRSAUARNTE35/design.json#/viewContainers/0/view"
+                    }
+                },
+                {
+                    "colSpan": 1,
+                    "collapsedStr": "F",
+                    "columnsNum": 1,
+                    "componentStyle": null,
+                    "customEvents": [
+                    ],
+                    "customizationLayer": 0,
+                    "customizationLayerDescription": "ECU",
+                    "description": " ",
+                    "enabled": 4095,
+                    "id": {
+                        "moduleId": "BUSIN",
+                        "subModuleId": "commons",
+                        "taskId": "T_VW_OHRWARAYIE87",
+                        "taskVersion": "1.0.0",
+                        "viewContainerId": "VC_EYWRY63_RPIMR_022"
+                    },
+                    "layoutType": "Group",
+                    "name": "T_VWarrantyView",
+                    "options": 0,
+                    "parentId": "VC_EYWRY63_FMRRT_302",
+                    "responsiveLayouts": null,
+                    "responsivity": false,
+                    "style": null,
+                    "titleLabel": {
+                        "defaultValue": {
+                            "$ref": "../../../../BUSIN/assets/languages/BUSIN.json#/BUSIN/LBL/DLB_BUSIN_OTETFWRRY_06685"
+                        },
+                        "labelId": "DLB_BUSIN_OTETFWRRY_06685",
+                        "moduleId": "BUSIN"
+                    },
+                    "view": {
+                        "$ref": "../../../../BUSIN/commons/forms/T_VW_OHRWARAYIE87/design.json#/viewContainers/0/view"
+                    }
+                }
+            ]
+        }
+    ]
+}

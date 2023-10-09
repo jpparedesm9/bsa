@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<procedure>
+  <database>cob_cartera</database>
+  <name>sp_reporte_castigo</name>
+  <type>SYBASE</type>
+  <version>1</version>
+  <parameters>
+    <parameter name="@i_id_inst_proc" dataType="int" direction="in" />
+  </parameters>
+  <queries>
+    <query>
+      <columns>
+        <column name="cedula" />
+        <column name="nombre" />
+        <column name="operacion" />
+        <column name="oficina" />
+        <column name="tipoOperacion" />
+        <column name="sector" />
+        <column name="garantia" />
+        <column name="fec_desem" />
+        <column name="fec_venc" />
+        <column name="fec_pag" />
+        <column name="monto" />
+        <column name="sal_cap" />
+        <column name="sal_int" />
+        <column name="sal_mora" />
+        <column name="sal_otros" />
+        <column name="sal_tot" />
+        <column name="por_prov" />
+        <column name="val_prov" />
+        <column name="di_mora" />
+        <column name="gr_cont" />
+        <column name="resumenEx" />
+        <column name="resumenJud" />
+        <column name="causa" />
+        <column name="estado" />
+      </columns>
+      <queryText>SELECT  "cedula" = ca_cedula,"nombre" = ca_nombre,"operacion" = ca_banco,"oficina" = ca_oficina,"tipoOperacion" = ca_toperacion,"sector" = ca_tcartera,"garantia" = ca_garantia,"fec_desem" = ca_fecha_liq,"fec_venc" = ca_fecha_ven,"fec_pag" = ca_fecha_ult_pago,"monto" = ca_monto,"sal_cap" = ca_saldo_cap,"sal_int" = ca_saldo_int,"sal_mora" = ca_saldo_mora,"sal_otros" = ca_saldo_otros,"sal_tot" = ca_saldo_total,"por_prov" = ca_por_provision,"val_prov" = ca_val_prov,"di_mora" = ca_dias_mora,"gr_cont" = ca_grupo_contable </queryText>
+    </query>
+  </queries>
+</procedure>

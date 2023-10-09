@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<blueprint xmlns="http://www.osgi.org/xmlns/blueprint/v1.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation=" http://www.osgi.org/xmlns/blueprint/v1.0.0 http://www.osgi.org/xmlns/blueprint/v1.0.0/blueprint.xsd"
+	xmlns:tx="http://aries.apache.org/xmlns/transactions/v1.0.0">
+
+
+	<reference id="serviceExecutorClient" interface="cobiscorp.ecobis.cts.integration.services.ICTSServiceExecutorClient" filter="(service.impl=ServiceExecutorInProc)" timeout="15000"/>
+
+
+    <bean id="TerminalValidationImpl" class="com.cobiscorp.ecobis.cobiscloud.loginvalidationext.impl.TerminalValidationImpl" activation="lazy">
+        <tx:transaction method="*" value="NotSupported" />
+		<property name="serviceExecutorClient" ref="serviceExecutorClient" />
+
+    </bean>
+
+	<service ref="TerminalValidationImpl">
+		<interfaces>
+		<value>com.cobiscorp.ecobis.services.extended.api.IExtendedServices</value>
+		</interfaces>
+		<service-properties>
+			<entry key="service.description" value="TerminalValidationImpl" />
+			<entry key="service.vendor" value="COBISCORP" />
+			<entry key="service.version" value="1.0.0" />
+
+		</service-properties>
+	</service>
+</blueprint>

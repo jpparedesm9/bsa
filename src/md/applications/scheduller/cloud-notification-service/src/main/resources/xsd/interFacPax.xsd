@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+   <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+         <!-- XML Schema Generated from XML Document on Tue May 26 2020 15:04:18 GMT-0500 (hora de Ecuador) -->
+         <!-- with XmlGrid.net Free Online Service http://xmlgrid.net -->
+         <xs:element name="ComprobantePax">
+               <xs:complexType>
+                     <xs:sequence>
+                           <xs:element name="Emisor">
+                                 <xs:complexType>
+                                       <xs:attribute name="Rfc" type="xs:string"></xs:attribute>
+                                       <xs:attribute name="Nombre" type="xs:string"></xs:attribute>
+                                       <xs:attribute name="RegimenFiscal" type="xs:string"></xs:attribute>
+                                 </xs:complexType>
+                           </xs:element>
+                           <xs:element name="Receptor">
+                                 <xs:complexType>
+                                       <xs:attribute name="Rfc" type="xs:string"></xs:attribute>
+                                       <xs:attribute name="Nombre" type="xs:string"></xs:attribute>
+                                       <xs:attribute name="UsoCFDI" type="xs:string"></xs:attribute>
+                                 </xs:complexType>
+                           </xs:element>
+                           <xs:element name="Conceptos">
+                                 <xs:complexType>
+                                       <xs:sequence>
+                                             <xs:element name="Concepto">
+                                                   <xs:complexType>
+                                                         <xs:attribute name="ClaveProdServ" type="xs:string"></xs:attribute>
+                                                         <xs:attribute name="NoIdentificacion" type="xs:string"></xs:attribute>
+                                                         <xs:attribute name="Cantidad" type="xs:double"></xs:attribute>
+                                                         <xs:attribute name="ClaveUnidad" type="xs:string"></xs:attribute>
+                                                         <xs:attribute name="Descripcion" type="xs:string"></xs:attribute>
+                                                         <xs:attribute name="ValorUnitario" type="xs:double"></xs:attribute>
+                                                         <xs:attribute name="Importe" type="xs:double"></xs:attribute>
+                                                   </xs:complexType>
+                                             </xs:element>
+                                       </xs:sequence>
+                                 </xs:complexType>
+                           </xs:element>
+                           <xs:element name="Impuestos"></xs:element>
+                           <xs:element name="Complemento">
+                                 <xs:complexType>
+                                       <xs:sequence>
+                                             <xs:element name="TimbreFiscalDigital">
+                                                   <xs:complexType>
+                                                         <xs:attribute name="xmlns:tfd" type="xs:string"></xs:attribute>
+                                                         <xs:attribute name="Version" type="xs:string"></xs:attribute>
+                                                         <xs:attribute name="UUID" type="xs:string"></xs:attribute>
+                                                         <xs:attribute name="FechaTimbrado" type="xs:dateTime"></xs:attribute>
+                                                         <xs:attribute name="RfcProvCertif" type="xs:string"></xs:attribute>
+                                                         <xs:attribute name="SelloCFD" type="xs:string"></xs:attribute>
+                                                         <xs:attribute name="SelloSAT" type="xs:string"></xs:attribute>
+                                                         <xs:attribute name="NoCertificadoSAT" type="xs:string"></xs:attribute>
+                                                         <xs:attribute name="xsi:schemaLocation" type="xs:string"></xs:attribute>
+                                                   </xs:complexType>
+                                             </xs:element>
+                                       </xs:sequence>
+                                 </xs:complexType>
+                           </xs:element>
+                           <xs:element name="Addenda">
+                                 <xs:complexType>
+                                       <xs:sequence>
+                                             <xs:element name="ad">
+                                                   <xs:complexType>
+                                                         <xs:attribute name="cadenaOriginal" type="xs:string"></xs:attribute>
+                                                   </xs:complexType>
+                                             </xs:element>
+                                       </xs:sequence>
+                                       <xs:attribute name="xmlns:cfdi" type="xs:string"></xs:attribute>
+                                 </xs:complexType>
+                           </xs:element>
+                     </xs:sequence>
+                     <xs:attribute name="xmlns:cfdi" type="xs:string"></xs:attribute>
+                     <xs:attribute name="xmlns:xsi" type="xs:string"></xs:attribute>
+                     <xs:attribute name="xsi:schemaLocation" type="xs:string"></xs:attribute>
+                     <xs:attribute name="Version" type="xs:string"></xs:attribute>
+                     <xs:attribute name="Serie" type="xs:string"></xs:attribute>
+                     <xs:attribute name="Folio" type="xs:int"></xs:attribute>
+                     <xs:attribute name="Fecha" type="xs:dateTime"></xs:attribute>
+                     <xs:attribute name="Sello" type="xs:string"></xs:attribute>
+                     <xs:attribute name="FormaPago" type="xs:string"></xs:attribute>
+                     <xs:attribute name="NoCertificado" type="xs:string"></xs:attribute>
+                     <xs:attribute name="Certificado" type="xs:string"></xs:attribute>
+                     <xs:attribute name="SubTotal" type="xs:double"></xs:attribute>
+                     <xs:attribute name="Moneda" type="xs:string"></xs:attribute>
+                     <xs:attribute name="TipoCambio" type="xs:string"></xs:attribute>
+                     <xs:attribute name="Total" type="xs:double"></xs:attribute>
+                     <xs:attribute name="TipoDeComprobante" type="xs:string"></xs:attribute>
+                     <xs:attribute name="MetodoPago" type="xs:string"></xs:attribute>
+                     <xs:attribute name="LugarExpedicion" type="xs:string"></xs:attribute>
+               </xs:complexType>
+         </xs:element>
+   </xs:schema>

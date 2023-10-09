@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="StandByCredits" language="java" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="c8b55034-8744-4f59-a024-23eb8f7979c7">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<field name="standByCreditsType" class="java.lang.String"/>
+	<field name="type_op_desc" class="java.lang.String"/>
+	<field name="operation" class="java.lang.String"/>
+	<field name="date_apt" class="java.lang.String"/>
+	<field name="date_vto" class="java.lang.String"/>
+	<field name="money_desc" class="java.lang.String"/>
+	<field name="amount_orig" class="java.lang.String"/>
+	<field name="beneficiary" class="java.lang.String"/>
+	<group name="StandByCredits">
+		<groupExpression><![CDATA[$F{standByCreditsType}]]></groupExpression>
+		<groupHeader>
+			<band height="50">
+				<textField>
+					<reportElement uuid="6898a5dc-8007-43fc-8bad-7d3cf7f2eff2" x="0" y="0" width="152" height="20"/>
+					<textElement/>
+					<textFieldExpression><![CDATA[$F{standByCreditsType}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement uuid="7e4663fa-12b6-4a82-b6da-4fcc7cf795e6" x="0" y="30" width="87" height="20"/>
+					<textElement/>
+					<text><![CDATA[type_op_desc]]></text>
+				</staticText>
+				<staticText>
+					<reportElement uuid="dd8e3de2-d5cc-48d1-984a-4486bb0dc974" x="87" y="30" width="65" height="20"/>
+					<textElement/>
+					<text><![CDATA[operation]]></text>
+				</staticText>
+				<staticText>
+					<reportElement uuid="a6cf776e-5be8-4ac1-9511-f154a9798fe8" x="152" y="30" width="66" height="20"/>
+					<textElement/>
+					<text><![CDATA[date_apt]]></text>
+				</staticText>
+				<staticText>
+					<reportElement uuid="83e66648-3eb9-45af-92ce-901fdbd0a04c" x="218" y="30" width="61" height="20"/>
+					<textElement/>
+					<text><![CDATA[date_vto]]></text>
+				</staticText>
+				<staticText>
+					<reportElement uuid="4214dfde-6deb-4391-a858-c3407ee17ec8" x="279" y="30" width="84" height="20"/>
+					<textElement/>
+					<text><![CDATA[money_desc]]></text>
+				</staticText>
+				<staticText>
+					<reportElement uuid="2a0c2c98-ffd3-453c-b881-a8265683a540" x="363" y="30" width="100" height="20"/>
+					<textElement/>
+					<text><![CDATA[amount_orig]]></text>
+				</staticText>
+				<staticText>
+					<reportElement uuid="6656c95f-4323-4365-b353-7874e3c27f2a" x="463" y="30" width="74" height="20"/>
+					<textElement/>
+					<text><![CDATA[beneficiary]]></text>
+				</staticText>
+			</band>
+		</groupHeader>
+		<groupFooter>
+			<band height="50"/>
+		</groupFooter>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band splitType="Stretch"/>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="125" splitType="Stretch">
+			<textField>
+				<reportElement uuid="53a4c8cb-25d8-4664-b945-64f95eb293b3" x="0" y="0" width="87" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{type_op_desc}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="f5bc2ffe-be03-4850-8e78-7e4ba79595ce" x="87" y="0" width="65" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{operation}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="1f87e5a9-5804-46aa-9dd9-76eb286b3493" x="152" y="0" width="66" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{date_apt}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="76e5840f-1c0a-4f5b-8be3-568bb2935e59" x="218" y="0" width="61" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{date_vto}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="7f6723f7-c901-4019-a92c-ee9da8da45be" x="279" y="0" width="84" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{money_desc}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="03c67dd5-b8b0-4ac7-9b3d-6215a7ff9c00" x="363" y="0" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{amount_orig}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="56140a04-b8b0-4005-b133-10d4e6047e33" x="463" y="0" width="74" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{beneficiary}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

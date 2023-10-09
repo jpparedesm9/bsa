@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="contratoCreditoRevolvente" pageWidth="507" pageHeight="794" whenNoDataType="AllSectionsNoDetail" columnWidth="507" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="deec1b21-1036-4734-948b-164547062a2b">
+	<property name="ireport.zoom" value="1.5"/>
+	<property name="ireport.x" value="165"/>
+	<property name="ireport.y" value="757"/>
+	<parameter name="SUBREPORT_DIR" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["/"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="condusef" class="java.lang.String"/>
+	<parameter name="clauMonto" class="java.lang.String"/>
+	<parameter name="pieAnio" class="java.lang.String"/>
+	<parameter name="footParam" class="java.lang.String" isForPrompting="false"/>
+	<field name="campo" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<detail>
+		<band height="22">
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="Float" stretchType="RelativeToBandHeight" x="0" y="0" width="507" height="22" isPrintWhenDetailOverflows="true" uuid="f795bcec-0708-4a73-b265-20cc81ee07c6"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="8" isBold="true"/>
+					<paragraph leftIndent="2" rightIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA["CLÁUSULA DE COMISIONES"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="125">
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="Float" stretchType="RelativeToBandHeight" x="0" y="0" width="170" height="22" isPrintWhenDetailOverflows="true" uuid="16e5935a-ee31-40aa-a683-394441c4d056"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="8" isBold="true"/>
+					<paragraph leftIndent="2" rightIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA["CONCEPTO DE COMISIONES"]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="Float" stretchType="RelativeToBandHeight" x="170" y="0" width="169" height="22" isPrintWhenDetailOverflows="true" uuid="d3903aca-a05b-45d3-b114-6422fa3247a8"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="8" isBold="true"/>
+					<paragraph leftIndent="2" rightIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA["PERIODICIDAD DE COBRO"]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="Float" stretchType="RelativeToBandHeight" x="339" y="0" width="168" height="22" isPrintWhenDetailOverflows="true" uuid="fccd2d52-9d2e-4a6b-99d1-89dace819db5"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="8" isBold="true"/>
+					<paragraph leftIndent="2" rightIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA["MONTO DE COBRO (1)"]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="Float" stretchType="RelativeToBandHeight" x="339" y="22" width="168" height="22" isPrintWhenDetailOverflows="true" uuid="9e7ef021-b48a-4fe2-8bef-547fa721eec9"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="8" isBold="true"/>
+					<paragraph leftIndent="2" rightIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA["5.00% de la cantidad dispuesta de la Línea de Crédito"]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="Float" stretchType="RelativeToBandHeight" x="170" y="22" width="169" height="22" isPrintWhenDetailOverflows="true" uuid="c96e1de8-a477-43a2-b3e3-6912dbec240b"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="8" isBold="true"/>
+					<paragraph leftIndent="2" rightIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Por evento"]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="Float" stretchType="RelativeToBandHeight" x="0" y="22" width="170" height="22" isPrintWhenDetailOverflows="true" uuid="e160f2d4-2da7-426e-bb0f-ba42ce60bc97"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="8" isBold="true"/>
+					<paragraph leftIndent="2" rightIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Comisión Disposición del Crédito en Efectivo"]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="Float" stretchType="RelativeToBandHeight" x="339" y="44" width="168" height="43" isPrintWhenDetailOverflows="true" uuid="52a82b8f-4b65-4aeb-8ac8-21cbec3c097e"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="8" isBold="true"/>
+					<paragraph leftIndent="2" rightIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA["$"+$P{clauMonto}+ " M.N."]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="Float" stretchType="RelativeToBandHeight" x="0" y="44" width="170" height="43" isPrintWhenDetailOverflows="true" uuid="952de8df-4bdb-45f3-9d2e-f4fec60ee5b7"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="8" isBold="true"/>
+					<paragraph leftIndent="2" rightIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Comisión Gastos de Cobranza (antes del siguiente corte y después de la fecha límite de pago)"]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="Float" stretchType="RelativeToBandHeight" x="170" y="44" width="169" height="43" isPrintWhenDetailOverflows="true" uuid="ed557431-04e6-489a-bfb8-6b65ca1407d1"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="8" isBold="true"/>
+					<paragraph leftIndent="2" rightIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Por evento"]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="93" width="507" height="32" uuid="fc5f0b83-026e-4ed0-86d2-31d7c9e2e9c3"/>
+				<textElement>
+					<font fontName="SansSerif" size="8" isBold="false"/>
+				</textElement>
+				<text><![CDATA[(1) Santander Inclusión Financiera se reserva el derecho de cobrar una comisión menor, misma que se indicará en la solicitud u oferta de crédito o, en su caso, en la carátula correspondiente. Los montos mostrados NO incluyen IVA.]]></text>
+			</staticText>
+		</band>
+		<band height="501">
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="0" y="0" width="507" height="498" isPrintWhenDetailOverflows="true" uuid="62a6362d-0a57-492f-b79a-c4509c21715c"/>
+				<textElement textAlignment="Justified" verticalAlignment="Top" markup="html">
+					<font fontName="SansSerif" size="6" isBold="false"/>
+					<paragraph leftIndent="2" rightIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA[" "]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<lastPageFooter>
+		<band height="33">
+			<textField>
+				<reportElement x="0" y="23" width="507" height="10" uuid="97d73bc7-e1ab-46bb-973f-cdffca4f0ff8"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="SansSerif" size="6" isBold="true"/>
+					<paragraph firstLineIndent="1"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Registro de Contratos de Adhesión de la CONDUSEF: " + $P{condusef}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="0" y="12" width="507" height="1" uuid="8684ad3f-e104-4dca-b703-739142bd8c45"/>
+				<graphicElement>
+					<pen lineWidth="0.5"/>
+				</graphicElement>
+			</line>
+			<textField>
+				<reportElement x="330" y="14" width="177" height="10" uuid="0d071605-103f-4ac8-b24d-cf4d132f28b2"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="6" isBold="true"/>
+					<paragraph firstLineIndent="1"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{footParam}+" "+ $P{pieAnio}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="0" y="9" width="507" height="1" uuid="dc831d45-eb77-4dd9-8ef3-c0e79bcbfa20"/>
+				<graphicElement>
+					<pen lineWidth="1.5"/>
+				</graphicElement>
+			</line>
+		</band>
+	</lastPageFooter>
+</jasperReport>

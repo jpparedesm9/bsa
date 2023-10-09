@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+	<context:annotation-config />
+
+	<bean id="QueryProductsManagerImpl"
+		class="com.cobiscorp.ecobis.clientviewer.bl.impl.QueryProductsManagerImpl">
+		<property name="summaryInvestmentsDAO" ref="SummaryInvestmentsDAO" />
+		<property name="summaryDebtsDAO" ref="SummaryDebtsDAO" />
+		<property name="currencyDAO" ref="CurrencyDAO" />
+		<property name="summaryWarrantiesDAO" ref="SummaryWarrantiesDAO" />
+		<property name="summaryCreditsDAO" ref="SummaryCreditsDAO" />
+		<property name="summaryOthersDAO" ref="SummaryOthersDAO" />
+		<property name="affiliationsDAO" ref="AffiliationsDAO" />
+		<property name="catalogDAO" ref="CatalogDAO" />
+		<property name="administratorDAO" ref="AdministratorDAO" />
+		<property name="serviceIntegration" ref="serviceIntegration" />
+		<property name="cacheManager" ref="cacheManager" />
+		
+	</bean>
+
+	<bean id="ConsolidatePositionManagerImpl"
+		class="com.cobiscorp.ecobis.clientviewer.bl.impl.ConsolidatePositionManagerImpl">
+		<property name="summaryInvestmentsDAO" ref="SummaryInvestmentsDAO" />
+		<property name="summaryWarrantiesDAO" ref="SummaryWarrantiesDAO" />
+		<property name="summaryPersonalWarrantiesDAO" ref="SummaryPersonalWarrantiesDAO" />
+		<property name="summaryDebtsDAO" ref="SummaryDebtsDAO" />
+		<property name="summaryCreditsDAO" ref="SummaryCreditsDAO" />
+		<property name="cobisStoredProcedureUtils" ref="CobisStoredProcedureUtils" />
+		<property name="cacheManager" ref="cacheManager" />
+		
+		
+	</bean>
+
+	<bean id="PrepareProductsDataManagerImpl"
+		class="com.cobiscorp.ecobis.clientviewer.bl.impl.PrepareProductsDataManagerImpl">
+		<property name="cobisStoredProcedureUtils" ref="CobisStoredProcedureUtils" />
+		<property name="spOrchestrator" ref="spOrchestrator" />
+	</bean>
+
+	<bean id="AdministratorManagerImpl"
+		class="com.cobiscorp.ecobis.clientviewer.admin.bl.impl.AdministratorManagerImpl">
+		<property name="administratorDAO" ref="AdministratorDAO" />
+	</bean>
+
+	<bean id="MaxDebtManagerImpl"
+		class="com.cobiscorp.ecobis.clientviewer.bl.impl.MaxDebtManagerImpl">
+		<property name="customerDAO" ref="CustomerDAO" />
+		<property name="generalParameterDAO" ref="GeneralParameterDAO" />
+		<property name="ratesDAO" ref="RateDAO" />
+		<property name="summaryDebtsDAO" ref="SummaryDebtsDAO" />
+		<property name="summaryCreditsDAO" ref="SummaryCreditsDAO" />
+		<property name="summaryInvestmentsDAO" ref="SummaryInvestmentsDAO" />
+		<property name="summaryPersonalWarrantiesDAO" ref="SummaryPersonalWarrantiesDAO" />
+		<property name="summaryWarrantiesDAO" ref="SummaryWarrantiesDAO" />
+		<property name="cobisStoredProcedureUtils" ref="CobisStoredProcedureUtils" />
+	</bean>
+
+	<bean id="ScoreManagerImpl"
+		class="com.cobiscorp.ecobis.clientviewer.bl.impl.ScoreManagerImpl">
+		<property name="scoreDAO" ref="IScoreDAO" />
+		<property name="catalogDAO" ref="CatalogDAO" />
+	</bean>
+
+	<bean id="CustomerManagerImpl"
+		class="com.cobiscorp.ecobis.clientviewer.bl.impl.CustomerManagerImpl">
+		<property name="customerDAO" ref="CustomerDAO" />
+		<property name="catalogDAO" ref="CatalogDAO" />
+		<property name="generalParameterDAO" ref="GeneralParameterDAO" />
+		<property name="addressTxService" ref="AddressTxService" />
+		<property name="contactTxService" ref="ContactTxService" />
+		<property name="maxDebtManagerImpl" ref="MaxDebtManagerImpl" />
+	</bean>
+
+	<bean id="RateManagerImpl"
+		class="com.cobiscorp.ecobis.clientviewer.bl.impl.RateManagerImpl">
+		<property name="rateDAO" ref="RateDAO" />
+	</bean>
+
+</beans>

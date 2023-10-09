@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<product path="D:/GYE/Dav_SaaSMx/SSSuite/BusinessProcess/source/middleware/SG/cuentas/Account/Products/COBISCorp.eCOBIS.Account.DTO" appPath="C:/Program Files (x86)/COBIS/COBIS Services Generator/" name="COBISCorp.eCOBIS.Account.DTO" productNS="http://dto.account.ecobis.cobiscorp" description="Account DTO" documentationLanguage="English" year="2017" version="2.0.0.0" type="DTO" GUID="A43B6895-7BC2-4879-B2CD-3248ED41942C">
+  <namespaces>
+    <namespace type="dto" base="COBISCorp.eCOBIS.Account" name="COBISCorp.eCOBIS.Account.DTO" package="cobiscorp.ecobis.account.dto" ns="http://dto.account.ecobis.cobiscorp" folder="DTO" />
+  </namespaces>
+  <templates>
+    <template id="DTOJavaPOJO" productName="COBISCorp.eCOBIS.Account.DTO" outputFolder="c:\COBIS-SG\Output\CTS\COBISCorp.eCOBIS.Account.DTO" package="true" packageType="Jar">
+      <templateFiles>
+        <templateFile filePath="JavaPOJO\JavaDTO.xslt" enabled="true" override="true" />
+        <templateFile filePath="..\Commons\Java\buildProperties.xslt" enabled="true" override="true" />
+        <templateFile filePath="..\Commons\Java\build.xslt" enabled="true" override="true" />
+      </templateFiles>
+    </template>
+  </templates>
+  <DTOs>
+    <DTO name="AccountResponse" nsBase="COBISCorp.eCOBIS.Account" namespace="COBISCorp.eCOBIS.Account.DTO" package="cobiscorp.ecobis.account.dto" ns="http://dto.account.ecobis.cobiscorp" version="1" />
+    <DTO name="AccountResponseList" nsBase="COBISCorp.eCOBIS.Account" namespace="COBISCorp.eCOBIS.Account.DTO" package="cobiscorp.ecobis.account.dto" ns="http://dto.account.ecobis.cobiscorp" version="1" />
+    <DTO name="Customer" nsBase="COBISCorp.eCOBIS.Account" namespace="COBISCorp.eCOBIS.Account.DTO" package="cobiscorp.ecobis.account.dto" ns="http://dto.account.ecobis.cobiscorp" version="1" />
+    <DTO name="CustomerRequest" nsBase="COBISCorp.eCOBIS.Account" namespace="COBISCorp.eCOBIS.Account.DTO" package="cobiscorp.ecobis.account.dto" ns="http://dto.account.ecobis.cobiscorp" version="1" />
+  </DTOs>
+  <classes />
+  <packagers>
+    <packager type="SGPackageJava" AntTask="sign-archive" KeyAlias="cobisapp" KeyPassword="cobisappadminadmin" KeyCertificatePassword="cobisappadmin" KeyFileName="cobisapp.keystore" RelativeFolder="True" TemplateId="DTOJavaPOJO" />
+  </packagers>
+  <productProperties>
+    <property name="MavenGroupId" value="com.cobiscorp.processapi" />
+    <property name="MavenArtifactId" value="COBISCorp.eCOBIS.Account.DTO" />
+    <property name="MavenVersion" value="2.0.0.0" />
+  </productProperties>
+</product>

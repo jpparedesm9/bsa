@@ -1,0 +1,199 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<procedure>
+  <database>cob_cartera</database>
+  <name>sp_rubro_tmp</name>
+  <type>SYBASE</type>
+  <version>1</version>
+  <parameters>
+    <parameter name="@s_user" dataType="varchar" direction="in" />
+    <parameter name="@s_term" dataType="varchar" direction="in" />
+    <parameter name="@s_date" dataType="datetime" direction="in" />
+    <parameter name="@s_ofi" dataType="int" direction="in" />
+    <parameter name="@t_show_version" dataType="bit" direction="in" />
+    <parameter name="@i_operacion" dataType="char" direction="in" />
+    <parameter name="@i_operacionca" dataType="int" direction="in" />
+    <parameter name="@i_banco" dataType="varchar" direction="in" />
+    <parameter name="@i_concepto" dataType="varchar" direction="in" />
+    <parameter name="@i_tipo_rubro" dataType="char" direction="in" />
+    <parameter name="@i_fpago" dataType="char" direction="in" />
+    <parameter name="@i_prioridad" dataType="smallint" direction="in" />
+    <parameter name="@i_paga_mora" dataType="char" direction="in" />
+    <parameter name="@i_provisiona" dataType="char" direction="in" />
+    <parameter name="@i_signo" dataType="char" direction="in" />
+    <parameter name="@i_factor" dataType="float" direction="in" />
+    <parameter name="@i_referencial" dataType="varchar" direction="in" />
+    <parameter name="@i_signo_reajuste" dataType="char" direction="in" />
+    <parameter name="@i_factor_reajuste" dataType="float" direction="in" />
+    <parameter name="@i_referencial_reajuste" dataType="varchar" direction="in" />
+    <parameter name="@i_valor" dataType="money" direction="in" />
+    <parameter name="@i_porcentaje" dataType="float" direction="in" />
+    <parameter name="@i_gracia" dataType="money" direction="in" />
+    <parameter name="@i_valor_max" dataType="money" direction="in" />
+    <parameter name="@i_valor_min" dataType="money" direction="in" />
+    <parameter name="@i_base_calculo" dataType="varchar" direction="in" />
+    <parameter name="@i_toperacion" dataType="varchar" direction="in" />
+    <parameter name="@i_concepto_asoc" dataType="varchar" direction="in" />
+    <parameter name="@i_cuenta_abono" dataType="varchar" direction="in" />
+    <parameter name="@i_porcentaje_tea" dataType="float" direction="in" />
+    <parameter name="@i_porcentaje_dia" dataType="float" direction="in" />
+    <parameter name="@i_diferir" dataType="char" direction="in" />
+    <parameter name="@i_afectacion" dataType="smallint" direction="in" />
+    <parameter name="@i_dias_diferir" dataType="int" direction="in" />
+    <parameter name="@i_fdescuento" dataType="varchar" direction="in" />
+    <parameter name="@i_financiado" dataType="char" direction="in" />
+    <parameter name="@i_fpago_tercero" dataType="varchar" direction="in" />
+    <parameter name="@i_cuenta_pago" dataType="varchar" direction="in" />
+    <parameter name="@i_simulacion" dataType="char" direction="in" />
+    <parameter name="@i_rot_tasa_minima" dataType="float" direction="in" />
+    <parameter name="@i_tasa_minima" dataType="float" direction="in" />
+  </parameters>
+  <queries>
+    <query>
+      <columns>
+        <column name="233711" />
+        <column name="233712" />
+        <column name="233713" />
+        <column name="233714" />
+        <column name="233715" />
+        <column name="233716" />
+        <column name="233717" />
+        <column name="233718" />
+        <column name="233719" />
+        <column name="233720" />
+        <column name="233721" />
+        <column name="233722" />
+        <column name="233723" />
+        <column name="233724" />
+        <column name="233725" />
+        <column name="233726" />
+        <column name="233839" />
+        <column name="233728" />
+        <column name="233729" />
+        <column name="233862" />
+        <column name="233257" />
+        <column name="233865" />
+        <column name="231237" />
+        <column name="234152" />
+        <column name="234194" />
+        <column name="234195" />
+        <column name="234361" />
+        <column name="351313" />
+        <column name="351314" />
+        <column name="351315" />
+        <column name="351316" />
+      </columns>
+      <queryText>SELECT  "233711" = rot_concepto,"233712" = rot_tipo_rubro,"233713" = rot_fpago,"233714" = rot_signo,"233715" = rot_factor,"233716" = rot_referencial,"233717" = rot_signo_reajuste,"233718" = rot_factor_reajuste,"233719" = rot_referencial_reajuste,"233720" = rot_valor,"233721" = rot_porcentaje,"233722" = rot_gracia,"233723" = rot_prioridad,"233724" = rot_valor_max,"233725" = rot_valor_min,"233726" = rot_base_calculo,"233839" = rot_cuenta_abono,"233728" = rot_porcentaje_tea,"233729" = rot_porcentaje_dia,"233862" = rot_diferir,"233257" = rot_afectacion,"233865" = rot_dias_diferir,"231237" = rot_fdescuento,"234152" = rot_financiado,"234194" = rot_fpago_tercero,"234195" = rot_cuenta_pago,"234361" = ISNULL (rot_gracia, 0),"351313" = rot_tasa_minima </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="{1}" />
+        <column name="{2}" />
+        <column name="{3}" />
+        <column name="{4}" />
+        <column name="{5}" />
+        <column name="{6}" />
+        <column name="{7}" />
+        <column name="{8}" />
+        <column name="{9}" />
+        <column name="{10}" />
+        <column name="{11}" />
+        <column name="{12}" />
+        <column name="{13}" />
+        <column name="{14}" />
+        <column name="{15}" />
+        <column name="{16}" />
+        <column name="{17}" />
+        <column name="{18}" />
+        <column name="{19}" />
+        <column name="{20}" />
+        <column name="{21}" />
+        <column name="{22}" />
+        <column name="{23}" />
+        <column name="{24}" />
+        <column name="{25}" />
+        <column name="{26}" />
+        <column name="{27}" />
+        <column name="{28}" />
+        <column name="{29}" />
+        <column name="{30}" />
+        <column name="{31}" />
+        <column name="{32}" />
+        <column name="{33}" />
+        <column name="{34}" />
+        <column name="{35}" />
+        <column name="{36}" />
+        <column name="{37}" />
+        <column name="{38}" />
+        <column name="{39}" />
+        <column name="{40}" />
+        <column name="{41}" />
+        <column name="{42}" />
+        <column name="{43}" />
+        <column name="{44}" />
+        <column name="{45}" />
+        <column name="{46}" />
+        <column name="{47}" />
+        <column name="{48}" />
+        <column name="{49}" />
+        <column name="{50}" />
+        <column name="{51}" />
+        <column name="{52}" />
+        <column name="{53}" />
+        <column name="{54}" />
+        <column name="{55}" />
+        <column name="{56}" />
+        <column name="{57}" />
+        <column name="{58}" />
+        <column name="{59}" />
+        <column name="{60}" />
+        <column name="{61}" />
+      </columns>
+      <queryText>SELECT w_concepto, w_descripcion, w_tipo_valor, w_desc_tipo, w_provisiona, w_prioridad, ctx.LTRIM(ctx.RTRIM(w_deb_automatico)), w_referencial, w_desc_referencial, ctx.LTRIM(ctx.RTRIM(w_signo_default)), ctx.ISNULL(w_valor_default, 0), w_signo_maximo, ctx.ISNULL(w_valor_maximo, 0), w_signo_minimo, ctx.ISNULL(w_valor_minimo, 0), ctx.ISNULL(w_valor_referencial, 0), ctx.ISNULL(w_total_default, 0), ctx.ISNULL(w_total_maximo, 0), ctx.ISNULL(w_total_minimo, 0), w_reajuste, w_desc_reajuste, w_referencial_reaj, w_desc_referencial_reaj, w_signo_reaj, ctx.ISNULL(w_valor_reaj, 0), w_signo_maximo_reaj, ctx.ISNULL(w_valor_maximo_reaj, 0), w_signo_minimo_reaj, ctx.ISNULL(w_valor_minimo_reaj, 0), ctx.ISNULL(w_valor_referencial_reaj, 0), ctx.ISNULL(w_total_reaj, 0), ctx.ISNULL(w_total_maximo_reaj, 0), ctx.ISNULL(w_total_minimo_reaj, 0), ctx.ISNULL(w_valor_max, 0), ctx.ISNULL(w_valor_min, 0), ctx.ISNULL(w_base_calculo, 0), w_tipo_rubro, w_concepto_asoc, w_cuenta_abono, w_bandera, w_des_modalidad_ref, w_periodicidad_meses_ref, i_fpago, ctx.ISNULL(w_porcentaje_tea, 0), ctx.ISNULL(w_porcentaje_dia, 0), w_des_modalidad_reaj, w_periodicidad_meses_reaj, w_paga_mora, w_afectacion, w_diferir, w_dias_diferir, w_fdescuento, w_financiado, w_fpago_tercero, w_cuenta_pago, w_clase, ctx.ISNULL(w_gracia, 0), w_vd_aplica_ajuste, ctx.ISNULL(w_rot_tasa_minima, 0), ctx.ISNULL(w_tasa_minima, 0), w_op_reajustable</queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="{1}" />
+        <column name="{2}" />
+        <column name="{3}" />
+      </columns>
+      <queryText>SELECT w_porcentaje_tea, i_porcentaje, w_porcentaje_dia</queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="{1}" />
+        <column name="{2}" />
+        <column name="{3}" />
+        <column name="{4}" />
+        <column name="{5}" />
+      </columns>
+      <queryText>SELECT w_porcentaje_tea, i_porcentaje, w_porcentaje_dia, w_signo, w_factor</queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="233169" />
+        <column name="233170" />
+        <column name="233171" />
+        <column name="230211" />
+      </columns>
+      <queryText>SELECT  "233169" = co_concepto,"233170" = SUBSTRING (co_descripcion, 1, 64),"233171" = co_codigo,"230211" = co_grupo </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="{1}" />
+        <column name="{2}" />
+      </columns>
+      <queryText>SELECT  co_concepto,SUBSTRING (co_descripcion, 1, 64) </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="{1}" />
+        <column name="{2}" />
+        <column name="{3}" />
+        <column name="{4}" />
+        <column name="{5}" />
+        <column name="{6}" />
+      </columns>
+      <queryText>SELECT  rubro,tipo_rubro,tipo_seguro,porcentaje,editable,valor </queryText>
+    </query>
+  </queries>
+</procedure>

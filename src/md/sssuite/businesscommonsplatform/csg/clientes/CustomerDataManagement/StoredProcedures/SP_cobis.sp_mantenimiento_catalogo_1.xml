@@ -1,0 +1,408 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<procedure>
+  <database>cobis</database>
+  <name>sp_mantenimiento_catalogo</name>
+  <type>SQLSERVER</type>
+  <version>1</version>
+  <parameters>
+    <parameter name="@s_ssn" dataType="int" direction="in" />
+    <parameter name="@s_user" dataType="varchar" direction="in" />
+    <parameter name="@s_term" dataType="varchar" direction="in" />
+    <parameter name="@s_date" dataType="datetime" direction="in" />
+    <parameter name="@s_srv" dataType="varchar" direction="in" />
+    <parameter name="@s_lsrv" dataType="varchar" direction="in" />
+    <parameter name="@s_ofi" dataType="smallint" direction="in" />
+    <parameter name="@s_rol" dataType="smallint" direction="in" />
+    <parameter name="@s_org_err" dataType="char" direction="in" />
+    <parameter name="@s_error" dataType="int" direction="in" />
+    <parameter name="@s_sev" dataType="tinyint" direction="in" />
+    <parameter name="@s_msg" dataType="varchar" direction="in" />
+    <parameter name="@s_org" dataType="char" direction="in" />
+    <parameter name="@t_from" dataType="varchar" direction="in" />
+    <parameter name="@t_trn" dataType="int" direction="in" />
+    <parameter name="@t_show_version" dataType="bit" direction="in" />
+    <parameter name="@t_file" dataType="varchar" direction="in" />
+    <parameter name="@t_debug" dataType="char" direction="in" />
+    <parameter name="@i_operacion" dataType="char" direction="in" />
+    <parameter name="@i_tabla_catalogo" dataType="varchar" direction="in" />
+    <parameter name="@i_cod_pais" dataType="varchar" direction="in" />
+    <parameter name="@i_pais_descrip" dataType="varchar" direction="in" />
+    <parameter name="@i_estado" dataType="varchar" direction="in" />
+    <parameter name="@i_codigo" dataType="varchar" direction="in" />
+    <parameter name="@i_descripcion" dataType="varchar" direction="in" />
+    <parameter name="@i_activ_comer" dataType="varchar" direction="in" />
+    <parameter name="@i_seccionCode" dataType="varchar" direction="in" />
+    <parameter name="@i_seccion" dataType="varchar" direction="in" />
+    <parameter name="@i_divisionCode" dataType="varchar" direction="in" />
+    <parameter name="@i_division" dataType="varchar" direction="in" />
+    <parameter name="@i_grupoCode" dataType="varchar" direction="in" />
+    <parameter name="@i_grupo" dataType="varchar" direction="in" />
+    <parameter name="@i_claseCode" dataType="varchar" direction="in" />
+    <parameter name="@i_clase" dataType="varchar" direction="in" />
+    <parameter name="@i_modo" dataType="int" direction="in" />
+    <parameter name="@i_ult_sec" dataType="varchar" direction="in" />
+    <parameter name="@i_secuencial" dataType="int" direction="in" />
+    <parameter name="@i_codSector" dataType="varchar" direction="in" />
+    <parameter name="@i_codSubSector" dataType="varchar" direction="in" />
+    <parameter name="@i_codActEc" dataType="varchar" direction="in" />
+    <parameter name="@i_codCaedge" dataType="varchar" direction="in" />
+    <parameter name="@i_codActEcon" dataType="varchar" direction="in" />
+    <parameter name="@i_pais" dataType="int" direction="in" />
+    <parameter name="@i_aclaracionFie" dataType="varchar" direction="in" />
+    <parameter name="@i_aclaracionFie2" dataType="varchar" direction="in" />
+    <parameter name="@i_aclaracionFie3" dataType="varchar" direction="in" />
+    <parameter name="@i_aclaracionFie4" dataType="varchar" direction="in" />
+    <parameter name="@i_valor" dataType="varchar" direction="in" />
+  </parameters>
+  <queries>
+    <query>
+      <columns>
+        <column name="Codigo" />
+        <column name="Descripcion" />
+        <column name="Cod FuenteIngreso" />
+        <column name="Fuente Ingreso" />
+        <column name="Estado" />
+      </columns>
+      <queryText>SELECT  "Codigo" = ap_codigo,"Descripcion" = ap_descripcion,"Cod FuenteIngreso" = ap_activ_comer,"Fuente Ingreso" = valor,"Estado" = ap_estado </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="Codigo" />
+        <column name="Descripcion" />
+        <column name="Cod FuenteIngreso" />
+        <column name="Fuente Ingreso" />
+        <column name="Estado" />
+      </columns>
+      <queryText>SELECT  "Codigo" = ap_codigo,"Descripcion" = ap_descripcion,"Cod FuenteIngreso" = ap_activ_comer,"Fuente Ingreso" = valor,"Estado" = ap_estado </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="secuencial" />
+        <column name="{2}" />
+        <column name="{3}" />
+        <column name="{4}" />
+        <column name="{5}" />
+        <column name="{6}" />
+        <column name="{7}" />
+        <column name="{8}" />
+        <column name="{9}" />
+        <column name="{10}" />
+        <column name="{11}" />
+      </columns>
+      <queryText>SELECT  "secuencial" = CONVERT (INT,is_secuencial ),is_codigo,is_seccionCode,is_seccion,is_divisionCode,is_division,is_grupoCode,is_grupo,is_claseCode,is_clase,is_estado </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="secuencial" />
+        <column name="{2}" />
+        <column name="{3}" />
+        <column name="{4}" />
+        <column name="{5}" />
+        <column name="{6}" />
+        <column name="{7}" />
+        <column name="{8}" />
+        <column name="{9}" />
+        <column name="{10}" />
+        <column name="{11}" />
+      </columns>
+      <queryText>SELECT  "secuencial" = CONVERT (INT,is_secuencial ),is_codigo,is_seccionCode,is_seccion,is_divisionCode,is_division,is_grupoCode,is_grupo,is_claseCode,is_clase,is_estado </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="{1}" />
+      </columns>
+      <queryText>SELECT w_codigo</queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="Codigo" />
+        <column name="Descripcion" />
+        <column name="Cod FuenteIngreso" />
+        <column name="Fuente Ingreso" />
+        <column name="Estado" />
+      </columns>
+      <queryText>SELECT  "Codigo" = se_codigo,"Descripcion" = se_descripcion,"Cod FuenteIngreso" = se_codFuentIng,"Fuente Ingreso" = valor,"Estado" = se_estado </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="Codigo" />
+        <column name="Descripcion" />
+        <column name="Cod FuenteIngreso" />
+        <column name="Fuente Ingreso" />
+        <column name="Estado" />
+      </columns>
+      <queryText>SELECT  "Codigo" = se_codigo,"Descripcion" = se_descripcion,"Cod FuenteIngreso" = se_codFuentIng,"Fuente Ingreso" = valor,"Estado" = se_estado </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="Codigo" />
+        <column name="Descripcion" />
+      </columns>
+      <queryText>SELECT  "Codigo" = se_codigo,"Descripcion" = se_descripcion </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="Codigo" />
+        <column name="Descripcion" />
+      </columns>
+      <queryText>SELECT  "Codigo" = se_codigo,"Descripcion" = se_descripcion </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="{1}" />
+      </columns>
+      <queryText>SELECT  se_descripcion </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="Codigo" />
+        <column name="Descripcion" />
+      </columns>
+      <queryText>SELECT  "Codigo" = b.codigo,"Descripcion" = b.valor </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="CODIGO" />
+        <column name="DESCRIPCION" />
+        <column name="COD. SECTOR ECO." />
+        <column name="ESTADO" />
+      </columns>
+      <queryText>SELECT  "CODIGO" = se_codigo,"DESCRIPCION" = se_descripcion,"COD. SECTOR ECO." = se_codSector,"ESTADO" = se_estado </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="CODIGO" />
+        <column name="DESCRIPCION" />
+        <column name="COD. SECTOR ECO." />
+        <column name="ESTADO" />
+      </columns>
+      <queryText>SELECT  "CODIGO" = se_codigo,"DESCRIPCION" = se_descripcion,"COD. SECTOR ECO." = se_codSector,"ESTADO" = se_estado </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="CODIGO" />
+        <column name="VALOR" />
+        <column name="COD. SECTOR ECO." />
+        <column name="ESTADO" />
+      </columns>
+      <queryText>SELECT  "CODIGO" = se_codigo,"VALOR" = se_descripcion,"COD. SECTOR ECO." = se_codSector,"ESTADO" = se_estado </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="CODIGO" />
+        <column name="VALOR" />
+        <column name="COD. SECTOR ECO." />
+        <column name="ESTADO" />
+      </columns>
+      <queryText>SELECT  "CODIGO" = se_codigo,"VALOR" = se_descripcion,"COD. SECTOR ECO." = se_codSector,"ESTADO" = se_estado </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="{1}" />
+      </columns>
+      <queryText>SELECT  se_descripcion </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="CODIGO" />
+        <column name="DESCRIPCION" />
+      </columns>
+      <queryText>SELECT  "CODIGO" = ac_codigo,"DESCRIPCION" = ac_descripcion </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="CODIGO" />
+        <column name="DESCRIPCION" />
+      </columns>
+      <queryText>SELECT  "CODIGO" = ac_codigo,"DESCRIPCION" = ac_descripcion </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="{1}" />
+      </columns>
+      <queryText>SELECT  ac_descripcion </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="CODIGO" />
+        <column name="VALOR" />
+        <column name="CAEDEC" />
+      </columns>
+      <queryText>SELECT  "CODIGO" = se_codigo,"VALOR" = se_descripcion,"CAEDEC" = se_codCaedge </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="CODIGO" />
+        <column name="VALOR" />
+        <column name="CAEDEC" />
+      </columns>
+      <queryText>SELECT  "CODIGO" = se_codigo,"VALOR" = se_descripcion,"CAEDEC" = se_codCaedge </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="CODIGO" />
+        <column name="VALOR" />
+      </columns>
+      <queryText>SELECT  "CODIGO" = se_codigo,"VALOR" = se_descripcion </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="CODIGO" />
+        <column name="VALOR" />
+      </columns>
+      <queryText>SELECT  "CODIGO" = se_codigo,"VALOR" = se_descripcion </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="CODIGO" />
+        <column name="DESCRIPCION" />
+        <column name="COD. ACT. ECONOMICA" />
+        <column name="ESTADO" />
+        <column name="COD. CAEGGE" />
+        <column name="ACLARACION FIE 1" />
+        <column name="ACLARACION FIE 2" />
+        <column name="ACLARACION FIE 3" />
+        <column name="ACLARACION FIE 4" />
+      </columns>
+      <queryText>SELECT  "CODIGO" = se_codigo,"DESCRIPCION" = se_descripcion,"COD. ACT. ECONOMICA" = se_codActEc,"ESTADO" = se_estado,"COD. CAEGGE" = se_codCaedge,"ACLARACION FIE 1" = se_aclaracionFie,"ACLARACION FIE 2" = se_aclaracionFie2,"ACLARACION FIE 3" = se_aclaracionFie3,"ACLARACION FIE 4" = se_aclaracionFie4 </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="CODIGO" />
+        <column name="DESCRIPCION" />
+        <column name="COD. ACT. ECONOMICA" />
+        <column name="ESTADO" />
+        <column name="COD. CAEGGE" />
+        <column name="ACLARACION FIE 1" />
+        <column name="ACLARACION FIE 2" />
+        <column name="ACLARACION FIE 3" />
+        <column name="ACLARACION FIE 4" />
+      </columns>
+      <queryText>SELECT  "CODIGO" = se_codigo,"DESCRIPCION" = se_descripcion,"COD. ACT. ECONOMICA" = se_codActEc,"ESTADO" = se_estado,"COD. CAEGGE" = se_codCaedge,"ACLARACION FIE 1" = se_aclaracionFie,"ACLARACION FIE 2" = se_aclaracionFie2,"ACLARACION FIE 3" = se_aclaracionFie3,"ACLARACION FIE 4" = se_aclaracionFie4 </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="CODIGO" />
+        <column name="VALOR" />
+        <column name="COD.ACTIVIDAD ECO." />
+        <column name="ESTADO" />
+        <column name="COD. CAEGGE" />
+        <column name="ACLARACION FIE 1" />
+        <column name="ACLARACION FIE 2" />
+        <column name="ACLARACION FIE 3" />
+        <column name="ACLARACION FIE 4" />
+      </columns>
+      <queryText>SELECT  "CODIGO" = se_codigo,"VALOR" = se_descripcion,"COD.ACTIVIDAD ECO." = se_codActEc,"ESTADO" = se_estado,"COD. CAEGGE" = se_codCaedge,"ACLARACION FIE 1" = se_aclaracionFie,"ACLARACION FIE 2" = se_aclaracionFie2,"ACLARACION FIE 3" = se_aclaracionFie3,"ACLARACION FIE 4" = se_aclaracionFie4 </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="CODIGO" />
+        <column name="VALOR" />
+        <column name="COD. ACTIVIDAD ECO." />
+        <column name="ESTADO" />
+        <column name="COD. CAEGGE" />
+        <column name="ACLARACION FIE 1" />
+        <column name="ACLARACION FIE 2" />
+        <column name="ACLARACION FIE 3" />
+        <column name="ACLARACION FIE 4" />
+      </columns>
+      <queryText>SELECT  "CODIGO" = se_codigo,"VALOR" = se_descripcion,"COD. ACTIVIDAD ECO." = se_codActEc,"ESTADO" = se_estado,"COD. CAEGGE" = se_codCaedge,"ACLARACION FIE 1" = se_aclaracionFie,"ACLARACION FIE 2" = se_aclaracionFie2,"ACLARACION FIE 3" = se_aclaracionFie3,"ACLARACION FIE 4" = se_aclaracionFie4 </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="CODIGO" />
+        <column name="DESCRIPCION" />
+        <column name="ESTADO" />
+      </columns>
+      <queryText>SELECT  "CODIGO" = se_codigo,"DESCRIPCION" = se_descripcion,"ESTADO" = se_estado </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="CODIGO" />
+        <column name="DESCRIPCION" />
+        <column name="ESTADO" />
+      </columns>
+      <queryText>SELECT  "CODIGO" = se_codigo,"DESCRIPCION" = se_descripcion,"ESTADO" = se_estado </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="{1}" />
+      </columns>
+      <queryText>SELECT  se_descripcion </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="CODIGO" />
+        <column name="DESCRIPCION" />
+        <column name="COD. ACTIVIDAD. ECO." />
+        <column name="ACTIVIDAD. ECO." />
+        <column name="ESTADO" />
+        <column name="COD. CAEGGE" />
+        <column name="ACLARACION FIE" />
+        <column name="COD.SUBSECTOR ECO." />
+        <column name="SUBSECTOR ECO." />
+        <column name="COD. SECTOR ECO." />
+        <column name="ACLARACION FIE 2" />
+        <column name="ACLARACION FIE 3" />
+        <column name="ACLARACION FIE 4" />
+      </columns>
+      <queryText>SELECT  "CODIGO" = c.se_codigo,"DESCRIPCION" = c.se_descripcion,"COD. ACTIVIDAD. ECO." = c.se_codActEc,"ACTIVIDAD. ECO." = d.ac_descripcion,"ESTADO" = c.se_estado,"COD. CAEGGE" = c.se_codCaedge,"ACLARACION FIE" = c.se_aclaracionFie,"COD.SUBSECTOR ECO." = e.se_codigo,"SUBSECTOR ECO." = e.se_descripcion,"COD. SECTOR ECO." = f.se_codigo,"ACLARACION FIE 2" = se_aclaracionFie2,"ACLARACION FIE 3" = se_aclaracionFie3,"ACLARACION FIE 4" = se_aclaracionFie4 </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="CODIGO" />
+        <column name="DESCRIPCION" />
+        <column name="COD. ACTIVIDAD ECO." />
+        <column name="ACTIVIDAD ECO." />
+        <column name="ESTADO" />
+        <column name="COD. CAEGGE" />
+        <column name="ACLARACION FIE" />
+        <column name="COD. SUBSECTOR ECO." />
+        <column name="SUBSECTOR ECO." />
+        <column name="COD. SECTOR ECO." />
+        <column name="ACLARACION FIE 2" />
+        <column name="ACLARACION FIE 3" />
+        <column name="ACLARACION FIE 4" />
+      </columns>
+      <queryText>SELECT  "CODIGO" = c.se_codigo,"DESCRIPCION" = c.se_descripcion,"COD. ACTIVIDAD ECO." = c.se_codActEc,"ACTIVIDAD ECO." = d.ac_descripcion,"ESTADO" = c.se_estado,"COD. CAEGGE" = c.se_codCaedge,"ACLARACION FIE" = c.se_aclaracionFie,"COD. SUBSECTOR ECO." = e.se_codigo,"SUBSECTOR ECO." = e.se_descripcion,"COD. SECTOR ECO." = f.se_codigo,"ACLARACION FIE 2" = se_aclaracionFie2,"ACLARACION FIE 3" = se_aclaracionFie3,"ACLARACION FIE 4" = se_aclaracionFie4 </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="CODIGO" />
+        <column name="DESCRIPCION" />
+        <column name="COD. ACTIVIDAD ECO." />
+        <column name="ACTIVIDAD ECO." />
+        <column name="ESTADO" />
+        <column name="COD. CAEGGE" />
+        <column name="ACLARACION FIE" />
+        <column name="COD. SUBSECTOR ECO." />
+        <column name="SUBSECTOR ECO" />
+        <column name="COD SECTOR ECO." />
+        <column name="ACLARACION FIE 2" />
+        <column name="ACLARACION FIE 3" />
+        <column name="ACLARACION FIE 4" />
+      </columns>
+      <queryText>SELECT  "CODIGO" = c.se_codigo,"DESCRIPCION" = c.se_descripcion,"COD. ACTIVIDAD ECO." = c.se_codActEc,"ACTIVIDAD ECO." = d.ac_descripcion,"ESTADO" = c.se_estado,"COD. CAEGGE" = c.se_codCaedge,"ACLARACION FIE" = c.se_aclaracionFie,"COD. SUBSECTOR ECO." = e.se_codigo,"SUBSECTOR ECO" = e.se_descripcion,"COD SECTOR ECO." = f.se_codigo,"ACLARACION FIE 2" = se_aclaracionFie2,"ACLARACION FIE 3" = se_aclaracionFie3,"ACLARACION FIE 4" = se_aclaracionFie4 </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="Codigo" />
+        <column name="Descripcion" />
+      </columns>
+      <queryText>SELECT  "Codigo" = dp_departamento,"Descripcion" = dp_descripcion </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="Codigo" />
+        <column name="Descripcion" />
+      </columns>
+      <queryText>SELECT  "Codigo" = dp_departamento,"Descripcion" = dp_descripcion </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="{1}" />
+      </columns>
+      <queryText>SELECT  dp_descripcion </queryText>
+    </query>
+  </queries>
+</procedure>

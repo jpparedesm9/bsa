@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<procedure>
+  <database>cob_cartera</database>
+  <name>sp_clientes_grupo</name>
+  <type>SYBASE</type>
+  <version>1</version>
+  <parameters>
+    <parameter name="@s_ssn" dataType="int" direction="in" />
+    <parameter name="@s_sesn" dataType="int" direction="in" />
+    <parameter name="@s_srv" dataType="varchar" direction="in" />
+    <parameter name="@s_lsrv" dataType="varchar" direction="in" />
+    <parameter name="@s_user" dataType="varchar" direction="in" />
+    <parameter name="@s_date" dataType="datetime" direction="in" />
+    <parameter name="@s_ofi" dataType="int" direction="in" />
+    <parameter name="@s_rol" dataType="tinyint" direction="in" />
+    <parameter name="@s_org" dataType="char" direction="in" />
+    <parameter name="@s_term" dataType="varchar" direction="in" />
+    <parameter name="@i_tramite" dataType="int" direction="in" />
+    <parameter name="@i_operacion" dataType="char" direction="in" />
+  </parameters>
+  <queries>
+    <query>
+      <columns>
+        <column name=" {se_operacion}" />
+        <column name="{se_banco}" />
+        <column name="{ se_cliente}" />
+        <column name="{se_fecha_ini}" />
+        <column name="{se_fecha_ult_intento}" />
+        <column name="{se_monto}" />
+        <column name="{se_estado}" />
+        <column name="{se_fecha_reporte}" />
+        <column name="{se_tramite}" />
+        <column name="{se_grupo}" />
+        <column name="{se_monto_pagado}" />
+        <column name="{se_monto_devuelto }" />
+        <column name="{se_forma_pago}" />
+        <column name="{se_tipo_seguro }  " />
+      </columns>
+      <queryText>SELECT  se_operacion,se_banco,se_cliente,se_fecha_ini,se_fecha_ult_intento,se_monto,se_estado,se_fecha_reporte,se_tramite,se_grupo,se_monto_pagado,se_monto_devuelto,se_forma_pago,se_tipo_seguro </queryText>
+    </query>
+  </queries>
+</procedure>

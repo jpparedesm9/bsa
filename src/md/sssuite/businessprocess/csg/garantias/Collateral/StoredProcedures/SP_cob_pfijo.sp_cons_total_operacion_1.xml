@@ -1,0 +1,232 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<procedure>
+  <database>cob_pfijo</database>
+  <name>sp_cons_total_operacion</name>
+  <type>SYBASE</type>
+  <version>1</version>
+  <parameters>
+    <parameter name="@s_ssn" dataType="int" direction="in" />
+    <parameter name="@s_user" dataType="varchar" direction="in" />
+    <parameter name="@s_term" dataType="varchar" direction="in" />
+    <parameter name="@s_date" dataType="datetime" direction="in" />
+    <parameter name="@s_srv" dataType="varchar" direction="in" />
+    <parameter name="@s_lsrv" dataType="varchar" direction="in" />
+    <parameter name="@s_ofi" dataType="smallint" direction="in" />
+    <parameter name="@s_rol" dataType="smallint" direction="in" />
+    <parameter name="@t_debug" dataType="char" direction="in" />
+    <parameter name="@t_file" dataType="varchar" direction="in" />
+    <parameter name="@t_from" dataType="varchar" direction="in" />
+    <parameter name="@t_trn" dataType="smallint" direction="in" />
+    <parameter name="@i_operacion" dataType="char" direction="in" />
+    <parameter name="@i_flag" dataType="char" direction="in" />
+    <parameter name="@i_estado1" dataType="varchar" direction="in" />
+    <parameter name="@i_estado2" dataType="varchar" direction="in" />
+    <parameter name="@i_estado3" dataType="varchar" direction="in" />
+    <parameter name="@i_accion_sgte" dataType="varchar" direction="in" />
+    <parameter name="@i_cuenta" dataType="varchar" direction="in" />
+    <parameter name="@i_siguientes" dataType="char" direction="in" />
+    <parameter name="@i_formato_fecha" dataType="int" direction="in" />
+    <parameter name="@i_empresa" dataType="smallint" direction="in" />
+    <parameter name="@i_flag_valida_cliente" dataType="char" direction="in" />
+    <parameter name="@i_flag_valida_cif" dataType="char" direction="in" />
+    <parameter name="@i_flag_valida_cif_blq" dataType="char" direction="in" />
+    <parameter name="@i_bloqueado" dataType="char" direction="in" />
+    <parameter name="@i_bloqueo_leg" dataType="char" direction="in" />
+    <parameter name="@i_pignorado" dataType="char" direction="in" />
+    <parameter name="@i_aprobacion" dataType="char" direction="in" />
+    <parameter name="@i_activacion" dataType="char" direction="in" />
+    <parameter name="@i_flag_val_instruccion" dataType="char" direction="in" />
+    <parameter name="@i_val_caja" dataType="char" direction="in" />
+    <parameter name="@i_flag_val_inact" dataType="char" direction="in" />
+    <parameter name="@i_flag_pago_pend" dataType="char" direction="in" />
+    <parameter name="@i_flag_per" dataType="char" direction="in" />
+    <parameter name="@i_flag_val_rev_renov" dataType="char" direction="in" />
+    <parameter name="@i_flag_firma" dataType="char" direction="in" />
+    <parameter name="@i_flag_pago" dataType="char" direction="in" />
+    <parameter name="@i_cert" dataType="char" direction="in" />
+  </parameters>
+  <queries>
+    <query>
+      <columns>
+        <column name="NOMBRE:         " />
+      </columns>
+      <queryText>SELECT "NOMBRE:         "=o_en_nombre_completo</queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="Account" />
+        <column name="CustomerCode" />
+        <column name="CustomerName" />
+        <column name="OpDescription" />
+        <column name="CatDescription" />
+        <column name="OpenOfficeName" />
+        <column name="CurrencyName" />
+        <column name="Term" />
+        <column name="Amount" />
+        <column name="InitialCapital" />
+        <column name="GuaranteeAmount" />
+        <column name="BlockedAmount" />
+        <column name="Rate" />
+        <column name="InterestEarned" />
+        <column name="EstimatedInterest" />
+        <column name="InterestPaid" />
+        <column name="TotalInterestEarned" />
+        <column name="TotalInterestPaid" />
+        <column name="TotalEstimatedInterest" />
+        <column name="Capitalization" />
+        <column name="PayForm" />
+        <column name="PeriodPayDescription" />
+        <column name="Duplicate" />
+        <column name="Renewals" />
+        <column name="Status" />
+        <column name="Pledged" />
+        <column name="officerName" />
+        <column name="OperationDescription" />
+        <column name="RegistrationDate" />
+        <column name="ActivationDate" />
+        <column name="ExpirationDate" />
+        <column name="NextPaymentDate" />
+        <column name="LastInterestPaymentDate" />
+        <column name="LastDateCalculation" />
+        <column name="withholdTaxes" />
+        <column name="Taxes" />
+        <column name="ExpiredDays" />
+        <column name="YearDays" />
+        <column name="PdDescription" />
+        <column name="PayDay" />
+        <column name="TypeOperationCode" />
+        <column name="Currency" />
+        <column name="Category" />
+        <column name="PayFormCode" />
+        <column name="NextAction" />
+        <column name="TotalTaxRetained" />
+        <column name="CancellationDate" />
+        <column name="TaxRate" />
+        <column name="Days" />
+        <column name="NewAccountOperation" />
+        <column name="Identification" />
+        <column name="AddressDescription" />
+        <column name="Phone" />
+        <column name="Months" />
+        <column name="DocNumber" />
+        <column name="Maintains" />
+        <column name="Available" />
+        <column name="CurrencyPay" />
+        <column name="AddressCode" />
+        <column name="City" />
+        <column name="Preprinted" />
+        <column name="FactorInMonths" />
+        <column name="AlternateName" />
+        <column name="OperationCode" />
+        <column name="OfficeCode" />
+        <column name="NumImpOrig" />
+        <column name="DaysBeforePrint" />
+        <column name="CapitalTax" />
+        <column name="Condition2" />
+        <column name="Condition3" />
+        <column name="CapitalPaid" />
+        <column name="Alternate3" />
+        <column name="Phone2" />
+        <column name="Law" />
+        <column name="OriginalCert" />
+        <column name="RateChangeDate" />
+        <column name="ReprogrammingDate" />
+        <column name="FrozenRate" />
+        <column name="BusinessYear" />
+        <column name="VariableRate" />
+        <column name="FlagEffectiveRate" />
+        <column name="EffectiveRate" />
+        <column name="TotalAccumulatedInterest" />
+        <column name="TotalEstimatedIntAnt" />
+        <column name="Residue" />
+        <column name="Print" />
+        <column name="PreviousTerm" />
+        <column name="EarlierExpiryDate" />
+        <column name="ActivationOrderDate" />
+        <column name="InterestProvision" />
+        <column name="Detained" />
+        <column name="AmountType" />
+        <column name="TermType" />
+        <column name="ExtensionStatus" />
+        <column name="ExtensionNumber" />
+        <column name="VarRateNemon" />
+        <column name="RateMode" />
+        <column name="VarRatePeriod" />
+        <column name="Operator" />
+        <column name="Spread" />
+        <column name="TranSaturday" />
+        <column name="CommissionPercentage" />
+        <column name="Commission" />
+        <column name="PayCommission" />
+        <column name="Province" />
+        <column name="Coupon" />
+        <column name="CouponCategory" />
+        <column name="CouponCategoryDes" />
+        <column name="Custody" />
+        <column name="Instruction" />
+        <column name="IncreaseExtension" />
+        <column name="Turned" />
+        <column name="Inactive" />
+        <column name="IncreasedSuspended" />
+        <column name="principalOfficerName" />
+        <column name="LastDateIncrementDecrement" />
+        <column name="LocatedOut" />
+        <column name="ReturnAmount" />
+      </columns>
+      <queryText>SELECT "NUMERO DE LA OPERACION"=o_num_banco,"CLIENTE TITULAR: "=o_ente,"NOMBRE:         "=o_en_nombre_completo,"TIPO DE OPERACION: "=o_desc_toperacion,"CATEGORIA:         "=o_desc_categoria,"OFICINA APERTURA:  "=o_of_nombre,"MONEDA: "=o_mo_descripcion,"PLAZO:  "=o_num_dias,"MONTO INICIAL: "=o_monto,"MONTO ACTUAL:  "=o_capital_inicial,"MONTO EN GARANTIA: "=o_monto_pgdo,"MONTO BLOQUEADO "=o_monto_blq,"TASA "=o_tasa,"INTERESES GANADOS: "=o_int_ganado,"INTERESES ESTIMADO: "=o_int_estimado,"INTERESES PAGADOS:  "=o_int_pagados,"TOTAL INT GANADOS: "=o_total_int_ganados,"TOTAL INT PAGADOS: "=o_total_int_pagados,"TOTAL INT ESTIMADOS:"=o_total_int_estimado,"CAPITALIZA INTERESES: "=o_tcapitalizacion,"FORMA DE PAGO: "=o_fpago,"PERIODO CAP/PAGO: "=o_pp_descripcion,"DUPLICADOS:       "=o_duplicados,"RENOVACIONES:     "=o_renovaciones,"ESTADO:           "=o_estado,"ESTA EN GARANTIA? "=o_pignorado,"OFICIAL:          "=o_fu_nombre,"DESCRIPCION:      "=o_descripcion,"FECHA INGRESO    :"=ctx.convertString(o_fecha_ing ,i_formato_fecha),"FECHA ACTIVACION :"=ctx.convertString(o_fecha_valor ,i_formato_fecha),"FECHA VENCIMIENTO:"=ctx.convertString(o_fecha_ven ,i_formato_fecha),"PROXIMA FECHA DE PAGO:"=ctx.convertString(o_fecha_pg_int ,i_formato_fecha),"FECHA ULT PG INT: "=ctx.convertString(o_fecha_ult_pg_int ,i_formato_fecha),"FECHA ULT CALCULO:"=ctx.convertString(o_fecha_ult_calculo ,i_formato_fecha),"RETIENE IMP: "=o_retienimp,"IMPUESTO X RETENER: "=o_impuesto,"DIAS VENCIDOS "=o_dia_vencido,"BASE DE CALCULO: "=o_dias_anio,"DESCRIPCION: "=o_pd_descripcion,"DIA DE PAGO: "=o_dia_pago,"COD: TIPO OP: "=o_toperacion,"COD. MONEDA: "=o_moneda,"COD CATEGORIA: "=o_categoria,"COD: FORMA PAGO: "=o_ppago,"ACCION SIGUIENTE: "=o_accion_sgte,"TOTAL IMPUESTO RETENIDO"=o_total_int_retenido,"FECHA DE CANCELACION"=ctx.convertString(o_fecha_can ,i_formato_fecha),"TASA DE IMPUESTO"=w_tasa,"DIAS"=w_dias,"NUEVA OPERACION"=o_num_banco_new,"CED RUC"=o_ced_ruc,"DIRECC/CASILLA/NN"=o_cd_descripcion,"TELEFONO"=o_telefono,"CONVERSION"=o_meses,"NUM. DOCUMENTOS"=o_numdoc,"MANTIENE INVENTARIO"=o_mantiene,"DISPONIBLE"=o_disponible,"MONEDA PAGO"=o_moneda_pg,"COD DIRECCI"=o_direccion,"CIUDAD"=o_ciudad,"No. PREIMPRESO"=o_preimpreso,"FACTOR EN MESES"=o_factor_en_meses,"NOMBRE ALTERNO "=o_alterno,"OPERACION"=o_operacion,"OFICINA"=o_oficina,"NUM.IMP.ORIG"=o_num_imp_orig,"DIAS ANTES IMPR.CERT"=o_dias_antes_impresion,"IMPUESTO AL CAPITAL"=o_impuesto_capital,"CONDICION 2"=o_condicion2,"CONDICION 3"=o_condicion3,"CAPITAL PAGADO"=o_capital_pagado,"ALTERNO 3 "=o_alterno3,"TELEFONO 2"=o_telefono2,"LEY"=o_ley,"ORIGINAL "=o_cert_origen,"FECHA CAMB.TASA "=ctx.convertString(o_fecha_cal_tasa ,i_formato_fecha),"FECHA REPROGRAMACION"=ctx.convertString(o_fecha_cert_origen ,i_formato_fecha),"TASA CONGELADO"=o_tasa_congelado,"FECHA COMERCIAL"=o_anio_comercial,"TASA VARIABLE S/N"=o_tasa_variable,"FLAG TASA EFECTIVA"=o_flag_tasaefec,"VALOR TASA EFECTIVA"=o_tasa_efectiva,"TOTAL INT ACUMULADO"=o_total_int_acumulado,"TOT INT ESTIMADO ANT"=o_tot_int_est_ant,"RESIDUO"=o_residuo,"IMPRIME"=o_imprime,"PLAZO ANT"=o_plazo_ant,"FECHA VENCIMIENTO ANT"=ctx.convertString(o_fecven_ant ,i_formato_fecha),"FECHA ORDEN ACTIVA"=ctx.convertString(o_fech_ord_act ,i_formato_fecha),"INT. PROVISION"=o_int_provision,"RETENIDO ?"=o_retenido,"TIPO DE MONTO"=o_tipo_monto,"TIPO DE PLAZO"=o_tipo_plazo,"ESTATUS PRORROGA"=o_estatus_prorroga,"NUM. PRORROGAS"=o_num_prorroga,"MNEMONICO TASA VAR"=o_mnemonico_tasavar,"MODALIDAD TASA"=o_modalidad_tasa,"PERIODO TASA VAR"=o_periodo_tasa,"OPERADOR"=o_operador,"SPREAD"=o_spread,"TRAN.SABADO"=o_tran_sabado,"PORC. COMISION"=o_porc_comision,"COMISION"=o_comision,"PAGA COMISION"=o_paga_comision,"PROVINCIA OFICINA "=o_provincia,"MANEJA CUPON "=o_cupon,"CATEGORIA CUPON"=o_categoria_cupon,"DESC.CATEGORIA CUPON"=o_desc_categoria_cupon,"CUSTODIA"=o_custodia,"INSTRUCCION"=o_instruccion,"INCREMENTO PRORROGA"=o_incremento_prorroga,"VUELTO"=o_vuelto,"INACTIVO"=ctx.ISNULL(o_inactivo, "N"),"INCREMENTO SUSPENSO"=o_incremento_susp,"OFICIAL PRINCIPAL"=o_nombre_oficial_principal,"FECHA ULT. INCR. DISM"=o_fecha_ult_inc_dism,"LOCALIZADO"=o_localizado_out,"VALOR VUELTO"=ctx.ISNULL(o_monto_vuelto, 0)</queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="DESC. TASA VARIABLE" />
+        <column name="PUNTOS FUERA LIMITE" />
+        <column name="CAPTADOR" />
+        <column name="BLOQUEO LEGAL" />
+        <column name="NOMBRE CAPTADOR" />
+        <column name="APROBADO" />
+        <column name="FECHA CREACION" />
+        <column name="ID OPERACION" />
+        <column name="SECUENCIA MOV MON" />
+        <column name="MONTO BLOQUEO LEGAL" />
+        <column name="CAPITAL INICIAL" />
+        <column name="FECHA DE RENOVACION" />
+        <column name="PRORROGA AUTOMATICA" />
+        <column name="OFICIAL PRINCIPAL" />
+        <column name="OFICIAL SECUNDARIO" />
+        <column name="LOGIN USUARIO" />
+        <column name="ORIGEN FONDOS" />
+        <column name="PROPOSITO CUENTA" />
+        <column name="PRODUCTO BANCARIO1" />
+        <column name="PRODUCTO BANCARIO2" />
+        <column name="DIAS REALES" />
+        <column name="LOGIN OFI. PRIN." />
+        <column name="LOGIN OFI. SUPLE" />
+        <column name="COD. ENTE CORRESP" />
+        <column name="LOCALIZADO S/N" />
+        <column name="FECHA LOCALIZACION" />
+        <column name="FECHA NO LOCALIZA" />
+        <column name="PLAZO ORIGINAL" />
+        <column name="NOMBRE ENTE CORRESP" />
+        <column name="ULT. FECHA CAMBIO " />
+        <column name="DESC ORIG FONDOS" />
+        <column name="DESC PROP CUENTA" />
+        <column name="DESC PROD BANC1" />
+        <column name="DESC PROD BANC2" />
+        <column name="CASILLA POSTAL" />
+        <column name="DIAS DE HOLD" />
+        <column name="SUCURSAL" />
+        <column name="CAJA" />
+        <column name="SALDO DISPONIBLE" />
+        <column name="CODIGO FUNDACION" />
+        <column name="TASA BASE" />
+        <column name="DIAS FUSFRA" />
+        <column name="FECHA VAL FRACFUS" />
+        <column name="MONTO PROX. PAGO" />
+        <column name="AMORTIZACION POR PERIODO" />
+        <column name="TOTAL AMORTIZADO" />
+        <column name="FIDEICOMISO" />
+        <column name="CAPITAL INICIAL ULT.PER.VIG" />
+      </columns>
+      <queryText>SELECT "DESC. TASA VARIABLE"=o_desc_tasa_var,"PUNTOS FUERA LIMITE"=o_puntos,"CAPTADOR"=o_captador,"BLOQUEO LEGAL"=o_bloqueo_legal,"NOMBRE CAPTADOR"=o_captador_nombre,"APROBADO"=o_aprobado,"FECHA CREACION"=ctx.convertString(o_fecha_crea ,i_formato_fecha),"ID OPERACION"=o_operacion,"SECUENCIA MOV MON"=o_mon_sgte,"MONTO BLOQUEO LEGAL"=o_monto_blqlegal,"CAPITAL INICIAL"=o_capital_inicial,"FECHA DE RENOVACION"=ctx.convertString(o_fecha_renovacion ,i_formato_fecha),"PRORROGA AUTOMATICA"=o_prorroga_aut,"OFICIAL PRINCIPAL"=o_nombre_oficial_principal,"OFICIAL SECUNDARIO"=o_nombre_oficial_secundario,"LOGIN USUARIO"=o_oficial,"ORIGEN FONDOS"=o_origen_fondos,"PROPOSITO CUENTA"=o_proposito_cuenta,"PRODUCTO BANCARIO1"=o_producto_bancario1,"PRODUCTO BANCARIO2"=o_producto_bancario2,"DIAS REALES"=o_op_dias_reales,"LOGIN OFI. PRIN."=o_oficial_principal,"LOGIN OFI. SUPLE"=o_oficial_secundario,"COD. ENTE CORRESP"=o_ente_corresp,"LOCALIZADO S/N"=o_localizado,"FECHA LOCALIZACION"=ctx.convertString(o_fecha_localizacion ,i_formato_fecha),"FECHA NO LOCALIZA"=o_fecha_no_localiza,"PLAZO ORIGINAL"=o_plazo_orig,"NOMBRE ENTE CORRESP"=o_nom_ente_corresp,"ULT. FECHA CAMBIO "=ctx.convertString(o_fech_camb ,i_formato_fecha),"DESC ORIG FONDOS"=o_desc_origen_fondos,"DESC PROP CUENTA"=o_desc_proposito_cuenta,"DESC PROD BANC1"=o_desc_producto_bancario1,"DESC PROD BANC2"=o_desc_producto_bancario2,"CASILLA POSTAL"=o_casilla,"DIAS DE HOLD"=o_dias_hold,"SUCURSAL"=o_sucursal,"CAJA"=ctx.ISNULL(w_val_caja, "X"),"SALDO DISPONIBLE"=ctx.ISNULL(o_saldo_disponible, 0),"CODIGO FUNDACION"=o_codsuper,"TASA BASE"=o_tasa_base,"DIAS FUSFRA"=o_num_dias_new,"FECHA VAL FRACFUS"=ctx.convertString(w_fecha_ini_per ,i_formato_fecha),"MONTO PROX. PAGO"=o_monto_prox_pago,"AMORTIZACION POR PERIODO"=o_amortiza_per,"TOTAL AMORTIZADO"=o_total_amortizado,"FIDEICOMISO"=o_fideicomiso,"CAPITAL INICIAL ULT.PER.VIG"=o_capital_periodo</queryText>
+    </query>
+  </queries>
+</procedure>

@@ -1,0 +1,30 @@
+buildscript {
+    
+    repositories {
+        google()
+        jcenter()
+        maven { url "https://oss.sonatype.org/content/repositories/snapshots" }
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:3.2.1'
+        classpath 'com.jakewharton:butterknife-gradle-plugin:9.0.0-SNAPSHOT'
+    }
+}
+
+allprojects {
+    repositories {
+        google()
+        jcenter()
+        maven { url "https://oss.sonatype.org/content/repositories/snapshots" }
+        maven { url "http://ns.bayteq.com:9150/artifactory/libs-release-local"
+            credentials {
+                username artifactory_username
+                password artifactory_password
+            }
+        }
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}

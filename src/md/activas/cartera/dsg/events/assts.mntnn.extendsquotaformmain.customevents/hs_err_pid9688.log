@@ -1,0 +1,126 @@
+#
+# There is insufficient memory for the Java Runtime Environment to continue.
+# Native memory allocation (malloc) failed to allocate 2455376 bytes for Chunk::new
+# Possible reasons:
+#   The system is out of physical RAM or swap space
+#   In 32 bit mode, the process size limit was hit
+# Possible solutions:
+#   Reduce memory load on the system
+#   Increase physical memory or swap space
+#   Check if swap backing store is full
+#   Use 64 bit Java on a 64 bit OS
+#   Decrease Java heap size (-Xmx/-Xms)
+#   Decrease number of Java threads
+#   Decrease Java thread stack sizes (-Xss)
+#   Set larger code cache with -XX:ReservedCodeCacheSize=
+# This output file may be truncated or incomplete.
+#
+#  Out of Memory Error (allocation.cpp:317), pid=9688, tid=9168
+#
+# JRE version: 6.0_26-b03
+# Java VM: Java HotSpot(TM) 64-Bit Server VM (20.1-b02 mixed mode windows-amd64 compressed oops)
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x000000000628c800):  JavaThread "C2 CompilerThread0" daemon [_thread_in_native, id=9168, stack(0x0000000006730000,0x0000000006830000)]
+
+Stack: [0x0000000006730000,0x0000000006830000]
+
+Current CompileTask:
+C2:   3904 233      org.apache.xerces.impl.XMLNSDocumentScannerImpl.scanStartElement()Z (866 bytes)
+
+
+---------------  P R O C E S S  ---------------
+
+Java Threads: ( => current thread )
+  0x00000000062a0800 JavaThread "Low Memory Detector" daemon [_thread_blocked, id=10184, stack(0x0000000006930000,0x0000000006a30000)]
+  0x0000000006295800 JavaThread "C2 CompilerThread1" daemon [_thread_in_native, id=7884, stack(0x0000000006830000,0x0000000006930000)]
+=>0x000000000628c800 JavaThread "C2 CompilerThread0" daemon [_thread_in_native, id=9168, stack(0x0000000006730000,0x0000000006830000)]
+  0x0000000006288800 JavaThread "Attach Listener" daemon [_thread_blocked, id=8876, stack(0x0000000006630000,0x0000000006730000)]
+  0x0000000006283800 JavaThread "Signal Dispatcher" daemon [_thread_blocked, id=7908, stack(0x0000000006530000,0x0000000006630000)]
+  0x0000000006235800 JavaThread "Finalizer" daemon [_thread_blocked, id=10620, stack(0x0000000006430000,0x0000000006530000)]
+  0x00000000002c9800 JavaThread "Reference Handler" daemon [_thread_blocked, id=9592, stack(0x0000000006130000,0x0000000006230000)]
+  0x0000000000208000 JavaThread "main" [_thread_in_native, id=5416, stack(0x0000000002400000,0x0000000002500000)]
+
+Other Threads:
+  0x00000000002c1800 VMThread [stack: 0x0000000006030000,0x0000000006130000] [id=5648]
+  0x00000000062b1800 WatcherThread [stack: 0x0000000006a30000,0x0000000006b30000] [id=9424]
+
+VM state:not at safepoint (normal execution)
+
+VM Mutex/Monitor currently owned by a thread: None
+
+Heap
+ PSYoungGen      total 37696K, used 21486K [0x00000000f5560000, 0x00000000f7f70000, 0x0000000100000000)
+  eden space 32320K, 49% used [0x00000000f5560000,0x00000000f65237f0,0x00000000f74f0000)
+  from space 5376K, 99% used [0x00000000f7a30000,0x00000000f7f68080,0x00000000f7f70000)
+  to   space 5376K, 0% used [0x00000000f74f0000,0x00000000f74f0000,0x00000000f7a30000)
+ PSOldGen        total 86208K, used 3000K [0x00000000e0000000, 0x00000000e5430000, 0x00000000f5560000)
+  object space 86208K, 3% used [0x00000000e0000000,0x00000000e02ee000,0x00000000e5430000)
+ PSPermGen       total 21248K, used 13685K [0x00000000dae00000, 0x00000000dc2c0000, 0x00000000e0000000)
+  object space 21248K, 64% used [0x00000000dae00000,0x00000000dbb5d468,0x00000000dc2c0000)
+
+Code Cache  [0x0000000002500000, 0x0000000002770000, 0x0000000005500000)
+ total_blobs=558 nmethods=316 adapters=195 free_code_cache=48828608 largest_free_block=11456
+
+Dynamic libraries:
+0x0000000000400000 - 0x000000000042e000 	C:\Program Files\Java\jdk1.6.0_26\jre\bin\java.exe
+0x0000000077270000 - 0x000000007741a000 	C:\Windows\SYSTEM32\ntdll.dll
+0x0000000077050000 - 0x000000007716f000 	C:\Windows\system32\kernel32.dll
+0x000007fefd2b0000 - 0x000007fefd31a000 	C:\Windows\system32\KERNELBASE.dll
+0x000007fefd7f0000 - 0x000007fefd8cb000 	C:\Windows\system32\ADVAPI32.dll
+0x000007fefd360000 - 0x000007fefd3ff000 	C:\Windows\system32\msvcrt.dll
+0x000007fefd8d0000 - 0x000007fefd8ef000 	C:\Windows\SYSTEM32\sechost.dll
+0x000007fefddb0000 - 0x000007fefdedd000 	C:\Windows\system32\RPCRT4.dll
+0x000000006d890000 - 0x000000006e048000 	C:\Program Files\Java\jdk1.6.0_26\jre\bin\server\jvm.dll
+0x0000000077170000 - 0x000000007726a000 	C:\Windows\system32\USER32.dll
+0x000007fefdee0000 - 0x000007fefdf47000 	C:\Windows\system32\GDI32.dll
+0x000007fefd400000 - 0x000007fefd40e000 	C:\Windows\system32\LPK.dll
+0x000007feff280000 - 0x000007feff34a000 	C:\Windows\system32\USP10.dll
+0x000007fefb7c0000 - 0x000007fefb7fb000 	C:\Windows\system32\WINMM.dll
+0x000007fefd490000 - 0x000007fefd4be000 	C:\Windows\system32\IMM32.DLL
+0x000007fefd920000 - 0x000007fefda29000 	C:\Windows\system32\MSCTF.dll
+0x000000006d800000 - 0x000000006d80e000 	C:\Program Files\Java\jdk1.6.0_26\jre\bin\verify.dll
+0x000000006d450000 - 0x000000006d477000 	C:\Program Files\Java\jdk1.6.0_26\jre\bin\java.dll
+0x0000000077430000 - 0x0000000077437000 	C:\Windows\system32\PSAPI.DLL
+0x000000006d850000 - 0x000000006d862000 	C:\Program Files\Java\jdk1.6.0_26\jre\bin\zip.dll
+0x000000006d5e0000 - 0x000000006d5ea000 	C:\Program Files\Java\jdk1.6.0_26\jre\bin\management.dll
+0x000000006d6a0000 - 0x000000006d6b7000 	C:\Program Files\Java\jdk1.6.0_26\jre\bin\net.dll
+0x000007fefe210000 - 0x000007fefe25d000 	C:\Windows\system32\WS2_32.dll
+0x000007fefd8f0000 - 0x000007fefd8f8000 	C:\Windows\system32\NSI.dll
+0x000007fefc7d0000 - 0x000007fefc825000 	C:\Windows\system32\mswsock.dll
+0x000007fefca00000 - 0x000007fefca07000 	C:\Windows\System32\wship6.dll
+0x000007fefc150000 - 0x000007fefc157000 	C:\Windows\System32\wshtcpip.dll
+0x000007fefc540000 - 0x000007fefc59b000 	C:\Windows\system32\DNSAPI.dll
+0x000007fef9c60000 - 0x000007fef9c87000 	C:\Windows\system32\IPHLPAPI.DLL
+0x000007fef9be0000 - 0x000007fef9beb000 	C:\Windows\system32\WINNSI.DLL
+0x000007fef90b0000 - 0x000007fef90b8000 	C:\Windows\system32\rasadhlp.dll
+0x000007fef98d0000 - 0x000007fef9923000 	C:\Windows\System32\fwpuclnt.dll
+
+VM Arguments:
+jvm_args: -Xmx512m -Dfile.encoding=UTF-8 
+java_command: edu.umd.cs.findbugs.FindBugs2 -xml:withMessages -auxclasspathFromInput -projectName assts.mntnn.extendsquotaformmain.customevents -effort:default -high -nested:false -include D:\AProyecto Migracion MEXICO\Migracion ACTIVAS\Activas\Cartera\frontEnd\web\events\assts.mntnn.extendsquotaformmain.customevents\target\finbugs\findbugs-Include.xml -exclude D:\AProyecto Migracion MEXICO\Migracion ACTIVAS\Activas\Cartera\frontEnd\web\events\assts.mntnn.extendsquotaformmain.customevents\target\finbugs\findbugs-Exclude.xml -output D:\AProyecto Migracion MEXICO\Migracion ACTIVAS\Activas\Cartera\frontEnd\web\events\assts.mntnn.extendsquotaformmain.customevents\target\findbugsTemp.xml D:\AProyecto Migracion MEXICO\Migracion ACTIVAS\Activas\Cartera\frontEnd\web\events\assts.mntnn.extendsquotaformmain.customevents\target\classes
+Launcher Type: SUN_STANDARD
+
+Environment Variables:
+JAVA_HOME=C:\Program Files\Java\jre1.8.0_101
+CLASSPATH=C:\Program Files (x86)\IBM\WebSphere MQ\java\lib\com.ibm.mqjms.jar;C:\Program Files (x86)\IBM\WebSphere MQ\java\lib\com.ibm.mq.jar
+USERNAME=kmeza
+OS=Windows_NT
+PROCESSOR_IDENTIFIER=Intel64 Family 6 Model 58 Stepping 9, GenuineIntel
+
+
+
+---------------  S Y S T E M  ---------------
+
+OS: Windows 7 Build 7601 Service Pack 1
+
+CPU:total 4 (2 cores per cpu, 2 threads per core) family 6 model 58 stepping 9, cmov, cx8, fxsr, mmx, sse, sse2, sse3, ssse3, sse4.1, sse4.2, popcnt, ht
+
+Memory: 4k page, physical 8273448k(1657096k free), swap 8976624k(8904k free)
+
+vm_info: Java HotSpot(TM) 64-Bit Server VM (20.1-b02) for windows-amd64 JRE (1.6.0_26-b03), built on May  4 2011 07:15:24 by "java_re" with MS VC++ 8.0 (VS2005)
+
+time: Mon Dec 05 17:56:48 2016
+elapsed time: 3 seconds
+

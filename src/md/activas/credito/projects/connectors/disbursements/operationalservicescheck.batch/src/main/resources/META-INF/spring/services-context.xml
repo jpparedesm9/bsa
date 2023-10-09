@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="DisbursementCheckProcess"
+          class="com.cobis.cloud.sofom.operationsexecution.operationalservicescheck.batch.process.impl.DisbursementCheckProcessImpl">
+        <property name="databaseName" value="jdbc/IEN_BDD_CENTRAL"/>
+        <property name="cobisStoredProcedureUtils" ref="cobisStoredProcedureUtilsOsgi"/>
+        <property name="cacheManager" ref="cacheManager"/>
+    </bean>
+
+    <bean id="HeaderDecider"
+          class="com.cobis.cloud.sofom.operationsexecution.operationalservicescheck.batch.process.decider.HeaderDecider">
+        <property name="serviceExecutor" ref="batchServiceExecutor"/>
+    </bean>
+
+    <bean id="ValidationService"
+          class="com.cobis.cloud.sofom.operationsexecution.operationalservicescheck.batch.tasklet.ValidationService">
+        <property name="databaseName" value="jdbc/IEN_BDD_CENTRAL"/>
+        <property name="cobisStoredProcedureUtils" ref="cobisStoredProcedureUtilsOsgi"/>
+    </bean>
+
+    <bean id="CustomEncryption"
+          class="com.cobis.cloud.sofom.operationsexecution.operationalservicescheck.batch.security.impl.CustomEncryptionImpl">
+        <property name="cobisParameter" ref="cobisParameterOsgi"/>
+    </bean>
+
+</beans>

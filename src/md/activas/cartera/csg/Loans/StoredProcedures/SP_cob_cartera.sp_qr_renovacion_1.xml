@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<procedure>
+  <database>cob_cartera</database>
+  <name>sp_qr_renovacion</name>
+  <type>SYBASE</type>
+  <version>1</version>
+  <parameters>
+    <parameter name="@s_ssn" dataType="int" direction="in" />
+    <parameter name="@s_date" dataType="datetime" direction="in" />
+    <parameter name="@s_user" dataType="varchar" direction="in" />
+    <parameter name="@s_term" dataType="varchar" direction="in" />
+    <parameter name="@s_ofi" dataType="smallint" direction="in" />
+    <parameter name="@s_lsrv" dataType="varchar" direction="in" />
+    <parameter name="@s_srv" dataType="varchar" direction="in" />
+    <parameter name="@i_banco" dataType="varchar" direction="in" />
+    <parameter name="@i_formato_fecha" dataType="int" direction="in" />
+    <parameter name="@i_crea_ext" dataType="char" direction="in" />
+    <parameter name="@o_msg_msv" dataType="varchar" direction="out" />
+  </parameters>
+  <queries>
+    <query>
+      <columns>
+        <column name="Nro. Operacion" />
+        <column name="Linea" />
+        <column name=" Monto Original" />
+        <column name="Total Renovar" />
+        <column name="Saldo Total" />
+        <column name="Moneda Op" />
+        <column name="Cotizacion" />
+      </columns>
+      <queryText></queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="banco" />
+        <column name="moneda" />
+        <column name="descripcion" />
+        <column name="toperacion" />
+        <column name="desToperacion" />
+        <column name="monto" />
+      </columns>
+      <queryText></queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="CONCEPTO" />
+        <column name="ESTADO CONCEPTO" />
+        <column name="OBLIG. ANTERIOR" />
+        <column name="ESTADO CUOTA" />
+      </columns>
+      <queryText></queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="tramite" />
+      </columns>
+      <queryText></queryText>
+    </query>
+  </queries>
+</procedure>

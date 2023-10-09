@@ -1,0 +1,42 @@
+<project
+        xmlns="http://maven.apache.org/POM/4.0.0"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.cobis.cloud.sofom</groupId>
+    <artifactId>cloud.sofom.customers.build</artifactId>
+    <version>1.0.0</version>
+    <packaging>pom</packaging>
+    <name>${project.artifactId}</name>
+    <url>http://www.cobiscorp.com/</url>
+    <distributionManagement>
+        <repository>
+            <id>cobiscloud-deploy</id>
+            <name>cobiscloud-deploy</name>
+            <url>http://mavenrepo-1579979608.us-east-1.elb.amazonaws.com/nexus/content/repositories/cobiscloud/</url>
+        </repository>
+        <snapshotRepository>
+            <id>cobiscloud-snapshots-deploy</id>
+            <name>cobiscloud-snapshots-deploy</name>
+            <url>
+                http://mavenrepo-1579979608.us-east-1.elb.amazonaws.com/nexus/content/repositories/cobiscloud-snapshots/
+            </url>
+        </snapshotRepository>
+    </distributionManagement>
+    <profiles>
+        <profile>
+            <id>env-development</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+            <modules>
+                <module>../cloud.sofom.customers.utils</module>
+                <module>../cloud.sofom.referencedata.party</module>
+                <module>../cloud.sofom.referencedata.party.impl</module>
+                <module>../cloud.sofom.salesservice.customermanagement</module>
+                <module>../cloud.sofom.salesservice.customermanagement.impl</module>
+            </modules>
+        </profile>
+    </profiles>
+    <!--if you want code order to custom maven distributionManagement use key:mainstreetregulationscompliance.distributionManagement -->
+</project>

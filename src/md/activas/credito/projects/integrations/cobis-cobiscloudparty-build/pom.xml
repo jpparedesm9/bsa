@@ -1,0 +1,48 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.cobiscorp.ecobis</groupId>
+	<artifactId>cobis-cobiscloudparty-build</artifactId>
+	<version>1.0.0</version>
+
+	<packaging>pom</packaging>
+	<name>${project.artifactId}</name>
+	<url>http://www.cobiscorp.com/</url>
+
+  <distributionManagement>
+    <repository>
+      <id>mainstreet-deploy</id>
+      <name>mainstreet-deploy</name>
+        <url>http://mavenrepo-1579979608.us-east-1.elb.amazonaws.com/nexus/content/repositories/mainstreet/</url>
+    </repository>
+    <snapshotRepository>
+      <id>mainstreet-snapshots-deploy</id>
+      <name>mainstreet-snapshots-deploy</name>
+        <url>http://mavenrepo-1579979608.us-east-1.elb.amazonaws.com/nexus/content/repositories/mainstreet-snapshots/</url>
+    </snapshotRepository>
+    
+  </distributionManagement>
+
+
+	<profiles>
+		<profile>
+			<id>env-development</id>
+			<activation>
+				<activeByDefault>true</activeByDefault>
+			</activation>
+			<modules>
+				<module>../cobis-cobiscloudparty-bsl</module>
+				<module>../cobis-cobiscloudparty-bsl-impl</module>
+			</modules>
+		</profile>
+		
+		<profile>
+			<id>env-hardening</id>
+			<modules>
+				<module>../cobis-cobiscloudparty-bsl</module>
+				<module>../cobis-cobiscloudparty-bsl-impl</module>
+			</modules>
+		</profile>
+	</profiles>
+<!--if you want code order to custom maven distributionManagement use key:cobiscloudparty.distributionManagement -->
+
+</project>

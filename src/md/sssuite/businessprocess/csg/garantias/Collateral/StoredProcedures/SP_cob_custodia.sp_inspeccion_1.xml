@@ -1,0 +1,217 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<procedure>
+  <database>cob_custodia</database>
+  <name>sp_inspeccion</name>
+  <type>SYBASE</type>
+  <version>1</version>
+  <parameters>
+    <parameter name="@s_ssn" dataType="int" direction="in" />
+    <parameter name="@s_date" dataType="datetime" direction="in" />
+    <parameter name="@s_user" dataType="varchar" direction="in" />
+    <parameter name="@s_term" dataType="varchar" direction="in" />
+    <parameter name="@s_corr" dataType="char" direction="in" />
+    <parameter name="@s_ssn_corr" dataType="int" direction="in" />
+    <parameter name="@s_ofi" dataType="smallint" direction="in" />
+    <parameter name="@t_rty" dataType="char" direction="in" />
+    <parameter name="@t_trn" dataType="smallint" direction="in" />
+    <parameter name="@t_debug" dataType="char" direction="in" />
+    <parameter name="@t_file" dataType="varchar" direction="in" />
+    <parameter name="@t_from" dataType="varchar" direction="in" />
+    <parameter name="@i_operacion" dataType="char" direction="in" />
+    <parameter name="@i_modo" dataType="smallint" direction="in" />
+    <parameter name="@i_filial" dataType="tinyint" direction="in" />
+    <parameter name="@i_sucursal" dataType="smallint" direction="in" />
+    <parameter name="@i_tipo_cust" dataType="varchar" direction="in" />
+    <parameter name="@i_custodia" dataType="int" direction="in" />
+    <parameter name="@i_fecha_insp" dataType="datetime" direction="in" />
+    <parameter name="@i_inspector" dataType="tinyint" direction="in" />
+    <parameter name="@i_estado" dataType="varchar" direction="in" />
+    <parameter name="@i_factura" dataType="varchar" direction="in" />
+    <parameter name="@i_valor_fact" dataType="money" direction="in" />
+    <parameter name="@i_observaciones" dataType="varchar" direction="in" />
+    <parameter name="@i_instruccion" dataType="varchar" direction="in" />
+    <parameter name="@i_motivo" dataType="varchar" direction="in" />
+    <parameter name="@i_valor_avaluo" dataType="money" direction="in" />
+    <parameter name="@i_estado_tramite" dataType="char" direction="in" />
+    <parameter name="@i_periodicidad" dataType="varchar" direction="in" />
+    <parameter name="@i_tipo_cust1" dataType="varchar" direction="in" />
+    <parameter name="@i_custodia1" dataType="int" direction="in" />
+    <parameter name="@i_custodia2" dataType="int" direction="in" />
+    <parameter name="@i_custodia3" dataType="int" direction="in" />
+    <parameter name="@i_fecha_insp1" dataType="datetime" direction="in" />
+    <parameter name="@i_fecha_insp2" dataType="datetime" direction="in" />
+    <parameter name="@i_fecha_insp3" dataType="datetime" direction="in" />
+    <parameter name="@i_oficial1" dataType="int" direction="in" />
+    <parameter name="@i_oficial2" dataType="int" direction="in" />
+    <parameter name="@i_formato_fecha" dataType="tinyint" direction="in" />
+    <parameter name="@i_todas" dataType="char" direction="in" />
+    <parameter name="@i_cliente" dataType="int" direction="in" />
+    <parameter name="@i_fecha_reporte" dataType="datetime" direction="in" />
+    <parameter name="@i_fecha_carta" dataType="datetime" direction="in" />
+    <parameter name="@i_oficina" dataType="smallint" direction="in" />
+    <parameter name="@i_valor_demanda" dataType="money" direction="in" />
+    <parameter name="@i_valor_vrapida" dataType="money" direction="in" />
+    <parameter name="@i_avance_obra" dataType="int" direction="in" />
+    <parameter name="@i_hipoteca" dataType="char" direction="in" />
+    <parameter name="@i_opcion" dataType="tinyint" direction="in" />
+    <parameter name="@i_avaluo" dataType="char" direction="in" />
+  </parameters>
+  <queries>
+    <query>
+      <columns>
+        <column name="{1}" />
+        <column name="{2}" />
+        <column name="{3}" />
+        <column name="{4}" />
+        <column name="{5}" />
+        <column name="{6}" />
+        <column name="{7}" />
+        <column name="{8}" />
+        <column name="{9}" />
+        <column name="{10}" />
+        <column name="{11}" />
+        <column name="{12}" />
+        <column name="{13}" />
+        <column name="{14}" />
+        <column name="{15}" />
+        <column name="{16}" />
+        <column name="{17}" />
+        <column name="{18}" />
+        <column name="{19}" />
+        <column name="{20}" />
+        <column name="{21}" />
+        <column name="{22}" />
+        <column name="{23}" />
+        <column name="{24}" />
+        <column name="{25}" />
+        <column name="{26}" />
+        <column name="{27}" />
+      </columns>
+      <queryText>SELECT w_filial, w_sucursal, w_tipo_cust, w_des_tipo, w_custodia, w_des_cliente, ctx.ISNULL(ctx.convertString(w_inspector), ""), w_des_inspector, w_estado, w_des_est_inspeccion, w_factura, w_valor_fact, ctx.convertString(w_fecha_insp ,i_formato_fecha), w_valor_avaluo, w_periodicidad, w_des_periodicidad, w_observaciones, w_instruccion, ctx.convertString(w_fenvio_carta ,i_formato_fecha), ctx.convertString(w_frecep_reporte ,i_formato_fecha), w_valor_actual, w_valor_real, w_valor_demanda, w_valor_vrapida, w_hipotecada, w_avance, w_avaluo</queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="{1}" />
+        <column name="{2}" />
+        <column name="{3}" />
+        <column name="{4}" />
+      </columns>
+      <queryText>SELECT w_inspector, w_des_inspector, w_periodicidad, w_des_periodicidad</queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="17862" />
+        <column name="17616" />
+        <column name="17617" />
+        <column name="17618" />
+        <column name="17619" />
+        <column name="17620" />
+        <column name="17621" />
+        <column name="17636" />
+        <column name="17622" />
+      </columns>
+      <queryText>SELECT DISTINCT "17862" = cu_codigo_externo,"17616" = in_custodia,"17617" = in_tipo_cust,"17618" = tc_descripcion,"17619" = CONVERT (VARCHAR (10),in_fecha_insp ,?),"17620" = b.valor,"17621" = in_inspector,"17636" = is_nombre,"17622" = in_observaciones </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="InspectionDate" />
+        <column name="ValueInitial" />
+        <column name="ValueDemand" />
+        <column name="ValueFast" />
+        <column name="Mortgaged" />
+        <column name="Advance" />
+        <column name="Condition" />
+        <column name="ValueFact" />
+        <column name="Periodicity" />
+        <column name="Name" />
+        <column name="DateSendLetter" />
+        <column name="DateReceptionReport" />
+        <column name="Observations" />
+      </columns>
+      <queryText>SELECT DISTINCT "17619" = CONVERT (VARCHAR (10),in_fecha_insp ,?),"16385" = ISNULL (in_valor_avaluo, 0),"17492" = ISNULL (in_valor_demanda, 0),"17881" = ISNULL (in_valor_vrapida, 0),"27882" = ISNULL (in_hipotecada, " "),"17883" = ISNULL (in_avance, 0),"17620" = in_estado,"17629" = ISNULL (in_valor_fact, 0),"17637" = ISNULL (cu_periodicidad, " "),"17621" = is_nombre,"15824" = CONVERT (VARCHAR (10),in_fenvio_carta ,?),"15825" = CONVERT (VARCHAR (10),in_frecep_reporte ,?),"17622" = in_observaciones </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="17862" />
+        <column name="17616" />
+        <column name="17617" />
+        <column name="17618" />
+        <column name="17619" />
+        <column name="17620" />
+        <column name="17621" />
+        <column name="17636" />
+        <column name="17622" />
+      </columns>
+      <queryText>SELECT DISTINCT "17862" = cu_codigo_externo,"17616" = in_custodia,"17617" = in_tipo_cust,"17618" = tc_descripcion,"17619" = CONVERT (VARCHAR (10),in_fecha_insp ,?),"17620" = b.valor,"17621" = in_inspector,"17636" = is_nombre,"17622" = in_observaciones </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="17616" />
+        <column name="17617" />
+        <column name="17618" />
+        <column name="17619" />
+        <column name="17626" />
+        <column name="17623" />
+        <column name="17624" />
+        <column name="1" />
+        <column name="17620" />
+        <column name="17621" />
+        <column name="17627" />
+        <column name="17628" />
+      </columns>
+      <queryText>SELECT DISTINCT "17616" = in_custodia,"17617" = in_tipo_cust,"17618" = tc_descripcion,"17619" = CONVERT (CHAR (10),in_fecha_insp ,?),"17626" = cu_valor_actual,"17623" = cg_oficial,"17624" = cg_ente,"1" = SUBSTRING (cg_nombre, 1, DATALENGTH (cg_nombre)),"17620" = in_estado,"17621" = in_inspector,"17627" = in_observaciones,"17628" = SUBSTRING (in_instruccion, 1, 70) </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="17616" />
+        <column name="17617" />
+        <column name="17629" />
+        <column name="17619" />
+        <column name="17624" />
+        <column name="17630" />
+        <column name="17631" />
+        <column name="17632" />
+        <column name="17633" />
+        <column name="17634" />
+        <column name="17620" />
+      </columns>
+      <queryText>SELECT DISTINCT "17616" = in_custodia,"17617" = in_tipo_cust,"17629" = in_valor_fact,"17619" = CONVERT (CHAR (10),in_fecha_insp ,101),"17624" = cg_ente,"17630" = cu_cta_inspeccion,"17631" = cu_tipo_cta,"17632" = in_inspector,"17633" = is_cta_inspector,"17634" = is_tipo_cta,"17620" = in_estado_tramite </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="17616" />
+        <column name="17617" />
+        <column name="17629" />
+        <column name="17619" />
+        <column name="17624" />
+        <column name="17630" />
+        <column name="17631" />
+        <column name="17632" />
+        <column name="17633" />
+        <column name="17634" />
+        <column name="17620" />
+      </columns>
+      <queryText>SELECT DISTINCT "17616" = in_custodia,"17617" = in_tipo_cust,"17629" = in_valor_fact,"17619" = CONVERT (CHAR (10),in_fecha_insp ,101),"17624" = cg_ente,"17630" = cu_cta_inspeccion,"17631" = cu_tipo_cta,"17632" = in_inspector,"17633" = is_cta_inspector,"17634" = is_tipo_cta,"17620" = in_estado_tramite </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="17862" />
+        <column name="17616" />
+        <column name="17617" />
+        <column name="17635" />
+        <column name="17624" />
+        <column name="17636" />
+        <column name="17637" />
+      </columns>
+      <queryText>SELECT  "17862" = cu_codigo_externo,"17616" = pi_custodia,"17617" = pi_tipo,"17635" = tc_descripcion,"17624" = cg_ente,"17636" = SUBSTRING (cg_nombre, 1, DATALENGTH (cg_nombre)),"17637" = cu_periodicidad </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="Valor" />
+        <column name="Fecha" />
+        <column name="A favor de" />
+      </columns>
+      <queryText>SELECT  "Valor" = ih_valor,"Fecha" = CONVERT (CHAR (10),ih_fecha ,?),"A favor de" = ih_afavor </queryText>
+    </query>
+  </queries>
+</procedure>

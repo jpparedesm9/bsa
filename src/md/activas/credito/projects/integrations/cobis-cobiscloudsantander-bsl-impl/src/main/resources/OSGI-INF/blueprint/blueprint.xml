@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<blueprint xmlns="http://www.osgi.org/xmlns/blueprint/v1.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation=" http://www.osgi.org/xmlns/blueprint/v1.0.0 http://www.osgi.org/xmlns/blueprint/v1.0.0/blueprint.xsd"
+	xmlns:tx="http://aries.apache.org/xmlns/transactions/v1.0.0"
+	>
+
+    <reference id="spOrchestrator"
+        interface="com.cobiscorp.cobis.cts.services.orchestrator.ISPOrchestrator"  filter="(service.callingSource=15)" />
+    <reference id="txMgr" interface="javax.transaction.TransactionManager" />
+	<reference id="cobisParameter" interface="com.cobiscorp.cobis.cts.services.utilservices.api.ICobisParameter" filter="(service.impl=default)"/>
+	<reference id="cobisCatalog" interface="com.cobiscorp.cobis.cts.services.utilservices.api.ICobisCatalog" filter="(service.impl=default)"/>
+	<reference id="cacheManager" interface="com.cobiscorp.cobis.cache.ICacheManager" />
+	<reference id="ctsSequentialService" interface="com.cobiscorp.cobis.cts.services.utilservices.api.ICOBISSequentialService" />
+
+
+
+	<bean id="CobisRegisterServiceSERVImpl"
+		class="com.cobiscorp.ecobis.cobiscloudsantander.bsl.serv.impl.CobisRegisterServiceSERVImpl"
+		 activation="lazy">
+		<!--incluir en code order con la clave:cobis-cobiscloudsantander-bsl-impl/src/main/resources/OSGI-INF/blueprint/blueprint.xml!CobisRegisterServiceSERVImpl.body -->
+				
+		<tx:transaction method="create*" value="Required" />
+		<tx:transaction method="update*" value="Required" />
+		<tx:transaction method="delete*" value="Required" />
+		<tx:transaction method="*" value="NotSupported" />
+		<property name="spOrchestrator" ref="spOrchestrator"  />
+		<property name="txMgr" ref="txMgr"  />
+		<property name="cobisParameter" ref="cobisParameter" />
+		<property name="cobisCatalog" ref="cobisCatalog" />
+		<property name="cacheManager" ref="cacheManager" />
+		<property name="ctsSequentialService" ref="ctsSequentialService" />
+	</bean>
+
+	<service ref="CobisRegisterServiceSERVImpl"
+		interface="com.cobiscorp.ecobis.cobiscloudsantander.bsl.serv.bsl.ICobisRegisterService" >
+		<service-properties>
+			<entry key="service.impl" value="CobisRegisterServiceSERVImpl" />
+		</service-properties>
+	</service>		
+
+			
+
+	
+
+
+	
+
+
+	
+
+
+	<bean id="SantanderCoreServiceSERVImpl"
+		class="com.cobiscorp.ecobis.cobiscloudsantander.bsl.serv.impl.SantanderCoreServiceSERVImpl"
+		 activation="lazy">
+		<!--incluir en code order con la clave:cobis-cobiscloudsantander-bsl-impl/src/main/resources/OSGI-INF/blueprint/blueprint.xml!SantanderCoreServiceSERVImpl.body -->
+		  <property name="customerService" ref="customerService" />
+  <property name="disbursement" ref="disbursement" />		
+		<tx:transaction method="create*" value="Required" />
+		<tx:transaction method="update*" value="Required" />
+		<tx:transaction method="delete*" value="Required" />
+		<tx:transaction method="*" value="NotSupported" />
+		<property name="spOrchestrator" ref="spOrchestrator"  />
+		<property name="txMgr" ref="txMgr"  />
+		<property name="cobisParameter" ref="cobisParameter" />
+		<property name="cobisCatalog" ref="cobisCatalog" />
+		<property name="cacheManager" ref="cacheManager" />
+		<property name="ctsSequentialService" ref="ctsSequentialService" />
+	</bean>
+
+	<service ref="SantanderCoreServiceSERVImpl"
+		interface="com.cobiscorp.ecobis.cobiscloudsantander.bsl.serv.bsl.ISantanderCoreService" >
+		<service-properties>
+			<entry key="service.impl" value="SantanderCoreServiceSERVImpl" />
+		</service-properties>
+	</service>		
+
+			
+
+	
+
+
+	
+
+	
+	<!--incluir en code order con la clave:cobis-cobiscloudsantander-bsl-impl/src/main/resources/OSGI-INF/blueprint/blueprint.xml.body -->
+  <reference id="customerService" interface="com.cobiscorp.ecobis.cobiscloudparty.bsl.serv.bsl.ICustomerService" />
+  <reference id="disbursement" interface="com.cobis.cloud.sofom.operationsexecution.operationalservices.IDisbursement" />
+</blueprint>

@@ -1,0 +1,158 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<serviceClass name="CallCenterManager" nsBase="COBISCorp.eCOBIS.BussinesCallCenter" namespace="COBISCorp.eCOBIS.BussinesCallCenter.Service" package="cobiscorp.ecobis.bussinescallcenter.service" ns="http://service.bussinescallcenter.ecobis.cobiscorp" module="BussinesCallCenter" productName="COBISCorp.eCOBIS.BussinesCallCenter.Service" productVersion="1.0.0.0">
+  <productProperties>
+    <property name="MavenGroupId" value="com.cobiscorp.processapi" />
+    <property name="MavenArtifactId" value="COBISCorp.eCOBIS.BussinesCallCenter.Service" />
+    <property name="MavenVersion" value="1.0.0.0" />
+  </productProperties>
+  <partialClass name="CallCenterManager">
+    <services>
+      <service id="BussinesCallCenter.CallCenterManager.AutorizeDisposition" netName="AutorizeDisposition" javaName="autorizeDisposition" mappingType="STORED_PROCEDURE" mapId="77369e37b2aa1404f416275183ab055f">
+        <SRVMapping name="cob_cartera..sp_lcr_desembolsar">
+          <DTOs>
+            <DTO direction="in" name="AutorizedDispositionRequest" alias="inAutorizedDispositionRequest" namespace="COBISCorp.eCOBIS.BussinesCallCenter.DTO" package="cobiscorp.ecobis.bussinescallcenter.dto" ns="http://dto.bussinescallcenter.ecobis.cobiscorp" required="true" />
+            <DTO direction="out" name="AutorizedDispositionRequest" alias="outAutorizedDispositionRequest" namespace="COBISCorp.eCOBIS.BussinesCallCenter.DTO" package="cobiscorp.ecobis.bussinescallcenter.dto" ns="http://dto.bussinescallcenter.ecobis.cobiscorp" required="true">
+              <properties>
+                <property name="operation" propertyNet="Operation" propertyJava="operation" setterJavaMethod="setOperation" getterJavaMethod="getOperation" xsdType="string" netType="string" javaType="String" cobisMapping="" isInherit="false" isComplexType="false" isCollectionType="false" required="false" encrypted="false" maxLength="0" />
+                <property name="monto" propertyNet="Monto" propertyJava="monto" setterJavaMethod="setMonto" getterJavaMethod="getMonto" xsdType="double" netType="double" javaType="double" cobisMapping="" isInherit="false" isComplexType="false" isCollectionType="false" required="true" encrypted="false" maxLength="0" />
+                <property name="msm" propertyNet="Msm" propertyJava="msm" setterJavaMethod="setMsm" getterJavaMethod="getMsm" xsdType="string" netType="string" javaType="String" cobisMapping="" isInherit="false" isComplexType="false" isCollectionType="false" required="false" encrypted="false" maxLength="0" />
+              </properties>
+            </DTO>
+          </DTOs>
+          <parameterMappings>
+            <parameter name="@i_banco" direction="in" mappingDirection="in" dataType="varchar" CTSDataType="SQLVARCHAR" JavaSQLType="VARCHAR" mappingType="DTO" allowNull="false" DTOAlias="inAutorizedDispositionRequest" DTOPropertyName="operation" />
+            <parameter name="@i_monto" direction="in" mappingDirection="in" dataType="money" CTSDataType="SQLMONEY" JavaSQLType="DECIMAL" mappingType="DTO" allowNull="false" DTOAlias="inAutorizedDispositionRequest" DTOPropertyName="monto" />
+            <parameter name="@o_msg" direction="in out" mappingDirection="in" dataType="varchar" CTSDataType="SQLVARCHAR" JavaSQLType="VARCHAR" mappingType="CONSTANT" allowNull="false" contantValue="--" />
+            <parameter name="@o_msg" direction="in out" mappingDirection="out" dataType="varchar" CTSDataType="SQLVARCHAR" JavaSQLType="VARCHAR" mappingType="DTO" allowNull="false" DTOAlias="outAutorizedDispositionRequest" DTOPropertyName="msm" />
+          </parameterMappings>
+          <resultMappings />
+          <MappingProperties />
+        </SRVMapping>
+      </service>
+      <service id="BussinesCallCenter.CallCenterManager.ResetInformationImageMessage" netName="ResetInformationImageMessage" javaName="resetInformationImageMessage" mappingType="STORED_PROCEDURE" mapId="70fcb77e6349f4467edd7227baa73222">
+        <SRVMapping name="cob_bvirtual..sp_reseteo_informacion">
+          <DTOs>
+            <DTO direction="in" name="ResetInformationRequest" alias="inResetInformationRequest" namespace="COBISCorp.eCOBIS.BussinesCallCenter.DTO" package="cobiscorp.ecobis.bussinescallcenter.dto" ns="http://dto.bussinescallcenter.ecobis.cobiscorp" required="true" />
+          </DTOs>
+          <parameterMappings>
+            <parameter name="@i_codCliente" direction="in" mappingDirection="in" dataType="int" CTSDataType="SQLVARCHAR" JavaSQLType="VARCHAR" mappingType="DTO" allowNull="false" DTOAlias="inResetInformationRequest" DTOPropertyName="codClienteReset" />
+          </parameterMappings>
+          <resultMappings />
+          <MappingProperties />
+        </SRVMapping>
+      </service>
+      <service id="BussinesCallCenter.CallCenterManager.SearchLoginCallCenter1" netName="SearchLoginCallCenter" javaName="searchLoginCallCenter" mappingType="STORED_PROCEDURE" mapId="5a45828dead8c065099cb653a2185df1">
+        <SRVMapping name="cob_bvirtual..sp_lcr_cc_validar_registro">
+          <DTOs>
+            <DTO direction="in" name="LoginCallCenterRequest" alias="inLoginCallCenterRequest" namespace="COBISCorp.eCOBIS.BussinesCallCenter.DTO" package="cobiscorp.ecobis.bussinescallcenter.dto" ns="http://dto.bussinescallcenter.ecobis.cobiscorp" required="true" />
+            <DTO direction="out" name="LoginCallCenterRequest" alias="outLoginCallCenterRequest" namespace="COBISCorp.eCOBIS.BussinesCallCenter.DTO" package="cobiscorp.ecobis.bussinescallcenter.dto" ns="http://dto.bussinescallcenter.ecobis.cobiscorp" required="true">
+              <properties>
+                <property name="idRegistrationCode" propertyNet="IdRegistrationCode" propertyJava="idRegistrationCode" setterJavaMethod="setIdRegistrationCode" getterJavaMethod="getIdRegistrationCode" xsdType="string" netType="string" javaType="String" cobisMapping="" isInherit="false" isComplexType="false" isCollectionType="false" required="false" encrypted="false" maxLength="0" />
+                <property name="msmLogin" propertyNet="MsmLogin" propertyJava="msmLogin" setterJavaMethod="setMsmLogin" getterJavaMethod="getMsmLogin" xsdType="string" netType="string" javaType="String" cobisMapping="" isInherit="false" isComplexType="false" isCollectionType="false" required="false" encrypted="false" maxLength="0" />
+                <property name="idCodCliente" propertyNet="IdCodCliente" propertyJava="idCodCliente" setterJavaMethod="setIdCodCliente" getterJavaMethod="getIdCodCliente" xsdType="int" netType="int" javaType="int" cobisMapping="" isInherit="false" isComplexType="false" isCollectionType="false" required="true" encrypted="false" maxLength="0" />
+                <property name="procedencia" propertyNet="Procedencia" propertyJava="procedencia" setterJavaMethod="setProcedencia" getterJavaMethod="getProcedencia" xsdType="string" netType="string" javaType="String" cobisMapping="" isInherit="false" isComplexType="false" isCollectionType="false" required="false" encrypted="false" maxLength="0" />
+              </properties>
+            </DTO>
+            <DTO direction="return" name="LoginCallCenterResponse" alias="returnLoginCallCenterResponse" namespace="COBISCorp.eCOBIS.BussinesCallCenter.DTO" package="cobiscorp.ecobis.bussinescallcenter.dto" ns="http://dto.bussinescallcenter.ecobis.cobiscorp" required="true">
+              <properties>
+                <property name="name" propertyNet="Name" propertyJava="name" setterJavaMethod="setName" getterJavaMethod="getName" xsdType="string" netType="string" javaType="String" cobisMapping="" isInherit="false" isComplexType="false" isCollectionType="false" required="false" encrypted="false" maxLength="0" />
+                <property name="surname" propertyNet="Surname" propertyJava="surname" setterJavaMethod="setSurname" getterJavaMethod="getSurname" xsdType="string" netType="string" javaType="String" cobisMapping="" isInherit="false" isComplexType="false" isCollectionType="false" required="false" encrypted="false" maxLength="0" />
+                <property name="telephone" propertyNet="Telephone" propertyJava="telephone" setterJavaMethod="setTelephone" getterJavaMethod="getTelephone" xsdType="string" netType="string" javaType="String" cobisMapping="" isInherit="false" isComplexType="false" isCollectionType="false" required="false" encrypted="false" maxLength="0" />
+                <property name="instProc" propertyNet="InstProc" propertyJava="instProc" setterJavaMethod="setInstProc" getterJavaMethod="getInstProc" xsdType="int" netType="int" javaType="int" cobisMapping="" isInherit="false" isComplexType="false" isCollectionType="false" required="true" encrypted="false" maxLength="0" />
+                <property name="idClient" propertyNet="IdClient" propertyJava="idClient" setterJavaMethod="setIdClient" getterJavaMethod="getIdClient" xsdType="int" netType="int" javaType="int" cobisMapping="" isInherit="false" isComplexType="false" isCollectionType="false" required="true" encrypted="false" maxLength="0" />
+                <property name="account" propertyNet="Account" propertyJava="account" setterJavaMethod="setAccount" getterJavaMethod="getAccount" xsdType="string" netType="string" javaType="String" cobisMapping="" isInherit="false" isComplexType="false" isCollectionType="false" required="false" encrypted="false" maxLength="0" />
+              </properties>
+            </DTO>
+          </DTOs>
+          <parameterMappings>
+            <parameter name="@i_cod_cliente" direction="in" mappingDirection="in" dataType="varchar" CTSDataType="SQLVARCHAR" JavaSQLType="VARCHAR" mappingType="DTO" allowNull="false" DTOAlias="inLoginCallCenterRequest" DTOPropertyName="idCodCliente" />
+            <parameter name="@o_msg" direction="in out" mappingDirection="in" dataType="varchar" CTSDataType="SQLVARCHAR" JavaSQLType="VARCHAR" mappingType="CONSTANT" allowNull="false" contantValue="--" />
+            <parameter name="@o_msg" direction="in out" mappingDirection="out" dataType="varchar" CTSDataType="SQLVARCHAR" JavaSQLType="VARCHAR" mappingType="DTO" allowNull="false" DTOAlias="outLoginCallCenterRequest" DTOPropertyName="msmLogin" />
+            <parameter name="@i_procedencia" direction="in" mappingDirection="in" dataType="varchar" CTSDataType="SQLVARCHAR" JavaSQLType="VARCHAR" mappingType="DTO" allowNull="false" DTOAlias="inLoginCallCenterRequest" DTOPropertyName="procedencia" />
+          </parameterMappings>
+          <resultMappings>
+            <result>
+              <DTOResult DTOAlias="returnLoginCallCenterResponse" MapReturn="true">
+                <columnMapping position="0" name="nombres" DTOPropertyName="name" DataType="string" Format="" />
+                <columnMapping position="1" name="apellidos" DTOPropertyName="surname" DataType="string" Format="" />
+                <columnMapping position="2" name="telefono" DTOPropertyName="telephone" DataType="string" Format="" />
+                <columnMapping position="3" name="insProceso" DTOPropertyName="instProc" DataType="int" Format="" />
+                <columnMapping position="4" name="cliente" DTOPropertyName="idClient" DataType="int" Format="" />
+                <columnMapping position="5" name="cuenta" DTOPropertyName="account" DataType="string" Format="" />
+              </DTOResult>
+            </result>
+          </resultMappings>
+          <MappingProperties>
+            <MappingProperty key="singleResult1" value="true" />
+          </MappingProperties>
+        </SRVMapping>
+      </service>
+      <service id="BussinesCallCenter.CallCenterManager.SearchQuestion" netName="SearchQuestion" javaName="searchQuestion" mappingType="STORED_PROCEDURE" mapId="b4baaff0e2f11b5356193849021d641f">
+        <SRVMapping name="cob_bvirtual..sp_b2c_generar_preguntas">
+          <DTOs>
+            <DTO direction="in" name="CallCenterQuestionRequest" alias="inCallCenterQuestionRequest" namespace="COBISCorp.eCOBIS.BussinesCallCenter.DTO" package="cobiscorp.ecobis.bussinescallcenter.dto" ns="http://dto.bussinescallcenter.ecobis.cobiscorp" required="true" />
+            <DTO direction="return" name="CallCenterQuestionResponse" alias="returnCallCenterQuestionResponse" namespace="COBISCorp.eCOBIS.BussinesCallCenter.DTO" package="cobiscorp.ecobis.bussinescallcenter.dto" ns="http://dto.bussinescallcenter.ecobis.cobiscorp" required="true">
+              <properties>
+                <property name="idQuestion" propertyNet="IdQuestion" propertyJava="idQuestion" setterJavaMethod="setIdQuestion" getterJavaMethod="getIdQuestion" xsdType="int" netType="int" javaType="int" cobisMapping="" isInherit="false" isComplexType="false" isCollectionType="false" required="true" encrypted="false" maxLength="0" />
+                <property name="question" propertyNet="Question" propertyJava="question" setterJavaMethod="setQuestion" getterJavaMethod="getQuestion" xsdType="string" netType="string" javaType="String" cobisMapping="" isInherit="false" isComplexType="false" isCollectionType="false" required="false" encrypted="false" maxLength="0" />
+                <property name="answer" propertyNet="Answer" propertyJava="answer" setterJavaMethod="setAnswer" getterJavaMethod="getAnswer" xsdType="string" netType="string" javaType="String" cobisMapping="" isInherit="false" isComplexType="false" isCollectionType="false" required="false" encrypted="false" maxLength="0" />
+                <property name="typeRes" propertyNet="TypeRes" propertyJava="typeRes" setterJavaMethod="setTypeRes" getterJavaMethod="getTypeRes" xsdType="string" netType="string" javaType="String" cobisMapping="" isInherit="false" isComplexType="false" isCollectionType="false" required="false" encrypted="false" maxLength="0" />
+                <property name="noTengo" propertyNet="NoTengo" propertyJava="noTengo" setterJavaMethod="setNoTengo" getterJavaMethod="getNoTengo" xsdType="string" netType="string" javaType="String" cobisMapping="" isInherit="false" isComplexType="false" isCollectionType="false" required="false" encrypted="false" maxLength="0" />
+              </properties>
+            </DTO>
+          </DTOs>
+          <parameterMappings>
+            <parameter name="@i_cliente" direction="in" mappingDirection="in" dataType="int" CTSDataType="SQLINT4" JavaSQLType="INTEGER" mappingType="DTO" allowNull="false" DTOAlias="inCallCenterQuestionRequest" DTOPropertyName="idCliente" />
+          </parameterMappings>
+          <resultMappings>
+            <result>
+              <DTOResult DTOAlias="returnCallCenterQuestionResponse" MapReturn="true">
+                <columnMapping position="0" name="id" DTOPropertyName="idQuestion" DataType="int" Format="" />
+                <columnMapping position="1" name="texto" DTOPropertyName="question" DataType="string" Format="" />
+                <columnMapping position="2" name="tipo_respuesta" DTOPropertyName="typeRes" DataType="string" />
+                <columnMapping position="3" name="no_tengo" DTOPropertyName="noTengo" DataType="string" />
+              </DTOResult>
+            </result>
+          </resultMappings>
+          <MappingProperties />
+        </SRVMapping>
+      </service>
+      <service id="BussinesCallCenter.CallCenterManager.ValidationQuestion" netName="ValidationQuestion" javaName="validationQuestion" mappingType="STORED_PROCEDURE" mapId="e02e27e04fdff967ba7d76fb24b8069d">
+        <SRVMapping name="cob_bvirtual..sp_b2c_validar_respuestas">
+          <DTOs>
+            <DTO direction="in" name="CallCenterQuestionRequest" alias="inCallCenterQuestionRequest" namespace="COBISCorp.eCOBIS.BussinesCallCenter.DTO" package="cobiscorp.ecobis.bussinescallcenter.dto" ns="http://dto.bussinescallcenter.ecobis.cobiscorp" required="true" />
+            <DTO direction="out" name="CallCenterQuestionRequest" alias="outCallCenterQuestionRequest" namespace="COBISCorp.eCOBIS.BussinesCallCenter.DTO" package="cobiscorp.ecobis.bussinescallcenter.dto" ns="http://dto.bussinescallcenter.ecobis.cobiscorp" required="true">
+              <properties>
+                <property name="idCliente" propertyNet="IdCliente" propertyJava="idCliente" setterJavaMethod="setIdCliente" getterJavaMethod="getIdCliente" xsdType="int" netType="int" javaType="int" cobisMapping="" isInherit="false" isComplexType="false" isCollectionType="false" required="true" encrypted="false" maxLength="0" />
+                <property name="idQuestion1" propertyNet="IdQuestion1" propertyJava="idQuestion1" setterJavaMethod="setIdQuestion1" getterJavaMethod="getIdQuestion1" xsdType="int" netType="int" javaType="int" cobisMapping="" isInherit="false" isComplexType="false" isCollectionType="false" required="true" encrypted="false" maxLength="0" />
+                <property name="idQuestion2" propertyNet="IdQuestion2" propertyJava="idQuestion2" setterJavaMethod="setIdQuestion2" getterJavaMethod="getIdQuestion2" xsdType="int" netType="int" javaType="int" cobisMapping="" isInherit="false" isComplexType="false" isCollectionType="false" required="true" encrypted="false" maxLength="0" />
+                <property name="idQuestion3" propertyNet="IdQuestion3" propertyJava="idQuestion3" setterJavaMethod="setIdQuestion3" getterJavaMethod="getIdQuestion3" xsdType="int" netType="int" javaType="int" cobisMapping="" isInherit="false" isComplexType="false" isCollectionType="false" required="true" encrypted="false" maxLength="0" />
+                <property name="answer1" propertyNet="Answer1" propertyJava="answer1" setterJavaMethod="setAnswer1" getterJavaMethod="getAnswer1" xsdType="string" netType="string" javaType="String" cobisMapping="" isInherit="false" isComplexType="false" isCollectionType="false" required="false" encrypted="false" maxLength="0" />
+                <property name="answer2" propertyNet="Answer2" propertyJava="answer2" setterJavaMethod="setAnswer2" getterJavaMethod="getAnswer2" xsdType="string" netType="string" javaType="String" cobisMapping="" isInherit="false" isComplexType="false" isCollectionType="false" required="false" encrypted="false" maxLength="0" />
+                <property name="answer3" propertyNet="Answer3" propertyJava="answer3" setterJavaMethod="setAnswer3" getterJavaMethod="getAnswer3" xsdType="string" netType="string" javaType="String" cobisMapping="" isInherit="false" isComplexType="false" isCollectionType="false" required="false" encrypted="false" maxLength="0" />
+                <property name="resultado" propertyNet="Resultado" propertyJava="resultado" setterJavaMethod="setResultado" getterJavaMethod="getResultado" xsdType="string" netType="string" javaType="String" cobisMapping="" isInherit="false" isComplexType="false" isCollectionType="false" required="false" encrypted="false" maxLength="0" />
+                <property name="msm" propertyNet="Msm" propertyJava="msm" setterJavaMethod="setMsm" getterJavaMethod="getMsm" xsdType="string" netType="string" javaType="String" cobisMapping="" isInherit="false" isComplexType="false" isCollectionType="false" required="false" encrypted="false" maxLength="0" />
+                <property name="correctVAlidation" propertyNet="CorrectVAlidation" propertyJava="correctVAlidation" setterJavaMethod="setCorrectVAlidation" getterJavaMethod="getCorrectVAlidation" xsdType="string" netType="string" javaType="String" cobisMapping="" isInherit="false" isComplexType="false" isCollectionType="false" required="false" encrypted="false" maxLength="0" />
+              </properties>
+            </DTO>
+          </DTOs>
+          <parameterMappings>
+            <parameter name="@i_cliente" direction="in" mappingDirection="in" dataType="int" CTSDataType="SQLINT4" JavaSQLType="INTEGER" mappingType="DTO" allowNull="false" DTOAlias="inCallCenterQuestionRequest" DTOPropertyName="idCliente" />
+            <parameter name="@i_id_pregunta1" direction="in" mappingDirection="in" dataType="int" CTSDataType="SQLINT4" JavaSQLType="INTEGER" mappingType="DTO" allowNull="false" DTOAlias="inCallCenterQuestionRequest" DTOPropertyName="idQuestion1" />
+            <parameter name="@i_respuesta1" direction="in" mappingDirection="in" dataType="varchar" CTSDataType="SQLVARCHAR" JavaSQLType="VARCHAR" mappingType="DTO" allowNull="false" DTOAlias="inCallCenterQuestionRequest" DTOPropertyName="answer1" />
+            <parameter name="@i_id_pregunta2" direction="in" mappingDirection="in" dataType="int" CTSDataType="SQLINT4" JavaSQLType="INTEGER" mappingType="DTO" allowNull="false" DTOAlias="inCallCenterQuestionRequest" DTOPropertyName="idQuestion2" />
+            <parameter name="@i_respuesta2" direction="in" mappingDirection="in" dataType="varchar" CTSDataType="SQLVARCHAR" JavaSQLType="VARCHAR" mappingType="DTO" allowNull="false" DTOAlias="inCallCenterQuestionRequest" DTOPropertyName="answer2" />
+            <parameter name="@i_id_pregunta3" direction="in" mappingDirection="in" dataType="int" CTSDataType="SQLINT4" JavaSQLType="INTEGER" mappingType="DTO" allowNull="false" DTOAlias="inCallCenterQuestionRequest" DTOPropertyName="idQuestion3" />
+            <parameter name="@i_respuesta3" direction="in" mappingDirection="in" dataType="varchar" CTSDataType="SQLVARCHAR" JavaSQLType="VARCHAR" mappingType="DTO" allowNull="false" DTOAlias="inCallCenterQuestionRequest" DTOPropertyName="answer3" />
+            <parameter name="@o_resultado" direction="in out" mappingDirection="in" dataType="char" CTSDataType="SQLCHAR" JavaSQLType="CHAR" mappingType="CONSTANT" allowNull="false" contantValue="--" />
+            <parameter name="@o_resultado" direction="in out" mappingDirection="out" dataType="char" CTSDataType="SQLCHAR" JavaSQLType="CHAR" mappingType="DTO" allowNull="false" DTOAlias="outCallCenterQuestionRequest" DTOPropertyName="resultado" />
+            <parameter name="@o_msg" direction="in out" mappingDirection="in" dataType="varchar" CTSDataType="SQLVARCHAR" JavaSQLType="VARCHAR" mappingType="CONSTANT" allowNull="false" contantValue="--" />
+            <parameter name="@o_msg" direction="in out" mappingDirection="out" dataType="varchar" CTSDataType="SQLVARCHAR" JavaSQLType="VARCHAR" mappingType="DTO" allowNull="false" DTOAlias="outCallCenterQuestionRequest" DTOPropertyName="msm" />
+          </parameterMappings>
+          <resultMappings />
+          <MappingProperties />
+        </SRVMapping>
+      </service>
+    </services>
+  </partialClass>
+</serviceClass>

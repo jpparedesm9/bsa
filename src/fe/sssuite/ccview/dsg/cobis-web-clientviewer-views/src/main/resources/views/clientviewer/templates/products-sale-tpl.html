@@ -1,0 +1,50 @@
+<div class="cb-viewport">
+	<div kendo-splitter k-orientation="orientationh" k-rebind="orientationh" k-panes="[ { collapsible: true, collapsed: false, resizable: true, size: '35%'},
+						 { collapsible: false, resizable: true, size: '65%'}]" ng-controller="clientviewer.productsSaleController">
+					
+			<div id="tree" kendo-tree-view="tree" k-data-source="treeDataProducts"  k-on-change="onProductSelected(dataItem)" >			
+				<span k-template class="{{dataItem.type}}"> {{dataItem.name}} </span>
+		</div>
+		<div>
+			<div id="producDetails" class="cb-view-container-root">
+				
+					<div class="form-group">
+						<label class="control-label" translate>COMMONS.LABELS.LBL_NAME_PROD</label>
+						<div>{{detProduct.nameDP}}</div>
+					</div>
+				
+					<div class="form-group">
+						<label class="control-label" translate>COMMONS.LABELS.LBL_DESCRIPTION_PS</label>
+						<div>{{detProduct.descriptionDP}}</div>
+					</div>
+				
+					<div class="form-group">
+						<label class="control-label" translate>COMMONS.LABELS.LBL_CATEGORY_PS</label>
+						<div>{{detProduct.categoryDP}}</div>
+					</div>
+				
+					<div class="form-group">
+						<label class="control-label" translate>COMMONS.LABELS.LBL_AVAILABLE_PS</label>
+						<input type="checkbox" ng-checked="detProduct.availableDP" disabled />
+					</div>
+				
+					<div class="form-group">
+						<label class="control-label" translate>COMMONS.LABELS.LBL_CURRENCY_PS</label>
+						 <kendo-grid k-columns="currenciesProductColumns" k-data-source="currenciesSelectedProduct" k-on-change="onCurrencyProductSelected(dataItem)" ></kendo-grid>
+						
+					</div>
+				
+					<div class="form-group">
+						<label class="control-label" translate>COMMONS.LABELS.LBL_POLICIES_PS</label>
+						   <kendo-grid k-columns="currenciesProductColumns" k-data-source="policiesSelectedProduct" ></kendo-grid>
+					</div>
+				</div>
+		</div>
+			<ul kendo-context-menu="menu" k-filter="'#tree .k-in'" k-on-open="onOpenCtxMenu(dataItem,kendoEvent)" >
+					<li ng-repeat="ctxObj in ctxMenu" class="k-item k-state-default" role="menuitem">
+						<span class="k-link" ng-click="ctxMnuClick(ctxObj.code)">{{ ctxObj.text }}</span>
+					</li>
+					</ul>
+		
+	</div>
+</div>	

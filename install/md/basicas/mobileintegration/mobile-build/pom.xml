@@ -1,0 +1,113 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.cobiscorp.ecobis</groupId>
+	<artifactId>mobile-build</artifactId>
+	<version>1.0.0</version>
+	<packaging>pom</packaging>
+	<name>${project.artifactId}</name>
+	<url>http://www.cobiscorp.com/</url>
+
+
+
+	<properties>
+		<maven-javadoc-plugin.version>2.10.3</maven-javadoc-plugin.version>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+	</properties>
+
+	<profiles>
+		<profile>
+			<id>env-development</id>
+			<activation>
+				<activeByDefault>true</activeByDefault>
+			</activation>
+			<modules>
+
+      
+        <module>../../Middleware/cobis-cobiscloud-parent</module>
+				<module>../../Middleware/cobis-cloud-orch-rest</module>
+				<module>../../Middleware/cobis-cobiscloudsynchronization-util</module>
+				<module>../../Middleware/cobis-cobiscloudsynchronization-bsl</module>
+				<module>../../Middleware/cobis-cobiscloudsynchronization-bsl-impl</module>
+				<module>../../Middleware/cobis-cobiscloudsynchronization-rest</module>
+        <module>../../Middleware/cts-web-token</module>
+        <module>../../Middleware/cobis-cobisclouddevicemanagement-util</module>
+        <module>../../Middleware/cobis-cobisclouddevicemanagement-bsl</module>
+        <module>../../Middleware/cobis-cobisclouddevicemanagement-bsl-impl</module>
+        <module>../../Middleware/cobis-cobisclouddevicemanagement-rest</module>
+        <module>../../Middleware/cobis-cobiscloudsecurity-rest</module>                
+        <module>../../Middleware/cobis-cobiscloudloginvalidationext-impl</module>
+				<module>../../Frontend/web/mobile-commons-utils</module>
+				<module>../../Frontend/web/mobile-commons-services</module>
+				<module>../../Frontend/web/mbile.domains</module>
+				<module>../../Frontend/web/mbile.commons.events</module>
+				<module>../../Frontend/web/mbile.admin.mobilemanagementform.services</module>
+				<module>../../Frontend/web/mbile.admin.mobilepopupform.services</module>
+				<module>../../Frontend/web/mbile.admin.syncmanagementform.services</module>
+				<module>../../Frontend/web/mbile.admin.terminalmanagementform.services</module>
+				<module>../../Frontend/web/mbile.admin.mobilemanagementform.customevents</module>
+				<module>../../Frontend/web/mbile.admin.mobilepopupform.customevents</module>
+				<module>../../Frontend/web/mbile.admin.syncmanagementform.customevents</module>
+				<module>../../Frontend/web/mbile.admin.terminalmanagementform.customevents</module>
+				<module>../../Frontend/web/cobis-web-mobil-views</module>
+				<module>../mobile-installer</module>
+      </modules>
+		</profile>
+		<profile>
+			<id>env-hardening</id>
+			<modules>
+        <module>../../Middleware/cobis-cobiscloud-parent</module>      
+				<module>../../Middleware/cobis-cloud-orch-rest</module>
+				<module>../../Middleware/cobis-cobiscloudsynchronization-util</module>
+				<module>../../Middleware/cobis-cobiscloudsynchronization-bsl</module>
+				<module>../../Middleware/cobis-cobiscloudsynchronization-bsl-impl</module>
+				<module>../../Middleware/cobis-cobiscloudsynchronization-rest</module>
+        <module>../../Middleware/cts-web-token</module>
+        <module>../../Middleware/cobis-cobisclouddevicemanagement-util</module>
+        <module>../../Middleware/cobis-cobisclouddevicemanagement-bsl</module>
+        <module>../../Middleware/cobis-cobisclouddevicemanagement-bsl-impl</module>
+        <module>../../Middleware/cobis-cobisclouddevicemanagement-rest</module>
+        <module>../../Middleware/cobis-cobiscloudsecurity-rest</module>                
+        <module>../../Middleware/cobis-cobiscloudloginvalidationext-impl</module>
+		 	    <module>../../Frontend/web/mobile-commons-utils</module>
+				<module>../../Frontend/web/mobile-commons-services</module>
+				<module>../../Frontend/web/mbile.domains</module>
+				<module>../../Frontend/web/mbile.commons.events</module>
+				<module>../../Frontend/web/mbile.admin.mobilemanagementform.services</module>
+				<module>../../Frontend/web/mbile.admin.mobilepopupform.services</module>
+				<module>../../Frontend/web/mbile.admin.syncmanagementform.services</module>
+				<module>../../Frontend/web/mbile.admin.terminalmanagementform.services</module>
+				<module>../../Frontend/web/mbile.admin.mobilemanagementform.customevents</module>
+				<module>../../Frontend/web/mbile.admin.mobilepopupform.customevents</module>
+				<module>../../Frontend/web/mbile.admin.syncmanagementform.customevents</module>
+				<module>../../Frontend/web/mbile.admin.terminalmanagementform.customevents</module>
+				<module>../../Frontend/web/cobis-web-mobil-views</module>
+				<module>../mobile-installer</module>
+      </modules>
+		</profile>
+		<profile>
+			<id>Purge</id>
+			<build>
+				<plugins>
+					<plugin>
+						<artifactId>maven-dependency-plugin</artifactId>
+						<version>2.10</version>
+						<executions>
+							<execution>
+								<id>purge-local-dependencies</id>
+								<phase>process-sources</phase>
+								<goals>
+									<goal>purge-local-repository</goal>
+								</goals>
+								<!-- >configuration> <actTransitively>true</actTransitively> <manualInclude>com.cobiscorp.processapi:COBISCorp.eCOBIS.Businessprocess.Creditmanagement.DTO</manualInclude> 
+									<reResolve>true</reResolve> </configuration -->
+							</execution>
+						</executions>
+					</plugin>
+				</plugins>
+			</build>
+		</profile>
+	</profiles>
+
+
+</project>

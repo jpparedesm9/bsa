@@ -1,0 +1,90 @@
+{
+    "id": {
+        "queryId": "Q_ERWRLCIE_4097",
+        "version": "1.0.0"
+    },
+    "name": {
+        "$ref": "../../../BUSIN/relations/componentKeys.json#/FLCRE/Queries/Q_ERWRLCIE_4097/name"
+    },
+    "customizationLayer": 0,
+    "customizationLayerDescription": "ECU",
+    "mainEntityId": "EN_WRANTYPIY629",
+    "mainEntityVersion": "1.0.0",
+    "queryMembers": [
+        {
+            "queryMemberId": "QM_ERWRL4097_59",
+            "order": 1,
+            "orderByDirection": "A",
+            "selectStr": "T",
+            "alias": "numberPolicy",
+            "whereStr": "F",
+            "customizationLayer": 0,
+            "customizationLayerDescription": "ECU",
+            "attribute": {
+                "$ref": "../../../BUSIN/entities/EN_WRANTYPIY629.json#/attributes/AT_WRA629UEIC78"
+            },
+            "select": true,
+            "where": false
+        },
+        {
+            "queryMemberId": "QM_ERWRL4097_57",
+            "order": 2,
+            "orderByDirection": "A",
+            "selectStr": "T",
+            "alias": "insurance",
+            "whereStr": "F",
+            "customizationLayer": 0,
+            "customizationLayerDescription": "ECU",
+            "attribute": {
+                "$ref": "../../../BUSIN/entities/EN_WRANTYPIY629.json#/attributes/AT_WRA629NSNE69"
+            },
+            "select": true,
+            "where": false
+        },
+        {
+            "queryMemberId": "QM_ERWRL4097_68",
+            "order": 3,
+            "orderByDirection": "A",
+            "selectStr": "T",
+            "alias": "insuranceDescription",
+            "whereStr": "F",
+            "customizationLayer": 0,
+            "customizationLayerDescription": "ECU",
+            "attribute": {
+                "$ref": "../../../BUSIN/entities/EN_WRANTYPIY629.json#/attributes/AT_WRA629EERN75"
+            },
+            "select": true,
+            "where": false
+        }
+    ],
+    "customEvents": [
+        {
+            "executionType": 1,
+            "customEventId": "CEQY_130_Q_ERWRLCIE_4097_213",
+            "customizationLayer": 0,
+            "customizationLayerDescription": "ECU",
+            "queryEventType": {
+                "eventId": 130,
+                "name": "ExecuteQuery",
+                "description": "Sobreescribe la ejecución de un Query"
+            },
+            "thereAnServerEvent": false,
+            "thereAnClientEvent": true,
+            "thereAnCallbackEvent": false
+        }
+    ],
+    "isAutomatic": false,
+    "isImported": true,
+    "mainEntityModule": "BUSIN",
+    "subModules": [
+        {
+            "id": {
+                "moduleId": "BUSIN",
+                "subModuleId": "FLCRE"
+            }
+        }
+    ],
+    "mainEntityName": {
+        "$ref": "../../../BUSIN/relations/componentKeys.json#/Entities/EN_WRANTYPIY629/name"
+    }
+}

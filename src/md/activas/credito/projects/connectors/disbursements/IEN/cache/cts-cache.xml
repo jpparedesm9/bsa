@@ -1,0 +1,9 @@
+<ehcache xsi:noNamespaceSchemaLocation="ehcache.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" updateCheck="false" monitoring="autodetect" dynamicConfig="true">
+  <diskStore path="java.io.tmpdir"/>
+  <defaultCache maxElementsInMemory="10000" maxElementsOnDisk="10000000" eternal="false" timeToIdleSeconds="600" timeToLiveSeconds="3600" overflowToDisk="false" diskSpoolBufferSizeMB="30" diskPersistent="false" diskExpiryThreadIntervalSeconds="120" memoryStoreEvictionPolicy="LRU"/>
+
+  <cache name="DisbursementCheckInfo" maxElementsInMemory="3000" maxElementsOnDisk="4000" eternal="false" timeToIdleSeconds="7200" timeToLiveSeconds="7200" overflowToDisk="false" diskSpoolBufferSizeMB="30" diskPersistent="false" diskExpiryThreadIntervalSeconds="900" memoryStoreEvictionPolicy="LRU">
+    <cacheEventListenerFactory class="com.cobiscorp.cobis.cache.impl.COBISCacheEventListenerFactory"/>
+  </cache>
+
+</ehcache>

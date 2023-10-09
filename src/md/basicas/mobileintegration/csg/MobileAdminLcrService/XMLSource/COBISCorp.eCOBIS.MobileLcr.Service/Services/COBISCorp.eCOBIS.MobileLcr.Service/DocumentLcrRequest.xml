@@ -1,0 +1,92 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<serviceClass name="DocumentLcrRequest" nsBase="COBISCorp.eCOBIS.MobileLcr" namespace="COBISCorp.eCOBIS.MobileLcr.Service" package="cobiscorp.ecobis.mobilelcr.service" ns="http://service.mobilelcr.ecobis.cobiscorp" module="MobileLcr" productName="COBISCorp.eCOBIS.MobileLcr.Service" productVersion="1.0.0.0">
+  <productProperties>
+    <property name="MavenGroupId" value="com.cobiscorp.processapi" />
+    <property name="MavenArtifactId" value="COBISCorp.eCOBIS.MobileLcr.Service" />
+    <property name="MavenVersion" value="1.0.0.0" />
+  </productProperties>
+  <partialClass name="DocumentLcrRequest">
+    <services>
+      <service id="MobileLcr.DocumentLcrRequest.CreateMobileLcrDocument" netName="CreateMobileLcrDocument" javaName="createMobileLcrDocument" mappingType="STORED_PROCEDURE" mapId="46d0671dd4117ea366031f87f3aa0093">
+        <SRVMapping name="cob_credito..sp_documents_lcr_resp" trnCode="2101">
+          <DTOs>
+            <DTO direction="in" name="DocumentLcrRequest" alias="inDocumentLcrRequest" namespace="COBISCorp.eCOBIS.MobileLcr.DTO" package="cobiscorp.ecobis.mobilelcr.dto" ns="http://dto.mobilelcr.ecobis.cobiscorp" required="true" />
+          </DTOs>
+          <parameterMappings>
+            <parameter name="@i_operacion" direction="in" mappingDirection="in" dataType="char" CTSDataType="SQLCHAR" JavaSQLType="CHAR" mappingType="DTO" allowNull="false" DTOAlias="inDocumentLcrRequest" DTOPropertyName="operacion" />
+            <parameter name="@i_inst_proceso" direction="in" mappingDirection="in" dataType="int" CTSDataType="SQLINT4" JavaSQLType="INTEGER" mappingType="DTO" allowNull="false" DTOAlias="inDocumentLcrRequest" DTOPropertyName="instProceso" />
+            <parameter name="@i_inst_actividad" direction="in" mappingDirection="in" dataType="int" CTSDataType="SQLINT4" JavaSQLType="INTEGER" mappingType="DTO" allowNull="false" DTOAlias="inDocumentLcrRequest" DTOPropertyName="instActividad" />
+            <parameter name="@i_logginAsesor" direction="in" mappingDirection="in" dataType="varchar" CTSDataType="SQLVARCHAR" JavaSQLType="VARCHAR" mappingType="DTO" allowNull="false" DTOAlias="inDocumentLcrRequest" DTOPropertyName="logginAsesor" />
+            <parameter name="@i_statusInterested" direction="in" mappingDirection="in" dataType="varchar" CTSDataType="SQLVARCHAR" JavaSQLType="VARCHAR" mappingType="DTO" allowNull="false" DTOAlias="inDocumentLcrRequest" DTOPropertyName="statusInterested" />
+            <parameter name="@i_catalogue" direction="in" mappingDirection="in" dataType="varchar" CTSDataType="SQLVARCHAR" JavaSQLType="VARCHAR" mappingType="DTO" allowNull="false" DTOAlias="inDocumentLcrRequest" DTOPropertyName="catalogue" />
+            <parameter name="@i_description" direction="in" mappingDirection="in" dataType="varchar" CTSDataType="SQLVARCHAR" JavaSQLType="VARCHAR" mappingType="DTO" allowNull="false" DTOAlias="inDocumentLcrRequest" DTOPropertyName="description" />
+            <parameter name="@i_id_document" direction="" mappingDirection="in" dataType="int" CTSDataType="SQLINT4" JavaSQLType="INTEGER" mappingType="DTO" allowNull="false" DTOAlias="inDocumentLcrRequest" DTOPropertyName="idDocumet" />
+          </parameterMappings>
+          <resultMappings />
+          <MappingProperties />
+        </SRVMapping>
+      </service>
+      <service id="MobileLcr.DocumentLcrRequest.QueryInformationLcrDocument" netName="QueryInformationLcrDocument" javaName="queryInformationLcrDocument" mappingType="STORED_PROCEDURE" mapId="46d0671dd4117ea366031f87f3aa0093">
+        <SRVMapping name="cob_credito..sp_documents_lcr_resp" trnCode="2101">
+          <DTOs>
+            <DTO direction="return" name="DocumentLcrValidateResponse" alias="returnDocumentLcrValidateResponse" namespace="COBISCorp.eCOBIS.MobileLcr.DTO" package="cobiscorp.ecobis.mobilelcr.dto" ns="http://dto.mobilelcr.ecobis.cobiscorp" required="true">
+              <properties>
+                <property name="operacion" propertyNet="Operacion" propertyJava="operacion" setterJavaMethod="setOperacion" getterJavaMethod="getOperacion" xsdType="char" netType="char" javaType="char" cobisMapping="" isInherit="false" isComplexType="false" isCollectionType="false" required="true" encrypted="false" maxLength="0" />
+                <property name="instProceso" propertyNet="InstProceso" propertyJava="instProceso" setterJavaMethod="setInstProceso" getterJavaMethod="getInstProceso" xsdType="int" netType="int" javaType="int" cobisMapping="" isInherit="false" isComplexType="false" isCollectionType="false" required="true" encrypted="false" maxLength="0" />
+                <property name="tdCodigoTipoDoc" propertyNet="TdCodigoTipoDoc" propertyJava="tdCodigoTipoDoc" setterJavaMethod="setTdCodigoTipoDoc" getterJavaMethod="getTdCodigoTipoDoc" xsdType="string" netType="string" javaType="String" cobisMapping="" isInherit="false" isComplexType="false" isCollectionType="false" required="true" encrypted="false" maxLength="0" />
+                <property name="riIdInstProc" propertyNet="RiIdInstProc" propertyJava="riIdInstProc" setterJavaMethod="setRiIdInstProc" getterJavaMethod="getRiIdInstProc" xsdType="int" netType="int" javaType="int" cobisMapping="" isInherit="false" isComplexType="false" isCollectionType="false" required="true" encrypted="false" maxLength="0" />
+                <property name="riCodigoTipoDoc" propertyNet="RiCodigoTipoDoc" propertyJava="riCodigoTipoDoc" setterJavaMethod="setRiCodigoTipoDoc" getterJavaMethod="getRiCodigoTipoDoc" xsdType="int" netType="int" javaType="int" cobisMapping="" isInherit="false" isComplexType="false" isCollectionType="false" required="true" encrypted="false" maxLength="0" />
+                <property name="riNombreDoc" propertyNet="RiNombreDoc" propertyJava="riNombreDoc" setterJavaMethod="setRiNombreDoc" getterJavaMethod="getRiNombreDoc" xsdType="string" netType="string" javaType="String" cobisMapping="" isInherit="false" isComplexType="false" isCollectionType="false" required="true" encrypted="false" maxLength="0" />
+              </properties>
+            </DTO>
+            <DTO direction="in" name="DocumentLcrRequest" alias="inDocumentLcrRequest" namespace="COBISCorp.eCOBIS.MobileLcr.DTO" package="cobiscorp.ecobis.mobilelcr.dto" ns="http://dto.mobilelcr.ecobis.cobiscorp" required="true" />
+          </DTOs>
+          <parameterMappings>
+            <parameter name="@i_operacion" direction="in" mappingDirection="in" dataType="char" CTSDataType="SQLCHAR" JavaSQLType="CHAR" mappingType="DTO" allowNull="false" DTOAlias="inDocumentLcrRequest" DTOPropertyName="operacion" />
+            <parameter name="@i_inst_proceso" direction="in" mappingDirection="in" dataType="int" CTSDataType="SQLINT4" JavaSQLType="INTEGER" mappingType="DTO" allowNull="false" DTOAlias="inDocumentLcrRequest" DTOPropertyName="instProceso" />
+          </parameterMappings>
+          <resultMappings>
+            <result>
+              <DTOResult DTOAlias="returnDocumentLcrValidateResponse" MapReturn="true">
+                <columnMapping position="0" name="{1}" DTOPropertyName="riIdInstProc" DataType="int" Format="" />
+                <columnMapping position="1" name="{2}" DTOPropertyName="riCodigoTipoDoc" DataType="int" Format="" />
+                <columnMapping position="2" name="{3}" DTOPropertyName="riNombreDoc" DataType="string" Format="" />
+              </DTOResult>
+            </result>
+          </resultMappings>
+          <MappingProperties />
+        </SRVMapping>
+      </service>
+      <service id="MobileLcr.DocumentLcrRequest.QueryMobileLcrValidateDocument" netName="QueryMobileLcrValidateDocument" javaName="queryMobileLcrValidateDocument" mappingType="STORED_PROCEDURE" mapId="46d0671dd4117ea366031f87f3aa0093">
+        <SRVMapping name="cob_credito..sp_documents_lcr_resp" trnCode="2101">
+          <DTOs>
+            <DTO direction="return" name="DocumentLcrValidateResponse" alias="returnDocumentLcrValidateResponse" namespace="COBISCorp.eCOBIS.MobileLcr.DTO" package="cobiscorp.ecobis.mobilelcr.dto" ns="http://dto.mobilelcr.ecobis.cobiscorp" required="true">
+              <properties>
+                <property name="operacion" propertyNet="Operacion" propertyJava="operacion" setterJavaMethod="setOperacion" getterJavaMethod="getOperacion" xsdType="char" netType="char" javaType="char" cobisMapping="" isInherit="false" isComplexType="false" isCollectionType="false" required="true" encrypted="false" maxLength="0" />
+                <property name="instProceso" propertyNet="InstProceso" propertyJava="instProceso" setterJavaMethod="setInstProceso" getterJavaMethod="getInstProceso" xsdType="int" netType="int" javaType="int" cobisMapping="" isInherit="false" isComplexType="false" isCollectionType="false" required="true" encrypted="false" maxLength="0" />
+                <property name="tdCodigoTipoDoc" propertyNet="TdCodigoTipoDoc" propertyJava="tdCodigoTipoDoc" setterJavaMethod="setTdCodigoTipoDoc" getterJavaMethod="getTdCodigoTipoDoc" xsdType="string" netType="string" javaType="String" cobisMapping="" isInherit="false" isComplexType="false" isCollectionType="false" required="true" encrypted="false" maxLength="0" />
+                <property name="riIdInstProc" propertyNet="RiIdInstProc" propertyJava="riIdInstProc" setterJavaMethod="setRiIdInstProc" getterJavaMethod="getRiIdInstProc" xsdType="int" netType="int" javaType="int" cobisMapping="" isInherit="false" isComplexType="false" isCollectionType="false" required="true" encrypted="false" maxLength="0" />
+                <property name="riCodigoTipoDoc" propertyNet="RiCodigoTipoDoc" propertyJava="riCodigoTipoDoc" setterJavaMethod="setRiCodigoTipoDoc" getterJavaMethod="getRiCodigoTipoDoc" xsdType="int" netType="int" javaType="int" cobisMapping="" isInherit="false" isComplexType="false" isCollectionType="false" required="true" encrypted="false" maxLength="0" />
+                <property name="riNombreDoc" propertyNet="RiNombreDoc" propertyJava="riNombreDoc" setterJavaMethod="setRiNombreDoc" getterJavaMethod="getRiNombreDoc" xsdType="string" netType="string" javaType="String" cobisMapping="" isInherit="false" isComplexType="false" isCollectionType="false" required="true" encrypted="false" maxLength="0" />
+              </properties>
+            </DTO>
+            <DTO direction="in" name="DocumentLcrRequest" alias="inDocumentLcrRequest" namespace="COBISCorp.eCOBIS.MobileLcr.DTO" package="cobiscorp.ecobis.mobilelcr.dto" ns="http://dto.mobilelcr.ecobis.cobiscorp" required="true" />
+          </DTOs>
+          <parameterMappings>
+            <parameter name="@i_operacion" direction="in" mappingDirection="in" dataType="char" CTSDataType="SQLCHAR" JavaSQLType="CHAR" mappingType="DTO" allowNull="false" DTOAlias="inDocumentLcrRequest" DTOPropertyName="operacion" />
+            <parameter name="@i_inst_proceso" direction="in" mappingDirection="in" dataType="int" CTSDataType="SQLINT4" JavaSQLType="INTEGER" mappingType="DTO" allowNull="false" DTOAlias="inDocumentLcrRequest" DTOPropertyName="instProceso" />
+            <parameter name="@i_tipo_credito" direction="in" mappingDirection="in" dataType="varchar" CTSDataType="SQLVARCHAR" JavaSQLType="VARCHAR" mappingType="DTO" allowNull="false" DTOAlias="inDocumentLcrRequest" DTOPropertyName="creditType" />
+          </parameterMappings>
+          <resultMappings>
+            <result>
+              <DTOResult DTOAlias="returnDocumentLcrValidateResponse" MapReturn="true">
+                <columnMapping position="0" name="{1}" DTOPropertyName="tdCodigoTipoDoc" DataType="string" Format="" />
+              </DTOResult>
+            </result>
+          </resultMappings>
+          <MappingProperties />
+        </SRVMapping>
+      </service>
+    </services>
+  </partialClass>
+</serviceClass>

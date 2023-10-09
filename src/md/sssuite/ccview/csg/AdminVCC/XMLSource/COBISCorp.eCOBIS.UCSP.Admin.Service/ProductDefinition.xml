@@ -1,0 +1,91 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<product path="E:/SSSuite/CCView/source/middleware/SG/AdminVCC/Products/COBISCorp.eCOBIS.UCSP.Admin.Service" appPath="C:/Program Files (x86)/COBIS/CEN - Services Generator/" name="COBISCorp.eCOBIS.UCSP.Admin.Service" productNS="http://service.admin.ucsp.ecobis.cobiscorp" description="BLI Admin VCC" documentationLanguage="Español" year="2016" version="4.2.0.0" type="SERVICE" GUID="030871E4-4F23-46D7-B517-47DC31640C49">
+  <namespaces>
+    <namespace type="class" base="COBISCorp.eCOBIS.UCSP.Admin" name="COBISCorp.eCOBIS.UCSP.Admin.Service" package="cobiscorp.ecobis.ucsp.admin.service" ns="http://service.admin.ucsp.ecobis.cobiscorp" folder="Admin" />
+  </namespaces>
+  <templates>
+    <template id="BLICEN402" productName="COBISCorp.eCOBIS.UCSP.Admin.BLI" outputFolder="c:\COBIS-SG\Output\AdminVCC\CEN\COBISCorp.eCOBIS.UCSP.Admin.BLI" package="true" packageType="Assembly">
+      <templateFiles>
+        <templateFile filePath="CEN402\BLIInterface.xslt" enabled="true" override="true" />
+        <templateFile filePath="CEN402\BLIImpl.xslt" enabled="true" override="true" />
+        <templateFile filePath="CEN402\ProjectMSBuild.xslt" enabled="true" override="true" />
+        <templateFile filePath="..\Commons\DOTNET\License.xslt" enabled="true" override="false" />
+        <templateFile filePath="..\Commons\DOTNET\AssemblyInfo.xslt" enabled="true" override="true" />
+      </templateFiles>
+    </template>
+    <template id="ServiceCTS302" productName="COBISCorp.eCOBIS.UCSP.Admin.Service" outputFolder="c:\COBIS-SG\Output\AdminVCC\CTS\COBISCorp.eCOBIS.UCSP.Admin.Service" package="true" packageType="Jar">
+      <templateFiles>
+        <templateFile filePath="Annotations\JavaInterface.xslt" enabled="true" override="true" />
+        <templateFile filePath="Annotations\JavaService.xslt" enabled="true" override="true" />
+        <templateFile filePath="Annotations\OSGIClass.xslt" enabled="true" override="true" />
+        <templateFile filePath="Annotations\Interceptor.xslt" enabled="true" override="false" />
+        <templateFile filePath="..\Commons\Java\buildProperties.xslt" enabled="true" override="true" />
+        <templateFile filePath="..\Commons\Java\build.xslt" enabled="true" override="true" />
+      </templateFiles>
+    </template>
+  </templates>
+  <DTOs />
+  <classes>
+    <class name="Administration" nsBase="COBISCorp.eCOBIS.UCSP.Admin" namespace="COBISCorp.eCOBIS.UCSP.Admin.Service" package="cobiscorp.ecobis.ucsp.admin.service" ns="http://service.admin.ucsp.ecobis.cobiscorp" version="1">
+      <partialClasses>
+        <partialClass name="Administration">
+          <services>
+            <service name="DefaultConfigurationVCC" id="UCSP.Admin.Administration.DefaultConfigurationVCC">
+              <procedure name="sp_admin_vcc" database="cob_pac" version="1" />
+            </service>
+            <service name="DeleteConfigurationVCC" id="UCSP.Admin.Administration.DeleteConfigurationVCC">
+              <procedure name="sp_admin_vcc" database="cob_pac" version="1" />
+            </service>
+            <service name="GetAllRoleAssociatesVCC" id="UCSP.Admin.Administration.GetAllRoleAssociatesVCC">
+              <procedure name="sp_admin_vcc" database="cob_pac" version="1" />
+            </service>
+            <service name="GetAllRoleConfigurationVCC" id="UCSP.Admin.Administration.GetAllRoleConfigurationVCC">
+              <procedure name="sp_admin_vcc" database="cob_pac" version="1" />
+            </service>
+            <service name="InsertConfigurationVCC" id="UCSP.Admin.Administration.InsertConfigurationVCC">
+              <procedure name="sp_admin_vcc" database="cob_pac" version="1" />
+            </service>
+            <service name="QueryConfigurationVCC" id="UCSP.Admin.Administration.QueryConfigurationVCC">
+              <procedure name="sp_admin_vcc" database="cob_pac" version="1" />
+            </service>
+            <service name="UpdateConfigurationVCC" id="UCSP.Admin.Administration.UpdateConfigurationVCC">
+              <procedure name="sp_admin_vcc" database="cob_pac" version="1" />
+            </service>
+          </services>
+        </partialClass>
+      </partialClasses>
+    </class>
+  </classes>
+  <packagers>
+    <packager type="SGPackageNet" RootNamespace="COBISCorp.eCOBIS.UCSP.Admin.BLI" SNKFileName="ucsp.snk" RelativeFolder="True" Framework="4.0" TemplateId="BLICEN402" />
+    <packager type="SGPackageJava" AntTask="sign-archive" KeyAlias="uscp" KeyPassword="ucspadminadmin" KeyCertificatePassword="ucspadmin" KeyFileName="ucsp.keystore" RelativeFolder="True" TemplateId="ServiceCTS302" />
+  </packagers>
+  <references>
+    <reference name="COBISCorp.eCOBIS.UCSP.Admin.DTO" type="DTO" version="4.2.0.0" GUID="21F0C56E-AC18-4B8A-B10E-54C384EE0D3D">
+      <templates>
+        <template id="DTODotNetWCF" productName="COBISCorp.eCOBIS.UCSP.Admin.DTO" outputFolder="c:\COBIS-SG\Output\AdminVCC\CEN\COBISCorp.eCOBIS.UCSP.Admin.DTO" package="true" packageType="Assembly">
+          <templateFiles>
+            <templateFile filePath="WCF\NetDTO.xslt" enabled="true" override="true" />
+            <templateFile filePath="WCF\ProjectMSBuild.xslt" enabled="true" override="true" />
+            <templateFile filePath="..\Commons\DOTNET\AssemblyInfo.xslt" enabled="true" override="true" />
+          </templateFiles>
+        </template>
+        <template id="DTOJavaPOJO" productName="COBISCorp.eCOBIS.UCSP.Admin.DTO" outputFolder="c:\COBIS-SG\Output\AdminVCC\CTS\COBISCorp.eCOBIS.UCSP.Admin.DTO" package="true" packageType="Jar">
+          <templateFiles>
+            <templateFile filePath="JavaPOJO\JavaDTO.xslt" enabled="true" override="true" />
+            <templateFile filePath="..\Commons\Java\buildProperties.xslt" enabled="true" override="true" />
+            <templateFile filePath="..\Commons\Java\build.xslt" enabled="true" override="true" />
+          </templateFiles>
+        </template>
+      </templates>
+      <namespaces>
+        <namespace type="dto" base="COBISCorp.eCOBIS.UCSP.Admin" name="COBISCorp.eCOBIS.UCSP.Admin.DTO" package="cobiscorp.ecobis.ucsp.admin.dto" ns="http://dto.admin.ucsp.ecobis.cobiscorp" folder="Admin\DTO" />
+      </namespaces>
+    </reference>
+  </references>
+  <productProperties>
+    <property name="MavenGroupId" value="com.cobiscorp.processapi" />
+    <property name="MavenArtifactId" value="COBISCorp.eCOBIS.UCSP.Admin.Service" />
+    <property name="MavenVersion" value="4.2.0.0" />
+  </productProperties>
+</product>

@@ -1,0 +1,19 @@
+<div class="cb-viewport">
+	<div kendo-splitter k-orientation="orientationh" k-rebind="orientationh" k-panes="[ { collapsible: true, collapsed: false, resizable: true, size: '25%'},
+						 { collapsible: false, resizable: true, size: '65%'}]" >
+			<ul class="nav nav-pills nav-stacked">
+				<!--li ng-class="{active:vc.viewState.dynamicInfo.templateUrl.indexOf(item.manConSecUrl)!=-1}" 
+				ng-repeat="item in otherInformation" ng-if="otherInformation != null && otherInformation.length > 0"-->
+				<li ng-class="{active:currentView==item.idManConSec}" 
+				ng-repeat="item in otherInformation" ng-if="otherInformation != null && otherInformation.length > 0">				
+				<a href="javascript://" ng-click="showOtherInfoView(item, $event)" translate>{{ item.manConSecName }}</a>				
+					<div ng-if="item.manConSecType == 'P_HIS'" id="treeViewHistory">
+						<div class="config-section">
+							<div id="treeControlHistory" kendo-tree-view="treeViewHistory" k-template="treeItemTemplateHistory" k-data-source="treeDataSourceHistory" k-on-change="setHistoryData(dataItem.name, $event)"></div>
+						</div>
+					</div>
+				</li>				 
+			</ul>
+			<div designer-form-load form="vc.viewState.dynamicInfo" class="cb-sub-scrollable"></div>
+  </div>
+</div>

@@ -1,0 +1,122 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<procedure>
+  <database>cobis</database>
+  <name>sp_relacion_qry</name>
+  <type>SYBASE</type>
+  <version>1</version>
+  <parameters>
+    <parameter name="@s_ssn" dataType="int" direction="in" />
+    <parameter name="@s_user" dataType="varchar" direction="in" />
+    <parameter name="@s_term" dataType="varchar" direction="in" />
+    <parameter name="@s_date" dataType="datetime" direction="in" />
+    <parameter name="@s_srv" dataType="varchar" direction="in" />
+    <parameter name="@s_lsrv" dataType="varchar" direction="in" />
+    <parameter name="@s_rol" dataType="smallint" direction="in" />
+    <parameter name="@s_ofi" dataType="smallint" direction="in" />
+    <parameter name="@s_org_err" dataType="char" direction="in" />
+    <parameter name="@s_error" dataType="int" direction="in" />
+    <parameter name="@s_sev" dataType="tinyint" direction="in" />
+    <parameter name="@s_msg" dataType="varchar" direction="in" />
+    <parameter name="@s_org" dataType="char" direction="in" />
+    <parameter name="@t_show_version" dataType="bit" direction="in" />
+    <parameter name="@t_debug" dataType="char" direction="in" />
+    <parameter name="@t_file" dataType="varchar" direction="in" />
+    <parameter name="@t_from" dataType="varchar" direction="in" />
+    <parameter name="@t_trn" dataType="smallint" direction="in" />
+    <parameter name="@i_operacion" dataType="char" direction="in" />
+    <parameter name="@i_modo" dataType="tinyint" direction="in" />
+    <parameter name="@i_relacion" dataType="int" direction="in" />
+    <parameter name="@i_izquierda" dataType="int" direction="in" />
+    <parameter name="@i_derecha" dataType="int" direction="in" />
+  </parameters>
+  <queries>
+    <query>
+      <columns>
+        <column name="Cod. Clte. Izq." />
+        <column name="Cliente Izq." />
+        <column name="Relaci¢n" />
+        <column name="Cod. Clte. Der." />
+        <column name="Cliente Der." />
+      </columns>
+      <queryText>SELECT  "Cod. Clte. Izq." = in_ente_i,"Cliente Izq." = CONVERT (CHAR (100),a.en_nomlar ),"Relaci¢n" = re_izquierda,"Cod. Clte. Der." = in_ente_d,"Cliente Der." = CONVERT (CHAR (100),b.en_nomlar ) </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="Cod. Clte. Izq." />
+        <column name="Cliente Izq." />
+        <column name="Relaci¢n" />
+        <column name="Cod. Clte. Der." />
+        <column name="Cliente Der." />
+      </columns>
+      <queryText>SELECT  "Cod. Clte. Izq." = in_ente_i,"Cliente Izq." = CONVERT (CHAR (100),a.en_nomlar ),"Relaci¢n" = re_izquierda,"Cod. Clte. Der." = in_ente_d,"Cliente Der." = CONVERT (CHAR (100),b.en_nomlar ) </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="Rel. Izq." />
+        <column name="Rel. Der." />
+        <column name="Lado" />
+        <column name="Cod. Clte." />
+        <column name="Cliente" />
+      </columns>
+      <queryText>SELECT  "Rel. Izq." = re_izquierda,"Rel. Der." = re_derecha,"Lado" = in_lado,"Cod. Clte." = in_ente_d,"Cliente" = CONVERT (CHAR (100),en_nomlar ) </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="Rel. Izq." />
+        <column name="Rel. Der." />
+        <column name="Lado" />
+        <column name="Cod. Clte." />
+        <column name="Cliente" />
+      </columns>
+      <queryText>SELECT  "Rel. Izq." = re_izquierda,"Rel. Der." = re_derecha,"Lado" = in_lado,"Cod. Clte." = in_ente_d,"Cliente" = CONVERT (CHAR (100),en_nomlar ) </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="Relaci¢n." />
+        <column name="Rel. Izq." />
+        <column name="Rel. Der." />
+        <column name="Lado" />
+        <column name="Cod. Clte." />
+        <column name="Cliente" />
+      </columns>
+      <queryText>SELECT  "Relaci¢n." = in_relacion,"Rel. Izq." = re_izquierda,"Rel. Der." = re_derecha,"Lado" = in_lado,"Cod. Clte." = in_ente_d,"Cliente" = CONVERT (CHAR (100),en_nomlar ) </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="Relaci¢n." />
+        <column name="Rel. Izq." />
+        <column name="Rel. Der." />
+        <column name="Lado" />
+        <column name="Cod. Clte." />
+        <column name="Cliente" />
+      </columns>
+      <queryText>SELECT  "Relaci¢n." = in_relacion,"Rel. Izq." = re_izquierda,"Rel. Der." = re_derecha,"Lado" = in_lado,"Cod. Clte." = in_ente_d,"Cliente" = CONVERT (CHAR (100),en_nomlar ) </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="Relaci¢n." />
+        <column name="Cod. Clte. Izq." />
+        <column name="Cliente Izq." />
+        <column name="Rel. Izq." />
+        <column name="Rel. Der." />
+        <column name="Lado" />
+        <column name="Cod. Clte. Der." />
+        <column name="Cliente Der." />
+      </columns>
+      <queryText>SELECT  "Relaci¢n." = in_relacion,"Cod. Clte. Izq." = in_ente_i,"Cliente Izq." = CONVERT (CHAR (100),a.en_nomlar ),"Rel. Izq." = CONVERT (CHAR (100),re_izquierda ),"Rel. Der." = re_derecha,"Lado" = in_lado,"Cod. Clte. Der." = in_ente_d,"Cliente Der." = CONVERT (CHAR (100),b.en_nomlar ) </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="Relaci¢n." />
+        <column name="Cod. Clte. Izq." />
+        <column name="Cliente Izq." />
+        <column name="Rel. Izq." />
+        <column name="Rel. Der." />
+        <column name="Lado" />
+        <column name="Cod. Clte. Der." />
+        <column name="Cliente Der." />
+      </columns>
+      <queryText>SELECT  "Relaci¢n." = in_relacion,"Cod. Clte. Izq." = in_ente_i,"Cliente Izq." = CONVERT (CHAR (100),a.en_nomlar ),"Rel. Izq." = re_izquierda,"Rel. Der." = re_derecha,"Lado" = in_lado,"Cod. Clte. Der." = in_ente_d,"Cliente Der." = CONVERT (CHAR (100),b.en_nomlar ) </queryText>
+    </query>
+  </queries>
+</procedure>

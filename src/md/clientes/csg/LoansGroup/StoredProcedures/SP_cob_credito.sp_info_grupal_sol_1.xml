@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<procedure>
+  <database>cob_credito</database>
+  <name>sp_info_grupal_sol</name>
+  <type>SYBASE</type>
+  <version>1</version>
+  <parameters>
+    <parameter name="@s_ssn" dataType="int" direction="in" />
+    <parameter name="@s_sesn" dataType="int" direction="in" />
+    <parameter name="@s_ofi" dataType="smallint" direction="in" />
+    <parameter name="@s_rol" dataType="smallint" direction="in" />
+    <parameter name="@s_user" dataType="varchar" direction="in" />
+    <parameter name="@s_date" dataType="datetime" direction="in" />
+    <parameter name="@s_term" dataType="varchar" direction="in" />
+    <parameter name="@t_debug" dataType="char" direction="in" />
+    <parameter name="@t_file" dataType="varchar" direction="in" />
+    <parameter name="@t_from" dataType="varchar" direction="in" />
+    <parameter name="@t_trn" dataType="smallint" direction="in" />
+    <parameter name="@s_srv" dataType="varchar" direction="in" />
+    <parameter name="@s_lsrv" dataType="varchar" direction="in" />
+    <parameter name="@i_modo" dataType="int" direction="in" />
+    <parameter name="@i_operacion" dataType="char" direction="in" />
+    <parameter name="@i_grupo" dataType="int" direction="in" />
+    <parameter name="@i_tramite" dataType="int" direction="in" />
+    <parameter name="@i_formato_fecha" dataType="int" direction="in" />
+  </parameters>
+  <queries>
+    <query>
+      <columns>
+        <column name="OFICINA" />
+        <column name="DESC_OFICINA" />
+        <column name="FECHA_SOL" />
+        <column name="ID_GRUPO" />
+        <column name="MONTO" />
+        <column name="TIPO_PLAZO" />
+        <column name="PLAZO" />
+        <column name="FECHA_DESEM" />
+        <column name="FECHA_PRI_PAGO" />
+      
+<column name="CICLO_TRAMITE" />
+      </columns>
+      <queryText>SELECT  "OFICINA" = tr_oficina,"DESC_OFICINA" = (SELECT  of_nombre FROM cobis..cl_oficina   WHERE of_oficina = tr_oficina     ),"FECHA_SOL" = CONVERT (VARCHAR (10),tr_fecha_crea ,?),"ID_GRUPO" = ?,"MONTO" = tr_monto,"TIPO_PLAZO" = (SELECT  td_descripcion FROM cob_cartera..ca_default_toperacion  ,cob_cartera..ca_tdividendo   WHERE dt_tdividendo = td_tdividendo AND dt_toperacion = tr_toperacion     ),"PLAZO" = (SELECT  dt_plazo FROM cob_cartera..ca_default_toperacion   WHERE dt_toperacion = tr_toperacion     ),"FECHA_DESEM" = CONVERT (VARCHAR (10),op_fecha_liq ,?),"FECHA_PRI_PAGO" = (SELECT  CONVERT (VARCHAR (10),di_fecha_ven ,?) FROM cob_cartera..ca_dividendo   WHERE di_operacion = op_operacion AND di_dividendo = 1     ) </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="NOMBRE_ENTE" />
+        <column name="ENTE" />
+        <column name="LUGAR_REUNION" />
+        <column name="DIRRECCION REUNION" />
+        <column name="TELEFONO_REUNION" />
+        <column name="TELEFONO_CEL_REUN" />
+        <column name="DIA_REUNION" />
+        <column name="COLONIA" />
+        <column name="CIUDAD" />
+        <column name="DIR_OFI" />
+        <column name="MONTO_LETRAS" />
+        <column name="APODERADO" />
+      </columns>
+      <queryText>SELECT "NOMBRE_ENTE"=w_nom_ente_anf,"ENTE"=w_ente_anf,"LUGAR_REUNION"=w_lugar_reunion,"DIRRECCION REUNION"=w_direccion_anf,"TELEFONO_REUNION"=w_telefono_anf,"TELEFONO_CEL_REUN"=w_telefono_cel_anf,"DIA_REUNION"=w_dia_reunion,"COLONIA"=w_parroquia,"CIUDAD"=w_ciudad,"DIR_OFI"=w_direccion_oficina,"MONTO_LETRAS"=w_monto_letras</queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="CLIENTE" />
+        <column name="MONTO SOLICITADO" />
+        <column name="MONTO APROBADO" />
+        <column name="PORCENTAJE" />
+        <column name="CICLO" />
+        <column name="NOM_CLI" />
+        <column name="MONTO_LET" />
+        <column name="CUENTA" />
+      <column name="ROL" />
+        <column name="AHORRO_VOLUNTARIO" />
+      
+<column name="CICLO_TRAMITE" />
+      </columns>
+      <queryText>SELECT  "CLIENTE" = tg_cliente,"MONTO SOLICITADO" = tg_monto,"MONTO APROBADO" = tg_monto_aprobado,"PORCENTAJE" = (SELECT  CONVERT (VARCHAR (10),tr_porc_garantia ) FROM cob_credito..cr_tramite   WHERE tr_tramite = ?     ),"CICLO" = (SELECT  en_nro_ciclo FROM cobis..cl_ente   WHERE en_ente = tg_cliente     ) </queryText>
+    </query>
+  </queries>
+</procedure>

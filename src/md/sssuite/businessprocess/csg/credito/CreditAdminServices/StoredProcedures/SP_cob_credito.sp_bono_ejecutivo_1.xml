@@ -1,0 +1,106 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<procedure>
+  <database>cob_credito</database>
+  <name>sp_bono_ejecutivo</name>
+  <type>SYBASE</type>
+  <version>1</version>
+  <parameters>
+    <parameter name="@s_ssn" dataType="int" direction="in" />
+    <parameter name="@s_user" dataType="varchar" direction="in" />
+    <parameter name="@s_sesn" dataType="int" direction="in" />
+    <parameter name="@s_term" dataType="varchar" direction="in" />
+    <parameter name="@s_date" dataType="datetime" direction="in" />
+    <parameter name="@s_srv" dataType="varchar" direction="in" />
+    <parameter name="@s_lsrv" dataType="varchar" direction="in" />
+    <parameter name="@s_rol" dataType="smallint" direction="in" />
+    <parameter name="@s_ofi" dataType="smallint" direction="in" />
+    <parameter name="@s_org_err" dataType="char" direction="in" />
+    <parameter name="@s_error" dataType="int" direction="in" />
+    <parameter name="@s_sev" dataType="tinyint" direction="in" />
+    <parameter name="@s_msg" dataType="varchar" direction="in" />
+    <parameter name="@s_org" dataType="char" direction="in" />
+    <parameter name="@t_debug" dataType="char" direction="in" />
+    <parameter name="@t_file" dataType="varchar" direction="in" />
+    <parameter name="@t_from" dataType="varchar" direction="in" />
+    <parameter name="@t_trn" dataType="int" direction="in" />
+    <parameter name="@i_operacion" dataType="char" direction="in" />
+    <parameter name="@i_modo" dataType="char" direction="in" />
+    <parameter name="@i_formato_fecha" dataType="tinyint" direction="in" />
+    <parameter name="@i_codigo_cab" dataType="int" direction="in" />
+    <parameter name="@i_codigo_detalle" dataType="int" direction="in" />
+    <parameter name="@i_total_modif" dataType="money" direction="in" />
+    <parameter name="@i_observacion" dataType="varchar" direction="in" />
+    <parameter name="@i_fecha_corte" dataType="char" direction="in" />
+    <parameter name="@i_tipo" dataType="char" direction="in" />
+  </parameters>
+  <queries>
+    <query>
+      <columns>
+        <column name="be_fecha_corte" />
+        <column name="be_codigo" />
+      </columns>
+      <queryText>SELECT  "be_fecha_corte" = CONVERT (CHAR (10),be_fecha_corte ,?) </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="be_fecha_corte" />
+        <column name="be_codigo" />
+      </columns>
+      <queryText>SELECT  "be_fecha_corte" = CONVERT (CHAR (10),be_fecha_corte ,103) </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="be_codigo" />
+        <column name="be_fecha_corte" />
+        <column name="be_estado" />
+      </columns>
+      <queryText>SELECT  "be_codigo" = be_codigo,"be_fecha_corte" = be_fecha_corte,"be_estado" = be_estado </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="bd_codigo" />
+        <column name="be_codigo" />
+        <column name="bd_oficial" />
+        <column name="bd_ofical_nombre" />
+        <column name="bd_oficina" />
+        <column name="bd_cargo" />
+        <column name="bd_categoria" />
+        <column name="bd_nivel" />
+        <column name="bd_saldo_cartera" />
+        <column name="bd_numero_clientes" />
+        <column name="bd_mora_ponderada" />
+        <column name="bd_numero_visitas" />
+        <column name="bd_retencion_clientes" />
+        <column name="bd_crecimiento_cartera" />
+        <column name="db_incremento_clientes" />
+        <column name="bd_varA1" />
+        <column name="bd_varA2" />
+        <column name="bd_varB1" />
+        <column name="bd_varB2" />
+        <column name="bd_varC" />
+        <column name="bd_varD1" />
+        <column name="bd_varD2" />
+        <column name="bd_varE" />
+        <column name="bd_total_sistema" />
+        <column name="bd_total_modif" />
+        <column name="bd_observacion" />
+        <column name="bd_total_sistema_ant" />
+        <column name="bd_total_mod_mes_ant" />
+      </columns>
+      <queryText>SELECT  "bd_codigo" = bd_codigo,"be_codigo" = be_codigo,"bd_oficial" = bd_oficial,"bd_ofical_nombre" = fu_nombre,"bd_oficina" = bd_oficina,"bd_cargo" = bd_cargo,"bd_categoria" = bd_categoria,"bd_nivel" = bd_nivel,"bd_saldo_cartera" = bd_saldo_cartera,"bd_numero_clientes" = bd_numero_clientes,"bd_mora_ponderada" = bd_mora_ponderada,"bd_numero_visitas" = bd_numero_visitas,"bd_retencion_clientes" = bd_retencion_clientes,"bd_crecimiento_cartera" = bd_crecimiento_cartera,"db_incremento_clientes" = db_incremento_clientes,"bd_varA1" = bd_varA1,"bd_varA2" = bd_varA2,"bd_varB1" = bd_varB1,"bd_varB2" = bd_varB2,"bd_varC" = bd_varC,"bd_varD1" = bd_varD1,"bd_varD2" = bd_varD2,"bd_varE" = bd_varE,"bd_total_sistema" = bd_total_sistema,"bd_total_modif" = bd_total_modif,"bd_observacion",bd_observacion </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="CODIGO" />
+        <column name="NOMBRE" />
+        <column name="CARGO" />
+        <column name="OFICINA" />
+        <column name="COMISION" />
+        <column name="VALOR" />
+        <column name="BONO" />
+        <column name="BONO_ANT" />
+      </columns>
+      <queryText></queryText>
+    </query>
+  </queries>
+</procedure>

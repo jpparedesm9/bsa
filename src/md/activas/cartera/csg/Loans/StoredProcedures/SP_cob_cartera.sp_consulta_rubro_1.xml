@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<procedure>
+  <database>cob_cartera</database>
+  <name>sp_consulta_rubro</name>
+  <type>SYBASE</type>
+  <version>1</version>
+  <parameters>
+    <parameter name="@s_ssn" dataType="int" direction="in" />
+    <parameter name="@s_user" dataType="varchar" direction="in" />
+    <parameter name="@s_term" dataType="varchar" direction="in" />
+    <parameter name="@s_date" dataType="datetime" direction="in" />
+    <parameter name="@s_srv" dataType="varchar" direction="in" />
+    <parameter name="@s_lsrv" dataType="varchar" direction="in" />
+    <parameter name="@s_ofi" dataType="smallint" direction="in" />
+    <parameter name="@t_debug" dataType="char" direction="in" />
+    <parameter name="@t_file" dataType="varchar" direction="in" />
+    <parameter name="@t_from" dataType="varchar" direction="in" />
+    <parameter name="@t_trn" dataType="smallint" direction="in" />
+    <parameter name="@t_show_version" dataType="bit" direction="in" />
+    <parameter name="@i_operacion" dataType="char" direction="in" />
+    <parameter name="@i_tipo" dataType="char" direction="in" />
+    <parameter name="@i_toperacion" dataType="varchar" direction="in" />
+    <parameter name="@i_moneda" dataType="tinyint" direction="in" />
+    <parameter name="@i_concepto" dataType="varchar" direction="in" />
+    <parameter name="@i_transaccion" dataType="smallint" direction="in" />
+    <parameter name="@i_banco" dataType="varchar" direction="in" />
+    <parameter name="@i_tipo_rubro" dataType="char" direction="in" />
+    <parameter name="@i_referencial" dataType="varchar" direction="in" />
+    <parameter name="@i_tabla_temporal" dataType="char" direction="in" />
+    <parameter name="@i_rubros_multa" dataType="char" direction="in" />
+    <parameter name="@i_valorcat" dataType="varchar" direction="in" />
+    <parameter name="@i_desde_originador" dataType="char" direction="in" />
+  </parameters>
+  <queries>
+    <query>
+      <columns>
+        <column name="concepto" />
+        <column name="descripcion" />
+        <column name="des_aplicar" />
+        <column name="des_referencial" />
+        <column name="base" />
+        <column name="signo" />
+        <column name="factor" />
+        <column name="total" />
+        <column name="minimo" />
+        <column name="maximo" />
+        <column name="prioridad" />
+        <column name="provisiona" />
+        <column name="tipo_valor" />
+        <column name="tipo_rubro" />
+        <column name="valor_max" />
+        <column name="formaPago" />
+        <column name="paga_mora" />
+        <column name="base_calculo" />
+        <column name="desc_tipo" />
+        <column name="desc_forma_pago" />
+        <column name="reajuste" />
+        <column name="desc_reajuste" />
+        <column name="referencial_reaj" />
+        <column name="desc_referencial_reaj" />
+        <column name="signo_reaj" />
+        <column name="valor_reaj" />
+        <column name="signo_maximo_reaj" />
+        <column name="valor_maximo_reaj" />
+        <column name="signo_minimo_reaj" />
+        <column name="valor_minimo_reaj" />
+        <column name="valor_referencial_reaj" />
+        <column name="total_reaj" />
+        <column name="total_maximo_reaj" />
+        <column name="valor_min" />
+        <column name="concepto_asociado" />
+        <column name="modalidad" />
+        <column name="periodicidad" />
+        <column name="diferir" />
+      </columns>
+      <queryText></queryText>
+    </query>
+  </queries>
+</procedure>

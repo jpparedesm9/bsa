@@ -1,0 +1,286 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<procedure>
+  <database>cob_credito</database>
+  <name>sp_bus_oper_cliente</name>
+  <type>SYBASE</type>
+  <version>1</version>
+  <parameters>
+    <parameter name="@s_ssn" dataType="int" direction="in" />
+    <parameter name="@s_user" dataType="varchar" direction="in" />
+    <parameter name="@s_sesn" dataType="int" direction="in" />
+    <parameter name="@s_term" dataType="varchar" direction="in" />
+    <parameter name="@s_date" dataType="datetime" direction="in" />
+    <parameter name="@s_srv" dataType="varchar" direction="in" />
+    <parameter name="@s_lsrv" dataType="varchar" direction="in" />
+    <parameter name="@s_rol" dataType="smallint" direction="in" />
+    <parameter name="@s_ofi" dataType="smallint" direction="in" />
+    <parameter name="@s_org_err" dataType="char" direction="in" />
+    <parameter name="@s_error" dataType="int" direction="in" />
+    <parameter name="@s_sev" dataType="tinyint" direction="in" />
+    <parameter name="@s_msg" dataType="varchar" direction="in" />
+    <parameter name="@s_org" dataType="char" direction="in" />
+    <parameter name="@t_rty" dataType="char" direction="in" />
+    <parameter name="@t_trn" dataType="smallint" direction="in" />
+    <parameter name="@t_debug" dataType="char" direction="in" />
+    <parameter name="@t_file" dataType="varchar" direction="in" />
+    <parameter name="@t_from" dataType="varchar" direction="in" />
+    <parameter name="@i_operacion" dataType="char" direction="in" />
+    <parameter name="@i_opcion" dataType="tinyint" direction="in" />
+    <parameter name="@i_modo" dataType="tinyint" direction="in" />
+    <parameter name="@i_cliente" dataType="int" direction="in" />
+    <parameter name="@i_banco" dataType="varchar" direction="in" />
+    <parameter name="@i_solo_cca" dataType="char" direction="in" />
+    <parameter name="@i_cobranza" dataType="char" direction="in" />
+    <parameter name="@i_oficina" dataType="smallint" direction="in" />
+    <parameter name="@i_linea" dataType="varchar" direction="in" />
+    <parameter name="@i_formato_fecha" dataType="tinyint" direction="in" />
+    <parameter name="@i_tramite" dataType="int" direction="in" />
+    <parameter name="@i_tipo" dataType="varchar" direction="in" />
+    <parameter name="@i_impresion" dataType="char" direction="in" />
+    <parameter name="@i_refinanciamiento" dataType="char" direction="in" />
+    <parameter name="@i_opcion_b" dataType="tinyint" direction="in" />
+    <parameter name="@i_toperacion" dataType="varchar" direction="in" />
+    <parameter name="@i_objeto_cre" dataType="varchar" direction="in" />
+    <parameter name="@i_sector" dataType="varchar" direction="in" />
+  </parameters>
+  <queries>
+    <query>
+      <columns>
+        <column name="{1}" />
+        <column name="{2}" />
+        <column name="{3}" />
+        <column name="op_fecha_fin " />
+        <column name="op_fecha_ini " />
+        <column name="{6}" />
+        <column name="Saldo " />
+        <column name="{8}" />
+        <column name="{9}" />
+        <column name="{10}" />
+        <column name="{11}" />
+        <column name="{12}" />
+        <column name="{13}" />
+        <column name="{14}" />
+        <column name="OperacionBase " />
+        <column name="{16}" />
+        <column name="{17}" />
+        <column name="Calificacion " />
+        <column name="Porcentaje " />
+        <column name="{20}" />
+        <column name="tr_tipo_cartera" />
+        <column name="tr_descripcion_oficial" />
+        <column name="tr_actividad" />
+        <column name="tr_destino" />
+        <column name="tr_origen_fondos" />
+        <column name="op_estado" />
+        <column name="op_mora" />
+        <column name="op_type_operation" />
+      </columns>
+      <queryText>SELECT  op_operacion,op_banco,op_toperacion,op_fecha_fin = CONVERT (CHAR (10),op_fecha_fin ,?),op_fecha_ini = CONVERT (CHAR (10),op_fecha_ini ,?),op_monto,Saldo = (SELECT  SUM (ISNULL (am_cuota, 0) + ISNULL (am_gracia, 0) - ISNULL (am_pagado, 0) - ISNULL (am_exponencial, 0)) FROM cob_cartera..ca_amortizacion   WHERE am_operacion = ope.op_operacion AND am_concepto = "CAP"     ),op_moneda,op_num_renovacion,op_renovacion,op_tipo,op_oficina,tr_objeto,LTRIM (en_calif_cartera),OperacionBase = " ",op_tramite,op_oficial,Calificacion = "jjj",Porcentaje = (SELECT  ((SUM (am_acumulado + am_gracia - am_pagado)) * 100) / SUM (am_acumulado) FROM cob_cartera..ca_amortizacion   WHERE ope.op_operacion = am_operacion AND am_concepto = "CAP"     ),op_sector </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="{1}" />
+        <column name="{2}" />
+        <column name="{3}" />
+        <column name="op_fecha_fin " />
+        <column name="op_fecha_ini " />
+        <column name="{6}" />
+        <column name="Saldo " />
+        <column name="{8}" />
+        <column name="{9}" />
+        <column name="{10}" />
+        <column name="{11}" />
+        <column name="{12}" />
+        <column name="{13}" />
+        <column name="en_calif_cartera " />
+        <column name="{15}" />
+        <column name="{16}" />
+        <column name="{17}" />
+        <column name="Calificacion " />
+        <column name="Porcentaje " />
+        <column name="{20}" />
+      </columns>
+      <queryText>SELECT  op_operacion,op_banco,op_toperacion,op_fecha_fin = CONVERT (CHAR (10),op_fecha_fin ,?),op_fecha_ini = CONVERT (CHAR (10),op_fecha_ini ,?),op_monto,Saldo = (SELECT  SUM (ISNULL (am_cuota, 0) + ISNULL (am_gracia, 0) - ISNULL (am_pagado, 0) - ISNULL (am_exponencial, 0)) FROM cob_cartera..ca_amortizacion   WHERE am_operacion = ope.op_operacion AND am_concepto = "CAP"     ),op_moneda,op_num_renovacion,op_renovacion,op_tipo,op_oficina,tr_objeto,en_calif_cartera = LTRIM (en_calif_cartera),or_base,op_tramite,op_oficial,Calificacion = "sdf",Porcentaje = (SELECT  ((SUM (am_acumulado + am_gracia - am_pagado)) * 100) / SUM (am_acumulado) FROM cob_cartera..ca_amortizacion   WHERE ope.op_operacion = am_operacion AND am_concepto = "CAP"     ),op_sector </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="{1}" />
+        <column name="{2}" />
+        <column name="{3}" />
+        <column name="op_fecha_fin " />
+        <column name="op_fecha_ini " />
+        <column name="{6}" />
+        <column name="Saldo " />
+        <column name="{8}" />
+        <column name="{9}" />
+        <column name="{10}" />
+        <column name="{11}" />
+        <column name="{12}" />
+        <column name="{13}" />
+        <column name="{14}" />
+        <column name="OperacionBase " />
+        <column name="{16}" />
+        <column name="{17}" />
+        <column name="Calificacion " />
+        <column name="Porcentaje " />
+        <column name="{20}" />
+      </columns>
+      <queryText>SELECT  op_operacion,op_banco,op_toperacion,op_fecha_fin = CONVERT (CHAR (10),op_fecha_fin ,?),op_fecha_ini = CONVERT (CHAR (10),op_fecha_ini ,?),op_monto,Saldo = (SELECT  SUM (ISNULL (am_cuota, 0) + ISNULL (am_gracia, 0) - ISNULL (am_pagado, 0) - ISNULL (am_exponencial, 0)) FROM cob_cartera..ca_amortizacion   WHERE am_operacion = ope.op_operacion AND am_concepto = "CAP"     ),op_moneda,op_num_renovacion,op_renovacion,op_tipo,op_oficina,da.tr_objeto,LTRIM (en_calif_cartera),OperacionBase = "",op_tramite,op_oficial,Calificacion = "sdf",Porcentaje = (SELECT  ((SUM (am_acumulado + am_gracia - am_pagado)) * 100) / SUM (am_acumulado) FROM cob_cartera..ca_amortizacion   WHERE ope.op_operacion = am_operacion AND am_concepto = "CAP"     ),op_sector </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="{1}" />
+        <column name="{2}" />
+        <column name="{3}" />
+        <column name="op_fecha_fin " />
+        <column name="op_fecha_ini " />
+        <column name="{6}" />
+        <column name="Saldo " />
+        <column name="{8}" />
+        <column name="{9}" />
+        <column name="{10}" />
+        <column name="{11}" />
+        <column name="{12}" />
+        <column name="{13}" />
+        <column name="{14}" />
+        <column name="OperacionBase " />
+        <column name="{16}" />
+        <column name="{17}" />
+        <column name="Calificacion " />
+        <column name="Porcentaje " />
+        <column name="{20}" />
+      </columns>
+      <queryText>SELECT  op_operacion,op_banco,op_toperacion,op_fecha_fin = CONVERT (CHAR (10),op_fecha_fin ,?),op_fecha_ini = CONVERT (CHAR (10),op_fecha_ini ,?),op_monto,Saldo = (SELECT  SUM (ISNULL (am_cuota, 0) + ISNULL (am_gracia, 0) - ISNULL (am_pagado, 0) - ISNULL (am_exponencial, 0)) FROM cob_cartera..ca_amortizacion   WHERE am_operacion = ope.op_operacion AND am_concepto = "CAP"     ),op_moneda,op_num_renovacion,op_renovacion,op_tipo,op_oficina,da.tr_objeto,LTRIM (en_calif_cartera),OperacionBase = "",op_tramite,op_oficial,Calificacion = "df",Porcentaje = (SELECT  ((SUM (am_acumulado + am_gracia - am_pagado)) * 100) / SUM (am_acumulado) FROM cob_cartera..ca_amortizacion   WHERE ope.op_operacion = am_operacion AND am_concepto = "CAP"     ),op_sector </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="{1}" />
+        <column name="{2}" />
+        <column name="{3}" />
+        <column name="op_fecha_fin " />
+        <column name="op_fecha_ini " />
+        <column name="{6}" />
+        <column name="Saldo " />
+        <column name="{8}" />
+        <column name="{9}" />
+        <column name="{10}" />
+        <column name="{11}" />
+        <column name="{12}" />
+        <column name="{13}" />
+        <column name="{14}" />
+        <column name="OperacionBase " />
+        <column name="{16}" />
+        <column name="{17}" />
+        <column name="Calificacion " />
+        <column name="Porcentaje " />
+        <column name="{20}" />
+        <column name="{21}" />
+      </columns>
+      <queryText>SELECT  op_operacion,op_banco,op_toperacion,op_fecha_fin = CONVERT (CHAR (10),op_fecha_fin ,?),op_fecha_ini = CONVERT (CHAR (10),op_fecha_ini ,?),op_monto,Saldo = (SELECT  SUM (ISNULL (am_cuota, 0) + ISNULL (am_gracia, 0) - ISNULL (am_pagado, 0) - ISNULL (am_exponencial, 0)) FROM cob_cartera..ca_amortizacion   WHERE am_operacion = ope.op_operacion AND am_concepto = "CAP"     ),op_moneda,op_num_renovacion,op_renovacion,op_tipo,op_oficina,da.tr_objeto,LTRIM (en_calif_cartera),OperacionBase = "",op_tramite,op_oficial,Calificacion = "sdfd",Porcentaje = (SELECT  ((SUM (am_acumulado + am_gracia - am_pagado)) * 100) / SUM (am_acumulado) FROM cob_cartera..ca_amortizacion   WHERE ope.op_operacion = am_operacion AND am_concepto = "CAP"     ),op_sector,da.tr_tipo_cartera </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="{1}" />
+        <column name="{2}" />
+        <column name="{3}" />
+        <column name="{4}" />
+        <column name="Saldo " />
+        <column name="{6}" />
+        <column name="{7}" />
+        <column name="{8}" />
+        <column name="{9}" />
+        <column name="{10}" />
+      </columns>
+      <queryText>SELECT  op_operacion,op_banco,op_toperacion,op_monto,Saldo = (SELECT  SUM (ISNULL (am_cuota, 0) + ISNULL (am_gracia, 0) - ISNULL (am_pagado, 0) - ISNULL (am_exponencial, 0)) FROM cob_cartera..ca_amortizacion   WHERE am_operacion = ope.op_operacion AND am_concepto = "CAP"     ),op_moneda,op_oficina,op_tramite,op_oficial,op_sector </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="op_operacion" />
+        <column name="op_banco" />
+        <column name="op_toperacion" />
+        <column name="op_fecha_fin" />
+        <column name="op_fecha_ini" />
+        <column name="op_monto" />
+        <column name="Saldo" />
+        <column name="op_moneda" />
+        <column name="op_num_renovacion" />
+        <column name="op_renovacion" />
+        <column name="op_tipo" />
+        <column name="op_oficina" />
+        <column name="tr_objeto" />
+        <column name="en_calif_cartera" />
+        <column name="or_base" />
+        <column name="op_tramite" />
+        <column name="op_oficial" />
+        <column name="Calificacion" />
+        <column name="Porcentaje" />
+        <column name="op_sector" />
+        <column name="tr_descripcion_oficial" />
+        <column name="tr_actividad" />
+        <column name="tr_destino" />
+        <column name="tr_origen_fondos" />
+        <column name="op_cuota" />
+        <column name="en_ente" />
+        <column name="or_abono" />
+        <column name="or_capitaliza" />
+        <column name="op_estado" />
+        <column name="op_mora" />
+        <column name="op_type_operation" />
+      </columns>
+      <queryText></queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="op_operacion" />
+        <column name="op_banco" />
+        <column name="op_toperacion" />
+        <column name="op_fecha_fin" />
+        <column name="op_fecha_ini" />
+        <column name="op_monto" />
+        <column name="Saldo" />
+        <column name="op_moneda" />
+        <column name="op_num_renovacion" />
+        <column name="op_renovacion" />
+        <column name="op_tipo" />
+        <column name="op_oficina" />
+        <column name="tr_objeto" />
+        <column name="en_calif_cartera" />
+        <column name="or_base" />
+        <column name="op_tramite" />
+        <column name="op_oficial" />
+        <column name="Calificacion" />
+        <column name="Porcentaje" />
+        <column name="op_sector" />
+      </columns>
+      <queryText></queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="op_operacion" />
+        <column name="op_banco" />
+        <column name="op_toperacion" />
+        <column name="op_fecha_fin" />
+        <column name="op_fecha_ini" />
+        <column name="op_monto" />
+        <column name="Saldo" />
+        <column name="op_moneda" />
+        <column name="op_num_renovacion" />
+        <column name="op_renovacion" />
+        <column name="op_tipo" />
+        <column name="op_oficina" />
+        <column name="tr_objeto" />
+        <column name="en_calif_cartera" />
+        <column name="or_base" />
+        <column name="op_tramite" />
+        <column name="op_oficial" />
+        <column name="Calificacion" />
+        <column name="Porcentaje" />
+        <column name="op_sector" />
+        <column name="op_estado" />
+        <column name="op_mora" />
+        <column name="op_operation_type" />
+      </columns>
+      <queryText></queryText>
+    </query>
+  </queries>
+</procedure>

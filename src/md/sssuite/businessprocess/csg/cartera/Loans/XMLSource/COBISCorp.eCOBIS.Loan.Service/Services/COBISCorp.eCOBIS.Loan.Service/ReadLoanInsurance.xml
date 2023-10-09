@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<serviceClass name="ReadLoanInsurance" nsBase="COBISCorp.eCOBIS.Loan" namespace="COBISCorp.eCOBIS.Loan.Service" package="cobiscorp.ecobis.loan.service" ns="http://service.loan.ecobis.cobiscorp" module="Loan" productName="COBISCorp.eCOBIS.Loan.Service" productVersion="2.0.0.0">
+  <productProperties>
+    <property name="MavenGroupId" value="com.cobiscorp.processapi" />
+    <property name="MavenArtifactId" value="COBISCorp.eCOBIS.Loan.Service" />
+    <property name="MavenVersion" value="2.0.0.0" />
+  </productProperties>
+  <partialClass name="ReadLoanInsurance">
+    <services>
+      <service id="Loan.ReadLoanInsurance.ReadLoanInsuranceSearch" netName="ReadLoanInsuranceSearch" javaName="readLoanInsuranceSearch" mappingType="STORED_PROCEDURE" mapId="ff3fd7838d15b73ab974060acc36e146">
+        <documentations default="Español">
+          <documentation id="English">See the basic information of the insurance policies associated with a loan</documentation>
+        </documentations>
+        <SRVMapping name="cob_custodia..sp_poliza" trnCode="19105">
+          <DTOs>
+            <DTO direction="in" name="ReadLoanInsuranceRequest" alias="inReadLoanInsuranceRequest" namespace="COBISCorp.eCOBIS.Loan.DTO" package="cobiscorp.ecobis.loan.dto" ns="http://dto.loan.ecobis.cobiscorp" required="true" />
+            <DTO direction="return" name="ReadLoanInsuranceResponse" alias="returnReadLoanInsuranceResponse" namespace="COBISCorp.eCOBIS.Loan.DTO" package="cobiscorp.ecobis.loan.dto" ns="http://dto.loan.ecobis.cobiscorp" required="true">
+              <properties>
+                <property name="policy" propertyNet="Policy" propertyJava="policy" setterJavaMethod="setPolicy" getterJavaMethod="getPolicy" xsdType="string" netType="string" javaType="String" cobisMapping="" isInherit="false" isComplexType="false" isCollectionType="false" required="false" encrypted="false" maxLength="0" />
+                <property name="customerIncumbent" propertyNet="CustomerIncumbent" propertyJava="customerIncumbent" setterJavaMethod="setCustomerIncumbent" getterJavaMethod="getCustomerIncumbent" xsdType="int" netType="int" javaType="int" cobisMapping="" isInherit="false" isComplexType="false" isCollectionType="false" required="true" encrypted="false" maxLength="0" />
+                <property name="nameIncumbent" propertyNet="NameIncumbent" propertyJava="nameIncumbent" setterJavaMethod="setNameIncumbent" getterJavaMethod="getNameIncumbent" xsdType="string" netType="string" javaType="String" cobisMapping="" isInherit="false" isComplexType="false" isCollectionType="false" required="false" encrypted="false" maxLength="0" />
+              </properties>
+            </DTO>
+            <DTO direction="out" name="ReadLoanInsuranceResponseList" alias="outReadLoanInsuranceResponseList" namespace="COBISCorp.eCOBIS.Loan.DTO" package="cobiscorp.ecobis.loan.dto" ns="http://dto.loan.ecobis.cobiscorp" required="true">
+              <properties>
+                <property name="loanInsuranceResponseList" propertyNet="LoanInsuranceResponseList" propertyJava="loanInsuranceResponseList" setterJavaMethod="setLoanInsuranceResponseList" getterJavaMethod="getLoanInsuranceResponseList" xsdType="GenericList" netType="List&lt;ReadLoanInsuranceResponse&gt;" javaType="ArrayList&lt;ReadLoanInsuranceResponse&gt;" cobisMapping="" isInherit="false" isComplexType="true" isCollectionType="true" required="true" encrypted="false" maxLength="0" XSDElementType="ReadLoanInsuranceResponse" netElementType="ReadLoanInsuranceResponse" javaElementType="ReadLoanInsuranceResponse" />
+              </properties>
+            </DTO>
+          </DTOs>
+          <parameterMappings>
+            <parameter name="@i_operacion" direction="in" mappingDirection="in" dataType="char" CTSDataType="SQLCHAR" JavaSQLType="CHAR" mappingType="CONSTANT" allowNull="false" contantValue="P" />
+            <parameter name="@i_banco" direction="in" mappingDirection="in" dataType="varchar" CTSDataType="SQLVARCHAR" JavaSQLType="VARCHAR" mappingType="DTO" allowNull="false" DTOAlias="inReadLoanInsuranceRequest" DTOPropertyName="bank" />
+          </parameterMappings>
+          <resultMappings>
+            <result>
+              <DTOResult DTOAlias="returnReadLoanInsuranceResponse" MapReturn="true">
+                <columnMapping position="0" name="policy" DTOPropertyName="policy" DataType="string" Format="" />
+                <columnMapping position="1" name="customerIncumbent" DTOPropertyName="customerIncumbent" DataType="int" Format="" />
+                <columnMapping position="2" name="nameIncumbent" DTOPropertyName="nameIncumbent" DataType="string" Format="" />
+              </DTOResult>
+            </result>
+          </resultMappings>
+          <MappingProperties />
+        </SRVMapping>
+      </service>
+    </services>
+  </partialClass>
+</serviceClass>

@@ -1,0 +1,89 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<procedure>
+  <database>cob_pac</database>
+  <name>sp_buscar_custodia_busin</name>
+  <type>SYBASE</type>
+  <version>1</version>
+  <parameters>
+    <parameter name="@s_ssn" dataType="int" direction="in" />
+    <parameter name="@s_date" dataType="datetime" direction="in" />
+    <parameter name="@s_user" dataType="varchar" direction="in" />
+    <parameter name="@s_term" dataType="varchar" direction="in" />
+    <parameter name="@s_corr" dataType="char" direction="in" />
+    <parameter name="@s_ssn_corr" dataType="int" direction="in" />
+    <parameter name="@s_ofi" dataType="smallint" direction="in" />
+    <parameter name="@t_rty" dataType="char" direction="in" />
+    <parameter name="@t_trn" dataType="smallint" direction="in" />
+    <parameter name="@t_debug" dataType="char" direction="in" />
+    <parameter name="@t_file" dataType="varchar" direction="in" />
+    <parameter name="@t_from" dataType="varchar" direction="in" />
+    <parameter name="@i_operacion" dataType="char" direction="in" />
+    <parameter name="@i_modo" dataType="smallint" direction="in" />
+    <parameter name="@i_filial" dataType="tinyint" direction="in" />
+    <parameter name="@i_sucursal" dataType="smallint" direction="in" />
+    <parameter name="@i_tipo" dataType="varchar" direction="in" />
+    <parameter name="@i_estado" dataType="varchar" direction="in" />
+    <parameter name="@i_formato_fecha" dataType="int" direction="in" />
+    <parameter name="@i_fecha_ingreso1" dataType="datetime" direction="in" />
+    <parameter name="@i_fecha_ingreso2" dataType="datetime" direction="in" />
+    <parameter name="@i_cliente" dataType="int" direction="in" />
+    <parameter name="@i_oficial" dataType="smallint" direction="in" />
+    <parameter name="@i_codigo_externo" dataType="varchar" direction="in" />
+    <parameter name="@i_codigo_externo2" dataType="varchar" direction="in" />
+    <parameter name="@i_moneda" dataType="int" direction="in" />
+    <parameter name="@i_cuantia" dataType="varchar" direction="in" />
+    <parameter name="@i_caracter" dataType="varchar" direction="in" />
+    <parameter name="@i_admisibilidad" dataType="varchar" direction="in" />
+    <parameter name="@i_compartida" dataType="varchar" direction="in" />
+  </parameters>
+  <queries>
+    <query>
+      <columns>
+        <column name="codigo_externo" />
+        <column name="tipo" />
+        <column name="descripcion" />
+        <column name="abierta_cerrada" />
+        <column name="id_garante" />
+        <column name="id_cliente" />
+        <column name="nombre_gar" />
+        <column name="custodia" />
+        <column name="sucursal" />
+        <column name="nombre_of" />
+        <column name="moneda" />
+        <column name="valor_actual" />
+        <column name="valor_inicial" />
+        <column name="fecha_avaluo" />
+        <column name="estado" />
+        <column name="usuario_crea" />
+        <column name="esPersonal" />
+        <column name="nombre_cli" />
+        <column name="fecha_vencimiento" />
+      </columns>
+      <queryText>SELECT  "codigo_externo" = cu_codigo_externo,"tipo" = cu_tipo,"descripcion" = SUBSTRING (tc_descripcion, 1, 35),"abierta_cerrada" = cu_abierta_cerrada,"id_garante" = cu_garante,"id_cliente" = cg_ente,"nombre_gar" = ISNULL (SUBSTRING (b.en_nomlar, 1, DATALENGTH (b.en_nomlar)), SUBSTRING (a.en_nomlar, 1, DATALENGTH (a.en_nomlar))),"custodia" = cu_custodia,"sucursal" = cu_sucursal,"nombre_of" = of_nombre,"moneda" = cu_moneda,"valor_actual" = cu_valor_actual,"valor_inicial" = cu_valor_inicial,"fecha_avaluo" = CONVERT (VARCHAR (10),cu_fecha_insp ,?),"estado" = cu_estado,"usuario_crea" = cu_usuario_crea,"esPersonal" = CASE WHEN cu_tipo THEN "S" ELSE "N" END,"nombre_cli" = SUBSTRING (a.en_nomlar, 1, DATALENGTH (a.en_nomlar)),'fecha_vencimiento'	=  convert(varchar(10), cu_fecha_vencimiento,@i_formato_fecha) </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="codigo_externo" />
+        <column name="tipo" />
+        <column name="descripcion" />
+        <column name="abierta_cerrada" />
+        <column name="id_garante" />
+        <column name="id_cliente" />
+        <column name="nombre_gar" />
+        <column name="custodia" />
+        <column name="sucursal" />
+        <column name="nombre_of" />
+        <column name="moneda" />
+        <column name="valor_actual" />
+        <column name="valor_inicial" />
+        <column name="fecha_avaluo" />
+        <column name="estado" />
+        <column name="usuario_crea" />
+        <column name="esPersonal" />
+        <column name="nombre_cli" />
+        <column name="fecha_vencimiento" />
+      </columns>
+      <queryText>SELECT  "codigo_externo" = cu_codigo_externo,"tipo" = cu_tipo,"descripcion" = SUBSTRING (tc_descripcion, 1, 35),"abierta_cerrada" = cu_abierta_cerrada,"id_garante" = cu_garante,"id_cliente" = cg_ente,"nombre_gar" = ISNULL (SUBSTRING (b.en_nomlar, 1, DATALENGTH (b.en_nomlar)), SUBSTRING (a.en_nomlar, 1, DATALENGTH (a.en_nomlar))),"custodia" = cu_custodia,"sucursal" = cu_sucursal,"nombre_of" = of_nombre,"moneda" = cu_moneda,"valor_actual" = cu_valor_actual,"valor_inicial" = cu_valor_inicial,"fecha_avaluo" = CONVERT (VARCHAR (10),cu_fecha_insp ,?),"estado" = cu_estado,"usuario_crea" = cu_usuario_crea,"esPersonal" = CASE WHEN cu_tipo THEN "S" ELSE "N" END,"nombre_cli" = SUBSTRING (a.en_nomlar, 1, DATALENGTH (a.en_nomlar)),'fecha_vencimiento'	=  convert(varchar(10), cu_fecha_vencimiento,@i_formato_fecha) </queryText>
+    </query>
+  </queries>
+</procedure>

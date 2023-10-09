@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="contratoCreditoRevolvente_contratoCredito" pageWidth="507" pageHeight="794" whenNoDataType="AllSectionsNoDetail" columnWidth="507" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="deec1b21-1036-4734-948b-164547062a2b">
+	<property name="ireport.zoom" value="1.5"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="SUBREPORT_DIR" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["/"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="firmaNF1CCI" class="java.lang.String"/>
+	<parameter name="firmaNF2CCI" class="java.lang.String"/>
+	<parameter name="firmaNB1CCI" class="java.lang.String"/>
+	<parameter name="firmaNB2CCI" class="java.lang.String"/>
+	<parameter name="condusef" class="java.lang.String"/>
+	<parameter name="pieAnio" class="java.lang.String"/>
+	<parameter name="footParamCr" class="java.lang.String" isForPrompting="false"/>
+	<field name="nombreCliente" class="java.lang.String"/>
+	<field name="cciDetalleUno" class="java.util.List"/>
+	<field name="cciDetalleDos" class="java.util.List"/>
+	<field name="cciDetalleFirmaUno" class="java.util.List"/>
+	<field name="dia" class="java.lang.String"/>
+	<field name="mes" class="java.lang.String"/>
+	<field name="anio" class="java.lang.String"/>
+	<field name="nombreInclusionRepUno" class="java.lang.String"/>
+	<field name="nombreInclusionRepDos" class="java.lang.String"/>
+	<field name="nombreBancoRepUno" class="java.lang.String"/>
+	<field name="nombreBancoRepDos" class="java.lang.String"/>
+	<field name="cciDetalleFirmaDos" class="java.util.List"/>
+	<field name="ciudadOfi" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<detail>
+		<band height="14" splitType="Stretch">
+			<staticText>
+				<reportElement x="131" y="0" width="377" height="14" uuid="ab886980-87d2-44fd-97cc-8aed035aa3b0"/>
+				<textElement textAlignment="Right" verticalAlignment="Top">
+					<font fontName="SansSerif" size="8" isBold="true"/>
+					<paragraph leftIndent="2" rightIndent="5"/>
+				</textElement>
+				<text><![CDATA[CONTRATO DE CRÉDITO INDIVIDUAL]]></text>
+			</staticText>
+		</band>
+		<band height="12" splitType="Stretch"/>
+		<band height="11" splitType="Stretch">
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="0" y="0" width="507" height="11" isPrintWhenDetailOverflows="true" uuid="a7511dea-238f-4276-814f-6dc1df2617ed"/>
+				<textElement textAlignment="Justified" verticalAlignment="Top" markup="none">
+					<font fontName="SansSerif" size="7" isBold="true"/>
+					<paragraph lineSpacingSize="0.5" leftIndent="2" rightIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA["CONTRATO DE APERTURA DE CRÉDITO INDIVIDUAL EN CUENTA CORRIENTE (CRÉDITO INDIVIDUAL) EN MONEDA NACIONAL QUE CELEBRAN POR UNA PARTE SANTANDER INCLUSIÓN FINANCIERA, S.A. DE C.V., SOFOM, E.R., GRUPO FINANCIERO SANTANDER MÉXICO, EN LO SUCESIVO “INCLUSIÓN FINANCIERA”, Y POR LA OTRA PARTE LA PERSONA CUYO NOMBRE, DATOS GENERALES Y FIRMA QUEDARON REGISTRADOS EN LA SOLICITUD CONTRATO QUE ANTECEDE AL PRESENTE CONTRATO, Y EN SU CASO LA(S) PERSONA(S) QUE CON EL CARÁCTER DE “OBLIGADO(S) SOLIDARIO(S) HAYAN QUEDADO REGISTRADOS EN LA SOLICITUD QUIEN(ES) EN LO SUCESIVO SE DESIGNARÁ COMO EL “ACREDITADO” Y EL(LOS) “OBLIGADO(S) SOLIDARIO(S)”, SEGÚN CORRESPONDA, CON LA COMPARECENCIA DE BANCO SANTANDER MÉXICO, S.A., INSTITUCIÓN DE BANCA MÚLTIPLE, GRUPO FINANCIERO SANTANDER MÉXICO, EN LO SUCESIVO EL “BANCO”, AL TENOR DE LAS SIGUIENTES DECLARACIONES Y CLÁUSULAS: "]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="18" splitType="Stretch"/>
+		<band height="15" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="-3" width="507" height="14" uuid="8fa0fd75-7df1-4314-a749-0834334c1e35"/>
+				<textElement textAlignment="Center" verticalAlignment="Top">
+					<font fontName="SansSerif" size="8" isBold="true"/>
+					<paragraph leftIndent="2" rightIndent="5"/>
+				</textElement>
+				<text><![CDATA[D E C L A R A C I O N E S]]></text>
+			</staticText>
+		</band>
+		<band height="20" splitType="Stretch"/>
+		<band height="14">
+			<subreport>
+				<reportElement positionType="Float" stretchType="RelativeToBandHeight" x="0" y="-18" width="245" height="14" uuid="99f501a4-23f9-4946-bfd3-f01ab1f2fd32"/>
+				<subreportParameter name="condusef">
+					<subreportParameterExpression><![CDATA[$P{condusef}]]></subreportParameterExpression>
+				</subreportParameter>
+				<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($F{cciDetalleUno})]]></dataSourceExpression>
+				<subreportExpression><![CDATA[$P{SUBREPORT_DIR} + "contratoCreditoRevolvente_Detalle_1.jasper"]]></subreportExpression>
+			</subreport>
+			<subreport>
+				<reportElement positionType="Float" stretchType="RelativeToBandHeight" x="262" y="-18" width="245" height="14" uuid="8ab81bbe-e801-444a-aded-441131afb2e3"/>
+				<subreportParameter name="condusef">
+					<subreportParameterExpression><![CDATA[$P{condusef}]]></subreportParameterExpression>
+				</subreportParameter>
+				<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($F{cciDetalleUno})]]></dataSourceExpression>
+				<subreportExpression><![CDATA[$P{SUBREPORT_DIR} + "contratoCreditoRevolvente_Detalle_1_2.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+		<band height="8" splitType="Stretch"/>
+		<band height="16" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="-14" width="507" height="14" uuid="97992d32-298a-4e40-84a3-7fbaef00ee68"/>
+				<textElement verticalAlignment="Top">
+					<font fontName="SansSerif" size="8" isBold="false"/>
+					<paragraph leftIndent="2" rightIndent="5"/>
+				</textElement>
+				<text><![CDATA[Hechas las DECLARACIONES anteriores, las partes convienen en obligarse al tenor de las siguientes:]]></text>
+			</staticText>
+		</band>
+		<band height="25" splitType="Stretch">
+			<staticText>
+				<reportElement x="-2" y="-10" width="507" height="14" uuid="318429f4-c7b2-42cf-b644-441d0f327573"/>
+				<textElement textAlignment="Center" verticalAlignment="Top">
+					<font fontName="SansSerif" size="8" isBold="true"/>
+					<paragraph leftIndent="2" rightIndent="5"/>
+				</textElement>
+				<text><![CDATA[C L Á U S U L A S]]></text>
+			</staticText>
+		</band>
+		<band height="2">
+			<subreport>
+				<reportElement positionType="Float" stretchType="RelativeToBandHeight" x="-2" y="-22" width="507" height="14" uuid="21de8fef-1d26-4155-b084-17960600a9dd"/>
+				<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($F{cciDetalleDos})]]></dataSourceExpression>
+				<subreportExpression><![CDATA[$P{SUBREPORT_DIR} + "contratoCreditoRevolvente_Detalle_2.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+		<band height="2"/>
+	</detail>
+	<pageFooter>
+		<band height="25">
+			<textField>
+				<reportElement x="0" y="7" width="233" height="9" uuid="cee7b48d-1ade-4c16-bd27-8cc1d8645efb"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="SansSerif" size="6" isBold="true"/>
+					<paragraph firstLineIndent="1"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Hoja " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="334" y="7" width="174" height="11" uuid="5d8522de-c1f5-4ce8-866e-e5098fce684c"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="6" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{footParamCr}+" " + $P{pieAnio}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="0" y="5" width="507" height="1" uuid="bef92ee6-24b9-4e1a-b31e-db4407e2a357"/>
+				<graphicElement>
+					<pen lineWidth="0.5"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement x="0" y="2" width="507" height="1" uuid="d128637b-4182-441f-82a3-54be66b2507e"/>
+				<graphicElement>
+					<pen lineWidth="1.5"/>
+				</graphicElement>
+			</line>
+			<textField>
+				<reportElement x="5" y="15" width="387" height="10" uuid="6ad4ad4a-39af-42dd-82aa-ebb9a1206f46"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="SansSerif" size="6" isBold="true"/>
+					<paragraph firstLineIndent="1"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Registro de Contratos de Adhesión de la CONDUSEF: " + $P{condusef}+"."]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+</jasperReport>

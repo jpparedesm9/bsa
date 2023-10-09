@@ -1,0 +1,386 @@
+{
+  "id": {
+    "moduleId": "ASSTS",
+    "subModuleId": "TRNSC",
+    "taskId": "T_NEGOTIATIOTML_700",
+    "version": "1.0.0"
+  },
+  "name": {
+    "$ref": "../../../../ASSTS/relations/componentKeys.json#/TRNSC/Forms/T_NEGOTIATIOTML_700/name"
+  },
+  "modeEnabled": 4095,
+  "tempSaveStr": "F",
+  "autoCrudStr": "F",
+  "mainViewContainerId": "VC_NEGOTIATOO_775700",
+  "customizationLayer": 0,
+  "customizationLayerDescription": "ECU",
+  "viewContainers": [
+    {
+      "layoutType": "Group",
+      "collapsedStr": "F",
+      "id": {
+        "moduleId": "ASSTS",
+        "subModuleId": "TRNSC",
+        "taskId": "T_NEGOTIATIOTML_700",
+        "taskVersion": "1.0.0",
+        "viewContainerId": "VC_NEGOTIATOO_775700"
+      },
+      "name": "NegotiationPaymentsModal",
+      "options": 0,
+      "enabled": 4095,
+      "componentStyle": null,
+      "colSpan": 1,
+      "customizationLayer": 0,
+      "customizationLayerDescription": "ECU",
+      "customEvents": [
+        {
+          "viewContainerEventType": {
+            "name": "InitData",
+            "eventId": 2,
+            "description": "Inicialización de datos de un ViewContainer, despues de este evento se realiza el segimiento de cambios en los datos",
+            "availableExecutionType": 7
+          },
+          "executionType": 1,
+          "customEventId": "CEVC_002T_NEGOTIATIOTML_700_242",
+          "filter": null,
+          "enabled": "T",
+          "customizationLayer": 0,
+          "customizationLayerDescription": "ECU",
+          "isEnabled": true
+        }
+      ],
+      "responsiveLayouts": null,
+      "responsivity": false,
+      "columnsNum": 1,
+      "view": {
+        "id": {
+          "viewId": "VW_NEGOTIATYP_225",
+          "version": "1.0.0"
+        },
+        "name": "View of NegotiationPaymentsModal",
+        "groups": [
+          {
+            "collapsedStr": "F",
+            "groupId": "G_NEGOTIADTM_913225",
+            "name": "Group1171",
+            "layoutType": "Group",
+            "enabled": 4095,
+            "visible": 4095,
+            "style": null,
+            "componentStyle": null,
+            "customEvents": [],
+            "eventType": 0,
+            "columnsNum": 2,
+            "entity": {
+              "$ref": "../../../../ASSTS/entities/EN_NEGOTIATI_654.json#"
+            },
+            "visualAttributes": [
+              {
+                "visualAttributeId": "VA_TEXTINPUTBOXHOE_149225",
+                "name": "paymentType",
+                "userControl": {
+                  "userControlId": "RadioButtonList",
+                  "type": "I"
+                },
+                "customEvents": [],
+                "options": 0,
+                "label": {
+                  "moduleId": "ASSTS",
+                  "labelId": "LBL_ASSTS_TIPOPAGOO_57001",
+                  "defaultValue": {
+                    "$ref": "../../../../ASSTS/assets/languages/ASSTS.json#/ASSTS/LBL/LBL_ASSTS_TIPOPAGOO_57001"
+                  }
+                },
+                "aggregateId": null,
+                "aggregate": null,
+                "width": null,
+                "style": null,
+                "componentStyle": null,
+                "customizationLayer": 0,
+                "customizationLayerDescription": "ECU",
+                "include": 4095,
+                "order": 1,
+                "colSpan": 1,
+                "responsivity": false,
+                "responsiveLayouts": null,
+                "maxRecords": null,
+                "attribute": {
+                  "$ref": "../../../../ASSTS/entities/EN_NEGOTIATI_654.json#/attributes/AT11_PAYMENPT654"
+                },
+                "attributeValidations": [],
+                "enabled": 4095,
+                "visible": 4095,
+                "readOnly": 8,
+                "catalogName": null,
+                "queryVersion": null,
+                "queryMemberText": {
+                  "queryMemberId": null,
+                  "attribute": {
+                    "attributeId": null,
+                    "name": null
+                  }
+                },
+                "queryMemberValue": {
+                  "queryMemberId": null,
+                  "attribute": {
+                    "attributeId": null,
+                    "name": null
+                  }
+                },
+                "cacheDuration": 0,
+                "entityQuery": null,
+                "queryModule": null,
+                "orientation": "V"
+              },
+              {
+                "visualAttributeId": "VA_TEXTINPUTBOXNOR_530225",
+                "name": "interestType",
+                "userControl": {
+                  "userControlId": "RadioButtonList",
+                  "type": "I"
+                },
+                "customEvents": [],
+                "options": 0,
+                "label": {
+                  "moduleId": "ASSTS",
+                  "labelId": "LBL_ASSTS_TIPOINTSR_53012",
+                  "defaultValue": {
+                    "$ref": "../../../../ASSTS/assets/languages/ASSTS.json#/ASSTS/LBL/LBL_ASSTS_TIPOINTSR_53012"
+                  }
+                },
+                "aggregateId": null,
+                "aggregate": null,
+                "width": null,
+                "style": null,
+                "componentStyle": null,
+                "customizationLayer": 0,
+                "customizationLayerDescription": "ECU",
+                "include": 4095,
+                "order": 2,
+                "colSpan": 1,
+                "responsivity": false,
+                "responsiveLayouts": null,
+                "maxRecords": null,
+                "attribute": {
+                  "$ref": "../../../../ASSTS/entities/EN_NEGOTIATI_654.json#/attributes/AT29_INTEREAA654"
+                },
+                "attributeValidations": [],
+                "enabled": 4095,
+                "visible": 4095,
+                "readOnly": 8,
+                "catalogName": null,
+                "queryVersion": null,
+                "queryMemberText": {
+                  "queryMemberId": null,
+                  "attribute": {
+                    "attributeId": null,
+                    "name": null
+                  }
+                },
+                "queryMemberValue": {
+                  "queryMemberId": null,
+                  "attribute": {
+                    "attributeId": null,
+                    "name": null
+                  }
+                },
+                "cacheDuration": 0,
+                "entityQuery": null,
+                "queryModule": null,
+                "orientation": "V"
+              },
+              {
+                "visualAttributeId": "VA_CHECKBOXMVFTHFB_720225",
+                "name": "fullFee",
+                "userControl": {
+                  "userControlId": "CheckBox",
+                  "type": "I"
+                },
+                "customEvents": [],
+                "options": 0,
+                "label": {
+                  "moduleId": "ASSTS",
+                  "labelId": "LBL_ASSTS_CUOTACOMM_65443",
+                  "defaultValue": {
+                    "$ref": "../../../../ASSTS/assets/languages/ASSTS.json#/ASSTS/LBL/LBL_ASSTS_CUOTACOMM_65443"
+                  }
+                },
+                "aggregateId": null,
+                "aggregate": null,
+                "width": null,
+                "style": null,
+                "componentStyle": null,
+                "customizationLayer": 0,
+                "customizationLayerDescription": "ECU",
+                "include": 4095,
+                "order": 3,
+                "colSpan": 1,
+                "responsivity": false,
+                "responsiveLayouts": null,
+                "maxRecords": null,
+                "attribute": {
+                  "$ref": "../../../../ASSTS/entities/EN_NEGOTIATI_654.json#/attributes/AT83_FULLFEEE654"
+                },
+                "attributeValidations": [],
+                "enabled": 4095,
+                "visible": 4095,
+                "readOnly": 8
+              },
+              {
+                "visualAttributeId": "VA_TEXTINPUTBOXAPF_912225",
+                "name": "additionalPayments",
+                "userControl": {
+                  "userControlId": "CheckBox",
+                  "type": "I"
+                },
+                "customEvents": [],
+                "options": 0,
+                "label": {
+                  "moduleId": "ASSTS",
+                  "labelId": "LBL_ASSTS_PERMITEDN_59825",
+                  "defaultValue": {
+                    "$ref": "../../../../ASSTS/assets/languages/ASSTS.json#/ASSTS/LBL/LBL_ASSTS_PERMITEDN_59825"
+                  }
+                },
+                "aggregateId": null,
+                "aggregate": null,
+                "width": null,
+                "style": null,
+                "componentStyle": null,
+                "customizationLayer": 0,
+                "customizationLayerDescription": "ECU",
+                "include": 4095,
+                "order": 4,
+                "colSpan": 1,
+                "responsivity": false,
+                "responsiveLayouts": null,
+                "maxRecords": null,
+                "attribute": {
+                  "$ref": "../../../../ASSTS/entities/EN_NEGOTIATI_654.json#/attributes/AT31_ADDITINN654"
+                },
+                "attributeValidations": [],
+                "enabled": 4095,
+                "visible": 4095,
+                "readOnly": 8
+              }
+            ],
+            "independentValidation": "F",
+            "orientation": "V",
+            "htmlSection": "F",
+            "responsiveLayouts": null,
+            "responsivity": false
+          }
+        ],
+        "modules": [
+          {
+            "moduleId": "ASSTS"
+          }
+        ]
+      }
+    }
+  ],
+  "commands": [
+    {
+      "id": {
+        "commandId": "CM_TNEGOTIA_2A4"
+      },
+      "name": "Command1",
+      "layoutType": "Command",
+      "commandType": 0,
+      "order": 0,
+      "showInMode": 4095,
+      "enabled": 4095,
+      "causesValidation": false,
+      "causesValidationAsString": "F",
+      "validationGroup": null,
+      "group": null,
+      "customizationLayer": 0,
+      "customizationLayerDescription": "ECU",
+      "imageId": null,
+      "options": 0,
+      "action": null,
+      "close": false,
+      "closeAsString": "F",
+      "userControl": {
+        "userControlId": "Button",
+        "type": "A"
+      },
+      "label": {
+        "moduleId": "ASSTS",
+        "labelId": "LBL_ASSTS_ACEPTARDV_64984",
+        "defaultValue": {
+          "$ref": "../../../../ASSTS/assets/languages/ASSTS.json#/ASSTS/LBL/LBL_ASSTS_ACEPTARDV_64984"
+        }
+      },
+      "customEvents": [
+        {
+          "commandEventType": {
+            "name": "ExecuteCommand",
+            "eventId": 10,
+            "description": "Permite personalizar la acción a ejecutar de un command o de un ActionControl",
+            "availableExecutionType": 7
+          },
+          "executionType": 1,
+          "enabled": "T",
+          "customEventId": "CECM_010CM_TNEGOTIA_2A4_447",
+          "filter": null,
+          "customizationLayer": 0,
+          "customizationLayerDescription": "ECU",
+          "isEnabled": true
+        }
+      ]
+    },
+    {
+      "id": {
+        "commandId": "CM_TNEGOTIA_6T_"
+      },
+      "name": "Command2",
+      "layoutType": "Command",
+      "commandType": 0,
+      "order": 1,
+      "showInMode": 4095,
+      "enabled": 4095,
+      "causesValidation": false,
+      "causesValidationAsString": "F",
+      "validationGroup": null,
+      "group": null,
+      "customizationLayer": 0,
+      "customizationLayerDescription": "ECU",
+      "imageId": null,
+      "options": 0,
+      "action": null,
+      "close": true,
+      "closeAsString": "F",
+      "userControl": {
+        "userControlId": "Button",
+        "type": "A"
+      },
+      "label": {
+        "moduleId": "ASSTS",
+        "labelId": "LBL_ASSTS_CANCELARR_70217",
+        "defaultValue": {
+          "$ref": "../../../../ASSTS/assets/languages/ASSTS.json#/ASSTS/LBL/LBL_ASSTS_CANCELARR_70217"
+        }
+      },
+      "customEvents": [
+        {
+          "commandEventType": {
+            "name": "ExecuteCommand",
+            "eventId": 10,
+            "description": "Permite personalizar la acción a ejecutar de un command o de un ActionControl",
+            "availableExecutionType": 7
+          },
+          "executionType": 1,
+          "enabled": "T",
+          "customEventId": "CECM_010CM_TNEGOTIA_6T__770",
+          "filter": null,
+          "customizationLayer": 0,
+          "customizationLayerDescription": "ECU",
+          "isEnabled": true
+        }
+      ]
+    }
+  ],
+  "isImported": false,
+  "customEvents": []
+}

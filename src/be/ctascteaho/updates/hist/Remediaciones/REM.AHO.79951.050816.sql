@@ -1,0 +1,70 @@
+/************************************************/
+---No Story: 79951
+---Título del Bug: AHO-H79951-Impresion de Contratos
+---Fecha: 05/Agosto/2016
+--Descripción del Problema: 
+--Descripción de la Solución: 
+--Autor: Tania Baidal
+/**************************************************/
+
+use cobis
+go
+
+
+------------------------------------------------------------------------
+declare @w_rol int, @w_moneda tinyint, @w_producto tinyint, @w_transaccion int, @w_descripcion varchar(64), @w_nemonico varchar(10), @w_desc_larga varchar(100), @w_procedure int, @w_base varchar(30), @w_nombresp varchar(50), @w_filesp varchar(50)
+select @w_rol = ro_rol from ad_rol where ro_descripcion like 'MENU POR PROCESOS'
+select @w_moneda = pa_tinyint from cobis..cl_parametro where pa_nemonico = 'CMNAC' and pa_producto = 'ADM'
+select @w_producto    = 3,
+	   @w_transaccion = 2543,
+	   @w_descripcion = 'CONSULTA DE NOMBRE DE CLIENTE',
+	   @w_nemonico    = 'CCLN',
+	   @w_desc_larga  = 'CONSULTA DE NOMBRE DE CLIENTE',
+	   @w_procedure   = 57,
+	   @w_base        = 'cobis',
+	   @w_nombresp    = 'sp_desc_cliente_cc',
+	   @w_filesp      = 'desclicc.sp'
+
+
+--cc_proc.sql
+if exists (SELECT * FROM cobis..ad_procedure WHERE pd_procedure = @w_procedure)
+begin
+       DELETE FROM ad_procedure WHERE pd_procedure = @w_procedure
+end
+
+insert into cobis..ad_procedure values(@w_procedure,@w_nombresp,@w_base,'V',getdate(),@w_filesp)
+
+--cc_tran.sql
+if exists (SELECT * FROM cobis..cl_ttransaccion WHERE tn_trn_code = @w_transaccion)
+begin
+       delete FROM cobis..cl_ttransaccion WHERE tn_trn_code = @w_transaccion
+end
+
+
+INSERT INTO cobis..cl_ttransaccion (tn_trn_code, tn_descripcion, tn_nemonico, tn_desc_larga)
+VALUES (@w_transaccion, 'ASIOCIACION DE CONTRATO A PRODUCTO BANC', 'ACPB', 'ASIOCIACION DE CONTRATO A PRODUCTO BANCARIO')
+
+
+--cc_protran.sql
+if exists (SELECT * FROM cobis..ad_pro_transaccion WHERE pt_producto = @w_producto and pt_transaccion = @w_transaccion  and pt_moneda = @w_moneda)
+begin
+delete from cobis..ad_pro_transaccion WHERE pt_producto = @w_producto and pt_transaccion = @w_transaccion and pt_moneda = @w_moneda
+end
+
+INSERT INTO cobis..ad_pro_transaccion (pt_producto, pt_tipo, pt_moneda, pt_transaccion, pt_estado, pt_fecha_ult_mod, pt_procedure, pt_especial)
+VALUES (@w_producto, 'R', @w_moneda, @w_transaccion, 'V', getdate(), @w_procedure, NULL)
+
+--cc_traut.sql
+if exists (SELECT * FROM cobis..ad_tr_autorizada WHERE ta_transaccion = @w_transaccion and ta_producto = @w_producto and ta_moneda = @w_moneda)
+begin
+    DELETE FROM cobis..ad_tr_autorizada WHERE ta_transaccion = @w_transaccion and ta_producto = @w_producto and ta_moneda = @w_moneda
+end
+
+INSERT INTO cobis..ad_tr_autorizada (ta_producto, ta_tipo, ta_moneda, ta_transaccion, ta_rol, ta_fecha_aut, ta_autorizante, ta_estado, ta_fecha_ult_mod)
+VALUES (@w_producto, 'R', @w_moneda, @w_transaccion, @w_rol, getdate(), 1, 'V', getdate())
+GO
+
+--adm_param
+update cl_parametro set pa_char='BM'
+where  pa_nemonico = 'CLIENT'
+and pa_producto = 'ADM'

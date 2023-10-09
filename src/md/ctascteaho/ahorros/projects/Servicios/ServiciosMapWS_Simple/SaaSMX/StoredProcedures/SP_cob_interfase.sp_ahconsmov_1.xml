@@ -1,0 +1,121 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<procedure>
+  <database>cob_interfase</database>
+  <name>sp_ahconsmov</name>
+  <type>SQLSERVER</type>
+  <version>1</version>
+  <parameters>
+    <parameter name="@s_ssn" dataType="int" direction="in" />
+    <parameter name="@s_srv" dataType="varchar" direction="in" />
+    <parameter name="@s_lsrv" dataType="varchar" direction="in" />
+    <parameter name="@s_user" dataType="varchar" direction="in" />
+    <parameter name="@s_sesn" dataType="int" direction="in" />
+    <parameter name="@s_term" dataType="varchar" direction="in" />
+    <parameter name="@s_date" dataType="datetime" direction="in" />
+    <parameter name="@s_ofi" dataType="smallint" direction="in" />
+    <parameter name="@s_rol" dataType="smallint" direction="in" />
+    <parameter name="@s_org_err" dataType="char" direction="in" />
+    <parameter name="@s_error" dataType="int" direction="in" />
+    <parameter name="@s_sev" dataType="tinyint" direction="in" />
+    <parameter name="@s_msg" dataType="varchar" direction="in" />
+    <parameter name="@s_org" dataType="char" direction="in" />
+    <parameter name="@t_debug" dataType="char" direction="in" />
+    <parameter name="@t_file" dataType="varchar" direction="in" />
+    <parameter name="@t_show_version" dataType="bit" direction="in" />
+    <parameter name="@t_trn" dataType="smallint" direction="in" />
+    <parameter name="@i_cta" dataType="varchar" direction="in" />
+    <parameter name="@i_cta_mig" dataType="varchar" direction="in" />
+    <parameter name="@i_mon" dataType="tinyint" direction="in" />
+    <parameter name="@i_fchdsde" dataType="datetime" direction="in" />
+    <parameter name="@i_fchhsta" dataType="datetime" direction="in" />
+    <parameter name="@i_sec" dataType="int" direction="in" />
+    <parameter name="@i_sec_alt" dataType="int" direction="in" />
+    <parameter name="@i_hora" dataType="smalldatetime" direction="in" />
+    <parameter name="@i_diario" dataType="tinyint" direction="in" />
+    <parameter name="@i_frontn" dataType="char" direction="in" />
+    <parameter name="@i_formato_fecha" dataType="tinyint" direction="in" />
+    <parameter name="@i_escliente" dataType="char" direction="in" />
+    <parameter name="@i_operacion" dataType="char" direction="in" />
+    <parameter name="@o_hist" dataType="tinyint" direction="out" />
+  </parameters>
+  <queries>
+    <query>
+      <columns>
+        <column name="/** Store Procedure **/" />
+        <column name="s_ssn" />
+        <column name="s_srv" />
+        <column name="s_lsrv" />
+        <column name="s_user" />
+        <column name="s_sesn" />
+        <column name="s_term" />
+        <column name="s_date" />
+        <column name="s_ofi" />
+        <column name="s_rol" />
+        <column name="s_org_err" />
+        <column name="s_error" />
+        <column name="s_sev" />
+        <column name="s_msg" />
+        <column name="s_org" />
+        <column name="t_file" />
+        <column name="t_trn" />
+        <column name="i_cta" />
+        <column name="i_mon" />
+        <column name="i_fchdsde" />
+        <column name="i_fchhsta" />
+        <column name="i_sec" />
+        <column name="i_sec_alt" />
+        <column name="i_hora" />
+        <column name="i_diario" />
+        <column name="i_frontn" />
+        <column name="i_formato_fecha" />
+        <column name="i_escliente" />
+        <column name="o_hist" />
+      </columns>
+      <queryText>SELECT "/** Store Procedure **/"=w_sp_name,"s_ssn"=s_ssn,"s_srv"=s_srv,"s_lsrv"=s_lsrv,"s_user"=s_user,"s_sesn"=s_sesn,"s_term"=s_term,"s_date"=s_date,"s_ofi"=s_ofi,"s_rol"=s_rol,"s_org_err"=s_org_err,"s_error"=s_error,"s_sev"=s_sev,"s_msg"=s_msg,"s_org"=s_org,"t_file"=t_file,"t_trn"=t_trn,"i_cta"=i_cta,"i_mon"=i_mon,"i_fchdsde"=i_fchdsde,"i_fchhsta"=i_fchhsta,"i_sec"=i_sec,"i_sec_alt"=i_sec_alt,"i_hora"=i_hora,"i_diario"=i_diario,"i_frontn"=i_frontn,"i_formato_fecha"=i_formato_fecha,"i_escliente"=i_escliente,"o_hist"=o_hist</queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="no_name" />
+      </columns>
+      <queryText></queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="no_name" />
+      </columns>
+      <queryText></queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="no_name" />
+      </columns>
+      <queryText></queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="hm_fecha" />
+        <column name="hm_causa" />
+        <column name="hm_oficina" />
+        <column name="hm_correccion" />
+        <column name="tn_descripcion" />
+        <column name="hm_signo" />
+        <column name="hm_valor" />
+        <column name="hm_terminal" />
+        <column name="hm_saldo_contable" />
+        <column name="hm_saldo_disponible" />
+        <column name="hm_interes" />
+        <column name="hm_ssn_branch" />
+        <column name="hm_cod_alterno" />
+        <column name="hm_serial" />
+        <column name="hm_secuencial" />
+        <column name="hm_usuario" />
+        <column name="hm_hora" />
+        <column name="hm_causa" />
+        <column name="hm_secuencial" />
+        <column name="hm_valor_comision" />
+        <column name="hm_monto_imp" />
+      </columns>
+      <queryText></queryText>
+    </query>
+  </queries>
+</procedure>

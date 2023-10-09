@@ -1,0 +1,22 @@
+use cob_fpm
+go
+insert into fp_processbyoperation values('APE','BLC')
+insert into fp_processbyoperation values('APE','NO')
+insert into fp_processbyoperation values('APE','BL')
+insert into fp_processbyoperation values('APE','NO')
+insert into fp_processbyoperation values('FIN','BLC')
+insert into fp_processbyoperation values('FIN','NO')
+insert into fp_processbyoperation values('ING','NO')
+insert into fp_processbyoperation values('LEV','OE')
+insert into fp_processbyoperation values('MOD','OE')
+insert into fp_processbyoperation values('MOD','BLC')
+insert into fp_processbyoperation values('MODSOB','OE')
+insert into fp_processbyoperation values('MODSOB','BLC')
+insert into fp_processbyoperation values('ORI','BLC')
+insert into fp_processbyoperation values('ORI','NO')
+insert into fp_processbyoperation values('REF','BLC')
+insert into fp_processbyoperation values('REF','NO')
+insert into fp_processbyoperation values('RES','OE')
+insert into fp_processbyoperation values('SOB','OE')
+insert into fp_processbyoperation values('SUS','OE')
+go

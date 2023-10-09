@@ -1,0 +1,119 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<procedure>
+  <database>cob_cartera</database>
+  <name>sp_valor</name>
+  <type>SYBASE</type>
+  <version>2</version>
+  <parameters>
+    <parameter name="@s_user" dataType="varchar" direction="in" />
+    <parameter name="@s_ofi" dataType="smallint" direction="in" />
+    <parameter name="@s_date" dataType="datetime" direction="in" />
+    <parameter name="@s_term" dataType="varchar" direction="in" />
+    <parameter name="@i_operacion" dataType="char" direction="in" />
+    <parameter name="@i_tipo" dataType="varchar" direction="in" />
+    <parameter name="@i_tipoh" dataType="char" direction="in" />
+    <parameter name="@i_find_pit" dataType="char" direction="in" />
+    <parameter name="@i_descripcion" dataType="varchar" direction="in" />
+    <parameter name="@i_tipo_puntos" dataType="char" direction="in" />
+    <parameter name="@i_num_dec" dataType="tinyint" direction="in" />
+    <parameter name="@i_tasa_pit" dataType="char" direction="in" />
+    <parameter name="@i_clase" dataType="varchar" direction="in" />
+    <parameter name="@i_signo_default" dataType="char" direction="in" />
+    <parameter name="@i_valor_default" dataType="float" direction="in" />
+    <parameter name="@i_signo_maximo" dataType="char" direction="in" />
+    <parameter name="@i_valor_maximo" dataType="float" direction="in" />
+    <parameter name="@i_signo_minimo" dataType="char" direction="in" />
+    <parameter name="@i_valor_minimo" dataType="float" direction="in" />
+    <parameter name="@i_referencia" dataType="varchar" direction="in" />
+    <parameter name="@i_sector" dataType="varchar" direction="in" />
+    <parameter name="@i_opcion" dataType="tinyint" direction="in" />
+    <parameter name="@i_tipo_rubro" dataType="char" direction="in" />
+    <parameter name="@i_rowcount" dataType="smallint" direction="in" />
+  </parameters>
+  <queries>
+    <query>
+      <columns>
+        <column name="Identificador" />
+        <column name="Descripcion" />
+        <column name="Clase" />
+        <column name="Tasa PIT" />
+      </columns>
+      <queryText>SELECT  "Identificador" = va_tipo,"Descripcion" = SUBSTRING (va_descripcion, 1, 50),"Clase" = va_clase,"Tasa PIT" = va_pit </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="Identificador" />
+        <column name="Sector" />
+        <column name="Sig. Defecto" />
+        <column name="Val. Defecto" />
+        <column name="Sig. Minimo" />
+        <column name="Val. Minimo" />
+        <column name="Sig. Maximo" />
+        <column name="Val. Maximo" />
+        <column name="Referencia" />
+        <column name="Tipo de Puntos" />
+        <column name="Num. de Decimales" />
+      </columns>
+      <queryText>SELECT  "Identificador" = vd_tipo,"Sector" = vd_sector,"Sig. Defecto" = vd_signo_default,"Val. Defecto" = vd_valor_default,"Sig. Minimo" = vd_signo_minimo,"Val. Minimo" = vd_valor_minimo,"Sig. Maximo" = vd_signo_maximo,"Val. Maximo" = vd_valor_maximo,"Referencia" = vd_referencia,"Tipo de Puntos" = vd_tipo_puntos,"Num. de Decimales" = vd_num_dec </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="{1}" />
+        <column name="{2}" />
+        <column name="{3}" />
+        <column name="{4}" />
+        <column name="{5}" />
+        <column name="{6}" />
+        <column name="{7}" />
+        <column name="{8}" />
+        <column name="{9}" />
+        <column name="{10}" />
+        <column name="{11}" />
+        <column name="{12}" />
+        <column name="{13}" />
+        <column name="{14}" />
+        <column name="{15}" />
+        <column name="{16}" />
+        <column name="{17}" />
+      </columns>
+      <queryText>SELECT w_tipo, w_descripcion, w_clase, w_referencia, w_tipo_puntos, v_descripcion, v_valor_default, w_signo_default, w_valor_default, w_signo_minimo, w_valor_minimo, w_signo_maximo, w_valor_maximo, i_sector, w_des_sector, w_num_dec, w_tipo_tasa</queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="{1}" />
+        <column name="{2}" />
+        <column name="{3}" />
+        <column name="{4}" />
+        <column name="{5}" />
+        <column name="{6}" />
+        <column name="{7}" />
+        <column name="{8}" />
+        <column name="{9}" />
+        <column name="{10}" />
+        <column name="{11}" />
+        <column name="{12}" />
+        <column name="{13}" />
+        <column name="{14}" />
+        <column name="{15}" />
+        <column name="{16}" />
+        <column name="{17}" />
+      </columns>
+      <queryText>SELECT w_tipo, w_descripcion, w_clase, w_des_tasarefe, w_modalidad, w_periodicidad, w_desc_periodid, w_valor_tasarefe, w_signo_default, w_valor_default, w_valor_aplicar, w_total_minimo, w_total_maximo, w_pit, w_num_dec, w_tipo_puntos, w_tipo_tasa</queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="Codigo" />
+        <column name="Descripcion" />
+        <column name="Clase" />
+      </columns>
+      <queryText>SELECT  "Codigo" = va_tipo,"Descripcion" = va_descripcion,"Clase" = va_clase </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="Descripcion" />
+        <column name="Valor" />
+      </columns>
+      <queryText>SELECT  "Descripcion" = va_descripcion,"Valor" = 0 </queryText>
+    </query>
+  </queries>
+</procedure>

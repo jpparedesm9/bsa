@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<serviceClass name="QueryCustomer" nsBase="COBISCorp.eCOBIS.BusinessProcess.Customers" namespace="COBISCorp.eCOBIS.BusinessProcess.Customers.Service" package="cobiscorp.ecobis.businessprocess.customers.service" ns="http://service.customers.businessprocess.ecobis.cobiscorp" module="BusinessProcess.Customers" productName="COBISCorp.eCOBIS.BusinessProcess.Service" productVersion="2.0.0.0">
+  <productProperties>
+    <property name="MavenGroupId" value="com.cobiscorp.processapi" />
+    <property name="MavenArtifactId" value="COBISCorp.eCOBIS.BusinessProcess.Service" />
+    <property name="MavenVersion" value="2.0.0.0" />
+  </productProperties>
+  <partialClass name="QueryCustomer">
+    <services>
+      <service id="BusinessProcess.Customers.QueryCustomer.QueryCustomerEntailment" netName="QueryCustomerEntailment" javaName="queryCustomerEntailment" mappingType="STORED_PROCEDURE" mapId="de4b06883dcb2b198b5bb5ba7961a95b">
+        <SRVMapping name="cob_pac..sp_consulta_cliente_busin" trnCode="73935">
+          <DTOs>
+            <DTO direction="in" name="Customer" alias="inCustomer" namespace="COBISCorp.eCOBIS.BusinessProcess.Customers.DTO" package="cobiscorp.ecobis.businessprocess.customers.dto" ns="http://dto.customers.businessprocess.ecobis.cobiscorp" required="true" />
+            <DTO direction="return" name="CustomerResponse" alias="returnCustomerResponse" namespace="COBISCorp.eCOBIS.BusinessProcess.Customers.DTO" package="cobiscorp.ecobis.businessprocess.customers.dto" ns="http://dto.customers.businessprocess.ecobis.cobiscorp" required="true">
+              <properties>
+                <property name="customerId" propertyNet="CustomerId" propertyJava="customerId" setterJavaMethod="setCustomerId" getterJavaMethod="getCustomerId" xsdType="int" netType="int" javaType="int" cobisMapping="" isInherit="false" isComplexType="false" isCollectionType="false" required="true" encrypted="false" maxLength="0" />
+                <property name="customerEntailment" propertyNet="CustomerEntailment" propertyJava="customerEntailment" setterJavaMethod="setCustomerEntailment" getterJavaMethod="getCustomerEntailment" xsdType="char?" netType="char?" javaType="Character" cobisMapping="" isInherit="false" isComplexType="false" isCollectionType="false" required="false" encrypted="false" maxLength="0" />
+              </properties>
+            </DTO>
+          </DTOs>
+          <parameterMappings>
+            <parameter name="@i_cliente" direction="in" mappingDirection="in" dataType="int" CTSDataType="SQLINT4" JavaSQLType="INTEGER" mappingType="DTO" allowNull="false" DTOAlias="inCustomer" DTOPropertyName="customerId" />
+            <parameter name="@i_operacion" direction="in" mappingDirection="in" dataType="char" CTSDataType="SQLCHAR" JavaSQLType="CHAR" mappingType="CONSTANT" allowNull="false" contantValue="V" />
+          </parameterMappings>
+          <resultMappings>
+            <result>
+              <DTOResult DTOAlias="returnCustomerResponse" MapReturn="true">
+                <columnMapping position="0" name="{1}" DTOPropertyName="customerEntailment" DataType="char?" Format="" />
+              </DTOResult>
+            </result>
+          </resultMappings>
+          <MappingProperties>
+            <MappingProperty key="singleResult1" value="true" />
+          </MappingProperties>
+        </SRVMapping>
+      </service>
+    </services>
+  </partialClass>
+</serviceClass>

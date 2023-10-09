@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingEnd="?dialogPreferredPadding"
+        android:paddingStart="?dialogPreferredPadding"
+        android:paddingTop="?dialogPreferredPadding">
+
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/solidarity_payment_hint_solidarity_payment">
+
+            <com.cobis.gestionasesores.widgets.currencyfield.CurrencyInputEditText
+                android:id="@+id/input_payment"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+        </android.support.design.widget.TextInputLayout>
+    </FrameLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="end">
+
+        <Button
+            android:id="@+id/btn_cancel"
+            style="?borderlessButtonStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:minHeight="36dp"
+            android:text="@string/action_cancel"/>
+
+        <Button
+            android:id="@+id/btn_accept"
+            style="?borderlessButtonStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:minHeight="36dp"
+            android:text="@string/action_accept"/>
+    </LinearLayout>
+</LinearLayout>

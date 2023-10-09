@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                  android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:orientation="vertical"
+                  android:paddingBottom="@dimen/activity_vertical_margin"
+                  android:paddingEnd="@dimen/activity_horizontal_margin"
+                  android:paddingStart="@dimen/activity_horizontal_margin"
+                  android:paddingTop="@dimen/activity_vertical_margin">
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/input_layout_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <android.support.design.widget.TextInputEditText
+                android:id="@+id/input_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:enabled="false"
+                android:focusable="false"
+                android:focusableInTouchMode="false"
+                android:hint="@string/member_hint_full_name"
+                android:inputType="textCapWords"/>
+        </android.support.design.widget.TextInputLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            >
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/input_layout_cycle_in_group"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"
+                android:paddingRight="@dimen/control_padding"
+                >
+
+                <android.support.design.widget.TextInputEditText
+                    android:id="@+id/input_cycle_in_group"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:enabled="false"
+                    android:focusable="false"
+                    android:focusableInTouchMode="false"
+                    android:hint="@string/member_hint_cycle"
+                    android:inputType="number"/>
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/input_layout_client_number"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"
+                android:paddingLeft="@dimen/control_padding"
+                >
+
+                <android.support.design.widget.TextInputEditText
+                    android:id="@+id/input_client_number"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:enabled="false"
+                    android:focusable="false"
+                    android:focusableInTouchMode="false"
+                    android:hint="@string/form_hint_customer_number"
+                    android:inputType="number"/>
+            </android.support.design.widget.TextInputLayout>
+        </LinearLayout>
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/control_padding"
+            android:layout_marginTop="@dimen/control_padding"
+            >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:text="@string/member_credit_hint_in_cycle"
+                />
+
+            <android.support.v7.widget.SwitchCompat
+                android:id="@+id/switch_is_part_cycle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:theme="@style/SwitchTheme"
+                />
+        </RelativeLayout>
+
+
+        <LinearLayout
+            android:id="@+id/container_request"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            >
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/input_layout_request_amount"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <com.cobis.gestionasesores.widgets.currencyfield.CurrencyInputEditText
+                    android:id="@+id/input_request_amount"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/credit_app_hint_amount"
+                    />
+            </android.support.design.widget.TextInputLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                >
+
+                <android.support.design.widget.TextInputLayout
+                    android:id="@+id/input_layout_auth_amount"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:paddingRight="@dimen/control_padding"
+
+                    >
+
+                    <com.cobis.gestionasesores.widgets.currencyfield.CurrencyInputEditText
+                        android:id="@+id/input_auth_amount"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:enabled="false"
+                        android:focusable="false"
+                        android:focusableInTouchMode="false"
+                        android:hint="@string/credit_app_hint_auth_amount"
+                        />
+                </android.support.design.widget.TextInputLayout>
+
+                <android.support.design.widget.TextInputLayout
+                    android:id="@+id/input_layout_warranty"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:paddingLeft="@dimen/control_padding"
+                    >
+
+                    <com.cobis.gestionasesores.widgets.currencyfield.CurrencyInputEditText
+                        android:id="@+id/input_warranty"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:enabled="false"
+                        android:focusable="false"
+                        android:focusableInTouchMode="false"
+                        android:hint="@string/member_credit_hint_warranty"
+                        />
+                </android.support.design.widget.TextInputLayout>
+            </LinearLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/input_layout_proposed_amount"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <com.cobis.gestionasesores.widgets.currencyfield.CurrencyInputEditText
+                    android:id="@+id/input_proposed_amount"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:enabled="false"
+                    android:focusable="false"
+                    android:focusableInTouchMode="false"
+                    android:hint="@string/member_credit_hint_proposed_amount"
+                    />
+            </android.support.design.widget.TextInputLayout>
+
+
+            <RelativeLayout
+                android:id="@+id/container_risk_level"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/hint_risk_level"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:text="@string/member_hint_risk_level"
+                    android:textAppearance="@style/TextAppearance.Design.Counter"
+                    />
+
+                <com.cobis.gestionasesores.widgets.GaugeView
+                    android:id="@+id/gauge_risk_level"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/risk_level_height"
+                    android:layout_below="@+id/hint_risk_level"
+                    android:layout_centerHorizontal="true"
+                    />
+            </RelativeLayout>
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>

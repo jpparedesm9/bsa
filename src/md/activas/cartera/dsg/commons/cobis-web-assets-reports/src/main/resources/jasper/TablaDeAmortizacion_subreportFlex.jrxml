@@ -1,0 +1,806 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="TablaDeAmortizacion_subreportFlex" pageWidth="802" pageHeight="556" orientation="Landscape" whenNoDataType="AllSectionsNoDetail" columnWidth="802" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="40c917f9-56b0-4294-a438-8b74a8979abe">
+	<property name="ireport.zoom" value="1.3310000000000008"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<subDataset name="dataset1" uuid="6575db43-726a-48e8-84ef-4455c1d7777a"/>
+	<parameter name="Pcurrency" class="java.lang.Integer"/>
+	<field name="dividend" class="java.lang.Integer"/>
+	<field name="datePag" class="java.lang.String"/>
+	<field name="daysQuota" class="java.lang.Double"/>
+	<field name="capitalBalance" class="java.lang.Double"/>
+	<field name="capital" class="java.lang.Double"/>
+	<field name="interest" class="java.lang.Double"/>
+	<field name="arrears" class="java.lang.Double"/>
+	<field name="myPymes" class="java.lang.Double"/>
+	<field name="ivaMyPymes" class="java.lang.Double"/>
+	<field name="colateral" class="java.lang.Double"/>
+	<field name="ivaColateral" class="java.lang.Double"/>
+	<field name="insurance" class="java.lang.Double"/>
+	<field name="insurances" class="java.lang.Double"/>
+	<field name="intSeg" class="java.lang.Double"/>
+	<field name="arrearsSeg" class="java.lang.Double"/>
+	<field name="others" class="java.lang.Double"/>
+	<field name="share" class="java.lang.Double"/>
+	<field name="state" class="java.lang.String"/>
+	<field name="paymentComp" class="java.lang.Double"/>
+	<field name="interestPend" class="java.lang.Double"/>
+	<variable name="SUM_DIAS" class="java.lang.Double" calculation="Sum">
+		<variableExpression><![CDATA[$F{daysQuota}]]></variableExpression>
+	</variable>
+	<variable name="SUM_CAP" class="java.lang.Double" calculation="Sum">
+		<variableExpression><![CDATA[$F{capital}]]></variableExpression>
+	</variable>
+	<variable name="SUM_INTERES" class="java.lang.Double" calculation="Sum">
+		<variableExpression><![CDATA[$F{interest}]]></variableExpression>
+	</variable>
+	<variable name="SUM_MORA" class="java.lang.Double" calculation="Sum">
+		<variableExpression><![CDATA[$F{arrears}]]></variableExpression>
+	</variable>
+	<variable name="SUM_MIPYMES" class="java.lang.Double" calculation="Sum">
+		<variableExpression><![CDATA[$F{myPymes}]]></variableExpression>
+	</variable>
+	<variable name="SUM_IVAMIPY" class="java.lang.Double" calculation="Sum">
+		<variableExpression><![CDATA[$F{ivaMyPymes}]]></variableExpression>
+	</variable>
+	<variable name="SUM_COLAT" class="java.lang.Double" calculation="Sum">
+		<variableExpression><![CDATA[$F{colateral}]]></variableExpression>
+	</variable>
+	<variable name="SUM_IVACOLAT" class="java.lang.Double" calculation="Sum">
+		<variableExpression><![CDATA[$F{ivaColateral}]]></variableExpression>
+	</variable>
+	<variable name="SUM_SEGDEU" class="java.lang.Double" calculation="Sum">
+		<variableExpression><![CDATA[$F{insurance}]]></variableExpression>
+	</variable>
+	<variable name="SUM_SEGUROS" class="java.lang.Double" calculation="Sum">
+		<variableExpression><![CDATA[$F{insurances}]]></variableExpression>
+	</variable>
+	<variable name="SUM_INTSEG" class="java.lang.Double" calculation="Sum">
+		<variableExpression><![CDATA[$F{intSeg}]]></variableExpression>
+	</variable>
+	<variable name="SUM_OTROS" class="java.lang.Double" calculation="Sum">
+		<variableExpression><![CDATA[$F{others}]]></variableExpression>
+	</variable>
+	<variable name="SUM_VALCUOTA" class="java.lang.Double" calculation="Sum">
+		<variableExpression><![CDATA[$F{share}]]></variableExpression>
+	</variable>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<columnHeader>
+		<band height="30">
+			<staticText>
+				<reportElement mode="Opaque" x="71" y="0" width="25" height="30" backcolor="#CCCCCC" uuid="eec2c892-a3c4-4ee9-98bf-f73e44b35eab"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8" isBold="false" isStrikeThrough="false"/>
+				</textElement>
+				<text><![CDATA[Días]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="205" y="0" width="55" height="30" backcolor="#CCCCCC" uuid="c56bb5d1-4c42-4497-ac70-bc5b8f8156ef"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8" isBold="false" isStrikeThrough="false"/>
+				</textElement>
+				<text><![CDATA[Interés]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="151" y="0" width="54" height="30" backcolor="#CCCCCC" uuid="f9049bb6-8261-4c3d-ad08-a047323f4186"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8" isBold="false" isStrikeThrough="false"/>
+				</textElement>
+				<text><![CDATA[Capital]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="96" y="0" width="55" height="30" backcolor="#CCCCCC" uuid="b5c1e0fa-82fb-46e6-8623-559b97b07d20"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8" isBold="false" isStrikeThrough="false"/>
+				</textElement>
+				<text><![CDATA[Saldo Capital]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="0" y="0" width="26" height="30" backcolor="#CCCCCC" uuid="3a09b7a3-04b2-4de6-8984-c7632dec7fa0"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="none">
+					<font size="8" isBold="false" isStrikeThrough="false"/>
+				</textElement>
+				<text><![CDATA[Cuota]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="26" y="0" width="45" height="30" backcolor="#CCCCCC" uuid="51627d17-fa15-4bc1-a3e3-317911c665d5"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8" isBold="false" isStrikeThrough="false"/>
+				</textElement>
+				<text><![CDATA[Fec. Pag.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="532" y="0" width="40" height="30" backcolor="#CCCCCC" uuid="108a6051-7470-4db5-b5ed-44472df7908e"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="7" isBold="false" isStrikeThrough="false"/>
+				</textElement>
+				<text><![CDATA[Int Seg.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="572" y="0" width="30" height="30" backcolor="#CCCCCC" uuid="2c25f4fe-aaed-402b-b247-5dc88b07fc7a"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8" isBold="false" isStrikeThrough="false"/>
+				</textElement>
+				<text><![CDATA[Otros]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="602" y="0" width="50" height="30" backcolor="#CCCCCC" uuid="59836db7-37ac-4a9e-954b-6a9f4b9b4f56"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8" isBold="false" isStrikeThrough="false"/>
+				</textElement>
+				<text><![CDATA[Valor Cuota]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="752" y="0" width="50" height="30" backcolor="#CCCCCC" uuid="5d672bb8-d2ec-4db2-8ef4-08b8ed096829"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8" isBold="false" isStrikeThrough="false"/>
+				</textElement>
+				<text><![CDATA[Estado]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="260" y="0" width="22" height="30" backcolor="#CCCCCC" uuid="d6e3f45c-1ae4-4d9b-9896-1eec5d39e1ff"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8" isBold="false" isStrikeThrough="false"/>
+				</textElement>
+				<text><![CDATA[Mora]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="282" y="0" width="40" height="30" backcolor="#CCCCCC" uuid="ea069046-d830-4d6f-9ed9-5f58a7752351"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="7" isBold="false" isStrikeThrough="false"/>
+				</textElement>
+				<text><![CDATA[MIPYMES]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="322" y="0" width="40" height="30" backcolor="#CCCCCC" uuid="56f6378a-8e2d-49ac-b409-0065172419ad"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="7" isBold="false" isStrikeThrough="false"/>
+				</textElement>
+				<text><![CDATA[IVA MIPYMES]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="362" y="0" width="40" height="30" backcolor="#CCCCCC" uuid="c6fab5a7-cd17-4077-bf82-2b7dcb9f0fc2"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="6" isBold="false" isStrikeThrough="false"/>
+				</textElement>
+				<text><![CDATA[COLATERAL]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="402" y="0" width="50" height="30" backcolor="#CCCCCC" uuid="6bb888f6-4d6e-47d6-85b2-a89cf48a6c3e"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="7" isBold="false" isStrikeThrough="false"/>
+				</textElement>
+				<text><![CDATA[IVA COLATERAL]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="452" y="0" width="40" height="30" backcolor="#CCCCCC" uuid="5c970e9c-9819-46a6-b21c-3685cac2be1c"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="6" isBold="false" isStrikeThrough="false"/>
+				</textElement>
+				<text><![CDATA[SEGDEUVEN]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="492" y="0" width="40" height="30" backcolor="#CCCCCC" uuid="c9d4ed95-6296-409d-96f4-0d81b7eaf3bc"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="7" isBold="false" isStrikeThrough="false"/>
+				</textElement>
+				<text><![CDATA[SEGUROS]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="702" y="0" width="50" height="30" backcolor="#CCCCCC" uuid="f4f0af20-2d2d-4b28-b25d-2eaaa4cb14ad"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8" isBold="false" isStrikeThrough="false"/>
+				</textElement>
+				<text><![CDATA[Interés Pend]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="652" y="0" width="50" height="30" backcolor="#CCCCCC" uuid="008249a2-bd5a-4b9d-8a8a-5b820be67b00"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8" isBold="false" isStrikeThrough="false"/>
+				</textElement>
+				<text><![CDATA[Comp. Pago]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="15" splitType="Stretch">
+			<staticText>
+				<reportElement x="398" y="-167" width="18" height="16" uuid="f9f3c67f-a3f1-48f9-8914-d8272d0e118a"/>
+				<textElement textAlignment="Left">
+					<font fontName="Tahoma" size="8"/>
+				</textElement>
+			</staticText>
+			<elementGroup/>
+			<textField isBlankWhenNull="true">
+				<reportElement x="0" y="0" width="26" height="15" uuid="a197e157-c530-4264-b1c5-03fda043dd27"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{dividend}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="26" y="0" width="45" height="15" uuid="1d533e35-389d-4392-9510-6a729ff3eb55"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{datePag}]]></textFieldExpression>
+			</textField>
+			<textField pattern="###0" isBlankWhenNull="true">
+				<reportElement x="71" y="0" width="25" height="15" uuid="d0ed005a-d327-47d2-9f22-85084f59593b"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Top">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{daysQuota}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="96" y="0" width="55" height="15" uuid="100510df-81e0-4a63-9c68-3dec80d6efff"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Top">
+					<font size="8"/>
+					<paragraph rightIndent="5"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{Pcurrency}==0?($F{capitalBalance}!=null? new java.text.DecimalFormat("#,##0").format($F{capitalBalance}):""):($F{capitalBalance}!=null? new java.text.DecimalFormat("#,##0.0000").format($F{capitalBalance}):"")]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="151" y="0" width="54" height="15" uuid="72ee8e82-ea92-4f80-a5b2-51b75bf28a61"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Top">
+					<font size="8"/>
+					<paragraph rightIndent="5"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{Pcurrency}==0?($F{capital}!=null? new java.text.DecimalFormat("#,##0").format($F{capital}):""):($F{capital}!=null? new java.text.DecimalFormat("#,##0.0000").format($F{capital}):"")]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="205" y="0" width="55" height="15" uuid="dc2fd776-18e2-485e-923f-b0703f0e97fb"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Top">
+					<font size="8"/>
+					<paragraph rightIndent="5"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{Pcurrency}==0?($F{interest}!=null? new java.text.DecimalFormat("#,##0").format($F{interest}):""):($F{interest}!=null? new java.text.DecimalFormat("#,##0.0000").format($F{interest}):"")]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="532" y="0" width="40" height="15" uuid="1737a75b-fc12-4c43-9acb-c8ee4a91bee8"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Top">
+					<font size="8"/>
+					<paragraph rightIndent="5"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{Pcurrency}==0?($F{intSeg}!=null? new java.text.DecimalFormat("#,##0").format($F{intSeg}):""):($F{intSeg}!=null? new java.text.DecimalFormat("#,##0.0000").format($F{intSeg}):"")]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="572" y="0" width="30" height="15" uuid="1f095459-4364-4fa0-8d74-12c359c1e871"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Top">
+					<font size="8"/>
+					<paragraph rightIndent="5"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{Pcurrency}==0?($F{others}!=null? new java.text.DecimalFormat("#,##0").format($F{others}):""):($F{others}!=null? new java.text.DecimalFormat("#,##0.0000").format($F{others}):"")]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="602" y="0" width="50" height="15" uuid="33d87f56-7627-43e9-85a6-5c2a8c1fe3b8"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Top">
+					<font size="8"/>
+					<paragraph rightIndent="5"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{Pcurrency}==0?($F{share}!=null? new java.text.DecimalFormat("#,##0").format($F{share}):""):($F{share}!=null? new java.text.DecimalFormat("#,##0.0000").format($F{share}):"")]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="752" y="0" width="50" height="15" uuid="71d8323b-723a-4bb6-8979-7ece5c345112"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font size="7"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{state}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="260" y="0" width="22" height="15" uuid="c0a9e269-87a8-46ca-8315-1248ce76f54f"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Top">
+					<font size="8"/>
+					<paragraph rightIndent="5"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{Pcurrency}==0?($F{arrears}!=null? new java.text.DecimalFormat("#,##0").format($F{arrears}):""):($F{arrears}!=null? new java.text.DecimalFormat("#,##0.0000").format($F{arrears}):"")]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="282" y="0" width="40" height="15" uuid="332277fe-dafb-4625-bc90-de1ca25c012f"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Top">
+					<font size="8"/>
+					<paragraph rightIndent="5"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{Pcurrency}==0?($F{myPymes}!=null? new java.text.DecimalFormat("#,##0").format($F{myPymes}):""):($F{myPymes}!=null? new java.text.DecimalFormat("#,##0.0000").format($F{myPymes}):"")]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="322" y="0" width="40" height="15" uuid="ddb6d47c-000e-4230-884b-b9360f074eef"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Top">
+					<font size="8"/>
+					<paragraph rightIndent="5"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{Pcurrency}==0?($F{ivaMyPymes}!=null? new java.text.DecimalFormat("#,##0").format($F{ivaMyPymes}):""):($F{ivaMyPymes}!=null? new java.text.DecimalFormat("#,##0.0000").format($F{ivaMyPymes}):"")]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="362" y="0" width="40" height="15" uuid="2c437080-8b4f-41f6-a680-e0be72c63d08"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Top">
+					<font size="8"/>
+					<paragraph rightIndent="5"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{Pcurrency}==0?($F{colateral}!=null? new java.text.DecimalFormat("#,##0").format($F{colateral}):""):($F{colateral}!=null? new java.text.DecimalFormat("#,##0.0000").format($F{colateral}):"")]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="402" y="0" width="50" height="15" uuid="710f6806-5d38-4933-a4eb-e13885ed0115"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Top">
+					<font size="8"/>
+					<paragraph rightIndent="5"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{Pcurrency}==0?($F{ivaColateral}!=null? new java.text.DecimalFormat("#,##0").format($F{ivaColateral}):""):($F{ivaColateral}!=null? new java.text.DecimalFormat("#,##0.0000").format($F{ivaColateral}):"")]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="452" y="0" width="40" height="15" uuid="e217769d-2ae1-4e72-b333-9c645c0fda5b"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Top">
+					<font size="8"/>
+					<paragraph rightIndent="5"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{Pcurrency}==0?($F{insurance}!=null? new java.text.DecimalFormat("#,##0").format($F{insurance}):""):($F{insurance}!=null? new java.text.DecimalFormat("#,##0.0000").format($F{insurance}):"")]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="492" y="0" width="40" height="15" uuid="3247d290-07e3-4851-b8d3-257f58e264ff"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Top">
+					<font size="8"/>
+					<paragraph rightIndent="5"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{Pcurrency}==0?($F{insurances}!=null? new java.text.DecimalFormat("#,##0").format($F{insurances}):""):($F{insurances}!=null? new java.text.DecimalFormat("#,##0.0000").format($F{insurances}):"")]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="652" y="0" width="50" height="15" uuid="0e1952bb-46aa-467e-b4e1-7b0b6f95bd68"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Right">
+					<font size="8"/>
+					<paragraph rightIndent="5"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{Pcurrency}==0?($F{paymentComp}!=null? new java.text.DecimalFormat("#,##0").format($F{paymentComp}):""):($F{paymentComp}!=null? new java.text.DecimalFormat("#,##0.0000").format($F{paymentComp}):"")]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="702" y="0" width="50" height="15" uuid="3f6f8225-d693-4cc3-8a2e-0e0c0be1d983"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Right">
+					<font size="8"/>
+					<paragraph rightIndent="5"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{Pcurrency}==0?($F{interestPend}!=null? new java.text.DecimalFormat("#,##0").format($F{interestPend}):""):($F{interestPend}!=null? new java.text.DecimalFormat("#,##0.0000").format($F{interestPend}):"")]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<summary>
+		<band height="25">
+			<staticText>
+				<reportElement mode="Transparent" x="26" y="0" width="45" height="15" backcolor="#FFFFFF" uuid="71fb8a44-30de-461f-9d5f-9b20af5ba6b1"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8" isBold="false" isStrikeThrough="false"/>
+				</textElement>
+				<text><![CDATA[TOTALES:]]></text>
+			</staticText>
+			<textField pattern="###0" isBlankWhenNull="true">
+				<reportElement x="71" y="0" width="25" height="15" uuid="32065dd3-d9a7-47fe-9090-6fec23e8f405"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{SUM_DIAS}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="96" y="0" width="55" height="15" uuid="9a24f5a0-9846-465a-8978-5be4cee6016b"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="8"/>
+					<paragraph rightIndent="5"/>
+				</textElement>
+				<text><![CDATA[0.00]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement x="151" y="0" width="54" height="15" uuid="6a118bf1-dabc-4c28-9c9f-419b688df13f"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="8"/>
+					<paragraph rightIndent="5"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{Pcurrency}==0?($V{SUM_CAP}!=null? new java.text.DecimalFormat("#,##0").format($V{SUM_CAP}):""):($V{SUM_CAP}!=null? new java.text.DecimalFormat("#,##0.0000").format($V{SUM_CAP}):"")]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="205" y="0" width="55" height="15" uuid="23dd93d6-12e9-43a2-92b7-c478faa45037"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="8"/>
+					<paragraph rightIndent="5"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{Pcurrency}==0?($V{SUM_INTERES}!=null? new java.text.DecimalFormat("#,##0").format($V{SUM_INTERES}):""):($V{SUM_INTERES}!=null? new java.text.DecimalFormat("#,##0.0000").format($V{SUM_INTERES}):"")]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="260" y="0" width="22" height="15" uuid="4d05b314-48a9-4f0f-b42e-d8bed3374a55"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="8"/>
+					<paragraph rightIndent="5"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{Pcurrency}==0?($V{SUM_MORA}!=null? new java.text.DecimalFormat("#,##0").format($V{SUM_MORA}):""):($V{SUM_MORA}!=null? new java.text.DecimalFormat("#,##0.0000").format($V{SUM_MORA}):"")]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="282" y="0" width="40" height="15" uuid="88cb5bd5-8a0e-49ff-98b5-72abf639d43d"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="8"/>
+					<paragraph rightIndent="5"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{Pcurrency}==0?($V{SUM_MIPYMES}!=null? new java.text.DecimalFormat("#,##0").format($V{SUM_MIPYMES}):""):($V{SUM_MIPYMES}!=null? new java.text.DecimalFormat("#,##0.0000").format($V{SUM_MIPYMES}):"")]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="322" y="0" width="40" height="15" uuid="c695d1dc-573c-4c96-8d10-4d65386dae62"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="8"/>
+					<paragraph rightIndent="5"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{Pcurrency}==0?($V{SUM_IVAMIPY}!=null? new java.text.DecimalFormat("#,##0").format($V{SUM_IVAMIPY}):""):($V{SUM_IVAMIPY}!=null? new java.text.DecimalFormat("#,##0.0000").format($V{SUM_IVAMIPY}):"")]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="362" y="0" width="40" height="15" uuid="1607193c-32dd-44cd-8374-c1dbe4e64c7e"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="8"/>
+					<paragraph rightIndent="5"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{Pcurrency}==0?($V{SUM_COLAT}!=null? new java.text.DecimalFormat("#,##0").format($V{SUM_COLAT}):""):($V{SUM_COLAT}!=null? new java.text.DecimalFormat("#,##0.0000").format($V{SUM_COLAT}):"")]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="402" y="0" width="50" height="15" uuid="337f18b5-76cc-4823-a284-283bb689c874"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="8"/>
+					<paragraph rightIndent="5"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{Pcurrency}==0?($V{SUM_IVACOLAT}!=null? new java.text.DecimalFormat("#,##0").format($V{SUM_IVACOLAT}):""):($V{SUM_IVACOLAT}!=null? new java.text.DecimalFormat("#,##0.0000").format($V{SUM_IVACOLAT}):"")]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="452" y="0" width="40" height="15" uuid="499f9f13-a815-498c-8fa0-4b309a29ffec"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="8"/>
+					<paragraph rightIndent="5"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{Pcurrency}==0?($V{SUM_SEGDEU}!=null? new java.text.DecimalFormat("#,##0").format($V{SUM_SEGDEU}):""):($V{SUM_SEGDEU}!=null? new java.text.DecimalFormat("#,##0.0000").format($V{SUM_SEGDEU}):"")]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="492" y="0" width="40" height="15" uuid="88c5be1f-5148-4854-a340-4931e864369d"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="8"/>
+					<paragraph rightIndent="5"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{Pcurrency}==0?($V{SUM_SEGUROS}!=null? new java.text.DecimalFormat("#,##0").format($V{SUM_SEGUROS}):""):($V{SUM_SEGUROS}!=null? new java.text.DecimalFormat("#,##0.0000").format($V{SUM_SEGUROS}):"")]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="532" y="0" width="40" height="15" uuid="c726a873-71d1-44b0-a2ba-25f86c94d1e8"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="8"/>
+					<paragraph rightIndent="5"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{Pcurrency}==0?($V{SUM_INTSEG}!=null? new java.text.DecimalFormat("#,##0").format($V{SUM_INTSEG}):""):($V{SUM_INTSEG}!=null? new java.text.DecimalFormat("#,##0.0000").format($V{SUM_INTSEG}):"")]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="572" y="0" width="30" height="15" uuid="0956f263-8848-4598-b7e6-290632672e1f"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="8"/>
+					<paragraph rightIndent="5"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{Pcurrency}==0?($V{SUM_OTROS}!=null? new java.text.DecimalFormat("#,##0").format($V{SUM_OTROS}):""):($V{SUM_OTROS}!=null? new java.text.DecimalFormat("#,##0.0000").format($V{SUM_OTROS}):"")]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="602" y="0" width="50" height="15" uuid="53e2dcd8-5570-43f1-824b-7cf3edaf7d31"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="8"/>
+					<paragraph rightIndent="5"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{Pcurrency}==0?($V{SUM_VALCUOTA}!=null? new java.text.DecimalFormat("#,##0").format($V{SUM_VALCUOTA}):""):($V{SUM_VALCUOTA}!=null? new java.text.DecimalFormat("#,##0.0000").format($V{SUM_VALCUOTA}):"")]]></textFieldExpression>
+			</textField>
+		</band>
+	</summary>
+</jasperReport>

@@ -1,0 +1,61 @@
+/****************************************************************************************/
+/*  Cobiscorp Colombia S.A                                                              */
+/*  Proyecto                       : Banco Agrario                                      */
+/*  Nombre del script              : tgd_an_cobisserver_webserver.tg                    */
+/*  Tipo de script                 : Estructura                                         */
+/*  Numero de Solicitud/Referencia : SD675028                                           */
+/*  Objetivo                       : Creación de trigger sobre tabla de componentes     */
+/*                                   para inserción de bitacora log cuando se elimine   */
+/*                                   un registro de la tabla an_cobisserver_webserver.  */
+/*  Fecha  creación                : Nov-04-2013                                          */
+/*  Autor                          : Cobiscorp Ecuador                                    */
+/****************************************************************************************/
+use cobis
+go
+if exists (select * from sysobjects where name = 'tgd_an_cobisserver_webserver')
+    drop trigger tgd_an_cobisserver_webserver
+go
+create trigger tgd_an_cobisserver_webserver
+on an_cobisserver_webserver
+for delete
+as
+begin
+    declare
+        @w_cw_cobisserver     varchar(30),
+        @w_id               int
+ 
+    declare cu_deleted cursor for
+        select
+            cw_cobisserver
+        from deleted
+ 
+    open cu_deleted
+    fetch cu_deleted into
+        @w_cw_cobisserver
+ 
+    while @@FETCH_STATUS = 0
+    begin
+        select @w_id = sq_siguiente
+        from cob_distrib..di_seqnos 
+        where sq_tabla = 'di_log'
+ 
+        update cob_distrib..di_seqnos
+        set sq_siguiente = sq_siguiente + 1
+        where sq_tabla = 'di_log'
+ 
+        insert into cob_distrib..di_log (
+            lg_id, lg_fecha, lg_operacion, lg_objeto)
+        values (@w_id, getdate(), 'D', 'cobis..sp_an_cobsrv_websrv_tg')
+ 
+        insert into cob_distrib..di_parametro (
+            pa_id, pa_nombre, pa_tipodato, pa_longitud, pa_varchar)
+        values (@w_id, '@i_cw_cobisserver', 39, isnull(datalength(@w_cw_cobisserver), 0), @w_cw_cobisserver)
+ 
+        fetch cu_deleted into
+            @w_cw_cobisserver
+ 
+    end
+    close cu_deleted
+    deallocate cu_deleted
+end
+go

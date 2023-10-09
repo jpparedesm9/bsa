@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="ContratoAperturaCredito-subreporte1" pageWidth="595" pageHeight="842" whenNoDataType="AllSectionsNoDetail" columnWidth="585" leftMargin="5" rightMargin="5" topMargin="5" bottomMargin="3" uuid="9f14dc72-e197-4ef4-872e-b982d561f7f9">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<field name="nameClient" class="java.lang.String"/>
+	<field name="indentityCard" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<columnHeader>
+		<band height="22" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="2" width="100" height="20" uuid="0fae97af-0bf3-4543-866f-01b0233c882b"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Nombre:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="313" y="2" width="126" height="20" uuid="d1f3a93a-2975-4187-b938-bda20733059e"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Documento de Identidad:]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="20" splitType="Stretch">
+			<textField isBlankWhenNull="true">
+				<reportElement x="0" y="0" width="301" height="20" uuid="263311d4-9b09-4b58-8ebb-c2a6f0d57b47"/>
+				<textFieldExpression><![CDATA[$F{nameClient}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="313" y="0" width="126" height="20" uuid="7642060d-da89-4ed2-a5d8-5f1afacb26d5"/>
+				<textFieldExpression><![CDATA[$F{indentityCard}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

@@ -1,0 +1,13 @@
+bcp "SELECT * FROM cob_conta_tercero..ct_saldo_tercero WHERE st_periodo = 2018 AND st_corte = 31" queryout D:\Temp\Pruebas\cob_conta_tercero_ct_saldo_tercero_2018_corte_31.dat -n -r \n -T -S
+bcp "SELECT * FROM cob_conta_tercero..ct_saldo_tercero WHERE st_periodo = 2018 AND st_corte = 59" queryout D:\Temp\Pruebas\cob_conta_tercero_ct_saldo_tercero_2018_corte_59.dat -n -r \n -T -S
+bcp "SELECT * FROM cob_conta_tercero..ct_saldo_tercero WHERE st_periodo = 2018 AND st_corte = 90" queryout D:\Temp\Pruebas\cob_conta_tercero_ct_saldo_tercero_2018_corte_90.dat -n -r \n -T -S
+bcp "SELECT * FROM cob_conta_tercero..ct_saldo_tercero WHERE st_periodo = 2018 AND st_corte = 120" queryout D:\Temp\Pruebas\cob_conta_tercero_ct_saldo_tercero_2018_corte_120.dat -n -r \n -T -S
+bcp "SELECT * FROM cob_conta_tercero..ct_saldo_tercero WHERE st_periodo = 2018 AND st_corte = 151" queryout D:\Temp\Pruebas\cob_conta_tercero_ct_saldo_tercero_2018_corte_151.dat -n -r \n -T -S
+bcp "SELECT * FROM cob_conta_tercero..ct_saldo_tercero WHERE st_periodo = 2018 AND st_corte = 181" queryout D:\Temp\Pruebas\cob_conta_tercero_ct_saldo_tercero_2018_corte_181.dat -n -r \n -T -S
+bcp "SELECT * FROM cob_conta_tercero..ct_saldo_tercero WHERE st_periodo = 2018 AND st_corte = 212" queryout D:\Temp\Pruebas\cob_conta_tercero_ct_saldo_tercero_2018_corte_212.dat -n -r \n -T -S
+bcp "SELECT * FROM cob_conta_tercero..ct_saldo_tercero WHERE st_periodo = 2018 AND st_corte = 243" queryout D:\Temp\Pruebas\cob_conta_tercero_ct_saldo_tercero_2018_corte_243.dat -n -r \n -T -S
+bcp "SELECT * FROM cob_conta_tercero..ct_saldo_tercero WHERE st_periodo = 2018 AND st_corte = 273" queryout D:\Temp\Pruebas\cob_conta_tercero_ct_saldo_tercero_2018_corte_273.dat -n -r \n -T -S
+bcp "SELECT * FROM cob_conta_tercero..ct_saldo_tercero WHERE st_periodo = 2018 AND st_corte = 304" queryout D:\Temp\Pruebas\cob_conta_tercero_ct_saldo_tercero_2018_corte_304.dat -n -r \n -T -S
+bcp "SELECT * FROM cob_conta_tercero..ct_saldo_tercero WHERE st_periodo = 2018 AND st_corte = 334" queryout D:\Temp\Pruebas\cob_conta_tercero_ct_saldo_tercero_2018_corte_334.dat -n -r \n -T -S
+bcp "SELECT * FROM cob_conta_tercero..ct_saldo_tercero WHERE st_periodo = 2018 AND st_corte = 365" queryout D:\Temp\Pruebas\cob_conta_tercero_ct_saldo_tercero_2018_corte_365.dat -n -r \n -T -S
+bcp "SELECT * FROM cob_conta_tercero..ct_saldo_tercero WHERE st_periodo = 2018 AND st_corte = 366" queryout D:\Temp\Pruebas\cob_conta_tercero_ct_saldo_tercero_2018_corte_366.dat -n -r \n -T -S

@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<serviceClass name="OperationManagement" nsBase="COBISCorp.eCOBIS.BusinessToBusiness" namespace="COBISCorp.eCOBIS.BusinessToBusiness.Service" package="cobiscorp.ecobis.businesstobusiness.service" ns="http://service.businesstobusiness.ecobis.cobiscorp" module="BusinessToBusiness" productName="COBISCorp.eCOBIS.BusinessToBusiness.Service" productVersion="1.0.0.0">
+  <productProperties>
+    <property name="MavenGroupId" value="com.cobiscorp.processapi" />
+    <property name="MavenArtifactId" value="COBISCorp.eCOBIS.BusinessToBusiness.Service" />
+    <property name="MavenVersion" value="1.0.0.0" />
+  </productProperties>
+  <partialClass name="OperationManagement">
+    <services>
+      <service id="BusinessToBusiness.OperationManagement.SearchOperations" netName="SearchOperations" javaName="searchOperations" mappingType="STORED_PROCEDURE" mapId="d3aeec875c479e55d1cdeea161842ec6">
+        <SRVMapping name="cob_cartera..sp_consulta_operaciones">
+          <DTOs>
+            <DTO direction="in" name="OperationRequest" alias="inOperationRequest" namespace="COBISCorp.eCOBIS.BusinessToBusiness.DTO" package="cobiscorp.ecobis.businesstobusiness.dto" ns="http://dto.businesstobusiness.ecobis.cobiscorp" required="true" />
+            <DTO direction="return" name="OperationResponse" alias="returnOperationResponse" namespace="COBISCorp.eCOBIS.BusinessToBusiness.DTO" package="cobiscorp.ecobis.businesstobusiness.dto" ns="http://dto.businesstobusiness.ecobis.cobiscorp" required="true">
+              <properties>
+                <property name="operationNumber" propertyNet="OperationNumber" propertyJava="operationNumber" setterJavaMethod="setOperationNumber" getterJavaMethod="getOperationNumber" xsdType="string" netType="string" javaType="String" cobisMapping="" isInherit="false" isComplexType="false" isCollectionType="false" required="false" encrypted="false" maxLength="0" />
+                <property name="operationType" propertyNet="OperationType" propertyJava="operationType" setterJavaMethod="setOperationType" getterJavaMethod="getOperationType" xsdType="string" netType="string" javaType="String" cobisMapping="" isInherit="false" isComplexType="false" isCollectionType="false" required="false" encrypted="false" maxLength="0" />
+                <property name="paymentAmount" propertyNet="PaymentAmount" propertyJava="paymentAmount" setterJavaMethod="setPaymentAmount" getterJavaMethod="getPaymentAmount" xsdType="double?" netType="double?" javaType="Double" cobisMapping="" isInherit="false" isComplexType="false" isCollectionType="false" required="false" encrypted="false" maxLength="0" />
+                <property name="minAmount" propertyNet="MinAmount" propertyJava="minAmount" setterJavaMethod="setMinAmount" getterJavaMethod="getMinAmount" xsdType="double?" netType="double?" javaType="Double" cobisMapping="" isInherit="false" isComplexType="false" isCollectionType="false" required="false" encrypted="false" maxLength="0" />
+                <property name="maxAmount" propertyNet="MaxAmount" propertyJava="maxAmount" setterJavaMethod="setMaxAmount" getterJavaMethod="getMaxAmount" xsdType="double?" netType="double?" javaType="Double" cobisMapping="" isInherit="false" isComplexType="false" isCollectionType="false" required="false" encrypted="false" maxLength="0" />
+                <property name="reference" propertyNet="Reference" propertyJava="reference" setterJavaMethod="setReference" getterJavaMethod="getReference" xsdType="string" netType="string" javaType="String" cobisMapping="" isInherit="false" isComplexType="false" isCollectionType="false" required="false" encrypted="false" maxLength="0" />
+                <property name="expirationPaymentDate" propertyNet="ExpirationPaymentDate" propertyJava="expirationPaymentDate" setterJavaMethod="setExpirationPaymentDate" getterJavaMethod="getExpirationPaymentDate" xsdType="dateTime?" netType="DateTime?" javaType="java.util.Calendar" cobisMapping="" isInherit="false" isComplexType="false" isCollectionType="false" required="false" encrypted="false" maxLength="0" />
+                <property name="emailAddress" propertyNet="EmailAddress" propertyJava="emailAddress" setterJavaMethod="setEmailAddress" getterJavaMethod="getEmailAddress" xsdType="string" netType="string" javaType="String" cobisMapping="" isInherit="false" isComplexType="false" isCollectionType="false" required="false" encrypted="false" maxLength="0" />
+                <property name="lastPaymentId" propertyNet="LastPaymentId" propertyJava="lastPaymentId" setterJavaMethod="setLastPaymentId" getterJavaMethod="getLastPaymentId" xsdType="string" netType="string" javaType="String" cobisMapping="" isInherit="false" isComplexType="false" isCollectionType="false" required="false" encrypted="false" maxLength="0" />
+                <property name="suggestedAmount" propertyNet="SuggestedAmount" propertyJava="suggestedAmount" setterJavaMethod="setSuggestedAmount" getterJavaMethod="getSuggestedAmount" xsdType="double?" netType="double?" javaType="Double" cobisMapping="" isInherit="false" isComplexType="false" isCollectionType="false" required="false" encrypted="false" maxLength="0" />
+                <property name="customerGroupName" propertyNet="CustomerGroupName" propertyJava="customerGroupName" setterJavaMethod="setCustomerGroupName" getterJavaMethod="getCustomerGroupName" xsdType="string" netType="string" javaType="String" cobisMapping="" isInherit="false" isComplexType="false" isCollectionType="false" required="false" encrypted="false" maxLength="0" />
+              </properties>
+            </DTO>
+          </DTOs>
+          <parameterMappings>
+            <parameter name="@i_operacion" direction="in" mappingDirection="in" dataType="char" CTSDataType="SQLCHAR" JavaSQLType="CHAR" mappingType="CONSTANT" allowNull="false" contantValue="S" />
+            <parameter name="@i_id_persona_grupo" direction="in" mappingDirection="in" dataType="int" CTSDataType="SQLINT4" JavaSQLType="INTEGER" mappingType="DTO" allowNull="true" DTOAlias="inOperationRequest" DTOPropertyName="customerGroupId" />
+            <parameter name="@i_tipo" direction="in" mappingDirection="in" dataType="char" CTSDataType="SQLCHAR" JavaSQLType="CHAR" mappingType="DTO" allowNull="true" DTOAlias="inOperationRequest" DTOPropertyName="customerGroupType" />
+            <parameter name="@i_corresponsal" direction="in" mappingDirection="in" dataType="varchar" CTSDataType="SQLVARCHAR" JavaSQLType="VARCHAR" mappingType="DTO" allowNull="false" DTOAlias="inOperationRequest" DTOPropertyName="correspondent" />
+          </parameterMappings>
+          <resultMappings>
+            <result>
+              <DTOResult DTOAlias="returnOperationResponse" MapReturn="true">
+                <columnMapping position="0" name="ID_OPERACION" DTOPropertyName="operationNumber" DataType="string" Format="" />
+                <columnMapping position="1" name="TIPO_OPERACION" DTOPropertyName="operationType" DataType="string" Format="" />
+                <columnMapping position="2" name="MONTO_PAGO" DTOPropertyName="paymentAmount" DataType="double?" />
+                <columnMapping position="3" name="MONTO_MAXIMO" DTOPropertyName="maxAmount" DataType="double?" Format="" />
+                <columnMapping position="4" name="MONTO_MINIMO" DTOPropertyName="minAmount" DataType="double?" Format="" />
+                <columnMapping position="5" name="REFERENCIA" DTOPropertyName="reference" DataType="string" Format="" />
+                <columnMapping position="6" name="FECHA_LIMITE_PAGO" DTOPropertyName="expirationPaymentDate" DataType="dateTime?" Format="" />
+                <columnMapping position="7" name="CORREO" DTOPropertyName="emailAddress" DataType="string" Format="" />
+                <columnMapping position="8" name="ID_ULT_PAGO" DTOPropertyName="lastPaymentId" DataType="string" Format="" />
+                <columnMapping position="9" name="MONTO_SUGERIDO" DTOPropertyName="suggestedAmount" DataType="double?" Format="" />
+                <columnMapping position="10" name="NOMBRE" DTOPropertyName="customerGroupName" DataType="string" />
+              </DTOResult>
+            </result>
+          </resultMappings>
+          <MappingProperties />
+        </SRVMapping>
+      </service>
+    </services>
+  </partialClass>
+</serviceClass>

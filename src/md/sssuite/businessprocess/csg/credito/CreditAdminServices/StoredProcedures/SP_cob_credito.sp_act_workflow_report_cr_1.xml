@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<procedure>
+  <database>cob_credito</database>
+  <name>sp_act_workflow_report_cr</name>
+  <type>SYBASE</type>
+  <version>1</version>
+  <parameters>
+    <parameter name="@s_ssn" dataType="int" direction="in" />
+    <parameter name="@s_user" dataType="varchar" direction="in" />
+    <parameter name="@s_sesn" dataType="int" direction="in" />
+    <parameter name="@s_term" dataType="varchar" direction="in" />
+    <parameter name="@s_date" dataType="datetime" direction="in" />
+    <parameter name="@s_srv" dataType="varchar" direction="in" />
+    <parameter name="@s_lsrv" dataType="varchar" direction="in" />
+    <parameter name="@s_rol" dataType="smallint" direction="in" />
+    <parameter name="@s_ofi" dataType="smallint" direction="in" />
+    <parameter name="@s_org_err" dataType="char" direction="in" />
+    <parameter name="@s_error" dataType="int" direction="in" />
+    <parameter name="@s_sev" dataType="tinyint" direction="in" />
+    <parameter name="@s_msg" dataType="varchar" direction="in" />
+    <parameter name="@s_org" dataType="char" direction="in" />
+    <parameter name="@t_show_version" dataType="bit" direction="in" />
+    <parameter name="@t_rty" dataType="char" direction="in" />
+    <parameter name="@t_trn" dataType="smallint" direction="in" />
+    <parameter name="@t_debug" dataType="char" direction="in" />
+    <parameter name="@t_file" dataType="varchar" direction="in" />
+    <parameter name="@t_from" dataType="varchar" direction="in" />
+    <parameter name="@i_operacion" dataType="char" direction="in" />
+    <parameter name="@i_num_proceso" dataType="int" direction="in" />
+    <parameter name="@i_modo" dataType="char" direction="in" />
+    <parameter name="@i_regional" dataType="varchar" direction="in" />
+    <parameter name="@i_fechaCorte" dataType="datetime" direction="in" />
+    <parameter name="@i_login" dataType="varchar" direction="in" />
+  </parameters>
+  <queries>
+    <query>
+      <columns>
+        <column name="USUARIO" />
+        <column name="CARGO" />
+        <column name="IDCARGO" />
+      </columns>
+      <queryText>SELECT DISTINCT "USUARIO" = f.fu_nombre,"CARGO" = (SELECT DISTINCT valor FROM cobis..cl_catalogo   WHERE tabla = ? AND codigo = CONVERT (CHAR (10),f.fu_cargo )     ),"IDCARGO" = fu_cargo </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="USUARIO" />
+        <column name="CARGO" />
+        <column name="IDCARGO" />
+      </columns>
+      <queryText>SELECT  "NOMBRE_GERENTE_GENERAL" = fu_nombre </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="NOMBRE" />
+        <column name="CODIGO_FUN" />
+        <column name="CARGO" />
+      </columns>
+      <queryText>SELECT  "NOMBRE_JEFE_AGENCIA" = fu_nombre </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="porcentaje" />
+        <column name="fecha_autorizacion" />
+        <column name="usuario" />
+        <column name="des_cargo" />
+        <column name="num_excepcion" />
+        <column name="justificativo" />
+      </columns>
+      <queryText></queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="id_sig_act" />
+        <column name="id_observacion" />
+        <column name="num_linea" />
+        <column name="texto" />
+        <column name="ejecutivo" />
+        <column name="cat_observ" />
+        <column name="numero" />
+      </columns>
+      <queryText></queryText>
+    </query>
+  </queries>
+</procedure>

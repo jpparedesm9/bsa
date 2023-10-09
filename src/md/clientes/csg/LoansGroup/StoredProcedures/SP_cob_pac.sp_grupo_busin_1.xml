@@ -1,0 +1,96 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<procedure>
+  <database>cob_pac</database>
+  <name>sp_grupo_busin</name>
+  <type>SQLSERVER</type>
+  <version>1</version>
+  <parameters>
+    <parameter name="@i_compania" dataType="int" direction="in" />
+    <parameter name="@i_comportamiento_pago" dataType="varchar" direction="in" />
+    <parameter name="@i_dia_reunion" dataType="varchar" direction="in" />
+    <parameter name="@i_dir_reunion" dataType="varchar" direction="in" />
+    <parameter name="@i_ente" dataType="int" direction="in" />
+    <parameter name="@i_estado" dataType="varchar" direction="in" />
+    <parameter name="@i_fecha_modificacion" dataType="datetime" direction="in" />
+    <parameter name="@i_fecha_registro" dataType="datetime" direction="in" />
+    <parameter name="@i_filial" dataType="tinyint" direction="in" />
+    <parameter name="@i_grupo" dataType="int" direction="in" />
+    <parameter name="@i_hora_reunion" dataType="datetime" direction="in" />
+    <parameter name="@i_max_riesgo" dataType="money" direction="in" />
+    <parameter name="@i_modo" dataType="tinyint" direction="in" />
+    <parameter name="@i_nombre" dataType="varchar" direction="in" />
+    <parameter name="@i_num_ciclo" dataType="int" direction="in" />
+    <parameter name="@i_oficial" dataType="int" direction="in" />
+    <parameter name="@i_oficina" dataType="smallint" direction="in" />
+    <parameter name="@i_operacion" dataType="char" direction="in" />
+    <parameter name="@i_representante" dataType="int" direction="in" />
+    <parameter name="@i_reservado" dataType="money" direction="in" />
+    <parameter name="@i_riesgo" dataType="money" direction="in" />
+    <parameter name="@i_ruc" dataType="varchar" direction="in" />
+    <parameter name="@i_tipo" dataType="char" direction="in" />
+    <parameter name="@i_tipo_grupo" dataType="varchar" direction="in" />
+    <parameter name="@i_tipo_vinculacion" dataType="varchar" direction="in" />
+    <parameter name="@i_usuario" dataType="varchar" direction="in" />
+    <parameter name="@i_vinculacion" dataType="char" direction="in" />
+    <parameter name="@o_grupo" dataType="int" direction="out" />
+    <parameter name="@s_date" dataType="datetime" direction="in" />
+    <parameter name="@s_error" dataType="int" direction="in" />
+    <parameter name="@s_lsrv" dataType="varchar" direction="in" />
+    <parameter name="@s_msg" dataType="varchar" direction="in" />
+    <parameter name="@s_ofi" dataType="smallint" direction="in" />
+    <parameter name="@s_org" dataType="char" direction="in" />
+    <parameter name="@s_org_err" dataType="char" direction="in" />
+    <parameter name="@s_rol" dataType="smallint" direction="in" />
+    <parameter name="@s_sev" dataType="tinyint" direction="in" />
+    <parameter name="@s_srv" dataType="varchar" direction="in" />
+    <parameter name="@s_ssn" dataType="int" direction="in" />
+    <parameter name="@s_term" dataType="varchar" direction="in" />
+    <parameter name="@s_user" dataType="varchar" direction="in" />
+    <parameter name="@t_debug" dataType="char" direction="in" />
+    <parameter name="@t_file" dataType="varchar" direction="in" />
+    <parameter name="@t_from" dataType="varchar" direction="in" />
+    <parameter name="@t_show_version" dataType="bit" direction="in" />
+    <parameter name="@t_trn" dataType="smallint" direction="in" />
+    <parameter name="@i_gr_tipo" dataType="char" direction="in" />
+    <parameter name="@i_gr_cta_grupal" dataType="varchar" direction="in" />
+    <parameter name="@i_gr_sucursal" dataType="int" direction="in" />
+    <parameter name="@i_gr_titular1" dataType="int" direction="in" />
+    <parameter name="@i_gr_titular2" dataType="int" direction="in" />
+    <parameter name="@i_gr_lugar_reunion" dataType="varchar" direction="in" />
+    <parameter name="@i_gr_tiene_ctagr" dataType="char" direction="in" />
+    <parameter name="@i_gr_tiene_ctain" dataType="char" direction="in" />
+    <parameter name="@i_gr_gar_liquida" dataType="char" direction="in" />
+  </parameters>
+  <queries>
+    <query>
+      <columns>
+        <column name="Id_Gupo" />
+        <column name="Nombre" />
+        <column name="Oficial" />
+        <column name="Fecha_Registro" />
+        <column name="Fecha_Modificacion" />
+        <column name="Estado" />
+        <column name="Dir_Reunion" />
+        <column name="Dia_Reunion" />
+        <column name="Hora_Reunion" />
+        <column name="Comportamiento_Pago" />
+        <column name="Num_Ciclo" />
+        <column name="Cuenta_grupal" />
+        <column name="Sucursal" />
+        <column name="Tipo" />
+        <column name="Titular1_Codigo" />
+        <column name="Titular1_Nombre" />
+        <column name="Titular2_Codigo" />
+        <column name="Titular2_Nombre" />
+        <column name="Lugar_reunion" />
+        <column name="Tiene_Cta_Grupal" />
+        <column name="Tiene_Cta_Individual" />
+        <column name="Actualiza" />
+        <column name="Gar_liquida" />
+        <column name="ActualizaMovil" />
+        <column name="Msm_ActualizaMov" />
+      </columns>
+      <queryText></queryText>
+    </query>
+  </queries>
+</procedure>

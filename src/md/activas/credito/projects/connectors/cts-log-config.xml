@@ -1,0 +1,141 @@
+<Configuration status="TRACE" monitorInterval="30" packages="com.cobiscorp.cobis.commons.log.logj42" verbose="true">
+  <Properties>
+    <Property name="filename">cts.log-$${sys:serverName}.log</Property>
+    <Property name="COBIS_HOME">$${sys:COBIS_HOME}</Property>
+    <Property name="serverName">$${sys:serverName}</Property>
+    <Property name="filenameSchedulerJob">scheduler-job-$${sys:serverName}.log</Property>
+    <Property name="filenameInstallPlugin">cts-install-plugins-$${sys:serverName}.log</Property>
+    <Property name="filenameIEN">batch.log-$${sys:serverName}.log</Property>
+    <Property name="interfaces">interfaces.log-$${sys:serverName}.log</Property>
+  </Properties>
+  <Appenders>
+    <RollingRandomAccessFile name="CRollingRandomAccessFile" fileName="${COBIS_HOME}/logs/${filename}" filePattern="${COBIS_HOME}/logs/$${date:yyyy-MM}/${filename}.%d{yyyy-MM-dd-HH}-%i.log.gz">
+      <DefaultRolloverStrategy max="50"></DefaultRolloverStrategy>
+      <PatternLayout>
+        <Pattern>%d{MMdd HHmmss,SSS} %-5.5p[${serverName}][%-.15t][%c{1}][%M][%X{sessionId},%X{backEndId},%X{trn},%X{user},%X{ssn}]%m%n</Pattern>
+      </PatternLayout>
+      <Policies>
+        <TimeBasedTriggeringPolicy modulate="true" interval="1"></TimeBasedTriggeringPolicy>
+        <SizeBasedTriggeringPolicy size="200 MB"></SizeBasedTriggeringPolicy>
+      </Policies>
+    </RollingRandomAccessFile>
+    <RollingRandomAccessFile name="CRollingRandomAccessFileSchedulerJob" fileName="${COBIS_HOME}/logs/${filenameSchedulerJob}" filePattern="${COBIS_HOME}/logs/$${date:yyyy-MM}/${filenameSchedulerJob}.%d{yyyy-MM-dd-HH}-%i.log.gz">
+      <DefaultRolloverStrategy max="50"></DefaultRolloverStrategy>
+      <PatternLayout>
+        <Pattern>%d{MMdd HHmmss,SSS} %-5.5p[${serverName}][%-.15t][%c{1}][%M][%X{sessionId},%X{backEndId},%X{trn},%X{user},%X{ssn}]%m%n</Pattern>
+      </PatternLayout>
+      <Policies>
+        <TimeBasedTriggeringPolicy modulate="true" interval="1"></TimeBasedTriggeringPolicy>
+        <SizeBasedTriggeringPolicy size="200MB"></SizeBasedTriggeringPolicy>
+      </Policies>
+    </RollingRandomAccessFile>
+    <RollingRandomAccessFile name="CRollingRandomAccessFileInstallPlugin" fileName="${COBIS_HOME}/logs/${filenameInstallPlugin}" filePattern="${COBIS_HOME}/logs/$${date:yyyy-MM}/${filenameInstallPlugin}.%d{yyyy-MM-dd-HH}-%i.log.gz">
+      <DefaultRolloverStrategy max="10"></DefaultRolloverStrategy>
+      <PatternLayout>
+        <Pattern>%d{MMdd HHmmss,SSS} %-5.5p[${serverName}][%-.15t][%c{1}][%M][%X{sessionId},%X{backEndId},%X{trn},%X{user},%X{ssn}]%m%n</Pattern>
+      </PatternLayout>
+      <Policies>
+        <TimeBasedTriggeringPolicy modulate="true" interval="1"></TimeBasedTriggeringPolicy>
+        <SizeBasedTriggeringPolicy size="200MB"></SizeBasedTriggeringPolicy>
+        <MarkBasedTriggeringPolicy mark="cleanFile"></MarkBasedTriggeringPolicy>
+      </Policies>
+    </RollingRandomAccessFile>
+    <RollingRandomAccessFile name="CRollingRandomAccessFileIEN" fileName="${COBIS_HOME}/logs/${filenameIEN}" filePattern="${COBIS_HOME}/logs/$${date:yyyy-MM}/${filenameIEN}.%d{yyyy-MM-dd-HH}-%i.log.gz">
+      <DefaultRolloverStrategy max="50"></DefaultRolloverStrategy>
+      <PatternLayout>
+        <Pattern>%d{MMdd HHmmss,SSS} %-5.5p[${serverName}][%-.5t][%c{1}][%M][%X{sessionId},%X{backEndId},%X{trn},%X{user},%X{ssn}]%m%n</Pattern>
+      </PatternLayout>
+      <Policies>
+        <TimeBasedTriggeringPolicy modulate="true" interval="1"></TimeBasedTriggeringPolicy>
+        <SizeBasedTriggeringPolicy size="200MB"></SizeBasedTriggeringPolicy>
+      </Policies>
+    </RollingRandomAccessFile>
+    <RollingRandomAccessFile name="CRollingRandomAccessFileInterfaces" fileName="${COBIS_HOME}/logs/${interfaces}" filePattern="${COBIS_HOME}/logs/$${date:yyyy-MM}/${interfaces}.%d{yyyy-MM-dd-HH}-%i.log.gz">
+      <DefaultRolloverStrategy max="50"></DefaultRolloverStrategy>
+      <PatternLayout>
+        <Pattern>%d{MMdd HHmmss,SSS} %-5.5p[${serverName}][%-.5t][%c{1}][%M][%X{sessionId},%X{backEndId},%X{trn},%X{user},%X{ssn}]%m%n</Pattern>
+      </PatternLayout>
+      <Policies>
+        <TimeBasedTriggeringPolicy modulate="true" interval="1"></TimeBasedTriggeringPolicy>
+        <SizeBasedTriggeringPolicy size="200MB"></SizeBasedTriggeringPolicy>
+      </Policies>
+    </RollingRandomAccessFile>
+  </Appenders>
+  <Loggers>
+    <Root level="TRACE" includeLocation="false">
+      <AppenderRef ref="CRollingRandomAccessFile"></AppenderRef>
+    </Root>
+    <Logger name="com.cobiscorp.cobis.cts.services.licenses" level="TRACE" additivity="true"></Logger>
+    <Logger name="com.cobiscorp.cobis.cache.impl" level="TRACE" additivity="true"></Logger>
+    <Logger name="com.cobiscorp.cobis.cts.console" level="TRACE" additivity="true"></Logger>
+    <Logger name="com.cobiscorp.cobis.cts.interceptors" level="TRACE" additivity="true"></Logger>
+    <Logger name="com.cobiscorp.cobis.cts.services.rpc.impl" level="TRACE" additivity="true"></Logger>
+    <Logger name="com.cobiscorp.cobis.cts.services.special.sp.impl" level="TRACE" additivity="true"></Logger>
+    <Logger name="cobiscorp.ecobis.admin" level="TRACE" additivity="true"></Logger>
+    <Logger name="cobiscorp.ecobis.cobisexplorer" level="TRACE" additivity="true"></Logger>
+    <Logger name="com.cobiscorp.cobis.cts.services.authentication.impl" level="TRACE" additivity="true"></Logger>
+    <Logger name="com.cobiscorp.cobis.cts.services.authorization.impl" level="TRACE" additivity="true"></Logger>
+    <Logger name="com.cobiscorp.cobis.cts.services.orchestrator.impl" level="TRACE" additivity="true"></Logger>
+    <Logger name="com.cobiscorp.cobis.cts.handlers" level="TRACE" additivity="true"></Logger>
+    <Logger name="com.cobiscorp.cobis.cts.services.routing.impl" level="TRACE" additivity="true"></Logger>
+    <Logger name="com.cobiscorp.cobis.cts.services.servexecutor.impl" level="TRACE" additivity="true"></Logger>
+    <Logger name="com.cobiscorp.cobis.cts.services.session.impl" level="TRACE" additivity="true"></Logger>
+    <Logger name="com.cobiscorp.cobis.cts.commons.dblib.impl" level="TRACE" additivity="true"></Logger>
+    <Logger name="com.cobiscorp.cobis.cts.services.execution.impl" level="TRACE" additivity="true"></Logger>
+    <Logger name="com.cobiscorp.cobis.cts.delegates" level="TRACE" additivity="true"></Logger>
+    <Logger name="com.cobiscorp.cts.reentry" level="TRACE" additivity="true"></Logger>
+    <Logger name="com.cobiscorp.cobis.csp.threshold" level="TRACE" additivity="true"></Logger>
+    <Logger name="com.cobiscorp.cobis.cts.services.trlogger.impl" level="TRACE" additivity="true"></Logger>
+    <Logger name="com.cobiscorp.cobis.cts.trlogger.daos" level="TRACE" additivity="true"></Logger>
+    <Logger name="org.apache.aries" level="ERROR" additivity="true"></Logger>
+    <Logger name="org.apache.openjpa" level="ERROR" additivity="true"></Logger>
+    <Logger name="org.springframework" level="ERROR" additivity="true">
+      <AppenderRef ref="CRollingRandomAccessFileIEN"></AppenderRef>
+    </Logger>
+    <Logger name="com.cobiscorp.cobis.csp.alerts" level="TRACE" additivity="true"></Logger>
+    <Logger name="com.cobiscorp.cobis.csp.binnacle" level="TRACE" additivity="true"></Logger>
+    <Logger name="com.cobiscorp.cobis.csp.corebanking" level="TRACE" additivity="true"></Logger>
+    <Logger name="com.cobiscorp.cobis.csp.dynamicorchestrator" level="TRACE" additivity="true"></Logger>
+    <Logger name="com.cobiscorp.cobis.csp.locktransaction" level="TRACE" additivity="true"></Logger>
+    <Logger name="com.cobiscorp.cobis.csp.provider" level="TRACE" additivity="true"></Logger>
+    <Logger name="com.cobiscorp.cobis.csp.reversecorebanking" level="TRACE" additivity="true"></Logger>
+    <Logger name="com.cobiscorp.cobis.cis.sp.java" level="TRACE" additivity="true"></Logger>
+    <Logger name="com.cobiscorp.cobis.csp.synchronousorchestrator" level="TRACE" additivity="true"></Logger>
+    <Logger name="shjob" level="TRACE" additivity="true">
+      <AppenderRef ref="CRollingRandomAccessFileSchedulerJob"></AppenderRef>
+    </Logger>
+    <Logger name="plugerr" level="TRACE" additivity="true">
+      <AppenderRef ref="CRollingRandomAccessFileInstallPlugin"></AppenderRef>
+    </Logger>
+    <Logger name="com.cobiscorp.cobis.batch" level="TRACE" additivity="true">
+      <AppenderRef ref="CRollingRandomAccessFileIEN"></AppenderRef>
+    </Logger>
+    <Logger name="org.quartz" level="TRACE" additivity="true">
+      <AppenderRef ref="CRollingRandomAccessFileIEN"></AppenderRef>
+    </Logger>
+    <Logger name="org.springframework.jdbc" level="TRACE" additivity="true">
+      <AppenderRef ref="CRollingRandomAccessFileIEN"></AppenderRef>
+    </Logger>
+    <Logger name="org.springframework.transaction" level="TRACE" additivity="true">
+      <AppenderRef ref="CRollingRandomAccessFileIEN"></AppenderRef>
+    </Logger>
+    <Logger name="org.springframework.transaction.jta" level="TRACE" additivity="true">
+      <AppenderRef ref="CRollingRandomAccessFileIEN"></AppenderRef>
+    </Logger>
+    <Logger name="org.springframework.transaction.support" level="TRACE" additivity="true">
+      <AppenderRef ref="CRollingRandomAccessFileIEN"></AppenderRef>
+    </Logger>
+    <Logger name="com.cobiscorp.cobis.jdbc" level="TRACE" additivity="true">
+      <AppenderRef ref="CRollingRandomAccessFileIEN"></AppenderRef>
+    </Logger>
+    <Logger name="cobiscorp.ecobis.integrationengine" level="TRACE" additivity="false">
+      <AppenderRef ref="CRollingRandomAccessFileIEN"></AppenderRef>
+    </Logger>
+    <Logger name="com.cobis.cloud.sofom" level="TRACE" additivity="true">  
+      <AppenderRef ref="CRollingRandomAccessFileInterfaces"/> 
+	</Logger>
+    <Logger name="com.cobiscorp.ecobis.cobiscloudburo.util" level="TRACE" additivity="true">  
+      <AppenderRef ref="CRollingRandomAccessFileInterfaces"/> 
+	</Logger>
+  </Loggers>
+</Configuration>

@@ -1,0 +1,120 @@
+<div class="cb-view" ng-controller="customer.queryCustomersController" ng-init="initData()">
+	<div class="cb-view-container-root">
+		<form id="customerSearch" kendo-validator="validator">
+			<div kendo-validator="val77" k-options="searchValidatorOptions">
+				<fieldset id="organizer">
+					<div class="cb-group cb-group-simple cb-gap-bottom">
+						<div class="row">
+
+							<div class="cb-breadcrumb" ng-if="openAsModal!=S">
+								<ul class="breadcrumb">
+									<li translate>COMMONS.LABELS.LBL_START</li>
+									<li translate>COMMONS.LABELS.LBL_CUSTOMER_SEARCH</li>
+								</ul>
+							</div>
+
+							<div class="cb-view-container-root cb-view-container cb-group-layout container-fluid">
+								<div class="container-fluid" style="max-width:600px;">
+									<div class="cb-flex cb-gutters">
+										<div class="cb-grow" ng-if="selectedField.id!=2 && isId">
+											<input type="text" ng-model="$parent.txtId" class="form-control input-lg" ng-keypress="onKeyPressDigit($event)" capitalize required validationMessage="{{'COMMONS.LABELS.LBL_CODE_NUMBER'|translate}} {{'COMMONS.MESSAGES.MSG_REQUIRED_ERROR'|translate}} " placeholder="{{selectedField.label}}" />
+										</div>
+										<div class="cb-grow" ng-if="selectedField.id!=2 && isSecuencial">
+											<input type="text" ng-model="$parent.txtSecuencial" class="form-control input-lg" ng-keypress="onKeyPressDigit($event)" id="secuencial" required validationMessage="{{'COMMONS.LABELS.LBL_CONSECUTIVE'|translate}} {{'COMMONS.MESSAGES.MSG_REQUIRED_ERROR'|translate}}" placeholder="{{selectedField.label}}" />
+										</div>
+										<div class="cb-grow" ng-if="selectedField.id==2 && (isName || isCompanyName)">
+											<input type="text" class="form-control input-lg" ng-model="$parent.txtName" ng-keypress="onKeyPressLetter($event)" capitalize id="firstName" dependantField="lastName" required-if-dependant-not-null data-msg-required-if-dependant-not-null="{{'COMMONS.LABELS.LBL_NAMES'|translate}} {{'COMMONS.MESSAGES.MSG_REQUIRED_ERROR'|translate}}" placeholder="{{'COMMONS.LABELS.LBL_NAMES'|translate}}" /></input>
+										</div>
+										<div class="cb-grow" ng-if="selectedField.id==2 && isName">
+											<input type="text" class="form-control input-lg" ng-model="$parent.txtLastName" ng-keypress="onKeyPressLetter($event)" capitalize id="lastName" placeholder="{{'COMMONS.LABELS.LBL_LAST_NAMES'|translate}}" />
+										</div>
+
+										<div class="cb-grow" ng-if="selectedField.id==2 && isCompanyName && columnExist">
+											<input id="autoCompleteControl" type="text" class="input-lg" kendo-auto-complete k-data-source="autoCompleteDataSource" k-data-text-field="'name'" k-data-value-field="'id'" ng-keyup="changeDataSourceByText($event)" ng-model="autoCompleteModel" required validationMessage="{{'COMMONS.LABELS.LBL_COMPANY_NAME_'|translate}} {{'COMMONS.MESSAGES.MSG_REQUIRED_ERROR'|translate}}" k-on-select="selectAutoComplete('_select')" k-on-change="onChangeAutoComplete('_change')" style="width:100%; height:95%" placeholder="Nombre" />
+										</div>
+
+										<div class="cb-grow" ng-if="selectedField.id==2 && isNameCriteria && columnExist">
+											<input id="autoCompleteControl" type="text" class="input-lg" kendo-auto-complete k-data-source="autoCompleteDataSource" k-data-text-field="'name'" k-data-value-field="'id'" ng-keyup="changeDataSourceByText($event)" ng-model="autoCompleteModel" required validationMessage="{{'COMMONS.LABELS.LBL_COMPANY_NAME_'|translate}} {{'COMMONS.MESSAGES.MSG_REQUIRED_ERROR'|translate}}" k-on-select="selectAutoComplete('_select')" k-on-change="onChangeAutoComplete('_change')" style="width:100%; height:95%" placeholder="Nombre" />
+										</div>
+										<div class="cb-grow" ng-if="selectedField.id==4 && isSantander">
+											<input type="text" class="form-control input-lg" ng-model="$parent.txtSantander" ng-keypress="onKeyPressDigit($event)" capitalize id="lastName" placeholder="{{'COMMONS.LABELS.LBL_SANTANDER'|translate}}" />
+										</div>
+										<div>
+											<button class="btn btn-primary btn-lg" ng-click="search($event)">
+												<span class="fa fa-search"></span>
+											</button>
+										</div>
+									</div>
+									<div id="filters" class="cb-flex cb-gutters cb-gap-bottom">
+										<div class="form-control-static">
+											<span translate>{{'COMMONS.LABELS.LBL_FILTER_BY'}}</span>:
+										</div>
+										<div>
+											<div class="dropdown">
+												<button class="btn btn-link" data-toggle="dropdown">
+													{{selectedEntity.label}}
+													<span class="caret"></span>
+													<div class="small text-muted" translate>COMMONS.LABELS.LBL_ENTITY</div>
+												</button>
+												<ul class="dropdown-menu">
+													<li ng-class="{'active':selectedEntity==item}" ng-repeat="item in filters.entity">
+														<a href="#" ng-click="setEntity(item)">{{item.label}}</a>
+													</li>
+												</ul>
+											</div>
+										</div>
+										<div>
+											<div class="dropdown">
+												<button class="btn btn-link" data-toggle="dropdown">
+													{{ selectedType.label }}
+													<span class="caret"></span>
+													<div class="small text-muted" translate>COMMONS.LABELS.LBL_TYPE</div>
+												</button>
+												<ul class="dropdown-menu">
+													<li ng-class="{'active':selectedType==item}" ng-repeat="item in filters.type">
+														<a href="#" ng-click="setType(item)">{{ item.label }}</a>
+													</li>
+												</ul>
+											</div>
+										</div>
+										<div>
+											<div class="dropdown">
+												<button class="btn btn-link" data-toggle="dropdown">
+													{{ selectedField.label }}
+													<span class="caret"></span>
+													<div class="small text-muted" translate>COMMONS.LABELS.LBL_SEARCH_BY</div>
+												</button>
+												<ul class="dropdown-menu">
+													<li ng-class="{'active':selectedField==item}" ng-repeat="item in filters.field">
+														<a href="#" ng-click="setField(item)">{{ item.label }}</a>
+													</li>
+												</ul>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="container-fluid" style="max-width:1000px;">
+								<div ng-show="isResultGrid">
+									<div id="gridGroupId" kendo-grid="gridGroup" k-data-source="group" k-selectable="'row'" k-columns="getGroupColumns()" k-on-change="onSelection(kendoEvent)" ng-show="isEconomicGroup || isSolidarityGroup"></div>
+									<div id="gridCompanyId" k-toolbar="prospectTemplate" kendo-grid="gridCompany" k-data-source="company" k-selectable="'row'" k-columns="companyColumns" k-on-change="onSelection(kendoEvent)" ng-show="isJuridicPerson"></div>
+									<div id="gridNaturalId" k-toolbar="prospectTemplate" kendo-grid="gridNatural" k-data-source="natural" k-selectable="'row'" k-columns="naturalColumns" k-on-change="onSelection(kendoEvent)" ng-show="isNaturalPerson"></div>
+
+									<div class="cb-navbar cb-navbar-bottom">
+										<button class="btn btn-default navbar-btn" ng-disabled="!isPrevius" ng-click="searchPrevious($event,'0')" translate>COMMONS.BUTTONS.BTN_PREVIOUS</button>
+										<button class="btn btn-default navbar-btn" ng-disabled="!isNext" ng-click="searchNext($event)" translate>COMMONS.BUTTONS.BTN_NEXT</button>
+										<button class="btn btn-primary navbar-btn" ng-disabled="!isSelect" ng-click="select($event)" translate>COMMONS.BUTTONS.BTN_SELECT</button>
+									</div>
+								</div>
+							</div>
+						</div>
+				</fieldset>
+				</div>
+			</div>
+	</div>
+	<div translate-cloak style="display:none;" class="cb-view-loading"> 
+		<div class="cb-view-loading-icon"></div> 
+	</div>
+	</fieldset>
+</div>
+</form>

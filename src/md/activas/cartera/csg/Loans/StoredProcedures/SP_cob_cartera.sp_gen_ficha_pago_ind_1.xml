@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<procedure>
+  <database>cob_cartera</database>
+  <name>sp_gen_ficha_pago_ind</name>
+  <type>SQLSERVER</type>
+  <version>1</version>
+  <parameters>
+    <parameter name="@i_banco" dataType="varchar" direction="in" />
+    <parameter name="@i_operacion" dataType="varchar" direction="in" />
+  </parameters>
+  <queries>
+    <query>
+      <columns>
+        <column name="fecha_inicio" />
+        <column name="nombre_cliente" />
+        <column name="fecha_vigencia" />
+        <column name="nro_pago" />
+        <column name="monto" />
+        <column name="sucursal" />
+      </columns>
+      <queryText>SELECT  "fecha_inicio" = fpi_op_fecha_liq,"nombre_cliente" = fpi_cliente_name,"fecha_vigencia" = fpi_di_fecha_vig,"nro_pago" = fpi_di_dividendo,"monto" = fpi_di_monto,"sucursal" = of_nombre </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="institucion" />
+        <column name="referencia" />
+        <column name="convenio" />
+      </columns>
+      <queryText>SELECT  "institucion","referencia","convenio" </queryText>
+    </query>
+  </queries>
+</procedure>

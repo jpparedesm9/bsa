@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<procedure>
+  <database>cob_interfase</database>
+  <name>sp_ahretiro</name>
+  <type>SYBASE</type>
+  <version>1</version>
+  <parameters>
+    <parameter name="@s_ssn" dataType="int" direction="in" />
+    <parameter name="@s_ssn_branch" dataType="int" direction="in" />
+    <parameter name="@s_srv" dataType="varchar" direction="in" />
+    <parameter name="@s_lsrv" dataType="varchar" direction="in" />
+    <parameter name="@s_user" dataType="varchar" direction="in" />
+    <parameter name="@s_sesn" dataType="int" direction="in" />
+    <parameter name="@s_term" dataType="varchar" direction="in" />
+    <parameter name="@s_date" dataType="datetime" direction="in" />
+    <parameter name="@s_ofi" dataType="smallint" direction="in" />
+    <parameter name="@s_rol" dataType="smallint" direction="in" />
+    <parameter name="@s_org_err" dataType="char" direction="in" />
+    <parameter name="@s_error" dataType="int" direction="in" />
+    <parameter name="@s_sev" dataType="tinyint" direction="in" />
+    <parameter name="@s_msg" dataType="varchar" direction="in" />
+    <parameter name="@s_org" dataType="char" direction="in" />
+    <parameter name="@t_debug" dataType="char" direction="in" />
+    <parameter name="@t_file" dataType="varchar" direction="in" />
+    <parameter name="@t_from" dataType="varchar" direction="in" />
+    <parameter name="@t_rty" dataType="char" direction="in" />
+    <parameter name="@t_show_version" dataType="bit" direction="in" />
+    <parameter name="@t_trn" dataType="smallint" direction="in" />
+    <parameter name="@t_ssn_corr" dataType="int" direction="in" />
+    <parameter name="@i_cta" dataType="varchar" direction="in" />
+    <parameter name="@i_cta_mig" dataType="varchar" direction="in" />
+    <parameter name="@i_mon" dataType="tinyint" direction="in" />
+    <parameter name="@i_val" dataType="money" direction="in" />
+    <parameter name="@i_ActTot" dataType="char" direction="in" />
+    <parameter name="@i_canal" dataType="tinyint" direction="in" />
+    <parameter name="@o_ssn" dataType="int" direction="out" />
+  </parameters>
+  <queries>
+    <query>
+      <columns>
+        <column name="r_descripcion" />
+        <column name="r_suspenso" />
+      </columns>
+      <queryText>SELECT "/** Store Procedure **/"=w_sp_name,"s_ssn"=s_ssn,"s_srv"=s_srv,"s_lsrv"=s_lsrv,"s_user"=s_user,"s_sesn"=s_sesn,"s_term"=s_term,"s_date"=s_date,"s_ofi"=s_ofi,"s_rol"=s_rol,"s_org_err"=s_org_err,"s_error"=s_error,"s_sev"=s_sev,"s_msg"=s_msg,"s_org"=s_org,"t_from"=t_from,"t_file"=t_file,"t_rty"=t_rty,"t_trn"=t_trn,"i_cta"=i_cta,"i_mon"=i_mon,"i_val"=i_val,"i_ActTot"=i_ActTot,"i_canal"=i_canal,"o_ssn"=o_ssn</queryText>
+    </query>
+  </queries>
+</procedure>

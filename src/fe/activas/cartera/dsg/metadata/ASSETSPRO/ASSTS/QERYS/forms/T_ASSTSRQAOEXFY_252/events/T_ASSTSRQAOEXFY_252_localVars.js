@@ -1,0 +1,1 @@
+/* variables locales de T_ASSTSRQAOEXFY_252*/

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:osgi="http://www.springframework.org/schema/osgi"
+	xmlns:aop="http://www.springframework.org/schema/aop" xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:jee="http://www.springframework.org/schema/jee" xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/osgi http://www.springframework.org/schema/osgi/spring-osgi.xsd
+		http://www.springframework.org/schema/jee http://www.springframework.org/schema/jee/spring-jee.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
+		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd">
+
+	<osgi:reference id="storedProcedureUtils"
+		interface="com.cobiscorp.cobis.cts.jdbc.utils.CobisStoredProcedureUtils" />
+
+	<osgi:service ref="defaultOperationManager"
+		interface="com.cobiscorp.ecobis.fpm.portfolio.service.IDefaultOperationManager" />
+
+	<osgi:service ref="itemPortfolioManager"
+		interface="com.cobiscorp.ecobis.fpm.portfolio.service.IItemPortfolioManager" />
+
+	<osgi:service ref="ratePortfolioManager"
+		interface="com.cobiscorp.ecobis.fpm.portfolio.service.IRatePortfolio" />
+		
+	<osgi:reference id="portfolioCatalogServiceRef"
+		interface="com.cobiscorp.ecobis.fpm.catalogs.service.ICatalogManager" />
+			
+	<osgi:service ref="purposePortfolioManager"
+		interface="com.cobiscorp.ecobis.fpm.portfolio.service.IPurposePortfolioManager" />
+		
+	<osgi:service ref="tranOperationManager"
+		interface="com.cobiscorp.ecobis.fpm.portfolio.service.ITranOperationManager" />
+		
+	<osgi:service ref="itemStatusPortfolioManager"
+		interface="com.cobiscorp.ecobis.fpm.portfolio.service.IItemStatusPortfolioManager" />
+			
+	<osgi:service ref="opManualStatusManager"
+		interface="com.cobiscorp.ecobis.fpm.portfolio.service.IOpManualStatusManager" />
+
+	<osgi:service ref="destinationTypeManager"
+		interface="com.cobiscorp.ecobis.fpm.portfolio.service.IDestinationTypeManager" />
+
+	<osgi:service ref="purposeTypeManager"
+		interface="com.cobiscorp.ecobis.fpm.portfolio.service.IPurposeTypeManager" />
+
+	<osgi:service ref="activityPortfolioManager"
+		interface="com.cobiscorp.ecobis.fpm.portfolio.service.IActivityPortfolioManager" />
+
+	<osgi:service ref="activityTypeManager"
+		interface="com.cobiscorp.ecobis.fpm.portfolio.service.IActivityTypeManager" />
+		
+	<osgi:service ref="itemWarrantyManager"
+		interface="com.cobiscorp.ecobis.fpm.portfolio.service.IItemWarrantyManager" />	
+	
+</beans>

@@ -1,0 +1,179 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<procedure>
+  <database>cob_credito</database>
+  <name>sp_reporte_buro</name>
+  <type>SYBASE</type>
+  <version>1</version>
+  <parameters>
+    <parameter name="@s_ssn" dataType="int" direction="in" />
+    <parameter name="@s_user" dataType="varchar" direction="in" />
+    <parameter name="@s_sesn" dataType="int" direction="in" />
+    <parameter name="@s_term" dataType="varchar" direction="in" />
+    <parameter name="@s_date" dataType="datetime" direction="in" />
+    <parameter name="@s_srv" dataType="varchar" direction="in" />
+    <parameter name="@s_lsrv" dataType="varchar" direction="in" />
+    <parameter name="@s_rol" dataType="smallint" direction="in" />
+    <parameter name="@s_ofi" dataType="smallint" direction="in" />
+    <parameter name="@s_org_err" dataType="char" direction="in" />
+    <parameter name="@s_error" dataType="int" direction="in" />
+    <parameter name="@s_sev" dataType="tinyint" direction="in" />
+    <parameter name="@s_msg" dataType="varchar" direction="in" />
+    <parameter name="@s_org" dataType="char" direction="in" />
+    <parameter name="@t_rty" dataType="char" direction="in" />
+    <parameter name="@t_trn" dataType="smallint" direction="in" />
+    <parameter name="@t_debug" dataType="char" direction="in" />
+    <parameter name="@t_file" dataType="varchar" direction="in" />
+    <parameter name="@t_from" dataType="varchar" direction="in" />
+    <parameter name="@i_cliente" dataType="int" direction="in" />
+    <parameter name="@i_formato_fecha" dataType="int" direction="in" />
+  </parameters>
+  <queries>
+    <query>
+      <columns>
+        <column name="Nombres" />
+        <column name="Apellidos" />
+        <column name="RFC" />
+        <column name="F_NACIMIENTO" />
+        <column name="IFE" />
+        <column name="ESTADO_CIVIL" />
+        <column name="F_REGISTRO" />
+        <column name="fecha_repore" />
+        <column name="sucursal" />
+        <column name="nombre_func" />
+        <column name="fecha_consulta" />
+        <column name="FolioConsultaBuro" />
+        <column name="curp" />
+      </columns>
+      <queryText>SELECT  sb_cliente,sb_nombre,sb_codigo,sb_valor,sb_codigo_razon,sb_codigo_error </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="secuencial" />
+        <column name="calle_y_num" />
+        <column name="colonia" />
+        <column name="delegacion" />
+        <column name="ciudad" />
+        <column name="estado" />
+        <column name="codigo_postal" />
+        <column name="reg_fecha" />
+      </columns>
+      <queryText>SELECT  di_secuencial,di_calle_y_num,di_colonia,di_delegacion,di_ciudad,di_estado,di_codigo_postal,di_reg_fecha </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="nombre_empresa" />
+        <column name="eb_cargo" />
+        <column name="salario" />
+        <column name="eb_base_salarial" />
+        <column name="direccion_uno" />
+        <column name="eb_colonia" />
+        <column name="delegacion" />
+        <column name="eb_ciudad" />
+        <column name="estado" />
+        <column name="eb_codigo_postal" />
+        <column name="numero_telefono" />
+        <column name="eb_fecha_contratacion" />
+      </columns>
+      <queryText>SELECT  eb_nombre_empresa,eb_cargo,eb_salario,eb_base_salarial,eb_direccion_uno,eb_colonia,eb_delegacion,eb_ciudad,eb_estado,eb_codigo_postal,eb_numero_telefono,eb_fecha_contratacion </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="numero" />
+        <column name="desc_tipo_contrato" />
+        <column name="desc_tipo_cuenta" />
+        <column name="desc_tipo_responsabilidad" />
+        <column name="nombre_otorgante" />
+        <column name="numero_cuenta_actual" />
+        <column name="clave_unidad_monetaria" />
+        <column name="fecha_actualizacion" />
+        <column name="fecha_apertura_cuenta" />
+        <column name="fecha_ultimo_pago" />
+        <column name="fecha_ultima_compra" />
+        <column name="fecha_cierre_cuenta" />
+        <column name="ultima_fecha_saldo_cero" />
+        <column name="limite_credito" />
+        <column name="credito_maximo" />
+        <column name="saldo_actual" />
+        <column name="saldo_vencido" />
+        <column name="monto_pagar" />
+        <column name="frecuencia_pagos" />
+        <column name="numero_pagos" />
+        <column name="desc_forma_pago_actual" />
+        <column name="fecha_mas_reciente_pago_historicos" />
+        <column name="fecha_mas_antigua_pago_historicos" />
+        <column name="historico_pagos" />
+        <column name="desc_clave_observacion" />
+      </columns>
+      <queryText>SELECT  bc_numero,bc_desc_tipo_contrato,bc_desc_tipo_cuenta,bc_desc_tipo_responsabilidad,bc_nombre_otorgante,bc_numero_cuenta_actual,bc_clave_unidad_monetaria,bc_fecha_actualizacion,bc_fecha_apertura_cuenta,bc_fecha_ultimo_pago,bc_fecha_ultima_compra,bc_fecha_cierre_cuenta,bc_ultima_fecha_saldo_cero,bc_limite_credito,bc_credito_maximo,bc_saldo_actual,bc_saldo_vencido,bc_monto_pagar,bc_frecuencia_pagos,bc_numero_pagos,bc_desc_forma_pago_actual,bc_fecha_mas_reciente_pago_historicos,bc_fecha_mas_antigua_pago_historicos,bc_historico_pagos,bc_desc_clave_observacion </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="Numero_cuentas" />
+        <column name="Cuentas_Pagos_fijos_Hipotecas" />
+        <column name="Cuentas_Revolventes_Abiertas" />
+        <column name="Cuentas_Cerradas" />
+        <column name="Cuentas_Negativas_Actuales" />
+        <column name="Cuentas_Disputa" />
+        <column name="NumeroSolicitudesUltimos6Meses" />
+        <column name="TotalSaldosActualesRevolventes" />
+        <column name="TotalSaldosVencidosRevolventes" />
+        <column name="TotalSaldosActualesPagosFijos" />
+        <column name="TotalSaldosVencidosPagosFijos" />
+        <column name="TotalPagosPagosFijos" />
+        <column name="TotalCreditosMaximosPagosFijos" />
+        <column name="PctLimiteCreditoUtilizadoRevolventes" />
+        <column name="CuentasClavesHistoriaNegativa" />
+        <column name="NumeroTotalCuentasDespachoCobranza" />
+        <column name="FechaAperCtaMasRecienteDespachoCob" />
+        <column name="NumeroTotalSolicitudesDespachosCob" />
+        <column name="FechaSolMasRecienteDespachoCobranza" />
+        <column name="FechaAperturaCuentaMasAntigua" />
+        <column name="FechaSolicitudReporteMasReciente" />
+        <column name="TotalSolicitudesReporte" />
+        <column name="FechaSolicitudReporteMasRecienteCre" />
+      </columns>
+      <queryText>SELECT  rc_Numero_cuentas,rc_Cuentas_Pagos_fijos_Hipotecas,rc_Cuentas_Revolventes_Abiertas,rc_Cuentas_Cerradas,rc_Cuentas_Negativas_Actuales,rc_Cuentas_Disputa,rc_NumeroSolicitudesUltimos6Meses,rc_TotalSaldosActualesRevolventes,rc_TotalSaldosVencidosRevolventes,rc_TotalSaldosActualesPagosFijos,rc_TotalSaldosVencidosPagosFijos,rc_TotalPagosPagosFijos,rc_TotalCreditosMaximosPagosFijos,rc_PctLimiteCreditoUtilizadoRevolventes,rc_CuentasClavesHistoriaNegativa,rc_NumeroTotalCuentasDespachoCobranza,rc_FechaAperCtaMasRecienteDespachoCob,rc_NumeroTotalSolicitudesDespachosCob,rc_FechaSolMasRecienteDespachoCobranza,rc_FechaAperturaCuentaMasAntigua,rc_FechaSolicitudReporteMasReciente,rc_TotalSolicitudesReporte,rc_FechaSolicitudReporteMasRecienteCre </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="cliente" />
+        <column name="mop" />
+        <column name="cuentas_abiertas" />
+        <column name="limite_cuentas_abiertas" />
+        <column name="maximo_abiertas" />
+        <column name="saldo_actual_abiertas" />
+        <column name="saldo_vencido_abiertas" />
+        <column name="pago_relizar_abiertas" />
+        <column name="cuentas_cerradas" />
+        <column name="limite_cuentas_cerradas" />
+        <column name="maximo_cerradas" />
+        <column name="saldo_actual_cerradas" />
+        <column name="monto_cerradas" />
+      </columns>
+      <queryText>SELECT  cp_cliente,cp_mop,cp_cuentas_abiertas,cp_limite_cuentas_abiertas,cp_maximo_abiertas,cp_saldo_actual_abiertas,cp_saldo_vencido_abiertas,cp_pago_relizar_abiertas,cp_cuentas_cerradas,cp_limite_cuentas_cerradas,cp_maximo_cerradas,cp_saldo_actual_cerradas,cp_monto_cerradas </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="ce_cliente" />
+        <column name="ce_otorgante" />
+        <column name="ce_fecha_consulta" />
+        <column name="ce_tipo_responsabilidad" />
+        <column name="ce_tipo_contrato" />
+        <column name="ce_importe_contrato" />
+        <column name="ce_tipo_unidad_monetaria" />
+      </columns>
+      <queryText>SELECT  ce_cliente,ce_otorgante,ce_fecha_consulta,ce_tipo_responsabilidad,ce_tipo_contrato,ce_importe_contrato,ce_tipo_unidad_monetaria </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="secuencial" />
+        <column name="nombre" />
+        <column name="codigo" />
+        <column name="valor" />
+        <column name="codigo_razon" />
+        <column name="codigo_error" />
+      </columns>
+      <queryText>SELECT  sb_secuencial,sb_nombre,sb_codigo,sb_valor,sb_codigo_razon,sb_codigo_error </queryText>
+    </query>
+  </queries>
+</procedure>

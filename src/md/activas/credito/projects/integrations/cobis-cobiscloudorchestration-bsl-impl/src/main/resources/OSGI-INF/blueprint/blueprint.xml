@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<blueprint xmlns="http://www.osgi.org/xmlns/blueprint/v1.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation=" http://www.osgi.org/xmlns/blueprint/v1.0.0 http://www.osgi.org/xmlns/blueprint/v1.0.0/blueprint.xsd"
+	xmlns:tx="http://aries.apache.org/xmlns/transactions/v1.0.0"
+	>
+
+    <reference id="spOrchestrator"
+        interface="com.cobiscorp.cobis.cts.services.orchestrator.ISPOrchestrator"  filter="(service.callingSource=15)" />
+    <reference id="txMgr" interface="javax.transaction.TransactionManager" />
+	<reference id="cobisParameter" interface="com.cobiscorp.cobis.cts.services.utilservices.api.ICobisParameter" filter="(service.impl=default)"/>
+	<reference id="cobisCatalog" interface="com.cobiscorp.cobis.cts.services.utilservices.api.ICobisCatalog" filter="(service.impl=default)"/>
+	<reference id="cacheManager" interface="com.cobiscorp.cobis.cache.ICacheManager" />
+	<reference id="ctsSequentialService" interface="com.cobiscorp.cobis.cts.services.utilservices.api.ICOBISSequentialService" />
+
+
+
+	
+
+
+	
+
+
+	
+
+
+	
+
+
+	
+
+
+	<bean id="OrchestrationClientValidationServiceSERVImpl"
+		class="com.cobiscorp.ecobis.cobiscloudorchestration.bsl.serv.impl.OrchestrationClientValidationServiceSERVImpl"
+		 activation="lazy">
+		<!--incluir en code order con la clave:cobis-cobiscloudorchestration-bsl-impl/src/main/resources/OSGI-INF/blueprint/blueprint.xml!OrchestrationClientValidationServiceSERVImpl.body -->
+		  <property name="buroServices" ref="buroServices" />
+  <property name="buroUtil" ref="buroUtil" />
+  <property name="santanderCoreService" ref="santanderCoreService" />
+  <property name="customerService" ref="customerService" />
+  <property name="workflowService" ref="WorkflowServiceSERVImpl" />
+		
+		<tx:transaction method="create*" value="Required" />
+		<tx:transaction method="update*" value="Required" />
+		<tx:transaction method="delete*" value="Required" />
+		<tx:transaction method="*" value="NotSupported" />
+		<property name="spOrchestrator" ref="spOrchestrator"  />
+		<property name="txMgr" ref="txMgr"  />
+		<property name="cobisParameter" ref="cobisParameter" />
+		<property name="cobisCatalog" ref="cobisCatalog" />
+		<property name="cacheManager" ref="cacheManager" />
+		<property name="ctsSequentialService" ref="ctsSequentialService" />
+	</bean>
+
+	<service ref="OrchestrationClientValidationServiceSERVImpl"
+		interface="com.cobiscorp.ecobis.cobiscloudorchestration.bsl.serv.bsl.IOrchestrationClientValidationService" >
+		<service-properties>
+			<entry key="service.impl" value="OrchestrationClientValidationServiceSERVImpl" />
+		</service-properties>
+	</service>		
+
+			
+
+	
+
+
+	
+
+
+	
+
+
+	
+
+
+	
+
+
+	
+
+
+	
+
+
+	<bean id="WorkflowServiceSERVImpl"
+		class="com.cobiscorp.ecobis.cobiscloudorchestration.bsl.serv.impl.WorkflowServiceSERVImpl"
+		 activation="lazy">
+		<!--incluir en code order con la clave:cobis-cobiscloudorchestration-bsl-impl/src/main/resources/OSGI-INF/blueprint/blueprint.xml!WorkflowServiceSERVImpl.body -->
+		  <property name="serviceIntegration" ref="serviceIntegration" />
+
+		
+		<tx:transaction method="create*" value="Required" />
+		<tx:transaction method="update*" value="Required" />
+		<tx:transaction method="delete*" value="Required" />
+		<tx:transaction method="*" value="NotSupported" />
+		<property name="spOrchestrator" ref="spOrchestrator"  />
+		<property name="txMgr" ref="txMgr"  />
+		<property name="cobisParameter" ref="cobisParameter" />
+		<property name="cobisCatalog" ref="cobisCatalog" />
+		<property name="cacheManager" ref="cacheManager" />
+		<property name="ctsSequentialService" ref="ctsSequentialService" />
+	</bean>
+
+	<service ref="WorkflowServiceSERVImpl"
+		interface="com.cobiscorp.ecobis.cobiscloudorchestration.bsl.serv.bsl.IWorkflowService" >
+		<service-properties>
+			<entry key="service.impl" value="WorkflowServiceSERVImpl" />
+		</service-properties>
+	</service>		
+
+			
+
+	
+
+	
+	<!--incluir en code order con la clave:cobis-cobiscloudorchestration-bsl-impl/src/main/resources/OSGI-INF/blueprint/blueprint.xml.body -->
+  <reference id="buroServices" interface="com.cobiscorp.ecobis.cobiscloudburo.bsl.serv.bsl.IBuroCustomerService" />
+  <reference id="buroUtil" interface="com.cobiscorp.ecobis.cobiscloudburo.bsl.serv.bsl.IBuroCustomerUtil" />
+  <reference id="santanderCoreService" interface="com.cobiscorp.ecobis.cobiscloudsantander.bsl.serv.bsl.ISantanderCoreService" />
+  <reference id="customerService" interface="com.cobiscorp.ecobis.cobiscloudparty.bsl.serv.bsl.ICustomerService" />
+  <reference id="serviceIntegration" interface="cobiscorp.ecobis.cts.integration.services.ICTSServiceIntegration" />
+
+</blueprint>

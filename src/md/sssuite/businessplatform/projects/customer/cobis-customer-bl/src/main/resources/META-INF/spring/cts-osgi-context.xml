@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:osgi="http://www.springframework.org/schema/osgi"
+	xmlns:aop="http://www.springframework.org/schema/aop" xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:jee="http://www.springframework.org/schema/jee" xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/osgi http://www.springframework.org/schema/osgi/spring-osgi.xsd
+		http://www.springframework.org/schema/jee http://www.springframework.org/schema/jee/spring-jee.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
+		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd">
+
+	<osgi:reference id="spOrchestrator"
+		interface="com.cobiscorp.cobis.cts.services.orchestrator.ISPOrchestrator"
+		filter="(service.callingSource=15)" />
+	<osgi:reference id="CustomerDAO"
+		interface="com.cobiscorp.ecobis.customer.dal.CustomerDAO" />
+	<osgi:reference id="PhoneDAO"
+		interface="com.cobiscorp.ecobis.customer.dal.PhoneDAO" />
+	<osgi:reference id="ContactDAO"
+		interface="com.cobiscorp.ecobis.customer.dal.ContactDAO" />
+	<osgi:reference id="POBoxDAO"
+		interface="com.cobiscorp.ecobis.customer.dal.POBoxDAO" />
+	<osgi:reference id="ProductDetailDAO"
+		interface="com.cobiscorp.ecobis.customer.dal.ProductDetailDAO" />
+	<osgi:reference id="SeqnosService"
+		interface="com.cobiscorp.ecobis.admin.service.SeqnosService" />
+	<osgi:reference id="ClientDAO"
+		interface="com.cobiscorp.ecobis.customer.dal.ClientDAO" />
+	<osgi:reference id="BusinessSegmentDAO"
+		interface="com.cobiscorp.ecobis.customer.dal.BusinessSegmentDAO" />
+
+	<osgi:reference id="ActivityDAO"
+		interface="com.cobiscorp.ecobis.customer.dal.ActivityDAO" />
+	<osgi:reference id="CountryDAO"
+		interface="com.cobiscorp.ecobis.customer.dal.CountryDAO" />
+
+
+
+	<osgi:service ref="CustomerManagerImpl"
+		interface="com.cobiscorp.ecobis.customer.bl.CustomerManager">
+		<osgi:service-properties>
+			<entry key="service.impl" value="current" />
+		</osgi:service-properties>
+	</osgi:service>
+	<osgi:service ref="AddressManagerImpl"
+		interface="com.cobiscorp.ecobis.customer.bl.AddressManager">
+		<osgi:service-properties>
+			<entry key="service.impl" value="current" />
+		</osgi:service-properties>
+	</osgi:service>
+	<osgi:service ref="PhoneManagerImpl"
+		interface="com.cobiscorp.ecobis.customer.bl.PhoneManager">
+		<osgi:service-properties>
+			<entry key="service.impl" value="current" />
+		</osgi:service-properties>
+	</osgi:service>
+	<osgi:service ref="QuickCustomerManagerImpl"
+		interface="com.cobiscorp.ecobis.customer.bl.QuickCustomerManager">
+		<osgi:service-properties>
+			<entry key="service.impl" value="current" />
+		</osgi:service-properties>
+	</osgi:service>
+	<osgi:service ref="CICManagerImpl"
+		interface="com.cobiscorp.ecobis.customer.bl.CICManager">
+		<osgi:service-properties>
+			<entry key="service.impl" value="current" />
+		</osgi:service-properties>
+	</osgi:service>
+	<osgi:service ref="PadronCustomerManagerImpl"
+		interface="com.cobiscorp.ecobis.customer.bl.PadronManager">
+		<osgi:service-properties>
+			<entry key="service.impl" value="current" />
+		</osgi:service-properties>
+	</osgi:service>
+	<osgi:service ref="IdCustomerManagerImp"
+		interface="com.cobiscorp.ecobis.customer.bl.IdCustomerManager">
+		<osgi:service-properties>
+			<entry key="service.impl" value="current" />
+		</osgi:service-properties>
+	</osgi:service>
+	<osgi:service ref="POBoxManagerImpl"
+		interface="com.cobiscorp.ecobis.customer.bl.POBoxManager">
+		<osgi:service-properties>
+			<entry key="service.impl" value="current" />
+		</osgi:service-properties>
+	</osgi:service>
+	<osgi:service ref="ProductDetailImpl"
+		interface="com.cobiscorp.ecobis.customer.bl.ProductDetailManager">
+		<osgi:service-properties>
+			<entry key="service.impl" value="current" />
+		</osgi:service-properties>
+	</osgi:service>
+	<osgi:service ref="ClientManagerImpl"
+		interface="com.cobiscorp.ecobis.customer.bl.ClientManager">
+		<osgi:service-properties>
+			<entry key="service.impl" value="current" />
+		</osgi:service-properties>
+	</osgi:service>
+	<osgi:service ref="ActivityManagerImpl"
+		interface="com.cobiscorp.ecobis.customer.bl.ActivityManager">
+		<osgi:service-properties>
+			<entry key="service.impl" value="current" />
+		</osgi:service-properties>
+	</osgi:service>
+	<osgi:service ref="BusinessSegmentManagerImpl"
+		interface="com.cobiscorp.ecobis.customer.bl.BusinessSegmentManager">
+		<osgi:service-properties>
+			<entry key="service.impl" value="current" />
+		</osgi:service-properties>
+	</osgi:service>
+	<osgi:service ref="CreationCustomerManagerImpl"
+		interface="com.cobiscorp.ecobis.customer.bl.CreationCustomerManager">
+		<osgi:service-properties>
+			<entry key="service.impl" value="current" />
+		</osgi:service-properties>
+	</osgi:service>
+	<osgi:service ref="ContactManagerImpl"
+		interface="com.cobiscorp.ecobis.customer.bl.ContactManager">
+		<osgi:service-properties>
+			<entry key="service.impl" value="current" />
+		</osgi:service-properties>
+	</osgi:service>
+	<osgi:service ref="NationalityManagerImpl"
+		interface="com.cobiscorp.ecobis.customer.bl.NationalityManager">
+		<osgi:service-properties>
+			<entry key="service.impl" value="current" />
+		</osgi:service-properties>
+	</osgi:service>
+</beans>

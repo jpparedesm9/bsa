@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<procedure>
+  <database>cob_custodia</database>
+  <name>sp_consulta_trans</name>
+  <type>SYBASE</type>
+  <version>1</version>
+  <parameters>
+    <parameter name="@s_date" dataType="datetime" direction="in" />
+    <parameter name="@t_trn" dataType="smallint" direction="in" />
+    <parameter name="@t_from" dataType="varchar" direction="in" />
+    <parameter name="@i_operacion" dataType="char" direction="in" />
+    <parameter name="@i_modo" dataType="smallint" direction="in" />
+    <parameter name="@i_fecha1" dataType="datetime" direction="in" />
+    <parameter name="@i_fecha2" dataType="datetime" direction="in" />
+    <parameter name="@i_formato_fecha" dataType="int" direction="in" />
+    <parameter name="@i_usuario" dataType="varchar" direction="in" />
+    <parameter name="@i_param1" dataType="varchar" direction="in" />
+    <parameter name="@i_secuencial" dataType="int" direction="in" />
+    <parameter name="@i_codigo_externo" dataType="varchar" direction="in" />
+  </parameters>
+  <queries>
+    <query>
+      <columns>
+        <column name="17461" />
+        <column name="17462" />
+      </columns>
+      <queryText>SELECT DISTINCT "17461" = SUBSTRING (us_login, 1, 15),"17462" = SUBSTRING (fu_nombre, 1, 30) </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="{1}" />
+      </columns>
+      <queryText>SELECT w_nombre_usr</queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="{1}" />
+        <column name="{2}" />
+        <column name="{3}" />
+        <column name="{4}" />
+        <column name="{5}" />
+        <column name="{6}" />
+        <column name="{7}" />
+        <column name="{8}" />
+        <column name="{9}" />
+        <column name="{10}" />
+      </columns>
+      <queryText>SELECT w_secuencial, w_codigo_externo, w_fecha_tran, w_descripcion, w_usuario, w_tran, w_oficina_orig, w_oficina_dest, w_estado, w_valor</queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="initialValue" />
+        <column name="guarantor" />
+        <column name="debtor" />
+        <column name="currentValue" />
+      </columns>
+      <queryText>SELECT w_valor_inicial, w_garante, w_deudor, w_valor_actual</queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="SequentialID" />
+        <column name="Type" />
+        <column name="Guarantee" />
+        <column name="DateTransaction" />
+        <column name="Transaction" />
+        <column name="Description" />
+        <column name="User" />
+        <column name="Value" />
+        <column name="Description2" />
+      </columns>
+      <queryText>SELECT DISTINCT "17463" = tr_secuencial,"17464" = cu_tipo,"17465" = cu_custodia,"17466" = CONVERT (CHAR (10),tr_fecha_tran ,?),"17467" = tr_tran,"17468" = tr_descripcion,"17469" = tr_usuario,"17470" = CONVERT (MONEY,dtr_valor ),"17471" </queryText>
+    </query>
+  </queries>
+</procedure>

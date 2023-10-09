@@ -1,0 +1,57 @@
+use cobis
+go
+if exists (select * from sysobjects where name = 'tgd_an_query_column')
+    drop trigger tgd_an_query_column
+go
+create trigger tgd_an_query_column
+on an_query_column
+for delete
+as
+begin
+    declare
+        @w_cl_query_id          int,
+        @w_cl_name              varchar(32),
+        @w_id                   int
+ 
+    declare cu_deleted cursor for
+        select
+            cl_query_id,
+            cl_name
+        from deleted
+ 
+    open cu_deleted
+    fetch cu_deleted into
+        @w_cl_query_id,
+        @w_cl_name
+ 
+    while @@FETCH_STATUS = 0
+    begin
+        select @w_id = sq_siguiente
+        from cob_distrib..di_seqnos
+        where sq_tabla = 'di_log'
+ 
+        update cob_distrib..di_seqnos
+        set sq_siguiente = sq_siguiente + 1
+        where sq_tabla = 'di_log'
+ 
+        insert into cob_distrib..di_log (
+            lg_id, lg_fecha, lg_operacion, lg_objeto)
+        values (@w_id, getdate(), 'D', 'cobis..sp_an_query_column_tg')
+ 
+        insert into cob_distrib..di_parametro (
+            pa_id, pa_nombre, pa_tipodato, pa_longitud, pa_int)
+        values (@w_id, '@i_cl_query_id', 56, isnull(datalength(@w_cl_query_id), 0), @w_cl_query_id)
+ 
+        insert into cob_distrib..di_parametro (
+            pa_id, pa_nombre, pa_tipodato, pa_longitud, pa_varchar)
+        values (@w_id, '@i_cl_name', 39, isnull(datalength(@w_cl_name), 0), @w_cl_name)
+ 
+        fetch cu_deleted into
+            @w_cl_query_id,
+            @w_cl_name
+ 
+    end
+    close cu_deleted
+    deallocate cu_deleted
+end
+go

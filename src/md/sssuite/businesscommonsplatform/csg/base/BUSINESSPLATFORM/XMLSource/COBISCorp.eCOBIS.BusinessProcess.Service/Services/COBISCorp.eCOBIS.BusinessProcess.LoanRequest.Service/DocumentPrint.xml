@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<serviceClass name="DocumentPrint" nsBase="COBISCorp.eCOBIS.BusinessProcess.LoanRequest" namespace="COBISCorp.eCOBIS.BusinessProcess.LoanRequest.Service" package="cobiscorp.ecobis.businessprocess.loanrequest.service" ns="http://service.loanrequest.businessprocess.ecobis.cobiscorp" module="BusinessProcess.LoanRequest" productName="COBISCorp.eCOBIS.BusinessProcess.Service" productVersion="2.0.0.0">
+  <productProperties>
+    <property name="MavenGroupId" value="com.cobiscorp.processapi" />
+    <property name="MavenArtifactId" value="COBISCorp.eCOBIS.BusinessProcess.Service" />
+    <property name="MavenVersion" value="2.0.0.0" />
+  </productProperties>
+  <partialClass name="DocumentPrint">
+    <services>
+      <service id="BusinessProcess.LoanRequest.DocumentPrint.DocumentByProcess" netName="DocumentByProcess" javaName="documentByProcess" mappingType="STORED_PROCEDURE" mapId="7077dcdb25617c33f5b3497451c6807f">
+        <documentations default="Español">
+          <documentation id="Español">Retorna todos los documentos asociados a un proceso</documentation>
+          <documentation id="English">Returns all documents associated with a process</documentation>
+        </documentations>
+        <SRVMapping name="cob_credito..sp_document_imp" trnCode="73905">
+          <DTOs>
+            <DTO direction="in" name="ProcessedNumber" alias="inProcessedNumber" namespace="COBISCorp.eCOBIS.BusinessProcess.LoanRequest.DTO" package="cobiscorp.ecobis.businessprocess.loanrequest.dto" ns="http://dto.loanrequest.businessprocess.ecobis.cobiscorp" required="true" />
+            <DTO direction="return" name="Document" alias="returnDocument" namespace="COBISCorp.eCOBIS.BusinessProcess.LoanRequest.DTO" package="cobiscorp.ecobis.businessprocess.loanrequest.dto" ns="http://dto.loanrequest.businessprocess.ecobis.cobiscorp" required="true">
+              <properties>
+                <property name="documentId" propertyNet="DocumentId" propertyJava="documentId" setterJavaMethod="setDocumentId" getterJavaMethod="getDocumentId" xsdType="int" netType="int" javaType="int" cobisMapping="" isInherit="false" isComplexType="false" isCollectionType="false" required="true" encrypted="false" maxLength="0" />
+                <property name="order" propertyNet="Order" propertyJava="order" setterJavaMethod="setOrder" getterJavaMethod="getOrder" xsdType="int" netType="int" javaType="int" cobisMapping="" isInherit="false" isComplexType="false" isCollectionType="false" required="true" encrypted="false" maxLength="0" />
+                <property name="description" propertyNet="Description" propertyJava="description" setterJavaMethod="setDescription" getterJavaMethod="getDescription" xsdType="string" netType="string" javaType="String" cobisMapping="" isInherit="false" isComplexType="false" isCollectionType="false" required="false" encrypted="false" maxLength="0" />
+                <property name="product" propertyNet="Product" propertyJava="product" setterJavaMethod="setProduct" getterJavaMethod="getProduct" xsdType="string" netType="string" javaType="String" cobisMapping="" isInherit="false" isComplexType="false" isCollectionType="false" required="false" encrypted="false" maxLength="0" />
+                <property name="template" propertyNet="Template" propertyJava="template" setterJavaMethod="setTemplate" getterJavaMethod="getTemplate" xsdType="string" netType="string" javaType="String" cobisMapping="" isInherit="false" isComplexType="false" isCollectionType="false" required="false" encrypted="false" maxLength="0" />
+                <property name="data" propertyNet="Data" propertyJava="data" setterJavaMethod="setData" getterJavaMethod="getData" xsdType="string" netType="string" javaType="String" cobisMapping="" isInherit="false" isComplexType="false" isCollectionType="false" required="false" encrypted="false" maxLength="0" />
+              </properties>
+            </DTO>
+            <DTO direction="out" name="DocumentResponse" alias="outDocumentResponse" namespace="COBISCorp.eCOBIS.BusinessProcess.LoanRequest.DTO" package="cobiscorp.ecobis.businessprocess.loanrequest.dto" ns="http://dto.loanrequest.businessprocess.ecobis.cobiscorp" required="true">
+              <properties>
+                <property name="documentList" propertyNet="DocumentList" propertyJava="documentList" setterJavaMethod="setDocumentList" getterJavaMethod="getDocumentList" xsdType="GenericList" netType="List&lt;Document&gt;" javaType="ArrayList&lt;Document&gt;" cobisMapping="" isInherit="false" isComplexType="true" isCollectionType="true" required="true" encrypted="false" maxLength="0" XSDElementType="Document" netElementType="Document" javaElementType="Document" />
+              </properties>
+            </DTO>
+          </DTOs>
+          <parameterMappings>
+            <parameter name="@i_id_inst_proc" direction="in" mappingDirection="in" dataType="int" CTSDataType="SQLINT4" JavaSQLType="INTEGER" mappingType="DTO" allowNull="false" DTOAlias="inProcessedNumber" DTOPropertyName="idInstProc" />
+            <parameter name="@i_operacion" direction="in" mappingDirection="in" dataType="char" CTSDataType="SQLCHAR" JavaSQLType="CHAR" mappingType="DTO" allowNull="false" DTOAlias="inProcessedNumber" DTOPropertyName="operation" />
+            <parameter name="@i_tramite" direction="in" mappingDirection="in" dataType="int" CTSDataType="SQLINT4" JavaSQLType="INTEGER" mappingType="DTO" allowNull="true" DTOAlias="inProcessedNumber" DTOPropertyName="tramite" />
+          </parameterMappings>
+          <resultMappings>
+            <result>
+              <DTOResult DTOAlias="returnDocument" MapReturn="true">
+                <columnMapping position="0" name="document" DTOPropertyName="documentId" DataType="int" Format="" />
+                <columnMapping position="1" name="order" DTOPropertyName="order" DataType="int" Format="" />
+                <columnMapping position="2" name="description" DTOPropertyName="description" DataType="string" Format="" />
+                <columnMapping position="3" name="product" DTOPropertyName="product" DataType="string" Format="" />
+                <columnMapping position="4" name="template" DTOPropertyName="template" DataType="string" Format="" />
+                <columnMapping position="5" name="data" DTOPropertyName="data" DataType="string" Format="" />
+              </DTOResult>
+            </result>
+          </resultMappings>
+          <MappingProperties>
+            <MappingProperty key="BLIQueryPropertyName1" value="documentList" />
+          </MappingProperties>
+        </SRVMapping>
+      </service>
+    </services>
+  </partialClass>
+</serviceClass>

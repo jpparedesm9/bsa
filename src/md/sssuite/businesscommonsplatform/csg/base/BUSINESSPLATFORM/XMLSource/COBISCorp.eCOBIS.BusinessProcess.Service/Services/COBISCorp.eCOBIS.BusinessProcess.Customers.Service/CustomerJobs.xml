@@ -1,0 +1,233 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<serviceClass name="CustomerJobs" nsBase="COBISCorp.eCOBIS.BusinessProcess.Customers" namespace="COBISCorp.eCOBIS.BusinessProcess.Customers.Service" package="cobiscorp.ecobis.businessprocess.customers.service" ns="http://service.customers.businessprocess.ecobis.cobiscorp" module="BusinessProcess.Customers" productName="COBISCorp.eCOBIS.BusinessProcess.Service" productVersion="2.0.0.0">
+  <productProperties>
+    <property name="MavenGroupId" value="com.cobiscorp.processapi" />
+    <property name="MavenArtifactId" value="COBISCorp.eCOBIS.BusinessProcess.Service" />
+    <property name="MavenVersion" value="2.0.0.0" />
+  </productProperties>
+  <partialClass name="CustomerJobs">
+    <services>
+      <service id="BusinessProcess.Customers.CustomerJobs.DeleteCustomerJob" netName="DeleteCustomerJob" javaName="deleteCustomerJob" mappingType="STORED_PROCEDURE" mapId="921c2dc40d0b979c2910298d2f880152">
+        <documentations default="Español">
+          <documentation id="Español">Elimina un empleo de un Cliente</documentation>
+          <documentation id="English">Removes a job from a Customer</documentation>
+        </documentations>
+        <SRVMapping name="cobis..sp_empleo" trnCode="1230">
+          <DTOs>
+            <DTO direction="in" name="Customer" alias="inCustomer" namespace="COBISCorp.eCOBIS.BusinessProcess.Customers.DTO" package="cobiscorp.ecobis.businessprocess.customers.dto" ns="http://dto.customers.businessprocess.ecobis.cobiscorp" required="true" />
+            <DTO direction="in" name="CustomerJob" alias="inCustomerJob" namespace="COBISCorp.eCOBIS.BusinessProcess.Customers.DTO" package="cobiscorp.ecobis.businessprocess.customers.dto" ns="http://dto.customers.businessprocess.ecobis.cobiscorp" required="true" />
+          </DTOs>
+          <parameterMappings>
+            <parameter name="@i_operacion" direction="in" mappingDirection="in" dataType="char" CTSDataType="SQLCHAR" JavaSQLType="CHAR" mappingType="CONSTANT" allowNull="false" contantValue="D" />
+            <parameter name="@i_ente" direction="in" mappingDirection="in" dataType="int" CTSDataType="SQLINT4" JavaSQLType="INTEGER" mappingType="DTO" allowNull="false" DTOAlias="inCustomer" DTOPropertyName="customerId" />
+            <parameter name="@i_trabajo" direction="in" mappingDirection="in" dataType="tinyint" CTSDataType="SQLINT1" JavaSQLType="INTEGER" mappingType="DTO" allowNull="false" DTOAlias="inCustomerJob" DTOPropertyName="idJob" />
+          </parameterMappings>
+          <resultMappings />
+          <MappingProperties />
+        </SRVMapping>
+      </service>
+      <service id="BusinessProcess.Customers.CustomerJobs.InsertCustomerJobs" netName="InsertCustomerJobs" javaName="insertCustomerJobs" mappingType="STORED_PROCEDURE" mapId="0f3d014eead934bbdbacb62a01dc4831">
+        <documentations default="Español">
+          <documentation id="Español">Realiza el Ingreso de Empleos de un Cliente</documentation>
+          <documentation id="English">Employment Income Make a Customer</documentation>
+        </documentations>
+        <SRVMapping name="cobis..sp_empleo" trnCode="181">
+          <DTOs>
+            <DTO direction="in" name="CustomerJob" alias="inCustomerJob" namespace="COBISCorp.eCOBIS.BusinessProcess.Customers.DTO" package="cobiscorp.ecobis.businessprocess.customers.dto" ns="http://dto.customers.businessprocess.ecobis.cobiscorp" required="true" />
+            <DTO direction="return" name="CustomerJob" alias="returnCustomerJob" namespace="COBISCorp.eCOBIS.BusinessProcess.Customers.DTO" package="cobiscorp.ecobis.businessprocess.customers.dto" ns="http://dto.customers.businessprocess.ecobis.cobiscorp" required="true">
+              <properties>
+                <property name="addresJob" propertyNet="AddresJob" propertyJava="addresJob" setterJavaMethod="setAddresJob" getterJavaMethod="getAddresJob" xsdType="string" netType="string" javaType="String" cobisMapping="" isInherit="false" isComplexType="false" isCollectionType="false" required="false" encrypted="false" maxLength="0" />
+                <property name="admissionDate" propertyNet="AdmissionDate" propertyJava="admissionDate" setterJavaMethod="setAdmissionDate" getterJavaMethod="getAdmissionDate" xsdType="string" netType="string" javaType="String" cobisMapping="" isInherit="false" isComplexType="false" isCollectionType="false" required="false" encrypted="false" maxLength="0" />
+                <property name="admissionDateIn" propertyNet="AdmissionDateIn" propertyJava="admissionDateIn" setterJavaMethod="setAdmissionDateIn" getterJavaMethod="getAdmissionDateIn" xsdType="dateTime" netType="DateTime" javaType="java.util.Calendar" cobisMapping="" isInherit="false" isComplexType="false" isCollectionType="false" required="true" encrypted="false" maxLength="0" />
+                <property name="company" propertyNet="Company" propertyJava="company" setterJavaMethod="setCompany" getterJavaMethod="getCompany" xsdType="string" netType="string" javaType="String" cobisMapping="" isInherit="false" isComplexType="false" isCollectionType="false" required="false" encrypted="false" maxLength="0" />
+                <property name="companyId" propertyNet="CompanyId" propertyJava="companyId" setterJavaMethod="setCompanyId" getterJavaMethod="getCompanyId" xsdType="int" netType="int" javaType="int" cobisMapping="" isInherit="false" isComplexType="false" isCollectionType="false" required="true" encrypted="false" maxLength="0" />
+                <property name="companyName" propertyNet="CompanyName" propertyJava="companyName" setterJavaMethod="setCompanyName" getterJavaMethod="getCompanyName" xsdType="string" netType="string" javaType="String" cobisMapping="" isInherit="false" isComplexType="false" isCollectionType="false" required="false" encrypted="false" maxLength="0" />
+                <property name="currency" propertyNet="Currency" propertyJava="currency" setterJavaMethod="setCurrency" getterJavaMethod="getCurrency" xsdType="string" netType="string" javaType="String" cobisMapping="" isInherit="false" isComplexType="false" isCollectionType="false" required="false" encrypted="false" maxLength="0" />
+                <property name="currencyId" propertyNet="CurrencyId" propertyJava="currencyId" setterJavaMethod="setCurrencyId" getterJavaMethod="getCurrencyId" xsdType="int" netType="int" javaType="int" cobisMapping="" isInherit="false" isComplexType="false" isCollectionType="false" required="true" encrypted="false" maxLength="0" />
+                <property name="empJobDescription" propertyNet="EmpJobDescription" propertyJava="empJobDescription" setterJavaMethod="setEmpJobDescription" getterJavaMethod="getEmpJobDescription" xsdType="string" netType="string" javaType="String" cobisMapping="" isInherit="false" isComplexType="false" isCollectionType="false" required="false" encrypted="false" maxLength="0" />
+                <property name="employeActivity" propertyNet="EmployeActivity" propertyJava="employeActivity" setterJavaMethod="setEmployeActivity" getterJavaMethod="getEmployeActivity" xsdType="string" netType="string" javaType="String" cobisMapping="" isInherit="false" isComplexType="false" isCollectionType="false" required="false" encrypted="false" maxLength="0" />
+                <property name="idJob" propertyNet="IdJob" propertyJava="idJob" setterJavaMethod="setIdJob" getterJavaMethod="getIdJob" xsdType="int" netType="int" javaType="int" cobisMapping="" isInherit="false" isComplexType="false" isCollectionType="false" required="true" encrypted="false" maxLength="0" />
+                <property name="modificationDate" propertyNet="ModificationDate" propertyJava="modificationDate" setterJavaMethod="setModificationDate" getterJavaMethod="getModificationDate" xsdType="string" netType="string" javaType="String" cobisMapping="" isInherit="false" isComplexType="false" isCollectionType="false" required="false" encrypted="false" maxLength="0" />
+                <property name="officeJob" propertyNet="OfficeJob" propertyJava="officeJob" setterJavaMethod="setOfficeJob" getterJavaMethod="getOfficeJob" xsdType="string" netType="string" javaType="String" cobisMapping="" isInherit="false" isComplexType="false" isCollectionType="false" required="false" encrypted="false" maxLength="0" />
+                <property name="outDate" propertyNet="OutDate" propertyJava="outDate" setterJavaMethod="setOutDate" getterJavaMethod="getOutDate" xsdType="string" netType="string" javaType="String" cobisMapping="" isInherit="false" isComplexType="false" isCollectionType="false" required="false" encrypted="false" maxLength="0" />
+                <property name="outDateIn" propertyNet="OutDateIn" propertyJava="outDateIn" setterJavaMethod="setOutDateIn" getterJavaMethod="getOutDateIn" xsdType="dateTime?" netType="DateTime?" javaType="java.util.Calendar" cobisMapping="" isInherit="false" isComplexType="false" isCollectionType="false" required="false" encrypted="false" maxLength="0" />
+                <property name="payrollNumber" propertyNet="PayrollNumber" propertyJava="payrollNumber" setterJavaMethod="setPayrollNumber" getterJavaMethod="getPayrollNumber" xsdType="string" netType="string" javaType="String" cobisMapping="" isInherit="false" isComplexType="false" isCollectionType="false" required="false" encrypted="false" maxLength="0" />
+                <property name="phoneFaxJob" propertyNet="PhoneFaxJob" propertyJava="phoneFaxJob" setterJavaMethod="setPhoneFaxJob" getterJavaMethod="getPhoneFaxJob" xsdType="string" netType="string" javaType="String" cobisMapping="" isInherit="false" isComplexType="false" isCollectionType="false" required="false" encrypted="false" maxLength="0" />
+                <property name="role" propertyNet="Role" propertyJava="role" setterJavaMethod="setRole" getterJavaMethod="getRole" xsdType="string" netType="string" javaType="String" cobisMapping="" isInherit="false" isComplexType="false" isCollectionType="false" required="false" encrypted="false" maxLength="0" />
+                <property name="salary" propertyNet="Salary" propertyJava="salary" setterJavaMethod="setSalary" getterJavaMethod="getSalary" xsdType="double" netType="double" javaType="double" cobisMapping="" isInherit="false" isComplexType="false" isCollectionType="false" required="true" encrypted="false" maxLength="0" />
+                <property name="subJobDescription" propertyNet="SubJobDescription" propertyJava="subJobDescription" setterJavaMethod="setSubJobDescription" getterJavaMethod="getSubJobDescription" xsdType="string" netType="string" javaType="String" cobisMapping="" isInherit="false" isComplexType="false" isCollectionType="false" required="false" encrypted="false" maxLength="0" />
+                <property name="timeJob" propertyNet="TimeJob" propertyJava="timeJob" setterJavaMethod="setTimeJob" getterJavaMethod="getTimeJob" xsdType="int" netType="int" javaType="int" cobisMapping="" isInherit="false" isComplexType="false" isCollectionType="false" required="true" encrypted="false" maxLength="0" />
+                <property name="verified" propertyNet="Verified" propertyJava="verified" setterJavaMethod="setVerified" getterJavaMethod="getVerified" xsdType="char" netType="char" javaType="char" cobisMapping="" isInherit="false" isComplexType="false" isCollectionType="false" required="true" encrypted="false" maxLength="0" />
+                <property name="dateFormat" propertyNet="DateFormat" propertyJava="dateFormat" setterJavaMethod="setDateFormat" getterJavaMethod="getDateFormat" xsdType="int" netType="int" javaType="int" cobisMapping="" isInherit="false" isComplexType="false" isCollectionType="false" required="true" encrypted="false" maxLength="0" />
+              </properties>
+            </DTO>
+            <DTO direction="out" name="CustomerJob" alias="outCustomerJob" namespace="COBISCorp.eCOBIS.BusinessProcess.Customers.DTO" package="cobiscorp.ecobis.businessprocess.customers.dto" ns="http://dto.customers.businessprocess.ecobis.cobiscorp" required="true">
+              <properties>
+                <property name="addresJob" propertyNet="AddresJob" propertyJava="addresJob" setterJavaMethod="setAddresJob" getterJavaMethod="getAddresJob" xsdType="string" netType="string" javaType="String" cobisMapping="" isInherit="false" isComplexType="false" isCollectionType="false" required="false" encrypted="false" maxLength="0" />
+                <property name="admissionDate" propertyNet="AdmissionDate" propertyJava="admissionDate" setterJavaMethod="setAdmissionDate" getterJavaMethod="getAdmissionDate" xsdType="string" netType="string" javaType="String" cobisMapping="" isInherit="false" isComplexType="false" isCollectionType="false" required="false" encrypted="false" maxLength="0" />
+                <property name="admissionDateIn" propertyNet="AdmissionDateIn" propertyJava="admissionDateIn" setterJavaMethod="setAdmissionDateIn" getterJavaMethod="getAdmissionDateIn" xsdType="dateTime" netType="DateTime" javaType="java.util.Calendar" cobisMapping="" isInherit="false" isComplexType="false" isCollectionType="false" required="true" encrypted="false" maxLength="0" />
+                <property name="company" propertyNet="Company" propertyJava="company" setterJavaMethod="setCompany" getterJavaMethod="getCompany" xsdType="string" netType="string" javaType="String" cobisMapping="" isInherit="false" isComplexType="false" isCollectionType="false" required="false" encrypted="false" maxLength="0" />
+                <property name="companyId" propertyNet="CompanyId" propertyJava="companyId" setterJavaMethod="setCompanyId" getterJavaMethod="getCompanyId" xsdType="int" netType="int" javaType="int" cobisMapping="" isInherit="false" isComplexType="false" isCollectionType="false" required="true" encrypted="false" maxLength="0" />
+                <property name="companyName" propertyNet="CompanyName" propertyJava="companyName" setterJavaMethod="setCompanyName" getterJavaMethod="getCompanyName" xsdType="string" netType="string" javaType="String" cobisMapping="" isInherit="false" isComplexType="false" isCollectionType="false" required="false" encrypted="false" maxLength="0" />
+                <property name="currency" propertyNet="Currency" propertyJava="currency" setterJavaMethod="setCurrency" getterJavaMethod="getCurrency" xsdType="string" netType="string" javaType="String" cobisMapping="" isInherit="false" isComplexType="false" isCollectionType="false" required="false" encrypted="false" maxLength="0" />
+                <property name="currencyId" propertyNet="CurrencyId" propertyJava="currencyId" setterJavaMethod="setCurrencyId" getterJavaMethod="getCurrencyId" xsdType="int" netType="int" javaType="int" cobisMapping="" isInherit="false" isComplexType="false" isCollectionType="false" required="true" encrypted="false" maxLength="0" />
+                <property name="empJobDescription" propertyNet="EmpJobDescription" propertyJava="empJobDescription" setterJavaMethod="setEmpJobDescription" getterJavaMethod="getEmpJobDescription" xsdType="string" netType="string" javaType="String" cobisMapping="" isInherit="false" isComplexType="false" isCollectionType="false" required="false" encrypted="false" maxLength="0" />
+                <property name="employeActivity" propertyNet="EmployeActivity" propertyJava="employeActivity" setterJavaMethod="setEmployeActivity" getterJavaMethod="getEmployeActivity" xsdType="string" netType="string" javaType="String" cobisMapping="" isInherit="false" isComplexType="false" isCollectionType="false" required="false" encrypted="false" maxLength="0" />
+                <property name="idJob" propertyNet="IdJob" propertyJava="idJob" setterJavaMethod="setIdJob" getterJavaMethod="getIdJob" xsdType="int" netType="int" javaType="int" cobisMapping="" isInherit="false" isComplexType="false" isCollectionType="false" required="true" encrypted="false" maxLength="0" />
+                <property name="modificationDate" propertyNet="ModificationDate" propertyJava="modificationDate" setterJavaMethod="setModificationDate" getterJavaMethod="getModificationDate" xsdType="string" netType="string" javaType="String" cobisMapping="" isInherit="false" isComplexType="false" isCollectionType="false" required="false" encrypted="false" maxLength="0" />
+                <property name="officeJob" propertyNet="OfficeJob" propertyJava="officeJob" setterJavaMethod="setOfficeJob" getterJavaMethod="getOfficeJob" xsdType="string" netType="string" javaType="String" cobisMapping="" isInherit="false" isComplexType="false" isCollectionType="false" required="false" encrypted="false" maxLength="0" />
+                <property name="outDate" propertyNet="OutDate" propertyJava="outDate" setterJavaMethod="setOutDate" getterJavaMethod="getOutDate" xsdType="string" netType="string" javaType="String" cobisMapping="" isInherit="false" isComplexType="false" isCollectionType="false" required="false" encrypted="false" maxLength="0" />
+                <property name="outDateIn" propertyNet="OutDateIn" propertyJava="outDateIn" setterJavaMethod="setOutDateIn" getterJavaMethod="getOutDateIn" xsdType="dateTime?" netType="DateTime?" javaType="java.util.Calendar" cobisMapping="" isInherit="false" isComplexType="false" isCollectionType="false" required="false" encrypted="false" maxLength="0" />
+                <property name="payrollNumber" propertyNet="PayrollNumber" propertyJava="payrollNumber" setterJavaMethod="setPayrollNumber" getterJavaMethod="getPayrollNumber" xsdType="string" netType="string" javaType="String" cobisMapping="" isInherit="false" isComplexType="false" isCollectionType="false" required="false" encrypted="false" maxLength="0" />
+                <property name="phoneFaxJob" propertyNet="PhoneFaxJob" propertyJava="phoneFaxJob" setterJavaMethod="setPhoneFaxJob" getterJavaMethod="getPhoneFaxJob" xsdType="string" netType="string" javaType="String" cobisMapping="" isInherit="false" isComplexType="false" isCollectionType="false" required="false" encrypted="false" maxLength="0" />
+                <property name="role" propertyNet="Role" propertyJava="role" setterJavaMethod="setRole" getterJavaMethod="getRole" xsdType="string" netType="string" javaType="String" cobisMapping="" isInherit="false" isComplexType="false" isCollectionType="false" required="false" encrypted="false" maxLength="0" />
+                <property name="salary" propertyNet="Salary" propertyJava="salary" setterJavaMethod="setSalary" getterJavaMethod="getSalary" xsdType="double" netType="double" javaType="double" cobisMapping="" isInherit="false" isComplexType="false" isCollectionType="false" required="true" encrypted="false" maxLength="0" />
+                <property name="subJobDescription" propertyNet="SubJobDescription" propertyJava="subJobDescription" setterJavaMethod="setSubJobDescription" getterJavaMethod="getSubJobDescription" xsdType="string" netType="string" javaType="String" cobisMapping="" isInherit="false" isComplexType="false" isCollectionType="false" required="false" encrypted="false" maxLength="0" />
+                <property name="timeJob" propertyNet="TimeJob" propertyJava="timeJob" setterJavaMethod="setTimeJob" getterJavaMethod="getTimeJob" xsdType="int" netType="int" javaType="int" cobisMapping="" isInherit="false" isComplexType="false" isCollectionType="false" required="true" encrypted="false" maxLength="0" />
+                <property name="verified" propertyNet="Verified" propertyJava="verified" setterJavaMethod="setVerified" getterJavaMethod="getVerified" xsdType="char" netType="char" javaType="char" cobisMapping="" isInherit="false" isComplexType="false" isCollectionType="false" required="true" encrypted="false" maxLength="0" />
+                <property name="dateFormat" propertyNet="DateFormat" propertyJava="dateFormat" setterJavaMethod="setDateFormat" getterJavaMethod="getDateFormat" xsdType="int" netType="int" javaType="int" cobisMapping="" isInherit="false" isComplexType="false" isCollectionType="false" required="true" encrypted="false" maxLength="0" />
+              </properties>
+            </DTO>
+            <DTO direction="in" name="Customer" alias="inCustomer" namespace="COBISCorp.eCOBIS.BusinessProcess.Customers.DTO" package="cobiscorp.ecobis.businessprocess.customers.dto" ns="http://dto.customers.businessprocess.ecobis.cobiscorp" required="true" />
+          </DTOs>
+          <parameterMappings>
+            <parameter name="@i_operacion" direction="in" mappingDirection="in" dataType="char" CTSDataType="SQLCHAR" JavaSQLType="CHAR" mappingType="CONSTANT" allowNull="false" contantValue="I" />
+            <parameter name="@i_ente" direction="in" mappingDirection="in" dataType="int" CTSDataType="SQLINT4" JavaSQLType="INTEGER" mappingType="DTO" allowNull="false" DTOAlias="inCustomer" DTOPropertyName="customerId" />
+            <parameter name="@i_empresa" direction="in" mappingDirection="in" dataType="int" CTSDataType="SQLINT4" JavaSQLType="INTEGER" mappingType="DTO" allowNull="false" DTOAlias="inCustomerJob" DTOPropertyName="companyId" />
+            <parameter name="@i_cargo" direction="in" mappingDirection="in" dataType="varchar" CTSDataType="SQLVARCHAR" JavaSQLType="VARCHAR" mappingType="DTO" allowNull="false" DTOAlias="inCustomerJob" DTOPropertyName="officeJob" />
+            <parameter name="@i_moneda" direction="in" mappingDirection="in" dataType="tinyint" CTSDataType="SQLINT1" JavaSQLType="INTEGER" mappingType="DTO" allowNull="false" DTOAlias="inCustomerJob" DTOPropertyName="currencyId" />
+            <parameter name="@i_sueldo" direction="in" mappingDirection="in" dataType="money" CTSDataType="SQLMONEY" JavaSQLType="DECIMAL" mappingType="DTO" allowNull="false" DTOAlias="inCustomerJob" DTOPropertyName="salary" />
+            <parameter name="@i_fecha_ingreso" direction="in" mappingDirection="in" dataType="datetime" CTSDataType="SQLDATETIME" JavaSQLType="DATE" mappingType="DTO" allowNull="false" DTOAlias="inCustomerJob" DTOPropertyName="admissionDateIn" />
+            <parameter name="@i_fecha_salida" direction="in" mappingDirection="in" dataType="datetime" CTSDataType="SQLDATETIME" JavaSQLType="DATE" mappingType="DTO" allowNull="false" DTOAlias="inCustomerJob" DTOPropertyName="outDateIn" />
+            <parameter name="@i_verificado" direction="in" mappingDirection="in" dataType="char" CTSDataType="SQLCHAR" JavaSQLType="CHAR" mappingType="DTO" allowNull="false" DTOAlias="inCustomerJob" DTOPropertyName="verified" />
+            <parameter name="@i_tipo" direction="in" mappingDirection="in" dataType="varchar" CTSDataType="SQLVARCHAR" JavaSQLType="VARCHAR" mappingType="DTO" allowNull="false" DTOAlias="inCustomerJob" DTOPropertyName="role" />
+            <parameter name="@i_formato_fecha" direction="in" mappingDirection="in" dataType="int" CTSDataType="SQLINT4" JavaSQLType="INTEGER" mappingType="DTO" allowNull="false" DTOAlias="inCustomerJob" DTOPropertyName="dateFormat" />
+            <parameter name="@i_nomemp" direction="in" mappingDirection="in" dataType="varchar" CTSDataType="SQLVARCHAR" JavaSQLType="VARCHAR" mappingType="DTO" allowNull="false" DTOAlias="inCustomerJob" DTOPropertyName="companyName" />
+            <parameter name="@i_objsocial" direction="in" mappingDirection="in" dataType="varchar" CTSDataType="SQLVARCHAR" JavaSQLType="VARCHAR" mappingType="DTO" allowNull="false" DTOAlias="inCustomerJob" DTOPropertyName="empJobDescription" />
+            <parameter name="@i_directrab" direction="in" mappingDirection="in" dataType="varchar" CTSDataType="SQLVARCHAR" JavaSQLType="VARCHAR" mappingType="DTO" allowNull="false" DTOAlias="inCustomerJob" DTOPropertyName="addresJob" />
+            <parameter name="@i_fonotrab" direction="in" mappingDirection="in" dataType="varchar" CTSDataType="SQLVARCHAR" JavaSQLType="VARCHAR" mappingType="DTO" allowNull="false" DTOAlias="inCustomerJob" DTOPropertyName="phoneFaxJob" />
+            <parameter name="@i_planilla" direction="in" mappingDirection="in" dataType="varchar" CTSDataType="SQLVARCHAR" JavaSQLType="VARCHAR" mappingType="DTO" allowNull="false" DTOAlias="inCustomerJob" DTOPropertyName="payrollNumber" />
+          </parameterMappings>
+          <resultMappings>
+            <result>
+              <DTOResult DTOAlias="returnCustomerJob" MapReturn="true">
+                <columnMapping position="0" name="jobId" DTOPropertyName="idJob" DataType="int" Format="" />
+              </DTOResult>
+            </result>
+          </resultMappings>
+          <MappingProperties>
+            <MappingProperty key="singleResult1" value="true" />
+          </MappingProperties>
+        </SRVMapping>
+      </service>
+      <service id="BusinessProcess.Customers.CustomerJobs.SearchCustomerJobs" netName="SearchCustomerJobs" javaName="searchCustomerJobs" mappingType="STORED_PROCEDURE" mapId="7e83722522e8aeb7512b7075311316b7">
+        <documentations default="Español">
+          <documentation id="Español">Retorna la lista de Empleos de un Cliente</documentation>
+          <documentation id="English">Returns the list of employee of a customer</documentation>
+        </documentations>
+        <SRVMapping name="cobis..sp_empleo" trnCode="1231">
+          <DTOs>
+            <DTO direction="in" name="Customer" alias="inCustomer" namespace="COBISCorp.eCOBIS.BusinessProcess.Customers.DTO" package="cobiscorp.ecobis.businessprocess.customers.dto" ns="http://dto.customers.businessprocess.ecobis.cobiscorp" required="true" />
+            <DTO direction="return" name="CustomerJob" alias="returnCustomerJob" namespace="COBISCorp.eCOBIS.BusinessProcess.Customers.DTO" package="cobiscorp.ecobis.businessprocess.customers.dto" ns="http://dto.customers.businessprocess.ecobis.cobiscorp" required="true">
+              <properties>
+                <property name="addresJob" propertyNet="AddresJob" propertyJava="addresJob" setterJavaMethod="setAddresJob" getterJavaMethod="getAddresJob" xsdType="string" netType="string" javaType="String" cobisMapping="" isInherit="false" isComplexType="false" isCollectionType="false" required="false" encrypted="false" maxLength="0" />
+                <property name="admissionDate" propertyNet="AdmissionDate" propertyJava="admissionDate" setterJavaMethod="setAdmissionDate" getterJavaMethod="getAdmissionDate" xsdType="string" netType="string" javaType="String" cobisMapping="" isInherit="false" isComplexType="false" isCollectionType="false" required="false" encrypted="false" maxLength="0" />
+                <property name="admissionDateIn" propertyNet="AdmissionDateIn" propertyJava="admissionDateIn" setterJavaMethod="setAdmissionDateIn" getterJavaMethod="getAdmissionDateIn" xsdType="dateTime" netType="DateTime" javaType="java.util.Calendar" cobisMapping="" isInherit="false" isComplexType="false" isCollectionType="false" required="true" encrypted="false" maxLength="0" />
+                <property name="company" propertyNet="Company" propertyJava="company" setterJavaMethod="setCompany" getterJavaMethod="getCompany" xsdType="string" netType="string" javaType="String" cobisMapping="" isInherit="false" isComplexType="false" isCollectionType="false" required="false" encrypted="false" maxLength="0" />
+                <property name="companyId" propertyNet="CompanyId" propertyJava="companyId" setterJavaMethod="setCompanyId" getterJavaMethod="getCompanyId" xsdType="int" netType="int" javaType="int" cobisMapping="" isInherit="false" isComplexType="false" isCollectionType="false" required="true" encrypted="false" maxLength="0" />
+                <property name="companyName" propertyNet="CompanyName" propertyJava="companyName" setterJavaMethod="setCompanyName" getterJavaMethod="getCompanyName" xsdType="string" netType="string" javaType="String" cobisMapping="" isInherit="false" isComplexType="false" isCollectionType="false" required="false" encrypted="false" maxLength="0" />
+                <property name="currency" propertyNet="Currency" propertyJava="currency" setterJavaMethod="setCurrency" getterJavaMethod="getCurrency" xsdType="string" netType="string" javaType="String" cobisMapping="" isInherit="false" isComplexType="false" isCollectionType="false" required="false" encrypted="false" maxLength="0" />
+                <property name="currencyId" propertyNet="CurrencyId" propertyJava="currencyId" setterJavaMethod="setCurrencyId" getterJavaMethod="getCurrencyId" xsdType="int" netType="int" javaType="int" cobisMapping="" isInherit="false" isComplexType="false" isCollectionType="false" required="true" encrypted="false" maxLength="0" />
+                <property name="empJobDescription" propertyNet="EmpJobDescription" propertyJava="empJobDescription" setterJavaMethod="setEmpJobDescription" getterJavaMethod="getEmpJobDescription" xsdType="string" netType="string" javaType="String" cobisMapping="" isInherit="false" isComplexType="false" isCollectionType="false" required="false" encrypted="false" maxLength="0" />
+                <property name="employeActivity" propertyNet="EmployeActivity" propertyJava="employeActivity" setterJavaMethod="setEmployeActivity" getterJavaMethod="getEmployeActivity" xsdType="string" netType="string" javaType="String" cobisMapping="" isInherit="false" isComplexType="false" isCollectionType="false" required="false" encrypted="false" maxLength="0" />
+                <property name="idJob" propertyNet="IdJob" propertyJava="idJob" setterJavaMethod="setIdJob" getterJavaMethod="getIdJob" xsdType="int" netType="int" javaType="int" cobisMapping="" isInherit="false" isComplexType="false" isCollectionType="false" required="true" encrypted="false" maxLength="0" />
+                <property name="modificationDate" propertyNet="ModificationDate" propertyJava="modificationDate" setterJavaMethod="setModificationDate" getterJavaMethod="getModificationDate" xsdType="string" netType="string" javaType="String" cobisMapping="" isInherit="false" isComplexType="false" isCollectionType="false" required="false" encrypted="false" maxLength="0" />
+                <property name="officeJob" propertyNet="OfficeJob" propertyJava="officeJob" setterJavaMethod="setOfficeJob" getterJavaMethod="getOfficeJob" xsdType="string" netType="string" javaType="String" cobisMapping="" isInherit="false" isComplexType="false" isCollectionType="false" required="false" encrypted="false" maxLength="0" />
+                <property name="outDate" propertyNet="OutDate" propertyJava="outDate" setterJavaMethod="setOutDate" getterJavaMethod="getOutDate" xsdType="string" netType="string" javaType="String" cobisMapping="" isInherit="false" isComplexType="false" isCollectionType="false" required="false" encrypted="false" maxLength="0" />
+                <property name="outDateIn" propertyNet="OutDateIn" propertyJava="outDateIn" setterJavaMethod="setOutDateIn" getterJavaMethod="getOutDateIn" xsdType="dateTime?" netType="DateTime?" javaType="java.util.Calendar" cobisMapping="" isInherit="false" isComplexType="false" isCollectionType="false" required="false" encrypted="false" maxLength="0" />
+                <property name="payrollNumber" propertyNet="PayrollNumber" propertyJava="payrollNumber" setterJavaMethod="setPayrollNumber" getterJavaMethod="getPayrollNumber" xsdType="string" netType="string" javaType="String" cobisMapping="" isInherit="false" isComplexType="false" isCollectionType="false" required="false" encrypted="false" maxLength="0" />
+                <property name="phoneFaxJob" propertyNet="PhoneFaxJob" propertyJava="phoneFaxJob" setterJavaMethod="setPhoneFaxJob" getterJavaMethod="getPhoneFaxJob" xsdType="string" netType="string" javaType="String" cobisMapping="" isInherit="false" isComplexType="false" isCollectionType="false" required="false" encrypted="false" maxLength="0" />
+                <property name="role" propertyNet="Role" propertyJava="role" setterJavaMethod="setRole" getterJavaMethod="getRole" xsdType="string" netType="string" javaType="String" cobisMapping="" isInherit="false" isComplexType="false" isCollectionType="false" required="false" encrypted="false" maxLength="0" />
+                <property name="salary" propertyNet="Salary" propertyJava="salary" setterJavaMethod="setSalary" getterJavaMethod="getSalary" xsdType="double" netType="double" javaType="double" cobisMapping="" isInherit="false" isComplexType="false" isCollectionType="false" required="true" encrypted="false" maxLength="0" />
+                <property name="subJobDescription" propertyNet="SubJobDescription" propertyJava="subJobDescription" setterJavaMethod="setSubJobDescription" getterJavaMethod="getSubJobDescription" xsdType="string" netType="string" javaType="String" cobisMapping="" isInherit="false" isComplexType="false" isCollectionType="false" required="false" encrypted="false" maxLength="0" />
+                <property name="timeJob" propertyNet="TimeJob" propertyJava="timeJob" setterJavaMethod="setTimeJob" getterJavaMethod="getTimeJob" xsdType="int" netType="int" javaType="int" cobisMapping="" isInherit="false" isComplexType="false" isCollectionType="false" required="true" encrypted="false" maxLength="0" />
+                <property name="verified" propertyNet="Verified" propertyJava="verified" setterJavaMethod="setVerified" getterJavaMethod="getVerified" xsdType="char" netType="char" javaType="char" cobisMapping="" isInherit="false" isComplexType="false" isCollectionType="false" required="true" encrypted="false" maxLength="0" />
+                <property name="dateFormat" propertyNet="DateFormat" propertyJava="dateFormat" setterJavaMethod="setDateFormat" getterJavaMethod="getDateFormat" xsdType="int" netType="int" javaType="int" cobisMapping="" isInherit="false" isComplexType="false" isCollectionType="false" required="true" encrypted="false" maxLength="0" />
+              </properties>
+            </DTO>
+            <DTO direction="out" name="CustomerJobsResponse" alias="outCustomerJobsResponse" namespace="COBISCorp.eCOBIS.BusinessProcess.Customers.DTO" package="cobiscorp.ecobis.businessprocess.customers.dto" ns="http://dto.customers.businessprocess.ecobis.cobiscorp" required="true">
+              <properties>
+                <property name="jobsList" propertyNet="JobsList" propertyJava="jobsList" setterJavaMethod="setJobsList" getterJavaMethod="getJobsList" xsdType="GenericList" netType="List&lt;CustomerJob&gt;" javaType="ArrayList&lt;CustomerJob&gt;" cobisMapping="" isInherit="false" isComplexType="true" isCollectionType="true" required="true" encrypted="false" maxLength="0" XSDElementType="CustomerJob" netElementType="CustomerJob" javaElementType="CustomerJob" />
+              </properties>
+            </DTO>
+          </DTOs>
+          <parameterMappings>
+            <parameter name="@i_operacion" direction="in" mappingDirection="in" dataType="char" CTSDataType="SQLCHAR" JavaSQLType="CHAR" mappingType="CONSTANT" allowNull="false" contantValue="S" />
+            <parameter name="@i_ente" direction="in" mappingDirection="in" dataType="int" CTSDataType="SQLINT4" JavaSQLType="INTEGER" mappingType="DTO" allowNull="false" DTOAlias="inCustomer" DTOPropertyName="customerId" />
+            <parameter name="@i_formato_fecha" direction="in" mappingDirection="in" dataType="int" CTSDataType="SQLINT4" JavaSQLType="INTEGER" mappingType="DTO" allowNull="false" DTOAlias="inCustomer" DTOPropertyName="dateFormat" />
+          </parameterMappings>
+          <resultMappings>
+            <result>
+              <DTOResult DTOAlias="returnCustomerJob" MapReturn="true">
+                <columnMapping position="0" name="idJob" DTOPropertyName="idJob" DataType="int" Format="" />
+                <columnMapping position="1" name="company" DTOPropertyName="company" DataType="string" Format="" />
+                <columnMapping position="2" name="officeJob" DTOPropertyName="officeJob" DataType="string" Format="" />
+                <columnMapping position="3" name="role" DTOPropertyName="role" DataType="string" Format="" />
+                <columnMapping position="4" name="currency" DTOPropertyName="currency" DataType="string" Format="" />
+                <columnMapping position="5" name="salary" DTOPropertyName="salary" DataType="double" Format="" />
+                <columnMapping position="6" name="verified" DTOPropertyName="verified" DataType="char" Format="" />
+                <columnMapping position="7" name="admissionDate" DTOPropertyName="admissionDate" DataType="string" />
+                <columnMapping position="8" name="outDate" DTOPropertyName="outDate" DataType="string" />
+                <columnMapping position="9" name="modificationDate" DTOPropertyName="modificationDate" DataType="string" Format="" />
+                <columnMapping position="10" name="companyName" DTOPropertyName="companyName" DataType="string" Format="" />
+                <columnMapping position="11" name="employeActivity" DTOPropertyName="employeActivity" DataType="string" Format="" />
+                <columnMapping position="12" name="addresJob" DTOPropertyName="addresJob" DataType="string" Format="" />
+                <columnMapping position="13" name="phoneFaxJob" DTOPropertyName="phoneFaxJob" DataType="string" Format="" />
+                <columnMapping position="14" name="payrollNumber" DTOPropertyName="payrollNumber" DataType="string" Format="" />
+                <columnMapping position="15" name="empJobDescription" DTOPropertyName="empJobDescription" DataType="string" Format="" />
+                <columnMapping position="16" name="subJobDescription" DTOPropertyName="subJobDescription" DataType="string" Format="" />
+                <columnMapping position="17" name="timeJob" DTOPropertyName="timeJob" DataType="int" Format="" />
+              </DTOResult>
+            </result>
+          </resultMappings>
+          <MappingProperties>
+            <MappingProperty key="BLIQueryPropertyName1" value="jobsList" />
+          </MappingProperties>
+        </SRVMapping>
+      </service>
+      <service id="BusinessProcess.Customers.CustomerJobs.UpdateCustomerJobs" netName="UpdateCustomerJobs" javaName="updateCustomerJobs" mappingType="STORED_PROCEDURE" mapId="d1a69640d53a32a9fb13e93d1c8f3104">
+        <documentations default="Español">
+          <documentation id="Español">Realiza la actualizacion de Empleos de un Cliente</documentation>
+          <documentation id="English">Employment Updated Make a Customer</documentation>
+        </documentations>
+        <SRVMapping name="cobis..sp_empleo" trnCode="182">
+          <DTOs>
+            <DTO direction="in" name="CustomerJob" alias="inCustomerJob" namespace="COBISCorp.eCOBIS.BusinessProcess.Customers.DTO" package="cobiscorp.ecobis.businessprocess.customers.dto" ns="http://dto.customers.businessprocess.ecobis.cobiscorp" required="true" />
+            <DTO direction="in" name="Customer" alias="inCustomer" namespace="COBISCorp.eCOBIS.BusinessProcess.Customers.DTO" package="cobiscorp.ecobis.businessprocess.customers.dto" ns="http://dto.customers.businessprocess.ecobis.cobiscorp" required="true" />
+          </DTOs>
+          <parameterMappings>
+            <parameter name="@i_operacion" direction="in" mappingDirection="in" dataType="char" CTSDataType="SQLCHAR" JavaSQLType="CHAR" mappingType="CONSTANT" allowNull="false" contantValue="U" />
+            <parameter name="@i_ente" direction="in" mappingDirection="in" dataType="int" CTSDataType="SQLINT4" JavaSQLType="INTEGER" mappingType="DTO" allowNull="false" DTOAlias="inCustomer" DTOPropertyName="customerId" />
+            <parameter name="@i_trabajo" direction="in" mappingDirection="in" dataType="tinyint" CTSDataType="SQLINT1" JavaSQLType="INTEGER" mappingType="DTO" allowNull="false" DTOAlias="inCustomerJob" DTOPropertyName="idJob" />
+            <parameter name="@i_empresa" direction="in" mappingDirection="in" dataType="int" CTSDataType="SQLINT4" JavaSQLType="INTEGER" mappingType="DTO" allowNull="false" DTOAlias="inCustomerJob" DTOPropertyName="companyId" />
+            <parameter name="@i_cargo" direction="in" mappingDirection="in" dataType="varchar" CTSDataType="SQLVARCHAR" JavaSQLType="VARCHAR" mappingType="DTO" allowNull="false" DTOAlias="inCustomerJob" DTOPropertyName="officeJob" />
+            <parameter name="@i_moneda" direction="in" mappingDirection="in" dataType="tinyint" CTSDataType="SQLINT1" JavaSQLType="INTEGER" mappingType="DTO" allowNull="false" DTOAlias="inCustomerJob" DTOPropertyName="currencyId" />
+            <parameter name="@i_sueldo" direction="in" mappingDirection="in" dataType="money" CTSDataType="SQLMONEY" JavaSQLType="DECIMAL" mappingType="DTO" allowNull="false" DTOAlias="inCustomerJob" DTOPropertyName="salary" />
+            <parameter name="@i_fecha_ingreso" direction="in" mappingDirection="in" dataType="datetime" CTSDataType="SQLDATETIME" JavaSQLType="DATE" mappingType="DTO" allowNull="false" DTOAlias="inCustomerJob" DTOPropertyName="admissionDateIn" />
+            <parameter name="@i_fecha_salida" direction="in" mappingDirection="in" dataType="datetime" CTSDataType="SQLDATETIME" JavaSQLType="DATE" mappingType="DTO" allowNull="false" DTOAlias="inCustomerJob" DTOPropertyName="outDateIn" />
+            <parameter name="@i_verificado" direction="in" mappingDirection="in" dataType="char" CTSDataType="SQLCHAR" JavaSQLType="CHAR" mappingType="DTO" allowNull="false" DTOAlias="inCustomerJob" DTOPropertyName="verified" />
+            <parameter name="@i_tipo" direction="in" mappingDirection="in" dataType="varchar" CTSDataType="SQLVARCHAR" JavaSQLType="VARCHAR" mappingType="DTO" allowNull="false" DTOAlias="inCustomerJob" DTOPropertyName="role" />
+            <parameter name="@i_formato_fecha" direction="in" mappingDirection="in" dataType="int" CTSDataType="SQLINT4" JavaSQLType="INTEGER" mappingType="DTO" allowNull="false" DTOAlias="inCustomerJob" DTOPropertyName="dateFormat" />
+            <parameter name="@i_nomemp" direction="in" mappingDirection="in" dataType="varchar" CTSDataType="SQLVARCHAR" JavaSQLType="VARCHAR" mappingType="DTO" allowNull="false" DTOAlias="inCustomerJob" DTOPropertyName="companyName" />
+            <parameter name="@i_objsocial" direction="in" mappingDirection="in" dataType="varchar" CTSDataType="SQLVARCHAR" JavaSQLType="VARCHAR" mappingType="DTO" allowNull="false" DTOAlias="inCustomerJob" DTOPropertyName="empJobDescription" />
+            <parameter name="@i_directrab" direction="in" mappingDirection="in" dataType="varchar" CTSDataType="SQLVARCHAR" JavaSQLType="VARCHAR" mappingType="DTO" allowNull="false" DTOAlias="inCustomerJob" DTOPropertyName="addresJob" />
+            <parameter name="@i_fonotrab" direction="in" mappingDirection="in" dataType="varchar" CTSDataType="SQLVARCHAR" JavaSQLType="VARCHAR" mappingType="DTO" allowNull="false" DTOAlias="inCustomerJob" DTOPropertyName="phoneFaxJob" />
+            <parameter name="@i_planilla" direction="in" mappingDirection="in" dataType="varchar" CTSDataType="SQLVARCHAR" JavaSQLType="VARCHAR" mappingType="DTO" allowNull="false" DTOAlias="inCustomerJob" DTOPropertyName="payrollNumber" />
+          </parameterMappings>
+          <resultMappings />
+          <MappingProperties />
+        </SRVMapping>
+      </service>
+    </services>
+  </partialClass>
+</serviceClass>

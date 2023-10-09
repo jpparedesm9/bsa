@@ -1,0 +1,1374 @@
+Attribute VB_Name = "MODGLB"
+'FIXIT: Use Option Explicit to avoid implicitly creating variables of type Variant         FixIT90210ae-R383-H1984
+Option Explicit
+'TODO: Auto-fix by Project Analyzer v9.0.05 on 15-Aug-10
+'*************************************************************
+' ARCHIVO:          MODGLB.BAS
+' NOMBRE LOGICO:    MODGLB
+' PRODUCTO:         Terminal Administrativa
+'*************************************************************
+'                       IMPORTANTE
+' Esta aplicacion es parte de los paquetes bancarios propiedad
+' de MACOSA S.A.
+' Su uso no  autorizado queda  expresamente prohibido asi como
+' cualquier  alteracion o  agregado  hecho por  alguno  de sus
+' usuarios sin el debido consentimiento por escrito de MACOSA.
+' Este programa esta protegido por la ley de derechos de autor
+' y por las  convenciones  internacionales de  propiedad inte-
+' lectual.  Su uso no  autorizado dara  derecho a  MACOSA para
+' obtener ordenes  de secuestro o  retencion y para  perseguir
+' penalmente a los autores de cualquier infraccion.
+'*************************************************************
+'                         PROPOSITO
+' Permite definir las variables globales y funciones usadas
+' en el modulo
+'*************************************************************
+'                       MODIFICACIONES
+' FECHA          AUTOR           RAZON
+' 10-Ene-02      C. Milán        Emisión Inicial
+' 21-Jul-05      L. Bernuil      Corregir Problema de desconexion
+' 09-Ago-05      L. Bernuil      Variable Global de Perfil de Cuenta
+'*************************************************************
+
+Global VGDecimales As String
+Global VGPaso As Integer
+Global VGImpOrientacion As Integer
+Global VGOperacion As String
+Global VGADatosI() As String
+Global VGADatosO() As String
+Global VGTeclaAyuda As Integer
+Global VGProducto As String
+Global VGTipoHis As String
+Global VGHelpRem As String
+Global VGFecha As String
+Global VGNombreFilial As String
+Global VGNombreOficina As String
+
+Global VGAperCifrada As Boolean
+Global VGEmpAgencia As Boolean 'Para mostrar la pantalla de Notas de DB/CR Empresariales en Agencia
+'Para verificar el nombre de la pantalla
+                                    'de Cheques de Ventanilla Con Costo
+                                    'o Sin Costo
+'En recepción de chequeras, si es PTA
+Global VGPrefijo_cta()  As String   ' Validación de se es cuenta COBIS y debe validar digito verificador
+Global VGMaxPrefijos   As Integer   ' Cantidad de prefijos de cuentas COBIS
+Global VGTipoOper As String
+Global VGMTipoDoc(15) As String     'Req 381 - CAV 14/01/2014
+
+'******Variables para Consulta de totales ********
+Global VGCodAgencia As String
+Global VGTurno As String
+Global VGTransaccion As String
+Global VGNumTransaccion As String
+Global VGOperador As String
+Global VGNumProducto As String
+Global VGDigito As String
+Global VGCodBanco As String 'PEDRO COELLO CODIGO DEL BANCO GLOBAL
+Global VGProductoConta As String
+
+Global VGCorresponsal As Integer 'CAVENDANO Codigo de Corresponsal Req 381
+Global VGCB As Boolean 'CAVENDANO Codigo de Corresponsal Req 381
+'*************************************************
+
+'***********************************************
+' CONSTANTES
+'***********************************************
+Global ARCHIVOINI As String
+'***********************************************
+' Variables Globales para manejo de *.ini
+'***********************************************
+Global Preferencias() As String
+Global Seccion() As RegistroTOK
+'***********************************************
+' Variables para manejo de formatos de fecha
+' CloVargas Oct/18/01
+'***********************************************
+Global VGFecha_SP As String      'Código para formato de fecha
+Global VGFecha_Pref As String    'String para formato de fecha
+Global formato_fecha() As String 'Matriz con los formatos y codigos Ej. mm/dd/yyyy - 101
+Global Const CGFormatoBase$ = "mm/dd/yyyy" 'Formato SYBASE
+
+Type VGLineaImp
+    Texto As String
+    length As Integer
+    col As Integer
+End Type
+
+Type CatalogoUsuario
+    Codigo As String
+    Descripcion As String
+End Type
+Global VGACatalogo As CatalogoUsuario 'Variable utilizada para llama al catálogo por F5
+
+Global VGFilial As String             'Código de la filial
+Global VGOficina As String            'Código de la oficina
+Global VGOficial As String            'Código del Oficial Actual
+Global VGMoneda As String             'Código de la moneda
+Global VGDescMoneda As String             'Código de la moneda
+Global VGRol As String                'Código del rol del usuario
+Global VGLongCtaCte As Integer       'Longitud de la cuenta corriente
+Global VGCteAbanks As String         'Longitud de la cuenta de ahorros
+Global VGLongCtaAho As Integer       'Longitud de la cuenta de ahorros
+Global VGNumGCtaCte As Integer       'Número de grupos de la cuenta corriente
+Global VGNumGCtaAho As Integer       'Número de grupos de la cuenta de ahorros
+Global VGPesosCtaCte As String       'Pesos de la cuenta corriente
+Global VGPesosCtaAho As String       'Pesos de la cuenta de ahorros
+Global VGModuloCtaCte As Integer     'Modulo de la cuenta corriente
+Global VGModuloCtaAho As Integer     'Modulo de la cuenta de ahorros
+Global VGMascaraCtaCte As String     'Mascara de la cuenta corriente
+Global VGMascaraCtaAho As String     'Mascara de la cuenta de ahorros
+'Utilizada para el scanner de las firmas
+Global VGBanco As String             'Banco
+Global VGPais As String              'País
+Global VGPath As String
+Global VGBusqueda()  As String
+Global VGSaldoLib As String
+Global VGNControl As String
+Global VGNSolicit As String
+Global VGNCausa As String           'ARiggs 09-14-06 Permite obtener la descripcion de la causa del lev.
+Global VGNivelMaximo As String
+Global VGCtaGerencia As String
+Global VGFormatoFecha As String
+Global VGDebug As Integer
+Global VGAyuda() As String
+Global VGCodPais As String
+Global VGManejaNdNc As String
+Global VGLineaPend As String
+
+Global VGcategoria As String
+Global VGprofinal As String
+Global VGCancelar As String
+Global VGCausal As String           'REQ 262 CAUSALES NC/ND
+Global VGCatCausal As String        'REQ 262 CAUSALES NC/ND
+
+Global VGLogTransacciones As String     ' Nombre del archivo de log de transacciones
+ Global sqlconn&                      'Handle to SQL Server connection
+Global ServerName$                   'Name of SQL Server connected to
+Global ServerNameLocal$                   'Name of SQL Server connected to
+
+Global VGLogin$                      'SQL Server login ID
+Global Password$                     'SQL Server password
+Global DatabaseName$                 'Current database name
+Global HostName$                     'Current Host Name
+
+Global Const VGMaximoRows% = 21
+Global Const VGMaxRows% = 20
+Global VGMascaraTarjeta As String     'Mascara de la tarjeta de debito
+
+Global VGComentario As String         'Comentario que se pide en la verificacion de cheques de camara
+Global VGMontoVerCheque As Currency   'Monto minimo de verificacion de emision de cheques de camara
+
+Global VGFBusCliente As BuscarClientes          'Forma de búsqueda de clientes
+
+
+Global VGCuenta As String
+Global VGNombreCuenta As String
+
+Global VGImpresora As String
+Global VGPerfilCta As String
+Global VGMascaraConta As String
+
+'Arreglo para calculo de digito verificador de Nit
+Global Const VGTablaDigito$ = "716759534743413729231917130703"
+
+'Rebranding
+Global VGNombreLargoBanco As String
+Global VGNombreCortoBanco As String
+Global VGDireccionElectro As String
+Global VGDominio As String
+Global VGFonoBanex As String
+Global VGLOGO As String
+Global VGPlazo As String
+Global VGDeposito As String
+Global VGPeriodicidad As String
+
+Global VGPuntos As String
+Global VGMontoFinal As String
+
+Global VGContractual As String
+Global VGProgresivo As String
+Global VGEstado As String
+Global VGOrigen As String
+
+'FIXIT: Declare 'VGProdFinal' with an early-bound data type                                FixIT90210ae-R1672-R1B8ZE
+Global VGProdFinal As String
+
+
+Public FMain As FPrincipal
+
+Public Sub PMBloqueaGrid(parSSControl As Object)
+'*************************************************************
+'PROPOSITO:  Bloquear la edición en un grid especificado
+' INPUT    :  parSSControl   'Grid seleccionado
+' OUTPUT   :  Ninguno
+'*************************************************************
+'                       MODIFICACIONES
+' FECHA          AUTOR           RAZON
+' 04-Nov-98      S.Garcés        Emision Inicial
+' 21-Feb-2000    X. Ramos        Verificación de existencia de
+'                                filas en el objeto.
+'*************************************************************
+
+'FIXIT: 'MaxRows' is not a property of the generic 'Control' object in Visual Basic .NET. To access 'MaxRows' declare 'parSSControl' using its actual type instead of 'Control'     FixIT90210ae-R1460-RCFE85
+'FIXIT: 'MaxRows' is not a property of the generic 'Control' object in Visual Basic .NET. To access 'MaxRows' declare 'parSSControl' using its actual type instead of 'Control'     FixIT90210ae-R1460-RCFE85
+    If parSSControl.MaxRows > 0 Then
+        'Bloquear edición en el grid
+'FIXIT: 'Row' is not a property of the generic 'Control' object in Visual Basic .NET. To access 'Row' declare 'parSSControl' using its actual type instead of 'Control'     FixIT90210ae-R1460-RCFE85
+'FIXIT: 'Row' is not a property of the generic 'Control' object in Visual Basic .NET. To access 'Row' declare 'parSSControl' using its actual type instead of 'Control'     FixIT90210ae-R1460-RCFE85
+        parSSControl.Row = 1
+'FIXIT: 'Col' is not a property of the generic 'Control' object in Visual Basic .NET. To access 'Col' declare 'parSSControl' using its actual type instead of 'Control'     FixIT90210ae-R1460-RCFE85
+'FIXIT: 'Col' is not a property of the generic 'Control' object in Visual Basic .NET. To access 'Col' declare 'parSSControl' using its actual type instead of 'Control'     FixIT90210ae-R1460-RCFE85
+        parSSControl.col = 1
+'FIXIT: 'MaxRows' is not a property of the generic 'Control' object in Visual Basic .NET. To access 'MaxRows' declare 'parSSControl' using its actual type instead of 'Control'     FixIT90210ae-R1460-RCFE85
+'FIXIT: 'Row2' is not a property of the generic 'Control' object in Visual Basic .NET. To access 'Row2' declare 'parSSControl' using its actual type instead of 'Control'     FixIT90210ae-R1460-RCFE85
+'FIXIT: 'MaxRows' is not a property of the generic 'Control' object in Visual Basic .NET. To access 'MaxRows' declare 'parSSControl' using its actual type instead of 'Control'     FixIT90210ae-R1460-RCFE85
+'FIXIT: 'Row2' is not a property of the generic 'Control' object in Visual Basic .NET. To access 'Row2' declare 'parSSControl' using its actual type instead of 'Control'     FixIT90210ae-R1460-RCFE85
+        parSSControl.Row2 = parSSControl.MaxRows
+'FIXIT: 'MaxCols' is not a property of the generic 'Control' object in Visual Basic .NET. To access 'MaxCols' declare 'parSSControl' using its actual type instead of 'Control'     FixIT90210ae-R1460-RCFE85
+'FIXIT: 'Col2' is not a property of the generic 'Control' object in Visual Basic .NET. To access 'Col2' declare 'parSSControl' using its actual type instead of 'Control'     FixIT90210ae-R1460-RCFE85
+'FIXIT: 'MaxCols' is not a property of the generic 'Control' object in Visual Basic .NET. To access 'MaxCols' declare 'parSSControl' using its actual type instead of 'Control'     FixIT90210ae-R1460-RCFE85
+'FIXIT: 'Col2' is not a property of the generic 'Control' object in Visual Basic .NET. To access 'Col2' declare 'parSSControl' using its actual type instead of 'Control'     FixIT90210ae-R1460-RCFE85
+        parSSControl.Col2 = parSSControl.MaxCols
+'FIXIT: 'BlockMode' is not a property of the generic 'Control' object in Visual Basic .NET. To access 'BlockMode' declare 'parSSControl' using its actual type instead of 'Control'     FixIT90210ae-R1460-RCFE85
+'FIXIT: 'BlockMode' is not a property of the generic 'Control' object in Visual Basic .NET. To access 'BlockMode' declare 'parSSControl' using its actual type instead of 'Control'     FixIT90210ae-R1460-RCFE85
+        parSSControl.BlockMode = True
+'FIXIT: 'Lock' is not a property of the generic 'Control' object in Visual Basic .NET. To access 'Lock' declare 'parSSControl' using its actual type instead of 'Control'     FixIT90210ae-R1460-RCFE85
+'FIXIT: 'Lock' is not a property of the generic 'Control' object in Visual Basic .NET. To access 'Lock' declare 'parSSControl' using its actual type instead of 'Control'     FixIT90210ae-R1460-RCFE85
+        parSSControl.Lock = True
+'FIXIT: 'BlockMode' is not a property of the generic 'Control' object in Visual Basic .NET. To access 'BlockMode' declare 'parSSControl' using its actual type instead of 'Control'     FixIT90210ae-R1460-RCFE85
+'FIXIT: 'BlockMode' is not a property of the generic 'Control' object in Visual Basic .NET. To access 'BlockMode' declare 'parSSControl' using its actual type instead of 'Control'     FixIT90210ae-R1460-RCFE85
+        parSSControl.BlockMode = False
+'FIXIT: 'ActiveRow' is not a property of the generic 'Control' object in Visual Basic .NET. To access 'ActiveRow' declare 'parSSControl' using its actual type instead of 'Control'     FixIT90210ae-R1460-RCFE85
+'FIXIT: 'Row' is not a property of the generic 'Control' object in Visual Basic .NET. To access 'Row' declare 'parSSControl' using its actual type instead of 'Control'     FixIT90210ae-R1460-RCFE85
+'FIXIT: 'ActiveRow' is not a property of the generic 'Control' object in Visual Basic .NET. To access 'ActiveRow' declare 'parSSControl' using its actual type instead of 'Control'     FixIT90210ae-R1460-RCFE85
+'FIXIT: 'Row' is not a property of the generic 'Control' object in Visual Basic .NET. To access 'Row' declare 'parSSControl' using its actual type instead of 'Control'     FixIT90210ae-R1460-RCFE85
+        parSSControl.Row = parSSControl.ActiveRow
+    End If
+    
+End Sub
+
+Public Sub PMMarcaFilaGrid(parSSControl As Object, parRow As Long)
+'*************************************************************
+'PROPOSITO: Marca la fila de un grid cuando ésta es
+'             seleccionada
+' INPUT    :  parSSControl   'Grid seleccionado
+'             parRow         'Fila selccionada
+' OUTPUT   :  Ninguno
+'*************************************************************
+'                       MODIFICACIONES
+' FECHA          AUTOR           RAZON
+' 23/Dic/97      S.Garcés        Emision Inicial
+'*************************************************************
+
+    If parRow > -1 Then     'el grid no pierde el foco
+        'marcar todo el grid y deseleccionarlo
+'FIXIT: 'Col' is not a property of the generic 'Control' object in Visual Basic .NET. To access 'Col' declare 'parSSControl' using its actual type instead of 'Control'     FixIT90210ae-R1460-RCFE85
+'FIXIT: 'Col' is not a property of the generic 'Control' object in Visual Basic .NET. To access 'Col' declare 'parSSControl' using its actual type instead of 'Control'     FixIT90210ae-R1460-RCFE85
+        parSSControl.col = 1
+'FIXIT: 'Row' is not a property of the generic 'Control' object in Visual Basic .NET. To access 'Row' declare 'parSSControl' using its actual type instead of 'Control'     FixIT90210ae-R1460-RCFE85
+'FIXIT: 'Row' is not a property of the generic 'Control' object in Visual Basic .NET. To access 'Row' declare 'parSSControl' using its actual type instead of 'Control'     FixIT90210ae-R1460-RCFE85
+        parSSControl.Row = 1
+'FIXIT: 'MaxCols' is not a property of the generic 'Control' object in Visual Basic .NET. To access 'MaxCols' declare 'parSSControl' using its actual type instead of 'Control'     FixIT90210ae-R1460-RCFE85
+'FIXIT: 'Col2' is not a property of the generic 'Control' object in Visual Basic .NET. To access 'Col2' declare 'parSSControl' using its actual type instead of 'Control'     FixIT90210ae-R1460-RCFE85
+'FIXIT: 'MaxCols' is not a property of the generic 'Control' object in Visual Basic .NET. To access 'MaxCols' declare 'parSSControl' using its actual type instead of 'Control'     FixIT90210ae-R1460-RCFE85
+'FIXIT: 'Col2' is not a property of the generic 'Control' object in Visual Basic .NET. To access 'Col2' declare 'parSSControl' using its actual type instead of 'Control'     FixIT90210ae-R1460-RCFE85
+        parSSControl.Col2 = parSSControl.MaxCols
+'FIXIT: 'MaxRows' is not a property of the generic 'Control' object in Visual Basic .NET. To access 'MaxRows' declare 'parSSControl' using its actual type instead of 'Control'     FixIT90210ae-R1460-RCFE85
+'FIXIT: 'Row2' is not a property of the generic 'Control' object in Visual Basic .NET. To access 'Row2' declare 'parSSControl' using its actual type instead of 'Control'     FixIT90210ae-R1460-RCFE85
+'FIXIT: 'MaxRows' is not a property of the generic 'Control' object in Visual Basic .NET. To access 'MaxRows' declare 'parSSControl' using its actual type instead of 'Control'     FixIT90210ae-R1460-RCFE85
+'FIXIT: 'Row2' is not a property of the generic 'Control' object in Visual Basic .NET. To access 'Row2' declare 'parSSControl' using its actual type instead of 'Control'     FixIT90210ae-R1460-RCFE85
+        parSSControl.Row2 = parSSControl.MaxRows
+'FIXIT: 'BlockMode' is not a property of the generic 'Control' object in Visual Basic .NET. To access 'BlockMode' declare 'parSSControl' using its actual type instead of 'Control'     FixIT90210ae-R1460-RCFE85
+'FIXIT: 'BlockMode' is not a property of the generic 'Control' object in Visual Basic .NET. To access 'BlockMode' declare 'parSSControl' using its actual type instead of 'Control'     FixIT90210ae-R1460-RCFE85
+        parSSControl.BlockMode = True
+        parSSControl.BackColor = vbWindowBackground
+'FIXIT: 'BlockMode' is not a property of the generic 'Control' object in Visual Basic .NET. To access 'BlockMode' declare 'parSSControl' using its actual type instead of 'Control'     FixIT90210ae-R1460-RCFE85
+'FIXIT: 'BlockMode' is not a property of the generic 'Control' object in Visual Basic .NET. To access 'BlockMode' declare 'parSSControl' using its actual type instead of 'Control'     FixIT90210ae-R1460-RCFE85
+        parSSControl.BlockMode = False
+
+        ' Sombrea el registro seleccionado con color amarillo
+'FIXIT: 'Col' is not a property of the generic 'Control' object in Visual Basic .NET. To access 'Col' declare 'parSSControl' using its actual type instead of 'Control'     FixIT90210ae-R1460-RCFE85
+'FIXIT: 'Col' is not a property of the generic 'Control' object in Visual Basic .NET. To access 'Col' declare 'parSSControl' using its actual type instead of 'Control'     FixIT90210ae-R1460-RCFE85
+        parSSControl.col = 1
+'FIXIT: 'Row' is not a property of the generic 'Control' object in Visual Basic .NET. To access 'Row' declare 'parSSControl' using its actual type instead of 'Control'     FixIT90210ae-R1460-RCFE85
+'FIXIT: 'Row' is not a property of the generic 'Control' object in Visual Basic .NET. To access 'Row' declare 'parSSControl' using its actual type instead of 'Control'     FixIT90210ae-R1460-RCFE85
+        parSSControl.Row = parRow
+'FIXIT: 'MaxCols' is not a property of the generic 'Control' object in Visual Basic .NET. To access 'MaxCols' declare 'parSSControl' using its actual type instead of 'Control'     FixIT90210ae-R1460-RCFE85
+'FIXIT: 'Col2' is not a property of the generic 'Control' object in Visual Basic .NET. To access 'Col2' declare 'parSSControl' using its actual type instead of 'Control'     FixIT90210ae-R1460-RCFE85
+'FIXIT: 'MaxCols' is not a property of the generic 'Control' object in Visual Basic .NET. To access 'MaxCols' declare 'parSSControl' using its actual type instead of 'Control'     FixIT90210ae-R1460-RCFE85
+'FIXIT: 'Col2' is not a property of the generic 'Control' object in Visual Basic .NET. To access 'Col2' declare 'parSSControl' using its actual type instead of 'Control'     FixIT90210ae-R1460-RCFE85
+        parSSControl.Col2 = parSSControl.MaxCols
+'FIXIT: 'Row2' is not a property of the generic 'Control' object in Visual Basic .NET. To access 'Row2' declare 'parSSControl' using its actual type instead of 'Control'     FixIT90210ae-R1460-RCFE85
+'FIXIT: 'Row2' is not a property of the generic 'Control' object in Visual Basic .NET. To access 'Row2' declare 'parSSControl' using its actual type instead of 'Control'     FixIT90210ae-R1460-RCFE85
+        parSSControl.Row2 = parRow
+'FIXIT: 'BlockMode' is not a property of the generic 'Control' object in Visual Basic .NET. To access 'BlockMode' declare 'parSSControl' using its actual type instead of 'Control'     FixIT90210ae-R1460-RCFE85
+'FIXIT: 'BlockMode' is not a property of the generic 'Control' object in Visual Basic .NET. To access 'BlockMode' declare 'parSSControl' using its actual type instead of 'Control'     FixIT90210ae-R1460-RCFE85
+        parSSControl.BlockMode = True
+        parSSControl.BackColor = vbInfoBackground '&HC0FFFF
+'FIXIT: 'BlockMode' is not a property of the generic 'Control' object in Visual Basic .NET. To access 'BlockMode' declare 'parSSControl' using its actual type instead of 'Control'     FixIT90210ae-R1460-RCFE85
+'FIXIT: 'BlockMode' is not a property of the generic 'Control' object in Visual Basic .NET. To access 'BlockMode' declare 'parSSControl' using its actual type instead of 'Control'     FixIT90210ae-R1460-RCFE85
+        parSSControl.BlockMode = False
+    End If
+    
+End Sub
+
+
+Function FMChequeaCtaAho(Cuenta As String) As Integer
+    Dim VTSum As Integer
+    Dim j As Integer
+    Dim i As Integer
+    Dim VTModulo As Integer
+    If Len(Cuenta$) < VGLongCtaAho% Then
+        FMChequeaCtaAho% = False
+        Exit Function
+    End If
+    '  Verifica si se trata de una cuenta COBIS antes de validar el digito
+    If Not FMCuenta_Cobis(Cuenta) Then
+        FMChequeaCtaAho% = True
+        Exit Function
+    End If
+    
+    VTSum% = 0
+    j% = 1
+    For i% = (VGLongCtaAho% - Len(Cuenta$) + 1) To VGLongCtaAho% - 1
+        VTSum% = VTSum% + Val(Mid$(Cuenta$, j%, 1)) * Val(Mid$(VGPesosCtaAho$, i%, 1))
+        j% = j% + 1
+    Next i%
+    VTModulo% = VTSum% Mod VGModuloCtaAho%
+   
+    VTModulo% = VGModuloCtaAho% - VTModulo%
+    If VTModulo% >= 10 Then
+        VTModulo% = 0
+    End If
+
+    If VTModulo% <> Val(Mid$(Cuenta$, VGLongCtaAho%, 1)) Then
+        FMChequeaCtaAho% = False
+    Else
+        FMChequeaCtaAho% = True
+    End If
+End Function
+Function FMChequeaCtaCte(Cuenta As String) As Integer
+
+Dim VTSum As Integer
+Dim j As Integer
+Dim i As Integer
+Dim VTModulo As Integer
+
+    If Len(Cuenta$) < VGLongCtaCte% Then
+        FMChequeaCtaCte% = False
+        Exit Function
+    End If
+    
+    '  Verifica si se trata de una cuenta COBIS antes de validar el digito
+    If Not FMCuenta_Cobis(Cuenta) Then
+        FMChequeaCtaCte% = True
+        Exit Function
+    End If
+    
+    'Verificar si se trata de cuenta Abanks Migrada o Cuenta Cobis G.Bank 13-Jun-2005
+'FIXIT: Replace 'Mid' function with 'Mid$' function                                        FixIT90210ae-R9757-R1B8ZE
+    If Val(Mid(Cuenta$, 6, 5)) < Val(VGCteAbanks$) Then ' Es cuenta Abanks
+        VTSum% = 0
+        j% = 1
+        For i% = (VGLongCtaCte% - Len(Cuenta$) + 1) To VGLongCtaCte% - 1
+            VTSum% = VTSum% + Val(Mid$(Cuenta$, j%, 1)) * Val(Mid$("3298765432", i%, 1))
+            j% = j% + 1
+        Next i%
+        
+        VTModulo% = VTSum% - CInt(VTSum% / 11 - 0.5) * 11
+        FMChequeaCtaCte% = VTModulo% = Val(Mid$(Cuenta$, VGLongCtaCte%, 1))
+        FMChequeaCtaCte% = True   'DIGITO VERIFICADOR DE ABANKS.... NO FUNCIONA SIEMPRE SERÁ CORRECTA LA CUENTA ABANKS
+        Exit Function
+    End If
+    
+    VTSum% = 0
+    j% = 1
+    For i% = (VGLongCtaCte% - Len(Cuenta$) + 1) To VGLongCtaCte% - 1
+        VTSum% = VTSum% + Val(Mid$(Cuenta$, j%, 1)) * Val(Mid$(VGPesosCtaCte$, i%, 1))
+        j% = j% + 1
+    Next i%
+    VTModulo% = VTSum% Mod VGModuloCtaCte%
+    VTModulo% = VGModuloCtaCte% - VTModulo%
+    If VTModulo% >= 10 Then
+        VTModulo% = 0
+    End If
+    
+    If VTModulo% <> Val(Mid$(Cuenta$, VGLongCtaCte%, 1)) Then
+        FMChequeaCtaCte% = False
+    Else
+        FMChequeaCtaCte% = True
+    End If
+End Function
+
+Function FMChequeaTarjeta(tarjeta As String) As Integer
+Dim VTSum As Integer
+Dim VTFactores As String
+Dim VTLngpan As Integer
+Dim VTLngfac As Integer
+Dim i As Integer
+Dim VTProducto As Integer
+Dim VTModulo As Integer
+    VTSum% = 0
+    VTFactores$ = "12121212121212121212"
+    VTLngpan% = Len(tarjeta$)
+    VTLngfac% = Len(VTFactores$)
+    VTFactores$ = Mid$(VTFactores$, VTLngfac% - VTLngpan% + 2, VTLngfac%)
+    
+    For i% = 1 To VTLngpan% - 1
+        VTProducto% = Val(Mid$(tarjeta$, i%, 1)) * Val(Mid$(VTFactores$, i%, 1))
+        If VTProducto% < 10 Then
+            VTSum% = VTSum% + VTProducto%
+        Else
+            VTSum% = VTSum% + VTProducto% \ 10 + VTProducto% Mod 10
+        End If
+    Next i%
+
+    VTModulo% = VTSum% Mod 10
+    If VTModulo% <> 0 Then
+        VTModulo% = 10 - VTModulo%
+    End If
+
+    If VTModulo% <> Val(Mid$(tarjeta$, VTLngpan%, 1)) Then
+        FMChequeaTarjeta% = False
+    Else
+        FMChequeaTarjeta% = True
+    End If
+
+End Function
+
+Function FMMascara(Variable As String, Mascara As String) As String
+Dim VTtxt As String
+Dim i As Integer
+Dim j As Integer
+Dim VTDigito As String
+
+
+VTtxt$ = ""
+    If Variable$ = "" Then
+        For i% = 1 To Len(Mascara$)
+            If Mid$(Mascara$, i%, 1) = "#" Then
+                VTtxt$ = VTtxt$ & "_"
+            ElseIf Mid$(Mascara$, i%, 1) <> "." Then
+                VTtxt$ = VTtxt$ & "-"
+            Else
+                VTtxt$ = VTtxt$ & "."
+            End If
+        Next i%
+    Else
+        j% = 1
+        For i% = 1 To Len(Mascara$)
+            If Mid$(Mascara$, i%, 1) = "#" Then
+                VTDigito = Mid$(Variable$, j%, 1)
+                If VTDigito <> "" Then
+                    VTtxt$ = VTtxt$ & VTDigito
+                Else
+                    VTtxt$ = VTtxt$ & "_"
+                End If
+                j% = j% + 1
+            ElseIf Mid$(Mascara$, i%, 1) <> "." Then
+                VTtxt$ = VTtxt$ & "-"
+            Else
+                VTtxt$ = VTtxt$ & "."
+            End If
+        Next i%
+    End If
+    FMMascara$ = VTtxt$
+End Function
+
+'FIXIT: Declare 'FMVAlidaTipoDato' with an early-bound data type                           FixIT90210ae-R1672-R1B8ZE
+Function FMVAlidaTipoDato(TipoDato As String, valor As Integer) As Integer
+    FMVAlidaTipoDato = valor%
+    Select Case TipoDato$
+    Case "N"
+        If (valor% <> 8) And ((valor% < 48) Or (valor% > 57)) Then
+            FMVAlidaTipoDato = 0
+        End If
+    Case "A"
+        If (valor% <> 8) And ((valor% < 65) Or (valor% > 90)) And (valor% <> 241) And (valor% <> 209) And ((valor% < 97) Or (valor% > 122)) And (valor% <> 32) Then
+            FMVAlidaTipoDato = 0
+        Else
+            FMVAlidaTipoDato = Asc(UCase$(Chr$(valor%)))
+        End If
+    Case "S"
+        If (valor% = 32) Then
+            FMVAlidaTipoDato = 0
+        Else
+            FMVAlidaTipoDato = Asc(UCase$(Chr$(valor%)))
+        End If
+    Case "B"
+        FMVAlidaTipoDato = Asc(UCase$(Chr$(valor%)))
+    Case "M"
+        If (valor% <> 8) And (valor% <> 46) And ((valor% < 48) Or (valor% > 57)) Then
+            FMVAlidaTipoDato = 0
+        End If
+    Case "U"
+        If (valor% <> 8) And (valor% <> 32) And (valor% <> 241) And ((valor% < 48) Or (valor% > 57)) And ((valor% < 96) Or (valor% > 123)) And ((valor% < 65) Or (valor% > 90)) And (valor% <> 209) Then
+            FMVAlidaTipoDato = 0
+        Else
+            FMVAlidaTipoDato = Asc(UCase$(Chr$(valor%)))
+        End If
+    End Select
+End Function
+
+Function FMVerificar_WinIni() As Integer
+'*************************************************************
+' Objetivo: Función que permite actualizar la configuración
+'           de formatos numéricos del Panel de Control de
+'           Windows según estándares uilizados en el
+'           módulo COBIS - Cuentas Corrientes
+' Output  : Si retorna True, no se deberá permitir la
+'           ejecución de COBIS-TADMIN. Si retorna False,
+'           no se deberá permitir la ejecución del módulo
+'*************************************************************
+'                       MODIFICACIONES
+' FECHA          AUTOR           RAZON
+' 03-Jul-96      M. del Pozo     Emision Inicial
+' 11-Jul-96      S. Garcés       Cambiar entrada de fecha
+'*************************************************************
+
+Dim VTProblema As Integer
+Dim VTFormatoFecha As String
+Dim VTFechaPref As String
+Dim VTiDate As String
+Dim VTMillar As String
+Dim VTDecimal As String
+Dim VTRetval As String
+Dim VTMsg As String
+
+    VTProblema% = False
+    FMVerificar_WinIni = False
+    'verificar formato fecha de las pref.
+    Select Case VGFormatoFecha$
+        Case "mm/dd/yyyy"
+            VTFechaPref$ = "MM/dd/yyyy"
+            VTiDate$ = "0"
+        Case "dd/mm/yyyy"
+            VTFechaPref$ = "dd/MM/yyyy"
+            VTiDate$ = "1"
+        Case Else
+            VTFechaPref$ = "yyyy/MM/dd"
+            VTiDate$ = "2"
+    End Select
+
+    'Comprobar configuración de millares
+    VTMillar$ = String$(255, 32)
+    VTDecimal$ = String$(255, 32)
+    VTFormatoFecha$ = String$(255, 32)
+
+    'Leer archivo win.ini, entrada de miles
+    
+    VTRetval$ = FMGetSeparadorMiles()
+    If VTRetval$ = "" Then
+        VTMsg$ = "Archivo win.ini o entrada sThousand no encontrados."
+        MsgBox VTMsg$, 16, "ERROR - FMVerificar_WinIni"
+        Exit Function
+    End If
+    VTMillar$ = VTRetval
+    If VTMillar$ <> "," Then VTProblema% = True
+    
+    'Leer archivo win.ini, entrada de decimales
+    VTRetval = FMGetSeparadorDecimales()
+    If VTRetval = "" Then
+        VTMsg$ = "Archivo win.ini o entrada sDecimal no encontrados."
+        MsgBox VTMsg$, 16, "ERROR - FMVerificar_WinIni"
+        Exit Function
+    End If
+
+    VTDecimal$ = VTRetval$
+    If VTDecimal$ <> "." Then VTProblema% = True
+   
+    'Leer archivo win.ini, entrada de fecha
+    VTRetval$ = FMGetFormatoFecha()
+    If VTRetval$ = "" Then
+        VTMsg$ = "Archivo win.ini o entrada sShortDate no encontrados."
+        MsgBox VTMsg$, 16, "ERROR - FMVerificar_WinIni"
+        Exit Function
+    End If
+    
+    VTFormatoFecha$ = VTRetval$
+    If VTFormatoFecha$ <> VTFechaPref$ Then VTProblema% = True
+    
+    'Si hay error en entradas del win.ini
+    If VTProblema% Then
+        VTProblema% = False
+        VTMsg$ = "La configuración para números y fechas del Panel de Control de Windows es "
+        VTMsg$ = VTMsg$ + "incompatible con las preferencias de COBIS - TERMINAL ADMINISTRATIVA." + Chr$(13)
+        VTMsg$ = VTMsg$ + Chr$(13) + "La configuración internacional del Panel de Control "
+        VTMsg$ = VTMsg$ + "debe ser modificada." + Chr$(13)
+        VTMsg$ = VTMsg$ + Chr$(13) + "Separador de miles : , "
+        VTMsg$ = VTMsg$ + Chr$(13) + "Separador de decimales : . "
+        VTMsg$ = VTMsg$ + Chr$(13) + "Formato de fecha : " + VTFechaPref$
+        MsgBox VTMsg$, 48, "ERROR - Cuentas Corrientes y Cuentas de Ahorros"
+        VTProblema% = True
+    End If
+    FMVerificar_WinIni = Not VTProblema%
+End Function
+Function FMCuenta_Cobis(par_cta As String) As Boolean
+'****************************************************************
+' Objetivo: '    Regresa verdadero si la cuenta corresponde a una cuenta COBIS,
+'                valida el prefijo y si esta
+'                Entre los prefijos de cuentas COBIS regresa verdadero.
+' Input   :      par_cta   cuenta a validar
+'****************************************************************
+    Dim i As Integer
+    Dim VTreturn As Boolean
+    For i% = 1 To VGMaxPrefijos
+'FIXIT: Replace 'Mid' function with 'Mid$' function                                        FixIT90210ae-R9757-R1B8ZE
+        If VGPrefijo_cta(2, i%) = Mid(par_cta, 3, Len(VGPrefijo_cta(2, i%))) Then
+             VTreturn = True
+             FMCuenta_Cobis = True
+             Exit Function
+        End If
+    Next i%
+    FMCuenta_Cobis = False
+End Function
+Sub PMCatalogo(Tipo As String, Tabla As String, ObjetoA As Object, ObjetoB As Object)
+    Select Case Tipo$
+        Case "A"
+            VGPaso% = True
+            PMPasoValores sqlconn&, "@i_tipo", 0, SQLCHAR, "A"
+            PMPasoValores sqlconn&, "@i_tabla", 0, SQLCHAR, Tabla$
+            PMPasoValores sqlconn&, "@i_filial", 0, SQLINT1, VGFilial$
+            PMPasoValores sqlconn&, "@i_oficina", 0, SQLINT2, VGOficina$
+            If FMTransmitirRPC(sqlconn&, ServerName$, "cobis", "sp_hp_catalogo", True, " Ok... Consulta de parámetros") Then
+                PMMapeaListaH sqlconn&, FCatalogo!lstCatalogo, False
+                PMChequea sqlconn&
+                FCatalogo.Show 1
+                ObjetoA.Text = VGACatalogo.Codigo$
+'FIXIT: 'Caption' is not a property of the generic 'Control' object in Visual Basic .NET. To access 'Caption' declare 'ObjetoB' using its actual type instead of 'Control'     FixIT90210ae-R1460-RCFE85
+                ObjetoB.Caption = VGACatalogo.Descripcion$
+            End If
+        Case "V"
+            PMPasoValores sqlconn&, "@i_tipo", 0, SQLCHAR, "V"
+            PMPasoValores sqlconn&, "@i_tabla", 0, SQLCHAR, Tabla$
+            PMPasoValores sqlconn&, "@i_codigo", 0, SQLVARCHAR, (ObjetoA.Text)
+            PMPasoValores sqlconn&, "@i_filial", 0, SQLINT1, VGFilial$
+            PMPasoValores sqlconn&, "@i_oficina", 0, SQLINT2, VGOficina$
+            If FMTransmitirRPC(sqlconn&, ServerName$, "cobis", "sp_hp_catalogo", True, " Ok... Consulta del parámetro " & "[" & ObjetoA.Text & "]") Then
+                PMMapeaObjeto sqlconn&, ObjetoB
+                PMChequea sqlconn&
+            Else
+                ObjetoA.Text = ""
+'FIXIT: 'Caption' is not a property of the generic 'Control' object in Visual Basic .NET. To access 'Caption' declare 'ObjetoB' using its actual type instead of 'Control'     FixIT90210ae-R1460-RCFE85
+                ObjetoB.Caption = ""
+                If ObjetoA.Enabled <> False Then
+'FIXIT: 'SetFocus' is not a property of the generic 'Control' object in Visual Basic .NET. To access 'SetFocus' declare 'ObjetoA' using its actual type instead of 'Control'     FixIT90210ae-R1460-RCFE85
+                    If ObjetoA.Enabled = True Then ObjetoA.SetFocus
+                End If
+            End If
+        Case "D"
+            PMPasoValores sqlconn&, "@i_tipo", 0, SQLCHAR, "D"
+            PMPasoValores sqlconn&, "@i_tabla", 0, SQLCHAR, Tabla$
+            PMPasoValores sqlconn&, "@i_filial", 0, SQLINT1, VGFilial$
+            PMPasoValores sqlconn&, "@i_oficina", 0, SQLINT2, VGOficina$
+            If FMTransmitirRPC(sqlconn&, ServerName$, "cobis", "sp_hp_catalogo", False, "") Then
+                PMMapeaObjetoAB sqlconn&, ObjetoA, ObjetoB
+                PMChequea sqlconn&
+            Else
+                ObjetoA.Text = ""
+'FIXIT: 'Caption' is not a property of the generic 'Control' object in Visual Basic .NET. To access 'Caption' declare 'ObjetoB' using its actual type instead of 'Control'     FixIT90210ae-R1460-RCFE85
+                ObjetoB.Caption = ""
+            End If
+    End Select
+End Sub
+
+Sub PMLimpiaGrid(grdGrid As Object)
+Dim i As Integer
+Dim j As Integer
+
+'FIXIT: 'Rows' is not a property of the generic 'Control' object in Visual Basic .NET. To access 'Rows' declare 'grdGrid' using its actual type instead of 'Control'     FixIT90210ae-R1460-RCFE85
+    grdGrid.Rows = 2
+'FIXIT: 'Cols' is not a property of the generic 'Control' object in Visual Basic .NET. To access 'Cols' declare 'grdGrid' using its actual type instead of 'Control'     FixIT90210ae-R1460-RCFE85
+    grdGrid.Cols = 2
+    For i% = 0 To 1
+'FIXIT: 'Col' is not a property of the generic 'Control' object in Visual Basic .NET. To access 'Col' declare 'grdGrid' using its actual type instead of 'Control'     FixIT90210ae-R1460-RCFE85
+        grdGrid.col = i%
+        For j% = 0 To 1
+'FIXIT: 'Row' is not a property of the generic 'Control' object in Visual Basic .NET. To access 'Row' declare 'grdGrid' using its actual type instead of 'Control'     FixIT90210ae-R1460-RCFE85
+            grdGrid.Row = j%
+            grdGrid.Text = ""
+        Next j%
+    Next i%
+End Sub
+
+Sub PMLogOff()
+Dim VTTemporal As String
+    ' Esta rutina cierra la conexión
+    If sqlconn& <> 0 Then
+       '-------------------------------------------
+       ' Control de tiempo para timeout de conexion
+       Set FPrincipal.VGHook = Nothing
+       '-------------------------------------------
+       
+       PMPasoValores sqlconn&, "@t_trn", 0, SQLVARCHAR, "1502"
+       PMPasoValores sqlconn&, "@i_server", 0, SQLVARCHAR, ServerNameLocal$
+       PMPasoValores sqlconn&, "@i_login", 0, SQLVARCHAR, VGLogin$
+       If FMTransmitirRPC(sqlconn&, ServerName$, "master", "sp_endlogin", False, "") Then
+          PMMapeaVariable sqlconn&, VTTemporal$
+          PMChequea sqlconn&
+          FPrincipal!lblEtiqueta.Visible = False
+          FPrincipal!cmbMoneda.Clear
+          FPrincipal!cmbMoneda.Visible = False
+          Escribir_Ini ARCHIVOINI
+          SqlClose sqlconn&
+          sqlconn& = 0
+          FPrincipal!mnuLogon.Enabled = True
+          FPrincipal!mnuLogoff.Enabled = False
+          FPrincipal!mnuPassword.Enabled = False
+          FPrincipal!mnuAhorros.Enabled = False
+          FPrincipal!mnuReCamara.Enabled = False
+          FPrincipal!mnuContenido.Enabled = False
+          FPrincipal!mnuBloquear.Enabled = False
+          FPrincipal!mnuadmin.Enabled = False
+          
+          MsgBox "OK... Desconexión del Servidor: " + ServerNameLocal$, 0, "Mensaje del Servidor"
+       Else
+          SqlClose sqlconn&
+          MsgBox "Ha ocurrido un error en la desconexión con el servidor", 0, "Mensaje del Servidor"
+          FPrincipal!lblEtiqueta.Visible = False
+          FPrincipal!cmbMoneda.Visible = False
+          Escribir_Ini ARCHIVOINI
+          sqlconn& = 0
+          FPrincipal!mnuLogon.Enabled = True
+          FPrincipal!mnuLogoff.Enabled = False
+          FPrincipal!mnuPassword.Enabled = False
+          FPrincipal!mnuAhorros.Enabled = False
+          FPrincipal!mnuReCamara.Enabled = False
+          FPrincipal!mnuContenido.Enabled = False
+          FPrincipal!mnuBloquear.Enabled = False
+          FPrincipal!mnuadmin.Enabled = False
+       End If
+
+    End If
+    
+    'Reinicializar Busqueda de Clientes
+        If Not (VGFBusCliente Is Nothing) Then
+            Set VGFBusCliente = Nothing
+        End If
+    FPrincipal.Caption = App.Title
+End Sub
+'FIXIT: Declare 'columna' with an early-bound data type                                    FixIT90210ae-R1672-R1B8ZE
+Sub PMOrdenaGrid(grdGrid As Object, TipoDato As String, columna As Integer, Orden As String)
+Dim VTFilas  As Integer
+Dim VTColumnas As Integer
+Dim i As Integer
+Dim j As Integer
+Dim ValorI As Integer
+Dim ValorJ As Integer
+Dim valor As Integer
+
+'FIXIT: 'Rows' is not a property of the generic 'Control' object in Visual Basic .NET. To access 'Rows' declare 'grdGrid' using its actual type instead of 'Control'     FixIT90210ae-R1460-RCFE85
+VTFilas = grdGrid.Rows
+'FIXIT: 'Cols' is not a property of the generic 'Control' object in Visual Basic .NET. To access 'Cols' declare 'grdGrid' using its actual type instead of 'Control'     FixIT90210ae-R1460-RCFE85
+VTColumnas = grdGrid.Cols
+ReDim VTArray(VTFilas, VTColumnas)
+ReDim VTVector(VTColumnas)
+    
+    Screen.MousePointer = 11
+    For i = 1 To VTFilas - 1
+'FIXIT: 'Row' is not a property of the generic 'Control' object in Visual Basic .NET. To access 'Row' declare 'grdGrid' using its actual type instead of 'Control'     FixIT90210ae-R1460-RCFE85
+        grdGrid.Row = i
+
+        For j = 1 To VTColumnas - 1
+'FIXIT: 'Col' is not a property of the generic 'Control' object in Visual Basic .NET. To access 'Col' declare 'grdGrid' using its actual type instead of 'Control'     FixIT90210ae-R1460-RCFE85
+            grdGrid.col = j
+            VTArray(i, j) = grdGrid.Text
+        Next j
+    Next i
+
+    i = 1
+    j = 2
+    
+    While i < VTFilas
+        Select Case TipoDato
+            Case "N"
+                ValorI = Val(VTArray(i, columna))
+            Case "A"
+                ValorI = VTArray(i, columna)
+            Case "M"
+                ValorI = CCur(VTArray(i, columna))
+            Case "D"
+                ValorI = CVar(VTArray(i, columna))
+        End Select
+        
+        While j < VTFilas
+            Select Case TipoDato
+                Case "N"
+                    ValorJ = Val(VTArray(j, columna))
+                Case "A"
+                    ValorJ = VTArray(j, columna)
+                Case "M"
+                    ValorJ = CCur(VTArray(j, columna))
+                Case "D"
+                    ValorJ = CVar(VTArray(j, columna))
+            End Select
+            
+            If Orden = "D" Then
+                valor = ValorJ
+                ValorJ = ValorI
+                ValorI = valor
+            End If
+            
+            If ValorI > ValorJ Then
+                For X = 1 To VTColumnas - 1
+                    VTVector(X) = VTArray(j, X)
+                Next X
+
+                For X = 1 To VTColumnas - 1
+                    VTArray(j, X) = VTArray(i, X)
+                Next X
+            
+                For X = 1 To VTColumnas - 1
+                    VTArray(i, X) = VTVector(X)
+                Next X
+
+                Select Case TipoDato
+                    Case "N"
+                        ValorI = Val(VTArray(i, columna))
+                    Case "A"
+                        ValorI = VTArray(i, columna)
+                    Case "M"
+                        ValorI = CCur(VTArray(i, columna))
+                    Case "D"
+                        ValorI = CVar(VTArray(i, columna))
+                End Select
+            End If
+
+            j = j + 1
+        Wend
+
+        i = i + 1
+        j = i + 1
+    Wend
+
+    For i = 1 To VTFilas - 1
+'FIXIT: 'Row' is not a property of the generic 'Control' object in Visual Basic .NET. To access 'Row' declare 'grdGrid' using its actual type instead of 'Control'     FixIT90210ae-R1460-RCFE85
+        grdGrid.Row = i
+
+        For j = 1 To VTColumnas - 1
+'FIXIT: 'Col' is not a property of the generic 'Control' object in Visual Basic .NET. To access 'Col' declare 'grdGrid' using its actual type instead of 'Control'     FixIT90210ae-R1460-RCFE85
+            grdGrid.col = j
+            grdGrid.Text = VTArray(i, j)
+        Next j
+    Next i
+    
+    Screen.MousePointer = 0
+End Sub
+
+Sub PLAjustaGrid(Celdas As Grid, Ventana As Object)
+Dim i As Integer
+Dim j As Integer
+Dim ancho As Integer
+Dim VTWidth As Integer
+    With Celdas
+        For i% = 1 To .Cols - 1
+            ancho% = 0
+            For j% = 0 To .Rows - 1
+                .Row = j%: .col = i%
+'FIXIT: 'TextWidth(Celdas.Text' is not a property of the generic 'Form' object in Visual Basic .NET. To access 'TextWidth(Celdas.Text' declare 'Ventana' using its actual type instead of 'Form'     FixIT90210ae-R1460-RCFE85
+                VTWidth% = Ventana.TextWidth(.Text)
+                If VTWidth% > ancho% Then ancho% = VTWidth%
+            Next j%
+            .ColWidth(i%) = IIf(ancho% <= 0, 100, ancho% - 0.15 * ancho%)
+        Next i%
+    End With
+End Sub
+Sub PMAnchoColGrid(lista1 As Object, col As Integer)
+'****************************************************************
+' Objetivo: Procedimiento que permite ajustar el ancho de
+'           la columna de una grilla al máximo numero de
+'           caracteres que tenga cada fila de la misma
+' Input   : La grid, el valor minimo que tomará si no existieran
+'           datos (en caracteres) y la columna a ajustar
+'****************************************************************
+'                       MODIFICACIONES
+' FECHA          AUTOR           RAZON
+' 09-Sep-99      R. Amarís       Emision Inicial
+'****************************************************************
+'FIXIT: 'Col' is not a property of the generic 'Control' object in Visual Basic .NET. To access 'Col' declare 'lista1' using its actual type instead of 'Control'     FixIT90210ae-R1460-RCFE85
+Dim VTColmax As Integer
+Dim i As Integer
+
+    lista1.col = col
+    VTColmax = 5
+'FIXIT: 'Rows' is not a property of the generic 'Control' object in Visual Basic .NET. To access 'Rows' declare 'lista1' using its actual type instead of 'Control'     FixIT90210ae-R1460-RCFE85
+    For i% = 0 To lista1.Rows - 1
+'FIXIT: 'Row' is not a property of the generic 'Control' object in Visual Basic .NET. To access 'Row' declare 'lista1' using its actual type instead of 'Control'     FixIT90210ae-R1460-RCFE85
+        lista1.Row = i%
+'FIXIT: Replace 'RTrim' function with 'RTrim$' function                                    FixIT90210ae-R9757-R1B8ZE
+        If Len(RTrim(lista1.Text)) > VTColmax Then
+            VTColmax = Len(lista1.Text)
+        End If
+    Next i%
+    VTColmax = VTColmax * 110
+'FIXIT: 'ColWidth(Col' is not a property of the generic 'Control' object in Visual Basic .NET. To access 'ColWidth(Col' declare 'lista1' using its actual type instead of 'Control'     FixIT90210ae-R1460-RCFE85
+    lista1.ColWidth(col) = VTColmax
+End Sub
+Sub PMAjustaColsGrid(grdGrid As Object)
+'****************************************************************
+' Objetivo: Procedimiento que permite ajustar el ancho de
+'           todas las columnas de una grilla al máximo numero de
+'           caracteres que tenga cada fila de la misma
+' Input   : El grid a ajustar
+'****************************************************************
+'                       MODIFICACIONES
+' FECHA          AUTOR           RAZON
+' 09-Jul-10      J. Loyo      Emision Inicial
+'****************************************************************
+
+Dim i As Integer
+Dim j As Integer
+
+Dim VTColmax As Integer
+
+'FIXIT: 'MaxCols' is not a property of the generic 'Control' object in Visual Basic .NET. To access 'MaxCols' declare 'grdGrid' using its actual type instead of 'Control'     FixIT90210ae-R1460-RCFE85
+    For i% = 0 To grdGrid.MaxCols - 1
+'FIXIT: 'Col' is not a property of the generic 'Control' object in Visual Basic .NET. To access 'Col' declare 'grdGrid' using its actual type instead of 'Control'     FixIT90210ae-R1460-RCFE85
+        grdGrid.col = i%
+        VTColmax = 4
+'FIXIT: 'MaxRows' is not a property of the generic 'Control' object in Visual Basic .NET. To access 'MaxRows' declare 'grdGrid' using its actual type instead of 'Control'     FixIT90210ae-R1460-RCFE85
+        For j% = 0 To grdGrid.MaxRows - 1
+'FIXIT: 'Row' is not a property of the generic 'Control' object in Visual Basic .NET. To access 'Row' declare 'grdGrid' using its actual type instead of 'Control'     FixIT90210ae-R1460-RCFE85
+             grdGrid.Row = j%
+'FIXIT: Replace 'RTrim' function with 'RTrim$' function                                    FixIT90210ae-R9757-R1B8ZE
+             If Len(RTrim(grdGrid.Text)) > VTColmax Then
+                VTColmax = Len(grdGrid.Text)
+             End If
+        Next j%
+'FIXIT: 'ColWidth(i%' is not a property of the generic 'Control' object in Visual Basic .NET. To access 'ColWidth(i%' declare 'grdGrid' using its actual type instead of 'Control'     FixIT90210ae-R1460-RCFE85
+    grdGrid.ColWidth(i%) = VTColmax
+    Next i%
+    
+End Sub
+
+Sub PMCargar_FechaSP(Formato As String)
+Dim i As Integer
+
+    For i% = 1 To UBound(formato_fecha)
+        If formato_fecha(i%, 1) = Formato$ Then
+           VGFecha_SP$ = formato_fecha(i%, 2)
+           VGFecha_Pref$ = Formato$
+        End If
+    Next
+End Sub
+
+'FIXIT: Declare 'FMCabeceraReporte' with an early-bound data type                          FixIT90210ae-R1672-R1B8ZE
+Sub FMCabeceraReporte(NomBanco As String, FechaEmision As String, _
+                           TituloReporte As String, HoraEmision As String, _
+                           ProgFuente As String, FechaSistema As String, _
+                           NumPagina As String)
+'****************************************************************
+' PROPOSITO: Procedimiento que permite personalizar
+'            la información relacionada con la cabecera de un
+'            reporte
+' INPUT    : Nombre del Banco, Fecha y Hora de Emisión,
+'            Título del Reporte, Programa Fuente y Fecha del
+'            Sistema.
+' OUTPUT   : Ninguna
+'****************************************************************
+'                       MODIFICACIONES
+' FECHA          AUTOR           RAZON
+' 20-Ene-03      J. Hidalgo      Emision Inicial
+'                                Bco. Agromercantil
+'****************************************************************
+
+        Printer.FontName = "Courier New"
+        Printer.FontBold = True
+        Printer.CurrentX = 0
+        Printer.CurrentY = 0
+        Printer.FontSize = 10
+        Printer.Print ""
+        Printer.Print ""
+        Printer.Print ""
+        Printer.Print ""
+        Printer.Print ""
+        Printer.FontBold = True
+        Printer.Print Tab(5); NomBanco; Tab(60); "Fecha de Emisión : "; Format(FechaEmision, "dd/mm/yyyy")
+        Printer.Print Tab(60); "Hora de Emisión : "; HoraEmision
+        Printer.Print ""
+        Printer.Print ""
+        Printer.Print Tab(5); TituloReporte '; Tab(100); "Hora de Emisión : "; HoraEmision
+        Printer.Print ""
+        Printer.Print ""
+        Printer.Print Tab(5); "Datos Al: "; Format$(FechaSistema, "dd/mm/yyyy"); Tab(60) '; "Pág. "; NumPagina
+        Printer.Print ""
+        Printer.Print ""
+        Printer.Print "  " & String$(94, "_")
+        Printer.Print ""
+        Printer.FontBold = False
+End Sub
+
+'FIXIT: Declare 'FMCabeceraReporteSob' with an early-bound data type                       FixIT90210ae-R1672-R1B8ZE
+Sub FMCabeceraReporteSob(NomBanco As String, FechaEmision As String, _
+                              TituloReporte As String, HoraEmision As String, _
+                              ProgFuente As String, FechaSistema As String, _
+                              NumPagina As String)
+'****************************************************************
+' PROPOSITO: Procedimiento que permite personalizar
+'            la información relacionada con la cabecera de un
+'            reporte
+' INPUT    : Nombre del Banco, Fecha y Hora de Emisión,
+'            Título del Reporte, Programa Fuente y Fecha del
+'            Sistema.
+' OUTPUT   : Ninguna
+'****************************************************************
+'                       MODIFICACIONES
+' FECHA          AUTOR           RAZON
+' 15-Sep-05      J. Suárez       Emision Inicial
+'                                Bco. Global Bank
+'****************************************************************
+
+        Printer.FontName = "Courier New"
+        Printer.FontBold = True
+        Printer.CurrentX = 0
+        Printer.CurrentY = 0
+        Printer.FontSize = 7
+        Printer.Print ""
+        Printer.Print ""
+        Printer.FontBold = True
+        Printer.Print Tab(5); NomBanco; Tab(125); "Fecha de Emisión : "; Format(FechaEmision, "dd/mm/yyyy")
+        Printer.Print Tab(125); "Hora de Emisión : "; HoraEmision
+        Printer.Print ""
+        Printer.Print ""
+        Printer.Print Tab(5); TituloReporte '; Tab(100); "Hora de Emisión : "; HoraEmision
+        Printer.Print ""
+        Printer.Print ""
+'       Printer.Print ProgFuente; Tab(20); "Datos Al: "; Format$(FechaSistema, "dd/mm/yyyy"); Tab(55); "Pág. "; NumPagina
+        Printer.Print Tab(5); "Datos Al: "; Format$(FechaSistema, "dd/mm/yyyy"); Tab(147); "Pág. "; NumPagina
+        Printer.Print ""
+        Printer.Print ""
+        Printer.Print "  " & String$(150, "_")
+        Printer.Print ""
+        Printer.FontBold = False
+End Sub
+Public Sub PMGetDefault(parOficina As String, parTabla As String, parVal As String, parDes As String)
+'****************************************************************
+' PROPOSITO: Procedimiento que permite obtener el valor por defecto
+'            de un catalogo
+' INPUT    : Oficina, Tabla
+' OUTPUT   : Valor del default, Descripción del default
+'****************************************************************
+'                       MODIFICACIONES
+' FECHA          AUTOR           RAZON
+' 15-May-03      ALF             Emision Inicial
+'****************************************************************
+Dim VTArreglo() As String
+Dim VTVal As String
+Dim VTDes As String
+Dim VTR1 As Integer
+
+On Error GoTo Err
+
+     VTVal = ""
+     VTDes = ""
+     PMPasoValores sqlconn&, "@i_tipo", 0, SQLCHAR&, "D"
+     PMPasoValores sqlconn&, "@i_tabla", 0, SQLVARCHAR&, parTabla
+     PMPasoValores sqlconn&, "@i_oficina", 0, SQLINT2&, parOficina
+     ReDim VTArreglo(10) As String
+     If FMTransmitirRPC(sqlconn&, ServerName$, "cobis", "sp_hp_catalogo", False, "") Then
+        VTR1% = FMMapeaArreglo(sqlconn&, VTArreglo())
+        PMChequea sqlconn&
+        VTVal = VTArreglo(1)
+        VTDes = VTArreglo(2)
+     End If
+Err:
+    parVal = VTVal
+    parDes = VTDes
+End Sub
+
+Public Sub PMBorrarGrid(parSSControl As Object)
+'*************************************************************
+'PROPOSITO: Borra todo el contenido de un grid especificado
+' INPUT    :  parSSControl   'Grid seleccionado
+' OUTPUT   :  Ninguno
+'*************************************************************
+'                       MODIFICACIONES
+' FECHA          AUTOR           RAZON
+' 16-Oct-98      S.Garcés        Emision Inicial
+'*************************************************************
+
+'FIXIT: 'MaxRows' is not a property of the generic 'Control' object in Visual Basic .NET. To access 'MaxRows' declare 'parSSControl' using its actual type instead of 'Control'     FixIT90210ae-R1460-RCFE85
+'FIXIT: 'MaxRows' is not a property of the generic 'Control' object in Visual Basic .NET. To access 'MaxRows' declare 'parSSControl' using its actual type instead of 'Control'     FixIT90210ae-R1460-RCFE85
+    If parSSControl.MaxRows > 0 Then
+        'Seleccionar bloque de celdas
+'FIXIT: 'Row' is not a property of the generic 'Control' object in Visual Basic .NET. To access 'Row' declare 'parSSControl' using its actual type instead of 'Control'     FixIT90210ae-R1460-RCFE85
+'FIXIT: 'Row' is not a property of the generic 'Control' object in Visual Basic .NET. To access 'Row' declare 'parSSControl' using its actual type instead of 'Control'     FixIT90210ae-R1460-RCFE85
+        parSSControl.Row = 1
+'FIXIT: 'Col' is not a property of the generic 'Control' object in Visual Basic .NET. To access 'Col' declare 'parSSControl' using its actual type instead of 'Control'     FixIT90210ae-R1460-RCFE85
+'FIXIT: 'Col' is not a property of the generic 'Control' object in Visual Basic .NET. To access 'Col' declare 'parSSControl' using its actual type instead of 'Control'     FixIT90210ae-R1460-RCFE85
+        parSSControl.col = 0
+'FIXIT: 'MaxRows' is not a property of the generic 'Control' object in Visual Basic .NET. To access 'MaxRows' declare 'parSSControl' using its actual type instead of 'Control'     FixIT90210ae-R1460-RCFE85
+'FIXIT: 'Row2' is not a property of the generic 'Control' object in Visual Basic .NET. To access 'Row2' declare 'parSSControl' using its actual type instead of 'Control'     FixIT90210ae-R1460-RCFE85
+'FIXIT: 'MaxRows' is not a property of the generic 'Control' object in Visual Basic .NET. To access 'MaxRows' declare 'parSSControl' using its actual type instead of 'Control'     FixIT90210ae-R1460-RCFE85
+'FIXIT: 'Row2' is not a property of the generic 'Control' object in Visual Basic .NET. To access 'Row2' declare 'parSSControl' using its actual type instead of 'Control'     FixIT90210ae-R1460-RCFE85
+        parSSControl.Row2 = parSSControl.MaxRows
+'FIXIT: 'MaxCols' is not a property of the generic 'Control' object in Visual Basic .NET. To access 'MaxCols' declare 'parSSControl' using its actual type instead of 'Control'     FixIT90210ae-R1460-RCFE85
+'FIXIT: 'Col2' is not a property of the generic 'Control' object in Visual Basic .NET. To access 'Col2' declare 'parSSControl' using its actual type instead of 'Control'     FixIT90210ae-R1460-RCFE85
+'FIXIT: 'MaxCols' is not a property of the generic 'Control' object in Visual Basic .NET. To access 'MaxCols' declare 'parSSControl' using its actual type instead of 'Control'     FixIT90210ae-R1460-RCFE85
+'FIXIT: 'Col2' is not a property of the generic 'Control' object in Visual Basic .NET. To access 'Col2' declare 'parSSControl' using its actual type instead of 'Control'     FixIT90210ae-R1460-RCFE85
+        parSSControl.Col2 = parSSControl.MaxCols
+'FIXIT: 'BlockMode' is not a property of the generic 'Control' object in Visual Basic .NET. To access 'BlockMode' declare 'parSSControl' using its actual type instead of 'Control'     FixIT90210ae-R1460-RCFE85
+'FIXIT: 'BlockMode' is not a property of the generic 'Control' object in Visual Basic .NET. To access 'BlockMode' declare 'parSSControl' using its actual type instead of 'Control'     FixIT90210ae-R1460-RCFE85
+        parSSControl.BlockMode = True
+        'Borrar datos del grid
+'FIXIT: 'Action' is not a property of the generic 'Control' object in Visual Basic .NET. To access 'Action' declare 'parSSControl' using its actual type instead of 'Control'     FixIT90210ae-R1460-RCFE85
+'FIXIT: 'Action' is not a property of the generic 'Control' object in Visual Basic .NET. To access 'Action' declare 'parSSControl' using its actual type instead of 'Control'     FixIT90210ae-R1460-RCFE85
+        parSSControl.Action = 12
+        'Deshabilitar bloque
+'FIXIT: 'BlockMode' is not a property of the generic 'Control' object in Visual Basic .NET. To access 'BlockMode' declare 'parSSControl' using its actual type instead of 'Control'     FixIT90210ae-R1460-RCFE85
+'FIXIT: 'BlockMode' is not a property of the generic 'Control' object in Visual Basic .NET. To access 'BlockMode' declare 'parSSControl' using its actual type instead of 'Control'     FixIT90210ae-R1460-RCFE85
+        parSSControl.BlockMode = False
+        
+        'Eliminar filas existentes
+'FIXIT: 'MaxRows' is not a property of the generic 'Control' object in Visual Basic .NET. To access 'MaxRows' declare 'parSSControl' using its actual type instead of 'Control'     FixIT90210ae-R1460-RCFE85
+'FIXIT: 'MaxRows' is not a property of the generic 'Control' object in Visual Basic .NET. To access 'MaxRows' declare 'parSSControl' using its actual type instead of 'Control'     FixIT90210ae-R1460-RCFE85
+        parSSControl.MaxRows = 0
+    End If
+End Sub
+Public Sub PMOrdenarGrid(Celdas As Grid, columna As Integer)
+Dim i As Integer
+Dim j As Integer
+Dim VLPosGrid As Integer
+Dim VLValorMin As String
+Dim VLPos As Integer
+Dim VLBorra As Boolean
+Dim VLValorInter As String
+Dim VLClip As String
+    With Celdas
+        i% = .Rows - 1
+        .col = columna
+        VLBorra = False
+        VLPosGrid% = 1
+        While i% >= 1
+            j% = i% - 1
+            .Row = i%
+'FIXIT: Replace 'LTrim' function with 'LTrim$' function                                    FixIT90210ae-R9757-R1B8ZE
+'FIXIT: Replace 'String' function with 'String$' function                                  FixIT90210ae-R9757-R1B8ZE
+'FIXIT: Replace 'Right' function with 'Right$' function                                    FixIT90210ae-R9757-R1B8ZE
+            VLValorMin$ = Right(String(30, "0") + LTrim(.Text), 30)
+            VLPos% = i%
+            While j% >= 1
+                .Row = j%
+'FIXIT: Replace 'LTrim' function with 'LTrim$' function                                    FixIT90210ae-R9757-R1B8ZE
+'FIXIT: Replace 'String' function with 'String$' function                                  FixIT90210ae-R9757-R1B8ZE
+'FIXIT: Replace 'Right' function with 'Right$' function                                    FixIT90210ae-R9757-R1B8ZE
+                VLValorInter$ = Right(String(30, "0") + LTrim(.Text), 30)
+                If VLValorInter$ < VLValorMin$ Then
+'FIXIT: Replace 'LTrim' function with 'LTrim$' function                                    FixIT90210ae-R9757-R1B8ZE
+'FIXIT: Replace 'String' function with 'String$' function                                  FixIT90210ae-R9757-R1B8ZE
+'FIXIT: Replace 'Right' function with 'Right$' function                                    FixIT90210ae-R9757-R1B8ZE
+                    VLValorMin$ = Right(String(30, "0") + LTrim(.Text), 30)
+                    VLPos% = j%
+                End If
+                j% = j% - 1
+            Wend
+            .SelStartCol = 1
+            .SelEndCol = .Cols - 1
+            .SelStartRow = VLPos%
+            .SelEndRow = VLPos%
+            VLClip$ = .Clip
+            
+            
+            .RemoveItem VLPos%
+            .AddItem Str$(VLPosGrid%) & Chr(9) & VLClip$
+            
+            i% = i% - 1
+            VLPosGrid% = VLPosGrid% + 1
+            
+        Wend
+    End With
+End Sub
+
+Public Function FMSeleccionarPrinter() As Boolean
+'*************************************************************
+'                   PROPOSITO
+' Permitir la seleccion de una impresora a la cual se enviarán
+' documentos como acuses de recibo, contratos, reportes de
+' pantalla, excepto Pines para impresión de sobreflex
+' Input  : Ninguno
+' Output : True/False; si seleccionó la impresora o no
+'*************************************************************
+'                       MODIFICACIONES
+' FECHA          AUTOR           RAZON
+' 28-Feb-2004    Sandro Soto     Emision Inicial BDF
+'*************************************************************
+
+FMSeleccionarPrinter = False
+FPrint.Show 1
+If VGImpresora <> "" Then FMSeleccionarPrinter = True
+End Function
+
+Sub GeneraDatosGrid_Excel(grilla As Grid, svTitulo As String)
+On Local Error GoTo ErrGeneraDatos_Excel
+Dim XlsApl As Excel.Application
+Dim xlsLibro As Excel.Workbook
+Dim xlhoja As Excel.Worksheet
+Dim Fil As Integer, col As Integer
+Dim nlTimer As Long
+Dim valor As String
+Dim CGFORMATOFECHA As String
+
+nlTimer = Timer
+
+Set XlsApl = New Excel.Application
+
+XlsApl.Caption = svTitulo
+XlsApl.WindowState = xlMinimized
+With XlsApl
+    .Workbooks.Add
+    Set xlsLibro = .ActiveWorkbook
+    Set xlhoja = xlsLibro.Worksheets.Add
+    xlhoja.Name = svTitulo
+    
+    With xlsLibro.Worksheets(svTitulo)
+        .Activate
+        grilla.Row = 0
+        XlsApl.Columns("A:A").Select
+        XlsApl.Selection.NumberFormat = "@"
+        For Fil = 0 To grilla.Rows - 1
+            FPrincipal.pnlHelpLine.Caption = " Exportando fila [" + CStr(Fil) + "] de " + CStr(grilla.Rows - 1) + " ..."
+            grilla.Row = Fil
+            For col = 1 To grilla.Cols - 1
+                grilla.col = col
+                valor$ = grilla.Text
+                If FMConvFecha(valor$, VGFecha_Pref$, CGFORMATOFECHA$) <> "" Then
+                    .Cells(Fil + 1, col) = "'" + grilla.Text
+                Else
+                    .Cells(Fil + 1, col) = grilla.Text
+                End If
+            Next
+            If Fil = 0 Then
+                .Rows("1:1").Select
+                With XlsApl.Selection.Interior
+                    .ColorIndex = 37
+                    .Pattern = xlSolid
+                End With
+                XlsApl.Selection.Font.Bold = True
+                XlsApl.Selection.Borders(xlInsideVertical).LineStyle = xlNone
+                XlsApl.Cells.Select
+                XlsApl.Range("E1").Activate
+                XlsApl.Cells.EntireColumn.AutoFit
+            End If
+        Next
+   End With
+End With
+XlsApl.Visible = True
+XlsApl.WindowState = xlMaximized
+XlsApl.Selection.Borders(xlInsideVertical).LineStyle = xlNone
+XlsApl.Cells.Select
+XlsApl.Range("E1").Activate
+XlsApl.Cells.EntireColumn.AutoFit
+ 
+Exit Sub
+ErrGeneraDatos_Excel:
+    MsgBox Err.Number & " - " & Err.Description, vbInformation
+    Exit Sub
+End Sub
+Sub PMCreaNumCta()
+Dim VGNumcta As String
+
+    Dim VLProducto As Integer
+    
+    If VGProducto$ = "CTE" Then
+        VLProducto% = 3
+    Else
+        VLProducto% = 4
+    End If
+
+    PMPasoValores sqlconn&, "@t_trn", 0, SQLINT2, "417"
+    PMPasoValores sqlconn&, "@i_filial", 0, SQLINT1, VGFilial$
+    PMPasoValores sqlconn&, "@i_oficina", 0, SQLINT2, VGOficina$
+    PMPasoValores sqlconn&, "@i_producto", 0, SQLINT1, VLProducto%
+    PMPasoValores sqlconn&, "@i_secucta", 0, SQLINT4, VGNumcta
+  
+    If VLProducto% = 3 Then
+
+    Else
+        If VGOnline Then
+'FIXIT: Replace 'Trim' function with 'Trim$' function                                      FixIT90210ae-R9757-R1B8ZE
+            PMPasoValores sqlconn&, "@i_tipo_cta", 0, SQLINT1, Trim(FTran201.txtCampo(8))
+        Else
+        End If
+    End If
+    PMPasoValores sqlconn&, "@i_mon", 0, SQLINT1, VGMoneda$
+    PMPasoValores sqlconn&, "@o_cta_banco", 1, SQLVARCHAR, "0"
+    If FMTransmitirRPC(sqlconn&, ServerNameLocal$, "cob_remesas", "sp_crea_num_cta", True, " Ok... Creacion de Numero de Cuenta") Then
+        PMMapeaVariable sqlconn&, VGCuenta$
+        PMChequea sqlconn&
+    End If
+End Sub
+
+Function FMValidaNit(Nit As String) As Integer
+        Dim VTDigOr As Integer
+        Dim VTNit As String
+        Dim VTSuma As Integer
+        Dim i As Integer
+        Dim VTNumero As Integer
+        Dim VTN As Integer
+        Dim VTConstante As Integer
+        Dim VTDig As Integer
+        
+'FIXIT: Replace 'RTrim' function with 'RTrim$' function                                    FixIT90210ae-R9757-R1B8ZE
+    VTDigOr% = Val(Right$(RTrim(Nit), 1))
+    VTNit$ = Left$(Trim$(Nit), Len(Trim$(Nit)) - 1)
+    
+    VTSuma% = 0
+    For i% = Len(VTNit$) To 1 Step -1
+        VTNumero% = Val(Mid$(VTNit$, i%, 1))
+        VTN% = i% + 15 - Len(VTNit$)
+        VTConstante% = Val(Mid$(VGTablaDigito$, 2 * VTN%, 1)) + 10 * Val(Mid$(VGTablaDigito$, 2 * VTN% - 1, 1))
+        VTSuma% = VTSuma% + VTNumero% * VTConstante%
+    Next i%
+    VTDig% = VTSuma% Mod 11
+    If VTDig% > 1 Then
+        VTDig% = 11 - VTDig%
+    End If
+    
+    FMValidaNit% = VTDigOr% = VTDig%
+
+End Function
+
+Public Sub PMValida_TipoDoc(TipoDoc As String, SubTipo As String)
+    Dim VTR As Integer
+    
+   VGMTipoDoc(1) = ""
+   TipoDoc = Trim$(UCase$(TipoDoc))
+    If TipoDoc <> "" Then
+         PMPasoValores sqlconn&, "@t_trn", 0, SQLINT2&, "1115"
+         PMPasoValores sqlconn&, "@i_tipo", 0, SQLCHAR&, "V"
+         PMPasoValores sqlconn&, "@i_subtipo", 0, SQLVARCHAR&, SubTipo
+         PMPasoValores sqlconn&, "@i_codigo", 0, SQLVARCHAR&, (TipoDoc)
+         If FMTransmitirRPC(sqlconn&, ServerName$, "cobis", "sp_tipodoc", True, "Ayuda Tipo de Identificación") Then
+             VTR% = FMMapeaArreglo(sqlconn&, VGMTipoDoc())
+             PMChequea sqlconn&
+         Else
+             PMChequea sqlconn&
+         End If
+     End If
+End Sub
+
+'FIXIT: Declare 'Token' with an early-bound data type                                      FixIT90210ae-R1672-R1B8ZE
+Function FMGet_Numero(Token As String) As String
+'*********************************************************
+'Objetivo:  Dado un Token elimina los caracteres diferentes
+'           de un numero, Elimina las mascaras
+'Input   :  Token          Token en el cual se buscan los numeros
+'Output  :  Get_Numero     valor actual para Token
+'*********************************************************
+'                    MODIFICACIONES
+'FECHA      AUTOR               RAZON
+'12/May/98  J.Loyo              Emisión Inicial
+'*********************************************************
+Dim Aux As String
+Dim i As Integer
+
+Aux$ = ""
+    For i% = 1 To Len(Token)
+        If IsNumeric(Mid$(Token, i%, 1)) Then
+            Aux$ = Aux$ + Mid$(Token, i%, 1)
+        End If
+    Next i%
+    FMGet_Numero = Aux$
+End Function
+
+

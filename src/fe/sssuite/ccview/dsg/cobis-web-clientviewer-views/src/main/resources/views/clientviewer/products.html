@@ -1,0 +1,46 @@
+<ul id="products" kendo-panel-bar k-on-expand-mode="single" k-select="onSelect" class="subpanel-collapsible" ng-if="groupsProduct != null && groupsProduct.length > 0" >
+	<li ng-repeat="group in groupsProduct">
+		<span>
+			<button class="btn btn-default btn-xs btn-more-detail" style="margin-right:5px;" ng-click="setCurrentView(group.mnemonic, $event)" title="Ver m&aacute;s detalle">
+				<span class="fa fa-angle-double-left"></span>
+			</button> 
+			<span translate>{{group.name}}</span>
+			<span class="pull-right" style="margin-right:20px;">
+				{{ getItem(group.dtoId.dtoName, 'totalAmountProduct') | currency:'':2 }}
+				<span class="badge">{{getItem(group.dtoId.dtoName, 'totalProduct')}}</span>
+			</span>
+		</span>
+		<div style="padding:30px; padding-bottom:0;">
+			<div ng-repeat="groupDetail in group.conditionDefaultProductSons">
+				<fieldset ng-repeat="headerProduct in getObject(groupDetail.dtoId.dtoName, null) | grouping:getGroupingField(groupDetail.dtoId)" class="cb-group cb-group-list cb-outset">
+					<legend>{{getHeader(headerProduct,groupDetail.dtoId)}}</legend>
+					<div class="list-group">
+						<div ng-repeat="detailProduct in getObject(groupDetail.dtoId.dtoName, null) | filterOperationType:getProperty(headerProduct, getGroupingField(groupDetail.dtoId)):getGroupingField(groupDetail.dtoId, null)" class="list-group-item">
+							<div class="row">
+								<div ng-repeat="property in getPropertiesSumaryPrimaryKey(groupDetail.dtoId)" class="col-xs-6">
+									<span translate class="text-muted cb-text-xs">{{property.text}}</span>
+									<div>
+										<a class="nodeClientResume k-in" data-toggle="dropdown">{{getProperty(detailProduct, property.name,property.format)}}</a>
+										<span class="groupSelected ng-hide" value="{{group.mnemonic}}"></span>
+										<span class="groupDetailSelected ng-hide" value="{{groupDetail.dtoId}}"></span>
+										<span class="detailProductSelected ng-hide" value="{{detailProduct}}"></span>
+										<ul kendo-context-menu="menu" k-filter="'#products .k-in'" k-on-open="onOpenCtxMenuResume(kendoEvent)">
+											 <li ng-repeat="process in processes | filterProcess: objFilterField:'S':'S':'X':mnemonic" class="k-item k-state-default" role="menuitem">
+												<span class="k-link" ng-click="rootProcessClick(  detailProductSelObj  , process.flowId)">{{process.processName}}</span>
+											</li>
+										</ul>									
+									</div>
+									
+								</div>
+								<div ng-repeat="property in getPropertiesSumary(groupDetail.dtoId)" class="col-xs-6">
+									<span translate class="text-muted cb-text-xs">{{property.text}}</span>
+									<div title="{{property.text}}">{{getProperty(detailProduct,property.name,property.format)}}</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</fieldset>
+			</div>
+		</div>	
+    </li>
+</ul>

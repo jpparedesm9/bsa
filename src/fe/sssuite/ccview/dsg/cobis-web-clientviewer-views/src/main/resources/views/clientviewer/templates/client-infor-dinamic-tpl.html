@@ -1,0 +1,27 @@
+<div ng-repeat="group in groupsClient | filterById:currentView" class="cb-group cb-group-content">
+	<div ng-repeat="groupDetail in group.conditionDefaultProductSons" ng-if="getVisibleSectionClient(groupDetail.typeClient)">
+		<fieldset class="cb-group cb-group-simple" ng-if="groupDetail.dtoId.isList"> 
+			<legend translate>{{groupDetail.dtoId.dtoText}}</legend>
+			<div class="form-vertical">
+				<div class="row">
+					<div ng-repeat="property in getPropertiesSumary(groupDetail.dtoId)" class="col-xs-6 cb-text-sm">
+						<div class="form-group">
+							<label class="control-label" translate>{{property.text}}</label>
+							<div class="cb-control" title="{{property.text}}">{{getProperty(getObject(groupDetail.dtoId.dtoName, 'dynamicClientData', property),property.name)}}</div>
+						</div>
+					</div>
+				</div>	
+			</div>
+		</fieldset>
+		<fieldset class="cb-group cb-group-simple" ng-if="!groupDetail.dtoId.isList && getVisibleSection(groupDetail.dtoId.dtoName, 'dynamicClientData')"> 
+			<legend translate>{{groupDetail.dtoId.dtoText}}</legend>					
+			<kendo-grid options="getDataSourceObject(groupDetail.dtoId.dtoName, groupDetail.dtoId, 'dynamicClientData')"           
+							k-selectable="'row'" 
+							k-columns="getDataColumns(groupDetail.dtoId)" >
+					<div k-detail-template ng-if="groupDetail.dtoId.dtoList != null && groupDetail.dtoId.dtoList.length > 0" ng-init="setDetailDataSoruceDirections(dataItem,groupDetail.dtoId.dtoList[0].dtoName,groupDetail.dtoId.dtoList[0].serviceId)">
+					<div kendo-grid k-data-source="getObject(groupDetail.dtoId.dtoList[0].dtoName  + dataItem.addressId, 'dynamicClientData')" k-columns="getDataColumns(groupDetail.dtoId.dtoList[0])"  ></div>
+				</div>
+			</kendo-grid>
+		</fieldset>
+	</div>
+</div>	

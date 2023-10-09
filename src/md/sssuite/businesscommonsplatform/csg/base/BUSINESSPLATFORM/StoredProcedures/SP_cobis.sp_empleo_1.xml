@@ -1,0 +1,102 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<procedure>
+  <database>cobis</database>
+  <name>sp_empleo</name>
+  <type>SYBASE</type>
+  <version>1</version>
+  <parameters>
+    <parameter name="@s_ssn" dataType="int" direction="in" />
+    <parameter name="@s_user" dataType="varchar" direction="in" />
+    <parameter name="@s_term" dataType="varchar" direction="in" />
+    <parameter name="@s_date" dataType="datetime" direction="in" />
+    <parameter name="@s_srv" dataType="varchar" direction="in" />
+    <parameter name="@s_lsrv" dataType="varchar" direction="in" />
+    <parameter name="@s_ofi" dataType="smallint" direction="in" />
+    <parameter name="@s_rol" dataType="smallint" direction="in" />
+    <parameter name="@s_org_err" dataType="char" direction="in" />
+    <parameter name="@s_error" dataType="int" direction="in" />
+    <parameter name="@s_sev" dataType="tinyint" direction="in" />
+    <parameter name="@s_msg" dataType="varchar" direction="in" />
+    <parameter name="@s_org" dataType="char" direction="in" />
+    <parameter name="@t_debug" dataType="char" direction="in" />
+    <parameter name="@t_file" dataType="varchar" direction="in" />
+    <parameter name="@t_from" dataType="varchar" direction="in" />
+    <parameter name="@t_trn" dataType="smallint" direction="in" />
+    <parameter name="@i_operacion" dataType="char" direction="in" />
+    <parameter name="@i_ente" dataType="int" direction="in" />
+    <parameter name="@i_trabajo" dataType="tinyint" direction="in" />
+    <parameter name="@i_empresa" dataType="int" direction="in" />
+    <parameter name="@i_cargo" dataType="varchar" direction="in" />
+    <parameter name="@i_moneda" dataType="tinyint" direction="in" />
+    <parameter name="@i_sueldo" dataType="money" direction="in" />
+    <parameter name="@i_fecha_ingreso" dataType="datetime" direction="in" />
+    <parameter name="@i_fecha_salida" dataType="datetime" direction="in" />
+    <parameter name="@i_fecha_verifi" dataType="datetime" direction="in" />
+    <parameter name="@i_verificado" dataType="char" direction="in" />
+    <parameter name="@i_tipo" dataType="varchar" direction="in" />
+    <parameter name="@i_formato_fecha" dataType="int" direction="in" />
+    <parameter name="@i_nomemp" dataType="varchar" direction="in" />
+    <parameter name="@i_objsocial" dataType="varchar" direction="in" />
+    <parameter name="@i_directrab" dataType="varchar" direction="in" />
+    <parameter name="@i_fonotrab" dataType="varchar" direction="in" />
+    <parameter name="@i_planilla" dataType="varchar" direction="in" />
+  </parameters>
+  <queries>
+    <query>
+      <columns>
+        <column name="jobId" />
+      </columns>
+      <queryText>SELECT o_siguiente</queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="idJob" />
+        <column name="company" />
+        <column name="officeJob" />
+        <column name="role" />
+        <column name="currency" />
+        <column name="salary" />
+        <column name="verified" />
+        <column name="admissionDate" />
+        <column name="outDate" />
+        <column name="modificationDate" />
+        <column name="companyName" />
+        <column name="employeActivity" />
+        <column name="addresJob" />
+        <column name="phoneFaxJob" />
+        <column name="payrollNumber" />
+        <column name="empJobDescription" />
+        <column name="subJobDescription" />
+        <column name="timeJob" />
+      </columns>
+      <queryText>SELECT DISTINCT "N�mero" = tr_trabajo,"Empresa" = nombre_completo,"Cargo" = tr_cargo,"Rol" = CASE tr_tipo WHEN NULL THEN " " ELSE valor END,"Moneda" = SUBSTRING (mo_descripcion, 1, 15),"Sueldo" = tr_sueldo,"Verif." = tr_verificado,"Fecha Ing." = CONVERT (CHAR (10),tr_fecha_ingreso ,?),"Fecha Sal." = CONVERT (CHAR (10),tr_fecha_salida ,?),"Fecha Mod." = CONVERT (CHAR (10),tr_fecha_modificacion ,?),"Nombre Empresa" = SUBSTRING (tr_nombre_emp, 1, 20),"Decrip.Act.Emp." = SUBSTRING (tr_objeto_emp, 1, 20),"Direc. Trab." = SUBSTRING (tr_direccion_emp, 1, 20),"Tel/Fax Trab." = tr_telefono,"No. de Planilla" = tr_planilla,"Desc. Cargo" = oc_descripcion,"Sub Cargo" = tr_sub_cargo,"Antiguedad" = tr_antiguedad </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="{1}" />
+        <column name="{2}" />
+        <column name="{3}" />
+        <column name="{4}" />
+        <column name="{5}" />
+        <column name="{6}" />
+        <column name="{7}" />
+        <column name="{8}" />
+        <column name="{9}" />
+        <column name="{10}" />
+        <column name="{11}" />
+        <column name="{12}" />
+        <column name="{13}" />
+        <column name="{14}" />
+        <column name="{15}" />
+        <column name="{16}" />
+        <column name="{17}" />
+        <column name="{18}" />
+        <column name="{19}" />
+        <column name="{20}" />
+        <column name="{21}" />
+        <column name="{22}" />
+      </columns>
+      <queryText>SELECT o_trabajo, o_empresa, o_no_empresa, o_cargo, o_sueldo, o_tipo, o_tinombre, o_moneda, o_mon_desc, ctx.convertString(o_fecha_ingreso ,i_formato_fecha), ctx.convertString(o_fecha_salida ,i_formato_fecha), ctx.convertString(o_fecha_registro ,i_formato_fecha), ctx.convertString(o_fecha_modificacion ,i_formato_fecha), o_vigencia, o_verificado, o_funcionario, ctx.convertString(o_fecha_verificacion ,i_formato_fecha), o_nomemp, o_objsocial, o_directrab, o_fonotrab, o_planilla</queryText>
+    </query>
+  </queries>
+</procedure>

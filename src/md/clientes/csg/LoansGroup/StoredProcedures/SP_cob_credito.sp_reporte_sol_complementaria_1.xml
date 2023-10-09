@@ -1,0 +1,245 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<procedure>
+  <database>cob_credito</database>
+  <name>sp_reporte_sol_complementaria</name>
+  <type>SYBASE</type>
+  <version>1</version>
+  <parameters>
+    <parameter name="@i_ente" dataType="int" direction="in" />
+    <parameter name="@i_operacion" dataType="char" direction="in" />
+    <parameter name="@i_modo" dataType="tinyint" direction="in" />
+    <parameter name="@i_formato" dataType="tinyint" direction="in" />
+    <parameter name="@i_tipo_dir" dataType="char" direction="in" />
+    <parameter name="@i_tipo" dataType="varchar" direction="in" />
+    <parameter name="@i_cod_neg" dataType="int" direction="in" />
+    <parameter name="@i_relacion" dataType="int" direction="in" />
+    <parameter name="@i_ente_d" dataType="int" direction="in" />
+    <parameter name="@i_tramite" dataType="int" direction="in" />
+  </parameters>
+  <queries>
+    <query>
+      <columns>
+        <column name="FECHA_NACIMIENTO" />
+        <column name="TIPO_DOCUMENTO" />
+        <column name="NUMERO_DOCUMENTO" />
+        <column name="fechaing" />
+        <column name="fechaexp" />
+        <column name="CODIGO_ENTIDAD_NACIMIENTO" />
+        <column name="DESCRIPCION_ENTIDAD_NACIMIENTO" />
+        <column name="PRIMER_NOMBRE" />
+        <column name="APELLIDO_PATERNO" />
+        <column name="APELLIDO_MATERNO" />
+        <column name="ciudad_nac" />
+        <column name="DESCRIPCION_GENERO" />
+        <column name="CODIGO_GENERO" />
+        <column name="CODIGO_ESTADO_CIVIL" />
+        <column name="DESCRIPCION_ESTADO_CIVIL" />
+        <column name="CODIGO_OCUPACION" />
+        <column name="DESCRIPCION_OCUPACION" />
+        <column name="CODIGO_ACTIVIDAD" />
+        <column name="DESCRIPCION_ACTIVIDAD" />
+        <column name="NUMERO_PASAPORTE" />
+        <column name="CODIGO_PAIS_NACIMIENTO" />
+        <column name="DESCRIPION_PAIS_NACIMIENTO" />
+        <column name="cod_sector" />
+        <column name="desc_sector" />
+        <column name="CODIGO_ESCOLARIDAD" />
+        <column name="DESCRIPCION_ESCOLARIDAD" />
+        <column name="tipo" />
+        <column name="desc_tipo" />
+        <column name="tipo_vivienda" />
+        <column name="desc_tipo_vivienda" />
+        <column name="NUMERO_DEPENDIENTES" />
+        <column name="num_hijos" />
+        <column name="oficial" />
+        <column name="desc_oficial" />
+        <column name="fechareg" />
+        <column name="fechamod" />
+        <column name="grupo" />
+        <column name="desc_grupo" />
+        <column name="tipo_vinculacion" />
+        <column name="desc_tipo_vinculacion" />
+        <column name="NUMERO_RFC" />
+        <column name="nivel_ing" />
+        <column name="oficina_origen" />
+        <column name="situacion_cliente" />
+        <column name="desc_situacion_cliente" />
+        <column name="patrim_tec" />
+        <column name="fecha_patrim_bruto" />
+        <column name="total_activos" />
+        <column name="oficial_sup" />
+        <column name="desc_oficial_sup" />
+        <column name="nivel_egr" />
+        <column name="SEGUNDO_NOMBRE" />
+        <column name="c_apellido" />
+        <column name="depar_doc" />
+        <column name="desc_depar_doc" />
+        <column name="numord" />
+        <column name="promotor" />
+        <column name="desc_promotor" />
+        <column name="CODIGO_PAIS_NACIONALIDAD" />
+        <column name="DESCRIPCION_PAIS_NACIONALIDAD" />
+        <column name="cod_otro_pais" />
+        <column name="inss" />
+        <column name="menor_edad" />
+        <column name="CODIGO_CONYUGE" />
+        <column name="NOMBRE_CONYUGE" />
+        <column name="persona_pub" />
+        <column name="ing_SN" />
+        <column name="otringr" />
+        <column name="CODIGO_LUGAR_NACIMIENTO" />
+        <column name="nac_aux" />
+        <column name="pais_emi" />
+        <column name="PERSONA_PEP" />
+        <column name="CARGO_PUBLICO" />
+        <column name="PARENTESCO_CARGO_PUBLICO" />
+        <column name="partner" />
+        <column name="lista_negra" />
+        <column name="tecnologico" />
+        <column name="cod_grupo" />
+        <column name="nom_grupo" />
+        <column name="DIA_LOCALIZACION" />
+        <column name="HORA_LOCALIZACION" />
+        <column name="INGRESOS_VENTAS" />
+        <column name="origen_ingresos" />
+        <column name="OTROS_INGRESOS" />
+        <column name="TOTAL_INGRESOS" />
+        <column name="GASTOS_NEGOCIO" />
+        <column name="GASTOS_FAMILIARES" />
+        <column name="TOTAL_GASTOS" />
+        <column name="CAPACIDAD_PAGO" />
+        <column name="SUCURSAL" />
+        <column name="IMPORTE_SOLICITADO" />
+        <column name="FECHA_SOLICITUD" />
+        <column name="NUMERO_IFE" />
+        <column name="NUMERO_SERIE_FIRMA" />
+        <column name="TELEFONO_FIJO" />
+        <column name="TELEFONO_CELULAR" />
+        <column name="TELEFONO_RECADO" />
+        <column name="NOMBRE_PERSONA_RECADO" />
+        <column name="CTA_EN_BURO_CREDITO" />
+        <column name="NOMBRE_ASESOR" />
+        <column name="NOMBRE_COORDINADOR" />
+        <column name="NOMBRE_ANALISTA" />
+        <column name="TIPO_DIRECCION" />
+        <column name="CORREO_ELECTRONICO" />
+        <column name="TIENE_CRED_GRUPAL" />
+        <column name="OP_BANCO_ANTERIOR" />
+      </columns>
+      <queryText>SELECT  fechanac,tipoced,cedula,fechaing,fechaexp,lugar_doc,desc_lugar_doc,nombre,p_apellido,s_apellido,ciudad_nac,sexo,cod_sexo,estado_civil,desc_estado_civil,profesion,desc_profesion,actividad,desc_actividad,pasaporte,pais,desc_pais,cod_sector,desc_sector,nivel_estudio,desc_niv_estudios,tipo,desc_tipo,tipo_vivienda,desc_tipo_vivienda,num_cargas,num_hijos,oficial,desc_oficial,fechareg,fechamod,grupo,desc_grupo,tipo_vinculacion,desc_tipo_vinculacion,nit,nivel_ing,oficina_origen,situacion_cliente,desc_situacion_cliente,patrim_tec,fecha_patrim_bruto,total_activos,oficial_sup,desc_oficial_sup,nivel_egr,segnombre,c_apellido,depar_doc,desc_depar_doc,numord,promotor,desc_promotor,pais_nacionalidad,desc_nacionalidad,cod_otro_pais,inss,menor_edad,cod_conyuge,nom_conyuge,persona_pub,ing_SN,otringr,depa_nac,nac_aux,pais_emi,pep,carg_pub,rel_carg_pub,partner,lista_negra,tecnologico,cod_grupo,nom_grupo,desc_dia_reunion,hora_reunion,otros_ingresos,origen_ingresos,ventas,total_ingresos,ct_ventas,ct_operativos,total_gastos,capacidad_pago </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="COD_DIRECCION" />
+        <column name="COD_TIPO" />
+        <column name="TIPO" />
+        <column name="COD_PAIS" />
+        <column name="PAIS" />
+        <column name="COD_PROVINCIA" />
+        <column name="PROVINCIA" />
+        <column name="COD_CIUDAD" />
+        <column name="CIUDAD" />
+        <column name="COD_PAQRROQUIA" />
+        <column name="PARROQUIA" />
+        <column name="DIRECCION" />
+        <column name="CALLE" />
+        <column name="BARRIO" />
+        <column name="PRINCIPAL" />
+        <column name="CORRESPONDENCIA" />
+        <column name="COD_DEPARTAMENTO" />
+        <column name="DEPARTAMENTO" />
+        <column name="TIEMPO_RESIDENCIA" />
+        <column name="COD_BARRIO" />
+        <column name="LATITUD" />
+        <column name="LONGITUD" />
+        <column name="ID_CODIGO_BARRIO" />
+        <column name="NRO_CALLE" />
+        <column name="COD_POSTAL" />
+        <column name="NRO_RESIDENTES" />
+        <column name="NRO_CALLE_INTER" />
+        <column name="MESES_VIGENCIA" />
+        <column name="COD_NEGOCIO" />
+        <column name="TIPO_VIVIENDA" />
+        <column name="CIUDAD_POBLACION" />
+        <column name="COD_TIPO_VIVIENDA" />
+        <column name="REFERENCIA_DOMI" />
+      </columns>
+      <queryText>SELECT "codigo"=nc_codigo,"negocio"=nc_nombre,"giro"=nc_giro,"fecha_apertura"="","destino_credito"=nc_destino_credito,"desc_destino_credito"=ctx.convertString(null),"direccion"=nc_calle,"numero"=nc_nro,"colonia"=nc_colonia,"localidad"=nc_localidad,"municipio"=nc_municipio,"cod_estado"=nc_estado,"desc_estado"=ctx.convertString(null),"cod_postal"=nc_codpostal,"cod_pais"=nc_pais,"desc_pais"=ctx.convertString(null),"telefono"=w_telefono_aux,"tiempo_actividad"=nc_tiempo_actividad,"tiempo_arraigo"=nc_tiempo_dom_neg,"tipo_recurso"=nc_recurso,"desc_tipo_recurso"=ctx.convertString(null),"ingreso_mensual"=nc_ingreso_mensual,"tipo_local"=nc_tipo_local,"desc_tipo_local"=ctx.convertString(null),"cod_actividad"=nc_actividad_ec,"desc_actividad"=ctx.convertString(null)</queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="NEGOCIO" />
+        <column name="GIRO" />
+        <column name="FECHA_APERTURA" />
+        <column name="DESTINO_CREDITO" />
+        <column name="DESC_DESTINO_CREDITO" />
+        <column name="DIRECCION" />
+        <column name="NUMERO" />
+        <column name="COLONIA" />
+        <column name="LOCALIDAD" />
+        <column name="MUNICIPIO" />
+        <column name="COD_ESTADO" />
+        <column name="DESC_ESTADO" />
+        <column name="COD_POSTAL" />
+        <column name="COD_PAIS" />
+        <column name="DESC_PAIS" />
+        <column name="TELEFONO" />
+        <column name="TIEMPO_ACTIVIDAD" />
+        <column name="TIEMPO_ARRAIGO" />
+        <column name="TIPO_RECURSO" />
+        <column name="DESC_TIPO_RECURSO" />
+        <column name="INGRESO_MENSUAL" />
+        <column name="TIPO_LOCAL" />
+        <column name="DESC_TIPO_LOCAL" />
+        <column name="COD_ACTIVIDAD" />
+        <column name="DESC_ACTIVIDAD" />
+        <column name="NUMERO_EXTERNO" />
+        <column name="NUMERO_INTERNO" />
+      </columns>
+      <queryText>SELECT  "NUMERO" = rp_referencia,"NOMBRE" = rp_nombre,"PRIMER_APELLIDO" = rp_p_apellido,"SEGUNDO_APELLIDO" = rp_s_apellido,"DIRECCION" = "90","TELEFONO_DOMICILIO" = RTRIM (rp_telefono_d),"TELEFONO_EMPRESA" = rp_telefono_e,"TELEFONO_OTRO" = rp_telefono_o,"VIGENTE" = rp_vigencia,"CORREO" = rp_direccion_e </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="NUMERO" />
+        <column name="NOMBRE" />
+        <column name="PRIMER_APELLIDO" />
+        <column name="SEGUNDO_APELLIDO" />
+        <column name="DIRECCION" />
+        <column name="TELEFONO_DOMICILIO" />
+        <column name="TELEFONO_CELULAR" />
+        <column name="TELEFONO_OFICINA" />
+        <column name="OBSERVACIONES" />
+        <column name="FECHA_REGISTRO" />
+        <column name="FECHA_ULT_MODIF" />
+        <column name="VIGENTE" />
+        <column name="VERIF" />
+        <column name="DEPARTAMENTO" />
+        <column name="CIUDAD" />
+        <column name="BARRIO" />
+        <column name="OBS_VERIFICADO" />
+        <column name="CALLE" />
+        <column name="NRO" />
+        <column name="COLONIA" />
+        <column name="LOCALIDAD" />
+        <column name="MUNICIPIO" />
+        <column name="CODESTADO" />
+        <column name="CODPOSTAL" />
+        <column name="CODPAIS" />
+        <column name="TIEMPO_CONOCIDO" />
+        <column name="CORREO" />
+      </columns>
+      <queryText>SELECT  "RELACION" = in_relacion,"REL_IZQ" = "","REL_DER" = "","LADO" = in_lado,"COD_CLI" = in_ente_d,"CLIENTE" = "" </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="RELACION" />
+        <column name="REL_IZQ" />
+        <column name="REL_DER" />
+        <column name="LADO" />
+        <column name="COD_CLI" />
+        <column name="CLIENTE" />
+      </columns>
+      <queryText></queryText>
+    </query>
+  </queries>
+</procedure>

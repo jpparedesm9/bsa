@@ -1,0 +1,248 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<procedure>
+  <database>cobis</database>
+  <name>sp_oficina</name>
+  <type>SYBASE</type>
+  <version>1</version>
+  <parameters>
+    <parameter name="@s_ssn" dataType="int" direction="in" />
+    <parameter name="@s_user" dataType="varchar" direction="in" />
+    <parameter name="@s_sesn" dataType="int" direction="in" />
+    <parameter name="@s_term" dataType="varchar" direction="in" />
+    <parameter name="@s_date" dataType="datetime" direction="in" />
+    <parameter name="@s_srv" dataType="varchar" direction="in" />
+    <parameter name="@s_lsrv" dataType="varchar" direction="in" />
+    <parameter name="@s_rol" dataType="smallint" direction="in" />
+    <parameter name="@s_ofi" dataType="smallint" direction="in" />
+    <parameter name="@s_org_err" dataType="char" direction="in" />
+    <parameter name="@s_error" dataType="int" direction="in" />
+    <parameter name="@s_sev" dataType="tinyint" direction="in" />
+    <parameter name="@s_msg" dataType="varchar" direction="in" />
+    <parameter name="@s_org" dataType="char" direction="in" />
+    <parameter name="@t_show_version" dataType="bit" direction="in" />
+    <parameter name="@t_debug" dataType="char" direction="in" />
+    <parameter name="@t_file" dataType="varchar" direction="in" />
+    <parameter name="@t_from" dataType="varchar" direction="in" />
+    <parameter name="@t_trn" dataType="smallint" direction="in" />
+    <parameter name="@i_operacion" dataType="char" direction="in" />
+    <parameter name="@i_modo" dataType="tinyint" direction="in" />
+    <parameter name="@i_tipo" dataType="char" direction="in" />
+    <parameter name="@i_oficina" dataType="smallint" direction="in" />
+    <parameter name="@i_valor" dataType="varchar" direction="in" />
+    <parameter name="@i_filial" dataType="tinyint" direction="in" />
+    <parameter name="@i_area" dataType="char" direction="in" />
+    <parameter name="@i_descripcion" dataType="varchar" direction="in" />
+  </parameters>
+  <queries>
+    <query>
+      <columns>
+        <column name="Filial" />
+        <column name="Codigo" />
+        <column name="Oficina" />
+        <column name="Area" />
+        <column name="Tipo" />
+        <column name="Direccion" />
+        <column name="Distrito" />
+      </columns>
+      <queryText>SELECT  "Filial" = of_filial,"Codigo" = of_oficina,"Oficina" = SUBSTRING (of_nombre, 1, 30),"Area" = SUBSTRING (c.valor, 1, 30),"Tipo" = of_subtipo,"Direccion" = SUBSTRING (of_direccion, 1, 30),"Distrito" = SUBSTRING (ci_descripcion, 1, 30) </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="Filial" />
+        <column name="Codigo" />
+        <column name="Oficina" />
+        <column name="Area" />
+        <column name="Tipo" />
+        <column name="Direccion" />
+        <column name="Distrito" />
+      </columns>
+      <queryText>SELECT  "Filial" = of_filial,"Codigo" = of_oficina,"Oficina" = SUBSTRING (of_nombre, 1, 30),"Area" = SUBSTRING (c.valor, 1, 30),"Tipo" = of_subtipo,"Direccion" = SUBSTRING (of_direccion, 1, 30),"Distrito" = SUBSTRING (ci_descripcion, 1, 30) </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="Filial" />
+        <column name="Codigo" />
+        <column name="Oficina" />
+        <column name="Area" />
+        <column name="Tipo" />
+        <column name="Direccion" />
+        <column name="Distrito" />
+      </columns>
+      <queryText>SELECT  "Filial" = of_filial,"Codigo" = of_oficina,"Oficina" = SUBSTRING (of_nombre, 1, 30),"Area" = SUBSTRING (c.valor, 1, 30),"Tipo" = of_subtipo,"Direccion" = SUBSTRING (of_direccion, 1, 30),"Distrito" = SUBSTRING (ci_descripcion, 1, 30) </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="Filial" />
+        <column name="Codigo" />
+        <column name="Oficina" />
+        <column name="Area" />
+        <column name="Tipo" />
+        <column name="Direccion" />
+        <column name="Distrito" />
+      </columns>
+      <queryText>SELECT  "Filial" = of_filial,"Codigo" = of_oficina,"Oficina" = SUBSTRING (of_nombre, 1, 30),"Area" = SUBSTRING (c.valor, 1, 30),"Tipo" = of_subtipo,"Direccion" = SUBSTRING (of_direccion, 1, 30),"Distrito" = SUBSTRING (ci_descripcion, 1, 30) </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="{1}" />
+        <column name="{2}" />
+        <column name="{3}" />
+        <column name="{4}" />
+        <column name="{5}" />
+        <column name="{6}" />
+        <column name="{7}" />
+        <column name="{8}" />
+        <column name="{9}" />
+        <column name="{10}" />
+        <column name="{11}" />
+        <column name="{12}" />
+      </columns>
+      <queryText>SELECT o_filial, o_finombre, o_subtipo, o_oficina, o_lonombre, o_direccion, o_ciudad, o_cinombre, o_sucursal, o_sunombre, o_area, o_arnombre</queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="Codigo" />
+        <column name="Oficina" />
+        <column name="Cod. Area" />
+        <column name="Nombre Area" />
+      </columns>
+      <queryText>SELECT  "Codigo" = a.of_oficina,"Oficina" = a.of_nombre,"Cod. Area" = a.of_area,"Nombre Area" = c.valor </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="Codigo" />
+        <column name="Oficina" />
+        <column name="Cod. Area" />
+        <column name="Nombre Area" />
+      </columns>
+      <queryText>SELECT  "Codigo" = of_oficina,"Oficina" = of_nombre,"Cod. Area" = a.of_area,"Nombre Area" = c.valor </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="Codigo" />
+        <column name="Oficina" />
+        <column name="Cod. Area" />
+        <column name="Nombre Area" />
+      </columns>
+      <queryText>SELECT  "Codigo" = a.of_oficina,"Oficina" = a.of_nombre,"Cod. Area" = a.of_area,"Nombre Area" = c.valor </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="Codigo" />
+        <column name="Oficina" />
+        <column name="Cod. Area" />
+        <column name="Nombre Area" />
+      </columns>
+      <queryText>SELECT  "Codigo" = of_oficina,"Oficina" = of_nombre,"Cod. Area" = a.of_area,"Nombre Area" = c.valor </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="Codigo" />
+        <column name="Oficina" />
+        <column name="Cod. Area" />
+        <column name="Nombre Area" />
+      </columns>
+      <queryText>SELECT  "Codigo" = of_oficina,"Oficina" = of_nombre,"Cod. Area" = a.of_area,"Nombre Area" = c.valor </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="Codigo" />
+        <column name="Oficina" />
+        <column name="Cod. Area" />
+        <column name="Nombre Area" />
+      </columns>
+      <queryText>SELECT  "Codigo" = of_oficina,"Oficina" = of_nombre,"Cod. Area" = a.of_area,"Nombre Area" = c.valor </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="{1}" />
+      </columns>
+      <queryText>SELECT  of_nombre </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="Codigo" />
+        <column name="Oficina" />
+        <column name="Cod. Area" />
+        <column name="Nombre Area" />
+      </columns>
+      <queryText>SELECT  "Codigo" = of_oficina,"Oficina" = of_nombre,"Cod. Area" = a.of_area,"Nombre Area" = c.valor </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="Codigo" />
+        <column name="Oficina" />
+        <column name="Cod. Area" />
+        <column name="Nombre Area" />
+      </columns>
+      <queryText>SELECT  "Codigo" = of_oficina,"Oficina" = of_nombre,"Cod. Area" = a.of_area,"Nombre Area" = c.valor </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="Cod." />
+        <column name="Oficina" />
+        <column name="Cod. Area" />
+        <column name="Nombre Area" />
+      </columns>
+      <queryText>SELECT  "Cod." = of_oficina,"Oficina" = of_nombre,"Cod. Area" = a.of_area,"Nombre Area" = c.valor </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="Cod." />
+        <column name="Oficina" />
+        <column name="Cod. Area" />
+        <column name="Nombre Area" />
+      </columns>
+      <queryText>SELECT  "Cod." = of_oficina,"Oficina" = of_nombre,"Cod. Area" = a.of_area,"Nombre Area" = c.valor </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="{1}" />
+      </columns>
+      <queryText>SELECT  of_nombre </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="filial" />
+        <column name="finombre" />
+        <column name="subtipo" />
+        <column name="oficina" />
+        <column name="lonombre" />
+        <column name="direccion" />
+        <column name="ciudad" />
+        <column name="cinombre" />
+        <column name="sucursal" />
+        <column name="sunombre" />
+        <column name="area" />
+        <column name="arnombre" />
+        <column name="regional" />
+        <column name="tip_punt_at" />
+        <column name="obs_horario" />
+        <column name="cir_comunic" />
+        <column name="nomb_encarg" />
+        <column name="ci_encarg" />
+        <column name="horario" />
+        <column name="tipo_horar" />
+        <column name="jefe_agenc" />
+        <column name="cod_fie_asf" />
+        <column name="fec_aut_asf" />
+        <column name="sector" />
+        <column name="des_regional" />
+        <column name="des_tip_punt" />
+        <column name="des_horario" />
+        <column name="des_tipo_horar" />
+        <column name="nom_jefe_agenc" />
+        <column name="des_sector" />
+        <column name="cod_depart" />
+        <column name="des_depart" />
+        <column name="cod_prov" />
+        <column name="des_prov" />
+        <column name="relacion_oficina" />
+        <column name="des_relacion_ofi" />
+        <column name="subregional" />
+        <column name="des_subregional" />
+      </columns>
+      <queryText></queryText>
+    </query>
+  </queries>
+</procedure>

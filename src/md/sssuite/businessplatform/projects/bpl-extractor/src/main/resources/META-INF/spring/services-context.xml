@@ -1,0 +1,675 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:jpa="http://www.springframework.org/schema/data/jpa" xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/data/jpa http://www.springframework.org/schema/data/jpa/spring-jpa.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
+		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd">
+
+	<context:annotation-config />
+	<tx:advice id="transactionalAdvice" transaction-manager="transactionManager">
+		<tx:attributes>
+			<tx:method name="*" propagation="REQUIRED" rollback-for="RuntimeException" />
+		</tx:attributes>
+	</tx:advice>
+
+	<aop:config>
+		<aop:pointcut id="RuleAdmTransactionalOperationsSystem"
+			expression="execution(* com.cobiscorp.ecobis.bpl.util.ISystemRuleDAO.*(..))" />
+		<aop:advisor pointcut-ref="RuleAdmTransactionalOperationsSystem"
+			advice-ref="transactionalAdvice" />
+	</aop:config>
+
+	<aop:config>
+		<aop:pointcut id="RuleAdmTransactionalOperationsSubType"
+			expression="execution(* com.cobiscorp.ecobis.bpl.util.ISubTypeRuleDAO.*(..))" />
+		<aop:advisor pointcut-ref="RuleAdmTransactionalOperationsSubType"
+			advice-ref="transactionalAdvice" />
+	</aop:config>
+
+	<aop:config>
+		<aop:pointcut id="RuleAdmTransactionalOperationsException"
+			expression="execution(* com.cobiscorp.ecobis.bpl.util.ExceptionRuleDAO.*(..))" />
+		<aop:advisor pointcut-ref="RuleAdmTransactionalOperationsException"
+			advice-ref="transactionalAdvice" />
+	</aop:config>
+
+	<aop:config>
+		<aop:pointcut id="RuleRoleAdmTransactionalOperationsException"
+			expression="execution(* com.cobiscorp.ecobis.bpl.util.ExceptionRuleDAO.*(..))" />
+		<aop:advisor pointcut-ref="RuleAdmTransactionalOperationsException"
+			advice-ref="transactionalAdvice" />
+	</aop:config>
+
+	<aop:config>
+		<aop:pointcut id="UserTransactionalOperations"
+			expression="execution(* com.cobiscorp.ecobis.bpl.dao.workflow.UserDao.*(..))" />
+		<aop:advisor pointcut-ref="UserTransactionalOperations"
+			advice-ref="transactionalAdvice" />
+	</aop:config>
+
+	<aop:config>
+		<aop:pointcut id="RoleTransactionalOperations"
+			expression="execution(* com.cobiscorp.ecobis.bpl.dao.workflow.RoleDao.*(..))" />
+		<aop:advisor pointcut-ref="RoleTransactionalOperations"
+			advice-ref="transactionalAdvice" />
+	</aop:config>
+
+	<aop:config>
+		<aop:pointcut id="RoleUserTransactionalOperations"
+			expression="execution(* com.cobiscorp.ecobis.bpl.dao.workflow.RoleUserDao.*(..))" />
+		<aop:advisor pointcut-ref="RoleUserTransactionalOperations"
+			advice-ref="transactionalAdvice" />
+	</aop:config>
+
+	<aop:config>
+		<aop:pointcut id="RoleTypeTransactionalOperations"
+			expression="execution(* com.cobiscorp.ecobis.bpl.dao.workflow.RoleTypeDao.*(..))" />
+		<aop:advisor pointcut-ref="RoleTypeTransactionalOperations"
+			advice-ref="transactionalAdvice" />
+	</aop:config>
+
+
+	<aop:config>
+		<aop:pointcut id="ResultTransactionalOperations"
+			expression="execution(* com.cobiscorp.ecobis.bpl.dao.workflow.ResultDao.*(..))" />
+		<aop:advisor pointcut-ref="ResultTransactionalOperations"
+			advice-ref="transactionalAdvice" />
+	</aop:config>
+
+	<aop:config>
+		<aop:pointcut id="RequirementTransactionalOperations"
+			expression="execution(* com.cobiscorp.ecobis.bpl.dao.workflow.RequirementDao.*(..))" />
+		<aop:advisor pointcut-ref="RequirementTransactionalOperations"
+			advice-ref="transactionalAdvice" />
+	</aop:config>
+
+	<aop:config>
+		<aop:pointcut id="ActivityTransactionalOperations"
+			expression="execution(* com.cobiscorp.ecobis.bpl.dao.workflow.ActivityDao.*(..))" />
+		<aop:advisor pointcut-ref="ActivityTransactionalOperations"
+			advice-ref="transactionalAdvice" />
+	</aop:config>
+
+	<aop:config>
+		<aop:pointcut id="ActivityObservationTransactionalOperations"
+			expression="execution(* com.cobiscorp.ecobis.bpl.dao.workflow.ActivityObservationDao.*(..))" />
+		<aop:advisor pointcut-ref="ActivityObservationTransactionalOperations"
+			advice-ref="transactionalAdvice" />
+	</aop:config>
+
+	<aop:config>
+		<aop:pointcut id="ActivityRequirementTransactionalOperations"
+			expression="execution(* com.cobiscorp.ecobis.bpl.dao.workflow.ActivityRequirementDao.*(..))" />
+		<aop:advisor pointcut-ref="ActivityRequirementTransactionalOperations"
+			advice-ref="transactionalAdvice" />
+	</aop:config>
+
+	<aop:config>
+		<aop:pointcut id="ActivityResultTransactionalOperations"
+			expression="execution(* com.cobiscorp.ecobis.bpl.dao.workflow.ActivityResultDao.*(..))" />
+		<aop:advisor pointcut-ref="ActivityResultTransactionalOperations"
+			advice-ref="transactionalAdvice" />
+	</aop:config>
+
+	<aop:config>
+		<aop:pointcut id="CatalogTransactionalOperations"
+			expression="execution(* com.cobiscorp.ecobis.bpl.dao.cobis.CatalogDao.*(..))" />
+		<aop:advisor pointcut-ref="CatalogTransactionalOperations"
+			advice-ref="transactionalAdvice" />
+	</aop:config>
+
+	<aop:config>
+		<aop:pointcut id="CobisTableTransactionalOperations"
+			expression="execution(* com.cobiscorp.ecobis.bpl.dao.cobis.CobisTableDao.*(..))" />
+		<aop:advisor pointcut-ref="CobisTableTransactionalOperations"
+			advice-ref="transactionalAdvice" />
+	</aop:config>
+
+	<aop:config>
+		<aop:pointcut id="StepServiceTransactionalOperations"
+			expression="execution(* com.cobiscorp.ecobis.bpl.service.workflow.StepService.*(..))" />
+		<aop:advisor pointcut-ref="StepServiceTransactionalOperations"
+			advice-ref="transactionalAdvice" />
+	</aop:config>
+
+	<aop:config>
+		<aop:pointcut id="ApprovalExceptionServiceTransactionalOperations"
+			expression="execution(* com.cobiscorp.ecobis.bpl.service.workflow.ApprovalExceptionService.*(..))" />
+		<aop:advisor pointcut-ref="ApprovalExceptionServiceTransactionalOperations"
+			advice-ref="transactionalAdvice" />
+	</aop:config>
+
+	<aop:config>
+		<aop:pointcut id="ProcessTransactionalOperations"
+			expression="execution(* com.cobiscorp.ecobis.bpl.dao.workflow.ProcessDao.*(..))" />
+		<aop:advisor pointcut-ref="ProcessTransactionalOperations"
+			advice-ref="transactionalAdvice" />
+	</aop:config>
+
+	<aop:config>
+		<aop:pointcut id="HierarchyTypeTplTransactionalOperations"
+			expression="execution(* com.cobiscorp.ecobis.bpl.dao.workflow.HierarchyTypeTplDao.*(..))" />
+		<aop:advisor pointcut-ref="HierarchyTypeTplTransactionalOperations"
+			advice-ref="transactionalAdvice" />
+	</aop:config>
+
+	<aop:config>
+		<aop:pointcut id="HierarchyItemTplTransactionalOperations"
+			expression="execution(* com.cobiscorp.ecobis.bpl.dao.workflow.HierarchyItemTplDao.*(..))" />
+		<aop:advisor pointcut-ref="HierarchyItemTplTransactionalOperations"
+			advice-ref="transactionalAdvice" />
+	</aop:config>
+
+	<aop:config>
+		<aop:pointcut id="HierarchyUserTplTransactionalOperations"
+			expression="execution(* com.cobiscorp.ecobis.bpl.dao.workflow.HierarchyUserTplDao.*(..))" />
+		<aop:advisor pointcut-ref="HierarchyUserTplTransactionalOperations"
+			advice-ref="transactionalAdvice" />
+	</aop:config>
+
+
+	<aop:config>
+		<aop:pointcut id="LinkTransactionOperations"
+			expression="execution(* com.cobiscorp.ecobis.bpl.dao.workflow.LinkDao.*(..))" />
+		<aop:advisor pointcut-ref="LinkTransactionOperations"
+			advice-ref="transactionalAdvice" />
+	</aop:config>
+
+
+	<aop:config>
+		<aop:pointcut id="ProcessServiceTransactionalOperations"
+			expression="execution(* com.cobiscorp.ecobis.bpl.service.workflow.ProcessService.*(..))" />
+		<aop:advisor pointcut-ref="ProcessServiceTransactionalOperations"
+			advice-ref="transactionalAdvice" />
+	</aop:config>
+
+	<aop:config>
+		<aop:pointcut id="HierarchyLevelTplTransactionalOperations"
+			expression="execution(* com.cobiscorp.ecobis.bpl.dao.workflow.HierarchyLevelTplDao.*(..))" />
+		<aop:advisor pointcut-ref="HierarchyLevelTplTransactionalOperations"
+			advice-ref="transactionalAdvice" />
+	</aop:config>
+
+	<aop:config>
+		<aop:pointcut id="AddresseeDaoTransactionalOperations"
+			expression="execution(* com.cobiscorp.ecobis.bpl.dao.workflow.AddresseeDao.*(..))" />
+		<aop:advisor pointcut-ref="AddresseeDaoTransactionalOperations"
+			advice-ref="transactionalAdvice" />
+	</aop:config>
+
+	<aop:config>
+		<aop:pointcut id="ProgramDaoTransactionalOperations"
+			expression="execution(* com.cobiscorp.ecobis.bpl.dao.workflow.ProgramDao.*(..))" />
+		<aop:advisor pointcut-ref="ProgramDaoTransactionalOperations"
+			advice-ref="transactionalAdvice" />
+	</aop:config>
+
+	<aop:config>
+		<aop:pointcut id="VariableDaoTransactionalOperations"
+			expression="execution(* com.cobiscorp.ecobis.bpl.dao.workflow.VariableDao.*(..))" />
+		<aop:advisor pointcut-ref="VariableDaoTransactionalOperations"
+			advice-ref="transactionalAdvice" />
+	</aop:config>
+
+	<aop:config>
+		<aop:pointcut id="RuleDaoTransactionalOperations"
+			expression="execution(* com.cobiscorp.ecobis.bpl.dao.rules.RuleDao.*(..))" />
+		<aop:advisor pointcut-ref="RuleDaoTransactionalOperations"
+			advice-ref="transactionalAdvice" />
+	</aop:config>
+
+	<aop:config>
+		<aop:pointcut id="LoadBalanceDaoTransactionalOperations"
+			expression="execution(* com.cobiscorp.ecobis.bpl.dao.workflow.LoadBalanceDao.*(..))" />
+		<aop:advisor pointcut-ref="LoadBalanceDaoTransactionalOperations"
+			advice-ref="transactionalAdvice" />
+	</aop:config>
+
+	<jpa:repositories base-package="com.cobiscorp.ecobis.bpl.extractor.repository" />
+
+	<bean id="entityManagerFactory"
+		class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
+		<property name="dataSource" ref="dataSource" />
+		<property name="jpaVendorAdapter">
+			<bean class="org.springframework.orm.jpa.vendor.OpenJpaVendorAdapter">
+				<property name="generateDdl" value="false" />
+				<property name="database" value="SYBASE" />
+			</bean>
+		</property>
+		<property name="persistenceUnitName" value="jpa.ExtractorApplication" />
+		<property name="jpaPropertyMap">
+			<map>
+				<entry key="openjpa.jdbc.DBDictionary" value="sqlserver(CatalogSeparator='..')" />
+			</map>
+		</property>
+	</bean>
+
+	<bean id="transactionManager" class="org.springframework.orm.jpa.JpaTransactionManager">
+		<property name="entityManagerFactory" ref="entityManagerFactory" />
+	</bean>
+
+	<bean id="exceptionRuleDAO" class="com.cobiscorp.ecobis.bpl.util.ExceptionRuleDAOImpl">
+	</bean>
+
+	<bean id="ruleExceptionManager"
+		class="com.cobiscorp.ecobis.bpl.util.RuleExceptionAdmManagerImpl">
+		<property name="exceptionRuleDAO" ref="exceptionRuleDAO" />
+	</bean>
+
+
+	<bean id="systemRuleDAO" class="com.cobiscorp.ecobis.bpl.util.SystemRuleDAOImpl">
+	</bean>
+
+	<bean id="systemRuleAdmManager" class="com.cobiscorp.ecobis.bpl.util.SystemRuleAdmManagerImpl">
+		<property name="systemRuleDAO" ref="systemRuleDAO" />
+	</bean>
+
+	<bean id="subTypeRuleDAO" class="com.cobiscorp.ecobis.bpl.util.SubTypeRuleDAOImpl">
+	</bean>
+
+	<bean id="subTypeRuleAdmManager" class="com.cobiscorp.ecobis.bpl.util.SubTypeRuleAdmManagerImpl">
+		<property name="subTypeRuleDAO" ref="subTypeRuleDAO" />
+	</bean>
+
+	<bean id="taskViewDao" class="com.cobiscorp.ecobis.bpl.dao.rules.impl.TaskViewDaoImpl">
+	</bean>
+
+	<bean id="componentDao"
+		class="com.cobiscorp.ecobis.bpl.dao.cobis.impl.ComponentDaoImpl">
+	</bean>
+
+	<bean id="taskViewService"
+		class="com.cobiscorp.ecobis.bpl.service.rules.impl.TaskViewServiceImpl">
+		<property name="taskViewDao" ref="taskViewDao" />
+		<property name="activityDao" ref="activityDao" />
+		<property name="componentDao" ref="componentDao" />
+	</bean>
+
+	<bean id="processVersionDao"
+		class="com.cobiscorp.ecobis.bpl.dao.workflow.impl.ProcessVersionDaoImpl">
+	</bean>
+
+	<bean id="processVersionService"
+		class="com.cobiscorp.ecobis.bpl.service.workflow.impl.ProcessVersionServiceImpl">
+		<property name="processVersionDao" ref="processVersionDao" />
+	</bean>
+
+	<bean id="linkDao" class="com.cobiscorp.ecobis.bpl.dao.workflow.impl.LinkDaoImpl">
+	</bean>
+
+	<bean id="linkService"
+		class="com.cobiscorp.ecobis.bpl.service.workflow.impl.LinkServiceImpl">
+		<property name="linkDao" ref="linkDao" />
+		<property name="linkConditionDao" ref="linkConditionDao" />
+		<property name="variableService" ref="variableService" />
+		<property name="resultService" ref="resultService" />
+		<property name="stepService" ref="stepService" />
+	</bean>
+
+	<bean id="processVariableDao"
+		class="com.cobiscorp.ecobis.bpl.dao.workflow.impl.ProcessVariableDaoImpl">
+	</bean>
+
+	<bean id="processVariableService"
+		class="com.cobiscorp.ecobis.bpl.service.workflow.impl.ProcessVariableServiceImpl">
+		<property name="processVariableDao" ref="processVariableDao" />
+		<property name="programService" ref="programService" />
+		<property name="variableService" ref="variableService" />
+	</bean>
+
+	<bean id="mappingVariableProcessDao"
+		class="com.cobiscorp.ecobis.bpl.dao.workflow.impl.MappingVariableProcessDaoImpl">
+	</bean>
+
+	<bean id="mappingVariableService"
+		class="com.cobiscorp.ecobis.bpl.service.workflow.impl.MappingVariableProcessServiceImpl">
+		<property name="mappingVariableProcessDao" ref="mappingVariableProcessDao" />
+	</bean>
+
+	<bean id="hierarchyDao"
+		class="com.cobiscorp.ecobis.bpl.dao.workflow.impl.HierarchyDaoImpl">
+	</bean>
+
+	<bean id="hierarchyRolDao"
+		class="com.cobiscorp.ecobis.bpl.dao.workflow.impl.HierarchyRolDaoImpl">
+	</bean>
+
+	<bean id="hierarchyRolService"
+		class="com.cobiscorp.ecobis.bpl.service.workflow.impl.HierarchyRolServiceImpl">
+		<property name="hierarchyRolDao" ref="hierarchyRolDao" />
+		<property name="roleService" ref="roleService" />
+		<property name="variableService" ref="variableService" />
+		<property name="resultService" ref="resultService" />
+	</bean>
+
+	<bean id="hierarchyService"
+		class="com.cobiscorp.ecobis.bpl.service.workflow.impl.HierarchyServiceImpl">
+		<property name="hierarchyDao" ref="hierarchyDao" />
+		<property name="hierarchyRolService" ref="hierarchyRolService" />
+	</bean>
+
+	<bean id="stepDao" class="com.cobiscorp.ecobis.bpl.dao.workflow.impl.StepDaoImpl">
+	</bean>
+
+<bean id="approvalExceptionDao"
+		class="com.cobiscorp.ecobis.bpl.dao.workflow.impl.ApprovalExceptionDaoImpl">
+	</bean>
+
+	<bean id="activityResultDao"
+		class="com.cobiscorp.ecobis.bpl.dao.workflow.impl.ActivityResultDaoImpl">
+	</bean>
+
+	<bean id="stepService"
+		class="com.cobiscorp.ecobis.bpl.service.workflow.impl.StepServiceImpl">
+		<property name="stepDao" ref="stepDao" />
+		<property name="resultDao" ref="resultDao" />
+		<property name="requirementDao" ref="requirementDao" />
+		<property name="activityResultDao" ref="activityResultDao" />
+		<property name="activityRequirementDao" ref="activityRequirementDao" />
+		<property name="activityObservationDao" ref="activityObservationDao" />
+		<property name="activityDao" ref="activityDao" />
+		<property name="policyStepDao" ref="policyStepDao" />
+		<property name="catalogDao" ref="catalogDao" />
+		<property name="hierarchyItemTplDao" ref="hierarchyItemTplDao" />
+		<property name="ruleService" ref="ruleService" />
+		<property name="variableService" ref="variableService" />
+		<property name="resultService" ref="resultService" />
+	<property name="approvalExceptionDao" ref="approvalExceptionDao" />
+	</bean>
+
+	<bean id="approvalExceptionService"
+		class="com.cobiscorp.ecobis.bpl.service.workflow.impl.ApprovalExceptionServiceImpl">
+		<property name="approvalExceptionDao" ref="approvalExceptionDao" />
+	</bean>
+
+	<bean id="policyStepDao"
+		class="com.cobiscorp.ecobis.bpl.dao.workflow.impl.PolicyStepDaoImpl">
+	</bean>
+
+	<bean id="policyStepService"
+		class="com.cobiscorp.ecobis.bpl.service.workflow.impl.PolicyStepServiceImpl">
+		<property name="policyStepDao" ref="policyStepDao" />
+	</bean>
+
+	<bean id="processActivityDao"
+		class="com.cobiscorp.ecobis.bpl.dao.workflow.impl.ProcessActivityDaoImpl">
+	</bean>
+
+	<bean id="processActivityService"
+		class="com.cobiscorp.ecobis.bpl.service.workflow.impl.ProcessActivityServiceImpl">
+		<property name="processActivityDao" ref="processActivityDao" />
+		<property name="activityDao" ref="activityDao" />
+	</bean>
+
+	<bean id="activityRequirementDao"
+		class="com.cobiscorp.ecobis.bpl.dao.workflow.impl.ActivityRequirementDaoImpl">
+	</bean>
+
+	<bean id="activityRequirementStepService"
+		class="com.cobiscorp.ecobis.bpl.service.workflow.impl.ActivityRequirementServiceImpl">
+		<property name="activityRequirementDao" ref="activityRequirementDao" />
+	</bean>
+
+
+
+	<bean id="activityResultService"
+		class="com.cobiscorp.ecobis.bpl.service.workflow.impl.ActivityResultServiceImpl">
+		<property name="activityResultDao" ref="activityResultDao" />
+	</bean>
+
+	<bean id="activityObservationDao"
+		class="com.cobiscorp.ecobis.bpl.dao.workflow.impl.ActivityObservationDaoImpl">
+	</bean>
+
+	<bean id="activityObservationService"
+		class="com.cobiscorp.ecobis.bpl.service.workflow.impl.ActivityObservationServiceImpl">
+		<property name="activityObservationDao" ref="activityObservationDao" />
+	</bean>
+
+	<bean id="receptorDao"
+		class="com.cobiscorp.ecobis.bpl.dao.workflow.impl.ReceptorDaoImpl">
+	</bean>
+
+	<bean id="receptorService"
+		class="com.cobiscorp.ecobis.bpl.service.workflow.impl.ReceptorServiceImpl">
+		<property name="receptorDao" ref="receptorDao" />
+	</bean>
+
+	<bean id="addresseeDao"
+		class="com.cobiscorp.ecobis.bpl.dao.workflow.impl.AddresseeDaoImpl">
+	</bean>
+
+	<bean id="addresseeService"
+		class="com.cobiscorp.ecobis.bpl.service.workflow.impl.AddresseeServiceImpl">
+		<property name="addresseeDao" ref="addresseeDao" />
+		<property name="roleService" ref="roleService" />
+		<property name="loadBalanceService" ref="loadBalanceService" />
+		<property name="processVariableService" ref="processVariableService" />
+		<property name="userService" ref="userService" />
+		<property name="activityService" ref="activityService" />
+		<property name="hierarchyTypeTplService" ref="hierarchyTypeTplService" />
+		<property name="hierarchyDao" ref="hierarchyDao" />
+		<property name="programService" ref="programService" />
+	</bean>
+
+	<bean id="userDao" class="com.cobiscorp.ecobis.bpl.dao.workflow.impl.UserDaoImpl">
+	</bean>
+
+	<bean id="userService"
+		class="com.cobiscorp.ecobis.bpl.service.workflow.impl.UserServiceImpl">
+		<property name="userDao" ref="userDao" />
+		<property name="officialDao" ref="officialDao" />
+	</bean>
+
+	<bean id="roleDao" class="com.cobiscorp.ecobis.bpl.dao.workflow.impl.RoleDaoImpl">
+	</bean>
+
+	<bean id="roleService"
+		class="com.cobiscorp.ecobis.bpl.service.workflow.impl.RoleServiceImpl">
+		<property name="roleDao" ref="roleDao" />
+		<property name="roleUserDao" ref="roleUserDao" />
+		<property name="userService" ref="userService" />
+		<property name="roleTypeService" ref="roleTypeService" />
+	</bean>
+
+	<bean id="hierarchyItemDao"
+		class="com.cobiscorp.ecobis.bpl.dao.workflow.impl.HierarchyItemDaoImpl">
+	</bean>
+
+	<bean id="hierarchyItemService"
+		class="com.cobiscorp.ecobis.bpl.service.workflow.impl.HierarchyItemServiceImpl">
+		<property name="hierarchyItemDao" ref="hierarchyItemDao" />
+		<property name="variableService" ref="variableService" />
+		<property name="resultService" ref="resultService" />
+	</bean>
+
+	<bean id="processTypeDao"
+		class="com.cobiscorp.ecobis.bpl.dao.workflow.impl.ProcessTypeDaoImpl">
+	</bean>
+
+	<bean id="processTypeService"
+		class="com.cobiscorp.ecobis.bpl.service.workflow.impl.ProcessTypeServiceImpl">
+		<property name="processTypeDao" ref="processTypeDao" />
+	</bean>
+
+	<bean id="linkConditionDao"
+		class="com.cobiscorp.ecobis.bpl.dao.workflow.impl.LinkConditionDaoImpl">
+	</bean>
+
+	<bean id="linkConditionService"
+		class="com.cobiscorp.ecobis.bpl.service.workflow.impl.LinkConditionServiceImpl">
+		<property name="linkConditionDao" ref="linkConditionDao" />
+		<property name="variableService" ref="variableService" />
+		<property name="resultService" ref="resultService" />
+	</bean>
+
+	<bean id="roleTypeDao"
+		class="com.cobiscorp.ecobis.bpl.dao.workflow.impl.RoleTypeDaoImpl">
+	</bean>
+
+	<bean id="roleTypeService"
+		class="com.cobiscorp.ecobis.bpl.service.workflow.impl.RoleTypeServiceImpl">
+		<property name="roleTypeDao" ref="roleTypeDao" />
+	</bean>
+
+	<bean id="roleUserDao"
+		class="com.cobiscorp.ecobis.bpl.dao.workflow.impl.RoleUserDaoImpl">
+	</bean>
+
+	<bean id="officialDao"
+		class="com.cobiscorp.ecobis.bpl.dao.workflow.impl.OfficialDaoImpl">
+	</bean>
+
+	<bean id="activityDao"
+		class="com.cobiscorp.ecobis.bpl.dao.workflow.impl.ActivityDaoImpl">
+	</bean>
+
+	<bean id="activityService"
+		class="com.cobiscorp.ecobis.bpl.service.workflow.impl.ActivityServiceImpl">
+		<property name="activityDao" ref="activityDao" />
+	</bean>
+
+	<bean id="resultDao"
+		class="com.cobiscorp.ecobis.bpl.dao.workflow.impl.ResultDaoImpl">
+	</bean>
+
+	<bean id="resultService"
+		class="com.cobiscorp.ecobis.bpl.service.workflow.impl.ResultServiceImpl">
+		<property name="resultDao" ref="resultDao" />
+	</bean>
+
+	<bean id="requirementDao"
+		class="com.cobiscorp.ecobis.bpl.dao.workflow.impl.RequirementDaoImpl">
+	</bean>
+
+	<bean id="requirementService"
+		class="com.cobiscorp.ecobis.bpl.service.workflow.impl.RequirementServiceImpl">
+		<property name="requirementDao" ref="requirementDao" />
+	</bean>
+	<bean id="catalogDao" class="com.cobiscorp.ecobis.bpl.dao.cobis.impl.CatalogDaoImpl">
+	</bean>
+
+	<bean id="cobisTableDao"
+		class="com.cobiscorp.ecobis.bpl.dao.cobis.impl.CobisTableDaoImpl">
+	</bean>
+	<bean id="catalogService"
+		class="com.cobiscorp.ecobis.bpl.service.cobis.impl.CatalogServiceImpl">
+		<property name="catalogDao" ref="catalogDao" />
+		<property name="cobisTableDao" ref="cobisTableDao" />
+	</bean>
+
+	<bean id="informationStepDao"
+		class="com.cobiscorp.ecobis.bpl.dao.workflow.impl.InformationStepDaoImpl">
+	</bean>
+	<bean id="informationStepService"
+		class="com.cobiscorp.ecobis.bpl.service.workflow.impl.InformationStepServiceImpl">
+		<property name="informationStepDao" ref="informationStepDao" />
+	</bean>
+
+	<bean id="hierarchyTypeTplDao"
+		class="com.cobiscorp.ecobis.bpl.dao.workflow.impl.HierarchyTypeTplDaoImpl">
+	</bean>
+	<bean id="hierarchyTypeTplService"
+		class="com.cobiscorp.ecobis.bpl.service.workflow.impl.HierarchyTypeTplServiceImpl">
+		<property name="hierarchyTypeTplDao" ref="hierarchyTypeTplDao" />
+		<property name="hierarchyItemTplDao" ref="hierarchyItemTplDao" />
+		<property name="hierarchyUserTplDao" ref="hierarchyUserTplDao" />
+		<property name="hierarchyLevelTplDao" ref="hierarchyLevelTplDao" />
+		<property name="userService" ref="userService" />
+		<property name="processVariableService" ref="processVariableService" />
+		<property name="variableService" ref="variableService" />
+	</bean>
+
+	<bean id="hierarchyItemTplDao"
+		class="com.cobiscorp.ecobis.bpl.dao.workflow.impl.HierarchyItemTplDaoImpl">
+	</bean>
+
+	<bean id="hierarchyUserTplDao"
+		class="com.cobiscorp.ecobis.bpl.dao.workflow.impl.HierarchyUserTplDaoImpl">
+	</bean>
+
+	<bean id="hierarchyLevelTplDao"
+		class="com.cobiscorp.ecobis.bpl.dao.workflow.impl.HierarchyLevelTplDaoImpl">
+	</bean>
+
+	<bean id="programDao"
+		class="com.cobiscorp.ecobis.bpl.dao.workflow.impl.ProgramDaoImpl">
+	</bean>
+
+	<bean id="programService"
+		class="com.cobiscorp.ecobis.bpl.service.workflow.impl.ProgramServiceImpl">
+		<property name="programDao" ref="programDao" />
+	</bean>
+
+
+	<bean id="variableDao"
+		class="com.cobiscorp.ecobis.bpl.dao.workflow.impl.VariableDaoImpl">
+	</bean>
+	<bean id="variableService"
+		class="com.cobiscorp.ecobis.bpl.service.workflow.impl.VariableServiceImpl">
+		<property name="variableDao" ref="variableDao" />
+		<property name="programService" ref="programService" />
+	</bean>
+
+	<bean id="ruleDao" class="com.cobiscorp.ecobis.bpl.dao.rules.impl.RuleDaoImpl">
+	</bean>
+	<bean id="ruleService"
+		class="com.cobiscorp.ecobis.bpl.service.rules.impl.RuleServiceImpl">
+		<property name="ruleDao" ref="ruleDao" />
+		<property name="ruleVersionDao" ref="ruleVersionDao" />
+		<property name="conditionRuleDao" ref="conditionRuleDao" />
+		<property name="systemRuleAdmManager" ref="systemRuleAdmManager" />
+		<property name="subTypeRuleAdmManager" ref="subTypeRuleAdmManager" />
+		<property name="ruleExceptionManager" ref="ruleExceptionManager" />
+		<property name="variableService" ref="variableService" />
+	</bean>
+
+	<bean id="conditionRuleDao"
+		class="com.cobiscorp.ecobis.bpl.dao.rules.impl.ConditionRuleDaoImpl">
+	</bean>
+
+
+	<bean id="ruleVersionDao"
+		class="com.cobiscorp.ecobis.bpl.dao.rules.impl.RuleVersionDaoImpl">
+	</bean>
+
+
+
+	<bean id="processDao"
+		class="com.cobiscorp.ecobis.bpl.dao.workflow.impl.ProcessDaoImpl">
+	</bean>
+	<bean id="processService"
+		class="com.cobiscorp.ecobis.bpl.service.workflow.impl.ProcessServiceImpl">
+		<property name="processDao" ref="processDao" />
+		<property name="processVersionDao" ref="processVersionDao" />
+		<property name="processActivityService" ref="processActivityService" />
+		<property name="stepService" ref="stepService" />
+		<property name="processVariableService" ref="processVariableService" />
+		<property name="taskViewService" ref="taskViewService" />
+		<property name="addresseeService" ref="addresseeService" />
+		<property name="hierarchyService" ref="hierarchyService" />
+	<property name="approvalExceptionService" ref="approvalExceptionService" />
+	</bean>
+
+	<bean id="loadBalanceDao"
+		class="com.cobiscorp.ecobis.bpl.dao.workflow.impl.LoadBalanceDaoImpl">
+	</bean>
+	<bean id="loadBalanceService"
+		class="com.cobiscorp.ecobis.bpl.service.workflow.impl.LoadBalanceServiceImpl">
+		<property name="loadBalanceDao" ref="loadBalanceDao" />
+	</bean>
+
+
+	<bean id="dataSource"
+		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+		<property name="driverClassName"
+			value="com.microsoft.sqlserver.jdbc.SQLServerDriver" />
+		<property name="url" value="jdbc:sqlserver://192.168.64.254:1433;DatabaseName=cob_pac" />
+		<property name="username" value="sa" />
+		<property name="password" value="server" />
+	</bean>
+	
+</beans> 

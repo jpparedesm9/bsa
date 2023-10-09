@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<serviceClass name="ValidateLineCredit" nsBase="COBISCorp.eCOBIS.BusinessProcess.LoanRequest" namespace="COBISCorp.eCOBIS.BusinessProcess.LoanRequest.Service" package="cobiscorp.ecobis.businessprocess.loanrequest.service" ns="http://service.loanrequest.businessprocess.ecobis.cobiscorp" module="BusinessProcess.LoanRequest" productName="COBISCorp.eCOBIS.BusinessProcess.Service" productVersion="2.0.0.0">
+  <productProperties>
+    <property name="MavenGroupId" value="com.cobiscorp.processapi" />
+    <property name="MavenArtifactId" value="COBISCorp.eCOBIS.BusinessProcess.Service" />
+    <property name="MavenVersion" value="2.0.0.0" />
+  </productProperties>
+  <partialClass name="ValidateLineCredit">
+    <services>
+      <service id="BusinessProcess.LoanRequest.ValidateLineCredit.ValidateUseOfLineCredit" netName="ValidateUseOfLineCredit" javaName="validateUseOfLineCredit" mappingType="STORED_PROCEDURE" mapId="98ed037c165c8ff9f4afefbe86f08c84">
+        <SRVMapping name="cob_credito..sp_utilizacion" trnCode="21888">
+          <DTOs>
+            <DTO direction="in" name="LineCreditInformation" alias="inLineCreditInformation" namespace="COBISCorp.eCOBIS.BusinessProcess.LoanRequest.DTO" package="cobiscorp.ecobis.businessprocess.loanrequest.dto" ns="http://dto.loanrequest.businessprocess.ecobis.cobiscorp" required="true" />
+          </DTOs>
+          <parameterMappings>
+            <parameter name="@i_tipo" direction="in" mappingDirection="in" dataType="char" CTSDataType="SQLCHAR" JavaSQLType="CHAR" mappingType="CONSTANT" allowNull="false" contantValue="C" />
+            <parameter name="@i_linea_banco" direction="in" mappingDirection="in" dataType="varchar" CTSDataType="SQLVARCHAR" JavaSQLType="VARCHAR" mappingType="DTO" allowNull="false" DTOAlias="inLineCreditInformation" DTOPropertyName="creditLine" />
+            <parameter name="@i_moneda" direction="in" mappingDirection="in" dataType="tinyint" CTSDataType="SQLINT1" JavaSQLType="INTEGER" mappingType="DTO" allowNull="false" DTOAlias="inLineCreditInformation" DTOPropertyName="currency" />
+            <parameter name="@i_monto" direction="in" mappingDirection="in" dataType="money" CTSDataType="SQLMONEY" JavaSQLType="DECIMAL" mappingType="DTO" allowNull="false" DTOAlias="inLineCreditInformation" DTOPropertyName="amount " />
+            <parameter name="@i_tramite" direction="in" mappingDirection="in" dataType="int" CTSDataType="SQLINT4" JavaSQLType="INTEGER" mappingType="DTO" allowNull="false" DTOAlias="inLineCreditInformation" DTOPropertyName="creditCode" />
+            <parameter name="@i_tolerancia" direction="in" mappingDirection="in" dataType="float" CTSDataType="SQLFLT8i" JavaSQLType="DOUBLE" mappingType="DTO" allowNull="false" DTOAlias="inLineCreditInformation" DTOPropertyName="tolerance " />
+            <parameter name="@i_frontend" direction="in" mappingDirection="in" dataType="char" CTSDataType="SQLCHAR" JavaSQLType="CHAR" mappingType="DTO" allowNull="false" DTOAlias="inLineCreditInformation" DTOPropertyName="frontEndCredit" />
+          </parameterMappings>
+          <resultMappings />
+          <MappingProperties />
+        </SRVMapping>
+      </service>
+    </services>
+  </partialClass>
+</serviceClass>

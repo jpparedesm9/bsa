@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="consentOfsegurityTuiioMedical" pageWidth="595" pageHeight="842" whenNoDataType="BlankPage" columnWidth="555" leftMargin="10" rightMargin="10" topMargin="10" bottomMargin="10" uuid="9931d0a9-24f4-41cb-a8c6-1a7ba6518450">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+	<property name="ireport.zoom" value="1.5"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="357"/>
+	<parameter name="certificationSecurityNameMedical" class="java.lang.String">
+		<parameterDescription><![CDATA[certificationSecurityNameMedical]]></parameterDescription>
+		<defaultValueExpression><![CDATA[" "]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="listInformationHeadLineMedical" class="java.util.List">
+		<fieldDescription><![CDATA[listInformationHeadLineMedical]]></fieldDescription>
+	</field>
+	<field name="listBenefitsDeclareMedical" class="java.util.List">
+		<fieldDescription><![CDATA[listBenefitsDeclareMedical]]></fieldDescription>
+	</field>
+	<field name="listBenefitsInformationTableMedical" class="java.util.List">
+		<fieldDescription><![CDATA[listBenefitsInformationTableMedical]]></fieldDescription>
+	</field>
+	<pageHeader>
+		<band height="79">
+			<image>
+				<reportElement x="0" y="2" width="126" height="72" uuid="e8e9ad7c-51a6-4764-8221-ebd9d686bc66"/>
+				<imageExpression><![CDATA["/logos/logoSraul.png"]]></imageExpression>
+			</image>
+			<image>
+				<reportElement x="454" y="0" width="121" height="72" uuid="b08bbd42-66e4-4e5d-92d9-7d88c52fbacc"/>
+				<imageExpression><![CDATA["/logos/logotuiio.png"]]></imageExpression>
+			</image>
+		</band>
+	</pageHeader>
+	<detail>
+		<band height="60" splitType="Stretch">
+			<subreport>
+				<reportElement x="0" y="0" width="575" height="60" uuid="dba61ec3-e725-4882-8be1-7662dd9ff63a"/>
+				<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.JREmptyDataSource()]]></dataSourceExpression>
+				<subreportExpression><![CDATA["subreportCertificationTuiioMedical.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+		<band height="129">
+			<staticText>
+				<reportElement stretchType="RelativeToBandHeight" mode="Transparent" x="0" y="11" width="575" height="20" forecolor="#1F1C1C" backcolor="#FCFCFC" uuid="bd60445b-ba24-4a1b-9e4f-6a2e30a91a69"/>
+				<box>
+					<topPen lineColor="#C2C2C2"/>
+					<leftPen lineWidth="0.0" lineColor="#0D0A0A"/>
+					<bottomPen lineColor="#C2C2C2"/>
+					<rightPen lineColor="#C2C2C2"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="13" isBold="true"/>
+				</textElement>
+				<text><![CDATA[CONSENTIMIENTO DEL SEGURO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="29" width="575" height="39" uuid="d5797a70-f031-44b6-8743-bc063f51cacf"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle" markup="html">
+					<font size="9"/>
+				</textElement>
+				<text><![CDATA[Otorgo mi consentimiento para formar parte del seguro colectivo de vida deudores, contratado a través de Santander Inclusión Financieras S.A. de C.V. SOFOM, ER en mi nombre y para tal efecto proporciono la siguiente información:
+
+]]></text>
+			</staticText>
+			<subreport>
+				<reportElement x="0" y="89" width="575" height="40" uuid="5e9e474c-444f-4ec9-97ab-54580f5d0950"/>
+				<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($F{listInformationHeadLineMedical})]]></dataSourceExpression>
+				<subreportExpression><![CDATA["informationHeadlineMedical.jasper"]]></subreportExpression>
+			</subreport>
+			<staticText>
+				<reportElement x="-1" y="69" width="575" height="16" uuid="9f8503d9-915b-464f-9b00-b9b2c04cc281">
+					<property name="local_mesure_unitheight" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement markup="html"/>
+				<text><![CDATA[<b>INFORMACIÓN DE TITULAR ASEGURADO:</b>]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="5" width="574" height="1" forecolor="#CCCCCC" uuid="2caea040-051b-4094-89fc-caecaac380fb"/>
+				<graphicElement>
+					<pen lineWidth="1.5"/>
+				</graphicElement>
+			</line>
+		</band>
+		<band height="70">
+			<staticText>
+				<reportElement x="0" y="0" width="319" height="30" uuid="ac5ff84f-9a8a-42b9-befa-7e00ac780edf"/>
+				<textElement textAlignment="Left" verticalAlignment="Bottom" markup="html"/>
+				<text><![CDATA[<b>Firma del Cliente:</b>________________________________________
+
+]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="319" y="0" width="255" height="30" uuid="cfc92b3e-9c75-4afd-b051-08a4815bb521"/>
+				<textElement verticalAlignment="Bottom" markup="html"/>
+				<text><![CDATA[<b> Fecha de firma:</b>___________________________]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="30" width="574" height="20" uuid="aba284cc-4104-4e24-b922-bea493d0e10b"/>
+				<textElement>
+					<font size="8" isItalic="false"/>
+				</textElement>
+				<text><![CDATA[Certifico que los datos que aparecen en la presente concuerdan con los que obran en nuestro poder.]]></text>
+			</staticText>
+			<line>
+				<reportElement x="-1" y="62" width="576" height="1" uuid="6d846c8e-f4e0-422e-9eeb-7bee050d0216"/>
+				<graphicElement>
+					<pen lineStyle="Dashed"/>
+				</graphicElement>
+			</line>
+		</band>
+		<band height="80">
+			<staticText>
+				<reportElement x="0" y="3" width="574" height="20" uuid="aaa7f323-a091-4a8c-9f62-de66116a02b3"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="13" isBold="true"/>
+				</textElement>
+				<text><![CDATA[CERTIFICADO DE SEGURO A:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="52" width="575" height="26" uuid="cb23db75-23d1-44bc-9dbe-e74d2c46bc08"/>
+				<textElement textAlignment="Center" verticalAlignment="Bottom">
+					<font size="13" isBold="true"/>
+				</textElement>
+				<text><![CDATA[QUIEN CUENTA CON LOS SIGUIENTES BENEFICIOS:]]></text>
+			</staticText>
+			<rectangle radius="10">
+				<reportElement x="6" y="25" width="562" height="20" uuid="aef21755-e5d1-4c18-adb8-2de883192fd6"/>
+				<graphicElement>
+					<pen lineWidth="2.0"/>
+				</graphicElement>
+			</rectangle>
+		</band>
+		<band height="69">
+			<subreport>
+				<reportElement x="0" y="0" width="575" height="69" uuid="cc8dc66a-b7ad-4022-b252-e1f39c205f7d"/>
+				<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($F{listBenefitsInformationTableMedical})]]></dataSourceExpression>
+				<subreportExpression><![CDATA["subreportBenefitsTableMedical.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+		<band height="52">
+			<staticText>
+				<reportElement x="6" y="2" width="568" height="50" uuid="1678a629-26e3-4f4c-a9d8-74e1aa45b002"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle" markup="none">
+					<font fontName="SansSerif" size="7" isItalic="false"/>
+				</textElement>
+				<text><![CDATA[   Edad de aceptación titular y pareja: 18 a 79 años con cancelación a los 80 años cumplidos. Hijos de 0 a 17 años con cancelación a los 18 años cumplidos. Incluye 5 eventos a  elegir por familia para médicos especialistas y 2 eventos a elegir por titular + pareja e hijos por grupo familiar. Es necesario realizar la llamada al 01 800 011 2202 para coordinar el servicio requerido. No aplican reembolsos.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="7" y="14" width="2" height="12" uuid="6bf4adce-a7d1-4f02-ba40-d1ed633648fb"/>
+				<textElement textAlignment="Justified">
+					<font size="5"/>
+				</textElement>
+				<text><![CDATA[1]]></text>
+			</staticText>
+		</band>
+		<band height="116">
+			<image>
+				<reportElement x="172" y="14" width="210" height="93" uuid="76f631ac-4679-4dec-87cf-4a2243baf291"/>
+				<imageExpression><![CDATA["/logos/medicalCard.png"]]></imageExpression>
+			</image>
+		</band>
+	</detail>
+</jasperReport>

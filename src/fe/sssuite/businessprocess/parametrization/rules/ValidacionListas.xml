@@ -1,0 +1,1063 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ruleXml>
+    <rules>
+        <acronym>PVALNF    </acronym>
+        <description>Validación de listas negras y negative file</description>
+        <id>66</id>
+        <name>Validación Listas</name>
+        <ruleVersions>
+            <conditionRules>
+                <conditionRuleLastParent>
+                    <conditionRuleParent>
+                        <id>16784</id>
+                        <idResult>17880</idResult>
+                        <isLastSon>false</isLastSon>
+                        <maxValue>1</maxValue>
+                        <minValue></minValue>
+                        <operador>&lt;=</operador>
+                        <rulesVersion>
+                            <dateFinish>8357-10-04T19:33:52-05:00</dateFinish>
+                            <dateStart>2020-01-04T23:00:32.737-06:00</dateStart>
+                            <id>214</id>
+                            <rule>
+<acronym>PVALNF    </acronym>
+<description>Validación de listas negras y negative file</description>
+<id>66</id>
+<name>Validación Listas</name>
+<subTypeId>ORI</subTypeId>
+<systemRuleId>CRE</systemRuleId>
+<type>P</type>
+                            </rule>
+                            <status>PRO       </status>
+                            <version>4</version>
+                        </rulesVersion>
+                        <variable>
+                            <abreviaturaVariable>NUCS      </abreviaturaVariable>
+                            <catalogo></catalogo>
+                            <codigoVariable>122</codigoVariable>
+                            <descVariable>Obtener el numero de ciclos de las distintas solicitudes</descVariable>
+                            <idPrograma>88</idPrograma>
+                            <idSeudoCatalogo>0</idSeudoCatalogo>
+                            <nombreVariable>Ciclos solicitudes</nombreVariable>
+                            <programa>
+<descPrograma>Obtener el número de ciclos de las solicitudes de crédito grupal. individual y revolvente</descPrograma>
+<idPrograma>88</idPrograma>
+<nombreBdd>cob_credito</nombreBdd>
+<nombrePrograma>sp_var_nro_ciclos</nombrePrograma>
+<tipoPrograma>PRA</tipoPrograma>
+                            </programa>
+                            <subTipoVariable>ORI       </subTipoVariable>
+                            <tipoDatos>INT</tipoDatos>
+                            <tipoVariable>CRE       </tipoVariable>
+                            <valVariable>1</valVariable>
+                            <valueOperator>0</valueOperator>
+                        </variable>
+                    </conditionRuleParent>
+                    <id>16787</id>
+                    <idResult>17881</idResult>
+                    <isLastSon>false</isLastSon>
+                    <maxValue></maxValue>
+                    <minValue></minValue>
+                    <operador>cualquier valor</operador>
+                    <rulesVersion>
+                        <dateFinish>8357-10-04T19:33:52-05:00</dateFinish>
+                        <dateStart>2020-01-04T23:00:32.737-06:00</dateStart>
+                        <id>214</id>
+                        <rule>
+                            <acronym>PVALNF    </acronym>
+                            <description>Validación de listas negras y negative file</description>
+                            <id>66</id>
+                            <name>Validación Listas</name>
+                            <subTypeId>ORI</subTypeId>
+                            <systemRuleId>CRE</systemRuleId>
+                            <type>P</type>
+                        </rule>
+                        <status>PRO       </status>
+                        <version>4</version>
+                    </rulesVersion>
+                    <variable>
+                        <abreviaturaVariable>VALN      </abreviaturaVariable>
+                        <catalogo> </catalogo>
+                        <codigoVariable>125</codigoVariable>
+                        <descVariable>Validar los solicitudes que aparezcan en listas negras</descVariable>
+                        <idPrograma>90</idPrograma>
+                        <idSeudoCatalogo>0</idSeudoCatalogo>
+                        <nombreVariable>Validación listas negras</nombreVariable>
+                        <programa>
+                            <descPrograma>Valida los solicitudes si existe en listas negras</descPrograma>
+                            <idPrograma>90</idPrograma>
+                            <nombreBdd>cob_credito</nombreBdd>
+                            <nombrePrograma>sp_listas_negative</nombrePrograma>
+                            <tipoPrograma>PRA</tipoPrograma>
+                        </programa>
+                        <subTipoVariable>ORI       </subTipoVariable>
+                        <tipoDatos>CHR</tipoDatos>
+                        <tipoVariable>CRE       </tipoVariable>
+                        <valVariable>S</valVariable>
+                        <valueOperator>0</valueOperator>
+                    </variable>
+                </conditionRuleLastParent>
+                <conditionRuleParent>
+                    <conditionRuleParent>
+                        <id>16784</id>
+                        <idResult>17880</idResult>
+                        <isLastSon>false</isLastSon>
+                        <maxValue>1</maxValue>
+                        <minValue></minValue>
+                        <operador>&lt;=</operador>
+                        <rulesVersion>
+                            <dateFinish>8357-10-04T19:33:52-05:00</dateFinish>
+                            <dateStart>2020-01-04T23:00:32.737-06:00</dateStart>
+                            <id>214</id>
+                            <rule>
+<acronym>PVALNF    </acronym>
+<description>Validación de listas negras y negative file</description>
+<id>66</id>
+<name>Validación Listas</name>
+<subTypeId>ORI</subTypeId>
+<systemRuleId>CRE</systemRuleId>
+<type>P</type>
+                            </rule>
+                            <status>PRO       </status>
+                            <version>4</version>
+                        </rulesVersion>
+                        <variable>
+                            <abreviaturaVariable>NUCS      </abreviaturaVariable>
+                            <catalogo></catalogo>
+                            <codigoVariable>122</codigoVariable>
+                            <descVariable>Obtener el numero de ciclos de las distintas solicitudes</descVariable>
+                            <idPrograma>88</idPrograma>
+                            <idSeudoCatalogo>0</idSeudoCatalogo>
+                            <nombreVariable>Ciclos solicitudes</nombreVariable>
+                            <programa>
+<descPrograma>Obtener el número de ciclos de las solicitudes de crédito grupal. individual y revolvente</descPrograma>
+<idPrograma>88</idPrograma>
+<nombreBdd>cob_credito</nombreBdd>
+<nombrePrograma>sp_var_nro_ciclos</nombrePrograma>
+<tipoPrograma>PRA</tipoPrograma>
+                            </programa>
+                            <subTipoVariable>ORI       </subTipoVariable>
+                            <tipoDatos>INT</tipoDatos>
+                            <tipoVariable>CRE       </tipoVariable>
+                            <valVariable>1</valVariable>
+                            <valueOperator>0</valueOperator>
+                        </variable>
+                    </conditionRuleParent>
+                    <id>16787</id>
+                    <idResult>17881</idResult>
+                    <isLastSon>false</isLastSon>
+                    <maxValue></maxValue>
+                    <minValue></minValue>
+                    <operador>cualquier valor</operador>
+                    <rulesVersion>
+                        <dateFinish>8357-10-04T19:33:52-05:00</dateFinish>
+                        <dateStart>2020-01-04T23:00:32.737-06:00</dateStart>
+                        <id>214</id>
+                        <rule>
+                            <acronym>PVALNF    </acronym>
+                            <description>Validación de listas negras y negative file</description>
+                            <id>66</id>
+                            <name>Validación Listas</name>
+                            <subTypeId>ORI</subTypeId>
+                            <systemRuleId>CRE</systemRuleId>
+                            <type>P</type>
+                        </rule>
+                        <status>PRO       </status>
+                        <version>4</version>
+                    </rulesVersion>
+                    <variable>
+                        <abreviaturaVariable>VALN      </abreviaturaVariable>
+                        <catalogo> </catalogo>
+                        <codigoVariable>125</codigoVariable>
+                        <descVariable>Validar los solicitudes que aparezcan en listas negras</descVariable>
+                        <idPrograma>90</idPrograma>
+                        <idSeudoCatalogo>0</idSeudoCatalogo>
+                        <nombreVariable>Validación listas negras</nombreVariable>
+                        <programa>
+                            <descPrograma>Valida los solicitudes si existe en listas negras</descPrograma>
+                            <idPrograma>90</idPrograma>
+                            <nombreBdd>cob_credito</nombreBdd>
+                            <nombrePrograma>sp_listas_negative</nombrePrograma>
+                            <tipoPrograma>PRA</tipoPrograma>
+                        </programa>
+                        <subTipoVariable>ORI       </subTipoVariable>
+                        <tipoDatos>CHR</tipoDatos>
+                        <tipoVariable>CRE       </tipoVariable>
+                        <valVariable>S</valVariable>
+                        <valueOperator>0</valueOperator>
+                    </variable>
+                </conditionRuleParent>
+                <id>16788</id>
+                <idResult>17882</idResult>
+                <isLastSon>true</isLastSon>
+                <maxValue>0</maxValue>
+                <minValue></minValue>
+                <operador>=</operador>
+                <rulesVersion>
+                    <dateFinish>8357-10-04T19:33:52-05:00</dateFinish>
+                    <dateStart>2020-01-04T23:00:32.737-06:00</dateStart>
+                    <id>214</id>
+                    <rule>
+                        <acronym>PVALNF    </acronym>
+                        <description>Validación de listas negras y negative file</description>
+                        <id>66</id>
+                        <name>Validación Listas</name>
+                        <subTypeId>ORI</subTypeId>
+                        <systemRuleId>CRE</systemRuleId>
+                        <type>P</type>
+                    </rule>
+                    <status>PRO       </status>
+                    <version>4</version>
+                </rulesVersion>
+                <variable>
+                    <abreviaturaVariable>RPO       </abreviaturaVariable>
+                    <catalogo>bpl_result_policies</catalogo>
+                    <codigoVariable>2</codigoVariable>
+                    <descVariable>M-Resultado Politica</descVariable>
+                    <idPrograma>0</idPrograma>
+                    <idSeudoCatalogo>0</idSeudoCatalogo>
+                    <nombreVariable>M-Resultado Politica</nombreVariable>
+                    <subTipoVariable>PRB       </subTipoVariable>
+                    <tipoDatos>INT</tipoDatos>
+                    <tipoVariable>PRB       </tipoVariable>
+                    <valVariable>0</valVariable>
+                    <valueOperator>0</valueOperator>
+                </variable>
+            </conditionRules>
+            <conditionRules>
+                <conditionRuleLastParent>
+                    <conditionRuleParent>
+                        <id>16783</id>
+                        <idResult>18177</idResult>
+                        <isLastSon>false</isLastSon>
+                        <maxValue>1</maxValue>
+                        <minValue></minValue>
+                        <operador>&gt;</operador>
+                        <rulesVersion>
+                            <dateFinish>8357-10-04T19:33:52-05:00</dateFinish>
+                            <dateStart>2020-01-04T23:00:32.737-06:00</dateStart>
+                            <id>214</id>
+                            <rule>
+<acronym>PVALNF    </acronym>
+<description>Validación de listas negras y negative file</description>
+<id>66</id>
+<name>Validación Listas</name>
+<subTypeId>ORI</subTypeId>
+<systemRuleId>CRE</systemRuleId>
+<type>P</type>
+                            </rule>
+                            <status>PRO       </status>
+                            <version>4</version>
+                        </rulesVersion>
+                        <variable>
+                            <abreviaturaVariable>NUCS      </abreviaturaVariable>
+                            <catalogo></catalogo>
+                            <codigoVariable>122</codigoVariable>
+                            <descVariable>Obtener el numero de ciclos de las distintas solicitudes</descVariable>
+                            <idPrograma>88</idPrograma>
+                            <idSeudoCatalogo>0</idSeudoCatalogo>
+                            <nombreVariable>Ciclos solicitudes</nombreVariable>
+                            <programa>
+<descPrograma>Obtener el número de ciclos de las solicitudes de crédito grupal. individual y revolvente</descPrograma>
+<idPrograma>88</idPrograma>
+<nombreBdd>cob_credito</nombreBdd>
+<nombrePrograma>sp_var_nro_ciclos</nombrePrograma>
+<tipoPrograma>PRA</tipoPrograma>
+                            </programa>
+                            <subTipoVariable>ORI       </subTipoVariable>
+                            <tipoDatos>INT</tipoDatos>
+                            <tipoVariable>CRE       </tipoVariable>
+                            <valVariable>1</valVariable>
+                            <valueOperator>0</valueOperator>
+                        </variable>
+                    </conditionRuleParent>
+                    <id>16786</id>
+                    <idResult>17849</idResult>
+                    <isLastSon>false</isLastSon>
+                    <maxValue>NO</maxValue>
+                    <minValue></minValue>
+                    <operador>=</operador>
+                    <rulesVersion>
+                        <dateFinish>8357-10-04T19:33:52-05:00</dateFinish>
+                        <dateStart>2020-01-04T23:00:32.737-06:00</dateStart>
+                        <id>214</id>
+                        <rule>
+                            <acronym>PVALNF    </acronym>
+                            <description>Validación de listas negras y negative file</description>
+                            <id>66</id>
+                            <name>Validación Listas</name>
+                            <subTypeId>ORI</subTypeId>
+                            <systemRuleId>CRE</systemRuleId>
+                            <type>P</type>
+                        </rule>
+                        <status>PRO       </status>
+                        <version>4</version>
+                    </rulesVersion>
+                    <variable>
+                        <abreviaturaVariable>VALN      </abreviaturaVariable>
+                        <catalogo> </catalogo>
+                        <codigoVariable>125</codigoVariable>
+                        <descVariable>Validar los solicitudes que aparezcan en listas negras</descVariable>
+                        <idPrograma>90</idPrograma>
+                        <idSeudoCatalogo>0</idSeudoCatalogo>
+                        <nombreVariable>Validación listas negras</nombreVariable>
+                        <programa>
+                            <descPrograma>Valida los solicitudes si existe en listas negras</descPrograma>
+                            <idPrograma>90</idPrograma>
+                            <nombreBdd>cob_credito</nombreBdd>
+                            <nombrePrograma>sp_listas_negative</nombrePrograma>
+                            <tipoPrograma>PRA</tipoPrograma>
+                        </programa>
+                        <subTipoVariable>ORI       </subTipoVariable>
+                        <tipoDatos>CHR</tipoDatos>
+                        <tipoVariable>CRE       </tipoVariable>
+                        <valVariable>S</valVariable>
+                        <valueOperator>0</valueOperator>
+                    </variable>
+                </conditionRuleLastParent>
+                <conditionRuleParent>
+                    <conditionRuleParent>
+                        <id>16783</id>
+                        <idResult>18177</idResult>
+                        <isLastSon>false</isLastSon>
+                        <maxValue>1</maxValue>
+                        <minValue></minValue>
+                        <operador>&gt;</operador>
+                        <rulesVersion>
+                            <dateFinish>8357-10-04T19:33:52-05:00</dateFinish>
+                            <dateStart>2020-01-04T23:00:32.737-06:00</dateStart>
+                            <id>214</id>
+                            <rule>
+<acronym>PVALNF    </acronym>
+<description>Validación de listas negras y negative file</description>
+<id>66</id>
+<name>Validación Listas</name>
+<subTypeId>ORI</subTypeId>
+<systemRuleId>CRE</systemRuleId>
+<type>P</type>
+                            </rule>
+                            <status>PRO       </status>
+                            <version>4</version>
+                        </rulesVersion>
+                        <variable>
+                            <abreviaturaVariable>NUCS      </abreviaturaVariable>
+                            <catalogo></catalogo>
+                            <codigoVariable>122</codigoVariable>
+                            <descVariable>Obtener el numero de ciclos de las distintas solicitudes</descVariable>
+                            <idPrograma>88</idPrograma>
+                            <idSeudoCatalogo>0</idSeudoCatalogo>
+                            <nombreVariable>Ciclos solicitudes</nombreVariable>
+                            <programa>
+<descPrograma>Obtener el número de ciclos de las solicitudes de crédito grupal. individual y revolvente</descPrograma>
+<idPrograma>88</idPrograma>
+<nombreBdd>cob_credito</nombreBdd>
+<nombrePrograma>sp_var_nro_ciclos</nombrePrograma>
+<tipoPrograma>PRA</tipoPrograma>
+                            </programa>
+                            <subTipoVariable>ORI       </subTipoVariable>
+                            <tipoDatos>INT</tipoDatos>
+                            <tipoVariable>CRE       </tipoVariable>
+                            <valVariable>1</valVariable>
+                            <valueOperator>0</valueOperator>
+                        </variable>
+                    </conditionRuleParent>
+                    <id>16786</id>
+                    <idResult>17849</idResult>
+                    <isLastSon>false</isLastSon>
+                    <maxValue>NO</maxValue>
+                    <minValue></minValue>
+                    <operador>=</operador>
+                    <rulesVersion>
+                        <dateFinish>8357-10-04T19:33:52-05:00</dateFinish>
+                        <dateStart>2020-01-04T23:00:32.737-06:00</dateStart>
+                        <id>214</id>
+                        <rule>
+                            <acronym>PVALNF    </acronym>
+                            <description>Validación de listas negras y negative file</description>
+                            <id>66</id>
+                            <name>Validación Listas</name>
+                            <subTypeId>ORI</subTypeId>
+                            <systemRuleId>CRE</systemRuleId>
+                            <type>P</type>
+                        </rule>
+                        <status>PRO       </status>
+                        <version>4</version>
+                    </rulesVersion>
+                    <variable>
+                        <abreviaturaVariable>VALN      </abreviaturaVariable>
+                        <catalogo> </catalogo>
+                        <codigoVariable>125</codigoVariable>
+                        <descVariable>Validar los solicitudes que aparezcan en listas negras</descVariable>
+                        <idPrograma>90</idPrograma>
+                        <idSeudoCatalogo>0</idSeudoCatalogo>
+                        <nombreVariable>Validación listas negras</nombreVariable>
+                        <programa>
+                            <descPrograma>Valida los solicitudes si existe en listas negras</descPrograma>
+                            <idPrograma>90</idPrograma>
+                            <nombreBdd>cob_credito</nombreBdd>
+                            <nombrePrograma>sp_listas_negative</nombrePrograma>
+                            <tipoPrograma>PRA</tipoPrograma>
+                        </programa>
+                        <subTipoVariable>ORI       </subTipoVariable>
+                        <tipoDatos>CHR</tipoDatos>
+                        <tipoVariable>CRE       </tipoVariable>
+                        <valVariable>S</valVariable>
+                        <valueOperator>0</valueOperator>
+                    </variable>
+                </conditionRuleParent>
+                <id>16789</id>
+                <idResult>18180</idResult>
+                <isLastSon>true</isLastSon>
+                <maxValue>0</maxValue>
+                <minValue></minValue>
+                <operador>=</operador>
+                <rulesVersion>
+                    <dateFinish>8357-10-04T19:33:52-05:00</dateFinish>
+                    <dateStart>2020-01-04T23:00:32.737-06:00</dateStart>
+                    <id>214</id>
+                    <rule>
+                        <acronym>PVALNF    </acronym>
+                        <description>Validación de listas negras y negative file</description>
+                        <id>66</id>
+                        <name>Validación Listas</name>
+                        <subTypeId>ORI</subTypeId>
+                        <systemRuleId>CRE</systemRuleId>
+                        <type>P</type>
+                    </rule>
+                    <status>PRO       </status>
+                    <version>4</version>
+                </rulesVersion>
+                <variable>
+                    <abreviaturaVariable>RPO       </abreviaturaVariable>
+                    <catalogo>bpl_result_policies</catalogo>
+                    <codigoVariable>2</codigoVariable>
+                    <descVariable>M-Resultado Politica</descVariable>
+                    <idPrograma>0</idPrograma>
+                    <idSeudoCatalogo>0</idSeudoCatalogo>
+                    <nombreVariable>M-Resultado Politica</nombreVariable>
+                    <subTipoVariable>PRB       </subTipoVariable>
+                    <tipoDatos>INT</tipoDatos>
+                    <tipoVariable>PRB       </tipoVariable>
+                    <valVariable>0</valVariable>
+                    <valueOperator>0</valueOperator>
+                </variable>
+            </conditionRules>
+            <conditionRules>
+                <conditionRuleLastParent>
+                    <conditionRuleParent>
+                        <id>16783</id>
+                        <idResult>18177</idResult>
+                        <isLastSon>false</isLastSon>
+                        <maxValue>1</maxValue>
+                        <minValue></minValue>
+                        <operador>&gt;</operador>
+                        <rulesVersion>
+                            <dateFinish>8357-10-04T19:33:52-05:00</dateFinish>
+                            <dateStart>2020-01-04T23:00:32.737-06:00</dateStart>
+                            <id>214</id>
+                            <rule>
+<acronym>PVALNF    </acronym>
+<description>Validación de listas negras y negative file</description>
+<id>66</id>
+<name>Validación Listas</name>
+<subTypeId>ORI</subTypeId>
+<systemRuleId>CRE</systemRuleId>
+<type>P</type>
+                            </rule>
+                            <status>PRO       </status>
+                            <version>4</version>
+                        </rulesVersion>
+                        <variable>
+                            <abreviaturaVariable>NUCS      </abreviaturaVariable>
+                            <catalogo></catalogo>
+                            <codigoVariable>122</codigoVariable>
+                            <descVariable>Obtener el numero de ciclos de las distintas solicitudes</descVariable>
+                            <idPrograma>88</idPrograma>
+                            <idSeudoCatalogo>0</idSeudoCatalogo>
+                            <nombreVariable>Ciclos solicitudes</nombreVariable>
+                            <programa>
+<descPrograma>Obtener el número de ciclos de las solicitudes de crédito grupal. individual y revolvente</descPrograma>
+<idPrograma>88</idPrograma>
+<nombreBdd>cob_credito</nombreBdd>
+<nombrePrograma>sp_var_nro_ciclos</nombrePrograma>
+<tipoPrograma>PRA</tipoPrograma>
+                            </programa>
+                            <subTipoVariable>ORI       </subTipoVariable>
+                            <tipoDatos>INT</tipoDatos>
+                            <tipoVariable>CRE       </tipoVariable>
+                            <valVariable>1</valVariable>
+                            <valueOperator>0</valueOperator>
+                        </variable>
+                    </conditionRuleParent>
+                    <id>16785</id>
+                    <idResult>17848</idResult>
+                    <isLastSon>false</isLastSon>
+                    <maxValue>SI</maxValue>
+                    <minValue></minValue>
+                    <operador>=</operador>
+                    <rulesVersion>
+                        <dateFinish>8357-10-04T19:33:52-05:00</dateFinish>
+                        <dateStart>2020-01-04T23:00:32.737-06:00</dateStart>
+                        <id>214</id>
+                        <rule>
+                            <acronym>PVALNF    </acronym>
+                            <description>Validación de listas negras y negative file</description>
+                            <id>66</id>
+                            <name>Validación Listas</name>
+                            <subTypeId>ORI</subTypeId>
+                            <systemRuleId>CRE</systemRuleId>
+                            <type>P</type>
+                        </rule>
+                        <status>PRO       </status>
+                        <version>4</version>
+                    </rulesVersion>
+                    <variable>
+                        <abreviaturaVariable>VALN      </abreviaturaVariable>
+                        <catalogo> </catalogo>
+                        <codigoVariable>125</codigoVariable>
+                        <descVariable>Validar los solicitudes que aparezcan en listas negras</descVariable>
+                        <idPrograma>90</idPrograma>
+                        <idSeudoCatalogo>0</idSeudoCatalogo>
+                        <nombreVariable>Validación listas negras</nombreVariable>
+                        <programa>
+                            <descPrograma>Valida los solicitudes si existe en listas negras</descPrograma>
+                            <idPrograma>90</idPrograma>
+                            <nombreBdd>cob_credito</nombreBdd>
+                            <nombrePrograma>sp_listas_negative</nombrePrograma>
+                            <tipoPrograma>PRA</tipoPrograma>
+                        </programa>
+                        <subTipoVariable>ORI       </subTipoVariable>
+                        <tipoDatos>CHR</tipoDatos>
+                        <tipoVariable>CRE       </tipoVariable>
+                        <valVariable>S</valVariable>
+                        <valueOperator>0</valueOperator>
+                    </variable>
+                </conditionRuleLastParent>
+                <conditionRuleParent>
+                    <conditionRuleParent>
+                        <id>16783</id>
+                        <idResult>18177</idResult>
+                        <isLastSon>false</isLastSon>
+                        <maxValue>1</maxValue>
+                        <minValue></minValue>
+                        <operador>&gt;</operador>
+                        <rulesVersion>
+                            <dateFinish>8357-10-04T19:33:52-05:00</dateFinish>
+                            <dateStart>2020-01-04T23:00:32.737-06:00</dateStart>
+                            <id>214</id>
+                            <rule>
+<acronym>PVALNF    </acronym>
+<description>Validación de listas negras y negative file</description>
+<id>66</id>
+<name>Validación Listas</name>
+<subTypeId>ORI</subTypeId>
+<systemRuleId>CRE</systemRuleId>
+<type>P</type>
+                            </rule>
+                            <status>PRO       </status>
+                            <version>4</version>
+                        </rulesVersion>
+                        <variable>
+                            <abreviaturaVariable>NUCS      </abreviaturaVariable>
+                            <catalogo></catalogo>
+                            <codigoVariable>122</codigoVariable>
+                            <descVariable>Obtener el numero de ciclos de las distintas solicitudes</descVariable>
+                            <idPrograma>88</idPrograma>
+                            <idSeudoCatalogo>0</idSeudoCatalogo>
+                            <nombreVariable>Ciclos solicitudes</nombreVariable>
+                            <programa>
+<descPrograma>Obtener el número de ciclos de las solicitudes de crédito grupal. individual y revolvente</descPrograma>
+<idPrograma>88</idPrograma>
+<nombreBdd>cob_credito</nombreBdd>
+<nombrePrograma>sp_var_nro_ciclos</nombrePrograma>
+<tipoPrograma>PRA</tipoPrograma>
+                            </programa>
+                            <subTipoVariable>ORI       </subTipoVariable>
+                            <tipoDatos>INT</tipoDatos>
+                            <tipoVariable>CRE       </tipoVariable>
+                            <valVariable>1</valVariable>
+                            <valueOperator>0</valueOperator>
+                        </variable>
+                    </conditionRuleParent>
+                    <id>16785</id>
+                    <idResult>17848</idResult>
+                    <isLastSon>false</isLastSon>
+                    <maxValue>SI</maxValue>
+                    <minValue></minValue>
+                    <operador>=</operador>
+                    <rulesVersion>
+                        <dateFinish>8357-10-04T19:33:52-05:00</dateFinish>
+                        <dateStart>2020-01-04T23:00:32.737-06:00</dateStart>
+                        <id>214</id>
+                        <rule>
+                            <acronym>PVALNF    </acronym>
+                            <description>Validación de listas negras y negative file</description>
+                            <id>66</id>
+                            <name>Validación Listas</name>
+                            <subTypeId>ORI</subTypeId>
+                            <systemRuleId>CRE</systemRuleId>
+                            <type>P</type>
+                        </rule>
+                        <status>PRO       </status>
+                        <version>4</version>
+                    </rulesVersion>
+                    <variable>
+                        <abreviaturaVariable>VALN      </abreviaturaVariable>
+                        <catalogo> </catalogo>
+                        <codigoVariable>125</codigoVariable>
+                        <descVariable>Validar los solicitudes que aparezcan en listas negras</descVariable>
+                        <idPrograma>90</idPrograma>
+                        <idSeudoCatalogo>0</idSeudoCatalogo>
+                        <nombreVariable>Validación listas negras</nombreVariable>
+                        <programa>
+                            <descPrograma>Valida los solicitudes si existe en listas negras</descPrograma>
+                            <idPrograma>90</idPrograma>
+                            <nombreBdd>cob_credito</nombreBdd>
+                            <nombrePrograma>sp_listas_negative</nombrePrograma>
+                            <tipoPrograma>PRA</tipoPrograma>
+                        </programa>
+                        <subTipoVariable>ORI       </subTipoVariable>
+                        <tipoDatos>CHR</tipoDatos>
+                        <tipoVariable>CRE       </tipoVariable>
+                        <valVariable>S</valVariable>
+                        <valueOperator>0</valueOperator>
+                    </variable>
+                </conditionRuleParent>
+                <id>16790</id>
+                <idResult>18179</idResult>
+                <isLastSon>true</isLastSon>
+                <maxValue>1</maxValue>
+                <minValue></minValue>
+                <operador>=</operador>
+                <rulesVersion>
+                    <dateFinish>8357-10-04T19:33:52-05:00</dateFinish>
+                    <dateStart>2020-01-04T23:00:32.737-06:00</dateStart>
+                    <id>214</id>
+                    <rule>
+                        <acronym>PVALNF    </acronym>
+                        <description>Validación de listas negras y negative file</description>
+                        <id>66</id>
+                        <name>Validación Listas</name>
+                        <subTypeId>ORI</subTypeId>
+                        <systemRuleId>CRE</systemRuleId>
+                        <type>P</type>
+                    </rule>
+                    <status>PRO       </status>
+                    <version>4</version>
+                </rulesVersion>
+                <variable>
+                    <abreviaturaVariable>RPO       </abreviaturaVariable>
+                    <catalogo>bpl_result_policies</catalogo>
+                    <codigoVariable>2</codigoVariable>
+                    <descVariable>M-Resultado Politica</descVariable>
+                    <idPrograma>0</idPrograma>
+                    <idSeudoCatalogo>0</idSeudoCatalogo>
+                    <nombreVariable>M-Resultado Politica</nombreVariable>
+                    <subTipoVariable>PRB       </subTipoVariable>
+                    <tipoDatos>INT</tipoDatos>
+                    <tipoVariable>PRB       </tipoVariable>
+                    <valVariable>0</valVariable>
+                    <valueOperator>0</valueOperator>
+                </variable>
+            </conditionRules>
+            <conditionRules>
+                <id>16783</id>
+                <idResult>18177</idResult>
+                <isLastSon>false</isLastSon>
+                <maxValue>1</maxValue>
+                <minValue></minValue>
+                <operador>&gt;</operador>
+                <rulesVersion>
+                    <dateFinish>8357-10-04T19:33:52-05:00</dateFinish>
+                    <dateStart>2020-01-04T23:00:32.737-06:00</dateStart>
+                    <id>214</id>
+                    <rule>
+                        <acronym>PVALNF    </acronym>
+                        <description>Validación de listas negras y negative file</description>
+                        <id>66</id>
+                        <name>Validación Listas</name>
+                        <subTypeId>ORI</subTypeId>
+                        <systemRuleId>CRE</systemRuleId>
+                        <type>P</type>
+                    </rule>
+                    <status>PRO       </status>
+                    <version>4</version>
+                </rulesVersion>
+                <variable>
+                    <abreviaturaVariable>NUCS      </abreviaturaVariable>
+                    <catalogo></catalogo>
+                    <codigoVariable>122</codigoVariable>
+                    <descVariable>Obtener el numero de ciclos de las distintas solicitudes</descVariable>
+                    <idPrograma>88</idPrograma>
+                    <idSeudoCatalogo>0</idSeudoCatalogo>
+                    <nombreVariable>Ciclos solicitudes</nombreVariable>
+                    <programa>
+                        <descPrograma>Obtener el número de ciclos de las solicitudes de crédito grupal. individual y revolvente</descPrograma>
+                        <idPrograma>88</idPrograma>
+                        <nombreBdd>cob_credito</nombreBdd>
+                        <nombrePrograma>sp_var_nro_ciclos</nombrePrograma>
+                        <tipoPrograma>PRA</tipoPrograma>
+                    </programa>
+                    <subTipoVariable>ORI       </subTipoVariable>
+                    <tipoDatos>INT</tipoDatos>
+                    <tipoVariable>CRE       </tipoVariable>
+                    <valVariable>1</valVariable>
+                    <valueOperator>0</valueOperator>
+                </variable>
+            </conditionRules>
+            <conditionRules>
+                <id>16784</id>
+                <idResult>17880</idResult>
+                <isLastSon>false</isLastSon>
+                <maxValue>1</maxValue>
+                <minValue></minValue>
+                <operador>&lt;=</operador>
+                <rulesVersion>
+                    <dateFinish>8357-10-04T19:33:52-05:00</dateFinish>
+                    <dateStart>2020-01-04T23:00:32.737-06:00</dateStart>
+                    <id>214</id>
+                    <rule>
+                        <acronym>PVALNF    </acronym>
+                        <description>Validación de listas negras y negative file</description>
+                        <id>66</id>
+                        <name>Validación Listas</name>
+                        <subTypeId>ORI</subTypeId>
+                        <systemRuleId>CRE</systemRuleId>
+                        <type>P</type>
+                    </rule>
+                    <status>PRO       </status>
+                    <version>4</version>
+                </rulesVersion>
+                <variable>
+                    <abreviaturaVariable>NUCS      </abreviaturaVariable>
+                    <catalogo></catalogo>
+                    <codigoVariable>122</codigoVariable>
+                    <descVariable>Obtener el numero de ciclos de las distintas solicitudes</descVariable>
+                    <idPrograma>88</idPrograma>
+                    <idSeudoCatalogo>0</idSeudoCatalogo>
+                    <nombreVariable>Ciclos solicitudes</nombreVariable>
+                    <programa>
+                        <descPrograma>Obtener el número de ciclos de las solicitudes de crédito grupal. individual y revolvente</descPrograma>
+                        <idPrograma>88</idPrograma>
+                        <nombreBdd>cob_credito</nombreBdd>
+                        <nombrePrograma>sp_var_nro_ciclos</nombrePrograma>
+                        <tipoPrograma>PRA</tipoPrograma>
+                    </programa>
+                    <subTipoVariable>ORI       </subTipoVariable>
+                    <tipoDatos>INT</tipoDatos>
+                    <tipoVariable>CRE       </tipoVariable>
+                    <valVariable>1</valVariable>
+                    <valueOperator>0</valueOperator>
+                </variable>
+            </conditionRules>
+            <conditionRules>
+                <conditionRuleParent>
+                    <id>16783</id>
+                    <idResult>18177</idResult>
+                    <isLastSon>false</isLastSon>
+                    <maxValue>1</maxValue>
+                    <minValue></minValue>
+                    <operador>&gt;</operador>
+                    <rulesVersion>
+                        <dateFinish>8357-10-04T19:33:52-05:00</dateFinish>
+                        <dateStart>2020-01-04T23:00:32.737-06:00</dateStart>
+                        <id>214</id>
+                        <rule>
+                            <acronym>PVALNF    </acronym>
+                            <description>Validación de listas negras y negative file</description>
+                            <id>66</id>
+                            <name>Validación Listas</name>
+                            <subTypeId>ORI</subTypeId>
+                            <systemRuleId>CRE</systemRuleId>
+                            <type>P</type>
+                        </rule>
+                        <status>PRO       </status>
+                        <version>4</version>
+                    </rulesVersion>
+                    <variable>
+                        <abreviaturaVariable>NUCS      </abreviaturaVariable>
+                        <catalogo></catalogo>
+                        <codigoVariable>122</codigoVariable>
+                        <descVariable>Obtener el numero de ciclos de las distintas solicitudes</descVariable>
+                        <idPrograma>88</idPrograma>
+                        <idSeudoCatalogo>0</idSeudoCatalogo>
+                        <nombreVariable>Ciclos solicitudes</nombreVariable>
+                        <programa>
+                            <descPrograma>Obtener el número de ciclos de las solicitudes de crédito grupal. individual y revolvente</descPrograma>
+                            <idPrograma>88</idPrograma>
+                            <nombreBdd>cob_credito</nombreBdd>
+                            <nombrePrograma>sp_var_nro_ciclos</nombrePrograma>
+                            <tipoPrograma>PRA</tipoPrograma>
+                        </programa>
+                        <subTipoVariable>ORI       </subTipoVariable>
+                        <tipoDatos>INT</tipoDatos>
+                        <tipoVariable>CRE       </tipoVariable>
+                        <valVariable>1</valVariable>
+                        <valueOperator>0</valueOperator>
+                    </variable>
+                </conditionRuleParent>
+                <id>16785</id>
+                <idResult>17848</idResult>
+                <isLastSon>false</isLastSon>
+                <maxValue>SI</maxValue>
+                <minValue></minValue>
+                <operador>=</operador>
+                <rulesVersion>
+                    <dateFinish>8357-10-04T19:33:52-05:00</dateFinish>
+                    <dateStart>2020-01-04T23:00:32.737-06:00</dateStart>
+                    <id>214</id>
+                    <rule>
+                        <acronym>PVALNF    </acronym>
+                        <description>Validación de listas negras y negative file</description>
+                        <id>66</id>
+                        <name>Validación Listas</name>
+                        <subTypeId>ORI</subTypeId>
+                        <systemRuleId>CRE</systemRuleId>
+                        <type>P</type>
+                    </rule>
+                    <status>PRO       </status>
+                    <version>4</version>
+                </rulesVersion>
+                <variable>
+                    <abreviaturaVariable>VALN      </abreviaturaVariable>
+                    <catalogo> </catalogo>
+                    <codigoVariable>125</codigoVariable>
+                    <descVariable>Validar los solicitudes que aparezcan en listas negras</descVariable>
+                    <idPrograma>90</idPrograma>
+                    <idSeudoCatalogo>0</idSeudoCatalogo>
+                    <nombreVariable>Validación listas negras</nombreVariable>
+                    <programa>
+                        <descPrograma>Valida los solicitudes si existe en listas negras</descPrograma>
+                        <idPrograma>90</idPrograma>
+                        <nombreBdd>cob_credito</nombreBdd>
+                        <nombrePrograma>sp_listas_negative</nombrePrograma>
+                        <tipoPrograma>PRA</tipoPrograma>
+                    </programa>
+                    <subTipoVariable>ORI       </subTipoVariable>
+                    <tipoDatos>CHR</tipoDatos>
+                    <tipoVariable>CRE       </tipoVariable>
+                    <valVariable>S</valVariable>
+                    <valueOperator>0</valueOperator>
+                </variable>
+            </conditionRules>
+            <conditionRules>
+                <conditionRuleParent>
+                    <id>16783</id>
+                    <idResult>18177</idResult>
+                    <isLastSon>false</isLastSon>
+                    <maxValue>1</maxValue>
+                    <minValue></minValue>
+                    <operador>&gt;</operador>
+                    <rulesVersion>
+                        <dateFinish>8357-10-04T19:33:52-05:00</dateFinish>
+                        <dateStart>2020-01-04T23:00:32.737-06:00</dateStart>
+                        <id>214</id>
+                        <rule>
+                            <acronym>PVALNF    </acronym>
+                            <description>Validación de listas negras y negative file</description>
+                            <id>66</id>
+                            <name>Validación Listas</name>
+                            <subTypeId>ORI</subTypeId>
+                            <systemRuleId>CRE</systemRuleId>
+                            <type>P</type>
+                        </rule>
+                        <status>PRO       </status>
+                        <version>4</version>
+                    </rulesVersion>
+                    <variable>
+                        <abreviaturaVariable>NUCS      </abreviaturaVariable>
+                        <catalogo></catalogo>
+                        <codigoVariable>122</codigoVariable>
+                        <descVariable>Obtener el numero de ciclos de las distintas solicitudes</descVariable>
+                        <idPrograma>88</idPrograma>
+                        <idSeudoCatalogo>0</idSeudoCatalogo>
+                        <nombreVariable>Ciclos solicitudes</nombreVariable>
+                        <programa>
+                            <descPrograma>Obtener el número de ciclos de las solicitudes de crédito grupal. individual y revolvente</descPrograma>
+                            <idPrograma>88</idPrograma>
+                            <nombreBdd>cob_credito</nombreBdd>
+                            <nombrePrograma>sp_var_nro_ciclos</nombrePrograma>
+                            <tipoPrograma>PRA</tipoPrograma>
+                        </programa>
+                        <subTipoVariable>ORI       </subTipoVariable>
+                        <tipoDatos>INT</tipoDatos>
+                        <tipoVariable>CRE       </tipoVariable>
+                        <valVariable>1</valVariable>
+                        <valueOperator>0</valueOperator>
+                    </variable>
+                </conditionRuleParent>
+                <id>16786</id>
+                <idResult>17849</idResult>
+                <isLastSon>false</isLastSon>
+                <maxValue>NO</maxValue>
+                <minValue></minValue>
+                <operador>=</operador>
+                <rulesVersion>
+                    <dateFinish>8357-10-04T19:33:52-05:00</dateFinish>
+                    <dateStart>2020-01-04T23:00:32.737-06:00</dateStart>
+                    <id>214</id>
+                    <rule>
+                        <acronym>PVALNF    </acronym>
+                        <description>Validación de listas negras y negative file</description>
+                        <id>66</id>
+                        <name>Validación Listas</name>
+                        <subTypeId>ORI</subTypeId>
+                        <systemRuleId>CRE</systemRuleId>
+                        <type>P</type>
+                    </rule>
+                    <status>PRO       </status>
+                    <version>4</version>
+                </rulesVersion>
+                <variable>
+                    <abreviaturaVariable>VALN      </abreviaturaVariable>
+                    <catalogo> </catalogo>
+                    <codigoVariable>125</codigoVariable>
+                    <descVariable>Validar los solicitudes que aparezcan en listas negras</descVariable>
+                    <idPrograma>90</idPrograma>
+                    <idSeudoCatalogo>0</idSeudoCatalogo>
+                    <nombreVariable>Validación listas negras</nombreVariable>
+                    <programa>
+                        <descPrograma>Valida los solicitudes si existe en listas negras</descPrograma>
+                        <idPrograma>90</idPrograma>
+                        <nombreBdd>cob_credito</nombreBdd>
+                        <nombrePrograma>sp_listas_negative</nombrePrograma>
+                        <tipoPrograma>PRA</tipoPrograma>
+                    </programa>
+                    <subTipoVariable>ORI       </subTipoVariable>
+                    <tipoDatos>CHR</tipoDatos>
+                    <tipoVariable>CRE       </tipoVariable>
+                    <valVariable>S</valVariable>
+                    <valueOperator>0</valueOperator>
+                </variable>
+            </conditionRules>
+            <conditionRules>
+                <conditionRuleParent>
+                    <id>16784</id>
+                    <idResult>17880</idResult>
+                    <isLastSon>false</isLastSon>
+                    <maxValue>1</maxValue>
+                    <minValue></minValue>
+                    <operador>&lt;=</operador>
+                    <rulesVersion>
+                        <dateFinish>8357-10-04T19:33:52-05:00</dateFinish>
+                        <dateStart>2020-01-04T23:00:32.737-06:00</dateStart>
+                        <id>214</id>
+                        <rule>
+                            <acronym>PVALNF    </acronym>
+                            <description>Validación de listas negras y negative file</description>
+                            <id>66</id>
+                            <name>Validación Listas</name>
+                            <subTypeId>ORI</subTypeId>
+                            <systemRuleId>CRE</systemRuleId>
+                            <type>P</type>
+                        </rule>
+                        <status>PRO       </status>
+                        <version>4</version>
+                    </rulesVersion>
+                    <variable>
+                        <abreviaturaVariable>NUCS      </abreviaturaVariable>
+                        <catalogo></catalogo>
+                        <codigoVariable>122</codigoVariable>
+                        <descVariable>Obtener el numero de ciclos de las distintas solicitudes</descVariable>
+                        <idPrograma>88</idPrograma>
+                        <idSeudoCatalogo>0</idSeudoCatalogo>
+                        <nombreVariable>Ciclos solicitudes</nombreVariable>
+                        <programa>
+                            <descPrograma>Obtener el número de ciclos de las solicitudes de crédito grupal. individual y revolvente</descPrograma>
+                            <idPrograma>88</idPrograma>
+                            <nombreBdd>cob_credito</nombreBdd>
+                            <nombrePrograma>sp_var_nro_ciclos</nombrePrograma>
+                            <tipoPrograma>PRA</tipoPrograma>
+                        </programa>
+                        <subTipoVariable>ORI       </subTipoVariable>
+                        <tipoDatos>INT</tipoDatos>
+                        <tipoVariable>CRE       </tipoVariable>
+                        <valVariable>1</valVariable>
+                        <valueOperator>0</valueOperator>
+                    </variable>
+                </conditionRuleParent>
+                <id>16787</id>
+                <idResult>17881</idResult>
+                <isLastSon>false</isLastSon>
+                <maxValue></maxValue>
+                <minValue></minValue>
+                <operador>cualquier valor</operador>
+                <rulesVersion>
+                    <dateFinish>8357-10-04T19:33:52-05:00</dateFinish>
+                    <dateStart>2020-01-04T23:00:32.737-06:00</dateStart>
+                    <id>214</id>
+                    <rule>
+                        <acronym>PVALNF    </acronym>
+                        <description>Validación de listas negras y negative file</description>
+                        <id>66</id>
+                        <name>Validación Listas</name>
+                        <subTypeId>ORI</subTypeId>
+                        <systemRuleId>CRE</systemRuleId>
+                        <type>P</type>
+                    </rule>
+                    <status>PRO       </status>
+                    <version>4</version>
+                </rulesVersion>
+                <variable>
+                    <abreviaturaVariable>VALN      </abreviaturaVariable>
+                    <catalogo> </catalogo>
+                    <codigoVariable>125</codigoVariable>
+                    <descVariable>Validar los solicitudes que aparezcan en listas negras</descVariable>
+                    <idPrograma>90</idPrograma>
+                    <idSeudoCatalogo>0</idSeudoCatalogo>
+                    <nombreVariable>Validación listas negras</nombreVariable>
+                    <programa>
+                        <descPrograma>Valida los solicitudes si existe en listas negras</descPrograma>
+                        <idPrograma>90</idPrograma>
+                        <nombreBdd>cob_credito</nombreBdd>
+                        <nombrePrograma>sp_listas_negative</nombrePrograma>
+                        <tipoPrograma>PRA</tipoPrograma>
+                    </programa>
+                    <subTipoVariable>ORI       </subTipoVariable>
+                    <tipoDatos>CHR</tipoDatos>
+                    <tipoVariable>CRE       </tipoVariable>
+                    <valVariable>S</valVariable>
+                    <valueOperator>0</valueOperator>
+                </variable>
+            </conditionRules>
+            <dateFinish>8357-10-04T19:33:52-05:00</dateFinish>
+            <dateStart>2020-01-04T23:00:32.737-06:00</dateStart>
+            <id>214</id>
+            <rule>
+                <acronym>PVALNF    </acronym>
+                <description>Validación de listas negras y negative file</description>
+                <id>66</id>
+                <name>Validación Listas</name>
+                <subTypeId>ORI</subTypeId>
+                <systemRuleId>CRE</systemRuleId>
+                <type>P</type>
+            </rule>
+            <status>PRO       </status>
+            <version>4</version>
+        </ruleVersions>
+        <subType>
+            <acronym>ORI</acronym>
+            <description>ORIGINACION</description>
+            <id>2</id>
+            <idSystemRule>2</idSystemRule>
+            <name>ORIGINACION</name>
+            <system>
+                <acronym>CRE</acronym>
+                <description>CREDITO</description>
+                <id>2</id>
+                <module>CCA</module>
+                <name>CREDITO</name>
+            </system>
+        </subType>
+        <subTypeId>ORI</subTypeId>
+        <systemRule>
+            <acronym>CRE</acronym>
+            <description>CREDITO</description>
+            <id>2</id>
+            <module>CCA</module>
+            <name>CREDITO</name>
+        </systemRule>
+        <systemRuleId>CRE</systemRuleId>
+        <type>P</type>
+    </rules>
+</ruleXml>

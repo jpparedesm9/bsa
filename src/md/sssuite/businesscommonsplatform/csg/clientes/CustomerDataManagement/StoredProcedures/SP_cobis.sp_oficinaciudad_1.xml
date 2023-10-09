@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<procedure>
+  <database>cobis</database>
+  <name>sp_oficinaciudad</name>
+  <type>SQLSERVER</type>
+  <version>1</version>
+  <parameters>
+    <parameter name="@i_tipo" dataType="char" direction="in" />
+    <parameter name="@i_ciudad" dataType="int" direction="in" />
+    <parameter name="@i_oficina" dataType="smallint" direction="in" />
+    <parameter name="@i_codigo" dataType="varchar" direction="in" />
+    <parameter name="@i_direccion" dataType="varchar" direction="in" />
+    <parameter name="@t_trn" dataType="smallint" direction="in" />
+    <parameter name="@t_show_version" dataType="bit" direction="in" />
+  </parameters>
+  <queries>
+    <query>
+      <columns>
+        <column name="Codigo" />
+        <column name="Nombre" />
+      </columns>
+      <queryText>SELECT  "Codigo" = of_oficina,"Nombre" = CONVERT (VARCHAR (48),of_nombre ) </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="Codigo" />
+        <column name="Nombre" />
+      </columns>
+      <queryText>SELECT  "Codigo" = of_oficina,"Nombre" = CONVERT (VARCHAR (48),of_nombre ) </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="Codigo" />
+        <column name="Nombre" />
+      </columns>
+      <queryText>SELECT  "Codigo" = of_ciudad,"Nombre" = ci_descripcion </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="Codigo" />
+        <column name="Nombre" />
+      </columns>
+      <queryText>SELECT  "Codigo" = of_oficina,"Nombre" = CONVERT (VARCHAR (48),of_nombre ) </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="ID" />
+        <column name="Nombre" />
+      </columns>
+      <queryText>SELECT  "ID" = of_oficina,"Nombre" = of_nombre </queryText>
+    </query>
+  </queries>
+</procedure>

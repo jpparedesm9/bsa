@@ -1,0 +1,31 @@
+<div class="cb-content">
+    <div >
+        <div  >
+            <div  id="chart"  kendo-chart k-tooltip="{visible:true}" k-series-colors= "arrayColors" k-series="[{field: 'value'}]" k-series-defaults="{ type: 'column', stack: 'categ',categoryField: 'categ', gap: 0.8}" k-legend="{position: 'right', height: '90%', visible: true, background: 'rgb(255, 255, 255)',offsetY: -130,labels: { padding: {right: auto, }}}" k-data-source="dataProducts" k-category-axis="{labels: { padding: { top: 5 } },  majorGridLines: { visible: false }, minorGridLines: {visible: false}}" k-value-axis="{ labels: { format: '{0:n} K'}, line: { visible: false },  axisCrossingValue: 0}">
+            </div>
+        </div>
+    </div>
+
+	<div>
+		<div >
+			<ul kendo-panel-bar class="cb-collapsible" k-on-select="onSelect(kendoEvent)" >
+				<li>
+							<span translate>COMMONS.HEADERS.HDR_RISKS</span>							
+							<div>
+								<div id="kRiskSource" kendo-grid k-data-source="totalRisk" k-selectable="'row'" k-columns="columnsRisk" k-rebind="totalRisk"></div>
+							</div>
+				</li>
+				<li>
+							<span translate>COMMONS.HEADERS.HDR_RATE</span>
+							<div>
+								<div id="kRateSource" kendo-grid k-data-source="rateSource" k-selectable="'row'" k-columns="columnsRate" k-rebind="rate"></div>
+							<div>
+				</li>
+			</ul>
+		</div>
+	</div>
+
+
+
+</div>
+

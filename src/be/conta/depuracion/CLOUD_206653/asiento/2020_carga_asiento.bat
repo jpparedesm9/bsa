@@ -1,0 +1,12 @@
+bcp cob_conta_tercero.dbo.ct_sasiento in D:\Temp\Pruebas\cob_conta_tercero_ct_sasiento_Enero_2020.dat -n -r \n -T -S
+bcp cob_conta_tercero.dbo.ct_sasiento in D:\Temp\Pruebas\cob_conta_tercero_ct_sasiento_Febrero_2020.dat -n -r \n -T -S
+bcp cob_conta_tercero.dbo.ct_sasiento in D:\Temp\Pruebas\cob_conta_tercero_ct_sasiento_Marzo_2020.dat -n -r \n -T -S
+bcp cob_conta_tercero.dbo.ct_sasiento in D:\Temp\Pruebas\cob_conta_tercero_ct_sasiento_Abril_2020.dat -n -r \n -T -S
+bcp cob_conta_tercero.dbo.ct_sasiento in D:\Temp\Pruebas\cob_conta_tercero_ct_sasiento_Mayo_2020.dat -n -r \n -T -S
+bcp cob_conta_tercero.dbo.ct_sasiento in D:\Temp\Pruebas\cob_conta_tercero_ct_sasiento_Junio_2020.dat -n -r \n -T -S
+bcp cob_conta_tercero.dbo.ct_sasiento in D:\Temp\Pruebas\cob_conta_tercero_ct_sasiento_Julio_2020.dat -n -r \n -T -S
+bcp cob_conta_tercero.dbo.ct_sasiento in D:\Temp\Pruebas\cob_conta_tercero_ct_sasiento_Agosto_2020.dat -n -r \n -T -S
+bcp cob_conta_tercero.dbo.ct_sasiento in D:\Temp\Pruebas\cob_conta_tercero_ct_sasiento_Septiembre_2020.dat -n -r \n -T -S
+bcp cob_conta_tercero.dbo.ct_sasiento in D:\Temp\Pruebas\cob_conta_tercero_ct_sasiento_Octubre_2020.dat -n -r \n -T -S
+bcp cob_conta_tercero.dbo.ct_sasiento in D:\Temp\Pruebas\cob_conta_tercero_ct_sasiento_Noviembre_2020.dat -n -r \n -T -S
+bcp cob_conta_tercero.dbo.ct_sasiento in D:\Temp\Pruebas\cob_conta_tercero_ct_sasiento_Diciembre_2020.dat -n -r \n -T -S

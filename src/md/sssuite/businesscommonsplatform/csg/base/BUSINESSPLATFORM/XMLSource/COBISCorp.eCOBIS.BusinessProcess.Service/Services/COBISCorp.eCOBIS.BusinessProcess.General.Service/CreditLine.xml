@@ -1,0 +1,165 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<serviceClass name="CreditLine" nsBase="COBISCorp.eCOBIS.BusinessProcess.General" namespace="COBISCorp.eCOBIS.BusinessProcess.General.Service" package="cobiscorp.ecobis.businessprocess.general.service" ns="http://service.general.businessprocess.ecobis.cobiscorp" module="BusinessProcess.General" productName="COBISCorp.eCOBIS.BusinessProcess.Service" productVersion="2.0.0.0">
+  <productProperties>
+    <property name="MavenGroupId" value="com.cobiscorp.processapi" />
+    <property name="MavenArtifactId" value="COBISCorp.eCOBIS.BusinessProcess.Service" />
+    <property name="MavenVersion" value="2.0.0.0" />
+  </productProperties>
+  <partialClass name="CreditLine">
+    <services>
+      <service id="BusinessProcess.General.CreditLine.GetLineOperation" netName="GetLineOperation" javaName="getLineOperation" mappingType="STORED_PROCEDURE" mapId="e9eb82716899ac9fd8d3b6a738212096">
+        <documentations default="Español">
+          <documentation id="Español">Me retorna si el parametro enviado es una linea de credito o una operacion</documentation>
+          <documentation id="English">Give me the field if it is a Credit line or an operation Number</documentation>
+        </documentations>
+        <SRVMapping name="cob_credito..sp_cons_op_lin_wf" trnCode="73922">
+          <DTOs>
+            <DTO direction="in" name="OperationCreditLine" alias="inOperationCreditLine" namespace="COBISCorp.eCOBIS.BusinessProcess.General.DTO" package="cobiscorp.ecobis.businessprocess.general.dto" ns="http://dto.general.businessprocess.ecobis.cobiscorp" required="true" />
+            <DTO direction="out" name="OperationCreditLine" alias="outOperationCreditLine" namespace="COBISCorp.eCOBIS.BusinessProcess.General.DTO" package="cobiscorp.ecobis.businessprocess.general.dto" ns="http://dto.general.businessprocess.ecobis.cobiscorp" required="true">
+              <properties>
+                <property name="lineaOperacion" propertyNet="LineaOperacion" propertyJava="lineaOperacion" setterJavaMethod="setLineaOperacion" getterJavaMethod="getLineaOperacion" xsdType="string" netType="string" javaType="String" cobisMapping="" isInherit="false" isComplexType="false" isCollectionType="false" required="false" encrypted="false" maxLength="0" />
+                <property name="result_ls" propertyNet="Result_ls" propertyJava="result_ls" setterJavaMethod="setResult_ls" getterJavaMethod="getResult_ls" xsdType="int" netType="int" javaType="int" cobisMapping="" isInherit="false" isComplexType="false" isCollectionType="false" required="true" encrypted="false" maxLength="0" />
+              </properties>
+            </DTO>
+            <DTO direction="return" name="OperationCreditLine" alias="returnOperationCreditLine" namespace="COBISCorp.eCOBIS.BusinessProcess.General.DTO" package="cobiscorp.ecobis.businessprocess.general.dto" ns="http://dto.general.businessprocess.ecobis.cobiscorp" required="true">
+              <properties>
+                <property name="lineaOperacion" propertyNet="LineaOperacion" propertyJava="lineaOperacion" setterJavaMethod="setLineaOperacion" getterJavaMethod="getLineaOperacion" xsdType="string" netType="string" javaType="String" cobisMapping="" isInherit="false" isComplexType="false" isCollectionType="false" required="false" encrypted="false" maxLength="0" />
+                <property name="result_ls" propertyNet="Result_ls" propertyJava="result_ls" setterJavaMethod="setResult_ls" getterJavaMethod="getResult_ls" xsdType="int" netType="int" javaType="int" cobisMapping="" isInherit="false" isComplexType="false" isCollectionType="false" required="true" encrypted="false" maxLength="0" />
+              </properties>
+            </DTO>
+          </DTOs>
+          <parameterMappings>
+            <parameter name="@i_operacion" direction="in" mappingDirection="in" dataType="varchar" CTSDataType="SQLVARCHAR" JavaSQLType="VARCHAR" mappingType="DTO" allowNull="false" DTOAlias="inOperationCreditLine" DTOPropertyName="lineaOperacion" />
+          </parameterMappings>
+          <resultMappings>
+            <result>
+              <DTOResult DTOAlias="returnOperationCreditLine" MapReturn="true">
+                <columnMapping position="0" name="{1}" DTOPropertyName="result_ls" DataType="int" Format="" />
+              </DTOResult>
+            </result>
+          </resultMappings>
+          <MappingProperties>
+            <MappingProperty key="singleResult1" value="true" />
+          </MappingProperties>
+        </SRVMapping>
+      </service>
+      <service id="BusinessProcess.General.CreditLine.GetOperation" netName="GetOperation" javaName="getOperation" mappingType="STORED_PROCEDURE" mapId="312c3acc5df34bf537cba7f3f02f27dd">
+        <documentations default="Español">
+          <documentation id="Español">Servicio que obtiene la operaciones</documentation>
+          <documentation id="English">Obtaining service operations</documentation>
+        </documentations>
+        <SRVMapping name="cob_credito..sp_consulta_operacion_linea" trnCode="73918">
+          <DTOs>
+            <DTO direction="out" name="CreditOperationResponse" alias="outCreditOperationResponse" namespace="COBISCorp.eCOBIS.BusinessProcess.General.DTO" package="cobiscorp.ecobis.businessprocess.general.dto" ns="http://dto.general.businessprocess.ecobis.cobiscorp" required="true">
+              <properties>
+                <property name="operationList" propertyNet="OperationList" propertyJava="operationList" setterJavaMethod="setOperationList" getterJavaMethod="getOperationList" xsdType="GenericList" netType="List&lt;CreditLineOperation&gt;" javaType="ArrayList&lt;CreditLineOperation&gt;" cobisMapping="" isInherit="false" isComplexType="true" isCollectionType="true" required="true" encrypted="false" maxLength="0" XSDElementType="CreditLineOperation" netElementType="CreditLineOperation" javaElementType="CreditLineOperation" />
+              </properties>
+            </DTO>
+            <DTO direction="return" name="CreditLineOperation" alias="returnCreditLineOperation" namespace="COBISCorp.eCOBIS.BusinessProcess.General.DTO" package="cobiscorp.ecobis.businessprocess.general.dto" ns="http://dto.general.businessprocess.ecobis.cobiscorp" required="true">
+              <properties>
+                <property name="operation" propertyNet="Operation" propertyJava="operation" setterJavaMethod="setOperation" getterJavaMethod="getOperation" xsdType="string" netType="string" javaType="String" cobisMapping="" isInherit="false" isComplexType="false" isCollectionType="false" required="false" encrypted="false" maxLength="0" />
+                <property name="operationN" propertyNet="OperationN" propertyJava="operationN" setterJavaMethod="setOperationN" getterJavaMethod="getOperationN" xsdType="string" netType="string" javaType="String" cobisMapping="" isInherit="false" isComplexType="false" isCollectionType="false" required="false" encrypted="false" maxLength="0" />
+                <property name="description" propertyNet="Description" propertyJava="description" setterJavaMethod="setDescription" getterJavaMethod="getDescription" xsdType="string" netType="string" javaType="String" cobisMapping="" isInherit="false" isComplexType="false" isCollectionType="false" required="false" encrypted="false" maxLength="0" />
+                <property name="descriptionN" propertyNet="DescriptionN" propertyJava="descriptionN" setterJavaMethod="setDescriptionN" getterJavaMethod="getDescriptionN" xsdType="string" netType="string" javaType="String" cobisMapping="" isInherit="false" isComplexType="false" isCollectionType="false" required="false" encrypted="false" maxLength="0" />
+              </properties>
+            </DTO>
+          </DTOs>
+          <parameterMappings>
+            <parameter name="@i_operacion" direction="in" mappingDirection="in" dataType="char" CTSDataType="SQLCHAR" JavaSQLType="CHAR" mappingType="CONSTANT" allowNull="false" contantValue="N" />
+          </parameterMappings>
+          <resultMappings>
+            <result>
+              <DTOResult DTOAlias="returnCreditLineOperation" MapReturn="true">
+                <columnMapping position="0" name="operacionN" DTOPropertyName="operationN" DataType="string" Format="" />
+                <columnMapping position="1" name="descripcionN" DTOPropertyName="descriptionN" DataType="string" Format="" />
+              </DTOResult>
+            </result>
+          </resultMappings>
+          <MappingProperties>
+            <MappingProperty key="BLIQueryPropertyName1" value="operationList" />
+          </MappingProperties>
+        </SRVMapping>
+      </service>
+      <service id="BusinessProcess.General.CreditLine.GetOperationCreditLine" netName="GetOperationCreditLine" javaName="getOperationCreditLine" mappingType="STORED_PROCEDURE" mapId="a508268c6bf3fb8cba93c96266bae829">
+        <documentations default="Español">
+          <documentation id="Español">Servicio para consultar operaciones de una linea de credito</documentation>
+          <documentation id="English">Operations consulting service for a line of credit</documentation>
+        </documentations>
+        <SRVMapping name="cob_credito..sp_consulta_operacion_linea" trnCode="73917">
+          <DTOs>
+            <DTO direction="in" name="CreditLine" alias="inCreditLine" namespace="COBISCorp.eCOBIS.BusinessProcess.General.DTO" package="cobiscorp.ecobis.businessprocess.general.dto" ns="http://dto.general.businessprocess.ecobis.cobiscorp" required="true" />
+            <DTO direction="return" name="CreditLineOperation" alias="returnCreditLineOperation" namespace="COBISCorp.eCOBIS.BusinessProcess.General.DTO" package="cobiscorp.ecobis.businessprocess.general.dto" ns="http://dto.general.businessprocess.ecobis.cobiscorp" required="true">
+              <properties>
+                <property name="operation" propertyNet="Operation" propertyJava="operation" setterJavaMethod="setOperation" getterJavaMethod="getOperation" xsdType="string" netType="string" javaType="String" cobisMapping="" isInherit="false" isComplexType="false" isCollectionType="false" required="false" encrypted="false" maxLength="0" />
+                <property name="operationN" propertyNet="OperationN" propertyJava="operationN" setterJavaMethod="setOperationN" getterJavaMethod="getOperationN" xsdType="string" netType="string" javaType="String" cobisMapping="" isInherit="false" isComplexType="false" isCollectionType="false" required="false" encrypted="false" maxLength="0" />
+                <property name="description" propertyNet="Description" propertyJava="description" setterJavaMethod="setDescription" getterJavaMethod="getDescription" xsdType="string" netType="string" javaType="String" cobisMapping="" isInherit="false" isComplexType="false" isCollectionType="false" required="false" encrypted="false" maxLength="0" />
+                <property name="descriptionN" propertyNet="DescriptionN" propertyJava="descriptionN" setterJavaMethod="setDescriptionN" getterJavaMethod="getDescriptionN" xsdType="string" netType="string" javaType="String" cobisMapping="" isInherit="false" isComplexType="false" isCollectionType="false" required="false" encrypted="false" maxLength="0" />
+              </properties>
+            </DTO>
+            <DTO direction="out" name="CreditOperationResponse" alias="outCreditOperationResponse" namespace="COBISCorp.eCOBIS.BusinessProcess.General.DTO" package="cobiscorp.ecobis.businessprocess.general.dto" ns="http://dto.general.businessprocess.ecobis.cobiscorp" required="true">
+              <properties>
+                <property name="operationList" propertyNet="OperationList" propertyJava="operationList" setterJavaMethod="setOperationList" getterJavaMethod="getOperationList" xsdType="GenericList" netType="List&lt;CreditLineOperation&gt;" javaType="ArrayList&lt;CreditLineOperation&gt;" cobisMapping="" isInherit="false" isComplexType="true" isCollectionType="true" required="true" encrypted="false" maxLength="0" XSDElementType="CreditLineOperation" netElementType="CreditLineOperation" javaElementType="CreditLineOperation" />
+              </properties>
+            </DTO>
+          </DTOs>
+          <parameterMappings>
+            <parameter name="@i_linea" direction="in" mappingDirection="in" dataType="varchar" CTSDataType="SQLVARCHAR" JavaSQLType="VARCHAR" mappingType="DTO" allowNull="false" DTOAlias="inCreditLine" DTOPropertyName="linea" />
+            <parameter name="@i_operacion" direction="in" mappingDirection="in" dataType="char" CTSDataType="SQLCHAR" JavaSQLType="CHAR" mappingType="CONSTANT" allowNull="false" contantValue="S" />
+          </parameterMappings>
+          <resultMappings>
+            <result>
+              <DTOResult DTOAlias="returnCreditLineOperation" MapReturn="true">
+                <columnMapping position="0" name="operacion" DTOPropertyName="operation" DataType="string" Format="" />
+                <columnMapping position="1" name="descripcion" DTOPropertyName="description" DataType="string" Format="" />
+              </DTOResult>
+            </result>
+          </resultMappings>
+          <MappingProperties>
+            <MappingProperty key="BLIQueryPropertyName1" value="operationList" />
+          </MappingProperties>
+        </SRVMapping>
+      </service>
+      <service id="BusinessProcess.General.CreditLine.GetOperationName" netName="GetOperationName" javaName="getOperationName" mappingType="STORED_PROCEDURE" mapId="65cc5aa894fd1733812e093aecc3b67f">
+        <documentations default="Español">
+          <documentation id="Español">Servicio que obtiene el nombre de la operacion</documentation>
+          <documentation id="English">Service that gets the name of the operation</documentation>
+        </documentations>
+        <SRVMapping name="cob_credito..sp_consulta_operacion_linea" trnCode="73919">
+          <DTOs>
+            <DTO direction="in" name="OperationName" alias="inOperationName" namespace="COBISCorp.eCOBIS.BusinessProcess.General.DTO" package="cobiscorp.ecobis.businessprocess.general.dto" ns="http://dto.general.businessprocess.ecobis.cobiscorp" required="true" />
+            <DTO direction="out" name="OperationName" alias="outOperationName" namespace="COBISCorp.eCOBIS.BusinessProcess.General.DTO" package="cobiscorp.ecobis.businessprocess.general.dto" ns="http://dto.general.businessprocess.ecobis.cobiscorp" required="true">
+              <properties>
+                <property name="operation" propertyNet="Operation" propertyJava="operation" setterJavaMethod="setOperation" getterJavaMethod="getOperation" xsdType="string" netType="string" javaType="String" cobisMapping="" isInherit="false" isComplexType="false" isCollectionType="false" required="false" encrypted="false" maxLength="0" />
+                <property name="nameOperation" propertyNet="NameOperation" propertyJava="nameOperation" setterJavaMethod="setNameOperation" getterJavaMethod="getNameOperation" xsdType="string" netType="string" javaType="String" cobisMapping="" isInherit="false" isComplexType="false" isCollectionType="false" required="false" encrypted="false" maxLength="0" />
+                <property name="operationList" propertyNet="OperationList" propertyJava="operationList" setterJavaMethod="setOperationList" getterJavaMethod="getOperationList" xsdType="string" netType="string" javaType="String" cobisMapping="" isInherit="false" isComplexType="false" isCollectionType="false" required="false" encrypted="false" maxLength="0" />
+                <property name="tipoMonto" propertyNet="TipoMonto" propertyJava="tipoMonto" setterJavaMethod="setTipoMonto" getterJavaMethod="getTipoMonto" xsdType="char" netType="char" javaType="char" cobisMapping="" isInherit="false" isComplexType="false" isCollectionType="false" required="true" encrypted="false" maxLength="0" />
+              </properties>
+            </DTO>
+            <DTO direction="return" name="OperationName" alias="returnOperationName" namespace="COBISCorp.eCOBIS.BusinessProcess.General.DTO" package="cobiscorp.ecobis.businessprocess.general.dto" ns="http://dto.general.businessprocess.ecobis.cobiscorp" required="true">
+              <properties>
+                <property name="operation" propertyNet="Operation" propertyJava="operation" setterJavaMethod="setOperation" getterJavaMethod="getOperation" xsdType="string" netType="string" javaType="String" cobisMapping="" isInherit="false" isComplexType="false" isCollectionType="false" required="false" encrypted="false" maxLength="0" />
+                <property name="nameOperation" propertyNet="NameOperation" propertyJava="nameOperation" setterJavaMethod="setNameOperation" getterJavaMethod="getNameOperation" xsdType="string" netType="string" javaType="String" cobisMapping="" isInherit="false" isComplexType="false" isCollectionType="false" required="false" encrypted="false" maxLength="0" />
+                <property name="operationList" propertyNet="OperationList" propertyJava="operationList" setterJavaMethod="setOperationList" getterJavaMethod="getOperationList" xsdType="string" netType="string" javaType="String" cobisMapping="" isInherit="false" isComplexType="false" isCollectionType="false" required="false" encrypted="false" maxLength="0" />
+                <property name="tipoMonto" propertyNet="TipoMonto" propertyJava="tipoMonto" setterJavaMethod="setTipoMonto" getterJavaMethod="getTipoMonto" xsdType="char" netType="char" javaType="char" cobisMapping="" isInherit="false" isComplexType="false" isCollectionType="false" required="true" encrypted="false" maxLength="0" />
+              </properties>
+            </DTO>
+          </DTOs>
+          <parameterMappings>
+            <parameter name="@i_operacion" direction="in" mappingDirection="in" dataType="char" CTSDataType="SQLCHAR" JavaSQLType="CHAR" mappingType="CONSTANT" allowNull="false" contantValue="D" />
+            <parameter name="@i_nombre_operacion" direction="in" mappingDirection="in" dataType="varchar" CTSDataType="SQLVARCHAR" JavaSQLType="VARCHAR" mappingType="DTO" allowNull="false" DTOAlias="inOperationName" DTOPropertyName="operation" />
+          </parameterMappings>
+          <resultMappings>
+            <result>
+              <DTOResult DTOAlias="returnOperationName" MapReturn="true">
+                <columnMapping position="0" name="operationName" DTOPropertyName="nameOperation" DataType="string" />
+              </DTOResult>
+            </result>
+          </resultMappings>
+          <MappingProperties>
+            <MappingProperty key="singleResult1" value="true" />
+          </MappingProperties>
+        </SRVMapping>
+      </service>
+    </services>
+  </partialClass>
+</serviceClass>

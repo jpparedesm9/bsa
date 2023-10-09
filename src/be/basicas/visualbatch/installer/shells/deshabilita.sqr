@@ -1,0 +1,45 @@
+!************************************************************************!
+!*      Archivo           :  deshabilita.sqr                            *!
+!*      Base de datos     :  cobis                                      *!
+!*      Producto          :  Visual Batch                               *!
+!*      Disenado por      :  Alfonso Duque.	                        *!
+!*      Fecha de escritura:  11/Jul/2005                                *!
+!************************************************************************!
+!*                              IMPORTANTE                              *!
+!*      Este programa es parte de los paquetes bancarios propiedad de   *!
+!*      "MACOSA", representantes exclusivos para el Ecuador de la       *!
+!*      "NCR CORPORATION".                                              *!
+!*      Su uso no autorizado queda expresamente prohibido asi como      *!
+!*      cualquier alteracion o agregado hecho por alguno de sus         *!
+!*      usuarios sin el debido consentimiento por escrito de la         *!
+!*      Presidencia Ejecutiva de MACOSA o su representante.             *!
+!************************************************************************!
+!*                              PROPOSITO                               *!
+!*      DesHabilitación de Productos					*!  
+!************************************************************************!
+!*                            MODIFICACIONES                            *!
+!*      FECHA           AUTOR           RAZON                           *!
+!*      11/Jul/2005     Alfonso Duque	Emision inicial			*!
+!************************************************************************!
+
+
+#include "log.sqr"
+
+Begin-Report
+do Main
+End-Report
+
+Begin-Procedure Main
+
+Begin-sql ON-ERROR = Error_Int
+update cobis..cl_pro_moneda
+set pm_estado='B'
+where pm_producto not in (select ha_producto from cobis..ba_habilita)
+End-sql
+End-Procedure
+
+Begin-Procedure Error_Int
+   let #return-status = 1 ! Para el sistema operativo
+   show $sql-error
+   stop
+End-Procedure

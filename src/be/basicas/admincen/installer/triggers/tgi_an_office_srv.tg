@@ -1,0 +1,58 @@
+use cobis
+go
+if exists (select * from sysobjects where name = 'tgi_an_office_srv')
+    drop trigger tgi_an_office_srv
+go
+create trigger tgi_an_office_srv
+on an_office_srv
+for insert
+as
+begin
+    declare
+        @w_os_office_id     int,
+        @w_os_srv_name      varchar(64),
+        @w_id               int
+ 
+    declare cu_inserted cursor for
+        select
+            os_office_id,
+            os_srv_name
+        from inserted
+ 
+    open cu_inserted
+    fetch cu_inserted into
+        @w_os_office_id,
+        @w_os_srv_name
+                 
+    while @@FETCH_STATUS=0
+    begin
+        select @w_id = sq_siguiente
+        from cob_distrib..di_seqnos
+        where sq_tabla = 'di_log'
+ 
+        update cob_distrib..di_seqnos
+        set sq_siguiente = sq_siguiente + 1
+        where sq_tabla = 'di_log'
+ 
+        insert into cob_distrib..di_log (
+        lg_id, lg_fecha, lg_operacion, lg_objeto)
+        values (@w_id, getdate(), 'I', 'cobis..sp_an_office_srv_tg')
+        
+        insert into cob_distrib..di_parametro (
+                pa_id, pa_nombre, pa_tipodato, pa_longitud, pa_int)
+        values (@w_id, '@i_os_office_id', 56, isnull(datalength(@w_os_office_id), 0), @w_os_office_id)
+
+        insert into cob_distrib..di_parametro (
+                pa_id, pa_nombre, pa_tipodato, pa_longitud, pa_varchar)
+        values (@w_id, '@i_os_srv_name', 39, isnull(datalength(@w_os_srv_name), 0), @w_os_srv_name)
+        
+        fetch cu_inserted into
+                @w_os_office_id,
+                @w_os_srv_name
+        
+    end
+    close cu_inserted
+    deallocate cu_inserted
+    
+end
+go

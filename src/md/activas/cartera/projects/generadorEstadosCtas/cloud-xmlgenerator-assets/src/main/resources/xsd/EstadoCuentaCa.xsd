@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.example.org/EstadoCuentaCa" xmlns:tns="http://www.example.org/EstadoCuentaCa" elementFormDefault="qualified">
+
+    <element name="EstadoCuentaCa" type="tns:EstadoCuentaCa"></element>
+
+    <complexType name="EstadoCuentaCa">
+    	<sequence>
+    		<element name="Operacion" type="tns:Operacion"></element>    		
+    	</sequence>
+    </complexType>
+
+    <complexType name="Operacion">
+    	<attribute name="Fecha" type="date"></attribute>
+    	<attribute name="RFC" type="string"></attribute>
+    	<attribute name="Cuenta" type="string"></attribute>
+    	<attribute name="Cliente" type="int"></attribute>
+    	<attribute name="Nombres" type="string"></attribute>
+    	<attribute name="Direccion" type="string"></attribute>
+    	<attribute name="FechaLimitePago" type="date"></attribute>
+    	<attribute name="PagoMinimo" type="float"></attribute>
+    	<attribute name="DeudaTotal" type="float"></attribute>
+    	<attribute name="SaldoFecha" type="float"></attribute>
+    	<attribute name="Producto" type="string"></attribute>
+    	<attribute name="Finalidad" type="string"></attribute>
+    	<attribute name="ImporteAutorizado" type="float"></attribute>
+    	<attribute name="CreditoOtorgado" type="float"></attribute>
+    	<attribute name="FechaDisposicion" type="date"></attribute>
+    	<attribute name="Plazo" type="int"></attribute>
+    	<attribute name="DiasPlazo" type="int"></attribute>
+    	<attribute name="TipoPrestamo" type="string"></attribute>
+    	<attribute name="FechaVencimiento" type="date"></attribute>
+    	<attribute name="ProximoAbono" type="float"></attribute>
+    	<attribute name="TasaOrdinaria" type="float"></attribute>
+    	<attribute name="TasaMoratorio" type="float"></attribute>
+    	<attribute name="TasaOrdinariaConcep" type="float"></attribute>
+    	<attribute name="TasaMoratorioConcep" type="float"></attribute>
+    	<attribute name="TasaComisionesConcep" type="float"></attribute>
+    	<attribute name="TasaIvaConcep" type="float"></attribute>
+    	<attribute name="CAT" type="float"></attribute>
+    	<attribute name="PorcentajeCubierto" type="float"></attribute>
+    	<attribute name="AbonoCapital" type="float"></attribute>
+    	<attribute name="TasaOrdinarioDet" type="float"></attribute>
+    	<attribute name="TasaMoratorioDet" type="float"></attribute>
+    	<attribute name="TasaComisionDet" type="float"></attribute>
+    	<attribute name="TasaIvaDet" type="float"></attribute>
+    	<attribute name="MontoPagado" type="float"></attribute>
+    	<attribute name="FechaPago" type="date"></attribute>
+    	<attribute name="Capital" type="float"></attribute>
+    	<attribute name="InteresOrdinario" type="float"></attribute>
+    	<attribute name="InteresMoratorio" type="float"></attribute>
+    	<attribute name="IVA" type="float"></attribute>    	
+    </complexType>
+    
+</schema>

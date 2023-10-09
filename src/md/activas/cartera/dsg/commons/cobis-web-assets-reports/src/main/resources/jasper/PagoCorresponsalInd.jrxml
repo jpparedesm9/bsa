@@ -1,0 +1,302 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report1" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="c2cd4cb8-d330-4ca4-8119-f6213466d077">
+	<property name="ireport.zoom" value="1.2418426461183107"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="26"/>
+	<style name="table">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 1">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 1_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 1_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 1_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<subDataset name="referencias" uuid="dc941ea3-57b6-4502-8bcc-2470d9b23fe4">
+		<field name="institucion" class="java.lang.String"/>
+		<field name="referencia" class="java.lang.String"/>
+		<field name="nroConvenio" class="java.lang.String"/>
+		<field name="barCode" class="java.lang.Object">
+			<fieldDescription><![CDATA[barCode]]></fieldDescription>
+		</field>
+	</subDataset>
+	<parameter name="FECINICIOCREDITO" class="java.util.Date"/>
+	<parameter name="NOMBRECLIENTE" class="java.lang.String"/>
+	<parameter name="FECVIGENCIA" class="java.util.Date"/>
+	<parameter name="NOPAGO" class="java.lang.Integer"/>
+	<parameter name="MONTOPAGO" class="java.math.BigDecimal"/>
+	<parameter name="SUCURSAL" class="java.lang.String"/>
+	<parameter name="PIEPAGINA" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="referencias" class="java.util.List"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="51" splitType="Stretch">
+			<staticText>
+				<reportElement mode="Opaque" x="137" y="7" width="409" height="20" forecolor="#000000" backcolor="#FFFFFF" uuid="e62414ec-279b-45f7-aeae-908e15d80562"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[FICHA DE PAGO INDIVIDUAL]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="137" y="26" width="409" height="10" forecolor="#000000" backcolor="#FFFFFF" uuid="30c3b30d-f1bf-4337-8cd2-be8fb1e8d44d"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="5" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ (MONEDA NACIONAL)]]></text>
+			</staticText>
+			<image scaleImage="FillFrame">
+				<reportElement x="0" y="1" width="98" height="49" uuid="c9ed1eab-fcef-4ee8-9d70-7dabb9246756"/>
+				<imageExpression><![CDATA["logo-tuiio.png"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement mode="Opaque" x="140" y="37" width="406" height="14" forecolor="#000000" backcolor="#FFFFFF" uuid="be671453-c959-45e5-99c9-9b616a3b9c02"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[SOFOM Santander ]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="150" splitType="Stretch">
+			<staticText>
+				<reportElement style="table_TH" mode="Opaque" x="194" y="37" width="361" height="19" backcolor="#CCCCCC" uuid="004bd8cd-cef9-4c94-b965-e34b0a8d98b5"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="none">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[NOMBRE DEL CLIENTE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="table_TH" mode="Opaque" x="0" y="37" width="194" height="19" backcolor="#CCCCCC" uuid="93e59acf-d167-4e01-bea2-61058aac34fb"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="styled">
+					<font fontName="SansSerif" isBold="true"/>
+				</textElement>
+				<text><![CDATA[FECHA DE INICIO DEL CRÉDITO ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="table_TH" mode="Opaque" x="327" y="76" width="102" height="19" backcolor="#CCCCCC" uuid="ed684937-8b14-4a23-8698-74aa08f50c02"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[MONTO DEL PAGO ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="table_TH" mode="Opaque" x="0" y="76" width="195" height="19" backcolor="#CCCCCC" uuid="46874e12-3ff0-4968-bdc3-80bd336b9ac3"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[FECHA DE VIGENCIA ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="table_TH" mode="Transparent" x="0" y="115" width="555" height="22" uuid="3a40e0bc-833c-41cb-b64b-501fe687fa4e"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[ "EVITA EL PAGO SOLIDARIO PARA OBTENER MEJOR HISTORIAL CREDITICIO Y BUSCAR BENEFICIOS DENTRO DE LA INSTITUCIÓN"]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="table_TH" mode="Opaque" x="429" y="76" width="126" height="19" backcolor="#CCCCCC" uuid="c7e065c9-5636-48f7-96df-cc9348a01456"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[SUCURSAL]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="table_TH" mode="Opaque" x="194" y="76" width="133" height="19" backcolor="#CCCCCC" uuid="a9cbc360-b355-4c3b-9e7a-452737bb1a58"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[No DE PAGO A REALIZAR ]]></text>
+			</staticText>
+			<textField>
+				<reportElement style="table_TH" x="194" y="56" width="361" height="20" backcolor="#FFFFFF" uuid="cf13fda3-34ec-44c4-8491-7a664b572edf"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[" " + $P{NOMBRECLIENTE}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="table_TH" x="194" y="95" width="133" height="20" isRemoveLineWhenBlank="true" backcolor="#FFFFFF" uuid="2746abc8-06f4-41ee-854c-0216adee5068"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{NOPAGO}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="table_TH" x="429" y="95" width="126" height="20" backcolor="#FFFFFF" uuid="4987b95f-1c9f-4cdf-9bc0-85c343c8890a"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[" " + $P{SUCURSAL}]]></textFieldExpression>
+			</textField>
+			<textField pattern="dd/MM/yyyy">
+				<reportElement style="table_TH" x="0" y="56" width="194" height="20" backcolor="#FFFFFF" uuid="a597fe8b-201d-43cf-9595-831bc044623f"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{FECINICIOCREDITO}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement style="table_TH" mode="Opaque" x="0" y="7" width="555" height="15" backcolor="#CCCCCC" uuid="36426bc9-9425-452c-814a-8c44f51e6d6f"/>
+				<textElement verticalAlignment="Middle">
+					<font size="10" isBold="true" isItalic="false"/>
+				</textElement>
+				<text><![CDATA[ DATOS DEL CRÉDITO:]]></text>
+			</staticText>
+			<textField pattern="">
+				<reportElement x="327" y="95" width="102" height="20" uuid="a31abffd-96fb-4456-bb72-326c1fc41ce9"/>
+				<box rightPadding="3"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA["$"+new java.text.DecimalFormat("#,##0.00", new DecimalFormatSymbols(Locale.ENGLISH)).format($P{MONTOPAGO}.doubleValue()) + " "]]></textFieldExpression>
+			</textField>
+			<textField pattern="dd/MM/yyyy">
+				<reportElement style="table_TH" x="0" y="95" width="194" height="20" backcolor="#FFFFFF" uuid="05efaaf8-ae7a-4c37-aa0d-7f9f24b87139"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{FECVIGENCIA}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="32" splitType="Stretch">
+			<staticText>
+				<reportElement style="table_TH" mode="Opaque" x="0" y="1" width="555" height="16" backcolor="#CCCCCC" uuid="50430564-1e23-43e2-9a45-4ed72b6bad8a"/>
+				<textElement verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[ REALIZA TUS PAGOS EN:]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="75" splitType="Stretch">
+			<componentElement>
+				<reportElement key="table 1" style="table 1" x="0" y="0" width="555" height="55" uuid="78cd6ed9-2a39-4c27-bad8-e4a9837ae9a1"/>
+				<jr:table xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd">
+					<datasetRun subDataset="referencias" uuid="aaac01f0-3e26-4cfe-beb9-c115f2a1e804">
+						<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($F{referencias})]]></dataSourceExpression>
+					</datasetRun>
+					<jr:column width="194" uuid="b005b595-adc4-4226-8e7a-f73894fd0599">
+						<jr:tableHeader style="table 1_TH" height="0" rowSpan="1"/>
+						<jr:tableFooter style="table 1_TH" height="0" rowSpan="1"/>
+						<jr:columnHeader style="table 1_CH" height="30" rowSpan="1">
+							<staticText>
+								<reportElement style="table 1_TH" mode="Opaque" x="0" y="0" width="194" height="30" backcolor="#CCCCCC" uuid="b79ff0e5-8da3-4437-8d83-cd624a036f7d"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font isBold="true" isItalic="false"/>
+								</textElement>
+								<text><![CDATA[INSTITUCIÓN]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:columnFooter style="table 1_CH" height="0" rowSpan="1"/>
+						<jr:detailCell style="table 1_TD" height="76" rowSpan="1">
+							<textField isBlankWhenNull="true">
+								<reportElement x="0" y="0" width="194" height="76" uuid="2b0ac79f-dde5-44a1-beb5-63b58ea40633"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle"/>
+								<textFieldExpression><![CDATA[$F{institucion}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="193" uuid="62fb09bf-ae88-457f-ad3d-e56840b619fd">
+						<jr:tableHeader style="table 1_TH" height="0" rowSpan="1"/>
+						<jr:tableFooter style="table 1_TH" height="0" rowSpan="1"/>
+						<jr:columnHeader style="table 1_CH" height="30" rowSpan="1">
+							<staticText>
+								<reportElement style="table 1_TH" mode="Opaque" x="0" y="0" width="193" height="30" backcolor="#CCCCCC" uuid="831a45a8-1a61-475b-b791-4de0a9dfedf8"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font isBold="true" isItalic="false"/>
+								</textElement>
+								<text><![CDATA[REFERENCIA]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:columnFooter style="table 1_CH" height="0" rowSpan="1"/>
+						<jr:detailCell style="table 1_TD" height="76" rowSpan="1">
+							<textField isBlankWhenNull="true">
+								<reportElement x="0" y="0" width="193" height="76" uuid="9117efee-d650-4f32-b275-8aa6e072e439"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle"/>
+								<textFieldExpression><![CDATA[$F{barCode} ==null ? $F{referencia}:""]]></textFieldExpression>
+							</textField>
+							<image hAlign="Center" vAlign="Middle">
+								<reportElement x="6" y="25" width="181" height="31" uuid="d00cca28-ae05-4684-935d-fdf869c89f4d">
+									<property name="local_mesure_unitheight" value="pixel"/>
+									<property name="com.jaspersoft.studio.unit.height" value="px"/>
+								</reportElement>
+								<imageExpression><![CDATA[$F{barCode}]]></imageExpression>
+							</image>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="170" uuid="db58e28e-efc0-4063-a949-f0454857dd76">
+						<jr:tableHeader style="table 1_TH" height="0" rowSpan="1"/>
+						<jr:tableFooter style="table 1_TH" height="0" rowSpan="1"/>
+						<jr:columnHeader style="table 1_CH" height="30" rowSpan="1">
+							<staticText>
+								<reportElement style="table 1_TH" mode="Opaque" x="0" y="0" width="170" height="30" backcolor="#CCCCCC" uuid="73afa37f-52ef-4c9b-ad1b-b1edce0db677"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font isBold="true" isItalic="false"/>
+								</textElement>
+								<text><![CDATA[CONVENIO]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:columnFooter style="table 1_CH" height="0" rowSpan="1"/>
+						<jr:detailCell style="table 1_TD" height="76" rowSpan="1">
+							<textField isBlankWhenNull="true">
+								<reportElement x="0" y="0" width="170" height="76" uuid="be640ee5-4b54-4c10-bf91-c885e1bdcd64"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle"/>
+								<textFieldExpression><![CDATA[$F{nroConvenio}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+				</jr:table>
+			</componentElement>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="56" splitType="Stretch">
+			<textField>
+				<reportElement mode="Opaque" x="0" y="0" width="555" height="45" forecolor="#000000" backcolor="#FFFFFF" uuid="e6d68d7a-467b-44b4-b40d-ecd02f09ed90"/>
+				<textElement textAlignment="Center">
+					<font size="7" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{PIEPAGINA}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+</jasperReport>

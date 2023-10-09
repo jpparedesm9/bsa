@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<procedure>
+  <database>cob_cartera</database>
+  <name>sp_valor_referencial</name>
+  <type>SQLSERVER</type>
+  <version>2</version>
+  <parameters>
+    <parameter name="@s_date" dataType="datetime" direction="in" />
+    <parameter name="@s_ofi" dataType="smallint" direction="in" />
+    <parameter name="@s_term" dataType="varchar" direction="in" />
+    <parameter name="@s_user" dataType="varchar" direction="in" />
+    <parameter name="@i_operacion" dataType="char" direction="in" />
+    <parameter name="@i_tipo" dataType="varchar" direction="in" />
+    <parameter name="@i_tipoh" dataType="char" direction="in" />
+    <parameter name="@i_fecha_vig" dataType="datetime" direction="in" />
+    <parameter name="@i_valor" dataType="float" direction="in" />
+    <parameter name="@i_tasa_valor" dataType="varchar" direction="in" />
+    <parameter name="@i_periodicidad" dataType="char" direction="in" />
+    <parameter name="@i_modalidad" dataType="char" direction="in" />
+    <parameter name="@i_secuencial" dataType="int" direction="in" />
+    <parameter name="@i_formato_fecha" dataType="int" direction="in" />
+  </parameters>
+  <queries>
+    <query>
+      <columns>
+        <column name="Tipo Valor" />
+        <column name="Descripcion" />
+        <column name="Tipo Tasa" />
+        <column name="Valor" />
+        <column name="Sec." />
+        <column name="Modalidad" />
+        <column name="Periodicidad" />
+      </columns>
+      <queryText>SELECT  "Tipo Valor" = vr_tipo,"Descripcion" = tv_descripcion,"Tipo Tasa" = tv_tipo_tasa,"Valor" = vr_valor,"Sec." = vr_secuencial,"Modalidad" = tv_modalidad,"Periodicidad" = SUBSTRING (td_descripcion, 1, 15) </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="Tipo Valor" />
+        <column name="Descripcion" />
+        <column name="Tipo Tasa" />
+        <column name="Valor" />
+      </columns>
+      <queryText>SELECT  "Tipo Valor" = vr_tipo,"Descripcion" = tv_descripcion,"Tipo Tasa" = tv_tipo_tasa,"Valor" = vr_valor </queryText>
+    </query>
+  </queries>
+</procedure>

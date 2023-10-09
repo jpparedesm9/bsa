@@ -1,0 +1,231 @@
+{
+  "id": {
+    "moduleId": "BUSIN",
+    "subModuleId": "FLCRE",
+    "taskId": "T_FLCRE_01_EJTDI03",
+    "version": "1.0.0"
+  },
+  "name": {
+    "$ref": "../../../relations/componentKeys.json#/FLCRE/CompositeForms/T_FLCRE_01_EJTDI03/name"
+  },
+  "modeEnabled": 4095,
+  "tempSaveStr": "F",
+  "autoCrudStr": "F",
+  "mainViewContainerId": "VC_EJTDI03_RCTER_783",
+  "customizationLayer": 0,
+  "customizationLayerDescription": "ECU",
+  "viewContainers": [
+    {
+      "layoutType": "Group",
+      "columnsNum": 1,
+      "collapsedStr": "F",
+      "id": {
+        "moduleId": "BUSIN",
+        "subModuleId": "FLCRE",
+        "taskId": "T_FLCRE_01_EJTDI03",
+        "viewContainerId": "VC_EJTDI03_RCTER_783",
+        "taskVersion": "1.0.0"
+      },
+      "name": "RejectedForm",
+      "description": "Formulario de Unidad funcional para Rechazo de la aplicación",
+      "options": 0,
+      "enabled": 4095,
+      "componentStyle": null,
+      "colSpan": 1,
+      "customizationLayer": 0,
+      "customizationLayerDescription": "ECU",
+      "customEvents": [
+        {
+          "executionType": 1,
+          "customEventId": "CEVC_008_EJTDI03_RCTER_783_494",
+          "enabled": "T",
+          "customizationLayer": 0,
+          "customizationLayerDescription": "ECU",
+          "viewContainerEventType": {
+            "eventId": 8,
+            "name": "Render",
+            "description": "Se ejecuta antes de renderizar un ViewContainer, permite realizar personalizaciones visuales"
+          },
+          "thereAnServerEvent": false,
+          "thereAnClientEvent": true,
+          "thereAnCallbackEvent": false,
+          "isEnabled": true
+        },
+        {
+          "viewContainerEventType": {
+            "name": "InitData",
+            "eventId": 2,
+            "description": "Inicialización de datos de un ViewContainer, despues de este evento se realiza el segimiento de cambios en los datos",
+            "availableExecutionType": 7
+          },
+          "executionType": 7,
+          "customEventId": "CEVC_002T_FLCRE_01_EJTDI03_691",
+          "filter": null,
+          "enabled": "T",
+          "isEnabled": true,
+          "customizationLayer": 0,
+          "customizationLayerDescription": "ECU"
+        }
+      ],
+      "responsiveLayouts": null,
+      "responsivity": false,
+      "viewContainers": [
+        {
+          "layoutType": "Group",
+          "collapsedStr": "F",
+          "id": {
+            "moduleId": "BUSIN",
+            "subModuleId": "commons",
+            "taskId": "T_VW_WTTTEPRCES08",
+            "viewContainerId": "VC_VW_WTTTEPRCES08",
+            "taskVersion": "1.0.0"
+          },
+          "name": "T_VW_WTTTEPRCES08",
+          "description": " ",
+          "options": 1,
+          "enabled": 4095,
+          "componentStyle": {
+            "componentStyleId": "cabecera",
+            "name": "cabecera"
+          },
+          "colSpan": 1,
+          "parentId": "VC_EJTDI03_RCTER_783",
+          "customizationLayer": 0,
+          "customizationLayerDescription": "ECU",
+          "customEvents": [],
+          "responsiveLayouts": null,
+          "responsivity": false,
+          "columnsNum": 1,
+          "view": {
+            "$ref": "../../../../BUSIN/commons/forms/T_VW_WTTTEPRCES08/design.json#/viewContainers/0/view"
+          }
+        },
+        {
+          "layoutType": "VerticalTabbedLayout",
+          "columnsNum": 1,
+          "collapsedStr": "F",
+          "id": {
+            "moduleId": "BUSIN",
+            "subModuleId": "FLCRE",
+            "taskId": "T_FLCRE_01_EJTDI03",
+            "viewContainerId": "VC_EJTDI03_GRINE_923",
+            "taskVersion": "1.0.0"
+          },
+          "name": "VerticalGrp",
+          "description": " ",
+          "options": 0,
+          "enabled": 4095,
+          "componentStyle": null,
+          "colSpan": 1,
+          "parentId": "VC_EJTDI03_RCTER_783",
+          "customizationLayer": 0,
+          "customizationLayerDescription": "ECU",
+          "customEvents": [],
+          "responsiveLayouts": null,
+          "responsivity": false,
+          "viewContainers": [
+            {
+              "layoutType": "Group",
+              "collapsedStr": "F",
+              "id": {
+                "moduleId": "BUSIN",
+                "subModuleId": "commons",
+                "taskId": "T_VW_EECTEDVIEW38",
+                "viewContainerId": "VC_VW_EECTEDVIEW38",
+                "taskVersion": "1.0.0"
+              },
+              "name": "T_VW_EECTEDVIEW38",
+              "description": " ",
+              "options": 0,
+              "titleLabel": {
+                "moduleId": "BUSIN",
+                "labelId": "DLB_BUSIN_MOTORECHZ_03662",
+                "defaultValue": "Motivo de Rechazo"
+              },
+              "enabled": 4095,
+              "componentStyle": null,
+              "colSpan": 1,
+              "parentId": "VC_EJTDI03_GRINE_923",
+              "customizationLayer": 0,
+              "customizationLayerDescription": "ECU",
+              "customEvents": [],
+              "responsiveLayouts": null,
+              "responsivity": false,
+              "columnsNum": 1,
+              "view": {
+                "$ref": "../../../../BUSIN/commons/forms/T_VW_EECTEDVIEW38/design.json#/viewContainers/0/view"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "commands": [
+    {
+      "id": {
+        "commandId": "CM_EJTDI03AVE03",
+        "moduleId": "BUSIN",
+        "subModuleId": "FLCRE",
+        "taskId": "T_FLCRE_01_EJTDI03",
+        "taskVersion": "1.0.0"
+      },
+      "name": "Save",
+      "layoutType": "Command",
+      "commandType": 0,
+      "order": 1,
+      "showInMode": 4095,
+      "enabled": 4095,
+      "causesValidation": true,
+      "causesValidationAsString": "T",
+      "validationGroup": null,
+      "group": null,
+      "customizationLayer": 0,
+      "customizationLayerDescription": "ECU",
+      "imageId": null,
+      "options": 0,
+      "action": null,
+      "close": false,
+      "closeAsString": "F",
+      "userControl": {
+        "userControlId": "Button",
+        "description": "Designer Button",
+        "customizationLayer": 0,
+        "customizationLayerDescription": "ECU",
+        "type": "A",
+        "name": "Designer Button"
+      },
+      "label": {
+        "moduleId": "BUSIN",
+        "labelId": "DLB_BUSIN_GUARDARWV_92974",
+        "defaultValue": {
+          "$ref": "../../../../BUSIN/assets/languages/BUSIN.json#/BUSIN/LBL/DLB_BUSIN_GUARDARWV_92974"
+        }
+      },
+      "labelToolTip": {
+        "moduleId": "BUSIN",
+        "labelId": "DLB_BUSIN_SAVELKIAQ_89169",
+        "defaultValue": "Save"
+      },
+      "customEvents": [
+        {
+          "commandEventType": {
+            "name": "ExecuteCommand",
+            "eventId": 10,
+            "description": "Permite personalizar la acción a ejecutar de un command o de un ActionControl",
+            "availableExecutionType": 7
+          },
+          "executionType": 7,
+          "enabled": "T",
+          "customEventId": "CECM_010CM_EJTDI03AVE03_587",
+          "filter": null,
+          "isEnabled": true,
+          "customizationLayer": 0,
+          "customizationLayerDescription": "ECU"
+        }
+      ]
+    }
+  ],
+  "isImported": true,
+  "customEvents": []
+}

@@ -1,0 +1,209 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<procedure>
+  <database>cobis</database>
+  <name>sp_ciudad</name>
+  <type>SYBASE</type>
+  <version>1</version>
+  <parameters>
+    <parameter name="@s_ssn" dataType="int" direction="in" />
+    <parameter name="@s_user" dataType="varchar" direction="in" />
+    <parameter name="@s_sesn" dataType="int" direction="in" />
+    <parameter name="@s_term" dataType="varchar" direction="in" />
+    <parameter name="@s_date" dataType="datetime" direction="in" />
+    <parameter name="@s_srv" dataType="varchar" direction="in" />
+    <parameter name="@s_lsrv" dataType="varchar" direction="in" />
+    <parameter name="@s_rol" dataType="smallint" direction="in" />
+    <parameter name="@s_ofi" dataType="smallint" direction="in" />
+    <parameter name="@s_org_err" dataType="char" direction="in" />
+    <parameter name="@s_error" dataType="int" direction="in" />
+    <parameter name="@s_sev" dataType="tinyint" direction="in" />
+    <parameter name="@s_msg" dataType="varchar" direction="in" />
+    <parameter name="@s_org" dataType="char" direction="in" />
+    <parameter name="@t_debug" dataType="char" direction="in" />
+    <parameter name="@t_file" dataType="varchar" direction="in" />
+    <parameter name="@t_from" dataType="varchar" direction="in" />
+    <parameter name="@t_trn" dataType="smallint" direction="in" />
+    <parameter name="@t_show_version" dataType="bit" direction="in" />
+    <parameter name="@i_operacion" dataType="varchar" direction="in" />
+    <parameter name="@i_tipo" dataType="varchar" direction="in" />
+    <parameter name="@i_modo" dataType="tinyint" direction="in" />
+    <parameter name="@i_ciudad" dataType="int" direction="in" />
+    <parameter name="@i_valorcat" dataType="varchar" direction="in" />
+    <parameter name="@i_descripcion" dataType="varchar" direction="in" />
+    <parameter name="@i_provincia" dataType="int" direction="in" />
+    <parameter name="@i_pais" dataType="smallint" direction="in" />
+    <parameter name="@i_estado" dataType="varchar" direction="in" />
+    <parameter name="@i_cod_bce" dataType="smallint" direction="in" />
+    <parameter name="@i_central_transmit" dataType="varchar" direction="in" />
+    <parameter name="@i_valor" dataType="varchar" direction="in" />
+    <parameter name="@i_ciudad_alf" dataType="varchar" direction="in" />
+    <parameter name="@i_canton" dataType="int" direction="in" />
+    <parameter name="@i_rowcount " dataType="int" direction="in" />
+  </parameters>
+  <queries>
+    <query>
+      <columns>
+        <column name="Codigo" />
+        <column name="Distrito" />
+        <column name="Cod. Provincia" />
+        <column name="Provincia" />
+        <column name="Cod. Pais" />
+        <column name="Pais" />
+        <column name="Cod. Canton" />
+        <column name="Canton" />
+        <column name="Cod.Remesas" />
+        <column name="Estado" />
+      </columns>
+      <queryText>SELECT  "Codigo" = ci_ciudad,"Distrito" = SUBSTRING (ci_descripcion, 1, 40),"Cod. Provincia" = ci_provincia,"Provincia" = SUBSTRING (pv_descripcion, 1, 20),"Cod. Pais" = pv_pais,"Pais" = SUBSTRING (pa_descripcion, 1, 20),"Cod. Canton" = ci_canton,"Canton" = SUBSTRING (ca_descripcion, 1, 20),"Cod.Remesas" = ci_cod_remesas,"Estado" = ci_estado </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="Codigo" />
+        <column name="Distrito" />
+        <column name="Cod. Provincia" />
+        <column name="Provincia" />
+        <column name="Cod. Pais" />
+        <column name="Pais" />
+        <column name="Cod. Canton" />
+        <column name="Canton" />
+        <column name="Cod.Remesas" />
+        <column name="Estado" />
+      </columns>
+      <queryText>SELECT  "Codigo" = ci_ciudad,"Distrito" = SUBSTRING (ci_descripcion, 1, 40),"Cod. Provincia" = ci_provincia,"Provincia" = SUBSTRING (pv_descripcion, 1, 20),"Cod. Pais" = pv_pais,"Pais" = SUBSTRING (pa_descripcion, 1, 20),"Cod. Canton" = ci_canton,"Canton" = SUBSTRING (ca_descripcion, 1, 20),"Cod.Remesas" = ci_cod_remesas,"Estado" = ci_estado </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="Codigo" />
+        <column name="Distrito" />
+        <column name="Cod. Provincia" />
+        <column name="Provincia" />
+        <column name="Cod. Canton" />
+        <column name="Canton" />
+        <column name="Cod.Remesas" />
+      </columns>
+      <queryText>SELECT  "Codigo" = ci_ciudad,"Distrito" = ci_descripcion,"Cod. Provincia" = ci_provincia,"Provincia" = pv_descripcion,"Cod. Canton" = ci_canton,"Canton" = SUBSTRING (ca_descripcion, 1, 20),"Cod.Remesas" = ci_cod_remesas </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="Codigo" />
+        <column name="Distrito" />
+        <column name="Cod. Provincia" />
+        <column name="Provincia" />
+        <column name="Cod. Canton" />
+        <column name="Canton" />
+        <column name="Cod.Remesas" />
+      </columns>
+      <queryText>SELECT  "Codigo" = ci_ciudad,"Distrito" = ci_descripcion,"Cod. Provincia" = ci_provincia,"Provincia" = pv_descripcion,"Cod. Canton" = ci_canton,"Canton" = SUBSTRING (ca_descripcion, 1, 20),"Cod.Remesas" = ci_cod_remesas </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="Cod." />
+        <column name="Nombre" />
+        <column name="Pais" />
+      </columns>
+      <queryText>SELECT  "Cod." = ci_ciudad,"Nombre" = ci_descripcion,"Pais" = pa_descripcion </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="Cod." />
+        <column name="Nombre" />
+        <column name="Pais" />
+      </columns>
+      <queryText>SELECT  "Cod." = ci_ciudad,"Nombre" = ci_descripcion,"Pais" = pa_descripcion </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="{1}" />
+      </columns>
+      <queryText>SELECT  ci_descripcion </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="Cod.Cantón" />
+        <column name="Nombre Cantón" />
+        <column name="Cod. Provincia" />
+        <column name="Nombre Prov." />
+        <column name="Cod. País" />
+        <column name="Nombre País" />
+      </columns>
+      <queryText>SELECT  "Cod.Cantón" = ci_canton,"Nombre Cantón" = ca_descripcion,"Cod. Provincia" = pv_provincia,"Nombre Prov." = pv_descripcion,"Cod. País" = pa_pais,"Nombre País" = pa_descripcion </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="Cod.Cantón" />
+        <column name="Nombre Cantón" />
+        <column name="Cod. Provincia" />
+        <column name="Nombre Prov." />
+        <column name="Cod. País" />
+        <column name="Nombre País" />
+      </columns>
+      <queryText>SELECT  "Cod.Cantón" = ci_canton,"Nombre Cantón" = ca_descripcion,"Cod. Provincia" = pv_provincia,"Nombre Prov." = pv_descripcion,"Cod. País" = pa_pais,"Nombre País" = pa_descripcion </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="Cod." />
+        <column name="Nombre" />
+        <column name="Pais" />
+      </columns>
+      <queryText>SELECT  "Cod." = ci_ciudad,"Nombre" = ci_descripcion,"Pais" = pa_descripcion </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="Cod." />
+        <column name="Nombre" />
+        <column name="Pais" />
+      </columns>
+      <queryText>SELECT  "Cod." = ci_ciudad,"Nombre" = ci_descripcion,"Pais" = pa_descripcion </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="{1}" />
+      </columns>
+      <queryText>SELECT  ci_descripcion </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="Cod." />
+        <column name="Nombre" />
+        <column name="Pais" />
+      </columns>
+      <queryText>SELECT  "Cod." = ci_ciudad,"Nombre" = ci_descripcion,"Pais" = pa_descripcion </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="Cod." />
+        <column name="Nombre" />
+        <column name="Pais" />
+      </columns>
+      <queryText>SELECT  "Cod." = ci_ciudad,"Nombre" = ci_descripcion,"Pais" = pa_descripcion </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="{1}" />
+      </columns>
+      <queryText>SELECT  ci_descripcion </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="Cod.Cantón" />
+        <column name="Nombre Cantón" />
+        <column name="Cod. Provincia" />
+        <column name="Nombre Prov." />
+        <column name="Cod. País" />
+        <column name="Nombre País" />
+      </columns>
+      <queryText>SELECT  "Cod.Cantón" = ci_canton,"Nombre Cantón" = ca_descripcion,"Cod. Provincia" = pv_provincia,"Nombre Prov." = pv_descripcion,"Cod. País" = pa_pais,"Nombre País" = pa_descripcion </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="Cod.Cantón" />
+        <column name="Nombre Cantón" />
+        <column name="Cod. Provincia" />
+        <column name="Nombre Prov." />
+        <column name="Cod. País" />
+        <column name="Nombre País" />
+      </columns>
+      <queryText>SELECT  "Cod.Cantón" = ci_canton,"Nombre Cantón" = ca_descripcion,"Cod. Provincia" = pv_provincia,"Nombre Prov." = pv_descripcion,"Cod. País" = pa_pais,"Nombre País" = pa_descripcion </queryText>
+    </query>
+  </queries>
+</procedure>

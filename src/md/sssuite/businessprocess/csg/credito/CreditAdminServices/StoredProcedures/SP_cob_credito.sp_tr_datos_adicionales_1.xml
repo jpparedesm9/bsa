@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<procedure>
+  <database>cob_credito</database>
+  <name>sp_tr_datos_adicionales</name>
+  <type>SYBASE</type>
+  <version>1</version>
+  <parameters>
+    <parameter name="@s_ssn" dataType="int" direction="in" />
+    <parameter name="@s_user" dataType="varchar" direction="in" />
+    <parameter name="@s_sesn" dataType="int" direction="in" />
+    <parameter name="@s_term" dataType="varchar" direction="in" />
+    <parameter name="@s_date" dataType="datetime" direction="in" />
+    <parameter name="@s_srv" dataType="varchar" direction="in" />
+    <parameter name="@s_lsrv" dataType="varchar" direction="in" />
+    <parameter name="@s_rol" dataType="smallint" direction="in" />
+    <parameter name="@s_ofi" dataType="smallint" direction="in" />
+    <parameter name="@s_org_err" dataType="char" direction="in" />
+    <parameter name="@s_error" dataType="int" direction="in" />
+    <parameter name="@s_sev" dataType="tinyint" direction="in" />
+    <parameter name="@s_msg" dataType="varchar" direction="in" />
+    <parameter name="@s_org" dataType="char" direction="in" />
+    <parameter name="@t_rty" dataType="char" direction="in" />
+    <parameter name="@t_trn" dataType="smallint" direction="in" />
+    <parameter name="@t_debug" dataType="char" direction="in" />
+    <parameter name="@t_file" dataType="varchar" direction="in" />
+    <parameter name="@t_from" dataType="varchar" direction="in" />
+    <parameter name="@t_show_version" dataType="bit" direction="in" />
+    <parameter name="@i_operacion" dataType="char" direction="in" />
+    <parameter name="@i_tramite" dataType="int" direction="in" />
+    <parameter name="@i_tipo_cartera" dataType="varchar" direction="in" />
+    <parameter name="@i_destino_descripcion" dataType="varchar" direction="in" />
+    <parameter name="@i_patrimonio" dataType="money" direction="in" />
+    <parameter name="@i_ventas" dataType="money" direction="in" />
+    <parameter name="@i_num_personal_ocupado" dataType="int" direction="in" />
+    <parameter name="@i_tipo_credito" dataType="varchar" direction="in" />
+    <parameter name="@i_indice_tamano_actividad" dataType="float" direction="in" />
+    <parameter name="@i_objeto" dataType="varchar" direction="in" />
+    <parameter name="@i_actividad" dataType="varchar" direction="in" />
+    <parameter name="@i_descripcion_oficial" dataType="varchar" direction="in" />
+    <parameter name="@i_ventas_anuales" dataType="money" direction="in" />
+    <parameter name="@i_activos_productivos" dataType="money" direction="in" />
+    <parameter name="@o_tipo_cartera" dataType="varchar" direction="out" />
+    <parameter name="@o_destino_descripcion" dataType="varchar" direction="out" />
+    <parameter name="@o_mes_cic" dataType="int" direction="out" />
+    <parameter name="@o_anio_cic" dataType="int" direction="out" />
+    <parameter name="@o_patrimonio" dataType="money" direction="out" />
+    <parameter name="@o_ventas" dataType="money" direction="out" />
+    <parameter name="@o_num_personal_ocupado" dataType="int" direction="out" />
+    <parameter name="@o_tipo_credito" dataType="varchar" direction="out" />
+    <parameter name="@o_indice_tamano_actividad" dataType="float" direction="out" />
+    <parameter name="@o_objeto" dataType="varchar" direction="out" />
+    <parameter name="@o_actividad" dataType="varchar" direction="out" />
+    <parameter name="@o_descripcion_oficial" dataType="varchar" direction="out" />
+    <parameter name="@o_ventas_anuales" dataType="money" direction="out" />
+    <parameter name="@o_activos_productivos" dataType="money" direction="out" />
+    <parameter name="@o_level_indebtedness" dataType="char" direction="out" />
+    <parameter name="@i_reprogramingObserv" dataType="varchar" direction="in" />
+    <parameter name="@o_reprogramingObserv" dataType="varchar" direction="out" />
+    <parameter name="@i_asigna_fecha_cic" dataType="char" direction="in" />
+    <parameter name="@i_producto_fie" dataType="varchar" direction="in" />
+    <parameter name="@i_num_viviendas" dataType="tinyint" direction="in" />
+    <parameter name="@i_calificacion" dataType="varchar" direction="in" />
+    <parameter name="@i_es_garantia_destino" dataType="char" direction="in" />
+  </parameters>
+  <queries />
+</procedure>

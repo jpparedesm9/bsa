@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<product path="D:/Santander/SG/RegularizePayments/Products/COBISCorp.eCOBIS.RegularizePayments.Service" appPath="C:/Program Files (x86)/COBIS/COBIS Services Generator/" name="COBISCorp.eCOBIS.RegularizePayments.Service" productNS="http://service.regularizepayments.ecobis.cobiscorp" description="cobisapp" documentationLanguage="Español" year="2019" version="1.0.0.0" type="SERVICE" GUID="918486E1-18FC-46FB-A3A6-BC0D20D06289">
+  <namespaces>
+    <namespace type="class" base="COBISCorp.eCOBIS.RegularizePayments" name="COBISCorp.eCOBIS.RegularizePayments.Service" package="cobiscorp.ecobis.regularizepayments.service" ns="http://service.regularizepayments.ecobis.cobiscorp" folder="" />
+  </namespaces>
+  <templates>
+    <template id="ServiceCTS302" productName="COBISCorp.eCOBIS.RegularizePayments.Service" outputFolder="c:\COBIS-SG\Output\CTS\COBISCorp.eCOBIS.RegularizePayments.Service" package="true" packageType="Jar">
+      <templateFiles>
+        <templateFile filePath="Annotations\JavaInterface.xslt" enabled="true" override="true" />
+        <templateFile filePath="Annotations\JavaService.xslt" enabled="true" override="true" />
+        <templateFile filePath="Annotations\OSGIClass.xslt" enabled="true" override="true" />
+        <templateFile filePath="Annotations\Interceptor.xslt" enabled="true" override="false" />
+        <templateFile filePath="..\Commons\Java\buildProperties.xslt" enabled="true" override="true" />
+        <templateFile filePath="..\Commons\Java\build.xslt" enabled="true" override="true" />
+      </templateFiles>
+    </template>
+  </templates>
+  <DTOs />
+  <classes>
+    <class name="Catalogs" nsBase="COBISCorp.eCOBIS.RegularizePayments" namespace="COBISCorp.eCOBIS.RegularizePayments.Service" package="cobiscorp.ecobis.regularizepayments.service" ns="http://service.regularizepayments.ecobis.cobiscorp" version="1">
+      <partialClasses>
+        <partialClass name="Catalogs">
+          <services>
+            <service name="OpGetPaymentMethods" id="RegularizePayments.Catalogs.OpGetPaymentMethods">
+              <procedure name="sp_qr_producto" database="cob_cartera" version="1" />
+            </service>
+          </services>
+        </partialClass>
+      </partialClasses>
+    </class>
+    <class name="ObjetedPayments" nsBase="COBISCorp.eCOBIS.RegularizePayments" namespace="COBISCorp.eCOBIS.RegularizePayments.Service" package="cobiscorp.ecobis.regularizepayments.service" ns="http://service.regularizepayments.ecobis.cobiscorp" version="1">
+      <partialClasses>
+        <partialClass name="ObjetedPayments">
+          <services>
+            <service name="GetAllObjetedPayments" id="RegularizePayments.ObjetedPayments.GetAllObjetedPayments">
+              <procedure name="sp_abono_objetado" database="cob_cartera" version="1" />
+            </service>
+            <service name="InsertObjetedPayments" id="RegularizePayments.ObjetedPayments.InsertObjetedPayments">
+              <procedure name="sp_abono_objetado" database="cob_cartera" version="1" />
+            </service>
+            <service name="OpGetObjetedPayments" id="RegularizePayments.ObjetedPayments.OpGetObjetedPayments">
+              <procedure name="sp_abono_objetado1" database="cob_cartera" version="1" />
+            </service>
+            <service name="OpRegularizePayments" id="RegularizePayments.ObjetedPayments.OpRegularizePayments">
+              <procedure name="sp_abono_objetado" database="cob_cartera" version="1" />
+            </service>
+          </services>
+        </partialClass>
+      </partialClasses>
+    </class>
+  </classes>
+  <packagers>
+    <packager type="SGPackageJava" AntTask="sign-archive" KeyAlias="cobisapp" KeyPassword="cobisappadminadmin" KeyCertificatePassword="cobisappadmin" KeyFileName="cobisapp.keystore" RelativeFolder="True" TemplateId="ServiceCTS302" />
+  </packagers>
+  <references>
+    <reference name="COBISCorp.eCOBIS.RegularizePayments.DTO" type="DTO" version="1.0.0.0" GUID="6AEA54EC-9359-4CC8-9577-6600518E4A96">
+      <templates>
+        <template id="DTOJavaPOJO" productName="COBISCorp.eCOBIS.RegularizePayments.DTO" outputFolder="c:\COBIS-SG\Output\CTS\COBISCorp.eCOBIS.RegularizePayments.DTO" package="true" packageType="Jar">
+          <templateFiles>
+            <templateFile filePath="JavaPOJO\JavaDTO.xslt" enabled="true" override="true" />
+            <templateFile filePath="..\Commons\Java\buildProperties.xslt" enabled="true" override="true" />
+            <templateFile filePath="..\Commons\Java\build.xslt" enabled="true" override="true" />
+          </templateFiles>
+        </template>
+      </templates>
+      <namespaces>
+        <namespace type="dto" base="COBISCorp.eCOBIS.RegularizePayments" name="COBISCorp.eCOBIS.RegularizePayments.DTO" package="cobiscorp.ecobis.regularizepayments.dto" ns="http://dto.regularizepayments.ecobis.cobiscorp" folder="DTO" />
+      </namespaces>
+    </reference>
+  </references>
+  <productProperties>
+    <property name="MavenGroupId" value="com.cobiscorp.cloud.paobj.api" />
+    <property name="MavenArtifactId" value="COBISCorp.eCOBIS.RegularizePayments.Service" />
+    <property name="MavenVersion" value="1.0.0.0" />
+  </productProperties>
+</product>

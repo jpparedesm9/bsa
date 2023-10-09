@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd">
+
+	<bean id="RegulatoryComplianceProcess" class="com.cobis.cloud.sofom.riskcompliance.regulationscompliance.batch.impl.RegulatoryComplianceProcessImpl">
+		<property name="databaseName" value="jdbc/CTS_BDD_MF"></property>
+		<property name="cobisStoredProcedureUtils" ref="cobisStoredProcedureUtilsOsgi"></property>
+	</bean>
+	<bean id="RegulatoryComplianceGenerate" class="com.cobis.cloud.sofom.riskcompliance.regulationscompliance.batch.generate.RegulatoryComplianceGenerateImpl">
+		<property name="cobisStoredProcedureUtils" ref="cobisStoredProcedureUtilsOsgi"></property>
+	</bean>
+</beans>

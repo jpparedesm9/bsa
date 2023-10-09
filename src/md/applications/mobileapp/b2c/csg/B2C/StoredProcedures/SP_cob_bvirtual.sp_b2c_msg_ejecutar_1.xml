@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<procedure>
+  <database>cob_bvirtual</database>
+  <name>sp_b2c_msg_ejecutar</name>
+  <type>SQLSERVER</type>
+  <version>1</version>
+  <parameters>
+    <parameter name="@s_ssn" dataType="int" direction="in" />
+    <parameter name="@s_sesn" dataType="int" direction="in" />
+    <parameter name="@s_date" dataType="datetime" direction="in" />
+    <parameter name="@s_user" dataType="varchar" direction="in" />
+    <parameter name="@s_term" dataType="varchar" direction="in" />
+    <parameter name="@s_ofi" dataType="int" direction="in" />
+    <parameter name="@s_srv" dataType="varchar" direction="in" />
+    <parameter name="@s_lsrv" dataType="varchar" direction="in" />
+    <parameter name="@s_rol" dataType="int" direction="in" />
+    <parameter name="@s_org" dataType="varchar" direction="in" />
+    <parameter name="@s_culture" dataType="varchar" direction="in" />
+    <parameter name="@t_show_version" dataType="bit" direction="in" />
+    <parameter name="@t_rty" dataType="char" direction="in" />
+    <parameter name="@t_debug" dataType="char" direction="in" />
+    <parameter name="@t_file" dataType="varchar" direction="in" />
+    <parameter name="@t_trn" dataType="int" direction="in" />
+    <parameter name="@i_cliente" dataType="int" direction="in" />
+    <parameter name="@i_msg_id" dataType="int" direction="in" />
+    <parameter name="@i_respuesta" dataType="char" direction="in" />
+    <parameter name="@o_msg" dataType="varchar" direction="out" />
+  </parameters>
+  <queries>
+    <query>
+      <columns>
+        <column name="Institucion" />
+        <column name="Tipo" />
+        <column name="Fecha_operacion" />
+        <column name="Hora_operacion" />
+        <column name="Folio" />
+        <column name="Estado" />
+        <column name="Mensaje" />
+      </columns>
+      <queryText>SELECT "Institucion"="SANTANDER","Tipo"="AUTORIZAR INCREMENTO CUPO","Fecha_operacion"=ctx.GETDATE(),"Hora_operacion"=ctx.GETDATE(),"Folio"=221,"Estado"="E","Mensaje"="El nuevo cupo de tu Línea de Crédito ya está disponible"</queryText>
+    </query>
+  </queries>
+</procedure>

@@ -1,0 +1,40 @@
+<div ng-controller="adminclientviewer.treeController" ng-init="initData()">
+    <ul kendo-panel-bar k-on-expand-mode="single" class="subpanel-collapsible" >
+        <li>
+			<span>
+            <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
+				<span translate>ADMCLIENTVIEWER.MENU.MNU_PRODUCTS</span>
+			</span>
+            <div>
+                <div class="config-section">
+                    <div id="treeControlProduct" kendo-tree-view="treeControlProduct" k-data-source="treeDataSourceProduct" k-on-change="onItemSelectedProduct(dataItem)">
+						<span k-template translate>{{dataItem.text}}</span>
+                </div>
+            </div>
+				<ul kendo-context-menu="menuPrg" k-filter="'#treeControlProduct .k-in'" k-on-open="ctxMnuOpenProduct(dataItem,kendoEvent)" >
+					<li ng-repeat="ctxObjPrg in ctxMenu" class="k-item k-state-default" role="menuitem">
+						<span class="k-link" ng-click="ctxMnuClickProduct(ctxObjPrg.code)">{{ ctxObjPrg.text }}</span>
+					</li>				
+				</ul>
+            </div>
+        </li>
+        <li>
+            <span>
+            <span class="glyphicon glyphicon-stats" aria-hidden="true"></span>
+				<span translate>ADMCLIENTVIEWER.MENU.MNU_CUSTOMERS</span>
+			</span>
+            <div>
+                <div class="config-section">
+                    <div id="treeControlCustomer" kendo-tree-view="treeControlCustomer" k-data-source="treeDataSourceCustomer" k-on-change="onItemSelectedCustomer(dataItem)">
+						<span k-template translate>{{dataItem.text}}</span>
+                </div>
+            </div>
+				<ul kendo-context-menu="menuClient" k-filter="'#treeControlCustomer .k-in'" k-on-open="ctxMnuOpenClient(dataItem,kendoEvent)" >
+					<li ng-repeat="ctxObjPrg in ctxMenu" class="k-item k-state-default" role="menuitem">
+						<span class="k-link" ng-click="ctxMnuClickProduct(ctxObjPrg.code)">{{ ctxObjPrg.text }}</span>
+					</li>				
+				</ul>
+            </div>
+        </li>
+    </ul>
+</div>

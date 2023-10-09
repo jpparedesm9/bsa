@@ -1,0 +1,1 @@
+select * from cob_cartera..ca_santander_log_pagos

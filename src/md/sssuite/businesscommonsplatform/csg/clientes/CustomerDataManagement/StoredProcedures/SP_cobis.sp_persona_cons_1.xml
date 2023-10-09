@@ -1,0 +1,368 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<procedure>
+  <database>cobis</database>
+  <name>sp_persona_cons</name>
+  <type>SYBASE</type>
+  <version>1</version>
+  <parameters>
+    <parameter name="@s_ssn" dataType="int" direction="in" />
+    <parameter name="@s_user" dataType="varchar" direction="in" />
+    <parameter name="@s_term" dataType="varchar" direction="in" />
+    <parameter name="@s_date" dataType="datetime" direction="in" />
+    <parameter name="@s_srv" dataType="varchar" direction="in" />
+    <parameter name="@s_lsrv" dataType="varchar" direction="in" />
+    <parameter name="@s_ofi" dataType="smallint" direction="in" />
+    <parameter name="@s_rol" dataType="smallint" direction="in" />
+    <parameter name="@s_org_err" dataType="char" direction="in" />
+    <parameter name="@s_error" dataType="int" direction="in" />
+    <parameter name="@s_sev" dataType="tinyint" direction="in" />
+    <parameter name="@s_msg" dataType="varchar" direction="in" />
+    <parameter name="@s_org" dataType="char" direction="in" />
+    <parameter name="@t_debug" dataType="char" direction="in" />
+    <parameter name="@t_file" dataType="varchar" direction="in" />
+    <parameter name="@t_from" dataType="varchar" direction="in" />
+    <parameter name="@t_trn" dataType="smallint" direction="in" />
+    <parameter name="@i_operacion" dataType="char" direction="in" />
+    <parameter name="@i_persona" dataType="int" direction="in" />
+    <parameter name="@i_tipo" dataType="char" direction="in" />
+    <parameter name="@i_nit" dataType="varchar" direction="in" />
+    <parameter name="@i_formato_fecha" dataType="int" direction="in" />
+    <parameter name="@t_show_version" dataType="bit" direction="in" />
+    <parameter name="@o_nit" dataType="varchar" direction="out" />
+    <parameter name="@o_retencion" dataType="char" direction="out" />
+    <parameter name="@o_sub_tipo" dataType="char" direction="out" />
+    <parameter name="@o_pjuridica" dataType="char" direction="out" />
+    <parameter name="@o_ced_ruc" dataType="char" direction="out" />
+    <parameter name="@i_modo" dataType="int" direction="in" />
+  </parameters>
+  <queries>
+    <query>
+      <columns>
+        <column name="{1}" />
+        <column name="{2}" />
+        <column name="{3}" />
+        <column name="{4}" />
+        <column name="{5}" />
+        <column name="{6}" />
+        <column name="{7}" />
+        <column name="{8}" />
+        <column name="{9}" />
+        <column name="{10}" />
+        <column name="{11}" />
+        <column name="{12}" />
+        <column name="{13}" />
+        <column name="{14}" />
+        <column name="{15}" />
+        <column name="{16}" />
+        <column name="{17}" />
+        <column name="{18}" />
+        <column name="{19}" />
+        <column name="{20}" />
+        <column name="{21}" />
+        <column name="{22}" />
+        <column name="{23}" />
+        <column name="{24}" />
+        <column name="{25}" />
+        <column name="{26}" />
+        <column name="{27}" />
+        <column name="{28}" />
+        <column name="{29}" />
+        <column name="{30}" />
+        <column name="{31}" />
+        <column name="{32}" />
+        <column name="{33}" />
+        <column name="{34}" />
+        <column name="{35}" />
+        <column name="{36}" />
+        <column name="{37}" />
+        <column name="{38}" />
+        <column name="{39}" />
+        <column name="{40}" />
+        <column name="{41}" />
+        <column name="{42}" />
+        <column name="{43}" />
+        <column name="{44}" />
+        <column name="{45}" />
+        <column name="{46}" />
+        <column name="{47}" />
+        <column name="{48}" />
+        <column name="{49}" />
+        <column name="{50}" />
+        <column name="{51}" />
+        <column name="{52}" />
+        <column name="{53}" />
+        <column name="{54}" />
+        <column name="{55}" />
+        <column name="{56}" />
+        <column name="{57}" />
+        <column name="{58}" />
+        <column name="{59}" />
+        <column name="{60}" />
+        <column name="{61}" />
+        <column name="{62}" />
+        <column name="{63}" />
+        <column name="{64}" />
+        <column name="{65}" />
+        <column name="{66}" />
+        <column name="{67}" />
+        <column name="{68}" />
+        <column name="{69}" />
+        <column name="{70}" />
+        <column name="{71}" />
+        <column name="{72}" />
+        <column name="{73}" />
+        <column name="{74}" />
+        <column name="{75}" />
+        <column name="{76}" />
+        <column name="{77}" />
+        <column name="{78}" />
+        <column name="{79}" />
+        <column name="{80}" />
+        <column name="{81}" />
+        <column name="{82}" />
+        <column name="{83}" />
+        <column name="{84}" />
+        <column name="{85}" />
+        <column name="{86}" />
+        <column name="{87}" />
+        <column name="{88}" />
+        <column name="{89}" />
+        <column name="{90}" />
+        <column name="{91}" />
+        <column name="{92}" />
+        <column name="{93}" />
+        <column name="{94}" />
+        <column name="{95}" />
+        <column name="{96}" />
+        <column name="{97}" />
+        <column name="{98}" />
+        <column name="{99}" />
+        <column name="{100}" />
+        <column name="{101}" />
+        <column name="{102}" />
+        <column name="{103}" />
+        <column name="{104}" />
+        <column name="{105}" />
+        <column name="{106}" />
+        <column name="{107}" />
+        <column name="{108}" />
+        <column name="{109}" />
+        <column name="{110}" />
+        <column name="{111}" />
+        <column name="{112}" />
+        <column name="{113}" />
+        <column name="{114}" />
+        <column name="{115}" />
+        <column name="{116}" />
+        <column name="{117}" />
+        <column name="{118}" />
+        <column name="{119}" />
+        <column name="{120}" />
+        <column name="{121}" />
+        <column name="{122}" />
+        <column name="{123}" />
+        <column name="{124}" />
+        <column name="{125}" />
+        <column name="{126}" />
+        <column name="{127}" />
+        <column name="{128}" />
+        <column name="{129}" />
+        <column name="{130}" />
+      </columns>
+      <queryText>SELECT w_fechanac, w_tipoced, w_cedula, w_fechaing, w_fechaexp, w_lugar_doc, w_des_lugar_doc, w_nombre, w_p_apellido, w_s_apellido, w_ciudad_nac, w_des_ciudad_nac, w_sexo, w_cod_sex, w_estado_civil, w_des_estado_civil, w_profesion, w_des_profesion, w_actividad, w_des_actividad, w_pasaporte, w_pais, w_des_pais, w_cod_sector, w_des_sector, w_nivel_estudio, w_des_niv_est, w_tipo, w_des_tipo, w_tipo_vivienda, ctx.ISNULL(w_des_tipo_vivienda, ""), w_num_cargas, w_comentario, w_referido, w_num_hijos, w_rep_superban, w_doc_validado, w_oficial, w_des_oficial, w_fechareg, w_fechamod, w_grupo, w_des_grupo, w_retencion, w_mala_referencia, w_tipo_vinculacion, w_nit, w_calif_cli, w_des_calif_cliente, w_des_tipo_vinculacion, w_nivel_ing, w_oficina_origen, w_des_oficina, w_des_referido, w_gran_contribuyente, w_situacion_cliente, w_des_situacion_cliente, w_patrim_tec, ctx.convertString(w_fecha_patrim_bruto ,101), w_total_activos, w_oficial_sup, w_des_oficial_sup, w_preferen, w_nivel_egr, w_exc_sipla, w_exc_por2, w_digito, w_cem, w_segnombre, w_c_apellido, w_depart_doc, w_des_dep_doc, w_numord, w_des_ciudad, w_promotor, w_des_promotor, w_num_pais_nacionalidad, w_des_nacionalidad, w_cod_otro_pais, w_inss</queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="{1}" />
+        <column name="{2}" />
+        <column name="{3}" />
+        <column name="{4}" />
+        <column name="{5}" />
+        <column name="{6}" />
+        <column name="{7}" />
+        <column name="{8}" />
+        <column name="{9}" />
+        <column name="{10}" />
+        <column name="{11}" />
+        <column name="{12}" />
+        <column name="{13}" />
+        <column name="{14}" />
+        <column name="{15}" />
+        <column name="{16}" />
+        <column name="{17}" />
+        <column name="{18}" />
+        <column name="{19}" />
+        <column name="{20}" />
+        <column name="{21}" />
+        <column name="{22}" />
+        <column name="{23}" />
+        <column name="{24}" />
+        <column name="{25}" />
+        <column name="{26}" />
+        <column name="{27}" />
+        <column name="{28}" />
+        <column name="{29}" />
+        <column name="{30}" />
+        <column name="{31}" />
+        <column name="{32}" />
+        <column name="{33}" />
+        <column name="{34}" />
+        <column name="{35}" />
+        <column name="{36}" />
+        <column name="{37}" />
+        <column name="{38}" />
+        <column name="{39}" />
+        <column name="{40}" />
+        <column name="{41}" />
+        <column name="{42}" />
+        <column name="{43}" />
+        <column name="{44}" />
+        <column name="{45}" />
+        <column name="{46}" />
+        <column name="{47}" />
+        <column name="{48}" />
+        <column name="{49}" />
+        <column name="{50}" />
+        <column name="{51}" />
+        <column name="{52}" />
+        <column name="{53}" />
+        <column name="{54}" />
+        <column name="{55}" />
+        <column name="{56}" />
+        <column name="{57}" />
+        <column name="{58}" />
+        <column name="{59}" />
+        <column name="{60}" />
+        <column name="{61}" />
+        <column name="{62}" />
+        <column name="{63}" />
+        <column name="{64}" />
+        <column name="{65}" />
+        <column name="{66}" />
+        <column name="{67}" />
+        <column name="{68}" />
+        <column name="{69}" />
+        <column name="{70}" />
+        <column name="{71}" />
+        <column name="{72}" />
+        <column name="{73}" />
+        <column name="{74}" />
+        <column name="{75}" />
+        <column name="{76}" />
+        <column name="{77}" />
+        <column name="{78}" />
+        <column name="{79}" />
+        <column name="{80}" />
+        <column name="{81}" />
+        <column name="{82}" />
+        <column name="{83}" />
+        <column name="{84}" />
+        <column name="{85}" />
+        <column name="{86}" />
+        <column name="{87}" />
+        <column name="{88}" />
+        <column name="{89}" />
+        <column name="{90}" />
+        <column name="{91}" />
+        <column name="{92}" />
+        <column name="{93}" />
+        <column name="{94}" />
+        <column name="{95}" />
+        <column name="{96}" />
+        <column name="{97}" />
+        <column name="{98}" />
+        <column name="{99}" />
+        <column name="{100}" />
+        <column name="{101}" />
+        <column name="{102}" />
+        <column name="{103}" />
+        <column name="{104}" />
+        <column name="{105}" />
+        <column name="{106}" />
+        <column name="{107}" />
+        <column name="{108}" />
+        <column name="{109}" />
+        <column name="{110}" />
+      </columns>
+      <queryText>SELECT w_licencia, w_ingre, w_des_ingresos, w_principal_login, w_suplente_login, w_en_id_tutor, w_en_nom_tutor, w_bloquear, w_relacion, w_desc_tipo_ced, w_tipo_medio, w_desc_tipo_medio, w_categoria, w_desc_categoria, w_es_cliente, w_referido_ext, w_des_referido_ext, w_carg_pub, w_rel_carg_pub, w_situacion_laboral, w_des_situacion_laboral, w_bienes, w_otros_ingresos, w_origen_ingresos, o_ea_estado, o_ea_observacion_aut, o_ea_contrato_firmado, o_ea_menor_edad, o_ea_conocido_como, o_ea_cliente_planilla, o_ea_cod_risk, o_ea_empadronado, o_ea_sector_eco, o_ea_actividad, o_c_funcionario, o_arma_categoria, ctx.ISNULL(o_ea_act_comp_kyc, "N"), ctx.ISNULL(o_ea_fecha_act_kyc, "01/01/1900"), ctx.ISNULL(o_ea_no_req_kyc_comp, "N"), ctx.ISNULL(o_ea_act_perfiltran, "N"), ctx.ISNULL(o_ea_fecha_act_perfiltran, "01/01/1900"), ctx.ISNULL(o_ea_con_salario, "N"), ctx.ISNULL(o_ea_fecha_consal, "01/01/1900"), ctx.ISNULL(o_ea_sin_salario, "N"), ctx.ISNULL(o_ea_fecha_sinsal, "01/01/1900"), o_ea_lin_neg, o_ea_seg_neg, o_ea_val_id_check, o_ea_ejecutivo_con, o_ea_suc_gestion, o_ea_constitucion, o_ea_emp_planilla, o_ea_remp_legal, o_ea_apoderado_legal, o_ea_actualizacion_cic, o_ea_fecha_act_cic, o_ea_excepcion_cic, o_ea_fuente_ing, o_ea_act_prin, o_ea_detalle, ctx.ISNULL(o_ea_act_dol, 0), o_ea_cat_aml, o_ea_observacion_vincula, o_ea_fecha_vincula, ctx.ISNULL(o_c_verificado, "N"), o_actividad_princ, o_fuente_ing, o_fecha_veri, o_act_cic, o_excep_cic, o_ea_excepcion_pad, w_discapacidad, w_tipo_discapacidad, w_desc_discapacidad, w_ced_discapacidad, w_asfi, w_egresos, w_desc_egresos, w_ifi, w_ea_desc_aml, w_nacio_tipo_ced, w_path_foto, w_nit_id, w_nit_venc, w_calif_cli, w_descalif_cli, w_ea_estado_desc,w_emproblemado,@w_dinero_transac,@w_pep,@w_mnt_pasivo,@w_vinculacion,@w_ant_nego,@w_ventas,@w_ct_ventas,@w_ct_operativos,@w_total_ingresos,@w_risk_level,@w_credit_bureau</queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="Número Documento" />
+        <column name="Nombres" />
+        <column name="Primer Apellido" />
+        <column name="Segundo Apellido" />
+        <column name="Sexo" />
+        <column name="Código Sexo" />
+        <column name="Pasaporte" />
+        <column name="Código País" />
+        <column name="País" />
+        <column name="Código Sector" />
+        <column name="Sector Económico" />
+        <column name="Tipo de Persona" />
+        <column name="Desc. Tipo de Persona" />
+        <column name="Oficial de Cuenta" />
+        <column name="Nombre Oficial de Cta." />
+        <column name="Cod. Grupo Económico" />
+        <column name="Grupo Económico" />
+        <column name="Malas Referencias" />
+        <column name="Número RUC" />
+        <column name="Categoria" />
+        <column name="Desc. Categoria" />
+        <column name="Cliente Planilla" />
+        <column name="Arma Categoria" />
+      </columns>
+      <queryText>SELECT "Número Documento"=w_cedula,"Nombres"=w_nombre,"Primer Apellido"=w_p_apellido,"Segundo Apellido"=w_s_apellido,"Sexo"=w_sexo,"Código Sexo"=w_cod_sex,"Pasaporte"=w_pasaporte,"Código País"=w_pais,"País"=w_des_pais,"Código Sector"=w_cod_sector,"Sector Económico"=w_des_sector,"Tipo de Persona"=w_tipo,"Desc. Tipo de Persona"=w_des_tipo,"Oficial de Cuenta"=w_oficial,"Nombre Oficial de Cta."=w_des_oficial,"Cod. Grupo Económico"=w_grupo,"Grupo Económico"=w_des_grupo,"Malas Referencias"=w_mala_referencia,"Número RUC"=w_nit,"Categoria"=w_categoria,"Desc. Categoria"=w_desc_categoria,"Cliente Planilla"=o_ea_cliente_planilla,"Arma Categoria"=o_arma_categoria</queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="{1}" />
+      </columns>
+      <queryText>SELECT ctx.ISNULL(w_direccion, 0)</queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="{1}" />
+        <column name="{2}" />
+        <column name="{3}" />
+        <column name="{4}" />
+        <column name="{5}" />
+      </columns>
+      <queryText>SELECT  en_nomlar,en_tipo_ced,en_ced_ruc,en_retencion,en_mala_referencia </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="codigo" />
+        <column name="nombre" />
+        <column name="segNombre" />
+        <column name="apellidoPat" />
+        <column name="apellidoMat" />
+        <column name="tipoDocument" />
+        <column name="curp" />
+        <column name="rfc" />
+        <column name="fechaVenIdentif" />
+        <column name="fechaNacimiento" />
+        <column name="sexo" />
+        <column name="lugarNacimiento" />
+        <column name="telefono" />
+      </columns>
+      <queryText></queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="telefonoRecados" />
+        <column name="numeroIfe" />
+        <column name="numeroSerieFirmaElect" />
+        <column name="personaRecados" />
+        <column name="antecedentesBuro" />
+        <column name="telefReferenciaUno" />
+        <column name="telefReferenciaDos" />
+        <column name="pasaporte" />
+        <column name="codigoCliente" />
+        <column name="professionalActivity" />
+        <column name="isCryptoUsed" />
+      </columns>
+      <queryText></queryText>
+    </query>
+  </queries>
+</procedure>

@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd
+		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd">
+
+	<bean id="transactionManager" class="com.cobiscorp.cobis.jndi.CobisTransactionManager" />
+
+	<tx:advice id="transactionalAdvice" transaction-manager="transactionManager">
+		<tx:attributes>
+			<tx:method name="*" propagation="REQUIRED" rollback-for="RuntimeException" />
+		</tx:attributes>
+	</tx:advice>
+	<aop:config>
+		<aop:pointcut id="defaultOperations"
+			expression="execution(* com.cobiscorp.ecobis.fpm.portfolio.service.IDefaultOperationManager.*(..))" />
+		<aop:advisor pointcut-ref="defaultOperations" advice-ref="transactionalAdvice" />
+	</aop:config>
+	<aop:config>
+		<aop:pointcut id="itemPortfolioOperations"
+			expression="execution(* com.cobiscorp.ecobis.fpm.portfolio.service.IItemPortfolioManager.*(..))" />
+		<aop:advisor pointcut-ref="itemPortfolioOperations"
+			advice-ref="transactionalAdvice" />
+	</aop:config>
+	<aop:config>
+		<aop:pointcut id="ratePortfolioOperations"
+			expression="execution(* com.cobiscorp.ecobis.fpm.portfolio.service.IRatePortfolio.*(..))" />
+		<aop:advisor pointcut-ref="ratePortfolioOperations"
+			advice-ref="transactionalAdvice" />
+	</aop:config>
+	<aop:config>
+		<aop:pointcut id="purposePortfolioOperations"
+			expression="execution(* com.cobiscorp.ecobis.fpm.portfolio.service.IPurposePortfolioManager.*(..))" />
+		<aop:advisor pointcut-ref="purposePortfolioOperations"
+			advice-ref="transactionalAdvice" />
+	</aop:config>
+	<aop:config>
+		<aop:pointcut id="tranOperations"
+			expression="execution(* com.cobiscorp.ecobis.fpm.portfolio.service.ITranOperationManager.*(..))" />
+		<aop:advisor pointcut-ref="tranOperations" advice-ref="transactionalAdvice" />
+	</aop:config>
+	<aop:config>
+		<aop:pointcut id="itemStatusPortfolioOperations"
+			expression="execution(* com.cobiscorp.ecobis.fpm.portfolio.service.IItemStatusPortfolioManager.*(..))" />
+		<aop:advisor pointcut-ref="itemStatusPortfolioOperations"
+			advice-ref="transactionalAdvice" />
+	</aop:config>
+	<aop:config>
+		<aop:pointcut id="opManualStatusOperations"
+			expression="execution(* com.cobiscorp.ecobis.fpm.portfolio.service.IOpManualStatusManager.*(..))" />
+		<aop:advisor pointcut-ref="opManualStatusOperations"
+			advice-ref="transactionalAdvice" />
+	</aop:config>
+
+	<aop:config>
+		<aop:pointcut id="destinationTypeOperations"
+			expression="execution(* com.cobiscorp.ecobis.fpm.portfolio.service.IDestinationTypeManager.*(..))" />
+		<aop:advisor pointcut-ref="destinationTypeOperations"
+			advice-ref="transactionalAdvice" />
+	</aop:config>
+
+	<aop:config>
+		<aop:pointcut id="purposeTypeOperations"
+			expression="execution(* com.cobiscorp.ecobis.fpm.portfolio.service.IPurposeTypeManager.*(..))" />
+		<aop:advisor pointcut-ref="purposeTypeOperations"
+			advice-ref="transactionalAdvice" />
+	</aop:config>
+	<aop:config>
+		<aop:pointcut id="activityPortfolioOperations"
+			expression="execution(* com.cobiscorp.ecobis.fpm.portfolio.service.IActivityPortfolioManager.*(..))" />
+		<aop:advisor pointcut-ref="activityPortfolioOperations"
+			advice-ref="transactionalAdvice" />
+	</aop:config>
+	<aop:config>
+		<aop:pointcut id="activityTypeOperations"
+			expression="execution(* com.cobiscorp.ecobis.fpm.portfolio.service.IActivityTypeManager.*(..))" />
+		<aop:advisor pointcut-ref="activityTypeOperations"
+			advice-ref="transactionalAdvice" />
+	</aop:config>
+	
+
+</beans>

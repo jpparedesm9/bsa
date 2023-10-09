@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<blueprint xmlns="http://www.osgi.org/xmlns/blueprint/v1.0.0">
+
+	<reference id="spOrchestratorOsgi"
+		interface="com.cobiscorp.cobis.cts.services.orchestrator.ISPOrchestrator" />
+
+	<bean id="synchronizationExecutor"
+		class="com.cobis.cloud.sofom.operationsexecution.synchronization.batch.SynchronizationExecutor">
+		<property name="spOrchestrator" ref="spOrchestratorOsgi" />
+	</bean>
+
+	<service ref="synchronizationExecutor"
+		interface="com.cobiscorp.cobis.scheduler.api.ICobisJob">
+		<service-properties>
+			<entry key="service.impl" value="SynchronizationExecutor" />
+		</service-properties>
+	</service>
+
+</blueprint>

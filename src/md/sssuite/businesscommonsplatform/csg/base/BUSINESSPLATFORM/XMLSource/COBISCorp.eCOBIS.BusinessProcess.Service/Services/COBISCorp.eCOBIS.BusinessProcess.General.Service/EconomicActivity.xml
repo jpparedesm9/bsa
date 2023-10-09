@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<serviceClass name="EconomicActivity" nsBase="COBISCorp.eCOBIS.BusinessProcess.General" namespace="COBISCorp.eCOBIS.BusinessProcess.General.Service" package="cobiscorp.ecobis.businessprocess.general.service" ns="http://service.general.businessprocess.ecobis.cobiscorp" module="BusinessProcess.General" productName="COBISCorp.eCOBIS.BusinessProcess.Service" productVersion="2.0.0.0">
+  <productProperties>
+    <property name="MavenGroupId" value="com.cobiscorp.processapi" />
+    <property name="MavenArtifactId" value="COBISCorp.eCOBIS.BusinessProcess.Service" />
+    <property name="MavenVersion" value="2.0.0.0" />
+  </productProperties>
+  <partialClass name="EconomicActivity">
+    <services>
+      <service id="BusinessProcess.General.EconomicActivity.QueryEconomicActivity" netName="QueryEconomicActivity" javaName="queryEconomicActivity" mappingType="STORED_PROCEDURE" mapId="4b26dc4663ccf960c8538d595d0a1d3a">
+        <documentations default="Español">
+          <documentation id="Español">Consulta catalogo de actividad economica</documentation>
+          <documentation id="English">Query economic activity catalog</documentation>
+        </documentations>
+        <SRVMapping name="cobis..sp_actividad_ec" trnCode="1437">
+          <DTOs>
+            <DTO direction="return" name="EconomicActivity" alias="returnEconomicActivity" namespace="COBISCorp.eCOBIS.BusinessProcess.General.DTO" package="cobiscorp.ecobis.businessprocess.general.dto" ns="http://dto.general.businessprocess.ecobis.cobiscorp" required="true">
+              <properties>
+                <property name="codigo" propertyNet="Codigo" propertyJava="codigo" setterJavaMethod="setCodigo" getterJavaMethod="getCodigo" xsdType="string" netType="string" javaType="String" cobisMapping="" isInherit="false" isComplexType="false" isCollectionType="false" required="false" encrypted="false" maxLength="0" />
+                <property name="descripcion" propertyNet="Descripcion" propertyJava="descripcion" setterJavaMethod="setDescripcion" getterJavaMethod="getDescripcion" xsdType="string" netType="string" javaType="String" cobisMapping="" isInherit="false" isComplexType="false" isCollectionType="false" required="false" encrypted="false" maxLength="0" />
+                <property name="desIndustria" propertyNet="DesIndustria" propertyJava="desIndustria" setterJavaMethod="setDesIndustria" getterJavaMethod="getDesIndustria" xsdType="string" netType="string" javaType="String" cobisMapping="" isInherit="false" isComplexType="false" isCollectionType="false" required="false" encrypted="false" maxLength="0" />
+                <property name="estado" propertyNet="Estado" propertyJava="estado" setterJavaMethod="setEstado" getterJavaMethod="getEstado" xsdType="string" netType="string" javaType="String" cobisMapping="" isInherit="false" isComplexType="false" isCollectionType="false" required="false" encrypted="false" maxLength="0" />
+                <property name="industria" propertyNet="Industria" propertyJava="industria" setterJavaMethod="setIndustria" getterJavaMethod="getIndustria" xsdType="string" netType="string" javaType="String" cobisMapping="" isInherit="false" isComplexType="false" isCollectionType="false" required="false" encrypted="false" maxLength="0" />
+                <property name="operacion" propertyNet="Operacion" propertyJava="operacion" setterJavaMethod="setOperacion" getterJavaMethod="getOperacion" xsdType="string" netType="string" javaType="String" cobisMapping="" isInherit="false" isComplexType="false" isCollectionType="false" required="false" encrypted="false" maxLength="0" />
+                <property name="sensitiva" propertyNet="Sensitiva" propertyJava="sensitiva" setterJavaMethod="setSensitiva" getterJavaMethod="getSensitiva" xsdType="string" netType="string" javaType="String" cobisMapping="" isInherit="false" isComplexType="false" isCollectionType="false" required="false" encrypted="false" maxLength="0" />
+              </properties>
+            </DTO>
+            <DTO direction="out" name="EconomicActivityResponse" alias="outEconomicActivityResponse" namespace="COBISCorp.eCOBIS.BusinessProcess.General.DTO" package="cobiscorp.ecobis.businessprocess.general.dto" ns="http://dto.general.businessprocess.ecobis.cobiscorp" required="true">
+              <properties>
+                <property name="actividadEconomicaDataList" propertyNet="ActividadEconomicaDataList" propertyJava="actividadEconomicaDataList" setterJavaMethod="setActividadEconomicaDataList" getterJavaMethod="getActividadEconomicaDataList" xsdType="GenericList" netType="List&lt;EconomicActivity&gt;" javaType="ArrayList&lt;EconomicActivity&gt;" cobisMapping="" isInherit="false" isComplexType="true" isCollectionType="true" required="true" encrypted="false" maxLength="0" XSDElementType="EconomicActivity" netElementType="EconomicActivity" javaElementType="EconomicActivity" />
+              </properties>
+            </DTO>
+          </DTOs>
+          <parameterMappings>
+            <parameter name="@i_operacion" direction="in" mappingDirection="in" dataType="char" CTSDataType="SQLCHAR" JavaSQLType="CHAR" mappingType="CONSTANT" allowNull="false" contantValue="S" />
+            <parameter name="@i_modo" direction="in" mappingDirection="in" dataType="tinyint" CTSDataType="SQLINT1" JavaSQLType="INTEGER" mappingType="CONSTANT" allowNull="false" contantValue="0" />
+          </parameterMappings>
+          <resultMappings>
+            <result>
+              <DTOResult DTOAlias="returnEconomicActivity" MapReturn="true">
+                <columnMapping position="0" name="Codigo" DTOPropertyName="codigo" DataType="string" Format="" />
+                <columnMapping position="1" name="Descripcion" DTOPropertyName="descripcion" DataType="string" Format="" />
+                <columnMapping position="2" name="Sensitiva" DTOPropertyName="sensitiva" DataType="string" Format="" />
+                <columnMapping position="3" name="Industria" DTOPropertyName="industria" DataType="string" Format="" />
+                <columnMapping position="4" name="Descripcion Industria" DTOPropertyName="desIndustria" DataType="string" Format="" />
+                <columnMapping position="5" name="Estado" DTOPropertyName="estado" DataType="string" Format="" />
+              </DTOResult>
+            </result>
+          </resultMappings>
+          <MappingProperties>
+            <MappingProperty key="BLIQueryPropertyName1" value="actividadEconomicaDataList" />
+          </MappingProperties>
+        </SRVMapping>
+      </service>
+    </services>
+  </partialClass>
+</serviceClass>

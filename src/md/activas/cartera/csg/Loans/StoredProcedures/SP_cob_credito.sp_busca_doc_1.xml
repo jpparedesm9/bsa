@@ -1,0 +1,92 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<procedure>
+  <database>cob_credito</database>
+  <name>sp_busca_doc</name>
+  <type>SQLSERVER</type>
+  <version>1</version>
+  <parameters>
+    <parameter name="@s_ssn" dataType="int" direction="in" />
+    <parameter name="@s_sesn" dataType="int" direction="in" />
+    <parameter name="@s_user" dataType="varchar" direction="in" />
+    <parameter name="@s_term" dataType="varchar" direction="in" />
+    <parameter name="@s_date" dataType="datetime" direction="in" />
+    <parameter name="@s_srv" dataType="varchar" direction="in" />
+    <parameter name="@s_lsrv" dataType="varchar" direction="in" />
+    <parameter name="@s_ofi" dataType="smallint" direction="in" />
+    <parameter name="@s_rol" dataType="smallint" direction="in" />
+    <parameter name="@s_org_err" dataType="char" direction="in" />
+    <parameter name="@s_error" dataType="int" direction="in" />
+    <parameter name="@s_sev" dataType="tinyint" direction="in" />
+    <parameter name="@s_msg" dataType="varchar" direction="in" />
+    <parameter name="@s_org" dataType="char" direction="in" />
+    <parameter name="@t_debug" dataType="char" direction="in" />
+    <parameter name="@t_file" dataType="varchar" direction="in" />
+    <parameter name="@t_from" dataType="varchar" direction="in" />
+    <parameter name="@t_trn" dataType="smallint" direction="in" />
+    <parameter name="@t_show_version" dataType="bit" direction="in" />
+    <parameter name="@i_tramite" dataType="int" direction="in" />
+    <parameter name="@i_cliente" dataType="int" direction="in" />
+    <parameter name="@i_grupo" dataType="int" direction="in" />
+    <parameter name="@i_banco" dataType="varchar" direction="in" />
+    <parameter name="@i_opcion" dataType="varchar" direction="in" />
+    <parameter name="@i_instancia" dataType="int" direction="in" />
+  </parameters>
+  <queries>
+    <query>
+      <columns>
+        <column name="es_grupal" />
+        <column name="instancia" />
+        <column name="grupo" />
+        <column name="cliente" />
+        <column name="nombre" />
+        <column name="prestamo" />
+        <column name="tramite" />
+      </columns>
+      <queryText>SELECT  "es_grupal" = ?,"instancia" = ?,"grupo" = tg_grupo,tg_cliente,"nombre" = "xxx","prestamo" = tg_prestamo,tg_tramite </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="es_grupal" />
+        <column name="instancia" />
+        <column name="grupo" />
+        <column name="cliente" />
+        <column name="nombre" />
+        <column name="prestamo" />
+        <column name="tramite" />
+      </columns>
+      <queryText>SELECT  "es_grupal" = ?,"instancia" = ?,"grupo" = 0,op_cliente,"nombre" = "xxx","prestamo" = op_banco,op_tramite </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="id_documento" />
+        <column name="extension" />
+        <column name="cargado" />
+        <column name="cliente" />
+        <column name="grupo" />
+        <column name="descripcion_doc" />
+        <column name="habilitar_edicion" />
+      </columns>
+      <queryText>SELECT  dd_tipo_doc,dd_extension,dd_cargado,dd_cliente,dd_grupo </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="id_documento" />
+        <column name="nombre" />
+        <column name="cargado" />
+        <column name="descripcion_doc" />
+        <column name="habilitar_edicion" />
+      </columns>
+      <queryText></queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="instancia" />
+        <column name="prestamo" />
+        <column name="tramite" />
+        <column name="ciclo" />
+        <column name="cicloDet" />
+      </columns>
+      <queryText></queryText>
+    </query>
+  </queries>
+</procedure>

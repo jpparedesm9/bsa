@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.0"
+	xmlns="http://java.sun.com/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/persistence  http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd">
+
+	<persistence-unit name="JpaFpmPortfolio"
+		transaction-type="JTA">
+		<jta-data-source>jdbc/CTS_BDD_MF</jta-data-source>
+		<class>com.cobiscorp.ecobis.fpm.portfolio.model.ActivityType</class>
+		<class>com.cobiscorp.ecobis.fpm.portfolio.model.ConceptPortfolio</class>
+		<class>com.cobiscorp.ecobis.fpm.portfolio.model.CreditLine</class>
+		<class>com.cobiscorp.ecobis.fpm.portfolio.model.CreditLineOperationCurrency</class>
+		<class>com.cobiscorp.ecobis.fpm.portfolio.model.CreditOperation</class>
+		<class>com.cobiscorp.ecobis.fpm.portfolio.model.DefaultOperation</class>
+		<class>com.cobiscorp.ecobis.fpm.portfolio.model.DestinationType</class>
+		<class>com.cobiscorp.ecobis.fpm.portfolio.model.ItemsOperationPortfolio</class>
+		<class>com.cobiscorp.ecobis.fpm.portfolio.model.ItemsOperationPortfolioDef</class>
+		<class>com.cobiscorp.ecobis.fpm.portfolio.model.ItemsPortfolio</class>
+		<class>com.cobiscorp.ecobis.fpm.portfolio.model.Operation</class>
+		<class>com.cobiscorp.ecobis.fpm.portfolio.model.OperationTemp</class>
+		<class>com.cobiscorp.ecobis.fpm.portfolio.model.ProcessedOperation</class>
+		<class>com.cobiscorp.ecobis.fpm.portfolio.model.PurposeType</class>
+		<class>com.cobiscorp.ecobis.fpm.portfolio.model.ReferencialValue</class>
+		<class>com.cobiscorp.ecobis.fpm.portfolio.model.TranOperation</class>
+		<class>com.cobiscorp.ecobis.fpm.portfolio.model.ValueDetailPortfolio</class>
+		<class>com.cobiscorp.ecobis.fpm.portfolio.model.ValuePortfolio</class>
+		<class>com.cobiscorp.ecobis.fpm.model.DictionaryField</class>
+		<exclude-unlisted-classes>true</exclude-unlisted-classes>
+	</persistence-unit>
+
+</persistence>

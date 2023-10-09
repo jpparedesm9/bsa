@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<procedure>
+  <database>cob_credito</database>
+  <name>sp_gar_anteriores</name>
+  <type>SYBASE</type>
+  <version>1</version>
+  <parameters>
+    <parameter name="@s_ssn" dataType="int" direction="in" />
+    <parameter name="@s_user" dataType="varchar" direction="in" />
+    <parameter name="@s_sesn" dataType="int" direction="in" />
+    <parameter name="@s_term" dataType="varchar" direction="in" />
+    <parameter name="@s_date" dataType="datetime" direction="in" />
+    <parameter name="@s_srv" dataType="varchar" direction="in" />
+    <parameter name="@s_lsrv" dataType="varchar" direction="in" />
+    <parameter name="@s_rol" dataType="smallint" direction="in" />
+    <parameter name="@s_ofi" dataType="smallint" direction="in" />
+    <parameter name="@s_org_err" dataType="char" direction="in" />
+    <parameter name="@s_error" dataType="int" direction="in" />
+    <parameter name="@s_sev" dataType="tinyint" direction="in" />
+    <parameter name="@s_msg" dataType="varchar" direction="in" />
+    <parameter name="@s_org" dataType="char" direction="in" />
+    <parameter name="@t_rty" dataType="char" direction="in" />
+    <parameter name="@t_trn" dataType="smallint" direction="in" />
+    <parameter name="@t_debug" dataType="char" direction="in" />
+    <parameter name="@t_file" dataType="varchar" direction="in" />
+    <parameter name="@t_from" dataType="varchar" direction="in" />
+    <parameter name="@i_tramite" dataType="int" direction="in" />
+    <parameter name="@i_gar_anterior" dataType="varchar" direction="in" />
+    <parameter name="@i_gar_nueva" dataType="varchar" direction="in" />
+    <parameter name="@i_num_operacion" dataType="varchar" direction="in" />
+    <parameter name="@i_operacion" dataType="char" direction="in" />
+    <parameter name="@i_modo" dataType="char" direction="in" />
+    <parameter name="@i_proposito" dataType="char" direction="in" />
+    <parameter name="@i_clase" dataType="char" direction="in" />
+    <parameter name="@i_porcentaje" dataType="float" direction="in" />
+    <parameter name="@i_saldo" dataType="money" direction="in" />
+    <parameter name="@i_secuencial" dataType="int" direction="in" />
+  </parameters>
+  <queries>
+    <query>
+      <columns>
+        <column name="operation" />
+        <column name="previousGuarantee" />
+        <column name="newGuarantee" />
+        <column name="percentage" />
+        <column name="operationValue" />
+      </columns>
+      <queryText>SELECT  "Operacion" = ga_operacion,"Garantia anterior" = ISNULL (ga_gar_anterior, ""),"Garantia nueva" = ISNULL (ga_gar_nueva, ""),"Porcentaje" = CONVERT (MONEY,STR (ga_porcentaje, 6, 2) ),"Valor Operacion" = ga_valor_resp_garantia </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="operation" />
+        <column name="previousGuarantee" />
+        <column name="newGuarantee" />
+        <column name="percentage" />
+        <column name="operationValue" />
+        <column name="Tipo" />
+        <column name="Clase" />
+        <column name="Descripcion" />
+        <column name="ValorInicial" />
+        <column name="FechaAvaluo" />
+        <column name="ValorDisponible" />
+        <column name="Estado" />
+      </columns>
+      <queryText>SELECT  "Operacion" = ga_operacion,"Garantia anterior" = ISNULL (ga_gar_anterior, ""),"Garantia nueva" = ISNULL (ga_gar_nueva, ""),"Porcentaje" = CONVERT (MONEY,STR (ga_porcentaje, 6, 2) ) </queryText>
+    </query>
+  </queries>
+</procedure>

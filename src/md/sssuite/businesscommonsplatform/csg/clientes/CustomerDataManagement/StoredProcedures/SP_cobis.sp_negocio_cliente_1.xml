@@ -1,0 +1,143 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<procedure>
+  <database>cobis</database>
+  <name>sp_negocio_cliente</name>
+  <type>SYBASE</type>
+  <version>1</version>
+  <parameters>
+    <parameter name="@s_ssn" dataType="int" direction="in" />
+    <parameter name="@s_user" dataType="varchar" direction="in" />
+    <parameter name="@s_term" dataType="varchar" direction="in" />
+    <parameter name="@s_date" dataType="datetime" direction="in" />
+    <parameter name="@s_sesn" dataType="int" direction="in" />
+    <parameter name="@s_culture" dataType="varchar" direction="in" />
+    <parameter name="@s_srv" dataType="varchar" direction="in" />
+    <parameter name="@s_lsrv" dataType="varchar" direction="in" />
+    <parameter name="@s_ofi" dataType="smallint" direction="in" />
+    <parameter name="@s_rol" dataType="smallint" direction="in" />
+    <parameter name="@s_org_err" dataType="char" direction="in" />
+    <parameter name="@s_error" dataType="int" direction="in" />
+    <parameter name="@s_sev" dataType="tinyint" direction="in" />
+    <parameter name="@s_msg" dataType="varchar" direction="in" />
+    <parameter name="@s_org" dataType="char" direction="in" />
+    <parameter name="@t_debug" dataType="char" direction="in" />
+    <parameter name="@t_file" dataType="varchar" direction="in" />
+    <parameter name="@t_from" dataType="varchar" direction="in" />
+    <parameter name="@t_trn" dataType="int" direction="in" />
+    <parameter name="@t_show_version" dataType="bit" direction="in" />
+    <parameter name="@i_operacion" dataType="char" direction="in" />
+    <parameter name="@i_codigo" dataType="int" direction="in" />
+    <parameter name="@i_ente" dataType="int" direction="in" />
+    <parameter name="@i_nombre" dataType="varchar" direction="in" />
+    <parameter name="@i_giro" dataType="varchar" direction="in" />
+    <parameter name="@i_fecha_apertura" dataType="datetime" direction="in" />
+    <parameter name="@i_calle" dataType="varchar" direction="in" />
+    <parameter name="@i_nro" dataType="int" direction="in" />
+    <parameter name="@i_colonia" dataType="varchar" direction="in" />
+    <parameter name="@i_localidad" dataType="varchar" direction="in" />
+    <parameter name="@i_municipio" dataType="varchar" direction="in" />
+    <parameter name="@i_estado" dataType="varchar" direction="in" />
+    <parameter name="@i_codpostal" dataType="varchar" direction="in" />
+    <parameter name="@i_pais" dataType="varchar" direction="in" />
+    <parameter name="@i_telefono" dataType="varchar" direction="in" />
+    <parameter name="@i_actividad_ec" dataType="varchar" direction="in" />
+    <parameter name="@i_tiempo_activida" dataType="int" direction="in" />
+    <parameter name="@i_tiempo_dom_neg" dataType="int" direction="in" />
+    <parameter name="@i_emprendedor" dataType="char" direction="in" />
+    <parameter name="@i_recurso" dataType="varchar" direction="in" />
+    <parameter name="@i_ingreso_mensual" dataType="money" direction="in" />
+    <parameter name="@i_tipo_local" dataType="varchar" direction="in" />
+    <parameter name="@i_estado_reg" dataType="char" direction="in" />
+    <parameter name="@i_destino_credito" dataType="varchar" direction="in" />
+    <parameter name="@i_canal" dataType="varchar" direction="in" />
+    <parameter name="@o_codigo" dataType="int" direction="out" />
+    <parameter name="@o_telefono_id" dataType="int" direction="out" />
+    <parameter name="@i_otro_recurso" dataType="varchar" direction="in" />
+  </parameters>
+  <queries>
+    <query>
+      <columns>
+        <column name="{1}" />
+      </columns>
+      <queryText>SELECT  (1) </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="codCliente" />
+        <column name="NomCliente" />
+        <column name="nombre" />
+        <column name="giro" />
+        <column name="fechaApertura" />
+        <column name="{6}" />
+        <column name="calle" />
+        <column name="nro" />
+        <column name="colonia" />
+        <column name="localidad" />
+        <column name="municipio" />
+        <column name="codEstado" />
+        <column name="{13}" />
+        <column name="codPostal" />
+        <column name="codPais" />
+        <column name="{16}" />
+        <column name="telefono" />
+        <column name="codActividad" />
+        <column name="desActividad" />
+        <column name="timeActivi" />
+        <column name="timeDomNeg" />
+        <column name="emprendedor" />
+        <column name="recurso" />
+        <column name="ingMensual" />
+        <column name="tipoLocal" />
+        <column name="codigo" />
+        <column name="destinoCredito" />
+        <column name="codTelefono" />
+        <column name="otroRecurso" />
+      </columns>
+      <queryText>SELECT  "codCliente" = nc_ente,"NomCliente" = en_nombre,"nombre" = nc_nombre,"giro" = nc_giro,"fechaApertura" = CONVERT (CHAR (10),nc_fecha_apertura ,103),"despDestinoCred","calle" = nc_calle,"nro" = nc_nro,"colonia" = nc_colonia,"localidad" = nc_localidad,"municipio" = nc_municipio,"codEstado" = nc_estado,"desEstado","codPostal" = nc_codpostal,"codPais" = nc_pais,"desPais","telefono" = ?,"codActividad" = nc_actividad_ec,"desActividad" = (SELECT  ac_descripcion FROM cobis..cl_actividad_ec   WHERE ac_codigo = nc_actividad_ec     ),"timeActivi" = nc_tiempo_actividad,"timeDomNeg" = nc_tiempo_dom_neg,"emprendedor" = nc_emprendedor,"recurso" = nc_recurso,"ingMensual" = nc_ingreso_mensual,"tipoLocal" = nc_tipo_local,"codigo" = nc_codigo,"destinoCredito" = nc_destino_credito,"codTelefono" = ? </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="codCliente" />
+        <column name="NomCliente" />
+        <column name="nombre" />
+        <column name="giro" />
+        <column name="fechaApertura" />
+        <column name="{6}" />
+        <column name="calle" />
+        <column name="nro" />
+        <column name="colonia" />
+        <column name="localidad" />
+        <column name="municipio" />
+        <column name="codEstado" />
+        <column name="{13}" />
+        <column name="codPostal" />
+        <column name="codPais" />
+        <column name="{16}" />
+        <column name="telefono" />
+        <column name="codActividad" />
+        <column name="desActividad" />
+        <column name="timeActivi" />
+        <column name="timeDomNeg" />
+        <column name="emprendedor" />
+        <column name="recurso" />
+        <column name="ingMensual" />
+        <column name="tipoLocal" />
+        <column name="codigo" />
+        <column name="destinoCredito" />
+      </columns>
+      <queryText>SELECT  "codCliente" = nc_ente,"NomCliente" = en_nombre,"nombre" = nc_nombre,"giro" = nc_giro,"fechaApertura" = CONVERT (CHAR (10),nc_fecha_apertura ,103),"despDestinoCred","calle" = nc_calle,"nro" = nc_nro,"colonia" = nc_colonia,"localidad" = nc_localidad,"municipio" = nc_municipio,"codEstado" = nc_estado,"desEstado","codPostal" = nc_codpostal,"codPais" = nc_pais,"desPais","telefono" = nc_telefono,"codActividad" = nc_actividad_ec,"desActividad" = (SELECT  ac_descripcion FROM cobis..cl_actividad_ec   WHERE ac_codigo = nc_actividad_ec     ),"timeActivi" = nc_tiempo_actividad,"timeDomNeg" = nc_tiempo_dom_neg,"emprendedor" = nc_emprendedor,"recurso" = nc_recurso,"ingMensual" = nc_ingreso_mensual,"tipoLocal" = nc_tipo_local,"codigo" = nc_codigo,"destinoCredito" = nc_destino_credito </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="pais" />
+        <column name="provincia" />
+        <column name="ciudad" />
+        <column name="parroquia" />
+        <column name="calle" />
+        <column name="no_calle" />
+        <column name="cod_posta" />
+      </columns>
+      <queryText>SELECT  "pais" = di_pais,"provincia" = di_provincia,"ciudad" = di_ciudad,"parroquia" = di_parroquia,"calle" = di_calle,"no_calle" = di_nro,"cod_posta" = di_codpostal </queryText>
+    </query>
+  </queries>
+</procedure>

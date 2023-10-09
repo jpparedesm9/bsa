@@ -1,0 +1,101 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<procedure>
+  <database>cob_sincroniza</database>
+  <name>sp_sincroniza_mobil</name>
+  <type>SYBASE</type>
+  <version>1</version>
+  <parameters>
+    <parameter name="@s_ssn" dataType="int" direction="in" />
+    <parameter name="@s_user" dataType="varchar" direction="in" />
+    <parameter name="@s_term" dataType="varchar" direction="in" />
+    <parameter name="@s_date" dataType="datetime" direction="in" />
+    <parameter name="@s_sesn" dataType="int" direction="in" />
+    <parameter name="@s_culture" dataType="varchar" direction="in" />
+    <parameter name="@s_srv" dataType="varchar" direction="in" />
+    <parameter name="@s_lsrv" dataType="varchar" direction="in" />
+    <parameter name="@s_ofi" dataType="smallint" direction="in" />
+    <parameter name="@s_rol" dataType="smallint" direction="in" />
+    <parameter name="@s_org_err" dataType="char" direction="in" />
+    <parameter name="@s_error" dataType="int" direction="in" />
+    <parameter name="@s_sev" dataType="tinyint" direction="in" />
+    <parameter name="@s_msg" dataType="varchar" direction="in" />
+    <parameter name="@s_org" dataType="char" direction="in" />
+    <parameter name="@t_debug" dataType="char" direction="in" />
+    <parameter name="@t_file" dataType="varchar" direction="in" />
+    <parameter name="@t_from" dataType="varchar" direction="in" />
+    <parameter name="@t_trn" dataType="int" direction="in" />
+    <parameter name="@t_show_version" dataType="bit" direction="in" />
+    <parameter name="@i_operacion" dataType="char" direction="in" />
+    <parameter name="@i_codigo" dataType="int" direction="in" />
+    <parameter name="@i_tipo" dataType="varchar" direction="in" />
+    <parameter name="@i_imei" dataType="varchar" direction="in" />
+    <parameter name="@i_macaddress" dataType="varchar" direction="in" />
+    <parameter name="@i_oficial" dataType="varchar" direction="in" />
+    <parameter name="@i_login" dataType="varchar" direction="in" />
+    <parameter name="@i_estado" dataType="char" direction="in" />
+    <parameter name="@i_alias" dataType="varchar" direction="in" />
+    <parameter name="@i_fecha_reg" dataType="datetime" direction="in" />
+    <parameter name="@o_codigo" dataType="int" direction="out" />
+    <parameter name="@i_permite_matri" dataType="varchar" direction="in" />
+  </parameters>
+  <queries>
+    <query>
+      <columns>
+        <column name="{1}" />
+      </columns>
+      <queryText>SELECT  (1) </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="codigo" />
+        <column name="tipo" />
+        <column name="desTipo" />
+        <column name="imei" />
+        <column name="macAddress" />
+        <column name="oficial" />
+        <column name="desOficial" />
+        <column name="alias" />
+        <column name="fechaRegistro" />
+        <column name="usuarioRegistro" />
+        <column name="estado" />
+        <column name="desEstado" />
+      </columns>
+      <queryText>SELECT  "codigo" = di_codigo,"tipo" = di_tipo,"desTipo" = (SELECT  valor FROM cobis..cl_catalogo   WHERE tabla AND codigo = di_tipo     ),"imei" = di_imei,"macAddress" = di_macaddress,"oficial" = di_oficial,"desOficial" = fu_nombre,"alias" = di_alias,"fechaRegistro" = CONVERT (VARCHAR (10),di_fecha_reg ,103),"usuarioRegistro" = di_usuario_reg,"estado" = di_estado,"desEstado" = (SELECT  valor FROM cobis..cl_catalogo   WHERE tabla AND codigo = di_estado     ) </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="codigo" />
+        <column name="tipo" />
+        <column name="descTipo" />
+        <column name="imei" />
+        <column name="macAddress" />
+        <column name="oficial" />
+        <column name="descOficial" />
+        <column name="alias" />
+        <column name="fechaRegistro" />
+        <column name="usuarioRegistro" />
+        <column name="estado" />
+        <column name="desEstado" />
+      </columns>
+      <queryText>SELECT  "codigo" = di_codigo,"tipo" = di_tipo,"descTipo" = (SELECT  valor FROM cobis..cl_catalogo   WHERE tabla AND codigo = di_tipo     ),"imei" = di_imei,"macAddress" = di_macaddress,"oficial" = di_oficial,"descOficial" = fu_nombre,"alias" = di_alias,"fechaRegistro" = CONVERT (VARCHAR (10),di_fecha_reg ,103),"usuarioRegistro" = di_usuario_reg,"estado" = di_estado,"desEstado" = (SELECT  valor FROM cobis..cl_catalogo   WHERE tabla AND codigo = di_estado     ) </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="codigo" />
+        <column name="tipo" />
+        <column name="descTipo" />
+        <column name="imei" />
+        <column name="macAddress" />
+        <column name="oficial" />
+        <column name="descOficial" />
+        <column name="alias" />
+        <column name="fechaRegistro" />
+        <column name="usuarioRegistro" />
+        <column name="estado" />
+        <column name="desEstado" />
+        <column name="di_permitir_matricula" />
+      </columns>
+      <queryText>SELECT  "codigo" = di_codigo,"tipo" = di_tipo,"descTipo" = (SELECT  valor FROM cobis..cl_catalogo   WHERE tabla AND codigo = di_tipo     ),"imei" = di_imei,"macAddress" = di_macaddress,"oficial" = di_oficial,"descOficial" = fu_nombre,"alias" = di_alias,"fechaRegistro" = CONVERT (VARCHAR (10),di_fecha_reg ,103),"usuarioRegistro" = di_usuario_reg,"estado" = di_estado,"desEstado" = (SELECT  valor FROM cobis..cl_catalogo   WHERE tabla AND codigo = di_estado     ) </queryText>
+    </query>
+  </queries>
+</procedure>

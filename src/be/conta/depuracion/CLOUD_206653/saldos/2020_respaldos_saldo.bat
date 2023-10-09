@@ -1,0 +1,13 @@
+bcp "SELECT * FROM cob_conta_tercero..ct_saldo_tercero WHERE st_periodo = 2020 AND st_corte = 31" queryout D:\Temp\Pruebas\cob_conta_tercero_ct_saldo_tercero_2020_corte_31.dat -n -r \n -T -S
+bcp "SELECT * FROM cob_conta_tercero..ct_saldo_tercero WHERE st_periodo = 2020 AND st_corte = 60" queryout D:\Temp\Pruebas\cob_conta_tercero_ct_saldo_tercero_2020_corte_60.dat -n -r \n -T -S
+bcp "SELECT * FROM cob_conta_tercero..ct_saldo_tercero WHERE st_periodo = 2020 AND st_corte = 91" queryout D:\Temp\Pruebas\cob_conta_tercero_ct_saldo_tercero_2020_corte_91.dat -n -r \n -T -S
+bcp "SELECT * FROM cob_conta_tercero..ct_saldo_tercero WHERE st_periodo = 2020 AND st_corte = 121" queryout D:\Temp\Pruebas\cob_conta_tercero_ct_saldo_tercero_2020_corte_121.dat -n -r \n -T -S
+bcp "SELECT * FROM cob_conta_tercero..ct_saldo_tercero WHERE st_periodo = 2020 AND st_corte = 152" queryout D:\Temp\Pruebas\cob_conta_tercero_ct_saldo_tercero_2020_corte_152.dat -n -r \n -T -S
+bcp "SELECT * FROM cob_conta_tercero..ct_saldo_tercero WHERE st_periodo = 2020 AND st_corte = 182" queryout D:\Temp\Pruebas\cob_conta_tercero_ct_saldo_tercero_2020_corte_182.dat -n -r \n -T -S
+bcp "SELECT * FROM cob_conta_tercero..ct_saldo_tercero WHERE st_periodo = 2020 AND st_corte = 213" queryout D:\Temp\Pruebas\cob_conta_tercero_ct_saldo_tercero_2020_corte_213.dat -n -r \n -T -S
+bcp "SELECT * FROM cob_conta_tercero..ct_saldo_tercero WHERE st_periodo = 2020 AND st_corte = 244" queryout D:\Temp\Pruebas\cob_conta_tercero_ct_saldo_tercero_2020_corte_244.dat -n -r \n -T -S
+bcp "SELECT * FROM cob_conta_tercero..ct_saldo_tercero WHERE st_periodo = 2020 AND st_corte = 274" queryout D:\Temp\Pruebas\cob_conta_tercero_ct_saldo_tercero_2020_corte_274.dat -n -r \n -T -S
+bcp "SELECT * FROM cob_conta_tercero..ct_saldo_tercero WHERE st_periodo = 2020 AND st_corte = 305" queryout D:\Temp\Pruebas\cob_conta_tercero_ct_saldo_tercero_2020_corte_305.dat -n -r \n -T -S
+bcp "SELECT * FROM cob_conta_tercero..ct_saldo_tercero WHERE st_periodo = 2020 AND st_corte = 335" queryout D:\Temp\Pruebas\cob_conta_tercero_ct_saldo_tercero_2020_corte_335.dat -n -r \n -T -S
+bcp "SELECT * FROM cob_conta_tercero..ct_saldo_tercero WHERE st_periodo = 2020 AND st_corte = 366" queryout D:\Temp\Pruebas\cob_conta_tercero_ct_saldo_tercero_2020_corte_366.dat -n -r \n -T -S
+bcp "SELECT * FROM cob_conta_tercero..ct_saldo_tercero WHERE st_periodo = 2020 AND st_corte = 367" queryout D:\Temp\Pruebas\cob_conta_tercero_ct_saldo_tercero_2020_corte_367.dat -n -r \n -T -S

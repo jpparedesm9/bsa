@@ -1,0 +1,36 @@
+USE cobis 
+go
+
+declare @w_commit        char(1)
+
+--NOMBRE DEL PROSPECTO: SHARY TORRES CANO
+--ID DEL PROSPECTO: 43347
+--CURP CORRECTO: TOCS920814MTLRNH07
+--RFC CORRECTO: TOCS9208147Y6
+--FECHA DE NACIMIENTO CORRECTA: 14 08 1992
+--FECHA DE NACIMIENTO INCORRECTA: 13 08 1992
+
+    PRINT 'Update fecha nacimiento cliente 43347'
+    UPDATE cobis..cl_ente
+    SET p_fecha_nac = '08/13/1992'
+    WHERE en_ente = 43347
+    
+
+--
+--NOMBRE DEL PROSPECTO: LAURA ISABEL JUVENAL CAMPOS
+--ID DEL PROSPECTO: 43359
+--CURP CORRECTO: JUCL651019MDFVMR03
+--RFC CORRECTO: JUCL651019JJ1
+--FECHA DE NACIMIENTO CORRECTA: 19 10 1965
+--FECHA DE NACIMIENTO INCORRECTA: 18 10 1965
+    PRINT 'Update fecha nacimiento cliente 43359'
+    UPDATE cobis..cl_ente
+    SET p_fecha_nac = '10/18/1965'
+    WHERE en_ente = 43359
+
+
+if @w_commit = 'S' begin 
+   select @w_commit = 'N'
+  rollback tran 
+end
+

@@ -1,0 +1,130 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<procedure>
+  <database>cobis</database>
+  <name>sp_refpersonal</name>
+  <type>SYBASE</type>
+  <version>1</version>
+  <parameters>
+    <parameter name="@s_ssn" dataType="int" direction="in" />
+    <parameter name="@s_user" dataType="varchar" direction="in" />
+    <parameter name="@s_term" dataType="varchar" direction="in" />
+    <parameter name="@s_date" dataType="datetime" direction="in" />
+    <parameter name="@s_srv" dataType="varchar" direction="in" />
+    <parameter name="@s_lsrv" dataType="varchar" direction="in" />
+    <parameter name="@s_ofi" dataType="smallint" direction="in" />
+    <parameter name="@t_debug" dataType="char" direction="in" />
+    <parameter name="@t_file" dataType="varchar" direction="in" />
+    <parameter name="@t_from" dataType="varchar" direction="in" />
+    <parameter name="@t_trn" dataType="smallint" direction="in" />
+    <parameter name="@t_show_version" dataType="bit" direction="in" />
+    <parameter name="@i_operacion" dataType="char" direction="in" />
+    <parameter name="@i_ente" dataType="int" direction="in" />
+    <parameter name="@i_referencia" dataType="tinyint" direction="in" />
+    <parameter name="@i_nombre" dataType="varchar" direction="in" />
+    <parameter name="@i_p_apellido" dataType="varchar" direction="in" />
+    <parameter name="@i_s_apellido" dataType="varchar" direction="in" />
+    <parameter name="@i_direccion" dataType="varchar" direction="in" />
+    <parameter name="@i_telefono_d" dataType="char" direction="in" />
+    <parameter name="@i_telefono_e" dataType="char" direction="in" />
+    <parameter name="@i_telefono_o" dataType="char" direction="in" />
+    <parameter name="@i_parentesco" dataType="varchar" direction="in" />
+    <parameter name="@i_descripcion" dataType="varchar" direction="in" />
+    <parameter name="@i_departamento" dataType="varchar" direction="in" />
+    <parameter name="@i_ciudad" dataType="varchar" direction="in" />
+    <parameter name="@i_barrio" dataType="varchar" direction="in" />
+    <parameter name="@i_calle" dataType="varchar" direction="in" />
+    <parameter name="@i_nro" dataType="int" direction="in" />
+    <parameter name="@i_colonia" dataType="varchar" direction="in" />
+    <parameter name="@i_localidad" dataType="varchar" direction="in" />
+    <parameter name="@i_municipio" dataType="varchar" direction="in" />
+    <parameter name="@i_estado" dataType="varchar" direction="in" />
+    <parameter name="@i_codpostal" dataType="varchar" direction="in" />
+    <parameter name="@i_pais" dataType="varchar" direction="in" />
+    <parameter name="@i_tiempo_conocido" dataType="int" direction="in" />
+    <parameter name="@o_siguiente" dataType="tinyint" direction="out" />
+    <parameter name="@i_direccion_e" dataType="varchar" direction="in" />
+  </parameters>
+  <queries>
+    <query>
+      <columns>
+        <column name="{1}" />
+      </columns>
+      <queryText>SELECT o_siguiente</queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="NUMERO" />
+        <column name="NOMBRE" />
+        <column name="PRIMER_APELLIDO" />
+        <column name="SEGUNDO_APELLIDO" />
+        <column name="DIRECCION" />
+        <column name="NEXO_CON_EL_CLIENTE" />
+        <column name="TELEFONO_DOMICILIO" />
+        <column name="TELEFONO_EMPRESA" />
+        <column name="TELEFONO_OTRO" />
+        <column name="OBSERVACIONES" />
+        <column name="FECHA_REGISTRO" />
+        <column name="FECHA_ULT_MODIF" />
+        <column name="VIGENTE" />
+        <column name="VERIF." />
+        <column name="DEPARTAMENTO" />
+        <column name="CIUDAD" />
+        <column name="BARRIO" />
+        <column name="OBS.VERIFICADO" />
+        <column name="CALLE" />
+        <column name="NRO" />
+        <column name="COLONIA" />
+        <column name="LOCALIDAD" />
+        <column name="MUNICIPIO" />
+        <column name="CODESTADO" />
+        <column name="CODPOSTAL" />
+        <column name="CODPAIS" />
+        <column name="TIEMPO_CONOCI" />
+        <column name="CORREO" />
+      </columns>
+      <queryText>SELECT  "NUMERO" = rp_referencia,"NOMBRE" = rp_nombre,"PRIMER_APELLIDO" = rp_p_apellido,"SEGUNDO_APELLIDO" = rp_s_apellido,"DIRECCION" = SUBSTRING (rp_direccion, 1, 32),"NEXO_CON_EL_CLIENTE" = SUBSTRING (a.valor, 1, 14),"TELEFONO_DOMICILIO" = rp_telefono_d,"TELEFONO_EMPRESA" = rp_telefono_e,"TELEFONO_OTRO" = rp_telefono_o,"OBSERVACIONES" = rp_descripcion,"FECHA_REGISTRO" = CONVERT (VARCHAR (10),rp_fecha_registro ,?),"FECHA_ULT_MODIF" = CONVERT (VARCHAR (10),rp_fecha_modificacion ,?),"VIGENTE" = rp_vigencia,"VERIF." = rp_verificacion,"DEPARTAMENTO" = rp_departamento,"CIUDAD" = rp_ciudad,"BARRIO" = rp_barrio,"OBS.VERIFICADO" = rp_obs_verificado,"CALLE" = rp_calle,"NRO" = rp_nro,"COLONIA" = rp_colonia,"LOCALIDAD" = rp_localidad,"MUNICIPIO" = rp_municipio,"CODESTADO" = rp_estado,"CODPOSTAL" = rp_codpostal,"CODPAIS" = rp_pais,"TIEMPO_CONOCI" = rp_tiempo_conocido </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="{1}" />
+        <column name="{2}" />
+        <column name="{3}" />
+        <column name="{4}" />
+        <column name="{5}" />
+        <column name="{6}" />
+        <column name="{7}" />
+        <column name="{8}" />
+        <column name="{9}" />
+        <column name="{10}" />
+        <column name="{11}" />
+        <column name="{12}" />
+        <column name="{13}" />
+        <column name="{14}" />
+        <column name="{15}" />
+        <column name="{16}" />
+        <column name="{17}" />
+        <column name="{18}" />
+        <column name="{19}" />
+        <column name="{20}" />
+        <column name="{21}" />
+        <column name="{22}" />
+        <column name="{23}" />
+        <column name="{24}" />
+        <column name="{25}" />
+        <column name="{26}" />
+        <column name="{27}" />
+        <column name="{28}" />
+        <column name="{29}" />
+      </columns>
+      <queryText>SELECT o_referencia, o_ref_nombre, o_ref_p_apellido, o_ref_s_apellido, o_direccion, o_telefono_d, o_telefono_e, o_telefono_o, o_parentesco, o_parnombre, ctx.convertString(o_fecha_registro ,i_formato), ctx.convertString(o_fecha_modificacion ,i_formato), o_vigencia, o_verificacion, o_funcionario, o_descripcion, ctx.convertString(o_fecha_ver ,101), o_departamento, o_ciudad, o_barrio, o_calle, o_nro, o_colonia, o_localidad, o_municipio, o_estado, o_codpostal, o_pais, o_tiempo_conocido</queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="parametro " />
+        <column name="ocuapacion" />
+        <column name="trabajo" />
+      </columns>
+      <queryText>SELECT "parametro "=o_parTV,"ocuapacion"=o_tipov,"trabajo"=o_vivienda</queryText>
+    </query>
+  </queries>
+</procedure>

@@ -1,0 +1,107 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<procedure>
+  <database>cob_credito</database>
+  <name>sp_tr_moratoria</name>
+  <type>SYBASE</type>
+  <version>1</version>
+  <parameters>
+    <parameter name="@s_sesn" dataType="int" direction="in" />
+    <parameter name="@s_user" dataType="varchar" direction="in" />
+    <parameter name="@s_term" dataType="varchar" direction="in" />
+    <parameter name="@s_date" dataType="datetime" direction="in" />
+    <parameter name="@s_ssn" dataType="int" direction="in" />
+    <parameter name="@s_srv" dataType="varchar" direction="in" />
+    <parameter name="@s_ofi" dataType="smallint" direction="in" />
+    <parameter name="@t_trn" dataType="int" direction="in" />
+    <parameter name="@i_operacion" dataType="char" direction="in" />
+    <parameter name="@i_mo_tramite" dataType="int" direction="in" />
+    <parameter name="@i_mo_banco" dataType="varchar" direction="in" />
+    <parameter name="@i_mo_cliente" dataType="int" direction="in" />
+    <parameter name="@i_mo_mora" dataType="int" direction="in" />
+    <parameter name="@i_mo_tipo" dataType="char" direction="in" />
+    <parameter name="@i_mo_concepto" dataType="varchar" direction="in" />
+    <parameter name="@i_mo_porc_pago" dataType="float" direction="in" />
+    <parameter name="@i_mo_estado" dataType="char" direction="in" />
+    <parameter name="@i_mo_monto_comprometido" dataType="money" direction="in" />
+    <parameter name="@i_mo_problema_neg" dataType="varchar" direction="in" />
+    <parameter name="@i_mo_situacion_gar" dataType="varchar" direction="in" />
+    <parameter name="@i_detalle" dataType="char" direction="in" />
+    <parameter name="@i_mo_observacion" dataType="varchar" direction="in" />
+  </parameters>
+  <queries>
+    <query>
+      <columns>
+        <column name="mo_tramite" />
+        <column name=" mo_banco" />
+        <column name=" mo_cliente" />
+        <column name=" mo_mora" />
+        <column name=" mo_tipo" />
+        <column name=" mo_concepto" />
+        <column name=" mo_porc_pago" />
+        <column name=" mo_estado" />
+      </columns>
+      <queryText>SELECT  mo_tramite,mo_banco,mo_cliente,mo_mora,mo_tipo,mo_concepto,mo_porc_pago,mo_estado </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="mo_tramite" />
+        <column name=" mo_banco" />
+        <column name=" mo_cliente" />
+        <column name=" mo_mora" />
+        <column name=" mo_tipo" />
+        <column name=" mo_concepto" />
+        <column name=" mo_porc_pago" />
+        <column name=" mo_estado" />
+      </columns>
+      <queryText>SELECT  mo_tramite,mo_banco,mo_cliente,mo_mora,mo_tipo,mo_concepto,mo_porc_pago,mo_estado </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="mo_tramite" />
+        <column name=" mo_banco" />
+        <column name=" mo_cliente" />
+        <column name=" mo_mora" />
+        <column name=" mo_tipo" />
+        <column name=" mo_concepto" />
+        <column name=" mo_porc_pago" />
+        <column name=" mo_estado" />
+      </columns>
+      <queryText>SELECT  mo_tramite,mo_banco,mo_cliente,mo_mora,mo_tipo,mo_concepto,mo_porc_pago,mo_estado </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="mo_tramite" />
+        <column name=" mo_banco" />
+        <column name=" mo_cliente" />
+        <column name=" mo_mora" />
+        <column name=" mo_tipo" />
+        <column name=" mo_concepto" />
+        <column name=" mo_porc_pago" />
+        <column name=" mo_estado" />
+      </columns>
+      <queryText>SELECT  mo_tramite,mo_banco,mo_cliente,mo_mora,mo_tipo,mo_concepto,mo_porc_pago,mo_estado </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="mo_tramite" />
+        <column name=" mo_banco" />
+        <column name="mo_cliente" />
+        <column name=" mo_mora" />
+        <column name=" mo_tipo" />
+        <column name=" mo_estado" />
+        <column name=" mo_monto_comprometido" />
+        <column name=" mo_problema_neg" />
+        <column name=" mo_situacion_gar" />
+        <column name=" mo_observaciones" />
+      </columns>
+      <queryText></queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="mod_concepto" />
+        <column name=" mod_porc_pago" />
+      </columns>
+      <queryText></queryText>
+    </query>
+  </queries>
+</procedure>

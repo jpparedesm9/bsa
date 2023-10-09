@@ -1,0 +1,22 @@
+<config>
+  <general>
+    <dbms>
+      <dbms-name>SYBCTS</dbms-name>
+      <serviceProvider>DataSource</serviceProvider>
+    </dbms>
+    <log-level>INFO</log-level>
+  </general>
+  <own>
+    <coreBankings>
+      <backEndId id="TENANT_COBIS" reference="default" description="COBIS" branch="false" default-tenant="true" offline="false">
+        <targets>
+          <target name="central" dbms-name="SYBCTS" ssnserver-name="SSNSERVER"></target>
+		   <target name="local" dbms-name="SYBCTS" ssnserver-name="SSNSERVER"></target>
+          <target name="cis-central" dbms-name="SYBCTS" ssnserver-name="SSNSERVER"></target>
+          <target name="ien-central" dbms-name="DBMSIEN" ssnserver-name="SSNSERVER"></target>
+        </targets>
+        <role id="1" description="Administrator"></role>
+      </backEndId>
+    </coreBankings>
+  </own>
+</config>

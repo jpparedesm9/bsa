@@ -1,0 +1,79 @@
+!************************************************************************!
+!*      Archivo           :  in_ba_log.sqr                              *!
+!*      Base de datos     :  cobis                                      *!
+!*      Producto          :  Visual Batch                               *!
+!*      Disenado por      :  Diego Ayala.	                        *!
+!*      Fecha de escritura:  24/Oct/02                                  *!
+!************************************************************************!
+!*                              IMPORTANTE                              *!
+!*      Este programa es parte de los paquetes bancarios propiedad de   *!
+!*      "MACOSA", representantes exclusivos para el Ecuador de la       *!
+!*      "NCR CORPORATION".                                              *!
+!*      Su uso no autorizado queda expresamente prohibido asi como      *!
+!*      cualquier alteracion o agregado hecho por alguno de sus         *!
+!*      usuarios sin el debido consentimiento por escrito de la         *!
+!*      Presidencia Ejecutiva de MACOSA o su representante.             *!
+!************************************************************************!
+!*                              PROPOSITO                               *!
+!*      Insercion del log						*!  
+!*	PARAM 1: $LOTE 	(codigo de lote o sarta)			*!
+!*	PARAM 2: $BATCH (codigo de opcion batch)			*!
+!*	PARAM 3: $SEC	(secuencial del batch en el lote		*!
+!*      PARAM 4: $NUMC	(numero de corrida)		                *!
+!*      PARAM 5: $NUMI	(numero de intento)		                *!
+!*      PARAM 6: $FECPROC (fecha de proceso)				*!
+!*      PARAM 7: $LISPAR (lista de parametros separados por espacio)	*!
+!*      PARAM 8: $USUARIO (usuario)			                *!
+!************************************************************************!
+!*                            MODIFICACIONES                            *!
+!*      FECHA           AUTOR           RAZON                           *!
+!*      24/oct/03       Diego Ayala	Emision inicial			*!
+!************************************************************************!
+
+
+Begin-Setup
+use cobis
+End-Setup  
+
+Begin-Report
+   input $w_lote        'Ingrese el codigo de lote      '
+   input $w_batch       'Ingrese el codigo del batch    '
+   input $w_sec         'Ingrese el secuencial          '
+   input $w_numc        'Ingrese la corrida             '
+   input $w_numi        'Ingrese la intento             '
+
+   input $w_fecproc     'Ingrese la fecha de proceso    '
+   input $w_lispar      'Ingrese la lista de parametros '
+   input $w_usuario     'Ingrese la usuarios		'
+   let #w_lote        = to_number ($w_lote)
+   let #w_batch       = to_number ($w_batch)
+   let #w_sec         = to_number ($w_sec)
+   let #w_numc        = to_number ($w_numc)
+   let #w_numi        = to_number ($w_numi)
+
+do Main
+End-Report
+
+Begin-Procedure Main
+Begin-sql ON-ERROR = Error_Int
+insert into cobis..ba_log
+(lo_sarta, lo_batch, lo_secuencial,
+lo_corrida, lo_operador, lo_fecha_inicio,
+lo_fecha_terminacion, lo_num_reg_proc, lo_estatus,
+lo_razon, lo_fecha_proceso, lo_parametro,
+lo_intento)
+values(
+#w_lote, #w_batch, #w_sec, #w_numc, $w_usuario, 
+getdate(), NULL, NULL, 'E', 
+"-                                                                                                                                                                                                                                                             -", 
+$w_fecproc, $w_lispar, #w_numi
+)
+End-sql
+
+End-Procedure
+
+Begin-Procedure Error_Int
+   let #return-status = 1 ! Para el sistema operativo
+   show $sql-error
+   stop
+End-Procedure

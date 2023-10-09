@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="formatPagareGrupal" pageWidth="509" pageHeight="841" columnWidth="469" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="c1957766-1c85-475d-9214-e3abf5674f9a">
+	<property name="ireport.zoom" value="1.2100000000000133"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="305"/>
+	<parameter name="SUBREPORT_DIR" class="java.lang.String">
+		<defaultValueExpression><![CDATA["/"]]></defaultValueExpression>
+	</parameter>
+	<field name="nombresMiembro" class="java.lang.String"/>
+	<field name="porcentajeAnual" class="java.lang.String"/>
+	<field name="monto" class="java.lang.String"/>
+	<field name="montoLetras" class="java.lang.String"/>
+	<field name="fechaLetras" class="java.lang.String"/>
+	<field name="direccion" class="java.lang.String"/>
+	<field name="listaPagos" class="java.util.List"/>
+	<detail>
+		<band height="349">
+			<staticText>
+				<reportElement mode="Transparent" x="97" y="56" width="285" height="15" forecolor="#6699FF" backcolor="#CCCCCC" uuid="8bf111ce-df5e-4528-a094-c265aa2b18d5"/>
+				<box leftPadding="5" rightPadding="5"/>
+				<textElement textAlignment="Center">
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[PAGARÉ]]></text>
+			</staticText>
+			<image>
+				<reportElement x="1" y="1" width="180" height="56" uuid="ae6212bf-1267-4f08-aedd-4eb2f73985f2"/>
+				<imageExpression><![CDATA["logo1.png"]]></imageExpression>
+			</image>
+			<textField>
+				<reportElement x="0" y="83" width="120" height="20" uuid="065802d6-ce7c-4677-93d6-dd5a91830a8a"/>
+				<box topPadding="2" leftPadding="5" bottomPadding="2" rightPadding="0"/>
+				<textFieldExpression><![CDATA["PAGARÉ BUENO POR "]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="103" width="469" height="82" uuid="3953187e-2d7d-49c6-8713-35a041748793"/>
+				<box topPadding="2" leftPadding="5" bottomPadding="0" rightPadding="5"/>
+				<textElement textAlignment="Justified" markup="html"/>
+				<textFieldExpression><![CDATA["Por el presente pagaré me (nos) obligo (obligamos) a pagar incondicionalmente a la orden de SOFOM SANTANDER la cantidad de " + $F{monto} +" (" + $F{montoLetras} + " ) en sus oficinas ubicadas en <u>Av. Prolongación Paseo de la Reforma No. 500 Col. Lomas de Santa Fe, Delegación Álvaro Obregón CP. 01219 Ciudad de México</u> y/o en cualquier otro lugar que me (nos) sea requerido el pago del presente documento, el día que se indique y forma que se precisa en la tabla de amortización de este título de crédito."]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="213" width="469" height="30" uuid="ad71fa0d-7fcb-400a-b9bc-6d3e0fc73871"/>
+				<box topPadding="2" leftPadding="5" bottomPadding="0" rightPadding="5"/>
+				<textElement textAlignment="Justified"/>
+				<textFieldExpression><![CDATA["El importe principal insoluto de este pagaré causará intereses ordinarios a razón del " + $F{porcentajeAnual} + "% anual sin impuesto al valor agregado a partir de la fecha de suscripción y hasta el día de la liquidación total."]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="242" width="469" height="30" uuid="1648bd33-7a99-45f4-a4c2-d50dfbd754ac"/>
+				<box topPadding="2" leftPadding="5" bottomPadding="2" rightPadding="5"/>
+				<textElement textAlignment="Justified" markup="html"/>
+				<text><![CDATA[El suscritor deberá pagar al beneficiario el monto que por amortización a capital más intereses ordinarios corresponda conforme la siguiente tabla de amortización.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="184" width="469" height="30" uuid="96a006bf-7225-4eb1-b941-2512ea4e6784"/>
+				<box topPadding="2" leftPadding="5" bottomPadding="0" rightPadding="5"/>
+				<textElement textAlignment="Justified"/>
+				<text><![CDATA[Valor recibido a mi entera satisfacción a través de cheque nominativo y/o vale de efectivo entregado y recibido.]]></text>
+			</staticText>
+			<subreport runToBottom="false">
+				<reportElement stretchType="RelativeToTallestObject" x="99" y="284" width="228" height="44" uuid="00c3376a-5e38-4b5a-927a-ad33667abb28"/>
+				<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($F{listaPagos})]]></dataSourceExpression>
+				<subreportExpression><![CDATA[$P{SUBREPORT_DIR} + "detalleTablaAmortizacion.jasper"]]></subreportExpression>
+			</subreport>
+			<textField>
+				<reportElement x="119" y="83" width="137" height="20" uuid="d6b5c151-a899-4b1f-b302-7dff0fbc0ff6"/>
+				<box topPadding="2" leftPadding="5" bottomPadding="2" rightPadding="5"/>
+				<textFieldExpression><![CDATA[$F{monto}]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="327">
+			<textField>
+				<reportElement x="0" y="274" width="469" height="33" uuid="7a917d30-74fa-4ef0-90ce-c520fd8c245a"/>
+				<box topPadding="3" leftPadding="5" bottomPadding="3" rightPadding="5"/>
+				<textElement textAlignment="Center" markup="html"/>
+				<textFieldExpression><![CDATA[$F{nombresMiembro} + "<br>" + $F{direccion}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="0" width="469" height="92" uuid="ead3f859-2512-400b-be8b-f2cfc5112fbf"/>
+				<box topPadding="5" leftPadding="5" bottomPadding="0" rightPadding="5"/>
+				<textElement textAlignment="Justified" markup="html"/>
+				<text><![CDATA[El cobro del presente <b>PAGARÉ</b> no requiere de diligencia, presentación, protesta o formalidad alguna.
+La omisión o demora por parte del poseedor de este PAGARÉ en ejercer cualquier derecho, facultad o recurso derivado del presente PAGARÉ no podrá ser considera como una renuncia de dicho derecho, facultad o derecho en esta o cualquier otra instancia. El suscriptor y aval se obligan a pagar los gastos que se realicen a efecto de cobrar este PAGARÉ, así como los honorarios de los abogados que intervengan para el cobro de los mismos, en caso de incumplimiento.
+]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="216" width="469" height="57" uuid="d7818c06-0b54-45b3-b5d4-61a4b2512fa4"/>
+				<box topPadding="3" leftPadding="5" bottomPadding="3" rightPadding="5">
+					<pen lineWidth="0.75"/>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[ACEPTO
+SUSCRIPTOR]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="0" y="181" width="469" height="20" uuid="75a4a71e-8085-4b25-833a-8e549cee634f"/>
+				<box topPadding="2" leftPadding="5" bottomPadding="2" rightPadding="5"/>
+				<textFieldExpression><![CDATA["Leído que fue este pagaré se firma en la Ciudad de México, el " + $F{fechaLetras}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="91" width="469" height="69" uuid="742bfe9d-d181-402d-a43e-ecda83fbfadb"/>
+				<box topPadding="2" leftPadding="5" bottomPadding="0" rightPadding="5"/>
+				<textElement textAlignment="Justified" markup="html"/>
+				<text><![CDATA[El suscriptor y el (los) aval (es) en su caso se reconocen y aceptan que la falta de pago oportuno total o parcial de cualquier amortización pactada conforme a este pagaré, generará el vencimiento por anticipado de las subsecuentes amortizaciones que falten por efectuar a partir de la fecha en que se incurra en moratoria de pago, siendo exigible por SOFOM SANTANDER el pago inmediato de todas las amortizaciones no pagadas.]]></text>
+			</staticText>
+			<break>
+				<reportElement x="0" y="319" width="100" height="1" uuid="3f17e374-b8b6-4949-be95-2a13ecd5ea67"/>
+			</break>
+		</band>
+	</detail>
+</jasperReport>

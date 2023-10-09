@@ -1,0 +1,98 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<procedure>
+  <database>cob_custodia</database>
+  <name>sp_intcre02</name>
+  <type>SYBASE</type>
+  <version>1</version>
+  <parameters>
+    <parameter name="@s_ssn" dataType="int" direction="in" />
+    <parameter name="@s_date" dataType="datetime" direction="in" />
+    <parameter name="@s_user" dataType="varchar" direction="in" />
+    <parameter name="@s_term" dataType="varchar" direction="in" />
+    <parameter name="@s_corr" dataType="char" direction="in" />
+    <parameter name="@s_ssn_corr" dataType="int" direction="in" />
+    <parameter name="@s_ofi" dataType="smallint" direction="in" />
+    <parameter name="@t_rty" dataType="char" direction="in" />
+    <parameter name="@t_trn" dataType="smallint" direction="in" />
+    <parameter name="@t_debug" dataType="char" direction="in" />
+    <parameter name="@t_file" dataType="varchar" direction="in" />
+    <parameter name="@t_from" dataType="varchar" direction="in" />
+    <parameter name="@i_operacion" dataType="char" direction="in" />
+    <parameter name="@i_modo" dataType="smallint" direction="in" />
+    <parameter name="@i_cliente" dataType="int" direction="in" />
+    <parameter name="@i_estado" dataType="varchar" direction="in" />
+    <parameter name="@i_estado1" dataType="tinyint" direction="in" />
+    <parameter name="@i_codigo_externo" dataType="varchar" direction="in" />
+    <parameter name="@i_opcion" dataType="tinyint" direction="in" />
+    <parameter name="@i_opcion1" dataType="tinyint" direction="in" />
+    <parameter name="@i_formato_fecha" dataType="smallint" direction="in" />
+  </parameters>
+  <queries>
+    <query>
+      <columns>
+        <column name="guaranteeCode" />
+        <column name="descriptionGuarantee" />
+        <column name="guaranteeStatus" />
+        <column name="valueGuarantee" />
+        <column name="currencyMnemonic" />
+        <column name="currentValue" />
+        <column name="coverageValue" />
+        <column name="coverage" />
+        <column name="account" />
+        <column name="accountType" />
+        <column name="depreciationPercentage" />
+        <column name="nameGuarantor" />
+        <column name="locationDocument" />
+        <column name="status" />
+      </columns>
+      <queryText>SELECT DISTINCT "17862" = cu_codigo_externo,"17662" = tc_descripcion,"17663" = e.valor,"17863" = CONVERT (MONEY,STR (ISNULL (cu_valor_actual, 0) * cotizacion, 15, 2) ),"17665" = mo_nemonico,"17664" = cu_valor_actual,"17680" = CONVERT (MONEY,STR (ROUND ((cu_valor_actual * cu_cobertura) / 100, 2), 15, 2) ),"17682" = CONVERT (MONEY,STR (cu_cobertura, 15, 2) ),"17892" = ISNULL (cu_cuenta_hold, cu_plazo_fijo),"17891" = (CASE tc_producto WHEN NULL THEN " " WHEN 14 THEN (SELECT  td_descripcion </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="guaranteeCode" />
+        <column name="descriptionGuarantee" />
+        <column name="guaranteeStatus" />
+        <column name="valueGuarantee" />
+        <column name="currencyMnemonic" />
+        <column name="currentValue" />
+        <column name="coverageValue" />
+        <column name="coverage" />
+        <column name="account" />
+        <column name="accountType" />
+        <column name="depreciationPercentage" />
+        <column name="nameGuarantor" />
+        <column name="locationDocument" />
+        <column name="status" />
+      </columns>
+      <queryText>SELECT DISTINCT "17862" = cu_codigo_externo,"17662" = tc_descripcion,"17663" = e.valor,"17863" = CONVERT (MONEY,STR (ISNULL (cu_valor_actual, 0) * cotizacion, 15, 2) ),"17665" = mo_nemonico,"17664" = cu_valor_actual,"17680" = CONVERT (MONEY,STR (ROUND ((cu_valor_actual * cu_cobertura) / 100, 2), 15, 2) ),"17682" = CONVERT (MONEY,STR (cu_cobertura, 15, 2) ),"17892" = ISNULL (cu_cuenta_hold, cu_plazo_fijo),"17891" = (CASE tc_producto WHEN NULL THEN " " WHEN 14 THEN (SELECT  td_descripcion </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="guaranteeState" />
+        <column name="guaranteeCode" />
+        <column name="descriptionGuarantee" />
+        <column name="valueGuarantee" />
+        <column name="currencyMnemonic" />
+        <column name="currentValue" />
+        <column name="policy" />
+        <column name="valuationDate" />
+        <column name="coverageValue" />
+        <column name="percentCoverage" />
+        <column name="creditCode" />
+        <column name="account" />
+        <column name="accountType" />
+        <column name="depreciationPercentage" />
+        <column name="nameGuarantor" />
+        <column name="locationDocument" />
+        <column name="policyHas" />
+      </columns>
+      <queryText></queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="totalValueGuarantee" />
+      </columns>
+      <queryText></queryText>
+    </query>
+  </queries>
+</procedure>

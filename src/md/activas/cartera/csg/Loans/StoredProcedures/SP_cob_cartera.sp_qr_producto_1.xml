@@ -1,0 +1,195 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<procedure>
+  <database>cob_cartera</database>
+  <name>sp_qr_producto</name>
+  <type>SYBASE</type>
+  <version>1</version>
+  <parameters>
+    <parameter name="@i_tipo" dataType="tinyint" direction="in" />
+    <parameter name="@i_operacion" dataType="char" direction="in" />
+    <parameter name="@i_producto" dataType="varchar" direction="in" />
+    <parameter name="@i_moneda" dataType="tinyint" direction="in" />
+    <parameter name="@i_afectacion" dataType="char" direction="in" />
+    <parameter name="@i_valorcat" dataType="varchar" direction="in" />
+  </parameters>
+  <queries>
+    <query>
+      <columns>
+        <column name="producto" />
+        <column name="descripcion" />
+        <column name="retencion" />
+        <column name="pcobis" />
+        <column name="pago_aut" />
+      </columns>
+      <queryText>SELECT  "233626" = cp_producto,"233627" = SUBSTRING (cp_descripcion, 1, 30),"233628" = cp_retencion,"233629" = cp_pcobis,"233630" = cp_pago_aut </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="233626" />
+        <column name="233627" />
+        <column name="233628" />
+        <column name="233629" />
+        <column name="233070" />
+        <column name="233979" />
+        <column name="233630" />
+      </columns>
+      <queryText>SELECT  "233626" = cp_producto,"233627" = SUBSTRING (cp_descripcion, 1, 30),"233628" = cp_retencion,"233629" = cp_pcobis,"233070" = cp_atx,"233979" = cp_descuento_directo,"233630" = cp_pago_aut </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="233626" />
+        <column name="233627" />
+        <column name="233628" />
+      </columns>
+      <queryText>SELECT  "233626" = cp_producto,"233627" = SUBSTRING (cp_descripcion, 1, 30),"233628" = cp_retencion </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="233626" />
+        <column name="233627" />
+        <column name="233628" />
+        <column name="233629" />
+      </columns>
+      <queryText>SELECT  "233626" = cp_producto,"233627" = SUBSTRING (cp_descripcion, 1, 30),"233628" = cp_retencion,"233629" = cp_pcobis </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="233626" />
+        <column name="233627" />
+        <column name="233628" />
+        <column name="233629" />
+      </columns>
+      <queryText>SELECT  "233626" = cp_producto,"233627" = SUBSTRING (cp_descripcion, 1, 30),"233628" = cp_retencion,"233629" = cp_pcobis </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="233626" />
+        <column name="233627" />
+        <column name="233628" />
+      </columns>
+      <queryText>SELECT  "233626" = cp_producto,"233627" = SUBSTRING (cp_descripcion, 1, 30),"233628" = cp_retencion </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="233626" />
+        <column name="233627" />
+        <column name="233628" />
+        <column name="233629" />
+      </columns>
+      <queryText>SELECT  "233626" = cp_producto,"233627" = SUBSTRING (cp_descripcion, 1, 30),"233628" = cp_retencion,"233629" = cp_pcobis </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="233626" />
+        <column name="233627" />
+        <column name="233628" />
+        <column name="233629" />
+      </columns>
+      <queryText>SELECT  "233626" = cp_producto,"233627" = SUBSTRING (cp_descripcion, 1, 30),"233628" = cp_retencion,"233629" = cp_pcobis </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="233626" />
+        <column name="233627" />
+        <column name="233628" />
+        <column name="233629" />
+        <column name="233630" />
+      </columns>
+      <queryText>SELECT  "233626" = cp_producto,"233627" = SUBSTRING (cp_descripcion, 1, 30),"233628" = cp_retencion,"233629" = cp_pcobis,"233630" = cp_pago_aut </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="{1}" />
+        <column name="{2}" />
+        <column name="{3}" />
+        <column name="{4}" />
+      </columns>
+      <queryText>SELECT  SUBSTRING (cp_descripcion, 1, 30),cp_retencion,cp_pcobis,cp_pago_aut </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="{1}" />
+        <column name="{2}" />
+        <column name="{3}" />
+        <column name="{4}" />
+        <column name="{5}" />
+      </columns>
+      <queryText>SELECT  SUBSTRING (cp_descripcion, 1, 30),cp_retencion,cp_pcobis,cp_atx,cp_descuento_directo </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="{1}" />
+        <column name="{2}" />
+        <column name="{3}" />
+      </columns>
+      <queryText>SELECT  SUBSTRING (cp_descripcion, 1, 30),cp_retencion,cp_pcobis </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="{1}" />
+        <column name="{2}" />
+        <column name="{3}" />
+      </columns>
+      <queryText>SELECT  SUBSTRING (cp_descripcion, 1, 30),cp_retencion,cp_pcobis </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="{1}" />
+        <column name="{2}" />
+      </columns>
+      <queryText>SELECT  SUBSTRING (cp_descripcion, 1, 30),cp_retencion </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="{1}" />
+        <column name="{2}" />
+        <column name="{3}" />
+      </columns>
+      <queryText>SELECT  SUBSTRING (cp_descripcion, 1, 30),cp_retencion,cp_pcobis </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="233626" />
+        <column name="233627" />
+        <column name="233628" />
+        <column name="233631" />
+      </columns>
+      <queryText>SELECT  "233626" = cp_producto,"233627" = SUBSTRING (cp_descripcion, 1, 30),"233628" = cp_retencion,"233631" = cp_moneda </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="{1}" />
+      </columns>
+      <queryText>SELECT  SUBSTRING (cp_descripcion, 1, 30) </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="{1}" />
+        <column name="{2}" />
+        <column name="{3}" />
+      </columns>
+      <queryText>SELECT  SUBSTRING (cp_descripcion, 1, 30),cp_retencion,cp_pcobis </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="{1}" />
+        <column name="{2}" />
+        <column name="{3}" />
+        <column name="{4}" />
+      </columns>
+      <queryText>SELECT  SUBSTRING (cp_descripcion, 1, 30),cp_retencion,cp_pcobis,cp_pago_aut </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="producto" />
+        <column name=" Descripcion" />
+        <column name=" Moneda" />
+        <column name=" Pcobis" />
+        <column name=" Pautmonatico" />
+        <column name=" Desembolso" />
+        <column name=" atx" />
+      </columns>
+      <queryText></queryText>
+    </query>
+  </queries>
+</procedure>

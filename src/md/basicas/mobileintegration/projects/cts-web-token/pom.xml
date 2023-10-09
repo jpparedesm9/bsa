@@ -1,0 +1,106 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.cobiscorp.cobis.cts</groupId>
+	<artifactId>cts-web-token</artifactId>
+	<!--version>${cts-web-token.version}</version-->
+	<version>1.0.0</version>
+
+  <parent>
+       <groupId>com.cobiscorp.cobiscloud</groupId>
+       <artifactId>cobis-cobiscloud-parent</artifactId>
+       <version>1.0.0</version>
+   </parent>
+
+	<properties>
+		<pmd.fail.on.violation>false</pmd.fail.on.violation>
+		<findbugs.fail.on.violation>false</findbugs.fail.on.violation>
+	</properties>
+
+	<build>
+		<sourceDirectory>src</sourceDirectory>
+		<testSourceDirectory>test</testSourceDirectory>
+		<resources>
+			<resource>
+				<directory>src</directory>
+				<excludes>
+					<exclude>**/*.java</exclude>
+				</excludes>
+			</resource>
+			<resource>
+				<directory>resources</directory>
+				<filtering>true</filtering>
+				<includes>
+					<include>**/*.xml</include>
+				</includes>
+				<excludes>
+					<exclude>**/*.jar</exclude>
+				</excludes>
+			</resource>
+
+		</resources>
+		<plugins>
+			<plugin>
+				<groupId>com.springsource.bundlor</groupId>
+				<artifactId>com.springsource.bundlor.maven</artifactId>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-jar-plugin</artifactId>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-jarsigner-plugin</artifactId>
+			</plugin>
+			
+
+		</plugins>
+	</build>
+	
+	<dependencies>
+		<!--dependency>
+			<groupId>com.cobiscorp.cobis.cts</groupId>
+			<artifactId>CTSServices</artifactId>
+			<version>${CTSServices.version}</version>
+		</dependency-->
+    <dependency>
+      <groupId>com.cobiscorp.cobis</groupId>
+      <artifactId>COBISCommons</artifactId>
+      <version>1.0.9</version>
+      <exclusions>
+        <exclusion>
+          <groupId>javax</groupId>
+          <artifactId>javaee-api</artifactId>
+        </exclusion>
+      </exclusions>
+    </dependency>
+    <dependency>
+      <groupId>com.cobiscorp.cobis.cts</groupId>
+      <artifactId>CTSCommons</artifactId>
+      <version>1.2.1</version>
+    </dependency>
+    
+		<dependency>
+			<groupId>com.cobiscorp.cobis.cts</groupId>
+			<artifactId>cts-services</artifactId>
+			<version>1.0.6.5</version>
+		</dependency>
+    
+		<dependency>
+			<groupId>com.cobiscorp.io.jsonwebtoken</groupId>
+			<artifactId>com-cobiscorp-jjwt</artifactId>
+			<version>0.7.1</version>
+		</dependency>
+		<dependency>
+			<groupId>org.glassfish.jersey.containers</groupId>
+			<artifactId>jersey-container-servlet</artifactId>
+			<version>2.5.1</version>
+		</dependency>
+		<dependency>
+			<groupId>org.glassfish.jersey.media</groupId>
+			<artifactId>jersey-media-json-jackson</artifactId>
+			<version>2.5.1</version>
+		</dependency>
+
+	</dependencies>
+</project>

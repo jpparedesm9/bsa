@@ -1,0 +1,1037 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="contratoCreditoInclusion_Detalle_2" columnCount="2" pageWidth="547" pageHeight="794" whenNoDataType="AllSectionsNoDetail" columnWidth="268" columnSpacing="11" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="deec1b21-1036-4734-948b-164547062a2b">
+	<property name="ireport.zoom" value="2.0"/>
+	<property name="ireport.x" value="11"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="SUBREPORT_DIR" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["/"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="urlPathSantander" class="java.lang.String"/>
+	<field name="datosOperacion" class="java.util.List"/>
+	<field name="lugarPago" class="java.lang.String"/>
+	<field name="documento" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<detail>
+		<band height="14" splitType="Stretch">
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="Float" stretchType="RelativeToBandHeight" x="0" y="0" width="263" height="14" isPrintWhenDetailOverflows="true" uuid="a4298a85-d5cd-4eb1-9daa-9805df55759a"/>
+				<textElement textAlignment="Justified" verticalAlignment="Top">
+					<font fontName="SansSerif" size="8" isBold="true"/>
+					<paragraph leftIndent="2" rightIndent="2"/>
+				</textElement>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="0" y="0" width="270" height="14" isPrintWhenDetailOverflows="true" uuid="15c284c2-2b88-4545-8ae2-24a29dfbbb85"/>
+				<textElement textAlignment="Justified" verticalAlignment="Top" markup="html">
+					<font fontName="DejaVu Sans" size="8" isBold="false"/>
+					<paragraph leftIndent="2" rightIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA["<b>PRIMERA. OBJETO.- </b> INCLUSIÓN FINANCIERA abre a los ACREDITADOS un crédito simple, en adelante el “Crédito”, hasta por la cantidad que aparece en el documento que contiene las condiciones particulares del Crédito -en adelante Carátula-.<br>"+
+"Dicho Crédito se otorga bajo la modalidad de crédito grupal, por virtud de la cual los integrantes del grupo acreditado, si bien disponen del mismo en lo individual, en las cantidades que se señalan en la tabla que se contiene en la presente cláusula, están de acuerdo en obligarse solidariamente respecto del monto total del crédito otorgado al grupo, acordando las partes que dicho Crédito es indivisible, resultando el grupo obligado a su pago integral."]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="14" splitType="Stretch">
+			<subreport>
+				<reportElement positionType="Float" stretchType="RelativeToBandHeight" x="0" y="0" width="263" height="14" uuid="95c11386-df33-465a-836a-646ad0f1c605"/>
+				<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($F{datosOperacion})]]></dataSourceExpression>
+				<subreportExpression><![CDATA[$P{SUBREPORT_DIR} + "contratoCreditoInclusion_DatosOperacion.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+		<band height="6" splitType="Stretch"/>
+		<band height="14" splitType="Stretch">
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="0" y="0" width="270" height="14" isPrintWhenDetailOverflows="true" uuid="7d040954-b55b-4bd1-897d-170bf5292796"/>
+				<textElement textAlignment="Justified" verticalAlignment="Top" markup="html">
+					<font fontName="DejaVu Sans" size="8" isBold="false"/>
+					<paragraph leftIndent="2" rightIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Para efectos del presente instrumento se considerará como \"grupo\" al conjunto que se constituye con las personas que se identifican en el presente instrumento como ACREDITADOS, quienes forman un solo ente deudor frente a INCLUSIÓN FINANCIERA, quien podrá exigir a cualquiera de ellos el todo de la deuda en los términos que se indican en el presente.<br/><br/>"+
+"Dentro del importe del crédito no quedan comprendidos las comisiones, accesorios y demás gastos que deban cubrir los ACREDITADOS con motivo del mismo."]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="6" splitType="Stretch"/>
+		<band height="14" splitType="Stretch">
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="0" y="0" width="270" height="14" isPrintWhenDetailOverflows="true" uuid="318cf817-03b0-4694-a4ba-9bcb85ae9d80"/>
+				<textElement textAlignment="Justified" verticalAlignment="Top" markup="html">
+					<font fontName="DejaVu Sans" size="8" isBold="false"/>
+					<paragraph leftIndent="2" rightIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA["<b>SEGUNDA. DESTINO.-</b> El destino del Crédito será para Capital de Trabajo, quedando los ACREDITADOS obligados a dar cumplimiento exacto al destino autorizado."]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="6" splitType="Stretch"/>
+		<band height="14" splitType="Stretch">
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="0" y="0" width="270" height="14" isPrintWhenDetailOverflows="true" uuid="03a84dc5-9221-4d50-88c9-ab3fd0ace597"/>
+				<textElement textAlignment="Justified" verticalAlignment="Top" markup="html">
+					<font fontName="DejaVu Sans" size="8" isBold="false"/>
+					<paragraph leftIndent="2" rightIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA["<b>TERCERA. DISPOSICIÓN DEL CRÉDITO.-</b> La disposición del Crédito se realizará a la Cuenta de cada uno de los ACREDITADOS de conformidad al monto señalado en la cláusula primera del presente instrumento.<br/><br/>"+
+"El número de la Cuenta especificado de conformidad con el párrafo inmediato anterior, será aquel con base en el cual los ACREDITADOS dispondrán del importe del que se trate en una sola ministración, mediante el abono que del mismo INCLUSIÓN FINANCIERA efectúe en la Cuenta a más tardar el segundo hábil contado a partir de la firma del presente instrumento.<br/><br/>"+
+"Cualquier disposición del Crédito efectuada por los ACREDITADOS al amparo del presente Contrato, se documentará mediante los asientos contables que realice INCLUSIÓN FINANCIERA, por lo que las partes acuerdan que la contabilidad de INCLUSIÓN FINANCIERA y/o los estados de la Cuenta, harán prueba plena de la disposición efectuada por los ACREDITADOS, de modo que a partir de la fecha en que INCLUSIÓN FINANCIERA abone el importe del Crédito a la Cuenta, se entenderá que los ACREDITADOS ha dispuesto el importe total del Crédito de que se trate.<br/><br/>"+
+"Lo anterior en el entendido que al Crédito, le corresponderá una CARÁTULA específica, misma que INCLUSIÓN FINANCIERA entregará a los ACREDITADOS, en términos de la Ley para la Transparencia y Ordenamiento de los Servicios Financieros.<br/>"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="6" splitType="Stretch"/>
+		<band height="14" splitType="Stretch">
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="Float" stretchType="RelativeToBandHeight" x="0" y="0" width="270" height="14" isPrintWhenDetailOverflows="true" uuid="6d0de493-6ee4-4e27-bb4e-c2e63fa706f4"/>
+				<textElement textAlignment="Justified" verticalAlignment="Top" markup="html">
+					<font fontName="DejaVu Sans" size="8" isBold="false"/>
+					<paragraph leftIndent="2" rightIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA["<b>CUARTA. INTERESES ORDINARIOS.- Los ACREDITADOS pagarán a INCLUSIÓN FINANCIERA sin necesidad de previo requerimiento, intereses ordinarios sobre el capital insoluto del Crédito, a la tasa de interés fija anual señalada en la CARÁTULA, pagaderos al vencimiento de cada amortización en los términos establecidos en el presente instrumento, más el Impuesto al Valor Agregado sobre dichos intereses, dicha fecha se considerará para todos los efectos legales como fecha de exigibilidad y corresponde a la fecha de corte para efectos del cómputo de intereses. </b><br>"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="14" splitType="Stretch">
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="Float" stretchType="RelativeToBandHeight" x="0" y="0" width="270" height="14" isPrintWhenDetailOverflows="true" uuid="6d0de493-6ee4-4e27-bb4e-c2e63fa706f4"/>
+				<textElement textAlignment="Justified" verticalAlignment="Top" markup="html">
+					<font fontName="DejaVu Sans" size="8" isBold="false"/>
+					<paragraph leftIndent="2" rightIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA["<b>Para la determinación de los intereses ordinarios se multiplicará el saldo insoluto del Crédito por la tasa fija establecida en la Carátula, el resultado obtenido se dividirá entre 360 (trescientos sesenta) y se multiplicará por 7 (siete días), más el Impuesto al Valor Agregado.</b>"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="6" splitType="Stretch"/>
+		<band height="14" splitType="Stretch">
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="0" y="0" width="270" height="14" isPrintWhenDetailOverflows="true" uuid="2070d600-cc29-4e56-bcca-f5f6430ce101"/>
+				<textElement textAlignment="Justified" verticalAlignment="Top" markup="html">
+					<font fontName="DejaVu Sans" size="8" isBold="false"/>
+					<paragraph leftIndent="2" rightIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA["<b>QUINTA. AMORTIZACIONES.-</b> El primer pago que deben de hacer los ACREDITADOS a INCLUSIÓN FINANCIERA será el séptimo día natural siguiente, contado a partir de la disposición del Crédito, correspondiendo al mismo día de la semana de la disposición. Los pagos sucesivos se deberán realizar el mismo día de cada semana hasta cubrir el importe total del crédito por concepto de capital, así como pagar los intereses, gastos, comisiones y accesorios que se generen.<br/><br/>"+
+"En todo caso, los ACREDITADOS se obligan a pagar a INCLUSIÓN FINANCIERA, sin necesidad de requerimiento o cobro previo, el importe dispuesto del Crédito de acuerdo a la Tabla de Amortización que INCLUSIÓN FINANCIERA le entrega a los ACREDITADOS en este acto y estos reciben a su entera satisfacción, formando parte integrante de este Contrato.<br>"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="14" splitType="Stretch">
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="0" y="0" width="270" height="14" isPrintWhenDetailOverflows="true" uuid="29515bb5-32e8-42ef-a080-4b9a4ee285f4"/>
+				<textElement textAlignment="Justified" verticalAlignment="Top" markup="html">
+					<font fontName="DejaVu Sans" size="8" isBold="true"/>
+					<paragraph leftIndent="2" rightIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA["En virtud de la solidaridad acordada entre los ACREDITADOS, los pagos que realice cada uno de ellos, por las cantidades que individualmente le corresponden, no los libera de la obligación de pago señalado en el párrafo anterior. Por lo que en el supuesto de que el total de la cuota correspondiente de acuerdo a la tabla de amortización, no sea cubierta en su totalidad, el pago recibido se aplicará al saldo insoluto del Crédito y se distribuirá de manera proporcional a cada uno de los ACREDITADOS, de acuerdo al monto entregado.<br/>"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="16" splitType="Stretch">
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="Float" stretchType="RelativeToBandHeight" x="0" y="0" width="270" height="14" isPrintWhenDetailOverflows="true" uuid="5a54b407-87ef-450c-8c4f-cb0f2506ee6a"/>
+				<textElement textAlignment="Justified" verticalAlignment="Top" markup="html">
+					<font fontName="DejaVu Sans" size="8" isBold="false"/>
+					<paragraph leftIndent="2" rightIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA["<b>La fecha de exigibilidad será la fecha límite en que dicho pago debe realizarse, con independencia que si se trata de un día inhábil bancario, el pago deberá realizarse al día siguiente hábil.</b>"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="6" splitType="Stretch"/>
+		<band height="14" splitType="Stretch">
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="Float" stretchType="RelativeToBandHeight" x="0" y="0" width="270" height="14" isPrintWhenDetailOverflows="true" uuid="8bf6a62e-e7b9-4201-91a1-9edf41923eb9"/>
+				<textElement textAlignment="Justified" verticalAlignment="Top" markup="html">
+					<font fontName="DejaVu Sans" size="8" isBold="false"/>
+					<paragraph leftIndent="2" rightIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA["<b>SEXTA. DE LOS PAGOS EN GENERAL.-</b> Los pagos que los ACREDITADOS realicen conforme a lo previsto en este Contrato, se acreditarán de acuerdo al medio de pago utilizado.  El importe de los pagos en efectivo, mediante transferencia electrónica a través del sistema conocido como SPEI, se acreditará en la fecha en que se reciban; los pagos que se realicen a través del servicio conocido como domiciliación, se acreditarán en la fecha acordada entre INCLUSIÓN FINANCIERA y los ACREDITADOS; los pagos con cheques a cargo de bancos autorizados para operar dentro de territorio nacional que se realicen antes de las 16:00 horas, así como los pagos realizados mediante transferencia electrónica de fondos proveniente de bancos autorizados para operar dentro del territorio nacional, se acreditará el día hábil bancario siguiente; los pagos con cheques a cargo de bancos autorizados para operar dentro del territorio nacional realizados después de las 16:00 horas, se recibirán salvo buen cobro y su importe se acreditará el segundo día hábil bancario siguiente. En todo caso, los pagos que se realicen con cheques se recibirán salvo buen cobro y se acreditarán solamente cuando sean cobrados por INCLUSIÓN FINANCIERA.<br/><br/>"+
+"Las sumas que los ACREDITADOS entreguen a INCLUSIÓN FINANCIERA, serán aplicadas a satisfacer el importe de los conceptos derivados de las obligaciones consignadas en este Contrato, en el orden exacto que enseguida se precisa: contribuciones, gastos, honorarios, comisiones, intereses ordinarios y el remanente a capital.<br/><br/>"+
+"En el evento de que la fecha de vencimiento de algún pago que deba verificarse conforme el presente Contrato resultare ser día inhábil bancario, los ACREDITADOS deberán realizar dicho pago el día hábil inmediato posterior, sin que proceda el cobro de comisiones para los ACREDITADOS."]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="6" splitType="Stretch"/>
+		<band height="16" splitType="Stretch">
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="Float" stretchType="RelativeToBandHeight" x="0" y="0" width="270" height="14" isPrintWhenDetailOverflows="true" uuid="9bce7175-3e1c-4d88-8f3e-f68b52cd34b8"/>
+				<textElement textAlignment="Justified" verticalAlignment="Top" markup="html">
+					<font fontName="DejaVu Sans" size="8" isBold="false"/>
+					<paragraph leftIndent="2" rightIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA["<b>SÉPTIMA. COMISIONES Y GASTOS.- Los ACREDITADOS se obligan a pagar a INCLUSIÓN FINANCIERA, las comisiones que por concepto de la prestación de los servicios materia del presente contrato se causen en su favor, cuyo monto hayan convenido las partes o haya sido modificado, en términos de las disposiciones legales aplicables."]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="33" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="6" width="270" height="22" uuid="5ae9fd8a-0563-47c6-b663-b38453dee25b"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font fontName="DejaVu Sans" size="8"/>
+				</textElement>
+				<text><![CDATA[<b>Los ACREDITADOS aceptan de conformidad la comisión que se cita a continuación:</b><br/>]]></text>
+			</staticText>
+		</band>
+		<band height="17" splitType="Stretch">
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="0" y="0" width="270" height="14" isPrintWhenDetailOverflows="true" uuid="fd707456-ade0-4849-8c7b-bc75220eefb6"/>
+				<textElement textAlignment="Justified" verticalAlignment="Top" markup="html">
+					<font fontName="DejaVu Sans" size="8" isBold="true" isStrikeThrough="false"/>
+					<paragraph leftIndent="2" rightIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA["COMISIÓN POR GASTOS DE COBRANZA.- Los ACREDITADOS se obligan a pagar a INCLUSIÓN FINANCIERA una comisión por gastos de cobranza, por la cantidad de $200.00 (doscientos pesos 00/100 moneda nacional), en cada ocasión en que realice fuera de tiempo los pagos que se encuentren obligados a realizar en relación con el Crédito. El importe de la comisión será más el Impuesto al Valor Agregado.<br/>"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="16" splitType="Stretch">
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="0" y="-1" width="270" height="14" isPrintWhenDetailOverflows="true" uuid="e529dbf8-fd50-4a2a-b9c2-57886a082ac0"/>
+				<textElement textAlignment="Justified" verticalAlignment="Top" markup="html">
+					<font fontName="DejaVu Sans" size="8" isBold="true"/>
+					<paragraph leftIndent="2" rightIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Los ACREDITADOS no estarán obligados a pagar comisiones cuyos conceptos no se encuentren previstos en este Contrato.<br/>"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="16" splitType="Stretch">
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="0" y="-1" width="270" height="14" isPrintWhenDetailOverflows="true" uuid="d1a6053f-f294-4732-92b4-31b714ad222d"/>
+				<textElement textAlignment="Justified" verticalAlignment="Top" markup="html">
+					<font fontName="DejaVu Sans" size="8" isBold="true"/>
+					<paragraph leftIndent="2" rightIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Las operaciones realizadas a través de los comisionistas bancarios podrán generar una Comisión, consulte antes de generar su operación."]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="6"/>
+		<band height="14">
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="0" y="0" width="270" height="14" isPrintWhenDetailOverflows="true" uuid="6590c8c1-de36-48f1-ae98-441158504bbc"/>
+				<textElement textAlignment="Justified" verticalAlignment="Top" markup="html">
+					<font fontName="DejaVu Sans" size="8" isBold="false"/>
+					<paragraph leftIndent="2" rightIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA["<b>OCTAVA. PAGOS ANTICIPADOS Y PAGOS ADELANTADOS.-</b> Los ACREDITADOS podrán en cualquier tiempo efectuar pagos anticipados a cuenta de capital sin que medie autorización expresa por parte de INCLUSIÓN FINANCIERA, siempre que los ACREDITADOS se encuentren al corriente de los pagos exigibles de conformidad con el presente instrumento, en el entendido que todo pago anticipado deberá, en su caso, ser por un importe igual o mayor al pago que deba realizarse en el periodo correspondiente al importe de una amortización de capital e intereses, o múltiplos enteros de dicho importe. El pago anticipado que corresponda será aplicado al saldo insoluto del crédito.<br><br>"+
+"Los pagos anticipados parciales tendrán como efecto una reducción en el importe de las amortizaciones que los ACREDITADOS se encuentren obligados a pagar, salvo que al momento de efectuar el pago anticipado de que se trate, los ACREDITADOS soliciten por escrito a INCLUSIÓN FINANCIERA que el mismo tenga por efecto una reducción en el plazo, caso en que INCLUSIÓN FINANCIERA reconocerá una reducción en el número de amortizaciones pendientes de pago como efecto del pago anticipado parcial. Los pagos anticipados parciales no eximen a los ACREDITADOS de la obligación de efectuar los pagos inmediatos siguientes.<br><br>"+
+"Los ACREDITADOS podrán en cualquier tiempo efectuar pagos adelantados, que aún no sean exigibles, con el fin de aplicarlos a cubrir las amortizaciones periódicas inmediatas siguientes que correspondan."]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="6"/>
+		<band height="14">
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="0" y="0" width="270" height="14" isPrintWhenDetailOverflows="true" uuid="cac4d48f-39b3-4eba-97e8-493c11652ef7"/>
+				<textElement textAlignment="Justified" verticalAlignment="Top" markup="html">
+					<font fontName="DejaVu Sans" size="8" isBold="false"/>
+					<paragraph leftIndent="2" rightIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA["<b>NOVENA. PROHIBICIÓN DE COBRO DE INTERESES POR ADELANTADO.-</b> Tratándose de Créditos celebrados al amparo del presente instrumento, el pago de intereses no podrá ser exigible por adelantado sino únicamente por períodos vencidos."]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="6"/>
+		<band height="14">
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="0" y="0" width="270" height="14" isPrintWhenDetailOverflows="true" uuid="d94c5e89-b0ee-4d69-a06c-f969ffd3184a"/>
+				<textElement textAlignment="Justified" verticalAlignment="Top" markup="html">
+					<font fontName="DejaVu Sans" size="8" isBold="false"/>
+					<paragraph leftIndent="2" rightIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA["<b>DÉCIMA. LUGAR DE PAGO.- Todos los pagos que deba hacer los ACREDITADOS a INCLUSIÓN FINANCIERA con motivo del Crédito, deberán realizarse sin necesidad de requerimiento o cobro previo, en "+$F{lugarPago}+"; o bien, mediante el depósito que los ACREDITADOS efectúe en días y horas hábiles en la Cuenta."]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="6"/>
+		<band height="14">
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="0" y="0" width="270" height="14" isPrintWhenDetailOverflows="true" uuid="7403e004-e34d-4002-acf1-673f047b6370"/>
+				<textElement textAlignment="Justified" verticalAlignment="Top" markup="html">
+					<font fontName="DejaVu Sans" size="8" isBold="false"/>
+					<paragraph leftIndent="2" rightIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA["<b>DÉCIMA PRIMERA. ESQUEMA DE ASEGURAMIENTO.- </b> Los ACREDITADOS se obligan a mantener un esquema de aseguramiento en los términos propuestos por INCLUSIÓN FINANCIERA, mismo que deberá incluir un seguro de vida por cada uno de los ACREDITADOS. Lo anterior, en el entendido que los ACREDITADOS podrán contratar el esquema de aseguramiento requerido con cualquier Institución de Seguros de su elección, autorizada en términos legales.<br/><br/>"+
+"El esquema de aseguramiento indicado deberá permanecer vigente desde la fecha de firma del presente instrumento y durante el plazo del Crédito especificado en la Carátula del mismo, por lo que la(s) póliza(s) correspondiente(s) deberá(n) permanecer vigentes durante dicho plazo, contemplando una suma asegurada suficiente para cubrir en todo tiempo el monto del saldo insoluto del Crédito y sus accesorios.<br/><br/>"+
+"Los ACREDITADOS deberán designar a Santander Inclusión Financiera, S.A. de C.V., SOFOM, E.R., Grupo Financiero Santander México como beneficiario preferente e irrevocable en términos de la Ley sobre el Contrato de Seguro hasta por el total del saldo insoluto del Crédito que resulte en el momento de ocurrir el siniestro, incluyendo cualquier accesorio legal o contractualmente exigible a cargo de los ACREDITADOS. Los ACREDITADOS podrán designar beneficiarios libremente con el fin de disponer de cualquier remanente de la suma asegurada mediante la cláusula beneficiaria correspondiente.<br/><br/>"+
+"A más tardar en la fecha de formalización del presente instrumento, los ACREDITADOS deberán demostrar a INCLUSIÓN FINANCIERA la contratación de dicho esquema de aseguramiento, que ampare las coberturas que correspondan y deberá entregarle duplicado de la(s) póliza(s) o endoso(s) en donde aparezca Santander Inclusión Financiera, S.A. de C.V., SOFOM, E.R., Grupo Financiero Santander México con la calidad señalada, asimismo, deberá acreditar de forma indubitable haber contratado el esquema de aseguramiento de que se trate por un período igual al  plazo del Crédito especificado en la Carátula y haber cubierto la prima correspondiente a dicho período, así como en su caso demostrar que las pólizas fueron renovadas, así como que la suma asegurada es suficiente, en el momento de cualquier disposición subsecuente que realice del Crédito, durante todo el tiempo que se mantenga vigente el presente contrato.<br/><br/>"+
+"Los ACREDITADOS cumplirán con la obligación prevista en el párrafo que antecede mediante la contratación de dicho esquema de aseguramiento que ampare los seguros que corresponda de conformidad con lo que se hubiese indicado en la CARÁTULA correspondiente, con cualquier Institución de Seguros de su elección autorizada en términos legales.<br/><br/>"+
+"Los ACREDITADOS se comprometen a entregar a INCLUSIÓN FINANCIERA, duplicados de la póliza y/o del endoso y los originales de los recibos de pago de las primas correspondientes, dentro de los cinco días siguientes a su emisión, los cuales quedarán en poder de INCLUSIÓN FINANCIERA mientras existan adeudos insolutos a cargo de los ACREDITADOS, derivados de este instrumento.<br/><br/>"+
+"Sin perjuicio de lo anterior, si los ACREDITADOS no contrataren el esquema de aseguramiento en las condiciones establecidas en esta cláusula o si no lo mantuviera en vigor, INCLUSIÓN FINANCIERA podrá optar por: (i) dar por vencido anticipadamente el presente Contrato; o bien, (ii) previa explicación de sus condiciones y consentimiento expreso de los ACREDITADOS, contratar en nombre y por cuenta de ésta, el esquema de aseguramiento de que se trate.<br/><br/>"+
+"Para el caso de que INCLUSIÓN FINANCIERA contrate el esquema de aseguramiento indicado, los ACREDITADOS instruyen a INCLUSIÓN FINANCIERA a cubrir la(s) prima(s) correspondiente(s) a la compañía aseguradora, aceptando que INCLUSIÓN FINANCIERA realice el pago de la(s) fracciones de prima(s) de los seguros que amparen los riesgos que corresponda, en el número de exhibiciones que sea necesario para mantener vigente el esquema de aseguramiento objeto de la presente cláusula. En este supuesto, INCLUSIÓN FINANCIERA entregará a los ACREDITADOS el documento que acredite dicha contratación, así como las coberturas y exclusiones del mismo en términos de las disposiciones legales aplicables, además de costos y fechas de pago del esquema de aseguramiento, aceptando los ACREDITADOS realizar los pagos que correspondan a las primas del seguro conjuntamente con las amortizaciones que se encuentran obligados a realizar en términos del presente Contrato.<br/><br/>"+
+"En caso de que los ACREDITADOS dejaren de pagar la prima correspondiente a la(s) cobertura(s) que corresponda(n), INCLUSIÓN FINANCIERA podrá o no hacerlo por cuenta de dicha parte, y en caso de que lo haga, podrá hacerlo por el plazo y monto que determine, en tal caso los ACREDITADOS se obligan a reembolsarle el importe de las mismas. Para dichos efectos, los ACREDITADOS instruyen a INCLUSIÓN FINANCIERA a realizar el pago de las primas devengadas en términos del párrafo precedente.<br/><br/>"+
+"LOS ACREDITADOS autorizan expresamente a INCLUSIÓN FINANCIERA para que pague los importes correspondientes al esquema de aseguramiento que incluya los seguros que en cumplimiento a esta cláusula llegase a contratar con Assurant Vida México, S.A. o con la compañía de seguros que INCLUSIÓN FINANCIERA designe para tal efecto en la Carátula del Crédito, por los importes y en las fechas que la empresa de que se trate  determine. El Estado de cuenta con el aviso de los enteros de la prima del seguro contratado, será el que haga las veces de comprobante de dicha operación. INCLUSIÓN FINANCIERA se reserva el derecho y los ACREDITADOS lo aceptan, de mostrar el pago de las primas correspondientes a los seguros que por riesgo de fallecimiento a que se refiere la presente cláusula, en un solo concepto correspondiente al esquema de aseguramiento.<br/><br/>"+
+"Los ACREDITADOS coadyuvarán con INCLUSIÓN FINANCIERA en la contratación de los seguros que amparen el esquema de aseguramiento mencionado, mediante la formalización de todos y cada uno de los formatos solicitud que en su caso requiera la compañía de seguros elegida por INCLUSIÓN FINANCIERA, así como para que se mantengan vigentes los consentimientos y designaciones relativas durante la vigencia del Crédito de que se trate."]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="6"/>
+		<band height="14">
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="0" y="0" width="270" height="14" isPrintWhenDetailOverflows="true" uuid="0fa3e6c0-f101-4e7a-af2f-ccac82805ea6"/>
+				<textElement textAlignment="Justified" verticalAlignment="Top" markup="html">
+					<font fontName="DejaVu Sans" size="8" isBold="false"/>
+					<paragraph leftIndent="2" rightIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA["<b>DÉCIMA SEGUNDA. VIGENCIA Y TERMINACIÓN.-</b> El presente Contrato iniciará su vigencia en la fecha de su firma y permanecerá vigente hasta la fecha en que deba efectuarse la última amortización del Crédito de acuerdo a lo estipulado en la CARÁTULA de que se trate, sin que pueda prorrogarse más que por el acuerdo previo y por escrito entre las partes.<br/><br/>"+
+"INCLUSIÓN FINANCIERA reportará a las Sociedades de Información Crediticia el cierre de la cuenta sin adeudos dentro del plazo que para tales efectos señala la Ley para Regular Sociedades de Información Crediticia."]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="6"/>
+		<band height="14">
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="0" y="0" width="270" height="14" isPrintWhenDetailOverflows="true" uuid="ea421e15-ec50-494b-be91-38d7fd82f452"/>
+				<textElement textAlignment="Justified" verticalAlignment="Top" markup="html">
+					<font fontName="DejaVu Sans" size="8" isBold="false"/>
+					<paragraph leftIndent="2" rightIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA["<b>DÉCIMA TERCERA. TERMINACIÓN ANTICIPADA.-</b> Los ACREDITADOS podrán solicitar la terminación anticipada del Crédito, bastando para ello la presentación de una solicitud por escrito en cualquier sucursal de INCLUSIÓN FINANCIERA, o bien por teléfono o por medios electrónicos. INCLUSIÓN FINANCIERA proporcionará a los ACREDITADOS un acuse de recibo, clave de confirmación o número de folio, y solicitará a los ACREDITADOS los datos necesarios para cerciorarse de la autenticidad y veracidad de la identidad de los ACREDITADOS.<br/><br/>"+
+"Lo anterior en el entendido que INCLUSIÓN FINANCIERA no condicionará la terminación del presente Contrato a la devolución del Contrato que obre en poder de los ACREDITADOS, ni cobrará a los ACREDITADOS Comisión o penalización por la terminación del Contrato, excepto aquellas pactadas relativas al pago anticipado del Crédito.<br/><br/>"+
+"Adicionalmente a lo antes indicado, los ACREDITADOS aceptan que serán aplicables, las siguientes condiciones:"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="6"/>
+		<band height="14">
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="24" y="0" width="241" height="14" isPrintWhenDetailOverflows="true" uuid="0d980dc1-a0d4-4c7f-9874-e6587d80e94b"/>
+				<textElement textAlignment="Justified" verticalAlignment="Top" markup="html">
+					<font fontName="DejaVu Sans" size="8" isBold="false"/>
+					<paragraph leftIndent="2" rightIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Se dará por terminado el Contrato el día hábil siguiente a aquél en que INCLUSIÓN FINANCIERA reciba la solicitud si no existen adeudos. De lo contrario, INCLUSIÓN FINANCIERA el día hábil siguiente al de la recepción de la solicitud, comunicará a los ACREDITADOS el importe de los adeudos y dentro de los cinco días hábiles siguientes a la misma pondrá a su disposición dicho dato, en la sucursal de que se trate, en el entendido que los ACREDITADOS deberá liquidar cualquier adeudo o legal o contractualmente exigible para que se dé por terminado el Contrato."]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" isPrintRepeatedValues="false" x="9" y="0" width="24" height="14" uuid="b4edc945-4fff-4cd3-a4bb-9c43a7231fb0"/>
+				<textElement verticalAlignment="Top" markup="html">
+					<font fontName="DejaVu Sans" size="8" isBold="false"/>
+					<paragraph leftIndent="2" rightIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA["I."]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="14">
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" isPrintRepeatedValues="false" x="9" y="0" width="24" height="14" uuid="8dd2fef8-0b91-4f38-8317-06a8017a5388"/>
+				<textElement verticalAlignment="Top" markup="html">
+					<font fontName="DejaVu Sans" size="8" isBold="false"/>
+					<paragraph leftIndent="2" rightIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA["II."]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="24" y="0" width="241" height="14" isPrintWhenDetailOverflows="true" uuid="85c19c92-a893-456f-9911-454d4dd01729"/>
+				<textElement textAlignment="Justified" verticalAlignment="Top" markup="html">
+					<font fontName="DejaVu Sans" size="8" isBold="false"/>
+					<paragraph leftIndent="2" rightIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA["INCLUSIÓN FINANCIERA entregará, en su caso, al ACREDITADO el saldo a favor en la fecha en que se dé por terminada la operación."]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="14">
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="24" y="0" width="241" height="14" isPrintWhenDetailOverflows="true" uuid="ebe666dd-b63e-447c-84b2-be4f69929644"/>
+				<textElement textAlignment="Justified" verticalAlignment="Top" markup="html">
+					<font fontName="DejaVu Sans" size="8" isBold="false"/>
+					<paragraph leftIndent="2" rightIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA["INCLUSIÓN FINANCIERA pondrá a disposición de los ACREDITADOS, dentro de 10 (diez) días hábiles a partir de que se hubiera realizado el pago de los adeudos o en la siguiente fecha de corte, el estado de cuenta o documento en el que conste el fin de la relación contractual y la inexistencia de adeudos derivados exclusivamente de dicha relación."]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" isPrintRepeatedValues="false" x="9" y="0" width="24" height="14" uuid="df750a48-9963-4639-83d5-1bd9edb66cf8"/>
+				<textElement verticalAlignment="Top" markup="html">
+					<font fontName="DejaVu Sans" size="8" isBold="false"/>
+					<paragraph leftIndent="2" rightIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA["III."]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="14">
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="24" y="0" width="241" height="14" isPrintWhenDetailOverflows="true" uuid="f0f5ebaf-35f2-4214-b9f0-5ac4947e5a42"/>
+				<textElement textAlignment="Justified" verticalAlignment="Top" markup="html">
+					<font fontName="DejaVu Sans" size="8" isBold="false"/>
+					<paragraph leftIndent="2" rightIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA["INCLUSIÓN FINANCIERA reportará a las Sociedades de Información Crediticia el cierre del crédito sin adeudos."]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" isPrintRepeatedValues="false" x="9" y="0" width="24" height="14" uuid="2060bb50-6f67-4d65-aebd-89e4d615315f"/>
+				<textElement verticalAlignment="Top" markup="html">
+					<font fontName="DejaVu Sans" size="8" isBold="false"/>
+					<paragraph leftIndent="2" rightIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA["IV."]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="14">
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="0" y="0" width="270" height="14" isPrintWhenDetailOverflows="true" uuid="c8baa040-3ea1-44d3-a948-9ce89d7c5a54"/>
+				<textElement textAlignment="Justified" verticalAlignment="Top" markup="html">
+					<font fontName="DejaVu Sans" size="8" isBold="false"/>
+					<paragraph leftIndent="2" rightIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Los ACREDITADOS podrán solicitar por escrito la terminación a que se refiere la presente Cláusula, por conducto de otra Entidad Financiera (receptora), previa apertura de cuenta a nombre de los ACREDITADOS, debiendo remitir a INCLUSIÓN FINANCIERA los documentos originales en los que conste la voluntad de los ACREDITADOS de dar por terminada la relación contractual con INCLUSIÓN FINANCIERA, y previa liquidación del adeudo de los ACREDITADOS, lo anterior bajo la responsabilidad de la Entidad financiera receptora antes indicada.<br/>"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="14">
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="Float" stretchType="RelativeToBandHeight" x="0" y="0" width="270" height="14" isPrintWhenDetailOverflows="true" uuid="c5aa2b74-bb0d-493f-9eb5-5d022141fe0f"/>
+				<textElement textAlignment="Justified" verticalAlignment="Top" markup="html">
+					<font fontName="DejaVu Sans" size="8" isBold="false"/>
+					<paragraph leftIndent="2" rightIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA["INCLUSIÓN FINANCIERA bloqueará la línea correspondiente y el día en que reciba la solicitud de terminación.<br/><br/>En tanto no sea liquidada la totalidad de los adeudos a cargo de los ACREDITADOS, la terminación del Contrato de Adhesión no surtirá efectos; sin embargo, INCLUSIÓN FINANCIERA no efectuará cargos adicionales, excepto los cargos ya generados pero no reflejados, las comisiones por incumplimiento de pago que correspondan, así como los accesorios e intereses que se generen hasta el momento en que los ACREDITADOS liquiden el saldo total del crédito. Los ACREDITADOS conservarán la misma fecha de pago y condiciones que tenía previamente a la solicitud de terminación.<br/><br/>"+
+"Los ACREDITADOS podrán terminar el Contrato en cualquier momento, en cuyo caso la relación jurídica derivada de los recursos previamente dispuestos, solo continuará en vigor para efectos del pago del principal con los intereses y accesorios que correspondan al Crédito.<br/><br/>"+
+"INCLUSIÓN FINANCIERA reportará a las sociedades de información crediticia que el Crédito está cerrado sin adeudo alguno dentro del plazo que para tales efectos señala la Ley para Regular las Sociedades de Información Crediticia.<br/>"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="14">
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="0" y="0" width="263" height="14" isPrintWhenDetailOverflows="true" uuid="d364c3cf-b56a-430b-a136-1b4a0184c157"/>
+				<textElement textAlignment="Justified" verticalAlignment="Top" markup="html">
+					<font fontName="DejaVu Sans" size="8" isBold="false"/>
+					<paragraph leftIndent="2" rightIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA["<b>DÉCIMA CUARTA. VENCIMIENTO ANTICIPADO.-</b> INCLUSIÓN FINANCIERA podrá dar por vencido anticipadamente el plazo para el pago de las prestaciones a cargo de los ACREDITADOS y exigir de inmediato el importe total del Crédito que haya otorgado a los ACREDITADOS, sus intereses y demás consecuencias y accesorios contractuales y legales que le sean aplicables, si cualquiera de los ACREDITADOS faltare al cumplimiento de cualquiera de las obligaciones que contrae en virtud de este Contrato y en especial en los siguientes casos:"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="6"/>
+		<band height="14">
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="24" y="0" width="240" height="14" isPrintWhenDetailOverflows="true" uuid="69583932-d9b7-4fae-b5b7-a1085d5e0472"/>
+				<textElement textAlignment="Justified" verticalAlignment="Top" markup="html">
+					<font fontName="DejaVu Sans" size="8" isBold="false"/>
+					<paragraph leftIndent="2" rightIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Si cualquiera de los ACREDITADOS no efectuare en forma total uno o más de los pagos que se obliga a realizar en relación con el Crédito otorgado, sean éstos de capital, intereses, accesorios o cualquier combinación de dichos conceptos."]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" isPrintRepeatedValues="false" x="10" y="0" width="24" height="14" uuid="56887308-31c4-4935-b86c-af8d904c617e"/>
+				<textElement verticalAlignment="Top" markup="html">
+					<font fontName="DejaVu Sans" size="8" isBold="false"/>
+					<paragraph leftIndent="2" rightIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA["a)"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="6"/>
+		<band height="14">
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="24" y="0" width="240" height="14" isPrintWhenDetailOverflows="true" uuid="69583932-d9b7-4fae-b5b7-a1085d5e0472"/>
+				<textElement textAlignment="Justified" verticalAlignment="Top" markup="html">
+					<font fontName="DejaVu Sans" size="8" isBold="false"/>
+					<paragraph leftIndent="2" rightIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Si cualquiera de los ACREDITADOS afrontaren conflictos o situaciones de carácter judicial, administrativo, fiscal o de cualquier naturaleza que afecten substancialmente su capacidad de pago a juicio de la SOFOM."]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" isPrintRepeatedValues="false" x="10" y="0" width="24" height="14" uuid="56887308-31c4-4935-b86c-af8d904c617e"/>
+				<textElement verticalAlignment="Top" markup="html">
+					<font fontName="DejaVu Sans" size="8" isBold="false"/>
+					<paragraph leftIndent="2" rightIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA["b)"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="6"/>
+		<band height="14">
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="24" y="0" width="240" height="14" isPrintWhenDetailOverflows="true" uuid="69583932-d9b7-4fae-b5b7-a1085d5e0472"/>
+				<textElement textAlignment="Justified" verticalAlignment="Top" markup="html">
+					<font fontName="DejaVu Sans" size="8" isBold="false"/>
+					<paragraph leftIndent="2" rightIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Si se iniciara un procedimiento por o en contra de cualquiera de los ACREDITADOS con el fin de declararlos en quiebra, suspensión de pagos o concurso."]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" isPrintRepeatedValues="false" x="10" y="0" width="24" height="14" uuid="56887308-31c4-4935-b86c-af8d904c617e"/>
+				<textElement verticalAlignment="Top" markup="html">
+					<font fontName="DejaVu Sans" size="8" isBold="false"/>
+					<paragraph leftIndent="2" rightIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA["c)"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="6"/>
+		<band height="14">
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="24" y="0" width="240" height="14" isPrintWhenDetailOverflows="true" uuid="69583932-d9b7-4fae-b5b7-a1085d5e0472"/>
+				<textElement textAlignment="Justified" verticalAlignment="Top" markup="html">
+					<font fontName="DejaVu Sans" size="8" isBold="false"/>
+					<paragraph leftIndent="2" rightIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Por comprobarse falsedad, inexactitud u ocultación en los datos facilitados a INCLUSIÓN FINANCIERA con carácter previo a la concesión de algún Crédito y que, a su juicio, hayan determinado una errónea o incompleta visión en el estudio del riesgo de la operación."]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" isPrintRepeatedValues="false" x="10" y="0" width="24" height="14" uuid="56887308-31c4-4935-b86c-af8d904c617e"/>
+				<textElement verticalAlignment="Top" markup="html">
+					<font fontName="DejaVu Sans" size="8" isBold="false"/>
+					<paragraph leftIndent="2" rightIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA["d)"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="6"/>
+		<band height="14">
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="24" y="0" width="240" height="14" isPrintWhenDetailOverflows="true" uuid="69583932-d9b7-4fae-b5b7-a1085d5e0472"/>
+				<textElement textAlignment="Justified" verticalAlignment="Top" markup="html">
+					<font fontName="DejaVu Sans" size="8" isBold="false"/>
+					<paragraph leftIndent="2" rightIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Cuando habiendo sido requerido por INCLUSIÓN FINANCIERA por cualquier medio para que se faciliten datos económicos o de solvencia actualizados, los ACREDITADOS no los hubieran facilitado dentro de los 30 días naturales siguientes o INCLUSIÓN FINANCIERA tuviese constancia o prueba  de la falta de autenticidad de los aportados."]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" isPrintRepeatedValues="false" x="10" y="0" width="24" height="14" uuid="56887308-31c4-4935-b86c-af8d904c617e"/>
+				<textElement verticalAlignment="Top" markup="html">
+					<font fontName="DejaVu Sans" size="8" isBold="false"/>
+					<paragraph leftIndent="2" rightIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA["e)"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="6"/>
+		<band height="14">
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="24" y="0" width="240" height="14" isPrintWhenDetailOverflows="true" uuid="69583932-d9b7-4fae-b5b7-a1085d5e0472"/>
+				<textElement textAlignment="Justified" verticalAlignment="Top" markup="html">
+					<font fontName="DejaVu Sans" size="8" isBold="false"/>
+					<paragraph leftIndent="2" rightIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Cuando con posterioridad a la fecha de firma de este documento, la realización de las operaciones, el ejercicio de los derechos o el cumplimiento de las obligaciones que INCLUSIÓN FINANCIERA asume en términos del presente Contrato, impliquen que INCLUSIÓN FINANCIERA deje de sujetarse a las disposiciones legales que le son aplicables."]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" isPrintRepeatedValues="false" x="10" y="0" width="24" height="14" uuid="56887308-31c4-4935-b86c-af8d904c617e"/>
+				<textElement verticalAlignment="Top" markup="html">
+					<font fontName="DejaVu Sans" size="8" isBold="false"/>
+					<paragraph leftIndent="2" rightIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA["f)"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="6"/>
+		<band height="14">
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="24" y="0" width="240" height="14" isPrintWhenDetailOverflows="true" uuid="69583932-d9b7-4fae-b5b7-a1085d5e0472"/>
+				<textElement textAlignment="Justified" verticalAlignment="Top" markup="html">
+					<font fontName="DejaVu Sans" size="8" isBold="false"/>
+					<paragraph leftIndent="2" rightIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Cuando no se mantenga vigente se rescinda o cancele el aseguramiento a que se refiere la cláusula denominada ESQUEMA DE ASEGURAMIENTO del presente  instrumento, en las condiciones que al efecto se señalan."]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" isPrintRepeatedValues="false" x="10" y="0" width="24" height="14" uuid="56887308-31c4-4935-b86c-af8d904c617e"/>
+				<textElement verticalAlignment="Top" markup="html">
+					<font fontName="DejaVu Sans" size="8" isBold="false"/>
+					<paragraph leftIndent="2" rightIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA["g)"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="6"/>
+		<band height="14">
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="24" y="0" width="240" height="14" isPrintWhenDetailOverflows="true" uuid="69583932-d9b7-4fae-b5b7-a1085d5e0472"/>
+				<textElement textAlignment="Justified" verticalAlignment="Top" markup="html">
+					<font fontName="DejaVu Sans" size="8" isBold="false"/>
+					<paragraph leftIndent="2" rightIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA["En los demás casos en que conforme a la Ley se hace anticipadamente exigible el cumplimiento de las obligaciones a plazo."]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" isPrintRepeatedValues="false" x="10" y="0" width="24" height="14" uuid="56887308-31c4-4935-b86c-af8d904c617e"/>
+				<textElement verticalAlignment="Top" markup="html">
+					<font fontName="DejaVu Sans" size="8" isBold="false"/>
+					<paragraph leftIndent="2" rightIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA["h)"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="6"/>
+		<band height="15">
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="0" y="0" width="263" height="14" isPrintWhenDetailOverflows="true" uuid="6ce61293-8b7c-4624-8b00-58eb93b9d9d6"/>
+				<textElement textAlignment="Justified" verticalAlignment="Top" markup="html">
+					<font fontName="DejaVu Sans" size="8" isBold="true"/>
+					<paragraph leftIndent="2" rightIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Cualquiera que sea el caso y de presentarse alguno de los supuestos anteriores, los ACREDITADOS estarán obligados a pagar a INCLUSIÓN FINANCIERA el importe del saldo insoluto del Crédito, que incluye los intereses y comisiones devengados, calculados hasta la fecha en que efectivamente tenga lugar el pago, así como los gastos y cualquier otro concepto devengado contractual o legalmente."]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="6"/>
+		<band height="14">
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="0" y="0" width="270" height="14" isPrintWhenDetailOverflows="true" uuid="c2f5d039-1820-473f-b870-d791676e9f93"/>
+				<textElement textAlignment="Justified" verticalAlignment="Top" markup="html">
+					<font fontName="DejaVu Sans" size="8" isBold="false"/>
+					<paragraph leftIndent="2" rightIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA["<b>DÉCIMA QUINTA. CANCELACIÓN Y RESCISIÓN.- </b>Los ACREDITADOS, hasta diez días hábiles posteriores a la formalización del Crédito, podrán cancelarlo sin su responsabilidad, y sin que ello implique el cobro de comisión alguna, siempre y cuando no haya utilizado u operado los productos o servicios financieros contratados, resolviendo INCLUSIÓN FINANCIERA el Contrato de que se trate regresando las cosas al estado en el que se encontraban con anterioridad a la firma del mismo.<br/><br/>"+
+"Con posterioridad al período indicado en el párrafo que antecede, los ACREDITADOS podrán cancelar el presente Contrato o cualquier Crédito celebrado al amparo del mismo liquidando en su totalidad el saldo vigente incluido cualquier accesorio legal o contractualmente exigible a la fecha en que realice el pago de las operaciones de crédito que desee cancelar, previa presentación de una identificación oficial.<br/><br/>"+
+"En todos los casos de cancelación mencionados en la presente cláusula, INCLUSIÓN FINANCIERA entregará a los ACREDITADOS un acuse de recibo, clave de confirmación o número de folio, según se trate, cerciorándose previamente de la identidad de los ACREDITADOS."]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="6"/>
+		<band height="14">
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="0" y="0" width="270" height="14" isPrintWhenDetailOverflows="true" uuid="efc287bd-c5b6-4ee0-85e3-5ba7824c5c2b"/>
+				<textElement textAlignment="Justified" verticalAlignment="Top" markup="html">
+					<font fontName="DejaVu Sans" size="8" isBold="false"/>
+					<paragraph leftIndent="2" rightIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA["<b>DÉCIMA SEXTA. ESTADOS DE CUENTA.- </b> INCLUSIÓN FINANCIERA remitirá periódicamente a los ACREDITADOS, dentro de los diez días naturales siguientes a la fecha de corte que corresponda, al menos mensualmente, al último correo electrónico señalado por los ACREDITADOS para ese fin o bien, mediante el uso de los medios electrónicos pactados, un estado de cuenta que especificará las operaciones y movimientos que se hubieren realizado al amparo de este Contrato durante cada período transcurrido, el saldo insoluto del Crédito así como las cantidades cargadas y abonadas durante cada periodo.<br/><br/>"+
+"Los ACREDITADOS tendrán un plazo de noventa días naturales contado a partir del corte, para objetar su estado de cuenta, por lo que si no lo recibe oportunamente, deberá solicitarlo a INCLUSIÓN FINANCIERA para, en su caso, poder objetarlo en tiempo. Transcurrido dicho plazo sin haberse hecho objeción a la cuenta, los asientos que figuren en la contabilidad de INCLUSIÓN FINANCIERA harán prueba a favor de ésta.<br/><br/>"+
+"Sin perjuicio de lo indicado, los ACREDITADOS se obligan a pagar el Crédito de que se trate en la fecha convenida, aún y cuando por cualquier razón, ya sea imputable a éste, a INCLUSIÓN FINANCIERA o a un tercero, no haya recibido su estado de cuenta. <br/><br/>"+
+"INCLUSIÓN FINANCIERA se reserva el derecho de emitir un estado de cuenta en el que se contenga la información relativa al Crédito.<br/><br/>"+
+"Asimismo, las partes pactan que los ACREDITADOS, mediante el uso de sus claves de acceso podrá consultar su estado de cuenta por los medios electrónicos que INCLUSIÓN FINANCIERA ponga a su disposición, en el entendido que dicha información se transmitirá de forma cifrada de tal manera que se evite su lectura por cualquier tercero no autorizado. <br/><br/>"+
+"No obstante lo anterior, los ACREDITADOS podrán solicitar en cualquier momento, la activación de la entrega física de su estado de cuenta, en cuyo caso desde este momento las partes acuerdan que dicha entrega física  del estado de cuenta será realizada en cualquier oficina de INCLUSIÓN FINANCIERA. Dicha modificación deberá realizarse a través de un escrito presentado en la oficina de INCLUSIÓN FINANCIERA que elijan los ACREDITADOS.<br/><br/>"+
+"Las fechas de corte que correspondan al cálculo de intereses en su caso, correspondientes al Crédito que celebre al amparo del presente Contrato, estarán a disposición de los ACREDITADOS para su consulta en el estado de cuenta."]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="6"/>
+		<band height="14">
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="0" y="0" width="270" height="14" isPrintWhenDetailOverflows="true" uuid="b5df9cf0-86d4-4da3-b1d9-4354f49b97b8"/>
+				<textElement textAlignment="Justified" verticalAlignment="Top" markup="html">
+					<font fontName="DejaVu Sans" size="8" isBold="false"/>
+					<paragraph leftIndent="2" rightIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA["<b>DÉCIMA SÉPTIMA.  CERTIFICACIÓN.-</b> Las partes convienen en que este Contrato junto con los estados de cuenta certificados por el Contador facultado por INCLUSIÓN FINANCIERA, harán prueba plena respecto al estado del adeudo de los ACREDITADOS."]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="6"/>
+		<band height="14">
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="0" y="0" width="270" height="14" isPrintWhenDetailOverflows="true" uuid="c15dddcb-f440-401e-b1ad-c765824945ae"/>
+				<textElement textAlignment="Justified" verticalAlignment="Top" markup="html">
+					<font fontName="DejaVu Sans" size="8" isBold="false"/>
+					<paragraph leftIndent="2" rightIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA["<b>DÉCIMA OCTAVA. DOMICILIOS.-</b> Todas las notificaciones, avisos y en general cualquier comunicación que las partes deban hacerse en relación al presente Contrato, incluyendo el emplazamiento en caso de juicio, se harán en los domicilios que se indican a continuación:<br/><br/>"+
+"Domicilio de INCLUSIÓN FINANCIERA: Prolongación Paseo de la Reforma número 500, Colonia Lomas de Santa Fe, Delegación Álvaro Obregón, C.P. 01219, en la Ciudad de México.<br/><br/>"+
+"Domicilio de los ACREDITADOS: El señalado en "+$F{documento}+" que forma parte integrante de este documento como si a la letra se insertase y, en todo caso, se entenderá por bien efectuada la notificación, cuando fuera intentada en dicho domicilio.<br/><br/>"+
+"Sin perjuicio de lo anterior, INCLUSIÓN FINANCIERA podrá notificar válidamente de cualquier cambio relacionado con el presente instrumento a los ACREDITADOS, mediante el uso de medios electrónicos pactados entre ambos, enunciando sin limitar, el uso de correo electrónico, cajeros automáticos, teléfono, el centro de mensajes que INCLUSIÓN FINANCIERA ponga a disposición de los ACREDITADOS en Internet, o cualquier otro que INCLUSIÓN FINANCIERA pueda poner al alcance de los ACREDITADOS en virtud de los avances tecnológicos.<br/><br/>"+
+"Asimismo, convienen las partes que cualquier notificación que  INCLUSIÓN FINANCIERA realice por los medios electrónicos pactados a través del presente instrumento o bien, mediante o adjunto al Estado de Cuenta de que se trate, se tendrá por válidamente realizada para todos los efectos legales a que haya lugar, incluso en el caso que los ACREDITADOS no hubiese recibido el Estado de Cuenta del período correspondiente siempre que no haya notificado en tiempo a INCLUSIÓN FINANCIERA dicha situación en las formas y términos previstos en el presente documento.<br/><br/>"+
+"El cambio de domicilio que los ACREDITADOS llegasen a tener en lo futuro deberá ser notificado por escrito a INCLUSIÓN FINANCIERA, en caso de no hacerlo, los avisos que realice INCLUSIÓN FINANCIERA en el último domicilio señalado, surtirán plenamente sus efectos liberando a INCLUSIÓN FINANCIERA de toda responsabilidad."]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="6"/>
+		<band height="14">
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="0" y="0" width="270" height="14" isPrintWhenDetailOverflows="true" uuid="dcd9cdb0-e30e-4936-9fc8-066409183a8c"/>
+				<textElement textAlignment="Justified" verticalAlignment="Top" markup="html">
+					<font fontName="DejaVu Sans" size="8" isBold="false"/>
+					<paragraph leftIndent="2" rightIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA["<b>DECIMA NOVENA. MODIFICACIONES.-</b> INCLUSIÓN FINANCIERA estará facultado para modificar los términos y condiciones del presente Contrato, conviniendo las partes como medio cierto de notificación el aviso dirigido a los ACREDITADOS, a través del estado de cuenta. Adicionalmente INCLUSIÓN FINANCIERA podrá hacer uso de alguno o algunos de los siguientes medios para reforzar a los ACREDITADOS dicha comunicación: aviso por escrito, medios electrónicos, publicaciones en periódicos de amplia circulación, colocación de las modificaciones en lugares abiertos al público en sucursales y oficinas de INCLUSIÓN FINANCIERA. Las modificaciones a este Contrato se avisarán a los ACREDITADOS con por lo menos 30 (treinta) días naturales de anticipación a la fecha en que tales modificaciones entren en vigor y con los alcances que en su caso señalen las modificaciones legales vigentes.<br/><br/>"+
+"En el evento que los ACREDITADOS no estén de acuerdo con las modificaciones propuestas al Contrato podrá solicitar la terminación del presente Contrato hasta 30 (treinta) días naturales posteriores a la fecha del aviso mencionado, sin responsabilidad de su parte, debiendo cumplir en su caso cualquier adeudo que se hubiese generado a la fecha de la solicitud de terminación por parte de los ACREDITADOS del presente instrumento; bajo las condiciones anteriores a las modificaciones propuestas.<br/><br/>"+
+"En caso de no solicitar la terminación antes mencionada, las modificaciones propuestas entrarán en vigor a la conclusión de dicho período.<br/><br/>"+
+"En adición a lo anterior INCLUSIÓN FINANCIERA podrá notificar dichas modificaciones a los ACREDITADOS a través de la red de cajeros automáticos.<br/>"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="14">
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="0" y="0" width="270" height="14" isPrintWhenDetailOverflows="true" uuid="dcd9cdb0-e30e-4936-9fc8-066409183a8c"/>
+				<textElement textAlignment="Justified" verticalAlignment="Top" markup="html">
+					<font fontName="DejaVu Sans" size="8" isBold="false"/>
+					<paragraph leftIndent="2" rightIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA["<b>Lo anterior en el entendido que el Crédito al tratarse de un instrumento con plazo fijo de vencimiento, INCLUSIÓN FINANCIERA no podrá incrementar el monto o número de comisiones aplicables, ni modificar las tasas de interés fijas que se hubiesen pactado en su caso, hasta su vencimiento, salvo que se reestructure con acuerdo previo con los ACREDITADOS.</b>"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="6"/>
+		<band height="14">
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="0" y="0" width="270" height="14" isPrintWhenDetailOverflows="true" uuid="dcd9cdb0-e30e-4936-9fc8-066409183a8c"/>
+				<textElement textAlignment="Justified" verticalAlignment="Top" markup="html">
+					<font fontName="DejaVu Sans" size="8" isBold="false"/>
+					<paragraph leftIndent="2" rightIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA["<b>VIGÉSIMA. OMISIÓN DE EJERCICIO.</b> La omisión por parte de la INCLUSIÓN FINANCIERA en el ejercicio de los derechos que a su favor prevé el presente Contrato, en ningún caso tendrá el efecto de o deberá entenderse como una renuncia a los mismos; de igual forma, ni el ejercicio singular ni el parcial de cualquier derecho derivado de este Contrato por parte de INCLUSIÓN FINANCIERA, excluye la posibilidad de ejercer algún otro derecho, facultad o privilegio."]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="7"/>
+		<band height="14">
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="0" y="0" width="270" height="14" isPrintWhenDetailOverflows="true" uuid="dcd9cdb0-e30e-4936-9fc8-066409183a8c"/>
+				<textElement textAlignment="Justified" verticalAlignment="Top" markup="html">
+					<font fontName="DejaVu Sans" size="8" isBold="false"/>
+					<paragraph leftIndent="2" rightIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA["<b>VIGÉSIMA PRIMERA. DOMICILIACIONES.</b> Los ACREDITADOS podrán autorizar a INCLUSIÓN FINANCIERA para que el pago de las cantidades que se adeuden en virtud del Crédito que corresponda celebrado al amparo del presente Contrato se realice mediante domiciliación con cargo a una cuenta de depósito bancario a la vista. Para ello deberá de presentar su solicitud y otorgar su autorización en el documento distinto al Contrato que le será proporcionado para tales efectos de conformidad con las disposiciones de Banco de México en la materia.<br/><br/>"+
+"En caso que los ACREDITADOS hayan instruido a INCLUSIÓN FINANCIERA a fin de realizar en su nombre el pago del Crédito celebrado al amparo del presente Contrato precisamente bajo el servicio denominado como domiciliación con cargo a una cuenta de depósito bancario a la vista, los ACREDITADOS podrán cancelarlo mediante solicitud expresa a través de los formatos establecidos por Banco de México por escrito en cualquier tiempo, sin que se requiera de la previa autorización de INCLUSIÓN FINANCIERA. La cancelación se efectuará en un plazo no mayor a tres días hábiles contados a partir de la fecha en que INCLUSIÓN FINANCIERA reciba dicha solicitud.<br/><br/>"+
+"Los formatos a que se refiere el párrafo anterior estarán a su disposición en cualquier oficina de INCLUSIÓN FINANCIERA o en la página web <u style=\"color:#335EFF\"><a href=\"www.tuiio.com.mx\" target=\"_blank\" >www.tuiio.com.mx</a></u>"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="6"/>
+		<band height="14">
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="0" y="0" width="270" height="14" isPrintWhenDetailOverflows="true" uuid="dcd9cdb0-e30e-4936-9fc8-066409183a8c"/>
+				<textElement textAlignment="Justified" verticalAlignment="Top" markup="html">
+					<font fontName="DejaVu Sans" size="8" isBold="false"/>
+					<paragraph leftIndent="2" rightIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA["<b>VIGÉSIMA SEGUNDA. CESIÓN.</b> INCLUSIÓN FINANCIERA queda facultado para ceder, descontar, endosar o en cualquier otra forma negociar, total o parcialmente y aún antes de su vencimiento, los derechos del Crédito concedido.<br/><br/>"+
+"Por su parte, los ACREDITADOS no podrán ceder sus derechos u obligaciones conforme a este Contrato."]]></textFieldExpression>
+			</textField>
+		</band>
+		<band/>
+		<band/>
+		<band height="6"/>
+		<band height="14">
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="0" y="0" width="270" height="14" isPrintWhenDetailOverflows="true" uuid="dcd9cdb0-e30e-4936-9fc8-066409183a8c"/>
+				<textElement textAlignment="Justified" verticalAlignment="Top" markup="html">
+					<font fontName="DejaVu Sans" size="8" isBold="false"/>
+					<paragraph leftIndent="2" rightIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA["<b>VIGÉSIMA TERCERA.  MEDIOS ELECTRÓNICOS. A través de la firma autógrafa del presente Contrato los ACREDITADOS aceptan la contratación de medios electrónicos y el servicio de Banca Electrónica, servicios que podrán ser prestados directamente por INCLUSIÓN FINANCIERA o por otra entidad que INCLUSIÓN FINANCIERA legalmente designe para ello, enunciando sin limitar a Banco Santander México, S.A., Institución de Banca Múltiple, Grupo Financiero Santander México (en lo sucesivo el “Banco”) o a cualquier otra que los ACREDITADOS faculten en la plataforma mediante el uso de sus claves de acceso que forme parte o esté relacionada con el Grupo Financiero Santander México, mediante el cual podrá celebrar operaciones y servicios bancarios y/o financieros diversos, a través del uso de medios electrónicos, entendiendo como tales, a los equipos, medios ópticos o de cualquier otra tecnología, sistemas automatizados de procesamiento de datos y redes de telecomunicaciones, ya sean privados o públicos, para lo cual ambas partes aceptan que según se trate, se identificará los ACREDITADOS mediante el uso del Número de Identificación Personal (NIP) o mediante la aplicación de cuestionarios según se trate, siendo plenamente responsables los ACREDITADOS de cualquier operación que se realice mediante el uso de las claves de acceso mencionadas. INCLUSIÓN FINANCIERA enviará notificaciones de las operaciones que los ACREDITADOS realicen al número de teléfono móvil o el correo electrónico que los ACREDITADOS hayan proporcionado para tal efecto en términos de las disposiciones legales aplicables. El uso de los medios de identificación a que se refiere el presente instrumento, en sustitución de la firma autógrafa, producirá los mismos efectos que las leyes otorgan a los documentos suscritos mediante firma autógrafa y tendrán el mismo valor probatorio. El uso inadecuado de los medios electrónicos representa riesgos de seguridad que derivan en diversas modalidades de fraude en perjuicio de los ACREDITADOS, riesgos que pueden ser mitigados siguiendo pautas básicas de protección de información personal y Claves de Acceso:"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="6"/>
+		<band height="14">
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="Float" isPrintRepeatedValues="false" x="10" y="0" width="21" height="14" uuid="84fbf23f-debc-420a-b573-ca619f72d5a4"/>
+				<textElement textAlignment="Left" verticalAlignment="Top" markup="html">
+					<font fontName="DejaVu Sans" size="8" isBold="true" isStrikeThrough="false"/>
+					<paragraph leftIndent="2" rightIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA["&#8226"]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="22" y="0" width="242" height="14" isPrintWhenDetailOverflows="true" uuid="836d04e0-1ef7-4d8a-9c1f-534630768c98"/>
+				<textElement textAlignment="Justified" verticalAlignment="Top" markup="html">
+					<font fontName="DejaVu Sans" size="8" isBold="true"/>
+					<paragraph leftIndent="2" rightIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA["INCLUSIÓN FINANCIERA nunca le solicitará que proporcione sus Claves de Acceso a través de un correo electrónico.</li>"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="14">
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="22" y="0" width="242" height="14" isPrintWhenDetailOverflows="true" uuid="1cfca32f-a5b3-4601-82a3-df5a40cbf3f6"/>
+				<textElement textAlignment="Justified" verticalAlignment="Top" markup="html">
+					<font fontName="DejaVu Sans" size="8" isBold="true"/>
+					<paragraph leftIndent="2" rightIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA["No compartir las Claves de Acceso con persona alguna, utilizar claves diferentes para cada uno de los medios electrónicos que los ACREDITADOS utilicen y escojan claves que resulten difíciles de adivinar para un tercero y que incluyan letras y números."]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="Float" isPrintRepeatedValues="false" x="10" y="0" width="21" height="14" uuid="bafb92e7-0c84-4464-b78b-19a099b9965f"/>
+				<textElement textAlignment="Left" verticalAlignment="Top" markup="html">
+					<font fontName="DejaVu Sans" size="8" isBold="true" isStrikeThrough="false"/>
+					<paragraph leftIndent="2" rightIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA["&#8226"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="14">
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="22" y="0" width="242" height="14" isPrintWhenDetailOverflows="true" uuid="8184ebbb-a4a9-42b5-a020-c1def7eb3254"/>
+				<textElement textAlignment="Justified" verticalAlignment="Top" markup="html">
+					<font fontName="DejaVu Sans" size="8" isBold="true"/>
+					<paragraph leftIndent="2" rightIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Verificar constantemente los movimientos que presenten sus cuentas y revisar siempre sus estados de cuenta."]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="Float" isPrintRepeatedValues="false" x="10" y="0" width="21" height="14" uuid="54fc43ed-ba52-4372-8285-c7dd278a3e03"/>
+				<textElement textAlignment="Left" verticalAlignment="Top" markup="html">
+					<font fontName="DejaVu Sans" size="8" isBold="true" isStrikeThrough="false"/>
+					<paragraph leftIndent="2" rightIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA["&#8226"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="14">
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="22" y="0" width="242" height="14" isPrintWhenDetailOverflows="true" uuid="88dcca44-8bfc-4764-89c8-02813d3df91e"/>
+				<textElement textAlignment="Justified" verticalAlignment="Top" markup="html">
+					<font fontName="DejaVu Sans" size="8" isBold="true"/>
+					<paragraph leftIndent="2" rightIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Al utilizar cajeros automáticos, cubrir con su cuerpo la pantalla al momento de ingresar sus Claves de Acceso."]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="Float" isPrintRepeatedValues="false" x="10" y="0" width="21" height="14" uuid="02959481-4d76-496c-b8c4-10abed18ba05"/>
+				<textElement textAlignment="Left" verticalAlignment="Top" markup="html">
+					<font fontName="DejaVu Sans" size="8" isBold="true" isStrikeThrough="false"/>
+					<paragraph leftIndent="2" rightIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA["&#8226"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="6"/>
+		<band height="48">
+			<staticText>
+				<reportElement stretchType="RelativeToTallestObject" x="0" y="0" width="270" height="48" isPrintWhenDetailOverflows="true" uuid="4e5fb6b8-de82-4ba2-9c59-e0abd5b2fed0"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font fontName="DejaVu Sans" size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[INCLUSIÓN FINANCIERA proporcionará a los ACREDITADOS de manera gratuita a través de la página de internet de INCLUSIÓN FINANCIERA información con el fin de evitar posibles fraudes en los productos o servicios financieros contratados.]]></text>
+			</staticText>
+		</band>
+		<band height="14">
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="0" y="0" width="270" height="14" isPrintWhenDetailOverflows="true" uuid="dcd9cdb0-e30e-4936-9fc8-066409183a8c"/>
+				<textElement textAlignment="Justified" verticalAlignment="Top" markup="html">
+					<font fontName="DejaVu Sans" size="8" isBold="false"/>
+					<paragraph leftIndent="2" rightIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Las partes convienen que la utilización por parte de los ACREDITADOS de los medios electrónicos objeto del presente instrumento implica la aceptación del medio y todos los efectos jurídicos derivados de éste.<br/><br/>"+
+"Los ACREDITADOS autorizan a INCLUSIÓN FINANCIERA a grabar las conversaciones telefónicas que mantenga con los ACREDITADOS. Los ACREDITADOS aceptan que INCLUSIÓN FINANCIERA no tendrá obligación de informarle que se están grabando dichas conversaciones, así como que tales grabaciones serán propiedad exclusiva de INCLUSIÓN FINANCIERA y que su contenido producirá los mismos efectos que las leyes otorgan a los documentos autógrafos suscritos por las partes, teniendo en consecuencia el mismo valor probatorio. <br/><br/>"+
+"INCLUSIÓN FINANCIERA podrá modificar en cualquier tiempo, en todo o en parte, temporal o permanentemente, sin necesidad de notificación previa a los ACREDITADOS, las condiciones, características y alcances de los medios electrónicos que pone a disposición de los ACREDITADOS, cuando dichas modificaciones sean en beneficio de los ACREDITADOS.<br/><br/>"+
+"Por lo que respecta al uso intransferible, los ACREDITADOS se obligan a hacer uso de dichos servicios en forma intransferible, conforme a los términos y condiciones convenidos en este Contrato y cubriendo los requisitos que para tal efecto establezca INCLUSIÓN FINANCIERA, dentro de los horarios que éste tenga establecido. <br/><br/>"+
+"De igual forma y a su propio juicio, INCLUSIÓN FINANCIERA podrá suspender temporal o permanentemente los derechos de los ACREDITADOS para utilizar los medios electrónicos cuando cuente con elementos que le hagan presumir que los mismos no están siendo utilizados por los propios ACREDITADOS, o bien, por considerar que su uso viola los términos de este documento o que su uso puede dañar los intereses de otros clientes o proveedores, o a las entidades financieras integrantes de Grupo Financiero Santander México, o bien, detecte(n) errores en la instrucción de que se trate. <br/><br/>"+
+"Para ello los ACREDITADOS aceptan que en los supuestos enunciados, INCLUSIÓN FINANCIERA podrá restringir hasta por quince días hábiles la disposición de los recursos de que se trate, a fin de llevar a cabo las investigaciones y las consultas que sean necesarias con otras instituciones de crédito relacionadas con la operación de que se trate, pudiendo prorrogar el plazo antes referido hasta por diez días hábiles más, siempre que se haya dado vista a la autoridad competente sobre probables hechos ilícitos cometidos en virtud de la operación respectiva.<br/><br/>"+
+"No obstante lo dispuesto en el párrafo anterior, cuando INCLUSIÓN FINANCIERA por motivo de las investigaciones antes referidas, tenga evidencia de que la cuenta respectiva fue abierta con información o documentación falsa, o bien, que los medios de identificación pactados para la realización de la operación de que se trate fueron utilizados en forma indebida, podrá cargar el importe respectivo con el propósito de que se abone en la cuenta de la que procedieron los recursos correspondientes.<br/><br/>"+
+"El uso de los medios de identificación a que se refiere el presente instrumento, en sustitución de la firma autógrafa, producirá los mismos efectos que las leyes otorgan a los documentos suscritos mediante firma autógrafa y tendrán el mismo valor probatorio."]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="6"/>
+		<band height="14">
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="0" y="0" width="270" height="14" isPrintWhenDetailOverflows="true" uuid="dcd9cdb0-e30e-4936-9fc8-066409183a8c"/>
+				<textElement textAlignment="Justified" verticalAlignment="Top" markup="html">
+					<font fontName="DejaVu Sans" size="8" isBold="false"/>
+					<paragraph leftIndent="2" rightIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA["<b>VIGÉSIMA CUARTA. DATOS ADICIONALES PARA LA ATENCIÓN DE USUARIOS DE SERVICIOS FINANCIEROS.-</b> En cumplimiento a lo dispuesto por la legislación aplicable INCLUSIÓN FINANCIERA señala como datos adicionales de identificación, localización y contacto, los siguientes:<br/><br/>"+
+"Domicilio: Prolongación Paseo de la Reforma número 500, Colonia Lomas de Santa Fe, Delegación Álvaro Obregón, C.P. 01219, en la Ciudad de México.<br/>"+
+"<b>Dirección en Internet y lugar a través del cual los ACREDITADOS pueden consultar las cuentas que INCLUSIÓN FINANCIERA mantiene activas en redes sociales</b>: <u style=\"color:#335EFF\"><a href=\"www.tuiio.com.mx\" target=\"_blank\" >www.tuiio.com.mx</a></u> <br/><br/>"+
+"Centro de atención para consultas de saldos, aclaraciones y movimientos, entre otros: 01 800 999 99 88<br/>"+
+"<b>Unidad Especializada:</b><u style=\"color:#335EFF\"><a href=\"mailto:asesoria@condusef.gob.mx\">ueac@santader.com.mx</a></u>; Av. Vasco de Quiroga No. 3900, Torre A Piso 13, Corp. Diamante, Col. Lomas de Santa Fe, Delegación Cuajimalpa, C.P. 05100, Ciudad de México, Teléfonos: (0155)  5169 4328 (Área Metropolitana) y 01 800 503 28 55 (Lada sin costo)."]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="14">
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="0" y="0" width="270" height="14" isPrintWhenDetailOverflows="true" uuid="dcd9cdb0-e30e-4936-9fc8-066409183a8c"/>
+				<textElement verticalAlignment="Top" markup="html">
+					<font fontName="DejaVu Sans" size="8" isBold="false"/>
+					<paragraph leftIndent="2" rightIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA["<b>Centro de atención telefónica de CONDUSEF:</b><br/>"+
+"<b>Teléfono: 55 53 40 09 99  y del interior de la República 01 800 99980 80. Correo electrónico:</b><u style=\"color:#335EFF\"><a href=\"mailto:asesoria@condusef.gob.mx\">asesoria@condusef.gob.mx</a></u><br/>"+
+"<b>Dirección en Internet:</b><u style=\"color:#335EFF\"><a href=\"www.condusef.gob.mx\" target=\"_blank\" >www.condusef.gob.mx</a></u>"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="6"/>
+		<band height="14">
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="0" y="0" width="270" height="14" isPrintWhenDetailOverflows="true" uuid="dcd9cdb0-e30e-4936-9fc8-066409183a8c"/>
+				<textElement textAlignment="Justified" verticalAlignment="Top" markup="html">
+					<font fontName="DejaVu Sans" size="8" isBold="false"/>
+					<paragraph leftIndent="2" rightIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA["<b>VIGÉSIMA QUINTA. PROCESO DE ACLARACIÓN.-</b> En caso de inconformidad y con el fin de objetar aquellos movimientos en los que los ACREDITADOS no estén de acuerdo, contenidos en el estado de cuenta respectivo o en su caso, en los medios electrónicos, ópticos o cualquier otra tecnología que al efecto hubieren pactado las partes, correspondientes a operaciones cuyo monto reclamado no exceda de 20,000 UDI relativas a la apertura de crédito celebrada al amparo del presente instrumento, los ACREDITADOS podrán optar por el siguiente procedimiento:"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="6"/>
+		<band height="14">
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" isPrintRepeatedValues="false" x="10" y="0" width="26" height="14" uuid="8297fb95-b51f-40c0-b96f-48cb8c48956b"/>
+				<textElement verticalAlignment="Top" markup="html">
+					<font fontName="DejaVu Sans" size="8" isBold="false"/>
+					<paragraph leftIndent="2" rightIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA["I."]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="26" y="0" width="238" height="14" isPrintWhenDetailOverflows="true" uuid="159a68b2-4a6a-4123-b69d-dd44d4498671"/>
+				<textElement textAlignment="Justified" verticalAlignment="Top" markup="html">
+					<font fontName="DejaVu Sans" size="8" isBold="false"/>
+					<paragraph leftIndent="2" rightIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Los ACREDITADOS deberán presentar su solicitud de aclaración en un plazo que no exceda de 90 (noventa) días naturales contados a partir de la fecha de corte, o en su caso, de la realización de la operación o del servicio, en la sucursal en la que radica la cuenta, o bien dirigirla a la Unidad Especializada de INCLUSIÓN FINANCIERA, mediante escrito o cualquier otro medio por el que se pueda comprobar fehacientemente su recepción."]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="14">
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="26" y="0" width="238" height="14" isPrintWhenDetailOverflows="true" uuid="159a68b2-4a6a-4123-b69d-dd44d4498671"/>
+				<textElement textAlignment="Justified" verticalAlignment="Top" markup="html">
+					<font fontName="DejaVu Sans" size="8" isBold="false"/>
+					<paragraph leftIndent="2" rightIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA["INCLUSIÓN FINANCIERA, acusará de recibo dicha solicitud de aclaración, siempre y cuando los ACREDITADOS cumplan con el plazo y términos establecidos."]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="14">
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="26" y="0" width="238" height="14" isPrintWhenDetailOverflows="true" uuid="0b3af7e2-d076-401e-a92b-d165bf19f26a"/>
+				<textElement textAlignment="Justified" verticalAlignment="Top" markup="html">
+					<font fontName="DejaVu Sans" size="8" isBold="false"/>
+					<paragraph leftIndent="2" rightIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Los ACREDITADOS no estarán obligados a realizar el pago de cuya aclaración solicita, ni de cualquier otra cantidad relacionada con el mismo, hasta en tanto INCLUSIÓN FINANCIERA, resuelva la aclaración conforme al presente procedimiento."]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="14">
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" isPrintRepeatedValues="false" x="10" y="0" width="26" height="14" uuid="8297fb95-b51f-40c0-b96f-48cb8c48956b"/>
+				<textElement verticalAlignment="Top" markup="html">
+					<font fontName="DejaVu Sans" size="8" isBold="false"/>
+					<paragraph leftIndent="2" rightIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA["II."]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="26" y="0" width="238" height="14" isPrintWhenDetailOverflows="true" uuid="159a68b2-4a6a-4123-b69d-dd44d4498671"/>
+				<textElement textAlignment="Justified" verticalAlignment="Top" markup="html">
+					<font fontName="DejaVu Sans" size="8" isBold="false"/>
+					<paragraph leftIndent="2" rightIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA["En un plazo que no excederá de 45 (cuarenta y cinco) días naturales contados a partir de la recepción de la solicitud que cumpla con los requisitos y plazos señalados indicada en el ordinal que antecede, INCLUSIÓN FINANCIERA emitirá el dictamen correspondiente, por escrito, anexando copia simple del documento o evidencia considerada para su emisión."]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="14">
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" isPrintRepeatedValues="false" x="10" y="0" width="26" height="14" uuid="8297fb95-b51f-40c0-b96f-48cb8c48956b"/>
+				<textElement verticalAlignment="Top" markup="html">
+					<font fontName="DejaVu Sans" size="8" isBold="false"/>
+					<paragraph leftIndent="2" rightIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA["III."]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="26" y="0" width="238" height="14" isPrintWhenDetailOverflows="true" uuid="159a68b2-4a6a-4123-b69d-dd44d4498671"/>
+				<textElement textAlignment="Justified" verticalAlignment="Top" markup="html">
+					<font fontName="DejaVu Sans" size="8" isBold="false"/>
+					<paragraph leftIndent="2" rightIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Una vez emitido el dictamen, cuando sea procedente el cobro del monto respectivo, los ACREDITADOS deberán realizar el pago de la cantidad correspondiente, incluyendo los intereses ordinarios pactados en el presente Contrato."]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="14">
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" isPrintRepeatedValues="false" x="10" y="0" width="26" height="14" uuid="8297fb95-b51f-40c0-b96f-48cb8c48956b"/>
+				<textElement verticalAlignment="Top" markup="html">
+					<font fontName="DejaVu Sans" size="8" isBold="false"/>
+					<paragraph leftIndent="2" rightIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA["IV."]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="26" y="0" width="238" height="14" isPrintWhenDetailOverflows="true" uuid="159a68b2-4a6a-4123-b69d-dd44d4498671"/>
+				<textElement textAlignment="Justified" verticalAlignment="Top" markup="html">
+					<font fontName="DejaVu Sans" size="8" isBold="false"/>
+					<paragraph leftIndent="2" rightIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Dentro del plazo de 45 (cuarenta y cinco) días naturales contados a partir de la entrega del dictamen, INCLUSIÓN FINANCIERA, pondrá a disposición de los ACREDITADOS en la sucursal en la que radica la cuenta el expediente generado con motivo de la solicitud, en términos de las disposiciones aplicables."]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="6"/>
+		<band height="14">
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="0" y="0" width="270" height="14" isPrintWhenDetailOverflows="true" uuid="dcd9cdb0-e30e-4936-9fc8-066409183a8c"/>
+				<textElement textAlignment="Justified" verticalAlignment="Top" markup="html">
+					<font fontName="DejaVu Sans" size="8" isBold="false"/>
+					<paragraph leftIndent="2" rightIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Las partes expresamente acuerdan que para lo dispuesto en la presente cláusula, el lugar de notificación del estado que guarda la solicitud respectiva será la sucursal en la que radica la cuenta y se verificará mediante los documentos que INCLUSIÓN FINANCIERA, dispone para tal efecto. La falta de presentación de los ACREDITADOS en el lugar acordado, durante los plazos que se establecen al efecto, relevará a INCLUSIÓN FINANCIERA, de cualquier responsabilidad relacionada, y se entenderá como desistimiento de la misma por parte de los ACREDITADOS, no estando obligada INCLUSIÓN FINANCIERA, a la realización de gestiones judiciales, extrajudiciales ni de ninguna otra naturaleza a fin de notificar a los ACREDITADOS del estado de su solicitud.<br/><br/>"+
+"Lo previsto en la presente cláusula, es sin perjuicio del derecho de los ACREDITADOS de acudir ante la Comisión Nacional  para la Protección y Defensa de los Usuarios de Servicios Financieros o ante la Autoridad Jurisdiccional correspondiente conforme a las disposiciones legales aplicables, en el entendido que el procedimiento previsto en la presente cláusula quedará sin efectos a partir del momento en que los ACREDITADOS presente su demanda ante la autoridad jurisdiccional o conduzca su reclamación en términos de la Ley de Protección y Defensa al Usuario de Servicios Financieros.<br/><br/>"+
+"Para todos los casos distintos a las operaciones y condiciones señaladas en los párrafos precedentes de esta cláusula, los ACREDITADOS podrán consultar saldos, transacciones y movimientos, personalmente a través de cualquiera de las sucursales de INCLUSIÓN FINANCIERA, previa identificación, mediante el uso de medios electrónicos, conforme a lo establecido en el presente Contrato."]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="6"/>
+		<band height="14">
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="0" y="0" width="270" height="14" isPrintWhenDetailOverflows="true" uuid="dcd9cdb0-e30e-4936-9fc8-066409183a8c"/>
+				<textElement textAlignment="Justified" verticalAlignment="Top" markup="html">
+					<font fontName="DejaVu Sans" size="8" isBold="false"/>
+					<paragraph leftIndent="2" rightIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA["<b>VIGÉSIMA SEXTA. CARGO EN CUENTA.- </b> En caso que los ACREDITADOS hayan asociado el presente crédito a una cuenta de depósito bancario de dinero a la vista en el BANCO, facultan a INCLUSIÓN FINANCIERA e instruyen al BANCO expresamente para cargar en la Cuenta los adeudos vencidos que los ACREDITADOS tengan con INCLUSIÓN FINANCIERA, considerando el saldo y plazo que se indican a continuación:"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="6"/>
+		<band height="14">
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" isPrintRepeatedValues="false" x="10" y="0" width="26" height="14" uuid="0275efd4-8bfa-4c1e-8720-fa4b11697374"/>
+				<textElement verticalAlignment="Top" markup="html">
+					<font fontName="DejaVu Sans" size="8" isBold="false"/>
+					<paragraph leftIndent="2" rightIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA["a)"]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="24" y="0" width="240" height="14" isPrintWhenDetailOverflows="true" uuid="a553d340-bfd1-491b-9732-3c501de52a4d"/>
+				<textElement textAlignment="Justified" verticalAlignment="Top" markup="html">
+					<font fontName="DejaVu Sans" size="8" isBold="false"/>
+					<paragraph leftIndent="2" rightIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Saldo: El BANCO cargará el monto acumulado que los ACREDITADOS adeuden a INCLUSIÓN FINANCIERA derivado de los productos y servicios contratados mediante el presente instrumento, que llegada su fecha de exigibilidad no haya sido pagado y por lo tanto sea vencido y exigible."]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="14">
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" isPrintRepeatedValues="false" x="10" y="0" width="26" height="14" uuid="0275efd4-8bfa-4c1e-8720-fa4b11697374"/>
+				<textElement verticalAlignment="Top" markup="html">
+					<font fontName="DejaVu Sans" size="8" isBold="false"/>
+					<paragraph leftIndent="2" rightIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA["b)"]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="24" y="0" width="240" height="14" isPrintWhenDetailOverflows="true" uuid="a553d340-bfd1-491b-9732-3c501de52a4d"/>
+				<textElement textAlignment="Justified" verticalAlignment="Top" markup="html">
+					<font fontName="DejaVu Sans" size="8" isBold="false"/>
+					<paragraph leftIndent="2" rightIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Plazo: Los ACREDITADOS autorizan que el cargo se ejecute por el BANCO sin requerimiento o cobro previo dentro del plazo que va desde el día posterior de la fecha de vencimiento de la obligación de que se trate sin que se haya realizado el pago en los términos convenidos y hasta que haya sido pagada la totalidad del adeudo."]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="6"/>
+		<band height="14">
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="0" y="0" width="270" height="14" isPrintWhenDetailOverflows="true" uuid="dcd9cdb0-e30e-4936-9fc8-066409183a8c"/>
+				<textElement textAlignment="Justified" verticalAlignment="Top" markup="html">
+					<font fontName="DejaVu Sans" size="8" isBold="false"/>
+					<paragraph leftIndent="2" rightIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA["<b>VIGÉSIMA SÉPTIMA. SUBTÍTULOS.-</b> Las partes convienen en subtitular cada una de las cláusulas del presente Contrato, únicamente con fines de identificación de las mismas, por lo que no deberán ser utilizados para la interpretación y cumplimiento del presente Contrato."]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="6"/>
+		<band height="14">
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="0" y="0" width="270" height="14" isPrintWhenDetailOverflows="true" uuid="dcd9cdb0-e30e-4936-9fc8-066409183a8c"/>
+				<textElement textAlignment="Justified" verticalAlignment="Top" markup="html">
+					<font fontName="DejaVu Sans" size="8" isBold="false"/>
+					<paragraph leftIndent="2" rightIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA["<b>VIGÉSIMA OCTAVA. SECRETO FINANCIERO.-</b> INCLUSIÓN FINANCIERA en ningún caso podrá dar noticias o información de los depósitos, servicios o cualquier tipo de operaciones relacionadas con este Contrato, sino a los ACREDITADOS, a sus representantes legales o a quienes tengan otorgado poder para disponer de la Cuenta o para intervenir en la operación o servicio, así como al beneficiario que corresponda, salvo cuando la pidieren la autoridad judicial en virtud de providencia dictada en juicio en el que el titular sea parte o acusado y las autoridades hacendarias federales, por conducto de la Comisión Nacional Bancaria y de Valores, para fines fiscales."]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="6"/>
+		<band height="14">
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="0" y="0" width="270" height="14" isPrintWhenDetailOverflows="true" uuid="dcd9cdb0-e30e-4936-9fc8-066409183a8c"/>
+				<textElement textAlignment="Justified" verticalAlignment="Top" markup="html">
+					<font fontName="DejaVu Sans" size="8" isBold="false"/>
+					<paragraph leftIndent="2" rightIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA["<b>VIGÉSIMA NOVENA. INFORMACIÓN Y DOCUMENTACIÓN.-</b> Los ACREDITADOS e INCLUSIÓN FINANCIERA acuerdan expresamente que las operaciones de Crédito solamente podrán ser celebradas una vez que INCLUSIÓN FINANCIERA haya comprobado a su satisfacción que la información y documentación entregada por los ACREDITADOS, ya sea a la firma de este Contrato o durante la vigencia del mismo, cumple con las especificaciones contenidas en las disposiciones legales aplicables a la identificación de clientes y/o en las políticas internas de INCLUSIÓN FINANCIERA.<br><br>"+
+"Asimismo, los ACREDITADOS autorizan expresamente y las partes acuerdan expresamente que INCLUSIÓN FINANCIERA está facultada para requerir en cualquier tiempo, a través de los medios pactados en el presente instrumento, la información y/o documentos que se requiera o que tenga establecida o en lo sucesivo establezca INCLUSIÓN FINANCIERA con el fin de dar cumplimiento a las disposiciones legales aplicables y a sus políticas internas, así como para acreditar el origen de los recursos, la licitud de cualquier operación particular u operativa general o su apego al perfil declarado por los ACREDITADOS, así como para proporcionar de manera enunciativa más no limitativa información relativa a las operaciones que celebren las partes al amparo del presente instrumento a las autoridades financieras o hacendarias mexicanas competentes para fines fiscales cuando así lo soliciten o de acuerdo a la legislación vigente; reconociendo los ACREDITADOS que es su responsabilidad notificar a la mayor brevedad a INCLUSIÓN FINANCIERA cualquier modificación en los datos, circunstancias y documentos proporcionados, , en el entendido que la omisión o defecto por parte de los ACREDITADOS en proporcionar a INCLUSIÓN FINANCIERA la información y/o documentación de que se trate para su correcta identificación, en los términos que INCLUSIÓN FINANCIERA le indique, dará derecho a este último de restringir de cualquier forma las operaciones contratadas o incluso rescindir el presente contrato en caso de que los ACREDITADOS no proporcionen la información y/o documentación necesaria y/o documentos falsos, incompletos o erróneos, enunciando sin limitar: no permitir la realización de operaciones e incluso dar por terminado anticipadamente el presente instrumento en cualquier tiempo, sin expresión de causa, con un día hábil de anticipación a la fecha de su efectividad con arreglo a la cláusula de VIGENCIA Y TERMINACIÓN del mismo. El tratamiento de la información  de las operaciones en los términos de la presente cláusula no implica transgresión a las obligaciones de reserva, confidencialidad o secreto bancario a los que está sujeto INCLUSIÓN FINANCIERA, por lo cual los ACREDITADOS liberan a INCLUSIÓN FINANCIERA en caso de compartir la información de las operaciones de acuerdo con lo anteriormente establecido.<br><br>"+
+"Cualquier aviso, solicitud de información, aviso de restricción e incluso el aviso de terminación antes mencionado, podrá hacerse por escrito en el último domicilio señalado por los ACREDITADOS o mediante el uso de medios electrónicos pactados por las partes en este instrumento en el desarrollo de una sesión iniciada por los ACREDITADOS mediante el uso de sus CLAVES DE ACCESO o a través de mensaje enviado a los datos de contacto que hubiese proporcionado para efectos de notificación de operaciones."]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="6"/>
+		<band height="14">
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="0" y="0" width="270" height="14" isPrintWhenDetailOverflows="true" uuid="dcd9cdb0-e30e-4936-9fc8-066409183a8c"/>
+				<textElement textAlignment="Justified" verticalAlignment="Top" markup="html">
+					<font fontName="DejaVu Sans" size="8" isBold="false"/>
+					<paragraph leftIndent="2" rightIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA["<b>TRIGÉSIMA. OBLIGACIÓN SOLIDARIA.-</b> Sin perjuicio de lo señalado en la cláusula quinta de este Contrato, cada uno de los ACREDITADOS constituye una obligación personal y solidaria respecto de las obligaciones asumidas por los demás ACREDITADOS, manifestando expresamente que no cesará su obligación sino hasta en tanto INCLUSIÓN FINANCIERA haya recibido la totalidad de las cantidades que los ACREDITADOS en su conjunto se obligan a pagar. En virtud de lo anterior, los ACREDITADOS en este acto se obligan de manera solidaria y personal, a pagar oportunamente a INCLUSIÓN FINANCIERA, el importe total del Crédito y los intereses ordinarios que se indican en este Contrato, gastos de cobranza, comisiones y/o cualquier accesorio contractual y legal que en su caso se genere.<br><br>"+
+"Asimismo, las obligaciones solidarias asumidas en esta cláusula no implican ni implicarán una extinción, disminución, liberación, modificación o transmisión de las obligaciones establecidas en el presente Contrato a favor de INCLUSIÓN FINANCIERA, ni un orden para exigir el cumplimiento de dichas obligaciones o una excusión de bienes para que los obligados solidarios respondan por las mismas."]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="6"/>
+		<band height="14">
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="0" y="0" width="270" height="14" isPrintWhenDetailOverflows="true" uuid="dcd9cdb0-e30e-4936-9fc8-066409183a8c"/>
+				<textElement textAlignment="Justified" verticalAlignment="Top" markup="html">
+					<font fontName="DejaVu Sans" size="8" isBold="false"/>
+					<paragraph leftIndent="2" rightIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA["<b>TRIGÉSIMA PRIMERA.- PAGO ADELANTADO.</b> Al momento de la firma del presente instrumento, los ACREDITADOS hacen entrega a INCLUSIÓN FINANCIERA de la cantidad equivalente al 10% (diez por ciento) del importe del Crédito, por concepto de pago adelantado del mismo, con el fin de aplicarlo en la medida que dicho importe alcance y baste, a cubrir los últimos pagos indicados en la tabla de amortización, o llegado el caso, a cubrir cualquier adeudo que habiendo transcurrido 3 (tres) semanas contadas a partir de la fecha de su vencimiento, no sea liquidado por los ACREDITADOS en los términos acordados. En todo caso, INCLUSIÓN FINANCIERA se reserva el derecho de solicitar un porcentaje menor o no solicitar el pago adelantado a que se refiere la presente Cláusula."]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="6"/>
+		<band height="14">
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="0" y="0" width="270" height="14" isPrintWhenDetailOverflows="true" uuid="dcd9cdb0-e30e-4936-9fc8-066409183a8c"/>
+				<textElement textAlignment="Justified" verticalAlignment="Top" markup="html">
+					<font fontName="DejaVu Sans" size="8" isBold="false"/>
+					<paragraph leftIndent="2" rightIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA["<b>TRIGÉSIMA SEGUNDA. LEGISLACIÓN, JURISDICCIÓN Y CUMPLIMIENTO.-</b> Para todo lo no previsto en este Contrato, se observará lo dispuesto por la Ley General de Organizaciones y Actividades Auxiliares del Crédito, Ley General de Títulos y Operaciones de Crédito, Ley para la Transparencia y Ordenamiento de los Servicios Financieros y demás disposiciones que resulten aplicables. Para la interpretación y cumplimiento del presente Contrato, las partes se someten a la jurisdicción de los tribunales competentes de la Ciudad de México o los que correspondan al lugar de firma del mismo, a elección de la parte actora, renunciando las partes expresamente a cualquier otro fuero que pudiera corresponderles en función de sus domicilios presentes o futuros."]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="6"/>
+	</detail>
+</jasperReport>

@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<serviceClass name="Queries" nsBase="COBISCorp.eCOBIS.Loan" namespace="COBISCorp.eCOBIS.Loan.Service" package="cobiscorp.ecobis.loan.service" ns="http://service.loan.ecobis.cobiscorp" module="Loan" productName="COBISCorp.eCOBIS.Loan.Service" productVersion="2.0.0.0">
+  <productProperties>
+    <property name="MavenGroupId" value="com.cobiscorp.processapi" />
+    <property name="MavenArtifactId" value="COBISCorp.eCOBIS.Loan.Service" />
+    <property name="MavenVersion" value="2.0.0.0" />
+  </productProperties>
+  <partialClass name="Queries">
+    <services>
+      <service id="Loan.Queries.GetStatus" netName="GetStatus" javaName="getStatus" mappingType="STORED_PROCEDURE" mapId="6872937617af85db5a39a5243e858d1f">
+        <SRVMapping name="cob_cartera..sp_consulta_estado" trnCode="7075">
+          <DTOs>
+            <DTO direction="return" name="ItemResponse" alias="returnItemResponse" namespace="COBISCorp.eCOBIS.Loan.DTO" package="cobiscorp.ecobis.loan.dto" ns="http://dto.loan.ecobis.cobiscorp" required="true">
+              <properties>
+                <property name="product" propertyNet="Product" propertyJava="product" setterJavaMethod="setProduct" getterJavaMethod="getProduct" xsdType="string" netType="string" javaType="String" cobisMapping="" isInherit="false" isComplexType="false" isCollectionType="false" required="false" encrypted="false" maxLength="0" />
+                <property name="description" propertyNet="Description" propertyJava="description" setterJavaMethod="setDescription" getterJavaMethod="getDescription" xsdType="string" netType="string" javaType="String" cobisMapping="" isInherit="false" isComplexType="false" isCollectionType="false" required="false" encrypted="false" maxLength="0" />
+                <property name="retention" propertyNet="Retention" propertyJava="retention" setterJavaMethod="setRetention" getterJavaMethod="getRetention" xsdType="int?" netType="int?" javaType="Integer" cobisMapping="" isInherit="false" isComplexType="false" isCollectionType="false" required="false" encrypted="false" maxLength="0" />
+                <property name="cobisProduct" propertyNet="CobisProduct" propertyJava="cobisProduct" setterJavaMethod="setCobisProduct" getterJavaMethod="getCobisProduct" xsdType="int?" netType="int?" javaType="Integer" cobisMapping="" isInherit="false" isComplexType="false" isCollectionType="false" required="false" encrypted="false" maxLength="0" />
+                <property name="automaticPayment" propertyNet="AutomaticPayment" propertyJava="automaticPayment" setterJavaMethod="setAutomaticPayment" getterJavaMethod="getAutomaticPayment" xsdType="string" netType="string" javaType="String" cobisMapping="" isInherit="false" isComplexType="false" isCollectionType="false" required="false" encrypted="false" maxLength="0" />
+                <property name="code" propertyNet="Code" propertyJava="code" setterJavaMethod="setCode" getterJavaMethod="getCode" xsdType="int?" netType="int?" javaType="Integer" cobisMapping="" isInherit="false" isComplexType="false" isCollectionType="false" required="false" encrypted="false" maxLength="0" />
+              </properties>
+            </DTO>
+          </DTOs>
+          <parameterMappings />
+          <resultMappings>
+            <result>
+              <DTOResult DTOAlias="returnItemResponse" MapReturn="true">
+                <columnMapping position="0" name="Codigo " DTOPropertyName="code" DataType="int?" />
+                <columnMapping position="1" name="Descripcion " DTOPropertyName="description" DataType="string" />
+              </DTOResult>
+            </result>
+          </resultMappings>
+          <MappingProperties />
+        </SRVMapping>
+      </service>
+    </services>
+  </partialClass>
+</serviceClass>

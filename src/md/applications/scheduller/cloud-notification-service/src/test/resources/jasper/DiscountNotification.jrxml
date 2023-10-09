@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="DiscountNotification" pageWidth="595" pageHeight="842" columnWidth="595" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="28" uuid="49cc9f12-b510-4284-8420-8e06c99d20de">
+	<property name="ireport.zoom" value="1.0000000000000018"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="112"/>
+	<parameter name="SUBREPORT_DIR" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["/"]]></defaultValueExpression>
+	</parameter>
+	<field name="discountDetailList" class="java.util.List"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<pageHeader>
+		<band height="129">
+			<image>
+				<reportElement x="0" y="0" width="595" height="126" uuid="ca25bbfd-d761-451f-8212-f9d48ab5d9bd"/>
+				<imageExpression><![CDATA["cabecera.png"]]></imageExpression>
+			</image>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="65">
+			<textField>
+				<reportElement x="0" y="0" width="595" height="65" forecolor="#666666" uuid="febf54cc-f602-47ce-b59b-99322893b09a"/>
+				<box leftPadding="100" rightPadding="50"/>
+				<textElement textAlignment="Justified" markup="html"/>
+				<textFieldExpression><![CDATA["Estimado Cliente,<br/><br/>Para Tuiio es un gusto informarle que han sido acreedores a un descuento que a continuación se detalla."]]></textFieldExpression>
+			</textField>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="125" splitType="Stretch">
+			<subreport>
+				<reportElement x="0" y="0" width="595" height="125" uuid="8eebf8b8-8f57-4cdb-ba11-c78dadfa495e"/>
+				<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($F{discountDetailList})]]></dataSourceExpression>
+				<subreportExpression><![CDATA[$P{SUBREPORT_DIR} + "DiscountNotificationSubreport.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+	</detail>
+	<summary>
+		<band height="131">
+			<textField>
+				<reportElement x="0" y="0" width="595" height="131" forecolor="#666666" uuid="82b2ca03-d754-42e0-89a4-7c16fff408d5"/>
+				<box leftPadding="100" rightPadding="50"/>
+				<textElement textAlignment="Justified" markup="html"/>
+				<textFieldExpression><![CDATA["Le recordamos que debe informar el monto que le corresponde a cada uno, de esta devolución.<br/><br/>"+
+"Recuerda que si continúas cumpliendo puntualmente los pagos de tu grupo, podrás seguir disfrutando de este tipo de beneficios.<br/><br/><br/><br/>"+
+"Atte.<br/>"+
+"Equipo Tuiio."]]></textFieldExpression>
+			</textField>
+		</band>
+	</summary>
+</jasperReport>

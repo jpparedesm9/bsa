@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+          package="com.cobis.gestionasesores">
+
+    <uses-feature
+        android:glEsVersion="0x00020000"
+        android:required="true" />
+
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+
+    <application
+        android:name=".AppConfig"
+        android:allowBackup="false"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:largeHeap="true"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+
+        <uses-library
+            android:name="org.apache.http.legacy"
+            android:required="false" />
+
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="@string/google_maps_key" />
+
+        <activity android:name=".presentation.launcher.LauncherActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".presentation.menu.MenuActivity"
+            android:screenOrientation="portrait">
+            <meta-data
+                android:name="android.app.searchable"
+                android:resource="@xml/searchable"/>
+        </activity>
+        <activity
+            android:name=".presentation.login.LoginActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".presentation.person.PersonActivity"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".presentation.sections.customerdata.CustomerDataActivity"
+            android:label="@string/customer_data_title"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".presentation.sections.customerbusiness.CustomerBusinessActivity"
+            android:label="@string/section_cus_bus"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".presentation.sections.partnerdata.PartnerDataActivity"
+            android:label="@string/partner_data_title"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".presentation.sections.partnerwork.PartnerWorkActivity"
+            android:label="@string/partner_work_title"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".presentation.sections.customerpayment.CustomerPaymentActivity"
+            android:label="@string/customer_payment_title"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".presentation.sections.customeraddress.CustomerAddressActivity"
+            android:label="@string/customer_address_title"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".presentation.sections.references.ReferenceListActivity"
+            android:label="@string/references_title"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".presentation.sections.references.items.ReferenceActivity"
+            android:label="@string/reference_title"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".presentation.sections.complementarydata.ComplementaryDataActivity"
+            android:label="@string/complementary_data_title"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".presentation.address.AddressActivity"
+            android:label="@string/address_title"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".presentation.sections.documents.DocumentListActivity"
+            android:label="@string/documents_title"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".presentation.sections.documents.items.DocumentActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/document_title"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".presentation.customers.SelectCustomerActivity"
+            android:label="@string/select_customer_title"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".presentation.member.MemberActivity"
+            android:label="@string/member_title"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".presentation.group.GroupActivity"
+            android:label="@string/group_title"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".presentation.selectgroup.SelectGroupActivity"
+            android:label="@string/select_group_title"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".presentation.groupcredit.GroupCreditActivity"
+            android:label="@string/credit_app_group_title"
+            android:windowSoftInputMode="stateHidden"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".presentation.individualcredit.IndividualCreditActivity"
+            android:label="@string/credit_app_individual_title"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".presentation.membercredit.MemberCreditActivity"
+            android:label="@string/member_credit_title"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateAlwaysHidden"/>
+        <activity
+            android:name=".presentation.sections.prospectdata.ProspectDataActivity"
+            android:label="@string/prospect_data_title"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".presentation.simulation.simulationtable.SimulationTableActivity"
+            android:label="@string/simulation_table_title"/>
+        <activity
+            android:name=".presentation.comments.CommentActivity"
+            android:label="@string/comments_title"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".presentation.groupverification.GroupVerificationActivity"
+            android:label="@string/group_verification_title"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".presentation.memberverification.MemberVerificationActivity"
+            android:label="@string/member_verification_title"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".presentation.registerdevice.RegisterDeviceActivity"
+            android:label="@string/register_device_title"
+            android:windowSoftInputMode="adjustPan"/>
+        <activity
+            android:name=".presentation.loginoffline.LoginOfflineActivity"
+            android:label="@string/login_offline_title"/>
+        <activity
+            android:name=".presentation.solidaritypayment.SolidarityPaymentActivity"
+            android:label="@string/solidarity_payment_title"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan"/>
+        <activity
+            android:name=".presentation.synchronization.upload.UploadActivity"
+            android:label="@string/synchronization_up"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".presentation.solidaritypayment.paymentinfo.PaymentInfoActivity"
+            android:label="@string/solidarity_payment_title"
+            android:screenOrientation="portrait"/>
+
+        <service android:name=".infrastructure.SyncManager$SyncIntentService"/>
+
+        <activity
+            android:name=".presentation.registerpin.RegisterPinActivity"
+            android:label="@string/register_pin_title"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".presentation.changepin.ChangePinActivity"
+            android:label="@string/change_pin_title"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".presentation.synchronization.SynchronizationActivity"
+            android:label="@string/sync_title"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".presentation.settings.SettingsActivity"
+            android:label="@string/menu_settings"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".presentation.member.moreinformation.MemberInformationActivity"
+            android:label="@string/member_information_title"
+            android:screenOrientation="portrait"/>
+    </application>
+
+</manifest>

@@ -1,0 +1,75 @@
+{
+    "id": {
+        "queryId": "Q_QEYMERET_5063",
+        "version": "1.0.0"
+    },
+    "name": {
+        "$ref": "../../../BUSIN/relations/componentKeys.json#/FLCRE/Queries/Q_QEYMERET_5063/name"
+    },
+    "customizationLayer": 0,
+    "customizationLayerDescription": "ECU",
+    "mainEntityId": "EN_MEGETLIST633",
+    "mainEntityVersion": "1.0.0",
+    "queryMembers": [
+        {
+            "queryMemberId": "QM_QEYME5063_22",
+            "order": 1,
+            "orderByDirection": "A",
+            "selectStr": "T",
+            "alias": "CodActivitiesEm",
+            "whereStr": "F",
+            "customizationLayer": 0,
+            "customizationLayerDescription": "ECU",
+            "attribute": {
+                "$ref": "../../../BUSIN/entities/EN_MEGETLIST633.json#/attributes/AT_MEG633CTVS18"
+            },
+            "select": true,
+            "where": false
+        },
+        {
+            "queryMemberId": "QM_QEYME5063_42",
+            "order": 2,
+            "orderByDirection": "A",
+            "selectStr": "T",
+            "alias": "DescriptionEm",
+            "whereStr": "F",
+            "customizationLayer": 0,
+            "customizationLayerDescription": "ECU",
+            "attribute": {
+                "$ref": "../../../BUSIN/entities/EN_MEGETLIST633.json#/attributes/AT_MEG633DSCR82"
+            },
+            "select": true,
+            "where": false
+        }
+    ],
+    "customEvents": [
+        {
+            "executionType": 1,
+            "customEventId": "CEQY_130_Q_QEYMERET_5063_372",
+            "customizationLayer": 0,
+            "customizationLayerDescription": "ECU",
+            "queryEventType": {
+                "eventId": 130,
+                "name": "ExecuteQuery",
+                "description": "Sobreescribe la ejecución de un Query"
+            },
+            "thereAnServerEvent": false,
+            "thereAnClientEvent": true,
+            "thereAnCallbackEvent": false
+        }
+    ],
+    "isAutomatic": false,
+    "isImported": true,
+    "mainEntityModule": "BUSIN",
+    "subModules": [
+        {
+            "id": {
+                "moduleId": "BUSIN",
+                "subModuleId": "FLCRE"
+            }
+        }
+    ],
+    "mainEntityName": {
+        "$ref": "../../../BUSIN/relations/componentKeys.json#/Entities/EN_MEGETLIST633/name"
+    }
+}

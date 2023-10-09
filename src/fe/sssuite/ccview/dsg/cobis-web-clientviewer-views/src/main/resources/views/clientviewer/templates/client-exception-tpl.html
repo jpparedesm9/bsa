@@ -1,0 +1,12 @@
+<div ng-controller="clientviewer.clientExceptionController" ng-init="getDataClientException()" >
+
+  <legend translate>CLIENTVIEWER.LABELS.LBL_EXCEPTION_CLIENT</legend>
+       <kendo-grid k-data-source="exceptionDataSource"  
+					options="datasourceException()"    
+					k-selectable="'row'" resizable="true" >
+					<div k-detail-template>
+					<div kendo-grid k-data-source="datasourceExceptionDetail(dataItem)"   options="datasourceDetailException()" ></div>
+				</div>
+		</kendo-grid>
+	</fieldset>
+</div>

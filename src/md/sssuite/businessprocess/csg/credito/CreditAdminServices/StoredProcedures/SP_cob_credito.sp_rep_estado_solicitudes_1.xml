@@ -1,0 +1,80 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<procedure>
+  <database>cob_credito</database>
+  <name>sp_rep_estado_solicitudes</name>
+  <type>SYBASE</type>
+  <version>1</version>
+  <parameters>
+    <parameter name="@s_ssn" dataType="int" direction="in" />
+    <parameter name="@s_user" dataType="varchar" direction="in" />
+    <parameter name="@s_sesn" dataType="int" direction="in" />
+    <parameter name="@s_term" dataType="varchar" direction="in" />
+    <parameter name="@s_date" dataType="datetime" direction="in" />
+    <parameter name="@s_srv" dataType="varchar" direction="in" />
+    <parameter name="@s_lsrv" dataType="varchar" direction="in" />
+    <parameter name="@s_rol" dataType="smallint" direction="in" />
+    <parameter name="@s_ofi" dataType="smallint" direction="in" />
+    <parameter name="@s_org_err" dataType="char" direction="in" />
+    <parameter name="@s_error" dataType="int" direction="in" />
+    <parameter name="@s_sev" dataType="tinyint" direction="in" />
+    <parameter name="@s_msg" dataType="varchar" direction="in" />
+    <parameter name="@s_org" dataType="char" direction="in" />
+    <parameter name="@t_rty" dataType="char" direction="in" />
+    <parameter name="@t_trn" dataType="smallint" direction="in" />
+    <parameter name="@t_debug" dataType="char" direction="in" />
+    <parameter name="@t_file" dataType="varchar" direction="in" />
+    <parameter name="@t_from" dataType="varchar" direction="in" />
+    <parameter name="@i_operacion" dataType="varchar" direction="in" />
+    <parameter name="@i_regional" dataType="varchar" direction="in" />
+    <parameter name="@i_agencia" dataType="int" direction="in" />
+    <parameter name="@i_user" dataType="int" direction="in" />
+    <parameter name="@i_estado" dataType="char" direction="in" />
+    <parameter name="@i_modo" dataType="tinyint" direction="in" />
+    <parameter name="@i_io_id_inst_proc" dataType="int" direction="in" />
+    <parameter name="@i_tipo_credito" dataType="int" direction="in" />
+  </parameters>
+  <queries>
+    <query>
+      <columns>
+        <column name="numero_correlativo" />
+        <column name="codigo_cliente" />
+        <column name="nombre_cliente" />
+        <column name="tipo_de_producto" />
+        <column name="tipo_de_tramite" />
+        <column name="fecha_inicio_solicitud" />
+        <column name="moneda" />
+        <column name="monto" />
+        <column name="fecha_de_cambio" />
+        <column name="estado" />
+        <column name="dias_en_el_estado" />
+        <column name="numero_de_dias" />
+        <column name="oficial_responsable" />
+        <column name="responsable_del_estado" />
+        <column name="estado_del_plazo" />
+        <column name="actividad_actual" />
+      </columns>
+      <queryText>SELECT DISTINCT "numero_correlativo" = INP.io_id_inst_proc,"codigo_cliente" = INP.io_campo_1,"nombre_cliente" = (SELECT  en_nomlar </queryText>
+    </query>
+    <query>
+      <columns>
+        <column name="numero_correlativo" />
+        <column name="codigo_cliente" />
+        <column name="nombre_cliente" />
+        <column name="tipo_de_producto" />
+        <column name="tipo_de_tramite" />
+        <column name="fecha_inicio_solicitud" />
+        <column name="moneda" />
+        <column name="monto" />
+        <column name="fecha_de_cambio" />
+        <column name="estado" />
+        <column name="dias_en_el_estado" />
+        <column name="numero_de_dias" />
+        <column name="oficial_responsable" />
+        <column name="responsable_del_estado" />
+        <column name="estado_del_plazo" />
+        <column name="actividad_actual" />
+      </columns>
+      <queryText>SELECT DISTINCT "numero_correlativo" = INP.io_id_inst_proc,"codigo_cliente" = INP.io_campo_1,"nombre_cliente" = (SELECT  en_nomlar </queryText>
+    </query>
+  </queries>
+</procedure>
